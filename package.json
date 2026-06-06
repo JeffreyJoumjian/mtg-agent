@@ -1,0 +1,16 @@
+{
+  "name": "mtg-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A Claude Code agent that answers Magic: The Gathering rules questions from the Comprehensive Rules, with a zero-dependency Bun build that chunks the rules and a skill to update them.",
+  "scripts": {
+    "build": "bun run scripts/build-rules.ts",
+    "fetch": "bun run scripts/fetch-rules.ts",
+    "update": "bun run scripts/fetch-rules.ts && bun run scripts/build-rules.ts",
+    "test": "bun test"
+  },
+  "engines": {
+    "bun": ">=1.1.0"
+  }
+}

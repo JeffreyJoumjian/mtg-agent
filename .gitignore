@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Editor cruft
+*.swp
+*~
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Bun (no deps, but just in case)
+node_modules/
+bun.lockb
