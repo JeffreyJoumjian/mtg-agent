@@ -58,6 +58,24 @@ bun run scripts/fetch-rules.ts "https://media.wizards.com/.../MagicCompRules.txt
 bun run scripts/build-rules.ts
 ```
 
+## Card data & deckbuilding
+
+Beyond rules, the repo has a small **Scryfall** card-data layer and a **deckbuilding** workspace.
+
+The card tool uses Bun-native `fetch` with the `User-Agent` Scryfall requires (a naive fetch
+without it gets HTTP 403), throttles politely, batches decklist lookups through
+`/cards/collection`, and caches results for 24 h in the git-ignored `data/` folder.
+
+```bash
+bun run card "Scarlet Witch, Chaotic Avenger"     # one card
+bun run card --deck decks/scarlet-witch/DECK.md --id ur   # price + validate a whole list
+bun run scripts/card.ts search "id<=ur t:warlock"  # Scryfall search syntax
+```
+
+Decks live under `decks/`, one folder per deck, with an authoritative `DECK.md` + `STATUS.md`
+pair and `research/` `versions/` `samples/` `images/` subfolders. See
+[`decks/README.md`](decks/README.md) for the conventions and how to start a new deck.
+
 ## How it works
 
 ```
@@ -94,7 +112,11 @@ rulings.
 | `bun run build` | Re-chunk from the newest file in `rules/raw/`. |
 | `bun run fetch` | Download the latest rules `.txt`. |
 | `bun run update` | `fetch` then `build`. |
-| `bun test` | Run the parser/chunker/differ/manifest tests. |
+| `bun run card "<name>"` | Look up one card (cost, type, color identity, price, legality). |
+| `bun run card --deck <path>` | Price a whole decklist in one batched call; flag not-found / illegal / off-identity. |
+| `bun run search "<query>"` | Scryfall search syntax (call `scripts/card.ts search` directly if the query has `<`/`>`). |
+| `bun run cards:refresh` | Re-pull every cached card (prices + oracle). |
+| `bun test` | Run the parser/chunker/differ/manifest/decklist tests. |
 
 ## Project layout
 
@@ -107,14 +129,17 @@ mtg-agent/
 │   ├── manifest.json      # the index the agent reads first
 │   ├── rules.json         # flat {ruleId: text} map (for diffing)
 │   └── meta.json          # version / effective date / source / sha256
-├── scripts/               # zero-dep Bun + TypeScript build pipeline
-│   ├── build-rules.ts
+├── scripts/               # zero-dep Bun + TypeScript
+│   ├── build-rules.ts     # rules pipeline
 │   ├── fetch-rules.ts
-│   └── lib/{parser,chunker,manifest,differ,paths,types}.ts
+│   ├── card.ts            # card-data CLI (Scryfall)
+│   └── lib/{parser,chunker,manifest,differ,paths,types,scryfall,card-cache,decklist}.ts
+├── decks/                 # one folder per deck (see decks/README.md); _TEMPLATE/ to start one
+├── data/                  # git-ignored 24 h Scryfall cache
 ├── test/                  # bun test
 ├── .claude/
 │   ├── agents/mtg-rules-expert.md
-│   └── skills/mtg-rules-update/SKILL.md
+│   └── skills/{mtg-rules-update,deck-finalizer}/SKILL.md
 ├── CHANGELOG.md
 └── CLAUDE.md
 ```

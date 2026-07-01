@@ -13,3 +13,9 @@
 # Bun (no deps, but just in case)
 node_modules/
 bun.lockb
+
+# Ephemeral, rebuildable Scryfall card cache (see decks/README.md)
+data/
+
+# Playwright MCP scratch output
+.playwright-mcp/

@@ -14,6 +14,12 @@ export const RULES_JSON_PATH = resolve(RULES_DIR, "rules.json");
 export const META_PATH = resolve(RULES_DIR, "meta.json");
 export const CHANGELOG_PATH = resolve(REPO_ROOT, "CHANGELOG.md");
 
+/** Deckbuilding + card-data locations. `data/` holds the ephemeral (git-ignored) Scryfall
+ *  cache; `decks/` holds one folder per deck (see decks/README.md). */
+export const DATA_DIR = resolve(REPO_ROOT, "data");
+export const CARD_CACHE_PATH = resolve(DATA_DIR, "card-cache.json");
+export const DECKS_DIR = resolve(REPO_ROOT, "decks");
+
 /** Convert an absolute path to a repo-relative POSIX path for storage in the manifest. */
 export function repoRelative(absPath: string): string {
   return relative(REPO_ROOT, absPath).split("\\").join("/");

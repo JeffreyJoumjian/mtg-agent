@@ -8,6 +8,9 @@
     "build": "bun run scripts/build-rules.ts",
     "fetch": "bun run scripts/fetch-rules.ts",
     "update": "bun run scripts/fetch-rules.ts && bun run scripts/build-rules.ts",
+    "card": "bun run scripts/card.ts",
+    "search": "bun run scripts/card.ts search",
+    "cards:refresh": "bun run scripts/card.ts refresh",
     "test": "bun test"
   },
   "engines": {

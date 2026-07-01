@@ -1,0 +1,79 @@
+EDGAR MARKOV  —  D3+Imp+Budg  (Budget Aristocrat-Combo)
+~$404 from scratch  |  Bracket 3 by count (Bracket-4 feel: 2 infinite combos)  |  Commander: Edgar Markov
+
+HOW IT WINS
+  Go wide with Edgar's eminence vampires + aristocrats, then close with EITHER infinite combo:
+   1) Cathars' Crusade + Animation Module + Ashnod's Altar  ->  infinite tokens/ETB/death  ->  Impact Tremors / Blood Artist
+   2) (Sanguine Bond or Vito) + Bloodthirsty Conqueror  ->  infinite life drain   [Bloodletter doubles it]
+
+BUDGET SUBSTITUTIONS  (placeholder  <-  premium it stands in for  |  upgrade cost)
+  Read the Bones         <- The One Ring               $104.31
+  Ashnod's Altar         <- Phyrexian Altar            $57.48
+  Idyllic Tutor          <- Enlightened Tutor          $37.67
+  Dictate of Erebos      <- Grave Pact                 $35.31
+  Witty Roastmaster      <- Purphoros, God of the Forge $29.65
+  Midnight Reaper        <- Trouble in Pairs           $28.04
+  Night's Whisper        <- Bolas's Citadel            $17.76
+  Crippling Fear         <- Kindred Dominance          $16.59
+  Wishclaw Talisman      <- Razaketh, the Foulblooded  $13.94
+
+MANA BASE  (14 premium lands replaced by basics  |  upgrade cost)
+  basic land            <- Cavern of Souls            $49.73
+  basic land            <- Luxury Suite               $28.76
+  basic land            <- Phyrexian Tower            $26.84
+  basic land            <- Three Tree City            $23.25
+  basic land            <- Savai Triome               $20.37
+  basic land            <- Vault of Champions         $18.21
+  basic land            <- Sacred Foundry             $10.79
+  basic land            <- Takenuma, Abandoned Mire   $10.26
+  basic land            <- Godless Shrine             $10.24
+  basic land            <- Blood Crypt                $9.93
+  basic land            <- City of Brass              $9.88
+  basic land            <- Blazemire Verge            $9.32
+  basic land            <- Minas Tirith               $6.25
+  basic land            <- Spectator Seating          $0.30
+
+NEW WIN ENGINE  (the deck — do NOT cut these)
+  Cathars' Crusade, Animation Module, Ashnod's Altar, Goblin Bombardment, Pitiless Plunderer, Oathsworn Vampire, Pawn of Ulamog, Scion of Opulence, Sanguine Bond, Bloodthirsty Conqueror, Bloodletter of Aclazotz, Vito, Thorn of the Dusk Rose
+
+CUT FROM ORIGINAL D3
+  doublers replaced by the combo (it makes infinite tokens): Anointed Procession, Mondrak, Glory Dominus, Roaming Throne
+  low-value filler: Champion of Dusk, Forerunner of the Legion, Master of Dark Rites, Dusk Legion Duelist, Vampire Gourmand
+
+UPGRADE PATH  (buy back in this order as budget allows)
+  -- Tier 1: engines & consistency (best value) --
+        $17.76  Bolas's Citadel
+        $13.94  Razaketh, the Foulblooded
+        $16.59  Kindred Dominance
+        $37.67  Enlightened Tutor
+        $57.48  Phyrexian Altar
+     subtotal: $143.44
+  -- Tier 2: real manabase (fixing) --
+        $49.73  Cavern of Souls
+        $28.76  Luxury Suite
+        $26.84  Phyrexian Tower
+        $23.25  Three Tree City
+        $20.37  Savai Triome
+        $18.21  Vault of Champions
+        $10.79  Sacred Foundry
+        $10.26  Takenuma, Abandoned Mire
+        $10.24  Godless Shrine
+         $9.93  Blood Crypt
+         $9.88  City of Brass
+         $9.32  Blazemire Verge
+         $6.25  Minas Tirith
+         $0.30  Spectator Seating
+     subtotal: $233.83
+  -- Tier 3: token doublers (raise ceiling) --
+        $63.92  Anointed Procession
+        $46.29  Mondrak, Glory Dominus
+        $51.23  Roaming Throne
+     subtotal: $161.44
+  -- Tier 4: luxury --
+       $104.31  The One Ring
+        $28.04  Trouble in Pairs
+        $29.65  Purphoros, God of the Forge
+        $35.31  Grave Pact
+     subtotal: $197.31
+
+  FULL upgrade to near-optimal: +$736.02  (deck total ~$1,140)
