@@ -15,8 +15,9 @@ export function CardTile(props: CardTileProps) {
 
   return (
     <div className="flex flex-col rounded-lg bg-neutral-900 p-1.5">
-      {/* Fixed card-aspect box: reserves height from width, so the name/price below are
-          always laid out and never overlapped. object-contain never crops the image. */}
+      {/* Card-aspect box reserves height from width; object-contain never crops. The footer
+          rows below have FIXED heights (h-5 + h-6) so CardGrid's deterministic row-height math
+          stays exact and the name/price are always visible at any width. */}
       <div className="relative aspect-[488/680] w-full overflow-hidden rounded bg-neutral-800">
         {tile.enriched.imageSmall ? (
           <img
@@ -39,8 +40,8 @@ export function CardTile(props: CardTileProps) {
           </span>
         )}
       </div>
-      <div className="mt-1 min-w-0 truncate text-sm" title={tile.name}>{tile.name}</div>
-      <div className="flex items-baseline justify-between gap-1">
+      <div className="mt-1 h-5 min-w-0 truncate text-sm leading-5" title={tile.name}>{tile.name}</div>
+      <div className="flex h-6 items-baseline justify-between gap-1 leading-6">
         <span className="font-semibold">{formatMoney(value, currency)}</span>
         {delta && (
           <span className={delta.value < 0 ? 'shrink-0 text-xs text-red-400' : 'shrink-0 text-xs text-emerald-400'}>

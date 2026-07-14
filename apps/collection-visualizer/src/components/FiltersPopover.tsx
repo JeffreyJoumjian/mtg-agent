@@ -1,15 +1,16 @@
+import { useState } from 'react'
 import * as Popover from '@radix-ui/react-popover'
 import * as Slider from '@radix-ui/react-slider'
 import type { ColorSymbol, Currency } from '~/lib/types'
 import { activeFilterCount, emptyFilters, type FilterState } from '~/lib/filters'
+import { ManaSymbol } from './ManaSymbol'
 
-/** Official mana-pip colors (W/U/B/R/G) — shown as colored circles instead of letters. */
-const MANA: { sym: ColorSymbol; label: string; bg: string }[] = [
-  { sym: 'W', label: 'White', bg: '#F8F3D6' },
-  { sym: 'U', label: 'Blue', bg: '#A6D3F0' },
-  { sym: 'B', label: 'Black', bg: '#B3AAA4' },
-  { sym: 'R', label: 'Red', bg: '#F0A183' },
-  { sym: 'G', label: 'Green', bg: '#9AD1A5' },
+const MANA: { sym: ColorSymbol; label: string }[] = [
+  { sym: 'W', label: 'White' },
+  { sym: 'U', label: 'Blue' },
+  { sym: 'B', label: 'Black' },
+  { sym: 'R', label: 'Red' },
+  { sym: 'G', label: 'Green' },
 ]
 
 const chip = (on: boolean): string =>
@@ -78,6 +79,9 @@ export function FiltersPopover(props: FiltersPopoverProps) {
   const count = activeFilterCount(f)
   const sym = props.currency === 'usd' ? '$' : '€'
 
+  const [setQuery, setSetQuery] = useState('')
+  const visibleSets = props.sets.filter((s) => s.name.toLowerCase().includes(setQuery.trim().toLowerCase()))
+
   const toggleColor = (c: ColorSymbol) =>
     set({ colors: f.colors.includes(c) ? f.colors.filter((x) => x !== c) : [...f.colors, c] })
   const toggleSet = (code: string) =>
@@ -113,9 +117,10 @@ export function FiltersPopover(props: FiltersPopoverProps) {
                         title={m.label}
                         aria-pressed={on}
                         onClick={() => toggleColor(m.sym)}
-                        className={`h-7 w-7 rounded-full border border-black/40 transition ${on ? 'ring-2 ring-white ring-offset-1 ring-offset-neutral-900' : 'opacity-40 hover:opacity-80'}`}
-                        style={{ backgroundColor: m.bg }}
-                      />
+                        className={`h-7 w-7 rounded-full transition ${on ? 'ring-2 ring-white ring-offset-1 ring-offset-neutral-900' : 'opacity-40 hover:opacity-90'}`}
+                      >
+                        <ManaSymbol sym={m.sym} className="h-full w-full" />
+                      </button>
                     )
                   })}
                   <select
@@ -158,13 +163,23 @@ export function FiltersPopover(props: FiltersPopoverProps) {
                 <div className="mb-1.5 text-neutral-300">
                   Sets {f.sets.length > 0 && <span className="text-neutral-500">({f.sets.length})</span>}
                 </div>
+                <input
+                  value={setQuery}
+                  onChange={(e) => setSetQuery(e.target.value)}
+                  placeholder="Search sets…"
+                  className="mb-1.5 w-full rounded bg-neutral-800 px-2 py-1 text-xs"
+                />
                 <div className="max-h-40 space-y-0.5 overflow-y-auto rounded border border-neutral-800 p-2">
-                  {props.sets.map((s) => (
-                    <label key={s.code} className="flex min-w-0 cursor-pointer items-center gap-2 rounded px-1 py-0.5 hover:bg-neutral-800">
-                      <input type="checkbox" checked={f.sets.includes(s.code)} onChange={() => toggleSet(s.code)} className="shrink-0 accent-amber-500" />
-                      <span className="min-w-0 truncate">{s.name}</span>
-                    </label>
-                  ))}
+                  {visibleSets.length === 0 ? (
+                    <div className="px-1 py-0.5 text-xs text-neutral-500">No sets match.</div>
+                  ) : (
+                    visibleSets.map((s) => (
+                      <label key={s.code} className="flex min-w-0 cursor-pointer items-center gap-2 rounded px-1 py-0.5 hover:bg-neutral-800">
+                        <input type="checkbox" checked={f.sets.includes(s.code)} onChange={() => toggleSet(s.code)} className="shrink-0 accent-amber-500" />
+                        <span className="min-w-0 truncate">{s.name}</span>
+                      </label>
+                    ))
+                  )}
                 </div>
               </section>
 
