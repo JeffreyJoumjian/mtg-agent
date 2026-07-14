@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { useState } from 'react'
 import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import appCss from '~/styles/app.css?url'
+import appCss from '~/styles/app.css?inline'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -11,7 +11,6 @@ export const Route = createRootRoute({
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { title: 'MTG Collection' },
     ],
-    links: [{ rel: 'stylesheet', href: appCss }],
   }),
   component: RootComponent,
 })
@@ -33,6 +32,7 @@ function RootDocument(props: Readonly<{ children: ReactNode }>) {
     <html lang="en">
       <head>
         <HeadContent />
+        <style dangerouslySetInnerHTML={{ __html: appCss }} />
       </head>
       <body className="bg-neutral-950 text-neutral-100">
         {props.children}
