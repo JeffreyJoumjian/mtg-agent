@@ -1317,6 +1317,14 @@ test('unparseable input falls back to a name substring match', () => {
   expect(p(tile({ name: '(( weird' }))).toEqual(true)
   expect(p(bolt)).toEqual(false)
 })
+
+test('a dangling or is malformed and falls back (never match-all)', () => {
+  // Each is malformed → name-substring fallback on the raw input (matches nothing here),
+  // NOT a predicate that returns true for every card.
+  expect(compileQuery('bolt or')(bolt)).toEqual(false)
+  expect(compileQuery('or bolt')(bear)).toEqual(false)
+  expect(compileQuery('or')(bolt)).toEqual(false)
+})
 ```
 
 - [ ] **Step 2: Run test to verify it fails**
@@ -1395,7 +1403,9 @@ const KNOWN_KEYS = new Set(['name', 'o', 't', 'r', 's', 'set', 'f', 'c', 'ci', '
 // ---- Tokenizer ----
 type Token = { type: 'term'; pred: Predicate } | { type: 'or' } | { type: 'not' } | { type: 'lparen' } | { type: 'rparen' }
 
-const TOKEN_RE = /\s*(-|\(|\)|(?:[a-zA-Z]+)(?:>=|<=|>|<|:|=)"[^"]*"|(?:[a-zA-Z]+)(?:>=|<=|>|<|:|=)\S+|"[^"]*"|\S+)/g
+// Catch-all terms use [^\s()]+ (not \S+) so a `)` abutting a word — e.g. `bears)` in
+// `(bolt or bears) c:g` — tokenizes as `bears` + `)` instead of being swallowed whole.
+const TOKEN_RE = /\s*(-|\(|\)|(?:[a-zA-Z]+)(?:>=|<=|>|<|:|=)"[^"]*"|(?:[a-zA-Z]+)(?:>=|<=|>|<|:|=)[^\s()]+|"[^"]*"|[^\s()]+)/g
 
 function tokenize(input: string): Token[] {
   const tokens: Token[] = []
@@ -1459,7 +1469,11 @@ function parseTokens(tokens: Token[]): Predicate {
     while (peek() && peek().type !== 'or' && peek().type !== 'rparen') {
       preds.push(parseNot())
     }
-    if (preds.length === 0) return () => true
+    // An empty clause here means a malformed query (a dangling `or`, an empty
+    // `()`, etc.) — throw so compileQuery falls back to name-substring rather
+    // than silently matching everything. (The truly-empty query is short-
+    // circuited in compileQuery before we ever tokenize.)
+    if (preds.length === 0) throw new Error('empty clause')
     return (t) => !preds.some((p) => !p(t))
   }
 
@@ -1822,9 +1836,10 @@ const tile = (name: string, usd: number): CardTile => ({
 })
 
 test('computeView applies search, filters, then sort', () => {
-  const tiles = [tile('Ancestral Recall', 100), tile('Ajani', 5), tile('Black Lotus', 9000)]
+  const tiles = [tile('Ancestral Recall', 100), tile('Ajani', 5), tile('Mox Ruby', 9000)]
   const out = computeView(tiles, { query: 'a', filters: emptyFilters(), sortKey: 'price', sortDir: 'asc', currency: 'usd' })
-  // 'a' matches Ancestral and Ajani (name contains 'a'), sorted by price asc
+  // 'a' matches Ancestral and Ajani (name contains 'a') but NOT 'Mox Ruby', sorted by price asc.
+  // (Fixture avoids any name with an incidental 'a' like "Black Lotus" — "blAck" would match.)
   expect(out.map((t) => t.name)).toEqual(['Ajani', 'Ancestral Recall'])
 })
 ```
@@ -2131,6 +2146,7 @@ git commit -m "add virtualized card grid and tile with price + delta"
 ### Task 13: Toolbar — currency/baseline toggles, sort, filters, refresh, upload
 
 **Files:**
+- Modify: `apps/collection-visualizer/src/routes/__root.tsx`
 - Create: `apps/collection-visualizer/src/components/Toolbar.tsx`
 - Create: `apps/collection-visualizer/src/components/SummaryBar.tsx`
 - Modify: `apps/collection-visualizer/src/routes/index.tsx`
@@ -2139,7 +2155,30 @@ git commit -m "add virtualized card grid and tile with price + delta"
 - Consumes: `FilterState`, `SortKey`, `Currency`, `Baseline`, `ownedSets` output, `totals`, `refreshPrices`, `uploadCsv`, `useServerFn`, `useRouter`, `useMutation`.
 - Produces: `<Toolbar props={...} />` (all controls, lifted state via callbacks), `<SummaryBar props={{ tiles, currency, baseline }} />`.
 
-- [ ] **Step 1: Implement `src/components/SummaryBar.tsx`**
+- [ ] **Step 1: Add the react-query provider to the root**
+
+This task introduces the first `useMutation` usage; without a `QueryClientProvider` above it, react-query throws "No QueryClient set" at runtime. Wrap the app in `src/routes/__root.tsx` by editing `RootComponent` (leave `RootDocument` and the head/links as-is):
+
+```tsx
+// add these imports at the top of __root.tsx
+import { useState } from 'react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+// replace the existing RootComponent with:
+function RootComponent() {
+  // One client per app instance; created lazily so SSR and client each get their own.
+  const [queryClient] = useState(() => new QueryClient())
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RootDocument>
+        <Outlet />
+      </RootDocument>
+    </QueryClientProvider>
+  )
+}
+```
+
+- [ ] **Step 2: Implement `src/components/SummaryBar.tsx`**
 
 ```tsx
 import type { Baseline, CardTile, Currency } from '~/lib/types'
@@ -2167,7 +2206,7 @@ export function SummaryBar(props: SummaryBarProps) {
 }
 ```
 
-- [ ] **Step 2: Implement `src/components/Toolbar.tsx`**
+- [ ] **Step 3: Implement `src/components/Toolbar.tsx`**
 
 ```tsx
 import { useRef } from 'react'
@@ -2289,7 +2328,7 @@ export function Toolbar(props: ToolbarProps) {
 }
 ```
 
-- [ ] **Step 3: Rewrite `src/routes/index.tsx` to compose Toolbar + SummaryBar + Grid**
+- [ ] **Step 4: Rewrite `src/routes/index.tsx` to compose Toolbar + SummaryBar + Grid**
 
 ```tsx
 import { useMemo, useState } from 'react'
@@ -2365,14 +2404,14 @@ function Home() {
 }
 ```
 
-- [ ] **Step 4: Manual smoke test**
+- [ ] **Step 5: Manual smoke test**
 
 Run: `bun run dev`. Verify: currency toggle flips all prices USD↔EUR; baseline dropdown swaps the ± badges and the summary; sort dropdown + arrow reorder; set/color/price filters narrow the grid; "Refresh" repopulates prices and updates the timestamp; "Upload CSV" of the ManaBox file reloads the collection.
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 6: Commit**
 
 ```bash
-git add apps/collection-visualizer/src/components/Toolbar.tsx apps/collection-visualizer/src/components/SummaryBar.tsx apps/collection-visualizer/src/routes/index.tsx
+git add apps/collection-visualizer/src/routes/__root.tsx apps/collection-visualizer/src/components/Toolbar.tsx apps/collection-visualizer/src/components/SummaryBar.tsx apps/collection-visualizer/src/routes/index.tsx
 git commit -m "add toolbar controls, summary bar, refresh and upload wiring"
 ```
 
@@ -2526,3 +2565,26 @@ small, additive follow-ups if wanted:
 - **First load is slow-ish:** the initial `getCollection` fetches ~15 batched Scryfall requests (~2s) to populate the cache; subsequent loads are instant until the 24h TTL lapses.
 - **Scryfall etiquette:** the client throttles to ~10 req/s and retries on 429 — do not remove the throttle.
 - **`routeTree.gen.ts`** is generated; never edit it by hand and keep it git-ignored.
+
+## Post-implementation record (corrections found during the subagent-driven build)
+
+This plan's code blocks were updated in place where a bug was found during execution; the
+implemented app matches the current text. Notable corrections:
+
+- **TanStack Start 1.168 has no `createRouter`/Nitro.** `router.tsx` exports `getRouter`; the
+  production build is plain Vite → `dist/` served by `vite preview` (not `.output/`). The
+  Dockerfile CMD and `package.json` `start` reflect this.
+- **Production CSS was 404ing (unstyled page).** The two-pass Vite build hashed the stylesheet
+  differently than the SSR link referenced it. Fixed by inlining compiled Tailwind into the
+  document `<head>` via `?inline` (dropped the `?url` link).
+- **Search parser:** `TOKEN_RE` catch-all is `[^\s()]+` (not `\S+`) so `)` abutting a word
+  tokenizes; a dangling `or` throws → name-substring fallback (never match-all).
+- **`set` sort** composites set name + zero-padded collector number (numeric tiebreak).
+- **Resilience:** `getCollection` serves stale cached prices if a Scryfall refresh fails
+  (only the manual `refreshPrices` surfaces the error).
+- **Summary ± currency:** `totals` returns `deltaCurrency`; the vs-purchase ± is labeled in the
+  purchase currency so the summary matches the tiles.
+- **react-query:** a `QueryClientProvider` in `__root.tsx` is required for the refresh/upload
+  mutations.
+
+Deferred (not defects): URL-param view state and the card-detail popover (see Deviations above).
