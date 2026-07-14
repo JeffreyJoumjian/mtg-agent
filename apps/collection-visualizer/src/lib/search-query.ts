@@ -132,7 +132,11 @@ function parseTokens(tokens: Token[]): Predicate {
     while (peek() && peek().type !== 'or' && peek().type !== 'rparen') {
       preds.push(parseNot())
     }
-    if (preds.length === 0) return () => true
+    // An empty clause here means a malformed query (a dangling `or`, an empty
+    // `()`, etc.) — throw so compileQuery falls back to name-substring rather
+    // than silently matching everything. (The truly-empty query is short-
+    // circuited in compileQuery before we ever tokenize.)
+    if (preds.length === 0) throw new Error('empty clause')
     return (t) => !preds.some((p) => !p(t))
   }
 

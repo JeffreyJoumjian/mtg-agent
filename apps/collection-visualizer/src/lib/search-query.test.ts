@@ -71,3 +71,11 @@ test('unparseable input falls back to a name substring match', () => {
   expect(p(tile({ name: '(( weird' }))).toEqual(true)
   expect(p(bolt)).toEqual(false)
 })
+
+test('a dangling or is malformed and falls back (never match-all)', () => {
+  // Each is malformed → name-substring fallback on the raw input (matches nothing here),
+  // NOT a predicate that returns true for every card.
+  expect(compileQuery('bolt or')(bolt)).toEqual(false)
+  expect(compileQuery('or bolt')(bear)).toEqual(false)
+  expect(compileQuery('or')(bolt)).toEqual(false)
+})
