@@ -11,7 +11,7 @@ function keyValue(tile: CardTile, key: SortKey, currency: Currency): number | st
     case 'name':
       return tile.name.toLowerCase()
     case 'set':
-      return tile.setName.toLowerCase()
+      return `${tile.setName.toLowerCase()} ${String(Number(tile.collectorNumber) || 0).padStart(6, '0')}`
     case 'rarity':
       return RARITY_ORDER[tile.rarity] ?? 99
     case 'number':

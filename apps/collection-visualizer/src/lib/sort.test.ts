@@ -39,3 +39,12 @@ test('sort by cmc', () => {
   const tiles = [tile({ cmc: 5, name: 'five' }), tile({ cmc: 1, name: 'one' })]
   expect(sortTiles(tiles, 'cmc', 'asc', 'usd').map((t) => t.name)).toEqual(['one', 'five'])
 })
+
+test('sort by set orders by set name then numeric collector number', () => {
+  const tiles = [
+    tile({ setName: 'Beta', collectorNumber: '5', name: 'b5' }),
+    tile({ setName: 'Alpha', collectorNumber: '10', name: 'a10' }),
+    tile({ setName: 'Alpha', collectorNumber: '2', name: 'a2' }),
+  ]
+  expect(sortTiles(tiles, 'set', 'asc', 'usd').map((t) => t.name)).toEqual(['a2', 'a10', 'b5'])
+})
