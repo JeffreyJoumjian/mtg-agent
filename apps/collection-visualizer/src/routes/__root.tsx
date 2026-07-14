@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
+import { useState } from 'react'
 import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import appCss from '~/styles/app.css?url'
 
 export const Route = createRootRoute({
@@ -15,10 +17,14 @@ export const Route = createRootRoute({
 })
 
 function RootComponent() {
+  // One client per app instance; created lazily so SSR and client each get their own.
+  const [queryClient] = useState(() => new QueryClient())
   return (
-    <RootDocument>
-      <Outlet />
-    </RootDocument>
+    <QueryClientProvider client={queryClient}>
+      <RootDocument>
+        <Outlet />
+      </RootDocument>
+    </QueryClientProvider>
   )
 }
 
