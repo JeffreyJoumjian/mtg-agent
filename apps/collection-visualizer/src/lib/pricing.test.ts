@@ -39,5 +39,17 @@ test('totals sum value and delta across quantity, skipping nulls', () => {
   ]
   // value: 2*2 = 4 ; second tile has null price -> skipped
   // delta sinceRefresh: (2-1.5)*2 = 1
-  expect(totals(tiles, 'usd', 'sinceRefresh')).toEqual({ value: 4, delta: 1 })
+  expect(totals(tiles, 'usd', 'sinceRefresh')).toEqual({ value: 4, delta: 1, deltaCurrency: 'usd' })
+})
+
+test('totals labels the vsPurchase delta in the purchase currency', () => {
+  const t = tile({
+    quantity: 2,
+    weightedPurchase: { price: 1.25, currency: 'USD' },
+    prices: { usd: 2, usdFoil: null, eur: 1, eurFoil: null },
+    previousPrices: null,
+  })
+  // Display EUR, but the vsPurchase ± is computed & labeled in USD (the purchase currency):
+  // value = eur 1 × 2 = 2 ; delta = (usd 2 − 1.25) × 2 = 1.5
+  expect(totals([t], 'eur', 'vsPurchase')).toEqual({ value: 2, delta: 1.5, deltaCurrency: 'USD' })
 })

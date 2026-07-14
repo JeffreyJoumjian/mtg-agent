@@ -42,13 +42,19 @@ async function refresh(rows: CollectionRow[], force: boolean): Promise<Collectio
   const now = Date.now()
   const toFetch = force ? ids : staleIds(cache, ids, now)
 
-  let nextCache = cache
-  if (toFetch.length > 0) {
+  if (toFetch.length === 0) return buildResponse(rows, cache)
+
+  try {
     const raw = await fetchCardsByIds(toFetch)
-    nextCache = mergeRefresh(cache, raw, now)
+    const nextCache = mergeRefresh(cache, raw, now)
     await saveCache(nextCache)
+    return buildResponse(rows, nextCache)
+  } catch (err) {
+    // A manual refresh surfaces the error to its mutation; an automatic (stale-TTL) load
+    // must never crash the page — serve whatever prices we already have cached.
+    if (force) throw err
+    return buildResponse(rows, cache)
   }
-  return buildResponse(rows, nextCache)
 }
 
 export const getCollection = createServerFn({ method: 'GET' }).handler(async () => {

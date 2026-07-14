@@ -36,14 +36,25 @@ export function unitDelta(
 }
 
 /** Portfolio totals (× quantity), skipping tiles with no price / no baseline. */
-export function totals(tiles: CardTile[], currency: Currency, baseline: Baseline): { value: number; delta: number } {
+export function totals(
+  tiles: CardTile[],
+  currency: Currency,
+  baseline: Baseline,
+): { value: number; delta: number; deltaCurrency: string } {
   let value = 0
   let delta = 0
+  // sinceRefresh deltas are in the display currency; vsPurchase deltas are in the purchase
+  // currency (uniform across a ManaBox export). Track it so the summary labels the ± with the
+  // same currency the tiles do, instead of the display currency.
+  let deltaCurrency: string = currency
   for (const t of tiles) {
     const unit = tileValue(t, currency)
     if (unit != null) value += unit * t.quantity
     const d = unitDelta(t, currency, baseline)
-    if (d != null) delta += d.value * t.quantity
+    if (d != null) {
+      delta += d.value * t.quantity
+      deltaCurrency = d.currency
+    }
   }
-  return { value, delta }
+  return { value, delta, deltaCurrency }
 }

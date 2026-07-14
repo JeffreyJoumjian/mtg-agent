@@ -109,8 +109,8 @@ export function Toolbar(props: ToolbarProps) {
         <span className="text-xs text-neutral-500">updated {new Date(props.pricesUpdatedAt).toLocaleString()}</span>
       )}
 
-      {(f.sets.length > 0 || f.colors.length > 0 || f.priceMin != null || f.priceMax != null || f.cmcMin != null || f.cmcMax != null) && (
-        <button onClick={() => set({ sets: [], colors: [], priceMin: null, priceMax: null, cmcMin: null, cmcMax: null })} className="text-xs text-neutral-400 underline">clear filters</button>
+      {(f.sets.length > 0 || f.colors.length > 0 || f.colorless || f.multicolor || f.priceMin != null || f.priceMax != null || f.cmcMin != null || f.cmcMax != null) && (
+        <button onClick={() => set({ sets: [], colors: [], colorMode: 'any', colorless: false, multicolor: false, priceMin: null, priceMax: null, cmcMin: null, cmcMax: null })} className="text-xs text-neutral-400 underline">clear filters</button>
       )}
     </div>
   )
