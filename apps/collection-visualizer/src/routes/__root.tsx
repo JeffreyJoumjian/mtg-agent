@@ -29,12 +29,12 @@ function RootComponent() {
 
 function RootDocument(props: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <HeadContent />
         <style dangerouslySetInnerHTML={{ __html: appCss }} />
       </head>
-      <body className="bg-neutral-950 text-neutral-100">
+      <body className="bg-background text-foreground">
         {props.children}
         <Scripts />
       </body>

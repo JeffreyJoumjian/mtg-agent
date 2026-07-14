@@ -14,11 +14,11 @@ export function CardTile(props: CardTileProps) {
   const delta = unitDelta(tile, currency, baseline)
 
   return (
-    <div className="flex flex-col rounded-lg bg-neutral-900 p-1.5">
+    <div className="flex flex-col rounded-lg bg-card p-1.5">
       {/* Card-aspect box reserves height from width; object-contain never crops. The footer
           rows below have FIXED heights (h-5 + h-6) so CardGrid's deterministic row-height math
           stays exact and the name/price are always visible at any width. */}
-      <div className="relative aspect-[488/680] w-full overflow-hidden rounded bg-neutral-800">
+      <div className="relative aspect-[488/680] w-full overflow-hidden rounded bg-muted">
         {tile.enriched.imageSmall ? (
           <img
             src={tile.enriched.imageSmall}
@@ -27,7 +27,7 @@ export function CardTile(props: CardTileProps) {
             className="absolute inset-0 h-full w-full object-contain"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-neutral-400">
+          <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-muted-foreground">
             {tile.name}
           </div>
         )}

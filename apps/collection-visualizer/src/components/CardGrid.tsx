@@ -7,6 +7,8 @@ interface CardGridProps {
   tiles: Tile[]
   currency: Currency
   baseline: Baseline
+  /** Cap on columns; null = auto (as many as fit responsively). */
+  maxPerRow: number | null
 }
 
 /** Grid geometry. Row height is derived DETERMINISTICALLY from the column width (every row is
@@ -24,8 +26,9 @@ interface Geometry {
   rowHeight: number
 }
 
-function computeGeometry(gridWidth: number): Geometry {
-  const columns = Math.max(1, Math.floor((gridWidth + GAP) / (MIN_TILE + GAP)))
+function computeGeometry(gridWidth: number, maxPerRow: number | null): Geometry {
+  const auto = Math.max(1, Math.floor((gridWidth + GAP) / (MIN_TILE + GAP)))
+  const columns = maxPerRow ? Math.min(auto, maxPerRow) : auto
   const tileWidth = (gridWidth - GAP * (columns - 1)) / columns
   const imageHeight = (tileWidth - TILE_PAD * 2) * CARD_ASPECT
   const rowHeight = TILE_PAD * 2 + imageHeight + FOOTER + GAP
@@ -42,7 +45,7 @@ export function CardGrid(props: CardGridProps) {
     const measure = () => {
       const gridWidth = el.clientWidth - PAGE_PAD
       if (gridWidth <= 0) return
-      const next = computeGeometry(gridWidth)
+      const next = computeGeometry(gridWidth, props.maxPerRow)
       setGeo((prev) =>
         prev.columns === next.columns && Math.abs(prev.rowHeight - next.rowHeight) < 0.5 ? prev : next,
       )
@@ -51,7 +54,7 @@ export function CardGrid(props: CardGridProps) {
     const ro = new ResizeObserver(measure)
     ro.observe(el)
     return () => ro.disconnect()
-  }, [])
+  }, [props.maxPerRow])
 
   const rowCount = Math.ceil(props.tiles.length / geo.columns)
 
