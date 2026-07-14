@@ -1,6 +1,6 @@
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { tileValue, unitDelta } from '~/lib/pricing'
-import { formatMoney, formatDelta, truncate } from '~/lib/format'
+import { formatMoney, formatDelta } from '~/lib/format'
 
 interface CardTileProps {
   tile: Tile
@@ -14,12 +14,19 @@ export function CardTile(props: CardTileProps) {
   const delta = unitDelta(tile, currency, baseline)
 
   return (
-    <div className="relative flex flex-col rounded-lg bg-neutral-900 p-1.5">
-      <div className="relative aspect-[488/680] w-full overflow-hidden rounded">
+    <div className="flex flex-col rounded-lg bg-neutral-900 p-1.5">
+      {/* Fixed card-aspect box: reserves height from width, so the name/price below are
+          always laid out and never overlapped. object-contain never crops the image. */}
+      <div className="relative aspect-[488/680] w-full overflow-hidden rounded bg-neutral-800">
         {tile.enriched.imageSmall ? (
-          <img src={tile.enriched.imageSmall} alt={tile.name} loading="lazy" className="h-full w-full object-cover" />
+          <img
+            src={tile.enriched.imageSmall}
+            alt={tile.name}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-contain"
+          />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-neutral-800 p-2 text-center text-xs text-neutral-400">
+          <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-neutral-400">
             {tile.name}
           </div>
         )}
@@ -32,11 +39,11 @@ export function CardTile(props: CardTileProps) {
           </span>
         )}
       </div>
-      <div className="mt-1 truncate text-sm" title={tile.name}>{truncate(tile.name, 22)}</div>
-      <div className="flex items-baseline justify-between">
+      <div className="mt-1 min-w-0 truncate text-sm" title={tile.name}>{tile.name}</div>
+      <div className="flex items-baseline justify-between gap-1">
         <span className="font-semibold">{formatMoney(value, currency)}</span>
         {delta && (
-          <span className={delta.value < 0 ? 'text-xs text-red-400' : 'text-xs text-emerald-400'}>
+          <span className={delta.value < 0 ? 'shrink-0 text-xs text-red-400' : 'shrink-0 text-xs text-emerald-400'}>
             {delta.value < 0 ? '▼' : '▲'} {formatDelta(delta.value, delta.currency)}
           </span>
         )}

@@ -3,7 +3,7 @@ import { createFileRoute, useRouter } from '@tanstack/react-router'
 import { useServerFn } from '@tanstack/react-start'
 import { useMutation } from '@tanstack/react-query'
 import { getCollection, refreshPrices, uploadCsv } from '~/server/collection'
-import { emptyFilters, type FilterState } from '~/lib/filters'
+import { emptyFilters, priceBounds, cmcBounds, type FilterState } from '~/lib/filters'
 import { computeView } from '~/lib/view'
 import { Toolbar } from '~/components/Toolbar'
 import { SummaryBar } from '~/components/SummaryBar'
@@ -48,6 +48,10 @@ function Home() {
     [data.tiles, query, filters, sortKey, sortDir, currency],
   )
 
+  // Slider bounds come from the whole collection (not the filtered view), so they don't shift.
+  const priceRange = useMemo(() => priceBounds(data.tiles, currency), [data.tiles, currency])
+  const cmcRange = useMemo(() => cmcBounds(data.tiles), [data.tiles])
+
   return (
     <main className="flex h-screen flex-col">
       <Toolbar
@@ -56,6 +60,7 @@ function Home() {
         baseline={baseline} onBaseline={setBaseline}
         sortKey={sortKey} sortDir={sortDir} onSort={(k, d) => { setSortKey(k); setSortDir(d) }}
         sets={data.sets} filters={filters} onFilters={setFilters}
+        priceBounds={priceRange} cmcBounds={cmcRange}
         onRefresh={() => refreshMutation.mutate()} refreshing={refreshMutation.isPending}
         onUpload={(file) => uploadMutation.mutate(file)}
         pricesUpdatedAt={data.pricesUpdatedAt}
@@ -63,7 +68,7 @@ function Home() {
       <div className="flex items-center justify-between px-3 py-2">
         <SummaryBar tiles={view} currency={currency} baseline={baseline} />
       </div>
-      <div className="flex-1 px-2">
+      <div className="min-h-0 flex-1">
         <CardGrid tiles={view} currency={currency} baseline={baseline} />
       </div>
     </main>

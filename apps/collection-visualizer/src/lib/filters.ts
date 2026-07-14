@@ -55,3 +55,42 @@ export function ownedSets(tiles: CardTile[]): { code: string; name: string }[] {
     .map(([code, name]) => ({ code, name }))
     .sort((a, b) => a.name.localeCompare(b.name))
 }
+
+/** [min, max] effective price across owned tiles in the given currency (floor/ceil, nulls skipped). */
+export function priceBounds(tiles: CardTile[], currency: Currency): [number, number] {
+  let min = Infinity
+  let max = -Infinity
+  for (const t of tiles) {
+    const p = effectivePrice(t.prices, currency, t.finish)
+    if (p == null) continue
+    if (p < min) min = p
+    if (p > max) max = p
+  }
+  if (!Number.isFinite(min)) return [0, 0]
+  return [Math.floor(min), Math.ceil(max)]
+}
+
+/** [min, max] mana value (cmc) across owned tiles. */
+export function cmcBounds(tiles: CardTile[]): [number, number] {
+  let min = Infinity
+  let max = -Infinity
+  for (const t of tiles) {
+    const c = t.enriched.cmc
+    if (c < min) min = c
+    if (c > max) max = c
+  }
+  if (!Number.isFinite(min)) return [0, 0]
+  return [Math.floor(min), Math.ceil(max)]
+}
+
+/** Number of active filter dimensions (for the "Filters" button badge). */
+export function activeFilterCount(f: FilterState): number {
+  let n = 0
+  if (f.sets.length > 0) n++
+  if (f.colors.length > 0) n++
+  if (f.colorless) n++
+  if (f.multicolor) n++
+  if (f.priceMin != null || f.priceMax != null) n++
+  if (f.cmcMin != null || f.cmcMax != null) n++
+  return n
+}
