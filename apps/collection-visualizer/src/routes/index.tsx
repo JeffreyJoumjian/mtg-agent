@@ -3,8 +3,9 @@ import { createFileRoute } from '@tanstack/react-router'
 import { getCollection } from '~/server/collection'
 import { emptyFilters, type FilterState } from '~/lib/filters'
 import { computeView } from '~/lib/view'
-import type { Currency } from '~/lib/types'
+import type { Baseline, Currency } from '~/lib/types'
 import type { SortKey } from '~/lib/sort'
+import { CardGrid } from '~/components/CardGrid'
 
 export const Route = createFileRoute('/')({
   loader: () => getCollection(),
@@ -19,6 +20,7 @@ function Home() {
   const [sortKey] = useState<SortKey>('name')
   const [sortDir] = useState<'asc' | 'desc'>('asc')
   const [currency] = useState<Currency>('usd')
+  const [baseline] = useState<Baseline>('sinceRefresh')
 
   const view = useMemo(
     () => computeView(data.tiles, { query, filters, sortKey, sortDir, currency }),
@@ -33,9 +35,10 @@ function Home() {
         placeholder="Search… (try o:&quot;draw a card&quot; or c:r t:instant)"
         className="w-full max-w-md rounded bg-neutral-800 px-3 py-2"
       />
-      <p className="mt-4 text-neutral-400">
+      <p className="my-3 text-sm text-neutral-400">
         {view.length} of {data.tiles.length} cards
       </p>
+      <CardGrid tiles={view} currency={currency} baseline={baseline} />
     </main>
   )
 }
