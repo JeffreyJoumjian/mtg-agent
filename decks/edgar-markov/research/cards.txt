@@ -938,3 +938,12 @@ Lunarch Veteran: Whenever another creature you control enters, you gain 1 life. 
 ## Sengir, the Dark Baron
 cost={4}{B}{B} | type=Legendary Creature — Vampire Noble | CI=B | produces=- | usd=$0.30
 Flying Whenever another creature dies, put two +1/+1 counters on Sengir. Whenever another player loses the game, you gain life equal to that player's life total as the turn began. Partner (You can have two commanders if both have partner.)
+
+
+## Coat of Arms
+cost={5} | type=Artifact | CI=- | produces=- | usd=$18.72
+Each creature gets +1/+1 for each other creature on the battlefield that shares at least one creature type with it. (For example, if two Goblin Warriors and a Goblin Shaman are on the battlefield, each gets +2/+2.)
+
+## Dark Ritual
+cost={B} | type=Instant | CI=B | produces=B | usd=$12.46
+Add {B}{B}{B}.
