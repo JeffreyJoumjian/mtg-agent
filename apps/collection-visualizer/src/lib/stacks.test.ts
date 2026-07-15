@@ -1,5 +1,5 @@
 import { test, expect } from 'bun:test'
-import { groupByName, representative, groupTotals, type NameGroup } from './stacks'
+import { groupByName, representative, variantsWorstFirst, groupTotals, type NameGroup } from './stacks'
 import type { CardTile } from './types'
 
 const tile = (over: Partial<CardTile> & { usd?: number }): CardTile => ({
@@ -33,6 +33,14 @@ test('representative honors a pin over the rule', () => {
   expect(representative(g, 'usd', { Bolt: 'b' }).key).toEqual('b')
   // a stale pin (key not present) falls back to the rule
   expect(representative(g, 'usd', { Bolt: 'gone' }).key).toEqual('a')
+})
+
+test('variantsWorstFirst orders worst → best so the best printing lands last', () => {
+  const g: NameGroup = {
+    name: 'Bolt',
+    variants: [tile({ key: 'dear', usd: 5 }), tile({ key: 'cheap', usd: 1 }), tile({ key: 'dear-foil', usd: 5, finish: 'foil' })],
+  }
+  expect(variantsWorstFirst(g, 'usd').map((v) => v.key)).toEqual(['cheap', 'dear', 'dear-foil'])
 })
 
 test('groupTotals sums quantity and value across variants', () => {

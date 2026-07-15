@@ -23,6 +23,17 @@ export function groupByName(tiles: CardTile[]): NameGroup[] {
 
 const isFoil = (t: CardTile): boolean => t.finish !== 'normal'
 
+/** Ranking used to pick the stack "face": most expensive first, foil breaking ties. */
+function byBestFirst(currency: Currency) {
+  return (a: CardTile, b: CardTile): number => {
+    const pa = effectivePrice(a.prices, currency, a.finish) ?? -1
+    const pb = effectivePrice(b.prices, currency, b.finish) ?? -1
+    if (pb !== pa) return pb - pa // most expensive first
+    if (isFoil(a) !== isFoil(b)) return isFoil(a) ? -1 : 1 // foil before regular
+    return 0
+  }
+}
+
 /** The tile shown as the stack's "face": the pinned variant if set, else most expensive (foil breaks ties). */
 export function representative(group: NameGroup, currency: Currency, pins: Record<string, string>): CardTile {
   const pinnedKey = pins[group.name]
@@ -30,13 +41,13 @@ export function representative(group: NameGroup, currency: Currency, pins: Recor
     const pinned = group.variants.find((v) => v.key === pinnedKey)
     if (pinned) return pinned
   }
-  return [...group.variants].sort((a, b) => {
-    const pa = effectivePrice(a.prices, currency, a.finish) ?? -1
-    const pb = effectivePrice(b.prices, currency, b.finish) ?? -1
-    if (pb !== pa) return pb - pa // most expensive first
-    if (isFoil(a) !== isFoil(b)) return isFoil(a) ? -1 : 1 // foil before regular
-    return 0
-  })[0]
+  return [...group.variants].sort(byBestFirst(currency))[0]
+}
+
+/** Variants ordered worst → best, so the best printing lands last — placed rightmost (and so most
+ *  visible) in the fanned variant selector. */
+export function variantsWorstFirst(group: NameGroup, currency: Currency): CardTile[] {
+  return [...group.variants].sort(byBestFirst(currency)).reverse()
 }
 
 /** Total quantity and value across all variants in the stack (in the given currency). */

@@ -1,7 +1,7 @@
 import { useState, type CSSProperties } from 'react'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { formatMoney } from '~/lib/format'
-import { groupTotals, type NameGroup } from '~/lib/stacks'
+import { groupTotals, variantsWorstFirst, type NameGroup } from '~/lib/stacks'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '~/components/ui/hover-card'
 import { CardDetails } from './CardDetails'
 
@@ -90,7 +90,7 @@ export function StackTile(props: StackTileProps) {
             <div className="mb-2 text-xs text-muted-foreground">
               {group.variants.length} printings · total {formatMoney(totals.value, currency)}
             </div>
-            <VariantFan variants={group.variants} hoveredKey={hoveredKey} onHover={setHoveredKey} onSelect={props.onSelect} />
+            <VariantFan variants={variantsWorstFirst(group, currency)} hoveredKey={hoveredKey} onHover={setHoveredKey} onSelect={props.onSelect} />
           </div>
         )}
       </HoverCardContent>
