@@ -94,7 +94,7 @@ export function SettingsPopover(props: SettingsPopoverProps) {
         )}
 
         {s.view === "grid" && (
-          <Row label="Fold duplicates">
+          <Row label="Group variants">
             <Button
               variant={s.grouped ? "default" : "outline"}
               size="sm"

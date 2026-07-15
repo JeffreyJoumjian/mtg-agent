@@ -1,11 +1,11 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { createFileRoute, useRouter } from '@tanstack/react-router'
 import { useServerFn } from '@tanstack/react-start'
 import { useMutation } from '@tanstack/react-query'
 import { getCollection, refreshPrices, uploadCsv } from '~/server/collection'
 import { emptyFilters, priceBounds, cmcBounds, type FilterState } from '~/lib/filters'
 import { computeView } from '~/lib/view'
-import { defaultSettings, type ViewSettings } from '~/lib/settings'
+import { defaultSettings, loadSettings, saveSettings, type ViewSettings } from '~/lib/settings'
 import { groupByName, representative } from '~/lib/stacks'
 import { Toolbar } from '~/components/Toolbar'
 import { SummaryBar } from '~/components/SummaryBar'
@@ -28,6 +28,21 @@ function Home() {
   const [filters, setFilters] = useState<FilterState>(emptyFilters())
   const [settings, setSettings] = useState<ViewSettings>(defaultSettings())
   const [selectedKey, setSelectedKey] = useState<string | null>(null)
+
+  // Load persisted settings once on mount. Kept out of the initializer so server and client both
+  // start from the defaults (no hydration mismatch); we adopt the stored values right after.
+  useEffect(() => {
+    const stored = loadSettings()
+    if (stored) {
+      setSettings(stored)
+    }
+  }, [])
+
+  // Persist on every user-driven change (not on the mount-time load above).
+  const updateSettings = (next: ViewSettings) => {
+    setSettings(next)
+    saveSettings(next)
+  }
   // Per-card pinned "face" (name -> tile.key), set when you click a variant.
   const [pins, setPins] = useState<Record<string, string>>({})
 
@@ -87,7 +102,7 @@ function Home() {
         priceBounds={priceRange}
         cmcBounds={cmcRange}
         settings={settings}
-        onSettings={setSettings}
+        onSettings={updateSettings}
         onRefresh={() => refreshMutation.mutate()}
         refreshing={refreshMutation.isPending}
         onUpload={(file) => uploadMutation.mutate(file)}
