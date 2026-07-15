@@ -81,7 +81,7 @@ export function StackTile(props: StackTileProps) {
 
       {/* One popover: the card details, which — for a real stack — render a strip of the printings
           below them (see CardDetails). A single-printing card still gets its details, just no strip. */}
-      <HoverCardContent side="right" align="center" className="w-72 text-sm">
+      <HoverCardContent side="right" align="center" className="w-56 text-sm">
         <CardDetails
           tile={hovered}
           currency={currency}
