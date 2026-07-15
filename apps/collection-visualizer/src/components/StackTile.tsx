@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { effectivePrice } from '~/lib/pricing'
 import { formatMoney } from '~/lib/format'
@@ -16,37 +16,88 @@ interface StackTileProps {
   onSelect: (key: string) => void
 }
 
+const TRANSITION = 'transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1)'
+
+/** Position for one card in the stack. Everything pivots from the BOTTOM (like a held hand of
+ *  cards): a visible cascade at rest, a rotated fan on hover, and a scaled-forward "focus" pose for
+ *  the hovered card. Cards are slightly inset (scale < 1) so the cascade stays inside the cell,
+ *  and the fan spreads up + outward — overflowing earlier rows (behind) rather than the row below. */
+function cardStyle(index: number, open: boolean, focused: boolean): CSSProperties {
+  // Fan slot: the face (index 0) sits centered; the others alternate to the sides.
+  const slot = index === 0 ? 0 : index % 2 === 1 ? -Math.ceil(index / 2) : Math.ceil(index / 2)
+
+  let transform: string
+  let zIndex: number
+  if (open && focused) {
+    transform = 'translateY(-14%) scale(1.02) rotate(0deg)'
+    zIndex = 40
+  } else if (open) {
+    transform = `translateX(${slot * 34}%) translateY(-16%) rotate(${slot * 11}deg) scale(0.84)`
+    zIndex = 20 - index
+  } else {
+    transform = `translateX(${index * 6}%) translateY(${-index * 11}%) rotate(${index * 2}deg) scale(0.82)`
+    zIndex = 20 - index
+  }
+  return { transform, transformOrigin: 'bottom center', zIndex, transition: TRANSITION }
+}
+
 export function StackTile(props: StackTileProps) {
   const { group, rep, currency, baseline } = props
   const totals = groupTotals(group, currency)
+
+  const others = group.variants.filter((v) => v.key !== rep.key)
+  const shown = [rep, ...others].slice(0, 3) // up to 3 visible in the tile; the flyout lists them all
   const many = group.variants.length > 1
+
+  const [open, setOpen] = useState(false)
+  const [hoveredKey, setHoveredKey] = useState(rep.key)
 
   return (
     <HoverCard openDelay={120} closeDelay={120}>
       <HoverCardTrigger asChild>
         <div
-          onClick={() => props.onSelect(rep.key)}
-          className={`flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:ring-2 hover:ring-ring ${props.selected ? 'ring-2 ring-primary' : ''}`}
+          onMouseEnter={() => setOpen(true)}
+          onMouseLeave={() => {
+            setOpen(false)
+            setHoveredKey(rep.key)
+          }}
+          className={`relative flex cursor-pointer flex-col rounded-lg p-1.5 transition-[z-index] ${open ? 'z-20' : 'z-0'}`}
         >
-          {/* Box stays card-aspect so the grid's deterministic row-height math is unchanged; the
-              "held stack" layers all live inside it (front top-left, backs cascade bottom-right). */}
+          {/* Stack area is card-aspect (keeps the grid's deterministic row height) but not clipped,
+              so the fan can spread beyond it on hover. */}
           <div className="relative aspect-[488/680] w-full">
-            {many && <div className="absolute inset-y-[6px] left-[6px] right-0 rounded-md border border-border bg-muted" />}
-            {many && <div className="absolute inset-y-[3px] left-[3px] right-[3px] rounded-md border border-border bg-muted" />}
-            <div className={`absolute overflow-hidden rounded bg-muted ${many ? 'bottom-[6px] left-0 right-[6px] top-0' : 'inset-0'}`}>
-              {rep.enriched.imageSmall ? (
-                <img src={rep.enriched.imageSmall} alt={rep.name} loading="lazy" className="absolute inset-0 h-full w-full object-contain" />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-muted-foreground">{rep.name}</div>
-              )}
-              <span className="absolute right-1 top-1 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">×{totals.quantity}</span>
-              {rep.finish !== 'normal' && (
-                <span className="absolute left-1 top-1 rounded bg-gradient-to-r from-fuchsia-500 to-amber-400 px-1 py-0.5 text-[10px] font-bold text-black">
-                  {rep.finish === 'etched' ? 'ETCH' : 'FOIL'}
-                </span>
-              )}
-            </div>
+            {shown.map((v, i) => {
+              const focused = hoveredKey === v.key
+              return (
+                <button
+                  key={v.key}
+                  onMouseEnter={() => setHoveredKey(v.key)}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    props.onSelect(v.key)
+                  }}
+                  style={cardStyle(i, open, focused)}
+                  className={`absolute inset-0 cursor-pointer overflow-hidden rounded-md border bg-muted shadow-md ${props.selected && focused ? 'border-primary' : 'border-black/40'}`}
+                >
+                  {v.enriched.imageSmall ? (
+                    <img src={v.enriched.imageSmall} alt={v.name} loading="lazy" className="absolute inset-0 h-full w-full object-contain" />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-muted-foreground">{v.name}</div>
+                  )}
+                  {v.finish !== 'normal' && (i === 0 || focused) && (
+                    <span className="absolute left-1 top-1 rounded bg-gradient-to-r from-fuchsia-500 to-amber-400 px-1 py-0.5 text-[10px] font-bold text-black">
+                      {v.finish === 'etched' ? 'ETCH' : 'FOIL'}
+                    </span>
+                  )}
+                  {/* Total count badge only on the face while at rest. */}
+                  {i === 0 && !open && (
+                    <span className="absolute right-1 top-1 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">×{totals.quantity}</span>
+                  )}
+                </button>
+              )
+            })}
           </div>
+
           <div className="mt-1 h-5 min-w-0 truncate text-sm leading-5" title={rep.name}>{rep.name}</div>
           <div className="flex h-6 items-baseline justify-between gap-1 leading-6">
             <span className="font-semibold">{formatMoney(totals.value, currency)}</span>
@@ -55,7 +106,14 @@ export function StackTile(props: StackTileProps) {
         </div>
       </HoverCardTrigger>
       <HoverCardContent side="right" className="w-72">
-        <StackFlyout group={group} rep={rep} currency={currency} baseline={baseline} onSelect={props.onSelect} />
+        <StackFlyout
+          group={group}
+          currency={currency}
+          baseline={baseline}
+          hoveredKey={hoveredKey}
+          onHover={setHoveredKey}
+          onSelect={props.onSelect}
+        />
       </HoverCardContent>
     </HoverCard>
   )
@@ -63,15 +121,15 @@ export function StackTile(props: StackTileProps) {
 
 interface StackFlyoutProps {
   group: NameGroup
-  rep: Tile
   currency: Currency
   baseline: Baseline
+  hoveredKey: string
+  onHover: (key: string) => void
   onSelect: (key: string) => void
 }
 
 function StackFlyout(props: StackFlyoutProps) {
-  const [hoveredKey, setHoveredKey] = useState(props.rep.key)
-  const hovered = props.group.variants.find((v) => v.key === hoveredKey) ?? props.rep
+  const hovered = props.group.variants.find((v) => v.key === props.hoveredKey) ?? props.group.variants[0]
   const totals = groupTotals(props.group, props.currency)
 
   return (
@@ -83,12 +141,12 @@ function StackFlyout(props: StackFlyoutProps) {
         </div>
         <div className="flex flex-wrap gap-1.5">
           {props.group.variants.map((v) => {
-            const active = v.key === hoveredKey
+            const active = v.key === props.hoveredKey
             const price = effectivePrice(v.prices, props.currency, v.finish)
             return (
               <button
                 key={v.key}
-                onMouseEnter={() => setHoveredKey(v.key)}
+                onMouseEnter={() => props.onHover(v.key)}
                 onClick={() => props.onSelect(v.key)}
                 title={`${v.setName} #${v.collectorNumber} · ${formatMoney(price, props.currency)}`}
                 className={`relative h-16 w-[46px] shrink-0 cursor-pointer overflow-hidden rounded border bg-muted transition ${active ? '-translate-y-0.5 border-ring ring-2 ring-ring' : 'border-border'}`}
