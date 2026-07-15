@@ -18,27 +18,14 @@ interface StackTileProps {
 
 const TRANSITION = 'transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1)'
 
-/** Position for one card in the stack. Everything pivots from the BOTTOM (like a held hand of
- *  cards): a visible cascade at rest, a rotated fan on hover, and a scaled-forward "focus" pose for
- *  the hovered card. Cards are slightly inset (scale < 1) so the cascade stays inside the cell,
- *  and the fan spreads up + outward — overflowing earlier rows (behind) rather than the row below. */
-function cardStyle(index: number, open: boolean, focused: boolean): CSSProperties {
-  // Fan slot: the face (index 0) sits centered; the others alternate to the sides.
-  const slot = index === 0 ? 0 : index % 2 === 1 ? -Math.ceil(index / 2) : Math.ceil(index / 2)
-
-  let transform: string
-  let zIndex: number
-  if (open && focused) {
-    transform = 'translateY(-14%) scale(1.02) rotate(0deg)'
-    zIndex = 40
-  } else if (open) {
-    transform = `translateX(${slot * 34}%) translateY(-16%) rotate(${slot * 11}deg) scale(0.84)`
-    zIndex = 20 - index
-  } else {
-    transform = `translateX(${index * 6}%) translateY(${-index * 11}%) rotate(${index * 2}deg) scale(0.82)`
-    zIndex = 20 - index
+/** Static cascade for a card in the TILE — a held-hand look, pivoting from the bottom, kept inside
+ *  the cell (scale < 1). The tile itself never animates on hover; the fan lives in the popover. */
+function tileCardStyle(index: number): CSSProperties {
+  return {
+    transform: `translateX(${index * 6}%) translateY(${-index * 11}%) rotate(${index * 2}deg) scale(0.82)`,
+    transformOrigin: 'bottom center',
+    zIndex: 20 - index,
   }
-  return { transform, transformOrigin: 'bottom center', zIndex, transition: TRANSITION }
 }
 
 export function StackTile(props: StackTileProps) {
@@ -46,56 +33,42 @@ export function StackTile(props: StackTileProps) {
   const totals = groupTotals(group, currency)
 
   const others = group.variants.filter((v) => v.key !== rep.key)
-  const shown = [rep, ...others].slice(0, 3) // up to 3 visible in the tile; the flyout lists them all
+  const shown = [rep, ...others].slice(0, 3) // up to 3 visible in the tile
   const many = group.variants.length > 1
 
-  const [open, setOpen] = useState(false)
   const [hoveredKey, setHoveredKey] = useState(rep.key)
 
   return (
-    <HoverCard openDelay={120} closeDelay={120}>
+    <HoverCard openDelay={120} closeDelay={120} onOpenChange={(o) => !o && setHoveredKey(rep.key)}>
       <HoverCardTrigger asChild>
         <div
-          onMouseEnter={() => setOpen(true)}
-          onMouseLeave={() => {
-            setOpen(false)
-            setHoveredKey(rep.key)
-          }}
-          className={`relative flex cursor-pointer flex-col rounded-lg p-1.5 transition-[z-index] ${open ? 'z-20' : 'z-0'}`}
+          onClick={() => props.onSelect(rep.key)}
+          className={`flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? 'ring-2 ring-primary' : ''}`}
         >
-          {/* Stack area is card-aspect (keeps the grid's deterministic row height) but not clipped,
-              so the fan can spread beyond it on hover. */}
+          {/* Card-aspect box keeps the grid's deterministic row height; the bg-card behind the
+              cascade makes the whole cell a clear, obvious hover target. */}
           <div className="relative aspect-[488/680] w-full">
-            {shown.map((v, i) => {
-              const focused = hoveredKey === v.key
-              return (
-                <button
-                  key={v.key}
-                  onMouseEnter={() => setHoveredKey(v.key)}
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    props.onSelect(v.key)
-                  }}
-                  style={cardStyle(i, open, focused)}
-                  className={`absolute inset-0 cursor-pointer overflow-hidden rounded-md border bg-muted shadow-md ${props.selected && focused ? 'border-primary' : 'border-black/40'}`}
-                >
-                  {v.enriched.imageSmall ? (
-                    <img src={v.enriched.imageSmall} alt={v.name} loading="lazy" className="absolute inset-0 h-full w-full object-contain" />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-muted-foreground">{v.name}</div>
-                  )}
-                  {v.finish !== 'normal' && (i === 0 || focused) && (
-                    <span className="absolute left-1 top-1 rounded bg-gradient-to-r from-fuchsia-500 to-amber-400 px-1 py-0.5 text-[10px] font-bold text-black">
-                      {v.finish === 'etched' ? 'ETCH' : 'FOIL'}
-                    </span>
-                  )}
-                  {/* Total count badge only on the face while at rest. */}
-                  {i === 0 && !open && (
-                    <span className="absolute right-1 top-1 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">×{totals.quantity}</span>
-                  )}
-                </button>
-              )
-            })}
+            {shown.map((v, i) => (
+              <div
+                key={v.key}
+                style={tileCardStyle(i)}
+                className="absolute inset-0 overflow-hidden rounded-md border border-black/40 bg-muted shadow-md"
+              >
+                {v.enriched.imageSmall ? (
+                  <img src={v.enriched.imageSmall} alt={v.name} loading="lazy" className="absolute inset-0 h-full w-full object-contain" />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-muted-foreground">{v.name}</div>
+                )}
+                {i === 0 && (
+                  <span className="absolute right-1 top-1 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">×{totals.quantity}</span>
+                )}
+                {i === 0 && rep.finish !== 'normal' && (
+                  <span className="absolute left-1 top-1 rounded bg-gradient-to-r from-fuchsia-500 to-amber-400 px-1 py-0.5 text-[10px] font-bold text-black">
+                    {rep.finish === 'etched' ? 'ETCH' : 'FOIL'}
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
 
           <div className="mt-1 h-5 min-w-0 truncate text-sm leading-5" title={rep.name}>{rep.name}</div>
@@ -105,17 +78,64 @@ export function StackTile(props: StackTileProps) {
           </div>
         </div>
       </HoverCardTrigger>
-      <HoverCardContent side="right" className="w-72">
-        <StackFlyout
-          group={group}
-          currency={currency}
-          baseline={baseline}
-          hoveredKey={hoveredKey}
-          onHover={setHoveredKey}
-          onSelect={props.onSelect}
-        />
+
+      {/* Two separate boxes: a centered fan (the hover mechanism) and the card-details popover. */}
+      <HoverCardContent side="right" align="center" className="flex w-auto items-start gap-3 border-0 bg-transparent p-0 shadow-none">
+        <FanBox variants={group.variants} hoveredKey={hoveredKey} onHover={setHoveredKey} onSelect={props.onSelect} />
+        <div className="w-72 rounded-md border bg-popover p-4 text-sm text-popover-foreground shadow-md">
+          <StackFlyout group={group} currency={currency} baseline={baseline} hoveredKey={hoveredKey} onHover={setHoveredKey} onSelect={props.onSelect} />
+        </div>
       </HoverCardContent>
     </HoverCard>
+  )
+}
+
+interface FanBoxProps {
+  variants: Tile[]
+  hoveredKey: string
+  onHover: (key: string) => void
+  onSelect: (key: string) => void
+}
+
+/** A centered fan of the stack's cards — always anchored to the box centre, so it reads the same no
+ *  matter where the tile sits in the grid. Hovering a card straightens + lifts it to the front. */
+function FanBox(props: FanBoxProps) {
+  const vs = props.variants
+  const n = vs.length
+  const center = (n - 1) / 2
+  const spread = Math.min(13, 52 / Math.max(1, n - 1)) // rotation (deg) per card
+  const offset = Math.min(42, 232 / Math.max(1, n - 1)) // horizontal separation (px) per card
+  const width = 132 + (n - 1) * offset
+
+  return (
+    <div className="rounded-md border bg-popover p-4 shadow-md">
+      <div className="relative mx-auto h-[184px]" style={{ width }}>
+        {vs.map((v, i) => {
+          const focused = props.hoveredKey === v.key
+          const x = (i - center) * offset
+          const angle = (i - center) * spread
+          // Cards spread horizontally AND rotate (so each exposes a hoverable strip); the focused
+          // one straightens, lifts and scales up in place — no jumping.
+          const transform = focused
+            ? `translateX(calc(-50% + ${x}px)) translateY(-22px) rotate(0deg) scale(1.1)`
+            : `translateX(calc(-50% + ${x}px)) rotate(${angle}deg)`
+          return (
+            <button
+              key={v.key}
+              onMouseEnter={() => props.onHover(v.key)}
+              onClick={() => props.onSelect(v.key)}
+              style={{ transform, transformOrigin: 'bottom center', zIndex: focused ? 50 : 10 + i, transition: TRANSITION }}
+              className={`absolute bottom-0 left-1/2 h-[150px] w-[104px] cursor-pointer overflow-hidden rounded-md border-2 bg-muted shadow-lg ${focused ? 'border-primary' : 'border-background'}`}
+            >
+              {v.enriched.imageSmall && <img src={v.enriched.imageSmall} alt={v.name} className="absolute inset-0 h-full w-full object-contain" />}
+              {v.finish !== 'normal' && (
+                <span className="absolute right-1 top-1 h-2.5 w-2.5 rounded-full bg-gradient-to-r from-fuchsia-500 to-amber-400" />
+              )}
+            </button>
+          )
+        })}
+      </div>
+    </div>
   )
 }
 
@@ -158,12 +178,6 @@ function StackFlyout(props: StackFlyoutProps) {
               </button>
             )
           })}
-        </div>
-        <div className="mt-2 text-xs text-muted-foreground">
-          {hovered.setName} · #{hovered.collectorNumber}
-          {hovered.finish !== 'normal' && ` · ${hovered.finish}`} ·{' '}
-          {formatMoney(effectivePrice(hovered.prices, props.currency, hovered.finish), props.currency)}
-          {hovered.quantity > 1 && ` · ×${hovered.quantity}`}
         </div>
       </div>
     </div>
