@@ -1,16 +1,12 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { useVirtualizer } from '@tanstack/react-virtual'
-import { CardTile } from './CardTile'
-import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 
 interface CardGridProps {
-  tiles: Tile[]
-  currency: Currency
-  baseline: Baseline
+  count: number
   /** Cap on columns; null = auto (as many as fit responsively). */
   maxPerRow: number | null
-  selectedKey: string | null
-  onSelect: (key: string) => void
+  /** Render the cell at `index`; must return a keyed element. */
+  renderCell: (index: number) => ReactNode
 }
 
 /** Grid geometry. Row height is derived DETERMINISTICALLY from the column width (every row is
@@ -58,7 +54,7 @@ export function CardGrid(props: CardGridProps) {
     return () => ro.disconnect()
   }, [props.maxPerRow])
 
-  const rowCount = Math.ceil(props.tiles.length / geo.columns)
+  const rowCount = Math.ceil(props.count / geo.columns)
 
   const virtualizer = useVirtualizer({
     count: rowCount,
@@ -67,7 +63,6 @@ export function CardGrid(props: CardGridProps) {
     overscan: 6,
   })
 
-  // Recompute virtual offsets whenever geometry changes (new column count or row height).
   useLayoutEffect(() => {
     virtualizer.measure()
   }, [geo.columns, geo.rowHeight, virtualizer])
@@ -77,7 +72,9 @@ export function CardGrid(props: CardGridProps) {
       <div className="relative w-full" style={{ height: virtualizer.getTotalSize() }}>
         {virtualizer.getVirtualItems().map((row) => {
           const start = row.index * geo.columns
-          const rowTiles = props.tiles.slice(start, start + geo.columns)
+          const end = Math.min(start + geo.columns, props.count)
+          const cells: ReactNode[] = []
+          for (let i = start; i < end; i++) cells.push(props.renderCell(i))
           return (
             <div
               key={row.key}
@@ -87,16 +84,7 @@ export function CardGrid(props: CardGridProps) {
                 gridTemplateColumns: `repeat(${geo.columns}, minmax(0, 1fr))`,
               }}
             >
-              {rowTiles.map((tile) => (
-                <CardTile
-                  key={tile.key}
-                  tile={tile}
-                  currency={props.currency}
-                  baseline={props.baseline}
-                  selected={tile.key === props.selectedKey}
-                  onSelect={props.onSelect}
-                />
-              ))}
+              {cells}
             </div>
           )
         })}

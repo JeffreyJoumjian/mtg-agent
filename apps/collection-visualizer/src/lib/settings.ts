@@ -8,6 +8,8 @@ export interface ViewSettings {
   view: ViewMode
   /** Cap on grid columns; null = auto (as many as fit responsively). */
   maxPerRow: number | null
+  /** Fold all printings of the same card into one stack tile (grid view). */
+  grouped: boolean
   currency: Currency
   baseline: Baseline
   sortKey: SortKey
@@ -17,5 +19,5 @@ export interface ViewSettings {
 export function defaultSettings(): ViewSettings {
   // Sort by price (high → low) by default — search handles finding specific cards, so surfacing
   // the most valuable cards first is more useful than alphabetical.
-  return { view: 'grid', maxPerRow: null, currency: 'usd', baseline: 'sinceRefresh', sortKey: 'price', sortDir: 'desc' }
+  return { view: 'grid', maxPerRow: null, grouped: false, currency: 'usd', baseline: 'sinceRefresh', sortKey: 'price', sortDir: 'desc' }
 }

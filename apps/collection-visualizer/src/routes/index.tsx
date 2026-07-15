@@ -6,9 +6,12 @@ import { getCollection, refreshPrices, uploadCsv } from '~/server/collection'
 import { emptyFilters, priceBounds, cmcBounds, type FilterState } from '~/lib/filters'
 import { computeView } from '~/lib/view'
 import { defaultSettings, type ViewSettings } from '~/lib/settings'
+import { groupByName, representative } from '~/lib/stacks'
 import { Toolbar } from '~/components/Toolbar'
 import { SummaryBar } from '~/components/SummaryBar'
 import { CardGrid } from '~/components/CardGrid'
+import { CardTile } from '~/components/CardTile'
+import { StackTile } from '~/components/StackTile'
 import { CardList } from '~/components/CardList'
 import { CardSidebar } from '~/components/CardSidebar'
 
@@ -60,6 +63,9 @@ function Home() {
   const priceRange = useMemo(() => priceBounds(data.tiles, settings.currency), [data.tiles, settings.currency])
   const cmcRange = useMemo(() => cmcBounds(data.tiles), [data.tiles])
 
+  const grouped = settings.grouped && settings.view === 'grid'
+  const groups = useMemo(() => (grouped ? groupByName(view) : []), [grouped, view])
+
   const selectedTile = selectedKey ? data.tiles.find((t) => t.key === selectedKey) ?? null : null
   const selectedVariants = selectedTile ? data.tiles.filter((t) => t.name === selectedTile.name) : []
 
@@ -95,12 +101,38 @@ function Home() {
           <div className="min-h-0 flex-1">
             {settings.view === 'grid' ? (
               <CardGrid
-                tiles={view}
-                currency={settings.currency}
-                baseline={settings.baseline}
                 maxPerRow={settings.maxPerRow}
-                selectedKey={selectedKey}
-                onSelect={onSelect}
+                count={grouped ? groups.length : view.length}
+                renderCell={
+                  grouped
+                    ? (i) => {
+                        const g = groups[i]
+                        return (
+                          <StackTile
+                            key={g.name}
+                            group={g}
+                            rep={representative(g, settings.currency, pins)}
+                            currency={settings.currency}
+                            baseline={settings.baseline}
+                            selected={selectedTile?.name === g.name}
+                            onSelect={onSelect}
+                          />
+                        )
+                      }
+                    : (i) => {
+                        const t = view[i]
+                        return (
+                          <CardTile
+                            key={t.key}
+                            tile={t}
+                            currency={settings.currency}
+                            baseline={settings.baseline}
+                            selected={t.key === selectedKey}
+                            onSelect={onSelect}
+                          />
+                        )
+                      }
+                }
               />
             ) : (
               <CardList

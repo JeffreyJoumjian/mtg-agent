@@ -93,6 +93,18 @@ export function SettingsPopover(props: SettingsPopoverProps) {
           </Row>
         )}
 
+        {s.view === "grid" && (
+          <Row label="Fold duplicates">
+            <Button
+              variant={s.grouped ? "default" : "outline"}
+              size="sm"
+              onClick={() => set({ grouped: !s.grouped })}
+            >
+              {s.grouped ? "On" : "Off"}
+            </Button>
+          </Row>
+        )}
+
         <Row label="Currency">
           <ToggleGroup
             type="single"
