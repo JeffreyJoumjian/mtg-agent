@@ -46,8 +46,16 @@ export function Toolbar(props: ToolbarProps) {
 
       <SettingsPopover settings={props.settings} onSettings={props.onSettings} />
 
-      <Button variant="default" size="sm" onClick={props.onRefresh} disabled={props.refreshing}>
-        <RefreshCw className={props.refreshing ? 'animate-spin' : ''} /> {props.refreshing ? 'Refreshing…' : 'Refresh'}
+      <Button
+        variant="default"
+        size="icon"
+        className="size-8"
+        onClick={props.onRefresh}
+        disabled={props.refreshing}
+        aria-label="Refresh prices"
+        title="Refresh prices"
+      >
+        <RefreshCw className={props.refreshing ? 'animate-spin' : ''} />
       </Button>
       <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()}>
         <Upload /> Upload

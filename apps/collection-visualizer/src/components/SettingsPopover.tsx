@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { Settings2, LayoutGrid, List, ArrowDownWideNarrow, ArrowUpNarrowWide } from 'lucide-react'
+import { Settings, LayoutGrid, List, ArrowDownWideNarrow, ArrowUpNarrowWide } from 'lucide-react'
 import { Popover, PopoverContent, PopoverTrigger } from '~/components/ui/popover'
 import { Button } from '~/components/ui/button'
 import { ToggleGroup, ToggleGroupItem } from '~/components/ui/toggle-group'
@@ -38,8 +38,8 @@ export function SettingsPopover(props: SettingsPopoverProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline" size="sm">
-          <Settings2 /> Settings
+        <Button variant="outline" size="icon" className="size-8" aria-label="Settings" title="Settings">
+          <Settings />
         </Button>
       </PopoverTrigger>
       <PopoverContent align="end" className="w-72 space-y-3 text-sm">
