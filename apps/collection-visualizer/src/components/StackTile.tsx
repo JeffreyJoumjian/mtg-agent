@@ -15,8 +15,6 @@ interface StackTileProps {
   onSelect: (key: string) => void
 }
 
-const TRANSITION = 'transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1)'
-
 /** Static cascade for a card in the TILE — a held-hand look, pivoting from the bottom, kept inside
  *  the cell (scale < 1). The tile itself never animates on hover; the fan lives in the popover. */
 function tileCardStyle(index: number): CSSProperties {
@@ -81,23 +79,16 @@ export function StackTile(props: StackTileProps) {
     <HoverCard openDelay={120} closeDelay={120} onOpenChange={(o) => !o && setHoveredKey(rep.key)}>
       <HoverCardTrigger asChild>{tile}</HoverCardTrigger>
 
-      {/* One popover: the card details, with — only for a real stack — the variant selector tucked
-          into the bottom-right corner of the card image. A single-printing card still gets its
-          details, just no selector. */}
+      {/* One popover: the card details, plus — only for a real stack — a horizontal strip of the
+          printings below them. A single-printing card still gets its details, just no strip. */}
       <HoverCardContent side="right" align="center" className="w-72 text-sm">
-        <CardDetails
-          tile={hovered}
-          currency={currency}
-          baseline={baseline}
-          imageOverlay={
-            many ? (
-              <VariantFan variants={variantsWorstFirst(group, currency)} hoveredKey={hoveredKey} onHover={setHoveredKey} onSelect={props.onSelect} />
-            ) : undefined
-          }
-        />
+        <CardDetails tile={hovered} currency={currency} baseline={baseline} />
         {many && (
-          <div className="mt-2 text-xs text-muted-foreground">
-            {group.variants.length} printings · total {formatMoney(totals.value, currency)}
+          <div className="mt-3 border-t pt-3">
+            <div className="mb-2 text-xs text-muted-foreground">
+              {group.variants.length} printings · total {formatMoney(totals.value, currency)}
+            </div>
+            <VariantStrip variants={variantsWorstFirst(group, currency)} hoveredKey={hoveredKey} onHover={setHoveredKey} onSelect={props.onSelect} />
           </div>
         )}
       </HoverCardContent>
@@ -105,37 +96,28 @@ export function StackTile(props: StackTileProps) {
   )
 }
 
-interface VariantFanProps {
+interface VariantStripProps {
   variants: Tile[]
   hoveredKey: string
   onHover: (key: string) => void
   onSelect: (key: string) => void
 }
 
-/** The variant selector: a small fanned hand of the printings tucked into the bottom-right corner of
- *  the card image. Ordered worst → best (best passed last), so the best printing is frontmost in the
- *  corner. Cards fan up-left from a shared bottom-right pivot and never reorder; hovering one scales
- *  it up and previews it in the image above. Clicking pins it. */
-function VariantFan(props: VariantFanProps) {
-  const vs = props.variants
-  const n = vs.length
-  const last = n - 1
-  const spread = Math.min(9, 46 / Math.max(1, n - 1)) // rotation (deg) per card, fanning up-left
-
+/** The variant selector: a plain horizontal strip of the printings (ordered worst → best), wrapping
+ *  as needed. No rotation or zoom — hovering a printing just highlights it and previews it in the
+ *  details above; clicking pins it. */
+function VariantStrip(props: VariantStripProps) {
   return (
-    <div className="absolute bottom-1.5 right-1.5 h-[62px] w-[44px]">
-      {vs.map((v, i) => {
-        const focused = props.hoveredKey === v.key
-        const behind = last - i // 0 = best (frontmost, upright in the corner)
-        const transform = `rotate(${-behind * spread}deg) scale(${focused ? 1.14 : 1})`
+    <div className="flex flex-wrap gap-1.5">
+      {props.variants.map((v) => {
+        const active = props.hoveredKey === v.key
         return (
           <button
             key={v.key}
             onMouseEnter={() => props.onHover(v.key)}
             onClick={() => props.onSelect(v.key)}
             title={`${v.setName} #${v.collectorNumber}`}
-            style={{ transform, transformOrigin: 'bottom right', zIndex: 10 + i, transition: TRANSITION }}
-            className={`absolute bottom-0 right-0 h-[62px] w-[44px] cursor-pointer overflow-hidden rounded border bg-muted shadow-md ${focused ? 'border-primary ring-1 ring-primary' : 'border-white/50'}`}
+            className={`relative aspect-[488/680] w-[42px] shrink-0 cursor-pointer overflow-hidden rounded border bg-muted ${active ? 'border-primary ring-2 ring-primary' : 'border-border'}`}
           >
             {v.enriched.imageSmall && <img src={v.enriched.imageSmall} alt={v.name} className="absolute inset-0 h-full w-full object-contain" />}
             {v.finish !== 'normal' && (
