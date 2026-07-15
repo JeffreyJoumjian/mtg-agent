@@ -1,6 +1,5 @@
 import { useState, type CSSProperties } from 'react'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
-import { effectivePrice } from '~/lib/pricing'
 import { formatMoney } from '~/lib/format'
 import { groupTotals, type NameGroup } from '~/lib/stacks'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '~/components/ui/hover-card'
@@ -37,6 +36,7 @@ export function StackTile(props: StackTileProps) {
   const many = group.variants.length > 1
 
   const [hoveredKey, setHoveredKey] = useState(rep.key)
+  const hovered = group.variants.find((v) => v.key === hoveredKey) ?? rep
 
   const tile = (
     <div
@@ -77,113 +77,69 @@ export function StackTile(props: StackTileProps) {
     </div>
   )
 
-  // A single-printing stack has nothing to fan — render just the tile, no hover popover.
-  if (!many) return tile
-
   return (
     <HoverCard openDelay={120} closeDelay={120} onOpenChange={(o) => !o && setHoveredKey(rep.key)}>
       <HoverCardTrigger asChild>{tile}</HoverCardTrigger>
 
-      {/* Two separate boxes: a centered fan (the hover mechanism) and the card-details popover. */}
-      <HoverCardContent side="right" align="center" className="flex w-auto items-start gap-3 border-0 bg-transparent p-0 shadow-none">
-        <FanBox variants={group.variants} hoveredKey={hoveredKey} onHover={setHoveredKey} onSelect={props.onSelect} />
-        <div className="w-72 rounded-md border bg-popover p-4 text-sm text-popover-foreground shadow-md">
-          <StackFlyout group={group} currency={currency} baseline={baseline} hoveredKey={hoveredKey} onHover={setHoveredKey} onSelect={props.onSelect} />
-        </div>
+      {/* One popover: the card details, plus — only for a real stack — a single fanned variant
+          selector below them. A single-printing card still gets its details, just no selector. */}
+      <HoverCardContent side="right" align="center" className="w-72 text-sm">
+        <CardDetails tile={hovered} currency={currency} baseline={baseline} />
+        {many && (
+          <div className="mt-3 border-t pt-3">
+            <div className="mb-2 text-xs text-muted-foreground">
+              {group.variants.length} printings · total {formatMoney(totals.value, currency)}
+            </div>
+            <VariantFan variants={group.variants} hoveredKey={hoveredKey} onHover={setHoveredKey} onSelect={props.onSelect} />
+          </div>
+        )}
       </HoverCardContent>
     </HoverCard>
   )
 }
 
-interface FanBoxProps {
+interface VariantFanProps {
   variants: Tile[]
   hoveredKey: string
   onHover: (key: string) => void
   onSelect: (key: string) => void
 }
 
-/** A centered fan of the stack's cards — always anchored to the box centre, so it reads the same no
- *  matter where the tile sits in the grid. Hovering a card straightens + lifts it to the front. */
-function FanBox(props: FanBoxProps) {
+/** A compact fanned hand of the printings — the single variant selector, living inside the details
+ *  popover. Cards keep a fixed poker-hand layout (deterministic x + rotation); hovering one only
+ *  scales it up (no reordering) and previews it in the details above. Clicking pins it. */
+function VariantFan(props: VariantFanProps) {
   const vs = props.variants
   const n = vs.length
   const center = (n - 1) / 2
-  const spread = Math.min(13, 52 / Math.max(1, n - 1)) // rotation (deg) per card
-  const offset = Math.min(42, 232 / Math.max(1, n - 1)) // horizontal separation (px) per card
-  const width = 132 + (n - 1) * offset
+  const spread = Math.min(6, 30 / Math.max(1, n - 1)) // rotation (deg) per card
+  const offset = Math.min(30, 210 / Math.max(1, n - 1)) // horizontal separation (px) per card
 
   return (
-    <div className="rounded-md border bg-popover p-4 shadow-md">
-      <div className="relative mx-auto h-[184px]" style={{ width }}>
-        {vs.map((v, i) => {
-          const focused = props.hoveredKey === v.key
-          const x = (i - center) * offset
-          const angle = (i - center) * spread
-          // Fixed poker-hand layout: every card keeps its fanned x + rotation no matter which is
-          // active. Hovering only lifts the card a touch, scales it up and raises its z-index — no
-          // reordering and no straightening, so the fan never visually reshuffles.
-          const transform = `translateX(calc(-50% + ${x}px)) translateY(${focused ? -16 : 0}px) rotate(${angle}deg) scale(${focused ? 1.12 : 1})`
-          return (
-            <button
-              key={v.key}
-              onMouseEnter={() => props.onHover(v.key)}
-              onClick={() => props.onSelect(v.key)}
-              style={{ transform, transformOrigin: 'bottom center', zIndex: focused ? 50 : 10 + i, transition: TRANSITION }}
-              className={`absolute bottom-0 left-1/2 h-[150px] w-[104px] cursor-pointer overflow-hidden rounded-md border-2 bg-muted shadow-lg ${focused ? 'border-primary' : 'border-background'}`}
-            >
-              {v.enriched.imageSmall && <img src={v.enriched.imageSmall} alt={v.name} className="absolute inset-0 h-full w-full object-contain" />}
-              {v.finish !== 'normal' && (
-                <span className="absolute right-1 top-1 h-2.5 w-2.5 rounded-full bg-gradient-to-r from-fuchsia-500 to-amber-400" />
-              )}
-            </button>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
-interface StackFlyoutProps {
-  group: NameGroup
-  currency: Currency
-  baseline: Baseline
-  hoveredKey: string
-  onHover: (key: string) => void
-  onSelect: (key: string) => void
-}
-
-function StackFlyout(props: StackFlyoutProps) {
-  const hovered = props.group.variants.find((v) => v.key === props.hoveredKey) ?? props.group.variants[0]
-  const totals = groupTotals(props.group, props.currency)
-
-  return (
-    <div>
-      <CardDetails tile={hovered} currency={props.currency} baseline={props.baseline} />
-      <div className="mt-3 border-t pt-2">
-        <div className="mb-2 text-xs text-muted-foreground">
-          {props.group.variants.length} printings · total {formatMoney(totals.value, props.currency)}
-        </div>
-        <div className="flex flex-wrap gap-1.5">
-          {props.group.variants.map((v) => {
-            const active = v.key === props.hoveredKey
-            const price = effectivePrice(v.prices, props.currency, v.finish)
-            return (
-              <button
-                key={v.key}
-                onMouseEnter={() => props.onHover(v.key)}
-                onClick={() => props.onSelect(v.key)}
-                title={`${v.setName} #${v.collectorNumber} · ${formatMoney(price, props.currency)}`}
-                className={`relative h-16 w-[46px] shrink-0 cursor-pointer overflow-hidden rounded border bg-muted transition ${active ? '-translate-y-0.5 border-ring ring-2 ring-ring' : 'border-border'}`}
-              >
-                {v.enriched.imageSmall && <img src={v.enriched.imageSmall} alt="" className="absolute inset-0 h-full w-full object-contain" />}
-                {v.finish !== 'normal' && (
-                  <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-amber-400" />
-                )}
-              </button>
-            )
-          })}
-        </div>
-      </div>
+    <div className="relative mx-auto h-[104px]">
+      {vs.map((v, i) => {
+        const focused = props.hoveredKey === v.key
+        const x = (i - center) * offset
+        const angle = (i - center) * spread
+        // Fixed poker-hand layout: every card keeps its fanned x + rotation. Hovering only scales
+        // the card up (no reordering, no straightening) and previews it in the details above.
+        const transform = `translateX(calc(-50% + ${x}px)) rotate(${angle}deg) scale(${focused ? 1.18 : 1})`
+        return (
+          <button
+            key={v.key}
+            onMouseEnter={() => props.onHover(v.key)}
+            onClick={() => props.onSelect(v.key)}
+            title={`${v.setName} #${v.collectorNumber}`}
+            style={{ transform, transformOrigin: 'bottom center', zIndex: 10 + i, transition: TRANSITION }}
+            className={`absolute bottom-0 left-1/2 h-[72px] w-[52px] cursor-pointer overflow-hidden rounded border-2 bg-muted shadow-md ${focused ? 'border-primary' : 'border-background'}`}
+          >
+            {v.enriched.imageSmall && <img src={v.enriched.imageSmall} alt={v.name} className="absolute inset-0 h-full w-full object-contain" />}
+            {v.finish !== 'normal' && (
+              <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-amber-400" />
+            )}
+          </button>
+        )
+      })}
     </div>
   )
 }
