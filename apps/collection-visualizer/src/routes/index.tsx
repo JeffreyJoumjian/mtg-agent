@@ -10,6 +10,7 @@ import { Toolbar } from '~/components/Toolbar'
 import { SummaryBar } from '~/components/SummaryBar'
 import { CardGrid } from '~/components/CardGrid'
 import { CardList } from '~/components/CardList'
+import { CardSidebar } from '~/components/CardSidebar'
 
 export const Route = createFileRoute('/')({
   loader: () => getCollection(),
@@ -23,6 +24,9 @@ function Home() {
   const [query, setQuery] = useState('')
   const [filters, setFilters] = useState<FilterState>(emptyFilters())
   const [settings, setSettings] = useState<ViewSettings>(defaultSettings())
+  const [selectedKey, setSelectedKey] = useState<string | null>(null)
+  // Per-card pinned "face" (name -> tile.key), set when you click a variant.
+  const [pins, setPins] = useState<Record<string, string>>({})
 
   const refreshFn = useServerFn(refreshPrices)
   const uploadFn = useServerFn(uploadCsv)
@@ -56,6 +60,16 @@ function Home() {
   const priceRange = useMemo(() => priceBounds(data.tiles, settings.currency), [data.tiles, settings.currency])
   const cmcRange = useMemo(() => cmcBounds(data.tiles), [data.tiles])
 
+  const selectedTile = selectedKey ? data.tiles.find((t) => t.key === selectedKey) ?? null : null
+  const selectedVariants = selectedTile ? data.tiles.filter((t) => t.name === selectedTile.name) : []
+
+  const onSelect = (key: string) => {
+    const tile = data.tiles.find((t) => t.key === key)
+    if (!tile) return
+    setSelectedKey(key)
+    setPins((p) => ({ ...p, [tile.name]: key }))
+  }
+
   return (
     <main className="flex h-screen flex-col">
       <Toolbar
@@ -73,14 +87,41 @@ function Home() {
         onUpload={(file) => uploadMutation.mutate(file)}
         pricesUpdatedAt={data.pricesUpdatedAt}
       />
-      <div className="flex items-center justify-between px-3 py-2">
-        <SummaryBar tiles={view} currency={settings.currency} baseline={settings.baseline} />
-      </div>
-      <div className="min-h-0 flex-1">
-        {settings.view === 'grid' ? (
-          <CardGrid tiles={view} currency={settings.currency} baseline={settings.baseline} maxPerRow={settings.maxPerRow} />
-        ) : (
-          <CardList tiles={view} currency={settings.currency} baseline={settings.baseline} />
+      <div className="flex min-h-0 flex-1">
+        <div className="flex min-w-0 flex-1 flex-col">
+          <div className="flex items-center justify-between px-3 py-2">
+            <SummaryBar tiles={view} currency={settings.currency} baseline={settings.baseline} />
+          </div>
+          <div className="min-h-0 flex-1">
+            {settings.view === 'grid' ? (
+              <CardGrid
+                tiles={view}
+                currency={settings.currency}
+                baseline={settings.baseline}
+                maxPerRow={settings.maxPerRow}
+                selectedKey={selectedKey}
+                onSelect={onSelect}
+              />
+            ) : (
+              <CardList
+                tiles={view}
+                currency={settings.currency}
+                baseline={settings.baseline}
+                selectedKey={selectedKey}
+                onSelect={onSelect}
+              />
+            )}
+          </div>
+        </div>
+        {selectedTile && (
+          <CardSidebar
+            tile={selectedTile}
+            variants={selectedVariants}
+            currency={settings.currency}
+            baseline={settings.baseline}
+            onSelect={onSelect}
+            onClose={() => setSelectedKey(null)}
+          />
         )}
       </div>
     </main>

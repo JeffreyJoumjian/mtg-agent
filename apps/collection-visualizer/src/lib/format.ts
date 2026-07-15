@@ -19,3 +19,8 @@ export function formatDelta(value: number, currency: Currency | string): string 
 export function truncate(name: string, max: number): string {
   return name.length <= max ? name : name.slice(0, max - 1) + '…'
 }
+
+/** Scryfall card page URL from set + collector number (the set/number form redirects correctly). */
+export function scryfallUrl(setCode: string, collectorNumber: string): string {
+  return `https://scryfall.com/card/${setCode.toLowerCase()}/${encodeURIComponent(collectorNumber)}`
+}

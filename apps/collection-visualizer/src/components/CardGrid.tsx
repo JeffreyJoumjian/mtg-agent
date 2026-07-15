@@ -9,6 +9,8 @@ interface CardGridProps {
   baseline: Baseline
   /** Cap on columns; null = auto (as many as fit responsively). */
   maxPerRow: number | null
+  selectedKey: string | null
+  onSelect: (key: string) => void
 }
 
 /** Grid geometry. Row height is derived DETERMINISTICALLY from the column width (every row is
@@ -86,7 +88,14 @@ export function CardGrid(props: CardGridProps) {
               }}
             >
               {rowTiles.map((tile) => (
-                <CardTile key={tile.key} tile={tile} currency={props.currency} baseline={props.baseline} />
+                <CardTile
+                  key={tile.key}
+                  tile={tile}
+                  currency={props.currency}
+                  baseline={props.baseline}
+                  selected={tile.key === props.selectedKey}
+                  onSelect={props.onSelect}
+                />
               ))}
             </div>
           )
