@@ -40,10 +40,10 @@ test('variantsWorstFirst orders worst → best so the best printing lands last',
     name: 'Bolt',
     variants: [tile({ key: 'dear', usd: 5 }), tile({ key: 'cheap', usd: 1 }), tile({ key: 'dear-foil', usd: 5, finish: 'foil' })],
   }
-  expect(variantsWorstFirst(g, 'usd').map((v) => v.key)).toEqual(['cheap', 'dear', 'dear-foil'])
+  expect(variantsWorstFirst(g.variants, 'usd').map((v) => v.key)).toEqual(['cheap', 'dear', 'dear-foil'])
 })
 
 test('groupTotals sums quantity and value across variants', () => {
   const g: NameGroup = { name: 'Bolt', variants: [tile({ usd: 2, quantity: 3 }), tile({ usd: 5, quantity: 1 })] }
-  expect(groupTotals(g, 'usd')).toEqual({ quantity: 4, value: 11 })
+  expect(groupTotals(g.variants, 'usd')).toEqual({ quantity: 4, value: 11 })
 })

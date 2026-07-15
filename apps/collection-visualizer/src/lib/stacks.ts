@@ -44,17 +44,17 @@ export function representative(group: NameGroup, currency: Currency, pins: Recor
   return [...group.variants].sort(byBestFirst(currency))[0]
 }
 
-/** Variants ordered worst → best, so the best printing lands last — placed rightmost (and so most
- *  visible) in the fanned variant selector. */
-export function variantsWorstFirst(group: NameGroup, currency: Currency): CardTile[] {
-  return [...group.variants].sort(byBestFirst(currency)).reverse()
+/** Variants ordered worst → best, so the best printing lands last — placed last (rightmost) in the
+ *  variant strip. */
+export function variantsWorstFirst(variants: CardTile[], currency: Currency): CardTile[] {
+  return [...variants].sort(byBestFirst(currency)).reverse()
 }
 
-/** Total quantity and value across all variants in the stack (in the given currency). */
-export function groupTotals(group: NameGroup, currency: Currency): { quantity: number; value: number } {
+/** Total quantity and value across the given variants (in the given currency). */
+export function groupTotals(variants: CardTile[], currency: Currency): { quantity: number; value: number } {
   let quantity = 0
   let value = 0
-  for (const v of group.variants) {
+  for (const v of variants) {
     quantity += v.quantity
     const p = effectivePrice(v.prices, currency, v.finish)
     if (p != null) value += p * v.quantity
