@@ -1,5 +1,5 @@
 import type { Baseline, CardTile as Tile, Currency } from "~/lib/types";
-import { tileValue, unitDelta } from "~/lib/pricing";
+import { effectivePrice, tileValue, unitDelta } from "~/lib/pricing";
 import { formatMoney, formatDelta } from "~/lib/format";
 import { groupTotals, variantsWorstFirst } from "~/lib/stacks";
 
@@ -9,7 +9,7 @@ interface CardDetailsProps {
   baseline: Baseline;
   /** Sidebar variant: also render the oracle text. */
   full?: boolean;
-  /** When more than one is given, render a strip of these printings below the details — highlighting
+  /** When more than one is given, render a strip of these printings at the bottom — highlighting
    *  `tile` (the printing shown) and letting the user hover/click another. */
   variants?: Tile[];
   onHoverVariant?: (key: string) => void;
@@ -36,19 +36,6 @@ export function CardDetails(props: CardDetailsProps) {
           </div>
         )}
       </div>
-      {showStrip && (
-        <div>
-          <div className="mb-1.5 text-xs text-muted-foreground">
-            {variants.length} printings · total {formatMoney(groupTotals(variants, currency).value, currency)}
-          </div>
-          <VariantStrip
-            variants={showStrip}
-            activeKey={tile.key}
-            onHover={props.onHoverVariant}
-            onSelect={props.onSelectVariant}
-          />
-        </div>
-      )}
       <div>
         <div className="font-semibold leading-tight">{tile.name}</div>
         {tile.enriched.typeLine && <div className="text-xs text-muted-foreground">{tile.enriched.typeLine}</div>}
@@ -71,39 +58,65 @@ export function CardDetails(props: CardDetailsProps) {
           {tile.enriched.oracleText}
         </p>
       )}
+      {showStrip && (
+        <div className="border-t pt-3">
+          <div className="mb-2 text-xs text-muted-foreground">
+            {variants.length} printings · total {formatMoney(groupTotals(variants, currency).value, currency)}
+          </div>
+          <VariantStrip
+            variants={showStrip}
+            currency={currency}
+            activeKey={tile.key}
+            onHover={props.onHoverVariant}
+            onSelect={props.onSelectVariant}
+          />
+        </div>
+      )}
     </div>
   );
 }
 
 interface VariantStripProps {
   variants: Tile[];
+  currency: Currency;
   activeKey: string;
   onHover?: (key: string) => void;
   onSelect?: (key: string) => void;
 }
 
-/** A plain horizontal strip of a card's printings (ordered worst → best), wrapping as needed. No
- *  rotation or zoom — hovering a printing just highlights it and (via onHover) previews it in the
- *  details above; clicking pins it. */
+/** A strip of a card's printings (ordered worst → best), wrapping as needed. Each shows its price so
+ *  the strip reads as a comparison; the active printing is highlighted. Hovering previews it (via
+ *  onHover) and clicking pins it. */
 function VariantStrip(props: VariantStripProps) {
   return (
-    <div className="flex flex-wrap gap-1.5">
+    <div className="flex flex-wrap gap-2">
       {props.variants.map((v) => {
         const active = v.key === props.activeKey;
+        const price = effectivePrice(v.prices, props.currency, v.finish);
+        const qty = v.quantity > 1 ? ` ×${v.quantity}` : "";
         return (
           <button
             key={v.key}
             onMouseEnter={() => props.onHover?.(v.key)}
             onClick={() => props.onSelect?.(v.key)}
-            title={`${v.setName} #${v.collectorNumber}`}
-            className={`relative aspect-[488/680] w-[42px] shrink-0 cursor-pointer overflow-hidden rounded border bg-muted ${active ? "border-primary ring-2 ring-primary" : "border-border"}`}
+            title={`${v.setName} #${v.collectorNumber}${v.finish !== "normal" ? ` · ${v.finish}` : ""}${qty}`}
+            className="flex w-14 shrink-0 cursor-pointer flex-col items-center"
           >
-            {v.enriched.imageSmall && (
-              <img src={v.enriched.imageSmall} alt={v.name} className="absolute inset-0 h-full w-full object-contain" />
-            )}
-            {v.finish !== "normal" && (
-              <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-amber-400" />
-            )}
+            <div
+              className={`relative aspect-[488/680] w-full overflow-hidden rounded border bg-muted ${active ? "border-primary ring-2 ring-primary" : "border-border"}`}
+            >
+              {v.enriched.imageSmall && (
+                <img src={v.enriched.imageSmall} alt={v.name} className="absolute inset-0 h-full w-full object-contain" />
+              )}
+              {v.finish !== "normal" && (
+                <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-amber-400" />
+              )}
+            </div>
+            <div
+              className={`mt-0.5 w-full truncate text-center text-[10px] leading-tight ${active ? "font-medium text-foreground" : "text-muted-foreground"}`}
+            >
+              {formatMoney(price, props.currency)}
+            </div>
           </button>
         );
       })}

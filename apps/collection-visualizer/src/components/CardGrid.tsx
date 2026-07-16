@@ -17,7 +17,7 @@ const GAP = 12 // gap-3, between tiles and between rows
 const PAGE_PAD = 16 // px-2 on the scroll container (8px each side)
 const TILE_PAD = 6 // p-1.5 inside each tile (each side)
 const CARD_ASPECT = 680 / 488 // MTG card height / width
-const FOOTER = 4 + 20 + 24 // mt-1 + name (h-5) + price (h-6)
+const FOOTER = 4 + 20 + 16 + 16 + 24 // mt-1 + name(h-5) + type(h-4) + meta(h-4) + price(h-6) — see TileFooter
 
 interface Geometry {
   columns: number

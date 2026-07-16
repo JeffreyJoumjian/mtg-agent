@@ -1,9 +1,8 @@
-import { useState, type CSSProperties } from 'react'
+import type { CSSProperties } from 'react'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
-import { formatMoney } from '~/lib/format'
 import { groupTotals, type NameGroup } from '~/lib/stacks'
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '~/components/ui/hover-card'
-import { CardDetails } from './CardDetails'
+import { totals } from '~/lib/pricing'
+import { TileFooter } from './TileFooter'
 
 interface StackTileProps {
   group: NameGroup
@@ -16,7 +15,7 @@ interface StackTileProps {
 }
 
 /** Static cascade for a card in the TILE — a held-hand look, pivoting from the bottom, kept inside
- *  the cell (scale < 1). The tile itself never animates on hover; the fan lives in the popover. */
+ *  the cell (scale < 1). */
 function tileCardStyle(index: number): CSSProperties {
   return {
     transform: `translateX(${index * 6}%) translateY(${-index * 11}%) rotate(${index * 2}deg) scale(0.82)`,
@@ -27,22 +26,20 @@ function tileCardStyle(index: number): CSSProperties {
 
 export function StackTile(props: StackTileProps) {
   const { group, rep, currency, baseline } = props
-  const totals = groupTotals(group.variants, currency)
+  const { quantity } = groupTotals(group.variants, currency)
+  const { value, delta, deltaCurrency } = totals(group.variants, currency, baseline)
 
   const others = group.variants.filter((v) => v.key !== rep.key)
   const shown = [rep, ...others].slice(0, 3) // up to 3 visible in the tile
-  const many = group.variants.length > 1
+  const printings = group.variants.length
 
-  const [hoveredKey, setHoveredKey] = useState(rep.key)
-  const hovered = group.variants.find((v) => v.key === hoveredKey) ?? rep
-
-  const tile = (
+  return (
     <div
       onClick={() => props.onSelect(rep.key)}
       className={`flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? 'ring-2 ring-primary' : ''}`}
     >
-      {/* Card-aspect box keeps the grid's deterministic row height; the bg-card behind the
-          cascade makes the whole cell a clear, obvious hover target. */}
+      {/* Card-aspect box keeps the grid's deterministic row height; the cascade shows up to 3 of the
+          stack's printings behind the face. */}
       <div className="relative aspect-[488/680] w-full">
         {shown.map((v, i) => (
           <div
@@ -56,7 +53,7 @@ export function StackTile(props: StackTileProps) {
               <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-muted-foreground">{v.name}</div>
             )}
             {i === 0 && (
-              <span className="absolute right-1 top-1 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">×{totals.quantity}</span>
+              <span className="absolute right-1 top-1 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">×{quantity}</span>
             )}
             {i === 0 && rep.finish !== 'normal' && (
               <span className="absolute left-1 top-1 rounded bg-gradient-to-r from-fuchsia-500 to-amber-400 px-1 py-0.5 text-[10px] font-bold text-black">
@@ -67,30 +64,15 @@ export function StackTile(props: StackTileProps) {
         ))}
       </div>
 
-      <div className="mt-1 h-5 min-w-0 truncate text-sm leading-5" title={rep.name}>{rep.name}</div>
-      <div className="flex h-6 items-baseline justify-between gap-1 leading-6">
-        <span className="font-semibold">{formatMoney(totals.value, currency)}</span>
-        {many && <span className="shrink-0 text-xs text-muted-foreground">{group.variants.length} printings</span>}
-      </div>
+      <TileFooter
+        name={rep.name}
+        typeLine={rep.enriched.typeLine}
+        meta={`${rep.setName} · ${rep.collectorNumber} · ${rep.rarity}`}
+        value={value}
+        delta={delta !== 0 ? { value: delta, currency: deltaCurrency } : null}
+        currency={currency}
+        printings={printings > 1 ? printings : undefined}
+      />
     </div>
-  )
-
-  return (
-    <HoverCard openDelay={120} closeDelay={120} onOpenChange={(o) => !o && setHoveredKey(rep.key)}>
-      <HoverCardTrigger asChild>{tile}</HoverCardTrigger>
-
-      {/* One popover: the card details, which — for a real stack — render a strip of the printings
-          below them (see CardDetails). A single-printing card still gets its details, just no strip. */}
-      <HoverCardContent side="right" align="center" className="w-56 text-sm">
-        <CardDetails
-          tile={hovered}
-          currency={currency}
-          baseline={baseline}
-          variants={group.variants}
-          onHoverVariant={setHoveredKey}
-          onSelectVariant={props.onSelect}
-        />
-      </HoverCardContent>
-    </HoverCard>
   )
 }

@@ -1,8 +1,6 @@
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { tileValue, unitDelta } from '~/lib/pricing'
-import { formatMoney, formatDelta } from '~/lib/format'
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '~/components/ui/hover-card'
-import { CardDetails } from './CardDetails'
+import { TileFooter } from './TileFooter'
 
 interface CardTileProps {
   tile: Tile
@@ -18,51 +16,42 @@ export function CardTile(props: CardTileProps) {
   const delta = unitDelta(tile, currency, baseline)
 
   return (
-    <HoverCard openDelay={180} closeDelay={80}>
-      <HoverCardTrigger asChild>
-        <div
-          onClick={() => props.onSelect?.(tile.key)}
-          className={`flex cursor-pointer flex-col rounded-lg bg-card p-1.5 ring-offset-2 ring-offset-background transition hover:ring-2 hover:ring-ring ${props.selected ? 'ring-2 ring-primary' : ''}`}
-        >
-          {/* Card-aspect box reserves height from width; object-contain never crops. The footer
-              rows below have FIXED heights (h-5 + h-6) so CardGrid's deterministic row-height math
-              stays exact and the name/price are always visible at any width. */}
-          <div className="relative aspect-[488/680] w-full overflow-hidden rounded bg-muted">
-            {tile.enriched.imageSmall ? (
-              <img
-                src={tile.enriched.imageSmall}
-                alt={tile.name}
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-contain"
-              />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-muted-foreground">
-                {tile.name}
-              </div>
-            )}
-            {tile.quantity > 1 && (
-              <span className="absolute right-1 top-1 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">×{tile.quantity}</span>
-            )}
-            {tile.finish !== 'normal' && (
-              <span className="absolute left-1 top-1 rounded bg-gradient-to-r from-fuchsia-500 to-amber-400 px-1 py-0.5 text-[10px] font-bold text-black">
-                {tile.finish === 'etched' ? 'ETCH' : 'FOIL'}
-              </span>
-            )}
+    <div
+      onClick={() => props.onSelect?.(tile.key)}
+      className={`flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? 'ring-2 ring-primary' : ''}`}
+    >
+      {/* Card-aspect box reserves height from width; object-contain never crops. The footer rows
+          below have FIXED heights so CardGrid's deterministic row-height math stays exact. */}
+      <div className="relative aspect-[488/680] w-full overflow-hidden rounded bg-muted">
+        {tile.enriched.imageSmall ? (
+          <img
+            src={tile.enriched.imageSmall}
+            alt={tile.name}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-contain"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-muted-foreground">
+            {tile.name}
           </div>
-          <div className="mt-1 h-5 min-w-0 truncate text-sm leading-5" title={tile.name}>{tile.name}</div>
-          <div className="flex h-6 items-baseline justify-between gap-1 leading-6">
-            <span className="font-semibold">{formatMoney(value, currency)}</span>
-            {delta && (
-              <span className={delta.value < 0 ? 'shrink-0 text-xs text-red-400' : 'shrink-0 text-xs text-emerald-400'}>
-                {delta.value < 0 ? '▼' : '▲'} {formatDelta(delta.value, delta.currency)}
-              </span>
-            )}
-          </div>
-        </div>
-      </HoverCardTrigger>
-      <HoverCardContent side="right" className="w-64">
-        <CardDetails tile={tile} currency={currency} baseline={baseline} />
-      </HoverCardContent>
-    </HoverCard>
+        )}
+        {tile.quantity > 1 && (
+          <span className="absolute right-1 top-1 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">×{tile.quantity}</span>
+        )}
+        {tile.finish !== 'normal' && (
+          <span className="absolute left-1 top-1 rounded bg-gradient-to-r from-fuchsia-500 to-amber-400 px-1 py-0.5 text-[10px] font-bold text-black">
+            {tile.finish === 'etched' ? 'ETCH' : 'FOIL'}
+          </span>
+        )}
+      </div>
+      <TileFooter
+        name={tile.name}
+        typeLine={tile.enriched.typeLine}
+        meta={`${tile.setName} · ${tile.collectorNumber} · ${tile.rarity}`}
+        value={value}
+        delta={delta}
+        currency={currency}
+      />
+    </div>
   )
 }
