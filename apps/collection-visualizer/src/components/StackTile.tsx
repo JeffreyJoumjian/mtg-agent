@@ -47,8 +47,8 @@ export function StackTile(props: StackTileProps) {
             style={tileCardStyle(i)}
             className="absolute inset-0 overflow-hidden rounded-md border border-black/40 bg-muted shadow-md"
           >
-            {v.enriched.imageSmall ? (
-              <img src={v.enriched.imageSmall} alt={v.name} loading="lazy" className="absolute inset-0 h-full w-full object-contain" />
+            {v.enriched.imageNormal ?? v.enriched.imageSmall ? (
+              <img src={v.enriched.imageNormal ?? v.enriched.imageSmall ?? undefined} alt={v.name} loading="lazy" className="absolute inset-0 h-full w-full object-contain" />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-muted-foreground">{v.name}</div>
             )}

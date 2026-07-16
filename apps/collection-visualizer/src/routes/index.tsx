@@ -4,6 +4,7 @@ import { useServerFn } from '@tanstack/react-start'
 import { useMutation } from '@tanstack/react-query'
 import { getCollection, refreshPrices, uploadCsv } from '~/server/collection'
 import { emptyFilters, priceBounds, cmcBounds, type FilterState } from '~/lib/filters'
+import type { CardTile as Tile } from '~/lib/types'
 import { computeView } from '~/lib/view'
 import { defaultSettings, loadSettings, saveSettings, type ViewSettings } from '~/lib/settings'
 import { groupByName, representative } from '~/lib/stacks'
@@ -82,7 +83,20 @@ function Home() {
   const groups = useMemo(() => (grouped ? groupByName(view) : []), [grouped, view])
 
   const selectedTile = selectedKey ? data.tiles.find((t) => t.key === selectedKey) ?? null : null
-  const selectedVariants = selectedTile ? data.tiles.filter((t) => t.name === selectedTile.name) : []
+
+  // Keep the sidebar mounted through its close animation: the width collapses immediately (driven by
+  // selectedTile), but the content lingers for the transition so it doesn't blank out mid-slide.
+  const [sidebarTile, setSidebarTile] = useState<Tile | null>(null)
+  useEffect(() => {
+    if (selectedTile) {
+      setSidebarTile(selectedTile)
+      return
+    }
+    const timer = setTimeout(() => setSidebarTile(null), 300)
+    return () => clearTimeout(timer)
+  }, [selectedTile])
+
+  const sidebarVariants = sidebarTile ? data.tiles.filter((t) => t.name === sidebarTile.name) : []
 
   const onSelect = (key: string) => {
     const tile = data.tiles.find((t) => t.key === key)
@@ -160,16 +174,20 @@ function Home() {
             )}
           </div>
         </div>
-        {selectedTile && (
-          <CardSidebar
-            tile={selectedTile}
-            variants={selectedVariants}
-            currency={settings.currency}
-            baseline={settings.baseline}
-            onSelect={onSelect}
-            onClose={() => setSelectedKey(null)}
-          />
-        )}
+        <div
+          className={`shrink-0 overflow-hidden transition-[width] duration-300 ease-out ${selectedTile ? 'w-96' : 'w-0'}`}
+        >
+          {sidebarTile && (
+            <CardSidebar
+              tile={sidebarTile}
+              variants={sidebarVariants}
+              currency={settings.currency}
+              baseline={settings.baseline}
+              onSelect={onSelect}
+              onClose={() => setSelectedKey(null)}
+            />
+          )}
+        </div>
       </div>
     </main>
   )

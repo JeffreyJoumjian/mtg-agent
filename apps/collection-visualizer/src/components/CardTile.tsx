@@ -14,6 +14,8 @@ export function CardTile(props: CardTileProps) {
   const { tile, currency, baseline } = props
   const value = tileValue(tile, currency)
   const delta = unitDelta(tile, currency, baseline)
+  // Use the higher-res 'normal' image — the 'small' one is only 146px wide and looks blurry at tile size.
+  const img = tile.enriched.imageNormal ?? tile.enriched.imageSmall
 
   return (
     <div
@@ -23,9 +25,9 @@ export function CardTile(props: CardTileProps) {
       {/* Card-aspect box reserves height from width; object-contain never crops. The footer rows
           below have FIXED heights so CardGrid's deterministic row-height math stays exact. */}
       <div className="relative aspect-[488/680] w-full overflow-hidden rounded bg-muted">
-        {tile.enriched.imageSmall ? (
+        {img ? (
           <img
-            src={tile.enriched.imageSmall}
+            src={img}
             alt={tile.name}
             loading="lazy"
             className="absolute inset-0 h-full w-full object-contain"

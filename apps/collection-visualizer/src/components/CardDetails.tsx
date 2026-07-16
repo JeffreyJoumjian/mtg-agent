@@ -6,6 +6,7 @@ import { formatMoney, formatDelta } from "~/lib/format";
 import { groupTotals, variantsWorstFirst } from "~/lib/stacks";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import { ImageModal } from "./ImageModal";
+import { OracleText } from "./OracleText";
 
 interface CardDetailsProps {
   tile: Tile;
@@ -34,7 +35,7 @@ export function CardDetails(props: CardDetailsProps) {
   return (
     <>
       <div className="space-y-2">
-        <div className="relative mx-auto w-2/3">
+        <div className="relative mx-auto w-3/4">
           <div className="relative aspect-[488/680] w-full overflow-hidden rounded-lg bg-muted">
             {img ? (
               <img src={img} alt={tile.name} className="absolute inset-0 h-full w-full object-contain" />
@@ -75,20 +76,20 @@ export function CardDetails(props: CardDetailsProps) {
           </div>
         )}
 
-        <div>
-          <div className="font-semibold leading-tight">{tile.name}</div>
-          {tile.enriched.typeLine && <div className="text-xs text-muted-foreground">{tile.enriched.typeLine}</div>}
-        </div>
-        <div className="text-xs text-muted-foreground">
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <span className="cursor-default">{tile.setCode.toUpperCase()}</span>
-            </TooltipTrigger>
-            <TooltipContent>{tile.setName}</TooltipContent>
-          </Tooltip>
-          {" "}· #{tile.collectorNumber} · {tile.rarity}
-          {tile.finish !== "normal" && ` · ${tile.finish}`}
-          {tile.quantity > 1 && ` · ×${tile.quantity}`}
+        <div className="space-y-0.5">
+          <div className="font-semibold leading-snug">{tile.name}</div>
+          {tile.enriched.typeLine && <div className="text-sm text-muted-foreground">{tile.enriched.typeLine}</div>}
+          <div className="text-xs text-muted-foreground">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span className="cursor-default">{tile.setCode.toUpperCase()}</span>
+              </TooltipTrigger>
+              <TooltipContent>{tile.setName}</TooltipContent>
+            </Tooltip>
+            {" "}· #{tile.collectorNumber} · {tile.rarity}
+            {tile.finish !== "normal" && ` · ${tile.finish}`}
+            {tile.quantity > 1 && ` · ×${tile.quantity}`}
+          </div>
         </div>
         <div className="flex items-baseline justify-between">
           <span className="text-lg font-semibold">{formatMoney(value, currency)}</span>
@@ -98,11 +99,7 @@ export function CardDetails(props: CardDetailsProps) {
             </span>
           )}
         </div>
-        {props.full && tile.enriched.oracleText && (
-          <p className="border-t pt-2 text-xs leading-relaxed whitespace-pre-wrap text-muted-foreground">
-            {tile.enriched.oracleText}
-          </p>
-        )}
+        {props.full && tile.enriched.oracleText && <OracleText text={tile.enriched.oracleText} />}
       </div>
 
       {expanded && img && <ImageModal src={img} alt={tile.name} onClose={() => setExpanded(false)} />}

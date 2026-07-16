@@ -20,7 +20,7 @@ export function CardSidebar(props: CardSidebarProps) {
 
   return (
     <aside className="flex w-96 shrink-0 flex-col border-l bg-card">
-      <div className="flex items-center justify-between gap-2 border-b p-3">
+      <div className="flex items-center justify-between gap-2 border-b px-4 py-3">
         <a href={scryfallUrl(t.setCode, t.collectorNumber)} target="_blank" rel="noreferrer">
           <Button variant="outline" size="sm">
             <ExternalLink /> Open in Scryfall
