@@ -1,5 +1,6 @@
 import type { Currency } from '~/lib/types'
 import { formatMoney, formatDelta } from '~/lib/format'
+import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 
 interface TileFooterProps {
   name: string
@@ -24,7 +25,13 @@ export function TileFooter(props: TileFooterProps) {
       <div className="mt-1 h-5 min-w-0 truncate text-sm leading-5" title={props.name}>{props.name}</div>
       <div className="h-4 min-w-0 truncate text-xs leading-4 text-muted-foreground" title={props.typeLine}>{props.typeLine}</div>
       <div className="h-4 min-w-0 truncate text-xs leading-4 text-muted-foreground">
-        <span title={props.setName}>{props.setCode.toUpperCase()}</span> · #{props.collectorNumber} · {props.rarity}
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <span className="cursor-default">{props.setCode.toUpperCase()}</span>
+          </TooltipTrigger>
+          <TooltipContent>{props.setName}</TooltipContent>
+        </Tooltip>
+        {' '}· #{props.collectorNumber} · {props.rarity}
       </div>
       <div className="flex h-6 items-baseline justify-between gap-1 leading-6">
         <span className="min-w-0 truncate">

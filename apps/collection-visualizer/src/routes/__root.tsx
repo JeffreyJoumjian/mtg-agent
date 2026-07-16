@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { useState } from 'react'
 import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { TooltipProvider } from '~/components/ui/tooltip'
 import appCss from '~/styles/app.css?inline'
 
 export const Route = createRootRoute({
@@ -20,9 +21,11 @@ function RootComponent() {
   const [queryClient] = useState(() => new QueryClient())
   return (
     <QueryClientProvider client={queryClient}>
-      <RootDocument>
-        <Outlet />
-      </RootDocument>
+      <TooltipProvider>
+        <RootDocument>
+          <Outlet />
+        </RootDocument>
+      </TooltipProvider>
     </QueryClientProvider>
   )
 }

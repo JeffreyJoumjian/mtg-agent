@@ -4,6 +4,7 @@ import type { Baseline, CardTile as Tile, Currency } from "~/lib/types";
 import { effectivePrice, tileValue, unitDelta } from "~/lib/pricing";
 import { formatMoney, formatDelta } from "~/lib/format";
 import { groupTotals, variantsWorstFirst } from "~/lib/stacks";
+import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import { ImageModal } from "./ImageModal";
 
 interface CardDetailsProps {
@@ -75,7 +76,13 @@ export function CardDetails(props: CardDetailsProps) {
           {tile.enriched.typeLine && <div className="text-xs text-muted-foreground">{tile.enriched.typeLine}</div>}
         </div>
         <div className="text-xs text-muted-foreground">
-          <span title={tile.setName}>{tile.setCode.toUpperCase()}</span> · #{tile.collectorNumber} · {tile.rarity}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="cursor-default">{tile.setCode.toUpperCase()}</span>
+            </TooltipTrigger>
+            <TooltipContent>{tile.setName}</TooltipContent>
+          </Tooltip>
+          {" "}· #{tile.collectorNumber} · {tile.rarity}
           {tile.finish !== "normal" && ` · ${tile.finish}`}
           {tile.quantity > 1 && ` · ×${tile.quantity}`}
         </div>
