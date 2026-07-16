@@ -1,8 +1,11 @@
-import { memo, type CSSProperties } from 'react'
+import { memo, useState, type CSSProperties } from 'react'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { groupTotals, type NameGroup } from '~/lib/stacks'
 import { totals } from '~/lib/pricing'
+import { facesOf, faceImage } from '~/lib/faces'
 import { TileFooter } from './TileFooter'
+import { FlipImage } from './FlipImage'
+import { FlipButton } from './FlipButton'
 
 interface StackTileProps {
   group: NameGroup
@@ -35,10 +38,15 @@ export const StackTile = memo(function StackTile(props: StackTileProps) {
   const shown = [rep, ...others].slice(0, 3) // up to 3 visible in the tile
   const printings = group.variants.length
 
+  // Only the face-up card (the rep) flips; the cascade behind it stays put.
+  const repFaces = facesOf(rep)
+  const repTwoSided = repFaces.length >= 2
+  const [flipped, setFlipped] = useState(false)
+
   return (
     <div
       onClick={() => props.onSelect(rep.key)}
-      className={`flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? 'ring-2 ring-primary' : ''}`}
+      className={`group flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? 'ring-2 ring-primary' : ''}`}
     >
       {/* Card-aspect box keeps the grid's deterministic row height; the cascade shows up to 3 of the
           stack's printings behind the face. */}
@@ -49,7 +57,9 @@ export const StackTile = memo(function StackTile(props: StackTileProps) {
             style={tileCardStyle(i)}
             className="absolute inset-0 overflow-hidden rounded-md border border-black/40 bg-muted shadow-md"
           >
-            {v.enriched.imageNormal ?? v.enriched.imageSmall ? (
+            {i === 0 && repTwoSided ? (
+              <FlipImage front={faceImage(repFaces[0], 'normal')} back={faceImage(repFaces[1], 'normal')} flipped={flipped} alt={v.name} loading="lazy" />
+            ) : v.enriched.imageNormal ?? v.enriched.imageSmall ? (
               <img src={v.enriched.imageNormal ?? v.enriched.imageSmall ?? undefined} alt={v.name} loading="lazy" className="absolute inset-0 h-full w-full object-contain" />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-muted-foreground">{v.name}</div>
@@ -64,6 +74,12 @@ export const StackTile = memo(function StackTile(props: StackTileProps) {
             )}
           </div>
         ))}
+        {repTwoSided && (
+          <FlipButton
+            onFlip={() => setFlipped((f) => !f)}
+            className="absolute bottom-1 left-1 z-30 opacity-0 transition-opacity group-hover:opacity-100"
+          />
+        )}
       </div>
 
       <TileFooter

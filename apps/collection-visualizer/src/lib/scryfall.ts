@@ -18,7 +18,13 @@ export function toEnriched(card: any): Enriched {
   const faces: any[] = Array.isArray(card?.card_faces) ? card.card_faces : []
   const joinFaces = (key: string) => faces.map((f) => f?.[key]).filter(Boolean).join(' // ')
   const face0 = faces[0] ?? {}
-  return {
+
+  // Genuinely two-sided cards (transform / MDFC / reversible) omit the top-level image and give each
+  // face its own — that's exactly the set we can flip. Split/adventure/flip keep a single top-level
+  // image, so they never match and stay single-faced.
+  const twoSided = !card?.image_uris && faces.filter((f) => f?.image_uris).length >= 2
+
+  const enriched: Enriched = {
     cmc: card?.cmc ?? 0,
     colors: (card?.colors ?? face0.colors ?? []) as ColorSymbol[],
     colorIdentity: (card?.color_identity ?? []) as ColorSymbol[],
@@ -27,6 +33,20 @@ export function toEnriched(card: any): Enriched {
     manaCost: card?.mana_cost ?? joinFaces('mana_cost'),
     imageSmall: card?.image_uris?.small ?? face0.image_uris?.small ?? null,
     imageNormal: card?.image_uris?.normal ?? face0.image_uris?.normal ?? null,
+  }
+
+  if (!twoSided) return enriched
+
+  return {
+    ...enriched,
+    faces: faces.map((f) => ({
+      name: f?.name ?? '',
+      typeLine: f?.type_line ?? '',
+      oracleText: f?.oracle_text ?? '',
+      manaCost: f?.mana_cost ?? '',
+      imageSmall: f?.image_uris?.small ?? null,
+      imageNormal: f?.image_uris?.normal ?? null,
+    })),
   }
 }
 

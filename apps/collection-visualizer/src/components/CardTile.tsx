@@ -1,7 +1,10 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { tileValue, unitDelta } from '~/lib/pricing'
+import { facesOf, faceImage } from '~/lib/faces'
 import { TileFooter } from './TileFooter'
+import { FlipImage } from './FlipImage'
+import { FlipButton } from './FlipButton'
 
 interface CardTileProps {
   tile: Tile
@@ -17,20 +20,27 @@ export const CardTile = memo(function CardTile(props: CardTileProps) {
   const { tile, currency, baseline } = props
   const value = tileValue(tile, currency)
   const delta = unitDelta(tile, currency, baseline)
+
+  const faces = facesOf(tile)
+  const twoSided = faces.length >= 2
+  const [flipped, setFlipped] = useState(false)
   // Use the higher-res 'normal' image — the 'small' one is only 146px wide and looks blurry at tile size.
-  const img = tile.enriched.imageNormal ?? tile.enriched.imageSmall
+  const front = twoSided ? faceImage(faces[0], 'normal') : tile.enriched.imageNormal ?? tile.enriched.imageSmall
+  const back = twoSided ? faceImage(faces[1], 'normal') : null
 
   return (
     <div
       onClick={() => props.onSelect?.(tile.key)}
-      className={`flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? 'ring-2 ring-primary' : ''}`}
+      className={`group flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? 'ring-2 ring-primary' : ''}`}
     >
       {/* Card-aspect box reserves height from width; object-contain never crops. The footer rows
           below have FIXED heights so CardGrid's deterministic row-height math stays exact. */}
       <div className="relative aspect-[488/680] w-full overflow-hidden rounded bg-muted">
-        {img ? (
+        {twoSided ? (
+          <FlipImage front={front} back={back} flipped={flipped} alt={tile.name} loading="lazy" />
+        ) : front ? (
           <img
-            src={img}
+            src={front}
             alt={tile.name}
             loading="lazy"
             className="absolute inset-0 h-full w-full object-contain"
@@ -47,6 +57,12 @@ export const CardTile = memo(function CardTile(props: CardTileProps) {
           <span className="absolute left-1 top-1 rounded bg-gradient-to-r from-fuchsia-500 to-amber-400 px-1 py-0.5 text-[10px] font-bold text-black">
             {tile.finish === 'etched' ? 'ETCH' : 'FOIL'}
           </span>
+        )}
+        {twoSided && (
+          <FlipButton
+            onFlip={() => setFlipped((f) => !f)}
+            className="absolute bottom-1 left-1 opacity-0 transition-opacity group-hover:opacity-100"
+          />
         )}
       </div>
       <TileFooter

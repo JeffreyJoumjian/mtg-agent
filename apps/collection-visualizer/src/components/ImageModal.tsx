@@ -1,17 +1,24 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
+import { FlipImage } from './FlipImage'
+import { FlipButton } from './FlipButton'
 
 interface ImageModalProps {
   src: string
   alt: string
   onClose: () => void
+  /** The other face; when present, a flip control turns the lightbox card over in 3D. */
+  back?: string | null
 }
 
 /** A full-screen image lightbox. Rendered into <body> so it escapes the sidebar; closes on backdrop
  *  click or Escape. Only mounted when open (client-side), so createPortal is always safe. */
 export function ImageModal(props: ImageModalProps) {
+  const twoSided = Boolean(props.back)
+  const [flipped, setFlipped] = useState(false)
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') props.onClose()
@@ -44,12 +51,25 @@ export function ImageModal(props: ImageModalProps) {
         </TooltipTrigger>
         <TooltipContent>Close</TooltipContent>
       </Tooltip>
-      <img
-        src={props.src}
-        alt={props.alt}
-        onClick={(e) => e.stopPropagation()}
-        className="max-h-full max-w-full rounded-xl object-contain shadow-2xl"
-      />
+      {twoSided ? (
+        <div className="relative aspect-[488/680] h-full max-h-full" onClick={(e) => e.stopPropagation()}>
+          <FlipImage front={props.src} back={props.back ?? null} flipped={flipped} alt={props.alt} loading="eager" />
+        </div>
+      ) : (
+        <img
+          src={props.src}
+          alt={props.alt}
+          onClick={(e) => e.stopPropagation()}
+          className="max-h-full max-w-full rounded-xl object-contain shadow-2xl"
+        />
+      )}
+      {twoSided && (
+        <FlipButton
+          onFlip={() => setFlipped((f) => !f)}
+          size="md"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2"
+        />
+      )}
     </div>,
     document.body,
   )

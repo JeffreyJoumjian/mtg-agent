@@ -4,7 +4,10 @@ import type { Baseline, CardTile as Tile, Currency } from "~/lib/types";
 import { effectivePrice, tileValue, unitDelta } from "~/lib/pricing";
 import { formatMoney, formatDelta } from "~/lib/format";
 import { groupTotals, variantsWorstFirst } from "~/lib/stacks";
+import { facesOf, faceImage } from "~/lib/faces";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
+import { FlipImage } from "./FlipImage";
+import { FlipButton } from "./FlipButton";
 import { ImageModal } from "./ImageModal";
 import { OracleText } from "./OracleText";
 
@@ -25,7 +28,18 @@ export function CardDetails(props: CardDetailsProps) {
   const { tile, currency, baseline } = props;
   const value = tileValue(tile, currency);
   const delta = unitDelta(tile, currency, baseline);
-  const img = tile.enriched.imageNormal ?? tile.enriched.imageSmall;
+
+  const faces = facesOf(tile);
+  const twoSided = faces.length >= 2;
+  const [flipped, setFlipped] = useState(false);
+  const activeFace = twoSided ? faces[flipped ? 1 : 0] : null;
+
+  const front = twoSided ? faceImage(faces[0], "normal") : tile.enriched.imageNormal ?? tile.enriched.imageSmall;
+  const back = twoSided ? faceImage(faces[1], "normal") : null;
+  const shownImg = flipped ? back : front;
+  // The sidebar text follows the shown face so a MDFC's back reads cleanly (not the joined blob).
+  const typeLine = activeFace ? activeFace.typeLine : tile.enriched.typeLine;
+  const oracleText = activeFace ? activeFace.oracleText : tile.enriched.oracleText;
 
   const variants = props.variants ?? [];
   const showStrip = variants.length > 1 ? variantsWorstFirst(variants, currency) : null;
@@ -37,15 +51,17 @@ export function CardDetails(props: CardDetailsProps) {
       <div className="space-y-2">
         <div className="relative mx-auto w-3/4">
           <div className="relative aspect-[488/680] w-full overflow-hidden rounded-lg bg-muted">
-            {img ? (
-              <img src={img} alt={tile.name} className="absolute inset-0 h-full w-full object-contain" />
+            {twoSided ? (
+              <FlipImage front={front} back={back} flipped={flipped} alt={tile.name} />
+            ) : shownImg ? (
+              <img src={shownImg} alt={tile.name} className="absolute inset-0 h-full w-full object-contain" />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-sm text-muted-foreground">
                 {tile.name}
               </div>
             )}
           </div>
-          {img && (
+          {shownImg && (
             <Tooltip>
               <TooltipTrigger asChild>
                 <button
@@ -58,6 +74,9 @@ export function CardDetails(props: CardDetailsProps) {
               </TooltipTrigger>
               <TooltipContent>Expand image</TooltipContent>
             </Tooltip>
+          )}
+          {twoSided && (
+            <FlipButton onFlip={() => setFlipped((f) => !f)} className="absolute bottom-1.5 left-1.5" />
           )}
         </div>
 
@@ -78,7 +97,7 @@ export function CardDetails(props: CardDetailsProps) {
 
         <div className="space-y-0.5">
           <div className="font-semibold leading-snug">{tile.name}</div>
-          {tile.enriched.typeLine && <div className="text-sm text-muted-foreground">{tile.enriched.typeLine}</div>}
+          {typeLine && <div className="text-sm text-muted-foreground">{typeLine}</div>}
           <div className="text-xs text-muted-foreground">
             <Tooltip>
               <TooltipTrigger asChild>
@@ -99,10 +118,17 @@ export function CardDetails(props: CardDetailsProps) {
             </span>
           )}
         </div>
-        {props.full && tile.enriched.oracleText && <OracleText text={tile.enriched.oracleText} />}
+        {props.full && oracleText && <OracleText text={oracleText} />}
       </div>
 
-      {expanded && img && <ImageModal src={img} alt={tile.name} onClose={() => setExpanded(false)} />}
+      {expanded && shownImg && (
+        <ImageModal
+          src={shownImg}
+          back={twoSided ? (flipped ? front : back) : null}
+          alt={tile.name}
+          onClose={() => setExpanded(false)}
+        />
+      )}
     </>
   );
 }

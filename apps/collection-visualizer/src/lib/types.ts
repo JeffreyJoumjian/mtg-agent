@@ -27,6 +27,16 @@ export interface PriceSet {
   eurFoil: number | null
 }
 
+/** One side of a genuinely two-faced card (transform / MDFC / reversible), each with its own image. */
+export interface CardFace {
+  name: string
+  typeLine: string
+  oracleText: string
+  manaCost: string
+  imageSmall: string | null
+  imageNormal: string | null
+}
+
 /** Scryfall fields cached for display, sorting, and search. */
 export interface Enriched {
   cmc: number
@@ -37,6 +47,9 @@ export interface Enriched {
   manaCost: string
   imageSmall: string | null
   imageNormal: string | null
+  /** The individual sides, present only for genuinely two-sided cards (each side has its own image).
+   *  Absent for single-image cards — including split / adventure / flip layouts, which are one image. */
+  faces?: CardFace[]
 }
 
 export interface CacheEntry {
