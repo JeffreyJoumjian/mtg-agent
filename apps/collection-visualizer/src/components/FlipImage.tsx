@@ -2,8 +2,9 @@ interface FlipImageProps {
   /** Front and back image URLs. */
   front: string | null
   back: string | null
-  /** When true, the card is rotated to reveal the back. */
-  flipped: boolean
+  /** Half-turns applied so far — each flip increments it, so flips keep spinning the same direction
+   *  instead of rocking back and forth. Even shows the front, odd shows the back. */
+  rotations: number
   alt: string
   loading?: 'lazy' | 'eager'
 }
@@ -15,7 +16,7 @@ export function FlipImage(props: FlipImageProps) {
     <div className="absolute inset-0 [perspective:1000px]">
       <div
         className="relative h-full w-full transition-transform duration-500 ease-out [transform-style:preserve-3d]"
-        style={{ transform: props.flipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
+        style={{ transform: `rotateY(${props.rotations * 180}deg)` }}
       >
         <Face src={props.front} alt={props.alt} loading={props.loading} />
         <Face src={props.back} alt={props.alt} loading={props.loading} back />

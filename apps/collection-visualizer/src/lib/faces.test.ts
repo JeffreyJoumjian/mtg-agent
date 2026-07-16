@@ -1,8 +1,17 @@
 import { test, expect } from 'bun:test'
-import { facesOf, isTwoSided, faceImage } from './faces'
+import { facesOf, isTwoSided, cardImage } from './faces'
 import type { CardFace, CardTile } from './types'
 
-const FACE: CardFace = { name: 'Back', typeLine: 'Land', oracleText: '', manaCost: '', imageSmall: 's', imageNormal: 'n' }
+const FACE: CardFace = {
+  name: 'Back',
+  typeLine: 'Land',
+  oracleText: '',
+  manaCost: '',
+  imageSmall: 's',
+  imageNormal: 'n',
+  imageLarge: 'l',
+  imagePng: 'p',
+}
 
 function tile(faces?: CardFace[]): CardTile {
   return {
@@ -18,7 +27,7 @@ function tile(faces?: CardFace[]): CardTile {
     weightedPurchase: null,
     prices: { usd: null, usdFoil: null, eur: null, eurFoil: null },
     previousPrices: null,
-    enriched: { cmc: 0, colors: [], colorIdentity: [], typeLine: '', oracleText: '', manaCost: '', imageSmall: null, imageNormal: null, faces },
+    enriched: { cmc: 0, colors: [], colorIdentity: [], typeLine: '', oracleText: '', manaCost: '', imageSmall: null, imageNormal: null, imageLarge: null, imagePng: null, faces },
     fetchedAt: 0,
     breakdown: [],
   }
@@ -35,8 +44,10 @@ test('isTwoSided requires at least two faces', () => {
   expect(isTwoSided(tile())).toEqual(false)
 })
 
-test('faceImage prefers the requested size and falls back to the other', () => {
-  expect(faceImage({ ...FACE, imageSmall: 's', imageNormal: 'n' }, 'normal')).toEqual('n')
-  expect(faceImage({ ...FACE, imageSmall: 's', imageNormal: null }, 'normal')).toEqual('s')
-  expect(faceImage({ ...FACE, imageSmall: null, imageNormal: 'n' }, 'small')).toEqual('n')
+test('cardImage picks the requested quality, degrading to what exists', () => {
+  expect(cardImage(FACE, 'png')).toEqual('p')
+  expect(cardImage(FACE, 'large')).toEqual('l')
+  expect(cardImage(FACE, 'normal')).toEqual('n')
+  expect(cardImage({ ...FACE, imagePng: null, imageLarge: null }, 'png')).toEqual('n')
+  expect(cardImage({ ...FACE, imageSmall: null, imageNormal: null, imageLarge: null, imagePng: null }, 'normal')).toEqual(null)
 })

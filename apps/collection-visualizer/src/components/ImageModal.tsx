@@ -4,11 +4,14 @@ import { X } from 'lucide-react'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import { FlipImage } from './FlipImage'
 import { FlipButton } from './FlipButton'
+import { DownloadButton } from './DownloadButton'
 
 interface ImageModalProps {
   src: string
   alt: string
   onClose: () => void
+  /** File name for the download button. */
+  filename: string
   /** The other face; when present, a flip control turns the lightbox card over in 3D. */
   back?: string | null
 }
@@ -17,7 +20,9 @@ interface ImageModalProps {
  *  click or Escape. Only mounted when open (client-side), so createPortal is always safe. */
 export function ImageModal(props: ImageModalProps) {
   const twoSided = Boolean(props.back)
-  const [flipped, setFlipped] = useState(false)
+  const [flips, setFlips] = useState(0)
+  // Download whichever face is currently turned toward the viewer.
+  const shown = flips % 2 === 1 && props.back ? props.back : props.src
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -53,7 +58,7 @@ export function ImageModal(props: ImageModalProps) {
       </Tooltip>
       {twoSided ? (
         <div className="relative aspect-[488/680] h-full max-h-full" onClick={(e) => e.stopPropagation()}>
-          <FlipImage front={props.src} back={props.back ?? null} flipped={flipped} alt={props.alt} loading="eager" />
+          <FlipImage front={props.src} back={props.back ?? null} rotations={flips} alt={props.alt} loading="eager" />
         </div>
       ) : (
         <img
@@ -64,12 +69,9 @@ export function ImageModal(props: ImageModalProps) {
         />
       )}
       {twoSided && (
-        <FlipButton
-          onFlip={() => setFlipped((f) => !f)}
-          size="md"
-          className="absolute bottom-6 left-1/2 -translate-x-1/2"
-        />
+        <FlipButton onFlip={() => setFlips((n) => n + 1)} size="md" className="absolute left-4 top-4" />
       )}
+      <DownloadButton url={shown} filename={props.filename} size="md" className="absolute bottom-4 right-4" />
     </div>,
     document.body,
   )

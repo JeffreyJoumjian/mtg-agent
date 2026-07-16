@@ -1,9 +1,12 @@
 import type { Currency } from '~/lib/types'
 import { formatMoney, formatDelta } from '~/lib/format'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
+import { ManaCost } from './ManaCost'
 
 interface TileFooterProps {
   name: string
+  /** Mana cost of the shown face, rendered as symbols on the line below the name. */
+  manaCost: string
   typeLine: string
   /** Short set code (shown) + full set name (revealed on hover). */
   setCode: string
@@ -13,8 +16,6 @@ interface TileFooterProps {
   value: number | null
   delta: { value: number; currency: Currency | string } | null
   currency: Currency
-  /** Stacks only: number of printings, shown after the value. */
-  printings?: number
 }
 
 /** The text block under a card tile's image. Every line has a LOCKED height so CardGrid's
@@ -30,6 +31,9 @@ export function TileFooter(props: TileFooterProps) {
           </TooltipTrigger>
           <TooltipContent>{props.name}</TooltipContent>
         </Tooltip>
+      </div>
+      <div className="flex h-4 items-center">
+        <ManaCost cost={props.manaCost} size="size-3" />
       </div>
       <div className="h-4 min-w-0 truncate text-xs leading-4 text-muted-foreground">
         {props.typeLine && (
@@ -51,12 +55,7 @@ export function TileFooter(props: TileFooterProps) {
         {' '}· #{props.collectorNumber} · {props.rarity}
       </div>
       <div className="flex h-6 items-baseline justify-between gap-1 leading-6">
-        <span className="min-w-0 truncate">
-          <span className="font-semibold">{formatMoney(props.value, props.currency)}</span>
-          {props.printings != null && (
-            <span className="text-xs text-muted-foreground"> · {props.printings} printings</span>
-          )}
-        </span>
+        <span className="min-w-0 truncate font-semibold">{formatMoney(props.value, props.currency)}</span>
         {props.delta && (
           <span className={props.delta.value < 0 ? 'shrink-0 text-xs text-red-400' : 'shrink-0 text-xs text-emerald-400'}>
             {props.delta.value < 0 ? '▼' : '▲'} {formatDelta(props.delta.value, props.delta.currency)}

@@ -29,8 +29,8 @@ function Home() {
   const [filters, setFilters] = useState<FilterState>(emptyFilters())
   const [settings, setSettings] = useState<ViewSettings>(defaultSettings())
   const [selectedKey, setSelectedKey] = useState<string | null>(null)
-  // The drawer's flip, seeded from the tile's shown face on open, then owned independently.
-  const [drawerFlipped, setDrawerFlipped] = useState(false)
+  // The drawer's flip count, seeded from the tile's shown face on open, then owned independently.
+  const [drawerFlips, setDrawerFlips] = useState(0)
 
   // Load persisted settings once on mount. Kept out of the initializer so server and client both
   // start from the defaults (no hydration mismatch); we adopt the stored values right after.
@@ -117,7 +117,8 @@ function Home() {
     const tile = data.tiles.find((t) => t.key === key)
     if (!tile) return
     setSelectedKey(key)
-    setDrawerFlipped(flipped)
+    // Seed the drawer on the same face the tile shows; a count keeps the flip spinning one way.
+    setDrawerFlips(flipped ? 1 : 0)
     setPins((p) => ({ ...p, [tile.name]: key }))
   }
 
@@ -203,8 +204,8 @@ function Home() {
               variants={sidebarVariants}
               currency={settings.currency}
               baseline={settings.baseline}
-              flipped={drawerFlipped}
-              onFlipChange={setDrawerFlipped}
+              rotations={drawerFlips}
+              onFlip={() => setDrawerFlips((n) => n + 1)}
               onSelect={onSelect}
               onClose={() => setSelectedKey(null)}
             />

@@ -4,10 +4,13 @@ import type { Baseline, CardTile as Tile, Currency } from "~/lib/types";
 import { effectivePrice, tileValue, unitDelta } from "~/lib/pricing";
 import { formatMoney, formatDelta } from "~/lib/format";
 import { groupTotals, variantsWorstFirst } from "~/lib/stacks";
-import { facesOf, faceImage } from "~/lib/faces";
+import { facesOf, cardImage } from "~/lib/faces";
+import { imageFilename } from "~/lib/download";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
+import { ManaCost } from "./ManaCost";
 import { FlipImage } from "./FlipImage";
 import { FlipButton } from "./FlipButton";
+import { DownloadButton } from "./DownloadButton";
 import { ImageModal } from "./ImageModal";
 import { OracleText } from "./OracleText";
 
@@ -22,10 +25,10 @@ interface CardDetailsProps {
   variants?: Tile[];
   onHoverVariant?: (key: string) => void;
   onSelectVariant?: (key: string) => void;
-  /** Controlled flip — the drawer seeds this from the tile's shown face, then owns it. When omitted
-   *  the flip is local (the list hover-card preview uses this). */
-  flipped?: boolean;
-  onFlipChange?: (flipped: boolean) => void;
+  /** Controlled flip count — the drawer seeds this from the tile's shown face, then owns it. When
+   *  omitted the flip is local (the list hover-card preview uses this). Even = front, odd = back. */
+  rotations?: number;
+  onFlip?: () => void;
 }
 
 export function CardDetails(props: CardDetailsProps) {
@@ -35,17 +38,27 @@ export function CardDetails(props: CardDetailsProps) {
 
   const faces = facesOf(tile);
   const twoSided = faces.length >= 2;
-  const [localFlipped, setLocalFlipped] = useState(false);
-  const flipped = props.flipped ?? localFlipped;
-  const setFlipped = props.onFlipChange ?? setLocalFlipped;
+  const [localFlips, setLocalFlips] = useState(0);
+  const rotations = props.rotations ?? localFlips;
+  const flip = props.onFlip ?? (() => setLocalFlips((n) => n + 1));
+  const flipped = rotations % 2 === 1;
   const activeFace = twoSided ? faces[flipped ? 1 : 0] : null;
 
-  const front = twoSided ? faceImage(faces[0], "normal") : tile.enriched.imageNormal ?? tile.enriched.imageSmall;
-  const back = twoSided ? faceImage(faces[1], "normal") : null;
+  // The sidebar shows the crisp 'large' image; the modal preview and download use the best 'png'.
+  const front = twoSided ? cardImage(faces[0], "large") : cardImage(tile.enriched, "large");
+  const back = twoSided ? cardImage(faces[1], "large") : null;
   const shownImg = flipped ? back : front;
+
+  const frontFull = twoSided ? cardImage(faces[0], "png") : cardImage(tile.enriched, "png");
+  const backFull = twoSided ? cardImage(faces[1], "png") : null;
+  const shownFull = flipped ? backFull : frontFull;
+  const otherFull = flipped ? frontFull : backFull;
+  const downloadName = imageFilename(activeFace ? activeFace.name || tile.name : tile.name);
+
   // The sidebar text follows the shown face so a MDFC's back reads cleanly (not the joined blob).
   const typeLine = activeFace ? activeFace.typeLine : tile.enriched.typeLine;
   const oracleText = activeFace ? activeFace.oracleText : tile.enriched.oracleText;
+  const manaCost = activeFace ? activeFace.manaCost : tile.enriched.manaCost;
 
   const variants = props.variants ?? [];
   const showStrip = variants.length > 1 ? variantsWorstFirst(variants, currency) : null;
@@ -58,7 +71,7 @@ export function CardDetails(props: CardDetailsProps) {
         <div className="relative mx-auto w-3/4">
           <div className="relative aspect-[488/680] w-full overflow-hidden rounded-lg bg-muted">
             {twoSided ? (
-              <FlipImage front={front} back={back} flipped={flipped} alt={tile.name} />
+              <FlipImage front={front} back={back} rotations={rotations} alt={tile.name} />
             ) : shownImg ? (
               <img src={shownImg} alt={tile.name} className="absolute inset-0 h-full w-full object-contain" />
             ) : (
@@ -73,7 +86,7 @@ export function CardDetails(props: CardDetailsProps) {
                 <button
                   onClick={() => setExpanded(true)}
                   aria-label="Expand image"
-                  className="absolute right-1.5 top-1.5 flex size-7 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition hover:bg-black/80"
+                  className="absolute bottom-1.5 left-1.5 flex size-7 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition hover:bg-black/80"
                 >
                   <Maximize2 className="size-4" />
                 </button>
@@ -82,7 +95,10 @@ export function CardDetails(props: CardDetailsProps) {
             </Tooltip>
           )}
           {twoSided && (
-            <FlipButton onFlip={() => setFlipped(!flipped)} className="absolute bottom-1.5 left-1.5" />
+            <FlipButton onFlip={flip} className="absolute left-1.5 top-1.5" />
+          )}
+          {shownFull && (
+            <DownloadButton url={shownFull} filename={downloadName} className="absolute bottom-1.5 right-1.5" />
           )}
         </div>
 
@@ -102,7 +118,12 @@ export function CardDetails(props: CardDetailsProps) {
         )}
 
         <div className="space-y-0.5">
-          <div className="font-semibold leading-snug">{tile.name}</div>
+          <div className="flex items-start justify-between gap-2">
+            <div className="font-semibold leading-snug">{tile.name}</div>
+            <span className="mt-0.5">
+              <ManaCost cost={manaCost} size="size-4" />
+            </span>
+          </div>
           {typeLine && <div className="text-sm text-muted-foreground">{typeLine}</div>}
           <div className="text-xs text-muted-foreground">
             <Tooltip>
@@ -127,11 +148,12 @@ export function CardDetails(props: CardDetailsProps) {
         {props.full && oracleText && <OracleText text={oracleText} />}
       </div>
 
-      {expanded && shownImg && (
+      {expanded && shownFull && (
         <ImageModal
-          src={shownImg}
-          back={twoSided ? (flipped ? front : back) : null}
+          src={shownFull}
+          back={twoSided ? otherFull : null}
           alt={tile.name}
+          filename={downloadName}
           onClose={() => setExpanded(false)}
         />
       )}

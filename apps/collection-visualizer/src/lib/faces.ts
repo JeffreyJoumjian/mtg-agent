@@ -10,7 +10,28 @@ export function isTwoSided(tile: CardTile): boolean {
   return facesOf(tile).length >= 2
 }
 
-/** A face's image at the preferred size, falling back to the other size. */
-export function faceImage(face: CardFace, prefer: 'small' | 'normal'): string | null {
-  return prefer === 'small' ? face.imageSmall ?? face.imageNormal : face.imageNormal ?? face.imageSmall
+export type ImageQuality = 'small' | 'normal' | 'large' | 'png'
+
+/** Anything carrying the Scryfall image sizes — both `Enriched` and `CardFace` qualify. The higher-res
+ *  sizes are optional (older caches lack them until re-enriched). */
+interface ImageSource {
+  imageSmall: string | null
+  imageNormal: string | null
+  imageLarge?: string | null
+  imagePng?: string | null
+}
+
+const FALLBACKS: Record<ImageQuality, (keyof ImageSource)[]> = {
+  png: ['imagePng', 'imageLarge', 'imageNormal', 'imageSmall'],
+  large: ['imageLarge', 'imageNormal', 'imageSmall'],
+  normal: ['imageNormal', 'imageSmall'],
+  small: ['imageSmall', 'imageNormal'],
+}
+
+/** Best available image at (or degrading below) the requested quality; null if the source has none. */
+export function cardImage(src: ImageSource, quality: ImageQuality): string | null {
+  for (const key of FALLBACKS[quality]) {
+    if (src[key]) return src[key]
+  }
+  return null
 }

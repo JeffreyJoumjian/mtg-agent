@@ -10,7 +10,7 @@ const CARD = {
   oracle_text: 'When this enters, investigate.',
   mana_cost: '{1}{W}',
   prices: { usd: '1.32', usd_foil: '3.10', eur: '0.95', eur_foil: '2.40', tix: '0.02' },
-  image_uris: { small: 'https://img/small.jpg', normal: 'https://img/normal.jpg' },
+  image_uris: { small: 'https://img/small.jpg', normal: 'https://img/normal.jpg', large: 'https://img/large.jpg', png: 'https://img/card.png' },
 }
 
 test('toPriceSet maps the four price fields, null when absent', () => {
@@ -28,6 +28,8 @@ test('toEnriched projects gameplay + image fields', () => {
     manaCost: '{1}{W}',
     imageSmall: 'https://img/small.jpg',
     imageNormal: 'https://img/normal.jpg',
+    imageLarge: 'https://img/large.jpg',
+    imagePng: 'https://img/card.png',
   })
 })
 
@@ -51,16 +53,16 @@ test('toEnriched captures both sides of a genuinely two-faced card (no top-level
     cmc: 1,
     color_identity: ['U'],
     card_faces: [
-      { name: 'Delver of Secrets', type_line: 'Creature — Human Wizard', oracle_text: 'Front.', mana_cost: '{U}', colors: ['U'], image_uris: { small: 'fs', normal: 'fn' } },
-      { name: 'Insectile Aberration', type_line: 'Creature — Human Insect', oracle_text: 'Flying.', mana_cost: '', image_uris: { small: 'bs', normal: 'bn' } },
+      { name: 'Delver of Secrets', type_line: 'Creature — Human Wizard', oracle_text: 'Front.', mana_cost: '{U}', colors: ['U'], image_uris: { small: 'fs', normal: 'fn', large: 'fl', png: 'fp' } },
+      { name: 'Insectile Aberration', type_line: 'Creature — Human Insect', oracle_text: 'Flying.', mana_cost: '', image_uris: { small: 'bs', normal: 'bn', large: 'bl', png: 'bp' } },
     ],
   }
   const e = toEnriched(twoSided)
   // Front stays the default face; the flip data lives in `faces`.
   expect(e.imageNormal).toEqual('fn')
   expect(e.faces).toEqual([
-    { name: 'Delver of Secrets', typeLine: 'Creature — Human Wizard', oracleText: 'Front.', manaCost: '{U}', imageSmall: 'fs', imageNormal: 'fn' },
-    { name: 'Insectile Aberration', typeLine: 'Creature — Human Insect', oracleText: 'Flying.', manaCost: '', imageSmall: 'bs', imageNormal: 'bn' },
+    { name: 'Delver of Secrets', typeLine: 'Creature — Human Wizard', oracleText: 'Front.', manaCost: '{U}', imageSmall: 'fs', imageNormal: 'fn', imageLarge: 'fl', imagePng: 'fp' },
+    { name: 'Insectile Aberration', typeLine: 'Creature — Human Insect', oracleText: 'Flying.', manaCost: '', imageSmall: 'bs', imageNormal: 'bn', imageLarge: 'bl', imagePng: 'bp' },
   ])
 })
 

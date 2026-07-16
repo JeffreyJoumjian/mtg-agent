@@ -1,7 +1,7 @@
 import { memo, useState } from 'react'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { tileValue, unitDelta } from '~/lib/pricing'
-import { facesOf, faceImage } from '~/lib/faces'
+import { facesOf, cardImage } from '~/lib/faces'
 import { TileFooter } from './TileFooter'
 import { FlipImage } from './FlipImage'
 import { FlipButton } from './FlipButton'
@@ -23,21 +23,23 @@ export const CardTile = memo(function CardTile(props: CardTileProps) {
 
   const faces = facesOf(tile)
   const twoSided = faces.length >= 2
-  const [flipped, setFlipped] = useState(false)
+  const [flips, setFlips] = useState(0)
   // Use the higher-res 'normal' image — the 'small' one is only 146px wide and looks blurry at tile size.
-  const front = twoSided ? faceImage(faces[0], 'normal') : tile.enriched.imageNormal ?? tile.enriched.imageSmall
-  const back = twoSided ? faceImage(faces[1], 'normal') : null
+  const front = twoSided ? cardImage(faces[0], 'normal') : cardImage(tile.enriched, 'normal')
+  const back = twoSided ? cardImage(faces[1], 'normal') : null
+  // Mana follows the shown face; the footer name stays the card's full identity.
+  const manaCost = twoSided ? faces[flips % 2].manaCost : tile.enriched.manaCost
 
   return (
     <div
-      onClick={() => props.onSelect?.(tile.key, flipped)}
+      onClick={() => props.onSelect?.(tile.key, flips % 2 === 1)}
       className={`group flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? 'ring-2 ring-primary' : ''}`}
     >
       {/* Card-aspect box reserves height from width; object-contain never crops. The footer rows
           below have FIXED heights so CardGrid's deterministic row-height math stays exact. */}
       <div className="relative aspect-[488/680] w-full overflow-hidden rounded bg-muted">
         {twoSided ? (
-          <FlipImage front={front} back={back} flipped={flipped} alt={tile.name} loading="lazy" />
+          <FlipImage front={front} back={back} rotations={flips} alt={tile.name} loading="lazy" />
         ) : front ? (
           <img
             src={front}
@@ -51,22 +53,23 @@ export const CardTile = memo(function CardTile(props: CardTileProps) {
           </div>
         )}
         {tile.quantity > 1 && (
-          <span className="absolute right-1 top-1 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">×{tile.quantity}</span>
+          <span className="absolute bottom-1 left-1/2 -translate-x-1/2 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">×{tile.quantity}</span>
         )}
         {tile.finish !== 'normal' && (
-          <span className="absolute left-1 top-1 rounded bg-gradient-to-r from-fuchsia-500 to-amber-400 px-1 py-0.5 text-[10px] font-bold text-black">
+          <span className="absolute bottom-1 left-1 rounded bg-gradient-to-r from-fuchsia-500 to-amber-400 px-1 py-0.5 text-[10px] font-bold text-black">
             {tile.finish === 'etched' ? 'ETCH' : 'FOIL'}
           </span>
         )}
         {twoSided && (
           <FlipButton
-            onFlip={() => setFlipped((f) => !f)}
-            className="absolute bottom-1 left-1 opacity-0 transition-opacity group-hover:opacity-100"
+            onFlip={() => setFlips((n) => n + 1)}
+            className="absolute left-1 top-1 opacity-0 transition-opacity group-hover:opacity-100"
           />
         )}
       </div>
       <TileFooter
         name={tile.name}
+        manaCost={manaCost}
         typeLine={tile.enriched.typeLine}
         setCode={tile.setCode}
         setName={tile.setName}

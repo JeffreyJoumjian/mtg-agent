@@ -33,6 +33,8 @@ export function toEnriched(card: any): Enriched {
     manaCost: card?.mana_cost ?? joinFaces('mana_cost'),
     imageSmall: card?.image_uris?.small ?? face0.image_uris?.small ?? null,
     imageNormal: card?.image_uris?.normal ?? face0.image_uris?.normal ?? null,
+    imageLarge: card?.image_uris?.large ?? face0.image_uris?.large ?? null,
+    imagePng: card?.image_uris?.png ?? face0.image_uris?.png ?? null,
   }
 
   if (!twoSided) return enriched
@@ -46,6 +48,8 @@ export function toEnriched(card: any): Enriched {
       manaCost: f?.mana_cost ?? '',
       imageSmall: f?.image_uris?.small ?? null,
       imageNormal: f?.image_uris?.normal ?? null,
+      imageLarge: f?.image_uris?.large ?? null,
+      imagePng: f?.image_uris?.png ?? null,
     })),
   }
 }

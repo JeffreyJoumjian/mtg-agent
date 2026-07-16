@@ -13,9 +13,9 @@ interface CardSidebarProps {
   baseline: Baseline
   onSelect: (key: string) => void
   onClose: () => void
-  /** Seeded from the tile's shown face when the drawer opens, then owned here (view-independent). */
-  flipped?: boolean
-  onFlipChange?: (flipped: boolean) => void
+  /** Flip count, seeded from the tile's shown face when the drawer opens, then owned here. */
+  rotations?: number
+  onFlip?: () => void
 }
 
 export function CardSidebar(props: CardSidebarProps) {
@@ -49,8 +49,8 @@ export function CardSidebar(props: CardSidebarProps) {
           full
           variants={props.variants}
           onSelectVariant={props.onSelect}
-          flipped={props.flipped}
-          onFlipChange={props.onFlipChange}
+          rotations={props.rotations}
+          onFlip={props.onFlip}
         />
       </div>
     </aside>

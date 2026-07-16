@@ -35,6 +35,8 @@ export interface CardFace {
   manaCost: string
   imageSmall: string | null
   imageNormal: string | null
+  imageLarge: string | null
+  imagePng: string | null
 }
 
 /** Scryfall fields cached for display, sorting, and search. */
@@ -47,6 +49,10 @@ export interface Enriched {
   manaCost: string
   imageSmall: string | null
   imageNormal: string | null
+  /** Higher-res images used by the sidebar (`large`) and modal/download (`png`). Optional because a
+   *  cache written before this field existed won't have them until the next refresh re-enriches. */
+  imageLarge?: string | null
+  imagePng?: string | null
   /** The individual sides, present only for genuinely two-sided cards (each side has its own image).
    *  Absent for single-image cards — including split / adventure / flip layouts, which are one image. */
   faces?: CardFace[]
