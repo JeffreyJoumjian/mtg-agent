@@ -1,39 +1,46 @@
-import { memo, useState } from 'react'
-import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
-import { tileValue, unitDelta } from '~/lib/pricing'
-import { facesOf, cardImage } from '~/lib/faces'
-import { TileFooter } from './TileFooter'
-import { FlipImage } from './FlipImage'
-import { FlipButton } from './FlipButton'
+import { memo, useState } from "react";
+import type { Baseline, CardTile as Tile, Currency } from "~/lib/types";
+import { tileValue, unitDelta } from "~/lib/pricing";
+import { facesOf, cardImage } from "~/lib/faces";
+import { manaToShow } from "~/lib/mana";
+import { useHoverPrefetch } from "~/lib/image-prefetch";
+import { TileFooter } from "./TileFooter";
+import { FlipImage } from "./FlipImage";
+import { FlipButton } from "./FlipButton";
 
 interface CardTileProps {
-  tile: Tile
-  currency: Currency
-  baseline: Baseline
-  selected?: boolean
-  onSelect?: (key: string, flipped?: boolean) => void
+  tile: Tile;
+  currency: Currency;
+  baseline: Baseline;
+  selected?: boolean;
+  onSelect?: (key: string, flipped?: boolean) => void;
 }
 
 // Memoized so the tile (with its Radix tooltips) doesn't re-render on every grid geometry change —
 // e.g. each frame of the sidebar width animation. Props are referentially stable between those.
 export const CardTile = memo(function CardTile(props: CardTileProps) {
-  const { tile, currency, baseline } = props
-  const value = tileValue(tile, currency)
-  const delta = unitDelta(tile, currency, baseline)
+  const { tile, currency, baseline } = props;
+  const value = tileValue(tile, currency);
+  const delta = unitDelta(tile, currency, baseline);
 
-  const faces = facesOf(tile)
-  const twoSided = faces.length >= 2
-  const [flips, setFlips] = useState(0)
+  const faces = facesOf(tile);
+  const twoSided = faces.length >= 2;
+  const [flips, setFlips] = useState(0);
+  const prefetch = useHoverPrefetch(tile);
   // Use the higher-res 'normal' image — the 'small' one is only 146px wide and looks blurry at tile size.
-  const front = twoSided ? cardImage(faces[0], 'normal') : cardImage(tile.enriched, 'normal')
-  const back = twoSided ? cardImage(faces[1], 'normal') : null
-  // Mana follows the shown face; the footer name stays the card's full identity.
-  const manaCost = twoSided ? faces[flips % 2].manaCost : tile.enriched.manaCost
+  const front = twoSided ? cardImage(faces[0], "normal") : cardImage(tile.enriched, "normal");
+  const back = twoSided ? cardImage(faces[1], "normal") : null;
+  // Name, mana, and face badge all follow the shown face; lands show the mana they produce.
+  const face = twoSided ? faces[flips % 2] : null;
+  const name = face ? face.name : tile.name;
+  const manaCost = manaToShow(face ? face.manaCost : tile.enriched.manaCost, tile.enriched.producedMana);
 
   return (
     <div
+      data-card
       onClick={() => props.onSelect?.(tile.key, flips % 2 === 1)}
-      className={`group flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? 'ring-2 ring-primary' : ''}`}
+      {...prefetch}
+      className={`group flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? "ring-2 ring-primary" : ""}`}
     >
       {/* Card-aspect box reserves height from width; object-contain never crops. The footer rows
           below have FIXED heights so CardGrid's deterministic row-height math stays exact. */}
@@ -41,23 +48,20 @@ export const CardTile = memo(function CardTile(props: CardTileProps) {
         {twoSided ? (
           <FlipImage front={front} back={back} rotations={flips} alt={tile.name} loading="lazy" />
         ) : front ? (
-          <img
-            src={front}
-            alt={tile.name}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-contain"
-          />
+          <img src={front} alt={tile.name} loading="lazy" className="absolute inset-0 h-full w-full object-contain" />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-xs text-muted-foreground">
             {tile.name}
           </div>
         )}
         {tile.quantity > 1 && (
-          <span className="absolute bottom-1 left-1/2 -translate-x-1/2 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">×{tile.quantity}</span>
+          <span className="absolute bottom-1 left-1/2 -translate-x-1/2 rounded bg-black/80 px-1.5 py-0.5 text-xs font-semibold text-white">
+            ×{tile.quantity}
+          </span>
         )}
-        {tile.finish !== 'normal' && (
+        {tile.finish !== "normal" && (
           <span className="absolute bottom-1 left-1 rounded bg-gradient-to-r from-fuchsia-500 to-amber-400 px-1 py-0.5 text-[10px] font-bold text-black">
-            {tile.finish === 'etched' ? 'ETCH' : 'FOIL'}
+            {tile.finish === "etched" ? "ETCH" : "FOIL"}
           </span>
         )}
         {twoSided && (
@@ -68,7 +72,8 @@ export const CardTile = memo(function CardTile(props: CardTileProps) {
         )}
       </div>
       <TileFooter
-        name={tile.name}
+        name={name}
+        faceBack={twoSided ? flips % 2 === 1 : undefined}
         manaCost={manaCost}
         typeLine={tile.enriched.typeLine}
         setCode={tile.setCode}
@@ -80,5 +85,5 @@ export const CardTile = memo(function CardTile(props: CardTileProps) {
         currency={currency}
       />
     </div>
-  )
-})
+  );
+});

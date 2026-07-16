@@ -47,6 +47,9 @@ export interface Enriched {
   typeLine: string
   oracleText: string
   manaCost: string
+  /** Mana this card can produce (e.g. `["W","U"]`, `["C"]`) — shown in the cost spot for lands and
+   *  other cost-less producers. Optional (older caches lack it until re-enriched). */
+  producedMana?: string[]
   imageSmall: string | null
   imageNormal: string | null
   /** Higher-res images used by the sidebar (`large`) and modal/download (`png`). Optional because a

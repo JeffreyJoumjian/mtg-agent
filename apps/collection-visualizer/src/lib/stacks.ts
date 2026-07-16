@@ -44,10 +44,10 @@ export function representative(group: NameGroup, currency: Currency, pins: Recor
   return [...group.variants].sort(byBestFirst(currency))[0]
 }
 
-/** Variants ordered worst → best, so the best printing lands last — placed last (rightmost) in the
- *  variant strip. */
-export function variantsWorstFirst(variants: CardTile[], currency: Currency): CardTile[] {
-  return [...variants].sort(byBestFirst(currency)).reverse()
+/** Variants ordered best → worst (most valuable first, foil breaking ties), so the most important
+ *  printing leads the variant strip. */
+export function variantsBestFirst(variants: CardTile[], currency: Currency): CardTile[] {
+  return [...variants].sort(byBestFirst(currency))
 }
 
 /** Total quantity and value across the given variants (in the given currency). */

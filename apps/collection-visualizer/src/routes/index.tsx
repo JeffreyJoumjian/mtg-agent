@@ -15,6 +15,7 @@ import { CardTile } from '~/components/CardTile'
 import { StackTile } from '~/components/StackTile'
 import { CardList } from '~/components/CardList'
 import { CardSidebar } from '~/components/CardSidebar'
+import { Drawer, DrawerContent, DrawerTitle } from '~/components/ui/drawer'
 
 export const Route = createFileRoute('/')({
   loader: () => getCollection(),
@@ -88,39 +89,43 @@ function Home() {
 
   const selectedTile = selectedKey ? data.tiles.find((t) => t.key === selectedKey) ?? null : null
 
-  // The drawer overlays the grid (it doesn't resize it). `drawerOpen` drives the slide transform;
-  // `sidebarTile` keeps the content mounted through the close animation so it doesn't blank mid-slide.
+  // vaul drives the slide animation; `sidebarTile` just keeps the drawer's content mounted through the
+  // close animation so it doesn't blank out mid-slide.
   const [sidebarTile, setSidebarTile] = useState<Tile | null>(null)
-  const [drawerOpen, setDrawerOpen] = useState(false)
   useEffect(() => {
     if (selectedTile) {
       setSidebarTile(selectedTile)
-      // Mount at the closed position, then open. Double rAF guarantees the closed frame paints first
-      // (a single rAF can batch into the same paint), so the slide-in actually plays.
-      let inner = 0
-      const outer = requestAnimationFrame(() => {
-        inner = requestAnimationFrame(() => setDrawerOpen(true))
-      })
-      return () => {
-        cancelAnimationFrame(outer)
-        cancelAnimationFrame(inner)
-      }
+      return
     }
-    setDrawerOpen(false)
-    const timer = setTimeout(() => setSidebarTile(null), 300)
+    const timer = setTimeout(() => setSidebarTile(null), 500)
     return () => clearTimeout(timer)
   }, [selectedTile])
 
   const sidebarVariants = sidebarTile ? data.tiles.filter((t) => t.name === sidebarTile.name) : []
 
-  const onSelect = (key: string, flipped = false) => {
+  const select = (key: string, flipped: boolean) => {
     const tile = data.tiles.find((t) => t.key === key)
     if (!tile) return
+    // Drop focus (e.g. the search box) before the drawer opens: vaul aria-hides the background, and
+    // that warns if it lands on a focused element.
+    if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
     setSelectedKey(key)
     // Seed the drawer on the same face the tile shows; a count keeps the flip spinning one way.
     setDrawerFlips(flipped ? 1 : 0)
     setPins((p) => ({ ...p, [tile.name]: key }))
   }
+
+  // Clicking a grid/list card: the same card toggles the drawer shut; a different one switches to it.
+  const onSelect = (key: string, flipped = false) => {
+    if (key === selectedKey) {
+      setSelectedKey(null)
+      return
+    }
+    select(key, flipped)
+  }
+
+  // Picking a printing in the drawer's strip switches to it but never closes the drawer.
+  const onSelectVariant = (key: string) => select(key, false)
 
   return (
     <main className="flex h-screen flex-col">
@@ -139,7 +144,18 @@ function Home() {
         onUpload={(file) => uploadMutation.mutate(file)}
         pricesUpdatedAt={data.pricesUpdatedAt}
       />
-      <div className="relative flex min-h-0 flex-1 overflow-hidden">
+      <div
+        className="flex min-h-0 flex-1"
+        onClick={(e) => {
+          // Click-away close: only when the click misses a card (which switches/toggles itself). So
+          // clicking another card loads it; empty space closes the non-modal drawer. The drawer is
+          // portaled out of this subtree, so its own clicks never reach here.
+          if (!selectedKey) return
+          const target = e.target as HTMLElement
+          if (target.closest('[data-card]')) return
+          setSelectedKey(null)
+        }}
+      >
         <div className="flex min-w-0 flex-1 flex-col">
           <div className="flex items-center justify-between px-3 py-2">
             <SummaryBar tiles={view} currency={settings.currency} baseline={settings.baseline} />
@@ -191,14 +207,23 @@ function Home() {
             )}
           </div>
         </div>
-        {/* Transparent click-catcher: clicking outside the drawer closes it and deselects the card
-            (no dim, no blur). Removed the instant the card is deselected so the grid frees up. */}
-        {selectedTile && <div className="absolute inset-0 z-40" onClick={() => setSelectedKey(null)} />}
-        {/* The drawer slides in over the content instead of resizing the grid. */}
+      </div>
+
+      {/* A non-modal right drawer: it slides over the grid (portaled) without a dimming overlay, so the
+          grid stays clickable — clicking another card switches it, clicking empty space closes it. */}
+      <Drawer
+        open={!!selectedTile}
+        onOpenChange={(open) => {
+          if (!open) setSelectedKey(null)
+        }}
+        direction="right"
+        modal={false}
+        dismissible={false}
+      >
         {sidebarTile && (
-          <div
-            className={`absolute right-0 top-0 z-50 h-full transition-transform duration-300 ease-out ${drawerOpen ? 'translate-x-0' : 'translate-x-full'}`}
-          >
+          // Start below the toolbar (~61px) so its buttons stay visible/clickable beside the drawer.
+          <DrawerContent data-drawer aria-describedby={undefined} className="top-[61px]">
+            <DrawerTitle className="sr-only">{sidebarTile.name}</DrawerTitle>
             <CardSidebar
               tile={sidebarTile}
               variants={sidebarVariants}
@@ -206,12 +231,12 @@ function Home() {
               baseline={settings.baseline}
               rotations={drawerFlips}
               onFlip={() => setDrawerFlips((n) => n + 1)}
-              onSelect={onSelect}
+              onSelect={onSelectVariant}
               onClose={() => setSelectedKey(null)}
             />
-          </div>
+          </DrawerContent>
         )}
-      </div>
+      </Drawer>
     </main>
   )
 }

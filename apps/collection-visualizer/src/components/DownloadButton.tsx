@@ -1,5 +1,6 @@
-import { useState, type MouseEvent } from 'react'
+import { useState, type ComponentProps, type MouseEvent } from 'react'
 import { Download, Check, Loader2 } from 'lucide-react'
+import { Button } from '~/components/ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import { downloadImage } from '~/lib/download'
 
@@ -7,17 +8,17 @@ interface DownloadButtonProps {
   /** Best-quality image URL to save. */
   url: string
   filename: string
-  /** Positioning classes (the caller places it in a corner). */
+  /** shadcn Button variant (defaults to "outline"). */
+  variant?: ComponentProps<typeof Button>['variant']
   className?: string
-  size?: 'sm' | 'md'
+  iconClassName?: string
 }
 
-/** Saves the card's best-quality image. Swallows the click so it never selects the tile or closes the
- *  modal behind it; shows a spinner while fetching and a check when done. */
+/** An icon-only shadcn Button that saves the card's best-quality image. Swallows the click so it never
+ *  selects the tile or closes the modal behind it; shows a spinner while fetching and a check when done. */
 export function DownloadButton(props: DownloadButtonProps) {
   const [state, setState] = useState<'idle' | 'busy' | 'done'>('idle')
-  const box = props.size === 'md' ? 'size-9' : 'size-7'
-  const icon = props.size === 'md' ? 'size-5' : 'size-4'
+  const icon = props.iconClassName ?? 'size-4'
 
   const onClick = async (e: MouseEvent) => {
     e.stopPropagation()
@@ -36,10 +37,13 @@ export function DownloadButton(props: DownloadButtonProps) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <button
+        <Button
+          type="button"
+          variant={props.variant ?? 'outline'}
+          size="icon"
           onClick={onClick}
           aria-label="Download image"
-          className={`flex ${box} cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition hover:bg-black/80 ${props.className ?? ''}`}
+          className={props.className}
         >
           {state === 'busy' ? (
             <Loader2 className={`${icon} animate-spin`} />
@@ -48,7 +52,7 @@ export function DownloadButton(props: DownloadButtonProps) {
           ) : (
             <Download className={icon} />
           )}
-        </button>
+        </Button>
       </TooltipTrigger>
       <TooltipContent>{state === 'done' ? 'Downloaded!' : 'Download image'}</TooltipContent>
     </Tooltip>

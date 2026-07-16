@@ -10,6 +10,13 @@ export function isTwoSided(tile: CardTile): boolean {
   return facesOf(tile).length >= 2
 }
 
+/** The face currently turned toward the viewer, or null for a single-faced card. `flipped` is the
+ *  parity of the flip count (odd = back). */
+export function shownFace(tile: CardTile, flipped: boolean): CardFace | null {
+  const faces = facesOf(tile)
+  return faces.length >= 2 ? faces[flipped ? 1 : 0] : null
+}
+
 export type ImageQuality = 'small' | 'normal' | 'large' | 'png'
 
 /** Anything carrying the Scryfall image sizes — both `Enriched` and `CardFace` qualify. The higher-res

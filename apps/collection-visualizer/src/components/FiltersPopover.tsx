@@ -7,6 +7,7 @@ import { Checkbox } from '~/components/ui/checkbox'
 import { Slider } from '~/components/ui/slider'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~/components/ui/select'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
+import { ScrollArea } from '~/components/ui/scroll-area'
 import type { ColorSymbol, Currency } from '~/lib/types'
 import { activeFilterCount, emptyFilters, type FilterState } from '~/lib/filters'
 import { ManaSymbol } from './ManaSymbol'
@@ -94,7 +95,9 @@ export function FiltersPopover(props: FiltersPopoverProps) {
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent align="end" className="max-h-[80vh] w-80 space-y-4 overflow-y-auto text-sm">
+        <PopoverContent align="end" className="w-80 p-0 text-sm">
+          <ScrollArea className="max-h-[80vh]">
+          <div className="space-y-4 p-4">
           <section>
             <div className="mb-2 text-muted-foreground">Colors</div>
             <div className="flex items-center gap-1.5">
@@ -168,18 +171,20 @@ export function FiltersPopover(props: FiltersPopoverProps) {
               placeholder="Search sets…"
               className="mb-2 h-8"
             />
-            <div className="max-h-40 space-y-0.5 overflow-y-auto rounded-md border p-2">
-              {visibleSets.length === 0 ? (
-                <div className="px-1 py-0.5 text-xs text-muted-foreground">No sets match.</div>
-              ) : (
-                visibleSets.map((s) => (
-                  <label key={s.code} className="flex min-w-0 cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-accent">
-                    <Checkbox checked={f.sets.includes(s.code)} onCheckedChange={() => toggleSet(s.code)} />
-                    <span className="min-w-0 truncate">{s.name}</span>
-                  </label>
-                ))
-              )}
-            </div>
+            <ScrollArea className="h-40 rounded-md border">
+              <div className="space-y-0.5 p-2 pr-2.5">
+                {visibleSets.length === 0 ? (
+                  <div className="px-1 py-0.5 text-xs text-muted-foreground">No sets match.</div>
+                ) : (
+                  visibleSets.map((s) => (
+                    <label key={s.code} className="flex min-w-0 cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-accent">
+                      <Checkbox checked={f.sets.includes(s.code)} onCheckedChange={() => toggleSet(s.code)} />
+                      <span className="min-w-0 truncate">{s.name}</span>
+                    </label>
+                  ))
+                )}
+              </div>
+            </ScrollArea>
           </section>
 
           <Button
@@ -191,6 +196,8 @@ export function FiltersPopover(props: FiltersPopoverProps) {
           >
             Clear all filters
           </Button>
+          </div>
+          </ScrollArea>
         </PopoverContent>
       </Popover>
 

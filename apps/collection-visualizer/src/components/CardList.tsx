@@ -39,6 +39,7 @@ export function CardList(props: CardListProps) {
             <HoverCard key={row.key} openDelay={180} closeDelay={80}>
               <HoverCardTrigger asChild>
                 <div
+                  data-card
                   onClick={() => props.onSelect(t.key)}
                   className={`absolute left-0 top-0 flex w-full cursor-pointer items-center gap-3 border-b px-3 transition hover:bg-accent ${selected ? 'bg-accent' : ''}`}
                   style={{ height: ROW, transform: `translateY(${row.start}px)` }}

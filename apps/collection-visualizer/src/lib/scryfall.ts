@@ -31,6 +31,7 @@ export function toEnriched(card: any): Enriched {
     typeLine: card?.type_line ?? joinFaces('type_line'),
     oracleText: card?.oracle_text ?? faces.map((f) => f?.oracle_text).filter(Boolean).join('\n//\n'),
     manaCost: card?.mana_cost ?? joinFaces('mana_cost'),
+    producedMana: Array.isArray(card?.produced_mana) ? card.produced_mana : [],
     imageSmall: card?.image_uris?.small ?? face0.image_uris?.small ?? null,
     imageNormal: card?.image_uris?.normal ?? face0.image_uris?.normal ?? null,
     imageLarge: card?.image_uris?.large ?? face0.image_uris?.large ?? null,

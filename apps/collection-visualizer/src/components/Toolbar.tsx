@@ -77,7 +77,8 @@ export function Toolbar(props: ToolbarProps) {
       />
 
       {props.pricesUpdatedAt && (
-        <span className="text-xs text-muted-foreground">updated {new Date(props.pricesUpdatedAt).toLocaleString()}</span>
+        // Fixed locale so the server and client render the same string (no hydration mismatch).
+        <span className="text-xs text-muted-foreground">updated {new Date(props.pricesUpdatedAt).toLocaleString('en-US')}</span>
       )}
     </div>
   )

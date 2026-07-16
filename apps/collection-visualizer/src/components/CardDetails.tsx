@@ -3,14 +3,16 @@ import { Maximize2 } from "lucide-react";
 import type { Baseline, CardTile as Tile, Currency } from "~/lib/types";
 import { effectivePrice, tileValue, unitDelta } from "~/lib/pricing";
 import { formatMoney, formatDelta } from "~/lib/format";
-import { groupTotals, variantsWorstFirst } from "~/lib/stacks";
+import { variantsBestFirst } from "~/lib/stacks";
 import { facesOf, cardImage } from "~/lib/faces";
+import { manaToShow } from "~/lib/mana";
 import { imageFilename } from "~/lib/download";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
+import { ScrollArea } from "~/components/ui/scroll-area";
 import { ManaCost } from "./ManaCost";
+import { FaceBadge } from "./FaceBadge";
 import { FlipImage } from "./FlipImage";
 import { FlipButton } from "./FlipButton";
-import { DownloadButton } from "./DownloadButton";
 import { ImageModal } from "./ImageModal";
 import { OracleText } from "./OracleText";
 
@@ -55,73 +57,86 @@ export function CardDetails(props: CardDetailsProps) {
   const otherFull = flipped ? frontFull : backFull;
   const downloadName = imageFilename(activeFace ? activeFace.name || tile.name : tile.name);
 
-  // The sidebar text follows the shown face so a MDFC's back reads cleanly (not the joined blob).
+  // Name, type, oracle, and mana all follow the shown face, so a MDFC's back reads as its own card
+  // instead of the joined "Front // Back" blob.
+  const displayName = activeFace ? activeFace.name : tile.name;
   const typeLine = activeFace ? activeFace.typeLine : tile.enriched.typeLine;
   const oracleText = activeFace ? activeFace.oracleText : tile.enriched.oracleText;
-  const manaCost = activeFace ? activeFace.manaCost : tile.enriched.manaCost;
+  const manaCost = manaToShow(activeFace ? activeFace.manaCost : tile.enriched.manaCost, tile.enriched.producedMana);
 
   const variants = props.variants ?? [];
-  const showStrip = variants.length > 1 ? variantsWorstFirst(variants, currency) : null;
+  const showStrip = variants.length > 1 ? variantsBestFirst(variants, currency) : null;
 
   const [expanded, setExpanded] = useState(false);
+
+  const preview = (
+    <>
+      <div className="relative aspect-[488/680] w-full overflow-hidden rounded-lg bg-muted">
+        {twoSided ? (
+          <FlipImage front={front} back={back} rotations={rotations} alt={tile.name} />
+        ) : shownImg ? (
+          <img src={shownImg} alt={tile.name} className="absolute inset-0 h-full w-full object-contain" />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-sm text-muted-foreground">
+            {tile.name}
+          </div>
+        )}
+      </div>
+      {shownImg && (
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <button
+              onClick={() => setExpanded(true)}
+              aria-label="Expand image"
+              className="absolute bottom-1.5 left-1.5 flex size-7 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition hover:bg-black/80"
+            >
+              <Maximize2 className="size-4" />
+            </button>
+          </TooltipTrigger>
+          <TooltipContent>Expand image</TooltipContent>
+        </Tooltip>
+      )}
+      {twoSided && <FlipButton onFlip={flip} className="absolute left-1.5 top-1.5" />}
+    </>
+  );
 
   return (
     <>
       <div className="space-y-2">
-        <div className="relative mx-auto w-3/4">
-          <div className="relative aspect-[488/680] w-full overflow-hidden rounded-lg bg-muted">
-            {twoSided ? (
-              <FlipImage front={front} back={back} rotations={rotations} alt={tile.name} />
-            ) : shownImg ? (
-              <img src={shownImg} alt={tile.name} className="absolute inset-0 h-full w-full object-contain" />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-sm text-muted-foreground">
-                {tile.name}
+        {showStrip ? (
+          // Cards with printings: image on the left, variants in a vertical scrolling column on the
+          // right, filling the space the centered image would otherwise waste.
+          <div className="flex gap-3">
+            <div className="relative min-w-0 flex-1">{preview}</div>
+            <div className="relative w-20 shrink-0">
+              <div className="absolute inset-0 flex flex-col">
+                <div className="mb-1.5 shrink-0 text-xs text-muted-foreground">{variants.length} printings</div>
+                <ScrollArea type="always" className="min-h-0 flex-1">
+                  <div className="pr-2.5">
+                    <VariantStrip
+                      variants={showStrip}
+                      currency={currency}
+                      activeKey={tile.key}
+                      onHover={props.onHoverVariant}
+                      onSelect={props.onSelectVariant}
+                    />
+                  </div>
+                </ScrollArea>
               </div>
-            )}
-          </div>
-          {shownImg && (
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button
-                  onClick={() => setExpanded(true)}
-                  aria-label="Expand image"
-                  className="absolute bottom-1.5 left-1.5 flex size-7 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition hover:bg-black/80"
-                >
-                  <Maximize2 className="size-4" />
-                </button>
-              </TooltipTrigger>
-              <TooltipContent>Expand image</TooltipContent>
-            </Tooltip>
-          )}
-          {twoSided && (
-            <FlipButton onFlip={flip} className="absolute left-1.5 top-1.5" />
-          )}
-          {shownFull && (
-            <DownloadButton url={shownFull} filename={downloadName} className="absolute bottom-1.5 right-1.5" />
-          )}
-        </div>
-
-        {showStrip && (
-          <div>
-            <div className="mb-2 text-xs text-muted-foreground">
-              {variants.length} printings · total {formatMoney(groupTotals(variants, currency).value, currency)}
             </div>
-            <VariantStrip
-              variants={showStrip}
-              currency={currency}
-              activeKey={tile.key}
-              onHover={props.onHoverVariant}
-              onSelect={props.onSelectVariant}
-            />
           </div>
+        ) : (
+          <div className="relative mx-auto w-3/4">{preview}</div>
         )}
 
         <div className="space-y-0.5">
           <div className="flex items-start justify-between gap-2">
-            <div className="font-semibold leading-snug">{tile.name}</div>
-            <span className="mt-0.5">
-              <ManaCost cost={manaCost} size="size-4" />
+            <div className="flex min-w-0 items-center gap-1.5">
+              {twoSided && <FaceBadge back={flipped} className="text-muted-foreground" />}
+              <div className="font-semibold leading-snug">{displayName}</div>
+            </div>
+            <span className="mt-1">
+              <ManaCost cost={manaCost} size="size-3.5" />
             </span>
           </div>
           {typeLine && <div className="text-sm text-muted-foreground">{typeLine}</div>}
@@ -131,8 +146,8 @@ export function CardDetails(props: CardDetailsProps) {
                 <span className="cursor-default">{tile.setCode.toUpperCase()}</span>
               </TooltipTrigger>
               <TooltipContent>{tile.setName}</TooltipContent>
-            </Tooltip>
-            {" "}· #{tile.collectorNumber} · {tile.rarity}
+            </Tooltip>{" "}
+            · #{tile.collectorNumber} · {tile.rarity}
             {tile.finish !== "normal" && ` · ${tile.finish}`}
             {tile.quantity > 1 && ` · ×${tile.quantity}`}
           </div>
@@ -169,12 +184,12 @@ interface VariantStripProps {
   onSelect?: (key: string) => void;
 }
 
-/** A strip of a card's printings (ordered worst → best), wrapping as needed. Each shows its price so
- *  the strip reads as a comparison; the active printing is highlighted. Hovering previews it (via
- *  onHover) and clicking pins it. */
+/** A vertical column of a card's printings (most important first), scrolling within its container.
+ *  Each shows its price so the column reads as a comparison; the active printing is highlighted.
+ *  Hovering previews it (via onHover) and clicking pins it. */
 function VariantStrip(props: VariantStripProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-col gap-2">
       {props.variants.map((v) => {
         const active = v.key === props.activeKey;
         const price = effectivePrice(v.prices, props.currency, v.finish);
@@ -185,13 +200,17 @@ function VariantStrip(props: VariantStripProps) {
               <button
                 onMouseEnter={() => props.onHover?.(v.key)}
                 onClick={() => props.onSelect?.(v.key)}
-                className="flex w-14 shrink-0 cursor-pointer flex-col items-center"
+                className="flex w-full cursor-pointer flex-col"
               >
                 <div
                   className={`relative aspect-[488/680] w-full overflow-hidden rounded border bg-muted ${active ? "border-primary ring-2 ring-primary" : "border-border"}`}
                 >
                   {v.enriched.imageSmall && (
-                    <img src={v.enriched.imageSmall} alt={v.name} className="absolute inset-0 h-full w-full object-contain" />
+                    <img
+                      src={v.enriched.imageSmall}
+                      alt={v.name}
+                      className="absolute inset-0 h-full w-full object-contain"
+                    />
                   )}
                   {v.finish !== "normal" && (
                     <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-amber-400" />

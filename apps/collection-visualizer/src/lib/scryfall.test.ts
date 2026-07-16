@@ -26,11 +26,19 @@ test('toEnriched projects gameplay + image fields', () => {
     typeLine: 'Creature — Human',
     oracleText: 'When this enters, investigate.',
     manaCost: '{1}{W}',
+    producedMana: [],
     imageSmall: 'https://img/small.jpg',
     imageNormal: 'https://img/normal.jpg',
     imageLarge: 'https://img/large.jpg',
     imagePng: 'https://img/card.png',
   })
+})
+
+test('toEnriched keeps produced_mana (for lands with no cost)', () => {
+  const land = { type_line: 'Land', produced_mana: ['W', 'U', 'C'], image_uris: { normal: 'n' } }
+  const e = toEnriched(land)
+  expect(e.manaCost).toEqual('')
+  expect(e.producedMana).toEqual(['W', 'U', 'C'])
 })
 
 test('toEnriched falls back to the first face for double-faced cards', () => {

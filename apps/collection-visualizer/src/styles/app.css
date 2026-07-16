@@ -117,4 +117,10 @@
   ::-webkit-scrollbar-thumb:hover {
     background-color: var(--foreground);
   }
+
+  /* The card drawer is intentionally non-modal (the grid behind it stays clickable so you can switch
+     cards), but vaul still locks the page's pointer events while open. Undo that lock. */
+  body[style*='pointer-events: none'] {
+    pointer-events: auto !important;
+  }
 }

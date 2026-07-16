@@ -71,7 +71,13 @@ export function ImageModal(props: ImageModalProps) {
       {twoSided && (
         <FlipButton onFlip={() => setFlips((n) => n + 1)} size="md" className="absolute left-4 top-4" />
       )}
-      <DownloadButton url={shown} filename={props.filename} size="md" className="absolute bottom-4 right-4" />
+      <DownloadButton
+        url={shown}
+        filename={props.filename}
+        variant="ghost"
+        className="absolute right-16 top-4 bg-black/60 text-white hover:bg-black/80 hover:text-white"
+        iconClassName="size-5"
+      />
     </div>,
     document.body,
   )
