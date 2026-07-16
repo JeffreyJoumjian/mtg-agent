@@ -29,6 +29,8 @@ function Home() {
   const [filters, setFilters] = useState<FilterState>(emptyFilters())
   const [settings, setSettings] = useState<ViewSettings>(defaultSettings())
   const [selectedKey, setSelectedKey] = useState<string | null>(null)
+  // The drawer's flip, seeded from the tile's shown face on open, then owned independently.
+  const [drawerFlipped, setDrawerFlipped] = useState(false)
 
   // Load persisted settings once on mount. Kept out of the initializer so server and client both
   // start from the defaults (no hydration mismatch); we adopt the stored values right after.
@@ -86,24 +88,36 @@ function Home() {
 
   const selectedTile = selectedKey ? data.tiles.find((t) => t.key === selectedKey) ?? null : null
 
-  // Keep the sidebar mounted through its close animation: the width collapses immediately (driven by
-  // selectedTile), but the content lingers for the transition so it doesn't blank out mid-slide.
+  // The drawer overlays the grid (it doesn't resize it). `drawerOpen` drives the slide transform;
+  // `sidebarTile` keeps the content mounted through the close animation so it doesn't blank mid-slide.
   const [sidebarTile, setSidebarTile] = useState<Tile | null>(null)
+  const [drawerOpen, setDrawerOpen] = useState(false)
   useEffect(() => {
     if (selectedTile) {
       setSidebarTile(selectedTile)
-      return
+      // Mount at the closed position, then open. Double rAF guarantees the closed frame paints first
+      // (a single rAF can batch into the same paint), so the slide-in actually plays.
+      let inner = 0
+      const outer = requestAnimationFrame(() => {
+        inner = requestAnimationFrame(() => setDrawerOpen(true))
+      })
+      return () => {
+        cancelAnimationFrame(outer)
+        cancelAnimationFrame(inner)
+      }
     }
+    setDrawerOpen(false)
     const timer = setTimeout(() => setSidebarTile(null), 300)
     return () => clearTimeout(timer)
   }, [selectedTile])
 
   const sidebarVariants = sidebarTile ? data.tiles.filter((t) => t.name === sidebarTile.name) : []
 
-  const onSelect = (key: string) => {
+  const onSelect = (key: string, flipped = false) => {
     const tile = data.tiles.find((t) => t.key === key)
     if (!tile) return
     setSelectedKey(key)
+    setDrawerFlipped(flipped)
     setPins((p) => ({ ...p, [tile.name]: key }))
   }
 
@@ -124,7 +138,7 @@ function Home() {
         onUpload={(file) => uploadMutation.mutate(file)}
         pricesUpdatedAt={data.pricesUpdatedAt}
       />
-      <div className="flex min-h-0 flex-1">
+      <div className="relative flex min-h-0 flex-1 overflow-hidden">
         <div className="flex min-w-0 flex-1 flex-col">
           <div className="flex items-center justify-between px-3 py-2">
             <SummaryBar tiles={view} currency={settings.currency} baseline={settings.baseline} />
@@ -176,20 +190,26 @@ function Home() {
             )}
           </div>
         </div>
-        <div
-          className={`flex shrink-0 overflow-hidden transition-[width] duration-300 ease-out will-change-[width] ${selectedTile ? 'w-96' : 'w-0'}`}
-        >
-          {sidebarTile && (
+        {/* Transparent click-catcher: clicking outside the drawer closes it and deselects the card
+            (no dim, no blur). Removed the instant the card is deselected so the grid frees up. */}
+        {selectedTile && <div className="absolute inset-0 z-40" onClick={() => setSelectedKey(null)} />}
+        {/* The drawer slides in over the content instead of resizing the grid. */}
+        {sidebarTile && (
+          <div
+            className={`absolute right-0 top-0 z-50 h-full transition-transform duration-300 ease-out ${drawerOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          >
             <CardSidebar
               tile={sidebarTile}
               variants={sidebarVariants}
               currency={settings.currency}
               baseline={settings.baseline}
+              flipped={drawerFlipped}
+              onFlipChange={setDrawerFlipped}
               onSelect={onSelect}
               onClose={() => setSelectedKey(null)}
             />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </main>
   )

@@ -11,7 +11,7 @@ interface CardTileProps {
   currency: Currency
   baseline: Baseline
   selected?: boolean
-  onSelect?: (key: string) => void
+  onSelect?: (key: string, flipped?: boolean) => void
 }
 
 // Memoized so the tile (with its Radix tooltips) doesn't re-render on every grid geometry change —
@@ -30,7 +30,7 @@ export const CardTile = memo(function CardTile(props: CardTileProps) {
 
   return (
     <div
-      onClick={() => props.onSelect?.(tile.key)}
+      onClick={() => props.onSelect?.(tile.key, flipped)}
       className={`group flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? 'ring-2 ring-primary' : ''}`}
     >
       {/* Card-aspect box reserves height from width; object-contain never crops. The footer rows

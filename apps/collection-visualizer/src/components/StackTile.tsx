@@ -14,7 +14,7 @@ interface StackTileProps {
   currency: Currency
   baseline: Baseline
   selected?: boolean
-  onSelect: (key: string) => void
+  onSelect: (key: string, flipped?: boolean) => void
 }
 
 /** Static cascade for a card in the TILE — a held-hand look, pivoting from the bottom, kept inside
@@ -45,7 +45,7 @@ export const StackTile = memo(function StackTile(props: StackTileProps) {
 
   return (
     <div
-      onClick={() => props.onSelect(rep.key)}
+      onClick={() => props.onSelect(rep.key, flipped)}
       className={`group flex cursor-pointer flex-col rounded-lg bg-card p-1.5 transition hover:bg-accent ${props.selected ? 'ring-2 ring-primary' : ''}`}
     >
       {/* Card-aspect box keeps the grid's deterministic row height; the cascade shows up to 3 of the

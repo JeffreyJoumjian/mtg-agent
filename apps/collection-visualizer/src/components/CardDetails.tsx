@@ -22,6 +22,10 @@ interface CardDetailsProps {
   variants?: Tile[];
   onHoverVariant?: (key: string) => void;
   onSelectVariant?: (key: string) => void;
+  /** Controlled flip — the drawer seeds this from the tile's shown face, then owns it. When omitted
+   *  the flip is local (the list hover-card preview uses this). */
+  flipped?: boolean;
+  onFlipChange?: (flipped: boolean) => void;
 }
 
 export function CardDetails(props: CardDetailsProps) {
@@ -31,7 +35,9 @@ export function CardDetails(props: CardDetailsProps) {
 
   const faces = facesOf(tile);
   const twoSided = faces.length >= 2;
-  const [flipped, setFlipped] = useState(false);
+  const [localFlipped, setLocalFlipped] = useState(false);
+  const flipped = props.flipped ?? localFlipped;
+  const setFlipped = props.onFlipChange ?? setLocalFlipped;
   const activeFace = twoSided ? faces[flipped ? 1 : 0] : null;
 
   const front = twoSided ? faceImage(faces[0], "normal") : tile.enriched.imageNormal ?? tile.enriched.imageSmall;
@@ -76,7 +82,7 @@ export function CardDetails(props: CardDetailsProps) {
             </Tooltip>
           )}
           {twoSided && (
-            <FlipButton onFlip={() => setFlipped((f) => !f)} className="absolute bottom-1.5 left-1.5" />
+            <FlipButton onFlip={() => setFlipped(!flipped)} className="absolute bottom-1.5 left-1.5" />
           )}
         </div>
 

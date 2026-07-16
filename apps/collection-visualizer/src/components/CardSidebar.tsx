@@ -13,13 +13,16 @@ interface CardSidebarProps {
   baseline: Baseline
   onSelect: (key: string) => void
   onClose: () => void
+  /** Seeded from the tile's shown face when the drawer opens, then owned here (view-independent). */
+  flipped?: boolean
+  onFlipChange?: (flipped: boolean) => void
 }
 
 export function CardSidebar(props: CardSidebarProps) {
   const t = props.tile
 
   return (
-    <aside className="flex w-96 shrink-0 flex-col border-l bg-card">
+    <aside className="flex h-full w-96 shrink-0 flex-col border-l bg-card shadow-2xl">
       <div className="flex items-center justify-between gap-2 border-b px-4 py-3">
         <a href={scryfallUrl(t.setCode, t.collectorNumber)} target="_blank" rel="noreferrer">
           <Button variant="outline" size="sm">
@@ -46,6 +49,8 @@ export function CardSidebar(props: CardSidebarProps) {
           full
           variants={props.variants}
           onSelectVariant={props.onSelect}
+          flipped={props.flipped}
+          onFlipChange={props.onFlipChange}
         />
       </div>
     </aside>
