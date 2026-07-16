@@ -47,7 +47,10 @@ export function CardTile(props: CardTileProps) {
       <TileFooter
         name={tile.name}
         typeLine={tile.enriched.typeLine}
-        meta={`${tile.setName} · ${tile.collectorNumber} · ${tile.rarity}`}
+        setCode={tile.setCode}
+        setName={tile.setName}
+        collectorNumber={tile.collectorNumber}
+        rarity={tile.rarity}
         value={value}
         delta={delta}
         currency={currency}

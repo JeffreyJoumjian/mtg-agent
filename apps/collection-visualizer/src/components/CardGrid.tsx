@@ -68,7 +68,7 @@ export function CardGrid(props: CardGridProps) {
   }, [geo.columns, geo.rowHeight, virtualizer])
 
   return (
-    <div ref={parentRef} className="h-full overflow-y-auto overflow-x-hidden px-2">
+    <div ref={parentRef} className="h-full overflow-y-auto overflow-x-hidden px-2 pt-2">
       <div className="relative w-full" style={{ height: virtualizer.getTotalSize() }}>
         {virtualizer.getVirtualItems().map((row) => {
           const start = row.index * geo.columns

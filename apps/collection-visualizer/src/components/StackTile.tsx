@@ -67,9 +67,12 @@ export function StackTile(props: StackTileProps) {
       <TileFooter
         name={rep.name}
         typeLine={rep.enriched.typeLine}
-        meta={`${rep.setName} · ${rep.collectorNumber} · ${rep.rarity}`}
+        setCode={rep.setCode}
+        setName={rep.setName}
+        collectorNumber={rep.collectorNumber}
+        rarity={rep.rarity}
         value={value}
-        delta={delta !== 0 ? { value: delta, currency: deltaCurrency } : null}
+        delta={{ value: delta, currency: deltaCurrency }}
         currency={currency}
         printings={printings > 1 ? printings : undefined}
       />

@@ -1,7 +1,10 @@
+import { useState } from "react";
+import { Maximize2 } from "lucide-react";
 import type { Baseline, CardTile as Tile, Currency } from "~/lib/types";
 import { effectivePrice, tileValue, unitDelta } from "~/lib/pricing";
 import { formatMoney, formatDelta } from "~/lib/format";
 import { groupTotals, variantsWorstFirst } from "~/lib/stacks";
+import { ImageModal } from "./ImageModal";
 
 interface CardDetailsProps {
   tile: Tile;
@@ -9,7 +12,7 @@ interface CardDetailsProps {
   baseline: Baseline;
   /** Sidebar variant: also render the oracle text. */
   full?: boolean;
-  /** When more than one is given, render a strip of these printings at the bottom — highlighting
+  /** When more than one is given, render a strip of these printings below the image — highlighting
    *  `tile` (the printing shown) and letting the user hover/click another. */
   variants?: Tile[];
   onHoverVariant?: (key: string) => void;
@@ -25,54 +28,74 @@ export function CardDetails(props: CardDetailsProps) {
   const variants = props.variants ?? [];
   const showStrip = variants.length > 1 ? variantsWorstFirst(variants, currency) : null;
 
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <div className="space-y-2">
-      <div className="relative aspect-[488/680] w-full overflow-hidden rounded-lg bg-muted">
-        {img ? (
-          <img src={img} alt={tile.name} className="absolute inset-0 h-full w-full object-contain" />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-sm text-muted-foreground">
-            {tile.name}
+    <>
+      <div className="space-y-2">
+        <div className="relative mx-auto w-2/3">
+          <div className="relative aspect-[488/680] w-full overflow-hidden rounded-lg bg-muted">
+            {img ? (
+              <img src={img} alt={tile.name} className="absolute inset-0 h-full w-full object-contain" />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center p-2 text-center text-sm text-muted-foreground">
+                {tile.name}
+              </div>
+            )}
           </div>
-        )}
-      </div>
-      <div>
-        <div className="font-semibold leading-tight">{tile.name}</div>
-        {tile.enriched.typeLine && <div className="text-xs text-muted-foreground">{tile.enriched.typeLine}</div>}
-      </div>
-      <div className="text-xs text-muted-foreground">
-        {tile.setName} · {tile.collectorNumber} · {tile.rarity}
-        {tile.finish !== "normal" && ` · ${tile.finish}`}
-        {tile.quantity > 1 && ` · ×${tile.quantity}`}
-      </div>
-      <div className="flex items-baseline justify-between">
-        <span className="text-lg font-semibold">{formatMoney(value, currency)}</span>
-        {delta && (
-          <span className={delta.value < 0 ? "text-sm text-red-400" : "text-sm text-emerald-400"}>
-            {delta.value < 0 ? "▼" : "▲"} {formatDelta(delta.value, delta.currency)}
-          </span>
-        )}
-      </div>
-      {props.full && tile.enriched.oracleText && (
-        <p className="border-t pt-2 text-xs leading-relaxed whitespace-pre-wrap text-muted-foreground">
-          {tile.enriched.oracleText}
-        </p>
-      )}
-      {showStrip && (
-        <div className="border-t pt-3">
-          <div className="mb-2 text-xs text-muted-foreground">
-            {variants.length} printings · total {formatMoney(groupTotals(variants, currency).value, currency)}
-          </div>
-          <VariantStrip
-            variants={showStrip}
-            currency={currency}
-            activeKey={tile.key}
-            onHover={props.onHoverVariant}
-            onSelect={props.onSelectVariant}
-          />
+          {img && (
+            <button
+              onClick={() => setExpanded(true)}
+              aria-label="Expand image"
+              title="Expand image"
+              className="absolute right-1.5 top-1.5 flex size-7 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition hover:bg-black/80"
+            >
+              <Maximize2 className="size-4" />
+            </button>
+          )}
         </div>
-      )}
-    </div>
+
+        {showStrip && (
+          <div>
+            <div className="mb-2 text-xs text-muted-foreground">
+              {variants.length} printings · total {formatMoney(groupTotals(variants, currency).value, currency)}
+            </div>
+            <VariantStrip
+              variants={showStrip}
+              currency={currency}
+              activeKey={tile.key}
+              onHover={props.onHoverVariant}
+              onSelect={props.onSelectVariant}
+            />
+          </div>
+        )}
+
+        <div>
+          <div className="font-semibold leading-tight">{tile.name}</div>
+          {tile.enriched.typeLine && <div className="text-xs text-muted-foreground">{tile.enriched.typeLine}</div>}
+        </div>
+        <div className="text-xs text-muted-foreground">
+          <span title={tile.setName}>{tile.setCode.toUpperCase()}</span> · #{tile.collectorNumber} · {tile.rarity}
+          {tile.finish !== "normal" && ` · ${tile.finish}`}
+          {tile.quantity > 1 && ` · ×${tile.quantity}`}
+        </div>
+        <div className="flex items-baseline justify-between">
+          <span className="text-lg font-semibold">{formatMoney(value, currency)}</span>
+          {delta && (
+            <span className={delta.value < 0 ? "text-sm text-red-400" : "text-sm text-emerald-400"}>
+              {delta.value < 0 ? "▼" : "▲"} {formatDelta(delta.value, delta.currency)}
+            </span>
+          )}
+        </div>
+        {props.full && tile.enriched.oracleText && (
+          <p className="border-t pt-2 text-xs leading-relaxed whitespace-pre-wrap text-muted-foreground">
+            {tile.enriched.oracleText}
+          </p>
+        )}
+      </div>
+
+      {expanded && img && <ImageModal src={img} alt={tile.name} onClose={() => setExpanded(false)} />}
+    </>
   );
 }
 

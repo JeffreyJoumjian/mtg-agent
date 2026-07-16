@@ -4,8 +4,11 @@ import { formatMoney, formatDelta } from '~/lib/format'
 interface TileFooterProps {
   name: string
   typeLine: string
-  /** e.g. "Kaldheim · 123 · rare" (the printing's set · number · rarity). */
-  meta: string
+  /** Short set code (shown) + full set name (revealed on hover). */
+  setCode: string
+  setName: string
+  collectorNumber: string
+  rarity: string
   value: number | null
   delta: { value: number; currency: Currency | string } | null
   currency: Currency
@@ -20,7 +23,9 @@ export function TileFooter(props: TileFooterProps) {
     <>
       <div className="mt-1 h-5 min-w-0 truncate text-sm leading-5" title={props.name}>{props.name}</div>
       <div className="h-4 min-w-0 truncate text-xs leading-4 text-muted-foreground" title={props.typeLine}>{props.typeLine}</div>
-      <div className="h-4 min-w-0 truncate text-xs leading-4 text-muted-foreground">{props.meta}</div>
+      <div className="h-4 min-w-0 truncate text-xs leading-4 text-muted-foreground">
+        <span title={props.setName}>{props.setCode.toUpperCase()}</span> · #{props.collectorNumber} · {props.rarity}
+      </div>
       <div className="flex h-6 items-baseline justify-between gap-1 leading-6">
         <span className="min-w-0 truncate">
           <span className="font-semibold">{formatMoney(props.value, props.currency)}</span>
