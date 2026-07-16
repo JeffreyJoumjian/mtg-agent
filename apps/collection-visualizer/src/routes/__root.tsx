@@ -30,12 +30,17 @@ function RootComponent() {
   )
 }
 
+// Apply the persisted theme before first paint so there's no flash (and no hydration fight — the
+// class is script-managed, hence suppressHydrationWarning on <html>). Defaults to dark.
+const THEME_SCRIPT = `(function(){try{var s=JSON.parse(localStorage.getItem('mtg-collection.settings')||'{}');document.documentElement.classList.toggle('dark',s.theme!=='light');}catch(e){document.documentElement.classList.add('dark');}})();`
+
 function RootDocument(props: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
         <style dangerouslySetInnerHTML={{ __html: appCss }} />
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body className="bg-background text-foreground">
         {props.children}

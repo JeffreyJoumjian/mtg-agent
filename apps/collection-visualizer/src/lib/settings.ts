@@ -2,6 +2,7 @@ import type { Baseline, Currency } from './types'
 import type { SortKey } from './sort'
 
 export type ViewMode = 'grid' | 'list'
+export type Theme = 'dark' | 'light'
 
 /** Display/view settings (as opposed to the search + filters that narrow the collection). */
 export interface ViewSettings {
@@ -14,13 +15,14 @@ export interface ViewSettings {
   baseline: Baseline
   sortKey: SortKey
   sortDir: 'asc' | 'desc'
+  theme: Theme
 }
 
 export function defaultSettings(): ViewSettings {
   // Sort by price (high → low) by default — search handles finding specific cards, so surfacing
   // the most valuable cards first is more useful than alphabetical. Group variants by default so a
   // card's printings fold into one stack.
-  return { view: 'grid', maxPerRow: null, grouped: true, currency: 'usd', baseline: 'sinceRefresh', sortKey: 'price', sortDir: 'desc' }
+  return { view: 'grid', maxPerRow: null, grouped: true, currency: 'usd', baseline: 'sinceRefresh', sortKey: 'price', sortDir: 'desc', theme: 'dark' }
 }
 
 const STORAGE_KEY = 'mtg-collection.settings'
@@ -50,4 +52,10 @@ export function saveSettings(settings: ViewSettings): void {
   } catch {
     // ignore write failures (private mode, quota, etc.)
   }
+}
+
+/** Apply a theme by toggling the `dark` class on <html> (matches the pre-paint script in __root). */
+export function applyTheme(theme: Theme): void {
+  if (typeof document === 'undefined') return
+  document.documentElement.classList.toggle('dark', theme === 'dark')
 }

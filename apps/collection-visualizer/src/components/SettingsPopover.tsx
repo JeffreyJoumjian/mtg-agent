@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Settings, LayoutGrid, List, ArrowDownWideNarrow, ArrowUpNarrowWide } from "lucide-react";
+import { Settings, LayoutGrid, List, ArrowDownWideNarrow, ArrowUpNarrowWide, Sun, Moon } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover";
 import { Button } from "~/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
@@ -13,7 +13,7 @@ import {
 } from "~/components/ui/select";
 import type { Baseline, Currency } from "~/lib/types";
 import type { SortKey } from "~/lib/sort";
-import type { ViewMode, ViewSettings } from "~/lib/settings";
+import type { Theme, ViewMode, ViewSettings } from "~/lib/settings";
 
 const SORTS: { key: SortKey; label: string }[] = [
   { key: "price", label: "Price" },
@@ -60,6 +60,23 @@ export function SettingsPopover(props: SettingsPopoverProps) {
         <TooltipContent>Settings</TooltipContent>
       </Tooltip>
       <PopoverContent align="end" className="w-72 space-y-3 text-sm">
+        <Row label="Theme">
+          <ToggleGroup
+            type="single"
+            variant="outline"
+            size="sm"
+            value={s.theme}
+            onValueChange={(v) => v && set({ theme: v as Theme })}
+          >
+            <ToggleGroupItem value="light" aria-label="Light">
+              <Sun />
+            </ToggleGroupItem>
+            <ToggleGroupItem value="dark" aria-label="Dark">
+              <Moon />
+            </ToggleGroupItem>
+          </ToggleGroup>
+        </Row>
+
         <Row label="View">
           <ToggleGroup
             type="single"

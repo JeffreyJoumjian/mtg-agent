@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { memo, type CSSProperties } from 'react'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { groupTotals, type NameGroup } from '~/lib/stacks'
 import { totals } from '~/lib/pricing'
@@ -24,7 +24,9 @@ function tileCardStyle(index: number): CSSProperties {
   }
 }
 
-export function StackTile(props: StackTileProps) {
+// Memoized so the tile (with its Radix tooltips) doesn't re-render on every grid geometry change —
+// e.g. each frame of the sidebar width animation. Props are referentially stable between those.
+export const StackTile = memo(function StackTile(props: StackTileProps) {
   const { group, rep, currency, baseline } = props
   const { quantity } = groupTotals(group.variants, currency)
   const { value, delta, deltaCurrency } = totals(group.variants, currency, baseline)
@@ -78,4 +80,4 @@ export function StackTile(props: StackTileProps) {
       />
     </div>
   )
-}
+})

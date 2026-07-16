@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { tileValue, unitDelta } from '~/lib/pricing'
 import { TileFooter } from './TileFooter'
@@ -10,7 +11,9 @@ interface CardTileProps {
   onSelect?: (key: string) => void
 }
 
-export function CardTile(props: CardTileProps) {
+// Memoized so the tile (with its Radix tooltips) doesn't re-render on every grid geometry change —
+// e.g. each frame of the sidebar width animation. Props are referentially stable between those.
+export const CardTile = memo(function CardTile(props: CardTileProps) {
   const { tile, currency, baseline } = props
   const value = tileValue(tile, currency)
   const delta = unitDelta(tile, currency, baseline)
@@ -59,4 +62,4 @@ export function CardTile(props: CardTileProps) {
       />
     </div>
   )
-}
+})

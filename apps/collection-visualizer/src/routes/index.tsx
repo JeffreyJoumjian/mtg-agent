@@ -6,7 +6,7 @@ import { getCollection, refreshPrices, uploadCsv } from '~/server/collection'
 import { emptyFilters, priceBounds, cmcBounds, type FilterState } from '~/lib/filters'
 import type { CardTile as Tile } from '~/lib/types'
 import { computeView } from '~/lib/view'
-import { defaultSettings, loadSettings, saveSettings, type ViewSettings } from '~/lib/settings'
+import { applyTheme, defaultSettings, loadSettings, saveSettings, type ViewSettings } from '~/lib/settings'
 import { groupByName, representative } from '~/lib/stacks'
 import { Toolbar } from '~/components/Toolbar'
 import { SummaryBar } from '~/components/SummaryBar'
@@ -36,6 +36,7 @@ function Home() {
     const stored = loadSettings()
     if (stored) {
       setSettings(stored)
+      applyTheme(stored.theme)
     }
   }, [])
 
@@ -43,6 +44,7 @@ function Home() {
   const updateSettings = (next: ViewSettings) => {
     setSettings(next)
     saveSettings(next)
+    applyTheme(next.theme)
   }
   // Per-card pinned "face" (name -> tile.key), set when you click a variant.
   const [pins, setPins] = useState<Record<string, string>>({})
@@ -175,7 +177,7 @@ function Home() {
           </div>
         </div>
         <div
-          className={`shrink-0 overflow-hidden transition-[width] duration-300 ease-out ${selectedTile ? 'w-96' : 'w-0'}`}
+          className={`flex shrink-0 overflow-hidden transition-[width] duration-300 ease-out will-change-[width] ${selectedTile ? 'w-96' : 'w-0'}`}
         >
           {sidebarTile && (
             <CardSidebar

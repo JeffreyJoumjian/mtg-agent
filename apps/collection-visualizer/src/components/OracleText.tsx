@@ -20,7 +20,10 @@ export function OracleText(props: OracleTextProps) {
   }
 
   return (
-    <div className="relative rounded-md border bg-muted/40 p-3 pr-9 font-serif text-sm leading-relaxed whitespace-pre-wrap text-foreground">
+    <div
+      className="relative rounded-md border bg-muted/40 p-3 pr-9 text-sm font-normal leading-relaxed whitespace-pre-wrap text-foreground"
+      style={{ fontFamily: "'Times New Roman', Times, serif" }}
+    >
       {renderOracle(props.text)}
       <Tooltip>
         <TooltipTrigger asChild>
