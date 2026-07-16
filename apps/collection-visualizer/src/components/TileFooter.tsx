@@ -22,12 +22,29 @@ interface TileFooterProps {
 export function TileFooter(props: TileFooterProps) {
   return (
     <>
-      <div className="mt-1 h-5 min-w-0 truncate text-sm leading-5" title={props.name}>{props.name}</div>
-      <div className="h-4 min-w-0 truncate text-xs leading-4 text-muted-foreground" title={props.typeLine}>{props.typeLine}</div>
+      <div className="mt-1 h-5 min-w-0 truncate text-sm leading-5">
+        {/* Longer open delay on the name/type reveals so they don't flash while scanning the grid. */}
+        <Tooltip delayDuration={700}>
+          <TooltipTrigger asChild>
+            <span>{props.name}</span>
+          </TooltipTrigger>
+          <TooltipContent>{props.name}</TooltipContent>
+        </Tooltip>
+      </div>
+      <div className="h-4 min-w-0 truncate text-xs leading-4 text-muted-foreground">
+        {props.typeLine && (
+          <Tooltip delayDuration={700}>
+            <TooltipTrigger asChild>
+              <span>{props.typeLine}</span>
+            </TooltipTrigger>
+            <TooltipContent>{props.typeLine}</TooltipContent>
+          </Tooltip>
+        )}
+      </div>
       <div className="h-4 min-w-0 truncate text-xs leading-4 text-muted-foreground">
         <Tooltip>
           <TooltipTrigger asChild>
-            <span className="cursor-default">{props.setCode.toUpperCase()}</span>
+            <span>{props.setCode.toUpperCase()}</span>
           </TooltipTrigger>
           <TooltipContent>{props.setName}</TooltipContent>
         </Tooltip>

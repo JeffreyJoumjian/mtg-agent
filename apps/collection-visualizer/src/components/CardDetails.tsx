@@ -45,14 +45,18 @@ export function CardDetails(props: CardDetailsProps) {
             )}
           </div>
           {img && (
-            <button
-              onClick={() => setExpanded(true)}
-              aria-label="Expand image"
-              title="Expand image"
-              className="absolute right-1.5 top-1.5 flex size-7 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition hover:bg-black/80"
-            >
-              <Maximize2 className="size-4" />
-            </button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={() => setExpanded(true)}
+                  aria-label="Expand image"
+                  className="absolute right-1.5 top-1.5 flex size-7 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition hover:bg-black/80"
+                >
+                  <Maximize2 className="size-4" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent>Expand image</TooltipContent>
+            </Tooltip>
           )}
         </div>
 
@@ -123,31 +127,34 @@ function VariantStrip(props: VariantStripProps) {
       {props.variants.map((v) => {
         const active = v.key === props.activeKey;
         const price = effectivePrice(v.prices, props.currency, v.finish);
-        const qty = v.quantity > 1 ? ` ×${v.quantity}` : "";
+        const label = `${v.setName} #${v.collectorNumber}${v.finish !== "normal" ? ` · ${v.finish}` : ""}${v.quantity > 1 ? ` ×${v.quantity}` : ""}`;
         return (
-          <button
-            key={v.key}
-            onMouseEnter={() => props.onHover?.(v.key)}
-            onClick={() => props.onSelect?.(v.key)}
-            title={`${v.setName} #${v.collectorNumber}${v.finish !== "normal" ? ` · ${v.finish}` : ""}${qty}`}
-            className="flex w-14 shrink-0 cursor-pointer flex-col items-center"
-          >
-            <div
-              className={`relative aspect-[488/680] w-full overflow-hidden rounded border bg-muted ${active ? "border-primary ring-2 ring-primary" : "border-border"}`}
-            >
-              {v.enriched.imageSmall && (
-                <img src={v.enriched.imageSmall} alt={v.name} className="absolute inset-0 h-full w-full object-contain" />
-              )}
-              {v.finish !== "normal" && (
-                <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-amber-400" />
-              )}
-            </div>
-            <div
-              className={`mt-0.5 w-full truncate text-center text-[10px] leading-tight ${active ? "font-medium text-foreground" : "text-muted-foreground"}`}
-            >
-              {formatMoney(price, props.currency)}
-            </div>
-          </button>
+          <Tooltip key={v.key}>
+            <TooltipTrigger asChild>
+              <button
+                onMouseEnter={() => props.onHover?.(v.key)}
+                onClick={() => props.onSelect?.(v.key)}
+                className="flex w-14 shrink-0 cursor-pointer flex-col items-center"
+              >
+                <div
+                  className={`relative aspect-[488/680] w-full overflow-hidden rounded border bg-muted ${active ? "border-primary ring-2 ring-primary" : "border-border"}`}
+                >
+                  {v.enriched.imageSmall && (
+                    <img src={v.enriched.imageSmall} alt={v.name} className="absolute inset-0 h-full w-full object-contain" />
+                  )}
+                  {v.finish !== "normal" && (
+                    <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-amber-400" />
+                  )}
+                </div>
+                <div
+                  className={`mt-0.5 w-full truncate text-center text-[10px] leading-tight ${active ? "font-medium text-foreground" : "text-muted-foreground"}`}
+                >
+                  {formatMoney(price, props.currency)}
+                </div>
+              </button>
+            </TooltipTrigger>
+            <TooltipContent>{label}</TooltipContent>
+          </Tooltip>
         );
       })}
     </div>

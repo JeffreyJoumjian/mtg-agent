@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { RefreshCw, Upload } from 'lucide-react'
 import { Input } from '~/components/ui/input'
 import { Button } from '~/components/ui/button'
+import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import { FiltersPopover } from './FiltersPopover'
 import { SettingsPopover } from './SettingsPopover'
 import type { FilterState } from '~/lib/filters'
@@ -46,17 +47,21 @@ export function Toolbar(props: ToolbarProps) {
 
       <SettingsPopover settings={props.settings} onSettings={props.onSettings} />
 
-      <Button
-        variant="default"
-        size="icon"
-        className="size-8"
-        onClick={props.onRefresh}
-        disabled={props.refreshing}
-        aria-label="Refresh prices"
-        title="Refresh prices"
-      >
-        <RefreshCw className={props.refreshing ? 'animate-spin' : ''} />
-      </Button>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="default"
+            size="icon"
+            className="size-8"
+            onClick={props.onRefresh}
+            disabled={props.refreshing}
+            aria-label="Refresh prices"
+          >
+            <RefreshCw className={props.refreshing ? 'animate-spin' : ''} />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Refresh prices</TooltipContent>
+      </Tooltip>
       <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()}>
         <Upload /> Upload
       </Button>

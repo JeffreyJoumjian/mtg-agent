@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Settings, LayoutGrid, List, ArrowDownWideNarrow, ArrowUpNarrowWide } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover";
 import { Button } from "~/components/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle-group";
 import {
   Select,
@@ -43,17 +44,21 @@ export function SettingsPopover(props: SettingsPopoverProps) {
 
   return (
     <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          className="size-8"
-          aria-label="Settings"
-          title="Settings"
-        >
-          <Settings />
-        </Button>
-      </PopoverTrigger>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <PopoverTrigger asChild>
+            <Button
+              variant="outline"
+              size="icon"
+              className="size-8"
+              aria-label="Settings"
+            >
+              <Settings />
+            </Button>
+          </PopoverTrigger>
+        </TooltipTrigger>
+        <TooltipContent>Settings</TooltipContent>
+      </Tooltip>
       <PopoverContent align="end" className="w-72 space-y-3 text-sm">
         <Row label="View">
           <ToggleGroup

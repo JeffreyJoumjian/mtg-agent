@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
+import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 
 interface ImageModalProps {
   src: string
@@ -31,14 +32,18 @@ export function ImageModal(props: ImageModalProps) {
       onClick={props.onClose}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-6 backdrop-blur-sm"
     >
-      <button
-        onClick={props.onClose}
-        aria-label="Close"
-        title="Close"
-        className="absolute right-4 top-4 flex size-9 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition hover:bg-black/80"
-      >
-        <X className="size-5" />
-      </button>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <button
+            onClick={props.onClose}
+            aria-label="Close"
+            className="absolute right-4 top-4 flex size-9 cursor-pointer items-center justify-center rounded-md bg-black/60 text-white transition hover:bg-black/80"
+          >
+            <X className="size-5" />
+          </button>
+        </TooltipTrigger>
+        <TooltipContent>Close</TooltipContent>
+      </Tooltip>
       <img
         src={props.src}
         alt={props.alt}

@@ -6,6 +6,7 @@ import { Input } from '~/components/ui/input'
 import { Checkbox } from '~/components/ui/checkbox'
 import { Slider } from '~/components/ui/slider'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~/components/ui/select'
+import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import type { ColorSymbol, Currency } from '~/lib/types'
 import { activeFilterCount, emptyFilters, type FilterState } from '~/lib/filters'
 import { ManaSymbol } from './ManaSymbol'
@@ -100,16 +101,20 @@ export function FiltersPopover(props: FiltersPopoverProps) {
               {MANA.map((m) => {
                 const on = f.colors.includes(m.sym)
                 return (
-                  <button
-                    key={m.sym}
-                    type="button"
-                    title={m.label}
-                    aria-pressed={on}
-                    onClick={() => toggleColor(m.sym)}
-                    className={`h-7 w-7 rounded-full transition ${on ? 'ring-2 ring-ring ring-offset-1 ring-offset-popover' : 'opacity-40 hover:opacity-90'}`}
-                  >
-                    <ManaSymbol sym={m.sym} className="h-full w-full" />
-                  </button>
+                  <Tooltip key={m.sym}>
+                    <TooltipTrigger asChild>
+                      <button
+                        type="button"
+                        aria-label={m.label}
+                        aria-pressed={on}
+                        onClick={() => toggleColor(m.sym)}
+                        className={`h-7 w-7 rounded-full transition ${on ? 'ring-2 ring-ring ring-offset-1 ring-offset-popover' : 'opacity-40 hover:opacity-90'}`}
+                      >
+                        <ManaSymbol sym={m.sym} className="h-full w-full" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent>{m.label}</TooltipContent>
+                  </Tooltip>
                 )
               })}
               <Select value={f.colorMode} onValueChange={(v) => set({ colorMode: v as FilterState['colorMode'] })}>
@@ -190,15 +195,20 @@ export function FiltersPopover(props: FiltersPopoverProps) {
       </Popover>
 
       {count > 0 && (
-        <Button
-          variant="ghost"
-          size="icon"
-          className="ml-1 size-8 text-muted-foreground"
-          title="Clear filters"
-          onClick={() => props.onFilters(emptyFilters())}
-        >
-          <X />
-        </Button>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="ml-1 size-8 text-muted-foreground"
+              aria-label="Clear filters"
+              onClick={() => props.onFilters(emptyFilters())}
+            >
+              <X />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Clear filters</TooltipContent>
+        </Tooltip>
       )}
     </div>
   )

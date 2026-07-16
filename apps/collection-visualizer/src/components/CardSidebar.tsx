@@ -1,5 +1,6 @@
 import { X, ExternalLink } from 'lucide-react'
 import { Button } from '~/components/ui/button'
+import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import { CardDetails } from './CardDetails'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { scryfallUrl } from '~/lib/format'
@@ -25,9 +26,14 @@ export function CardSidebar(props: CardSidebarProps) {
             <ExternalLink /> Open in Scryfall
           </Button>
         </a>
-        <Button variant="ghost" size="icon" className="size-8" onClick={props.onClose} aria-label="Close" title="Close">
-          <X />
-        </Button>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="ghost" size="icon" className="size-8" onClick={props.onClose} aria-label="Close">
+              <X />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Close</TooltipContent>
+        </Tooltip>
       </div>
 
       {/* Full details for the selected printing, plus the printings strip (with prices) at the
