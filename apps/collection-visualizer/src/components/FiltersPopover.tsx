@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { SlidersHorizontal, X } from 'lucide-react'
 import { Popover, PopoverContent, PopoverTrigger } from '~/components/ui/popover'
 import { Button } from '~/components/ui/button'
@@ -76,6 +76,7 @@ export function FiltersPopover(props: FiltersPopoverProps) {
   const set = (patch: Partial<FilterState>) => props.onFilters({ ...f, ...patch })
   const count = activeFilterCount(f)
   const sym = props.currency === 'usd' ? '$' : '€'
+  const contentRef = useRef<HTMLDivElement>(null)
 
   const [setQuery, setSetQuery] = useState('')
   const visibleSets = props.sets.filter((s) => s.name.toLowerCase().includes(setQuery.trim().toLowerCase()))
@@ -96,7 +97,21 @@ export function FiltersPopover(props: FiltersPopoverProps) {
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent align="end" className="w-80 p-0 text-sm">
+        {/* Radix focuses the first focusable child on open — here the White mana button, whose
+            tooltip then fires the instant the popover appears. Take focus to the panel itself
+            instead of just cancelling: leaving focus on the trigger means Tab walks to the next
+            toolbar button and closes the popover, so the filters become unreachable by keyboard.
+            From the panel, Tab steps into the controls in order. */}
+        <PopoverContent
+          ref={contentRef}
+          align="end"
+          tabIndex={-1}
+          className="w-80 p-0 text-sm"
+          onOpenAutoFocus={(e) => {
+            e.preventDefault()
+            contentRef.current?.focus()
+          }}
+        >
           <ScrollArea className="max-h-[80vh]">
           <div className="space-y-4 p-4">
           <section>

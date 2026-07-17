@@ -6,9 +6,15 @@ function ScrollArea(props: ComponentProps<typeof ScrollAreaPrimitive.Root>) {
   const { className, children, ...rest } = props
   return (
     <ScrollAreaPrimitive.Root data-slot="scroll-area" className={cn('relative', className)} {...rest}>
+      {/* `[&>div]:!block` overrides the `display: table` Radix hard-codes on the wrapper it puts
+          around the children. Table sizing grows to fit content, which is how Radix measures for
+          horizontal scrolling — but it also means a fixed-width container never constrains what's
+          inside it, so content lays out at its natural width and spills out (a 320px popover ended
+          up 390px wide). Every ScrollArea here scrolls vertically only, so blocking the wrapper
+          costs nothing and makes width behave. !important is required: it's fighting an inline style. */}
       <ScrollAreaPrimitive.Viewport
         data-slot="scroll-area-viewport"
-        className="size-full rounded-[inherit] outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1"
+        className="size-full rounded-[inherit] outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 [&>div]:!block"
       >
         {children}
       </ScrollAreaPrimitive.Viewport>
