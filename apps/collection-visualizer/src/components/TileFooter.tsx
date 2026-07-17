@@ -1,8 +1,12 @@
-import type { Currency } from "~/lib/types";
+import type { Currency, Finish } from "~/lib/types";
 import { formatMoney, formatDelta } from "~/lib/format";
+import { rarityStyle } from "~/lib/rarity";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import { ManaCost } from "./ManaCost";
 import { FaceBadge } from "./FaceBadge";
+import { SetIcon } from "./SetIcon";
+import { RarityBadge } from "./RarityBadge";
+import { FinishBadge } from "./FinishBadge";
 
 interface TileFooterProps {
   /** Name of the shown face (for a double-faced card) or the whole card. */
@@ -17,6 +21,8 @@ interface TileFooterProps {
   setName: string;
   collectorNumber: string;
   rarity: string;
+  /** Foil/etched printings get a chip here — the tile's card art has no FOIL badge on it any more. */
+  finish: Finish;
   value: number | null;
   delta: { value: number; currency: Currency | string } | null;
   currency: Currency;
@@ -52,14 +58,20 @@ export function TileFooter(props: TileFooterProps) {
           </Tooltip>
         )}
       </div>
-      <div className="h-4 min-w-0 truncate text-xs leading-4 text-muted-foreground">
+      {/* Set symbol takes the rarity's color, the way a real card's does. */}
+      <div className="flex h-4 min-w-0 items-center gap-1 text-xs leading-4 text-muted-foreground">
         <Tooltip>
           <TooltipTrigger asChild>
-            <span>{props.setCode.toUpperCase()}</span>
+            <span className="flex min-w-0 items-center gap-1">
+              <SetIcon setCode={props.setCode} className={rarityStyle(props.rarity).icon} />
+              <span className="truncate">{props.setCode.toUpperCase()}</span>
+            </span>
           </TooltipTrigger>
           <TooltipContent>{props.setName}</TooltipContent>
-        </Tooltip>{" "}
-        · #{props.collectorNumber} · {props.rarity}
+        </Tooltip>
+        <span className="shrink-0">· #{props.collectorNumber}</span>
+        <RarityBadge rarity={props.rarity} />
+        <FinishBadge finish={props.finish} />
       </div>
       <div className="flex h-6 items-baseline justify-between gap-1 leading-6">
         <span className="min-w-0 truncate font-semibold">{formatMoney(props.value, props.currency)}</span>

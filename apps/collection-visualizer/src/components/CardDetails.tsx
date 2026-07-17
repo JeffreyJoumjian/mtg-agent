@@ -1,18 +1,23 @@
 import { useState } from "react";
-import { Maximize2 } from "lucide-react";
+import { Maximize2, Pin } from "lucide-react";
 import type { Baseline, CardTile as Tile, Currency } from "~/lib/types";
 import { effectivePrice, tileValue, unitDelta } from "~/lib/pricing";
 import { formatMoney, formatDelta } from "~/lib/format";
 import { variantsBestFirst } from "~/lib/stacks";
 import { facesOf, cardImage } from "~/lib/faces";
 import { manaToShow } from "~/lib/mana";
+import { rarityStyle } from "~/lib/rarity";
 import { imageFilename } from "~/lib/download";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { ManaCost } from "./ManaCost";
 import { FaceBadge } from "./FaceBadge";
+import { SetIcon } from "./SetIcon";
+import { RarityBadge } from "./RarityBadge";
+import { FinishBadge } from "./FinishBadge";
 import { FlipImage } from "./FlipImage";
 import { FlipButton } from "./FlipButton";
+import { FoilCard } from "./FoilCard";
 import { ImageModal } from "./ImageModal";
 import { OracleText } from "./OracleText";
 
@@ -25,6 +30,8 @@ interface CardDetailsProps {
   /** When more than one is given, render a strip of these printings below the image — highlighting
    *  `tile` (the printing shown) and letting the user hover/click another. */
   variants?: Tile[];
+  /** `key` of the printing pinned to the tile, if any — marked in the strip. */
+  pinnedKey?: string;
   onHoverVariant?: (key: string) => void;
   onSelectVariant?: (key: string) => void;
   /** Controlled flip count — the drawer seeds this from the tile's shown face, then owns it. When
@@ -68,10 +75,19 @@ export function CardDetails(props: CardDetailsProps) {
   const showStrip = variants.length > 1 ? variantsBestFirst(variants, currency) : null;
 
   const [expanded, setExpanded] = useState(false);
+  // Expand's tooltip is controlled so it can be forced shut while the lightbox is open. It has to
+  // be: this button opens the lightbox, and the drawer traps focus — so the button keeps focus the
+  // whole time the lightbox is up, and Radix opens tooltips on focus. Left alone, its tooltip
+  // surfaces over the lightbox whenever anything re-triggers that (clicking Flip does).
+  const [expandTip, setExpandTip] = useState(false);
 
   const preview = (
     <>
-      <div className="relative aspect-[488/680] w-full overflow-hidden rounded-lg bg-muted">
+      <FoilCard
+        foil={tile.finish !== "normal"}
+        etched={tile.finish === "etched"}
+        className="relative aspect-[488/680] w-full overflow-hidden rounded-lg bg-muted"
+      >
         {twoSided ? (
           <FlipImage front={front} back={back} rotations={rotations} alt={tile.name} />
         ) : shownImg ? (
@@ -81,9 +97,9 @@ export function CardDetails(props: CardDetailsProps) {
             {tile.name}
           </div>
         )}
-      </div>
+      </FoilCard>
       {shownImg && (
-        <Tooltip>
+        <Tooltip open={expandTip && !expanded} onOpenChange={setExpandTip}>
           <TooltipTrigger asChild>
             <button
               onClick={() => setExpanded(true)}
@@ -117,6 +133,7 @@ export function CardDetails(props: CardDetailsProps) {
                       variants={showStrip}
                       currency={currency}
                       activeKey={tile.key}
+                      pinnedKey={props.pinnedKey}
                       onHover={props.onHoverVariant}
                       onSelect={props.onSelectVariant}
                     />
@@ -140,16 +157,20 @@ export function CardDetails(props: CardDetailsProps) {
             </span>
           </div>
           {typeLine && <div className="text-sm text-muted-foreground">{typeLine}</div>}
-          <div className="text-xs text-muted-foreground">
+          <div className="flex min-w-0 items-center gap-1 text-xs text-muted-foreground">
             <Tooltip>
               <TooltipTrigger asChild>
-                <span className="cursor-default">{tile.setCode.toUpperCase()}</span>
+                <span className="flex min-w-0 cursor-default items-center gap-1">
+                  <SetIcon setCode={tile.setCode} className={rarityStyle(tile.rarity).icon} />
+                  <span className="truncate">{tile.setCode.toUpperCase()}</span>
+                </span>
               </TooltipTrigger>
               <TooltipContent>{tile.setName}</TooltipContent>
-            </Tooltip>{" "}
-            · #{tile.collectorNumber} · {tile.rarity}
-            {tile.finish !== "normal" && ` · ${tile.finish}`}
-            {tile.quantity > 1 && ` · ×${tile.quantity}`}
+            </Tooltip>
+            <span className="shrink-0">· #{tile.collectorNumber}</span>
+            <RarityBadge rarity={tile.rarity} />
+            <FinishBadge finish={tile.finish} />
+            {tile.quantity > 1 && <span className="shrink-0">· ×{tile.quantity}</span>}
           </div>
         </div>
         <div className="flex items-baseline justify-between">
@@ -169,6 +190,7 @@ export function CardDetails(props: CardDetailsProps) {
           back={twoSided ? otherFull : null}
           alt={tile.name}
           filename={downloadName}
+          finish={tile.finish}
           onClose={() => setExpanded(false)}
         />
       )}
@@ -180,20 +202,23 @@ interface VariantStripProps {
   variants: Tile[];
   currency: Currency;
   activeKey: string;
+  pinnedKey?: string;
   onHover?: (key: string) => void;
   onSelect?: (key: string) => void;
 }
 
 /** A vertical column of a card's printings (most important first), scrolling within its container.
- *  Each shows its price so the column reads as a comparison; the active printing is highlighted.
- *  Hovering previews it (via onHover) and clicking pins it. */
+ *  Each shows its price so the column reads as a comparison; the printing being viewed is
+ *  highlighted, and the one pinned to the tile (if any) is marked. Clicking switches the drawer to a
+ *  printing — it doesn't pin it; that's the header's pin button. */
 function VariantStrip(props: VariantStripProps) {
   return (
     <div className="flex flex-col gap-2">
       {props.variants.map((v) => {
         const active = v.key === props.activeKey;
+        const pinned = v.key === props.pinnedKey;
         const price = effectivePrice(v.prices, props.currency, v.finish);
-        const label = `${v.setName} #${v.collectorNumber}${v.finish !== "normal" ? ` · ${v.finish}` : ""}${v.quantity > 1 ? ` ×${v.quantity}` : ""}`;
+        const label = `${v.setName} #${v.collectorNumber}${v.finish !== "normal" ? ` · ${v.finish}` : ""}${v.quantity > 1 ? ` ×${v.quantity}` : ""}${pinned ? " · pinned to tile" : ""}`;
         return (
           <Tooltip key={v.key}>
             <TooltipTrigger asChild>
@@ -214,6 +239,11 @@ function VariantStrip(props: VariantStripProps) {
                   )}
                   {v.finish !== "normal" && (
                     <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-amber-400" />
+                  )}
+                  {pinned && (
+                    <span className="absolute left-0.5 top-0.5 flex size-3.5 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                      <Pin className="size-2" />
+                    </span>
                   )}
                 </div>
                 <div

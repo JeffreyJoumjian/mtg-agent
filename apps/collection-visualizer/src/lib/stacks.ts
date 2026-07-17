@@ -1,4 +1,5 @@
 import type { CardTile, Currency } from './types'
+import type { Pins } from './pins'
 import { effectivePrice } from './pricing'
 
 /** A "stack": all owned tiles (printings/finishes) that are the same card by name. */
@@ -34,9 +35,10 @@ function byBestFirst(currency: Currency) {
   }
 }
 
-/** The tile shown as the stack's "face": the pinned variant if set, else most expensive (foil breaks ties). */
-export function representative(group: NameGroup, currency: Currency, pins: Record<string, string>): CardTile {
-  const pinnedKey = pins[group.name]
+/** The tile shown as the stack's "face": the pinned printing if one is set (and still owned), else
+ *  the most expensive (foil breaks ties). */
+export function representative(group: NameGroup, currency: Currency, pins: Pins): CardTile {
+  const pinnedKey = pins[group.name]?.variantKey
   if (pinnedKey) {
     const pinned = group.variants.find((v) => v.key === pinnedKey)
     if (pinned) return pinned

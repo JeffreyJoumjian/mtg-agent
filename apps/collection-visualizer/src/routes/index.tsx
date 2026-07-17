@@ -2,11 +2,14 @@ import { useEffect, useMemo, useState } from 'react'
 import { createFileRoute, useRouter } from '@tanstack/react-router'
 import { useServerFn } from '@tanstack/react-start'
 import { useMutation } from '@tanstack/react-query'
+import { useAtom, useSetAtom } from 'jotai'
+import { useHydrateAtoms } from 'jotai/utils'
 import { getCollection, refreshPrices, uploadCsv } from '~/server/collection'
 import { emptyFilters, priceBounds, cmcBounds, type FilterState } from '~/lib/filters'
 import type { CardTile as Tile } from '~/lib/types'
 import { computeView } from '~/lib/view'
-import { applyTheme, defaultSettings, loadSettings, saveSettings, type ViewSettings } from '~/lib/settings'
+import { applyTheme, type ViewSettings } from '~/lib/settings'
+import { pinsAtom, setIconsAtom, settingsAtom } from '~/lib/store'
 import { groupByName, representative } from '~/lib/stacks'
 import { Toolbar } from '~/components/Toolbar'
 import { SummaryBar } from '~/components/SummaryBar'
@@ -26,31 +29,33 @@ function Home() {
   const data = Route.useLoaderData()
   const router = useRouter()
 
+  // Seed the set symbols from the loader during render, so they're on screen at first paint instead
+  // of arriving a frame later via an effect.
+  useHydrateAtoms([[setIconsAtom, data.setIcons]])
+  const setSetIcons = useSetAtom(setIconsAtom)
+  // ...but hydration only ever fires once, so a later loader result (uploading a CSV that adds sets,
+  // or a refresh that vendors newly-released ones) still has to be pushed in.
+  useEffect(() => {
+    setSetIcons(data.setIcons)
+  }, [data.setIcons, setSetIcons])
+
   const [query, setQuery] = useState('')
   const [filters, setFilters] = useState<FilterState>(emptyFilters())
-  const [settings, setSettings] = useState<ViewSettings>(defaultSettings())
   const [selectedKey, setSelectedKey] = useState<string | null>(null)
   // The drawer's flip count, seeded from the tile's shown face on open, then owned independently.
   const [drawerFlips, setDrawerFlips] = useState(0)
 
-  // Load persisted settings once on mount. Kept out of the initializer so server and client both
-  // start from the defaults (no hydration mismatch); we adopt the stored values right after.
-  useEffect(() => {
-    const stored = loadSettings()
-    if (stored) {
-      setSettings(stored)
-      applyTheme(stored.theme)
-    }
-  }, [])
+  // Both of these persist themselves to localStorage (see lib/store.ts).
+  const [settings, setSettings] = useAtom(settingsAtom)
+  const [pins, setPins] = useAtom(pinsAtom)
 
-  // Persist on every user-driven change (not on the mount-time load above).
-  const updateSettings = (next: ViewSettings) => {
-    setSettings(next)
-    saveSettings(next)
-    applyTheme(next.theme)
-  }
-  // Per-card pinned "face" (name -> tile.key), set when you click a variant.
-  const [pins, setPins] = useState<Record<string, string>>({})
+  // The theme is the one setting with an effect outside React — it toggles a class on <html>. Runs on
+  // the stored value once it's read, too, not just on user changes.
+  useEffect(() => {
+    applyTheme(settings.theme)
+  }, [settings.theme])
+
+  const updateSettings = (next: ViewSettings) => setSettings(next)
 
   const refreshFn = useServerFn(refreshPrices)
   const uploadFn = useServerFn(uploadCsv)
@@ -112,7 +117,23 @@ function Home() {
     setSelectedKey(key)
     // Seed the drawer on the same face the tile shows; a count keeps the flip spinning one way.
     setDrawerFlips(flipped ? 1 : 0)
-    setPins((p) => ({ ...p, [tile.name]: key }))
+  }
+
+  // The drawer is otherwise independent of the grid: browsing printings and flipping faces in it
+  // changes nothing outside until you pin. Pinning is per card NAME, so it survives toggling
+  // grouping — grouped tiles read the printing, and either view reads the face.
+  const drawerFace = drawerFlips % 2
+  const pin = sidebarTile ? pins[sidebarTile.name] : undefined
+  const pinned = !!sidebarTile && pin?.variantKey === sidebarTile.key && pin?.face === drawerFace
+
+  const togglePin = () => {
+    if (!sidebarTile) return
+
+    const next = { ...pins }
+    if (pinned) delete next[sidebarTile.name]
+    else next[sidebarTile.name] = { variantKey: sidebarTile.key, face: drawerFace }
+
+    setPins(next)
   }
 
   // Clicking a grid/list card: the same card toggles the drawer shut; a different one switches to it.
@@ -124,7 +145,8 @@ function Home() {
     select(key, flipped)
   }
 
-  // Picking a printing in the drawer's strip switches to it but never closes the drawer.
+  // Picking a printing in the drawer's strip switches the drawer to it (never closing it, and never
+  // touching the grid — that's the pin button's job).
   const onSelectVariant = (key: string) => select(key, false)
 
   return (
@@ -177,6 +199,7 @@ function Home() {
                             currency={settings.currency}
                             baseline={settings.baseline}
                             selected={selectedTile?.name === g.name}
+                            pin={pins[g.name]}
                             onSelect={onSelect}
                           />
                         )
@@ -190,6 +213,7 @@ function Home() {
                             currency={settings.currency}
                             baseline={settings.baseline}
                             selected={t.key === selectedKey}
+                            pin={pins[t.name]}
                             onSelect={onSelect}
                           />
                         )
@@ -231,6 +255,9 @@ function Home() {
               baseline={settings.baseline}
               rotations={drawerFlips}
               onFlip={() => setDrawerFlips((n) => n + 1)}
+              pinned={pinned}
+              pinnedKey={pin?.variantKey}
+              onTogglePin={togglePin}
               onSelect={onSelectVariant}
               onClose={() => setSelectedKey(null)}
             />

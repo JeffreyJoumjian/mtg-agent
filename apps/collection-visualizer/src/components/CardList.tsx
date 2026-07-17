@@ -3,9 +3,12 @@ import { useVirtualizer } from '@tanstack/react-virtual'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { tileValue, unitDelta } from '~/lib/pricing'
 import { formatMoney, formatDelta } from '~/lib/format'
+import { rarityStyle } from '~/lib/rarity'
 import { ManaSymbol } from './ManaSymbol'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '~/components/ui/hover-card'
 import { CardDetails } from './CardDetails'
+import { SetIcon } from './SetIcon'
+import { RarityBadge } from './RarityBadge'
 
 interface CardListProps {
   tiles: Tile[]
@@ -51,10 +54,16 @@ export function CardList(props: CardListProps) {
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="truncate">{t.name}</div>
-                    <div className="truncate text-xs text-muted-foreground">
-                      {t.setName} · {t.collectorNumber}
-                      {t.finish !== 'normal' && ` · ${t.finish === 'etched' ? 'Etched' : 'Foil'}`}
-                      {t.quantity > 1 && ` · ×${t.quantity}`}
+                    <div className="flex min-w-0 items-center gap-1 text-xs text-muted-foreground">
+                      <SetIcon setCode={t.setCode} className={rarityStyle(t.rarity).icon} />
+                      <span className="truncate">
+                        {t.setName} · {t.collectorNumber}
+                      </span>
+                      <RarityBadge rarity={t.rarity} />
+                      <span className="shrink-0">
+                        {t.finish !== 'normal' && ` · ${t.finish === 'etched' ? 'Etched' : 'Foil'}`}
+                        {t.quantity > 1 && ` · ×${t.quantity}`}
+                      </span>
                     </div>
                   </div>
                   <div className="flex shrink-0 items-center gap-0.5">

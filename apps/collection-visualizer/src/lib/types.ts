@@ -61,6 +61,14 @@ export interface Enriched {
   faces?: CardFace[]
 }
 
+/** A set's symbol, kept as the innards of its `<svg>` so it can be inlined and take its color from
+ *  `currentColor` (which is what lets it follow the theme and the card's rarity). */
+export interface SetIcon {
+  viewBox: string
+  /** Raw inner markup (`<path>`/`<g>` only — validated when vendored). */
+  body: string
+}
+
 export interface CacheEntry {
   current: PriceSet
   previous: PriceSet | null

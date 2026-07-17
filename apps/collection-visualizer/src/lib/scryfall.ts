@@ -68,6 +68,18 @@ async function throttle(): Promise<void> {
   lastRequestAt = Date.now()
 }
 
+async function get(path: string): Promise<any> {
+  await throttle()
+  const res = await fetch(`${API}${path}`, { headers: HEADERS })
+  if (res.status === 429) {
+    const retryAfter = Number(res.headers.get('retry-after') ?? '1')
+    await new Promise((r) => setTimeout(r, Math.max(1, retryAfter) * 1000))
+    return get(path)
+  }
+  if (!res.ok) throw new Error(`Scryfall ${res.status}`)
+  return res.json()
+}
+
 async function post(path: string, body: unknown): Promise<any> {
   await throttle()
   const res = await fetch(`${API}${path}`, {
@@ -82,6 +94,30 @@ async function post(path: string, body: unknown): Promise<any> {
   }
   if (!res.ok) throw new Error(`Scryfall ${res.status}`)
   return res.json()
+}
+
+/** One set's code and the URL of its symbol. Several sets legitimately share one symbol file — every
+ *  Secret Lair and Store Championship points at `star.svg`, and promo sets reuse their parent's — so
+ *  the icon URL must be read from the API, never guessed from the code. */
+export interface SetSymbol {
+  code: string
+  iconUri: string
+}
+
+/** Every set Scryfall knows about (~1000), with the URL of its symbol. Returned unpaginated. */
+export async function fetchAllSets(): Promise<SetSymbol[]> {
+  const body = await get('/sets')
+  return (body.data ?? [])
+    .filter((s: any) => s?.code && s?.icon_svg_uri)
+    .map((s: any) => ({ code: s.code, iconUri: s.icon_svg_uri }))
+}
+
+/** Fetch one set symbol. These live on Scryfall's asset CDN rather than the API host, so they're
+ *  outside the API rate limit and skip the throttle. */
+export async function fetchSvg(url: string): Promise<string> {
+  const res = await fetch(url, { headers: { 'User-Agent': HEADERS['User-Agent'], Accept: 'image/svg+xml' } })
+  if (!res.ok) throw new Error(`Scryfall icon ${res.status}`)
+  return res.text()
 }
 
 /** Batch-fetch raw Scryfall card objects by Scryfall ID (75/request), keyed by id. */

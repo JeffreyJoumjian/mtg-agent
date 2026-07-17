@@ -127,6 +127,12 @@ export function SettingsPopover(props: SettingsPopoverProps) {
           </Row>
         )}
 
+        <Row label="Foil effect">
+          <Button variant={s.foil ? "default" : "outline"} size="sm" onClick={() => set({ foil: !s.foil })}>
+            {s.foil ? "On" : "Off"}
+          </Button>
+        </Row>
+
         <Row label="Currency">
           <ToggleGroup
             type="single"

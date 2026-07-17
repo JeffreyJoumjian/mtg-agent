@@ -30,9 +30,9 @@ test('representative picks the most expensive, foil breaking ties', () => {
 
 test('representative honors a pin over the rule', () => {
   const g: NameGroup = { name: 'Bolt', variants: [tile({ key: 'a', usd: 5 }), tile({ key: 'b', usd: 1 })] }
-  expect(representative(g, 'usd', { Bolt: 'b' }).key).toEqual('b')
-  // a stale pin (key not present) falls back to the rule
-  expect(representative(g, 'usd', { Bolt: 'gone' }).key).toEqual('a')
+  expect(representative(g, 'usd', { Bolt: { variantKey: 'b', face: 0 } }).key).toEqual('b')
+  // a stale pin (printing no longer owned) falls back to the rule
+  expect(representative(g, 'usd', { Bolt: { variantKey: 'gone', face: 0 } }).key).toEqual('a')
 })
 
 test('variantsBestFirst orders best → worst so the most important printing leads', () => {

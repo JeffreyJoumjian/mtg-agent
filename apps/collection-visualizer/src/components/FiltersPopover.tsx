@@ -11,6 +11,7 @@ import { ScrollArea } from '~/components/ui/scroll-area'
 import type { ColorSymbol, Currency } from '~/lib/types'
 import { activeFilterCount, emptyFilters, type FilterState } from '~/lib/filters'
 import { ManaSymbol } from './ManaSymbol'
+import { SetIcon } from './SetIcon'
 
 const MANA: { sym: ColorSymbol; label: string }[] = [
   { sym: 'W', label: 'White' },
@@ -179,6 +180,8 @@ export function FiltersPopover(props: FiltersPopoverProps) {
                   visibleSets.map((s) => (
                     <label key={s.code} className="flex min-w-0 cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-accent">
                       <Checkbox checked={f.sets.includes(s.code)} onCheckedChange={() => toggleSet(s.code)} />
+                      {/* No single rarity applies to a whole set, so the symbol just follows the text. */}
+                      <SetIcon setCode={s.code} className="text-muted-foreground" />
                       <span className="min-w-0 truncate">{s.name}</span>
                     </label>
                   ))

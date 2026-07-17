@@ -1,4 +1,4 @@
-import { X, ExternalLink } from 'lucide-react'
+import { X, ExternalLink, Pin, PinOff } from 'lucide-react'
 import { Button } from '~/components/ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import { ScrollArea } from '~/components/ui/scroll-area'
@@ -20,6 +20,12 @@ interface CardSidebarProps {
   /** Flip count, seeded from the tile's shown face when the drawer opens, then owned here. */
   rotations?: number
   onFlip?: () => void
+  /** True when the grid already renders exactly this printing + face. */
+  pinned: boolean
+  /** `key` of the printing currently pinned for this card, if any — marked in the variant strip. */
+  pinnedKey?: string
+  /** Commit this printing + face as what the grid renders (or clear it when already pinned). */
+  onTogglePin: () => void
 }
 
 export function CardSidebar(props: CardSidebarProps) {
@@ -41,6 +47,23 @@ export function CardSidebar(props: CardSidebarProps) {
             </Button>
           </a>
           {downloadUrl && <DownloadButton url={downloadUrl} filename={downloadName} className="size-8" />}
+          {/* The drawer is otherwise independent of the grid — this is the one control that pushes
+              what you're looking at back out to the tile. */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant={props.pinned ? 'default' : 'outline'}
+                size="icon"
+                className="size-8"
+                onClick={props.onTogglePin}
+                aria-pressed={props.pinned}
+                aria-label={props.pinned ? 'Unpin from tile' : 'Pin to tile'}
+              >
+                {props.pinned ? <PinOff /> : <Pin />}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>{props.pinned ? 'Unpin — go back to the default printing' : 'Show this printing & face on the tile'}</TooltipContent>
+          </Tooltip>
         </div>
         <Tooltip>
           <TooltipTrigger asChild>
@@ -61,6 +84,7 @@ export function CardSidebar(props: CardSidebarProps) {
             baseline={props.baseline}
             full
             variants={props.variants}
+            pinnedKey={props.pinnedKey}
             onSelectVariant={props.onSelect}
             rotations={props.rotations}
             onFlip={props.onFlip}
