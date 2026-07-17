@@ -226,6 +226,7 @@ function Home() {
                 currency={settings.currency}
                 baseline={settings.baseline}
                 selectedKey={selectedKey}
+                pins={pins}
                 onSelect={onSelect}
               />
             )}
