@@ -38,7 +38,11 @@ function ScrollBar(props: ComponentProps<typeof ScrollAreaPrimitive.ScrollAreaSc
       )}
       {...rest}
     >
-      <ScrollAreaPrimitive.ScrollAreaThumb data-slot="scroll-area-thumb" className="relative flex-1 rounded-full bg-border" />
+      {/* Dragged, not clicked — so grab/grabbing, same as the slider's thumb. */}
+      <ScrollAreaPrimitive.ScrollAreaThumb
+        data-slot="scroll-area-thumb"
+        className="relative flex-1 cursor-grab rounded-full bg-border active:cursor-grabbing"
+      />
     </ScrollAreaPrimitive.ScrollAreaScrollbar>
   )
 }
