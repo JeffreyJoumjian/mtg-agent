@@ -5,8 +5,8 @@ import { Button } from '~/components/ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import { FiltersPopover } from './FiltersPopover'
 import { SettingsPopover } from './SettingsPopover'
-import type { FilterState } from '~/lib/filters'
-import type { ViewSettings } from '~/lib/settings'
+import type { FilterState } from '~/lib/view/filters'
+import type { ViewSettings } from '~/lib/state/settings'
 
 interface ToolbarProps {
   query: string

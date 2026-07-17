@@ -1,5 +1,5 @@
-import type { CardTile, Currency } from './types'
-import { tileValue } from './pricing'
+import type { CardTile, Currency } from '~/lib/types'
+import { tileValue } from '~/lib/card/pricing'
 
 export type SortKey = 'name' | 'set' | 'rarity' | 'number' | 'cmc' | 'price'
 

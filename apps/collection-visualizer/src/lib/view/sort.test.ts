@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test'
 import { sortTiles } from './sort'
-import type { CardTile } from './types'
+import type { CardTile } from '~/lib/types'
 
 const tile = (over: Partial<CardTile> & { cmc?: number }): CardTile => ({
   key: over.key ?? Math.random().toString(), scryfallId: 'id', name: over.name ?? 'C', setCode: 'S',

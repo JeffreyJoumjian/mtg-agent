@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test'
 import { staleIds, mergeRefresh, TTL_MS } from './price-cache'
-import type { PriceCache } from './types'
+import type { PriceCache } from '~/lib/types'
 
 const entry = (usd: number, fetchedAt: number) => ({
   current: { usd, usdFoil: null, eur: null, eurFoil: null },

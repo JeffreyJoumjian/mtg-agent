@@ -1,6 +1,6 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import type { Finish } from "~/lib/types";
-import { rarityStyle } from "~/lib/rarity";
+import { rarityStyle } from "~/lib/card/rarity";
 import { cn } from "~/lib/utils";
 
 interface FinishBadgeProps {

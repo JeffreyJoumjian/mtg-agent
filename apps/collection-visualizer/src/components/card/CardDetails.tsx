@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Check, Copy, Maximize2, Pin } from "lucide-react";
 import type { Baseline, CardTile as Tile, Currency } from "~/lib/types";
-import { effectivePrice, tileValue, unitDelta } from "~/lib/pricing";
+import { effectivePrice, tileValue, unitDelta } from "~/lib/card/pricing";
 import { formatMoney, formatDelta } from "~/lib/format";
-import { variantsBestFirst } from "~/lib/stacks";
-import { facesOf, cardImage } from "~/lib/faces";
-import { manaToShow } from "~/lib/mana";
-import { rarityStyle } from "~/lib/rarity";
+import { variantsBestFirst } from "~/lib/card/stacks";
+import { facesOf, cardImage } from "~/lib/card/faces";
+import { manaToShow } from "~/lib/card/mana";
+import { rarityStyle } from "~/lib/card/rarity";
 import { imageFilename } from "~/lib/download";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import { ScrollArea } from "~/components/ui/scroll-area";

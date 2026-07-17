@@ -1,7 +1,7 @@
 import { test, expect } from 'bun:test'
 import { computeView } from './view'
 import { emptyFilters } from './filters'
-import type { CardTile } from './types'
+import type { CardTile } from '~/lib/types'
 
 const tile = (name: string, usd: number): CardTile => ({
   key: name, scryfallId: name, name, setCode: 'S', setName: 'Set', collectorNumber: '1', rarity: 'common',

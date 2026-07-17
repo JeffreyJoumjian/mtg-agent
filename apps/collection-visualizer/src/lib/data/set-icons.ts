@@ -1,4 +1,4 @@
-import type { SetIcon } from "./types";
+import type { SetIcon } from "~/lib/types";
 
 // Pure half of the set-symbol feature: no node/IO imports, because `buildResponse` reaches this
 // module and `buildResponse` is reachable from the client bundle. Fetching and disk live in

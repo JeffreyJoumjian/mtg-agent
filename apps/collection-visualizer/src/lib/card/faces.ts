@@ -1,4 +1,4 @@
-import type { CardFace, CardTile } from './types'
+import type { CardFace, CardTile } from '~/lib/types'
 
 /** The individual sides of a card, or [] for a single-faced one. */
 export function facesOf(tile: CardTile): CardFace[] {

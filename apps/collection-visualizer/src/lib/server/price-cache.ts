@@ -1,7 +1,10 @@
+// Server only — see lib/server/README. Reaching this from a component (even transitively, through
+// something that looks pure) breaks the client build: node:fs has no browser equivalent, so Vite
+// externalises it to a stub that throws on first access.
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
-import type { PriceCache } from './types'
-import { toPriceSet, toEnriched } from './scryfall'
+import type { PriceCache } from '~/lib/types'
+import { toPriceSet, toEnriched } from '~/lib/data/scryfall'
 
 export const TTL_MS = 24 * 60 * 60 * 1000
 

@@ -1,5 +1,5 @@
-import type { CardTile, Currency } from './types'
-import type { Pins } from './pins'
+import type { CardTile, Currency } from '~/lib/types'
+import type { Pins } from '~/lib/state/pins'
 import { effectivePrice } from './pricing'
 
 /** A "stack": all owned tiles (printings/finishes) that are the same card by name. */

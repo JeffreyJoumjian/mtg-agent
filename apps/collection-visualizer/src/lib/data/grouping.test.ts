@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test'
 import { groupRows, enrichTiles, ownedIds } from './grouping'
-import type { CollectionRow, PriceCache } from './types'
+import type { CollectionRow, PriceCache } from '~/lib/types'
 
 const row = (over: Partial<CollectionRow>): CollectionRow => ({
   scryfallId: 'id-1', name: 'Bolt', setCode: 'LEA', setName: 'Alpha', collectorNumber: '161',

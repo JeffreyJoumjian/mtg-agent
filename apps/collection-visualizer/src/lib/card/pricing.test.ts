@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test'
 import { effectivePrice, unitDelta, totals } from './pricing'
-import type { CardTile } from './types'
+import type { CardTile } from '~/lib/types'
 
 const tile = (over: Partial<CardTile>): CardTile => ({
   key: 'k', scryfallId: 'id', name: 'C', setCode: 'S', setName: 'Set', collectorNumber: '1',

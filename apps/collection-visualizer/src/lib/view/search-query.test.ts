@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test'
 import { compileQuery } from './search-query'
-import type { CardTile } from './types'
+import type { CardTile } from '~/lib/types'
 
 const tile = (over: Partial<CardTile> & { colors?: any; ci?: any; type?: string; oracle?: string; cmc?: number }): CardTile => ({
   key: 'k', scryfallId: 'id', name: over.name ?? 'Lightning Bolt', setCode: over.setCode ?? 'LEA', setName: 'Alpha',

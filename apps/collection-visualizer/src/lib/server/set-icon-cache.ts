@@ -1,8 +1,8 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { DATA_DIR, TTL_MS } from "./price-cache";
-import { fetchAllSets, fetchSvg } from "./scryfall";
-import { emptyIconCache, iconId, missingIcons, parseSetIcon, type SetIconCache } from "./set-icons";
+import { fetchAllSets, fetchSvg } from "~/lib/data/scryfall";
+import { emptyIconCache, iconId, missingIcons, parseSetIcon, type SetIconCache } from "~/lib/data/set-icons";
 
 // Fetching + disk for the vendored set symbols. Kept apart from set-icons.ts (the pure half) because
 // that one is reachable from the client bundle, and these node imports must not follow it there.

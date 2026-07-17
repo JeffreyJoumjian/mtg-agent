@@ -1,5 +1,5 @@
 import { useAtomValue } from "jotai";
-import { setIconsAtom } from "~/lib/store";
+import { setIconsAtom } from "~/lib/state/store";
 import { cn } from "~/lib/utils";
 
 interface SetIconProps {

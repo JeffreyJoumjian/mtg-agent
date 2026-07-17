@@ -1,6 +1,6 @@
 import { atom } from "jotai";
 import { atomWithStorage, createJSONStorage } from "jotai/utils";
-import type { SetIcon } from "./types";
+import type { SetIcon } from "~/lib/types";
 import type { Pins } from "./pins";
 import { defaultSettings, type ViewSettings } from "./settings";
 

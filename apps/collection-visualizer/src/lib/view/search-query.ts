@@ -1,4 +1,4 @@
-import type { CardTile, ColorSymbol } from './types'
+import type { CardTile, ColorSymbol } from '~/lib/types'
 
 type Predicate = (tile: CardTile) => boolean
 

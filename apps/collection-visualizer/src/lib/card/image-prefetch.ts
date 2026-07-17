@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import type { CardTile } from './types'
+import type { CardTile } from '~/lib/types'
 import { facesOf, cardImage } from './faces'
 
 // URLs already requested this session — the browser caches the bytes, this just avoids re-issuing.

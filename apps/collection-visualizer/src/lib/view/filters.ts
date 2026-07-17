@@ -1,5 +1,5 @@
-import type { CardTile, ColorSymbol, Currency } from './types'
-import { effectivePrice } from './pricing'
+import type { CardTile, ColorSymbol, Currency } from '~/lib/types'
+import { effectivePrice } from '~/lib/card/pricing'
 
 export type ColorMode = 'any' | 'all' | 'exactly'
 

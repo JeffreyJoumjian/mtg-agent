@@ -1,4 +1,4 @@
-import type { PriceSet, Enriched, ColorSymbol } from './types'
+import type { PriceSet, Enriched, ColorSymbol } from '~/lib/types'
 
 const API = 'https://api.scryfall.com'
 const HEADERS = {

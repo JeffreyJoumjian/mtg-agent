@@ -1,4 +1,4 @@
-import type { Baseline, CardTile, Currency, Finish, PriceSet } from './types'
+import type { Baseline, CardTile, Currency, Finish, PriceSet } from '~/lib/types'
 
 /** The market price for a tile given currency + finish (foil/etched → *_foil with fallback). */
 export function effectivePrice(prices: PriceSet | null, currency: Currency, finish: Finish): number | null {

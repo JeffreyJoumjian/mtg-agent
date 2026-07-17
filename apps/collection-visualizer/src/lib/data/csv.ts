@@ -1,4 +1,4 @@
-import type { CollectionRow, Finish } from './types'
+import type { CollectionRow, Finish } from '~/lib/types'
 
 /** Split one CSV line into fields, honoring double-quoted fields with embedded commas/quotes. */
 function splitCsvLine(line: string): string[] {

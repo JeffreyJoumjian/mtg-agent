@@ -6,7 +6,7 @@ import { CardDetails } from './CardDetails'
 import { DownloadButton } from './DownloadButton'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { scryfallUrl } from '~/lib/format'
-import { shownFace, cardImage } from '~/lib/faces'
+import { shownFace, cardImage } from '~/lib/card/faces'
 import { imageFilename } from '~/lib/download'
 
 interface CardSidebarProps {

@@ -1,4 +1,4 @@
-import type { CardTile, Currency } from './types'
+import type { CardTile, Currency } from '~/lib/types'
 import { compileQuery } from './search-query'
 import { applyFilters, type FilterState } from './filters'
 import { sortTiles, type SortKey } from './sort'

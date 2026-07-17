@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import type { ColorSymbol, Currency } from "~/lib/types";
-import { activeFilterCount, emptyFilters, type FilterState } from "~/lib/filters";
+import { activeFilterCount, emptyFilters, type FilterState } from "~/lib/view/filters";
 import { ManaSymbol } from "~/components/symbols/Mana";
 import { SetIcon } from "~/components/symbols/SetIcon";
 import { cn } from "~/lib/utils";

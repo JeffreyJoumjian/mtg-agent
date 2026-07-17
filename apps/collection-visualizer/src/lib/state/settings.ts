@@ -1,5 +1,5 @@
-import type { Baseline, Currency } from './types'
-import type { SortKey } from './sort'
+import type { Baseline, Currency } from '~/lib/types'
+import type { SortKey } from '~/lib/view/sort'
 
 export type ViewMode = 'grid' | 'list'
 export type Theme = 'dark' | 'light'

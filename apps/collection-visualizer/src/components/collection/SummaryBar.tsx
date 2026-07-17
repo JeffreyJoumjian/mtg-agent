@@ -1,5 +1,5 @@
 import type { Baseline, CardTile, Currency } from '~/lib/types'
-import { totals } from '~/lib/pricing'
+import { totals } from '~/lib/card/pricing'
 import { formatMoney, formatDelta } from '~/lib/format'
 
 interface SummaryBarProps {

@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test'
 import { facesOf, isTwoSided, cardImage } from './faces'
-import type { CardFace, CardTile } from './types'
+import type { CardFace, CardTile } from '~/lib/types'
 
 const FACE: CardFace = {
   name: 'Back',

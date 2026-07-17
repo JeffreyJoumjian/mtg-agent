@@ -1,6 +1,6 @@
 import type { Currency, Finish } from "~/lib/types";
 import { formatMoney, formatDelta } from "~/lib/format";
-import { rarityStyle } from "~/lib/rarity";
+import { rarityStyle } from "~/lib/card/rarity";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import { ManaCost } from "~/components/symbols/Mana";
 import { SetIcon } from "~/components/symbols/SetIcon";

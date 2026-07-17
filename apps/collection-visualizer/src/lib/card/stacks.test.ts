@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test'
 import { groupByName, representative, variantsBestFirst, groupTotals, type NameGroup } from './stacks'
-import type { CardTile } from './types'
+import type { CardTile } from '~/lib/types'
 
 const tile = (over: Partial<CardTile> & { usd?: number }): CardTile => ({
   key: over.key ?? 'k', scryfallId: over.scryfallId ?? 'id', name: over.name ?? 'Bolt', setCode: 'S', setName: 'Set',

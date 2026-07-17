@@ -1,4 +1,4 @@
-import type { CardTile, CollectionRow, Enriched, PriceCache, PriceSet } from './types'
+import type { CardTile, CollectionRow, Enriched, PriceCache, PriceSet } from '~/lib/types'
 
 export interface GroupedRow {
   key: string

@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test'
 import { applyFilters, emptyFilters, ownedSets, priceBounds, cmcBounds, activeFilterCount } from './filters'
-import type { CardTile, ColorSymbol } from './types'
+import type { CardTile, ColorSymbol } from '~/lib/types'
 
 const tile = (over: Partial<CardTile> & { colors?: ColorSymbol[]; cmc?: number }): CardTile => ({
   key: over.key ?? 'k', scryfallId: 'id', name: 'C', setCode: over.setCode ?? 'AAA', setName: over.setName ?? 'Set A',

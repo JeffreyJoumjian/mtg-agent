@@ -1,6 +1,6 @@
 import { useEffect, useRef, type PointerEvent, type ReactNode } from "react";
 import { useAtomValue } from "jotai";
-import { settingsAtom } from "~/lib/store";
+import { settingsAtom } from "~/lib/state/store";
 import { cn } from "~/lib/utils";
 
 interface FoilCardProps {

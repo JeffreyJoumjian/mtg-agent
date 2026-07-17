@@ -12,8 +12,8 @@ import {
   SelectValue,
 } from "~/components/ui/select";
 import type { Baseline, Currency } from "~/lib/types";
-import type { SortKey } from "~/lib/sort";
-import type { Theme, ViewMode, ViewSettings } from "~/lib/settings";
+import type { SortKey } from "~/lib/view/sort";
+import type { Theme, ViewMode, ViewSettings } from "~/lib/state/settings";
 
 const SORTS: { key: SortKey; label: string }[] = [
   { key: "price", label: "Price" },
