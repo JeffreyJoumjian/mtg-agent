@@ -2,11 +2,9 @@ import type { Currency, Finish } from "~/lib/types";
 import { formatMoney, formatDelta } from "~/lib/format";
 import { rarityStyle } from "~/lib/rarity";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
-import { ManaCost } from "./ManaCost";
-import { FaceBadge } from "./FaceBadge";
-import { SetIcon } from "./SetIcon";
-import { RarityBadge } from "./RarityBadge";
-import { FinishBadge } from "./FinishBadge";
+import { ManaCost } from "~/components/symbols/Mana";
+import { SetIcon } from "~/components/symbols/SetIcon";
+import { FaceBadge, FinishBadge, RarityBadge } from "~/components/symbols/Badges";
 
 interface TileFooterProps {
   /** Name of the shown face (for a double-faced card) or the whole card. */

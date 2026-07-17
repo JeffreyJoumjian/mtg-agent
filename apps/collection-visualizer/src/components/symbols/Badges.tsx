@@ -1,5 +1,6 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import type { Finish } from "~/lib/types";
+import { rarityStyle } from "~/lib/rarity";
 import { cn } from "~/lib/utils";
 
 interface FinishBadgeProps {
@@ -48,5 +49,46 @@ export function FinishBadge(props: FinishBadgeProps) {
       </TooltipTrigger>
       <TooltipContent>{finish.label}</TooltipContent>
     </Tooltip>
+  );
+}
+
+interface RarityBadgeProps {
+  rarity: string;
+  className?: string;
+}
+
+/** The card's rarity as a metallic chip, echoing how a real card colors its set symbol. The shine is
+ *  entirely in the rarity's gradient — deliberately no inset highlight or edge ring, which is what
+ *  reads as embossed. Height is locked to 14px so it fits the tile's 16px meta row (which CardGrid's
+ *  FOOTER math depends on) — only the width grows with the label. */
+export function RarityBadge(props: RarityBadgeProps) {
+  const style = rarityStyle(props.rarity);
+
+  return (
+    <span
+      className={cn(
+        "inline-flex size-3.5 shrink-0 cursor-default items-center justify-center rounded-[3px] text-[9px] font-medium leading-none tracking-wide",
+        style.badge,
+        props.className,
+      )}
+    >
+      {style.letter}
+    </span>
+  );
+}
+
+interface FaceBadgeProps {
+  /** Which of the two faces is shown (odd flip = back / face-down). */
+  back: boolean;
+  className?: string;
+}
+
+/** The double-faced indicator MTG prints on the card: a triangle pointing up for the face-up side and
+ *  down for the face-down side, flipping as you turn the card over. */
+export function FaceBadge(props: FaceBadgeProps) {
+  return (
+    <svg viewBox="0 0 12 12" fill="currentColor" aria-hidden className={cn("size-3.5 shrink-0", props.className)}>
+      {props.back ? <path d="M2.5 4.5 L9.5 4.5 L6 9.5 Z" /> : <path d="M6 2.5 L9.5 7.5 L2.5 7.5 Z" />}
+    </svg>
   );
 }

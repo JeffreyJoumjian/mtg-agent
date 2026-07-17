@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Maximize2, Pin } from "lucide-react";
+import { Check, Copy, Maximize2, Pin } from "lucide-react";
 import type { Baseline, CardTile as Tile, Currency } from "~/lib/types";
 import { effectivePrice, tileValue, unitDelta } from "~/lib/pricing";
 import { formatMoney, formatDelta } from "~/lib/format";
@@ -10,16 +10,12 @@ import { rarityStyle } from "~/lib/rarity";
 import { imageFilename } from "~/lib/download";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import { ScrollArea } from "~/components/ui/scroll-area";
-import { ManaCost } from "./ManaCost";
-import { FaceBadge } from "./FaceBadge";
-import { SetIcon } from "./SetIcon";
-import { RarityBadge } from "./RarityBadge";
-import { FinishBadge } from "./FinishBadge";
-import { FlipImage } from "./FlipImage";
-import { FlipButton } from "./FlipButton";
+import { ManaCost } from "~/components/symbols/Mana";
+import { SetIcon } from "~/components/symbols/SetIcon";
+import { FaceBadge, FinishBadge, RarityBadge } from "~/components/symbols/Badges";
+import { FlipButton, FlipImage } from "./Flip";
 import { FoilCard } from "./FoilCard";
 import { ImageModal } from "./ImageModal";
-import { OracleText } from "./OracleText";
 
 interface CardDetailsProps {
   tile: Tile;
@@ -258,5 +254,71 @@ function VariantStrip(props: VariantStripProps) {
         );
       })}
     </div>
+  );
+}
+
+/** The card's rules text, styled to feel like a card's text box: a serif face (closer to the real
+ *  card font) inside a bordered panel. Mana / tap / etc. symbols render as Scryfall glyphs, but the
+ *  underlying `{T}` / `{U}` token stays selectable, so copying (button or manual select) yields the
+ *  canonical text form. */
+function OracleText(props: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copy = async () => {
+    await navigator.clipboard.writeText(props.text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  return (
+    <div
+      className="relative rounded-md border bg-muted/40 p-3 pr-9 text-sm font-normal leading-relaxed whitespace-pre-wrap text-foreground"
+      style={{ fontFamily: "'Times New Roman', Times, serif" }}
+    >
+      {renderOracle(props.text)}
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <button
+            onClick={copy}
+            aria-label="Copy card text"
+            className="absolute right-1.5 top-1.5 flex size-6 cursor-pointer items-center justify-center rounded text-muted-foreground transition hover:bg-accent hover:text-foreground"
+          >
+            {copied ? <Check className="size-3.5 text-emerald-400" /> : <Copy className="size-3.5" />}
+          </button>
+        </TooltipTrigger>
+        <TooltipContent>{copied ? "Copied!" : "Copy card text"}</TooltipContent>
+      </Tooltip>
+    </div>
+  );
+}
+
+/** Split the text on {...} tokens; render tokens as symbols, everything else as plain text. */
+function renderOracle(text: string) {
+  return text.split(/(\{[^}]+\})/g).map((seg, i) => {
+    const isToken = /^\{[^}]+\}$/.test(seg);
+    return isToken ? <OracleSymbol key={i} token={seg} /> : <span key={i}>{seg}</span>;
+  });
+}
+
+function OracleSymbol(props: { token: string }) {
+  const [failed, setFailed] = useState(false);
+  // {W/U} → WU, {T} → T, {2} → 2 — Scryfall names its symbol files without the braces or slash.
+  const code = props.token.slice(1, -1).replace(/\//g, "");
+
+  if (failed) return <>{props.token}</>;
+
+  return (
+    // overflow-hidden clips the (invisible) token to the glyph's size, but selection still copies the
+    // full `{T}` text; the glyph image is laid over the top.
+    <span className="relative mx-px inline-block h-[0.95em] w-[0.95em] overflow-hidden align-[-0.12em]">
+      <span className="text-transparent">{props.token}</span>
+      <img
+        src={`https://svgs.scryfall.io/card-symbols/${code}.svg`}
+        alt={props.token}
+        draggable={false}
+        onError={() => setFailed(true)}
+        className="pointer-events-none absolute inset-0 h-full w-full"
+      />
+    </span>
   );
 }

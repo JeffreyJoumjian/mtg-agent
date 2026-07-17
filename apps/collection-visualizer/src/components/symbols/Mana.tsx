@@ -1,4 +1,10 @@
 import { useState } from 'react'
+import wSvg from '~/assets/mana/W.svg?raw'
+import uSvg from '~/assets/mana/U.svg?raw'
+import bSvg from '~/assets/mana/B.svg?raw'
+import rSvg from '~/assets/mana/R.svg?raw'
+import gSvg from '~/assets/mana/G.svg?raw'
+import type { ColorSymbol } from '~/lib/types'
 
 interface ManaCostProps {
   /** A mana cost string, e.g. "{2}{R}". */
@@ -36,6 +42,27 @@ function Pip(props: { token: string; size: string }) {
       draggable={false}
       onError={() => setFailed(true)}
       className={`${props.size} shrink-0`}
+    />
+  )
+}
+
+/** Official mana pip SVGs (colored circle + glyph), bundled at build time via Vite `?raw`. */
+const SVG: Record<ColorSymbol, string> = { W: wSvg, U: uSvg, B: bSvg, R: rSvg, G: gSvg }
+
+interface ManaSymbolProps {
+  sym: ColorSymbol
+  className?: string
+}
+
+/** A single colored mana pip. Unlike ManaCost above (which pulls any symbol from Scryfall's CDN, so
+ *  it covers hybrids/generic/tap), this is bundled — it only needs the five colors, and the filters
+ *  popover shows them before any network is available. */
+export function ManaSymbol(props: ManaSymbolProps) {
+  return (
+    <span
+      aria-hidden
+      className={`block [&>svg]:h-full [&>svg]:w-full ${props.className ?? ''}`}
+      dangerouslySetInnerHTML={{ __html: SVG[props.sym] }}
     />
   )
 }

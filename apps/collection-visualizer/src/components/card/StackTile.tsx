@@ -7,8 +7,7 @@ import { facesOf, cardImage } from "~/lib/faces";
 import { manaToShow } from "~/lib/mana";
 import { useHoverPrefetch } from "~/lib/image-prefetch";
 import { TileFooter } from "./TileFooter";
-import { FlipImage } from "./FlipImage";
-import { FlipButton } from "./FlipButton";
+import { FlipButton, FlipImage } from "./Flip";
 import { FoilCard } from "./FoilCard";
 
 interface StackTileProps {

@@ -4,11 +4,11 @@ import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { tileValue, unitDelta } from '~/lib/pricing'
 import { formatMoney, formatDelta } from '~/lib/format'
 import { rarityStyle } from '~/lib/rarity'
-import { ManaSymbol } from './ManaSymbol'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '~/components/ui/hover-card'
-import { CardDetails } from './CardDetails'
-import { SetIcon } from './SetIcon'
-import { RarityBadge } from './RarityBadge'
+import { ManaSymbol } from '~/components/symbols/Mana'
+import { SetIcon } from '~/components/symbols/SetIcon'
+import { RarityBadge } from '~/components/symbols/Badges'
+import { CardDetails } from '~/components/card/CardDetails'
 
 interface CardListProps {
   tiles: Tile[]
