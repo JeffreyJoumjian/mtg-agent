@@ -67,7 +67,11 @@ function ToggleGroupItem(
       data-size={context.size || size}
       className={cn(
         toggleVariants({ variant: context.variant || variant, size: context.size || size }),
-        'min-w-0 flex-1 shrink-0 rounded-none shadow-none first:rounded-l-md last:rounded-r-md focus:z-10 focus-visible:z-10 data-[variant=outline]:border-l-0 data-[variant=outline]:first:border-l',
+        // flex-auto, not upstream's flex-1: the group sizes itself with `w-fit`, and `flex-1` sets
+        // `flex-basis: 0`, so items contribute nothing to that intrinsic width and every one ends up
+        // the same size — clipping whichever label is longest ("Completion" next to "Name").
+        // `flex-auto` measures from content first and still lets items grow to fill a wider group.
+        'min-w-0 flex-auto shrink-0 rounded-none shadow-none first:rounded-l-md last:rounded-r-md focus:z-10 focus-visible:z-10 data-[variant=outline]:border-l-0 data-[variant=outline]:first:border-l',
         className,
       )}
       {...rest}

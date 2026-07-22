@@ -1,8 +1,13 @@
 import type { ReactNode } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { useAtomValue } from 'jotai'
+import { settingsAtom } from '~/lib/state/store'
+import { applyTheme } from '~/lib/state/settings'
 import { TooltipProvider } from '~/components/ui/tooltip'
+import { SidebarInset, SidebarProvider } from '~/components/ui/sidebar'
+import { AppSidebar } from '~/components/nav/AppSidebar'
 import appCss from '~/styles/app.css?inline'
 
 export const Route = createRootRoute({
@@ -19,11 +24,27 @@ export const Route = createRootRoute({
 function RootComponent() {
   // One client per app instance; created lazily so SSR and client each get their own.
   const [queryClient] = useState(() => new QueryClient())
+
+  // The theme is the one setting with an effect outside React — it toggles a class on <html>. It
+  // lives here rather than on a page so every route keeps it, and so it runs on the stored value
+  // once localStorage is read, not just when you change it.
+  const theme = useAtomValue(settingsAtom).theme
+  useEffect(() => {
+    applyTheme(theme)
+  }, [theme])
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <RootDocument>
-          <Outlet />
+          {/* h-svh here rather than on each page: the pages scroll their own panes, so the shell
+              itself must be exactly one viewport tall and never scroll. */}
+          <SidebarProvider className="h-svh min-h-0">
+            <AppSidebar />
+            <SidebarInset className="min-w-0 overflow-hidden">
+              <Outlet />
+            </SidebarInset>
+          </SidebarProvider>
         </RootDocument>
       </TooltipProvider>
     </QueryClientProvider>
