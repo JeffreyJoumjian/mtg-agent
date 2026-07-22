@@ -1,11 +1,12 @@
 import { createServerFn } from '@tanstack/react-start'
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { join } from 'node:path'
-import type { CardTile, CollectionRow, PriceCache, SetIcon } from '~/lib/types'
+import type { CardTile, CollectionRow, PriceCache, PriceSet, SetIcon } from '~/lib/types'
 import { parseManaBoxCsv } from '~/lib/data/csv'
 import { groupRows, enrichTiles, ownedIds } from '~/lib/data/grouping'
 import { ownedSets } from '~/lib/view/filters'
 import { loadCache, saveCache, staleIds, mergeRefresh, DATA_DIR } from '~/lib/server/price-cache'
+import { loadHistory, saveHistory, recordPrices, seedFromCache } from '~/lib/server/price-history'
 import { fetchCardsByIds } from '~/lib/data/scryfall'
 import { iconsForSets, emptyIconCache } from '~/lib/data/set-icons'
 import { loadIconCache, refreshSetIcons } from '~/lib/server/set-icon-cache'
@@ -51,6 +52,33 @@ async function refreshIcons(now: number) {
   }
 }
 
+/** Append this refresh's prices to the permanent history.
+ *
+ *  Only the ids we actually fetched have prices new enough to file under today. On the very first
+ *  run the history file doesn't exist yet, so it's seeded from the prices already cached — the
+ *  pre-refresh cache, so those points keep the dates they were fetched on rather than all landing
+ *  on today.
+ *
+ *  A failure here must not take the refresh down with it: the prices themselves are already saved,
+ *  and a chart missing a day is a far smaller problem than a refresh that won't complete. It's
+ *  logged rather than swallowed, since a history that silently stops recording defeats the point. */
+async function recordHistory(before: PriceCache, after: PriceCache, fetched: string[], now: number) {
+  try {
+    const stored = await loadHistory()
+    const history = Object.keys(stored).length === 0 ? seedFromCache(before) : stored
+
+    const priceById: Record<string, PriceSet> = {}
+    for (const id of fetched) {
+      const entry = after[id]
+      if (entry) priceById[id] = entry.current
+    }
+
+    await saveHistory(recordPrices(history, priceById, now))
+  } catch (err) {
+    console.error('[price-history] failed to record this refresh:', err)
+  }
+}
+
 /** Refresh any stale/missing owned prices, persist, and return the assembled response. */
 async function refresh(rows: CollectionRow[], force: boolean): Promise<CollectionResponse> {
   const cache = await loadCache()
@@ -67,6 +95,7 @@ async function refresh(rows: CollectionRow[], force: boolean): Promise<Collectio
     const raw = await fetchCardsByIds(toFetch)
     const nextCache = mergeRefresh(cache, raw, now)
     await saveCache(nextCache)
+    await recordHistory(cache, nextCache, Object.keys(raw), now)
     return buildResponse(rows, nextCache, icons)
   } catch (err) {
     // A manual refresh surfaces the error to its mutation; an automatic (stale-TTL) load

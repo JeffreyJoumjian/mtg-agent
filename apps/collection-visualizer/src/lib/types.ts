@@ -78,6 +78,19 @@ export interface CacheEntry {
 
 export type PriceCache = Record<string, CacheEntry>
 
+/** A card's prices on one day. */
+export interface PricePoint extends PriceSet {
+  /** UTC `YYYY-MM-DD`. At most one point per card per day — a second refresh the same day
+   *  overwrites it rather than adding a second entry. */
+  date: string
+}
+
+/** Every price we've ever recorded, per Scryfall id, oldest first. Unlike `PriceCache` — which
+ *  holds only the latest two prices — this is never overwritten, because Scryfall can't tell us
+ *  what a card cost last week. Points are only written when a price actually moves, so a gap
+ *  means "unchanged", and a reader carries the last point forward. */
+export type PriceHistory = Record<string, PricePoint[]>
+
 export interface CardTile {
   key: string
   scryfallId: string
