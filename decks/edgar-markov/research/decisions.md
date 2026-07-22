@@ -52,6 +52,21 @@ Companion files: cards.txt (card cache), UPGRADE-ROADMAP.txt (what's done / to b
   Boros Charm's indestructible mode was redundant and doesn't stop our own -X/-X wipes.
   Assessment: fine cut, NOT worth re-adding (protection suite is solid at 4).
 
+=== CARDS UNDER CONSIDERATION (not yet in deck) =============
+- Coat of Arms ({5} artifact, ~$19): QUEUED for the final build. Quadratic tribal anthem
+  (+1/+1 per OTHER same-type creature) — on a wide vampire board it's a swing-for-lethal
+  finisher; stacks with the lords + Shared Animosity + Elspeth's doubled tokens. Catches:
+  (1) SYMMETRICAL — also pumps opponents' shared-type creatures (real risk vs other tribal/
+  token decks); (2) it's a non-interactive WIN-MORE payoff, and payoffs aren't our weak spot
+  (removal/wraths are). Verdict: strong FLEX/Pocket — great vs slow grindy pods, side out vs
+  tribal mirrors. Must EARN a slot in the finalizer vs interaction; not an auto-include.
+
+=== EVALUATED & PASSED (do not re-litigate) =================
+- Dark Ritual ({B} instant, one-time BBB): NO. One-shot ritual = spend a card for +2 mana
+  ONCE, then it's a dead draw. Only pays off in cEDH combo/storm that ends on an explosive
+  turn. Our deck is Bracket-3 midrange grind that wants card advantage + repeatable mana;
+  BBB doesn't even fix for Edgar's R/W. Great card, wrong deck.
+
 === MANABASE DECISIONS ======================================
 - 13 basics + premium-leaning nonbasics. Target ~16-18 nonbasic / ~18-20 basic was the
   early goal; now leaning more premium.
