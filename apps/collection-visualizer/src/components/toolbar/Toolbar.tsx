@@ -1,8 +1,10 @@
 import { useRef } from 'react'
-import { RefreshCw, Upload } from 'lucide-react'
+import { RefreshCw, Upload, X } from 'lucide-react'
+import { SetIcon } from '~/components/symbols/SetIcon'
 import { Input } from '~/components/ui/input'
 import { Button } from '~/components/ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
+import { SidebarTrigger } from '~/components/ui/sidebar'
 import { FiltersPopover } from './FiltersPopover'
 import { SettingsPopover } from './SettingsPopover'
 import type { FilterState } from '~/lib/view/filters'
@@ -24,6 +26,9 @@ interface ToolbarProps {
   refreshing: boolean
   onUpload: (file: File) => void
   pricesUpdatedAt: number | null
+  /** Set the Library is pinned to (arrived from Collections), or null when browsing everything. */
+  scopedSet: { code: string; name: string } | null
+  onClearScope: () => void
 }
 
 export function Toolbar(props: ToolbarProps) {
@@ -31,6 +36,24 @@ export function Toolbar(props: ToolbarProps) {
 
   return (
     <div className="flex flex-wrap items-center gap-2 border-b p-3">
+      <SidebarTrigger className="-ml-1" />
+
+      {props.scopedSet && (
+        <div className="flex items-center gap-1.5 rounded-md border bg-accent py-1 pl-2 pr-1 text-sm">
+          <SetIcon setCode={props.scopedSet.code} className="text-muted-foreground" />
+          <span className="max-w-[12rem] truncate font-medium">{props.scopedSet.name}</span>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="size-5"
+            aria-label="Show all sets"
+            onClick={props.onClearScope}
+          >
+            <X />
+          </Button>
+        </div>
+      )}
+
       <Input
         value={props.query}
         onChange={(e) => props.onQuery(e.target.value)}
@@ -39,7 +62,7 @@ export function Toolbar(props: ToolbarProps) {
       />
 
       <FiltersPopover
-        sets={props.sets}
+        sets={props.scopedSet ? [] : props.sets}
         types={props.types}
         filters={props.filters}
         onFilters={props.onFilters}

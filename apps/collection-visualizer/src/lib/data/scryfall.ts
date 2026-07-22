@@ -102,14 +102,34 @@ async function post(path: string, body: unknown): Promise<any> {
 export interface SetSymbol {
   code: string
   iconUri: string
+  name: string
+  /** How many cards the set was printed with — the denominator on the card ("123/281"). Absent for
+   *  sets that never had one (promos, Secret Lairs, anything open-ended), where only `cardCount` is
+   *  meaningful. */
+  printedSize: number | null
+  /** Every printing Scryfall files under the set, including showcase and borderless variants — so
+   *  it runs well past `printedSize` for a modern set. */
+  cardCount: number
+  releasedAt: string | null
+  setType: string
+  digital: boolean
 }
 
-/** Every set Scryfall knows about (~1000), with the URL of its symbol. Returned unpaginated. */
+/** Every set Scryfall knows about (~1000). Returned unpaginated. */
 export async function fetchAllSets(): Promise<SetSymbol[]> {
   const body = await get('/sets')
   return (body.data ?? [])
     .filter((s: any) => s?.code && s?.icon_svg_uri)
-    .map((s: any) => ({ code: s.code, iconUri: s.icon_svg_uri }))
+    .map((s: any) => ({
+      code: s.code,
+      iconUri: s.icon_svg_uri,
+      name: s.name ?? s.code,
+      printedSize: typeof s.printed_size === 'number' ? s.printed_size : null,
+      cardCount: s.card_count ?? 0,
+      releasedAt: s.released_at ?? null,
+      setType: s.set_type ?? '',
+      digital: !!s.digital,
+    }))
 }
 
 /** Fetch one set symbol. These live on Scryfall's asset CDN rather than the API host, so they're

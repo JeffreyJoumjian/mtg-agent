@@ -35,21 +35,32 @@ export function unitDelta(
   return { value: currentInPurchaseCcy - purchase.price, currency: purchase.currency }
 }
 
+/** Summed market value of some tiles (× quantity), skipping any with no price.
+ *
+ *  Shared with `totals` so a slice of the collection priced on its own — one set on the Collections
+ *  page, say — can't disagree with the figure the summary bar shows for that same slice. */
+export function tilesValue(tiles: CardTile[], currency: Currency): number {
+  let value = 0
+  for (const t of tiles) {
+    const unit = tileValue(t, currency)
+    if (unit != null) value += unit * t.quantity
+  }
+  return value
+}
+
 /** Portfolio totals (× quantity), skipping tiles with no price / no baseline. */
 export function totals(
   tiles: CardTile[],
   currency: Currency,
   baseline: Baseline,
 ): { value: number; delta: number; deltaCurrency: string } {
-  let value = 0
+  const value = tilesValue(tiles, currency)
   let delta = 0
   // sinceRefresh deltas are in the display currency; vsPurchase deltas are in the purchase
   // currency (uniform across a ManaBox export). Track it so the summary labels the ± with the
   // same currency the tiles do, instead of the display currency.
   let deltaCurrency: string = currency
   for (const t of tiles) {
-    const unit = tileValue(t, currency)
-    if (unit != null) value += unit * t.quantity
     const d = unitDelta(t, currency, baseline)
     if (d != null) {
       delta += d.value * t.quantity

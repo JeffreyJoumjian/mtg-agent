@@ -10,6 +10,7 @@ import { loadHistory, saveHistory, recordPrices, seedFromCache } from '~/lib/ser
 import { fetchCardsByIds } from '~/lib/data/scryfall'
 import { iconsForSets, emptyIconCache } from '~/lib/data/set-icons'
 import { loadIconCache, refreshSetIcons } from '~/lib/server/set-icon-cache'
+import { getSets } from '~/lib/server/set-cache'
 
 export interface CollectionResponse {
   tiles: CardTile[]
@@ -108,6 +109,15 @@ async function refresh(rows: CollectionRow[], force: boolean): Promise<Collectio
 export const getCollection = createServerFn({ method: 'GET' }).handler(async () => {
   const rows = await readRows()
   return refresh(rows, false)
+})
+
+/** The collection plus Scryfall's set list, which the Collections page needs for its denominators. */
+export const getCollectionWithSets = createServerFn({ method: 'GET' }).handler(async () => {
+  const rows = await readRows()
+  const collection = await refresh(rows, false)
+  const sets = await getSets(Date.now())
+
+  return { ...collection, setInfo: sets }
 })
 
 export const refreshPrices = createServerFn({ method: 'POST' }).handler(async () => {

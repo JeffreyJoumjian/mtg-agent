@@ -71,6 +71,8 @@ function RangeSlider(props: RangeSliderProps) {
 }
 
 interface FiltersPopoverProps {
+  /** Empty while the Library is scoped to a single set — the picker is hidden rather than disabled,
+   *  since there's nothing to choose between and the scope has its own control in the toolbar. */
   sets: { code: string; name: string }[];
   /** Only the types the collection actually contains, so no chip ever filters to nothing. */
   types: CardType[];
@@ -225,7 +227,7 @@ export function FiltersPopover(props: FiltersPopoverProps) {
                 onChange={(lo, hi) => set({ cmcMin: lo, cmcMax: hi })}
               />
 
-              <section>
+              <section className={props.sets.length === 0 ? 'hidden' : undefined}>
                 <div className="mb-2 text-muted-foreground">
                   Sets {f.sets.length > 0 && <span>({f.sets.length})</span>}
                 </div>

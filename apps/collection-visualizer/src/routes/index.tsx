@@ -8,7 +8,7 @@ import { getCollection, refreshPrices, uploadCsv } from '~/server/collection'
 import { emptyFilters, ownedTypes, priceBounds, cmcBounds, type FilterState } from '~/lib/view/filters'
 import type { CardTile as Tile } from '~/lib/types'
 import { computeView } from '~/lib/view/view'
-import { applyTheme, type ViewSettings } from '~/lib/state/settings'
+import { type ViewSettings } from '~/lib/state/settings'
 import { pinsAtom, setIconsAtom, settingsAtom } from '~/lib/state/store'
 import { groupByName, representative } from '~/lib/card/stacks'
 import { Toolbar } from '~/components/toolbar/Toolbar'
@@ -21,6 +21,11 @@ import { CardSidebar } from '~/components/card/CardSidebar'
 import { Drawer, DrawerContent, DrawerTitle, DRAWER_MS } from '~/components/ui/drawer'
 
 export const Route = createFileRoute('/')({
+  /** `?set=` scopes the Library to one set — how Collections drills in. It's a search param rather
+   *  than component state so the scoped view is linkable and survives a reload. */
+  validateSearch: (search: Record<string, unknown>): { set?: string } => ({
+    set: typeof search.set === 'string' && search.set !== '' ? search.set : undefined,
+  }),
   loader: () => getCollection(),
   component: Home,
 })
@@ -28,6 +33,8 @@ export const Route = createFileRoute('/')({
 function Home() {
   const data = Route.useLoaderData()
   const router = useRouter()
+  const navigate = Route.useNavigate()
+  const { set: scopedSet } = Route.useSearch()
 
   // Seed the set symbols from the loader during render, so they're on screen at first paint instead
   // of arriving a frame later via an effect.
@@ -49,12 +56,6 @@ function Home() {
   const [settings, setSettings] = useAtom(settingsAtom)
   const [pins, setPins] = useAtom(pinsAtom)
 
-  // The theme is the one setting with an effect outside React — it toggles a class on <html>. Runs on
-  // the stored value once it's read, too, not just on user changes.
-  useEffect(() => {
-    applyTheme(settings.theme)
-  }, [settings.theme])
-
   const updateSettings = (next: ViewSettings) => setSettings(next)
 
   const refreshFn = useServerFn(refreshPrices)
@@ -73,17 +74,26 @@ function Home() {
     onSuccess: () => router.invalidate(),
   })
 
+  // A set scope overrides the set filter outright rather than merging with it — while you're inside
+  // a set, that's the only set there is, which is why the Sets picker is hidden below.
+  const effectiveFilters = useMemo(
+    () => (scopedSet ? { ...filters, sets: [scopedSet] } : filters),
+    [filters, scopedSet],
+  )
+
   const view = useMemo(
     () =>
       computeView(data.tiles, {
         query,
-        filters,
+        filters: effectiveFilters,
         sortKey: settings.sortKey,
         sortDir: settings.sortDir,
         currency: settings.currency,
       }),
-    [data.tiles, query, filters, settings.sortKey, settings.sortDir, settings.currency],
+    [data.tiles, query, effectiveFilters, settings.sortKey, settings.sortDir, settings.currency],
   )
+
+  const scopedSetName = scopedSet ? data.sets.find((s) => s.code === scopedSet)?.name ?? scopedSet : null
 
   // Slider bounds and the type chips come from the whole collection (not the filtered view), so they
   // don't shift as you filter.
@@ -152,7 +162,8 @@ function Home() {
   const onSelectVariant = (key: string) => select(key, false)
 
   return (
-    <main className="flex h-screen flex-col">
+    // The shell owns the viewport height and renders the <main>; this just fills it.
+    <div className="flex h-full min-h-0 flex-col">
       <Toolbar
         query={query}
         onQuery={setQuery}
@@ -168,6 +179,8 @@ function Home() {
         refreshing={refreshMutation.isPending}
         onUpload={(file) => uploadMutation.mutate(file)}
         pricesUpdatedAt={data.pricesUpdatedAt}
+        scopedSet={scopedSet ? { code: scopedSet, name: scopedSetName! } : null}
+        onClearScope={() => navigate({ search: {} })}
       />
       <div
         className="flex min-h-0 flex-1"
@@ -268,6 +281,6 @@ function Home() {
           </DrawerContent>
         )}
       </Drawer>
-    </main>
+    </div>
   )
 }

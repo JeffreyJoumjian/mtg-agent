@@ -78,6 +78,23 @@ export interface CacheEntry {
 
 export type PriceCache = Record<string, CacheEntry>
 
+/** What we keep about a Magic set itself, as opposed to the cards from it that you own. */
+export interface SetInfo {
+  name: string
+  /** The denominator printed on the card ("123/281"), or null for sets that never had one. */
+  printedSize: number | null
+  /** Every printing filed under the set, variants included — runs past `printedSize`. */
+  cardCount: number
+  releasedAt: string | null
+  setType: string
+}
+
+/** Scryfall's set list, keyed by set code, with the timestamp it was pulled. */
+export interface SetCache {
+  fetchedAt: number
+  sets: Record<string, SetInfo>
+}
+
 /** A card's prices on one day. */
 export interface PricePoint extends PriceSet {
   /** UTC `YYYY-MM-DD`. At most one point per card per day — a second refresh the same day
