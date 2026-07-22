@@ -1,5 +1,6 @@
 import type { CardTile, ColorSymbol, Currency } from '~/lib/types'
 import { effectivePrice } from '~/lib/card/pricing'
+import { CARD_TYPES, typesOf, type CardType } from '~/lib/card/type-line'
 
 export type ColorMode = 'any' | 'all' | 'exactly'
 
@@ -9,6 +10,10 @@ export interface FilterState {
   colorMode: ColorMode
   colorless: boolean
   multicolor: boolean
+  /** Selected card types, matched as OR — picking Creature and Instant shows both. There's no
+   *  any/all/exactly mode like colors have: "all" only means anything for the few multi-type cards,
+   *  and the search box already spells that case as `t:artifact t:creature`. */
+  types: CardType[]
   priceMin: number | null
   priceMax: number | null
   cmcMin: number | null
@@ -16,7 +21,7 @@ export interface FilterState {
 }
 
 export function emptyFilters(): FilterState {
-  return { sets: [], colors: [], colorMode: 'any', colorless: false, multicolor: false, priceMin: null, priceMax: null, cmcMin: null, cmcMax: null }
+  return { sets: [], colors: [], colorMode: 'any', colorless: false, multicolor: false, types: [], priceMin: null, priceMax: null, cmcMin: null, cmcMax: null }
 }
 
 function colorMatch(tileColors: ColorSymbol[], selected: ColorSymbol[], mode: ColorMode): boolean {
@@ -36,6 +41,11 @@ export function applyFilters(tiles: CardTile[], filters: FilterState, currency: 
     if (filters.multicolor && colors.length < 2) return false
     if (!colorMatch(colors, filters.colors, filters.colorMode)) return false
 
+    if (filters.types.length > 0) {
+      const have = typesOf(t)
+      if (!filters.types.some((type) => have.includes(type))) return false
+    }
+
     const price = effectivePrice(t.prices, currency, t.finish)
     if (filters.priceMin != null && (price == null || price < filters.priceMin)) return false
     if (filters.priceMax != null && (price == null || price > filters.priceMax)) return false
@@ -54,6 +64,16 @@ export function ownedSets(tiles: CardTile[]): { code: string; name: string }[] {
   return Object.entries(map)
     .map(([code, name]) => ({ code, name }))
     .sort((a, b) => a.name.localeCompare(b.name))
+}
+
+/** The card types actually present in the collection, in `CARD_TYPES` order — so the chip row only
+ *  ever offers a type that filters to something. */
+export function ownedTypes(tiles: CardTile[]): CardType[] {
+  const seen: Record<string, boolean> = {}
+  for (const t of tiles) {
+    for (const type of typesOf(t)) seen[type] = true
+  }
+  return CARD_TYPES.filter((type) => seen[type])
 }
 
 /** [min, max] effective price across owned tiles in the given currency (floor/ceil, nulls skipped). */
@@ -90,6 +110,7 @@ export function activeFilterCount(f: FilterState): number {
   if (f.colors.length > 0) n++
   if (f.colorless) n++
   if (f.multicolor) n++
+  if (f.types.length > 0) n++
   if (f.priceMin != null || f.priceMax != null) n++
   if (f.cmcMin != null || f.cmcMax != null) n++
   return n

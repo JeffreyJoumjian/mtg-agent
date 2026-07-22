@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import type { ColorSymbol, Currency } from "~/lib/types";
+import type { CardType } from "~/lib/card/type-line";
 import { activeFilterCount, emptyFilters, type FilterState } from "~/lib/view/filters";
 import { ManaSymbol } from "~/components/symbols/Mana";
 import { SetIcon } from "~/components/symbols/SetIcon";
@@ -71,6 +72,8 @@ function RangeSlider(props: RangeSliderProps) {
 
 interface FiltersPopoverProps {
   sets: { code: string; name: string }[];
+  /** Only the types the collection actually contains, so no chip ever filters to nothing. */
+  types: CardType[];
   filters: FilterState;
   onFilters: (f: FilterState) => void;
   priceBounds: [number, number];
@@ -92,6 +95,8 @@ export function FiltersPopover(props: FiltersPopoverProps) {
     set({ colors: f.colors.includes(c) ? f.colors.filter((x) => x !== c) : [...f.colors, c] });
   const toggleSet = (code: string) =>
     set({ sets: f.sets.includes(code) ? f.sets.filter((s) => s !== code) : [...f.sets, code] });
+  const toggleType = (t: CardType) =>
+    set({ types: f.types.includes(t) ? f.types.filter((x) => x !== t) : [...f.types, t] });
 
   return (
     <div className="flex items-center">
@@ -174,6 +179,29 @@ export function FiltersPopover(props: FiltersPopoverProps) {
                   >
                     Multicolor
                   </Button>
+                </div>
+              </section>
+
+              <section>
+                <div className="mb-2 text-muted-foreground">
+                  Types {f.types.length > 0 && <span>({f.types.length})</span>}
+                </div>
+                {/* Chips are OR-ed, so an Artifact Creature lights up under either one. */}
+                <div className="flex flex-wrap gap-1.5">
+                  {props.types.map((t) => {
+                    const on = f.types.includes(t);
+                    return (
+                      <Button
+                        key={t}
+                        variant={on ? "default" : "outline"}
+                        size="sm"
+                        aria-pressed={on}
+                        onClick={() => toggleType(t)}
+                      >
+                        {t}
+                      </Button>
+                    );
+                  })}
                 </div>
               </section>
 

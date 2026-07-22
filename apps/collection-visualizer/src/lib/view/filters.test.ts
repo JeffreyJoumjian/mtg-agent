@@ -1,12 +1,12 @@
 import { test, expect } from 'bun:test'
-import { applyFilters, emptyFilters, ownedSets, priceBounds, cmcBounds, activeFilterCount } from './filters'
+import { applyFilters, emptyFilters, ownedSets, ownedTypes, priceBounds, cmcBounds, activeFilterCount } from './filters'
 import type { CardTile, ColorSymbol } from '~/lib/types'
 
-const tile = (over: Partial<CardTile> & { colors?: ColorSymbol[]; cmc?: number }): CardTile => ({
+const tile = (over: Partial<CardTile> & { colors?: ColorSymbol[]; cmc?: number; typeLine?: string }): CardTile => ({
   key: over.key ?? 'k', scryfallId: 'id', name: 'C', setCode: over.setCode ?? 'AAA', setName: over.setName ?? 'Set A',
   collectorNumber: '1', rarity: 'rare', finish: 'normal', quantity: 1, weightedPurchase: null,
   prices: over.prices ?? { usd: 2, usdFoil: null, eur: null, eurFoil: null }, previousPrices: null,
-  enriched: { cmc: over.cmc ?? 2, colors: over.colors ?? [], colorIdentity: [], typeLine: '', oracleText: '', manaCost: '', imageSmall: null, imageNormal: null },
+  enriched: { cmc: over.cmc ?? 2, colors: over.colors ?? [], colorIdentity: [], typeLine: over.typeLine ?? '', oracleText: '', manaCost: '', imageSmall: null, imageNormal: null },
   fetchedAt: 0, breakdown: [],
 })
 
@@ -32,6 +32,29 @@ test('cmcBounds returns min/max cmc', () => {
 test('activeFilterCount counts active dimensions', () => {
   expect(activeFilterCount(emptyFilters())).toEqual(0)
   expect(activeFilterCount({ ...emptyFilters(), colors: ['R'], priceMin: 5, multicolor: true })).toEqual(3)
+  expect(activeFilterCount({ ...emptyFilters(), types: ['Creature'] })).toEqual(1)
+})
+
+test('type filter keeps cards matching any selected type', () => {
+  const creature = tile({ key: 'c', typeLine: 'Creature — Human Soldier' })
+  const instant = tile({ key: 'i', typeLine: 'Instant' })
+  const land = tile({ key: 'l', typeLine: 'Basic Land — Island' })
+  const tiles = [creature, instant, land]
+
+  expect(applyFilters(tiles, { ...emptyFilters(), types: ['Instant'] }, 'usd')).toEqual([instant])
+  expect(applyFilters(tiles, { ...emptyFilters(), types: ['Creature', 'Instant'] }, 'usd')).toEqual([creature, instant])
+})
+
+test('type filter matches a multi-type card under either of its types', () => {
+  const golem = tile({ typeLine: 'Artifact Creature — Golem' })
+  expect(applyFilters([golem], { ...emptyFilters(), types: ['Artifact'] }, 'usd')).toEqual([golem])
+  expect(applyFilters([golem], { ...emptyFilters(), types: ['Creature'] }, 'usd')).toEqual([golem])
+})
+
+test('ownedTypes lists only the types present, in canonical order', () => {
+  const tiles = [tile({ typeLine: 'Basic Land — Island' }), tile({ typeLine: 'Instant' }), tile({ typeLine: 'Instant' })]
+  expect(ownedTypes(tiles)).toEqual(['Instant', 'Land'])
+  expect(ownedTypes([])).toEqual([])
 })
 
 test('set filter keeps only selected sets', () => {

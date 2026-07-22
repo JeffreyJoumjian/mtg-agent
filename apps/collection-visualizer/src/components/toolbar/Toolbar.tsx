@@ -6,12 +6,14 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip
 import { FiltersPopover } from './FiltersPopover'
 import { SettingsPopover } from './SettingsPopover'
 import type { FilterState } from '~/lib/view/filters'
+import type { CardType } from '~/lib/card/type-line'
 import type { ViewSettings } from '~/lib/state/settings'
 
 interface ToolbarProps {
   query: string
   onQuery: (v: string) => void
   sets: { code: string; name: string }[]
+  types: CardType[]
   filters: FilterState
   onFilters: (f: FilterState) => void
   priceBounds: [number, number]
@@ -38,6 +40,7 @@ export function Toolbar(props: ToolbarProps) {
 
       <FiltersPopover
         sets={props.sets}
+        types={props.types}
         filters={props.filters}
         onFilters={props.onFilters}
         priceBounds={props.priceBounds}

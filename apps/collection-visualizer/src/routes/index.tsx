@@ -5,7 +5,7 @@ import { useMutation } from '@tanstack/react-query'
 import { useAtom, useSetAtom } from 'jotai'
 import { useHydrateAtoms } from 'jotai/utils'
 import { getCollection, refreshPrices, uploadCsv } from '~/server/collection'
-import { emptyFilters, priceBounds, cmcBounds, type FilterState } from '~/lib/view/filters'
+import { emptyFilters, ownedTypes, priceBounds, cmcBounds, type FilterState } from '~/lib/view/filters'
 import type { CardTile as Tile } from '~/lib/types'
 import { computeView } from '~/lib/view/view'
 import { applyTheme, type ViewSettings } from '~/lib/state/settings'
@@ -85,9 +85,11 @@ function Home() {
     [data.tiles, query, filters, settings.sortKey, settings.sortDir, settings.currency],
   )
 
-  // Slider bounds come from the whole collection (not the filtered view), so they don't shift.
+  // Slider bounds and the type chips come from the whole collection (not the filtered view), so they
+  // don't shift as you filter.
   const priceRange = useMemo(() => priceBounds(data.tiles, settings.currency), [data.tiles, settings.currency])
   const cmcRange = useMemo(() => cmcBounds(data.tiles), [data.tiles])
+  const types = useMemo(() => ownedTypes(data.tiles), [data.tiles])
 
   const grouped = settings.grouped && settings.view === 'grid'
   const groups = useMemo(() => (grouped ? groupByName(view) : []), [grouped, view])
@@ -155,6 +157,7 @@ function Home() {
         query={query}
         onQuery={setQuery}
         sets={data.sets}
+        types={types}
         filters={filters}
         onFilters={setFilters}
         priceBounds={priceRange}
