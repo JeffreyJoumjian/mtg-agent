@@ -18,7 +18,7 @@ import { SummaryBar } from '~/components/collection/SummaryBar'
 import { CardTile } from '~/components/card/CardTile'
 import { StackTile } from '~/components/card/StackTile'
 import { CardSidebar } from '~/components/card/CardSidebar'
-import { Drawer, DrawerContent, DrawerTitle } from '~/components/ui/drawer'
+import { Drawer, DrawerContent, DrawerTitle, DRAWER_MS } from '~/components/ui/drawer'
 
 export const Route = createFileRoute('/')({
   loader: () => getCollection(),
@@ -104,7 +104,7 @@ function Home() {
       setSidebarTile(selectedTile)
       return
     }
-    const timer = setTimeout(() => setSidebarTile(null), 500)
+    const timer = setTimeout(() => setSidebarTile(null), DRAWER_MS)
     return () => clearTimeout(timer)
   }, [selectedTile])
 
