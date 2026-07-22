@@ -16,6 +16,13 @@ export function formatMoney(value: number | null, currency: Currency | string): 
   return `${symbolFor(currency)}${amount(value)}`
 }
 
+/** Money for an axis tick: no cents once the numbers are big enough that cents are noise, so a scale
+ *  reads `$2,900` rather than `$2,900.00`. */
+export function formatTick(value: number, currency: Currency | string): string {
+  const decimals = Math.abs(value) >= 100 ? 0 : Math.abs(value) >= 10 ? 1 : 2
+  return `${symbolFor(currency)}${value.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}`
+}
+
 export function formatDelta(value: number, currency: Currency | string): string {
   const sign = value < 0 ? '−' : '+'
   return `${sign}${symbolFor(currency)}${amount(Math.abs(value))}`

@@ -15,6 +15,9 @@ import { Toolbar } from '~/components/toolbar/Toolbar'
 import { CardGrid } from '~/components/collection/CardGrid'
 import { CardList } from '~/components/collection/CardList'
 import { SummaryBar } from '~/components/collection/SummaryBar'
+import { ValueHistory } from '~/components/collection/ValueHistory'
+import { Button } from '~/components/ui/button'
+import { TrendingUp } from 'lucide-react'
 import { CardTile } from '~/components/card/CardTile'
 import { StackTile } from '~/components/card/StackTile'
 import { CardSidebar } from '~/components/card/CardSidebar'
@@ -195,9 +198,26 @@ function Home() {
         }}
       >
         <div className="flex min-w-0 flex-1 flex-col">
-          <div className="flex items-center justify-between px-3 py-2">
+          <div className="flex items-center justify-between gap-3 px-3 py-2">
             <SummaryBar tiles={view} currency={settings.currency} baseline={settings.baseline} />
+            <Button
+              variant="ghost"
+              size="sm"
+              aria-pressed={settings.showTrend}
+              onClick={() => updateSettings({ ...settings, showTrend: !settings.showTrend })}
+            >
+              <TrendingUp /> {settings.showTrend ? 'Hide' : 'Show'} trend
+            </Button>
           </div>
+          {settings.showTrend && (
+            <div className="border-y bg-card/40 px-3 py-2">
+              <ValueHistory
+                currency={settings.currency}
+                setCode={scopedSet ?? null}
+                setName={scopedSetName}
+              />
+            </div>
+          )}
           <div className="min-h-0 flex-1">
             {settings.view === 'grid' ? (
               <CardGrid

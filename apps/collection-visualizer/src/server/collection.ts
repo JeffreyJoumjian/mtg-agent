@@ -11,6 +11,7 @@ import { fetchCardsByIds } from '~/lib/data/scryfall'
 import { iconsForSets, emptyIconCache } from '~/lib/data/set-icons'
 import { loadIconCache, refreshSetIcons } from '~/lib/server/set-icon-cache'
 import { getSets } from '~/lib/server/set-cache'
+import { valueSeries } from '~/lib/view/history'
 
 export interface CollectionResponse {
   tiles: CardTile[]
@@ -124,6 +125,39 @@ export const refreshPrices = createServerFn({ method: 'POST' }).handler(async ()
   const rows = await readRows()
   return refresh(rows, true)
 })
+
+/** Daily value of the whole collection, or of one set.
+ *
+ *  Aggregated here rather than on the client: the history file only grows, and shipping every card's
+ *  series to the browser to sum it there would get worse every week. Both currencies come back
+ *  together so flipping USD/EUR is instant instead of a refetch. */
+export const getValueHistory = createServerFn({ method: 'GET' })
+  .validator((data: unknown): { setCode?: string } => {
+    const setCode = (data as { setCode?: unknown })?.setCode
+    return { setCode: typeof setCode === 'string' && setCode !== '' ? setCode : undefined }
+  })
+  .handler(async ({ data }) => {
+    const [rows, cache, history] = await Promise.all([readRows(), loadCache(), loadHistory()])
+    const tiles = enrichTiles(groupRows(rows), cache)
+    const scoped = data.setCode
+      ? tiles.filter((t) => t.setCode.toLowerCase() === data.setCode!.toLowerCase())
+      : tiles
+
+    return { points: valueSeries(scoped, history) }
+  })
+
+/** One card's recorded prices. Fetched per card as the drawer opens rather than shipped with the
+ *  collection — only ever one card is on screen. */
+export const getCardHistory = createServerFn({ method: 'GET' })
+  .validator((data: unknown): { scryfallId: string } => {
+    const id = (data as { scryfallId?: unknown })?.scryfallId
+    if (typeof id !== 'string' || id === '') throw new Error('scryfallId is required')
+    return { scryfallId: id }
+  })
+  .handler(async ({ data }) => {
+    const history = await loadHistory()
+    return { points: history[data.scryfallId] ?? [] }
+  })
 
 export const uploadCsv = createServerFn({ method: 'POST' })
   .validator((data: unknown) => {

@@ -3,6 +3,7 @@ import { Button } from '~/components/ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import { ScrollArea } from '~/components/ui/scroll-area'
 import { CardDetails } from './CardDetails'
+import { CardHistory } from './CardHistory'
 import { DownloadButton } from './DownloadButton'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
 import { scryfallUrl } from '~/lib/format'
@@ -89,6 +90,9 @@ export function CardSidebar(props: CardSidebarProps) {
             rotations={props.rotations}
             onFlip={props.onFlip}
           />
+          <div className="mt-4 border-t pt-4">
+            <CardHistory scryfallId={t.scryfallId} finish={t.finish} currency={props.currency} />
+          </div>
         </div>
       </ScrollArea>
     </div>

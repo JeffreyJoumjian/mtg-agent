@@ -18,13 +18,15 @@ export interface ViewSettings {
   theme: Theme
   /** Render the holographic shimmer on foil printings. Off falls back to the F/E badge alone. */
   foil: boolean
+  /** Show the value-over-time chart above the grid. */
+  showTrend: boolean
 }
 
 export function defaultSettings(): ViewSettings {
   // Sort by price (high → low) by default — search handles finding specific cards, so surfacing
   // the most valuable cards first is more useful than alphabetical. Group variants by default so a
   // card's printings fold into one stack.
-  return { view: 'grid', maxPerRow: null, grouped: true, currency: 'usd', baseline: 'sinceRefresh', sortKey: 'price', sortDir: 'desc', theme: 'dark', foil: true }
+  return { view: 'grid', maxPerRow: null, grouped: true, currency: 'usd', baseline: 'sinceRefresh', sortKey: 'price', sortDir: 'desc', theme: 'dark', foil: true, showTrend: true }
 }
 
 /** Apply a theme by toggling the `dark` class on <html> (matches the pre-paint script in __root). */
