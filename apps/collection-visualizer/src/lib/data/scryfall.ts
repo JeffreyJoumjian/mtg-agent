@@ -9,6 +9,15 @@ const THROTTLE_MS = 100
 
 const num = (v: unknown): number | null => (v == null ? null : Number(v))
 
+/** Format names from Scryfall's `legalities` map where the card is playable (`legal` or, for the
+ *  eternal formats, `restricted`). `not_legal`/`banned` are dropped. */
+function legalFormats(legalities: unknown): string[] {
+  if (!legalities || typeof legalities !== 'object') return []
+  return Object.entries(legalities as Record<string, unknown>)
+    .filter(([, status]) => status === 'legal' || status === 'restricted')
+    .map(([format]) => format)
+}
+
 export function toPriceSet(card: any): PriceSet {
   const p = card?.prices ?? {}
   return { usd: num(p.usd), usdFoil: num(p.usd_foil), eur: num(p.eur), eurFoil: num(p.eur_foil) }
@@ -32,6 +41,9 @@ export function toEnriched(card: any): Enriched {
     oracleText: card?.oracle_text ?? faces.map((f) => f?.oracle_text).filter(Boolean).join('\n//\n'),
     manaCost: card?.mana_cost ?? joinFaces('mana_cost'),
     producedMana: Array.isArray(card?.produced_mana) ? card.produced_mana : [],
+    // Keep only the formats you can actually run the card in; `not_legal`/`banned` fall away. A card
+    // with no legalities block (tokens, some promos) yields [] — matched by nothing, never crashes.
+    legalIn: legalFormats(card?.legalities),
     imageSmall: card?.image_uris?.small ?? face0.image_uris?.small ?? null,
     imageNormal: card?.image_uris?.normal ?? face0.image_uris?.normal ?? null,
     imageLarge: card?.image_uris?.large ?? face0.image_uris?.large ?? null,
@@ -138,6 +150,31 @@ export async function fetchSvg(url: string): Promise<string> {
   const res = await fetch(url, { headers: { 'User-Agent': HEADERS['User-Agent'], Accept: 'image/svg+xml' } })
   if (!res.ok) throw new Error(`Scryfall icon ${res.status}`)
   return res.text()
+}
+
+/** Key cards by lowercased full name AND front-face name, so "Fire // Ice" resolves from "Fire". */
+export function indexByName(cards: any[]): Record<string, any> {
+  const byName: Record<string, any> = {}
+  for (const card of cards) {
+    if (typeof card?.name !== 'string') continue
+    const full = card.name.toLowerCase()
+    byName[full] = card
+    const front = full.split(' // ')[0].trim()
+    if (front !== full) byName[front] = card
+  }
+  return byName
+}
+
+/** Batch-fetch raw Scryfall card objects by exact name (75/request), keyed by lowercased name.
+ *  Look up results with `result[name.toLowerCase()]`. Callable from the browser (Scryfall is CORS-open). */
+export async function fetchCardsByNames(names: string[]): Promise<Record<string, any>> {
+  const unique = [...new Set(names.filter(Boolean).map((n) => n.trim()))]
+  const cards: any[] = []
+  for (const batch of chunk(unique, 75)) {
+    const body = await post('/cards/collection', { identifiers: batch.map((name) => ({ name })) })
+    cards.push(...(body.data ?? []))
+  }
+  return indexByName(cards)
 }
 
 /** Batch-fetch raw Scryfall card objects by Scryfall ID (75/request), keyed by id. */
