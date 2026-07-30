@@ -1,4 +1,4 @@
-import { Library, Layers } from 'lucide-react'
+import { Library, Layers, Swords } from 'lucide-react'
 import { Link, useRouterState } from '@tanstack/react-router'
 import {
   Sidebar,
@@ -16,6 +16,7 @@ import {
 const NAV = [
   { to: '/', label: 'Library', icon: Library },
   { to: '/collections', label: 'Collections', icon: Layers },
+  { to: '/decks', label: 'Decks', icon: Swords },
 ] as const
 
 export function AppSidebar() {
@@ -32,7 +33,11 @@ export function AppSidebar() {
             <SidebarMenu>
               {NAV.map((item) => (
                 <SidebarMenuItem key={item.to}>
-                  <SidebarMenuButton asChild isActive={pathname === item.to} tooltip={item.label}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={item.to === '/' ? pathname === '/' : pathname.startsWith(item.to)}
+                    tooltip={item.label}
+                  >
                     <Link to={item.to}>
                       <item.icon />
                       <span>{item.label}</span>
