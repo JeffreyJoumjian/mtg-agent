@@ -98,15 +98,9 @@ export class DeckSession {
           includePartialMessages: true,
           systemPrompt: { type: "preset", preset: "claude_code", append },
           mcpServers: { "deck-ui": deckUiServer() },
-          allowedTools: [
-            "Read",
-            "Glob",
-            "Grep",
-            "TodoWrite",
-            "mcp__deck-ui__present_batch",
-            "mcp__deck-ui__update_tally",
-            "mcp__deck-ui__propose_final_list",
-          ],
+          // No allowedTools: bare entries there auto-approve BEFORE canUseTool (the SDK warns with
+          // CLAUDE_SDK_CAN_USE_TOOL_SHADOWED). The gate is the single authority — it allows
+          // Read/Glob/Grep/TodoWrite and the deck-ui tools itself.
           canUseTool: async (toolName, input) => {
             const decision = classifyToolUse(toolName, input, DECKS_DIR);
 
