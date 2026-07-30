@@ -16,7 +16,7 @@ Turn a pile of cards into a tight, legal, on-plan deck by going through it **wit
 You can't judge "keep or cut" without knowing the target. First:
 1. **Get the card pool** — the user's full in-hand list (pasted, or a file path). Strip set-code/treatment noise (`[DSK] 138`, `(Showcase)`, leading counts).
 2. **Read the deck's identity & guardrails** — `decks/<slug>/research/decisions.md` (gameplan + locked decisions, if present), `decks/<slug>/research/strategy.md` (if present), and the authoritative pair `decks/<slug>/DECK.md` + `STATUS.md` (the current list — always kept in sync). Pull: **colors, deck size (usually 99 + commander = 100), and the bracket ceiling** (Bracket 3 = at most 3 Game Changers).
-3. **Confirm with the user**: deck size, bracket ceiling, and what their **third option** means (default **Pocket** = a situational sideboard card swapped in per table).
+3. **Confirm with the user**: deck size, bracket ceiling, and what their **third option** means (default **Pocket** = a situational sideboard card swapped in per table). The standing fourth option is **Hold** = park it in Considering and revisit before final assembly.
 4. **Say the gameplan back** in one or two sentences so you're both anchored before judging anything.
 5. **Open the live companion (browser mirror).** Run `bun run scripts/deck-live.ts open <slug>` —
    it opens `http://localhost:3000/decks/<slug>/live`, a read-only dashboard the user watches while
@@ -47,9 +47,20 @@ with card images). Keep updates cheap — one `set` per batch boundary, not per 
 ## The loop — batches of 5–10
 Repeat until the pool is exhausted:
 
-1. **Present a batch (5–10 cards).** Run `scripts/carddata.py --deck <slug>` to pull descriptions from the deck's `research/cards.txt` cache (it fetches + caches anything missing — always cache-first). Show one tight line per card: **name — cost — type — one clause on what it does.** Don't editorialize yet; let them decide relatively blind.
-2. **Have the user call each:** Keep / Cut / Pocket (or their third option). **Wait** — don't give verdicts until they've called the whole batch.
-3. **Give your verdict per card:** lead with **AGREE** or **DISAGREE** with their call, then 1–3 sentences of *why* using the rubric below. Name the real driver of your call. Flag genuine close calls as "coin-flip — your call."
+1. **Present a batch (5–10 cards).** Run `scripts/carddata.py --deck <slug>` to pull descriptions from the deck's `research/cards.txt` cache (it fetches + caches anything missing — always cache-first). Use the cache to build each card's summary + details for the tabbed questions below.
+2. **Have the user call each:** Keep / Cut / Pocket / Hold. **Collect the calls with the
+   AskUserQuestion tool when it's available** — one question per card, short-name header
+   (≤12 chars), and the question text stacked in exactly this order (one line each):
+   (1) your one-line summary of what the card does here,
+   (2) `My call: KEEP/CUT/POCKET — <one-clause why>` (flag genuine coin-flips as such),
+   (3) the card's details: cost · type · the key oracle clause.
+   Options are always the same four: Keep / Cut / Pocket / **Hold** ("park it — revisit before
+   final assembly"; held cards live in the Considering pile on the dashboard). The tool caps at
+   4 questions per call, so a batch takes 2–3 sequential calls. Fall back to typed calls when
+   the tool isn't available.
+3. **After the calls, recap:** one warm line where they followed your call; where they overrode
+   you, make the case once — **AGREE**/**DISAGREE** + 1–3 sentences of *why* from the rubric,
+   naming the real driver — then respect the override. It's their deck.
 4. **Update the running tally** (Guardrails) and surface anything alarming: over/under the card count, a category being gutted, a Game Changer breaching the bracket, mana sources dropping too low.
 
 Keep it moving — this should feel like a friend flipping through a binder with you, not a form.
@@ -71,7 +82,16 @@ Weigh these (roughly in order) and tell the user which one is driving the call:
 - **Bracket ceiling.** Live Game Changer count; warn before a keep would breach it.
 
 ## Final assembly — only when the user says go
-1. Reconcile the keep-pile to *exactly* the target. If over/under, walk the last few swaps with your recommendations.
+1. **Resolve every Hold first — show the whole field, ranked.** Present the ENTIRE Considering
+   pile as one ranked list, strongest claim on a seat → weakest, one line per card naming the
+   driver (role gap, field signal, curve fit) and, for the losers, the specific blocker ("ninth
+   5-drop", "protection slot #3 of 2"). Never show only the open seats and your slot-ins — the
+   user picks from the full ranked field. Mirror the same order on the live board (Considering
+   pile top→bottom = your ranking) and mark how many seats exist. Collect the seat picks with
+   the tabbed UI (multi-select over the top contenders; any lower-ranked card can be written in),
+   then resolve every unseated hold explicitly — Cut or Pocket, one line of why each — and only
+   then reconcile the keep-pile to *exactly* the target, walking the last swaps with your
+   recommendations.
 2. Run `scripts/deckcheck.py --deck <slug>` on the final list → confirm **count, Game Changer count (bracket), mana sources, field coverage** (coverage only when the deck has a sample).
 3. Show the final list for **explicit sign-off.**
 4. **Only after sign-off:** snapshot the outgoing list to `decks/<slug>/versions/YYYY-MM-DD-<label>.md`, then update `decks/<slug>/DECK.md` **and** `STATUS.md` together (they must stay in sync — see `decks/README.md`), and append a short keep/cut summary (with the *why* for the non-obvious ones) to `decks/<slug>/research/decisions.md`.
