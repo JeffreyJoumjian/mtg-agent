@@ -4,6 +4,7 @@ import type { TallyInput } from '~/lib/deck/chat-events'
 import type { DeckViewMode } from '~/lib/state/settings'
 import { fetchCardsByNames } from '~/lib/data/scryfall'
 import { GuardrailRail } from './GuardrailRail'
+import { CardStackColumn, scryImage } from './CardStackColumn'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '~/components/ui/hover-card'
 
 const STATUS_STYLE: Record<DeckStatus, string> = {
@@ -21,10 +22,6 @@ const STATUS_CHIP: Record<DeckStatus, string> = {
   PROXY: 'bg-violet-500 text-white',
   CONSIDERING: 'bg-sky-500 text-black',
   CUT: 'bg-black/60 text-white line-through',
-}
-
-function scryImage(card: any): string | null {
-  return card?.image_uris?.normal ?? card?.card_faces?.[0]?.image_uris?.normal ?? null
 }
 
 interface DeckPanelProps {
@@ -83,52 +80,32 @@ function BoardView(props: ViewProps) {
     <div className="min-h-0 flex-1 overflow-auto">
       <div className="flex items-start gap-3 p-3">
         {deck.groups.map((group) => (
-          <div key={group.name} className="w-44 shrink-0">
-            <div className="sticky top-0 z-20 -mt-3 bg-background pb-1 pt-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              {group.name} ({group.cards.reduce((n, c) => n + c.qty, 0)})
-            </div>
-
-            {/* Overlap: card aspect is 488:680 (≈139% of width tall); -125% leaves a ~14% name band. */}
-            <div className="[&>*+*]:mt-[-125%]">
-              {group.cards.map((card) => {
-                const scry = cards[card.name.toLowerCase()]
-                const image = scryImage(scry)
-                const status = statuses[card.name]
-
-                return (
-                  <HoverCard key={card.name} openDelay={250} closeDelay={50}>
-                    <HoverCardTrigger asChild>
-                      <div className="relative transition hover:z-10 hover:-translate-y-1">
-                        {image ? (
-                          <img src={image} alt={card.name} loading="lazy" className="aspect-[488/680] w-full rounded-lg shadow-sm" />
-                        ) : (
-                          <div className="flex aspect-[488/680] w-full items-start justify-center rounded-lg border bg-muted p-2 text-center text-xs">
-                            {card.name}
-                          </div>
-                        )}
-                        <span className="absolute right-1 top-1 flex gap-1">
-                          {card.qty > 1 && (
-                            <span className="rounded bg-black/60 px-1 text-[10px] font-semibold text-white">{card.qty}x</span>
-                          )}
-                          {status && status.status !== 'HAVE' && (
-                            <span className={`rounded px-1 text-[10px] font-semibold ${STATUS_CHIP[status.status]}`}>
-                              {status.status}
-                              {status.proxyCandidate ? ' 💰' : ''}
-                            </span>
-                          )}
-                        </span>
-                      </div>
-                    </HoverCardTrigger>
-                    {image && (
-                      <HoverCardContent side="right" className="w-64 p-1">
-                        <img src={image} alt={card.name} className="w-full rounded-md" loading="lazy" />
-                      </HoverCardContent>
+          <CardStackColumn
+            key={group.name}
+            title={group.name}
+            count={group.cards.reduce((n, c) => n + c.qty, 0)}
+            images={cards}
+            stickyHeader
+            cards={group.cards.map((card) => {
+              const status = statuses[card.name]
+              return {
+                name: card.name,
+                overlay: (
+                  <>
+                    {card.qty > 1 && (
+                      <span className="rounded bg-black/60 px-1 text-[10px] font-semibold text-white">{card.qty}x</span>
                     )}
-                  </HoverCard>
-                )
-              })}
-            </div>
-          </div>
+                    {status && status.status !== 'HAVE' && (
+                      <span className={`rounded px-1 text-[10px] font-semibold ${STATUS_CHIP[status.status]}`}>
+                        {status.status}
+                        {status.proxyCandidate ? ' 💰' : ''}
+                      </span>
+                    )}
+                  </>
+                ),
+              }
+            })}
+          />
         ))}
       </div>
     </div>
