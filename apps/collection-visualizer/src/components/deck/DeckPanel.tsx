@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import type { CardStatus, DeckStatus, ParsedDeck } from '~/lib/deck/parse'
 import type { TallyInput } from '~/lib/deck/chat-events'
 import type { DeckViewMode } from '~/lib/state/settings'
-import { fetchCardsByNames } from '~/lib/data/scryfall'
+import { getCardsByNames } from '~/lib/deck/card-images'
 import { GuardrailRail } from './GuardrailRail'
 import { CardStackColumn, scryImage } from './CardStackColumn'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '~/components/ui/hover-card'
@@ -42,11 +42,11 @@ export function DeckPanel(props: DeckPanelProps) {
   useEffect(() => {
     let cancelled = false
 
-    fetchCardsByNames(allNames)
-      .then((byName) => {
-        if (!cancelled) setCards(byName)
-      })
-      .catch(() => {}) // images are decoration — the panel works without them
+    // Cached + serialized + retried in card-images.ts; images are decoration, so a miss just
+    // renders name rows.
+    void getCardsByNames(allNames).then((result) => {
+      if (!cancelled) setCards((prev) => ({ ...prev, ...result.cards }))
+    })
 
     return () => {
       cancelled = true

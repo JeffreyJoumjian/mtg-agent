@@ -39,19 +39,28 @@ export function CardStackColumn(props: CardStackColumnProps) {
       </div>
 
       <div className="[&>*+*]:mt-[-125%]">
-        {props.cards.map((card) => {
+        {props.cards.map((card, i) => {
           const image = scryImage(props.images[card.name.toLowerCase()])
+          // Showcase/full-art printings don't keep their name at the top of the card, so the
+          // visible band of a stacked card can be an anonymous art sliver. Stamp our own name
+          // chip on every card that's partially hidden; the fully-visible last card needs none.
+          const buried = i < props.cards.length - 1
 
           return (
             <HoverCard key={card.name} openDelay={250} closeDelay={50}>
               <HoverCardTrigger asChild>
                 <div className={`relative transition hover:z-10 hover:-translate-y-1 ${card.dim ? 'opacity-60 grayscale' : ''}`}>
                   {image ? (
-                    <img src={image} alt={card.name} loading="lazy" className="aspect-[488/680] w-full rounded-lg shadow-sm" />
+                    <img src={image} alt={card.name} loading="lazy" className="aspect-[488/680] w-full rounded-lg bg-muted shadow-sm" />
                   ) : (
                     <div className="flex aspect-[488/680] w-full items-start justify-center rounded-lg border bg-muted p-2 text-center text-xs">
                       {card.name}
                     </div>
+                  )}
+                  {buried && image && (
+                    <span className="absolute left-1 top-1 max-w-[70%] truncate rounded bg-black/70 px-1 text-[10px] font-medium text-white">
+                      {card.name}
+                    </span>
                   )}
                   {card.overlay && <span className="absolute right-1 top-1 flex gap-1">{card.overlay}</span>}
                 </div>

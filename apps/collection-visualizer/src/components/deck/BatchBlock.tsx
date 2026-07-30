@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { BatchInput } from '~/lib/deck/chat-events'
 import type { BatchCall } from '~/lib/deck/use-deck-chat'
-import { fetchCardsByNames } from '~/lib/data/scryfall'
+import { getCardsByNames } from '~/lib/deck/card-images'
 import { ManaCost } from '~/components/symbols/Mana'
 import { Button } from '~/components/ui/button'
 
@@ -32,11 +32,9 @@ export function BatchBlock(props: BatchBlockProps) {
   useEffect(() => {
     let cancelled = false
 
-    fetchCardsByNames(input.cards.map((c) => c.name))
-      .then((byName) => {
-        if (!cancelled) setImages(byName)
-      })
-      .catch(() => {})
+    void getCardsByNames(input.cards.map((c) => c.name)).then((result) => {
+      if (!cancelled) setImages((prev) => ({ ...prev, ...result.cards }))
+    })
 
     return () => {
       cancelled = true

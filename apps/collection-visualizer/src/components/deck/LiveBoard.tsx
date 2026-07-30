@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { LiveState } from '~/lib/deck/live-state'
-import { fetchCardsByNames } from '~/lib/data/scryfall'
+import { getCardsByNames } from '~/lib/deck/card-images'
 import { CardStackColumn, scryImage } from './CardStackColumn'
 
 interface LiveBoardProps {
@@ -12,6 +12,7 @@ interface LiveBoardProps {
 export function LiveBoard(props: LiveBoardProps) {
   const { state } = props
   const [cards, setCards] = useState<Record<string, any>>({})
+  const [imagesDegraded, setImagesDegraded] = useState(false)
 
   const allNames = [
     ...(state.batch?.cards.map((c) => c.name) ?? []),
@@ -26,11 +27,11 @@ export function LiveBoard(props: LiveBoardProps) {
     if (allNames.length === 0) return
     let cancelled = false
 
-    fetchCardsByNames(allNames)
-      .then((byName) => {
-        if (!cancelled) setCards((prev) => ({ ...prev, ...byName }))
-      })
-      .catch(() => {})
+    void getCardsByNames(allNames).then((result) => {
+      if (cancelled) return
+      setCards((prev) => ({ ...prev, ...result.cards }))
+      setImagesDegraded(result.missing.length > 0)
+    })
 
     return () => {
       cancelled = true
@@ -54,6 +55,11 @@ export function LiveBoard(props: LiveBoardProps) {
         </div>
       )}
       {!t && state.note && <div className="border-b bg-card px-4 py-2 text-xs italic text-muted-foreground">{state.note}</div>}
+      {imagesDegraded && (
+        <div className="border-b bg-amber-500/10 px-4 py-1 text-xs text-amber-500">
+          Some card images unavailable (Scryfall hiccup) — they retry on the next update.
+        </div>
+      )}
 
       {state.batch && (
         <section className="border-b p-4">
@@ -87,7 +93,9 @@ export function LiveBoard(props: LiveBoardProps) {
           {state.keep.map((group) => (
             <CardStackColumn
               key={group.name}
-              title={group.name}
+              // The terminal sometimes writes counts into group names ("Lands (35)") — strip
+              // them; the column renders its own count.
+              title={group.name.replace(/\s*\(\d+\)\s*$/, '')}
               count={group.cards.length}
               cards={group.cards.map((name) => ({ name }))}
               images={cards}

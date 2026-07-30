@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { createFileRoute, Outlet, useMatches } from '@tanstack/react-router'
 import { listDecks } from '~/server/decks'
-import { fetchCardsByNames } from '~/lib/data/scryfall'
+import { getCardsByNames } from '~/lib/deck/card-images'
 import { SidebarTrigger } from '~/components/ui/sidebar'
 import { DeckSummaryCard } from '~/components/deck/DeckSummaryCard'
 import { NewDeckForm } from '~/components/deck/NewDeckForm'
@@ -25,18 +25,16 @@ function Decks() {
     if (hasChild || commanders.length === 0) return
     let cancelled = false
 
-    fetchCardsByNames(commanders)
-      .then((byName) => {
-        if (cancelled) return
-        const crops: Record<string, string> = {}
-        for (const name of commanders) {
-          const card = byName[name.toLowerCase()]
-          const crop = card?.image_uris?.art_crop ?? card?.card_faces?.[0]?.image_uris?.art_crop
-          if (typeof crop === 'string') crops[name] = crop
-        }
-        setArt(crops)
-      })
-      .catch(() => {}) // art is decoration
+    void getCardsByNames(commanders).then((result) => {
+      if (cancelled) return
+      const crops: Record<string, string> = {}
+      for (const name of commanders) {
+        const card = result.cards[name.toLowerCase()]
+        const crop = card?.image_uris?.art_crop ?? card?.card_faces?.[0]?.image_uris?.art_crop
+        if (typeof crop === 'string') crops[name] = crop
+      }
+      setArt(crops)
+    })
 
     return () => {
       cancelled = true
