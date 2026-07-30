@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { LiveState } from '~/lib/deck/live-state'
 import { getCardsByNames } from '~/lib/deck/card-images'
-import { CardStackColumn, scryImage } from './CardStackColumn'
+import { CardStackColumn, CopiedChip, scryImage, useCopyCardName } from './CardStackColumn'
 
 interface LiveBoardProps {
   state: LiveState
@@ -13,6 +13,7 @@ export function LiveBoard(props: LiveBoardProps) {
   const { state } = props
   const [cards, setCards] = useState<Record<string, any>>({})
   const [imagesDegraded, setImagesDegraded] = useState(false)
+  const { copiedName, copy } = useCopyCardName()
 
   const allNames = [
     ...(state.batch?.cards.map((c) => c.name) ?? []),
@@ -72,13 +73,16 @@ export function LiveBoard(props: LiveBoardProps) {
               const image = scryImage(cards[card.name.toLowerCase()])
               return (
                 <div key={card.name} className="flex flex-col gap-1">
-                  {image ? (
-                    <img src={image} alt={card.name} loading="lazy" className="aspect-[488/680] w-full rounded-lg shadow" />
-                  ) : (
-                    <div className="flex aspect-[488/680] items-center justify-center rounded-lg border bg-muted p-2 text-center text-sm">
-                      {card.name}
-                    </div>
-                  )}
+                  <div className="relative cursor-pointer" onClick={() => copy(card.name)}>
+                    {image ? (
+                      <img src={image} alt={card.name} loading="lazy" className="aspect-[488/680] w-full rounded-lg shadow" />
+                    ) : (
+                      <div className="flex aspect-[488/680] items-center justify-center rounded-lg border bg-muted p-2 text-center text-sm">
+                        {card.name}
+                      </div>
+                    )}
+                    {copiedName === card.name && <CopiedChip />}
+                  </div>
                   {card.blurb && <span className="line-clamp-2 text-[11px] text-muted-foreground">{card.blurb}</span>}
                 </div>
               )
