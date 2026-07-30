@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { createFileRoute, redirect, useRouter } from '@tanstack/react-router'
+import { useAtomValue } from 'jotai'
 import { getDeck } from '~/server/decks'
 import { useDeckChat } from '~/lib/deck/use-deck-chat'
+import { settingsAtom } from '~/lib/state/store'
 import { SidebarTrigger } from '~/components/ui/sidebar'
+import { SettingsButton, DeckViewSetting, ThemeSetting } from '~/components/settings/settings-button'
 import { DeckPanel } from '~/components/deck/DeckPanel'
 import { ChatPane } from '~/components/deck/ChatPane'
 
@@ -25,6 +28,7 @@ function DeckPage() {
   const router = useRouter()
   const navigate = Route.useNavigate()
   const chat = useDeckChat(slug)
+  const settings = useAtomValue(settingsAtom)
 
   // A brand-new deck arrives with an ?intro= handoff from the creation form: send it as the
   // first message once we know the transcript really is empty, then drop it from the URL.
@@ -56,12 +60,16 @@ function DeckPage() {
         <span className={`ml-auto text-sm ${detail.summary.total === 100 ? 'text-muted-foreground' : 'text-amber-500'}`}>
           {detail.summary.total}/100
         </span>
+        <SettingsButton>
+          <DeckViewSetting />
+          <ThemeSetting />
+        </SettingsButton>
       </header>
 
       {/* Deck panel LEFT, chat RIGHT. */}
       <div className="grid min-h-0 flex-1 grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(400px,560px)]">
         <div className="hidden min-h-0 border-r lg:block">
-          <DeckPanel deck={detail.deck} statuses={detail.statuses} tally={chat.state.tally} />
+          <DeckPanel deck={detail.deck} statuses={detail.statuses} tally={chat.state.tally} view={settings.deckView} />
         </div>
         <ChatPane chat={chat} />
       </div>
