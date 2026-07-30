@@ -49,7 +49,7 @@ export function CardStackColumn(props: CardStackColumnProps) {
           return (
             <HoverCard key={card.name} openDelay={250} closeDelay={50}>
               <HoverCardTrigger asChild>
-                <div className={`relative transition hover:z-10 hover:-translate-y-1 ${card.dim ? 'opacity-60 grayscale' : ''}`}>
+                <div className={`relative ${card.dim ? 'opacity-60 grayscale' : ''}`}>
                   {image ? (
                     <img src={image} alt={card.name} loading="lazy" className="aspect-[488/680] w-full rounded-lg bg-muted shadow-sm" />
                   ) : (
