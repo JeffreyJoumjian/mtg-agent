@@ -85,7 +85,7 @@ describe("parseStatusMd", () => {
     expect(s["Mountain"].status).toEqual("PROXY");
     expect(s["Sol Ring"].status).toEqual("HAVE");
     // no explicit status and no section default → not recorded
-    expect(s["Unlabeled Rock"]).toEqual(undefined);
+    expect("Unlabeled Rock" in s).toEqual(false);
   });
 });
 
