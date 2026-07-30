@@ -1,5 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
 import { listDeckSlugs, readDeckFiles, createDeckFromTemplate } from '~/lib/server/deck-files'
+import { readLiveState } from '~/lib/server/deck-live'
 import { parseDeckMd, parseStatusMd, summarize } from '~/lib/deck/parse'
 import type { CardStatus, DeckSummary, ParsedDeck } from '~/lib/deck/parse'
 import { slugify, isValidSlug } from '~/lib/deck/slug'
@@ -49,6 +50,16 @@ export const createDeck = createServerFn({ method: 'POST' })
 
     await createDeckFromTemplate(slug)
     return { slug }
+  })
+
+export const getLiveState = createServerFn({ method: 'GET' })
+  .validator((data: unknown): { slug: string } => {
+    const d = data as { slug?: unknown }
+    if (typeof d?.slug !== 'string' || !isValidSlug(d.slug)) throw new Error('Invalid deck slug')
+    return { slug: d.slug }
+  })
+  .handler(async ({ data }) => {
+    return readLiveState(data.slug)
   })
 
 export const sendDeckMessage = createServerFn({ method: 'POST' })

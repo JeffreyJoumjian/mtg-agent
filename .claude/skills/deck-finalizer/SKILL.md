@@ -18,6 +18,31 @@ You can't judge "keep or cut" without knowing the target. First:
 2. **Read the deck's identity & guardrails** — `decks/<slug>/research/decisions.md` (gameplan + locked decisions, if present), `decks/<slug>/research/strategy.md` (if present), and the authoritative pair `decks/<slug>/DECK.md` + `STATUS.md` (the current list — always kept in sync). Pull: **colors, deck size (usually 99 + commander = 100), and the bracket ceiling** (Bracket 3 = at most 3 Game Changers).
 3. **Confirm with the user**: deck size, bracket ceiling, and what their **third option** means (default **Pocket** = a situational sideboard card swapped in per table).
 4. **Say the gameplan back** in one or two sentences so you're both anchored before judging anything.
+5. **Open the live companion (browser mirror).** Run `bun run scripts/deck-live.ts open <slug>` —
+   it opens `http://localhost:3000/decks/<slug>/live`, a read-only dashboard the user watches while
+   the exercise stays in the terminal. If it exits with "dev server not reachable", ask the user to
+   run `bun run dev` in `apps/collection-visualizer` (never start it yourself); if they'd rather
+   not, continue terminal-only and skip every live-update step below.
+
+## The live companion — keep it in sync
+The dashboard polls `apps/collection-visualizer/data/deck-live/<slug>.json`. Update it by piping
+state to `bun run scripts/deck-live.ts set <slug>` (heredoc works well). Update **when presenting
+each batch** (the batch cards + current piles) and **after processing the calls** (piles + tally).
+State shape (`updatedAt` is stamped by the script):
+
+```json
+{
+  "batch": {"batchNumber": 4, "totalBatches": 12, "cards": [{"name": "Sol Ring", "blurb": "Fast mana."}]},
+  "keep": [{"name": "Ramp", "cards": ["Arcane Signet"]}, {"name": "Removal", "cards": ["Chaos Warp"]}],
+  "considering": ["Diabolic Tutor"],
+  "pocket": ["Bojuka Bog"],
+  "cut": ["Doom Blade"],
+  "tally": {"keeps": 71, "cuts": 20, "pockets": 3, "target": 99, "gameChangers": 2, "gcCeiling": 3, "manaSources": 44},
+  "note": "debating the removal package"
+}
+```
+`keep` is grouped by the exercise's categories; `batch` is the 5–10 cards on the table (shown big,
+with card images). Keep updates cheap — one `set` per batch boundary, not per individual call.
 
 ## The loop — batches of 5–10
 Repeat until the pool is exhausted:
