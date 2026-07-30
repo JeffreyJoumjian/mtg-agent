@@ -1,6 +1,7 @@
 import { createServerFn } from '@tanstack/react-start'
 import { listDeckSlugs, readDeckFiles, createDeckFromTemplate } from '~/lib/server/deck-files'
 import { readLiveState } from '~/lib/server/deck-live'
+import { lookupCardsByNames } from '~/lib/server/card-name-cache'
 import { parseDeckMd, parseStatusMd, summarize } from '~/lib/deck/parse'
 import type { CardStatus, DeckSummary, ParsedDeck } from '~/lib/deck/parse'
 import { slugify, isValidSlug } from '~/lib/deck/slug'
@@ -50,6 +51,17 @@ export const createDeck = createServerFn({ method: 'POST' })
 
     await createDeckFromTemplate(slug)
     return { slug }
+  })
+
+export const lookupCards = createServerFn({ method: 'POST' })
+  .validator((data: unknown): { names: string[] } => {
+    const d = data as { names?: unknown }
+    if (!Array.isArray(d?.names) || d.names.some((n) => typeof n !== 'string')) throw new Error('names must be strings')
+    if (d.names.length > 400) throw new Error('too many names')
+    return { names: d.names as string[] }
+  })
+  .handler(async ({ data }) => {
+    return lookupCardsByNames(data.names)
   })
 
 export const getLiveState = createServerFn({ method: 'GET' })

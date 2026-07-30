@@ -1,9 +1,14 @@
-/** Client-side card-image service over Scryfall lookups. Exists because raw per-component
- *  fetching proved fragile in practice: Scryfall's edge intermittently fails bursts with
- *  CORS-headerless responses (fetch hard-rejects), and React StrictMode double-fires effects.
- *  So: one session cache, all lookups serialized through a queue (no parallel bursts), retry
- *  with backoff on rejection, and known-missing tracking so nothing refetches forever. */
-import { fetchCardsByNames } from "~/lib/data/scryfall";
+/** Client-side card-lookup service. Card DATA comes from our own server (persistent
+ *  data/card-names.json cache — the browser never talks to Scryfall for data; direct calls
+ *  proved fragile: Scryfall's edge intermittently fails bursts with CORS-headerless responses).
+ *  Image BYTES still load from Scryfall's CDN via <img> with immutable cache headers, like the
+ *  collection grid. This layer adds: session memo, serialization (StrictMode double-fires
+ *  effects), retry with backoff, and known-missing tracking. */
+import { lookupCards } from "~/server/decks";
+
+function serverLookup(names: string[]): Promise<Record<string, any>> {
+  return lookupCards({ data: { names } });
+}
 
 type Fetcher = (names: string[]) => Promise<Record<string, any>>;
 
@@ -65,7 +70,7 @@ async function load(
 
 export function getCardsByNames(
   names: string[],
-  fetcher: Fetcher = fetchCardsByNames,
+  fetcher: Fetcher = serverLookup,
   opts: { retryDelayMs?: number } = {},
 ): Promise<CardLookup> {
   const run = queue.then(() => load(names, fetcher, opts.retryDelayMs ?? 2500));
