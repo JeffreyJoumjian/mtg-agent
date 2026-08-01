@@ -4,18 +4,23 @@ Read-only web viewer for a ManaBox CSV export. Prices from Scryfall (TCGplayer U
 Cardmarket EUR). Search, filter, sort, daily/manual refresh, CSV upload.
 
 ## Develop
+
 ```bash
 bun install
 cp ~/Desktop/ManaBox_Collection.csv data/collection.csv   # seed initial data
-bun run dev            # http://localhost:3000
+bun run dev            # http://localhost:3200
 bun test               # unit tests
+bun run format         # Prettier: double quotes, semicolons, 120 cols (.prettierrc)
+bun run format:check   # verify without writing
 ```
 
 ## Deploy on a NAS (Docker)
+
 ```bash
 docker compose up -d --build
 # open http://<nas-ip>:8080
 ```
+
 `./data` holds `collection.csv` and `prices.json`. Drop in a new CSV there (or use the
 in-app Upload button) — no rebuild required.
 
@@ -24,6 +29,7 @@ Vite/`dist/`, not a standalone Nitro bundle), which serves the built client asse
 routes everything else to the SSR handler. See `Dockerfile` for details.
 
 ## Layout
+
 Components are grouped by what they draw, `lib/` by what it does:
 
 ```
@@ -48,6 +54,7 @@ src/
 `src/lib/server/README.md`.
 
 ## Data
+
 - `data/collection.csv` — ManaBox export; source of truth for what you own.
 - `data/prices.json` — Scryfall price cache (24h TTL, `previous` snapshot for ± since refresh).
 - `data/deck-sessions.json` / `data/deck-transcripts/` — deck-agent session ids + chat history
@@ -56,7 +63,7 @@ src/
 ## Deck workbench
 
 The **Decks** view chats with a per-deck headless Claude session (the
-`@anthropic-ai/claude-agent-sdk` — Claude Code as a library, running on your Claude *login*, no
+`@anthropic-ai/claude-agent-sdk` — Claude Code as a library, running on your Claude _login_, no
 API key) and runs the deck-finalizer exercise with card images, click-based Keep/Cut/Pocket
 calls, a live guardrail tally, and browser-approved file writes.
 
