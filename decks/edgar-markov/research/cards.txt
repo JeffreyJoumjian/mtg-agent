@@ -947,3 +947,19 @@ Each creature gets +1/+1 for each other creature on the battlefield that shares 
 ## Dark Ritual
 cost={B} | type=Instant | CI=B | produces=B | usd=$12.46
 Add {B}{B}{B}.
+
+## High-Society Hunter
+cost={3}{B}{B} | type=Creature — Vampire Noble | CI=B | produces=- | usd=$0.37
+Flying Whenever this creature attacks, you may sacrifice another creature. If you do, put a +1/+1 counter on this creature. Whenever another nontoken creature dies, draw a card.
+
+## Drana and Linvala
+cost={1}{W}{W}{B} | type=Legendary Creature — Vampire Angel | CI=BW | produces=- | usd=$7.77
+Flying, vigilance Activated abilities of creatures your opponents control can't be activated. Drana and Linvala has all activated abilities of all creatures your opponents control. You may spend mana as though it were mana of any color to activate those abilities.
+
+## Soul Warden
+cost={W} | type=Creature — Human Cleric | CI=W | produces=- | usd=$3.80
+Whenever another creature enters, you gain 1 life.
+
+## Killing Wave
+cost={X}{B} | type=Sorcery | CI=B | produces=- | usd=$0.38
+For each creature, its controller sacrifices it unless they pay X life.
