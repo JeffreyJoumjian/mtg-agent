@@ -14,8 +14,9 @@
 node_modules/
 bun.lockb
 
-# Ephemeral, rebuildable Scryfall card cache (see decks/README.md)
-data/
+# Ephemeral, rebuildable Scryfall card cache (see decks/README.md). Anchored to the repo root —
+# an unanchored `data/` also swallowed source dirs like apps/…/src/lib/data/.
+/data/
 
 # Playwright MCP scratch output
 .playwright-mcp/

@@ -1,0 +1,282 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* One consistent, always-visible scrollbar across every scroll container (grid, sidebar,
+     popovers) instead of the mix of hidden / native system scrollbars. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--muted-foreground) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--muted-foreground);
+    border: 3px solid transparent;
+    border-radius: 9999px;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--foreground);
+  }
+
+  /* The card drawer is intentionally non-modal (the grid behind it stays clickable so you can switch
+     cards), but vaul still locks the page's pointer events while open. Undo that lock. */
+  body[style*='pointer-events: none'] {
+    pointer-events: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Foil / holographic finish — applied only to printings whose finish isn't `normal`. With no FOIL
+   badge on the tile, this sheen is the ONLY thing saying "this copy is foil", so it's pitched high
+   enough to read on its own, with no pointer and no motion.
+
+     idle, on screen  — a slow keyframed drift.
+     idle, off screen — static. No animation at all.
+     hover            — the pointer drives position, tilt, and glare, for that one card only.
+
+   The off-screen case is not a micro-optimisation. `background-position` can't be composited, so
+   each drifting card repaints AND re-blends through color-dodge every frame; the grid keeps ~4x
+   more tiles mounted than are visible (overscan), so animating them all meant roughly two thirds of
+   that work went into cards nobody could see. Frame rate stayed pinned throughout, which is exactly
+   why it read as free and wasn't — the cost came out as heat, not dropped frames. FoilCard drives
+   `.foil-onscreen` from an IntersectionObserver.
+
+   The idle -> hover handover leans on cascade order: CSS animations outrank normal inline styles, so
+   the drift's `background-position` beats the `var(--mx) var(--my)` FoilCard writes inline, until
+   `.foil-active` kills the animation and hands the pointer control.
+
+   --active (0/1) cross-fades idle and hover, so nothing snaps.
+   --mx/--my  pointer position within the card, as a percentage.
+   --rx/--ry  tilt, in degrees.
+--------------------------------------------------------------------------------------------- */
+@keyframes foil-drift {
+  from {
+    background-position: 16% 26%;
+  }
+  to {
+    background-position: 84% 74%;
+  }
+}
+@layer components {
+  .foil {
+    --mx: 50%;
+    --my: 50%;
+    --rx: 0deg;
+    --ry: 0deg;
+    --active: 0;
+  }
+
+  /* Tilt is opt-in: a card sitting in a stack's cascade is already transformed into its slot and
+     clipped by it, so it shimmers without tilting. Only a card standing on its own lifts. */
+  .foil-tilt {
+    transform: perspective(700px) rotateX(var(--rx)) rotateY(var(--ry));
+    /* Only the settle-back is animated; while tracking, a transition would lag behind the cursor. */
+    transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .foil-tilt.foil-active {
+    transition: none;
+    will-change: transform;
+  }
+
+  /* The spectrum itself. Sits above the art (z-1) but below the badges (z-10), so FOIL/×2 stay
+     readable instead of being blended into. */
+  .foil::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      110deg,
+      rgba(255, 119, 115, 0.34) 0%,
+      rgba(255, 237, 95, 0.34) 7%,
+      rgba(168, 255, 95, 0.34) 14%,
+      rgba(131, 255, 247, 0.34) 21%,
+      rgba(120, 148, 255, 0.34) 28%,
+      rgba(216, 117, 255, 0.34) 35%,
+      rgba(255, 119, 115, 0.34) 42%
+    );
+    background-size: 260% 260%;
+    background-position: var(--mx) var(--my);
+    /* color-dodge is what makes a spectrum read as metal rather than as a sticker, but it clips to
+       white fast — hence the restrained alphas above and the ceiling here. The card has to stay
+       readable; this is a finish on the art, not a replacement for it. */
+    mix-blend-mode: color-dodge;
+    /* Idle sits high on purpose: with no FOIL badge, this is the only thing marking the card as
+       foil, so it has to be obvious at a glance and not just when the cursor arrives. Hover is a
+       step up from there rather than the whole reveal. */
+    /* Hover is a modest step over idle, not a doubling: at this alpha, color-dodge starts eating
+       pale art somewhere past ~0.55, and bright cards would blow out. */
+    opacity: calc(0.4 + var(--active) * 0.1);
+    transition: opacity 320ms ease;
+  }
+
+  /* Only cards actually on screen drift. Off-screen ones keep the static sheen for free. */
+  .foil-onscreen::before {
+    animation: foil-drift 7s ease-in-out infinite alternate;
+  }
+
+  /* Pointer takes over: killing the animation lets the inline --mx/--my win the cascade. Must come
+     after .foil-onscreen — same specificity, so source order decides. */
+  .foil-active::before {
+    animation: none;
+  }
+
+  /* Specular glare tracking the cursor — the part that sells "tilting it in your hand". Absent
+     entirely at rest, since a real card only throws a highlight when it catches a light. */
+  .foil::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: inherit;
+    pointer-events: none;
+    background-image: radial-gradient(
+      circle at var(--mx) var(--my),
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.1) 34%,
+      rgba(255, 255, 255, 0) 58%
+    );
+    mix-blend-mode: overlay;
+    opacity: var(--active);
+    transition: opacity 320ms ease;
+  }
+
+  /* Etched foil is a coarser, silvery treatment on the frame rather than a full rainbow — so it gets
+     a desaturated, wider band instead of the spectrum. */
+  .foil-etched::before {
+    background-image: repeating-linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.36) 0%,
+      rgba(190, 210, 230, 0.24) 9%,
+      rgba(255, 245, 220, 0.36) 18%,
+      rgba(170, 190, 210, 0.22) 27%,
+      rgba(255, 255, 255, 0.36) 36%
+    );
+    opacity: calc(0.35 + var(--active) * 0.1);
+  }
+
+  /* No unrequested motion: the drift and the tilt both stop, but the sheen stays put so a foil is
+     still identifiable as foil — which it has to be, since the FOIL badge is gone. */
+  @media (prefers-reduced-motion: reduce) {
+    .foil-tilt,
+    .foil-tilt.foil-active {
+      transform: none;
+      transition: none;
+    }
+
+    .foil-onscreen::before {
+      animation: none;
+    }
+  }
+}

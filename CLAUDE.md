@@ -63,3 +63,17 @@ Bun runs the TypeScript directly — no compile step, no npm dependencies.
 - `bun run update` — fetch then build.
 - `bun run card` / `bun run search` / `bun run cards:refresh` — card data (see "Card data").
 - `bun test` — run the parser/chunker/differ/manifest/decklist tests.
+
+**Bun, everywhere.** `bun.lockb` is the only lockfile — never run `npm`/`pnpm`/`yarn` here, and pass
+`--use-bun` (or answer the prompt) if a generator like the shadcn CLI asks.
+
+### Don't leave processes running
+
+Background processes you start are yours to stop. Stop a dev server as soon as you're done with it
+rather than leaving it for the next task — several were once left running across sessions on ports
+3001–3003, quietly burning CPU, because Vite silently walks to the next free port. (`strictPort` in
+`apps/collection-visualizer/vite.config.ts` now makes a second start fail instead of hiding a
+duplicate.)
+
+A `SessionEnd` hook in `.claude/settings.json` kills this repo's Vite servers as a backstop — it is
+not a licence to leave them running, since it only fires when the session actually ends.

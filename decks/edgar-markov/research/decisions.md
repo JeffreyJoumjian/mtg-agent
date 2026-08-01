@@ -52,6 +52,21 @@ Companion files: cards.txt (card cache), UPGRADE-ROADMAP.txt (what's done / to b
   Boros Charm's indestructible mode was redundant and doesn't stop our own -X/-X wipes.
   Assessment: fine cut, NOT worth re-adding (protection suite is solid at 4).
 
+=== CARDS UNDER CONSIDERATION (not yet in deck) =============
+- Coat of Arms ({5} artifact, ~$19): QUEUED for the final build. Quadratic tribal anthem
+  (+1/+1 per OTHER same-type creature) — on a wide vampire board it's a swing-for-lethal
+  finisher; stacks with the lords + Shared Animosity + Elspeth's doubled tokens. Catches:
+  (1) SYMMETRICAL — also pumps opponents' shared-type creatures (real risk vs other tribal/
+  token decks); (2) it's a non-interactive WIN-MORE payoff, and payoffs aren't our weak spot
+  (removal/wraths are). Verdict: strong FLEX/Pocket — great vs slow grindy pods, side out vs
+  tribal mirrors. Must EARN a slot in the finalizer vs interaction; not an auto-include.
+
+=== EVALUATED & PASSED (do not re-litigate) =================
+- Dark Ritual ({B} instant, one-time BBB): NO. One-shot ritual = spend a card for +2 mana
+  ONCE, then it's a dead draw. Only pays off in cEDH combo/storm that ends on an explosive
+  turn. Our deck is Bracket-3 midrange grind that wants card advantage + repeatable mana;
+  BBB doesn't even fix for Edgar's R/W. Great card, wrong deck.
+
 === MANABASE DECISIONS ======================================
 - 13 basics + premium-leaning nonbasics. Target ~16-18 nonbasic / ~18-20 basic was the
   early goal; now leaning more premium.
@@ -79,3 +94,47 @@ Lands (Bracket-3 safe): Luxury Suite, Vault of Champions, then Urborg+Cabal Coff
   Cavern of Souls, Three Tree City, Phyrexian Tower, Savai Triome, fetchlands.
 Game Changers (Bracket-4 lever): Smothering Tithe (>Mind Stone), Demonic Tutor
   (>Diabolic Tutor), Vampiric Tutor (>Grim Tutor).
+
+=== 2026-07-31: FINAL 100 LOCKED (card-by-card finalize exercise) ==========
+Pool of 130 in-hand cards judged in 12 batches + final assembly. Result written to
+DECK.md/STATUS.md; outgoing draft snapshotted to versions/2026-07-31-pre-finalize.md.
+Checks: 100 cards, 45 mana sources (36 lands + 9 rocks), 0 GC -> Bracket 3, curve avg ~2.97.
+
+Final four seats (from an 18-card hold field, ranked + debated):
+- Indulgent Aristocrat — 4/6 staple; instant-speed outlet #4 whose payoff (counter on
+  every Vampire) stacks under the lords.
+- Sorin, Imperious Bloodlord — -3 cheats the deck's heavy 5-drop tier (8 cards) into play.
+- Vampire Socialite — re-read mid-exercise: NOT a one-shot; every Vampire enters with an
+  extra counter any turn an opponent lost life (≈ always here). 3/6 field.
+- Nomad Outpost — 36th land; the 5-drop count demanded it.
+
+NO-COMBO SUB SHEET (table bans infinites): OUT Exquisite Blood + Bloodthirsty Conqueror,
+IN Vein Ripper + High-Society Hunter. Keeps the Vito/Sanguine Bond side: their output
+(opponent life loss) is the win direction, Bloodletter doubles it, Vito's {3}{B}{B}
+team-lifelink activation is the fair finisher, and Ripper's gain-2 chains into Bond/Vito
+(value chain, not a loop). Removing both loss->gain pieces kills all four infinite pairings.
+
+Sideboard (8): Vein Ripper + High-Society Hunter (the subs), Preacher of the Schism
+(first creature sub; strong but both triggers are life-total-conditional, 2/6),
+Boros Charm (wipe-heavy pods), Drana and Linvala (ability-tribal meta), Coat of Arms
+(only if lone tribal deck), Killing Wave (grindy pods), The Lord of Pain (chaos night).
+
+Notable cuts + why:
+- Dark Prophecy — no "may": a wipe with a wide token board force-drains you out.
+- Cathars' Crusade + Dusk Legion Duelist — two-card package; Crusade spends turn 5 on
+  zero immediate impact and wipes erase the counters; Duelist draws ~nothing without it.
+  Head-to-head loser vs Elspeth (bodies > counters in an aristocrats build).
+- Dawn's Truce / Unbreakable Formation / Boros Charm — protection capped at 2 slots
+  (Akroma's Will + Clever Concealment; phasing outclasses conditional indestructible).
+- Bartolomé del Presidio / Goblin Bombardment — outlets capped (Seer, Yahenni, Altar,
+  Aristocrat already in).
+- Soul Warden / Pawn of Ulamog / Vampire of the Dire Moon tier — off-plan or 0/6 field.
+
+Field notes from the 6-deck sample: our missing staples are all deliberate exclusions
+(premium lands + the 3 GC lever cards) or outside the pool (Charismatic Conqueror 5/6,
+Markov Baron 4/6 — future pickup candidates).
+
+2026-07-31 post-finalize swap: Dusk Legion Zealot -> Dusk Legion Duelist. The seats changed
+the math: Sorin's +1 (counter on a Vampire, every turn, free) and Indulgent Aristocrat's
+at-will team pump make Duelist's once-a-turn draw a repeatable engine — the deck's thinnest
+category — where Zealot offered one guaranteed card. Drana adds a combat route. 2mv for 2mv.

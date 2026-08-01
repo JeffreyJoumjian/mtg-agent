@@ -1,0 +1,11 @@
+services:
+  collection-visualizer:
+    build: .
+    container_name: mtg-collection
+    ports:
+      - "8080:3000"
+    volumes:
+      - ./data:/data
+    environment:
+      - DATA_DIR=/data
+    restart: unless-stopped

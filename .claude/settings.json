@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pkill -f \"mtg-agent.*node_modules/\\.bin/[v]ite\" 2>/dev/null; exit 0",
+            "statusMessage": "Stopping this repo's dev servers"
+          }
+        ]
+      }
+    ]
+  }
+}
