@@ -20,6 +20,9 @@ function contains(haystack: string, needle: string): boolean {
   return haystack.toLowerCase().includes(needle.toLowerCase())
 }
 
+/** Format aliases so `legal:edh` reads the same as `legal:commander`. */
+const FORMAT_ALIAS: Record<string, string> = { edh: 'commander' }
+
 /** Build the predicate for a single `key:value` (or comparison) term. */
 function termPredicate(key: string, op: string, value: string): Predicate {
   switch (key) {
@@ -36,6 +39,12 @@ function termPredicate(key: string, op: string, value: string): Predicate {
       return (t) => t.setCode.toLowerCase() === value.toLowerCase()
     case 'f':
       return (t) => t.finish.toLowerCase() === value.toLowerCase()
+    case 'legal': {
+      const fmt = FORMAT_ALIAS[value.toLowerCase()] ?? value.toLowerCase()
+      // A card not yet re-enriched has no `legalIn` — treat that as "unknown", i.e. no match, rather
+      // than pretending it's legal everywhere.
+      return (t) => (t.enriched.legalIn ?? []).includes(fmt)
+    }
     case 'c': {
       const want = parseColors(value)
       return (t) => !want.some((c) => !t.enriched.colors.includes(c))
@@ -61,7 +70,7 @@ function termPredicate(key: string, op: string, value: string): Predicate {
   }
 }
 
-const KNOWN_KEYS = new Set(['name', 'o', 't', 'r', 's', 'set', 'f', 'c', 'ci', 'mv', 'cmc'])
+const KNOWN_KEYS = new Set(['name', 'o', 't', 'r', 's', 'set', 'f', 'legal', 'c', 'ci', 'mv', 'cmc'])
 
 // ---- Tokenizer ----
 type Token = { type: 'term'; pred: Predicate } | { type: 'or' } | { type: 'not' } | { type: 'lparen' } | { type: 'rparen' }

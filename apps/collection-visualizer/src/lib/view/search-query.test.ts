@@ -2,11 +2,11 @@ import { test, expect } from 'bun:test'
 import { compileQuery } from './search-query'
 import type { CardTile } from '~/lib/types'
 
-const tile = (over: Partial<CardTile> & { colors?: any; ci?: any; type?: string; oracle?: string; cmc?: number }): CardTile => ({
+const tile = (over: Partial<CardTile> & { colors?: any; ci?: any; type?: string; oracle?: string; cmc?: number; legalIn?: string[] }): CardTile => ({
   key: 'k', scryfallId: 'id', name: over.name ?? 'Lightning Bolt', setCode: over.setCode ?? 'LEA', setName: 'Alpha',
   collectorNumber: '161', rarity: over.rarity ?? 'common', finish: over.finish ?? 'normal', quantity: 1, weightedPurchase: null,
   prices: { usd: 1, usdFoil: null, eur: null, eurFoil: null }, previousPrices: null,
-  enriched: { cmc: over.cmc ?? 1, colors: over.colors ?? ['R'], colorIdentity: over.ci ?? ['R'], typeLine: over.type ?? 'Instant', oracleText: over.oracle ?? 'Deal 3 damage to any target.', manaCost: '{R}', imageSmall: null, imageNormal: null },
+  enriched: { cmc: over.cmc ?? 1, colors: over.colors ?? ['R'], colorIdentity: over.ci ?? ['R'], typeLine: over.type ?? 'Instant', oracleText: over.oracle ?? 'Deal 3 damage to any target.', manaCost: '{R}', imageSmall: null, imageNormal: null, legalIn: over.legalIn },
   fetchedAt: 0, breakdown: [],
 })
 
@@ -43,6 +43,17 @@ test('r: rarity, s: set, f: finish', () => {
   expect(compileQuery('set:leb')(bear)).toEqual(true)
   expect(compileQuery('f:normal')(bolt)).toEqual(true)
   expect(compileQuery('f:foil')(bolt)).toEqual(false)
+})
+
+test('legal: matches a format the card is playable in, with edh→commander alias', () => {
+  const commander = tile({ name: 'Sol Ring', legalIn: ['commander', 'legacy', 'vintage'] })
+  const banned = tile({ name: 'Channel', legalIn: ['legacy', 'vintage'] })
+
+  expect(compileQuery('legal:commander')(commander)).toEqual(true)
+  expect(compileQuery('legal:edh')(commander)).toEqual(true)
+  expect(compileQuery('legal:commander')(banned)).toEqual(false)
+  // A tile from a cache written before legalities were stored has no legalIn — unknown, so no match.
+  expect(compileQuery('legal:commander')(bolt)).toEqual(false)
 })
 
 test('mv comparisons', () => {

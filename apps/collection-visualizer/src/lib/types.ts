@@ -50,6 +50,11 @@ export interface Enriched {
   /** Mana this card can produce (e.g. `["W","U"]`, `["C"]`) — shown in the cost spot for lands and
    *  other cost-less producers. Optional (older caches lack it until re-enriched). */
   producedMana?: string[]
+  /** Formats this card can be played in — Scryfall's `legalities`, kept as just the format names
+   *  where the status is `legal` or `restricted` (e.g. `["commander","vintage","legacy"]`). Powers
+   *  the `legal:` search token. Optional: a cache written before this field existed won't have it
+   *  until the next `cards:refresh`, and a reader must treat missing as *unknown*, never "illegal". */
+  legalIn?: string[]
   imageSmall: string | null
   imageNormal: string | null
   /** Higher-res images used by the sidebar (`large`) and modal/download (`png`). Optional because a
@@ -119,6 +124,10 @@ export interface CardTile {
   finish: Finish
   quantity: number
   weightedPurchase: { price: number | null; currency: string } | null
+  /** A manually-set purchase price for this printing + finish, kept apart from the CSV so a
+   *  re-upload can't clobber it (see `lib/server/purchase-overrides`). Present only when one has been
+   *  set; when it is, it wins over `weightedPurchase` everywhere the vs-purchase baseline is used. */
+  purchaseOverride?: { price: number; currency: string }
   prices: PriceSet
   previousPrices: PriceSet | null
   enriched: Enriched

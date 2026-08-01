@@ -31,7 +31,18 @@ test('toEnriched projects gameplay + image fields', () => {
     imageNormal: 'https://img/normal.jpg',
     imageLarge: 'https://img/large.jpg',
     imagePng: 'https://img/card.png',
+    legalIn: [],
   })
+})
+
+test('toEnriched keeps only the formats a card is legal or restricted in', () => {
+  const card = {
+    type_line: 'Artifact',
+    legalities: { commander: 'legal', legacy: 'legal', vintage: 'restricted', standard: 'not_legal', modern: 'banned' },
+  }
+  expect(toEnriched(card).legalIn).toEqual(['commander', 'legacy', 'vintage'])
+  // No legalities block at all (tokens, some promos) → empty, never undefined.
+  expect(toEnriched({ type_line: 'Token' }).legalIn).toEqual([])
 })
 
 test('toEnriched keeps produced_mana (for lands with no cost)', () => {
