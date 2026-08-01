@@ -8,6 +8,7 @@ import { getCollection, refreshPrices, uploadCsv } from '~/server/collection'
 import { emptyFilters, ownedTypes, priceBounds, cmcBounds, type FilterState } from '~/lib/view/filters'
 import type { CardTile as Tile } from '~/lib/types'
 import { computeView } from '~/lib/view/view'
+import { sortGroups } from '~/lib/view/sort'
 import { type ViewSettings } from '~/lib/state/settings'
 import { pinsAtom, setIconsAtom, settingsAtom } from '~/lib/state/store'
 import { groupByName, representative } from '~/lib/card/stacks'
@@ -16,6 +17,7 @@ import { CardGrid } from '~/components/collection/CardGrid'
 import { CardList } from '~/components/collection/CardList'
 import { SummaryBar } from '~/components/collection/SummaryBar'
 import { ValueHistory } from '~/components/collection/ValueHistory'
+import { TopMovers } from '~/components/collection/TopMovers'
 import { Button } from '~/components/ui/button'
 import { TrendingUp } from 'lucide-react'
 import { CardTile } from '~/components/card/CardTile'
@@ -105,7 +107,14 @@ function Home() {
   const types = useMemo(() => ownedTypes(data.tiles), [data.tiles])
 
   const grouped = settings.grouped && settings.view === 'grid'
-  const groups = useMemo(() => (grouped ? groupByName(view) : []), [grouped, view])
+  // `groupByName` only preserves the tile order, which is by *unit* price — but a stack shows its
+  // summed total, so the groups have to be re-sorted by that same total (see `sortGroups`) or a
+  // cheap-but-numerous stack lands in the wrong place.
+  const groups = useMemo(
+    () =>
+      grouped ? sortGroups(groupByName(view), settings.sortKey, settings.sortDir, settings.currency, pins) : [],
+    [grouped, view, settings.sortKey, settings.sortDir, settings.currency, pins],
+  )
 
   const selectedTile = selectedKey ? data.tiles.find((t) => t.key === selectedKey) ?? null : null
 
@@ -177,7 +186,6 @@ function Home() {
         priceBounds={priceRange}
         cmcBounds={cmcRange}
         settings={settings}
-        onSettings={updateSettings}
         onRefresh={() => refreshMutation.mutate()}
         refreshing={refreshMutation.isPending}
         onUpload={(file) => uploadMutation.mutate(file)}
@@ -210,12 +218,15 @@ function Home() {
             </Button>
           </div>
           {settings.showTrend && (
-            <div className="border-y bg-card/40 px-3 py-2">
+            <div className="space-y-3 border-y bg-card/40 px-3 py-2">
               <ValueHistory
                 currency={settings.currency}
                 setCode={scopedSet ?? null}
                 setName={scopedSetName}
               />
+              <div className="border-t pt-3">
+                <TopMovers currency={settings.currency} setCode={scopedSet ?? null} />
+              </div>
             </div>
           )}
           <div className="min-h-0 flex-1">
