@@ -27,6 +27,16 @@ test('unitDelta vs purchase uses the purchase currency', () => {
   expect(unitDelta(t, 'usd', 'vsPurchase')).toEqual({ value: 0.75, currency: 'USD' })
 })
 
+test('unitDelta lets a purchase override win over the CSV weighted purchase', () => {
+  const t = tile({
+    weightedPurchase: { price: 5, currency: 'usd' },
+    purchaseOverride: { price: 1, currency: 'usd' },
+    prices: { usd: 2, usdFoil: null, eur: null, eurFoil: null },
+  })
+  // Uses the override (1), not the CSV weighted average (5): 2 − 1 = 1.
+  expect(unitDelta(t, 'usd', 'vsPurchase')).toEqual({ value: 1, currency: 'usd' })
+})
+
 test('unitDelta is null when the baseline data is missing', () => {
   expect(unitDelta(tile({ previousPrices: null }), 'usd', 'sinceRefresh')).toEqual(null)
   expect(unitDelta(tile({ weightedPurchase: null }), 'usd', 'vsPurchase')).toEqual(null)

@@ -2,7 +2,7 @@ import type { Currency } from './types'
 
 const SYMBOL: Record<string, string> = { usd: '$', eur: '€' }
 
-function symbolFor(currency: Currency | string): string {
+export function symbolFor(currency: Currency | string): string {
   return SYMBOL[String(currency).toLowerCase()] ?? '$'
 }
 

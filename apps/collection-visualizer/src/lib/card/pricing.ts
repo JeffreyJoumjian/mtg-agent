@@ -27,7 +27,8 @@ export function unitDelta(
     return { value: current - prev, currency }
   }
 
-  const purchase = tile.weightedPurchase
+  // A manual override wins over the CSV-derived weighted average wherever purchase is the baseline.
+  const purchase = tile.purchaseOverride ?? tile.weightedPurchase
   if (!purchase || purchase.price == null) return null
   const purchaseCurrency = purchase.currency.toLowerCase() === 'eur' ? 'eur' : 'usd'
   const currentInPurchaseCcy = effectivePrice(tile.prices, purchaseCurrency, tile.finish)
