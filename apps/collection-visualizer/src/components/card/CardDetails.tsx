@@ -94,6 +94,13 @@ export function CardDetails(props: CardDetailsProps) {
           </div>
         )}
       </FoilCard>
+      {/* How many of this printing you own, along the bottom so it's readable without hovering and
+          clear of the art. */}
+      {tile.quantity > 1 && (
+        <span className="pointer-events-none absolute bottom-1.5 left-1/2 z-10 -translate-x-1/2 rounded-md bg-black/70 px-2 py-0.5 text-sm font-semibold text-white">
+          ×{tile.quantity}
+        </span>
+      )}
       {shownImg && (
         <Tooltip open={expandTip && !expanded} onOpenChange={setExpandTip}>
           <TooltipTrigger asChild>
@@ -235,6 +242,11 @@ function VariantStrip(props: VariantStripProps) {
                   )}
                   {v.finish !== "normal" && (
                     <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-amber-400" />
+                  )}
+                  {v.quantity > 1 && (
+                    <span className="pointer-events-none absolute bottom-0.5 left-1/2 -translate-x-1/2 rounded bg-black/75 px-1 py-0.5 text-[9px] font-semibold leading-none text-white">
+                      ×{v.quantity}
+                    </span>
                   )}
                   {pinned && (
                     <span className="absolute left-0.5 top-0.5 flex size-3.5 items-center justify-center rounded-full bg-primary text-primary-foreground">

@@ -3,6 +3,7 @@ import { Button } from '~/components/ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import { ScrollArea } from '~/components/ui/scroll-area'
 import { CardDetails } from './CardDetails'
+import { CardCopies } from './CardCopies'
 import { CardHistory } from './CardHistory'
 import { DownloadButton } from './DownloadButton'
 import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
@@ -90,6 +91,9 @@ export function CardSidebar(props: CardSidebarProps) {
             rotations={props.rotations}
             onFlip={props.onFlip}
           />
+          {/* Purchase-price editing is built (PurchaseEditor + the override server fns) but hidden for
+              now — re-add <PurchaseEditor tile={t} currency={props.currency} /> here to bring it back. */}
+          <CardCopies tile={t} />
           <div className="mt-4 border-t pt-4">
             <CardHistory scryfallId={t.scryfallId} finish={t.finish} currency={props.currency} />
           </div>
