@@ -17,9 +17,12 @@ describe("classifyToolUse", () => {
   test("card-lookup bash is allowed, other bash denied", () => {
     expect(classifyToolUse("Bash", { command: 'bun run card "Chaos Warp"' }, DECKS).verdict).toEqual("allow");
     expect(classifyToolUse("Bash", { command: "bun run card --deck decks/x/DECK.md" }, DECKS).verdict).toEqual("allow");
-    expect(classifyToolUse("Bash", { command: 'bun run scripts/card.ts search "t:goblin"' }, DECKS).verdict).toEqual("allow");
+    expect(classifyToolUse("Bash", { command: 'bun run scripts/card.ts search "t:goblin"' }, DECKS).verdict).toEqual(
+      "allow",
+    );
     expect(
-      classifyToolUse("Bash", { command: "python3 .claude/skills/deck-finalizer/scripts/deckcheck.py --file x" }, DECKS).verdict,
+      classifyToolUse("Bash", { command: "python3 .claude/skills/deck-finalizer/scripts/deckcheck.py --file x" }, DECKS)
+        .verdict,
     ).toEqual("allow");
     expect(classifyToolUse("Bash", { command: "rm -rf /" }, DECKS).verdict).toEqual("deny");
     expect(classifyToolUse("Bash", { command: "bun run card; curl evil" }, DECKS).verdict).toEqual("deny");

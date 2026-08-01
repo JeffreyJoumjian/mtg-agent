@@ -132,11 +132,7 @@ export function parseStatusMd(text: string): Record<string, CardStatus> {
   return out;
 }
 
-export function summarize(
-  slug: string,
-  deck: ParsedDeck,
-  statuses: Record<string, CardStatus>,
-): DeckSummary {
+export function summarize(slug: string, deck: ParsedDeck, statuses: Record<string, CardStatus>): DeckSummary {
   let commander: string | null = null;
   let colors: string | null = null;
 
@@ -145,7 +141,11 @@ export function summarize(
 
     if (paren) {
       commander = paren[1];
-      const last = paren[2].split(",").map((s) => s.trim()).pop() ?? "";
+      const last =
+        paren[2]
+          .split(",")
+          .map((s) => s.trim())
+          .pop() ?? "";
       colors = /^[WUBRGC/]+$/.test(last) ? last : null;
     } else {
       commander = deck.commanderLine;

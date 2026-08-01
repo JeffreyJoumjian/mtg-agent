@@ -20,11 +20,7 @@ const BASH_ALLOWLIST = [
 /** Shell operators that would chain an allowed command into something else. */
 const BASH_CHAINING = [";", "&&", "||", "|", "`", "$(", ">", "<"];
 
-export function classifyToolUse(
-  tool: string,
-  input: Record<string, unknown>,
-  decksDir: string,
-): GateDecision {
+export function classifyToolUse(tool: string, input: Record<string, unknown>, decksDir: string): GateDecision {
   if (ALWAYS_ALLOWED.includes(tool) || tool.startsWith("mcp__deck-ui__")) {
     return { verdict: "allow" };
   }
@@ -36,7 +32,11 @@ export function classifyToolUse(
     if (!chained && BASH_ALLOWLIST.some((re) => re.test(command))) {
       return { verdict: "allow" };
     }
-    return { verdict: "deny", reason: "Only card-lookup commands (bun run card, scripts/card.ts, the finalizer's carddata/deckcheck scripts) are allowed here. Ask the user to run anything else in the terminal." };
+    return {
+      verdict: "deny",
+      reason:
+        "Only card-lookup commands (bun run card, scripts/card.ts, the finalizer's carddata/deckcheck scripts) are allowed here. Ask the user to run anything else in the terminal.",
+    };
   }
 
   if (tool === "Write" || tool === "Edit" || tool === "MultiEdit") {
@@ -48,7 +48,10 @@ export function classifyToolUse(
     if (filePath.startsWith(decksDir + "/")) {
       return { verdict: "ask", path: filePath };
     }
-    return { verdict: "deny", reason: "The deck agent may only write inside decks/. Ask the user to make other changes in the terminal." };
+    return {
+      verdict: "deny",
+      reason: "The deck agent may only write inside decks/. Ask the user to make other changes in the terminal.",
+    };
   }
 
   return { verdict: "deny", reason: "Not available in the deck workbench — ask the user to do this in the terminal." };

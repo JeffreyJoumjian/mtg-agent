@@ -1,13 +1,13 @@
-import * as React from 'react'
-import * as SliderPrimitive from '@radix-ui/react-slider'
-import { cn } from '~/lib/utils'
+import * as React from "react";
+import * as SliderPrimitive from "@radix-ui/react-slider";
+import { cn } from "~/lib/utils";
 
 function Slider(props: React.ComponentProps<typeof SliderPrimitive.Root>) {
-  const { className, defaultValue, value, min = 0, max = 100, ...rest } = props
+  const { className, defaultValue, value, min = 0, max = 100, ...rest } = props;
   const values = React.useMemo(
     () => (Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min, max]),
     [value, defaultValue, min, max],
-  )
+  );
   return (
     <SliderPrimitive.Root
       data-slot="slider"
@@ -21,7 +21,7 @@ function Slider(props: React.ComponentProps<typeof SliderPrimitive.Root>) {
         // started on the track only makes the ROOT :active, never the thumb (:active walks up to
         // ancestors, not down to children), so without it the thumb would flip back to `grab` the
         // moment it caught up with the cursor mid-drag.
-        'relative flex w-full cursor-pointer touch-none items-center select-none active:cursor-grabbing [&:active_*]:cursor-grabbing data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col',
+        "relative flex w-full cursor-pointer touch-none items-center select-none active:cursor-grabbing [&:active_*]:cursor-grabbing data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
         className,
       )}
       {...rest}
@@ -43,7 +43,7 @@ function Slider(props: React.ComponentProps<typeof SliderPrimitive.Root>) {
         />
       ))}
     </SliderPrimitive.Root>
-  )
+  );
 }
 
-export { Slider }
+export { Slider };

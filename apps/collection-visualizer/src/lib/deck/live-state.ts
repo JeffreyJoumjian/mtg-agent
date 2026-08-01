@@ -55,7 +55,11 @@ export function normalizeLiveState(raw: unknown): LiveState | null {
       if (typeof card?.name !== "string") return null;
       cards.push({ name: card.name, ...(typeof card.blurb === "string" ? { blurb: card.blurb } : {}) });
     }
-    batch = { batchNumber: b.batchNumber, totalBatches: typeof b.totalBatches === "number" ? b.totalBatches : null, cards };
+    batch = {
+      batchNumber: b.batchNumber,
+      totalBatches: typeof b.totalBatches === "number" ? b.totalBatches : null,
+      cards,
+    };
   }
 
   const keep: LiveState["keep"] = [];

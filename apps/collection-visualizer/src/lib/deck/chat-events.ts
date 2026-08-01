@@ -57,7 +57,15 @@ export type ChatItem =
   | { type: "batch"; id: string; input: BatchInput; submitted: boolean }
   | { type: "final-list"; id: string; input: FinalListInput; signedOff: boolean }
   | { type: "activity"; id: string; label: string }
-  | { type: "approval"; id: string; requestId: string; tool: string; path: string; preview: string; decision: "allow" | "deny" | null }
+  | {
+      type: "approval";
+      id: string;
+      requestId: string;
+      tool: string;
+      path: string;
+      preview: string;
+      decision: "allow" | "deny" | null;
+    }
   | { type: "notice"; id: string; level: "info" | "error"; text: string };
 
 export interface ChatState {
@@ -112,7 +120,10 @@ export function applyEvent(state: ChatState, ev: TranscriptEvent): ChatState {
       return { ...state, tally: ev.input };
 
     case "tool-final-list":
-      return { ...state, items: [...state.items, { type: "final-list", id: ev.id, input: ev.input, signedOff: false }] };
+      return {
+        ...state,
+        items: [...state.items, { type: "final-list", id: ev.id, input: ev.input, signedOff: false }],
+      };
 
     case "tool-activity":
       return { ...state, items: [...state.items, { type: "activity", id: ev.id, label: ev.label }] };
@@ -122,7 +133,15 @@ export function applyEvent(state: ChatState, ev: TranscriptEvent): ChatState {
         ...state,
         items: [
           ...state.items,
-          { type: "approval", id: ev.id, requestId: ev.requestId, tool: ev.tool, path: ev.path, preview: ev.preview, decision: null },
+          {
+            type: "approval",
+            id: ev.id,
+            requestId: ev.requestId,
+            tool: ev.tool,
+            path: ev.path,
+            preview: ev.preview,
+            decision: null,
+          },
         ],
       };
 

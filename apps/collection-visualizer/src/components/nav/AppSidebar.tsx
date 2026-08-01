@@ -1,5 +1,5 @@
-import { Library, Layers, Swords } from 'lucide-react'
-import { Link, useRouterState } from '@tanstack/react-router'
+import { Library, Layers, Swords } from "lucide-react";
+import { Link, useRouterState } from "@tanstack/react-router";
 import {
   Sidebar,
   SidebarContent,
@@ -9,18 +9,18 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '~/components/ui/sidebar'
+} from "~/components/ui/sidebar";
 
 /** `Collections` is deliberately broader than the sets it lists today — it's where user-made lists
  *  will live alongside them, which is why the nav item and the heading inside it differ. */
 const NAV = [
-  { to: '/', label: 'Library', icon: Library },
-  { to: '/collections', label: 'Collections', icon: Layers },
-  { to: '/decks', label: 'Decks', icon: Swords },
-] as const
+  { to: "/", label: "Library", icon: Library },
+  { to: "/collections", label: "Collections", icon: Layers },
+  { to: "/decks", label: "Decks", icon: Swords },
+] as const;
 
 export function AppSidebar() {
-  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   return (
     <Sidebar collapsible="icon">
@@ -35,7 +35,7 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.to}>
                   <SidebarMenuButton
                     asChild
-                    isActive={item.to === '/' ? pathname === '/' : pathname.startsWith(item.to)}
+                    isActive={item.to === "/" ? pathname === "/" : pathname.startsWith(item.to)}
                     tooltip={item.label}
                   >
                     <Link to={item.to}>
@@ -50,5 +50,5 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
-  )
+  );
 }

@@ -21,8 +21,13 @@ describe("batchSchema", () => {
 describe("tallySchema", () => {
   test("accepts the full tally shape", () => {
     const input = {
-      keeps: 71, cuts: 20, pockets: 3, target: 99,
-      gameChangers: 2, gcCeiling: 3, manaSources: 44,
+      keeps: 71,
+      cuts: 20,
+      pockets: 3,
+      target: 99,
+      gameChangers: 2,
+      gcCeiling: 3,
+      manaSources: 44,
       categories: [{ name: "Removal", count: 8, target: 9 }],
     };
     expect(z.object(tallySchema).parse(input)).toEqual(input);

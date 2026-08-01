@@ -113,9 +113,11 @@ export class DeckSession {
 
             const requestId = randomUUID();
             const preview =
-              typeof input.content === "string" ? input.content.slice(0, 4000)
-              : typeof input.new_string === "string" ? input.new_string.slice(0, 4000)
-              : "";
+              typeof input.content === "string"
+                ? input.content.slice(0, 4000)
+                : typeof input.new_string === "string"
+                  ? input.new_string.slice(0, 4000)
+                  : "";
             this.emit({
               kind: "approval-request",
               id: randomUUID(),
@@ -139,7 +141,12 @@ export class DeckSession {
 
       await this.pump(q);
       // The input generator never ends, so reaching here means the SDK closed the stream.
-      this.emit({ kind: "notice", id: randomUUID(), level: "info", text: "Session closed — your next message starts it again." });
+      this.emit({
+        kind: "notice",
+        id: randomUUID(),
+        level: "info",
+        text: "Session closed — your next message starts it again.",
+      });
     } catch (err) {
       this.emit({ kind: "notice", id: randomUUID(), level: "error", text: String(err) });
     } finally {
@@ -182,14 +189,25 @@ export class DeckSession {
           if (block.name === "mcp__deck-ui__present_batch") this.emit({ kind: "tool-batch", id, input });
           else if (block.name === "mcp__deck-ui__update_tally") this.emit({ kind: "tool-tally", id, input });
           else if (block.name === "mcp__deck-ui__propose_final_list") this.emit({ kind: "tool-final-list", id, input });
-          else this.emit({ kind: "tool-activity", id, label: describeToolUse(block.name, block.input as Record<string, unknown>) });
+          else
+            this.emit({
+              kind: "tool-activity",
+              id,
+              label: describeToolUse(block.name, block.input as Record<string, unknown>),
+            });
         }
       } else if (msg.type === "result") {
         if (msg.subtype !== "success") {
-          const hint = msg.subtype.includes("budget") || msg.subtype.includes("limit")
-            ? " — you may have hit a usage limit; try again in a bit."
-            : "";
-          this.emit({ kind: "notice", id: randomUUID(), level: "error", text: "Turn ended with: " + msg.subtype + hint });
+          const hint =
+            msg.subtype.includes("budget") || msg.subtype.includes("limit")
+              ? " — you may have hit a usage limit; try again in a bit."
+              : "";
+          this.emit({
+            kind: "notice",
+            id: randomUUID(),
+            level: "error",
+            text: "Turn ended with: " + msg.subtype + hint,
+          });
         }
         if (turnId) {
           this.emit({ kind: "turn-end", id: turnId });

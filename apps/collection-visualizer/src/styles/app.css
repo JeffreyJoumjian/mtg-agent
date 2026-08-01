@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -128,7 +128,7 @@
 
   /* The card drawer is intentionally non-modal (the grid behind it stays clickable so you can switch
      cards), but vaul still locks the page's pointer events while open. Undo that lock. */
-  body[style*='pointer-events: none'] {
+  body[style*="pointer-events: none"] {
     pointer-events: auto !important;
   }
 }
@@ -190,7 +190,7 @@
   /* The spectrum itself. Sits above the art (z-1) but below the badges (z-10), so FOIL/×2 stay
      readable instead of being blended into. */
   .foil::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -235,7 +235,7 @@
   /* Specular glare tracking the cursor — the part that sells "tilting it in your hand". Absent
      entirely at rest, since a real card only throws a highlight when it catches a light. */
   .foil::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     z-index: 2;

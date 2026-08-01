@@ -1,31 +1,31 @@
-import { useEffect, useState } from 'react'
-import { createPortal } from 'react-dom'
-import { X } from 'lucide-react'
-import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
-import type { Finish } from '~/lib/types'
-import { FlipButton, FlipImage } from './Flip'
-import { FoilCard } from './FoilCard'
-import { DownloadButton } from './DownloadButton'
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { X } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
+import type { Finish } from "~/lib/types";
+import { FlipButton, FlipImage } from "./Flip";
+import { FoilCard } from "./FoilCard";
+import { DownloadButton } from "./DownloadButton";
 
 interface ImageModalProps {
-  src: string
-  alt: string
-  onClose: () => void
+  src: string;
+  alt: string;
+  onClose: () => void;
   /** File name for the download button. */
-  filename: string
+  filename: string;
   /** The other face; when present, a flip control turns the lightbox card over in 3D. */
-  back?: string | null
+  back?: string | null;
   /** Printing's finish — a foil one shimmers and tilts here too, at full size. */
-  finish: Finish
+  finish: Finish;
 }
 
 /** A full-screen image lightbox. Rendered into <body> so it escapes the sidebar; closes on backdrop
  *  click or Escape. Only mounted when open (client-side), so createPortal is always safe. */
 export function ImageModal(props: ImageModalProps) {
-  const twoSided = Boolean(props.back)
-  const [flips, setFlips] = useState(0)
+  const twoSided = Boolean(props.back);
+  const [flips, setFlips] = useState(0);
   // Download whichever face is currently turned toward the viewer.
-  const shown = flips % 2 === 1 && props.back ? props.back : props.src
+  const shown = flips % 2 === 1 && props.back ? props.back : props.src;
 
   // No focus management here on purpose: the lightbox opens from inside the drawer, and vaul's
   // content traps focus, so anything focused out here (this dialog, even its own close button) is
@@ -33,16 +33,16 @@ export function ImageModal(props: ImageModalProps) {
   // CardDetails, which stops that button's tooltip firing while the lightbox is up.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') props.onClose()
-    }
-    document.addEventListener('keydown', onKey)
-    const prevOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+      if (e.key === "Escape") props.onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener('keydown', onKey)
-      document.body.style.overflow = prevOverflow
-    }
-  }, [props.onClose])
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [props.onClose]);
 
   return createPortal(
     <div
@@ -70,7 +70,7 @@ export function ImageModal(props: ImageModalProps) {
           stopPropagation sits on the wrapper, so clicking the card doesn't close the lightbox while
           clicking the backdrop still does. */}
       <div className="relative aspect-[488/680] h-full max-h-full" onClick={(e) => e.stopPropagation()}>
-        <FoilCard foil={props.finish !== 'normal'} etched={props.finish === 'etched'} className="absolute inset-0">
+        <FoilCard foil={props.finish !== "normal"} etched={props.finish === "etched"} className="absolute inset-0">
           {twoSided ? (
             <FlipImage front={props.src} back={props.back ?? null} rotations={flips} alt={props.alt} loading="eager" />
           ) : (
@@ -82,9 +82,7 @@ export function ImageModal(props: ImageModalProps) {
           )}
         </FoilCard>
       </div>
-      {twoSided && (
-        <FlipButton onFlip={() => setFlips((n) => n + 1)} size="md" className="absolute left-4 top-4" />
-      )}
+      {twoSided && <FlipButton onFlip={() => setFlips((n) => n + 1)} size="md" className="absolute left-4 top-4" />}
       <DownloadButton
         url={shown}
         filename={props.filename}
@@ -94,5 +92,5 @@ export function ImageModal(props: ImageModalProps) {
       />
     </div>,
     document.body,
-  )
+  );
 }

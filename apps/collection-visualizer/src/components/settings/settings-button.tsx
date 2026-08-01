@@ -1,25 +1,11 @@
 import type { ReactNode } from "react";
-import {
-  Settings,
-  LayoutGrid,
-  List,
-  ArrowDownWideNarrow,
-  ArrowUpNarrowWide,
-  Sun,
-  Moon,
-} from "lucide-react";
+import { Settings, LayoutGrid, List, ArrowDownWideNarrow, ArrowUpNarrowWide, Sun, Moon } from "lucide-react";
 import { useAtom } from "jotai";
 import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover";
 import { Button } from "~/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
 import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle-group";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "~/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
 import { settingsAtom } from "~/lib/state/store";
 import type { Baseline, Currency } from "~/lib/types";
 import type { SortKey } from "~/lib/view/sort";
@@ -180,11 +166,7 @@ export function GroupVariantsSetting() {
 
   return (
     <SettingRow label="Group variants">
-      <Button
-        variant={s.grouped ? "default" : "outline"}
-        size="sm"
-        onClick={() => set({ grouped: !s.grouped })}
-      >
+      <Button variant={s.grouped ? "default" : "outline"} size="sm" onClick={() => set({ grouped: !s.grouped })}>
         {s.grouped ? "On" : "Off"}
       </Button>
     </SettingRow>

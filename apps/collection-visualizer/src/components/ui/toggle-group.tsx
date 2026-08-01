@@ -1,7 +1,7 @@
-import * as React from 'react'
-import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group'
-import { cva, type VariantProps } from 'class-variance-authority'
-import { cn } from '~/lib/utils'
+import * as React from "react";
+import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "~/lib/utils";
 
 // The selected item is `primary` — the same near-white/near-black pill a `Button` uses when it's on,
 // so every toggle in the app reads "on" the same way.
@@ -16,50 +16,50 @@ const toggleVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-transparent',
+        default: "bg-transparent",
         outline:
-          'border border-input bg-transparent shadow-xs data-[state=off]:hover:bg-accent data-[state=off]:hover:text-accent-foreground',
+          "border border-input bg-transparent shadow-xs data-[state=off]:hover:bg-accent data-[state=off]:hover:text-accent-foreground",
       },
       size: {
-        default: 'h-9 px-2 min-w-9',
-        sm: 'h-8 px-1.5 min-w-8',
-        lg: 'h-10 px-2.5 min-w-10',
+        default: "h-9 px-2 min-w-9",
+        sm: "h-8 px-1.5 min-w-8",
+        lg: "h-10 px-2.5 min-w-10",
       },
     },
-    defaultVariants: { variant: 'default', size: 'default' },
+    defaultVariants: { variant: "default", size: "default" },
   },
-)
+);
 
 const ToggleGroupContext = React.createContext<VariantProps<typeof toggleVariants>>({
-  size: 'default',
-  variant: 'default',
-})
+  size: "default",
+  variant: "default",
+});
 
 function ToggleGroup(
   props: React.ComponentProps<typeof ToggleGroupPrimitive.Root> & VariantProps<typeof toggleVariants>,
 ) {
-  const { className, variant, size, children, ...rest } = props
+  const { className, variant, size, children, ...rest } = props;
   return (
     <ToggleGroupPrimitive.Root
       data-slot="toggle-group"
       data-variant={variant}
       data-size={size}
       className={cn(
-        'group/toggle-group flex w-fit items-center rounded-md data-[variant=outline]:shadow-xs',
+        "group/toggle-group flex w-fit items-center rounded-md data-[variant=outline]:shadow-xs",
         className,
       )}
       {...rest}
     >
       <ToggleGroupContext.Provider value={{ variant, size }}>{children}</ToggleGroupContext.Provider>
     </ToggleGroupPrimitive.Root>
-  )
+  );
 }
 
 function ToggleGroupItem(
   props: React.ComponentProps<typeof ToggleGroupPrimitive.Item> & VariantProps<typeof toggleVariants>,
 ) {
-  const { className, children, variant, size, ...rest } = props
-  const context = React.useContext(ToggleGroupContext)
+  const { className, children, variant, size, ...rest } = props;
+  const context = React.useContext(ToggleGroupContext);
   return (
     <ToggleGroupPrimitive.Item
       data-slot="toggle-group-item"
@@ -71,14 +71,14 @@ function ToggleGroupItem(
         // `flex-basis: 0`, so items contribute nothing to that intrinsic width and every one ends up
         // the same size — clipping whichever label is longest ("Completion" next to "Name").
         // `flex-auto` measures from content first and still lets items grow to fill a wider group.
-        'min-w-0 flex-auto shrink-0 rounded-none shadow-none first:rounded-l-md last:rounded-r-md focus:z-10 focus-visible:z-10 data-[variant=outline]:border-l-0 data-[variant=outline]:first:border-l',
+        "min-w-0 flex-auto shrink-0 rounded-none shadow-none first:rounded-l-md last:rounded-r-md focus:z-10 focus-visible:z-10 data-[variant=outline]:border-l-0 data-[variant=outline]:first:border-l",
         className,
       )}
       {...rest}
     >
       {children}
     </ToggleGroupPrimitive.Item>
-  )
+  );
 }
 
-export { ToggleGroup, ToggleGroupItem, toggleVariants }
+export { ToggleGroup, ToggleGroupItem, toggleVariants };

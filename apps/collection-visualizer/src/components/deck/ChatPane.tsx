@@ -1,38 +1,38 @@
-import { useEffect, useRef, useState } from 'react'
-import { SendHorizontal } from 'lucide-react'
-import type { DeckChat } from '~/lib/deck/use-deck-chat'
-import { ChatMessage } from './ChatMessage'
-import { BatchBlock } from './BatchBlock'
-import { ApprovalCard } from './ApprovalCard'
-import { FinalListReview } from './FinalListReview'
-import { Button } from '~/components/ui/button'
+import { useEffect, useRef, useState } from "react";
+import { SendHorizontal } from "lucide-react";
+import type { DeckChat } from "~/lib/deck/use-deck-chat";
+import { ChatMessage } from "./ChatMessage";
+import { BatchBlock } from "./BatchBlock";
+import { ApprovalCard } from "./ApprovalCard";
+import { FinalListReview } from "./FinalListReview";
+import { Button } from "~/components/ui/button";
 
 interface ChatPaneProps {
-  chat: DeckChat
+  chat: DeckChat;
 }
 
 export function ChatPane(props: ChatPaneProps) {
-  const { chat } = props
-  const [draft, setDraft] = useState('')
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const pinnedToBottom = useRef(true)
+  const { chat } = props;
+  const [draft, setDraft] = useState("");
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const pinnedToBottom = useRef(true);
 
   // Auto-scroll on new content unless the user scrolled up to read history.
   useEffect(() => {
-    const el = scrollRef.current
+    const el = scrollRef.current;
 
     if (el && pinnedToBottom.current) {
-      el.scrollTop = el.scrollHeight
+      el.scrollTop = el.scrollHeight;
     }
-  }, [chat.state])
+  }, [chat.state]);
 
   function send() {
-    const text = draft.trim()
-    if (text.length === 0 || chat.state.busy) return
+    const text = draft.trim();
+    if (text.length === 0 || chat.state.busy) return;
 
-    chat.sendText(text)
-    setDraft('')
-    pinnedToBottom.current = true
+    chat.sendText(text);
+    setDraft("");
+    pinnedToBottom.current = true;
   }
 
   return (
@@ -40,8 +40,8 @@ export function ChatPane(props: ChatPaneProps) {
       <div
         ref={scrollRef}
         onScroll={(e) => {
-          const el = e.currentTarget
-          pinnedToBottom.current = el.scrollHeight - el.scrollTop - el.clientHeight < 80
+          const el = e.currentTarget;
+          pinnedToBottom.current = el.scrollHeight - el.scrollTop - el.clientHeight < 80;
         }}
         className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto p-3"
       >
@@ -54,11 +54,11 @@ export function ChatPane(props: ChatPaneProps) {
 
         {chat.state.items.map((item) => {
           switch (item.type) {
-            case 'user':
-              return <ChatMessage key={item.id} role="user" text={item.text} />
-            case 'assistant':
-              return <ChatMessage key={item.id} role="assistant" text={item.text} streaming={item.streaming} />
-            case 'batch':
+            case "user":
+              return <ChatMessage key={item.id} role="user" text={item.text} />;
+            case "assistant":
+              return <ChatMessage key={item.id} role="assistant" text={item.text} streaming={item.streaming} />;
+            case "batch":
               return (
                 <BatchBlock
                   key={item.id}
@@ -66,8 +66,8 @@ export function ChatPane(props: ChatPaneProps) {
                   submitted={item.submitted}
                   onSubmit={(calls) => chat.submitBatch(item.id, item.input.batchNumber, calls)}
                 />
-              )
-            case 'final-list':
+              );
+            case "final-list":
               return (
                 <FinalListReview
                   key={item.id}
@@ -75,8 +75,8 @@ export function ChatPane(props: ChatPaneProps) {
                   signedOff={item.signedOff}
                   onSignOff={() => chat.signOff(item.id)}
                 />
-              )
-            case 'approval':
+              );
+            case "approval":
               return (
                 <ApprovalCard
                   key={item.id}
@@ -86,29 +86,29 @@ export function ChatPane(props: ChatPaneProps) {
                   decision={item.decision}
                   onDecide={(decision) => chat.approve(item.requestId, decision)}
                 />
-              )
-            case 'activity':
+              );
+            case "activity":
               return (
                 <div key={item.id} className="truncate font-mono text-[11px] text-muted-foreground/70">
                   {item.label}
                 </div>
-              )
-            case 'notice':
+              );
+            case "notice":
               return (
                 <div
                   key={item.id}
                   className={`flex items-center gap-2 rounded-md px-3 py-2 text-xs ${
-                    item.level === 'error' ? 'bg-destructive/10 text-destructive' : 'bg-muted text-muted-foreground'
+                    item.level === "error" ? "bg-destructive/10 text-destructive" : "bg-muted text-muted-foreground"
                   }`}
                 >
                   <span className="min-w-0 flex-1">{item.text}</span>
-                  {item.level === 'error' && (
+                  {item.level === "error" && (
                     <Button size="sm" variant="outline" onClick={() => chat.retryLast()}>
                       Retry
                     </Button>
                   )}
                 </div>
-              )
+              );
           }
         })}
 
@@ -121,8 +121,8 @@ export function ChatPane(props: ChatPaneProps) {
 
       <form
         onSubmit={(e) => {
-          e.preventDefault()
-          send()
+          e.preventDefault();
+          send();
         }}
         className="flex shrink-0 items-end gap-2 border-t p-3"
       >
@@ -130,13 +130,13 @@ export function ChatPane(props: ChatPaneProps) {
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-              e.preventDefault()
-              send()
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              send();
             }
           }}
-          rows={Math.min(5, Math.max(1, draft.split('\n').length))}
-          placeholder={chat.state.busy ? 'Agent is working…' : 'Message the deck agent'}
+          rows={Math.min(5, Math.max(1, draft.split("\n").length))}
+          placeholder={chat.state.busy ? "Agent is working…" : "Message the deck agent"}
           className="max-h-40 min-h-9 w-full resize-none rounded-md border bg-transparent px-3 py-2 text-sm outline-none placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring"
         />
         <Button type="submit" size="icon" disabled={draft.trim().length === 0 || chat.state.busy}>
@@ -144,5 +144,5 @@ export function ChatPane(props: ChatPaneProps) {
         </Button>
       </form>
     </div>
-  )
+  );
 }

@@ -1,11 +1,11 @@
-import { useRef } from 'react'
-import { RefreshCw, Upload, X } from 'lucide-react'
-import { SetIcon } from '~/components/symbols/SetIcon'
-import { Input } from '~/components/ui/input'
-import { Button } from '~/components/ui/button'
-import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
-import { SidebarTrigger } from '~/components/ui/sidebar'
-import { FiltersPopover } from './FiltersPopover'
+import { useRef } from "react";
+import { RefreshCw, Upload, X } from "lucide-react";
+import { SetIcon } from "~/components/symbols/SetIcon";
+import { Input } from "~/components/ui/input";
+import { Button } from "~/components/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
+import { SidebarTrigger } from "~/components/ui/sidebar";
+import { FiltersPopover } from "./FiltersPopover";
 import {
   SettingsButton,
   ThemeSetting,
@@ -16,32 +16,32 @@ import {
   CurrencySetting,
   SortSetting,
   BaselineSetting,
-} from '~/components/settings/settings-button'
-import type { FilterState } from '~/lib/view/filters'
-import type { CardType } from '~/lib/card/type-line'
-import type { ViewSettings } from '~/lib/state/settings'
+} from "~/components/settings/settings-button";
+import type { FilterState } from "~/lib/view/filters";
+import type { CardType } from "~/lib/card/type-line";
+import type { ViewSettings } from "~/lib/state/settings";
 
 interface ToolbarProps {
-  query: string
-  onQuery: (v: string) => void
-  sets: { code: string; name: string }[]
-  types: CardType[]
-  filters: FilterState
-  onFilters: (f: FilterState) => void
-  priceBounds: [number, number]
-  cmcBounds: [number, number]
-  settings: ViewSettings
-  onRefresh: () => void
-  refreshing: boolean
-  onUpload: (file: File) => void
-  pricesUpdatedAt: number | null
+  query: string;
+  onQuery: (v: string) => void;
+  sets: { code: string; name: string }[];
+  types: CardType[];
+  filters: FilterState;
+  onFilters: (f: FilterState) => void;
+  priceBounds: [number, number];
+  cmcBounds: [number, number];
+  settings: ViewSettings;
+  onRefresh: () => void;
+  refreshing: boolean;
+  onUpload: (file: File) => void;
+  pricesUpdatedAt: number | null;
   /** Set the Library is pinned to (arrived from Collections), or null when browsing everything. */
-  scopedSet: { code: string; name: string } | null
-  onClearScope: () => void
+  scopedSet: { code: string; name: string } | null;
+  onClearScope: () => void;
 }
 
 export function Toolbar(props: ToolbarProps) {
-  const fileRef = useRef<HTMLInputElement>(null)
+  const fileRef = useRef<HTMLInputElement>(null);
 
   return (
     <div className="flex flex-wrap items-center gap-2 border-b p-3">
@@ -103,7 +103,7 @@ export function Toolbar(props: ToolbarProps) {
             disabled={props.refreshing}
             aria-label="Refresh prices"
           >
-            <RefreshCw className={props.refreshing ? 'animate-spin' : ''} />
+            <RefreshCw className={props.refreshing ? "animate-spin" : ""} />
           </Button>
         </TooltipTrigger>
         <TooltipContent>Refresh prices</TooltipContent>
@@ -117,15 +117,17 @@ export function Toolbar(props: ToolbarProps) {
         accept=".csv"
         hidden
         onChange={(e) => {
-          const file = e.target.files?.[0]
-          if (file) props.onUpload(file)
+          const file = e.target.files?.[0];
+          if (file) props.onUpload(file);
         }}
       />
 
       {props.pricesUpdatedAt && (
         // Fixed locale so the server and client render the same string (no hydration mismatch).
-        <span className="text-xs text-muted-foreground">updated {new Date(props.pricesUpdatedAt).toLocaleString('en-US')}</span>
+        <span className="text-xs text-muted-foreground">
+          updated {new Date(props.pricesUpdatedAt).toLocaleString("en-US")}
+        </span>
       )}
     </div>
-  )
+  );
 }

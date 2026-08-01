@@ -39,10 +39,7 @@ describe("getCardsByNames", () => {
   test("concurrent calls serialize — the second finds the cache warm", async () => {
     const { fetcher, calls } = fakeFetcher(["sol ring"]);
 
-    const [a, b] = await Promise.all([
-      getCardsByNames(["Sol Ring"], fetcher),
-      getCardsByNames(["Sol Ring"], fetcher),
-    ]);
+    const [a, b] = await Promise.all([getCardsByNames(["Sol Ring"], fetcher), getCardsByNames(["Sol Ring"], fetcher)]);
     expect(a.cards["sol ring"]).toEqual(b.cards["sol ring"]);
     expect(calls.length).toEqual(1);
   });

@@ -12,10 +12,10 @@ then imported `price-cache.ts` for its cache directory — three hops from a com
 invisible to every check we run. The fix was to split the pure half from the I/O half, which is what
 this folder makes structural:
 
-| pure — safe anywhere      | server-only — here            |
-| ------------------------- | ----------------------------- |
-| `lib/data/set-icons.ts`   | `lib/server/set-icon-cache.ts` |
-| `lib/data/scryfall.ts`    | `lib/server/price-cache.ts`    |
+| pure — safe anywhere    | server-only — here             |
+| ----------------------- | ------------------------------ |
+| `lib/data/set-icons.ts` | `lib/server/set-icon-cache.ts` |
+| `lib/data/scryfall.ts`  | `lib/server/price-cache.ts`    |
 
 `lib/data/scryfall.ts` fetches over HTTP and stays pure, so it's importable from either side.
 

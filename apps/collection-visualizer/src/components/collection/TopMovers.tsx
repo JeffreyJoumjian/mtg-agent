@@ -1,18 +1,18 @@
-import { useQuery } from '@tanstack/react-query'
-import { useServerFn } from '@tanstack/react-start'
-import type { Currency } from '~/lib/types'
-import { getTopMovers, type Mover } from '~/server/collection'
-import { formatDelta, scryfallUrl } from '~/lib/format'
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
+import type { Currency } from "~/lib/types";
+import { getTopMovers, type Mover } from "~/server/collection";
+import { formatDelta, scryfallUrl } from "~/lib/format";
 
 interface TopMoversProps {
-  currency: Currency
+  currency: Currency;
   /** Set to scope to, or null for the whole library. */
-  setCode: string | null
+  setCode: string | null;
 }
 
 function MoverRow(props: { mover: Mover; currency: Currency }) {
-  const m = props.mover
-  const down = m.absolute < 0
+  const m = props.mover;
+  const down = m.absolute < 0;
 
   return (
     <a
@@ -23,14 +23,14 @@ function MoverRow(props: { mover: Mover; currency: Currency }) {
     >
       <span className="min-w-0 truncate">
         {m.name}
-        {m.finish !== 'normal' && <span className="ml-1 text-muted-foreground">{m.finish}</span>}
+        {m.finish !== "normal" && <span className="ml-1 text-muted-foreground">{m.finish}</span>}
       </span>
-      <span className={`shrink-0 tabular-nums ${down ? 'text-red-400' : 'text-emerald-400'}`}>
-        {down ? '▼' : '▲'} {formatDelta(m.absolute, props.currency)}
+      <span className={`shrink-0 tabular-nums ${down ? "text-red-400" : "text-emerald-400"}`}>
+        {down ? "▼" : "▲"} {formatDelta(m.absolute, props.currency)}
         {m.ratio != null && <span className="ml-1 opacity-80">({(m.ratio * 100).toFixed(0)}%)</span>}
       </span>
     </a>
-  )
+  );
 }
 
 function MoverColumn(props: { label: string; movers: Mover[]; currency: Currency }) {
@@ -43,7 +43,7 @@ function MoverColumn(props: { label: string; movers: Mover[]; currency: Currency
         props.movers.map((m) => <MoverRow key={m.key} mover={m} currency={props.currency} />)
       )}
     </div>
-  )
+  );
 }
 
 /** Biggest price gainers and losers over a recent window, for whatever the Library is scoped to.
@@ -51,28 +51,27 @@ function MoverColumn(props: { label: string; movers: Mover[]; currency: Currency
  *  Like the value chart, this follows the set scope rather than the search — and it's thin until a
  *  few refreshes have accumulated history, since a "move" needs a recorded price on both ends. */
 export function TopMovers(props: TopMoversProps) {
-  const fetchMovers = useServerFn(getTopMovers)
+  const fetchMovers = useServerFn(getTopMovers);
 
   const { data, isPending } = useQuery({
     // Currency is in the key: ranking is by price change, which differs per currency, so it refetches.
-    queryKey: ['top-movers', props.setCode, props.currency],
+    queryKey: ["top-movers", props.setCode, props.currency],
     queryFn: () => fetchMovers({ data: { setCode: props.setCode ?? undefined, currency: props.currency } }),
     staleTime: 5 * 60 * 1000,
-  })
+  });
 
-  if (isPending) return <div className="h-16" aria-hidden />
+  if (isPending) return <div className="h-16" aria-hidden />;
 
-  const gainers = data?.gainers ?? []
-  const losers = data?.losers ?? []
-  const days = data?.days ?? 7
+  const gainers = data?.gainers ?? [];
+  const losers = data?.losers ?? [];
+  const days = data?.days ?? 7;
 
   if (gainers.length === 0 && losers.length === 0) {
     return (
       <p className="text-xs text-muted-foreground">
-        No price moves recorded in the last {days} days yet — movers appear once refreshes build up
-        history.
+        No price moves recorded in the last {days} days yet — movers appear once refreshes build up history.
       </p>
-    )
+    );
   }
 
   return (
@@ -83,5 +82,5 @@ export function TopMovers(props: TopMoversProps) {
         <MoverColumn label="Losers" movers={losers} currency={props.currency} />
       </div>
     </div>
-  )
+  );
 }

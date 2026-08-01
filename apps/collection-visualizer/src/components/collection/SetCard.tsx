@@ -1,19 +1,19 @@
-import { Link } from '@tanstack/react-router'
-import type { Currency } from '~/lib/types'
-import type { SetProgress } from '~/lib/view/collections'
-import { formatMoney } from '~/lib/format'
-import { SetIcon } from '~/components/symbols/SetIcon'
+import { Link } from "@tanstack/react-router";
+import type { Currency } from "~/lib/types";
+import type { SetProgress } from "~/lib/view/collections";
+import { formatMoney } from "~/lib/format";
+import { SetIcon } from "~/components/symbols/SetIcon";
 
 interface SetCardProps {
-  set: SetProgress
-  currency: Currency
+  set: SetProgress;
+  currency: Currency;
 }
 
 /** One set in the Collections grid. Clicking it opens the Library scoped to that set. */
 export function SetCard(props: SetCardProps) {
-  const { set } = props
-  const pct = set.ratio == null ? null : Math.round(set.ratio * 100)
-  const complete = set.ratio === 1
+  const { set } = props;
+  const pct = set.ratio == null ? null : Math.round(set.ratio * 100);
+  const complete = set.ratio === 1;
 
   return (
     <Link
@@ -30,7 +30,7 @@ export function SetCard(props: SetCardProps) {
           <div className="text-xs uppercase text-muted-foreground">{set.code}</div>
         </div>
         {pct != null && (
-          <span className={`shrink-0 text-sm font-semibold tabular-nums ${complete ? 'text-emerald-400' : ''}`}>
+          <span className={`shrink-0 text-sm font-semibold tabular-nums ${complete ? "text-emerald-400" : ""}`}>
             {pct}%
           </span>
         )}
@@ -42,7 +42,7 @@ export function SetCard(props: SetCardProps) {
         <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
           {set.ratio != null && (
             <div
-              className={`h-full rounded-full ${complete ? 'bg-emerald-400' : 'bg-primary'}`}
+              className={`h-full rounded-full ${complete ? "bg-emerald-400" : "bg-primary"}`}
               style={{ width: `${set.ratio * 100}%` }}
             />
           )}
@@ -51,8 +51,11 @@ export function SetCard(props: SetCardProps) {
           <span className="min-w-0 truncate tabular-nums">
             {set.total == null ? `${set.owned} owned` : `${set.owned} / ${set.total}`}
             {/* Two sets side by side can be counted against different denominators, so say which. */}
-            {set.basis === 'all' && (
-              <span className="ml-1 opacity-70" title="Scryfall publishes no printed set size, so this counts every printing including variant art">
+            {set.basis === "all" && (
+              <span
+                className="ml-1 opacity-70"
+                title="Scryfall publishes no printed set size, so this counts every printing including variant art"
+              >
                 all printings
               </span>
             )}
@@ -61,5 +64,5 @@ export function SetCard(props: SetCardProps) {
         </div>
       </div>
     </Link>
-  )
+  );
 }

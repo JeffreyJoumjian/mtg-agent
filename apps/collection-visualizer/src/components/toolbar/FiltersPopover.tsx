@@ -227,7 +227,7 @@ export function FiltersPopover(props: FiltersPopoverProps) {
                 onChange={(lo, hi) => set({ cmcMin: lo, cmcMax: hi })}
               />
 
-              <section className={props.sets.length === 0 ? 'hidden' : undefined}>
+              <section className={props.sets.length === 0 ? "hidden" : undefined}>
                 <div className="mb-2 text-muted-foreground">
                   Sets {f.sets.length > 0 && <span>({f.sets.length})</span>}
                 </div>

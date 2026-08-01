@@ -1,45 +1,45 @@
-import { useMemo, useState } from 'react'
-import { createFileRoute } from '@tanstack/react-router'
-import { useAtomValue } from 'jotai'
-import { useHydrateAtoms } from 'jotai/utils'
-import { getCollectionWithSets } from '~/server/collection'
-import { setIconsAtom, settingsAtom } from '~/lib/state/store'
-import { searchSets, setProgress, sortSets, type CollectionSort } from '~/lib/view/collections'
-import { formatMoney } from '~/lib/format'
-import { Input } from '~/components/ui/input'
-import { SidebarTrigger } from '~/components/ui/sidebar'
+import { useMemo, useState } from "react";
+import { createFileRoute } from "@tanstack/react-router";
+import { useAtomValue } from "jotai";
+import { useHydrateAtoms } from "jotai/utils";
+import { getCollectionWithSets } from "~/server/collection";
+import { setIconsAtom, settingsAtom } from "~/lib/state/store";
+import { searchSets, setProgress, sortSets, type CollectionSort } from "~/lib/view/collections";
+import { formatMoney } from "~/lib/format";
+import { Input } from "~/components/ui/input";
+import { SidebarTrigger } from "~/components/ui/sidebar";
 import {
   SettingsButton,
   ThemeSetting,
   CurrencySetting,
   SetSortSetting,
   BaselineSetting,
-} from '~/components/settings/settings-button'
-import { SetCard } from '~/components/collection/SetCard'
+} from "~/components/settings/settings-button";
+import { SetCard } from "~/components/collection/SetCard";
 
-export const Route = createFileRoute('/collections')({
+export const Route = createFileRoute("/collections")({
   loader: () => getCollectionWithSets(),
   component: Collections,
-})
+});
 
 function Collections() {
-  const data = Route.useLoaderData()
+  const data = Route.useLoaderData();
 
-  useHydrateAtoms([[setIconsAtom, data.setIcons]])
-  const settings = useAtomValue(settingsAtom)
+  useHydrateAtoms([[setIconsAtom, data.setIcons]]);
+  const settings = useAtomValue(settingsAtom);
 
-  const [query, setQuery] = useState('')
-  const [sort, setSort] = useState<CollectionSort>('completion')
-  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
+  const [query, setQuery] = useState("");
+  const [sort, setSort] = useState<CollectionSort>("completion");
+  const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
 
   const sets = useMemo(
     () => setProgress(data.tiles, data.setInfo, settings.currency),
     [data.tiles, data.setInfo, settings.currency],
-  )
-  const view = useMemo(() => sortSets(searchSets(sets, query), sort, sortDir), [sets, query, sort, sortDir])
+  );
+  const view = useMemo(() => sortSets(searchSets(sets, query), sort, sortDir), [sets, query, sort, sortDir]);
 
-  const totalValue = sets.reduce((n, s) => n + s.value, 0)
-  const completed = sets.filter((s) => s.ratio === 1).length
+  const totalValue = sets.reduce((n, s) => n + s.value, 0);
+  const completed = sets.filter((s) => s.ratio === 1).length;
 
   return (
     <div className="flex h-full min-h-0 flex-col">
@@ -64,12 +64,10 @@ function Collections() {
 
       <div className="flex items-center gap-4 px-3 py-2 text-sm">
         <span>
-          <span className="font-semibold">{sets.length}</span>{' '}
-          <span className="text-muted-foreground">sets</span>
+          <span className="font-semibold">{sets.length}</span> <span className="text-muted-foreground">sets</span>
         </span>
         <span>
-          <span className="font-semibold">{completed}</span>{' '}
-          <span className="text-muted-foreground">complete</span>
+          <span className="font-semibold">{completed}</span> <span className="text-muted-foreground">complete</span>
         </span>
         <span className="text-muted-foreground">
           Value: <span className="font-semibold text-foreground">{formatMoney(totalValue, settings.currency)}</span>
@@ -88,5 +86,5 @@ function Collections() {
         )}
       </div>
     </div>
-  )
+  );
 }

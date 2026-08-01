@@ -29,11 +29,7 @@ export function resetCardImagesForTests(): void {
   queue = Promise.resolve();
 }
 
-async function load(
-  names: string[],
-  fetcher: Fetcher,
-  retryDelayMs: number,
-): Promise<CardLookup> {
+async function load(names: string[], fetcher: Fetcher, retryDelayMs: number): Promise<CardLookup> {
   const wanted = [...new Set(names.filter(Boolean).map((n) => n.trim().toLowerCase()))];
   const unknown = wanted.filter((n) => !(n in cache));
 

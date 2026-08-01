@@ -1,17 +1,17 @@
-import type { CardTile, Currency, Finish, PriceHistory, PricePoint, PriceSet } from '~/lib/types'
-import { effectivePrice } from '~/lib/card/pricing'
+import type { CardTile, Currency, Finish, PriceHistory, PricePoint, PriceSet } from "~/lib/types";
+import { effectivePrice } from "~/lib/card/pricing";
 
 /** One day on a chart. `usd`/`eur` are carried side by side so switching currency doesn't refetch. */
 export interface ValuePoint {
-  date: string
-  usd: number
-  eur: number
+  date: string;
+  usd: number;
+  eur: number;
 }
 
 /** A single card's price on one day, already resolved to the displayed currency and finish. */
 export interface CardValuePoint {
-  date: string
-  value: number
+  date: string;
+  value: number;
 }
 
 /** Daily total value of the given tiles, oldest first.
@@ -23,62 +23,62 @@ export interface CardValuePoint {
  *  when a card entered the collection, so a card bought yesterday looks owned all along), and a card
  *  is worth nothing on days before its first recorded price rather than being guessed backwards. */
 export function valueSeries(tiles: CardTile[], history: PriceHistory): ValuePoint[] {
-  const byDate: Record<string, Record<string, PriceSet>> = {}
+  const byDate: Record<string, Record<string, PriceSet>> = {};
   for (const [id, series] of Object.entries(history)) {
     for (const point of series) {
-      byDate[point.date] ??= {}
-      byDate[point.date][id] = point
+      byDate[point.date] ??= {};
+      byDate[point.date][id] = point;
     }
   }
 
-  const current: Record<string, PriceSet> = {}
+  const current: Record<string, PriceSet> = {};
 
   return Object.keys(byDate)
     .sort()
     .map((date) => {
-      Object.assign(current, byDate[date])
+      Object.assign(current, byDate[date]);
 
-      let usd = 0
-      let eur = 0
+      let usd = 0;
+      let eur = 0;
       for (const tile of tiles) {
-        const prices = current[tile.scryfallId]
-        if (!prices) continue
+        const prices = current[tile.scryfallId];
+        if (!prices) continue;
 
-        const inUsd = effectivePrice(prices, 'usd', tile.finish)
-        const inEur = effectivePrice(prices, 'eur', tile.finish)
-        if (inUsd != null) usd += inUsd * tile.quantity
-        if (inEur != null) eur += inEur * tile.quantity
+        const inUsd = effectivePrice(prices, "usd", tile.finish);
+        const inEur = effectivePrice(prices, "eur", tile.finish);
+        if (inUsd != null) usd += inUsd * tile.quantity;
+        if (inEur != null) eur += inEur * tile.quantity;
       }
 
-      return { date, usd, eur }
-    })
+      return { date, usd, eur };
+    });
 }
 
 /** One card's recorded prices, resolved for a currency and finish. Days where that combination has
  *  no price (a EUR-less printing, say) are dropped rather than plotted as zero. */
 export function cardSeries(points: PricePoint[], currency: Currency, finish: Finish): CardValuePoint[] {
-  const out: CardValuePoint[] = []
+  const out: CardValuePoint[] = [];
   for (const point of points) {
-    const value = effectivePrice(point, currency, finish)
-    if (value != null) out.push({ date: point.date, value })
+    const value = effectivePrice(point, currency, finish);
+    if (value != null) out.push({ date: point.date, value });
   }
-  return out
+  return out;
 }
 
 /** Pick the currency's side of a value series. */
 export function inCurrency(points: ValuePoint[], currency: Currency): CardValuePoint[] {
-  return points.map((p) => ({ date: p.date, value: currency === 'usd' ? p.usd : p.eur }))
+  return points.map((p) => ({ date: p.date, value: currency === "usd" ? p.usd : p.eur }));
 }
 
 /** Change between the first and last point — the figure a chart's caption quotes. Null when there's
  *  nothing to compare against yet, which is different from a change of zero. */
 export function seriesDelta(points: CardValuePoint[]): { absolute: number; ratio: number | null } | null {
-  if (points.length < 2) return null
+  if (points.length < 2) return null;
 
-  const first = points[0].value
-  const last = points[points.length - 1].value
+  const first = points[0].value;
+  const last = points[points.length - 1].value;
 
-  return { absolute: last - first, ratio: first === 0 ? null : (last - first) / first }
+  return { absolute: last - first, ratio: first === 0 ? null : (last - first) / first };
 }
 
 /** How much one card moved over a window: its latest recorded price vs. the price in effect at
@@ -93,17 +93,17 @@ export function windowDelta(
   finish: Finish,
   cutoffDate: string,
 ): { absolute: number; ratio: number | null } | null {
-  const series = cardSeries(points, currency, finish)
-  if (series.length === 0) return null
+  const series = cardSeries(points, currency, finish);
+  if (series.length === 0) return null;
 
-  const current = series[series.length - 1].value
+  const current = series[series.length - 1].value;
 
-  let baseline: number | null = null
+  let baseline: number | null = null;
   for (const p of series) {
-    if (p.date > cutoffDate) break
-    baseline = p.value
+    if (p.date > cutoffDate) break;
+    baseline = p.value;
   }
-  if (baseline == null) return null
+  if (baseline == null) return null;
 
-  return { absolute: current - baseline, ratio: baseline === 0 ? null : (current - baseline) / baseline }
+  return { absolute: current - baseline, ratio: baseline === 0 ? null : (current - baseline) / baseline };
 }

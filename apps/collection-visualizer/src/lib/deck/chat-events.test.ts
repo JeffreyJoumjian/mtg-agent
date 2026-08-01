@@ -22,7 +22,13 @@ describe("applyEvent", () => {
     expect(s.busy).toEqual(true);
     expect(s.items).toEqual([{ type: "assistant", id: "m1", text: "Hello", streaming: true }]);
 
-    s = fold([{ kind: "text-final", id: "m1", text: "Hello!" }, { kind: "turn-end", id: "t1" }], s);
+    s = fold(
+      [
+        { kind: "text-final", id: "m1", text: "Hello!" },
+        { kind: "turn-end", id: "t1" },
+      ],
+      s,
+    );
     expect(s.items).toEqual([{ type: "assistant", id: "m1", text: "Hello!", streaming: false }]);
     expect(s.busy).toEqual(false);
   });
@@ -44,7 +50,13 @@ describe("applyEvent", () => {
       { kind: "approval-request", id: "a1", requestId: "r1", tool: "Write", path: "/d/DECK.md", preview: "…" },
     ]);
     expect(s.items[0]).toEqual({
-      type: "approval", id: "a1", requestId: "r1", tool: "Write", path: "/d/DECK.md", preview: "…", decision: null,
+      type: "approval",
+      id: "a1",
+      requestId: "r1",
+      tool: "Write",
+      path: "/d/DECK.md",
+      preview: "…",
+      decision: null,
     });
 
     s = fold([{ kind: "approval-resolved", id: "a2", requestId: "r1", decision: "allow" }], s);

@@ -1,43 +1,43 @@
-import { X, ExternalLink, Pin, PinOff } from 'lucide-react'
-import { Button } from '~/components/ui/button'
-import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
-import { ScrollArea } from '~/components/ui/scroll-area'
-import { CardDetails } from './CardDetails'
-import { CardCopies } from './CardCopies'
-import { CardHistory } from './CardHistory'
-import { DownloadButton } from './DownloadButton'
-import type { Baseline, CardTile as Tile, Currency } from '~/lib/types'
-import { scryfallUrl } from '~/lib/format'
-import { shownFace, cardImage } from '~/lib/card/faces'
-import { imageFilename } from '~/lib/download'
+import { X, ExternalLink, Pin, PinOff } from "lucide-react";
+import { Button } from "~/components/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
+import { ScrollArea } from "~/components/ui/scroll-area";
+import { CardDetails } from "./CardDetails";
+import { CardCopies } from "./CardCopies";
+import { CardHistory } from "./CardHistory";
+import { DownloadButton } from "./DownloadButton";
+import type { Baseline, CardTile as Tile, Currency } from "~/lib/types";
+import { scryfallUrl } from "~/lib/format";
+import { shownFace, cardImage } from "~/lib/card/faces";
+import { imageFilename } from "~/lib/download";
 
 interface CardSidebarProps {
-  tile: Tile
+  tile: Tile;
   /** All owned variants (same card name), including the selected tile. */
-  variants: Tile[]
-  currency: Currency
-  baseline: Baseline
-  onSelect: (key: string) => void
-  onClose: () => void
+  variants: Tile[];
+  currency: Currency;
+  baseline: Baseline;
+  onSelect: (key: string) => void;
+  onClose: () => void;
   /** Flip count, seeded from the tile's shown face when the drawer opens, then owned here. */
-  rotations?: number
-  onFlip?: () => void
+  rotations?: number;
+  onFlip?: () => void;
   /** True when the grid already renders exactly this printing + face. */
-  pinned: boolean
+  pinned: boolean;
   /** `key` of the printing currently pinned for this card, if any — marked in the variant strip. */
-  pinnedKey?: string
+  pinnedKey?: string;
   /** Commit this printing + face as what the grid renders (or clear it when already pinned). */
-  onTogglePin: () => void
+  onTogglePin: () => void;
 }
 
 export function CardSidebar(props: CardSidebarProps) {
-  const t = props.tile
+  const t = props.tile;
 
   // Best-quality image of the face the drawer is currently showing, for the download button.
-  const flipped = (props.rotations ?? 0) % 2 === 1
-  const face = shownFace(t, flipped)
-  const downloadUrl = face ? cardImage(face, 'png') : cardImage(t.enriched, 'png')
-  const downloadName = imageFilename(face ? face.name || t.name : t.name)
+  const flipped = (props.rotations ?? 0) % 2 === 1;
+  const face = shownFace(t, flipped);
+  const downloadUrl = face ? cardImage(face, "png") : cardImage(t.enriched, "png");
+  const downloadName = imageFilename(face ? face.name || t.name : t.name);
 
   return (
     <div className="flex h-full flex-col">
@@ -54,17 +54,19 @@ export function CardSidebar(props: CardSidebarProps) {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                variant={props.pinned ? 'default' : 'outline'}
+                variant={props.pinned ? "default" : "outline"}
                 size="icon"
                 className="size-8"
                 onClick={props.onTogglePin}
                 aria-pressed={props.pinned}
-                aria-label={props.pinned ? 'Unpin from tile' : 'Pin to tile'}
+                aria-label={props.pinned ? "Unpin from tile" : "Pin to tile"}
               >
                 {props.pinned ? <PinOff /> : <Pin />}
               </Button>
             </TooltipTrigger>
-            <TooltipContent>{props.pinned ? 'Unpin — go back to the default printing' : 'Show this printing & face on the tile'}</TooltipContent>
+            <TooltipContent>
+              {props.pinned ? "Unpin — go back to the default printing" : "Show this printing & face on the tile"}
+            </TooltipContent>
           </Tooltip>
         </div>
         <Tooltip>
@@ -100,5 +102,5 @@ export function CardSidebar(props: CardSidebarProps) {
         </div>
       </ScrollArea>
     </div>
-  )
+  );
 }

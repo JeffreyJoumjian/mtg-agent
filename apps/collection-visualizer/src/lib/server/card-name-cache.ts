@@ -21,16 +21,12 @@ export interface NamedCard {
 export function trimCard(card: any): NamedCard {
   const face = (f: any) => ({
     ...(typeof f?.name === "string" ? { name: f.name } : {}),
-    ...(f?.image_uris
-      ? { image_uris: { normal: f.image_uris.normal, art_crop: f.image_uris.art_crop } }
-      : {}),
+    ...(f?.image_uris ? { image_uris: { normal: f.image_uris.normal, art_crop: f.image_uris.art_crop } } : {}),
   });
 
   return {
     name: card.name,
-    ...(card.image_uris
-      ? { image_uris: { normal: card.image_uris.normal, art_crop: card.image_uris.art_crop } }
-      : {}),
+    ...(card.image_uris ? { image_uris: { normal: card.image_uris.normal, art_crop: card.image_uris.art_crop } } : {}),
     ...(Array.isArray(card.card_faces) ? { card_faces: card.card_faces.map(face) } : {}),
   };
 }

@@ -1,26 +1,26 @@
-import type { FinalListInput } from '~/lib/deck/chat-events'
-import { Button } from '~/components/ui/button'
+import type { FinalListInput } from "~/lib/deck/chat-events";
+import { Button } from "~/components/ui/button";
 
 interface FinalListReviewProps {
-  input: FinalListInput
-  signedOff: boolean
-  onSignOff: () => void
+  input: FinalListInput;
+  signedOff: boolean;
+  onSignOff: () => void;
 }
 
 export function FinalListReview(props: FinalListReviewProps) {
-  const { input, signedOff } = props
+  const { input, signedOff } = props;
   const counted = input.groups.reduce(
     (n, g) => n + g.cards.reduce((s, c) => s + (Number(c.match(/^(\d+)x\s/)?.[1]) || 1), 0),
     0,
-  )
-  const mismatch = counted !== input.total
+  );
+  const mismatch = counted !== input.total;
 
   return (
     <div className="rounded-lg border-2 border-primary/50 bg-card p-3">
       <div className="mb-2 flex items-baseline gap-2">
         <span className="font-semibold">Final list</span>
-        <span className={`text-sm ${mismatch ? 'text-destructive' : 'text-muted-foreground'}`}>
-          {input.total} cards{mismatch ? ` (groups sum to ${counted})` : ''}
+        <span className={`text-sm ${mismatch ? "text-destructive" : "text-muted-foreground"}`}>
+          {input.total} cards{mismatch ? ` (groups sum to ${counted})` : ""}
         </span>
         {signedOff && <span className="ml-auto text-xs text-emerald-500">✓ signed off</span>}
       </div>
@@ -50,5 +50,5 @@ export function FinalListReview(props: FinalListReviewProps) {
         </div>
       )}
     </div>
-  )
+  );
 }
