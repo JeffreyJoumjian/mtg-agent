@@ -104,13 +104,23 @@ const progress = (over: Partial<SetProgress>): SetProgress => ({
 
 test('sortSets puts the most complete first and unknowns last', () => {
   const sets = [progress({ name: 'Unknown' }), progress({ name: 'Half', ratio: 0.5 }), progress({ name: 'Full', ratio: 1 })]
-  expect(sortSets(sets, 'completion').map((s) => s.name)).toEqual(['Full', 'Half', 'Unknown'])
+  expect(sortSets(sets, 'completion', 'desc').map((s) => s.name)).toEqual(['Full', 'Half', 'Unknown'])
 })
 
 test('sortSets orders by value and by name', () => {
   const sets = [progress({ name: 'B', value: 5 }), progress({ name: 'A', value: 50 })]
-  expect(sortSets(sets, 'value').map((s) => s.name)).toEqual(['A', 'B'])
-  expect(sortSets(sets, 'name').map((s) => s.name)).toEqual(['A', 'B'])
+  expect(sortSets(sets, 'value', 'desc').map((s) => s.name)).toEqual(['A', 'B'])
+  expect(sortSets(sets, 'name', 'asc').map((s) => s.name)).toEqual(['A', 'B'])
+})
+
+test('sortSets reverses direction but keeps unknown completion last', () => {
+  const sets = [progress({ name: 'Full', ratio: 1 }), progress({ name: 'Half', ratio: 0.5 }), progress({ name: 'Unknown' })]
+  // Ascending completion: least complete known set first, but the unknown still sorts last.
+  expect(sortSets(sets, 'completion', 'asc').map((s) => s.name)).toEqual(['Half', 'Full', 'Unknown'])
+
+  const byValue = [progress({ name: 'B', value: 5 }), progress({ name: 'A', value: 50 })]
+  expect(sortSets(byValue, 'value', 'asc').map((s) => s.name)).toEqual(['B', 'A'])
+  expect(sortSets(byValue, 'name', 'desc').map((s) => s.name)).toEqual(['B', 'A'])
 })
 
 test('searchSets matches name or code, and passes everything on an empty query', () => {

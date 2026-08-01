@@ -6,7 +6,17 @@ import { Button } from '~/components/ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip'
 import { SidebarTrigger } from '~/components/ui/sidebar'
 import { FiltersPopover } from './FiltersPopover'
-import { SettingsPopover } from './SettingsPopover'
+import {
+  SettingsButton,
+  ThemeSetting,
+  ViewSetting,
+  MaxPerRowSetting,
+  GroupVariantsSetting,
+  FoilSetting,
+  CurrencySetting,
+  SortSetting,
+  BaselineSetting,
+} from '~/components/settings/settings-button'
 import type { FilterState } from '~/lib/view/filters'
 import type { CardType } from '~/lib/card/type-line'
 import type { ViewSettings } from '~/lib/state/settings'
@@ -21,7 +31,6 @@ interface ToolbarProps {
   priceBounds: [number, number]
   cmcBounds: [number, number]
   settings: ViewSettings
-  onSettings: (s: ViewSettings) => void
   onRefresh: () => void
   refreshing: boolean
   onUpload: (file: File) => void
@@ -71,7 +80,18 @@ export function Toolbar(props: ToolbarProps) {
         currency={props.settings.currency}
       />
 
-      <SettingsPopover settings={props.settings} onSettings={props.onSettings} />
+      {/* The Library composes the full set of controls; the Sets view (collections.tsx) reuses the
+          same button with a leaner selection. */}
+      <SettingsButton>
+        <ThemeSetting />
+        <ViewSetting />
+        <MaxPerRowSetting />
+        <GroupVariantsSetting />
+        <FoilSetting />
+        <CurrencySetting />
+        <SortSetting />
+        <BaselineSetting />
+      </SettingsButton>
 
       <Tooltip>
         <TooltipTrigger asChild>

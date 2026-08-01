@@ -7,20 +7,20 @@ import { setIconsAtom, settingsAtom } from '~/lib/state/store'
 import { searchSets, setProgress, sortSets, type CollectionSort } from '~/lib/view/collections'
 import { formatMoney } from '~/lib/format'
 import { Input } from '~/components/ui/input'
-import { ToggleGroup, ToggleGroupItem } from '~/components/ui/toggle-group'
 import { SidebarTrigger } from '~/components/ui/sidebar'
+import {
+  SettingsButton,
+  ThemeSetting,
+  CurrencySetting,
+  SetSortSetting,
+  BaselineSetting,
+} from '~/components/settings/settings-button'
 import { SetCard } from '~/components/collection/SetCard'
 
 export const Route = createFileRoute('/collections')({
   loader: () => getCollectionWithSets(),
   component: Collections,
 })
-
-const SORTS: { key: CollectionSort; label: string }[] = [
-  { key: 'completion', label: 'Completion' },
-  { key: 'value', label: 'Value' },
-  { key: 'name', label: 'Name' },
-]
 
 function Collections() {
   const data = Route.useLoaderData()
@@ -30,12 +30,13 @@ function Collections() {
 
   const [query, setQuery] = useState('')
   const [sort, setSort] = useState<CollectionSort>('completion')
+  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
 
   const sets = useMemo(
     () => setProgress(data.tiles, data.setInfo, settings.currency),
     [data.tiles, data.setInfo, settings.currency],
   )
-  const view = useMemo(() => sortSets(searchSets(sets, query), sort), [sets, query, sort])
+  const view = useMemo(() => sortSets(searchSets(sets, query), sort, sortDir), [sets, query, sort, sortDir])
 
   const totalValue = sets.reduce((n, s) => n + s.value, 0)
   const completed = sets.filter((s) => s.ratio === 1).length
@@ -51,21 +52,14 @@ function Collections() {
           placeholder="Search sets…"
           className="min-w-[12rem] max-w-sm flex-1"
         />
-        <ToggleGroup
-          type="single"
-          variant="outline"
-          size="sm"
-          // Hold its width next to the flex-1 search input rather than being squeezed by it.
-          className="shrink-0"
-          value={sort}
-          onValueChange={(v) => v && setSort(v as CollectionSort)}
-        >
-          {SORTS.map((s) => (
-            <ToggleGroupItem key={s.key} value={s.key}>
-              {s.label}
-            </ToggleGroupItem>
-          ))}
-        </ToggleGroup>
+        {/* Same shared gear as the Library — theme/currency/baseline are global, so changing them
+            here also changes the Library; the set sort is this view's own local state. */}
+        <SettingsButton>
+          <ThemeSetting />
+          <CurrencySetting />
+          <SetSortSetting value={sort} onChange={setSort} dir={sortDir} onDirChange={setSortDir} />
+          <BaselineSetting />
+        </SettingsButton>
       </div>
 
       <div className="flex items-center gap-4 px-3 py-2 text-sm">

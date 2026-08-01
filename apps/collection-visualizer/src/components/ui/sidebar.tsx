@@ -27,7 +27,9 @@ import {
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
-const SIDEBAR_WIDTH = "16rem"
+// Narrower than shadcn's 16rem default: this rail only holds a couple of nav items, so it's sized to
+// just fit its widest label ("MTG Collection" / "Collections") rather than leave a slab of dead space.
+const SIDEBAR_WIDTH = "11rem"
 const SIDEBAR_WIDTH_MOBILE = "18rem"
 const SIDEBAR_WIDTH_ICON = "3rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"

@@ -106,18 +106,21 @@ export function searchSets(sets: SetProgress[], query: string): SetProgress[] {
   return sets.filter((s) => s.name.toLowerCase().includes(q) || s.code.toLowerCase().includes(q))
 }
 
-/** Sorted copy. Sets with no known total sort last on completion — they aren't 0% complete, we just
- *  can't say — and ties fall back to name so the order is stable rather than arbitrary. */
-export function sortSets(sets: SetProgress[], sort: CollectionSort): SetProgress[] {
+/** Sorted copy. `dir` flips the ordering just like the Library's card sort. Sets with no known total
+ *  sort last on completion in *both* directions — they aren't 0% complete, we just can't say — and
+ *  ties fall back to name (ascending) so the order is stable rather than arbitrary. */
+export function sortSets(sets: SetProgress[], sort: CollectionSort, dir: 'asc' | 'desc'): SetProgress[] {
+  const factor = dir === 'asc' ? 1 : -1
   const byName = (a: SetProgress, b: SetProgress) => a.name.localeCompare(b.name)
 
   return [...sets].sort((a, b) => {
-    if (sort === 'name') return byName(a, b)
-    if (sort === 'value') return b.value - a.value || byName(a, b)
+    if (sort === 'name') return factor * byName(a, b)
+    if (sort === 'value') return factor * (a.value - b.value) || byName(a, b)
 
+    // The null check sits outside `factor` so an unknown total stays last whichever way we sort.
     if (a.ratio == null && b.ratio == null) return byName(a, b)
     if (a.ratio == null) return 1
     if (b.ratio == null) return -1
-    return b.ratio - a.ratio || byName(a, b)
+    return factor * (a.ratio - b.ratio) || byName(a, b)
   })
 }
