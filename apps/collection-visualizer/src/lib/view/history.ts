@@ -80,3 +80,30 @@ export function seriesDelta(points: CardValuePoint[]): { absolute: number; ratio
 
   return { absolute: last - first, ratio: first === 0 ? null : (last - first) / first }
 }
+
+/** How much one card moved over a window: its latest recorded price vs. the price in effect at
+ *  `cutoffDate` — the last recorded point on or before it, carried forward (a gap means "unchanged").
+ *
+ *  Null when it can't be measured: no price for this currency+finish at all, or the card's first
+ *  recorded point is *after* the cutoff, so it's too new to have a full-window change to report. A
+ *  card that simply hasn't moved inside the window returns a change of zero, not null. */
+export function windowDelta(
+  points: PricePoint[],
+  currency: Currency,
+  finish: Finish,
+  cutoffDate: string,
+): { absolute: number; ratio: number | null } | null {
+  const series = cardSeries(points, currency, finish)
+  if (series.length === 0) return null
+
+  const current = series[series.length - 1].value
+
+  let baseline: number | null = null
+  for (const p of series) {
+    if (p.date > cutoffDate) break
+    baseline = p.value
+  }
+  if (baseline == null) return null
+
+  return { absolute: current - baseline, ratio: baseline === 0 ? null : (current - baseline) / baseline }
+}

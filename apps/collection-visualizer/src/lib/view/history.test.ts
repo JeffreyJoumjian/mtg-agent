@@ -1,5 +1,5 @@
 import { test, expect } from 'bun:test'
-import { cardSeries, inCurrency, seriesDelta, valueSeries } from './history'
+import { cardSeries, inCurrency, seriesDelta, valueSeries, windowDelta } from './history'
 import type { CardTile, PriceHistory, PricePoint } from '~/lib/types'
 
 const point = (date: string, usd: number | null, eur: number | null = null): PricePoint => ({
@@ -90,4 +90,30 @@ test('seriesDelta is null with fewer than two points', () => {
 
 test('seriesDelta reports a null ratio rather than dividing by zero', () => {
   expect(seriesDelta([{ date: 'a', value: 0 }, { date: 'b', value: 4 }])).toEqual({ absolute: 4, ratio: null })
+})
+
+test('windowDelta measures latest vs. the price as of the cutoff, carried forward', () => {
+  // Moves on day 1 (10) and day 5 (16); cutoff day 3 → baseline is the carried-forward day-1 price.
+  const points = [point('2026-01-01', 10), point('2026-01-05', 16)]
+  expect(windowDelta(points, 'usd', 'normal', '2026-01-03')).toEqual({ absolute: 6, ratio: 0.6 })
+})
+
+test('windowDelta is null when the card’s first point is after the cutoff (too new to measure)', () => {
+  const points = [point('2026-01-04', 5), point('2026-01-06', 8)]
+  expect(windowDelta(points, 'usd', 'normal', '2026-01-03')).toEqual(null)
+})
+
+test('windowDelta is a zero change when nothing moved inside the window', () => {
+  // Only point predates the cutoff, so baseline == current: unchanged, not un-measurable.
+  const points = [point('2026-01-01', 10)]
+  expect(windowDelta(points, 'usd', 'normal', '2026-01-03')).toEqual({ absolute: 0, ratio: 0 })
+})
+
+test('windowDelta resolves currency and finish, and is null when that combo has no price', () => {
+  const points = [
+    { date: '2026-01-01', usd: 1, usdFoil: 4, eur: null, eurFoil: null },
+    { date: '2026-01-05', usd: 3, usdFoil: 10, eur: null, eurFoil: null },
+  ]
+  expect(windowDelta(points, 'usd', 'foil', '2026-01-03')).toEqual({ absolute: 6, ratio: 1.5 })
+  expect(windowDelta(points, 'eur', 'normal', '2026-01-03')).toEqual(null)
 })
