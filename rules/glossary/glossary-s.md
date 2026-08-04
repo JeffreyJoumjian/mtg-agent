@@ -86,7 +86,7 @@ Extra cards that may be used to modify a deck between games of a match. See rule
 
 ## Siege
 
-A battle subtype. Only an opponent of a Siege’s controller can be its protector. When the last defense counter is removed, its controller exiles the Siege, then they may cast it transformed without paying its mana cost. See rule 310.11.
+A battle subtype. Only an opponent of a Siege’s controller can be its protector. When the last defense counter is removed, its controller exiles the Siege, then they may cast it transformed without paying its mana cost. See rule 310.12.
 
 ## Silver-Bordered
 
@@ -122,8 +122,7 @@ Some older cards were printed with the term “snow-covered” in their rules te
 
 ## Solved
 
-1. A designation a Case may have, allowing its last ability to affect the game. See rule 719, “Case Cards.”
-2. A keyword ability of Case cards that affects the game only if the Case has the solved designation. See rule 702.169, “Solved.”
+1. A designation a Case may have, allowing its last ability to affect the game. See rule 719, “Case Cards.” 2. A keyword ability of Case cards that affects the game only if the Case has the solved designation. See rule 702.169, “Solved.”
 
 ## Sorcery
 
@@ -264,6 +263,10 @@ A kicker variant that can add a sticker to the spell with the ability and give a
 ## Sticker Sheet
 
 The collection of stickers found on an insert in Unfinity booster packs. See rule 123, “Stickers.”
+
+## Storied
+
+A keyword causing a player to get the enduring story designation once they control three or more permanents that are artifacts, Sagas, and/or legendary. See rule 702.195, “Storied.”
 
 ## Storm
 

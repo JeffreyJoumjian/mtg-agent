@@ -62,8 +62,7 @@ A multiplayer game or a two-player series of games (usually best-two-of-three) p
 
 ## Max Speed
 
-1. A player has max speed if their speed is 4. See rule 702.179, “Start Your Engines!”
-2. A keyword ability that grants an ability to the permanent or card it’s on only if that permanent’s controller (or that card’s owner, if it isn’t on the battlefield) has a speed of 4. See rule 702.178, “Max Speed.”
+1. A player has max speed if their speed is 4. See rule 702.179, “Start Your Engines!” 2. A keyword ability that grants an ability to the permanent or card it’s on only if that permanent’s controller (or that card’s owner, if it isn’t on the battlefield) has a speed of 4. See rule 702.178, “Max Speed.”
 
 ## Maximum Hand Size
 

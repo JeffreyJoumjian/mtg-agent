@@ -98,7 +98,7 @@ A keyword ability that can have a creature enter the battlefield with +1/+1 coun
 
 ## Boast
 
-A special kind of activated ability that can be activated only once each turn if the creature with the boast ability attacked that turn. See rule 702.142, “Boast.”
+An activated ability that can be activated only once each turn if the creature with the boast ability attacked that turn. See rule 702.142, “Boast.”
 
 ## Bolster
 

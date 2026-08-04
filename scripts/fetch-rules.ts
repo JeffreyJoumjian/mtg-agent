@@ -23,9 +23,13 @@ async function findTxtUrl(): Promise<string> {
     headers: { "user-agent": "Mozilla/5.0 (mtg-agent rules fetcher)" },
   });
   if (!res.ok) throw new Error(`Failed to load rules page: HTTP ${res.status}`);
-  const html = await res.text();
+  const raw = await res.text();
 
-  const matches = [...html.matchAll(/https?:\/\/[^"'\s)]+?\.txt/gi)].map((m) => m[0]);
+  // The page embeds its links in a JSON payload with escaped slashes, and the published
+  // filename contains a space ("MagicCompRules 20260807.txt") — so unescape first and let
+  // the match span spaces, stopping only at a quote or tag boundary.
+  const html = raw.replace(/\\u002F/gi, "/");
+  const matches = [...html.matchAll(/https?:\/\/[^"'<>\\)]+?\.txt/gi)].map((m) => m[0].trim());
   if (matches.length === 0) {
     throw new Error(
       "No .txt link found on the rules page. Its layout may have changed — pass the URL " +
@@ -38,7 +42,12 @@ async function findTxtUrl(): Promise<string> {
 
 /** Derive a YYYY.MM.DD version stamp from the URL basename or the file's effective date. */
 function deriveStamp(url: string, content: string): string {
-  const fromUrl = url.match(/(\d{4})[.\-_]?(\d{2})[.\-_]?(\d{2})/);
+  // Match against the decoded basename only: a percent-encoded space ("%2020260807") would
+  // otherwise read as the date 2020.26.08, and the digit lookarounds keep the match from
+  // slicing a date out of the middle of a longer run.
+  const basename = url.split("/").pop()?.replace(/%20/g, " ") ?? url;
+
+  const fromUrl = basename.match(/(?<!\d)(\d{4})[.\-_ ]?(\d{2})[.\-_ ]?(\d{2})(?!\d)/);
   if (fromUrl) return `${fromUrl[1]}.${fromUrl[2]}.${fromUrl[3]}`;
 
   const eff = content.match(/effective as of\s+([A-Za-z]+)\s+(\d{1,2}),\s+(\d{4})/i);
@@ -51,7 +60,10 @@ function deriveStamp(url: string, content: string): string {
 
 async function main() {
   const arg = process.argv[2];
-  const url = arg && /^https?:\/\//.test(arg) ? arg : await findTxtUrl();
+  const found = arg && /^https?:\/\//.test(arg) ? arg : await findTxtUrl();
+
+  /** Percent-encodes any literal space in the filename; idempotent if already encoded. */
+  const url = new URL(found).href;
 
   console.log(`Downloading ${url}`);
   const res = await fetch(url, {

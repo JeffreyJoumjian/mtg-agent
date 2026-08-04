@@ -1,5 +1,14 @@
 # Scarlet Witch — Strategy
 
+> ⚠️ **SUPERSEDED 2026-08-01.** This describes the earlier **Izzet (U/R) "Scarlet Witch, Chaotic
+> Avenger"** reality-warping build, which was replaced by a **mono-red "The Scarlet Witch"
+> big-mana haymaker** deck. That decklist is preserved in
+> `../versions/2026-08-01-pre-storm-rebuild-izzet.md`.
+>
+> For the current deck read **`sample-deck-analysis.md`** (archetype research and the staple core)
+> and **`considered-and-cut.md`** (what was left out and why). Kept for history — the identity and
+> flavour notes below still apply.
+
 ## Identity
 **"Wanda, the greatest witch alive."** A resilient, reality-warping Izzet spellcaster. The deck
 should *feel* like being Wanda — spells everywhere, bending the game, protecting herself — not a

@@ -11,7 +11,8 @@
     "card": "bun run scripts/card.ts",
     "search": "bun run scripts/card.ts search",
     "cards:refresh": "bun run scripts/card.ts refresh",
-    "test": "bun test"
+    "test": "bun test",
+    "deck:pdf": "bun run scripts/deck-pdf.ts"
   },
   "engines": {
     "bun": ">=1.1.0"

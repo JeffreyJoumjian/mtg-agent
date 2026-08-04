@@ -31,6 +31,8 @@ export interface CardSummary {
   colors: string[];
   /** Color identity — the colors that matter for Commander legality (`["R","U"]`). */
   colorIdentity: string[];
+  /** Mana this card can produce (`["B","R"]`, `["C"]`). Mostly useful for lands and rocks. */
+  producedMana: string[];
   set: string;
   setName: string;
   collectorNumber: string;
@@ -95,6 +97,7 @@ export function toSummary(card: any): CardSummary {
     loyalty: card.loyalty ?? faces[0]?.loyalty,
     colors: card.colors ?? faces.flatMap((f: any) => f.colors ?? []),
     colorIdentity: card.color_identity ?? [],
+    producedMana: card.produced_mana ?? [],
     set: card.set,
     setName: card.set_name,
     collectorNumber: card.collector_number,

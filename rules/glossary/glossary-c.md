@@ -110,8 +110,7 @@ A number printed on most cards that has no effect on game play. See rule 213, �
 
 ## Color
 
-1. A characteristic of an object. See rule 105, “Colors,” and rule 202, “Mana Cost and Color.”
-2. An attribute mana may have. See rule 106, “Mana.”
+1. A characteristic of an object. See rule 105, “Colors,” and rule 202, “Mana Cost and Color.” 2. An attribute mana may have. See rule 106, “Mana.”
 
 ## Color Identity
 
@@ -123,8 +122,7 @@ A characteristic of an object. See rule 105, “Colors,” and rule 204, “Colo
 
 ## Colorless
 
-1. An object with no color is colorless. Colorless is not a color. See rule 105, “Colors,” and rule 202, “Mana Cost and Color.”
-2. A type of mana. See rule 106, “Mana,” and rule 107.4c.
+1. An object with no color is colorless. Colorless is not a color. See rule 105, “Colors,” and rule 202, “Mana Cost and Color.” 2. A type of mana. See rule 106, “Mana,” and rule 107.4c.
 
 ## Combat Damage
 
@@ -144,8 +142,7 @@ A zone for certain specialized objects that have an overarching effect on the ga
 
 ## Commander
 
-1. A casual variant in which each deck is led by a legendary card (usually a creature). See rule 903, “Commander.”
-2. A designation given to one legendary card in each player’s deck in the Commander casual variant.
+1. A casual variant in which each deck is led by a legendary card (usually a creature). See rule 903, “Commander.” 2. A designation given to one legendary card in each player’s deck in the Commander casual variant.
 
 ## Commander Draft
 
@@ -229,9 +226,7 @@ Values of an object’s characteristics that are checked by copy effects. See ru
 
 ## Copy
 
-1. To create a new object whose copiable values have been set to those of another object.
-2. An object whose copiable values have been set to those of another object.
-See rule 707, “Copying Objects.”
+1. To create a new object whose copiable values have been set to those of another object. 2. An object whose copiable values have been set to those of another object. See rule 707, “Copying Objects.”
 
 ## Cost
 
@@ -239,8 +234,7 @@ An action or payment necessary to take another action or to stop another action 
 
 ## Counter
 
-1. To cancel a spell or ability so it doesn’t resolve and none of its effects occur. See rule 701.6, “Counter.”
-2. A marker placed on an object or player that modifies its characteristics or interacts with a rule or ability. See rule 122, “Counters.”
+1. To cancel a spell or ability so it doesn’t resolve and none of its effects occur. See rule 701.6, “Counter.” 2. A marker placed on an object or player that modifies its characteristics or interacts with a rule or ability. See rule 122, “Counters.”
 
 ## Counts As (Obsolete)
 

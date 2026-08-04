@@ -1,80 +1,103 @@
 # Scarlet Witch — Status
 
-Mirror of DECK.md. Statuses: `HAVE` (in your pile) · `BUY ($x)` · `PROXY` · `CONSIDERING` · `CUT`.
-💰 = expensive proxy candidate. Prices are Scryfall USD snapshots (2026-07-01), via `bun run card`.
+Mirror of `DECK.md` (Bracket 3). Sideboard tracking lives in `SIDEBOARD.md`.
+Statuses: `HAVE` · `BUY ($x)` · `PROXY` · `CONSIDERING` · `CUT`. 💰 = proxy candidate (≥$8).
+Prices are Scryfall USD snapshots taken **2026-08-02** via `bun run card --deck … --id r`.
 
-Sticker total ≈ **$319**, but you proxy lands + big cards, so real spend is much lower
-(see "Proxy candidates" at the bottom). Keep in sync with DECK.md.
+**Sticker total: $773.55** · Validated at 100 cards, all commander-legal, all mono-red identity.
+**Real cash after proxying lands + 💰 cards: roughly $95.**
+
+---
 
 ## Commander
-1x Scarlet Witch, Chaotic Avenger — HAVE (~$3; also in the Avengers Assemble precon)
 
-## Theme / Wanda core (your pile)
-1x The Vision and Scarlet Witch — HAVE 💰 (~$60 — proxy if you don't own it)
-1x Vision, Synthezoid Avenger — HAVE
-1x The Vision — HAVE
-1x Vision, Spectral Synthezoid — HAVE
-1x Viv Vision, Teen Synthezoid — HAVE
-1x Quicksilver, Speedster — HAVE
-1x Wiccan, Young Avenger — HAVE
-1x Speed, Young Avenger — HAVE
-1x Scarlet Witch, Wanda Maximoff — HAVE
-1x The Scarlet Witch — HAVE
-1x Wanda's Vision — HAVE (~$7)
-1x Chaos Warp — HAVE (mar #69 = the House of M / Scarlet Witch art 💰, or any cheap printing)
-1x Avengers Disassembled — HAVE
-1x Hex Magic — HAVE
-1x Vision Quest — HAVE
-1x Vision of Love — HAVE
+1x The Scarlet Witch — HAVE ($0.75)
 
-## Lands — all PROXY (per your "proxy lands" rule)
-1x Command Tower · 1x Steam Vents 💰 · 1x Spirebluff Canal 💰 · 1x Sulfur Falls · 1x Shivan Reef
-1x Scalding Tarn 💰 · 1x Cascade Bluffs · 1x Prismari Campus · 1x Temple of Epiphany
-1x Izzet Boilerworks · 1x Frostboil Snarl · 1x Desolate Lighthouse · 1x Mystic Sanctuary
-1x Reliquary Tower · 1x Rogue's Passage · 1x Otawara, Soaring City 💰
-1x Sokenzan, Crucible of Defiance · 9x Mountain · 9x Island
+## Lands (33) — all PROXY per your standing rule
 
-## Ramp
-1x Sol Ring — BUY ($2) · 1x Arcane Signet — BUY ($1) · 1x Izzet Signet — BUY ($0.40)
-1x Talisman of Creativity — BUY ($2) · 1x Fellwar Stone — BUY ($0.75) · 1x Mind Stone — BUY ($0.30)
-1x Storm-Kiln Artist — BUY ($2) · 1x Birgi, God of Storytelling — BUY ($2)
-1x Jeska's Will — 💰 PROXY ($41; budget swap: Unexpected Windfall / Seething Song) · 1x Big Score — BUY ($0.40)
+1x Ancient Tomb ($134.88) 💰 🔶GC · 1x Nykthos, Shrine to Nyx ($53.55) 💰
+1x Valakut, the Molten Pinnacle ($18.55) 💰 · 1x Arena of Glory ($7.61) · 1x War Room ($4.43)
+1x Tyrite Sanctum ($3.01) · 1x Sokenzan, Crucible of Defiance ($2.54)
+1x Cori Mountain Monastery ($0.96) · 1x Forge of Heroes ($0.39) · 1x Demolition Field ($0.28)
+1x Scavenger Grounds ($0.28) · 1x Rogue's Passage · 1x Shatterskull Smashing
+1x Valakut Awakening · 19x Mountain
 
-## Card Draw
-1x Ponder — BUY ($2) · 1x Preordain — BUY ($0.45) · 1x Brainstorm — BUY ($1.40)
-1x Chart a Course — BUY ($0.15) · 1x Archmage Emeritus — BUY ($0.65)
-1x Pull from Tomorrow — BUY ($0.30) · 1x Mystic Confluence — BUY ($1)
+## Ramp — rocks and rituals (12)
 
-## Counterspells / Protection
-1x Counterspell — BUY ($3.60) · 1x Swan Song — 💰 BUY ($8) · 1x Arcane Denial — BUY ($2)
-1x An Offer You Can't Refuse — BUY ($2) · 1x Negate — BUY ($0.25) · 1x Dispel — BUY ($0.35)
-1x Remand — BUY ($0.30) · 1x Cryptic Command — 💰 BUY ($6.70)
+1x Sol Ring — BUY ($1.43) · 1x Arcane Signet — BUY ($0.43) · 1x Mind Stone — BUY ($0.35)
+1x Ruby Medallion — 💰 PROXY ($13.16) · 1x Tablet of Discovery — BUY ($1.94)
+1x Pyromancer's Goggles — BUY ($0.41) · 1x Pyretic Ritual — BUY ($5.17)
+1x Desperate Ritual — BUY ($6.77) · 1x Seething Song — 💰 PROXY ($12.55)
+1x Jeska's Will — 💰 PROXY ($41.58) 🔶GC · 1x Mana Geyser — BUY ($1.47)
+1x Brass's Bounty — BUY ($0.44)
 
-## Removal / Reality-warp
-1x Curse of the Swine — BUY ($0.30) · 1x Pongify — BUY ($1) · 1x Rapid Hybridization — BUY ($1)
-1x Reality Shift — BUY ($0.60) · 1x Abrade — BUY ($0.25) · 1x Lightning Bolt — BUY ($0.85)
-1x Vandalblast — BUY ($1.20)
+## Ramp — per-spell mana engines (7)
 
-## Board Wipes
-1x Blasphemous Act — BUY ($1) · 1x Evacuation — BUY ($0.30)
+1x Birgi, God of Storytelling — 💰 PROXY (~$33) · 1x Electro, Assaulting Battery — BUY ($6.45)
+1x Urabrask — 💰 PROXY (~$17) · 1x Ashling, Flame Dancer — BUY ($5.61)
+1x Neheb, the Eternal — BUY ($7.34) · 1x Storm-Kiln Artist — BUY ($1.46)
+1x The Vision and Scarlet Witch — 💰 PROXY ($48.13)
 
-## Protection & Evasion
-1x Swiftfoot Boots — BUY ($2.75) · 1x Lightning Greaves — BUY ($3.50) · 1x Whispersilk Cloak — BUY ($1)
-1x Bolt Bend — BUY ($4.60) · 1x Spellskite — 💰 BUY ($8)
+## Card Draw (12)
 
-## Tokens & Copy
-1x Young Pyromancer — BUY ($0.25) · 1x Saheeli, Sublime Artificer — BUY ($0.40)
-1x Metallurgic Summonings — BUY ($2.50) · 1x Veyran, Voice of Duality — BUY ($1.60)
-1x Murmuring Mystic — BUY ($0.75) · 1x Spark Double — 💰 PROXY ($14)
+1x Big Score — BUY ($0.43) · 1x Unexpected Windfall — BUY ($3.46)
+1x Pirate's Pillage — BUY ($2.29) · 1x Inspired Tinkering — BUY ($1.97)
+1x Commune with Lava — BUY ($0.71) · 1x Ignite the Future — BUY ($0.50)
+1x Hex Magic — BUY ($1.28) · 1x **Wiccan, Young Avenger — BUY ($0.24)** ← best value in the deck
+1x Wheel of Fortune — 💰 PROXY · 1x Reforge the Soul — BUY ($6.98)
+1x Will of the Jeskai — BUY ($3.91) · 1x The One Ring — 💰 PROXY ($105.67) 🔶GC
 
-## Extra Turns
-1x Temporal Manipulation — 💰 PROXY ($12.50) · 1x Karn's Temporal Sundering — BUY ($1.60)
+## Theme — pump her power to grow the discount (5)
 
-## Finisher
-1x Comet Storm — BUY ($3.30)
+1x Livaan, Cultist of Tiamat — BUY ($0.23) ← *the key engine card, 23 cents*
+1x Cait Sith, Fortune Teller — BUY ($0.29) · 1x Blazing Shoal — BUY ($5.44)
+1x Monstrous Rage — BUY ($0.33) · 1x Blackblade Reforged — BUY ($2.05)
 
-## Proxy candidates (💰)
-Lands (~$85 of the sticker): Scalding Tarn, Otawara, Steam Vents, Spirebluff Canal — proxy all.
-Cards: The Vision and Scarlet Witch ($60), Jeska's Will ($41), Spark Double ($14),
-Temporal Manipulation ($12.50), Swan Song ($8), Spellskite ($8), Cryptic Command ($6.70).
-Proxy those + lands and the **cash buy is roughly $70–90**.
+## Theme — copy and recur (6)
+
+1x Mizzix's Mastery — 💰 BUY ($8.92) · 1x Past in Flames — BUY ($4.17)
+1x Increasing Vengeance — BUY ($1.00) · 1x Repeated Reverberation — BUY ($0.41)
+1x Arcane Bombardment — BUY ($7.01) · 1x Improvisation Capstone — 💰 BUY ($11.03)
+
+## Protection (7)
+
+1x Deflecting Swat — 💰 PROXY ($67.34) · 1x Bolt Bend — BUY ($5.48)
+1x Return the Favor — BUY ($0.43) · 1x Hexing Squelcher — 💰 PROXY ($19.08)
+1x Champion's Helm — BUY ($3.41) · 1x Mithril Coat — BUY (no Scryfall price; typically single digits)
+1x Commander's Plate — 💰 PROXY ($43.07)
+
+## Removal & Defence (8)
+
+1x Chaos Warp — HAVE ($0.33; `mar #69` is the House of M art)
+1x Abrade — BUY ($0.29) · 1x Vandalblast — BUY ($1.02)
+1x Untimely Malfunction — BUY ($7.57) · 1x Zuko's Exile — BUY ($0.22)
+1x Fiery Confluence — BUY ($0.40) · 1x Volcanic Vision — BUY ($0.50)
+1x Disrupt Decorum — BUY ($4.23)
+
+## Win Conditions (9)
+
+1x Crackle with Power — BUY ($7.06) · 1x Apex of Power — BUY ($0.98)
+1x Chandra's Ignition — BUY ($6.63) · 1x Thor, God of Thunder — 💰 BUY ($13.23)
+1x Longshot, Rebel Bowman — 💰 BUY ($8.75) · 1x Storm King's Thunder — BUY ($4.62)
+1x Electrodominance — BUY ($0.43) · 1x Fiery Inscription — BUY ($0.43)
+1x Solphim, Mayhem Dominus — 💰 PROXY ($27.53)
+
+---
+
+## Proxy plan
+
+**Proxy (💰):** all non-basic lands, plus Deflecting Swat, The One Ring, The Vision and Scarlet
+Witch, Commander's Plate, Jeska's Will, Birgi, Hexing Squelcher, Urabrask, Ruby Medallion,
+Wheel of Fortune, Seething Song.
+
+**Actual cash outlay:** the engine cards are almost free — Livaan $0.23, Wiccan $0.24,
+Cait Sith $0.29, Monstrous Rage $0.33, Electrodominance $0.43, Apex of Power $0.98. Buying
+everything under $8 comes to roughly **$95**.
+
+## Newly added 2026-08-02 — buy these
+
+Wiccan, Young Avenger ($0.24) · Neheb, the Eternal ($7.34) · Disrupt Decorum ($4.23) ·
+Champion's Helm ($3.41) · Ashling, Flame Dancer ($5.61) · Hex Magic ($1.28) ·
+Fiery Confluence ($0.40) · Volcanic Vision ($0.50) · Fiery Inscription ($0.43) · Mithril Coat
+
+**Total new cash: about $23.** Plus two proxies: Urabrask (~$17) and Solphim ($27.53).

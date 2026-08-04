@@ -1,0 +1,574 @@
+{
+ "title": "Edgar Markov \u2014 Vampire Aristocrats",
+ "subtitle": "Bracket 3 \u00b7 3/3 Game Changers \u00b7 no infinite combos \u00b7 100 cards \u00b7 rebuilt 2026-08-03/04",
+ "stats": [
+  [
+   "Creatures",
+   "36"
+  ],
+  [
+   "Cheap (MV\u22642)",
+   "14"
+  ],
+  [
+   "Avg creature MV",
+   "2.95"
+  ],
+  [
+   "Lifelink",
+   "11"
+  ],
+  [
+   "Draw",
+   "9"
+  ],
+  [
+   "Sac outlets",
+   "5"
+  ],
+  [
+   "Removal",
+   "5"
+  ],
+  [
+   "Protection",
+   "2"
+  ],
+  [
+   "Wipes",
+   "2"
+  ],
+  [
+   "Lands",
+   "36 (7 basic)"
+  ],
+  [
+   "Sources",
+   "W21 / B28 / R16"
+  ],
+  [
+   "Rocks",
+   "4"
+  ]
+ ],
+ "swaps": [
+  {
+   "in": {
+    "name": "Vein Ripper",
+    "cost": "{3}{B}{B}{B}",
+    "text": "6/5 flier, Ward\u2014Sacrifice a creature. ANY creature dies \u2192 target opponent loses 2, you gain 2."
+   },
+   "out": {
+    "name": "Exquisite Blood",
+    "cost": "{4}{B}",
+    "text": "Whenever an opponent loses life, you gain that much life."
+   },
+   "why": "Half of the infinite \u2014 pairs with BOTH Sanguine Bond and Vito. Cutting this direction kills all four pairings at once. Ripper is a Vampire (lords, eminence, Roaming Throne) and its board-wide drain DETERS opponents from wiping.",
+   "back": "Only if the table explicitly allows infinite combos."
+  },
+  {
+   "in": {
+    "name": "Cathars' Crusade",
+    "cost": "{3}{W}{W}",
+    "text": "Creature enters \u2192 +1/+1 counter on your whole board."
+   },
+   "out": {
+    "name": "Bloodthirsty Conqueror",
+    "cost": "{3}{B}{B}",
+    "text": "5/5 flying deathtouch. Opponent loses life \u2192 you gain that much."
+   },
+   "why": "Other half of the infinite. GENUINE LOSS \u2014 4/6 field, and its lifegain was a real life floor (replaced by lifelink bodies instead). Crusade gives TWO triggers per Vampire cast (eminence token + the spell), THREE with Elspeth.",
+   "back": "Only if the table explicitly allows infinite combos."
+  },
+  {
+   "in": {
+    "name": "Emeritus of Woe",
+    "cost": "{3}{B}",
+    "text": "5/4 Vampire. Enters PREPARED \u2192 cast a copy of DEMONIC TUTOR. Re-prepares whenever 2+ creatures died that turn."
+   },
+   "out": {
+    "name": "Diabolic Tutor",
+    "cost": "{2}{B}{B}",
+    "text": "Search your library for a card, put it into your hand."
+   },
+   "why": "Four mana to find a card and affect nothing \u2014 weakest card in the 100, 0/6 field. Emeritus is a REPEATABLE tutor on a Vampire body, and it is NOT on the Game Changer list (plain Demonic Tutor is), so it costs no bracket slot.",
+   "back": "Never."
+  },
+  {
+   "in": {
+    "name": "Herald's Horn",
+    "cost": "{3}",
+    "text": "Vampires cost {1} less, plus top-of-library Vampire draw."
+   },
+   "out": {
+    "name": "Grim Tutor",
+    "cost": "{1}{B}{B}",
+    "text": "Search library \u2192 hand. You LOSE 3 LIFE."
+   },
+   "why": "Redundant second tutor, and 3 life is real in a deck with no life floor. Horn shifts the entire curve down a pip instead of fixing one card.",
+   "back": "Never."
+  },
+  {
+   "in": {
+    "name": "Markov Baron",
+    "cost": "{2}{B}",
+    "text": "Lord + lifelink, with CONVOKE \u2014 often one real mana on a wide board."
+   },
+   "out": {
+    "name": "Champion of Dusk",
+    "cost": "{3}{B}{B}",
+    "text": "4/4. ETB draw X and LOSE X life, X = your Vampire count."
+   },
+   "why": "At 15 life, X=10 kills you \u2014 this lost a real game. Field runs it 4/6, but mostly decks holding an infinite where drawing to 5 is safe because the game ends first.",
+   "back": "If lifelink gets high enough that drawing 8 is safe."
+  },
+  {
+   "in": {
+    "name": "Master of Dark Rites",
+    "cost": "{B}",
+    "text": "1/1 Vampire. {T}, sac another creature: add {B}{B}{B}. Sac outlet AND ritual."
+   },
+   "out": {
+    "name": "Pitiless Plunderer",
+    "cost": "{3}{B}",
+    "text": "1/4 Human Pirate. Your creature dies \u2192 create a Treasure."
+   },
+   "why": "Non-Vampire 4-drop. Master of Dark Rites, Phyrexian Tower, Three Tree City and Ashnod's Altar all cover 'dead creature \u2192 mana'. Trades a 4-drop for a 1-drop.",
+   "back": "If the deck ever wants a 6th mana outlet."
+  },
+  {
+   "in": {
+    "name": "Urza's Incubator",
+    "cost": "{3}",
+    "text": "Vampire spells cost {2} LESS. Stacks with Herald's Horn = {3} off every Vampire."
+   },
+   "out": {
+    "name": "Mind Stone",
+    "cost": "{2}",
+    "text": "{T}: Add {C}. {1},{T}, sac: draw a card."
+   },
+   "why": "Vanilla rock with 0/8 field adoption \u2014 literally nobody runs it. Cost reduction beats a colourless rock once the curve comes down.",
+   "back": "Never."
+  },
+  {
+   "in": {
+    "name": "Phyrexian Reclamation",
+    "cost": "{B}",
+    "text": "{1}{B}, pay 2 life: creature from graveyard \u2192 HAND. Recasting RE-TRIGGERS eminence."
+   },
+   "out": {
+    "name": "Fellwar Stone",
+    "cost": "{2}",
+    "text": "Adds a colour an OPPONENT's land could produce."
+   },
+   "why": "Unreliable \u2014 hands you blue/green you can't spend against the wrong pod (2/8 field). Reclamation is the recursion the deck had none of.",
+   "back": "Never."
+  },
+  {
+   "in": {
+    "name": "Blade of the Bloodchief",
+    "cost": "{1}",
+    "text": "Any creature dies \u2192 +1/+1 counter on equipped; TWO if it's a Vampire."
+   },
+   "out": {
+    "name": "Idol of Oblivion",
+    "cost": "{2}",
+    "text": "{T}: draw, only if you made a token. {8}: make a 10/10."
+   },
+   "why": "Colourless and non-Vampire. Draw now comes attached to bodies instead. Blade snowballs off deaths, which happen constantly here.",
+   "back": "If draw drops badly and nothing better is free."
+  },
+  {
+   "in": {
+    "name": "Warleader's Call",
+    "cost": "{1}{R}{W}",
+    "text": "Creatures +1/+1 AND creature enters \u2192 1 damage to each opponent."
+   },
+   "out": {
+    "name": "Fracture",
+    "cost": "{W}{B}",
+    "text": "Destroy target artifact, enchantment or planeswalker."
+   },
+   "why": "CANNOT hit creatures. Generous Gift and Chaos Warp already cover that role and removal stays at the field median of 5.",
+   "back": "BLOOD MOON or BACK TO BASICS in the pod \u2014 Fracture answers both. Also any heavy artifact/enchantment deck."
+  },
+  {
+   "in": {
+    "name": "Vampire of the Dire Moon",
+    "cost": "{B}",
+    "text": "1/1 deathtouch lifelink. Turn-1 play that scales with every lord."
+   },
+   "out": {
+    "name": "Oathsworn Vampire",
+    "cost": "{1}{B}",
+    "text": "2/2. ENTERS TAPPED. Cast from graveyard only if you gained life this turn."
+   },
+   "why": "Does nothing the turn it lands and the recursion is conditional. Phyrexian Reclamation does that job unconditionally.",
+   "back": "Never."
+  },
+  {
+   "in": {
+    "name": "Teferi's Protection",
+    "cost": "{2}{W}",
+    "text": "GAME CHANGER. Phase out all your permanents + protection from everything until your next turn."
+   },
+   "out": {
+    "name": "Toxic Deluge",
+    "cost": "{2}{B}",
+    "text": "PAY X LIFE. All creatures get -X/-X."
+   },
+   "why": "The one wipe that attacks the resource you're shortest on. Olivia's Wrath is one-sided and Meathook keeps draining after \u2014 two wipes is right for go-wide. Teferi's answers the wipes that kept killing your board.",
+   "back": "Vs go-wide opponents when you need a 3rd wipe and can afford the life."
+  },
+  {
+   "in": {
+    "name": "Smothering Tithe",
+    "cost": "{3}{W}",
+    "text": "GAME CHANGER. Opponent draws \u2192 they pay {2} or you get a Treasure."
+   },
+   "out": {
+    "name": "Orzhov Signet",
+    "cost": "{2}",
+    "text": "{1},{T}: Add {W}{B}."
+   },
+   "why": "2/8 field. Rocks cut 9 \u2192 4 as the curve came down \u2014 rock count tracks curve height (the swarm decks run 1-3).",
+   "back": "If the curve ever goes back up."
+  },
+  {
+   "in": {
+    "name": "Charismatic Conqueror",
+    "cost": "{1}{W}",
+    "text": "2/2 vigilance. Opponent's artifact/creature enters untapped \u2192 they tap it or you get a 1/1 lifelink Vampire."
+   },
+   "out": {
+    "name": "Rakdos Signet",
+    "cost": "{2}",
+    "text": "{1},{T}: Add {B}{R}."
+   },
+   "why": "1/8 field \u2014 lowest adoption of anything in the deck. Conqueror is 5/6, the highest-adoption card the deck was missing.",
+   "back": "Never."
+  },
+  {
+   "in": {
+    "name": "Plumb the Forbidden",
+    "cost": "{1}{B}",
+    "text": "Sac any number of creatures, copy per creature, draw 1 each."
+   },
+   "out": {
+    "name": "Clever Concealment",
+    "cost": "{2}{W}{W}",
+    "text": "Convoke. Any number of your nonland permanents phase out."
+   },
+   "why": "Protection 3 \u2192 2, still above the 1.5 field median. Teferi's does it better and Akroma's Will is dual-mode. Plumb is anti-wipe too \u2014 sac the board in response and draw 6-8, and unlike Teferi's it beats EXILE wipes.",
+   "back": "Pod with heavy targeted removal."
+  },
+  {
+   "in": {
+    "name": "Scheming Silvertongue",
+    "cost": "{1}{B}",
+    "text": "1/3 flying lifelink Vampire. Gained 2+ life this turn \u2192 cast a copy of SIGN IN BLOOD. Repeatable draw-2."
+   },
+   "out": {
+    "name": "Terminate",
+    "cost": "{B}{R}",
+    "text": "Destroy target creature, no regeneration."
+   },
+   "why": "Creature-only removal; Swords and Path cover it. Removal 6 \u2192 5 = exactly median. Silvertongue hits cheap-creature count, lifelink AND draw on one $1 card.",
+   "back": "Creature-heavy pod."
+  },
+  {
+   "in": {
+    "name": "Florian, Voldaren Scion",
+    "cost": "{1}{B}{R}",
+    "text": "3/3 first strike. Postcombat: look at top X where X = life ALL opponents lost this turn; play one that turn."
+   },
+   "out": {
+    "name": "Impact Tremors",
+    "cost": "{1}{R}",
+    "text": "Creature enters \u2192 1 damage to each opponent."
+   },
+   "why": "Weakest of the 3 ETB-damage pieces \u2014 Warleader's Call adds an anthem, Purphoros deals 2 and is indestructible. Cost: table damage per Vampire cast drops 36 \u2192 27. Florian is a real draw engine (X is routinely 8+).",
+   "back": "If the deck leans harder into tokens."
+  },
+  {
+   "in": {
+    "name": "Patchwork Banner",
+    "cost": "{3}",
+    "text": "Vampires +1/+1 and taps for ANY colour, painlessly."
+   },
+   "out": {
+    "name": "Talisman of Indulgence",
+    "cost": "{2}",
+    "text": "{T}: {C}, or {B}/{R} for 1 damage."
+   },
+   "why": "Pain source in a deck with 9 of them. White sources 20\u219221, pain 9\u21928, better fixing. Costs one turn of speed.",
+   "back": "If you need faster turn-2 ramp."
+  },
+  {
+   "in": {
+    "name": "Marauding Blight-Priest",
+    "cost": "{2}{B}",
+    "text": "3/2 Vampire. Whenever you gain life, EACH opponent loses 1."
+   },
+   "out": {
+    "name": "Drana, Liberator of Malakir",
+    "cost": "{1}{B}{B}",
+    "text": "2/3 flying first strike. Combat damage to a player \u2192 +1/+1 on each attacker."
+   },
+   "why": "Survived a 66-card matrix as the single soft slot \u2014 the only card in MV1-3 whose payoff needs to CONNECT. Blight-Priest counts SOURCES not life points (CR 702.15e): 6 lifelink attackers = 6 triggers; a wipe with Blood Artist + Cruel Celebrant = 6 triggers = 18 to the table.",
+   "back": "HELD \u2014 a fine evasive first-strike body if an MV2-4 slot opens."
+  },
+  {
+   "in": {
+    "name": "Deadly Dispute",
+    "cost": "{1}{B}",
+    "text": "Sac an artifact or creature: draw 2 and make a Treasure."
+   },
+   "out": {
+    "name": "Skullclamp",
+    "cost": "{1}",
+    "text": "Equipped creature +1/-1. When it dies, draw 2."
+   },
+   "why": "ANTHEM-DEAD. A clamped token is 3/1 with any anthem out \u2014 it lives and draws nothing (CR 611.3c: the token is NEVER on the battlefield unmodified). Deck runs 7 anthems, and Warleader's Call pumps ALL creatures. Dispute is anthem-independent.",
+   "back": "If the anthem count ever drops to 1 or fewer."
+  },
+  {
+   "in": {
+    "name": "Ruthless Lawbringer",
+    "cost": "{1}{W}{B}",
+    "text": "3/2 Vampire. ETB: sac a creature \u2192 DESTROY TARGET NONLAND PERMANENT."
+   },
+   "out": {
+    "name": "Welcoming Vampire",
+    "cost": "{2}{W}",
+    "text": "2/3 flier. Creatures with POWER 2 OR LESS enter \u2192 draw. Once per turn."
+   },
+   "why": "Welcoming works with 0-1 anthems (token is 2/2) but is DEAD at two (3/3) \u2014 and Vampire Socialite's counter is a replacement effect that counts toward it. Lawbringer is a catch-all answer on a Vampire, and the sacrifice is upside (feeds Blood Artist, Celebrant, Blight-Priest).",
+   "back": "If anthem count drops, or draw becomes critical."
+  },
+  {
+   "in": {
+    "name": "Urborg, Tomb of Yawgmoth",
+    "cost": "land",
+    "text": "Every land is a Swamp. Black sources 28 \u2192 42."
+   },
+   "out": {
+    "name": "Secluded Courtyard",
+    "cost": "land",
+    "text": "Any colour \u2014 CREATURE SPELLS ONLY."
+   },
+   "why": "Deck now has 28 noncreature cards, so Courtyard was colourless for nearly half the list. Urborg fixes the real problem (56 black pips vs 28 sources), turns every colourless utility land into a black source, AND switches on all four remaining basic-type conditional lands.",
+   "back": "Never."
+  },
+  {
+   "in": {
+    "name": "Cavern of Souls",
+    "cost": "land",
+    "text": "Any colour for Vampires, and they CAN'T BE COUNTERED."
+   },
+   "out": {
+    "name": "Unclaimed Territory",
+    "cost": "land",
+    "text": "Any colour \u2014 CREATURE SPELLS ONLY."
+   },
+   "why": "Same creature-only problem, and Cavern does it strictly better.",
+   "back": "Never."
+  },
+  {
+   "in": {
+    "name": "Savai Triome",
+    "cost": "land",
+    "text": "W/B/R, typed Plains Mountain Swamp. Enters tapped, cycles {3}."
+   },
+   "out": {
+    "name": "Exotic Orchard",
+    "cost": "land",
+    "text": "Any colour an OPPONENT's land could produce."
+   },
+   "why": "Depends entirely on the pod. Savai is reliable and its land types turn on your conditional lands AND count for Cabal Coffers.",
+   "back": "Never."
+  },
+  {
+   "in": {
+    "name": "Phyrexian Tower",
+    "cost": "land",
+    "text": "{T}, sac a creature: add {B}{B}. Free sac outlet on a land."
+   },
+   "out": {
+    "name": "Battlefield Forge",
+    "cost": "land",
+    "text": "{C}, or {R}/{W} for 1 damage."
+   },
+   "why": "Fourth W/R land for a colour with only 8 single pips \u2014 AND a painland. Pain sources 9 \u2192 8.",
+   "back": "If red demand ever rises."
+  },
+  {
+   "in": {
+    "name": "Ancient Tomb",
+    "cost": "land",
+    "text": "GAME CHANGER. {T}: add {C}{C}, deals 2 damage to you."
+   },
+   "out": {
+    "name": "Mountain",
+    "cost": "basic",
+    "text": "{T}: Add {R}."
+   },
+   "why": "Only 8 red pips in the whole deck, all single \u2014 three dedicated Mountains was over-supply. NOTE: Ancient Tomb costs 2 life per tap, the same objection that ruled out Necropotence and Bolas's Citadel; affordable here because lifelink is now 11, but watch it.",
+   "back": "If red sources drop below ~15."
+  },
+  {
+   "in": {
+    "name": "Vault of the Archangel",
+    "cost": "land",
+    "text": "{2}{W}{B},{T}: your whole team gains DEATHTOUCH AND LIFELINK."
+   },
+   "out": {
+    "name": "Mountain",
+    "cost": "basic",
+    "text": "{T}: Add {R}."
+   },
+   "why": "Rebuilds the life floor from a LAND, costing no spell slot \u2014 the direct answer to losing lifegain races. (One Mountain was later restored off a Swamp to hold red at 16 sources.)",
+   "back": "If red sources drop below ~15."
+  },
+  {
+   "in": {
+    "name": "Vault of Champions",
+    "cost": "land",
+    "text": "W/B bond land \u2014 untapped with 2+ opponents, i.e. always in Commander."
+   },
+   "out": {
+    "name": "Plains",
+    "cost": "basic",
+    "text": "{T}: Add {W}."
+   },
+   "why": "White at 21 sources for 20 pips is comfortable. Bond lands are strictly better than basics in a multiplayer game.",
+   "back": "If white sources drop below ~19."
+  },
+  {
+   "in": {
+    "name": "Luxury Suite",
+    "cost": "land",
+    "text": "B/R bond land \u2014 untapped with 2+ opponents."
+   },
+   "out": {
+    "name": "Plains",
+    "cost": "basic",
+    "text": "{T}: Add {W}."
+   },
+   "why": "Helps black (the starved colour, 56 pips) AND the red splash at once.",
+   "back": "If white sources drop below ~19."
+  },
+  {
+   "in": {
+    "name": "Three Tree City",
+    "cost": "land",
+    "text": "{2},{T}: mana equal to your Vampire count, in any one colour."
+   },
+   "out": {
+    "name": "Plains",
+    "cost": "basic",
+    "text": "{T}: Add {W}."
+   },
+   "why": "Scales with the board \u2014 on a wide turn it is the biggest mana source in the deck. Becomes a black source once Urborg is down.",
+   "back": "If white sources drop below ~19."
+  },
+  {
+   "in": {
+    "name": "Cabal Coffers",
+    "cost": "land",
+    "text": "{2},{T}: add {B} per Swamp \u2014 with Urborg that's ~36 black."
+   },
+   "out": {
+    "name": "Swamp",
+    "cost": "basic",
+    "text": "{T}: Add {B}."
+   },
+   "why": "Coffers counts Swamp-TYPED lands (8 \u2192 7 after this), and Urborg makes all 36 Swamps anyway. Funding it from a Swamp instead of the last Mountain kept red on target at 16.",
+   "back": "Never."
+  },
+  {
+   "in": {
+    "name": "Sundown Pass",
+    "cost": "land",
+    "text": "R/W. Enters tapped unless you control TWO OR MORE other lands \u2014 untapped from land drop 3 on."
+   },
+   "out": {
+    "name": "Clifftop Retreat",
+    "cost": "land",
+    "text": "R/W. Enters tapped unless you control a Mountain or a Plains."
+   },
+   "why": "Clifftop needed a Mountain or Plains and had only 7 enablers \u2014 untapped just 50% of the time on your 4th land. Critically it was the ONE conditional land Urborg cannot fix (Urborg grants Swamp, not Mountain/Plains). Sundown Pass is 100% untapped from land drop 3. Same colours, pure reliability gain.",
+   "back": "Never."
+  },
+  {
+   "in": {
+    "name": "Shattered Sanctum",
+    "cost": "land",
+    "text": "W/B. Enters tapped unless you control TWO OR MORE other lands \u2014 untapped from land drop 3 on."
+   },
+   "out": {
+    "name": "Tainted Field",
+    "cost": "land",
+    "text": "{C}, or {W}/{B} only if you control a Swamp."
+   },
+   "why": "Tainted Field could sit stuck on colourless for a long time on a slow land draw \u2014 only 7 Swamp-typed enablers, ~50% at four lands. Sanctum is guaranteed W/B from land drop 3. Tainted Field is not itself Swamp-typed, so removing it has ZERO knock-on effect on the other conditional lands.",
+   "back": "If you want a land that always taps for at least {C} on turns 1-2."
+  }
+ ],
+ "sideboard": [
+  {
+   "name": "Drana, Liberator of Malakir",
+   "cost": "{1}{B}{B}",
+   "when": "Ability-light pods where an evasive first-strike blocker matters more than a drain trigger."
+  },
+  {
+   "name": "Drana and Linvala",
+   "cost": "{1}{W}{W}{B}",
+   "when": "Facing equipment / activated-ability decks. Shuts off opponents' activated abilities AND steals them."
+  },
+  {
+   "name": "Boros Charm",
+   "cost": "{R}{W}",
+   "when": "Wipe-heavy pods. Note it protects ALL your permanents, not just creatures."
+  },
+  {
+   "name": "Coat of Arms",
+   "cost": "{5}",
+   "when": "Only when you're the sole tribal deck at the table. SYMMETRICAL \u2014 never vs another tribal deck."
+  },
+  {
+   "name": "Killing Wave",
+   "cost": "{X}{B}",
+   "when": "Grindy pods, or to break a board stall."
+  },
+  {
+   "name": "Preacher of the Schism",
+   "cost": "{2}{B}",
+   "when": "When you want anthem-independent draw. 2/4 deathtouch; attack a player with more life \u2192 draw + a 1/1 Vampire."
+  },
+  {
+   "name": "Olivia Voldaren",
+   "cost": "{2}{B}{R}",
+   "when": "The only repeatable interaction available. Costs an 11th MV4 slot \u2014 take it if the pod is creature-heavy."
+  },
+  {
+   "name": "Village Rites",
+   "cost": "{B}",
+   "when": "If draw proves too thin in playtesting. Sac, draw 2, instant speed."
+  },
+  {
+   "name": "Gifted Aetherborn",
+   "cost": "{B}{B}",
+   "when": "If you need another cheap lifelink blocker."
+  },
+  {
+   "name": "Fracture",
+   "cost": "{W}{B}",
+   "when": "BLOOD MOON or BACK TO BASICS in the pod \u2014 this answers both. Also heavy artifact/enchantment decks."
+  }
+ ],
+ "appendix": [
+  "research/gameplan.md",
+  "research/formulas.md"
+ ]
+}

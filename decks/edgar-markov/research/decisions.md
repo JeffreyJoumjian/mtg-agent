@@ -138,3 +138,30 @@ Markov Baron 4/6 — future pickup candidates).
 the math: Sorin's +1 (counter on a Vampire, every turn, free) and Indulgent Aristocrat's
 at-will team pump make Duelist's once-a-turn draw a repeatable engine — the deck's thinnest
 category — where Zealot offered one guaranteed card. Drana adds a combat route. 2mv for 2mv.
+
+=== 2026-08-01: NO-COMBO SUB SHEET REVISED ======================
+The 2026-07-31 sub sheet said: OUT Exquisite Blood + Bloodthirsty Conqueror,
+IN Vein Ripper + High-Society Hunter.
+
+REVISED (pilot's call): the second slot is now CATHARS' CRUSADE, not High-Society Hunter.
+  OUT Exquisite Blood        -> IN Vein Ripper        ({4}{B} -> {3}{B}{B}{B})
+  OUT Bloodthirsty Conqueror -> IN Cathars' Crusade   ({3}{B}{B} -> {3}{W}{W})
+
+Logic unchanged on the combo side: both cards leaving are the "opponent loses life ->
+you gain life" direction, so removing both kills all four infinite pairings. Vito and
+Sanguine Bond STAY (opposite direction, can't loop alone).
+
+Vein Ripper: a double Blood Artist on a 6/5 flier, and it IS a Vampire (lords, Edgar
+counters, Roaming Throne doubling, Sanctum Seeker / Champion of Dusk / Olivia's Wrath
+counts). Ward-Sacrifice a creature protects it AND makes their removal feed our death
+triggers. Cost: 6 mana, triple black.
+
+Cathars' Crusade over High-Society Hunter: second quadratic payoff alongside Shared
+Animosity, and eminence means every Vampire spell is 2 entry triggers (3 with Elspeth).
+Acknowledged downsides, unchanged from the original cut rationale: zero impact the turn
+it lands, wipes erase the counters, it's not a Vampire, and it's the fiddliest card in
+the deck to physically track. Accepted as the pilot's preference.
+
+Also written this session: research/gameplan.md (turn-by-turn play guide, combat and
+sacrifice decision trees, 15 scenarios) and research/formulas.md (per-card damage
+formulas, combo math, rules gotchas). Both mirrored as artifacts.

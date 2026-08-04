@@ -36,6 +36,10 @@ A keyword ability that allows an Equipment creature to temporarily stop being a 
 
 A keyword ability that lets a player return a card from their graveyard to their hand. See rule 702.59, “Recover.”
 
+## Recruit
+
+A keyword action that lets a player draw a card, discard a card, and then create a creature token if a nonland card was discarded. See rule 701.70, “Recruit.”
+
 ## Redirect (Obsolete)
 
 Some older cards were printed with the term “redirect” to indicate a redirection effect. Such cards have received errata in the Oracle card reference so they explicitly state that damage that would be dealt to one object or player is dealt “instead” to another. See Redirection Effect.

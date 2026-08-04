@@ -2,8 +2,7 @@
 
 ## Vanguard
 
-1. A casual variant in which each player plays the role of a famous character. See rule 902, “Vanguard.”
-2. A card type seen only on nontraditional Magic cards in the Vanguard casual variant. A vanguard card is not a permanent. See rule 313, “Vanguards.”
+1. A casual variant in which each player plays the role of a famous character. See rule 902, “Vanguard.” 2. A card type seen only on nontraditional Magic cards in the Vanguard casual variant. A vanguard card is not a permanent. See rule 313, “Vanguards.”
 
 ## Vanishing
 
@@ -28,6 +27,10 @@ A keyword action that can bring dungeon cards into the game from outside the gam
 ## Venture Marker
 
 A marker used to track which room of a dungeon card a player is currently in. See rule 309, “Dungeons.”
+
+## Vibranium Token
+
+A Vibranium token is a colorless Vibranium artifact token with indestructible and “{T}: Add {C}. This mana can’t be spent to cast a nonartifact spell.” For more information about predefined tokens, see rule 111.10.
 
 ## Vigilance
 

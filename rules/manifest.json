@@ -1,8 +1,8 @@
 {
-  "version": "2026-04-17",
-  "effectiveDate": "April 17, 2026",
+  "version": "2026-08-07",
+  "effectiveDate": "August 7, 2026",
   "source": "https://magic.wizards.com/en/rules",
-  "sha256": "afd833c5a44c614b7af620befd5a6b8820dcc29f54b9c19899dd467d6975162e",
+  "sha256": "2ed5f1bbb4f8771c84a6f2944a218428c6c5ccba21110a5d101b9a51a4c062b3",
   "chapters": [
     {
       "num": 1,
@@ -653,6 +653,8 @@
         "Copiable Values",
         "Incubator Token",
         "Permanent Spell",
+        "Vibranium Token",
+        "Indestructible",
         "Treasure Token",
         "Combat Damage",
         "Booster Pack",
@@ -664,9 +666,7 @@
         "Shard Token",
         "Clue Token",
         "Food Token",
-        "Gold Token",
-        "Junk Token",
-        "Rules Text"
+        "Gold Token"
       ],
       "crossRefs": [
         "701",
@@ -1122,17 +1122,17 @@
         "Shield Counter",
         "Double Strike",
         "First Strike",
+        "Hone Counter",
         "Planeswalker",
         "Stun Counter",
         "Battlefield",
         "Deathtouch",
         "Main Phase",
+        "Equipment",
         "Graveyard",
         "Permanent",
         "Toughness",
-        "Vigilance",
-        "Activate",
-        "Creature"
+        "Vigilance"
       ],
       "crossRefs": [
         "400",
@@ -3217,6 +3217,7 @@
         "Priority",
         "Ability",
         "Instant",
+        "Library",
         "Loyalty",
         "Effect",
         "Oracle",
@@ -3227,8 +3228,7 @@
         "Spell",
         "Stack",
         "Card",
-        "Cast",
-        "Land"
+        "Cast"
       ],
       "crossRefs": [
         "115",
@@ -3933,7 +3933,9 @@
         "Airbend",
         "Earthbend",
         "Waterbend",
-        "Blight"
+        "Blight",
+        "Heal",
+        "Recruit"
       ]
     },
     {
@@ -4457,7 +4459,10 @@
         "Firebending",
         "Sneak",
         "Increment",
-        "Paradigm"
+        "Paradigm",
+        "Power-up",
+        "Teamwork",
+        "Storied"
       ]
     },
     {
@@ -4829,6 +4834,7 @@
         "Triggered Ability",
         "Outside the Game",
         "Characteristics",
+        "Copiable Values",
         "Substitute Card",
         "Timestamp Order",
         "Permanent Card",
@@ -4843,8 +4849,7 @@
         "Face Down",
         "Graveyard",
         "Mana Cost",
-        "Permanent",
-        "Toughness"
+        "Permanent"
       ],
       "crossRefs": [
         "100",
@@ -5471,6 +5476,7 @@
         "Replacement Effect",
         "Merged Permanent",
         "Characteristics",
+        "Copiable Values",
         "Timestamp Order",
         "Battlefield",
         "Commander",
@@ -5478,6 +5484,7 @@
         "Graveyard",
         "Permanent",
         "Transform",
+        "Ability",
         "Becomes",
         "Face Up",
         "Flipped",
@@ -5489,9 +5496,7 @@
         "Double",
         "Effect",
         "Mutate",
-        "Object",
-        "Player",
-        "Reveal"
+        "Object"
       ],
       "crossRefs": [
         "400",
@@ -6514,6 +6519,7 @@
       "End the Turn",
       "Ending Phase",
       "Endure",
+      "Enduring Story",
       "Energy Symbol",
       "Enlist",
       "Enter",
@@ -6596,11 +6602,13 @@
       "Harnessed",
       "Haste",
       "Haunt",
+      "Heal",
       "Hexproof",
       "Hidden Agenda",
       "Hidden Zone",
       "Hideaway",
       "Historic",
+      "Hone Counter",
       "Horsemanship",
       "Hybrid Card",
       "Hybrid Mana Symbols",
@@ -6794,6 +6802,7 @@
       "Postcombat Main Phase",
       "Power",
       "Powerstone Token",
+      "Power-up",
       "Precombat Main Phase",
       "Preparation Card",
       "Prepare Spell",
@@ -6820,6 +6829,7 @@
       "Rebound",
       "Reconfigure",
       "Recover",
+      "Recruit",
       "Redirect (Obsolete)",
       "Redirection Effect",
       "Reflexive Triggered Ability",
@@ -6915,6 +6925,7 @@
       "Sticker",
       "Sticker Kicker",
       "Sticker Sheet",
+      "Storied",
       "Storm",
       "Stun Counter",
       "Subgame",
@@ -6940,6 +6951,7 @@
       "Team",
       "Team vs. Team Variant",
       "Teammate",
+      "Teamwork",
       "Text Box",
       "Text-Changing Effect",
       "Threshold",
@@ -7005,6 +7017,7 @@
       "Venture into [Quality]",
       "Venture into the Dungeon",
       "Venture Marker",
+      "Vibranium Token",
       "Vigilance",
       "Visit",
       "Vote",
@@ -7019,6 +7032,7 @@
       "Wizardcycling",
       "World",
       "World Rule",
+      "Worthy",
       "X",
       "Y",
       "You, Your",

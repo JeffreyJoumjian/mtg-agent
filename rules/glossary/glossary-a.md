@@ -6,9 +6,7 @@ To turn a face-up ongoing scheme card face down and put it on the bottom of its 
 
 ## Ability
 
-1. Text on an object that explains what that object does or can do.
-2. An activated or triggered ability on the stack. This kind of ability is an object.
-See rule 113, “Abilities,” and section 6, “Spells, Abilities, and Effects.”
+1. Text on an object that explains what that object does or can do. 2. An activated or triggered ability on the stack. This kind of ability is an object. See rule 113, “Abilities,” and section 6, “Spells, Abilities, and Effects.”
 
 ## Ability Word
 
@@ -104,9 +102,7 @@ A keyword ability that can make a creature particularly brutal when it attacks. 
 
 ## Ante
 
-1. A zone used only when playing “for keeps.”
-2. To put a card into the ante zone.
-See rule 407, “Ante.”
+1. A zone used only when playing “for keeps.” 2. To put a card into the ante zone. See rule 407, “Ante.”
 
 ## Any Target
 
@@ -118,8 +114,7 @@ See Active Player, Nonactive Player Order.
 
 ## Archenemy
 
-1. A casual variant in which a team of players faces off against a single opponent strengthened with powerful scheme cards. See rule 904, “Archenemy.”
-2. A player in an Archenemy game who is playing with a scheme deck.
+1. A casual variant in which a team of players faces off against a single opponent strengthened with powerful scheme cards. See rule 904, “Archenemy.” 2. A player in an Archenemy game who is playing with a scheme deck.
 
 ## Archenemy Commander
 

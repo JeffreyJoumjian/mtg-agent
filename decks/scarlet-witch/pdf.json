@@ -1,0 +1,290 @@
+{
+  "title": "The Scarlet Witch — Mono-Red Big Mana",
+  "subtitle": "Bracket 3 · 3/3 Game Changers · no infinite combos · 100 cards · finalized 2026-08-02",
+  "stats": [
+    ["Lands", "33 (19 basic)"],
+    ["Instants/Sorceries", "39"],
+    ["Discounted (MV 4+)", "25"],
+    ["X-spells", "5"],
+    ["Creatures", "13"],
+    ["Avg MV", "3.52"],
+    ["Mana engines", "7"],
+    ["Draw", "12"],
+    ["Protection", "7"],
+    ["Removal/Defence", "8"],
+    ["Win conditions", "9"],
+    ["Game Changers", "3 / 3"]
+  ],
+  "footer": "Discount = Wanda's power + Ruby Medallion + Longshot, generic only, MV 4+ only. Crackle: X costs 3 generic each and deals 5X. X=8 is 40 = a kill from full. Free-casting an X-spell forces X=0. Full pilot notes in research/gameplan.md and research/formulas.md.",
+  "swaps": [
+    {
+      "in": { "name": "Urabrask", "cost": "{2}{R}{R}", "text": "4/4 first strike. Whenever you cast an instant or sorcery, deals 1 to target opponent AND adds {R}. Flips into a Saga once you've cast three in a turn." },
+      "out": { "name": "Molten-Core Maestro", "cost": "{1}{R}", "text": "Opus — whenever you cast an instant/sorcery, put a +1/+1 counter on it. If 5+ mana was spent, add {R} equal to its power." },
+      "why": "Measured, not guessed: Maestro's mana ability needs 5+ mana SPENT, and only 6 of 37 fixed-cost instants/sorceries still cost that much after a 2-power discount. Wanda's discount actively turns it off — the better she is, the less it triggers. Urabrask's {R} is unconditional.",
+      "back": "Only if the deck somehow stops discounting."
+    },
+    {
+      "in": { "name": "Ashling, Flame Dancer", "cost": "{2}{R}{R}", "text": "4/4. Keeps unspent red mana across steps. Loots on every instant/sorcery; 2nd resolution each turn deals 2 to each opponent and their creatures; 3rd adds {R}{R}{R}{R}." },
+      "out": { "name": "Fellwar Stone", "cost": "{2}", "text": "{T}: Add one mana of any colour a land an opponent controls could produce." },
+      "why": "A build error being corrected. In mono-red, Fellwar Stone often cannot produce {R} at all — and the deck has {R}{R} and {R}{R}{R} costs throughout. Ashling both fixes flood (loot every spell) and produces mana.",
+      "back": "Tables where every opponent plays red."
+    },
+    {
+      "in": { "name": "Hex Magic", "cost": "{2}{R}", "text": "Exile your whole hand, draw that many, and you may still play the exiled cards until the end of your next turn." },
+      "out": { "name": "Rousing Refrain", "cost": "{3}{R}{R}", "text": "Add {R} for each card in target opponent's hand, retained until end of turn. Suspend 3—{1}{R}." },
+      "why": "Rousing Refrain scales off your OPPONENTS' hand sizes — dead against a table that has dumped its grip. Hex Magic is reliable, cheaper, and effectively doubles your available cards for the turn.",
+      "back": "Full-grip tables: control, counterspell decks, Rhystic/Remora pods. Three opponents holding four cards each is 12 red mana."
+    },
+    {
+      "in": { "name": "Wiccan, Young Avenger", "cost": "{3}{R}", "text": "3/3. Whenever you cast a noncreature spell, exile the top card of your library — you may play it until your next end step." },
+      "out": { "name": "Call Forth the Tempest", "cost": "{5}{R}{R}{R}", "text": "Cascade, cascade. Deals damage to each creature opponents control equal to the total MV of your other spells this turn." },
+      "why": "Impulse card advantage on EVERY noncreature spell — a six-spell turn draws six extra cards, for 24 cents. Tempest was eight mana with a random cascade.",
+      "back": "Creature-heavy boards where the sweep half matters."
+    },
+    {
+      "in": { "name": "Neheb, the Eternal", "cost": "{3}{R}{R}", "text": "4/6 afflict 3. At the beginning of each of your postcombat main phases, add {R} for each 1 life your opponents have lost this turn." },
+      "out": { "name": "Comet Storm", "cost": "{X}{R}{R}", "text": "Multikicker {1}. Deals X damage to each of up to 1 + kicks targets." },
+      "why": "A Fiery-Confluence turn hands you 18+ red mana in your second main phase. Comet Storm was redundant with Crackle with Power, which does the same job better.",
+      "back": "When you want a second instant-speed X-spell."
+    },
+    {
+      "in": { "name": "Disrupt Decorum", "cost": "{2}{R}{R}", "text": "Goad all creatures you don't control — until your next turn they must attack, and must attack someone other than you." },
+      "out": { "name": "Blazing Crescendo", "cost": "{1}{R}", "text": "Target creature gets +3/+1. Exile the top card of your library; you may play it until the end of your next turn." },
+      "why": "Reversal of an earlier bad cut. The deck had NO way to avoid being attacked, and red gets no fogs. Goad is a one-sided fog that also points the table at each other. Crescendo was outclassed by Monstrous Rage anyway — same +3/+1 for half the mana, plus a permanent +1/+1 Role.",
+      "back": "If you want a sixth pump effect."
+    },
+    {
+      "in": { "name": "Champion's Helm", "cost": "{3}", "text": "Equipped creature gets +2/+2 and, while it's legendary, has hexproof. Equip {1}." },
+      "out": { "name": "Swiftfoot Boots", "cost": "{2}", "text": "Equipped creature has hexproof and haste. Equip {1}." },
+      "why": "A swap, not redundancy — hexproof does not stack. Haste is worth nothing here because Wanda's discount is a STATIC ability that works the moment she resolves. The +2/+2 is +2 off every discounted spell, and 10 of our 12 creatures are legendary.",
+      "back": "Artifact-removal-heavy pods, or if you want haste for the Blackblade commander-damage line."
+    },
+    {
+      "in": { "name": "Fiery Confluence", "cost": "{2}{R}{R}", "text": "Choose three, repeats allowed: 1 damage to each creature / 2 damage to each opponent / destroy target artifact." },
+      "out": { "name": "Insurrection", "cost": "{5}{R}{R}{R}", "text": "Untap all creatures and gain control of them until end of turn. They gain haste." },
+      "why": "MV 4, so Wanda drops it to {R}{R} — six damage to each opponent for two mana, or a three-damage sweeper. Insurrection is six mana after the discount, wins through COMBAT (the one axis this deck isn't built for), and is blank against a creature-light table.",
+      "back": "Creature-heavy boards worth stealing. Note it is NOT a defensive card — it's a sorcery and can't answer an attack."
+    },
+    {
+      "in": { "name": "Volcanic Vision", "cost": "{5}{R}{R}", "text": "Return an instant/sorcery from your graveyard to hand; deals damage equal to that card's MV to each creature YOUR OPPONENTS control. Exiles itself." },
+      "out": { "name": "Wild Ricochet", "cost": "{2}{R}{R}", "text": "Change targets of target instant/sorcery, then copy it." },
+      "why": "MV 7 → {3}{R}{R}. Return Apex of Power and it's a 10-damage ONE-SIDED wipe plus the regrowth — it doesn't kill your own engines. Wild Ricochet was the fourth redirect behind Deflecting Swat, Bolt Bend and Return the Favor.",
+      "back": "Spell-heavy pods where redirect-and-copy earns its slot."
+    },
+    {
+      "in": { "name": "Fiery Inscription", "cost": "{2}{R}", "text": "Whenever you cast an instant or sorcery, deals 2 damage to each opponent. On entry, the Ring tempts you." },
+      "out": { "name": "Double Vision", "cost": "{3}{R}{R}", "text": "Whenever you cast your first instant or sorcery each turn, copy it." },
+      "why": "Three mana for 2 to each opponent per spell — a five-spell turn is 30 damage across the table — and being an enchantment it survives the removal that kills Thor and Longshot. Double Vision was five mana to copy a single spell per turn.",
+      "back": "Grindy games where you cast one spell a turn for many turns."
+    },
+    {
+      "in": { "name": "Solphim, Mayhem Dominus", "cost": "{2}{R}{R}", "text": "5/4. Doubles all noncombat damage you deal to opponents and to permanents they control. Can give itself an indestructible counter." },
+      "out": { "name": "Fiery Emancipation", "cost": "{3}{R}{R}{R}", "text": "Triples all damage from sources you control." },
+      "why": "Two mana cheaper, and it doubles ONLY damage aimed at opponents — Fiery Emancipation triples damage to your own board too, which would make Blasphemous Act read 39 to each creature. Neither gets Wanda's discount (creature and enchantment), so the two-mana gap is the whole argument. Solphim halves the X you need on Crackle.",
+      "back": "If you want the triple instead of the double and can afford six mana."
+    },
+    {
+      "in": { "name": "Mithril Coat", "cost": "{3}", "text": "Flash. Indestructible. On entry, attach it to target legendary creature you control. Equipped creature has indestructible." },
+      "out": { "name": "Blasphemous Act", "cost": "{8}{R}", "text": "Costs {1} less for each creature on the battlefield. Deals 13 damage to each creature." },
+      "why": "The deck had no answer to a board wipe: hexproof does nothing (a wrath doesn't target), Commander's Plate's protection doesn't stop a destroy effect and gives nothing vs red, and all three redirects need a spell with a single target. Mithril Coat has FLASH, so you hold it and deploy in response. Blasphemous Act was also the only sweeper that killed Wanda — and the claim it 'pairs with the damage doublers' fails, since 13 already kills everything and it deals no damage to players.",
+      "back": "Tables with LARGE creatures, where Chandra's Ignition at low power and Fiery Confluence at 3 don't get there."
+    }
+  ],
+  "upgrades": [
+    {
+      "title": "Bracket 4 upgrade path",
+      "intro": "Swap these 14 and the Bracket 3 list becomes the Bracket 4 list in DECK-B4.md — 86 cards stay the same. The fair mana base becomes a fast one and Underworld Breach turns the graveyard into a second hand. Everything costing 5+ that isn't a payoff comes out. Game Changers go from 3 to 10, which is legal at Bracket 4 and NOT at Bracket 3.",
+      "labels": ["B4", "B3"],
+      "backLabel": "Revert to B3 when",
+      "swaps": [
+        {
+          "in": { "name": "Mana Vault", "cost": "{1}", "text": "{T}: Add {C}{C}{C}. Doesn't untap normally; {4}: Untap. 1 damage per upkeep it stays tapped." },
+          "out": { "name": "Mind Stone", "cost": "{2}", "text": "{T}: Add {C}. {1},{T}, Sacrifice: Draw a card." },
+          "why": "Bracket 4 wants explosive mana on turns 1–3, not a fair rock that ramps by one. Three mana off a one-drop.",
+          "back": "Always — Mana Vault is a Game Changer and B3 caps at three."
+        },
+        {
+          "in": { "name": "Grim Monolith", "cost": "{2}", "text": "{T}: Add {C}{C}{C}. Doesn't untap during your untap step; {4}: Untap." },
+          "out": { "name": "Tablet of Discovery", "cost": "{2}{R}", "text": "ETB mill a card, may play it this turn. {T}: Add {R}. {T}: Add {R}{R}, instants and sorceries only." },
+          "why": "Net +1 mana the turn it lands instead of a three-mana rock that produces two.",
+          "back": "Always — Game Changer."
+        },
+        {
+          "in": { "name": "Chrome Mox", "cost": "{0}", "text": "Imprint: exile a nonland, nonartifact card from hand. {T}: Add one mana of the imprinted card's colour." },
+          "out": { "name": "Pyromancer's Goggles", "cost": "{5}", "text": "{T}: Add {R}. When that mana is spent on a red instant/sorcery, copy that spell." },
+          "why": "Goggles is a five-mana investment that pays off a turn later. B4 needs turn-one acceleration more than a delayed copy engine.",
+          "back": "Always — Game Changer. Goggles is one of the best cards in the fair build: the copy keeps X and can re-use targets."
+        },
+        {
+          "in": { "name": "Mox Diamond", "cost": "{0}", "text": "If this would enter, discard a land card instead or bin it. {T}: Add one mana of any colour." },
+          "out": { "name": "Brass's Bounty", "cost": "{6}{R}", "text": "Create a Treasure for each land you control — untapped." },
+          "why": "Brass's Bounty is 5 mana after the discount for ~14 untapped Treasures, which is enormous but a turn-7 card. B4 is trying to win by then.",
+          "back": "Always — Game Changer. Brass's Bounty is the fair build's biggest single mana burst."
+        },
+        {
+          "in": { "name": "Mox Amber", "cost": "{0}", "text": "{T}: Add one mana of any colour among legendary creatures and planeswalkers you control." },
+          "out": { "name": "Reforge the Soul", "cost": "{3}{R}{R}", "text": "Each player discards their hand, then draws seven. Miracle {1}{R}." },
+          "why": "Wanda switches Mox Amber on by herself, and B4 already runs Wheel of Fortune, Will of the Jeskai and Faithless Looting.",
+          "back": "The miracle cost makes Reforge a two-mana Wheel whenever you draw it first — watch every draw step."
+        },
+        {
+          "in": { "name": "Lotus Petal", "cost": "{0}", "text": "{T}, Sacrifice: Add one mana of any colour." },
+          "out": { "name": "Monstrous Rage", "cost": "{R}", "text": "Target creature gets +2/+0 and a Monster Role token (+1/+1, trample)." },
+          "why": "The pump package shrinks to three in B4 — the fast build wins before growing Wanda pays off.",
+          "back": "The permanent +1/+1 Role is a permanent discount in the fair build."
+        },
+        {
+          "in": { "name": "Lion's Eye Diamond", "cost": "{0}", "text": "{T}, Discard your hand, Sacrifice: Add three mana of any one colour." },
+          "out": { "name": "Blackblade Reforged", "cost": "{2}", "text": "Equipped creature gets +1/+1 for each land you control. Equip legendary {3}, equip {7}." },
+          "why": "LED is the other half of Underworld Breach — discarding your hand is upside once Breach is out. Blackblade is a five-mana all-in that deals no damage the turn it lands.",
+          "back": "Always — Game Changer. Blackblade is the biggest single discount boost in the fair build."
+        },
+        {
+          "in": { "name": "City of Traitors", "cost": "—", "text": "{T}: Add {C}{C}. When you play another land, sacrifice this." },
+          "out": { "name": "Mountain", "cost": "—", "text": "Basic Land — Mountain." },
+          "why": "Two mana off one land pulls the Breach turn forward by a full turn cycle.",
+          "back": "The fair build wants stable mana more than a burst, and Valakut counts Mountains."
+        },
+        {
+          "in": { "name": "Underworld Breach", "cost": "{1}{R}", "text": "Each nonland card in your graveyard has escape — its mana cost plus exile three other cards. Sacrifice it at end step." },
+          "out": { "name": "Arcane Bombardment", "cost": "{4}{R}{R}", "text": "First instant/sorcery each turn: exile one at random from your yard, then copy every card exiled with it, free." },
+          "why": "Breach turns the graveyard into a second hand, and because escape cost equals the mana cost, X-SPELLS ESCAPE AT FULL SIZE. Arcane Bombardment's copies are free-cast, so they force X=0.",
+          "back": "Always — Game Changer, and it enables lines a fair pod won't enjoy."
+        },
+        {
+          "in": { "name": "Gamble", "cost": "{R}", "text": "Search your library for a card, put it into your hand, then discard a card at random." },
+          "out": { "name": "Improvisation Capstone", "cost": "{5}{R}{R}", "text": "Exile from the top until total MV 4+, cast any number free. Paradigm: a free copy from exile at the start of each of your first main phases." },
+          "why": "A one-mana tutor for Breach or Crackle. The random discard barely matters once Breach can escape whatever you lose.",
+          "back": "Always — Game Changer. Capstone's Paradigm is a recurring engine the fair build wants."
+        },
+        {
+          "in": { "name": "Reiterate", "cost": "{1}{R}{R}", "text": "Buyback {3}. Copy target instant or sorcery spell." },
+          "out": { "name": "Zuko's Exile", "cost": "{5}", "text": "Exile target artifact, creature or enchantment. Its controller creates a Clue." },
+          "why": "Reiterate with buyback plus Mana Geyser is infinite mana, and it copies X-spells at full size.",
+          "back": "ALWAYS. This is the single card that would make the Bracket 3 list an infinite combo deck — it must never appear there."
+        },
+        {
+          "in": { "name": "Finale of Promise", "cost": "{X}{R}{R}", "text": "Cast up to one instant and one sorcery from your graveyard with MV X or less, free. If X is 10+, copy each twice." },
+          "out": { "name": "Disrupt Decorum", "cost": "{2}{R}{R}", "text": "Goad all creatures you don't control." },
+          "why": "B4 wins before the crack-back matters, so the fog is worth less than a second recursion spell.",
+          "back": "Disrupt Decorum is the fair build's ONLY way to not be attacked."
+        },
+        {
+          "in": { "name": "Dance with Calamity", "cost": "{7}{R}", "text": "Exile cards from the top one at a time; while the total MV stays 13 or less you may cast any number of them free." },
+          "out": { "name": "Fiery Inscription", "cost": "{2}{R}", "text": "Whenever you cast an instant or sorcery, deals 2 damage to each opponent." },
+          "why": "A chip clock needs several turns and B4 doesn't have several turns. Dance converts a big mana pile straight into a board.",
+          "back": "Fiery Inscription is 30+ damage over a normal fair-length game."
+        },
+        {
+          "in": { "name": "Faithless Looting", "cost": "{R}", "text": "Draw two cards, then discard two. Flashback {2}{R}." },
+          "out": { "name": "Solphim, Mayhem Dominus", "cost": "{2}{R}{R}", "text": "Doubles noncombat damage you deal to opponents and their permanents." },
+          "why": "Looting fills the graveyard for Underworld Breach, so discarding is upside. Solphim does nothing on an empty board.",
+          "back": "Solphim halves the X you need on Crackle, which is the fair build's entire kill."
+        }
+      ]
+    }
+  ],
+  "sideboard": [
+    {
+      "name": "Blasphemous Act",
+      "cost": "{8}{R}",
+      "when": "IN for Volcanic Vision, vs boards with LARGE creatures where Chandra's Ignition at low power and Fiery Confluence at 3 don't get there. Costs {1} less per creature on the battlefield — often {R}. Remember it kills Wanda too."
+    },
+    {
+      "name": "Rousing Refrain",
+      "cost": "{3}{R}{R}",
+      "when": "IN for Mana Geyser, vs full-grip tables — control, counterspell decks, Rhystic Study / Mystic Remora pods. Three opponents holding four cards each is 12 red mana. Dead against aggro."
+    },
+    {
+      "name": "Insurrection",
+      "cost": "{5}{R}{R}{R}",
+      "when": "IN for Chandra's Ignition, vs creature-heavy boards worth stealing. NOT a defensive card — it's a sorcery, so it cannot answer an attack."
+    },
+    {
+      "name": "Swiftfoot Boots",
+      "cost": "{2}",
+      "when": "IN for Champion's Helm, vs artifact-removal-heavy pods, or when you want haste for the Blackblade commander-damage line. Hexproof does not stack."
+    },
+    {
+      "name": "Darksteel Plate",
+      "cost": "{3}",
+      "when": "IN for Return the Favor, when you want a SECOND indestructible source. Five mana all-in and no flash, so it's strictly worse than Mithril Coat."
+    },
+    {
+      "name": "Nova Flame",
+      "cost": "{X}{2}{R}{R}",
+      "when": "IN for Volcanic Vision, vs creature decks. The +1/+1 counters on Wanda are PERMANENT, so the discount grows — but it deals no damage to players and can't close."
+    },
+    {
+      "name": "Prisoner's Dilemma",
+      "cost": "{3}{R}{R}",
+      "when": "IN for Fiery Confluence, vs pods that enjoy politics. 4/8/12 damage to each opponent, but THEY choose the outcome."
+    },
+    {
+      "name": "Pinnacle Monk",
+      "cost": "{3}{R}{R}",
+      "when": "IN for a Mountain, if you keep flooding or getting land-screwed. The spell half is a CREATURE, so Wanda never discounts it, and Mystic Peak isn't a Mountain — it turns off Valakut and adds no Nykthos devotion."
+    },
+    {
+      "name": "Hit the Mother Lode",
+      "cost": "{4}{R}{R}{R}",
+      "when": "IN for Tablet of Discovery. Discover 10 free-casts your best card. Its Treasures enter TAPPED, so that mana is for next turn — and Brass's Bounty makes ~14 untapped for the same 5 mana."
+    },
+    {
+      "name": "Jaya's Immolating Inferno",
+      "cost": "{X}{R}{R}",
+      "when": "IN for Electrodominance, when you want a second Crackle. X damage to up to three targets, all different. The legendary requirement is always met."
+    },
+    {
+      "name": "Fiery Emancipation",
+      "cost": "{3}{R}{R}{R}",
+      "when": "IN for Solphim, if you want the triple instead of the double. Six mana, an enchantment so NO discount, and it triples damage to your own board too."
+    },
+    {
+      "name": "Comet Storm",
+      "cost": "{X}{R}{R}",
+      "when": "IN for Electrodominance, when you want a second instant-speed X-spell. Multikicker {1} per extra target."
+    },
+    {
+      "name": "Call Forth the Tempest",
+      "cost": "{5}{R}{R}{R}",
+      "when": "IN for Apex of Power, vs creature-heavy boards. Cascade twice, then damage to each creature opponents control equal to the total MV of your other spells this turn."
+    },
+    {
+      "name": "Wild Ricochet",
+      "cost": "{2}{R}{R}",
+      "when": "IN for Untimely Malfunction, vs spell-heavy pods. Redirect AND copy. It was the fourth redirect behind Deflecting Swat, Bolt Bend and Return the Favor."
+    },
+    {
+      "name": "Double Vision",
+      "cost": "{3}{R}{R}",
+      "when": "IN for Repeated Reverberation, in grindy games where you cast one spell a turn for many turns. Copies only your FIRST instant/sorcery each turn."
+    },
+    {
+      "name": "Blazing Crescendo",
+      "cost": "{1}{R}",
+      "when": "IN for Monstrous Rage, if you want a sixth pump. Outclassed — Monstrous Rage is the same +3/+1 for half the mana and leaves a permanent +1/+1 Role."
+    },
+    {
+      "name": "Witch's Mark",
+      "cost": "{1}{R}",
+      "when": "IN for Monstrous Rage, in grindy tables where the extra card beats tempo. MV 2 so no discount, but the Wicked Role is a permanent +1 to Wanda's power."
+    },
+    {
+      "name": "Coruscation Mage",
+      "cost": "{1}{R}",
+      "when": "IN for Fiery Inscription, vs low-interaction tables where a chip clock survives. Offspring {2} gives a second body. Dies to any wipe."
+    },
+    {
+      "name": "Molten-Core Maestro",
+      "cost": "{1}{R}",
+      "when": "IN for Storm-Kiln Artist, only if the deck somehow stops discounting. Its mana ability needs 5+ mana SPENT, and only 6 of 37 fixed-cost spells cost that after a 2-power discount — Wanda actively turns it off."
+    },
+    {
+      "name": "Fellwar Stone",
+      "cost": "{2}",
+      "when": "IN for Mind Stone, only at tables with red opponents. In mono-red it often cannot produce {R} at all, and the deck has {R}{R} and {R}{R}{R} costs throughout."
+    }
+  ],
+  "appendix": ["research/gameplan.md", "research/formulas.md"]
+}

@@ -43,3 +43,7 @@ A supertype that’s normally relevant on enchantments. See rule 205.4, “Super
 ## World Rule
 
 A state-based action that causes all permanents with the world supertype except the one that has had the world supertype for the shortest amount of time are put into their owners’ graveyards. See rule 704.5k.
+
+## Worthy
+
+A rules term used to describe a creature that’s legendary, not a Villain, and red and/or white. See rule 700.16.

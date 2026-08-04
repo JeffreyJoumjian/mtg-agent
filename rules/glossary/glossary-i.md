@@ -66,8 +66,7 @@ A keyword ability that affects how an object deals damage to creatures and playe
 
 ## Infinity
 
-1. An artifact subtype.
-2. ∞ is a keyword found on Infinity cards that grants an ability as long as that permanent is harnessed. See rule 702.186, “∞ (Infinity),” and rule 701.64, “Harness.”
+1. An artifact subtype. 2. ∞ is a keyword found on Infinity cards that grants an ability as long as that permanent is harnessed. See rule 702.186, “∞ (Infinity),” and rule 701.64, “Harness.”
 
 ## Ingest
 

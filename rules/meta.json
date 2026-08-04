@@ -1,11 +1,11 @@
 {
-  "version": "2026-04-17",
-  "effectiveDate": "April 17, 2026",
+  "version": "2026-08-07",
+  "effectiveDate": "August 7, 2026",
   "source": "https://magic.wizards.com/en/rules",
-  "rawFile": "rules/raw/MagicCompRules.2026.04.17.txt",
-  "sha256": "afd833c5a44c614b7af620befd5a6b8820dcc29f54b9c19899dd467d6975162e",
+  "rawFile": "rules/raw/MagicCompRules.2026.08.07.txt",
+  "sha256": "2ed5f1bbb4f8771c84a6f2944a218428c6c5ccba21110a5d101b9a51a4c062b3",
   "sectionCount": 147,
   "chunkCount": 151,
-  "ruleCount": 3136,
-  "glossaryTermCount": 730
+  "ruleCount": 3158,
+  "glossaryTermCount": 739
 }

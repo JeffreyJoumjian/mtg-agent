@@ -64,6 +64,62 @@ bun run scripts/card.ts search "id<=ur t:warlock"  # Scryfall search syntax (cal
 Use `--deck ... --id <colors>` on every commit-worthy edit to catch color-identity violations and
 non-commander-legal cards before they reach a physical build.
 
+## Printable deck reference (PDF)
+
+`bun run deck:pdf <deck-slug>` builds a print-ready PDF at
+`decks/<slug>/<slug>-reference.pdf`:
+
+1. **Page 1** — the decklist from `DECK.md`, three columns, grouped by its `## Role (n)` headers,
+   with a stat bar across the top. Fits on one page, so it doubles as a build checklist.
+2. **Swap pages** — one bordered row per substitution: `IN` card image and text on the left,
+   `↔`, `OUT` on the right, then **Why** and **Bring back** side by side underneath.
+3. **Sideboard** — each held card with its bring-in trigger. Flows on from the swaps rather than
+   starting a fresh page.
+4. **Appendix** — any markdown docs you list (gameplan, formulas, …), each starting a new page.
+
+Everything is black-on-white with no background fills, so it prints without eating ink. Card images
+are pulled from Scryfall once and cached in the git-ignored `data/card-images/`, so re-runs are
+offline and instant. Rendering shells out to headless Chrome — no npm dependencies.
+
+The decklist comes straight from `DECK.md`; everything else lives in **`decks/<slug>/pdf.json`**:
+
+```jsonc
+{
+  "title": "Edgar Markov — Vampire Aristocrats",
+  "subtitle": "Bracket 3 · 3/3 Game Changers · no infinite combos · 100 cards",
+  "stats": [["Creatures", "36"], ["Lifelink", "11"], ["Sources", "W21 / B28 / R16"]],
+  "swaps": [
+    {
+      "in":  { "name": "Sundown Pass",     "cost": "land", "text": "R/W. Untapped from land drop 3." },
+      "out": { "name": "Clifftop Retreat", "cost": "land", "text": "R/W. Needs a Mountain or Plains." },
+      "why":  "Only 7 enablers — untapped just 50% of the time on your 4th land.",
+      "back": "Never."
+    }
+  ],
+  "sideboard": [
+    { "name": "Fracture", "cost": "{W}{B}", "when": "Blood Moon or Back to Basics in the pod." }
+  ],
+  "appendix": ["research/gameplan.md", "research/formulas.md"]
+}
+```
+
+Notes:
+- The decklist shows **mana cost + MV** for spells and **produced mana** for lands, using Scryfall's
+  official symbol SVGs (cached in `data/card-symbols/`). Land output is trimmed to the deck's own
+  colour identity, so Command Tower reads `WBR` rather than `WUBRG`.
+- `appendix` renders markdown docs into the PDF — headings, tables, fenced code, blockquotes and
+  lists are supported, and `{B}`-style tokens in prose become real mana symbols (inside fenced code
+  they stay as text so formula alignment survives).
+- `swaps` and `sideboard` are **sorted alphabetically at render time** — keep them in whatever order
+  is convenient to edit.
+- Add `"set": "m21"` to any card ref to pin which printing's art is used. Basic lands default to a
+  plain black-bordered printing already, because Scryfall's default basic is often a full-art or
+  borderless treatment that reads badly in print.
+- `stats`, `swaps`, `sideboard` and `footer` are all optional — a `pdf.json` with just a `title`
+  produces a clean one-page decklist.
+
+Regenerate the PDF whenever `DECK.md` changes, or it will silently show the old list.
+
 ## Where things go (quick rules)
 
 - A new candidate card, combo idea, or matchup note → `research/`.

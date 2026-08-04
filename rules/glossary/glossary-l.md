@@ -70,9 +70,7 @@ Cards with striated text boxes and three power/toughness boxes. See rule 711, �
 
 ## Library
 
-1. A zone. A player’s library is where that player draws cards from.
-2. All the cards in a player’s library.
-See rule 401, “Library.”
+1. A zone. A player’s library is where that player draws cards from. 2. All the cards in a player’s library. See rule 401, “Library.”
 
 ## Life, Life Total
 
@@ -132,8 +130,7 @@ There are several ways to lose the game. See rule 104, “Ending the Game,” ru
 
 ## Loyalty
 
-1. Part of a card that only planeswalker cards have. A planeswalker card’s loyalty is printed in its lower right corner. See rule 209, “Loyalty.”
-2. A characteristic that only planeswalkers have. See rule 306.5.
+1. Part of a card that only planeswalker cards have. A planeswalker card’s loyalty is printed in its lower right corner. See rule 209, “Loyalty.” 2. A characteristic that only planeswalkers have. See rule 306.5.
 
 ## Loyalty Ability
 

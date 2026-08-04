@@ -1,0 +1,147 @@
+# Scarlet Witch — Decklist (Bracket 4)
+
+Commander: The Scarlet Witch (mono-red)
+Bracket: 4 (Optimized) · Game Changers: 10 (no limit at B4) · Total: 100
+
+> The Bracket 4 variant. Shares **86 cards** with `DECK.md`; the 14-card swap at the bottom is
+> computed from the two files, not hand-maintained.
+>
+> **What changes:** the fair mana base becomes a fast one (moxen, Grim Monolith, Mana Vault,
+> Lotus Petal, City of Traitors) and Underworld Breach turns the graveyard into a second hand.
+> Everything costing 5+ that isn't a payoff comes out — at this speed you no longer have time to
+> cast an 8-mana Insurrection or a 6-mana Arcane Bombardment, and you don't need to.
+
+## Commander (1)
+
+1x The Scarlet Witch
+
+## Lands (33)
+
+1x Ancient Tomb
+1x City of Traitors
+1x Valakut, the Molten Pinnacle
+1x Nykthos, Shrine to Nyx
+1x War Room
+1x Rogue's Passage
+1x Tyrite Sanctum
+1x Forge of Heroes
+1x Cori Mountain Monastery
+1x Arena of Glory
+1x Shatterskull Smashing
+1x Valakut Awakening
+1x Sokenzan, Crucible of Defiance
+1x Demolition Field
+1x Scavenger Grounds
+18x Mountain
+
+## Ramp — fast mana and rituals (16)
+
+1x Sol Ring
+1x Mana Vault
+1x Grim Monolith
+1x Chrome Mox
+1x Mox Diamond
+1x Mox Amber
+1x Lotus Petal
+1x Lion's Eye Diamond
+1x Arcane Signet
+1x Ruby Medallion
+1x Pyretic Ritual
+1x Desperate Ritual
+1x Seething Song
+1x Jeska's Will
+1x Mana Geyser
+1x Dance with Calamity
+
+## Ramp — per-spell mana engines (7)
+
+1x Birgi, God of Storytelling
+1x Electro, Assaulting Battery
+1x Urabrask
+1x Ashling, Flame Dancer
+1x Neheb, the Eternal
+1x Storm-Kiln Artist
+1x The Vision and Scarlet Witch
+
+## Card Draw / Selection (14)
+
+1x Big Score
+1x Unexpected Windfall
+1x Pirate's Pillage
+1x Inspired Tinkering
+1x Commune with Lava
+1x Ignite the Future
+1x Faithless Looting
+1x Hex Magic
+1x Wiccan, Young Avenger
+1x Wheel of Fortune
+1x Reforge the Soul
+1x Will of the Jeskai
+1x The One Ring
+1x Gamble
+
+## Theme / Synergy — pump the discount (3)
+
+1x Livaan, Cultist of Tiamat
+1x Cait Sith, Fortune Teller
+1x Blazing Shoal
+
+## Theme / Synergy — copy and recur (7)
+
+1x Underworld Breach
+1x Mizzix's Mastery
+1x Past in Flames
+1x Reiterate
+1x Increasing Vengeance
+1x Repeated Reverberation
+1x Finale of Promise
+
+## Protection (6)
+
+1x Deflecting Swat
+1x Bolt Bend
+1x Return the Favor
+1x Hexing Squelcher
+1x Champion's Helm
+1x Commander's Plate
+
+## Removal (6)
+
+1x Chaos Warp
+1x Abrade
+1x Vandalblast
+1x Untimely Malfunction
+1x Wild Ricochet
+1x Blasphemous Act
+
+## Win Conditions (7)
+
+1x Crackle with Power
+1x Apex of Power
+1x Chandra's Ignition
+1x Thor, God of Thunder
+1x Longshot, Rebel Bowman
+1x Storm King's Thunder
+1x Electrodominance
+
+---
+
+## The 14-card swap from DECK.md
+
+**Take out (14):**
+Mind Stone · Tablet of Discovery · Pyromancer's Goggles · Brass's Bounty · Monstrous Rage ·
+Blackblade Reforged · Zuko's Exile · Disrupt Decorum · Insurrection · Fiery Emancipation ·
+Double Vision · Arcane Bombardment · Improvisation Capstone · one Mountain
+
+**Put in (14):**
+Mana Vault · Grim Monolith · Chrome Mox · Mox Diamond · Mox Amber · Lotus Petal ·
+Lion's Eye Diamond · City of Traitors · Underworld Breach · Gamble · Reiterate ·
+Finale of Promise · Dance with Calamity · Faithless Looting
+
+**Game Changers (10):** Ancient Tomb · Jeska's Will · The One Ring · Underworld Breach ·
+Lion's Eye Diamond · Grim Monolith · Mana Vault · Chrome Mox · Mox Diamond · Gamble
+
+**Careful with the X-spell trap here.** Bracket 4 runs far more free-cast effects, and rule 107.3b
+forces X = 0 on any spell cast without paying its mana cost. Never free-cast Crackle with Power or
+Storm King's Thunder off Underworld Breach escape recursion, Apex of Power, Gamble's discard,
+Dance with Calamity, or Finale of Promise.

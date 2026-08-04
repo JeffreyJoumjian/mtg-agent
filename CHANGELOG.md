@@ -1,5 +1,194 @@
 # Changelog
 
-## 2026-04-17 (effective April 17, 2026)
+## 2026-08-07 (effective August 7, 2026)
 
-Initial build of the chunked Comprehensive Rules.
+**35 added · 13 removed · 44 changed**
+
+### Added
+
+- `111.10w`
+- `122.1j`
+- `310.9a`
+- `310.9b`
+- `310.9c`
+- `310.9d`
+- `310.9e`
+- `310.9f`
+- `310.9g`
+- `310.12`
+- `310.12a`
+- `310.12b`
+- `601.7a`
+- `601.7b`
+- `601.8`
+- `700.16`
+- `701.50f`
+- `701.69`
+- `701.69a`
+- `701.70`
+- `701.70a`
+- `702.122e`
+- `702.193`
+- `702.193a`
+- `702.193b`
+- `702.194`
+- `702.194a`
+- `702.194b`
+- `702.194c`
+- `702.195`
+- `702.195a`
+- `702.195b`
+- `702.195c`
+- `704.5aa`
+- `707.12a`
+
+### Removed
+
+- `205.4c`
+- `310.8a`
+- `310.8b`
+- `310.8c`
+- `310.8d`
+- `310.8e`
+- `310.8f`
+- `310.8g`
+- `310.11a`
+- `310.11b`
+- `509.1b`
+- `601.5a`
+- `601.6b`
+
+### Changed
+
+- `205.3g`
+  - before: Artifacts have their own unique set of subtypes; these subtypes are called artifact types. The artifact types are Attraction (see rule 717), Blood, Bobblehead, Book, Clue, Contraption, Equipment (see…
+  - after: Artifacts have their own unique set of subtypes; these subtypes are called artifact types. The artifact types are Attraction (see rule 717), Blood, Bobblehead, Book, Clue, Contraption, Equipment (see…
+- `205.3h`
+  - before: Enchantments have their own unique set of subtypes; these subtypes are called enchantment types. The enchantment types are Aura (see rule 303.4), Background, Cartouche, Case (see rule 719), Class (se…
+  - after: Enchantments have their own unique set of subtypes; these subtypes are called enchantment types. The enchantment types are Aura (see rule 303.4), Background, Cartouche, Case (see rule 719), Class (se…
+- `205.3m`
+  - before: Creatures and kindreds share their lists of subtypes; these subtypes are called creature types. One creature type is two words long: Time Lord. All other creature types are one word long: Advisor, Ae…
+  - after: Creatures and kindreds share their lists of subtypes; these subtypes are called creature types. One creature type is two words long: Time Lord. All other creature types are one word long: Advisor, Ae…
+- `205.4b`
+  - before: An object’s supertype is independent of its card type and subtype, even though some supertypes are closely identified with specific card types. Changing an object’s card types or subtypes won’t chang…
+  - after: An object’s supertype is independent of its card type and subtype, even though some supertypes are closely identified with specific card types. Changing an object’s card types or subtypes won’t chang…
+- `310.7`
+  - before: If a battle’s defense is 0 and it isn’t the source of an ability which has triggered but not yet left the stack, it’s put into its owner’s graveyard. (This is a state-based action. See rule 704.)
+  - after: If a Siege battle’s defense is 0 and it isn’t the source of an ability which has triggered but not yet left the stack, it’s put into its owner’s graveyard. (This is a state-based action. See rule 704…
+- `310.8`
+  - before: Each battle has a player designated as its protector.
+  - after: If a non-Siege battle’s defense is 0, it’s put into its owner’s graveyard. (This is a state-based action. See rule 704.)
+- `310.9`
+  - before: A battle can’t be attached to players or permanents, even if it is also an Aura, Equipment, or Fortification. If a battle is somehow attached to a permanent, it becomes unattached. This is a state-ba…
+  - after: Each battle has a player designated as its protector.
+- `310.10`
+  - before: If a battle that isn’t being attacked has no player designated as its protector, or its protector is a player who can’t be its protector based on its battle type, its controller chooses an appropriat…
+  - after: A battle can’t be attached to players or permanents, even if it is also an Aura, Equipment, or Fortification. If a battle is somehow attached to a permanent, it becomes unattached. This is a state-ba…
+- `310.11`
+  - before: All currently existing battles have the subtype Siege. Sieges are subject to special rules.
+  - after: If a battle that isn’t being attacked has no player designated as its protector, or its protector is a player who can’t be its protector, its controller chooses an appropriate player to be its protec…
+- `505.1b`
+  - before: In card text, phrases such as “first main phase,” “second main phase,” and so on count the number of main phases that have occurred only in the current turn unless that text specifies otherwise.
+  - after: Phrases such as “first main phase,” “second main phase,” and so on count the number of main phases that have occurred only in the current turn unless that text specifies otherwise.
+- `506.4`
+  - before: A permanent is removed from combat if it leaves the battlefield, if its controller changes, if it phases out, if an effect specifically removes it from combat, if it’s a planeswalker that’s being att…
+  - after: A permanent is removed from combat if it leaves the battlefield, if its controller or protector changes, if it phases out, if an effect specifically removes it from combat, if it’s a planeswalker tha…
+- `509.1a`
+  - before: The defending player chooses which creatures they control, if any, will block. The chosen creatures must be untapped and they can’t also be battles. For each of the chosen creatures, the defending pl…
+  - after: The defending player chooses which creatures they control, if any, will block. The chosen creatures must be untapped and they can’t also be battles. For each of the chosen creatures, the defending pl…
+- `601.5`
+  - before: If a player is no longer allowed to cast a spell after completing its proposal (see rules 601.2a–d), the casting of the spell is illegal and the game returns to the moment before the casting of that …
+  - after: While announcing the choices of any targets and/or the division or distribution of any effects as described in rules 601.2c–d, some options may be available to a player only if other choices are made…
+- `601.6`
+  - before: Some spells specify that one of their controller’s opponents does something the controller would normally do while it’s being cast, such as choose a mode or choose targets. In these cases, the oppone…
+  - after: If a player is no longer allowed to cast a spell after completing its proposal (see rules 601.2a–d), the casting of the spell is illegal and the game returns to the moment before the casting of that …
+- `601.6a`
+  - before: If there is more than one opponent who could make such a choice, the spell’s controller decides which of those opponents will make the choice.
+  - after: Once a player has begun casting a spell that had flash because certain conditions were met or that could be cast as though it had flash because certain conditions were met (see 601.3d), they may cont…
+- `601.7`
+  - before: Casting a spell that alters costs won’t affect spells and abilities that are already on the stack.
+  - after: Some spells specify that one of their controller’s opponents does something the controller would normally do while it’s being cast, such as choose a mode or choose targets. In these cases, the oppone…
+- `603.12a`
+  - before: Normally, if the trigger event or events occur multiple times during the resolution of the spell or ability that created it, the reflexive triggered ability will trigger once for each of those times.…
+  - after: Normally, if the trigger event or events occur multiple times during the resolution of the spell or ability that created it, the reflexive triggered ability will trigger once for each of those times.…
+- `605.1a`
+  - before: An activated ability is a mana ability if it meets all of the following criteria: it doesn’t require a target (see rule 115.6), it could add mana to a player’s mana pool when it resolves, and it’s no…
+  - after: An activated ability is a mana ability if it meets all of the following criteria: it doesn’t require a target (see rule 115.6), it could add mana to a player’s mana pool when it resolves, it’s not a …
+- `701.44c`
+  - before: If a permanent changes zones before an effect causes it to explore, its last known information is used to determine which object explored and who controlled it.
+  - after: If a permanent is no longer on the battlefield as an effect instructs it to explore, its last known information is used to determine which object explored and who controlled it.
+- `701.50b`
+  - before: A permanent “connives” after the process described in rule 701.50a is complete, even if some or all of those actions were impossible.
+  - after: If a permanent is no longer on the battlefield as an effect instructs it to connive, its last known information is used to determine which object connived and who controlled it.
+- `701.50c`
+  - before: If a permanent changes zones before an effect causes it to connive, its last known information is used to determine which object connived and who controlled it.
+  - after: If multiple permanents are instructed to connive at the same time, the first player in APNAP order who controls (or, in the case of a permanent no longer on the battlefield, last controlled; see rule…
+- `701.50d`
+  - before: If multiple permanents are instructed to connive at the same time, the first player in APNAP order who controls (or, in the case of a permanent no longer on the battlefield, last controlled; see rule…
+  - after: Connive N is a variant of connive. To have a permanent connive N, the permanent’s controller draws N cards, discards N cards, then puts a number of +1/+1 counters on the permanent equal to the number…
+- `701.50e`
+  - before: Connive N is a variant of connive. The permanent’s controller draws N cards, discards N cards, then puts a number of +1/+1 counters on the permanent equal to the number of nonland cards discarded thi…
+  - after: If a permanent would connive 0, no connive event occurs. Abilities that trigger whenever a permanent connives won’t trigger.
+- `702.2e`
+  - before: If an object changes zones before an effect causes it to deal damage, its last known information is used to determine whether it had deathtouch.
+  - after: If an object is no longer in the zone it’s expected to be in as an effect causes it to deal damage, its last known information is used to determine whether it had deathtouch.
+- `702.15c`
+  - before: If an object changes zones before an effect causes it to deal damage, its last known information is used to determine whether it had lifelink.
+  - after: If an object is no longer in the zone it’s expected to be in as an effect causes it to deal damage, its last known information is used to determine whether it had lifelink.
+- `702.54b`
+  - before: “Bloodthirst X” is a special form of bloodthirst. “Bloodthirst X” means “This permanent enters with X +1/+1 counters on it, where X is the total damage your opponents have been dealt this turn.”
+  - after: “Bloodthirst X” is a variant of the bloodthirst ability. “Bloodthirst X” means “This permanent enters with X +1/+1 counters on it, where X is the total damage your opponents have been dealt this turn…
+- `702.57a`
+  - before: A forecast ability is a special kind of activated ability that can be activated only from a player’s hand. It’s written “Forecast — [Activated ability].”
+  - after: A forecast ability is an activated ability that can be activated only from a player’s hand. It’s written “Forecast — [Activated ability].”
+- `702.80b`
+  - before: If an object changes zones before an effect causes it to deal damage, its last known information is used to determine whether it had wither.
+  - after: If an object is no longer in the zone it’s expected to be in as an effect causes it to deal damage, its last known information is used to determine whether it had wither.
+- `702.90d`
+  - before: If an object changes zones before an effect causes it to deal damage, its last known information is used to determine whether it had infect.
+  - after: If an object is no longer in the zone it’s expected to be in as an effect causes it to deal damage, its last known information is used to determine whether it had infect.
+- `702.122c`
+  - before: If an effect states that a creature “can’t crew Vehicles,” that creature can’t be tapped to pay the crew cost of a Vehicle.
+  - after: A Vehicle is “crewed by” a creature if that creature was tapped to pay the cost to activate that Vehicle’s crew ability.
+- `702.122d`
+  - before: Some Vehicles have abilities that trigger when they become crewed. “Whenever [this Vehicle] becomes crewed” means “Whenever a crew ability of [this Vehicle] resolves.” If that ability has an interven…
+  - after: If an effect states that a creature “can’t crew Vehicles,” that creature can’t be tapped to pay the crew cost of a Vehicle.
+- `702.142a`
+  - before: A boast ability is a special kind of activated ability. “Boast — [Cost]: [Effect]” means “[Cost]: [Effect]. Activate only if this creature attacked this turn and only once each turn.”
+  - after: Boast is a keyword that adds additional rules to the activated ability that follows it. “Boast — [Cost]: [Effect]” means “[Cost]: [Effect]. Activate only if this creature attacked this turn and only …
+- `702.177a`
+  - before: An exhaust ability is a special kind of activated ability. “Exhaust — [Cost]: [Effect]” means “[Cost]: [Effect]. Activate only once.”
+  - after: Exhaust is a keyword that adds additional rules to the activated ability that follows it. “Exhaust — [Cost]: [Effect]” means “[Cost]: [Effect]. Activate only once.”
+- `702.178a`
+  - before: A max speed ability is a special kind of static ability. “Max speed — [Ability]” means “As long as your speed is 4, this object has ‘[Ability].’” See rule 702.179, “Start Your Engines!”
+  - after: A max speed ability is a static ability. “Max speed — [Ability]” means “As long as your speed is 4, this object has ‘[Ability].’” See rule 702.179, “Start Your Engines!”
+- `704.5v`
+  - before: If a battle has defense 0 and it isn’t the source of an ability that has triggered but not yet left the stack, it’s put into its owner’s graveyard.
+  - after: If a Siege battle has defense 0 and it isn’t the source of an ability that has triggered but not yet left the stack, it’s put into its owner’s graveyard.
+- `704.5w`
+  - before: If a battle has no player in the game designated as its protector and no attacking creatures are currently attacking that battle, that battle’s controller chooses an appropriate player to be its prot…
+  - after: If a non-Siege battle has defense 0, it’s put into its owner’s graveyard.
+- `704.5x`
+  - before: If a Siege’s controller is also its designated protector, that player chooses an opponent to become its protector. If no player can be chosen this way, the battle is put into its owner’s graveyard. S…
+  - after: If a battle has no player in the game designated as its protector and no attacking creatures are currently attacking that battle, that battle’s controller chooses an appropriate player to be its prot…
+- `704.5y`
+  - before: If a permanent has more than one Role controlled by the same player attached to it, each of those Roles except the one with the most recent timestamp is put into its owner’s graveyard.
+  - after: If a battle’s protector is a player who can’t be its protector, that battle’s controller chooses an appropriate player to become its protector. If no player can be chosen this way, the battle is put …
+- `704.5z`
+  - before: If a player controls a permanent with start your engines! and that player has no speed, that player’s speed becomes 1. See rule 702.179, “Start Your Engines!”
+  - after: If a permanent has more than one Role controlled by the same player attached to it, each of those Roles except the one with the most recent timestamp is put into its owner’s graveyard.
+- `708.2b`
+  - before: A face-down permanent can’t be turned face-down. If a spell or ability attempts to turn a face-down permanent face down, nothing happens and that effect doesn’t change any of its characteristics or t…
+  - after: A face-down permanent can’t be turned face down. If a spell or ability attempts to turn a face-down permanent face down, nothing happens and that effect doesn’t change any of its characteristics or t…
+- `712.16`
+  - before: Melded permanents and other double-faced permanents can’t be turned face down. If a spell or ability tries to turn a double-faced permanent face down, nothing happens.
+  - after: Melded permanents and other double-faced permanents can’t be turned face down. If a spell or ability tries to turn a double-faced permanent face down, nothing happens and that effect doesn’t change a…
+- `722.3a`
+  - before: Some spells and abilities cause a permanent with a prepare spell to become prepared or state that a permanent enters prepared. If that permanent has the alternative characteristics of a prepare spell…
+  - after: Some spells and abilities cause a permanent with a prepare spell to become prepared or state that a permanent enters prepared. If that permanent has the alternative characteristics of a prepare spell…
+- `730.2j`
+  - before: A face-up merged permanent that contains a double-faced component can’t be turned face down.
+  - after: A face-up merged permanent that contains a double-faced component can’t be turned face down. If a spell or ability tries to turn a face-up merged permanent that contains a double-faced component face…
+- `800.4i`
+  - before: If an effect requires information about a specific player, the effect uses the current information about that player if they are still in the game; otherwise, the effect uses the last known informati…
+  - after: If an effect requires information about a specific player, the effect uses the current information about that player if they are still in the game; otherwise, the effect uses the last known informati…

@@ -84,6 +84,10 @@ Part of the turn. This phase is the fifth and final phase of the turn. See rule 
 
 A keyword ability that lets you choose put +1/+1 counters on a creature or create a Spirit creature token. See rule 702.62, “Endure.”
 
+## Enduring Story
+
+A designation a player can have. The storied keyword causes a player to get this designation once they control three permanents that are artifacts, Sagas, and/or legendary. See rule 702.195, “Storied.”
+
 ## Energy Symbol
 
 The energy symbol {E} represents one energy counter. To pay {E}, a player removes one energy counter from themselves.
@@ -162,13 +166,11 @@ A keyword action that stops a permanent from untapping during the next untap ste
 
 ## Exhaust
 
-A special kind of activated ability that may be activated only once. See rule 702.177, “Exhaust.”
+An activated ability that may be activated only once. See rule 702.177, “Exhaust.”
 
 ## Exile
 
-1. A zone. Exile is essentially a holding area for cards. It used to be known as the “removed-from-the-game” zone.
-2. To put an object into the exile zone from whatever zone it’s currently in. An “exiled” card is one that’s been put into the exile zone.
-See rule 406, “Exile.”
+1. A zone. Exile is essentially a holding area for cards. It used to be known as the “removed-from-the-game” zone. 2. To put an object into the exile zone from whatever zone it’s currently in. An “exiled” card is one that’s been put into the exile zone. See rule 406, “Exile.”
 
 ## Expansion Symbol
 

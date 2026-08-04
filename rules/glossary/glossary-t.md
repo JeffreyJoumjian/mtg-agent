@@ -36,6 +36,10 @@ A multiplayer variant played among two or more teams, each of which sits togethe
 
 In a multiplayer game between teams, a player’s teammates are the other players on their team. See rule 102.3.
 
+## Teamwork
+
+A keyword ability that represents an optional additional cost of tapping creatures. See rule 702.194, “Teamwork.”
+
 ## Text Box
 
 Part of a card. The text box is printed on the lower half of the card and contains the card’s rules text, reminder text, and flavor text. See rule 207, “Text Box.”
@@ -86,8 +90,7 @@ An obsolete keyword ability that has been renamed. See rule 702.89, “Umbra Arm
 
 ## Toughness
 
-1. Part of a card that only creature cards have. A creature card’s toughness is printed after the slash in its lower right corner. See rule 208, “Power/Toughness.”
-2. A characteristic that only creatures have. See rule 302.4.
+1. Part of a card that only creature cards have. A creature card’s toughness is printed after the slash in its lower right corner. See rule 208, “Power/Toughness.” 2. A characteristic that only creatures have. See rule 302.4.
 
 ## Tournament
 
@@ -179,8 +182,7 @@ A multiplayer variant played among two-player teams that each have a shared life
 
 ## Type
 
-1. An object’s card type or, more broadly, its card type, subtype, and/or supertype. See rule 205, “Type Line,” and section 3, “Card Types.”
-2. An attribute mana has. See rule 106, “Mana.”
+1. An object’s card type or, more broadly, its card type, subtype, and/or supertype. See rule 205, “Type Line,” and section 3, “Card Types.” 2. An attribute mana has. See rule 106, “Mana.”
 
 ## Type Icon
 

@@ -2,9 +2,7 @@
 
 ## Hand
 
-1. A zone. A player’s hand is where that player holds cards they have drawn but not played yet.
-2. All the cards in a player’s hand.
-See rule 402, “Hand.”
+1. A zone. A player’s hand is where that player holds cards they have drawn but not played yet. 2. All the cards in a player’s hand. See rule 402, “Hand.”
 
 ## Hand Modifier
 
@@ -30,6 +28,10 @@ A keyword ability that lets a creature ignore the “summoning sickness” rule.
 
 A keyword ability that exiles cards. A card exiled this way “haunts” a creature targeted by the haunt ability. See rule 702.55, “Haunt.”
 
+## Heal
+
+To remove damage marked on a permanent. See rule 701.69, “Heal.”
+
 ## Hexproof
 
 A keyword ability that precludes a permanent or player from being targeted by an opponent. See rule 702.11, “Hexproof.”
@@ -49,6 +51,10 @@ A keyword ability that lets a player store a secret card. See rule 702.75, “Hi
 ## Historic
 
 An object is historic if it has the legendary supertype, the artifact card type, or the Saga subtype. See rule 700.6.
+
+## Hone Counter
+
+A counter on an Equipment that gives the equipped creature +1/+0. See rule 122, “Counters.”
 
 ## Horsemanship
 
