@@ -86,7 +86,8 @@ MV on the stack = 3X + 2
 |---|---|---|
 | **Paying a real cost** — hard-cast, or flashback/escape where the cost = the mana cost | ✅ you choose | Past in Flames, Will of the Jeskai, Underworld Breach (B4) |
 | **Copying a spell on the stack** — the copy inherits X **and** can re-use targets | ✅ free, same X | Pyromancer's Goggles, Increasing Vengeance, Repeated Reverberation, Return the Favor, Storm King's Thunder |
-| **Cast "without paying its mana cost"** | ❌ **X = 0** | Apex of Power, Improvisation Capstone, Mizzix's Mastery, Electrodominance, Arcane Bombardment, Dance with Calamity (B4), Finale of Promise (B4) |
+| **Cast "without paying its mana cost"** | ❌ **X = 0** | Improvisation Capstone, Mizzix's Mastery, Electrodominance, Arcane Bombardment, Hit the Mother Lode (SB), Dance with Calamity (B4), Finale of Promise (B4) |
+| **"You may cast/play them" (you still PAY)** | ✅ you choose | **Apex of Power**, Jeska's Will, Commune with Lava, Ignite the Future (from hand) |
 
 Rule 107.3b: X is forced to 0 only when you pay *neither the mana cost nor an alternative cost that
 includes X*. Flashback and escape costs that equal the mana cost **include** X, so they're fine.
@@ -136,7 +137,7 @@ expensive ones are nearly free.
 | **Storm King's Thunder** | copies your next instant/sorcery `X` times | force multiplier, not damage |
 | **Valakut, the Molten Pinnacle** | `3` per Mountain entering, needs 5+ other Mountains | any target |
 | **Shatterskull Smashing** | `X` split among ≤2 creatures; **2X if X ≥ 6** | creatures only |
-| **Apex of Power** | no damage — `+10` mana of one colour and cast 7 free cards | the enabler |
+| **Apex of Power** | no damage — exile 7, **cast them by PAYING**, and add `+10` mana of one colour | the enabler; unplayed cards stay exiled |
 
 **All of these double under Solphim** except damage to your own permanents.
 

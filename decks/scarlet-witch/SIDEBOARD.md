@@ -8,11 +8,14 @@ Companion to `DECK.md`. Two tiers:
 `DECK.md` is at **exactly 100**, so anything you promote from here needs a matching cut. The
 "Displaces" column is my recommendation for each.
 
-Finalized 2026-08-02.
+Finalized 2026-08-02. Last updated 2026-08-06 (Kazuul in, Abrade out).
+
+**This file is the single source of truth for the sideboard.** `DECK.md` used to carry a second
+copy and the two drifted apart; that copy is now just a pointer here.
 
 ---
 
-## Sideboard (20)
+## Sideboard (28)
 
 ### Table-dependent — bring in for specific pods
 
@@ -31,9 +34,8 @@ Finalized 2026-08-02.
 
 | Card | Why it's out | Displaces if you want it back |
 |---|---|---|
-| **Hit the Mother Lode** | Its Treasures enter **tapped**, so the mana is for next turn — and Brass's Bounty makes ~14 **untapped** Treasures for the same 5 mana after the discount. | Tablet of Discovery |
-| **Jaya's Immolating Inferno** | A fourth X-spell payoff behind Crackle, Storm King's Thunder and Electrodominance. | Electrodominance |
-| **Fiery Emancipation** | Six mana, enchantment so no discount, and it triples damage to **your own** board too — Blasphemous Act becomes 39 to each creature. Lost to Solphim at four mana. | Solphim, Mayhem Dominus |
+| **Pirate's Pillage** | Word-for-word identical to Big Score at the same cost, but a **sorcery** instead of an instant. Third copy of an effect already run twice. | Big Score |
+| **Solphim, Mayhem Dominus** | Doubles instead of triples, and it's a **creature** — dies to the removal every deck has, where an enchantment doesn't. Its indestructible costs {1} + 4 life + **discarding two cards**, and doesn't stop exile. | Fiery Emancipation |
 | **Comet Storm** | Redundant with Crackle with Power. | Electrodominance |
 | **Call Forth the Tempest** | Eight mana and the cascade is random. | Apex of Power |
 | **Wild Ricochet** | Fourth redirect effect behind Deflecting Swat, Bolt Bend and Return the Favor. | Untimely Malfunction |
@@ -42,9 +44,18 @@ Finalized 2026-08-02.
 | **Witch's Mark** | Mana value 2, so no discount. The Wicked Role is a permanent +1 to Wanda's power though. | Monstrous Rage |
 | **Coruscation Mage** | Chip damage on a 2/2 in a deck that wants one big turn. Offspring {2} gives a second body. | Fiery Inscription |
 | **Molten-Core Maestro** | Its mana ability needs 5+ mana **spent**, and only 6 of 37 fixed-cost spells still cost that after a 2-power discount. Wanda actively turns it off. | Storm-Kiln Artist |
+| **Sokenzan, Crucible of Defiance** | Taps for red, but it isn't a **Mountain** so it doesn't trigger Valakut, and its channel makes two 1/1s with haste in a deck that never attacks. A Mountain is strictly better. | a Mountain |
+| **Cori Mountain Monastery** | *"Enters tapped unless you control a Plains or an Island"* — in mono-red that means it **always** enters tapped. | Castle Embereth |
+| **Scavenger Grounds** | "Exile all graveyards" is symmetric, and **your** graveyard feeds Past in Flames, Will of the Jeskai and Mizzix's Mastery. Colourless too. | a Mountain |
+| **Demolition Field** | Kills one nonbasic and **hands them a basic in exchange**, on a colourless land. Legal at Bracket 3 (only *mass* land denial is barred) — just low value. | Mines of Moria |
+| **Improvisation Capstone** | Paradigm is real recurring value, but it strip-mines your **library** every turn and anything you don't cast **stays exiled**. Its free-cast also forces **X = 0**. Same failure that cost a game to Apex, but repeating. | Arcane Bombardment |
+| **Bolt Bend** | Usually just {R} with a 4-power creature, but **redirect only**. Return the Favor can copy *opponents'* spells and abilities, which nothing else in the deck does. | Return the Favor |
+| **Monstrous Rage** | Smallest pump. The repeatable ones (Livaan, Cait Sith) and the free one (Blazing Shoal) all stay. | Blackblade Reforged |
 | **Fellwar Stone** | In mono-red it often can't produce {R} at all, and we have {R}{R} and {R}{R}{R} costs throughout. | Mind Stone |
+| **Abrade** | Mana value 2, so **Wanda never discounts it**, and 3 damage kills very little in Commander. Traded a one-shot answer for a permanent one. Bring it back for artifact-heavy pods or tables of small utility creatures. | Kazuul, Tyrant of the Cliffs |
+| **Crawlspace** | {3} artifact, "no more than two creatures can attack you each combat." Lost to Kazuul on price ($9.93 vs $0.34) and because it does nothing when nobody attacks. Its real edge: it's an **artifact**, so your own Fiery Confluence and Chandra's Ignition can't kill it — every creature-based defence plan folds to your own sweepers. **Silent Arbiter** ({4}, one attacker per combat) is the bigger version, but it's a 1/5 creature that your Ignition kills, and capping the whole table's attacks stops your opponents pressuring each other, leaving you the only target. | Kazuul, Tyrant of the Cliffs |
 
-## Hard cut (8) — not coming back
+## Hard cut (12) — not coming back
 
 | Card | Why it's wrong for this deck |
 |---|---|
@@ -56,13 +67,16 @@ Finalized 2026-08-02.
 | **Electrostatic Field** | 1 damage per spell on a 0/4 defender. Too slow for a one-big-turn deck. |
 | **Erebor Flamesmith** | Same rate as Firebrand Archer, worse body. |
 | **Dualcaster Mage** | A worse Reiterate on a fragile body; we already run five copy effects. |
+| **Young Pyromancer** · **Prismari Pianist** | Token-per-spell chump blockers. **Your own cards kill them**: Fiery Confluence's "1 damage to each creature" mode, taken three times, is 3 to each creature, and Chandra's Ignition hits "each *other* creature." You'd build blockers with one hand and burn them with the other — and 1/1s don't stop Commander-sized attackers anyway. (Pianist makes *three* tokens off a mana value 5+ spell, and Wanda's discount doesn't lower mana value, so it does trigger often. Still 1/1s.) |
+| **Goblinslide** | Costs {1} per token, competing with the mana you're trying to bank. |
+| **Manaform Hellkite** | X/X flier where X is the mana **actually spent** — so *Wanda's discount shrinks your own token* — and it's exiled at the next end step. Backwards on both counts. |
 
 ---
 
 ## Rules gotchas worth re-reading before you play
 
 - **X-spells and free casts (rule 107.3b).** Casting a spell "without paying its mana cost" forces
-  **X = 0**. Never free-cast Crackle with Power or Storm King's Thunder off Apex of Power,
+  **X = 0**. Never free-cast Crackle with Power or Storm King's Thunder off
   Improvisation Capstone, Mizzix's Mastery, Electrodominance, or Hit the Mother Lode's discover.
   Cost *reduction* (Wanda) is fine — only free-casting breaks it.
 - **Neheb sequencing (rule 500.1).** The postcombat main phase happens every turn whether or not

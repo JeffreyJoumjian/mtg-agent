@@ -4,6 +4,12 @@ This folder holds Magic: The Gathering (Commander/EDH) decks. One folder per dec
 before creating, editing, or reorganizing anything in `decks/` so the structure stays consistent
 and work doesn't get lost.
 
+> **This file covers *where things go*. For *how to decide* — card evaluation, cuts, swaps,
+> rulings, and what's already been settled — invoke the `deck-brain` skill first.** Its
+> `LEDGER.md` is append-only: when a session produces a lesson that would change a future decision
+> on a different card or deck, write it there before finishing. Decisions specific to one deck go
+> in that deck's `research/decisions.md`.
+
 ## Per-deck layout
 
 Every deck lives in `decks/<deck-slug>/` (slug = kebab-case theme or commander, e.g.

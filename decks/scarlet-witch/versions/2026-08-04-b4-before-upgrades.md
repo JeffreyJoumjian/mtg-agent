@@ -3,7 +3,7 @@
 Commander: The Scarlet Witch (mono-red)
 Bracket: 4 (Optimized) · Game Changers: 10 (no limit at B4) · Total: 100
 
-> The Bracket 4 variant. Shares **85 cards** with `DECK.md`; the 15-card swap at the bottom is
+> The Bracket 4 variant. Shares **86 cards** with `DECK.md`; the 14-card swap at the bottom is
 > computed from the two files, not hand-maintained.
 >
 > **What changes:** the fair mana base becomes a fast one (moxen, Grim Monolith, Mana Vault,
@@ -16,7 +16,7 @@ Bracket: 4 (Optimized) · Game Changers: 10 (no limit at B4) · Total: 100
 
 1x The Scarlet Witch
 
-## Lands (32)
+## Lands (33)
 
 1x Ancient Tomb
 1x City of Traitors
@@ -31,9 +31,9 @@ Bracket: 4 (Optimized) · Game Changers: 10 (no limit at B4) · Total: 100
 1x Shatterskull Smashing
 1x Valakut Awakening
 1x Mines of Moria
-19x Mountain
+20x Mountain
 
-## Ramp — fast mana, rituals and cost reduction (17)
+## Ramp — fast mana and rituals (16)
 
 1x Sol Ring
 1x Mana Vault
@@ -45,7 +45,6 @@ Bracket: 4 (Optimized) · Game Changers: 10 (no limit at B4) · Total: 100
 1x Lion's Eye Diamond
 1x Arcane Signet
 1x Ruby Medallion
-1x Artist's Talent
 1x Pyretic Ritual
 1x Desperate Ritual
 1x Seething Song
@@ -63,7 +62,7 @@ Bracket: 4 (Optimized) · Game Changers: 10 (no limit at B4) · Total: 100
 1x Storm-Kiln Artist
 1x The Vision and Scarlet Witch
 
-## Card Draw / Selection (13)
+## Card Draw / Selection (12)
 
 1x Big Score
 1x Unexpected Windfall
@@ -77,7 +76,6 @@ Bracket: 4 (Optimized) · Game Changers: 10 (no limit at B4) · Total: 100
 1x Will of the Jeskai
 1x The One Ring
 1x Gamble
-1x Hit the Mother Lode
 
 ## Theme / Synergy — pump the discount (3)
 
@@ -95,9 +93,10 @@ Bracket: 4 (Optimized) · Game Changers: 10 (no limit at B4) · Total: 100
 1x Repeated Reverberation
 1x Finale of Promise
 
-## Protection (6)
+## Protection (7)
 
 1x Deflecting Swat
+1x Bolt Bend
 1x Return the Favor
 1x Hexing Squelcher
 1x Champion's Helm
@@ -126,25 +125,19 @@ Bracket: 4 (Optimized) · Game Changers: 10 (no limit at B4) · Total: 100
 
 ---
 
-## The 15-card swap from DECK.md
+## The 14-card swap from DECK.md
 
 Computed from both files, not hand-maintained.
 
-**Take out (15):**
-Mind Stone · Tablet of Discovery · Pyromancer's Goggles · Brass's Bounty · Gauntlet of Power ·
-Reforge the Soul · Blackblade Reforged · Zuko's Exile · Disrupt Decorum · Arcane Bombardment ·
-Fiery Inscription · Fiery Emancipation · Kazuul, Tyrant of the Cliffs · two Mountains
+**Take out (14):**
+Mind Stone · Tablet of Discovery · Pyromancer's Goggles · Brass's Bounty · Reforge the Soul ·
+Monstrous Rage · Blackblade Reforged · Zuko's Exile · Disrupt Decorum · Arcane Bombardment ·
+Improvisation Capstone · Fiery Inscription · Fiery Emancipation · one Mountain
 
-Artist's Talent and Hit the Mother Lode are cheap enough that **both stay** in the Bracket 4 list.
-Gauntlet of Power does not — five mana that pays off over several turns is the wrong shape for a
-build trying to end the game on turn four or five. **Kazuul doesn't either**: it's five mana of
-pure defence in a list that intends to be dead or victorious before anyone's attack step matters,
-so Bracket 4 keeps **Abrade** as its cheap interaction instead.
-
-**Put in (15):**
+**Put in (14):**
 Mana Vault · Grim Monolith · Chrome Mox · Mox Diamond · Mox Amber · Lotus Petal ·
 Lion's Eye Diamond · City of Traitors · Underworld Breach · Gamble · Reiterate ·
-Finale of Promise · Dance with Calamity · Faithless Looting · Abrade
+Finale of Promise · Dance with Calamity · Faithless Looting
 
 **Game Changers (10):** Ancient Tomb · Jeska's Will · The One Ring · Underworld Breach ·
 Lion's Eye Diamond · Grim Monolith · Mana Vault · Chrome Mox · Mox Diamond · Gamble

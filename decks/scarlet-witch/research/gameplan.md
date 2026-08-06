@@ -85,7 +85,7 @@ and cast Crackle at X=7 instead of X=9. That's 10 damage per target, thrown away
 | **Crackle with Power** | 5×X damage to each of up to X targets | **X=8 is 40** — a kill from full |
 | **Jaya's / Comet Storm** *(sideboard)* | X to three / X+kicks targets | backup Crackles |
 | **Chandra's Ignition** | Wanda's power to each other creature **and each opponent** | needs Wanda pumped; also a one-sided-ish wipe |
-| **Apex of Power** | 10 mana of any one colour + cast 7 free cards | it's a *mana engine* that also wins |
+| **Apex of Power** | exile 7 and **cast them by paying**, + 10 mana of one colour | a *mana engine*, not a free-cast — see the Apex rule in §6 |
 
 **B. Per-spell chip damage.** These turn a long turn into a kill without a payoff card:
 
@@ -194,6 +194,7 @@ cast on curve.
 | **Disrupt Decorum** | you're about to be attacked, or you're the archenemy | Goad lasts **until your next turn**, so cast it in *your* main phase to cover the whole cycle back to you. |
 | **Past in Flames** | your graveyard has 3+ spells worth recasting | It's a payoff, not a cantrip. Casting it with an empty yard is a wasted card. |
 | **Improvisation Capstone** | you're going to have main phases left to use the Paradigm copies | The free copy each first main phase is most of the card's value. |
+| **Apex of Power** | you have mana left *after* casting it to deploy what it finds | It exiles 7 and **anything you don't cast that turn is gone forever**. It is NOT a free-cast — you pay normally, which is why it gives you ten mana. Cast it **early** in the turn, never last, and cast the cards you'd most hate to lose first. Crackle exiled this way **is** castable at a real X — pay for it. Commune with Lava and Ignite the Future are safer (until end of your *next* turn). |
 | **The One Ring** | you need the protection turn, or you need cards | *"Protection from everything until your next turn"* is a **fog for the whole table's attacks.** Sometimes the right play is casting it purely to not die. |
 | **Vandalblast** | you can overload it ({4}{R}) profitably | Single-target for {R} is fine in a pinch, but overloading is a blowout. Don't fire it at a Sol Ring. |
 | **Ancient Tomb** | you actually need the second mana | It deals you 2 every activation. At 40 life that's fine; at 12 it's a real cost. Tap Mountains first when the extra mana doesn't change what you cast. |
@@ -220,7 +221,7 @@ discounts these.
 Thunder**. The copy keeps your X and can **re-use the same targets** — the "no duplicate targets"
 rule is per spell, and a copy is a separate spell.
 
-**❌ Free-casting → X = 0, deals nothing.** **Apex of Power**, **Improvisation Capstone**,
+**❌ Free-casting → X = 0, deals nothing.** **Improvisation Capstone**,
 **Mizzix's Mastery**, **Electrodominance**, **Arcane Bombardment**. If Apex exiles Crackle with
 Power, **do not cast it** — put it in hand if the effect allows, or cast something else.
 
@@ -343,6 +344,17 @@ for the entire table and it draws you cards afterwards.
 Third: **Volcanic Vision** returning a big spell — damage equal to its mana value to each creature
 *your opponents control*, one-sided, and it doesn't kill your engines.
 
+**If Kazuul is already down, you may not need any of them.** Every attacking creature costs its
+controller {3} or hands you a 3/3 Ogre, and the trigger resolves during **declare attackers** — so
+the Ogres exist before blockers are declared and can block that same combat. Against three
+attackers that's either {9} out of their turn or three 3/3 blockers. Two things to remember:
+
+- **It's a tax, not a prevention.** They can pay. A deck with mana open will just pay and swing.
+- **Your own Chandra's Ignition kills Kazuul** once Wanda's power is 4 or more, and a 3-power
+  Ignition kills the Ogres. If you're holding Ignition as your kill, the Ogres are for *surviving
+  to* that turn, not for blocking on it. Fiery Confluence at 3 does **not** kill Kazuul (5/4), but
+  it does kill every Ogre.
+
 ### 🧊 Scenario 6 — Wanda has been killed twice and the tax is {6}
 
 Don't chase her. At {2}{R} + {4} tax she's a 7-mana 2/3.
@@ -373,7 +385,7 @@ half.
 You have a **card** problem. Do not cast the ritual.
 
 Priority: **The One Ring** (draws increasingly many) → **Hex Magic** (doubles your hand for a turn)
-→ **Commune with Lava** for a big X → **War Room** → **Apex of Power** (7 free cards *and* 10 mana).
+→ **Commune with Lava** for a big X → **War Room** → **Apex of Power** (see 7 cards *and* 10 mana — but you PAY for what you cast, and lose the rest).
 
 Apex is the best flood-breaker in the deck precisely because it converts excess mana into cards.
 

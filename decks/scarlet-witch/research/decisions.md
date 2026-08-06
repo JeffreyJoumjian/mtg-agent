@@ -145,3 +145,172 @@ Fiery Confluence does 3.
 **The cost, stated plainly:** the deck now has no *unconditional* wrath. The remaining three all
 depend on something — what's in the graveyard, or Wanda's power. Board Blasphemous Act back in
 against tables with large creatures.
+
+## 2026-08-04 — Jaya's Immolating Inferno in, Pirate's Pillage out
+
+Snapshot: `versions/2026-08-04-b3-before-jayas.md`. Prompted by a playtest where Apex of Power
+exiled the deck's payoffs.
+
+**The real problem wasn't damage volume, it was concentration.** Counting face-damage sources gives
+ten, which is plenty — but only **two** could kill a table alone (Crackle with Power, and
+Chandra's Ignition once Wanda is pumped). I had filed Jaya's in the sideboard as "a fourth X-spell
+behind Crackle, Storm King's Thunder and Electrodominance," which was wrong: Storm King's Thunder
+is a *copier*, and Electrodominance hits **one** target. Jaya's is the **second table-killer**.
+
+**Pirate's Pillage was the cut.** It is word-for-word identical to Big Score — discard a card, draw
+two, two Treasures — at the same {3}{R}, but a **sorcery** instead of an instant. There is no board
+state where you'd rather have it. Card draw 12 → 11, still above the 8–10 most decks run, and the
+remaining package keeps five true refills (The One Ring, both wheels, Will of the Jeskai, Hex
+Magic) plus Wiccan's per-spell impulse.
+
+**Correction logged — Apex of Power does NOT free-cast.** Its text is "you may **cast** spells from
+among them," with no "without paying their mana costs" clause; that's why it adds ten mana. X-spells
+exiled by Apex **can** be cast at a real X. I had wrongly listed it alongside the true free-cast
+cards (Improvisation Capstone, Mizzix's Mastery, Electrodominance, Arcane Bombardment) in four
+documents, all now fixed. The genuine Apex risk is different: anything you don't cast **that turn**
+stays exiled permanently, so cast it early in the turn and deploy what you'd hate to lose first.
+
+## 2026-08-04 (part 2) — damage multiplier reversed, and a manabase pass
+
+Snapshots: `versions/2026-08-04-b3-before-emancipation.md`, `-before-manabase.md`.
+
+### Fiery Emancipation back in, Solphim to the sideboard
+
+I originally cut Emancipation for Solphim on "two mana cheaper, no friendly fire, has a body."
+All three were weak:
+
+- **The gap is one mana, not two.** Longshot reduces *noncreature* spells, so it applies to
+  Emancipation ({1}{R}{R}{R} with Ruby + Longshot) but **not** to a creature like Solphim
+  ({1}{R}{R} with Ruby alone).
+- **The triple lets X be smaller.** 40 damage needs Crackle at X=4 under a doubler but only X=3
+  under a tripler — three mana back on the payoff, against one more to deploy. Net two ahead.
+- **Resilience is the real argument.** Commander runs vastly more creature removal than enchantment
+  removal. Solphim's indestructible costs {1} + 4 life + **discarding two cards**, and doesn't stop
+  exile. Friendly fire from the triple is minor — by the time you're comboing your creatures are
+  expendable.
+
+### Manabase: colourless is worse than red, and worse than it looks
+
+**Red mana banks; colourless doesn't.** Electro and Ashling both say *"You don't lose unspent **red**
+mana as steps and phases end,"* and rule 500.5 makes end-of-step/phase the only thing that empties
+a pool — so red persists indefinitely, across turns, until spent (the Omnath, Locus of Mana
+pattern). Every Mountain is a battery under either creature. Colourless mana empties normally.
+
+Against that, 25 of 66 nonland cards need {R}{R} or more.
+
+| Out | In | Why |
+|---|---|---|
+| Cori Mountain Monastery | Castle Embereth | Cori enters tapped unless you control a Plains or Island — in mono-red, **always tapped**. |
+| Scavenger Grounds | a Mountain | Symmetric graveyard hate against a deck that *needs* its graveyard, on a colourless land. |
+| Demolition Field | Mines of Moria | Kills one nonbasic and hands them a basic; Mines taps for red and is untapped with any of our ten legendary creatures. |
+| Sokenzan, Crucible of Defiance | a Mountain | Taps red, but isn't a **Mountain** (no Valakut trigger) and its channel makes 1/1s in a deck that doesn't attack. |
+
+**Mountains 19 → 21**, which also makes Valakut better. Colourless lands 8 → 5, and the survivors
+each buy something a Mountain can't: Ancient Tomb (two mana off one land), Nykthos (its devotion
+ability makes *red*, which banks), Tyrite Sanctum (one of only two wrath answers), Forge of Heroes
+(a free permanent +1 to the discount), Rogue's Passage and War Room kept on the pilot's call.
+
+**Ramunap Ruins was considered and rejected** — it costs 1 life for red, isn't a Mountain so it
+misses Valakut, and the Desert synergy that justified it disappeared when Scavenger Grounds was cut.
+Barbarian Ring and Fogwell's Gym were rejected for the same reason: **mono-red has essentially no
+lifegain** (a format-wide search returns three unplayable cards), and the deck already bleeds 15–25
+a game from Ancient Tomb, The One Ring, War Room and Shatterskull Smashing.
+
+## 2026-08-04 (part 3) — upgrade sweep, 3 in / 3 out
+
+Snapshot: `versions/2026-08-04-b3-before-upgrades.md`. Full research in `upgrade-candidates.md`.
+
+| In | Out | Why |
+|---|---|---|
+| **Artist's Talent** | Improvisation Capstone | Level 2 is a **third cost reducer** — only two exist in mono-red — plus L1 looting that feeds Past in Flames and L3's +2 to every damage instance. Costs just {R} with Ruby out. |
+| **Gauntlet of Power** | Monstrous Rage | All 21 Mountains tap for {R}{R}, and the surplus **banks** under Electro or Ashling. Only affects **basic** lands, and it's symmetric. |
+| **Hit the Mother Lode** | Bolt Bend | ~3 mana after reducers. Undiscovered cards go to the **bottom of the library**, not exile, and *"or put it into your hand"* dodges the X=0 trap entirely. |
+
+### Rejected, with reasons
+
+- **Fire Servant** ($0.39, doubles red instant/sorcery damage) — cost it out and it's **4 mana with
+  Ruby**, exactly the same as Fiery Emancipation with Ruby + Longshot, which **triples everything**.
+  At equal cost the tripler wins, so Fire Servant is only a *second* multiplier — and multipliers
+  are win-more. Redundancy in payoffs is good; redundancy in multipliers is not, because a
+  multiplier alone does nothing.
+- **Comet Storm** — third multi-target X-spell and the worst of the three: multikicker charges {1}
+  per extra target while Jaya's gets three free. At 12 mana: Crackle 20 each, Jaya's 14, Comet 12.
+- **Call Forth the Tempest** — a genuine second one-sided wrath, but it would be the **third** 8-plus
+  mana card alongside Apex and Brass's Bounty, and its cascades free-cast (≈18% to whiff into one of
+  the six X-spells). Stays in the sideboard.
+- **Delayed Blast Fireball** — 5 to each opponent when cast from exile, which happens often here, but
+  Fiery Confluence already does 6 to each for {R}{R} after discount. Overlap, at $16.
+- **Fury Storm / Primal Amulet / Lithoform Engine / Twinning Staff** — all marginal upgrades over
+  copy effects already in the list.
+
+### Two calls the pilot won on their own read
+
+- **Return the Favor stays.** Its copy mode has **no "you control" clause**, so it can copy an
+  *opponent's* spell — and *activated or triggered abilities* as well. Nothing else in the deck does
+  either. Bolt Bend, which is redirect-only, was the correct cut instead.
+- **Arcane Bombardment stays over Improvisation Capstone.** The deciding factor is where the cards
+  come from: Bombardment exiles from the **graveyard** (already-spent cards, so no loss), while
+  Capstone strip-mines the **library** every turn and permanently loses whatever you can't cast.
+
+## 2026-08-06 — Kazuul in, Abrade out; and Ojer Axonil rejected
+
+Snapshots: `versions/2026-08-06-b3-before-kazuul.md`, `-b4-`.
+
+### Ojer Axonil, Deepest Might — rejected on a rules interaction
+
+Ojer is a **damage floor of 4** (red sources, noncombat, opponents only), not a multiplier. It would
+have doubled Longshot and Fiery Inscription from 2 to 4 and turned Fiery Confluence's 6 into 12.
+
+It fails for two reasons:
+
+- **It cancels out with Fiery Emancipation, and the opponent picks the order.** Rule 616.1: when
+  two replacement effects want to modify one event, *the affected player* chooses — and damage to an
+  opponent means **they** choose. Ojer first: 2 → 4 → **12**. Emancipation first: 2 → 6, and Ojer no
+  longer applies because 6 isn't less than 4 → **6**. They always take 6, which is what Emancipation
+  does alone. With Emancipation out, Ojer contributes **zero**.
+- **It misses every X line.** Crackle deals 5X, so at X ≥ 1 it's already past the floor; same for
+  Jaya's, Electrodominance, Storm King's Thunder, Apex. Ojer touches one of five kill lines.
+  Emancipation touches all five, plus damage to creatures.
+
+**Torbran, Thane of Red Fell is the version that would work** and is logged as the alternative:
+additive rather than a floor, so it nets +2 per instance *even under the tripler* (opponent's best
+order is 2 → 6 → 8, still better than 6), it adds +2 to a 40-damage Crackle where Ojer adds nothing,
+and it boosts damage to **permanents opponents control** — which makes Fiery Confluence's "1 damage
+to each creature" a one-sided 3-to-theirs, 1-to-ours sweeper. $4.27 against Ojer's $23. Not seated
+because it's still a *second* damage booster in a role deliberately trimmed to one; the trigger to
+revisit is a game where Longshot/Inscription chip is what kills the table rather than an X-spell.
+
+### Kazuul, Tyrant of the Cliffs in, Abrade out
+
+The question that prompted this was whether to run a token-per-spell maker as chump-block fodder.
+The instinct was right — **defence is the deck's one real structural weakness** — but the 1/1
+version is self-defeating here: Fiery Confluence's "1 damage to each creature" mode taken three
+times is 3 to each creature, and Chandra's Ignition hits "each *other* creature". Your own two most
+castable sweepers wipe your own blockers. And 1/1s don't stop Commander-sized attackers.
+
+**Kazuul is the token maker that actually defends.** Whenever an opponent's creature attacks and
+you're the defending player, they pay {3} or you get a **3/3 Ogre**. The trigger resolves during
+declare attackers, so the Ogres are available to block **that same combat** — the only option found
+that produces blockers at the moment they're needed. Either outcome is good: the attack gets taxed,
+or you build a board. Plus a 5/4 body, and it's 34¢.
+
+Known costs, accepted: it's five mana (four with Ruby Medallion; Wanda doesn't discount creatures),
+it dies to removal, and your own **Chandra's Ignition kills it** once Wanda's power is 4 or more —
+the Ogres die to a 3-power Ignition too. Fiery Confluence at 3 does *not* kill Kazuul.
+
+**Abrade was the cut**: mana value 2, so Wanda never discounts it, and 3 damage kills very little in
+this format. Trading a small one-shot answer for a permanent one. Abrade stays in the **Bracket 4**
+list, where five mana of pure defence is the wrong shape — B4 intends to be dead or victorious
+before anyone's attack step matters. B3/B4 shared count drops 86 → 85, swap 14 → 15.
+
+**Crawlspace was the runner-up** ({3} artifact, max two attackers at you per combat). Its genuine
+edge is that it's an **artifact**, so unlike every creature-based defence plan it survives your own
+sweepers. It lost on price — $9.93 against $0.34 — and on doing nothing when nobody attacks.
+
+### Documentation fix found while editing
+
+The sideboard existed in **three** places with three different counts: `DECK.md` claimed 20 and
+listed 22, `SIDEBOARD.md` claimed 20 and listed 26, `pdf.json` carried 24. The `DECK.md` copy had
+drifted worst — it still listed **Fiery Emancipation and Hit the Mother Lode as sideboard cards**
+after both were moved into the 100 on 2026-08-04. `DECK.md`'s copy is now a pointer;
+**`SIDEBOARD.md` is the single source of truth**, and `pdf.json` is synced from it.

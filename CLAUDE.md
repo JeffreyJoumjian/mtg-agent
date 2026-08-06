@@ -3,6 +3,17 @@
 A Claude Code project that answers Magic: The Gathering rules questions from the official
 Comprehensive Rules without loading the whole ~970 KB file into context.
 
+## Start here — the deck brain
+
+**Invoke the `deck-brain` skill before any Magic decision or deck edit**, and before answering
+"should I run X", "what about card Y", "is the deck done". It is the accumulated method and
+knowledge base from every deck in this repo: verified rulings with CR citations, evaluation
+patterns that changed real decisions, and the mistakes already made so they aren't made twice.
+
+It is also **append-only learning** — when a session produces a lesson that would change a future
+decision on a different card or deck, write it into `.claude/skills/deck-brain/LEDGER.md` before
+finishing. Deck-specific choices go in that deck's `research/decisions.md` instead.
+
 ## How to answer MTG rules questions
 
 **For any Magic: The Gathering rules question, dispatch to the `mtg-rules-expert`
@@ -37,6 +48,10 @@ Decks live in `decks/`, one folder per deck. **Read `decks/README.md` first** �
 per-deck structure, the `DECK.md` + `STATUS.md` authoritative pair (keep them in sync), the
 naming schema, and how to start a deck (copy `decks/_TEMPLATE/`). For a final card-by-card
 trim to 100, use the `deck-finalizer` skill.
+
+The three fit together: **`deck-brain`** is *how to decide* and what's already been settled,
+**`decks/README.md`** is *where things go*, **`deck-finalizer`** is the interactive cut-to-100
+exercise.
 
 ## Layout
 
