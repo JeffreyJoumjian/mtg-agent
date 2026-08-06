@@ -1,5 +1,25 @@
 # Considered and cut — the card-by-card agenda
 
+> ## ⚠️ HISTORICAL — computed 2026-07-30, verdicts superseded
+>
+> **This is a dated snapshot of the agenda that *started* the card-by-card pass, not a description
+> of the current deck.** We then argued through it, and about ten of the individual verdicts below
+> reversed. Do not read it as the deck's current state.
+>
+> **For current state:** `../DECK.md` and `../DECK-B4.md` are the lists, `../SIDEBOARD.md` is the
+> authoritative sideboard, and `decisions.md` carries every reversal with its reasoning.
+>
+> **Known reversals — listed below as cut, now IN the deck:** Fiery Inscription · Hit the Mother
+> Lode · Volcanic Vision · Fiery Confluence · Jaya's Immolating Inferno · Champion's Helm ·
+> Disrupt Decorum · Ashling, Flame Dancer · Mines of Moria · Hex Magic.
+> **Listed below as "Kept", now sideboarded:** Monstrous Rage · Blazing Crescendo · Swiftfoot
+> Boots. Bolt Bend is referenced as in-deck (redirect count) and is also sideboarded now.
+>
+> **Kept because nothing else has it:** the **sample frequencies for rejected cards** (`X/11`) —
+> `SIDEBOARD.md` records what left and why but carries no field data — and the four
+> **"cut on principle"** groupings, whose verdicts all still stand and are the reason we don't
+> re-litigate the pinger package or the equipment suite every few weeks.
+
 Every card that appears in **2 or more** of the 11 Scarlet Witch sample decks but is **not** in
 `DECK.md` or `DECK-B4.md`, with why. This is the agenda for the card-by-card pass — argue with any
 of it. Computed, not recalled: the list comes from diffing the sample data against both builds.
