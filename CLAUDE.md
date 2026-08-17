@@ -103,7 +103,9 @@ Bun runs the TypeScript directly — no compile step, no npm dependencies.
 - `bun run update` — fetch then build.
 - `bun run card` / `bun run search` / `bun run cards:refresh` — card data (see "Card data").
 - `bun run carddata` / `bun run deckcheck` — the deck-finalizer helpers (see that skill).
-- `bun test` — run the parser/chunker/differ/manifest/decklist/deck-research tests.
+- `bun test` — run the parser/chunker/differ/manifest/decklist/deck-research tests. Scoped to
+  `./test` on purpose: `apps/collection-visualizer` has its own deps and its own `bun test`, and
+  an unscoped run fails on a fresh clone before that app is installed.
 
 **Bun, everywhere.** `bun.lockb` is the only lockfile — never run `npm`/`pnpm`/`yarn` here, and pass
 `--use-bun` (or answer the prompt) if a generator like the shadcn CLI asks.

@@ -14,7 +14,7 @@
     "set-scan": "bun run scripts/set-scan.ts",
     "carddata": "bun run scripts/carddata.ts",
     "deckcheck": "bun run scripts/deckcheck.ts",
-    "test": "bun test",
+    "test": "bun test ./test",
     "deck:pdf": "bun run scripts/deck-pdf.ts"
   },
   "engines": {
