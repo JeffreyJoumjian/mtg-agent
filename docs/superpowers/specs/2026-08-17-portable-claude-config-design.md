@@ -1,7 +1,7 @@
 # Portable Claude setup — mtg-agent on any machine
 
 **Date:** 2026-08-17
-**Status:** approved design, pending implementation plan
+**Status:** implemented — see "As built" at the end for where reality differed from this design.
 
 ## Goal
 
@@ -315,3 +315,43 @@ installer's backup step means a mistaken run is recoverable.
 - **The two reference PDFs stay in git** (16 MB of the 22 MB tracked). They are regenerable via
   `bun run deck:pdf`, but keeping them means a Windows box without Chrome can still open the
   thing you actually print. Revisit only if the repo becomes unwieldy.
+
+## As built
+
+Implemented 2026-08-17 across `mtg-agent` (`cbfa684`…`19f1a3c`) and the new private
+`claude-config` repo. Six things differed from the design above, all found by testing:
+
+1. **`settings.json` carries the marketplaces itself.** Registering `expo/skills` writes an
+   `extraKnownMarketplaces` block into `settings.json` — by source, with no absolute paths. That
+   is strictly better than the planned installer step, which is now only a fallback for older
+   Claude Code versions. It also means `settings.json` drifts as Claude Code rewrites it, so the
+   README documents copying it back deliberately.
+
+2. **`bun test` had to be scoped to `./test`.** A fresh clone failed three tests: an unscoped run
+   walks into `apps/collection-visualizer`, whose dependencies aren't installed. That app has its
+   own `test` script. Without this the runbook's smoke test would fail on every new machine.
+
+3. **`vercel-react-best-practices` was a symlink** out of `~/.claude/skills` to
+   `~/.agents/skills/`, which would dangle on a new machine. It's dereferenced into the repo and
+   installs as a real directory.
+
+4. **`parseKeepPile` needed a counted/uncounted rule.** A faithful port of the Python parsed
+   `DECK.md`'s `Game Changers (3/3 — …): Ancient Tomb · …` metadata line as a card, giving Iron
+   Man 101 cards. The rule now is: if any line in the list carries a count, every card line must.
+   A list with no counts anywhere is still treated as a bare keep-pile.
+
+5. **`carddata` needed 75-identifier batching.** The original called `/cards/collection` once,
+   which fails on any full decklist. `fetchCollection` in `lib/scryfall.ts` already chunked;
+   calling `request` directly for exact cache-format control skipped that.
+
+6. **`cleanEntryName` ordering.** `cleanCardName` has to run *before* the parenthesis strip — it
+   matches `(m10) 66` as one unit, so stripping parentheses first orphaned the collector number
+   and produced `Ponder 66`. This bug existed in the Python too.
+
+Two bugs were fixed as a side effect: double-faced cards are now indexed under their front face,
+so DFC lands count as mana sources; and 14 cards genuinely missing from Edgar's `cards.txt` were
+cached, moving its report from a spurious `36 mana sources ⚠️ low` to the correct `41`.
+
+**Still unverified:** `install.ps1` has never been executed — there is no PowerShell on this Mac
+to even syntax-check it — and the Git Bash hook-resolution question from the risks section above
+remains open until someone runs this on real Windows.
