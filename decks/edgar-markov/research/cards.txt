@@ -963,3 +963,59 @@ Whenever another creature enters, you gain 1 life.
 ## Killing Wave
 cost={X}{B} | type=Sorcery | CI=B | produces=- | usd=$0.38
 For each creature, its controller sacrifices it unless they pay X life.
+
+## Herald's Horn
+cost={3} | type=Artifact | CI=- | produces=- | usd=$5.09
+As this artifact enters, choose a creature type. Creature spells you cast of the chosen type cost {1} less to cast. At the beginning of your upkeep, look at the top card of your library. If it's a creature card of the chosen type, you may reveal it and put it into your hand.
+
+## Patchwork Banner
+cost={3} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$2.24
+As this artifact enters, choose a creature type. Creatures you control of the chosen type get +1/+1. {T}: Add one mana of any color.
+
+## Urza's Incubator
+cost={3} | type=Artifact | CI=- | produces=- | usd=$20.77
+As this artifact enters, choose a creature type. Creature spells of the chosen type cost {2} less to cast.
+
+## Ancient Tomb
+cost=- | type=Land | CI=- | produces=C | usd=$134.58
+{T}: Add {C}{C}. This land deals 2 damage to you.
+
+## Shattered Sanctum
+cost=- | type=Land | CI=BW | produces=B,W | usd=$1.99
+This land enters tapped unless you control two or more other lands. {T}: Add {W} or {B}.
+
+## Sundown Pass
+cost=- | type=Land | CI=RW | produces=R,W | usd=$2.25
+This land enters tapped unless you control two or more other lands. {T}: Add {R} or {W}.
+
+## Vault of the Archangel
+cost=- | type=Land | CI=BW | produces=C | usd=$0.74
+{T}: Add {C}. {2}{W}{B}, {T}: Creatures you control gain deathtouch and lifelink until end of turn.
+
+## Emeritus of Woe // Demonic Tutor
+cost={3}{B} // {1}{B} | type=Creature — Vampire Warlock // Sorcery | CI=B | produces=- | usd=$11.65
+Emeritus of Woe: This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.) At the beginning of your end step, if two or more creatures died this turn, this creature becomes prepared. // Demonic Tutor: Search your library for a card, put that card into your hand, then shuffle.
+
+## Florian, Voldaren Scion
+cost={1}{B}{R} | type=Legendary Creature — Vampire Noble | CI=BR | produces=- | usd=$0.37
+First strike At the beginning of each of your postcombat main phases, look at the top X cards of your library, where X is the total amount of life your opponents lost this turn. Exile one of those cards and put the rest on the bottom of your library in a random order. You may play the exiled card this turn.
+
+## Scheming Silvertongue // Sign in Blood
+cost={1}{B} // {B}{B} | type=Creature — Vampire Warlock // Sorcery | CI=B | produces=- | usd=$1.25
+Scheming Silvertongue: Flying, lifelink At the beginning of your second main phase, if you gained 2 or more life this turn, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.) // Sign in Blood: Target player draws two cards and loses 2 life.
+
+## Anowon, the Ruin Sage
+cost={3}{B}{B} | type=Legendary Creature — Vampire Shaman | CI=B | produces=- | usd=$2.67
+At the beginning of your upkeep, each player sacrifices a non-Vampire creature of their choice.
+
+## Phyrexian Reclamation
+cost={B} | type=Enchantment | CI=B | produces=- | usd=$2.78
+{1}{B}, Pay 2 life: Return target creature card from your graveyard to your hand.
+
+## Sangromancer
+cost={2}{B}{B} | type=Creature — Vampire Shaman | CI=B | produces=- | usd=$0.86
+Flying Whenever a creature an opponent controls dies, you may gain 3 life. Whenever an opponent discards a card, you may gain 3 life.
+
+## Tainted Remedy
+cost={2}{B} | type=Enchantment | CI=B | produces=- | usd=$9.02
+If an opponent would gain life, that player loses that much life instead.

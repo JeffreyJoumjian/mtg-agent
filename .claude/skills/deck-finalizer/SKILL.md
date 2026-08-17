@@ -53,7 +53,7 @@ with card images). Keep updates cheap — one `set` per batch boundary, not per 
 ## The loop — batches of 5–10
 Repeat until the pool is exhausted:
 
-1. **Present a batch (5–10 cards).** Run `scripts/carddata.py --deck <slug>` to pull descriptions from the deck's `research/cards.txt` cache (it fetches + caches anything missing — always cache-first). Use the cache to build each card's summary + details for the tabbed questions below.
+1. **Present a batch (5–10 cards).** Run `bun run carddata --deck <slug>` to pull descriptions from the deck's `research/cards.txt` cache (it fetches + caches anything missing — always cache-first). Use the cache to build each card's summary + details for the tabbed questions below.
 2. **Have the user call each:** Keep / Cut / Pocket / Hold. **Collect the calls with the
    AskUserQuestion tool when it's available** — one question per card, short-name header
    (≤12 chars), and the question text stacked in exactly this order (one line each):
@@ -74,7 +74,7 @@ Keep it moving — this should feel like a friend flipping through a binder with
 ## Rubric — how to judge each card
 Weigh these (roughly in order) and tell the user which one is driving the call:
 - **Gameplan fit** — does it advance what *this* deck does? A powerful card that's off-plan is still a cut.
-- **Field signal** — how many comparable sample decks run it (`scripts/deckcheck.py` shows per-card coverage when the deck has a comparison sample under `decks/<slug>/research/` — e.g. `decks/edgar-markov/research/premium_edgar_decks.json`). **4+/6 = consensus staple** (strong keep); **0/6 = personal tech or a trap** — judge on merit, don't auto-cut. **No sample for this deck → skip this lens** and say so once; don't fake it.
+- **Field signal** — how many comparable sample decks run it (`bun run deckcheck` shows per-card coverage when the deck has a comparison sample under `decks/<slug>/research/` — e.g. `decks/edgar-markov/research/premium_edgar_decks.json`). **4+/6 = consensus staple** (strong keep); **0/6 = personal tech or a trap** — judge on merit, don't auto-cut. **No sample for this deck → skip this lens** and say so once; don't fake it.
 - **Synergy, by name** — which *specific* keep-pile cards does it curve/combo/snowball with? "It's good" isn't enough — name the partner.
 - **Redundancy** — already 3+ cards doing this job? The Nth copy is the easiest cut.
 - **Mana & curve** — does cutting it hurt fixing/ramp? On budget manabases, color-fixing **rocks and treasure-makers are doing the fixing the basics can't — protect them.** Does adding it spike the curve?
@@ -98,7 +98,7 @@ Weigh these (roughly in order) and tell the user which one is driving the call:
    then resolve every unseated hold explicitly — Cut or Pocket, one line of why each — and only
    then reconcile the keep-pile to *exactly* the target, walking the last swaps with your
    recommendations.
-2. Run `scripts/deckcheck.py --deck <slug>` on the final list → confirm **count, Game Changer count (bracket), mana sources, field coverage** (coverage only when the deck has a sample).
+2. Run `bun run deckcheck --deck <slug>` on the final list → confirm **count, Game Changer count (bracket), mana sources, field coverage** (coverage only when the deck has a sample).
 3. Show the final list for **explicit sign-off.**
 4. **Only after sign-off:** snapshot the outgoing list to `decks/<slug>/versions/YYYY-MM-DD-<label>.md`, then update `decks/<slug>/DECK.md` **and** `STATUS.md` together (they must stay in sync — see `decks/README.md`), and append a short keep/cut summary (with the *why* for the non-obvious ones) to `decks/<slug>/research/decisions.md`.
 5. Remind the user to update acquisition statuses in `STATUS.md` for anything newly bought/proxied.
@@ -113,9 +113,10 @@ Decks live in `decks/<slug>/` — see `decks/README.md` for the full conventions
 - `decks/<slug>/research/decisions.md` — locked decisions + gameplan.
 - `decks/<slug>/research/premium_*_decks.json` / `new_*_decks_clean.json` — optional comparison
   sample for field signal (exists for `edgar-markov`; skip the lens when a deck has none).
-- `scripts/carddata.py --deck <slug> <names…>` (or `--file decks/<slug>/<list>` — slug inferred) —
+- `bun run carddata --deck <slug> <names…>` (or `--file decks/<slug>/<list>` — slug inferred) —
   prints cached descriptions; fetches + appends any missing to the deck's `cards.txt`.
-- `scripts/deckcheck.py --file decks/<slug>/<list>` (or `--deck <slug>` with stdin) — count,
+- `bun run deckcheck --file decks/<slug>/<list>` (or `--deck <slug>` with stdin) — count,
   Game Changers/bracket, mana sources, and field coverage per card when a sample exists.
 
-Run scripts from the project root (`mtg-agent/`).
+Run scripts from the project root (`mtg-agent/`). Both commands are Bun/TypeScript and need no
+runtime beyond Bun itself, so they work identically on macOS, Linux, and Windows.

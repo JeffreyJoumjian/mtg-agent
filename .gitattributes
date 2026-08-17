@@ -1,0 +1,26 @@
+# Normalize line endings so the repo behaves identically on macOS, Linux, and Windows.
+#
+# Without this, Git's Windows default (core.autocrlf=true) rewrites every text file to CRLF on
+# checkout. That would churn every deck file on a Windows clone, and — worse — corrupt the
+# rules fixtures: `scripts/lib/parser.ts` splits `rules/raw/*.txt` on \n and the tests in
+# `test/parser.test.ts` assert against exact rule text, so a stray \r breaks the build.
+
+* text=auto
+
+# Pinned to LF regardless of platform: parsed by the build pipeline or by lib/decklist.ts.
+*.txt  text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.ts   text eol=lf
+*.sh   text eol=lf
+
+# Windows shell scripts genuinely need CRLF.
+*.ps1  text eol=crlf
+*.cmd  text eol=crlf
+*.bat  text eol=crlf
+
+# Never touch binaries — deck reference PDFs and card images.
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.lockb binary

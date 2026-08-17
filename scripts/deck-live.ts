@@ -27,6 +27,19 @@ if (!cmd || !slug || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) {
 
 const statePath = join(LIVE_DIR, slug + ".json");
 
+/** Hand a URL to the OS default browser. Each platform has its own opener: macOS `open`,
+ *  Windows `start` (a cmd builtin, hence `cmd /c`, whose first quoted argument is the window
+ *  title — so it needs an empty `""` before the URL), and `xdg-open` elsewhere. */
+function openInBrowser(url: string): void {
+  if (process.platform === "darwin") {
+    Bun.spawnSync(["open", url]);
+  } else if (process.platform === "win32") {
+    Bun.spawnSync(["cmd", "/c", "start", "", url]);
+  } else {
+    Bun.spawnSync(["xdg-open", url]);
+  }
+}
+
 function writeState(state: Record<string, unknown>): void {
   mkdirSync(LIVE_DIR, { recursive: true });
   writeFileSync(statePath, JSON.stringify({ ...state, updatedAt: Date.now() }, null, 2) + "\n");
@@ -61,7 +74,7 @@ if (cmd === "clear") {
     process.exit(2);
   }
   writeState(EMPTY);
-  Bun.spawnSync(["open", url]);
+  openInBrowser(url);
   console.log("opened", url);
 } else {
   console.error(`unknown command: ${cmd}`);

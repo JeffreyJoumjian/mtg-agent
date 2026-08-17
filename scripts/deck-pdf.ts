@@ -105,19 +105,46 @@ const esc = (s: string) =>
 /** Scryfall prints double-faced cards under the full "A // B" name; we key on the front face. */
 const frontFace = (name: string) => name.split(" // ")[0].split(" / ")[0].trim();
 
-const CHROME_CANDIDATES = [
-  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-  "/Applications/Chromium.app/Contents/MacOS/Chromium",
-  "/usr/bin/google-chrome",
-  "/usr/bin/chromium",
-  "/usr/bin/chromium-browser",
-];
+/**
+ * Chrome/Chromium locations to probe, per platform.
+ *
+ * Windows paths are resolved from the environment rather than hardcoded to `C:\`, because
+ * "Program Files" is localized and Chrome may be installed per-user under `%LOCALAPPDATA%`.
+ * Edge is probed last on Windows: it's Chromium underneath and ships with the OS, so it
+ * saves a fresh machine from needing a Chrome install just to print a deck reference.
+ */
+function chromeCandidates(): string[] {
+  if (process.platform === "win32") {
+    const roots = [
+      process.env.LOCALAPPDATA,
+      process.env.PROGRAMFILES,
+      process.env["PROGRAMFILES(X86)"],
+    ].filter((root): root is string => Boolean(root));
+
+    return [
+      ...roots.map((root) => join(root, "Google", "Chrome", "Application", "chrome.exe")),
+      ...roots.map((root) => join(root, "Chromium", "Application", "chrome.exe")),
+      ...roots.map((root) => join(root, "Microsoft", "Edge", "Application", "msedge.exe")),
+    ];
+  }
+
+  if (process.platform === "darwin") {
+    return [
+      "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    ];
+  }
+
+  return ["/usr/bin/google-chrome", "/usr/bin/chromium", "/usr/bin/chromium-browser"];
+}
 
 function findChrome(): string {
-  const found = CHROME_CANDIDATES.find((p) => existsSync(p));
+  const candidates = chromeCandidates();
+  const found = candidates.find((p) => existsSync(p));
+
   if (!found) {
     throw new Error(
-      `No Chrome/Chromium found. Looked in:\n  ${CHROME_CANDIDATES.join("\n  ")}\n` +
+      `No Chrome/Chromium found. Looked in:\n  ${candidates.join("\n  ")}\n` +
         `Install Google Chrome, or set one of those paths.`,
     );
   }
