@@ -23,6 +23,7 @@
 
 import { existsSync, mkdirSync, readdirSync } from "node:fs";
 import { REPO_ROOT } from "./lib/paths.ts";
+import { CARD_LINE as DECKLIST_CARD_LINE, cleanCardName } from "./lib/decklist.ts";
 import { join } from "node:path";
 
 // ---------------------------------------------------------------- types
@@ -70,9 +71,11 @@ const BASICS = ["Plains", "Island", "Swamp", "Mountain", "Forest"];
 
 /**
  * One decklist line: `1 Sol Ring` or `1x Sol Ring` (the convention in `decks/README.md`).
- * Capture 1 is the quantity, capture 2 the name. Kept in sync with `lib/decklist.ts`.
+ * Capture 1 is the quantity, capture 2 the still-annotated name — pass it through
+ * `cleanCardName` before rendering or looking it up. Shared with `lib/decklist.ts` so the
+ * PDF and the card tool can never disagree about what a line means.
  */
-const CARD_LINE = /^(\d+)\s*[xX]?\s+(.+)$/;
+const CARD_LINE = DECKLIST_CARD_LINE;
 
 /** Contents of `decks/<slug>/pdf.json`. */
 type PdfData = {
@@ -378,7 +381,8 @@ function renderDecklist(
     const items = cards.map((line) => {
       const m = line.trim().match(CARD_LINE);
       if (!m) return `<li>${esc(line.trim())}</li>`;
-      const [, qty, name] = m;
+      const [, qty] = m;
+      const name = cleanCardName(m[2]);
       const card = meta[frontFace(name).toLowerCase()];
       if (!card) return `<li><span class="q">${qty}</span> ${esc(name)}</li>`;
 
@@ -594,8 +598,11 @@ const images = await loadImages(cardRefs);
 
 const deckNames = deckMd
   .split("\n")
-  .map((l) => l.trim().match(CARD_LINE)?.[2])
-  .filter(Boolean) as string[];
+  .map((l) => {
+    const m = l.trim().match(CARD_LINE);
+    return m ? cleanCardName(m[2]) : "";
+  })
+  .filter(Boolean);
 const meta = await loadDeckMeta(slug, deckNames);
 const symbols = await loadSymbols();
 

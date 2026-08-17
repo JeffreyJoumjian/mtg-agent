@@ -33,6 +33,12 @@ export interface CardSummary {
   colorIdentity: string[];
   /** Mana this card can produce (`["B","R"]`, `["C"]`). Mostly useful for lands and rocks. */
   producedMana: string[];
+  /** Keyword abilities on this card (`["Flying", "Amass"]`). */
+  keywords: string[];
+  /** Scryfall layout — distinguishes `modal_dfc` / `transform` / `adventure` / `normal`. */
+  layout: string;
+  /** True if this card is on Wizards' Commander-bracket Game Changers list. */
+  gameChanger: boolean;
   set: string;
   setName: string;
   collectorNumber: string;
@@ -53,15 +59,21 @@ async function throttle(): Promise<void> {
   lastRequestAt = Date.now();
 }
 
-/** One throttled request with a single 429 retry (honoring Retry-After). Returns parsed JSON. */
-async function request(path: string, init?: RequestInit): Promise<any> {
+/** One throttled request, retrying on 429 (honoring Retry-After) and up to three times on
+ *  transient 5xx errors — Scryfall throws intermittent 503s under load. Returns parsed JSON. */
+export async function request(path: string, init?: RequestInit, attempt = 0): Promise<any> {
   await throttle();
   const res = await fetch(`${API}${path}`, { ...init, headers: { ...HEADERS, ...init?.headers } });
 
   if (res.status === 429) {
     const retryAfter = Number(res.headers.get("retry-after") ?? "1");
     await new Promise((r) => setTimeout(r, Math.max(1, retryAfter) * 1000));
-    return request(path, init);
+    return request(path, init, attempt);
+  }
+
+  if (res.status >= 500 && attempt < 3) {
+    await new Promise((r) => setTimeout(r, 2000 * (attempt + 1)));
+    return request(path, init, attempt + 1);
   }
 
   const body = await res.json().catch(() => null);
@@ -98,6 +110,9 @@ export function toSummary(card: any): CardSummary {
     colors: card.colors ?? faces.flatMap((f: any) => f.colors ?? []),
     colorIdentity: card.color_identity ?? [],
     producedMana: card.produced_mana ?? [],
+    keywords: card.keywords ?? [],
+    layout: card.layout ?? "normal",
+    gameChanger: card.game_changer === true,
     set: card.set,
     setName: card.set_name,
     collectorNumber: card.collector_number,

@@ -11,6 +11,7 @@
     "card": "bun run scripts/card.ts",
     "search": "bun run scripts/card.ts search",
     "cards:refresh": "bun run scripts/card.ts refresh",
+    "set-scan": "bun run scripts/set-scan.ts",
     "test": "bun test",
     "deck:pdf": "bun run scripts/deck-pdf.ts"
   },
