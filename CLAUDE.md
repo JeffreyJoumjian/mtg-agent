@@ -102,10 +102,27 @@ Bun runs the TypeScript directly — no compile step, no npm dependencies.
 - `bun run fetch` — download the latest rules `.txt`.
 - `bun run update` — fetch then build.
 - `bun run card` / `bun run search` / `bun run cards:refresh` — card data (see "Card data").
-- `bun test` — run the parser/chunker/differ/manifest/decklist tests.
+- `bun run carddata` / `bun run deckcheck` — the deck-finalizer helpers (see that skill).
+- `bun test` — run the parser/chunker/differ/manifest/decklist/deck-research tests.
 
 **Bun, everywhere.** `bun.lockb` is the only lockfile — never run `npm`/`pnpm`/`yarn` here, and pass
 `--use-bun` (or answer the prompt) if a generator like the shadcn CLI asks.
+
+### Working on another machine
+
+Everything this repo needs travels with the clone — the skills in `.claude/skills/`, the
+`mtg-rules-expert` agent, the chunked rules, and the decks. **Bun is the only runtime
+prerequisite** (`powershell -c "irm bun.sh/install.ps1 | iex"` on Windows,
+`curl -fsSL https://bun.sh/install | bash` elsewhere); there is no Python dependency.
+
+The *global* config — the user's `~/.claude` instructions, rules, agents, and enabled plugins —
+lives in a separate private repo, [`claude-config`](https://github.com/JeffreyJoumjian/claude-config),
+whose `install.sh` / `install.ps1` copy it into place. Its README is the from-scratch runbook.
+
+Scripts are cross-platform: `deck-pdf.ts` probes Windows Chrome/Edge locations as well as
+macOS and Linux ones, and `deck-live.ts` picks `open` / `start` / `xdg-open` by platform.
+`bun run deck:pdf` is the one command with an external dependency — it needs Chrome, Chromium,
+or (on Windows) Edge.
 
 ### Don't leave processes running
 
