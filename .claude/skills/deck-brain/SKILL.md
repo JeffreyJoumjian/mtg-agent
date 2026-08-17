@@ -10,10 +10,13 @@ The method and the memory behind every deck in `decks/`. Two files:
 - **`SKILL.md`** (this file) — *how to decide*. Stable. Changes rarely.
 - **`LEDGER.md`** — *what we've learned*. *Append-only.* Grows every session.
 
-**Read `LEDGER.md` before you reason about a card.** It is grep-friendly — search the card
-name, the rule number, or the pattern name before working anything out from scratch. Half the
-questions that come up have already been settled once, and re-deriving them is how contradictions
-get introduced.
+**Read `LEDGER.md` before you reason about a card.** It is grep-friendly — search the card name,
+the rule number, or the pattern name first.
+
+But read it for **facts, not verdicts.** A rules citation, an oracle quote or a measurement stays
+true; *"card X beats card Y here"* was only ever true of the list as it stood that day, and every
+swap since has quietly changed the list. **Re-derive every verdict against the deck in front of
+you** — see §1.1b, which is the rule this skill most often gets broken on.
 
 ---
 
@@ -36,6 +39,37 @@ Corollary: **when the user pushes back on a card, re-read the oracle text before
 position.** Every contested call in the Scarlet Witch build that the user won was one where the
 actual text contained something not in the recalled version — most sharply **Return the Favor**,
 whose copy mode has no *"you control"* clause and can therefore copy an opponent's spell.
+
+### 1.1b A past verdict is evidence, not a ruling — re-derive it
+
+**Facts keep. Verdicts expire.** Split every prior note into the two, and treat them differently:
+
+| | Examples | Lifetime |
+|---|---|---|
+| **Facts** | A CR citation · oracle text · a price · a measured count ("0 of 10 ran a storm card") | Durable. Cite and reuse. |
+| **Verdicts** | "X is better than Y here" · "weakest card in the deck" · "0/6 field, cut it" · "outlets are capped" | **Perishable.** They were true *of a list that has since changed.* |
+
+A verdict is a function of the deck around it. Every swap changes that deck, so every swap silently
+invalidates some verdicts. The Edgar list re-derived **Sorin** and found the "8-card 5-drop tier"
+that justified it had shrunk to two targets; it re-derived **Captivating Vampire** and found a use
+(steal → sacrifice as removal) the original evaluation never considered; and it re-derived
+**Sangromancer**, which a prior pass had ranked below the MV4 band before Anowon existed to feed it.
+
+So:
+
+- **Never cite a prior verdict as a reason.** "Evaluated and passed", "already settled",
+  "don't re-litigate" are not arguments. Say instead: *"Settled 2026-08-03 on the grounds that
+  X, Y, Z — X and Y still hold, Z no longer does."* If you can't name the grounds, you have no
+  finding, only a memory.
+- **Re-read the oracle text on both sides of every comparison, every time.** Cheap; `bun run card`
+  is one call. Pattern-matching a card from its gist is the single most reliable predictor of being
+  wrong (see Corrections).
+- **Re-score every *cut* against the post-package board**, not the pre-package one. A card can look
+  redundant while the same swap package is adding its payoff.
+- **When the user questions a call, re-derive it from scratch.** Do not defend it from the notes —
+  the notes are what you're checking.
+
+Grep `LEDGER.md` for the *facts*. Re-derive the *verdicts*.
 
 ### 1.2 Cost the card out in *this deck's* mana before comparing anything
 
@@ -105,9 +139,19 @@ Scarlet Witch build stalled for a full pass trying. What works:
 1. Assign **target slot counts per role** (lands / ramp / draw / removal / protection / payoffs).
 2. Count what's actually in each role.
 3. **Only compare cards within an over-subscribed role.**
+4. **Rank every card in that role, in a table, before naming a cut.**
 
 This immediately isolated win conditions (11 against a target of 8) as the sole bloated role and
 made every cut obvious. Use it every time a deck is over the limit.
+
+**Step 4 is not optional.** Nominating one card out of a group is how the wrong one gets cut.
+Edgar had four Vampire lords; Stromkirk Captain was nominated for the cut without Markov Baron ever
+being put beside it. Side by side the answer flips — Stromkirk grants **the whole team first
+strike**, while Baron's lifelink is on itself alone and its madness is dead in a deck with no
+discard outlet. The real (unstated) reason for the nomination was *castability*, not power.
+
+The table has one row per card in the role and one column per rider, scored **against the current
+list**. If a rider needs an enabler, write down whether that enabler is in the deck right now.
 
 ### 2.2 Measure the field before committing to an archetype
 
@@ -152,8 +196,11 @@ Every deck carries the same documentation shape (see `decks/README.md` for the f
 non-obvious parts:
 
 - **`research/decisions.md`** is append-only. Never rewrite history; add a dated entry. Include
-  what was **rejected and why**, not just what was taken — the rejections are what stops the same
-  card being re-litigated in three weeks.
+  what was **rejected and why**, not just what was taken. Record the rejection as **the grounds,
+  not the verdict** — *"passed because the deck had 6 sac outlets and 21 cards at MV4+"* beats
+  *"passed, do not re-litigate."* Grounds can be re-checked; a bare verdict can only be obeyed.
+  **Never write "do not re-litigate."** Per §1.1b the next reader's job is to re-derive, and the
+  entry's value is handing them the grounds to test.
 - **`SIDEBOARD.md`** carries the "displaces" card for every entry, so a swap is never ambiguous.
 - **`research/gameplan.md`** is for the pilot: hold-lists, sequencing, scenarios.
   **`research/formulas.md`** is for the math.
@@ -198,5 +245,6 @@ Rules for the ledger:
 - **One fact per entry.** No omnibus entries.
 - **Cite or don't claim.** An entry with no CR number, no oracle quote, and no measurement is a
   hunch, and hunches are what this file exists to replace.
-- If `LEDGER.md` passes ~600 lines, split it into `rulings.md` / `patterns.md` / `corrections.md`
-  and leave `LEDGER.md` as an index.
+- If `LEDGER.md` passes ~2000 lines, split it into `rulings.md` / `patterns.md` / `corrections.md`
+  and leave `LEDGER.md` as an index. Until then it stays one greppable file — splitting early costs
+  more (three files to search, an index to keep honest) than a long file does.

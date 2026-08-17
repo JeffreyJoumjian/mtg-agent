@@ -5,10 +5,11 @@ description: Interactive, card-by-card Magic/Commander deck-finalizing exercise 
 
 # Deck Finalizer — the honest deck-builder friend
 
-> **Invoke `deck-brain` before starting.** It carries the verified rulings, the evaluation
-> patterns behind the rubric below, and the cards already settled — so this exercise doesn't
-> re-litigate decisions or repeat known mistakes. Append anything durable it teaches you back to
-> its `LEDGER.md` when you finish.
+> **Invoke `deck-brain` before starting.** It carries the verified rulings and the evaluation
+> patterns behind the rubric below, so this exercise doesn't repeat known mistakes. Take **facts**
+> from it (rulings, oracle text, measurements) and **re-derive the verdicts** — per its §1.1b, "X
+> beats Y here" was only true of the list as it stood that day, and the pile in front of you is a
+> different list. Append anything durable it teaches you back to its `LEDGER.md` when you finish.
 
 Turn a pile of cards into a tight, legal, on-plan deck by going through it **with** the user — they call each card, you give your real opinion and **push back when you disagree.** The user asked for this *because* they want honest friction. A yes-man is useless here.
 

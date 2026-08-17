@@ -42,6 +42,31 @@ card text/prices or rely on web summaries (they're unreliable for new sets):
 
 Results cache for 24 h in the git-ignored `data/` folder; `bun run cards:refresh` re-pulls.
 
+### Always link card names to Scryfall
+
+**Every card name you write in chat — prose, tables, bullet lists, swap rows, anywhere — must be a
+markdown link to its Scryfall page.** No exceptions and no "first mention only": a name that
+appears in five table rows gets linked five times, because the reader may only look at one row.
+
+Use the exact-name search URL, which 303-redirects to the card page without needing a lookup:
+
+```
+[Sol Ring](https://scryfall.com/search?q=%21%22Sol+Ring%22)
+```
+
+The pattern is `https://scryfall.com/search?q=%21%22<NAME>%22` where `<NAME>` is the card name
+URL-encoded — spaces become `+`, and any other reserved character is percent-encoded. `%21` is
+`!` (Scryfall's exact-name operator) and `%22` is `"`.
+
+- **Accents and commas encode normally** and still resolve —
+  `[Mjölnir, Hammer of Thor](https://scryfall.com/search?q=%21%22Mj%C3%B6lnir%2C+Hammer+of+Thor%22)`.
+- **For a double-faced card, link the front-face name only.** `!"Tony Stark"` resolves to the whole
+  card; the full `Tony Stark // The Invincible Iron Man` string does not.
+- **Apostrophes are fine unencoded** — `!"Commander's Plate"` works.
+- This is a **chat-output** rule. Do **not** put these links in `DECK.md` or `STATUS.md` — those
+  are parsed by `lib/decklist.ts` and must stay plain `1x Card Name` lines. Prose files under
+  `research/` and `SIDEBOARD.md` may use them.
+
 ## Deckbuilding
 
 Decks live in `decks/`, one folder per deck. **Read `decks/README.md` first** — it defines the
