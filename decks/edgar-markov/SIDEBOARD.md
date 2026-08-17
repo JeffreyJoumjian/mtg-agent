@@ -95,10 +95,35 @@ races — check this before adding another painland or fetch.
 
 ---
 
+## A2. Cut in the 2026-08-06 vampire upgrade pass
+
+Full evaluation of the 45-card candidate pool: `research/vampire-candidates-2026-08-06.md`.
+
+| Card | Cost | What it does | Why cut | Replaced by | Own |
+|---|---|---|---|---|---|
+| **Cathars' Crusade** | `{3}{W}{W}` | Creature you control enters → +1/+1 counter on each creature you control | Pilot's call, and it uses the downsides recorded when it was added: **zero impact the turn it lands**, wipes erase the counters, fiddliest card in the deck to track. Also **not a Vampire** — misses the lords, eminence, Sanctum Seeker, Olivia's Wrath *and* both cost reducers. Was one of only two `{W}{W}` cards; white pips 20 → 18 | Anowon, the Ruin Sage | ✅ |
+| **Sorin, Imperious Bloodlord** | `{2}{B}` | +1 deathtouch/lifelink + counter · +1 sac a Vampire for 3 · **−3 put a Vampire from hand onto the battlefield** | The `−3` was the whole justification (*"cheats the deck's heavy 5-drop tier — 8 cards — into play"*) and **that tier no longer exists**: two legal targets remain above MV4. Worse, `−3` puts the Vampire in **without casting it, so no eminence token** | Tainted Remedy | ✅ |
+| **Vampire of the Dire Moon** | `{B}` | 1/1 deathtouch lifelink | The only genuinely vanilla card in the list. Its job — a cheap lifelink body to rebuild the life floor — is what Sangromancer was added to do properly | Sangromancer | 🛒 |
+
+| **Markov Baron** | `{2}{B}` | 2/2. Convoke, lifelink, other Vampires +1/+1, madness `{2}{B}` | **Weakest of the four Vampire lords once they were ranked side by side** (they never had been). Its lifelink is on **itself only**; its **madness is dead** — the deck has no discard outlet; convoke saves 1–2 mana and only using untapped creatures you weren't attacking with. Stromkirk Captain grants the **whole team** first strike; Captivating Vampire's steal is **removal** (steal → sacrifice to a free outlet) | Vengeful Bloodwitch | 🛒 |
+
+**Bring back if:** the deck ever drops back to ≤1 anthem and wants a counter engine → **Cathars' Crusade**.
+If the top end grows again (three or more Vampires at MV5+) → **Sorin** becomes live again.
+If Vampire anthems ever fall below 4 → **Markov Baron** is the cheapest way back, and it's mono-black.
+
+⚠️ **Watch Dusk Legion Duelist.** It was kept in Phase 2b *specifically because* Cathars' Crusade
+turned on its once-a-turn draw. Cordial Vampire, Indulgent Aristocrat and Edgar's attack trigger
+still feed it, but it is meaningfully worse now and is the leading next cut.
+
+---
+
 ## B. Standing situational sideboard
 
 | Card | Cost | What it does | Bring in when | Own |
 |---|---|---|---|---|
+| **Patron of the Vein** | `{4}{B}{B}` | 4/4 flier. ETB destroy a creature an opponent controls. Opponents' creatures that die are **exiled** and every Vampire gets a `+1/+1` counter | Grindy or creature-heavy pods, and **against recursion decks** (the exile clause is the best graveyard hate in the pool). Pairs with Anowon: their forced sacrifice becomes +3/+3 on your whole board per turn cycle. Held out of the 100 only on curve — it would be the deck's third card at MV6 | 🛒 |
+| **Indulging Patrician** | `{1}{W}{B}` | 1/4 flying lifelink. End step, if you gained 3+ life this turn, **each opponent loses 3** | You need a passive clock that doesn't require attacking, or a real blocker while you stabilise. 9 to the table per turn — **18** with Bloodletter, **36** with Roaming Throne + Bloodletter | 🛒 |
+| **Elenda's Hierophant** | `{2}{W}` | 1/1 flier. `+1/+1` counter whenever you gain life. Dies → **X 1/1 lifelink Vampire tokens**, X = its power (anthems included, **doubled by Elspeth**) | Token/ETB-payoff pods where Warleader's Call, Purphoros and Mirkwood Bats can convert the death payout into a kill. Needs a sac outlet to cash in | 🛒 |
 | **Drana and Linvala** | `{1}{W}{W}{B}` | 3/4 flier. Opponents' creatures' **activated abilities can't be activated** — and she has all of them | Facing an ability-tribal / equipment / activated-combo deck | ❓ |
 | **Boros Charm** | `{R}{W}` | Modal: 4 dmg to a player · **all your permanents indestructible** · double strike | Wipe-heavy pods. Note it protects *permanents*, not just creatures | ❓ |
 | **Coat of Arms** | `{5}` | Each creature +1/+1 per other creature sharing a type | You're the only tribal deck at the table. **Symmetrical** — never vs another tribal deck | ❓ |
@@ -166,10 +191,10 @@ Full reasoning in `research/swaps.md`. Ranked within tier.
 - **Glass-Cast Heart** `{2}{B}` — Blood on Vampire attack; `{B}`,`{T}`, pay 1: 1/1 lifelink Vampire token.
 - **Door of Destinies** `{4}` — counter per Vampire **cast**, +1/+1 each. Quadratic; nothing on turn 1.
 - **Patchwork Banner** `{3}` — Vampires +1/+1 **and** taps for any color.
-- **Creeping Bloodsucker** `{1}{B}` — upkeep: 1 damage to each opponent, gain that much.
+- ~~**Creeping Bloodsucker**~~ — re-evaluated 2026-08-06 and **rejected**: 3 damage a turn loses to
+  every card in the MV2 band, and $5 is poor value for it.
 - **Forerunner of the Legion** `{2}{W}` — ETB tutor a Vampire to the **top** (not hand).
-- **Patron of the Vein** `{4}{B}{B}` — ETB destroy a creature; opponents' creatures that die are
-  **exiled** and every Vampire gets a counter. Removal + graveyard hate + pump, but 6 mana.
+- ~~**Patron of the Vein**~~ — **resolved 2026-08-06: now in the standing sideboard (§B).**
 - **And They Shall Know No Fear** `{1}{W}` — chosen type gets +1/+0 and **indestructible**, instant.
 
 ### Tier 3 — real cards, wrong deck or wrong cost

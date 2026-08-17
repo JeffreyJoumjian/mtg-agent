@@ -27,8 +27,7 @@ colourless does not.
 
 ## Ramp — rocks, rituals and cost reduction (14)
 
-1x Sol Ring — BUY ($1.43) · 1x Arcane Signet — BUY ($0.43)
-1x **The Fire Crystal — BUY ($6.18)** ← second Ruby Medallion; {R}{R} floor, so 3 mana in practice
+1x Sol Ring — BUY ($1.43) · 1x Arcane Signet — BUY ($0.43) · 1x Mind Stone — BUY ($0.35)
 1x Ruby Medallion — 💰 PROXY ($13.16) · 1x Tablet of Discovery — BUY ($1.94)
 1x Pyromancer's Goggles — BUY ($0.41) · 1x Pyretic Ritual — BUY ($5.17)
 1x Desperate Ritual — BUY ($6.77) · 1x Seething Song — 💰 PROXY ($12.55)
@@ -82,8 +81,7 @@ colourless does not.
 
 ## Win Conditions (10)
 
-1x Crackle with Power — BUY ($7.06)
-1x **Iron Man, Tony Stark — BUY ($4.24)** ← 2/1 flier per red spell; third win axis
+1x Crackle with Power — BUY ($7.06) · 1x Apex of Power — BUY ($0.98)
 1x Chandra's Ignition — BUY ($6.63) · 1x Thor, God of Thunder — 💰 BUY ($13.23)
 1x Longshot, Rebel Bowman — 💰 BUY ($8.75) · 1x Storm King's Thunder — BUY ($4.62)
 1x Electrodominance — BUY ($0.43) · 1x Fiery Inscription — BUY ($0.43)
@@ -119,14 +117,6 @@ Castle Embereth ($0.31) · **Artist's Talent ($5.50)** · **Gauntlet of Power ($
 **Out of the deck** (now in `SIDEBOARD.md`): Pirate's Pillage · Solphim, Mayhem Dominus ·
 Cori Mountain Monastery · Scavenger Grounds · Demolition Field · Sokenzan, Crucible of Defiance ·
 Monstrous Rage · Bolt Bend · Improvisation Capstone
-
-## Changed 2026-08-07 — buy these
-
-**The Fire Crystal ($6.18)** — in for **Mind Stone**. A second Ruby Medallion; Mind Stone was the
-last pure-colourless rock and its mana doesn't bank under Electro or Ashling.
-**Iron Man, Tony Stark ($4.24)** — in for **Apex of Power**. Apex adds its ten mana *only if cast
-from hand*, so it was dead off Past in Flames / Mizzix's Mastery, and its exile window ends the same
-turn. Seething Song nets the same +4 mana for 1 mana instead of 6.
 
 ## Changed 2026-08-06 — buy this
 

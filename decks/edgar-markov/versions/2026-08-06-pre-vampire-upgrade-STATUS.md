@@ -63,9 +63,8 @@ Bracket 3 · 3/3 Game Changers · no infinite combos · 100 cards
 1 Plumb the Forbidden 🛒 BUY ($0.36)
 1 Scheming Silvertongue 🛒 BUY ($1.05)
 
-## Removal (6)
+## Removal (5)
 
-1 Anowon, the Ruin Sage 🛒 BUY ($2.70) — recurring one-sided edict each upkeep
 1 Chaos Warp ✅
 1 Generous Gift ✅
 1 Path to Exile ✅
@@ -82,13 +81,14 @@ Bracket 3 · 3/3 Game Changers · no infinite combos · 100 cards
 1 Akroma's Will ✅
 1 Teferi's Protection 💰 PROXY ($50.60) — Game Changer 2/3
 
-## Theme / Synergy — Vampires & Payoffs (39)
+## Theme / Synergy — Vampires & Payoffs (40)
 
 1 Blade of the Bloodchief 🛒 BUY ($5.18)
 1 Blood Artist ✅
 1 Bloodletter of Aclazotz ✅
 1 Bloodline Keeper ✅
 1 Captivating Vampire ✅
+1 Cathars' Crusade ✅ (was sideboard)
 1 Charismatic Conqueror 🛒 BUY ($22.35)
 1 Clavileño, First of the Blessed ✅
 1 Cordial Vampire ✅
@@ -103,6 +103,7 @@ Bracket 3 · 3/3 Game Changers · no infinite combos · 100 cards
 1 Legion Lieutenant ✅
 1 Malakir Bloodwitch ✅
 1 Marauding Blight-Priest 🛒 BUY ($0.32)
+1 Markov Baron 🛒 BUY ($0.35)
 1 Master of Dark Rites 🛒 BUY ($3.53)
 1 Mirkwood Bats ✅
 1 Nullpriest of Oblivion ✅
@@ -110,15 +111,14 @@ Bracket 3 · 3/3 Game Changers · no infinite combos · 100 cards
 1 Purphoros, God of the Forge ✅
 1 Roaming Throne ✅
 1 Sanctum Seeker ✅
-1 Sangromancer 🛒 BUY ($0.85) — life floor; gain 3 per opponent creature death
 1 Sanguine Bond ✅
 1 Shared Animosity ✅
+1 Sorin, Imperious Bloodlord ✅
 1 Stromkirk Captain ✅
-1 Tainted Remedy 🛒 BUY ($8.90) — answers the lifegain decks in the pod
 1 Twilight Prophet ✅
+1 Vampire of the Dire Moon 🛒 BUY ($1.20)
 1 Vampire Socialite ✅
 1 Vein Ripper ✅ (was sideboard)
-1 Vengeful Bloodwitch 🛒 BUY ($0.26) — 5th aristocrats drain; 5th Blight-Priest trigger per death
 1 Viscera Seer ✅
 1 Vito, Thorn of the Dusk Rose ✅
 1 Warleader's Call 🛒 BUY ($5.60)

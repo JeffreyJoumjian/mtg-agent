@@ -17,8 +17,9 @@
 >
 > **Kept because nothing else has it:** the **sample frequencies for rejected cards** (`X/11`) —
 > `SIDEBOARD.md` records what left and why but carries no field data — and the four
-> **"cut on principle"** groupings, whose verdicts all still stand and are the reason we don't
-> re-litigate the pinger package or the equipment suite every few weeks.
+> **"cut on principle"** groupings — kept for the *grounds* they record (what the package needed
+> and why the deck couldn't supply it), not as closed verdicts. Re-test them whenever the list
+> changes enough that those grounds might no longer hold.
 
 Every card that appears in **2 or more** of the 11 Scarlet Witch sample decks but is **not** in
 `DECK.md` or `DECK-B4.md`, with why. This is the agenda for the card-by-card pass — argue with any

@@ -8,9 +8,8 @@ Bracket: 3 (high) · Game Changers: 3/3 · Total: 100 · Research: research/samp
 >
 > **Gameplan:** ramp and ritual into instants/sorceries of mana value 4+, which The Scarlet Witch
 > discounts by her power. Grow her power mid-turn (Livaan, Cait Sith, Blazing Shoal) so each
-> haymaker makes the next one cheaper, then close with Crackle with Power, Jaya's Immolating
-> Inferno, or Chandra's Ignition pointed at a pumped commander. Iron Man adds a third, slower
-> route: a 2/1 flier per red spell, and Fiery Emancipation **triples combat damage too**.
+> haymaker makes the next one cheaper, then close with Crackle with Power, Apex of Power, or
+> Chandra's Ignition pointed at a pumped commander.
 >
 > **Sequencing note:** on a Neheb turn, burn in your *precombat* main, then collect {R} per point
 > of life your opponents lost at the start of your *postcombat* main and cast the X-spell there.
@@ -40,7 +39,7 @@ Bracket: 3 (high) · Game Changers: 3/3 · Total: 100 · Research: research/samp
 
 1x Sol Ring
 1x Arcane Signet
-1x The Fire Crystal
+1x Mind Stone
 1x Ruby Medallion
 1x Tablet of Discovery
 1x Pyromancer's Goggles
@@ -116,7 +115,7 @@ Bracket: 3 (high) · Game Changers: 3/3 · Total: 100 · Research: research/samp
 ## Win Conditions (10)
 
 1x Crackle with Power
-1x Iron Man, Tony Stark
+1x Apex of Power
 1x Chandra's Ignition
 1x Thor, God of Thunder
 1x Longshot, Rebel Bowman
@@ -168,7 +167,3 @@ sideboard entry names the card it displaces.
 - **Hexproof and protection both fail against wraths** — a wrath neither targets nor deals damage.
   Your real answers are Mithril Coat held up at instant speed, and Tyrite Sanctum's indestructible
   counter.
-- **Reductions only eat the GENERIC part of a cost.** A "{1} less" effect can never touch a coloured
-  pip, so the floor of any spell is its coloured requirement. The Fire Crystal at {2}{R}{R} has only
-  {2} of generic — Ruby and Longshot take it to {R}{R} and **Artist's Talent L2 then does nothing**.
-  Count the generic symbols before stacking reducers (see `research/formulas.md`).

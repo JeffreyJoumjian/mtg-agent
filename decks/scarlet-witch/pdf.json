@@ -8,23 +8,23 @@
     ],
     [
       "Instants/Sorceries",
-      "38"
+      "37"
     ],
     [
       "Discounted (MV 4+)",
-      "25"
+      "24"
     ],
     [
       "X-spells",
-      "6"
+      "7"
     ],
     [
       "Creatures",
-      "14"
+      "16"
     ],
     [
       "Avg MV",
-      "3.57"
+      "3.52"
     ],
     [
       "Mana engines",
@@ -318,12 +318,40 @@
       },
       "why": "Defence was the deck's one structural weakness and Kazuul is the only fix that produces blockers WHEN YOU NEED THEM — the trigger resolves during declare attackers, so the 3/3 Ogres can block that same combat. Either they pay {3} per attacker or you build a board; both are good. Abrade is mana value 2 so Wanda never discounts it, and 3 damage kills very little in Commander. Note: your own Chandra's Ignition kills Kazuul once Wanda's power is 4+.",
       "back": "Artifact-heavy pods, or tables of small utility creatures worth killing at instant speed."
+    },
+    {
+      "in": {
+        "name": "The Fire Crystal",
+        "cost": "{2}{R}{R}",
+        "text": "Red spells you cast cost {1} less. Creatures you control have haste. {4}{R}{R}, {T}: copy a creature you control until end of turn."
+      },
+      "out": {
+        "name": "Mind Stone",
+        "cost": "{2}",
+        "text": "{T}: Add {C}. {1}, {T}, Sacrifice: Draw a card."
+      },
+      "why": "A SECOND Ruby Medallion — word-for-word the same reduction line. Cost reducers are the one category where redundancy is unambiguously right: they stack additively and never blank each other. NOTE only {2} of its cost is generic, so Ruby + Longshot take it to {R}{R} and Artist's Talent L2 then does nothing — it is 3 mana in practice, never 1. Mind Stone was the last pure-colourless rock and its mana does NOT bank under Electro or Ashling.",
+      "back": "If the curve feels top-heavy — this trades a two-drop for a three-drop."
+    },
+    {
+      "in": {
+        "name": "Iron Man, Tony Stark",
+        "cost": "{3}{R}{R}",
+        "text": "3/3 flying. Attacking creatures you control get +1/+0. Whenever you cast a RED spell, create a 2/1 colorless Robot Hero artifact creature token with flying."
+      },
+      "out": {
+        "name": "Apex of Power",
+        "cost": "{7}{R}{R}{R}",
+        "text": "Exile the top seven cards; you may cast them until end of turn. If cast from your HAND, add ten mana of any one color."
+      },
+      "why": "Apex adds its ten mana ONLY if cast from hand, so it was dead off Past in Flames / Mizzix's Mastery / Will of the Jeskai in a deck built to recur sorceries. Seething Song nets the same +4 mana for 1 mana instead of 6. Its exile window also ends THAT TURN, where every other impulse effect here lasts until the end of your next turn — that is what cost a real game. Iron Man is a third win axis: a 2/1 flier per red spell, and Fiery Emancipation triples COMBAT damage too (six Robots = 12 -> 36).",
+      "back": "If you want the widest single dig and accept losing whatever you can't cast."
     }
   ],
   "upgrades": [
     {
       "title": "Bracket 4 upgrade path",
-      "intro": "Swap these 15 and the Bracket 3 list becomes the Bracket 4 list in DECK-B4.md — 85 cards stay the same. The fair mana base becomes a fast one and Underworld Breach turns the graveyard into a second hand. Everything costing 5+ that isn't a payoff comes out. Game Changers go from 3 to 10, which is legal at Bracket 4 and NOT at Bracket 3.",
+      "intro": "Swap these 16 and the Bracket 3 list becomes the Bracket 4 list in DECK-B4.md — 84 cards stay the same. The fair mana base becomes a fast one and Underworld Breach turns the graveyard into a second hand. Everything costing 5+ that isn't a payoff comes out. Game Changers go from 3 to 10, which is legal at Bracket 4 and NOT at Bracket 3.",
       "labels": [
         "B4",
         "B3"
@@ -539,6 +567,20 @@
           },
           "why": "Five mana of pure defence is the wrong shape for a list that intends to be dead or victorious before anyone's attack step matters. B4 wants the cheap instant back.",
           "back": "If B4 games are going long enough that you're being attacked at all."
+        },
+        {
+          "in": {
+            "name": "Apex of Power",
+            "cost": "{7}{R}{R}{R}",
+            "text": "Exile top seven, cast them until end of turn. Ten mana if cast from hand."
+          },
+          "out": {
+            "name": "Iron Man, Tony Stark",
+            "cost": "{3}{R}{R}",
+            "text": "2/1 flier per red spell."
+          },
+          "why": "B4 has no time for a board that needs a turn cycle. NOTE: the from-hand-only clause that cut Apex from B3 arguably bites HARDER here, since this list is built around Underworld Breach recursion. Flagged as an open question.",
+          "back": "If B4 stops caring about its graveyard."
         }
       ]
     }
@@ -683,6 +725,21 @@
       "name": "Scavenger Grounds",
       "cost": "—",
       "when": "Graveyard hate, but symmetric — and YOUR graveyard feeds Past in Flames, Will of the Jeskai and Mizzix's Mastery. Colourless too. Displaces a Mountain only vs a dedicated graveyard deck."
+    },
+    {
+      "name": "Mind Stone",
+      "cost": "{2}",
+      "when": "IN for The Fire Crystal if you want the cheaper rock back. Colourless, so it does not bank under Electro or Ashling."
+    },
+    {
+      "name": "Apex of Power",
+      "cost": "{7}{R}{R}{R}",
+      "when": "IN for Iron Man. Widest single dig in the pool, but adds mana ONLY from hand and anything uncast is exiled permanently."
+    },
+    {
+      "name": "Runaway Steam-Kin",
+      "cost": "{1}{R}",
+      "when": "Cheapest engine in the pool. Rate matches Electro (1 mana per spell) — the old 'caps at three' objection was wrong. Out on fragility: a 1/1 that dies to your own Fiery Confluence."
     }
   ],
   "appendix": [

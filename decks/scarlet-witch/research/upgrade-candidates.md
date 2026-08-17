@@ -155,12 +155,24 @@ including Nykthos's devotion tap and Valakut's trigger.
 
 ### Known but not seated
 
-**Torbran, Thane of Red Fell** — {1}{R}{R}{R}, 2/4, $4.27. The version of Ojer that works:
-**additive**, so it nets +2 per instance even under Emancipation (opponent's best order is
-2 → 6 → 8, still better than 6), and it boosts damage to **permanents opponents control**, which
-turns Fiery Confluence's "1 damage to each creature" into a one-sided 3-to-theirs, 1-to-ours
-sweeper. Not seated only because it's a *second* damage booster in a role trimmed to one.
-**Revisit trigger:** a game where Longshot/Inscription chip is what kills the table, not an X-spell.
+**Torbran, Thane of Red Fell** — {1}{R}{R}{R}, 2/4, $4.27.
+
+> **Corrected 2026-08-07.** This entry originally called Torbran "the version of Ojer that works,"
+> which framed it as filling a gap. It isn't. **Artist's Talent Level 3 — already in the deck —
+> reads *"if a source you control would deal noncombat damage to an opponent or a permanent an
+> opponent controls, it deals that much damage plus 2 instead."*** Torbran's only differences are
+> that it covers *combat* damage and restricts to *red* sources. In a mono-red deck that never
+> attacks, **those are the same card.** Torbran would be a second copy, not a first.
+
+The mechanical facts still stand and are worth keeping: an **additive** booster nets +2 per instance
+even under Fiery Emancipation (the opponent's best ordering is 2 → 6 → 8, still better than 6), and
+it boosts damage to **permanents opponents control**, which turns Fiery Confluence's "1 damage to
+each creature" into a one-sided 3-to-theirs, 1-to-ours sweeper.
+
+**What that means in practice:** two additive boosters *do* stack (+2 and +2 = +4, neither has a
+threshold), so Torbran isn't worthless — and Artist's Talent needs 9 total mana to reach Level 3, so
+redundancy for an expensive unlock is a real argument. But it's redundancy, not a gap.
+**Revisit trigger:** a game where you reach Artist's Talent L3 and want a second copy of it.
 
 ---
 

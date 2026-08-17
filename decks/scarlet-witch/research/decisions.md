@@ -314,3 +314,71 @@ listed 22, `SIDEBOARD.md` claimed 20 and listed 26, `pdf.json` carried 24. The `
 drifted worst — it still listed **Fiery Emancipation and Hit the Mother Lode as sideboard cards**
 after both were moved into the 100 on 2026-08-04. `DECK.md`'s copy is now a pointer;
 **`SIDEBOARD.md` is the single source of truth**, and `pdf.json` is synced from it.
+
+## 2026-08-07 — The Fire Crystal + Iron Man in; Mind Stone + Apex out
+
+Snapshots: `versions/2026-08-07-b3-before-ironman.md` and `-STATUS.md`.
+
+### The Fire Crystal in, Mind Stone out
+
+The Fire Crystal's first line is **word-for-word Ruby Medallion** — *"Red spells you cast cost {1}
+less to cast."* Cost reducers are the one category where redundancy is unambiguously correct: they
+stack additively and can never blank each other, unlike multipliers.
+
+**Correction, caught by the pilot:** I first claimed it could cost 1 mana. It can't. **Reductions
+only eat the generic portion of a cost** — `formulas.md` line 30 already said *"generic portion
+only"* and I ignored it. {2}{R}{R} has just {2} of generic, so Ruby and Longshot take it to
+{R}{R} and **Artist's Talent L2 then does nothing.** Floor is 2; realistically **3 mana**.
+
+Ramp was ranked whole before naming a cut. **Mind Stone came last**: the only pure-colourless rock
+left, and colourless doesn't bank under Electro or Ashling. Accepted cost — this trades a two-drop
+for a three-drop; Ruby Medallion already holds the cheap-reducer slot.
+
+### Iron Man in, Apex of Power out
+
+Iron Man makes a **2/1 flier per red spell** — the broadest trigger of any token maker in the pool,
+and permanent tokens rather than end-step sacrifices. The reason it's a real win condition and not
+win-more: **Fiery Emancipation has no noncombat restriction**, so it triples *combat* damage too.
+Six Robots is 12 power, **36 with Emancipation**. Note the asymmetry — Artist's Talent L3 *is*
+noncombat-only, so it does **not** pump them.
+
+**Apex of Power was the cut, and its own text made the case:**
+
+- *"If this spell was cast from your **hand**, add ten mana."* From the graveyard it adds **zero** —
+  dead off Past in Flames, Mizzix's Mastery and Will of the Jeskai, in a deck built to recur.
+- **Seething Song nets the same +4 mana for 1 mana instead of 6** (Song is MV 3, so Wanda doesn't
+  apply; Apex is 10 − 2 − 1 − 1 = 6 and adds 10).
+- Its exile window ends **that turn**. Every other impulse effect in the deck — Commune with Lava,
+  Ignite the Future, Hex Magic, Wiccan — runs until the end of your *next* turn. Apex is the only
+  one with a same-turn deadline, which is the mechanism that cost a real game, not bad luck.
+
+What was genuinely lost: the only big-mana card **not contingent on the table** (Mana Geyser needs
+tapped opponent lands, Brass's Bounty scales with your lands, Jeska's Will with their hand), and the
+widest single dig. Judged acceptable because at 6 mana you already need the board that turns those
+conditional cards on.
+
+### Kazuul stays; dropping a Mountain was rejected
+
+**Blackblade Reforged is the decisive number** — *"+1/+1 for each land you control."* At 33 lands
+that's +33/+33 on Wanda, and her power **is** the discount, so **every land cut is one more mana on
+every MV 4+ spell.** Add Valakut needing *"at least five other Mountains"*, Gauntlet of Power
+doubling **basics** only, Brass's Bounty scaling per land, and red banking so an untapped Mountain
+is never dead. (Correction: **Nykthos scales off devotion, not lands** — neutral here.)
+
+### Sideboard hygiene
+
+Two "Displaces" pointers went stale the moment this swap landed — Call Forth the Tempest pointed at
+Apex and Fellwar Stone at Mind Stone, both now out of the deck. Repointed to Brass's Bounty and
+Arcane Signet. **Runaway Steam-Kin moved from hard cut to sideboard** with corrected grounds, and
+**Thought Vessel** was hard-cut (strictly worse than Mind Stone, which itself just lost its slot).
+
+### Stats were recomputed, not adjusted
+
+The PDF's *"Discounted (MV 4+) = 25"* reproduced under no definition — X-spells were being counted
+at X = 0. Now computed as instants/sorceries with MV 4+ **or** an {X} in the cost = **24**.
+Creatures corrected 14 → **16**; the hand-set figure had missed the Artifact Creatures.
+
+### Open question flagged, not changed
+
+**Bracket 4 still runs Apex**, and the from-hand-only clause bites *harder* there — that list is
+built around Underworld Breach recursion. Noted in `DECK-B4.md`; not changed without a decision.

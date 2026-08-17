@@ -8,14 +8,14 @@ Companion to `DECK.md`. Two tiers:
 `DECK.md` is at **exactly 100**, so anything you promote from here needs a matching cut. The
 "Displaces" column is my recommendation for each.
 
-Finalized 2026-08-02. Last updated 2026-08-06 (Kazuul in, Abrade out).
+Finalized 2026-08-02. Last updated 2026-08-07 (The Fire Crystal + Iron Man in; Mind Stone + Apex out).
 
 **This file is the single source of truth for the sideboard.** `DECK.md` used to carry a second
 copy and the two drifted apart; that copy is now just a pointer here.
 
 ---
 
-## Sideboard (28)
+## Sideboard (31)
 
 ### Table-dependent — bring in for specific pods
 
@@ -37,7 +37,7 @@ copy and the two drifted apart; that copy is now just a pointer here.
 | **Pirate's Pillage** | Word-for-word identical to Big Score at the same cost, but a **sorcery** instead of an instant. Third copy of an effect already run twice. | Big Score |
 | **Solphim, Mayhem Dominus** | Doubles instead of triples, and it's a **creature** — dies to the removal every deck has, where an enchantment doesn't. Its indestructible costs {1} + 4 life + **discarding two cards**, and doesn't stop exile. | Fiery Emancipation |
 | **Comet Storm** | Redundant with Crackle with Power. | Electrodominance |
-| **Call Forth the Tempest** | Eight mana and the cascade is random. | Apex of Power |
+| **Call Forth the Tempest** | Eight mana and the cascade is random. | Brass's Bounty |
 | **Wild Ricochet** | Fourth redirect effect behind Deflecting Swat, Bolt Bend and Return the Favor. | Untimely Malfunction |
 | **Double Vision** | Five mana to copy one spell per turn. | Repeated Reverberation |
 | **Blazing Crescendo** | Outclassed by Monstrous Rage — same +3/+1 for half the mana, and Rage leaves a permanent +1/+1 Role. | Monstrous Rage |
@@ -51,8 +51,11 @@ copy and the two drifted apart; that copy is now just a pointer here.
 | **Improvisation Capstone** | Paradigm is real recurring value, but it strip-mines your **library** every turn and anything you don't cast **stays exiled**. Its free-cast also forces **X = 0**. Same failure that cost a game to Apex, but repeating. | Arcane Bombardment |
 | **Bolt Bend** | Usually just {R} with a 4-power creature, but **redirect only**. Return the Favor can copy *opponents'* spells and abilities, which nothing else in the deck does. | Return the Favor |
 | **Monstrous Rage** | Smallest pump. The repeatable ones (Livaan, Cait Sith) and the free one (Blazing Shoal) all stay. | Blackblade Reforged |
-| **Fellwar Stone** | In mono-red it often can't produce {R} at all, and we have {R}{R} and {R}{R}{R} costs throughout. | Mind Stone |
+| **Fellwar Stone** | In mono-red it often can't produce {R} at all, and we have {R}{R} and {R}{R}{R} costs throughout. | Arcane Signet |
 | **Abrade** | Mana value 2, so **Wanda never discounts it**, and 3 damage kills very little in Commander. Traded a one-shot answer for a permanent one. Bring it back for artifact-heavy pods or tables of small utility creatures. | Kazuul, Tyrant of the Cliffs |
+| **Mind Stone** | The last pure-colourless rock. Its mana **doesn't bank** under Electro or Ashling, where every other source in the deck is red and does. Losing the sac-for-a-card is real, but there are 12 draw sources. | The Fire Crystal |
+| **Apex of Power** | Adds its ten mana **only if cast from hand**, so it was dead off Past in Flames, Mizzix's Mastery and Will of the Jeskai — in a deck built to recur sorceries. Seething Song nets the same **+4** for 1 mana instead of 6. And its exile window ends **that turn**, where every other impulse effect here lasts until the end of your *next* turn. Bring it back only if you want the widest single dig and don't mind the risk. | Iron Man, Tony Stark |
+| **Runaway Steam-Kin** | **Corrected 2026-08-07 — the old grounds ("caps at three counters") were wrong.** Over six red spells it accrues 3 → {R}{R}{R} → 3 → {R}{R}{R}, which is **1 mana per spell, identical to Electro**. The cap limits storage, not throughput. It's out on *fragility* — a 1/1 that dies to your own Fiery Confluence — and on lumpy {R}{R}{R} payouts you must remember to cash. In its favour: at {1}{R} it's the **cheapest engine in the pool** (Electro 3, Birgi 3, Ashling 4, Urabrask 4, The Vision 4, Neheb 5) and triggers on *red spells*, broader than Electro. | any per-spell engine |
 | **Crawlspace** | {3} artifact, "no more than two creatures can attack you each combat." Lost to Kazuul on price ($9.93 vs $0.34) and because it does nothing when nobody attacks. Its real edge: it's an **artifact**, so your own Fiery Confluence and Chandra's Ignition can't kill it — every creature-based defence plan folds to your own sweepers. **Silent Arbiter** ({4}, one attacker per combat) is the bigger version, but it's a 1/5 creature that your Ignition kills, and capping the whole table's attacks stops your opponents pressuring each other, leaving you the only target. | Kazuul, Tyrant of the Cliffs |
 
 ## Hard cut (12) — not coming back
@@ -61,7 +64,7 @@ copy and the two drifted apart; that copy is now just a pointer here.
 |---|---|
 | **Impact Tremors** | Creature-ETB payoff. We have 12 creatures and 44 instants/sorceries — about 5 damage a game against Fiery Inscription's 30+. |
 | **Whispersilk Cloak** | Grants **shroud**, which stops *us* targeting Wanda — it would turn off Livaan, Cait Sith, Blazing Shoal, Chandra's Ignition and Nova Flame. Actively anti-synergistic. |
-| **Runaway Steam-Kin** | Caps at three counters. Electro, Birgi, Urabrask and The Vision all add {R} per spell with no cap. |
+| **Thought Vessel** | {2} for {T}: add {C} plus no maximum hand size. **Mind Stone did the same job better** — same cost, same colourless mana, and it cashes in for a card. The hand-size clause is blank in a deck that empties its hand every turn, and colourless doesn't bank under Electro or Ashling. |
 | **Guttersnipe** | Three mana for 2 damage per instant/sorcery on a 2/2. Longshot does more and reduces costs. |
 | **Firebrand Archer** | Coruscation Mage without Offspring, and a 2/1 instead of a 2/2. |
 | **Electrostatic Field** | 1 damage per spell on a 0/4 defender. Too slow for a one-big-turn deck. |

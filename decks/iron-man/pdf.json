@@ -1,0 +1,178 @@
+{
+  "title": "Iron Man — Izzet Artifact Voltron",
+  "subtitle": "Tony Stark // The Invincible Iron Man · Bracket 3 (3.5 with Aggravated Assault) · 3/3 Game Changers · 100 cards",
+  "stats": [
+    [
+      "Lands",
+      "37"
+    ],
+    [
+      "Equipment",
+      "15"
+    ],
+    [
+      "Artifacts",
+      "41"
+    ],
+    [
+      "Sources",
+      "U23 / R22"
+    ],
+    [
+      "Game Changers",
+      "3/3"
+    ]
+  ],
+  "swaps": [
+    {
+      "in": {
+        "name": "Ultima Weapon",
+        "cost": "{7}",
+        "text": "Whenever equipped creature attacks, destroy target creature an opponent controls. Equipped creature gets +7/+7. Equip {7}"
+      },
+      "out": {
+        "name": "Sword of the Animist",
+        "cost": "{2}",
+        "text": "Equipped creature gets +1/+1. Whenever equipped creature attacks, search your library for a basic land, put it onto the battlefield tapped."
+      },
+      "why": "Cast {7} and equip {7} make it unplayable normally — which is why it belongs here: the commander deploys AND attaches it free. 5/5 becomes 12/12, and 24 with Mjolnir is lethal commander damage in one swing. Plus it kills a creature every attack, before blockers.",
+      "back": "Never. Sword of the Animist is a ramp sword in a deck that cheats artifacts in anyway."
+    },
+    {
+      "in": {
+        "name": "Roaming Throne",
+        "cost": "{4}",
+        "text": "Ward {2}. As this creature enters, choose a creature type. If a triggered ability of another creature you control of the chosen type triggers, it triggers an additional time."
+      },
+      "out": {
+        "name": "Auton Soldier",
+        "cost": "{4}{U}{U}",
+        "text": "May enter as a copy of any creature on the battlefield, except it isn't legendary, is an artifact, and has myriad."
+      },
+      "why": "Choose HERO. The back face is a Legendary Artifact Creature - Human Hero, so the combat trigger fires twice: two free artifacts a combat, both Equipment attached to the REAL commander. Also doubles Iron Man, Titan of Innovation (also a Human Hero). Auton Soldier tried the same job but per CR 201.5 the copy's trigger attaches gear to ITSELF, and commander damage only counts from your actual commander.",
+      "back": "Never."
+    },
+    {
+      "in": {
+        "name": "Champion's Helm",
+        "cost": "{3}",
+        "text": "Equipped creature gets +2/+2. As long as equipped creature is legendary, it has hexproof."
+      },
+      "out": {
+        "name": "Liquimetal Torque",
+        "cost": "{2}",
+        "text": "{T}: Add {C}. {T}: Target nonland permanent becomes an artifact in addition to its other types until end of turn."
+      },
+      "why": "The deck had ZERO hexproof; Commander's Plate covers only W/B/G, so blue and red removal walked straight through. Liquimetal Torque is 1/5 field, taps only for {C}, and its second ability is near-dead with no maindeck artifact removal. Talisman of Creativity was protected from this cut: 5/5 field and the only other rock making {U} or {R}.",
+      "back": "Alongside Vandalblast, for the turn-their-bomb-into-an-artifact line."
+    },
+    {
+      "in": {
+        "name": "Adaptive Omnitool",
+        "cost": "{2}",
+        "text": "Equipped creature gets +1/+1 for each artifact you control. Whenever equipped creature attacks, look at the top six cards; you may reveal an artifact card and put it into your hand."
+      },
+      "out": {
+        "name": "Sword of Hearth and Home",
+        "cost": "{3}",
+        "text": "Equipped creature gets +2/+2 and has protection from green and from white. Combat damage: blink a creature you own and fetch a basic."
+      },
+      "why": "+1/+1 per artifact is routinely +10/+10 here, and the attack trigger digs six for an artifact INTO HAND — exactly where the free-drop trigger wants it. 4/5 field vs 1/5.",
+      "back": "Against heavy green/white creature decks where the protection matters more than the size."
+    },
+    {
+      "in": {
+        "name": "Chaos Warp",
+        "cost": "{2}{R}",
+        "text": "The owner of target permanent shuffles it into their library, then reveals the top card. If it's a permanent card, they put it onto the battlefield."
+      },
+      "out": {
+        "name": "Reality Shift",
+        "cost": "{1}{U}",
+        "text": "Exile target creature. Its controller manifests the top card of their library."
+      },
+      "why": "The base had no clean answer to a resolved NONCREATURE permanent. Reality Shift also hands an opponent a 2/2 blocker, which is a real cost when your kill is a flier. 3/5 field vs 1/5.",
+      "back": "Never."
+    },
+    {
+      "in": {
+        "name": "Iron Man, Tony Stark",
+        "cost": "{3}{R}{R}",
+        "text": "Flying. Attacking creatures you control get +1/+0. Whenever you cast a red spell, create a 2/1 colorless Robot Hero artifact creature token with flying."
+      },
+      "out": {
+        "name": "Hulking Metamorph",
+        "cost": "{9}",
+        "text": "Prototype {2}{U}{U} - 3/3. May enter as a copy of an artifact or creature you control."
+      },
+      "why": "It is a Human HERO, so Roaming Throne naming Hero makes it the THIRD doubled trigger - two 2/1 flying artifact tokens per red spell, off 21 red spells. Each token is +1/+1 to the commander via Adaptive Omnitool, plus metalcraft, affinity and artifact count. Hulking Metamorph was 1/5 field, the weakest card in the 100. Artifact creature out, artifact creature in - creature count stays 10.",
+      "back": "Only if Roaming Throne leaves the deck; without the Throne it is a 5-drop competing with the flip turn."
+    },
+    {
+      "in": {
+        "name": "Volcanic Island",
+        "cost": "land",
+        "text": "Land - Island Mountain. ({T}: Add {U} or {R}.) No drawback: enters untapped, costs no life, and is still a fetch target."
+      },
+      "out": {
+        "name": "Bloodstained Mire",
+        "cost": "land",
+        "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Swamp or Mountain card, put it onto the battlefield, then shuffle."
+      },
+      "why": "Three of the four fetches only had one live half and no payoff behind them - the deck runs zero shuffle effects (no Sensei's Top, no Brainstorm), fixing is easy in two colours, and thinning is noise. Their only real cost mattered: Aettir and Priwen sets the commander's base P/T to your LIFE TOTAL, and the deck already bleeds from Ancient Tomb, Shivan Reef, Talisman and The One Ring. Fetches are the budget-agnostic way to smooth a manabase; remove the money constraint and you just play the best duals. Also swapped Wooded Foothills for Riverpyre Verge and Misty Rainforest for Sulfur Falls. Also added Scorched Geyser (enters tapped only if you control fewer than two basics - trivially met) over a basic Island. Sources went U21/R20 to U23/R22 with zero extra life paid.",
+      "back": "Never. Scalding Tarn STAYS - Volcanic Island is Island Mountain typed, so the Tarn is effectively a second Volcanic Island for 1 life, and singleton means that's the only way to run a second copy of your best dual."
+    }
+  ],
+  "sideboard": [
+    {
+      "name": "Master Transmuter",
+      "cost": "{3}{U}",
+      "when": "STRICT BRACKET 3: swap in for Aggravated Assault. Assault goes infinite with BOTH The Reaver Cleaver and Sword of Feast and Famine, which the commander attaches free."
+    },
+    {
+      "name": "Rogue's Passage",
+      "cost": "land",
+      "when": "Fliers and reach at the table. {4},{T} for unblockable is the guaranteed connection when trample isn't enough. Displaces Fomori Vault."
+    },
+    {
+      "name": "Vandalblast",
+      "cost": "{R}",
+      "when": "Another artifact deck in the pod. Overload {4}{R} is a one-sided wipe in the mirror. Displaces Galvanic Blast."
+    },
+    {
+      "name": "Padeem, Consul of Innovation",
+      "cost": "{3}{U}",
+      "when": "Targeted-removal-heavy pods. Hexproof for ALL your artifacts — the back face is an Artifact Creature, so it covers the commander. Costs a creature slot, which makes your own sweepers slightly worse. Displaces Insight Engine."
+    },
+    {
+      "name": "Darksteel Plate",
+      "cost": "{3}",
+      "when": "Heavy damage-based sweepers. Second indestructible source; makes your own Blasphemous Act fully one-sided. Displaces Champion's Helm."
+    },
+    {
+      "name": "Urza, Lord High Artificer",
+      "cost": "{2}{U}{U}",
+      "when": "Power upgrade that is NOT a Game Changer, so it stays bracket 3. Taps your artifacts for {U}, so it partly replaces a rock. Displaces Cursed Mirror."
+    },
+    {
+      "name": "Sword of Fire and Ice",
+      "cost": "{3}",
+      "when": "MAINDECKED — pilot note, not a sideboard card. Pro-red unattaches Mjolnir, The Reaver Cleaver and Embercleave (CR 702.16d), so they are mutually exclusive ON THE COMMANDER. Decline the combat trigger rather than deploying SoFI while Mjolnir is attached. Best home is Knuckles: double strike fires its trigger twice."
+    },
+    {
+      "name": "Lightning Greaves",
+      "cost": "{2}",
+      "when": "NEVER. Grants shroud — you could no longer equip anything else to your own commander. Same for Whispersilk Cloak."
+    },
+    {
+      "name": "Vision of Love",
+      "cost": "{1}{R}",
+      "when": "More instant-speed draw. Sacrifice an artifact (usually a Treasure) or discard, draw two. Lost to Insight Engine because that one's charge counters accumulate - {2} for 1 card, then 2, then 3. Displaces Big Score."
+    }
+  ],
+  "appendix": [
+    "research/gameplan.md",
+    "research/field-analysis.md",
+    "research/decisions.md"
+  ]
+}

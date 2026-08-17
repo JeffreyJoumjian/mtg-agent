@@ -478,6 +478,139 @@ further land cuts; the deck is at a sane 9 basics and shouldn't go much lower.
 
 ---
 
+## Phase 6 — VAMPIRE UPGRADE PASS (2026-08-06), APPLIED
+
+45 pilot-supplied candidates, all pulled with `bun run card`, grouped by function, compared only
+within role + MV band. Full ruling: `research/vampire-candidates-2026-08-06.md`. **3 of 45 landed.**
+
+Clearing checks: `is:gamechanger` run over the whole pool — **none are Game Changers** (Vein Ripper
+checked too and is not one), so Bracket 3 stays at **3/3**. No card in the pool is a *they lose →
+you gain* **static**, so **0 infinite pairings** are created and Vito / Sanguine Bond stay.
+
+### 23. Cathars' Crusade ↔ Anowon, the Ruin Sage
+`{3}{W}{W}` MV5 → `{3}{B}{B}` MV5, **4/3 Legendary Vampire Shaman**
+
+**Out (pilot's call).** Uses the downsides recorded when it was added: zero impact the turn it
+lands, wipes erase the counters, fiddliest card in the deck to track. Two more that had not been
+counted: it is **not a Vampire**, so it misses the lords, eminence, Sanctum Seeker, Malakir
+Bloodwitch, Olivia's Wrath **and** both cost reducers; and it was one of only **two** `{W}{W}` cards
+— cutting it leaves Elspeth alone there and drops white pips **20 → 18** against 21 sources.
+
+**In.** *"At the beginning of your upkeep, each player sacrifices a non-Vampire creature of their
+choice."* The deck's only **recurring** interaction — everything else is a one-shot except Dictate,
+which needs your creature to die first. One-sided here: Edgar, Yahenni (Aetherborn **Vampire**),
+Roaming Throne (*is* the chosen type) and the changeling Shapeshifter are all immune.
+
+Verified (CR 608.2d / 101.3 / 609.3): a player controlling only Vampires **sacrifices nothing** and
+can never substitute a Vampire.
+
+The real value is that it is an **engine for a cluster already in the deck**. Opponents' creatures
+dying feeds Blood Artist, Cordial Vampire, Vein Ripper, Elenda, Blade of the Bloodchief, Meathook
+and Yahenni — seven cards that were only situationally live. Anowon guarantees three such deaths per
+turn cycle, **doubled to six by Roaming Throne**, and **Dictate of Erebos compounds it** (your own
+forced sacrifice makes every opponent sacrifice again).
+
+⚠️ *Each player* includes **you**. Your non-Vampires: **Mirkwood Bats**, **Elspeth's Soldier
+tokens**, and Purphoros while red devotion ≥ 5. Feed it a Soldier token — that also triggers
+Mirkwood Bats. With no token, it eats Bats.
+
+### 24. Sorin, Imperious Bloodlord ↔ Tainted Remedy
+`{2}{B}` MV3 planeswalker → `{2}{B}` MV3 enchantment
+
+**Out.** Sorin was seated on 2026-07-31 because `−3` *"cheats the deck's heavy 5-drop tier (8 cards)
+into play."* **That tier no longer exists** — `−3` puts a *Vampire creature card* onto the
+battlefield, and the current list has **two** legal targets above MV4 (Malakir Bloodwitch, Vein
+Ripper). After Herald's Horn + Urza's Incubator it saves one mana at best. And per the ledger,
+`−3` **puts the Vampire in without casting it — no eminence token.** The marquee ability actively
+skips the deck's central engine.
+
+**In (pilot's call).** A **permanent** answer to the pod's lifegain decks — the pilot's
+longest-standing loss pattern, and the ledger's *"prefer the permanent answer when the role is
+structural."* Side benefit: it flips **Swords to Plowshares** from "exile it, they gain life" to
+"exile it, they **lose** that much." Stated plainly and accepted: it is a hoser, blank against
+non-lifegain pods, not a Vampire, and it misses both cost reducers.
+
+### 25. Vampire of the Dire Moon ↔ Sangromancer
+`{B}` MV1 → `{2}{B}{B}` MV4, **3/3 flying Vampire Shaman**
+
+**Out.** The only genuinely vanilla card in the list. Its job was a cheap lifelink body to rebuild
+the life floor, which is exactly what the card replacing it does properly.
+
+**In.** *"Whenever a creature an opponent controls dies, you may gain 3 life."* Rebuilds the life
+floor lost when Bloodthirsty Conqueror was cut. Each death is a **separate gain event**, so it feeds
+Marauding Blight-Priest, Vito and Sanguine Bond **per death**, not per turn — and Anowon, Dictate,
+Olivia's Wrath and Meathook all manufacture those deaths. `{2}{B}{B}` on a Vampire, so both
+reducers apply.
+
+### 26. Markov Baron ↔ Vengeful Bloodwitch
+`{2}{B}` MV3 → `{1}{B}` MV2, **1/1 Vampire Warlock**
+
+Applied after the pilot challenged swap 23's reasoning. **All four Vampire lords ranked side by
+side** — which had never been done — and the answer flipped:
+
+| Lord | Cost | Rider | Verdict |
+|---|---|---|---|
+| Legion Lieutenant | `{W}{B}` | none | cheapest, keep |
+| **Captivating Vampire** | `{1}{B}{B}` | Tap 5 Vampires: **steal a creature** | **Keep** — steal → **sacrifice** to a free outlet (Viscera Seer / Ashnod's Altar / Master of Dark Rites) is *unconditional removal* that also feeds every death trigger, and beats hexproof, indestructible and regeneration |
+| **Stromkirk Captain** | `{1}{B}{R}` | **Team first strike** | **Keep** — a real combat multiplier; 1/1 tokens kill blockers before taking damage back |
+| **Markov Baron** | `{2}{B}` | Lifelink **on itself only** · convoke · madness `{2}{B}` | **CUT** — madness is **dead** (no discard outlet in the deck); convoke saves 1–2 mana and only with untapped creatures you weren't attacking with |
+
+**In.** *"Whenever this creature or another creature **you control** dies, target opponent loses 1
+life and you gain 1 life."* The fifth aristocrats drain — and bigger than it looks, because
+**Marauding Blight-Priest counts life-gain *events*, not life points**. Each drain effect is its own
+event, so this is a **fifth Blight-Priest trigger per death**, plus a fifth feed into Vito and
+Sanguine Bond. One sacrifice goes from 4 drain triggers to 5.
+
+⚠️ **Cost:** lifelink sources **10 → 9**, in a deck with a documented life-floor problem. Bloodwitch
+gains life on every death, which partly covers it, but it is not lifelink and does not scale with
+combat. Vampire anthems 6 → 5.
+
+Only axis on which Baron wins is **castability** (mono-black against Stromkirk's red pip off 15–16
+sources) — a legitimate axis, but it has to be named out loud to count, and it wasn't.
+
+### Phase 6 curve check — measured against the sample field
+
+|  | MV1 | MV2 | MV3 | MV4 | MV5 | MV6+ | **≤2** | **4+** | avg |
+|---|---|---|---|---|---|---|---|---|---|
+| ours, before | 10 | 14 | 20 | 12 | 6 | 2 | **24** | **20** | 2.94 |
+| **ours, after** | 9 | 14 | 20 | 13 | 6 | 2 | **23** | **21** | **2.99** |
+| field — *Need I Say More?* | 9 | 20 | 20 | 8 | 2 | 2 | 29 | 12 | 2.72 |
+| field — *The Definitive Edgar* | 8 | 19 | 17 | 7 | 9 | 3 | 27 | 19 | 3.03 |
+| field — *Midnight Masquerade* | 11 | 21 | 14 | 10 | 6 | 2 | 32 | 18 | 2.84 |
+
+**The finding:** the deck was **already the heaviest in the sample** before this pass — 3–8 cheap
+cards behind every comparison deck. Cutting Cathars' Crusade absorbed Sangromancer's cost, so three
+adds cost the same **+1** at MV4+ that two would have.
+
+**Zero field decks run cost reducers**; ours runs two. Real edge, but 2 cards in 99 — roughly a
+**23%** chance of seeing one by turn 5, and you still have to cast it. A bonus, not a plan.
+
+⚠️ **Standing action:** the deck needs a dedicated **cheap-cards pass** to move MV≤2 from 23 toward
+the field's 27+. Nothing in this 45-card pool qualified. This is its own project, not something to
+smuggle into an upgrade pass.
+
+### Held to the sideboard (§B of SIDEBOARD.md)
+**Patron of the Vein** — the best card in the pool after Anowon, and it pairs with it directly
+(their forced sacrifice → `+1/+1` on every Vampire, plus exile hate). Kept out **purely on curve**:
+it would be the deck's third card at MV6. · **Indulging Patrician** · **Elenda's Hierophant**.
+
+### Three calls the pilot won
+- **Captivating Vampire — kept.** I proposed cutting it as "the 4th lord whose steal competes with
+  attacking." Wrong frame: **steal-then-sacrifice** with a free outlet is unconditional removal that
+  also feeds every death trigger. I evaluated the ability for combat only.
+- **Stensian Sanguinist — rejected.** I recommended its Exsanguinate as a scalable finisher. The
+  mana it eats is mana that was going to cast Vampires — i.e. eminence tokens. **A mana sink
+  competes with the engine when the engine is "cast creature spells."**
+- **Sanguine Bond — kept.** I proposed it as Anowon's counterpart. My cut was backwards: Bond gets
+  **better** with Sangromancer feeding it lifegain events.
+
+### ⚠️ Watch: Dusk Legion Duelist
+Kept in Phase 2b **specifically because** Cathars' Crusade turned on its once-a-turn draw. Cordial
+Vampire, Indulgent Aristocrat and Edgar's attack trigger still feed it, but it is meaningfully worse
+now and is the leading next cut.
+
+---
+
 ## Phase 2 — original notes (superseded above)
 
 Target: cheap creatures 11 → 16-17, MV4+ 20 → ~15, and rebuild the life floor that

@@ -61,9 +61,8 @@ Bracket 3 · 3/3 Game Changers · no infinite combos · 100 cards
 1 Plumb the Forbidden
 1 Scheming Silvertongue
 
-## Removal (6)
+## Removal (5)
 
-1 Anowon, the Ruin Sage
 1 Chaos Warp
 1 Generous Gift
 1 Path to Exile
@@ -80,13 +79,14 @@ Bracket 3 · 3/3 Game Changers · no infinite combos · 100 cards
 1 Akroma's Will
 1 Teferi's Protection
 
-## Theme / Synergy — Vampires & Payoffs (39)
+## Theme / Synergy — Vampires & Payoffs (40)
 
 1 Blade of the Bloodchief
 1 Blood Artist
 1 Bloodletter of Aclazotz
 1 Bloodline Keeper
 1 Captivating Vampire
+1 Cathars' Crusade
 1 Charismatic Conqueror
 1 Clavileño, First of the Blessed
 1 Cordial Vampire
@@ -101,6 +101,7 @@ Bracket 3 · 3/3 Game Changers · no infinite combos · 100 cards
 1 Legion Lieutenant
 1 Malakir Bloodwitch
 1 Marauding Blight-Priest
+1 Markov Baron
 1 Master of Dark Rites
 1 Mirkwood Bats
 1 Nullpriest of Oblivion
@@ -108,15 +109,14 @@ Bracket 3 · 3/3 Game Changers · no infinite combos · 100 cards
 1 Purphoros, God of the Forge
 1 Roaming Throne
 1 Sanctum Seeker
-1 Sangromancer
 1 Sanguine Bond
 1 Shared Animosity
+1 Sorin, Imperious Bloodlord
 1 Stromkirk Captain
-1 Tainted Remedy
 1 Twilight Prophet
+1 Vampire of the Dire Moon
 1 Vampire Socialite
 1 Vein Ripper
-1 Vengeful Bloodwitch
 1 Viscera Seer
 1 Vito, Thorn of the Dusk Rose
 1 Warleader's Call
