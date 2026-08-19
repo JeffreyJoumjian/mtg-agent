@@ -303,3 +303,180 @@ Land count unchanged at 37; basics 10 → 9.
 **Correction logged:** the "U19 / R17" figure previously in `pdf.json` counted only lands that
 *directly* tap for a colour and ignored what the fetches could retrieve. The true pre-change
 numbers were U21/R20.
+
+---
+
+## 2026-08-19 — Conqueror's Flail in, Big Score out
+
+**Grounds:** Evaluated on the user's prompt ("might be critical for a voltron deck"). Both clauses
+were costed against *this* list before the call.
+
+**The pump is a rounding error and was not the reason.** *"+1/+1 for each color among permanents you
+control"* is hard-capped at **+2/+2** here: Izzet is two colours, and a count of the actual board
+showed **54 of the deck's 72 permanents are colourless** — only ~17 are coloured, all U or R. The
+same count gives it an unusually stable floor, because the back face **The Invincible Iron Man is
+`{4}{U}{R}`, colors [R, U]** — the voltron target supplies both colours by itself, with an empty
+board. So it is always exactly +2/+2, which is nothing next to Ultima Weapon (+7/+7), Excalibur
+(+10/+0) or Aettir and Priwen (base P/T = life total).
+
+**It was bought for the second clause, which fills a hole nothing else in the 100 covered.** All
+existing protection is *creature* protection — Champion's Helm (hexproof), Mithril Coat
+(indestructible), Commander's Plate (pro W/B/G), Darksteel Forge (the flipped commander is an
+Artifact Creature), plus one-shot Deflecting Swat / Fierce Guardianship. **Not one of them stops a
+Fog, a flashed-in blocker, an instant-speed wipe mid-combat, or a counterspell on the six combat
+spells** (Great Train Heist, Savage Beating, Seize the Day, Overpowering Attack, Aggravated
+Assault, Embercleave). Deciding axis (deck-brain §2.3): everything else in the Equipment package
+makes the swing *bigger*; this is the only card that makes the swing *resolve*.
+
+**Two fit bonuses:**
+- **Deploys for 0.** The commander's beginning-of-combat trigger puts an artifact from hand onto
+  the battlefield and auto-attaches Equipment, so the lockout arrives free at exactly the moment it
+  matters. Hard-cast it is `{2}` + `{2}` = 4, tying Commander's Plate and Champion's Helm as the
+  cheapest Equipment in the deck.
+- **Colourless, so it never fights our own gear.** Per CR 702.16d, Sword of Fire and Ice's pro-red
+  clause unattaches four of the sixteen Equipment (Mjölnir, The Reaver Cleaver, Embercleave,
+  Hexplate Wallbreaker). The Flail stacks with all of them.
+
+**Honest costs, recorded so the call can be re-checked:** it is turn-limited (sorcery-speed wraths
+on their turn still connect, where the other protection covers every turn); it stops **spells
+only**, so activated abilities go straight through; opponents still get one response window while
+the combat trigger is on the stack; and the **field signal is 1/7** — only `budget-voltron-100`
+runs it. It is living purely on the argument above, not on adoption.
+
+**Displaced: Big Score.** In `SIDEBOARD.md`'s own measurement the lowest-value card left in the 100
+at **1/5 field**; `{3}{R}` *plus a discard* for a net +1 card; and not one of the six counted
+Treasure makers, so the artifact-count package is untouched. **Card Draw 7 → 6, Equipment 15 → 16**,
+artifacts 41 → 42, still 100 cards and 3/3 Game Changers.
+
+**Considered and not taken: cutting Sword of Fire and Ice instead.** Structurally it is the weaker
+card — the 702.16d conflict above is a live anti-synergy with four maindeck Equipment, where Big
+Score is merely low-value. It was left alone because the user kept it deliberately on 2026-08-07
+(see the Liquimetal Torque entry) and that call was not re-opened here. If the pilot ever wants the
+draw back without losing the lockout, **SoFI is the cut to re-derive first.**
+
+**Knock-on:** `research/hob-set-review-2026-08-09.md` recommended Fateful Discovery displacing Big
+Score at "draw 7→7". That slot is now spent — the note there has been flagged stale, and Fateful
+Discovery needs a different displaced card or the deck lands at 101.
+
+---
+
+## 2026-08-19 — Four-swap package: Staff / Fateful / Beacon / Hammer (SoFI out)
+
+**Prompted by the user's online finds.** Every card verified via `bun run card`; field signal from
+the five optimized sample lists. None of the four adds is a Game Changer — bracket 3 (3/3) holds.
+Snapshot: `versions/2026-08-19-before-staff-hammer-beacon-fateful.md`.
+
+| IN | OUT | Grounds |
+|---|---|---|
+| **Wizard's Staff** | Cursed Mirror | The pending HOB MAIN, applied as recommended. Third deploy trigger with Roaming Throne on Hero (CR 603.2d — doublers add). Rocks 8→7 = exactly the field average. Mirror was 2/5 and the designated flex OUT. |
+| **Fateful Discovery** | One with the Machine | The stale HOB MAIN, re-derived against the current draw six. Engine (every artifact ETB = a card; a Reaver Cleaver hit = that many Treasures = that many draws) over a one-shot that needs a fat artifact already on board. Enchantment — survives Blasphemous Act, Chandra's Ignition, Battleship. OwtM was 2/5. |
+| **Command Beacon** | 1x Mountain | Attacks the *measured* pain (2026-08-18 ledger: "the pilot reported never reliably reaching" the commander). Tax reset + either face castable from hand (CR 712.11b is zone-agnostic): flat `{4}{U}{R}` after any number of deaths. R sources 22→21; nothing in the 100 counts Mountains (Desert Were-Worm is sideboard-only); Scorched Geyser needs 2+ basics — 8 remain. 1/5 field, but our problem is documented, not speculative. |
+| **Hammer of Nazahn** | Sword of Fire and Ice | **User's call, reversing two earlier keeps — the evidence moved.** With the Staff (a blue card) in, SoFI's pro-red/blue unattaches **five** maindeck Equipment (Mjölnir, Reaver Cleaver, Embercleave, Hexplate, Staff). Hammer: every Equipment that *enters* attaches free — hard-casts, Welder/Engineer graveyard returns, and Titan of Innovation's mid-combat fetches (tapped is irrelevant for Equipment) — plus +2/+0 and a third indestructible source, keeping our own Blasphemous Act one-sided. Deciding axis: live anti-synergy vs added engine. Honest limit recorded: the Hammer does **not** re-attach gear already stranded on the battlefield — that's Thorin's job (now a sideboard row). SoFI moved to the sideboard (displaces the Hammer, grind-lane row). |
+
+**Net:** rocks 8→7, draw stays 6, lands stay 37 (basics 9→8), Equipment 16→17, artifacts stay 42,
+creatures stay 10, 100/100, 3/3 GC. Artifact-count payoffs 10→9 (One with the Machine left).
+
+**Re-derived and KEPT, with the grounds updated:**
+
+- **Urza's Saga** (3/5 field) — chapter II Constructs are +1/+1-per-artifact (routinely 6/6+ here,
+  survive Battleship's 4); chapter III's only legal fetch in this 100 is **Sol Ring** (the artifact
+  lands have *no* mana cost, so they don't qualify — and it whiffs if Sol Ring is already out).
+  Pilot notes: play it when `{2}` is spare the next two turns; respond to the chapter III trigger
+  with a final Construct activation.
+- **Knuckles the Echidna** — the user proposed cutting; re-reading flipped it. The prior grounds
+  (Treasure package) had **omitted the card's strongest line**: *"if you control thirty or more
+  artifacts, you win the game"* — live in a 42-artifact deck that mints Treasures and Constructs.
+  Also the best holder for sideboard SoFI (double strike = two triggers). Costs recorded:
+  `{2}{R}{R}` must be hard-cast (not an artifact), dies to all three of our own sweepers.
+- **Iron Man, Titan of Innovation** — reframed for the pilot as a *tutor engine*: attack → Treasure
+  → sac it (MV 0) → fetch any MV 1 (Sol Ring), or ladder a `{2}` rock into Mithril Coat /
+  Commander's Plate, Thran Dynamo into Genji Glove / Arc Reactor. Fetched Equipment arrives tapped
+  (costless for Equipment) and **Hammer of Nazahn now attaches it free mid-combat**. Roaming
+  Throne doubles the whole trigger.
+- **The copy suite** (now 2 after Cursed Mirror left): **Phyrexian Metamorph** — best line is
+  copying our own *nonlegendary* Extinguisher Battleship for a second free wipe ETB; never copy own
+  legendaries. **Mystic Reflection** — interaction first: respond to a scary commander's arrival by
+  making it enter as a copy of a nonlegendary dork; blowout mode: point it at a big Construct
+  before a token batch enters.
+
+**Rejected, with grounds (full oracle pulled for each):**
+
+- **The Arkenstone** — colour identity **W** via its `{2}{W}` Adventure half; illegal in Izzet.
+  Ledger entry 2026-08-19.
+- **Long-Lost Lances, Venser's Journal, Spellbook** — see SIDEBOARD.md bullets.
+- **The 11 "Iron Man" name-cards** — the user's count was exact (name search = 11; oracle-text
+  search finds only 5 — search names, not rules text, for theme sweeps). Three already run (the
+  commander, Titan of Innovation, Iron Man Tony Stark). Of the other eight: **Armored Avenger**
+  closest miss (SIDEBOARD bullet); **Master of Machines** already in field-analysis's
+  "deliberately not run" list; **Bleeding Edge** copies artifact spells you *cast* — anti-plan in a
+  cheat-artifacts deck; **Modern Marvel** (anthem, no wide board), **Futurist Paragon** (6-mana
+  go-wide animator), **I Am Iron Man** (trick below the 10-hard-answer bar), **Iron Man Armor**
+  (payload below all 17 incumbents), **Origin of Iron Man** (chapter III duplicates the
+  commander's own engine). Standing conclusion: theme ≠ synergy — most of these are built for the
+  cast-artifacts or go-wide Iron Man archetypes, and the "non-Iron-Man" cards they'd replace are
+  the interaction/extra-combat/draw glue that keeps this list the committed outlier.
+- **Cost-reduction research (user asked):** generic reducers for the 99 stay rejected — the 6 vs
+  field-9.2 gap *is* the cheat-artifacts identity. The commander-side gap is now addressed by
+  Command Beacon; **Training Grounds** held as a SIDEBOARD bullet (transform `{4}{U}{R}` →
+  `{2}{U}{R}`, near-dead otherwise). **Mass-attach pool exhausted:** Hammer (taken), Thorin
+  (sideboard), Brass Squire and Magnetic Theft (SIDEBOARD bullets) — everything else is white.
+- **Glamdring, Foe-hammer** — still the open HOB MAIN, still unapplied; its proposed slot
+  (Aettir and Priwen) was *not* spent by this package. Next session's question if the pilot wants
+  a fifth swap.
+
+---
+
+## 2026-08-19 — Amendment: Command Beacon's cut was Scalding Tarn, not a Mountain (user's call)
+
+**What changed:** the pilot took Scalding Tarn out for Command Beacon instead of the recommended
+basic Mountain. Files reconciled to match: basics stay 9 (6 Mountain / 3 Island), fetches 1 → 0.
+
+**The trade, stated honestly:** the Tarn counted as both a U and an R source (it fetches Volcanic
+Island, Steam Vents, or a basic, untapped), so this cut costs **U23 → U22 *and* R22 → R21** where
+the Mountain cut cost only R. In exchange: no more 1-life fetch tax in a deck that already bleeds
+(Ancient Tomb, The One Ring, painlands — and Aettir and Priwen keys base P/T to life total), one
+more basic against nonbasic hate, and 11 Mountains stay for sideboard Desert Were-Worm.
+
+**Grounds that expired with it:** the 2026-08-07 manabase entry kept the Tarn as *"effectively a
+second Volcanic Island for 1 life"* and concluded *"one fetch is correct."* That verdict is now
+moot — zero fetches. The same entry's reasons for not adding fetches **back** all still hold
+(two colours, no shuffle payoffs, thinning is noise), so the fetch count should stay 0 unless the
+manabase actually misfires in play. If U22 ever feels tight, this is the first swap to re-check.
+
+---
+
+## 2026-08-19 — Two sweeps on the pilot's prompts: power-flings and goad/mass-tap. No maindeck change.
+
+**Prompt 1: "more cards like 'deals damage equal to its power'"** (the 37/37 Aettir-and-Priwen
+dream). Swept `o:"deals damage equal to its power"` (77 hits) and the sac-fling wording (12 hits)
+in `ci<=UR`; every candidate is **0/5** in the optimized field.
+
+**Verdict: the deck already owns the family's best card.** Chandra's Ignition *is* the dream —
+and **Mjölnir doubles it** (verified: *"Double all damage equipped creature would deal"* — the
+Ignition damage is dealt by the creature). At life-total power ~30 that is ~60 to each opponent
+plus a near one-sided wipe. Deciding axis for the rest: **in this deck an extra combat strictly
+dominates a fling** — an extra combat phase is a fresh beginning-of-combat (another ×3 deploy
+trigger), attack triggers (Treasures, Omnitool dig, Titan fetch), and **commander damage** toward
+the 21, where a fling is raw noncombat damage that must chew through full 40-life totals and is
+dead without a board. Soul's Fire kept as a sideboard row for attack-tax pods (instant, any
+target, Mjölnir-doubled); Fiendlash noted as the fun three-piece line (indestructible commander +
+own Blasphemous Act → fling 2× power); the rest recorded in SIDEBOARD.md with per-card grounds.
+
+**Two pilot notes recorded with it:** (1) Aettir and Priwen is **dynamic** — *"base power and
+toughness X/X, where X is your life total"* — so Ancient Tomb / One Ring / painland bleed shrinks
+the commander in real time; sequence the Ignition turn *before* paying life that turn. (2) This
+whole plan runs through A&P, which is **the same slot the still-open Glamdring recommendation
+wants** — the pilot's enthusiasm here is evidence for keeping A&P when that question is next
+raised.
+
+**Prompt 2: "goad or tap all creatures so no one can block us."** Swept the goad/forced-attack/
+mass-tap pool in identity; every candidate is **0/5** in the field, and the measurement says why:
+**the blocking problem is already solved in layers** — the flipped commander has *flying* (only
+fliers/reach may block at all), trample beats chumps (CR 702.19b entry), Ultima Weapon kills a
+blocker on attack before blocks, Conqueror's Flail stops flash blockers and Fogs, instant bounce
+(Into the Flood Maw, Otawara) clears the one that matters, and Rogue's Passage sits in the
+sideboard. Also corrected a common misread: **goad does not forbid blocking** — its value is
+their creatures attacking each other on their turns and arriving at yours tapped and shrunken.
+Disrupt Decorum (the one mass goad with *"a player other than you"*) kept as a sideboard row for
+creature-heavy pods; Bident of Thassa and the symmetric forced-attack cards rejected because
+their forced attacks **can be pointed at us**; Icy Blast / Sleep recorded with grounds.

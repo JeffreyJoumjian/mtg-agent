@@ -128,6 +128,10 @@ rising feeds the attach engine. If the pilot won't move a role count, the in-rol
 already claims that slot below, and per SKILL §2.1 both shouldn't come out at once without re-ranking
 the whole Equipment role.
 
+> **APPLIED 2026-08-19** — in over Cursed Mirror exactly as recommended below. The SoFI conflict
+> noted here became one of the grounds for cutting Sword of Fire and Ice itself in the same
+> package (see `decisions.md`), so the anti-synergy warning is now moot unless SoFI returns.
+
 **Anti-synergy check (LEDGER 2026-08-07, protection-colours):** Wizard's Staff is a **blue card**.
 [Sword of Fire and Ice](https://scryfall.com/search?q=%21%22Sword+of+Fire+and+Ice%22) grants pro-red
 *and* pro-blue, so SoFI on the commander rips the Staff off — **add it to the existing SoFI conflict
@@ -189,9 +193,19 @@ hate. Honest costs: it is **not** an artifact (feeds none of the 10 artifact-cou
 Treasures are the only loss to the artifact-count package (it is not one of the six counted makers);
 Fateful Discovery repays that by drawing off every other Treasure for the rest of the game.
 
+> **APPLIED 2026-08-19** — after the Big Score slot was spent on Conqueror's Flail, the cut was
+> re-derived against the remaining six and Fateful Discovery came in over **One with the Machine**
+> (engine over one-shot; grounds in `decisions.md`).
+
 ---
 
 ## SIDE candidates
+
+> **Partially stale as of 2026-08-19:** Thorin's row was added to SIDEBOARD.md (now displacing
+> Phyrexian Metamorph). Bilbo's proposed OUT (Cursed Mirror) left the 100 for Wizard's Staff, and
+> Orcrist's whole premise (the SoFI grind lane) left with Sword of Fire and Ice — re-derive both
+> before ever bringing them in. Desert Were-Worm's row was never added; its Mountain count is now
+> 10, not 11.
 
 ### [Desert Were-Worm](https://scryfall.com/search?q=%21%22Desert+Were-Worm%22) — {4}{R}{R}, Creature 0/5, $0.54
 

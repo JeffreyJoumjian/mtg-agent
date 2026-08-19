@@ -67,7 +67,7 @@ colourless does not.
 ## Protection (6)
 
 1x Deflecting Swat — 💰 PROXY ($67.34)
-1x Return the Favor — BUY ($0.43) · 1x Hexing Squelcher — 💰 PROXY ($19.08)
+1x Return the Favor — BUY ($0.43) · 1x **Conqueror's Flail — BUY ($3.73)** ← lockout: opponents can't cast spells during your turn
 1x Champion's Helm — BUY ($3.41) · 1x Mithril Coat — BUY (no Scryfall price; typically single digits)
 1x Commander's Plate — 💰 PROXY ($43.07)
 
@@ -95,12 +95,21 @@ colourless does not.
 ## Proxy plan
 
 **Proxy (💰):** all non-basic lands, plus Deflecting Swat, The One Ring, The Vision and Scarlet
-Witch, Commander's Plate, Jeska's Will, Birgi, Hexing Squelcher, Urabrask, Ruby Medallion,
+Witch, Commander's Plate, Jeska's Will, Birgi, Urabrask, Ruby Medallion,
 Wheel of Fortune, Seething Song.
 
 **Actual cash outlay:** the engine cards are almost free — Livaan $0.23, Wiccan $0.24,
 Cait Sith $0.29, Electrodominance $0.43, Hit the Mother Lode $1.67, Apex of Power $0.98. Buying
 everything under $8 comes to roughly **$95**.
+
+## Changed 2026-08-19 — buy this
+
+**Conqueror's Flail ($3.73)** — in for **Hexing Squelcher** ($19.08 proxy no longer needed). The
+pump is a flat +1/+1 here (mono-red, colorless isn't a color) — it's in purely for *"opponents
+can't cast spells during your turn"*, which shuts off counterspells **and** instant-speed removal
+on the only turn that matters. Don't equip Wanda by default: she's the removal magnet, and the
+lockout only needs the Flail attached to *a* creature — a Robot token or Storm-Kiln Artist keeps it
+alive through her dying.
 
 ## Newly added 2026-08-02 — buy these
 

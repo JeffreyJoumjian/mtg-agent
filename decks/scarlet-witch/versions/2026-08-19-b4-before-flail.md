@@ -99,7 +99,7 @@ Bracket: 4 (Optimized) · Game Changers: 10 (no limit at B4) · Total: 100
 
 1x Deflecting Swat
 1x Return the Favor
-1x Conqueror's Flail
+1x Hexing Squelcher
 1x Champion's Helm
 1x Mithril Coat
 1x Commander's Plate

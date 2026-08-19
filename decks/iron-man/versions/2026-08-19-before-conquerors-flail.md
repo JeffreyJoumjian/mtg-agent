@@ -17,7 +17,6 @@ Game Changers (3/3 — at the bracket 3 cap): Ancient Tomb · Fierce Guardianshi
 1x Ancient Tomb *GC*
 1x Archway of Innovation
 1x Cascade Bluffs
-1x Command Beacon
 1x Command Tower
 1x Darksteel Citadel
 1x Fomori Vault
@@ -27,6 +26,7 @@ Game Changers (3/3 — at the bracket 3 cap): Ancient Tomb · Fierce Guardianshi
 6x Mountain
 1x Otawara, Soaring City
 1x Riverpyre Verge
+1x Scalding Tarn
 1x Scorched Geyser
 1x Seat of the Synod
 1x Shivan Reef
@@ -44,21 +44,23 @@ Game Changers (3/3 — at the bracket 3 cap): Ancient Tomb · Fierce Guardianshi
 1x Volcanic Island
 1x Sink into Stupor
 
-## Ramp / Mana Rocks (7)
+## Ramp / Mana Rocks (8)
 
 1x Sol Ring
 1x Arcane Signet
 1x Mind Stone
 1x Talisman of Creativity
 1x Thought Vessel
+1x Cursed Mirror
 1x Thran Dynamo
 1x Arc Reactor
 
-## Card Draw (6)
+## Card Draw (7)
 
 1x Insight Engine
 1x Armor Wars
-1x Fateful Discovery
+1x Big Score
+1x One with the Machine
 1x The One Ring *GC*
 1x Thoughtcast
 1x The Ten Rings
@@ -88,17 +90,15 @@ Game Changers (3/3 — at the bracket 3 cap): Ancient Tomb · Fierce Guardianshi
 1x Chandra's Ignition
 1x Blasphemous Act
 
-## Equipment (Voltron Payload) (17)
+## Equipment (Voltron Payload) (15)
 
 1x Commander's Plate
 1x Adaptive Omnitool
-1x Conqueror's Flail
 1x Buster Sword
 1x Champion's Helm
-1x Hammer of Nazahn
 1x Mithril Coat
 1x Sword of Feast and Famine
-1x Wizard's Staff
+1x Sword of Fire and Ice
 1x The Reaver Cleaver
 1x Mjölnir, Hammer of Thor
 1x Genji Glove

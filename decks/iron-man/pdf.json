@@ -8,15 +8,15 @@
     ],
     [
       "Equipment",
-      "15"
+      "17"
     ],
     [
       "Artifacts",
-      "41"
+      "42"
     ],
     [
       "Sources",
-      "U23 / R22"
+      "U22 / R21"
     ],
     [
       "Game Changers",
@@ -120,7 +120,77 @@
         "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Swamp or Mountain card, put it onto the battlefield, then shuffle."
       },
       "why": "Three of the four fetches only had one live half and no payoff behind them - the deck runs zero shuffle effects (no Sensei's Top, no Brainstorm), fixing is easy in two colours, and thinning is noise. Their only real cost mattered: Aettir and Priwen sets the commander's base P/T to your LIFE TOTAL, and the deck already bleeds from Ancient Tomb, Shivan Reef, Talisman and The One Ring. Fetches are the budget-agnostic way to smooth a manabase; remove the money constraint and you just play the best duals. Also swapped Wooded Foothills for Riverpyre Verge and Misty Rainforest for Sulfur Falls. Also added Scorched Geyser (enters tapped only if you control fewer than two basics - trivially met) over a basic Island. Sources went U21/R20 to U23/R22 with zero extra life paid.",
-      "back": "Never. Scalding Tarn STAYS - Volcanic Island is Island Mountain typed, so the Tarn is effectively a second Volcanic Island for 1 life, and singleton means that's the only way to run a second copy of your best dual."
+      "back": "Never. (Scalding Tarn, kept at the time as 'a second Volcanic Island for 1 life', later left the 100 for Command Beacon on 2026-08-19 — the deck now runs zero fetches.)"
+    },
+    {
+      "in": {
+        "name": "Conqueror's Flail",
+        "cost": "{2}",
+        "text": "Equipped creature gets +1/+1 for each color among permanents you control. As long as this Equipment is attached to a creature, your opponents can't cast spells during your turn. Equip {2}"
+      },
+      "out": {
+        "name": "Big Score",
+        "cost": "{3}{R}",
+        "text": "As an additional cost to cast this spell, discard a card. Draw two cards and create two Treasure tokens."
+      },
+      "why": "Bought entirely for the second line. The pump is capped at +2/+2 - Izzet is two colors, 54 of the deck's 72 permanents are colorless, and the flipped commander is itself {4}{U}{R} so it supplies both by itself. What the deck lacked: hexproof, indestructible and pro-W/B/G all protect the CREATURE, and nothing in the 100 stopped a Fog, a flashed-in blocker, an instant-speed wipe, or a counterspell on the six combat spells. The commander deploys AND attaches it free at beginning of combat, exactly when the lockout matters, and it is colorless, so unlike Sword of Fire and Ice it never unattaches the four red Equipment (CR 702.16d). Big Score was 1/5 field, the lowest of anything left in the 100.",
+      "back": "Pods with little instant-speed interaction, where the lockout has nothing to lock out. Big Score returns straight into this slot."
+    },
+    {
+      "in": {
+        "name": "Wizard's Staff",
+        "cost": "{1}{U}",
+        "text": "Equipped creature has prowess. If a triggered ability of equipped creature triggers, that ability triggers an additional time. Equip Wizard {1}. Equip {3}"
+      },
+      "out": {
+        "name": "Cursed Mirror",
+        "cost": "{2}{R}",
+        "text": "{T}: Add {R}. As this artifact enters, you may have it become a copy of any creature on the battlefield until end of turn, except it has haste."
+      },
+      "why": "Second doubler on the deploy trigger: with Roaming Throne naming Hero it fires THREE times per combat (CR 603.2d — doublers add, never compound). Tony deploys and attaches the Staff itself free. Rocks go 8 to 7, exactly the field average.",
+      "back": "If the pod punishes slow mana. Note the Staff is a blue card — Sword of Fire and Ice rips it off (CR 702.16d), one more reason SoFI left the 100."
+    },
+    {
+      "in": {
+        "name": "Fateful Discovery",
+        "cost": "{3}{U}{U}",
+        "text": "Whenever an artifact you control enters, draw a card."
+      },
+      "out": {
+        "name": "One with the Machine",
+        "cost": "{3}{U}",
+        "text": "Draw cards equal to the greatest mana value among artifacts you control."
+      },
+      "why": "Draws off EVERY artifact that enters — free deploys, every Treasure, every Construct. A connected Reaver Cleaver is that many cards. Engine over one-shot at the turn count this deck reaches, and an enchantment survives all three of our own sweepers.",
+      "back": "Never. One with the Machine needed a fat artifact already on board and drew exactly once."
+    },
+    {
+      "in": {
+        "name": "Command Beacon",
+        "cost": "land",
+        "text": "{T}: Add {C}. {T}, Sacrifice: Put your commander into your hand from the command zone."
+      },
+      "out": {
+        "name": "Scalding Tarn",
+        "cost": "land",
+        "text": "{T}, Pay 1 life, Sacrifice: Search your library for an Island or Mountain card, put it onto the battlefield."
+      },
+      "why": "Fixes the measured problem: commander tax. Put Tony in hand and cast EITHER face from hand at zero tax (CR 712.11b is zone-agnostic) — {4}{U}{R} flat instead of 8-10 from the zone. Pilot's cut: the Tarn over a basic Mountain — saves 1 life per fetch, keeps 6 basics. Sources U23/R22 to U22/R21, fetches 1 to 0.",
+      "back": "If the manabase ever feels tight — the Tarn was 'a second Volcanic Island for 1 life' and its slot is the first to re-check."
+    },
+    {
+      "in": {
+        "name": "Hammer of Nazahn",
+        "cost": "{4}",
+        "text": "Whenever this or another Equipment you control enters, you may attach that Equipment to target creature you control. Equipped creature gets +2/+0 and has indestructible. Equip {4}"
+      },
+      "out": {
+        "name": "Sword of Fire and Ice",
+        "cost": "{3}",
+        "text": "Equipped creature gets +2/+2 and has protection from red and from blue. Whenever equipped creature deals combat damage to a player, deal 2 damage to any target and draw a card."
+      },
+      "why": "Every Equipment that ENTERS now attaches free — hard-casts, Welder/Engineer returns from the graveyard, Titan of Innovation's mid-combat fetches — plus +2/+0 and a third indestructible source, so your own Blasphemous Act stays one-sided. SoFI's pro-red/blue had grown to unattaching FIVE maindeck Equipment (Mjolnir, Reaver Cleaver, Embercleave, Hexplate, Wizard's Staff).",
+      "back": "SoFI sits in the sideboard for the Commander's Plate grind lane; it displaces the Hammer."
     }
   ],
   "sideboard": [
@@ -142,7 +212,7 @@
     {
       "name": "Padeem, Consul of Innovation",
       "cost": "{3}{U}",
-      "when": "Targeted-removal-heavy pods. Hexproof for ALL your artifacts — the back face is an Artifact Creature, so it covers the commander. Costs a creature slot, which makes your own sweepers slightly worse. Displaces Insight Engine."
+      "when": "Targeted-removal-heavy pods. Hexproof for ALL your artifacts — the back face is an Artifact Creature, so it covers the commander. Costs a creature slot, which makes your own sweepers slightly worse. Displaces Professional Face-Breaker."
     },
     {
       "name": "Darksteel Plate",
@@ -152,12 +222,12 @@
     {
       "name": "Urza, Lord High Artificer",
       "cost": "{2}{U}{U}",
-      "when": "Power upgrade that is NOT a Game Changer, so it stays bracket 3. Taps your artifacts for {U}, so it partly replaces a rock. Displaces Cursed Mirror."
+      "when": "Power upgrade that is NOT a Game Changer, so it stays bracket 3. Taps your artifacts for {U}, so it partly replaces a rock. Displaces Mind Stone."
     },
     {
       "name": "Sword of Fire and Ice",
       "cost": "{3}",
-      "when": "MAINDECKED — pilot note, not a sideboard card. Pro-red unattaches Mjolnir, The Reaver Cleaver and Embercleave (CR 702.16d), so they are mutually exclusive ON THE COMMANDER. Decline the combat trigger rather than deploying SoFI while Mjolnir is attached. Best home is Knuckles: double strike fires its trigger twice."
+      "when": "Left the 100 for Hammer of Nazahn on 2026-08-19. Bring back for the Commander's Plate grind lane (pro-all-colours, near-unblockable vs coloured boards) — it displaces the Hammer. It unattaches FIVE maindeck Equipment on the commander (Mjolnir, The Reaver Cleaver, Embercleave, Hexplate Wallbreaker, Wizard's Staff — CR 702.16d); its best home is Knuckles, whose double strike fires the trigger twice."
     },
     {
       "name": "Lightning Greaves",
@@ -167,7 +237,12 @@
     {
       "name": "Vision of Love",
       "cost": "{1}{R}",
-      "when": "More instant-speed draw. Sacrifice an artifact (usually a Treasure) or discard, draw two. Lost to Insight Engine because that one's charge counters accumulate - {2} for 1 card, then 2, then 3. Displaces Big Score."
+      "when": "More instant-speed draw. Sacrifice an artifact (usually a Treasure) or discard, draw two. Lost to Insight Engine because that one's charge counters accumulate - {2} for 1 card, then 2, then 3. Displaces Conqueror's Flail - Big Score held this slot until the 2026-08-19 swap and is now the cheaper way to buy it back."
+    },
+    {
+      "name": "Big Score",
+      "cost": "{3}{R}",
+      "when": "Pods with little instant-speed interaction. Straight reversal of the 2026-08-19 swap - displaces Conqueror's Flail and puts draw back to seven."
     }
   ],
   "appendix": [

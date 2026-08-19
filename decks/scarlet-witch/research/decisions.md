@@ -382,3 +382,30 @@ Creatures corrected 14 → **16**; the hand-set figure had missed the Artifact C
 
 **Bracket 4 still runs Apex**, and the from-hand-only clause bites *harder* there — that list is
 built around Underworld Breach recursion. Noted in `DECK-B4.md`; not changed without a decision.
+
+## 2026-08-19 — Conqueror's Flail in, Hexing Squelcher out
+
+Prompted by the rival-list diff (`rival-lists-2026-08-09.md`) plus a direct request to evaluate
+the Flail. User's call after discussion of three cut doors.
+
+**Grounds for the add:** the deck's whole plan is *survive to one turn, resolve one enormous
+spell*, and every common way that fails is an opponent casting during our turn — a counter on
+Crackle, instant-speed removal on Wanda mid-Ignition, an artifact wipe on Emancipation.
+*"Opponents can't cast spells during your turn"* answers all of it proactively from an Equipment
+our own sweepers can't kill. The pump clause is a flat +1/+1 here (mono-red; colorless isn't a
+color) and played no part in the decision.
+
+**Grounds for Squelcher as the cut** (not Champion's Helm, not a win condition): (1) its 2/2 body
+dies to our own Fiery Confluence and Chandra's Ignition on exactly the turn it's needed; (2) its
+on-turn counter-coverage is a subset of the Flail's lockout, leaving only off-turn protection of a
+flashed Mithril Coat / Deflecting Swat as unique value — judged too narrow; (3) Champion's Helm
+keeps covering what nothing else does: red and colorless targeted removal on opponents' turns,
+which Commander's Plate's W/U/B/G protection misses. Protection stays at 6; Win Conditions stays
+at 10 (the door of taking the slot from the over-target wincon role was raised and not taken).
+
+**Rejected alternative:** cutting Champion's Helm instead — right only for counterspell-heavy
+pods, so Squelcher's sideboard entry displaces the Helm, not the Flail.
+
+Applied to both `DECK.md` and `DECK-B4.md`. Play note: don't equip Wanda by default — the lockout
+needs the Flail on *a* creature, and she's the removal magnet; a Robot token or Storm-Kiln Artist
+holds it through her dying.

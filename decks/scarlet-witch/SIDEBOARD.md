@@ -8,14 +8,14 @@ Companion to `DECK.md`. Two tiers:
 `DECK.md` is at **exactly 100**, so anything you promote from here needs a matching cut. The
 "Displaces" column is my recommendation for each.
 
-Finalized 2026-08-02. Last updated 2026-08-07 (The Fire Crystal + Iron Man in; Mind Stone + Apex out).
+Finalized 2026-08-02. Last updated 2026-08-19 (Conqueror's Flail in; Hexing Squelcher out).
 
 **This file is the single source of truth for the sideboard.** `DECK.md` used to carry a second
 copy and the two drifted apart; that copy is now just a pointer here.
 
 ---
 
-## Sideboard (31)
+## Sideboard (32)
 
 ### Table-dependent — bring in for specific pods
 
@@ -29,6 +29,7 @@ copy and the two drifted apart; that copy is now just a pointer here.
 | **Blasphemous Act** | Tables with **large** creatures, where Chandra's Ignition at 2 power and Fiery Confluence at 3 don't get there. Costs {1} less per creature on the battlefield, so it's often {R}. Remember it kills Wanda too. | Volcanic Vision |
 | **Prisoner's Dilemma** | Pods that enjoy the politics. 4/8/12 to each opponent, but *they* choose. | Fiery Confluence |
 | **Pinnacle Monk // Mystic Peak** | If you keep flooding or getting land-screwed. Land when you need land. | a Mountain |
+| **Hexing Squelcher** | Counterspell-heavy pods, where you want uncounterable on **all** turns (a flashed Mithril Coat or Deflecting Swat can be countered; Conqueror's Flail only locks *your* turn). Left the 100 on 2026-08-19: a 2/2 your own Fiery Confluence and Chandra's Ignition kill on the crucial turn, and its on-turn coverage is what Flail now does more broadly. | Champion's Helm |
 
 ### Lost a slot on rate, not on quality
 

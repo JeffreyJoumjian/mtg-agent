@@ -377,6 +377,303 @@ MV-gated reducers (The Scarlet Witch) read whichever half is being cast.
 
 ---
 
+### Cost reducers cut the commander tax, so they compound on a recast commander — 2026-08-18
+
+**Claim:** A generic cost reduction applies to the *total* cost of a commander cast from the
+command zone, which includes the {2}-per-previous-cast tax. It is not limited to the printed
+mana cost.
+**Evidence:** CR 601.2f — *"The total cost is the mana cost or alternative cost..., plus all
+additional costs and cost increases, and minus all cost reductions."* CR 903.8 makes the tax an
+**additional cost**, so it sits inside that total before reductions apply.
+**Changes:** Price a reducer against the *whole recast curve*, not one cast. A -{2} reducer on a
+{4}{U}{R} commander turns 6 / 8 / 10 into 4 / 6 / 8 — it is worth three cards' worth of mana over a
+game where the commander eats removal twice, which is far more than the same reducer is worth on
+any single spell in the 99.
+**Source:** iron-man, Tony Stark // The Invincible Iron Man.
+
+---
+
+### A modal DFC's mana value on the battlefield is the face that's up — 2026-08-18
+
+**Claim:** For a **modal** DFC the mana value follows whichever face is currently up on the stack
+or battlefield. This is the opposite of a **nonmodal** DFC, whose back face keeps the front face's
+mana value.
+**Evidence:** CR 712.8f — *"While a modal double-faced spell is on the stack or a modal
+double-faced permanent is on the battlefield, it has only the characteristics of the face that's
+up."* Contrast CR 712.8e for nonmodal DFCs — *"its mana value is calculated using the mana cost of
+its front face."* CR 712.8a keeps both at the front face's MV in every other zone.
+**Changes:** Anything that counts mana value of permanents reads the back face for a flipped modal
+DFC. A transformed Tony Stark is an **MV 6** historic permanent, so Excalibur, Sword of Eden
+(*"costs {X} less, where X is the total mana value of historic permanents you control"*) is 6
+cheaper from the commander alone. Check `layout` before doing this arithmetic — the same board with
+a nonmodal DFC commander would count 2.
+**Source:** iron-man.
+
+---
+
+### The current CR lets a modal DFC transform — the 2021 MDFC rulings boilerplate is stale — 2026-08-18
+
+**Claim:** A modal double-faced card *can* transform under the current rules. Do not trust the
+cached Scryfall ruling text *"A modal double-faced card can't be transformed"* that is stamped on
+every 2020-2021 MDFC.
+**Evidence:** CR 712.9 (rules of 2026-08-07) — *"Only permanents represented by double-faced tokens
+and double-faced cards that are **not meld cards** can transform or convert."* Modal DFCs are not
+excluded. Nothing in CR 712 restricts transforming to nonmodal cards. Tony Stark is
+`layout: modal_dfc` and prints *"{4}{U}{R}: Transform Tony Stark"* — a hybrid design the 2021
+boilerplate predates.
+**Changes:** When a Scryfall ruling and the local `rules/sections/` disagree, the local CR wins —
+rulings are frozen at print date and are not re-issued when the rules change. Grep the CR before
+quoting a ruling older than the card in front of you.
+**Source:** iron-man, checking whether Tony Stark can be cast as its back face.
+
+---
+
+### Read the PRINTED CARD to tell a modal DFC from a transforming one — 2026-08-18
+
+**Claim:** When a card's layout is contested, the card image settles it faster and more reliably
+than any database field or ruling. Three independent tells, all visible on the scan.
+**Evidence:** (1) **A mana cost printed in the back face's top-right corner** — modal only; a
+nonmodal back face never has one. (2) **A hint bar in the lower left of *both* faces showing the
+other face's P/T and mana cost** — CR 712.3c, modal only; a nonmodal front face prints only gray
+P/T with no cost (CR 712.2c). (3) **The back-face symbol**: two triangles in a sideways teardrop
+(modal, CR 712.3b) vs a single downward triangle in a circle (nonmodal, CR 712.2b).
+Tony Stark // The Invincible Iron Man shows all three modal tells *and* a `{4}{U}{R}: Transform`
+ability on its front face — a hybrid the pre-2026 rules did not allow, confirmed as deliberate by a
+five-card Marvel Super Heroes cycle (Bruce Banner, Jennifer Walters, King T'Challa, Monica Rambeau,
+Tony Stark) whose transform cost equals the back face's mana cost in every case.
+**Changes:** `bun run scripts/card.ts <name> --json` exposes `imageUri`; download it and Read it
+when a layout claim is load-bearing. Also: a card can be modal *and* transform, so "it has a
+Transform ability" is **not** evidence that the back face is uncastable — check for a printed
+back-face mana cost instead. Note the limit of this test: it settles *which layout the card is*, not
+*which zones you may cast it from*; the command-zone half still rests on CR 712.11b + 903.8, and
+this cycle has **zero** Scryfall rulings to lean on.
+**Source:** iron-man — the user challenged "are you 1000% sure" on the 6-vs-8 mana claim, and the
+scan answered it in one look after the API and the rulings could not.
+
+---
+
+### Commander tax is face-agnostic; the face choice is remade every cast — 2026-08-18
+
+**Claim:** For a modal DFC commander you pick the face fresh on every cast, with no lock-in from
+previous casts — but the commander tax counts *casts of the card* and rises no matter which face
+you chose. Casting the cheap face therefore taxes the expensive one.
+**Evidence:** CR 712.11b — *"A player casting a modal double-faced card... chooses which face they
+are casting before putting it onto the stack."* CR 903.8 — *"costs an additional {2} for each
+previous time the player casting it has cast **it** from the command zone that game"* — "it" is the
+card, not the face.
+**Changes:** Price the cheap face's *option cost*, not just its mana cost. A 2-mana front face that
+trades with a removal spell has raised the real threat's price by {2}; that is a genuine reason to
+skip an "obviously free" early commander deploy. Two corollaries: a **transform ability is not a
+cast**, so flipping never adds tax and converts an escalating cost into a flat one; and Command
+Beacon zeroes the counter *and* still allows either face (712.11b is zone-agnostic).
+**Source:** iron-man, Tony Stark // The Invincible Iron Man.
+
+---
+
+### Colour identity reads every half of a card; protection reads only the battlefield face — 2026-08-19
+
+**Claim:** A card that is colourless *as a permanent* can still be undeckable: colour identity is
+computed across all halves and faces (Adventure halves included), while on-battlefield colour —
+what a protection clause like Sword of Fire and Ice checks — comes only from the face in play.
+Check the two layers separately, in that order: identity gates deckbuilding, printed colours gate
+attach/protection conflicts.
+**Evidence:** The Arkenstone // Seek the Heart — the battlefield face is a `{5}` Legendary
+Artifact (colourless), but the Adventure half is `{2}{W}`, so Scryfall reports **CI: W** — not
+legal in an Izzet deck at all. The mirror case, already noted in the HOB review: Glamdring,
+Foe-hammer's Adventure is `{3}{U}` (identity U, deckable in Izzet) while the permanent stays
+colourless and so coexists with SoFI's pro-blue.
+**Changes:** When screening "colourless" artifacts, read CI from the tool output, never from the
+type line or the battlefield face. A card can pass the protection-conflict check and still fail
+identity, or vice versa.
+**Source:** iron-man — The Arkenstone, found by the user online, rejected on identity alone.
+
+---
+
+### "That player" in a per-player trigger points at each affected player, not the turn's owner — 2026-08-19
+
+**Claim:** In Archfiend of Despair's *"At the beginning of each end step, each opponent loses life
+equal to the life that player lost this turn,"* "that player" refers back to "each opponent"
+individually — every opponent doubles their **own** turn's life loss. Whose end step it is only
+sets the timing, never the amount.
+**Evidence:** CR 608.2c applies the text as written with the rules of English — "each opponent" is
+the only player noun in the sentence, so it is the only possible antecedent; "each end step" names
+a time, not a player. CR 608.2f's own example (Blatant Thievery: *"For each opponent, ... that
+player controls"*) shows the per-player template, and the loss is one action on multiple players,
+so it happens simultaneously. The count is a look-back (CR 608.2i) fixed once at resolution
+(CR 608.2h): the **whole turn's** gross loss — damage, payments, effects (CR 119.2–119.4) —
+including loss from before the Archfiend entered, and life gain never reduces it (Gatherer ruling
+2018-06-08: "counts only how much life was lost"). Corollary from the same ruling: a second
+Archfiend's trigger *does* see the first trigger's loss (3 lost early → first trigger 3, second
+trigger 6).
+**Changes:** When a trigger's timing clause names an event ("each end step", "each upkeep") and its
+effect names a player set ("each opponent"), resolve pronouns against the player set — never assume
+the active/turn player is implied. Same reading applies to the whole wording family (Wound
+Reflection et al.).
+**Source:** scarlet-witch session — user asked whether each player loses their own lost life or
+the end-step player's.
+
+---
+
+### Transforming is NOT "a creature enters" — but entering transformed is — 2026-08-19
+
+**Claim:** A permanent that transforms (or converts) into its creature face does not trigger any
+"enters the battlefield" ability — not other permanents' *"whenever a creature enters"* triggers,
+not the back face's own *"when this creature enters"* ETB, and not "as this enters"/enters-with-
+counters replacements. The one exception is entering the battlefield *already* transformed, which
+is a real enters event that ETB triggers see as the creature face.
+**Evidence:** CR 701.27a — transform = "turn it over so that its other face is up," no zone change;
+CR 712.18 — it "doesn't become a new object" and effects continue to apply (auras, equipment,
+counters all stay). ETB triggers are zone-change triggers firing only when an event "puts one or
+more permanents onto the battlefield" (CR 603.6, 603.6a), and enters-replacements apply only "as
+part of the event that puts the permanent onto the battlefield" (CR 603.6d, 614.12). Contrast
+CR 712.14a: put onto the battlefield "transformed" → it *enters* back-face-up, so ETB triggers fire
+seeing the creature. Convert is the same mechanic (CR 701.28a). Two footnotes: transforming DOES
+grant a new timestamp (CR 613.7g — layers only), and no single CR line says "neither enters nor
+leaves" — the conclusion is derived, so cite the chain, not a phantom subrule.
+**Changes:** Never count ETB payoffs (Impact Tremors-style, "when this enters" value) as working
+with a transform — flipping Tony Stark into The Invincible Iron Man feeds none of them. Conversely
+blink/reanimate effects that return a DFC "transformed" DO pay ETB value. Also: a flip does not
+reset auras/counters, so buffs survive the transform.
+**Source:** iron-man/scarlet-witch session — user asked if transforming into a creature counts as
+"creature enters."
+
+---
+
+### Summoning sickness never blocks being tapped by an effect — 2026-08-19
+
+**Claim:** A creature cast this turn can be tapped by any spell or ability effect. "Summoning
+sickness" restricts exactly two things — the creature attacking, and its controller activating
+the creature's own abilities with {T}/{Q} in the cost — and nothing else. So Charismatic
+Conqueror's *"enters untapped → they may tap that permanent"* choice works on a just-cast
+creature.
+**Evidence:** CR 302.6 — the full restriction is "can't attack" + "activated ability with the tap
+symbol or the untap symbol in its activation cost can't be activated"; CR 702.10b–c (haste) lift
+exactly those two and nothing more. Tapping is a keyword action whose only precondition is that
+the permanent is untapped (CR 701.26a). The Conqueror trigger is an ETB trigger (CR 603.6a); the
+tap-or-token choice is made on resolution (CR 608.2d). Vigilance doesn't protect the entering
+creature — it only stops tapping from attacking (CR 702.20b). If the permanent enters already
+tapped, the trigger never fires at all ("enters untapped").
+**Changes:** When evaluating tax pieces of this shape, price the real cost to each opponent: a
+vanilla creature was summoning-sick anyway, so tapping it mostly costs them **blocking** before
+their next turn plus any non-{T} uses; against haste creatures and mana dorks the tap is a full
+turn's tempo. Conversely never discount a tap effect because the target "just came down."
+**Source:** scarlet-witch session — user asked whether Charismatic Conqueror can tap freshly cast
+creatures.
+
+---
+
+### Deathtouch on a SPELL turns any damage sweep into a board wipe — 2026-08-19
+
+**Claim:** Deathtouch works from any source, not just creatures — a spell granted deathtouch
+(Judith, Carnage Connoisseur mode 1) destroys every creature it deals ANY nonzero damage to, so a
+1-damage-to-each-creature instant becomes "destroy each non-indestructible creature," with
+lifelink paying 1 life per creature damaged.
+**Evidence:** CR 702.2b — "a creature ... that's been dealt damage by **a source** with deathtouch
+... is destroyed as a state-based action" (says *source*, not creature); CR 702.2d — deathtouch
+functions from any zone, including the stack; CR 704.5h is the destroying SBA and regeneration can
+replace it. Sequencing is safe by construction: the cast-trigger sits ABOVE the spell on the stack
+(CR 603.3), the mode is announced when the trigger is put on the stack (CR 603.3c), and once it
+resolves the granted deathtouch persists even if Judith dies (CR 113.7a, 611.2c). Survivors:
+indestructible (CR 702.12b — destroy just doesn't happen, though lifelink still counts the
+damage), and anything whose damage is PREVENTED (protection — no damage dealt, no deathtouch).
+Targeting is irrelevant; "each creature" sweeps work identically.
+**Changes:** Evaluate deathtouch/lifelink spell-granters (Judith, Kaya's Ghostform-style riders,
+equipment that grants a spell keywords) with the deck's cheap mass-damage spells in mind — a
+Pyroclasm-class card upgrades to Damnation-class with one such piece on board. Conversely a
+deck with such a granter should count its 1–2 damage sweeps as conditional wipes when doing role
+counts.
+**Source:** session question — Judith, Carnage Connoisseur + 1-damage instants.
+
+---
+
+### Trigger-doublers count at TRIGGER time — deploying one mid-resolution doubles nothing — 2026-08-19
+
+**Claim:** An effect that makes abilities "trigger an additional time" (Roaming Throne,
+Panharmonicon family) must be on the battlefield at the moment the trigger EVENT occurs. Putting
+the doubler onto the battlefield during the resolution of a trigger never retro-doubles that
+trigger — deploying Roaming Throne with The Invincible Iron Man's beginning-of-combat trigger
+yields no second deploy that combat; the doubling starts at the next trigger event.
+**Evidence:** CR 603.2d — determine "how many times it should trigger" as part of the triggering
+itself; CR 603.10 — continuous effects that exist *at the time of the event* determine the
+triggering; CR 603.2c — an ability triggers only once per event, with nothing revisiting the
+count later. A resolving trigger is an independent stack object with only its own text
+(CR 603.3). The useful flip side: an EXTRA combat phase this turn (CR 500.8) begins a NEW
+beginning-of-combat event (CR 500.6), and the now-present Throne doubles that one.
+**Changes:** When sequencing a doubler deploy off the very trigger it's meant to double, price the
+payoff as starting NEXT turn (or next extra combat) — never count it for the current instance.
+Same reasoning bars every "as soon as it lands" fantasy: Panharmonicon entering off an ETB trigger
+doesn't double that ETB either.
+**Source:** iron-man — deploying Roaming Throne with Iron Man's combat trigger.
+
+---
+
+### "Exiled with" collections are cumulative — every trigger recopies the WHOLE pile, once each — 2026-08-19
+
+**Claim:** Arcane Bombardment's trigger copies every card it has ever exiled, exactly once per
+card per trigger — the originals never leave exile, so the pile only grows, and a card exiled
+turns ago (Chaos Warp) yields one fresh cast on every subsequent trigger. The just-exiled card is
+included in the SAME trigger's batch ("exile... **Then** copy each card").
+**Evidence:** CR 607.2a — "exiled with [this object]" is a linked ability referring to all cards
+its own instruction put in exile that are still there; CR 608.2c — instructions in written order,
+"each" = one copy action per card; CR 707.12 — the copy is a new object created in exile and then
+cast (CR 601.2a–h, no priority mid-resolution per CR 608.2g), so the original never moves.
+Copies that resolve (or are declined) cease to exist in any zone but stack/battlefield
+(CR 707.10a, SBA 704.5e) — they never refill the graveyard or the pile. Trigger is "your first
+instant or sorcery spell each turn" — EVERY turn, so an instant on an opponent's turn triggers it
+there too.
+**Changes:** Value cards of this family as compounding engines: turn count × pile size, not one
+copy. Sequencing corollary: casting your first spell on each opponent's turn (any cheap instant)
+nearly quadruples the engine's output in a 4-player game. Deck-building corollary: the copies
+never come back as cards — the graveyard is only drained (one random card per trigger), so
+pairing with self-mill/spell-recursion keeps the random exile pool stocked.
+**Source:** scarlet-witch — user asked if an already-exiled Chaos Warp keeps producing copies.
+
+---
+
+### A targeted trigger that adds mana is NOT a mana ability — the mana fizzles with the target — 2026-08-19
+
+**Claim:** Urabrask's *"Whenever you cast an instant or sorcery spell, Urabrask deals 1 damage to
+target opponent. Add {R}"* is one ordinary triggered ability, not a mana ability: it uses the
+stack, can be responded to or Stifled, and the {R} arrives only on resolution. If the target is
+illegal at resolution — or no opponent is targetable when it triggers — NOTHING happens, mana
+included.
+**Evidence:** CR 605.5a — "An ability with a target is not a mana ability, even if it could put
+mana into a player's mana pool when it resolves"; CR 605.1b (triggered mana abilities must be
+targetless AND triggered by mana). CR 608.2b — if all targets are illegal the ability doesn't
+resolve and none of its effects happen, untargeted riders included (the rule's own Sorin's Thirst
+example); CR 603.3d — no legal target when it triggers → removed from the stack entirely. Timing
+upside: the trigger sits ABOVE the spell that caused it (CR 603.3) and resolves first, so the {R}
+is available while that spell is still on the stack — but pools empty each step/phase (CR 106.4).
+**Changes:** When counting a card like this as "ramp," discount it by the fizzle risk (opponent
+hexproof effects, players leaving) and by CR 106.4 — the mana must be spent in the same
+step/phase. Frequency read: "whenever you cast" = once per cast, every cast, no per-turn cap
+(CR 603.2c); only explicit "only once each turn" wording caps a trigger (CR 603.2h).
+**Source:** scarlet-witch — user asked if Urabrask adds {R} once or each time.
+
+---
+
+### Artifact tokens are legal bounce-fodder for Master Transmuter-style costs — 2026-08-20
+
+**Claim:** A Treasure (or any artifact token) can pay a cost like Master Transmuter's *"Return an
+artifact you control to its owner's hand"* — the token ceases to exist on the way to hand, but the
+cost is fully paid and the ability resolves normally. The bounced token itself can never be the
+thing put onto the battlefield, because the effect asks for an artifact **card** and a token isn't
+a card.
+**Evidence:** CR 111.10a (a Treasure token is an artifact token) + CR 110.1/111.6 make it an
+artifact you control, so it satisfies the activation cost (CR 602.1a). CR 111.7 / 704.5d — a token
+in any zone other than the battlefield ceases to exist (a state-based action), and CR 111.8 — it
+can never come back. CR 602.2 — announcements and payments can't be altered after they're made, so
+the SBA deleting the token doesn't undo the payment; CR 113.7a — the ability on the stack exists
+independently. CR 111.6 — *"A token isn't a card,"* so it can't be the "artifact card from your
+hand."
+**Changes:** Treat expendable artifact tokens (Treasures, Clues, Food, blink-copies) as premium
+fodder for any "return/sacrifice an artifact" activation cost — the deck loses an object it was
+going to spend anyway. Generalizes to all bounce-as-cost cards; the token evaporating is a feature,
+not a bug.
+**Source:** rules question — can Master Transmuter be used on a Treasure token?
+
+---
+
 # Evaluation patterns
 
 Heuristics that earned their place by changing a real decision.
@@ -713,6 +1010,68 @@ deck, then decide — and treat "for each color" as 1 in mono-color before compa
 
 ---
 
+### A "don't cast your artifacts" deck still has to cast its commander — 2026-08-18
+
+**Claim:** When a deck's design decision is *cheat permanents into play instead of casting them*,
+that decision justifies skipping cost reduction for the 99 — but it never covers the commander,
+which must be hard-cast from the command zone at an escalating price. Exempt the commander from the
+"we don't need reducers" conclusion and re-ask the question for it alone.
+**Evidence:** iron-man's role table rejected a cost-reduction package on the grounds that *"its
+nine-drops arrive free"* (field-analysis.md) — true of every artifact in the 99, and false of the
+one artifact spell the whole engine depends on. The deck's commander is a {4}{U}{R} artifact
+creature spell recast at 6 / 8 / 10, and the pilot reported never reliably reaching it.
+**Changes:** Split "cost reduction" into *reduction for the 99* and *reduction for the commander*
+before counting the role against a field average. Then prefer reducers that don't undo the deck's
+other deviations — for a deliberately creature-light deck whose own sweepers are near one-sided,
+that means **noncreature** reducers (Semblance Anvil, the Medallions, Cloud Key) and
+**commander-only** ones (Training Grounds on an activated transform), never the cheap-creature
+reducers the field runs (Foundry Inspector, Etherium Sculptor, Shuri).
+**Source:** iron-man — the pilot's "I can never get Iron Man out" report against a role table that
+had already, correctly, rejected creature-based cost reduction.
+
+---
+
+### Count the coloured PERMANENTS, not the deck's colour identity, for a per-colour rider — 2026-08-19
+
+**Claim:** A *"for each color among permanents you control"* rider is capped by what is actually on
+the board, and an artifact deck's board is far less colourful than its identity implies — but a
+DFC commander's **back face** can set a hard floor.
+**Evidence:** iron-man is Izzet, so the naive read of Conqueror's Flail is +2/+2. Counting the
+actual list: **54 of its 72 permanents are colourless**, only ~17 are coloured, and every one is U
+or R — most of the board is artifacts and lands, which have no colour. The floor is nonetheless a
+firm +2/+2, because the back face **The Invincible Iron Man is `{4}{U}{R}`, colors [R, U]**
+(Scryfall `card_faces`) — the voltron target carries both colours by itself on an empty board.
+Refines *"A rider that counts COLORS is near-dead in a mono-color deck"* (2026-08-10), which
+established colourless-is-not-a-colour for the mono case; this is the two-colour case, where the
+answer is **not** automatically 2.
+**Changes:** For any per-colour rider, run the count — filter the list to permanents and tally
+distinct colours — instead of reading colour identity off the deck header. Then check whether the
+commander (**including its back face**) supplies those colours unaided; that, not the deck's
+identity, is the rider's floor.
+**Source:** iron-man — Conqueror's Flail over Big Score.
+
+---
+
+### "Protection" is not one role — creature protection does not cover the combat step — 2026-08-19
+
+**Claim:** Hexproof, indestructible and protection-from-colour all protect the *creature*; none of
+them stop the interaction that actually beats a voltron deck mid-swing. Count the two as separate
+roles before calling a deck well-protected.
+**Evidence:** iron-man's whole protection suite — Champion's Helm (hexproof), Mithril Coat
+(indestructible), Commander's Plate (pro W/B/G), Darksteel Forge (indestructible artifacts), plus
+one-shot Deflecting Swat / Fierce Guardianship — leaves **Fogs, flashed-in blockers, instant-speed
+wipes, and counterspells on the deck's six combat spells** completely unanswered. Conqueror's
+Flail's *"your opponents can't cast spells during your turn"* covers exactly that set and nothing
+the others already cover. Its own limits are equally sharp: turn-limited, and **spells only**, so
+activated abilities still resolve.
+**Changes:** When the plan is one alpha strike, split the protection role into **"keeps the
+creature alive"** and **"lets the swing resolve"**, and count each separately. A deck can be
+saturated on the first and hold zero of the second — which is invisible if "protection" is scored
+as a single number.
+**Source:** iron-man — Conqueror's Flail over Big Score.
+
+---
+
 # Corrections
 
 Mistakes, root causes, and the guard that prevents a recurrence. Never delete these.
@@ -1005,5 +1364,23 @@ not accumulating several mistakes. Name that decision out loud before touching a
 every swap that moves a role count as a structural change requiring its own justification.
 **Source:** iron-man. The single most valuable correction in this file for evaluating *other
 people's* decks.
+
+---
+
+### A successful defense recorded incomplete grounds — and the omission nearly cost the card later — 2026-08-19
+
+**What happened:** Knuckles the Echidna was defended from a cut on 2026-08-07 and the recorded
+grounds were "part of the 6-maker Treasure package." The card's *strongest* clause — *"At the
+beginning of your upkeep, if you control thirty or more artifacts, you win the game"* — appeared
+nowhere in the notes. When the user proposed cutting it again on 2026-08-19, the recorded grounds
+alone would have lost the argument; the full re-read is what kept the card (a live alternate win
+condition in a 42-artifact deck).
+**Root cause:** The defense stopped at the first sufficient reason. Grounds recorded under time
+pressure describe the role that was being argued about, not the card — so the file preserved a
+*sufficient* case instead of the *best* case, and sufficiency decays as the list changes.
+**Guard:** When recording grounds for a KEEP, list **every ability** the card has, not just the
+one that won the argument — the next challenge will come from a different angle. Cheap test: if
+the grounds don't mention a line of rules text, either re-read it or note why it's irrelevant.
+**Source:** iron-man — the user's "I think we should count this as a candidate for replacement."
 
 ---
