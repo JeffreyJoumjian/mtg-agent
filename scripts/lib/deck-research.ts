@@ -234,3 +234,16 @@ export function loadFieldSamples(slug: string): string[][] {
   }
   return samples;
 }
+
+/**
+ * Pull the commander out of a `DECK.md`: the `Commander:` header line (minus any trailing
+ * parenthetical like `(UR)` or `(mono-red)`), else the first card under the `## Commander`
+ * section. Returns null when neither names one.
+ */
+export function commanderFromDeck(text: string): string | null {
+  const headerLine = text.match(/^Commander:\s*(.+)$/m)?.[1];
+  if (headerLine) return headerLine.replace(/\s*\([^)]*\)\s*$/, "").trim();
+
+  const section = text.match(/^## Commander[^\n]*\n([\s\S]*?)(?=^## |$(?![\s\S]))/m)?.[1] ?? "";
+  return parseKeepPile(section)[0]?.name ?? null;
+}

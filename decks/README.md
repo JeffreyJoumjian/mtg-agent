@@ -70,6 +70,25 @@ bun run scripts/card.ts search "id<=ur t:warlock"  # Scryfall search syntax (cal
 Use `--deck ... --id <colors>` on every commit-worthy edit to catch color-identity violations and
 non-commander-legal cards before they reach a physical build.
 
+## Field signal (EDHREC)
+
+`bun run edhrec` pulls crowd statistics from EDHREC's public JSON endpoints, cached for 7 days
+in the git-ignored `data/` folder. It is an **additional lens — popularity data, never source
+of truth**: oracle text, prices and legality stay with `bun run card`, and how to weigh the
+numbers is deck-brain §2.2.
+
+```bash
+bun run edhrec commander "The Scarlet Witch"      # themes + high-synergy/top/GC lists
+bun run edhrec commander "Atraxa" --theme infect  # one theme's version (--all: every list)
+bun run edhrec card "Sol Ring"                    # site-wide inclusion %, salt, top commanders
+bun run edhrec --deck decks/<slug>/DECK.md        # coverage: inclusion % + synergy per deck
+                                                  # card, then ranked ideas the deck doesn't run
+```
+
+Names resolve by front face (`"Tony Stark"`, never the full DFC name). `--commander "Name"`
+overrides the commander detected from `DECK.md`, `--ideas N` widens the ideas list (default 25),
+and `--json` gives raw output everywhere.
+
 ## Printable deck reference (PDF)
 
 `bun run deck:pdf <deck-slug>` builds a print-ready PDF at

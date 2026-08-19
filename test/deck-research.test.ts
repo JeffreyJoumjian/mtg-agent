@@ -3,6 +3,7 @@ import {
   blockFor,
   cacheBlock,
   cleanEntryName,
+  commanderFromDeck,
   deckSlugFrom,
   frontFace,
   isBasicLand,
@@ -251,4 +252,18 @@ test("popFlag handles two flags being popped in sequence", () => {
   expect(deck).toEqual("iron-man");
   expect(file).toEqual("a.md");
   expect(rest).toEqual(["x"]);
+});
+
+test("commanderFromDeck reads the Commander: header line, dropping a trailing parenthetical", () => {
+  const text = "# Iron Man\n\nCommander: Tony Stark // The Invincible Iron Man (UR)\nBracket: 3\n";
+  expect(commanderFromDeck(text)).toEqual("Tony Stark // The Invincible Iron Man");
+});
+
+test("commanderFromDeck falls back to the first card in the ## Commander section", () => {
+  const text = "# Deck\n\n## Commander (1)\n\n1x The Scarlet Witch\n\n## Lands (33)\n\n1x Mountain\n";
+  expect(commanderFromDeck(text)).toEqual("The Scarlet Witch");
+});
+
+test("commanderFromDeck returns null when a list names no commander", () => {
+  expect(commanderFromDeck("## Lands\n1x Mountain\n")).toEqual(null);
 });

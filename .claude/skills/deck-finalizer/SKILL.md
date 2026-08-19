@@ -22,9 +22,14 @@ Turn a pile of cards into a tight, legal, on-plan deck by going through it **wit
 You can't judge "keep or cut" without knowing the target. First:
 1. **Get the card pool** — the user's full in-hand list (pasted, or a file path). Strip set-code/treatment noise (`[DSK] 138`, `(Showcase)`, leading counts).
 2. **Read the deck's identity & guardrails** — `decks/<slug>/research/decisions.md` (gameplan + locked decisions, if present), `decks/<slug>/research/strategy.md` (if present), and the authoritative pair `decks/<slug>/DECK.md` + `STATUS.md` (the current list — always kept in sync). Pull: **colors, deck size (usually 99 + commander = 100), and the bracket ceiling** (Bracket 3 = at most 3 Game Changers).
-3. **Confirm with the user**: deck size, bracket ceiling, and what their **third option** means (default **Pocket** = a situational sideboard card swapped in per table). The standing fourth option is **Hold** = park it in Considering and revisit before final assembly.
-4. **Say the gameplan back** in one or two sentences so you're both anchored before judging anything.
-5. **Open the live companion (browser mirror).** Run `bun run scripts/deck-live.ts open <slug>` —
+3. **Pull the field data** — `bun run edhrec --deck decks/<slug>/DECK.md` once (cached 7 days):
+   per-card inclusion % + synergy across the commander's EDHREC decks, plus the ranked ideas
+   list. This is the fallback field-signal lens when the deck has no local comparison sample,
+   and a second opinion when it does. If the commander has no EDHREC page, say so once and
+   drop the stat from the batches.
+4. **Confirm with the user**: deck size, bracket ceiling, and what their **third option** means (default **Pocket** = a situational sideboard card swapped in per table). The standing fourth option is **Hold** = park it in Considering and revisit before final assembly.
+5. **Say the gameplan back** in one or two sentences so you're both anchored before judging anything.
+6. **Open the live companion (browser mirror).** Run `bun run scripts/deck-live.ts open <slug>` —
    it opens `http://localhost:3000/decks/<slug>/live`, a read-only dashboard the user watches while
    the exercise stays in the terminal. If it exits with "dev server not reachable", ask the user to
    run `bun run dev` in `apps/collection-visualizer` (never start it yourself); if they'd rather
@@ -59,7 +64,9 @@ Repeat until the pool is exhausted:
    (≤12 chars), and the question text stacked in exactly this order (one line each):
    (1) your one-line summary of what the card does here,
    (2) `My call: KEEP/CUT/POCKET — <one-clause why>` (flag genuine coin-flips as such),
-   (3) the card's details: cost · type · the key oracle clause.
+   (3) the card's details: cost · type · the key oracle clause · the EDHREC stat from the
+   setup pull when the commander's page lists it (`EDHREC 62% · +0.42 synergy`; absence from
+   the page is itself signal — say "not on the EDHREC page" rather than omitting the line).
    Options are always the same four: Keep / Cut / Pocket / **Hold** ("park it — revisit before
    final assembly"; held cards live in the Considering pile on the dashboard). The tool caps at
    4 questions per call, so a batch takes 2–3 sequential calls. Fall back to typed calls when
@@ -74,7 +81,7 @@ Keep it moving — this should feel like a friend flipping through a binder with
 ## Rubric — how to judge each card
 Weigh these (roughly in order) and tell the user which one is driving the call:
 - **Gameplan fit** — does it advance what *this* deck does? A powerful card that's off-plan is still a cut.
-- **Field signal** — how many comparable sample decks run it (`bun run deckcheck` shows per-card coverage when the deck has a comparison sample under `decks/<slug>/research/` — e.g. `decks/edgar-markov/research/premium_edgar_decks.json`). **4+/6 = consensus staple** (strong keep); **0/6 = personal tech or a trap** — judge on merit, don't auto-cut. **No sample for this deck → skip this lens** and say so once; don't fake it.
+- **Field signal** — how many comparable sample decks run it (`bun run deckcheck` shows per-card coverage when the deck has a comparison sample under `decks/<slug>/research/` — e.g. `decks/edgar-markov/research/premium_edgar_decks.json`). **4+/6 = consensus staple** (strong keep); **0/6 = personal tech or a trap** — judge on merit, don't auto-cut. **No sample → fall back to the EDHREC pull** from setup: ≥~60% inclusion ≈ consensus staple, single-digit % or absent ≈ personal tech or a trap — same rule, judge on merit. Popularity is evidence, not a verdict (deck-brain §2.2 names its biases: averages across brackets/budgets, lags new sets). Neither source → skip this lens and say so once; don't fake it.
 - **Synergy, by name** — which *specific* keep-pile cards does it curve/combo/snowball with? "It's good" isn't enough — name the partner.
 - **Redundancy** — already 3+ cards doing this job? The Nth copy is the easiest cut.
 - **Mana & curve** — does cutting it hurt fixing/ramp? On budget manabases, color-fixing **rocks and treasure-makers are doing the fixing the basics can't — protect them.** Does adding it spike the curve?
@@ -117,6 +124,8 @@ Decks live in `decks/<slug>/` — see `decks/README.md` for the full conventions
   prints cached descriptions; fetches + appends any missing to the deck's `cards.txt`.
 - `bun run deckcheck --file decks/<slug>/<list>` (or `--deck <slug>` with stdin) — count,
   Game Changers/bracket, mana sources, and field coverage per card when a sample exists.
+- `bun run edhrec --deck decks/<slug>/DECK.md` — EDHREC coverage (per-card inclusion % +
+  synergy) and the ranked ideas list; `commander`/`card` modes and flags in `decks/README.md`.
 
 Run scripts from the project root (`mtg-agent/`). Both commands are Bun/TypeScript and need no
 runtime beyond Bun itself, so they work identically on macOS, Linux, and Windows.

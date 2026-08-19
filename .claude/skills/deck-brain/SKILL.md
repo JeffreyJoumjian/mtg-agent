@@ -160,8 +160,26 @@ The Scarlet Witch deck was nearly built as a storm deck. Measuring the sample de
 haymaker. One script beat a confident assumption.
 
 Field signal, once a sample exists: **4+/6 comparable decks = consensus staple** (strong keep);
-**0/6 = personal tech or a trap** — judge on merit, don't auto-cut. No sample → say so and skip
-the lens rather than inventing one.
+**0/6 = personal tech or a trap** — judge on merit, don't auto-cut.
+
+**EDHREC is the second instrument on this axis** (`bun run edhrec` — commands in
+`decks/README.md`). A local sample stays primary when one exists (it was curated for this
+deck's power level and archetype); EDHREC is always available: `--deck` cross-references the
+whole list against the commander's page (inclusion % + synergy per card) and ranks the
+high-synergy cards the deck *doesn't* run — the idea-generation lens. Read it with its biases
+named:
+
+- **Popularity is evidence, not a verdict** — §1.1b applies to the crowd too. High inclusion
+  means "the field found this good in the *average* build of this commander"; it knows nothing
+  about this deck's mana, bracket, or plan. Low inclusion on a card this deck's own math likes
+  is not a cut.
+- It **averages across brackets and budgets**, and **lags new sets** — the page's New Cards
+  list is the early-adoption view.
+- It substitutes for **no** verification: oracle text still goes through `bun run card` (§1.1),
+  costs still get re-derived in this deck's mana (§1.2), self-hits still get checked (§1.3).
+
+No signal at all (no sample, commander too new or obscure on EDHREC) → say so and skip the
+lens rather than inventing one.
 
 ### 2.3 Say which axis is driving the call
 

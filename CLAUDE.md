@@ -42,6 +42,21 @@ card text/prices or rely on web summaries (they're unreliable for new sets):
 
 Results cache for 24 h in the git-ignored `data/` folder; `bun run cards:refresh` re-pulls.
 
+### Field signal (EDHREC)
+
+For crowd data — what other decks run, synergy scores, inclusion rates, card ideas — use the
+local EDHREC tool (7-day cache in `data/`):
+
+- `bun run edhrec commander "<name>"` — themes + high-synergy/top lists (`--theme <slug>`,
+  `--all`, `--json`).
+- `bun run edhrec card "<name>"` — site-wide inclusion %, salt score, top commanders.
+- `bun run edhrec --deck decks/<slug>/DECK.md` — per-card inclusion % + synergy for the whole
+  list, then ranked ideas the deck doesn't run.
+
+EDHREC is an **additional lens, never source of truth** — oracle text, prices and legality
+still come from `bun run card`, and deck-brain §2.2 says how to weigh it (averages across
+brackets/budgets, lags new sets, popularity ≠ a verdict for this deck).
+
 ### Always link card names to Scryfall
 
 **Every card name you write in chat — prose, tables, bullet lists, swap rows, anywhere — must be a
@@ -102,6 +117,7 @@ Bun runs the TypeScript directly — no compile step, no npm dependencies.
 - `bun run fetch` — download the latest rules `.txt`.
 - `bun run update` — fetch then build.
 - `bun run card` / `bun run search` / `bun run cards:refresh` — card data (see "Card data").
+- `bun run edhrec` — EDHREC crowd statistics (see "Field signal (EDHREC)").
 - `bun run carddata` / `bun run deckcheck` — the deck-finalizer helpers (see that skill).
 - `bun test` — run the parser/chunker/differ/manifest/decklist/deck-research tests. Scoped to
   `./test` on purpose: `apps/collection-visualizer` has its own deps and its own `bun test`, and

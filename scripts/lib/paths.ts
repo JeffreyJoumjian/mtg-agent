@@ -18,6 +18,7 @@ export const CHANGELOG_PATH = resolve(REPO_ROOT, "CHANGELOG.md");
  *  cache; `decks/` holds one folder per deck (see decks/README.md). */
 export const DATA_DIR = resolve(REPO_ROOT, "data");
 export const CARD_CACHE_PATH = resolve(DATA_DIR, "card-cache.json");
+export const EDHREC_CACHE_PATH = resolve(DATA_DIR, "edhrec-cache.json");
 export const DECKS_DIR = resolve(REPO_ROOT, "decks");
 
 /** Convert an absolute path to a repo-relative POSIX path for storage in the manifest. */
