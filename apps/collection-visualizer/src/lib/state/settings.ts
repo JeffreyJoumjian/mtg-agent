@@ -2,8 +2,6 @@ import type { Baseline, Currency } from "~/lib/types";
 import type { SortKey } from "~/lib/view/sort";
 
 export type ViewMode = "grid" | "list";
-/** Deck page: board = image columns per category (deck-builder style); list = compact text rows. */
-export type DeckViewMode = "board" | "list";
 export type Theme = "dark" | "light";
 
 /** Display/view settings (as opposed to the search + filters that narrow the collection). */
@@ -22,8 +20,6 @@ export interface ViewSettings {
   foil: boolean;
   /** Show the value-over-time chart above the grid. */
   showTrend: boolean;
-  /** Deck page view (Decks workbench). */
-  deckView: DeckViewMode;
 }
 
 export function defaultSettings(): ViewSettings {
@@ -41,7 +37,6 @@ export function defaultSettings(): ViewSettings {
     theme: "dark",
     foil: true,
     showTrend: true,
-    deckView: "board",
   };
 }
 

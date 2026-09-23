@@ -10,7 +10,7 @@ import { settingsAtom } from "~/lib/state/store";
 import type { Baseline, Currency } from "~/lib/types";
 import type { SortKey } from "~/lib/view/sort";
 import type { CollectionSort } from "~/lib/view/collections";
-import type { DeckViewMode, Theme, ViewMode, ViewSettings } from "~/lib/state/settings";
+import type { Theme, ViewMode, ViewSettings } from "~/lib/state/settings";
 
 /** One label + control row inside the settings popover. */
 function SettingRow(props: { label: string; children: ReactNode }) {
@@ -97,30 +97,6 @@ export function ViewSetting() {
       >
         <ToggleGroupItem value="grid" aria-label="Grid view">
           <LayoutGrid /> Grid
-        </ToggleGroupItem>
-        <ToggleGroupItem value="list" aria-label="List view">
-          <List /> List
-        </ToggleGroupItem>
-      </ToggleGroup>
-    </SettingRow>
-  );
-}
-
-/** Deck page: board (image columns per category) vs compact list. */
-export function DeckViewSetting() {
-  const [s, set] = useSettings();
-
-  return (
-    <SettingRow label="View">
-      <ToggleGroup
-        type="single"
-        variant="outline"
-        size="sm"
-        value={s.deckView}
-        onValueChange={(v) => v && set({ deckView: v as DeckViewMode })}
-      >
-        <ToggleGroupItem value="board" aria-label="Board view">
-          <LayoutGrid /> Board
         </ToggleGroupItem>
         <ToggleGroupItem value="list" aria-label="List view">
           <List /> List

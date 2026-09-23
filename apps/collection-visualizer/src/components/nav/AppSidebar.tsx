@@ -11,12 +11,12 @@ import {
   SidebarMenuItem,
 } from "~/components/ui/sidebar";
 
-/** `Collections` is deliberately broader than the sets it lists today — it's where user-made lists
- *  will live alongside them, which is why the nav item and the heading inside it differ. */
+/** Decks are the home route. `Collection` is the owned-card library; `Collections` is deliberately
+ *  broader than the sets it lists today — it's where user-made lists will live alongside them. */
 const NAV = [
-  { to: "/", label: "Library", icon: Library },
+  { to: "/", label: "Decks", icon: Swords },
+  { to: "/collection", label: "Collection", icon: Library },
   { to: "/collections", label: "Collections", icon: Layers },
-  { to: "/decks", label: "Decks", icon: Swords },
 ] as const;
 
 export function AppSidebar() {
@@ -25,7 +25,7 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader className="h-[61px] justify-center border-b px-4 group-data-[collapsible=icon]:px-2">
-        <span className="truncate font-semibold group-data-[collapsible=icon]:hidden">MTG Collection</span>
+        <span className="truncate font-semibold group-data-[collapsible=icon]:hidden">MTG Workbench</span>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
@@ -35,7 +35,13 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.to}>
                   <SidebarMenuButton
                     asChild
-                    isActive={item.to === "/" ? pathname === "/" : pathname.startsWith(item.to)}
+                    isActive={
+                      item.to === "/"
+                        ? pathname === "/" || pathname.startsWith("/decks")
+                        : item.to === "/collection"
+                          ? pathname === "/collection"
+                          : pathname.startsWith(item.to)
+                    }
                     tooltip={item.label}
                   >
                     <Link to={item.to}>

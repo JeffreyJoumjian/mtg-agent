@@ -25,7 +25,7 @@ import { StackTile } from "~/components/card/StackTile";
 import { CardSidebar } from "~/components/card/CardSidebar";
 import { Drawer, DrawerContent, DrawerTitle, DRAWER_MS } from "~/components/ui/drawer";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/collection")({
   /** `?set=` scopes the Library to one set — how Collections drills in. It's a search param rather
    *  than component state so the scoped view is linkable and survives a reload. */
   validateSearch: (search: Record<string, unknown>): { set?: string } => ({
