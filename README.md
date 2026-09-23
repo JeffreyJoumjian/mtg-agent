@@ -18,7 +18,11 @@ producing a changelog of what changed.
 
 ## Prerequisites
 
-- [Bun](https://bun.sh) ≥ 1.1 — `curl -fsSL https://bun.sh/install | bash`
+- [Bun](https://bun.sh) ≥ 1.3.14 — `curl -fsSL https://bun.sh/install | bash`
+  - The repo pins the exact version in **`mise.toml`**. With
+    [mise](https://mise.jdx.dev) installed and activated, `cd` into this folder and it switches
+    automatically; `mise install` fetches the pinned Bun the first time. Without mise, any Bun at
+    or above that version works.
 - [Claude Code](https://claude.com/claude-code)
 
 ## Quick start (asking questions)
@@ -68,13 +72,18 @@ without it gets HTTP 403), throttles politely, batches decklist lookups through
 
 ```bash
 bun run card "Scarlet Witch, Chaotic Avenger"     # one card
-bun run card --deck decks/scarlet-witch/DECK.md --id ur   # price + validate a whole list
+bun run card --deck scarlet-witch                 # price + validate a deck's main list
 bun run scripts/card.ts search "id<=ur t:warlock"  # Scryfall search syntax
 ```
 
-Decks live under `decks/`, one folder per deck, with an authoritative `DECK.md` + `STATUS.md`
-pair and `research/` `versions/` `samples/` `images/` subfolders. See
-[`decks/README.md`](decks/README.md) for the conventions and how to start a new deck.
+Decks live under `decks/`, one folder per deck. Each deck is a single `deck.json` (every list —
+main, variants, pools — plus per-card status, tags and printing pins), with `history.jsonl` and
+`versions/` as the append-only record of every applied change, a generated `MOXFIELD.txt`, and
+`research/` `samples/` `images/` subfolders. Read and change a deck from the terminal with
+`bun run deck:show` / `deck:edit` / `deck:meta`, or in the browser with the deck builder in
+[`apps/collection-visualizer`](apps/collection-visualizer/README.md) — both write through the
+same apply path. See [`decks/README.md`](decks/README.md) for the conventions and how to start a
+new deck.
 
 ## How it works
 
@@ -113,10 +122,15 @@ rulings.
 | `bun run fetch` | Download the latest rules `.txt`. |
 | `bun run update` | `fetch` then `build`. |
 | `bun run card "<name>"` | Look up one card (cost, type, color identity, price, legality). |
-| `bun run card --deck <path>` | Price a whole decklist in one batched call; flag not-found / illegal / off-identity. |
+| `bun run card --deck <slug> [--list <id>]` | Price a deck's list in one batched call; flag not-found / illegal / off-identity. |
 | `bun run search "<query>"` | Scryfall search syntax (call `scripts/card.ts search` directly if the query has `<`/`>`). |
 | `bun run cards:refresh` | Re-pull every cached card (prices + oracle). |
-| `bun test` | Run the parser/chunker/differ/manifest/decklist tests. |
+| `bun run deck:show <slug> [--list <id>]` | Markdown view of a list from `deck.json`, with a stats footer. |
+| `bun run deck:edit <slug> --label "…" --add/--remove/--move/--qty …` | Change a list: canonicalise names, snapshot, log history, regenerate Moxfield. |
+| `bun run deck:meta <slug> --card "Name" …` | Per-card tags / status / note / printing pin. |
+| `bun run deck:moxfield <slug>` | Regenerate the derived `MOXFIELD*.txt` (every `deck:edit` does this already). |
+| `bun run deck:pdf <slug> [list-id]` | Printable deck reference (needs Chrome/Chromium/Edge). |
+| `bun test` | Run the parser/chunker/differ/manifest/decklist/deck-model/change-set/deck-store tests. |
 
 ## Project layout
 
@@ -133,13 +147,17 @@ mtg-agent/
 │   ├── build-rules.ts     # rules pipeline
 │   ├── fetch-rules.ts
 │   ├── card.ts            # card-data CLI (Scryfall)
-│   └── lib/{parser,chunker,manifest,differ,paths,types,scryfall,card-cache,decklist}.ts
-├── decks/                 # one folder per deck (see decks/README.md); _TEMPLATE/ to start one
-├── data/                  # git-ignored 24 h Scryfall cache
+│   ├── deck.ts            # deck:show / deck:edit / deck:meta
+│   ├── deck-moxfield.ts, deck-pdf.ts, deck-migrate.ts, edhrec.ts, carddata.ts, deckcheck.ts
+│   └── lib/{parser,chunker,manifest,differ,paths,types,scryfall,card-cache,
+│            deck-model,change-set,deck-stats,deck-store,moxfield,decklist}.ts
+├── decks/                 # one folder per deck: deck.json + history.jsonl + versions/ (see decks/README.md)
+├── apps/collection-visualizer/   # MTG Workbench — browser deck builder + collection viewer
+├── data/                  # git-ignored 24 h Scryfall cache (card-cache.json, shared with the app)
 ├── test/                  # bun test
 ├── .claude/
 │   ├── agents/mtg-rules-expert.md
-│   └── skills/{mtg-rules-update,deck-finalizer}/SKILL.md
+│   └── skills/{mtg-rules-update,deck-brain,deck-finalizer}/SKILL.md
 ├── CHANGELOG.md
 └── CLAUDE.md
 ```

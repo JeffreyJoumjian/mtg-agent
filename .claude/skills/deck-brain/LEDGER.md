@@ -247,9 +247,14 @@ commander's identity, so it can never conflict with on-colour Equipment.
 ### Living weapon and For Mirrodin! walk the Equipment off onto their own token — 2026-08-07
 
 **PARTIALLY SUPERSEDED by "A relocated Equipment still delivers its GLOBAL clauses" (Corrections,
-2026-08-07).** The rules claim below is correct; the *conclusion* drawn from it — that the whole
-cycle is anti-synergy — was wrong for any Equipment whose payoff is a global effect rather than a
-buff to the equipped creature.
+2026-08-07) and by "Living weapon loses the Germ tug-of-war to any TRIGGERED attach effect"
+(Verified rulings, 2026-09-18).** The second entry corrects the *sequencing* claim below: the
+attach-on-ETB trigger does not have to resolve first — when both are triggered abilities you
+control, CR 603.3b lets you order them so the attacher resolves last and takes the Equipment back.
+
+The rules claim below is correct; the *conclusion* drawn from it — that the whole cycle is
+anti-synergy — was wrong for any Equipment whose payoff is a global effect rather than a buff to
+the equipped creature.
 
 
 **Claim:** Any Equipment with Living weapon or For Mirrodin! cannot be used to suit up a specific
@@ -674,6 +679,1726 @@ not a bug.
 
 ---
 
+### "Without paying its mana cost" never waives ADDITIONAL costs — 2026-08-20
+
+**Claim:** Casting a spell (or copy) "without paying its mana cost" is an alternative cost that
+replaces only the mana cost — additional costs still apply and must be paid. A Big Score copy off
+Arcane Bombardment still costs "discard a card" every single time; with nothing to discard, that
+copy can't be cast at all (the cast is optional, so you simply decline it).
+**Evidence:** CR 118.9 — "without paying its mana cost" is the standard phrasing of an alternative
+cost; CR 118.9d — "If an alternative cost is being paid to cast a spell, any **additional costs**,
+cost increases, and cost reductions that affect that spell **are applied** to that alternative
+cost." Oracle: Big Score (msc #802) — "As an additional cost to cast this spell, discard a card."
+**Changes:** When pricing "free cast" engines (Bombardment piles, cascade, Mizzix's Mastery),
+audit each candidate spell for additional costs — discard/sacrifice riders keep charging on every
+free cast, which flips cards like Big Score from "pure value" to "value minus a card each loop."
+Companion fact already ledgered: free-casting an X-spell forces X = 0.
+**Source:** scarlet-witch — auditing a real game's Arcane Bombardment loop with Big Score in the
+pile.
+
+### "Dies" means battlefield → graveyard only; exile, bounce and tuck are not deaths — 2026-08-21
+
+**Claim:** A "whenever a creature dies" trigger does NOT fire when the creature is exiled (or
+bounced to hand, or put into a library, or phased out). It DOES fire on destroy, sacrifice,
+0-toughness SBA, and on tokens (which hit the graveyard before ceasing to exist).
+**Evidence:** CR 700.4 — "dies" = "is put into a graveyard from the battlefield"; CR 406.2 — exile
+is its own zone, so battlefield → exile never touches a graveyard. Yes-cases: 701.8a (destroy →
+graveyard), 701.21a (sacrifice → graveyard), 704.5f (toughness ≤ 0 → graveyard), 111.7 (a token
+that changes zones triggers abilities before it ceases to exist). The broader wording that DOES
+catch exile is "leaves the battlefield" — CR 603.6c (moves from the battlefield to *another
+zone*); both kinds look back in time (603.10a).
+**Changes:** When evaluating a "dies" payoff (Blood Artist, Black Cat, Edgar's aristocrat drains),
+count the field's exile-based removal (Swords, Path, Farewell, Anguished Unmaking) as **blanks**
+for it — only destroy/sacrifice/damage removal feeds it. Prefer "leaves the battlefield" wording
+where the deck wants value against exile. Conversely, a "dies" payoff is immune to nothing: it is
+the removal *type*, not the removal count, that decides how often it fires.
+**Source:** user rules question — does exile trigger "dies"; verified by mtg-rules-expert against
+rules version 2026-08-07.
+
+### Non-tap activated abilities repeat freely while holding priority; sacrifice costs are paid at once — 2026-08-21
+
+**Claim:** An activated ability with no {T}/{Q} in its cost and no printed "activate only once each
+turn" / timing restriction can be activated any number of times in a turn — including back-to-back
+without passing priority — limited only by the ability to pay the cost. A sacrifice cost is paid
+on activation (immediately, unresponsive, not refunded if the ability is countered), so a free sac
+outlet can respond to exile-based removal by sending its own creatures to the graveyard first.
+**Evidence:** CR 117.1b / 602.1 (activate whenever you have priority); 602.2 + 601.2h (cost paid
+during activation, no partial payments, can't be altered after); 117.3c (you keep priority after
+activating — stack another activation before passing); 602.5a (the only tap-related limit, and it
+needs a tap symbol); 602.5b (once-per-turn limits must be printed); 701.6b (no refund of costs when
+countered). Companion fact: 702.12c — multiple instances of indestructible are redundant, and
+indestructible does nothing against sacrifice (701.21a), toughness ≤ 0 (704.5f) or exile.
+**Changes:** Count any "Sacrifice a creature: <effect>" with no tap symbol as a full instant-speed
+sac outlet for the role-skeleton (Yahenni, Viscera Seer, Carrion Feeder shape), not a once-a-turn
+trick. Pilot note: against Farewell / exile wraths, sac through it in response for death triggers;
+against destroy wraths one activation of a "gains indestructible" effect is enough — the rest are
+just sac fodder.
+**Source:** user rules question — Yahenni, Undying Partisan repeat activations; oracle verified with
+`bun run card`; rules verified by mtg-rules-expert against rules version 2026-08-07.
+
+---
+
+### "Another target player" in a trigger means other than the player named by the trigger — 2026-08-23
+
+**Claim:** On The Lord of Pain ("whenever a player casts their first spell each turn, choose
+another target player"), "another" means a player other than **the caster**, not other than the
+controller; the controller of the trigger chooses the target. So when an opponent casts, I may
+aim it at any other opponent (or myself), never at the caster; when I cast, I must aim at an
+opponent. In a two-player game I must target myself.
+**Evidence:** CR 115.1 / 603.3a (the ability's controller chooses targets); Gatherer ruling
+2024-09-20 for The Lord of Pain, verbatim: "must target a player other than the one who cast the
+spell… if it's just you and one other player… you'll have to target yourself."
+**Changes:** Read "another" in any per-player trigger against the player the trigger names, not
+against "you". Pilot consequence: a punisher commander like this *steers* damage — it keeps the
+table even rather than hitting the active player.
+**Source:** lord-of-pain, build 2026-08-23; verified by mtg-rules-expert against CR 2026-08-07.
+
+### "First spell each turn" is per player per turn of the game, and it reads game history — 2026-08-23
+
+**Claim:** A trigger on "a player's first spell each turn" (The Lord of Pain, Vial Smasher the
+Fierce, The Frightful Four) fires once per player per *turn*, not per that player's own turn — an
+opponent's instant on my turn is their first spell that turn. And "first" is judged from the whole
+turn's history: if the permanent enters after a player has already cast a spell this turn, that
+player's next spell that turn is not their "first" and does not trigger it.
+**Evidence:** CR 603.2 (literal reading of the trigger event; no special rule), 601.2i (cast
+triggers fire on cast). A four-player pod is therefore up to four triggers per turn, every turn.
+**Changes:** Price these cards at ~4 triggers a turn cycle, and flash-deploy them *before* the
+first spell of a turn, not in response to it.
+**Source:** lord-of-pain; mtg-rules-expert.
+
+### An alternative cost (incl. free casts) leaves mana value unchanged — 2026-08-23
+
+**Claim:** A spell cast for an alternative cost — Fierce Guardianship for free, Deadly Rollick
+free, "without paying its mana cost" — keeps its printed mana value. MV-keyed punishers (Lord of
+Pain, Kaervek, Frightful Four) bill the full printed number; only {X} spells shrink, because X must
+be 0 under a free cast. Extends "Mana value is not what you paid" (2026-08-06) from cost
+*reduction* to *alternative* costs.
+**Evidence:** CR 118.9c ("an alternative cost… doesn't change a spell's mana cost"), 118.8d
+(additional costs likewise), 202.3e (X as chosen on the stack), 107.3b (X = 0 when free-cast).
+**Changes:** When evaluating a "damage equal to mana value" punisher, count opponents' free spells
+at full value. Conversely Helm of Awakening-style reducers raise the *number* of spells cast
+without lowering the bill on each.
+**Source:** lord-of-pain; mtg-rules-expert.
+
+### The draw-step draw happens BEFORE "beginning of draw step" triggers — 2026-08-23
+
+**Claim:** In the draw step the active player's normal draw is a turn-based action that happens
+first; Howling Mine / Font of Mythos / Teferi's Puzzle Box triggers go on the stack afterwards, when
+the active player would receive priority. So a card tutored to the top with Vampiric Tutor is drawn
+by the normal draw — and under Teferi's Puzzle Box it is then bottomed with the rest of the hand
+unless the tutor is cast *in response to the Box trigger*. The Box's controller orders their own
+Mine/Font/Box triggers: resolve the Box first to keep the extra draws in hand.
+**Evidence:** CR 504.1 ("First, the active player draws a card. This turn-based action doesn't
+use the stack."), 504.2 (then the active player gets priority; triggers are put on the stack then,
+603.3).
+**Changes:** Pilot note for any top-of-library tutor in a wheel/Puzzle Box deck; and don't count a
+"beginning of draw step" trigger as happening before the draw.
+**Source:** lord-of-pain, Puzzle Box review.
+
+### A villainous choice CAN be answered with the impossible option — 2026-08-24
+
+**Claim:** A player facing a villainous choice may pick the option they cannot perform at all. With
+no creatures on board, an opponent facing The Dalek Emperor's "sacrifices a creature of their
+choice, or you create a 3/3 Dalek" picks the sacrifice, sacrifices nothing, and you get **no
+token** — the trigger whiffs entirely. This is the opposite of the general rule for effect choices.
+**Evidence:** CR 701.55b — "While facing a villainous choice, a player may choose an option that is
+illegal or impossible. In that case, they perform as much of the action as is possible. This is an
+exception to rule 608.2d." CR 608.2d is the general rule that "the player can't choose an option
+that's illegal or impossible." Oracle: The Dalek Emperor — "At the beginning of combat on your turn,
+each opponent faces a villainous choice — That player sacrifices a creature of their choice, or you
+create a 3/3 black Dalek artifact creature token with menace."
+**Changes:** Evaluate a *villainous choice* card as **strictly weaker than the same effect written
+as "unless"** — punisher wording ("sacrifices a creature unless…") forces the fallback when the
+option is impossible, villainous choice does not. Villainous-choice edicts are dead against empty
+boards, tokens-only-after-a-wipe boards, and any opponent happy to take zero. Related but distinct
+from [A type-restricted edict is skipped entirely, never substituted] — that is about the
+*sacrifice* whiffing on type, this is about the *whole choice* whiffing on either half.
+**Source:** rules question on The Dalek Emperor.
+
+### Sacrifice IS a death — "died this turn" is self-enabling, not a gate — 2026-08-25
+
+**Claim:** Any condition worded "if N creatures died this turn" / "whenever a creature dies" is
+something a deck with a free sacrifice outlet **does on purpose**, not something it waits for.
+**Evidence:** CR 700.4 — *"The term dies means 'is put into a graveyard from the battlefield.'"*
+CR 701.21a — *"To sacrifice a permanent, its controller moves it from the battlefield directly to
+its owner's graveyard."* Sacrificing therefore satisfies every "dies" trigger.
+**Changes:** Never score a "dies"/"died this turn" clause as a passive gate when the list holds a
+free outlet (Viscera Seer, Ashnod's Altar, Phyrexian Altar, Yahenni). Count the outlets first, then
+decide. Timing detail for intervening-"if" versions (CR 603.4) such as **Emeritus of Woe**
+("at the beginning of your end step, if two or more creatures died this turn"): the deaths must
+happen **before** the end step, so sacrifice in the second main phase — after combat damage, which
+costs an attack-based deck nothing.
+**Source:** edgar-markov, versions A/B build. The pilot caught it: "sacrifices count as deaths."
+
+### Roaming Throne does NOT beat "This ability triggers only once each turn" — 2026-08-25
+
+**Claim:** An effect that makes an ability "trigger an additional time" cannot exceed a once-per-turn
+cap printed on that ability. Two copies of the creature can; one creature plus a doubler cannot.
+**Evidence:** CR 603.2d — an additional-trigger effect works by *"determine how many times it should
+trigger, then that ability triggers that many times"* (it does not create a second ability). Roaming
+Throne's own Gatherer ruling: *"doesn't copy the triggered ability; it just causes the ability to
+trigger an additional time."* CR 101.2 — the "can't" wins over the "does." Contrast the Cursed
+Wombat ruling, where **separate instances** of a once-per-turn ability each get their own allowance:
+*"These abilities are not redundant."*
+**Changes:** Roaming Throne / Panharmonicon-style doublers are blank on Dusk Legion Duelist,
+Welcoming Vampire, Caretaker's Talent and the other ~143 cards carrying that clause. Checked all of
+them plus Panharmonicon, Yarok, Harmonic Prodigy and Naban for a controlling Gatherer ruling — none
+exists, so this is derived from the CR.
+**Source:** edgar-markov — "does Roaming Throne double Duelist's draw?"
+
+### Multiple lifelink sources = separate life-gain events (CR 702.15e) — 2026-08-25
+
+**Claim:** "Whenever you gain life" triggers count **events**, not life points, and simultaneous
+lifelink damage from N creatures is N events.
+**Evidence:** CR 702.15e — *"If multiple sources with lifelink deal damage at the same time, they
+cause separate life gain events,"* with the printed example of Ajani's Pridemate triggering twice.
+**Changes:** Marauding Blight-Priest ("whenever you gain life, each opponent loses 1") is a
+**board-width-scaling converter**, not a flat-1 filler: with Vito's {3}{B}{B} team-lifelink
+activation, Vault of the Archangel or Akroma's Will, a ten-creature attack is ten triggers = 10 to
+each opponent. Same for every Blood Artist / Cruel Celebrant trigger in a wipe. Rank event-counting
+payoffs by how many *separate* gain events the deck produces, never by total life gained.
+**Source:** edgar-markov. Superseded my own mis-ranking of Blight-Priest as the weakest drain.
+
+### Welcoming Vampire's power check includes anthems and entering counters — 2026-08-25
+
+**Claim:** A payoff gated on a creature's power/toughness *as it enters* reads the creature as
+modified, so your own anthems can switch it off.
+**Evidence:** Official Gatherer ruling on Welcoming Vampire: *"If creatures enter the battlefield
+with +1/+1 counters or a continuous effect such as that of Wedding Festivity will apply to the
+creatures on the battlefield, those effects apply when checking to see if Welcoming Vampire's
+ability will trigger."* Consistent with CR 603.6b.
+**Changes:** Before adding any "power N or less" payoff, count the static pumps and entering-counter
+effects already in the list. In Edgar with six anthems plus Vampire Socialite, two anthems on board
+turn the 1/1 eminence tokens into 3/3s and blank it — despite 73–83% field inclusion. Prefer the
+cast-triggered version of the same effect (Vanquisher's Banner) in an anthem-dense list.
+**Source:** edgar-markov, versions A/B build.
+
+### Battlefield-recursion bypasses cast-triggers; hand-recursion preserves them — 2026-08-25
+
+**Claim:** A card that returns a creature *to the battlefield* misses every "whenever you cast"
+trigger. A card that returns it *to hand* keeps them, because you recast it.
+**Evidence:** CR 601.2 — *"To cast a spell is to take it from where it is (usually the hand), **put it
+on the stack**, and pay its costs."* A permanent put onto the battlefield from the graveyard never
+uses the stack, so it was not cast. Edgar Markov's eminence reads *"Whenever you **cast** another
+Vampire spell…"*, so Bloodghast's landfall return, Olivia Crimson Bride's attack trigger, Strefan's
+ability and any reanimation effect produce **no** eminence token — while Phyrexian Reclamation
+(return to *hand*) does, because the recast is a real cast.
+**Changes:** In any deck whose commander or engine keys on **casting** (Edgar's eminence, storm
+counts, Prosper's exile-cast, "whenever you cast your first spell each turn"), price reanimation and
+battlefield-recursion **without** the cast-trigger value, and prefer return-to-hand recursion.
+Two further traps on the same card: a recurred nontoken creature also misses "whenever you create or
+sacrifice a **token**" payoffs (Mirkwood Bats), and landfall-gated recursion stops in the late game
+when land drops run out.
+**Source:** edgar-markov — the pilot caught Bloodghast: "it doesn't trigger eminence on re-entry."
+This repo had already rejected **Strefan, Maurer Progenitor** for the identical reason at
+`decks/edgar-markov/research/swaps.md:406` ("bypassing the cast → no eminence"); the note existed and
+was not grepped before proposing Bloodghast.
+
+### A tapped permanent is a legal target for "tap target …" — the rider still happens — 2026-09-02
+
+**Claim:** Pointing a "tap target creature" ability at an *already tapped* creature is legal: the
+ability resolves, the tap does nothing, and every rider attached to it (draw, investigate, counter)
+still happens. But payoffs worded "becomes tapped" or "untapped creature" do **not** trigger.
+**Evidence:** Four rules, in order. **CR 601.2c** (applied to abilities by **602.2b**) — the target
+must be "an appropriate object", and appropriateness is only what the ability states; Inquisitor
+Greyfax says "target creature an opponent controls", which says nothing about tapped status, so a
+tapped creature is a legal choice. **CR 608.2b** — on resolution the target is re-checked and is
+still legal, so "the spell or ability will resolve normally." **CR 701.26a** — *"Only untapped
+permanents can be tapped"*, so the tap accomplishes nothing. **CR 101.3** — *"Any part of an
+instruction that's impossible to perform is ignored"* — only that part. **CR 608.2c** — remaining
+instructions are followed in the order written, so Greyfax's separate sentence "**Investigate.**"
+still happens. Contrast the payoff wordings, which read the *event* rather than the instruction and
+therefore do NOT fire: Hylda of the Icy Crown *"Whenever you tap an **untapped** creature an
+opponent controls"*, Verity Circle *"Whenever a creature an opponent controls **becomes tapped**"*.
+**Changes:** Before claiming this of a card, check the rider's grammar — it must be an unconditional
+separate instruction. It holds for Greyfax (`Tap target creature an opponent controls.
+**Investigate.**`) and for Sharae of Numbing Depths' ETB (`tap target creature an opponent controls
+**and** put a stun counter on it` — the stun counter lands on an already-tapped creature, locking it
+down). It is **not** a claim about bare tappers with no rider at all (Icy Manipulator, Hylda's Crown
+of Winter — nothing to collect), and it fails for any rider gated on "if you do" / "when you do", or
+written as a separate trigger keyed on "becomes tapped" / "untapped creature". Practical line: farm
+unconditional riders off already-tapped creatures, but spend taps on **untapped** ones first when a
+tap-payoff is also on board — the payoff is the scarce resource, not the tap.
+**Source:** inquisitor-greyfax — founding the Esper tap/untap deck.
+
+### Goad and forced attacks do NOT feed "whenever you tap" payoffs — 2026-09-02
+
+**Claim:** Making an opponent's creature attack taps it, but it does not satisfy any payoff worded
+"whenever **you** tap", and the best "becomes tapped" payoff explicitly carves attackers out.
+**Evidence:** Oracle text. Hylda of the Icy Crown: *"Whenever **you tap** an untapped creature an
+opponent controls…"* — a goaded creature taps itself as a turn-based action during its controller's
+declare-attackers step (CR 508.1f), so no player tapped it. Sharae of Numbing Depths uses the same
+"whenever you tap" wording. Verity Circle states the exclusion outright: *"Whenever a creature an
+opponent controls becomes tapped, **if it isn't being declared as an attacker**, you may draw a
+card."*
+**Changes:** "Tap their creatures" and "make their creatures attack" are two different decks that
+look like one. Goad belongs with punishers that read the *state* — Royal Assassin (destroy target
+**tapped** creature), Sunblast Angel, Meekstone — never with the "you tap" value engines. Check
+which of the three wordings a card uses before filing it in a tap-matters deck: *you tap* /
+*becomes tapped* / *is tapped*.
+**Source:** inquisitor-greyfax — the user proposed goad as a way to feed the tap payoffs.
+
+### Commander damage is COMBAT damage only — a power-doubler feeds the sweeper, not the 21 — 2026-09-02
+
+**Claim:** Only damage dealt in a combat damage step by an attacking or blocking creature counts
+toward the 21-damage commander loss condition. Damage a commander deals via a spell or ability —
+fight, Fling, "deals damage equal to its power to each opponent" — adds **zero** to that tally, no
+matter how large or how thoroughly doubled.
+**Evidence:** CR 903.10a — *"A player who's been dealt **21 or more combat damage** by the same
+commander over the course of the game loses the game"* (repeated at 104.3j, enforced as an SBA at
+704.6c). Glossary "Combat Damage" — *"Damage dealt **during the combat damage step** by **attacking
+creatures and blocking creatures** as a consequence of combat."* CR 120.2a (combat damage, turn-based,
+510.1a/510.2) vs CR 120.2b (*"Damage may be dealt as an **effect of a spell or ability**"*). The
+decisive analogy is CR 701.14d — *"The damage dealt when a creature **fights** isn't combat damage"* —
+the same shape as Chandra's Ignition. Neither the timing (cast during combat), the source (an
+attacking creature), nor "equal to its power" phrasing converts 120.2b damage into combat damage.
+**Related, verified same pass:** a damage doubler *does* apply to that noncombat damage (CR 120.2b →
+120.7 makes the creature the source; 614.1/614.4 replacement, applied at 120.4b), and it applies
+**per recipient, not to a summed total** — CR 614.5's worked example: a creature that normally deals
+2 deals 8 under two doublers, "not just 4". Caveat 614.4: the doubler must still be attached when
+damage is dealt, and a power pump must resolve *before* the damage spell, which locks power on
+resolution.
+**Changes:** When a voltron deck evaluates a "deals damage equal to its power to each opponent"
+effect, score it as **life loss against 40 plus a sweep**, never against the 21 threshold. The only
+ways to accelerate the 21 are more combat damage steps (double strike, CR 510.4/702.4a-b), extra
+combat phases, and multipliers applied to combat damage. Corrects the Ignition claim in "Doubling
+POWER is a damage multiplier when a damage doubler is already on board" under Evaluation patterns.
+**Source:** iron-man — pilot asked whether Chandra's Ignition damage is commander damage.
+
+### A replacement-effect additive on already-combat damage counts in FULL as commander damage — 2026-09-08
+
+**Claim:** Torbran, Thane of Red Fell's "+2 damage" (and any replacement effect shaped like it —
+"if a source you control would deal damage... instead") applied to a commander's combat damage is
+**not** split into a "base combat damage" tally plus separate non-commander life loss. The entire
+modified total counts toward the 21-damage commander-loss threshold. A 4-power red commander hitting
+for 4 becomes a hit for 6, and all 6 is commander damage.
+**Evidence:** CR 614.1/614.1a/614.6 — Torbran's "instead" wording is a replacement effect that
+modifies the **amount** of an event, not a new event; the source ("it") stays the commander. CR
+120.4b — the modification happens as damage is dealt, before the event is processed into results.
+CR 609.7a — a damage-modifying effect's source concept is independent of whether the damage is
+combat or spell/ability damage; the combat/noncombat category is fixed by *how the damage arose*
+(CR 510, glossary "Combat Damage"), not by anything the replacement effect itself does. Glossary
+"Combat Damage" and CR 903.10a/704.6c track damage that *is* combat damage from that commander —
+both conditions still hold for the whole modified amount; no rule carves the +2 into a separate
+bucket the way 120.4a/120.10 explicitly carve out excess damage.
+**Changes:** This is the mirror case of "Commander damage is COMBAT damage only" above, not a
+contradiction of it. The dividing line is **what kind of event exists before the amplifier ever
+touches it**: if the underlying event is already combat damage (attacking/blocking creature,
+combat damage step, CR 510) before Torbran/a doubler/any amount-amplifying replacement effect
+applies, the amplified total stays commander damage in full. If the underlying event was never
+combat damage to begin with (Chandra's Ignition, fight damage per CR 701.14d — damage from a
+spell/ability per CR 120.2b), amplifying it only inflates ordinary life loss and never feeds the
+21, no matter how large. Check *which side of that line* a damage-boosting effect sits on before
+scoring it against the 21-threshold in a voltron/commander-damage plan.
+**Source:** lord-of-pain — pilot asked whether Torbran's extra 2 damage counts as commander damage
+when The Lord of Pain (a red source) deals combat damage.
+
+---
+
+### "Whenever ONE OR MORE creatures die" fires once per batch — a mass sacrifice is one counter — 2026-09-03
+
+**Claim:** An ability worded *"whenever one or more creatures die"* triggers **once** when any number
+of creatures die simultaneously; *"whenever a creature dies"* triggers once **per creature**. A
+board wipe, a mobilize end-step sacrifice, or any simultaneous sacrifice is therefore one event
+for the batched wording and N events for the per-creature wording.
+**Evidence:** CR 603.2c — *"An ability triggers only once each time its trigger event occurs.
+However, it can trigger repeatedly if one event contains multiple occurrences."* The "one or more"
+wording collapses the occurrences into one. CR 608.2f — actions on multiple objects are processed
+simultaneously, so the mobilize sacrifice (CR 702.181a, *"Sacrifice them at the beginning of the
+next end step"*) is one event. Worked case: Infantry Shield's X tokens dying at end step put **one**
+rev counter on Chainsaw (*"Whenever one or more creatures die, put a rev counter"*), while the same
+deaths put **X** counters on Blade of the Bloodchief (*"Whenever a creature dies"*). Sacrificing the
+tokens one at a time to an outlet restores one event per token. Same pass, CR 508.4: tokens put
+onto the battlefield attacking *"never 'attacked'"*, so they fire no "whenever a creature attacks"
+triggers (Shared Animosity does nothing for them) — but they do fire per-creature *enters* triggers
+(Purphoros, Warleader's Call, Mirkwood Bats) under 603.2c's multiple-occurrence clause.
+**Changes:** Before calling two cards a combo, read whether the payoff is per-creature or
+per-batch. A "one or more" counter-grower scales with the number of death **events**, so it wants
+one-at-a-time sacrifice outlets, not wipes or mass end-step sacrifice.
+**Source:** iron-man + edgar-markov — the pilot proposed Infantry Shield + Chainsaw as a combo.
+
+---
+
+### "Gain 1 life for each" is ONE life-gain event — and it happens after the destroy, so the creatures it killed never see it — 2026-09-06
+
+**Claim:** Fumigate-style *"destroy all creatures, gain 1 life for each"* is a single life-gain
+event of N, not N events — and because the gain is applied after the destruction, any *"whenever
+you gain life"* creature the wrath killed is already in the graveyard and does not trigger.
+**Evidence:** CR 119.9 (*"whenever you gain life" = whenever a source causes you to gain life*),
+CR 608.2h (the count is determined once as the effect is applied), CR 603.2c (one trigger per
+event); contrast CR 702.15e, where *multiple lifelink sources* make separate events. Gatherer's
+Ajani's Pridemate ruling (2024-11-08) states the "for each" = one event reading verbatim. For the
+look-back half: CR 603.10a lists leaves-the-battlefield triggers only — a gain-life trigger needs
+its source on the battlefield (ledger 2026-07-31, *dies-triggers look back; gain-life does not*).
+**Changes:** Against a lifegain wrath, count only the **noncreature** gain payoffs (Sanguine Bond
+survives; Vito, Marauding Blight-Priest, Indulging Patrician die first and fire nothing). One event
+also means Blight-Priest's flat 1 is all it ever gives here — a Vito/Bond drains N in one hit.
+**Source:** edgar-markov — Fumigate evaluated for the drain build.
+
+---
+
+### A copy of an exiled card is cast FROM EXILE — Arcane Bombardment and Mizzix's Mastery fire "cast from exile" and "cast from anywhere but hand" — 2026-09-06
+
+**Claim:** When an effect says *"copy it, you may cast the copy"* about a card in exile, the copy is
+created in exile and then cast, so it counts for Passionate Archaeologist (*"cast a spell from
+exile"*) and Nico Minoru (*"from anywhere other than your hand"*). Cosmic Cube, by contrast, casts
+from the **library** (*"look at the top six … cast a spell from among them"*) — Nico yes,
+Archaeologist no. Flashback casts from the **graveyard** — Nico yes, Archaeologist no.
+**Evidence:** CR 707.12 — casting a copy *"follows the rules for casting spells, except that the
+copy is created in the same zone the object is in and then cast"*; CR 601.2/601.2a (a cast moves the
+object *from where it is* to the stack, expressly including *"that copy of a card"*); CR 707.10 —
+merely copying a *spell on the stack* is not a cast at all (Increasing Vengeance, Loki, Repeated
+Reverberation fire neither).
+**Changes:** Count exile-cast enablers by zone, card by card: impulse draw (Wiccan, Commune,
+Ignite, Tinkering, Hex Magic, Cait Sith, Jeska's Will, Thor's ETB), discover, and exile-copy
+engines (Bombardment, Mastery) — **not** flashback, not spell copies, not Cosmic Cube.
+**Source:** scarlet-witch / vision-scarlet-witch — Passionate Archaeologist evaluated for both.
+
+---
+
+### A Background is a normal enchantment in the 99 — the granted ability works on any commander — 2026-09-06
+
+**Claim:** Passionate Archaeologist (or any Background) can be run as an ordinary enchantment in a
+deck whose commander has no *"Choose a Background"*, and *"Commander creatures you own have …"*
+still applies to that commander while it is on the battlefield.
+**Evidence:** CR 205.3h — Background is an enchantment subtype. CR 702.124k restricts only the
+**command zone** (a Background *"can't be your commander unless …"*). CR 903.5a–e (deck
+construction) never mentions Backgrounds; CR 903.3d — "controlling a commander" means a permanent
+on the battlefield that is a commander.
+**Changes:** Evaluate Backgrounds as 2-mana enchantments that need the commander **on the
+battlefield** — the ability lives on the commander, so it is blank while they are in the command
+zone and does nothing the turn they are removed.
+**Source:** scarlet-witch — Passionate Archaeologist.
+
+---
+
+### "Creatures you control can't be targeted … this turn" covers creatures that enter LATER in the turn, and fizzles removal already on the stack — 2026-09-06
+
+**Claim:** Veilstone Amulet's resolved trigger protects every creature you control for the rest of
+the turn, including ones that enter afterwards, and casting any spell in response to targeted
+removal makes that removal fizzle on resolution.
+**Evidence:** CR 611.2c — a rules-modifying continuous effect from a resolving ability *"can affect
+objects that weren't affected when that continuous effect began"* (the locked-in set applies only
+to characteristic/control-changing effects); CR 117.5 — the trigger goes on the stack above the
+removal spell; CR 608.2b — a spell whose only target is now illegal *"doesn't resolve"*.
+**Changes:** Score "whenever you cast a spell, protection this turn" cards as (a) automatic on your
+own turn and (b) a counterspell-for-targeted-removal on opponents' turns **only if the deck holds
+cheap instants** — count the instants under 2 mana before crediting cell (b). It fills the
+targeted-spell + targeted-ability rows of the protection matrix (ledger 2026-08-21) for *all*
+creatures, and nothing else: wipes, edicts and exile-all ignore it.
+**Source:** vision-scarlet-witch / scarlet-witch — Veilstone Amulet evaluated across every deck.
+
+---
+
+### "No maximum hand size" vs "your maximum hand size is ten" — later timestamp wins — 2026-09-06
+
+**Claim:** Thought Vessel / Reliquary Tower and The Ten Rings do not stack; whichever entered the
+battlefield later sets the maximum. The Ten Rings' end-step refill works either way because it
+counts cards in hand, never the maximum.
+**Evidence:** CR 613.11 (hand-size effects apply after all other continuous effects, in timestamp
+order), CR 613.7/613.7d (a permanent's timestamp is when it entered), CR 613.9 (last applied
+"wins"); CR 603.4 for the intervening-if refill.
+**Changes:** In any list running The Ten Rings, a second no-max-hand-size card is redundant, not
+additive — and it can *lose* to the Rings on timestamp. Reliquary Tower earns a slot only in a deck
+that reliably ends its own turn above seven cards *without* a refill engine (Lord of Pain's
+Howling-Mine package qualifies; Iron Man and Ultron with The Ten Rings do not).
+**Source:** iron-man — Reliquary Tower re-evaluated; matches the 2026-08-25 Venser's Journal cut.
+
+---
+
+### Cost reducers eat the GENERIC part of buyback too — Reiterate with buyback is {R}{R} under four reducers — 2026-09-06
+
+**Claim:** Buyback is an additional cost folded into the spell's single total cost, so generic
+cost reducers subtract from the buyback's generic mana as freely as from the printed cost. Reiterate
+({1}{R}{R}, buyback {3}) under Ruby Medallion, The Fire Crystal, Longshot and Artist's Talent L2 is
+{4}{R}{R} − {4} = **{R}{R} with buyback**; under the two medallions alone it is {2}{R}{R}.
+**Evidence:** CR 702.27a (buyback is paid "following the rules for paying additional costs in
+601.2b and 601.2f–h"); CR 601.2f (*"The total cost is the mana cost or alternative cost … plus all
+additional costs … minus all cost reductions"*); CR 118.7a (generic reductions touch only the
+generic component). Mana value is unchanged (CR 118.8d). Copies keep X and targets can be changed
+(CR 707.10, 707.10c) but a copy is **not cast** — no cast-triggers, magecraft-style "cast or copy"
+only.
+**Changes:** In any reducer-dense deck, cost a buyback spell at its *reduced buyback total* — that
+is the price of a repeatable effect, and it decides whether the card is a one-shot or an engine.
+Same arithmetic applies to kicker, escalate and splice costs.
+**Source:** scarlet-witch — Reiterate re-evaluated for the Bracket 3 list under the pilot's
+chosen-N loop line.
+
+---
+
+### "Regenerate target artifact" saves an artifact-creature commander — and only from destruction — 2026-09-07
+
+**Claim:** Welding Jar ({0}, sacrifice: regenerate target artifact) is instant-speed protection for
+any artifact creature commander (The Vision and Scarlet Witch, Ultron) as well as for The Ozolith
+and Equipment — against "destroy", lethal damage and deathtouch, and nothing else.
+**Evidence:** CR 205.2b (an object with several card types satisfies "target artifact");
+CR 701.19a (regeneration replaces the next destruction this turn: remove damage, tap it, remove
+from combat); CR 701.8b (destruction is only "destroy" effects and the lethal-damage / deathtouch
+SBAs, 704.5g–h); CR 704.5f (toughness ≤ 0 "can't be replaced" by regeneration); CR 117.1b
+(activate whenever you have priority). The shield exists only once the ability resolves.
+**Changes:** In any deck with an artifact commander, a zero-mana regenerator is a free spell
+(cast-triggers fire) that fills the destroy row of the protection matrix for *every* artifact at
+once; it does not fill the exile / edict / −X/−X row, and it taps the creature. Rank it beside
+Mithril Coat, not instead of it.
+**Source:** vision-scarlet-witch — the pilot asked for cheap artifact protection for The Ozolith.
+
+---
+
+### The Ozolith carries keyword counters too — an indestructible counter survives the commander leaving — 2026-09-07
+
+**Claim:** When a creature with mixed counters leaves, The Ozolith gets the same number of *each
+kind*, keyword counters included, and moves all of them back at the next beginning of combat.
+**Evidence:** CR 122.8 (leaves-the-battlefield counter transfer puts "the same number of each
+kind of counter"), CR 122.5 (move = remove and put onto a second object), CR 122.1b (keyword
+counters grant the keyword; indestructible is one).
+**Changes:** Price an indestructible counter (Tyrite Sanctum's second ability, Flawless Maneuver
+counters, etc.) as *permanent across recasts* in any Ozolith deck — the recast commander regains
+it at combat. The same holds for shield, flying, lifelink and every other keyword counter.
+**Source:** vision-scarlet-witch — Tyrite Sanctum + The Ozolith.
+
+---
+
+### Tyrite Sanctum's God type is permanent — the two-step indestructible works on any legendary creature — 2026-09-07
+
+**Claim:** The first ability ("becomes a God in addition to its other types") has no stated
+duration, so it lasts until the creature leaves the battlefield; on any later turn the second
+ability ({4},{T}, sacrifice: indestructible counter on target God) can target it.
+**Evidence:** CR 611.2a (no duration stated → until end of game), CR 205.1b (types are additive),
+CR 400.7 (a recast commander is a new object — start over). Verified after this repo's deck
+notes had cited the Sanctum as indestructible for non-God commanders without checking.
+**Changes:** In every legendary-commander deck the Sanctum is six mana over two turns for a
+permanent indestructible counter, not a God-tribal card. Count it on the destroy row.
+**Source:** vision-scarlet-witch / scarlet-witch — both lists run it.
+
+---
+
+### Kicker payments share ONE discount budget with X — every kick costs a point of X — 2026-09-08
+
+**Claim:** A generic cost reduction does apply to kicker and multikicker payments, because the
+total cost is assembled first and reduced afterwards. The consequence is the part that gets
+missed: kicks and X draw on the *same* pool of discount, so under a fixed reduction each kick you
+pay costs you exactly one point of X.
+**Evidence:** CR 601.2f — *"The total cost is the mana cost or alternative cost … **plus all
+additional costs and cost increases, and minus all cost reductions**."* CR 702.33a/c make
+(multi)kicker an additional cost. CR 118.7a confines a generic reduction to the generic component,
+floored at {0} (CR 601.2f). Worked: Comet Storm ({X}{R}{R}, multikicker {1}) at X=5 kicked twice is
+{5}{R}{R} + {1} + {1} = {7}{R}{R}; The Scarlet Witch at power 8 wipes all 7 generic and wastes the
+8th, so it costs {R}{R} — and **X + kicks = 8** is the real constraint. Also CR 202.4 / 118.8d: the
+kicker payments do **not** raise mana value, so kicking can never switch on an MV-gated discount
+(Comet Storm at X=1 is MV 3, kicked or not). And CR 601.2f locks the total in, so killing the
+commander with the spell already on the stack does not raise what you pay.
+**Changes:** When a deck's reducer is large but finite, price a kicked spell as `X + kicks` against
+one budget, then compare it to the unkicked card that does the same job. In scarlet-witch that
+comparison demotes Comet Storm: kicked twice it hits three targets for `X + 2` generic, where
+Jaya's Immolating Inferno hits *up to three targets* for `X` at the same {X}{R}{R} — strictly two
+generic cheaper for the same board, with instant speed the only thing Comet Storm buys back.
+**Source:** scarlet-witch — the pilot's "are you sure the kicker cost gets eaten by the discount?"
+
+---
+
+
+### A beginning-of-combat ATTACH trigger plus an unattach-cost ability is a free extra activation — 2026-09-08
+
+**Claim:** When a permanent has a trigger that attaches an Equipment *from the battlefield* and a
+separate ability whose cost is "unattach an Equipment," you get one **free** activation every turn
+by activating in response to the trigger — no equip cost and no second re-attacher needed. Letting
+the trigger resolve first wastes it entirely.
+**Evidence:** CR 701.3b — *"If an effect tries to attach [an Equipment] to the object... it's
+already attached to, the effect does nothing."* So the trigger is blank unless the Equipment is
+already off. CR 701.3d — unattaching leaves the Equipment *"on the battlefield but not equipping
+anything."* CR 608.2b — targets are rechecked on resolution and an unattached Equipment you control
+is still legal. The line: trigger goes on the stack targeting the attached Equipment → hold
+priority → activate the unattach-cost ability → trigger resolves and re-attaches.
+**Changes:** Refines "'Unattach' in a cost needs a BATTLEFIELD re-attacher" (2026-09-02). That entry
+sorted attach effects into *on enter* / *from hand* / *from battlefield* and counted only the third.
+Add a fourth question: **is the from-battlefield attacher a beginning-of-combat trigger?** If so the
+first activation each turn is free, and Puresteel Paladin / Forge Anew / Brass Squire buy *additional*
+activations rather than the first one. Captain America, First Avenger carries both halves in the
+command zone, which is what makes Surestrike Trident and Sunforger one-card engines under him where
+they were two-card engines under Tony Stark.
+**Source:** captain-america evaluation; ties back to iron-man V3's Surestrike Trident.
+
+---
+
+### Unattaching as a COST strips the Equipment's granted abilities before the effect resolves — 2026-09-08
+
+**Claim:** An ability that pays *"unattach an Equipment"* as a cost loses whatever that Equipment
+was granting **before** the ability's damage or effect happens. Throw the Equipment that grants the
+rider and the rider is gone; throw a *different* one and the rider applies in full.
+**Evidence:** CR 601.2h (via 602.2b) — costs are paid during activation; CR 608.1/608.2c — the
+ability resolves later. CR 120.3 — damage results depend on *"the characteristics of the damage's
+source"*, checked as the damage is dealt. CR 113.7a — the source's information is read on
+**resolution**, not locked in at announcement, and the LKI fallbacks in CR 702.2e / 702.15c apply
+only when the source has left the battlefield. Worked case: Basilisk Collar on Captain America —
+throwing a different Equipment gives the Throw damage deathtouch and lifelink; throwing the Collar
+itself gives neither.
+**Related, verified same pass:** **deathtouch is not combat-only.** CR 702.2b — *"A creature... that's
+been dealt damage by a source with deathtouch... is destroyed as a state-based action"*, with no
+combat restriction (CR 702.2d confirms it functions from any zone). So a Collar-equipped creature
+pinging for 1 via an activated ability is repeatable removal. Lifelink (CR 702.15b / 120.3f) gains
+life equal to the **total** dealt across all targets of one instance, not per target.
+**Changes:** For any unattach-cost or sacrifice-cost outlet, list what the deck's *other* attached
+permanents grant and confirm the rider survives the cost payment. The pairing is "rider Equipment
+stays on, payload Equipment gets thrown" — never the same card doing both.
+**Source:** captain-america — Basilisk Collar (69% EDHREC inclusion) with Captain America's Throw.
+
+---
+
+### An activated ability survives its source's removal, so an unattach/sac outlet is removal insurance — 2026-09-08
+
+**Claim:** Once an activated ability is on the stack it resolves in full even if its source is
+destroyed in response. A voltron commander with a damage outlet therefore converts a removal spell
+into damage instead of losing the turn's investment.
+**Evidence:** CR 113.7a — *"Once activated or triggered, an ability exists on the stack independently
+of its source. Destruction or removal of the source after that time won't affect the ability... The
+source can still perform the action even though it no longer exists."* CR 608.2h supplies last known
+information for the source's characteristics. CR 117.1b — an activated ability with no printed
+activation instruction (CR 602.5d) can be activated any time you have priority, including in response
+to removal and on an opponent's turn.
+**Changes:** Voltron's standard failure mode is "they kill the commander and the equipment investment
+evaporates" (see "Equipment survives its creature leaving", CR 704.5n — the gear stays, the equip
+costs are the real loss). A commander-based damage outlet **partially answers that**, and should be
+scored as resilience, not just as reach. Check the outlet has no `{T}` in its cost, or the commander
+needs vigilance / an untapper to use it after attacking.
+**Source:** captain-america — Throw ({3}, Unattach) in response to spot removal.
+
+---
+
+### Mana value on the battlefield is the PRINTED cost, and {X} there counts as zero — 2026-09-08
+
+**Claim:** A permanent's mana value is derived from its printed mana cost, unaffected by anything you
+paid. An `{X}` in that cost counts as **0** while the permanent isn't on the stack, so any payoff
+keyed to "that permanent's mana value" reads an X-cost permanent as 0.
+**Evidence:** CR 202.3 — *"The mana value of an object is a number equal to the total amount of mana
+in its mana cost."* CR 118.7 — *"Paying a cost changed or reduced by an effect counts as paying the
+original cost."* CR 601.2f applies reductions only while determining a spell's total cost. CR 202.3e
+— *"an {X} in a mana cost is treated as 0"* off the stack. CR 120.8 — a source dealing 0 damage deals
+no damage at all, so no damage triggers fire either.
+**Changes:** Strengthens "Mana value is not what you paid" (2026-08-06), which asserted this without
+a CR citation — cite CR 202.3 / 118.7 from here on. Two live consequences: Excalibur, Sword of Eden
+has **MV 12 on the battlefield** even when its historic-permanents discount casts it for {0}, making
+it the largest Throw payload in a Captain America deck; and **any X-cost Equipment is a dead payload**
+(MV 0 → zero damage), so exclude the whole class before building a payload list.
+**Source:** captain-america — sizing Throw damage by payload mana value.
+
+---
+
+### One-mana cost-reduction floors do NOT stack, and Training Grounds misses equip costs — 2026-09-08
+
+**Claim:** Training Grounds and Zirda, the Dawnwaker each carry their own *"can't reduce the mana in
+that cost to less than one mana"* clause. Running both never reaches {0} in any application order.
+They also cover **different sets of abilities**: Training Grounds hits only creatures' activated
+abilities; Zirda hits every non-mana ability you activate, including equip.
+**Evidence:** CR 601.2f — *"If multiple cost reductions apply, the player may apply them in any
+order"* — but each floor is evaluated as its own reduction applies, so {3} → {1} and the second
+reducer can go no further. CR 702.6a — *"Equip is an activated ability of Equipment cards"*; an
+Equipment is an artifact, so equip is not an activated ability of a creature you control and Training
+Grounds does nothing for it. CR 118.7a — generic-mana reductions touch only the generic component,
+never a nonmana cost like "unattach an Equipment." Narrow exception: an Equipment that is *itself* a
+creature (reconfigure, living weapon body) does have its activated abilities reduced by Training
+Grounds (CR 702.151a).
+**Changes:** This is SKILL.md §1.2 ("cost the card out in *this deck's* mana") applied to **activated**
+costs, where the reducers differ far more than the spell-side ones do. Before pricing an activation
+engine, check each reducer's exact subject — *creatures' activated abilities* (Training Grounds) vs
+*any non-mana ability you activate* (Zirda) vs *equip abilities only* (Fighter Class L2, Bureau
+Headmaster) — and never assume two floored reducers reach free. A "free activation" engine has to come
+from a granted equip {0} (Puresteel Paladin metalcraft) or a free-attach trigger, not from stacking
+reducers.
+**Source:** captain-america — pricing the Throw engine at {3} base.
+
+---
+
+
+### A companion's condition is checked INCLUDING your commander, and companion is nothing like a commander — 2026-09-08
+
+**Claim:** In Commander, a companion's deckbuilding condition is evaluated against all 100 cards
+**including the commander**, because the check happens before the commander is set aside. And the
+companion mechanic shares nothing with the commander mechanic beyond "starts outside the library":
+flat {3} **once per game** to move it to *hand* (you still cast it), no escalating tax, no command-zone
+recursion, no commander damage.
+**Evidence:** CR 702.139b — *"If a companion ability refers to your starting deck, it refers to your
+deck after you've set aside any sideboard cards. **In a Commander game, this is also before you've set
+aside your commander.**"* CR 103.2a/b/c sequences it: sideboard aside → companion revealed → commander
+to the command zone. CR 702.139a + 116.2g — *"pay {3} and put that card into your hand"*, a special
+action, sorcery speed, empty stack, once per game; contrast CR 903.8 (commander tax, +{2} per prior
+cast) and CR 903.9a/b (return to the command zone on death/exile). CR 702.139d / 903.11 make companion
+legal in Commander despite CR 903.5e (*"Commander games do not use sideboards"*) — a companion is
+revealed from **outside the game** (CR 400.11), a different bucket from a sideboard. CR 903.11a blocks
+it if the card shares a name with anything in your starting deck, or if any colour in its identity is
+outside your commander's.
+**Related, verified same pass:** **mana abilities ARE activated abilities.** CR 605.1a — *"An activated
+ability is a mana ability if..."* — so `{T}: Add {W}` satisfies any "has an activated ability" check.
+Basic lands qualify on their intrinsic ability (CR 305.6) and fetchlands on their sacrifice ability,
+but a Saga does **not** (chapter abilities are triggered; Urza's Saga only *gains* `{T}: Add {C}` after
+chapter I, irrelevant to a card checked outside the game). Equip qualifies (CR 702.6a), so every
+Equipment passes; crew likewise.
+**Changes:** Price a companion as **{3} + its mana cost, once, for a card that dies permanently** —
+never as a second commander. Then apply the real test: the condition is a **deckbuilding tax on 100
+cards plus the commander**, and in singleton that is usually fatal. Worked case: Zirda, the Dawnwaker
+under Captain America, First Avenger — the *commander* passes (Throw is `{3}, Unattach an Equipment:`)
+and the R/W hybrid identity (CR 903.4) fits inside RUW, but the 99 cannot: Puresteel Paladin (87%
+EDHREC), Sigarda's Aid (86%), Sram (75%), Forge Anew (69%), Esper Sentinel, Masterwork of Ingenuity,
+Bureau Headmaster and Urza's Saga all have only static and/or triggered abilities. **Default to running
+the companion card maindeck**; a maindeck copy makes the companion illegal anyway (CR 903.11a), so it
+is strictly either/or.
+**Source:** captain-america — pilot asked how companions work and whether to keep both Zirda and
+Training Grounds.
+
+---
+
+
+### An "enter as a copy" Equipment copying a LEGENDARY target dies to the legend rule on arrival — 2026-09-08
+
+**Claim:** A copy effect copies name and supertypes, so copying a legendary permanent you already
+control produces two legendary permanents with the same name and one is put into the graveyard
+immediately as a state-based action. You cannot use the doomed copy first — the SBA happens before
+any player gets priority.
+**Evidence:** CR 707.2 — copiable values are *"name, mana cost, colour indicator, card type, subtype,
+**supertype**, rules text, power, toughness and/or loyalty."* CR 205.4d + CR 704.5j — *"If two or more
+legendary permanents with the same name are controlled by the same player, that player chooses one of
+them, and the rest are put into their owners' graveyards."* CR 704.3 — SBAs are checked before any
+player receives priority. Note it is **put into the graveyard, not sacrificed** (no sacrifice triggers),
+and the legend rule is **per controller**, so copying an *opponent's* legendary permanent is fine.
+**Changes:** Before scoring a copy effect against a marquee legendary target, check whether you already
+control the original. Worked case: Masterwork of Ingenuity ({1}) copying Excalibur, Sword of Eden gets
+mana value **12** (CR 707.2 → 202.3, and the {1} actually paid is irrelevant) — so the Throw damage
+maths is right — but the copy is *also* named Excalibur and legendary, so one of the two dies on
+arrival and the "second 12-damage payload for {1}" line does not exist. Masterwork's real ceiling in a
+Captain America deck is the best **nonlegendary** payload: Meteor Sword (MV 7) or Argentum Armor
+(MV 6). Generalise: **rank copy targets by mana value among nonlegendary permanents first**, and treat
+a legendary target as available only when an opponent controls it.
+**Source:** captain-america — evaluating Masterwork of Ingenuity (57% EDHREC) as a Throw payload.
+
+---
+
+### An additional combat PHASE carries its own beginning-of-combat step; an added STEP does not — 2026-09-08
+
+**Claim:** Every effect that adds a combat *phase* adds a full phase including its **beginning of
+combat step**, so "at the beginning of combat on your turn" triggers fire again in each extra combat.
+The exception is an effect that adds a bare *step*, which creates the containing phase with the other
+steps skipped.
+**Evidence:** CR 506.1 — the combat phase has five steps *"which proceed in order: **beginning of
+combat**, declare attackers, declare blockers, combat damage, end of combat"*; only declare
+blockers/combat damage are ever skipped (CR 508.8). CR 500.8 — *"Some effects can add **phases** to a
+turn... directly after the specified phase."* CR 500.6 — *"When a phase or step begins, any abilities
+that trigger 'at the beginning of' that phase or step trigger."* Contrast CR 500.10, the added-*step*
+case (Obeka), which skips the phase's other steps. Verified for Genji Glove, Aggravated Assault and
+Godo, Bandit Warlord — all three add a phase. Genji Glove's *"if it's the first combat phase of the
+turn"* is an intervening-if (CR 603.4/608.2a), so it grants exactly one extra combat per Glove.
+**Changes:** Extra-combat cards are **not** only a combat-damage multiplier — in any deck whose engine
+is a beginning-of-combat trigger, each extra combat phase is a **second activation of that engine**,
+and should be scored in that role rather than filed with the aggro payoffs. For captain-america this
+promotes Genji Glove sharply: combat 1's Catch attaches the Glove, the attack schedules combat 2, and
+combat 2's Catch moves a *different* high-mana-value Equipment onto Cap for a second free Throw. Check
+the wording says *phase* and not *step* before counting on it.
+**Source:** captain-america — Genji Glove (34% EDHREC) against the Catch/Throw engine.
+
+---
+
+
+### One cost payment buys ONE ability — two unattach-cost abilities on the same Equipment need a re-attach between them — 2026-09-09
+
+**Claim:** An Equipment that pays *"Unattach this"* for one ability cannot have that same unattach also
+pay a second ability's identical cost, in either order. You must physically re-attach it in between,
+and the re-attachment must fully **resolve** before the second ability is activated.
+**Evidence:** CR 118.10 — *"Each payment of a cost applies to only one spell, ability, or effect. For
+example, a player can't sacrifice just one creature to activate the activated abilities of two
+permanents that each require sacrificing a creature as a cost."* Reverse order fails on CR 118.3 —
+*"A player can't pay a cost without having the necessary resources to pay it fully… a permanent
+that's already tapped can't be tapped to pay a cost"* — an already-unattached Equipment has no
+creature to be moved away from (CR 701.3d), so there is nothing to spend; the activation is rewound
+under CR 602.2 / 733.1.
+**Related, verified same pass:** **no player ever receives priority during an activation.** A window
+does exist in which the ability is on the stack (CR 602.2a) while the Equipment is still attached,
+because costs are paid later at CR 601.2h — but CR 117.3c gives priority only *after* the activation
+completes, and CR 117.1d makes **mana abilities** the sole thing playable inside that window. So
+"hold priority and respond to my own cost payment" is not a legal line, ever.
+**Changes:** For any deck stacking unattach-cost cards (Sunforger, Surestrike Trident, Captain
+America's Throw), count the **re-attach events available per turn**, not the number of unattach
+outlets — each extra activation needs its own resolved attach. The free line under Captain America is
+Sunforger's ability in the precombat main phase, then Catch re-attaching it at beginning of combat,
+then Throw — which also means Sunforger's ability must always go *first* in a turn that uses both.
+**Source:** captain-america — the pilot asked whether one unattach could pay for Sunforger and Throw.
+
+---
+
+### "The first equip ability each turn is free" effects do NOT stack — 2026-09-09
+
+**Claim:** Bruenor Battlehammer and Forge Anew each read *"You may pay {0} rather than pay the equip
+cost of the **first** equip ability you activate [during] each [of your] turn[s]."* Controlling both
+gives you **one** free equip per turn, not two — each independently replaces the cost of the same
+first activation.
+**Evidence:** Oracle text of both cards, verified via `bun run card`. The replacement is keyed to an
+ordinal ("the first"), so once the first equip of the turn has been activated, neither effect has a
+remaining application; a second equip that turn is simply not "the first."
+**Changes:** Do not count two such cards as two free equips when modelling how many Equipment can be
+moved in a turn. They remain worth running together as **substitutes** under SKILL.md §2.5 — drawing
+either one turns the effect on, which is the real reason for a second copy — but the throughput model
+must use one free equip per turn, plus whatever Puresteel Paladin's granted **equip {0}** provides
+(that one is an actual cost of {0}, not an ordinal replacement, so it is unlimited).
+**Source:** captain-america — both cards are in the list.
+
+---
+
+### A "{T}: Attach target Equipment" ability is NOT equip, so it works at instant speed — 2026-09-09
+
+**Claim:** A permanent whose ability reads *"{T}: Attach target Equipment you control to target
+creature you control"* (Brass Squire) has no sorcery-speed restriction. It can attach during combat,
+during an opponent's turn, and in response to removal.
+**Evidence:** CR 702.6a builds the restriction into equip itself — *"Equip [cost]" means "[Cost]:
+Attach this permanent to target creature you control. **Activate only as a sorcery**"* — so it binds
+only equip abilities. CR 301.5b expressly allows other routes: *"Spells and other abilities may also
+attach an Equipment to a creature."* Brass Squire prints no activation instruction, so CR 117.1b
+applies: *"A player may activate an activated ability any time they have priority."* Caveats: CR
+602.5a summoning sickness for the {T}, and CR 608.2b — both targets are chosen on activation and must
+still be yours on resolution.
+**Changes:** Sort a deck's attach effects by **speed** as well as by source zone. An instant-speed
+attacher is the piece that re-suits a commander *in response to removal* and that enables an
+unattach-cost activation on an opponent's turn — jobs no equip ability can do without Forge Anew's
+*"during your turn"* clause, which itself does not extend to opponents' turns.
+**Source:** captain-america — Brass Squire, kept in the list at the pilot's request.
+
+
+### "Becomes tapped" triggers on COST-taps, not just "tap target creature" — 2026-09-09
+
+**Claim:** A "whenever X becomes tapped" trigger fires on *any* untapped→tapped status change,
+including taps paid as a cost — crew, Station, convoke, improvise, a `{T}` activation cost — and on
+tapping to attack. It is cause-agnostic.
+**Evidence:** CR 110.5 (tapped is a *status*, not an action). CR 603.2e — such abilities trigger
+"only when the status of a permanent that's already on the battlefield changes from untapped to
+tapped." Nothing in the rules distinguishes the cause. Specifically: CR 107.5 (`{T}` in a cost means
+"Tap this permanent"), 702.122a (crew: "Tap any number of other untapped creatures you control"),
+702.184a (Station: "Tap another untapped creature you control"), 702.51a (convoke), 508.1f
+(attacking "isn't a cost; attacking simply causes creatures to become tapped").
+**Changes:** Evaluate every "becomes tapped" payoff against the deck's *cost*-taps, not only its
+tappers. Two exclusions to remember: improvise taps **artifacts** (702.126a), so it only triggers
+creature-tap payoffs for artifact *creatures*; and a permanent that **enters the battlefield
+tapped** never triggers it (603.2e, stated verbatim).
+**Source:** cap-living-legend — Captain America, Living Legend.
+
+### A trigger caused by a cost-tap always resolves AFTER the spell that caused it — 2026-09-09
+
+**Claim:** Value you get from tapping a permanent to pay a cost can never help pay for the thing
+you were casting. This kills "tap a dork for mana, untap it, spend the extra mana on this spell"
+and "convoke the same creature twice for one spell."
+**Evidence:** The tap happens while paying costs (CR 601.2h, applied to abilities by 602.2b), but
+the spell isn't cast until 601.2i, and CR 603.3 only puts the triggered ability on the stack "the
+next time a player would receive priority." So the trigger is strictly downstream.
+**Changes:** When a commander or engine converts taps into mana or untaps, sequence it as **tap
+with priority first, hold the mana, then cast** — and price the effect as "extra mana next
+activation," never as a cost reduction on the current spell. Note mana empties at end of step or
+phase (CR 500.5), so the holding window is short.
+**Source:** cap-living-legend.
+
+### Crew stays crewed after the crewers untap, and they can crew a second Vehicle — 2026-09-09
+
+**Claim:** Untapping the creatures that paid a crew cost does not un-crew the Vehicle, and those
+same creatures may immediately pay another Vehicle's crew cost.
+**Evidence:** The untap trigger goes on the stack *above* the crew ability (CR 603.3), so it
+resolves first — but CR 602.2 says payments "can't be altered after they've been made," and
+702.122c refers to a creature that **was** tapped to pay the cost (past tense, a locked historical
+fact). Crew's effect (702.122a) has no ongoing dependency on the crewers' status. Crew requires
+"other **untapped** creatures," which they now are again, and crew has no sorcery restriction.
+**Changes:** In any deck with an untapper, count each creature's power **once per Vehicle**, not
+once per turn. Also CR 603.2c: tapping three creatures for one crew cost is one event with three
+occurrences, so it produces **three** separate triggers.
+**Source:** cap-living-legend.
+
+### "Activate only as a sorcery" is a TIMING restriction, not a per-turn cap — 2026-09-09
+
+**Claim:** An ability reading "Activate only as a sorcery" can be activated any number of times in
+a turn, as long as each activation is in your main phase with an empty stack.
+**Evidence:** CR 602.5d — "Activated abilities that read 'Activate only as a sorcery' mean the
+player must follow the timing rules for casting a sorcery spell." That is main phase, your turn,
+empty stack. It says nothing about frequency. Contrast a genuine cap, which is worded "Activate
+only once each turn."
+**Changes:** Never assume sorcery-speed means once per turn. The practical consequence is that the
+activations can't be stacked in response to each other — you must let each one resolve first — so
+any untap that enables a second activation has to resolve in between.
+**Source:** cap-living-legend — Station (CR 702.184a) firing twice per creature per turn.
+
+### Untapping an attacker doesn't remove it from combat, and the untap lands before blockers — 2026-09-09
+
+**Claim:** A creature that taps to attack and is then untapped is still an attacking creature, still
+deals combat damage, and is physically untapped when blockers are declared.
+**Evidence:** CR 506.4b — "Tapping or untapping a creature that's already been declared as an
+attacker or blocker doesn't remove it from combat and doesn't prevent its combat damage." CR 508.2b
+puts abilities that triggered during the 508.1 declaration on the stack before the active player
+gets priority, and CR 500.2 means the declare attackers step doesn't end until they resolve.
+**Changes:** A "first tap each turn untaps it" effect is genuine team-wide pseudo-vigilance, and the
+untapped attacker can still be tapped again for a `{T}` ability that same combat (subject to CR
+302.6 summoning sickness).
+**Source:** cap-living-legend.
+
+
+### Divided damage ("among one, two, or three targets") can be aimed at your OWN permanents — 2026-09-09
+
+**Claim:** The modern divided-damage templating is an "any target" ability. Its targets may be
+creatures, players, planeswalkers or battles on **any** side of the table, so a commander with such
+an ability can legally target itself or your own creatures.
+**Evidence:** CR 115.4 — abilities requiring *"'any target,' 'another target,' 'two targets,' **or
+similar**"* may target *"creatures, players, planeswalkers, or battles."* CR 115.3 / 601.2c: the
+phrase contains one instance of "target," so the chosen targets must be **different objects** — you
+cannot name the same creature twice to double the damage into it. CR 601.2c–d fix the number of
+targets and the division when the ability is put on the stack, and CR 601.5 explicitly lets you look
+ahead to which object you will use to pay the cost when making that choice.
+**Changes:** Any "deals damage divided among N targets" ability is also a self-targeting outlet.
+That opens a whole class of otherwise-unplayable payoffs: damage-to-counters converters, "whenever
+a creature you control is dealt damage" triggers, and enrage. Check for them before writing such an
+ability off as opponent-facing only.
+**Source:** captain-america — Throw + Panther Habit.
+
+### When a doubler and a prevention-with-a-rider both hit YOUR creature, YOU pick the order — 2026-09-09
+
+**Claim:** Damage doubling is a replacement effect, and when it collides with a prevention effect on
+the same damage event the **affected object's controller** chooses which applies first. Aiming your
+own damage at your own creature therefore hands you the ordering choice, and "double first, then
+prevent" is always available.
+**Evidence:** CR 701.10g — *"To double an amount of damage a source would deal, that source instead
+deals twice that much damage. **This is a replacement effect.**"* CR 616.1 — the affected object's
+controller chooses one to apply; CR 616.1e — *"Any of the applicable replacement and/or prevention
+effects may be chosen"*; CR 616.1f reapplies the process to the modified event. CR 615.5 — the
+prevention effect's rider *"takes place immediately afterward"*, so it measures the **doubled**
+amount. CR 614.5 caps each effect at one application (N → 2N, never 4N).
+**Changes:** Two consequences. (1) A damage-to-counters or damage-to-life-gain converter scales with
+your doublers, not with the printed number — cost it at 2× before comparing. (2) The mirror image:
+when you aim damage at an **opponent's** shielded creature, CR 616.1 gives *them* the ordering
+choice and they will prevent first, so never count on a doubler pushing through a prevention shield
+you don't control. Same rule, opposite outcome, purely because of who is affected.
+**Source:** captain-america — Mjölnir + Panther Habit on a self-aimed Throw.
+
+### A copied activated ability reuses the ORIGINAL's cost objects, and can't redivide its damage — 2026-09-09
+
+**Claim:** Copying an activated ability never re-charges the cost, and an effect in the copy that
+refers to an object used to pay the cost reads the object the **original** used. If the ability
+divides damage, the copy keeps the original's division; only the identities of the targets may
+change.
+**Evidence:** CR 707.10 — *"a copy of an activated ability isn't activated... If an effect of the
+copy refers to objects used to pay its costs, it uses the objects used to pay the costs of the
+original spell or ability"* (the rule's own example is Fling). CR 707.10b — the copy has the same
+source as the original. CR 707.10c — new targets are optional and must be legal. CR 115.7f — *"the
+original division can't be changed"* when choosing new targets.
+**Changes:** Prices every ability-copier (Illusionist's Bracers, Lithoform Engine, Rings of Brighthearth)
+against sacrifice/unattach/exile-cost abilities at **full value for zero extra cost** — the copy is
+pure profit, and it inherits every static buff on the source. But a copy of a *divided* damage
+ability cannot be recombined into one big hit: 2/1/1 among three targets stays 2/1/1 among three
+targets. Do not plan on a copy consolidating chip damage into a kill.
+**Source:** captain-america — Illusionist's Bracers copying Throw.
+
+### Paying a cost with the permanent that grants the trigger loses the trigger — 2026-09-09
+
+**Claim:** Costs are paid *before* activation finishes, so if you sacrifice or unattach the very
+permanent whose static ability would have triggered on the activation, that ability is already gone
+and never triggers.
+**Evidence:** CR 602.2b routes activation through CR 601.2a–i. Costs are paid at **CR 601.2h**; the
+ability is not activated — and cast/activate triggers do not trigger — until **CR 601.2i**:
+*"Once the steps described in 601.2a–h are completed... Any abilities that trigger when a spell is
+cast or put onto the stack trigger at this time."* CR 603.2 requires the trigger condition to exist
+at that moment. CR 701.3d: an unattached Equipment *"remains on the battlefield but isn't equipping
+anything"* — so there is no "equipped creature."
+**Changes:** A hard sequencing trap in any deck where the enabler is also valid fodder. Concretely:
+never unattach Illusionist's Bracers (or the Equipment granting the keyword you want on the damage)
+to pay an "unattach an Equipment" cost — throw a *different* piece. Same shape as sacrificing your
+own "whenever you sacrifice a creature" permanent to its own outlet.
+**Source:** captain-america — Throw's unattach cost vs. Illusionist's Bracers / Panther Habit.
+
+### Unpreventable damage still fires a prevention effect's rider — 2026-09-09
+
+**Claim:** A prevention effect that also does something else ("prevent that damage **and** put that
+many counters on it") still does the something else against damage that can't be prevented. You take
+the damage and get the rider.
+**Evidence:** CR 615.12 — *"If unpreventable damage would be dealt, any applicable prevention effects
+are still applied to it. Those effects won't prevent any damage, but **any additional effects they
+have will take place**."*
+**Changes:** Prevention-with-a-rider cards are strictly better than plain prevention against
+Skullcrack/Flame Rift-style "damage can't be prevented" clauses — the shield fails but the payoff
+still lands. Do not discount them for a meta with unpreventable damage. Note the reverse is not a
+free lunch: the damage is fully dealt, so lethal damage still kills.
+**Source:** captain-america — Panther Habit evaluation.
+
+
+### A copy effect on a permanent already on the battlefield does NOT trigger ETBs — 2026-09-09
+
+**Claim:** "Target permanent becomes a copy of..." fires no enters-the-battlefield abilities. Only
+"enters **as** a copy" does.
+**Evidence:** CR 707.4 — "Some effects cause a permanent that's copying a permanent to copy a
+different object while remaining on the battlefield. The change doesn't cause enters-the-battlefield
+or leaves-the-battlefield abilities to trigger." ETB abilities are zone-change triggers (603.6a) and
+a copy effect is a layer 1a continuous effect (613.2a) on a permanent that never changes zones.
+Contrast CR 707.5, the "enters as a copy" case, which *does* get ETB triggers.
+**Changes:** When picking targets for a Shuri/Mirrorworks-style copy effect, value **attack** and
+**activated** abilities, not ETBs. A card whose whole value is its ETB is a dead copy target for the
+707.4 kind and a live one for the 707.5 kind — check which you have before evaluating.
+**Source:** cap-living-legend — Shuri, Wakandan Inventor.
+
+### Copy effects don't copy counters or status, so counter-gated cards are dead copy targets — 2026-09-09
+
+**Claim:** Copying a card whose abilities and creature-ness sit behind a counter threshold (Station
+`{N+}`, level up, Sagas, Class levels) gives you a bare shell with none of it.
+**Evidence:** CR 707.2 — copiable values are "name, mana cost, color indicator, card type, subtype,
+supertype, rules text, power, toughness, and/or loyalty… Other effects (including type-changing and
+text-changing effects), **status, counters**, and stickers are not copied." CR 721.2b defines a
+Station `{5+}` line as "**As long as this permanent has 5 or more charge counters on it**, it has
+[abilities] and is a creature."
+**Changes:** Never nominate a Station Spacecraft, a leveler or a Saga as the thing to copy. In the
+same family: **status isn't copied either**, so a *tapped* permanent that becomes a copy of a
+Vehicle is a *tapped* Vehicle and cannot attack (508.1a). Tap the rock for mana **or** copy it into
+a threat — not both in one turn.
+**Source:** cap-living-legend — Extinguisher Battleship rejected as a Shuri target.
+
+### Attacking and summoning sickness key on control of the PERMANENT, not on how long it's been a creature — 2026-09-09
+
+**Claim:** A noncreature permanent you've controlled since your turn began can be animated mid-turn
+and attack immediately.
+**Evidence:** CR 302.6 — "A creature can't attack unless **it has been under its controller's
+control continuously since their most recent turn began**." CR 508.1a repeats it for declaring
+attackers. Neither asks when the permanent became a creature. Same principle as man-lands and
+freshly-crewed Vehicles.
+**Changes:** Animation effects (copy-into-a-Vehicle, Cyberdrive Awakener, Mech Hangar, March of the
+Machines) are same-turn threats, not next-turn ones — price them as haste. Corollary already
+verified: crew is unaffected by summoning sickness in **both** directions, because the Vehicle's own
+`{T}` isn't in the cost and the creatures tapped to pay are paying a cost, not activating an ability.
+**Source:** cap-living-legend.
+
+### A crew effect is a layer-4 NONCOPY effect and survives being re-copied — 2026-09-09
+
+**Claim:** Crew a cheap Vehicle first, *then* copy it into an expensive one, and you get the
+expensive Vehicle as a creature **without ever paying the big crew cost**.
+**Evidence:** Crew's "becomes an artifact creature until end of turn" is a type-changing effect
+applied in layer 4 (CR 613.1d); the copy effect applies in layer 1a (613.2a). CR 707.4 — a permanent
+copying a different object "doesn't change any noncopy effects presently affecting the permanent,"
+and 613.6 keeps it applying. So the layer-4 animation persists through the layer-1a change.
+**Changes:** In any Vehicle deck with a copy effect, the correct line is *crew the Crew-1 Vehicle,
+copy it into the Crew-6 one*. **The trap on the same rule:** never re-copy that same permanent into
+something with no printed power/toughness — the lingering crew effect leaves an artifact creature
+that is 0/0 (208.5) and it dies to SBA immediately (704.5f). Point the second activation elsewhere.
+**Source:** cap-living-legend — Shuri + Heart of Kiran / Smuggler's Copter into Parhelion II.
+
+### "Whenever a CREATURE you control becomes tapped" ignores a noncreature artifact tapping — 2026-09-09
+
+**Claim:** Tapping a mana rock does not fire a "whenever a creature you control becomes tapped"
+trigger, and animating that rock afterwards does not retroactively fire it.
+**Evidence:** The trigger condition tests the object's type at the moment of the event. CR 603.2e —
+such abilities "trigger only at the time the named event happens — they don't trigger if that state
+already exists or **retrigger if it persists**." The tap event has already passed; making the
+permanent a creature later is not a new tap.
+**Changes:** With a "first tap each turn untaps it" commander, your **rocks get no untap** — only
+creatures do. Plan mana around that: a rock you tap stays tapped all turn, so anything that wants to
+animate or copy that rock into an attacker must be done **before** tapping it for mana.
+**Source:** cap-living-legend.
+
+### Lae'zel's "+1 counter" applies PER PERMANENT on an "each" placement — 2026-09-10
+
+**Claim:** When one ability puts a counter on each of several permanents, Lae'zel, Vlaakith's
+Champion adds +1 to *every* permanent, not +1 to the event.
+**Evidence:** Lae'zel: "put that many plus one ... on **that permanent** or player instead." CR 614.1
+applies a replacement as the event affects each object; 616.1 frames ordering around "the affected
+object's controller." Iron Spider on four artifact creatures = 8 counters, not 5. Lae'zel does
+**not** reach an uncrewed Vehicle — "creature or planeswalker" and an uncrewed Vehicle is neither
+(CR 301.7). "Enters with X counters" is also covered (614.1c, 122.6). Two "+1" effects add, never
+multiply (616.1e–f): 1 → 3.
+**Changes:** Price Lae'zel-style effects as a board-wide multiplier on mass counter placers, not as
+a single +1. Ordering only matters when a +1 effect meets a true doubler (Doubling Season): +1 then
+double beats double then +1, and the affected permanent's controller chooses.
+**Source:** cap-living-legend — pinger variant study.
+
+### Stuffy Doll + Guilty Conscience is a mandatory loop that any damage starts — 2026-09-10
+
+**Claim:** The pair is an automatic, unstoppable kill, not a "choose N" loop, and it does not need
+the Doll's own `{T}` — a Walking Ballista ping or combat damage starts it.
+**Evidence:** Neither card has "may." Damage to the Doll triggers the Doll (damage to the chosen
+player), which triggers Guilty Conscience (damage back to the Doll), indefinitely. It ends only when
+the chosen player loses to SBA (CR 704.5a) and leaves the game (800.4a); later triggers then do
+nothing (609.3). If the chosen player *can't* lose, it becomes an all-mandatory loop and the game is
+a draw (104.4b, 732.4). Opponents can break it by removing the Aura, exiling or bouncing the Doll
+(destroy fails — indestructible, 702.12b), or preventing the damage (603.2g).
+**Changes:** Under this pilot's loop policy (automatic infinites banned), never run Guilty Conscience
+in any deck containing Stuffy Doll. Also: Stuffy Doll's player choice may be yourself (it says
+"player"), is not targeted (115.10a), and is never re-made if that player leaves (800.4g).
+**Source:** cap-living-legend.
+
+### Delney's power-2 gate turns OFF under your own counter engine — 2026-09-10
+
+**Claim:** Delney, Streetwise Lookout ("If a triggered ability of a creature you control with power
+2 or less triggers, that ability triggers an additional time") stops doubling a creature the moment
+your own +1/+1 counters push it to power 3.
+**Evidence:** Power is checked when the ability triggers. Stuffy Doll (0/1) under Iron Spider's two
+activations a turn is a 2/3 after one turn and a 4/5 after two, and Delney no longer applies.
+**Changes:** Same family as the Kotori / Mighty Servant finding — a card that *raises* a number can
+silently disable a card gated on that number staying low. Before pairing a "power N or less" payoff
+with an anthem or counter engine, check whether the engine hits the payoff itself.
+**Source:** cap-living-legend.
+
+### An opponent-turn untapper does nothing for a creature in the round it was cast — 2026-09-10
+
+**Claim:** Drumbellower-style untaps give a newly cast `{T}` creature no extra activations until your
+next turn begins, even though the creature is untapped during opponents' turns.
+**Evidence:** CR 302.6 — summoning sickness lasts until the creature "has been under its
+controller's control continuously since their most recent turn began." A creature cast on your turn
+is still sick through every opponent's turn that follows. (Thousand-Year Elixir, which grants haste
+for activated abilities, is the fix.)
+**Changes:** When modelling "activations per round" under an opponent-turn untapper, count from the
+round **after** the creature lands. It makes Thousand-Year Elixir more valuable in any deck that
+runs these untappers.
+**Source:** cap-living-legend — rules check on Drumbellower + Prodigal Sorcerer.
+
+### Protection from a colour fizzles your OWN pending abilities from that colour's sources — 2026-09-10
+
+**Claim:** Giving a creature protection from white while one of your own white-sourced abilities is
+still on the stack targeting it makes that ability do nothing. Stacking two Giver of Runes / Mother
+of Runes activations against two removal spells fails whenever the second is mono-white.
+**Evidence:** CR 702.16b — a creature with protection from a quality "can't be the target of ...
+abilities from a source with the stated quality." CR 608.2b — a target that has become illegal makes
+the ability not resolve. CR 113.7 / 113.7a — the ability's source is Giver (a white creature), using
+last known information if it has left. Worked stack (bottom to top): RED spell, Giver #1, WHITE spell,
+Giver #2 choosing white. Giver #2 resolves; WHITE fizzles; **Giver #1 fizzles**; RED resolves.
+Choosing red on Giver #2 fails differently: WHITE resolves first. Also: Giver's and Mother's colour
+is chosen **on resolution**, not activation (CR 700.2 — the ability isn't modal; 608.2d).
+**Changes:** In any deck running white protection creatures, pro-white must be the last white-source
+ability on the creature to resolve. Against two spells where the second is mono-white, answer with
+**hexproof** (CR 702.11b — only stops opponents, so your own pending ability survives) or phasing,
+not a second protection activation. Note the knock-on: after pro-white, the pilot's own white
+targeted effects (Urdnan's double-strike trigger, Patriot, Clever Concealment) can't reach the
+creature that turn; blue sources still can.
+**Source:** cap-living-legend — pilot's Giver of Runes sequencing question.
+
+### An untap-on-tap trigger always gives opponents a window while the permanent is still tapped — 2026-09-10
+
+**Claim:** A "whenever X becomes tapped, untap it" trigger never lets you re-use a tap ability *in
+response to something an opponent does in that same priority window*: opponents can always act
+while the trigger is on the stack and the permanent is still tapped.
+**Evidence:** The tap is paid as a cost (CR 602.2b → 601.2h). The trigger goes on the stack above the
+ability before anyone gets priority (CR 117.5, 603.3). It resolves only when all players pass in
+succession (117.4), so every opponent gets priority first. A tapped permanent can't pay a `{T}` cost
+(107.5). On an opponent's turn, a "during your turn" untapper doesn't trigger at all.
+**Changes:** Price the second activation from an untapper as proactive value (a second draw, a
+second counter, a second mana) — never as an instant-speed answer the pilot can count on.
+Protection against a second response should come from a different card.
+**Source:** cap-living-legend — Captain America, Living Legend + Giver of Runes.
+
+### "Loses flying" vs "have flying" is decided by TIMESTAMP, and an Equipment re-stamps on every attach — 2026-09-10
+
+**Claim:** Colossus Hammer ("+10/+10 and loses flying") and a static flying grant (Levitation,
+Archetype of Imagination) both apply in layer 6 with no dependency, so the later timestamp wins — and
+the Hammer gets a fresh timestamp each time it becomes attached.
+**Evidence:** CR 613.1f (ability-adding/removing effects in layer 6), 613.8a (no dependency), 613.7
+(timestamp order), 613.7a/d (a static ability's timestamp is when its permanent entered), 613.7e (an
+Equipment's effect gets a new timestamp when it becomes attached). A resolving ability's grant (Iron
+Man, Armored Avenger's attack trigger) is timestamped on resolution (613.7b), so it beats an earlier
+Hammer. "Loses" is not a "can't", so CR 101.2 doesn't apply.
+**Changes:** In any deck pairing Colossus Hammer with a flying source, sequence it: equip the Hammer
+*before* the flying source lands, or re-trigger flying afterwards. Moving the Hammer later strips
+flying again.
+**Source:** cap-living-legend — v2 voltron research.
+
+### Heliod + Walking Ballista needs TWO counters to start — with one, Ballista dies first — 2026-09-10
+
+**Claim:** The Heliod, Sun-Crowned + Walking Ballista loop (lifelink ping → life gain → Heliod puts
+the counter back) cannot start from a one-counter Ballista.
+**Evidence:** Removing the last counter is the cost, so Ballista is 0/0 before anyone gets priority;
+SBAs are checked first (CR 117.5, 704.3) and it dies (704.5f). The ping still resolves using last
+known information for lifelink (113.7a, 702.15c), so you gain 1 and Heliod triggers — but it has no
+Ballista to put the counter on. With 2+ counters the loop is indefinite. It is a *chosen* loop — each
+ping is an optional activation, so CR 104.4b/732.2a let the pilot name N — and it is a two-card,
+instant-speed kill. Stops: exile/bounce Ballista in response, "can't gain life" (119.7), prevention.
+**Changes:** Say it out loud at the table. Under this pilot's policy (chosen-N loops allowed) it is
+legal; it still changes how a Bracket 3 table reads the deck. Model the start as X=2 or a second
+counter source, not X=1.
+**Source:** cap-living-legend — v2 voltron research.
+
+### Life-gain payoffs count EVENTS or AMOUNT — the difference is an order of magnitude on lifelink — 2026-09-10
+
+**Claim:** Heliod, Sun-Crowned and Archangel of Thune trigger once per life-gain *event*; Light of
+Promise ("put **that many** +1/+1 counters") scales with the *amount*. They reward opposite sources.
+**Evidence:** CR 119.9 (each gain is an event), 603.2c (one event with several occurrences triggers
+repeatedly). Three tokens entering at once under Soul Warden = three separate 1-life events = three
+Heliod/Archangel triggers, three Light of Promise counters. A lifelink commander hitting for 5 = one
+event = one Heliod counter, one Archangel counter each — but **five** Light of Promise counters.
+Simultaneous lifelink sources are separate events (702.15e). Soul Warden has no controller clause, so
+opponents' creatures and tokens entering count (603.6a).
+**Changes:** Pair event-counters (Heliod, Archangel, Ajani's Pridemate) with many small gains (Soul
+Warden family, token swarms); pair amount-counters (Light of Promise, Cradle of Vitality) with big
+single hits (lifelink on a large attacker). A lifelink voltron with Light of Promise roughly doubles
+its power every connected swing.
+**Source:** cap-living-legend — v2 voltron research.
+
+### Protection Equipment on your own commander: pick it by YOUR colours, and it strips your own Auras — 2026-09-10
+
+**Claim:** Protection from one of the commander's own colours doesn't just block your own targeted
+effects — it also knocks off your own Auras of that colour and unattaches your Equipment of that
+colour.
+**Evidence:** CR 702.16b (targeting), 702.16c + 704.5m (Aura of that colour → graveyard), 702.16d +
+704.5n (Equipment of that colour → unattached; colourless Equipment is unaffected). For a white-blue
+commander: safe Swords are Feast and Famine (B/G), Sinew and Steel (B/R), Forge and Frontier (R/G);
+Commander's Plate is protection from the three off-colours (702.16i). Pro-white would strip Light of
+Promise and Maul of the Skyclaves (both white); pro-blue would strip Aqueous Form and Stark's
+Ingenuity (both blue). Static grants ("each creature", "creatures you control have flying") still
+reach a protected commander.
+**Changes:** Before adding protection Equipment or choosing a Mother/Giver colour, list the colours of
+every Aura and coloured Equipment you plan to stack on that creature. In a voltron deck built on
+own-colour Auras, prefer hexproof (Patriot, Champion's Helm, Swiftfoot Boots) over protection.
+**Source:** cap-living-legend — v2 voltron research (extends the 2026-08-07 unattach entry and the
+2026-09-10 Giver of Runes entry).
+
+### Double strike + lifelink + an amount-scaled counter trigger grows the creature BETWEEN damage steps — 2026-09-10
+
+**Claim:** A double-striking lifelink creature enchanted with Light of Promise (or Sunbond — "whenever
+you gain life, put that many +1/+1 counters on this creature") hits in the regular damage step at
+roughly double the power it hit with in the first-strike step. It is a one-combat commander kill.
+**Evidence:** CR 510.4 / 702.4b (second combat damage step for double strikers). Lifelink gain is
+part of the damage event (702.15b, 120.3f), so the trigger goes on the stack when a player would next
+receive priority — in the first-strike damage step (603.3, 510.3a) — and resolves before the step can
+end (117.4, 500.2). Power is read at assignment (510.1a). Both steps' damage is combat damage from
+the commander (510.4, 903.10a). Worked: 9/10 lifelink double strike → 9, +9 counters → 18 → 27 total.
+Trample through a chump: the blocker is dead before the second step, and a blocked trampler with no
+blockers left assigns all its damage to the player (702.19d — not 702.19e, which is planeswalkers).
+**Changes:** Price double strike on a lifelink creature with an amount-scaled counter trigger as a
+multiplier on the second hit, not as ×2 damage. Watch the priority window in the first-strike step —
+removal there stops the second hit (702.4c), though damage already dealt stays.
+**Source:** cap-living-legend — v2 gameplan.
+
+### Wizard's Staff doubles abilities GRANTED to the creature, not the attachments' own triggers — 2026-09-10
+
+**Claim:** "If a triggered ability of equipped creature triggers, that ability triggers an additional
+time" doubles a quoted ability an Aura grants ("Enchanted creature **has** '…'") but not triggers
+printed on the Aura or Equipment themselves ("Whenever equipped creature…").
+**Evidence:** CR 113.1a (abilities granted with "has/have" belong to the object), 603.2d ("refers
+only to triggered abilities that object has"), 113.7 (an ability's source is the object it's on).
+So Light of Promise's granted "whenever you gain life, put that many +1/+1 counters on this creature"
+triggers twice — a 7-point lifelink hit gives 14 counters — while Umezawa's Jitte, Super-Soldier
+Serum, Sword triggers, Skullclamp, Heliod and Archangel of Thune are untouched. Two doublers add one
+copy each (603.2d): Staff + Roaming Throne = 3 copies, not 4.
+**Changes:** Before pricing a trigger-doubler Equipment, read *where* each trigger on the creature is
+printed. It is a multiplier with a single payoff here — a blank without Light of Promise (or Sunbond),
+so its value is gated on that Aura's access (deck-brain §2.5, the "blank" case).
+**Source:** cap-living-legend — Equipment pass.
+
+### Two lifelink sources on one creature are one lifelink — score the second as zero — 2026-09-10
+
+**Claim:** A second lifelink-granting Equipment on a creature that already has lifelink adds no life
+and no extra life-gain event.
+**Evidence:** CR 702.15f — multiple instances of lifelink on the same object are redundant. The gain
+is still one event of the total damage dealt (702.15b, 120.3f); only *separate sources* dealing damage
+create separate events (702.15e).
+**Changes:** When stacking voltron gear, value each piece only on what it adds that the creature
+doesn't already have. Loxodon Warhammer on a Shadowspear creature is +3/+0 for 6 mana; Basilisk
+Collar is deathtouch (which with trample means 1 damage per blocker, 702.2c + 702.19b), not lifelink.
+**Source:** cap-living-legend — Equipment pass.
+
+### "Attach any number of target Equipment" on attack is not equip — no cost, no timing, and it steals — 2026-09-10
+
+**Claim:** Super-Soldier Serum's "Whenever enchanted creature attacks or blocks, attach any number of
+target Equipment you control to it" moves every Equipment onto the creature for free, including gear
+currently on your other creatures, in time for that combat's damage.
+**Evidence:** CR 702.6a (equip is an activated, sorcery-speed ability with a cost); 701.3a and 301.5b
+(an ability can simply attach Equipment); 702.6c (equip-quality restrictions don't limit what the
+Equipment can be attached to); 701.3b/d (targeting gear already on the creature does nothing; a
+creature it's moved from has it become unattached). The trigger resolves in the declare attackers
+step (508.1m, 508.2b), before damage is assigned (510.1a). Moved Equipment gets a new timestamp
+(701.3c, 613.7e). It also fires on blocks.
+**Changes:** With a free-attach engine, an Equipment's equip cost stops mattering after the first
+turn — price such gear on cast cost alone. Without one, price it on cast + equip.
+**Source:** cap-living-legend — Equipment pass.
+
+### Teysa Karlov doubles DIES triggers (Skullclamp included), never SACRIFICE triggers — 2026-09-10
+
+**Claim:** Teysa / Drivnod ("if a creature dying causes a triggered ability of a permanent you control
+to trigger, that ability triggers an additional time") double any trigger whose event is a creature
+dying — including Skullclamp's draw and a creature's own "when this dies" — but not triggers on the
+act of sacrificing, and not intervening-if end-step checks.
+**Evidence:** CR 700.4 (dies = battlefield → graveyard), 701.21a (sacrifice is a way to die), 603.10a
+(dies triggers look back, so they still double when Teysa dies in the same wipe; Skullclamp still
+sees "equipped creature"), 603.2d (two "additional time" effects = 3 instances, not 4 — Teysa +
+Roaming Throne). Gatherer ruling: "an ability that triggers 'whenever you sacrifice a creature'
+triggers only once." Each instance chooses targets and optional payments separately (Kalastria {B},
+Crossway 2 life each). Emeritus of Woe (603.4 intervening-if) and cast triggers are untouched. By
+contrast, token doublers are replacement effects that multiply (616.1e–f, 614.5): two = 4×.
+**Changes:** In an aristocrats deck, decide which half of the loop to multiply. A token doubler scales
+the fodder; a dies-doubler scales the payoff AND the death-draw engines (Clamp → 4 cards). Check
+every "sacrifice" wording before counting it as doubled (Mirkwood Bats is not).
+**Source:** edgar-markov — "should we run more token doublers?", verified by mtg-rules-expert.
+
+### Elesh Norn doubles "enters" triggers from ANY player's permanent — but not the triggers downstream of them — 2026-09-10
+
+**Claim:** Elesh Norn, Mother of Machines makes your Soul Warden-style "whenever another creature
+enters" triggers fire twice for every creature entering, including opponents' creatures and tokens —
+but the life-gain triggers those produce (Heliod, Archangel of Thune, Light of Promise) are *not*
+doubled again.
+**Evidence:** Norn: "If a permanent entering causes a triggered ability of a permanent you control to
+trigger, that ability triggers an additional time." CR 603.6a (every permanent is checked when any
+permanent enters), 603.2d (additional triggers don't invoke themselves). Gatherer 2023-02-04: Norn
+"doesn't look at who controls the permanent entering the battlefield, only who controls the permanent
+that has the triggered ability." A life-gain trigger's event is gaining life (119.9), not a permanent
+entering, so Norn doesn't touch it. Her second clause shuts off opponents' enters triggers and
+landfall but not replacement effects ("enters with", "as ~ enters" — 614.1c, 603.6d) and not
+leaves/dies triggers.
+**Changes:** Count Norn's value as (number of your enters-caused triggers) × (enters events), then
+let the downstream payoffs multiply once. With two Wardens she turns each creature entering into four
+1-life events. An opponent's Norn blanks your Wardens entirely.
+**Source:** cap-living-legend — Elesh Norn evaluation.
+
+### A doubled attach trigger is removal insurance, not a second attachment — 2026-09-10
+
+**Claim:** When an Equipment's "when this enters, attach it to target creature" trigger fires twice
+(Elesh Norn, Panharmonicon), the second instance does nothing on the same target — but ordering the
+two at different targets protects the Equipment against a response.
+**Evidence:** CR 701.3b (attaching to the object it's already on does nothing), 701.3a/c (a move
+between creatures; the last-resolving attach wins, with a new timestamp), 603.3b (you order your
+triggers), 603.3d (targets chosen per instance). Aim the first-resolving copy at a backup creature and
+the last-resolving copy at the commander: if the commander is removed in response, the Equipment ends
+on the backup instead of sitting unattached.
+**Changes:** Don't count a doubled attach trigger as extra value when scoring a trigger-doubler; do use
+the ordering trick when the doubler is already out.
+**Source:** cap-living-legend — Elesh Norn + Maul of the Skyclaves / Mithril Coat.
+
+### N counters from one instruction are ONE placement event — a "+1" amplifier adds once — 2026-09-10
+
+**Claim:** When a single resolving effect puts N +1/+1 counters on a creature (Light of Promise's
+"that many"), that is one event: Lae'zel-style "that many plus one" makes it N+1, not 2N, and a
+"whenever one or more +1/+1 counters are put on this creature" trigger fires once.
+**Evidence:** CR 614.1a/614.5 (a replacement effect gets one opportunity per event), 122.6/122.7
+(counters "put on" an object in one instruction), 603.2c (one trigger per event). The CR has no
+single sentence saying "N counters from one instruction = one event"; it follows from 614.5 and
+Lae'zel's own "one or more counters … that many plus one" wording. Worked (verified): a 9-point
+lifelink hit = one 9-life gain (702.15b, 119.9) → Heliod 1 counter, Archangel 1 each, Light of
+Promise 9; with Lae'zel 2 + 2 + 10 = 14 on the commander. Nine separate 1-life gains instead would
+give nine triggers of each and 18 from Light of Promise alone.
+**Changes:** Additive counter amplifiers reward *many small placements* (Soul Warden swarms,
+per-event payoffs), not one big one. Price Lae'zel as "+1 per event", and count events, not counters.
+**Source:** cap-living-legend — pilot's Heliod question.
+
+### A card that GRANTS a {T} ability to a colour turns the whole creature base into tap engines — 2026-09-10
+
+**Claim:** Resplendent Mentor ("White creatures you control have '{T}: You gain 1 life.'") under a
+"first tap each turn untaps it" commander gives every white creature two separate life-gain events per
+turn — including the commander and every white token — subject to summoning sickness.
+**Evidence:** A granted ability is the creature's own ability (CR 113.10), so a {T} cost is a
+"becomes tapped" event (603.2e) and 302.6 applies — a creature or token that arrived this turn can't
+activate it without haste (702.10c). Each activation resolves as its own gain (119.9, 603.2c), so
+Heliod / Archangel of Thune / Light of Promise each trigger per activation. Measured in
+cap-living-legend: 20 of 27 creatures were white, taking "cards using the untap" from 12 to 32 with a
+six-card package. Heliod gets the ability only at devotion 5+ (it isn't a creature otherwise).
+**Changes:** When a deck's commander rewards tapping, look for *granters* of tap abilities before
+adding individual tap creatures — one granter can outnumber a dozen slots. Sequencing cost: a creature
+tapped twice stays tapped and can't block (509.1a); do the first tap precombat (it untaps), attack,
+then the second tap after combat.
+**Source:** cap-living-legend — tap re-centre of DECK-COUNTERS.
+
+### Protection from a CARD TYPE doesn't strip Auras/Equipment — but blocks your own creature sources — 2026-09-10
+
+**Claim:** Pippin, Guard of the Citadel's "protection from the card type of your choice" choosing
+*creature* makes the commander unblockable by creatures and immune to creature damage without
+knocking off his Auras or Equipment — unlike protection from one of his own colours.
+**Evidence:** CR 702.16a (card-type qualities), 702.16b/e/f (targeting, damage, blocking), 702.16c/d
+(only Auras/Equipment *with the quality* fall off — they aren't creatures). Caveat: your own creature
+sources can no longer target him that turn — Mother of Runes, Giver of Runes, Urdnan's triggers,
+creature-Heliod — while non-targeting attaches (Stonehewer Giant, Super-Soldier Serum) still work.
+A second Pippin activation (e.g. protection from instants) must resolve *before* the creature one,
+or it fizzles against a creature-protected target (608.2b).
+**Changes:** For a voltron commander wearing own-colour Auras, prefer card-type protection
+(creature / instant / sorcery) over colour protection; resolve protection-from-creatures last.
+**Source:** cap-living-legend.
+
+### Vorinclex doubles YOUR planeswalkers' starting loyalty and halves opponents' — 2026-09-12
+
+**Claim:** Vorinclex, Monstrous Raider modifies planeswalker starting loyalty in both directions:
+your walkers enter with 2× printed loyalty, opponents' enter with half rounded down, and an
+opponent's printed-1 walker enters at 0 and is put into the graveyard immediately.
+**Evidence:** CR 209.1 + 306.5b — a planeswalker has the intrinsic ability *"This permanent enters
+with a number of loyalty counters on it equal to its printed loyalty number,"* which *"creates a
+replacement effect (see rule 614.1c)."* CR 122.6 — counters "put on" an object covers *"an object
+that's given counters as it enters the battlefield."* CR 122.6a — *"If the effect doesn't specify a
+player, the object's controller puts those counters on it"* — this is the load-bearing rule, because
+Vorinclex is worded by WHO puts the counters, and Gatherer's 2021-02-05 ruling says it *"cares deeply
+about who is putting the counters."* So an opponent's own walker is *them* putting counters → halved.
+CR 704.5i — *"If a planeswalker has loyalty 0, it's put into its owner's graveyard"* (state-based,
+no stack). Rounding is on the card ("rounded down"), as CR 107.1a requires.
+**Changes:** Treat any counter doubler/halver as a planeswalker-loyalty effect. Under your own
+Vorinclex, printed-5 walkers come down at 10 with their ultimate already live (606.6 gates `[-N]` on
+having the counters, so doubled entry genuinely unlocks turn-one ultimates). Under an *opponent's*
+Vorinclex, score your own 1-loyalty walkers as uncastable and everything else at half.
+**Source:** rules question from the pilot's pod — opponent claimed double loyalty; claim was correct.
+
+### "If YOU would put" doubles loyalty-ability costs; "if an EFFECT would put" does not — 2026-09-12
+
+**Claim:** Vorinclex doubles the `[+N]` loyalty-ability cost (you put 2 counters for a `[+1]`),
+where Doubling Season explicitly does not. The deciding word is "you" vs "an effect."
+**Evidence:** CR 107.7 — *"`[+N]` means 'Put N loyalty counters on this permanent'"*; CR 606.4 — the
+cost to activate a loyalty ability *"is to put on or remove from that permanent a certain number of
+loyalty counters… This cost may be modified by other effects"*; CR 118.1 (paying a cost = carrying
+out the instruction). Vorinclex reads *"If **you** would put one or more counters…"* with no
+effect-qualifier, so it replaces the cost-payment event. Doubling Season reads *"If **an effect**
+would put…"* and its official ruling says the `[+1]` is not doubled *"because those counters are put
+on as a cost, not as an effect."* CR 614.16 limits only the "if an effect would" template.
+Corollaries: an opponent's `[+1]` under your Vorinclex puts 0 (event replaced, not forbidden — the
+ability is still activatable, cf. 614.17b); `[0]` stays 0; Carth the Lion merges into a single cost
+first (606.5), so Carth + `[+1]` = one `[+2]` → Vorinclex doubles once (614.5) → 4.
+**Changes:** Before scoring any counter amplifier, read which template it uses. "If an effect would
+put" misses every cost-paid counter (loyalty `[+N]`, cumulative upkeep, counter-paying activations);
+"if you would put" catches them. Same split decides whether the amplifier helps a planeswalker
+subtheme at all beyond entry.
+**Source:** rules question from the pilot's pod, verified by mtg-rules-expert.
+
+### A counter/token doubler entering SIMULTANEOUSLY with its target does not apply — 2026-09-12
+
+**Claim:** A replacement effect that modifies how a permanent enters only applies if it already
+exists at that moment, so a doubler arriving in the same event (mass reanimation, a simultaneous
+blink, a board-wide ETB) does nothing for the permanents entering alongside it.
+**Evidence:** CR 614.12 — check the entering permanent against *"continuous effects that **already
+exist** and would apply to the permanent."* CR 614.4 — replacement effects *"must exist before the
+appropriate event occurs — they can't 'go back in time'."* CR 614.5 — each replacement effect gets
+*"only one opportunity to affect an event."* CR 616.1/616.1e–f — with multiple applicable effects the
+**entering permanent's controller** chooses the order, one at a time.
+**Changes:** When pricing a doubler, count only the permanents that enter *after* it. Do not value a
+reanimation spell that returns Vorinclex/Doubling Season alongside the payoff as if the doubler
+applied. Ordering only matters when effects don't commute — multipliers commute, so a doubler plus a
+doubler is 4× in any order, but a multiplier meeting an additive or a subtractive (compleated's −2,
+Lae'zel's +1) flips on order, and the controller of the entering permanent picks the best one.
+**Source:** rules question from the pilot's pod — Vorinclex + planeswalkers.
+
+
+### Over-crewing adds ZERO power, but a second crew activation re-triggers "becomes crewed" — 2026-09-13
+
+**Claim:** Tapping more power than a Vehicle's crew number gives it no extra stats — but activating
+crew a *second* time on an already-crewed Vehicle re-fires every "becomes crewed" and "crews a
+Vehicle" payoff.
+**Evidence:** CR 702.122a — crew's whole effect is *"This permanent becomes an artifact creature
+until end of turn"*; a Vehicle's P/T is its printed P/T (CR 208.3, 301.7a–b), so excess tapped power
+is discarded. CR 702.122e — *"'Whenever [this Vehicle] becomes crewed' means 'Whenever a crew ability
+of [this Vehicle] resolves'"* → a second resolution = a second trigger. CR 702.122b/c define
+"crews a Vehicle" / "crewed by" off the *cost payment*, so over-tapping in a single activation also
+multiplies per-creature crew triggers. Ordering: the crew triggers go on the stack **above** the crew
+ability (117.2a, 601.2i) and resolve **before** the Vehicle animates — CR 208.3a's own example
+(Veteran Motorist) exists to confirm the +1/+1 still applies once it becomes a creature.
+**Changes:** Never count over-crewing as "a bigger Vehicle." Do count it as a trigger multiplier:
+in a crew-payoff deck, score each Vehicle as (crew activations per turn) × (crew triggers), and tap
+extra bodies on purpose when the payoff is per-creature. Pairs with the crew-cost-reducer trap
+(2026-09-10) — a reducer *lowers* the bodies you naturally tap.
+**Source:** rules question from the pilot — "does crew have to be one continuous action?"
+
+### Crewing after blockers are declared does nothing — a Vehicle's defence is staying UNCREWED — 2026-09-13
+
+**Claim:** Animating a Vehicle at instant speed cannot make it block. Blockers are locked in as a
+turn-based action, so a Vehicle crewed after that point is an untapped artifact creature that blocks
+nothing and deals no combat damage.
+**Evidence:** CR 509.1/509.1a (blockers are chosen at the start of the declare blockers step, before
+anyone gets priority), 509.1g (only creatures chosen then become blocking creatures). Crew itself has
+no timing restriction (702.122a is a plain activated ability; 117.1b), so instant-speed crewing *is*
+legal — it just has to happen before the relevant turn-based action. Converse, also verified: an
+**untapped blocker can be tapped to crew while it's blocking** and still deals its damage (CR 506.4b),
+and 509.1 never taps blockers.
+**Changes:** Write the Vehicle line into the gameplan as *hold it uncrewed* — that is what dodges
+sorcery-speed removal and creature wraths (an uncrewed Vehicle is not a creature), and crew only to
+attack (before declare attackers), to block (before declare blockers), or to bank a "becomes crewed"
+trigger. Never price a Vehicle as a reactive blocker you can flash in.
+**Source:** rules question from the pilot — crew timing.
+
+
+### "Attacks a player" is a strictly narrower trigger than "attacks" — a planeswalker swing turns it off — 2026-09-13
+
+**Claim:** A trigger worded *"Whenever ~ attacks a player"* does **not** fire when that creature is
+declared attacking a planeswalker or a battle, even though there is still a defending player.
+**Evidence:** CR 508.3a — *"An ability that reads 'Whenever [a creature] attacks, . . .' triggers if
+that creature is declared as an attacker. Similarly, 'Whenever [a creature] attacks [a player,
+planeswalker, or battle], . . .' triggers if that creature is declared as an attacker attacking that
+player or permanent."* CR 508.5 confirms a defending player still exists when you attack their
+planeswalker — the trigger condition is the *declared target of the attack*, not the presence of a
+defending player. Worked case: Shredder, Shadow Master's myriad-shaped token ability is gated on
+"attacks a player," so pointing it at an opponent's planeswalker creates zero tokens; real myriad
+(702.116a, *"Whenever this creature attacks"*) would still fire.
+**Changes:** When reading an attack trigger, note whether it says "attacks", "attacks a player", or
+"attacks alone" — they are three different conditions. Write the "always swing at the face" note into
+the deck's gameplan for any "attacks a player" commander, and do not count such a card as a
+planeswalker answer.
+**Source:** rules question from the pilot — Shredder, Shadow Master.
+
+### "Attacks and isn't blocked" is the ONE attack-shaped trigger that fires for a token put onto the battlefield attacking — 2026-09-13
+
+**Claim:** Refines the 2026-08-25 CR 508.4 finding (tokens that enter attacking *"never 'attacked'"*,
+so no "whenever a creature attacks" triggers). There is exactly one carve-out in the rules, and it is
+worth building around.
+**Evidence:** CR 509.3g — *"Whenever [a creature] attacks and isn't blocked, . . ."* → *"**It will
+trigger even if the creature was never declared as an attacker** (for example, if it entered the
+battlefield attacking)."* Contrast the four rules that explicitly exclude entered-attacking creatures:
+508.3a (creature attacks / attacks a player), 508.3b (a player **is attacked**), 508.3c/d/e (a player
+attacks). The tokens also still fire 509.3c/d ("becomes blocked") and every combat-damage trigger,
+which are not attack triggers at all. CR 508.6 — you *are* "attacking" those players (static checks
+see it) but you never *attacked* them.
+**Changes:** In a myriad / enters-attacking deck, payoffs worded "attacks and isn't blocked" (and
+combat-damage payoffs) scale with the token count; payoffs worded "whenever a creature you control
+attacks" (Shared Animosity, raid, attack-count triggers) see only the declared attackers. Defensively,
+the good news is the tokens do not wake opponents' "whenever you're attacked" triggers (508.3b).
+**Source:** rules question from the pilot — Shredder, Shadow Master.
+
+### A myriad-shaped ability that SACRIFICES its tokens is an aristocrats engine; real myriad exiles and gives nothing — 2026-09-13
+
+**Claim:** The clean-up clause is the whole evaluation. "Sacrifice those tokens at end of combat"
+routes N bodies through the graveyard every combat; myriad's "exile the tokens at end of combat"
+triggers nothing.
+**Evidence:** CR 701.21a — *"To sacrifice a permanent, its controller moves it from the battlefield
+directly to its owner's graveyard"* — so the tokens **die**, firing Blood Artist / Zulaport Cutthroat /
+Mayhem Devil / "whenever one or more creatures die" / "whenever you sacrifice". CR 111.7 — a token in
+a non-battlefield zone ceases to exist, but *"applicable triggered abilities will trigger before the
+token ceases to exist."* Exile is not a death and triggers none of it. Companion facts: CR 702.116b
+only merges *multiple instances of myriad*, so a printed myriad-shaped ability **stacks** with granted
+myriad (Blade of Selves) for two separate token sets; CR 701.21a also notes sacrifice bypasses
+destruction replacement and indestructible. Edge case: you cannot sacrifice a token whose control has
+changed (701.21a — can't sacrifice what you don't control), so it survives the turn.
+**Changes:** Read the clean-up verb before scoring any token-copy attacker. "Sacrifice" makes the card
+an aristocrats payoff worth pairing with drain outlets; "exile" makes it combat damage only. Same read
+applies to mobilize and other temporary-token mechanics.
+**Source:** rules question from the pilot — Shredder, Shadow Master vs Blade of Selves.
+
+### Sequential "loses half their life" triggers recompute on resolution and compound — 2026-09-13
+
+**Claim:** Two instances of *"that player loses half their life, rounded up"* hitting the same player
+are not one pooled halving — each reads the life total at its own resolution, so they stack into a
+quarter.
+**Evidence:** CR 510.2 (combat damage is dealt simultaneously, no action between assignment and
+dealing), 510.3a + 603.3b (all resulting triggers go on the stack together and you order yours), and
+each resolves separately — so each computes from the total left by the previous one. CR 107.1/107.1a
+(integers only; the card states the rounding). Worked: a player at 40 taking two 5-power hits →
+40 − 10 = 30, first trigger takes ⌈30/2⌉ = 15 → 15, second takes ⌈15/2⌉ = 8 → **7**. Also: ⌈L/2⌉ ≥ 1
+for every L ≥ 1, so a half-life *loss* always removes at least 1 and **always kills a player at 1**.
+Life loss is not damage (CR 119.3 vs 120.3a/120.4c), so 615.1 prevention cannot touch it — but the
+trigger is gated on combat damage connecting, so a Fog still blanks the whole package.
+**Changes:** Price multiple half-life bodies pointed at one player as a compounding clock, not a
+doubled one (⌈⌈L/2⌉/2⌉, not L/2 twice). Complements the 2026-08-23 amplifier entry, which covers a
+single instance under a doubler.
+**Source:** rules question from the pilot — Shredder, Shadow Master.
+
+
+### A modal spell's modes resolve in PRINTED order, and a mid-resolution graveyard counts — 2026-09-16
+
+**Claim:** Chosen modes are carried out top-to-bottom as printed, never in the order chosen and
+never reorderable. And a continuous effect from a resolving spell fixes its set of objects **when
+that effect begins**, not when the spell starts resolving — so cards put into the graveyard by an
+*earlier mode of the same spell* are inside the set.
+**Evidence:** CR 608.2c — *"The controller of the spell or ability follows its instructions in the
+order written."* CR 700.2a/601.2b put the mode *choice* at cast time, but nothing anywhere permits
+reordering; CR 700.2d treats a mode chosen twice as appearing "that many times in sequence."
+CR 611.2c — *"the set of objects it affects is determined **when that continuous effect begins**.
+After that point, the set won't change."* "Gains flashback" is an ability-adding effect, so it is a
+characteristic modification (CR 613.1f, layer 6) and that first sentence governs. CR 608.2g: no
+player gets priority during resolution, so nothing can be done between the two modes.
+**Worked case — Will of the Jeskai** ({3}{R}, *"Choose one. If you control a commander … you may
+choose both instead. • Each player may discard their hand and draw five cards. • Each instant and
+sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its
+mana cost."*): the discard is printed first, so every instant and sorcery you pitch to it **is in
+the graveyard when the flashback effect begins and does gain flashback.** The five freshly drawn
+cards do **not** — they are in hand at that moment, and the set cannot grow afterwards. Same
+principle as the official Past in Flames ruling ("cards put into your graveyard later in the turn
+won't gain flashback").
+**Changes:** For any modal spell, read the bullets in printed order and ask what each earlier
+bullet puts where — a discard, mill or sacrifice in mode 1 is *input* to mode 2. Conversely, never
+promise that something entering the graveyard after a grant resolves will be covered by it.
+**Source:** scarlet-witch — the pilot's "does Will of the Jeskai's flashback apply to the cards it
+discarded?"; mtg-rules-expert.
+
+---
+
+
+### A "whenever you cast" pump resolves BEFORE the spell that triggered it — so a doubler doubles its own trigger — 2026-09-16
+
+**Claim:** Doubling power is a one-shot calculation, not a live effect — but a cast-triggered pump
+from the *same* spell is already applied when the doubler resolves, so you never have to sequence
+that part. Everything else must be deployed first.
+**Evidence:** CR 701.10b — *"To double a creature's power, that creature gets +X/+0, where X is that
+creature's power **as the spell or ability that doubles its power resolves**."* CR 701.10a: the
+effect *modifies* rather than sets (layer 7c, CR 613.4c). CR 608.2h: information an effect needs is
+determined once, when applied. CR 603.3b: a triggered ability goes on the stack **above** the spell
+that triggered it, so Livaan's *"whenever you cast a noncreature spell, target creature gets +X/+0"*
+resolves first and is inside the doubled total. Worked on a 2/3 with Livaan and 6 lands: casting
+Bulk Up then attaching Blackblade Reforged is `(2+2)×2 + 6 = 14`; attaching Blackblade **first** is
+`(2+6+2)×2 = 20`.
+**Changes:** `final power = 2 × (power when the doubler resolves) + (pumps added afterwards)`, so
+moving a pump of N from after the doubler to before it gains **exactly N**. Cast the doubler last —
+after equips, after deploys, after blockers. Timestamps and layer order are a red herring: once X is
+locked every layer-7c effect is a plain integer and addition commutes. Corollary in the other
+direction — a layer-7b *set* effect ("becomes 0/1") applied later does **not** erase the doubling
+(7b always precedes 7c), but if it resolves **first** the doubler sees the set value and can whiff
+to +0/+0 entirely.
+**Source:** scarlet-witch — the pilot's "is the doubling continuous if its power keeps increasing?";
+mtg-rules-expert. The existing LEDGER notes on Bulk Up and Unleash Fury were checked and are
+accurate; the `701.10b` citation in SIDEBOARD.md is correct.
+
+---
+
+
+### "Damage can't be prevented" beats ONE of four defence families — sort the opponent's card before hoping — 2026-09-16
+
+**Claim:** A burn deck loses to four structurally different things, and unpreventable-damage effects
+answer only the first. Sort any defensive card into the right family before assuming Skullcrack
+covers it.
+
+| Family | Wording tell | CR | Beaten by "can't be prevented"? |
+|---|---|---|---|
+| **Prevention** (incl. protection's damage clause) | the word *prevent* | 615.1a, 702.16e/j | **Yes** — CR 615.12 |
+| **Replacement** (Worship, Angel's Grace, Phyrexian Unlife) | the word *instead* | 614.1a | No |
+| **Rules-modifying "can't"** (can't be targeted, life total can't change, damage can't be dealt) | the word *can't* | 613.11, 101.2 | No |
+| **Existence / legality** (countered, phased out, target killed) | — | 608.2b, 702.26b | No |
+
+**Evidence:** CR 615.12 — *"If unpreventable damage would be dealt, any applicable prevention
+effects are still applied to it. Those effects won't prevent any damage."* CR 101.2 — a "can't"
+effect takes precedence over an effect that allows or directs. CR 615.1a defines prevention by the
+word *prevent*, which is why **protection's damage clause is prevention** (702.16e/j) and therefore
+beatable, while its *can't be targeted* clause (702.16b/j) is not.
+**The three that decide real games:** (1) **Teferi's Protection** also reads *"your life total
+can't change"* — that, not the protection, is what makes it unanswerable by damage; the damage is
+dealt and the life-loss result is simply impossible (101.2, 119.8). (2) **The One Ring is only
+protection from everything, no life lock** — so a *non-targeting* damage source plus an
+unpreventable-damage effect kills through it, and its protection arrives on a *triggered* ability,
+leaving a priority window to burn them in response. (3) **Player hexproof** (Leyline of Sanctity,
+Witchbane Orb, Shalai) blanks every targeted burn spell and is beaten outright by non-targeted
+damage (115.10a), with no prevention effect needed.
+**Changes:** In any damage deck, the maximum-coverage kill is **non-targeted damage + a source
+whose colour dodges protection + an unpreventable-damage effect**. For Chandra's Ignition the
+*source is the creature, not the spell* (CR 120.7), so a **colourless** creature ignores protection
+from red entirely. Also check colour identity before reaching for the obvious enabler: Everlasting
+Torment is {2}{B/R}, identity {B,R}, and is **illegal in mono-red** (CR 903.4).
+**Source:** scarlet-witch — the pilot's "if an opponent casts Teferi's or a damage-can't-be-dealt
+card we're kinda cooked"; mtg-rules-expert.
+
+---
+
+
+### "Another target" forbids repeats even across several uses of "target"; a kicked spell's copies stay kicked — 2026-09-16
+
+**Claim:** On a multikicker spell that reads *"choose any target, then choose **another** target for
+each time this spell was kicked"*, every target must be different, even though the word "target"
+appears more than once. Each kick adds exactly one required target. Copies of the spell are kicked
+the same number of times, keep X, and may each target the same players again.
+**Evidence:** CR 601.2c / 115.3 allow a repeat across *separate* uses of "target" only "as long as it
+fits the targeting criteria". "Another" is itself a criterion (CR 115.4; compare "any other target",
+CR 115.7e), so it rules repeats out. Official Comet Storm ruling: *"Each target you choose must be
+different."* The target count is fixed at casting (CR 601.2c) with no "up to", so if you cannot name
+kicks + 1 different legal targets the cast is illegal and rewinds (CR 601.2, 733). CR 707.10: a copy
+copies *"the value of X, and additional or alternative costs"*, and CR 702.33d makes a spell kicked
+that way "kicked". Official Gatherer ruling: *"If you copy a kicked spell on the stack, the copy is
+also kicked."* A copy is a separate spell, so the no-repeat rule applies inside each copy but not
+across copies (CR 707.10, 115.3).
+**Changes:** Kick count is capped by different legal targets minus one. Under a copier, the kicks are
+paid **once** and every copy gets the same target count free, so the discount spent on kicks is
+multiplied by the copies. Comet Storm with two kicks and Storm King's Thunder at X=2 is three spells,
+each hitting all three opponents: 3X to each.
+**Source:** scarlet-witch — the pilot's "if I kicked it once can I select the same player twice?";
+mtg-rules-expert.
+
+---
+
+
+### "Cast" permissions never touch lands; "play" does, but still spends your land drop — 2026-09-16
+
+**Claim:** A land is never a spell, so a *"you may cast spells from among them"* permission leaves an
+exiled land stuck. A *"you may play"* permission covers lands too, but a land played that way uses
+your one land drop and needs your own turn, a main phase and an empty stack. A spell//land modal
+DFC is a **nonland** card in exile, so "cast" lets you use only its spell face and "play" lets you
+use either face.
+**Evidence:** CR 305.1 — playing a land is a special action, *"it is never a spell"*. CR 701.18b —
+*"To play a card means to play that card as a land or to cast that card as a spell."* CR 305.2a
+counts lands played during an effect's resolution toward the one-per-turn limit; CR 305.2b and
+305.3 forbid playing a land with no land drop left or on another player's turn. CR 712.8a — outside
+the battlefield and stack a DFC has only its front face's characteristics. Official rulings: Apex of
+Power, *"Any cards not cast, including land cards, remain in exile"*; Commune with Lava, *"you must
+follow all applicable timing rules"*.
+**Changes:** Read the verb before counting an impulse effect's card advantage. "Cast" effects lose
+every land they exile. "Play" effects keep them, but at most one per turn, and none on an
+opponent's turn. So a "play until the end of your next turn" effect cast on an opponent's turn gives
+you one land drop, not two. For "exile until you exile a nonland card" effects, a spell//land MDFC
+is where they stop, and if the effect then casts it for free, X is 0.
+**Source:** scarlet-witch — the pilot's "lands don't count as spells, right?"; mtg-rules-expert.
+
+---
+
+
+### A copier that TARGETS the spell dies with it; a "when you next cast" copy trigger does not — 2026-09-16
+
+**Claim:** Spell copiers split into two families that behave oppositely when the original is
+countered. *Targeted* copiers (Reiterate, Increasing Vengeance, Return the Favor's copy mode) are
+cast above the spell and make the copy when they resolve; if the original leaves the stack first,
+they have no legal target, do not resolve, and make nothing — and buyback does not return a
+Reiterate that failed this way. *Non-targeting* copy triggers (Storm King's Thunder, Repeated
+Reverberation, Pyromancer's Goggles) go on the stack above the spell and **still make their copies
+if the original was countered**, using its last known information.
+**Evidence:** CR 608.2b — a spell whose targets are all illegal *"doesn't resolve"*; CR 702.27a —
+buyback returns the card only *"as it resolves"*. CR 115.10a — "that spell" is not a target, so the
+608.2b check never applies to the triggers; CR 608.2h — last known information. Official Gatherer
+rulings: Storm King's Thunder *"will create copies … even if that spell has been countered"*;
+Pyromancer's Goggles *"A copy is created even if the spell … has been countered"*; Repeated
+Reverberation the same. CR 707.10: in both families the copy goes on top of the original and
+resolves first, is a spell in its own right, can be countered separately, and is **not cast**.
+**Changes:** Against counterspells, rate the trigger family above the targeted family — their weak
+moment is the setup spell itself (countering Storm King's Thunder means no trigger exists) or a
+Stifle on the trigger, not a counter on the payoff. Goggles' setup is a mana ability and can't be
+responded to at all. For "can't be countered" effects, read the wording: *"spells you control
+can't be countered"* protects copies (they are spells you control); *"the next spell you cast"*
+does not (copies are never cast); *"spells and abilities can't be countered"* also protects the
+copy triggers from Stifle.
+**Source:** scarlet-witch — the pilot's "how does the stack look when I copy a spell, and what
+remains if things get countered?"; mtg-rules-expert.
+
+---
+
+
+### Every resolution opens a fresh priority round, and the ACTIVE player acts first — 2026-09-16
+
+**Claim:** When all players pass, only the top object resolves. Then state-based actions are
+checked, any triggers from that resolution go on the stack, and the **active player** (not the
+controller of what resolved) gets priority. Everyone must pass again for the next object. A stack of
+three spells is at least three separate rounds, and every player may respond before each one,
+including a player who passed on the object above.
+**Evidence:** CR 117.4 — the top object resolves only *"if all players pass in succession"*; any
+action resets it. CR 117.3b — *"The active player receives priority after a spell or ability (other
+than a mana ability) resolves."* CR 117.5 / 704.3 — state-based actions, then waiting triggers
+(CR 603.3, in APNAP order), repeated until stable, before anyone gets priority. So a trigger caused
+by the top object goes above the next object and resolves first. CR 732.2 — a casual "resolve it
+all" shortcut can be cut short by any player at any point. MTR 4.2 (tournaments, from the web):
+putting an object on the stack implies passing priority unless you say you are holding it, and
+anyone may interrupt a shortcut mid-sequence.
+**Changes:** Any line that relies on acting "between resolutions" — casting a card an earlier
+trigger drew, responding after seeing a copy resolve — is legal for you **and** for every
+opponent. On an opponent's turn they get the first window after each resolution. And a "when you
+next cast" setup (Storm King's Thunder, Repeated Reverberation) only exists once its own spell has
+resolved, so anything cast in response to the setup spell is not copied.
+**Source:** scarlet-witch — the pilot's "does each resolution create a new round of priority?";
+mtg-rules-expert.
+
+---
+
+
+### Living weapon loses the Germ tug-of-war to any TRIGGERED attach effect — 2026-09-18
+
+**Claim:** A Living weapon / For Mirrodin! Equipment does **not** end up stranded on its own token
+when your attach effect is a *triggered* ability keying on the same "an Equipment enters" event.
+Both triggers are yours, so you choose the order: put the attacher on the stack **first** so it
+resolves **last**, and it moves the Equipment off the Germ. The lock only holds against an attach
+performed inside another ability's own **resolution**.
+**Evidence:** CR 702.92a — Living weapon is a *triggered* ability (*"When this Equipment enters,
+create a 0/0 black Phyrexian Germ creature token, then attach this Equipment to it"*). CR 603.3b —
+a player puts simultaneously-triggered abilities they control on the stack *"in any order they
+choose"*; last on resolves first. CR 701.3a — to attach is *"to take it from where it currently is
+and put it onto that object"*, which moves an already-attached Equipment. CR 603.3d → 601.2c — the
+attacher's target is locked in as the trigger goes on the stack, **before the Germ exists**, so it
+must be a creature already on the battlefield; controlling none means 603.3d removes the trigger
+from the stack. CR 704.5f / 704.5d — the stripped Germ is 0/0, dies, and ceases to exist.
+Contrast CR 603.3 — a triggered ability goes on the stack only *"the next time a player would
+receive priority"*, so an attach performed **during another ability's resolution** (Stonehewer
+Giant: *"put it onto the battlefield, attach it to a creature you control"* — note it no longer
+targets) always completes first, and Living weapon is guaranteed to steal it afterwards.
+**Changes:** Stop treating Living weapon as a blanket disqualifier. Sort attach effects into
+**triggered** (Sigarda's Aid, Hammer of Nazahn — beat it by ordering) and **resolution-internal**
+(Stonehewer Giant — lose to it), and note that Stonehewer is rescued whenever a triggered attacher
+is also on the battlefield, since the Equipment entering triggers that too. Also CR 301.5d — an
+Equipment's controller is independent of the equipped creature's controller, so an Equipment
+sitting on a Germ (or on an opponent's creature) is still *"an Equipment you control"* and a legal
+target for a battlefield re-attacher such as Captain America's Catch, every combat, with no
+ordering required.
+**Source:** captain-america — pilot's "can Sigarda's Aid strip Equipment from living weapons as
+they enter?"
+
+---
+
+
 # Evaluation patterns
 
 Heuristics that earned their place by changing a real decision.
@@ -1070,11 +2795,1106 @@ saturated on the first and hold zero of the second — which is invisible if "pr
 as a single number.
 **Source:** iron-man — Conqueror's Flail over Big Score.
 
+### A repeated in-game failure outranks every list-derived verdict it touches — 2026-08-20
+
+**Claim:** When the pilot reports the same concrete failure mechanism across a whole session of
+real games, treat it as the strongest field signal available and re-derive every structural
+verdict it touches — do not defend the structure from the notes that designed it.
+**Evidence:** iron-man went 0-for on 2026-08-19 with one mechanism ("6+ turns doing nothing"
+while the commander cost 6/8/10) — the day after a full analysis pass had the same 100 scored
+as coherent. Three structural verdicts expired at once: "creature-light is load-bearing"
+(the protected sweeper upside never materialized in any game), "extra combats dominate"
+(only true of a deck that functions), and "this deck skips cost reduction" (already flagged
+2026-08-18). A list-derived verdict had never been play-tested; one game night falsified three.
+**Changes:** After any reported game session, list which structural verdicts the results touch
+and re-derive each one before proposing card-level swaps. Card evaluations answer "which card";
+only play reports answer "is the structure right".
+**Source:** iron-man — the V2 recomposition (`decks/iron-man/DECK-V2.md`).
+
+### When reducers and the cheat engine both key on one card type, off-type cards pay a DOUBLE tax — 2026-08-20
+
+**Claim:** In a deck whose cost reducers and whose free-deployment engine both read the same card
+type, every off-type card pays twice — no discount AND no free deployment — so its effective cost
+gap versus an on-type card is larger than the printed costs suggest. Price that gap before adding
+off-type cards, and hold them to a higher bar (or require ≤2 MV / instant speed).
+**Evidence:** iron-man V2 pilot report: Knuckles ({2}{R}{R}) and Jhoira ({2}{U}{R}) produced
+"cast this and do nothing" turns while artifact creatures of the same nominal cost were reduced
+by up to {3} of stack (Sculptor/Mechanaut/Inspector/Shuri/Cloud Key) and deployable free by the
+commander's trigger. The deck's reducers read "artifact spells" (CR-verified oracle) and the
+commander's trigger reads "an artifact card from your hand" — both exclude the same cards.
+**Changes:** For any typal-engine deck (artifact, enchantress, Eldrazi-colorless, etc.), compute
+a card's cost as printed cost MINUS applicable reducers MINUS deployability, and compare
+candidates on that number, not on printed MV. An off-type 4-drop can be dearer than an on-type
+7-drop.
+**Source:** iron-man — the pilot's double-pip tempo report after V2's first game night.
+
 ---
+
+### Mono-red's to-hand tutor pool is two cards, and one is a Game Changer — 2026-08-20
+
+**Claim:** A mono-red Commander deck has exactly two unconditional "search for a card, put it in
+your hand" effects, and adding the better one is a Game Changer budget question before it is a
+slot question.
+**Evidence:** Scryfall `id<=r f:commander o:"search your library" -t:land` returns 114 cards;
+classified, every hit is type-restricted (Goblin/Dwarf/Dragon/Elemental/Equipment/artifact/land/
+creature-with-power-≤2) or a colourless 10–12-mana activation (Ring of Three Wishes {5}+{5},
+Planar Portal {6}+{6}) except **Gamble** ({R}, any card, random discard) and **Fervent Mastery**
+({3}{R}{R} sorcery, MV 5: up to three cards, then discard three at random). `is:gamechanger
+id<=r` lists Gamble; Fervent Mastery, Inventors' Fair and Imperial Recruiter are not on it.
+Firemind's Foresight is CI:RU — not legal in mono-red, despite reading as a red card.
+**Changes:** When a mono-red deck asks for tutors, check the Game Changer count first (a Bracket 3
+list at 3/3 must drop a GC to seat Gamble), then cost Fervent Mastery under the deck's MV-4+
+reducers — it is the one tutor those reducers touch. Rank the random-discard tax against the
+deck's own recursion before calling it a downside.
+**Source:** scarlet-witch — the 2026-08-20 "should we add tutors" pass.
+
+---
+
+### Count the conversion layer before the mana layer in a spellslinger deck — 2026-08-21
+
+**Claim:** In a deck whose plan is "cast spells, deal damage," the role that decides whether the
+deck does anything before its big turn is the number of permanents that turn a cast spell into
+damage to opponents (the *conversion layer*), not the number of mana sources or draw spells. Count
+it as its own role and target enough of it that one is on the board by turn 4–5.
+**Evidence:** Scarlet Witch pilot report 2026-08-21: "8+ turns doing nothing, then very strong."
+The list had 54 of 99 slots making or discounting mana, 12 draw, and **5** converters (Longshot,
+Fiery Inscription, Thor, Urabrask, Ashling); 6 of ~35 instants/sorceries dealt damage. With 5
+converters in 99, P(at least one in the first 12 cards) = 1 − C(94,12)/C(99,12) ≈ **48%** — half the
+games reach turn 5 with draw spells resolving into a board that converts none of them. 7 → 61%,
+8 → 66%, 9 → 70%.
+**Changes:** When a spellslinger pilot reports "nothing happens for N turns," count converters
+first and compare to mana slots; the fix is moving slots from the mana role into converters and
+cheap each-opponent burn, not adding more mana or draw. Re-derive any "pinger package is the wrong
+deck" verdict against that count — the self-sweep grounds may hold for 2/2 bodies while the
+conclusion is exactly the reported failure.
+**Source:** scarlet-witch — `research/damage-pass-2026-08-21.md`.
+
+---
+
+### Theme-filter the EDHREC page when a pass moves a deck toward a sub-archetype — 2026-08-21
+
+**Claim:** When a pass is pushing a deck toward one of its commander's EDHREC sub-themes, run
+`bun run edhrec commander "<name>" --theme <slug> --all` and read candidates against *that* list;
+the base page averages the target sub-field away and under-rates exactly the cards the pass is
+looking for.
+**Evidence:** Scarlet Witch damage pass: base page (1,721 decks) vs Burn theme (64 decks) —
+Electrostatic Field 13% → 22%, Kessig Flamebreather 9% → 17%, Longshot 36% → 47%, Fiery
+Inscription 30% → 41%, Electrodominance 48% → 55%; Enraged Flamecaster (11% Burn) was absent from
+the base page entirely; Desperate Ritual fell 27% → 17% (sharpening it as the weakest ritual to
+cut). The user had to prompt for this lens; the first pass used only the base page and `--deck`.
+**Changes:** Any pass that names a direction ("more burn", "more voltron", "more stax") pulls the
+matching theme view first and reports both numbers. A card at 0% on the theme view too is
+personal tech even when its math is right — say so. Absence from the base page is not absence
+from the sub-field.
+**Source:** scarlet-witch — `research/damage-pass-2026-08-21.md` §6; prompted by the pilot.
+
+### Map voltron protection to a threat matrix — no Equipment fills the non-targeting row — 2026-08-21
+
+**Claim:** Hexproof, protection-from-instants/sorceries, and indestructible each cover a
+DIFFERENT set of threats; the only way to judge a new protection piece is to place it in the
+matrix and see whether it fills an empty cell. The row "non-targeting, non-damage, non-destroy"
+(Farewell, Toxic Deluge, edicts, overloaded Cyclonic Rift) is filled by NO on-body piece — only
+counterspells or a cheap recast answer it.
+**Evidence:** CR 702.11 (hexproof: can't be the TARGET of opponents' spells/abilities — blank vs
+anything that doesn't target) · CR 702.16 (protection: Damage, Enchant/Equip, Block, Target from
+sources with the quality — an ability's source is a permanent, so "protection from instants and
+sorceries" does not stop planeswalker/creature abilities, but DOES prevent damage from
+Blasphemous Act) · CR 702.12 (indestructible: destroy and lethal damage only — exile, −X/−X,
+bounce and sacrifice ignore it). Matrix for iron-man V2: Champion's Helm = targeted spells +
+targeted abilities; Sword of Wealth and Power = targeted spells + damage wipes; Mithril Coat /
+Hammer / Forge = destroy wipes + damage; bottom row = counters only.
+**Changes:** When comparing protection Equipment, write the five-row matrix (targeted spell /
+targeted ability / damage wipe / destroy wipe / exile-shrink-edict-bounce) and score the
+candidate by new cells filled, not by how strong it sounds. Also check the candidate against the
+deck's OWN targeted spells — pro-sorceries blanks your own Chandra's Ignition.
+**Source:** iron-man — the user's "hexproof means they lose to non-targeting wipes, both of
+them lose to that no?" — correcting a sloppy line in the Swords pass.
+
+---
+
+### In a symmetric-punisher deck, only opponent-restricted amplifiers are safe — 2026-08-23
+
+**Claim:** A damage multiplier worded "if a source **you control** would deal damage to a
+permanent or player" (Fiery Emancipation, City on Fire, Angrath's Marauders) or "if a source would
+deal damage" (Dictate of the Twin Gods, Furnace of Rath) also multiplies the damage your own
+symmetric permanents deal **to you** — Spiteful Visions on your draws, Manabarbs on your taps,
+Descent into Avernus, Seizan, Citadel of Pain. In a group-slug/group-hug deck built on symmetric
+gift engines, that turns the best multiplier on the page into a self-kill. The safe wording is
+"to an **opponent**": Solphim, Mayhem Dominus (×2 noncombat), Torbran (+2 red), Torture Pit (+2
+noncombat), Twinflame Tyrant (×2), Fiendish Duo, Bloodletter (life loss, my turn), Wound Reflection.
+**Evidence:** Oracle text of each; Fiery Emancipation (34% inclusion on The Lord of Pain's EDHREC
+page) rejected on it. Arithmetic: under Emancipation, Spiteful Visions on my ~5 draws a turn is 15
+to me a turn; under Solphim it is 5.
+**Changes:** SKILL §1.3 sharpened for slug decks: before seating any "source you control" or
+"a source would deal" amplifier, grep your own list for symmetric damage permanents. Two
+opponent-only amplifiers that commute (× and ×) plus additives (+2, +2) is the correct stack; the
+damaged player orders them, so (1×2)+2+2 = 6 per ping, never (1+4)×2.
+**Source:** lord-of-pain, amplifier table in research/decisions.md.
+
+### A symmetric copy of a one-sided static the commander already provides is a strict downgrade — 2026-08-23
+
+**Claim:** When the commander (or a core engine) already supplies the opponent-only version of an
+effect, the symmetric printing of the same effect adds nothing against opponents and switches the
+effect on against you. The Lord of Pain says "your opponents can't gain life"; Sulfuric Vortex,
+Havoc Festival and Rampaging Ferocidon say "players can't gain life" — each would shut off the
+deck's own lifeline (Exquisite Blood, Bloodthirsty Conqueror, Sheoldred's +2 per draw).
+**Evidence:** Oracle text; all three rejected from the user's pool on these grounds.
+**Changes:** Read the commander's statics first, then filter the candidate pool for symmetric
+re-prints of them — they look like redundancy and are anti-synergy.
+**Source:** lord-of-pain.
+
+### Half-life effects under amplifiers: a doubler kills even totals, doubler + additive kills all — 2026-08-23
+
+**Claim:** For any "deals damage equal to half that player's life, rounded down" effect
+(Heartless Hidetsugu): one ×2 amplifier kills every opponent on an **even** life total and leaves
+odd totals at exactly 1; ×2 plus any +2 additive kills every total of 2 or more (a player at exactly 1 takes 0 — no
+damage event, nothing to add to); a +2 alone kills nothing. For
+"loses half their life, rounded up" effects (Fraying Omnipotence, Havoc Festival, Unstoppable
+Slasher) under a life-loss doubler (Bloodletter of Aclazotz on your turn), ⌈L/2⌉ × 2 ≥ L always —
+every opponent loses their whole total.
+**Evidence:** Arithmetic with the 616.1 ordering rule (opponent picks min of (⌊L/2⌋×2)+2 and
+(⌊L/2⌋+2)×2 — both ≥ L for all L ≥ 2; at L = 1 the source would deal 0, which is no damage at all,
+CR 120.8, so the additive never applies). Worked table in decks/lord-of-pain/research/formulas.md.
+**Changes:** Rate a half-life card as a finisher only when the list carries the matching
+amplifier; note the parity gotcha on the damage version and the clean kill on the loss version.
+**Source:** lord-of-pain.
+
+### Score an Equipment (or any two-mode card) on BOTH modes before rejecting it — 2026-08-25
+
+**Claim:** A card rejected for one non-functional mode can still be elite on the other. Skullclamp
+was passed over in Edgar on the grounds that anthems stop a clamped 1/1 from killing itself — which
+is true, and is only half the card.
+**Evidence:** Skullclamp reads *"Equipped creature gets +1/-1"* **and** *"Whenever equipped creature
+dies, draw two cards."* Equip {1} to any creature, sacrifice it to a free outlet, draw 2 — the
+creature's size never enters into it. Edgar holds three free outlets (Viscera Seer, Ashnod's Altar,
+Yahenni); with Ashnod's Altar the sacrifice pays the next equip and nets a mana. EDHREC agrees on
+where it is best: 77% in the aristocrats theme, 73% aggro, 61% overall.
+**Changes:** When a card has a self-executing mode and an enabled mode, name both and score each
+against the current list before writing a verdict. The self-executing mode failing is not a rejection.
+**Source:** edgar-markov — re-derivation of a prior pass's Skullclamp cut.
+
+### An "opponent's creature dies" trigger is not opponent-dependent in an edict deck — 2026-08-25
+
+**Claim:** Payoffs keyed to opponents' permanents leaving play are only passive if the deck has no
+way to force it. Count your own edicts before filing one as "depends what they do."
+**Evidence:** Sangromancer ("whenever a creature an opponent controls dies, you may gain 3 life")
+was twice put on the cut list as opponent-dependent — in a list running Anowon, the Ruin Sage (an
+edict every upkeep), Olivia's Wrath and The Meathook Massacre, and in a build adding Grave Pact and
+Dictate of Erebos. Opponents sacrificing to those effects **is** a creature dying (CR 700.4 +
+701.21a), so the deck manufactures the trigger every turn. Each gain of 3 is then its own life-gain
+event feeding Vito and Marauding Blight-Priest.
+**Changes:** Before rejecting a "when an opponent's creature dies / an opponent sacrifices" payoff,
+count the edicts, sweepers and forced-sacrifice effects in the same list. EDHREC inclusion near 0%
+is not evidence here — the crowd's average build has no edict package.
+**Source:** edgar-markov, versions A/B build.
+
+### Attach a fragile utility permanent to the least-targeted creature, not the best one — 2026-08-25
+
+**Claim:** For reconfigure cards and utility Equipment whose benefit is global rather than
+combat-relevant, the correct host is the creature opponents care least about. Attaching to the
+deck's primary threat converts a one-time cost into a recurring one, because every removal spell
+aimed at that threat also knocks the utility piece loose.
+**Evidence:** iron-man — The Reality Chip ("as long as this is attached to a creature, you may
+play lands and cast spells from the top of your library") costs {1}{U} plus reconfigure {2}{U}.
+The pilot reported it as "too expensive"; the cost is actually one-time, and the recurrence came
+from hosting it on the commander, the most-removed permanent in a voltron deck. Reconfigure
+re-attachment is sorcery-speed, so each host death costs a full turn's tempo as well as 3 mana.
+**Changes:** Split attachments into *combat-relevant* (stats, evasion, protection — host the
+attacker) and *global* (card access, mana, static abilities — host anything that survives). For
+the second group, pick the most expendable legal creature on board.
+**Source:** iron-man V3 — the pilot's "it's just too expensive sometimes."
+
+### Rank commander candidates by "what does this do next turn, ALONE?" — 2026-09-02
+
+**Claim:** The commander is the only card you are guaranteed to have, so the first screen on any
+commander choice is self-sufficiency — what it does the turn after it resolves with no other card.
+A **payoff** commander with no built-in enabler is *more* draw-dependent than a conditional one,
+which is the opposite of how it feels.
+**Evidence:** Choosing between three tap/untap commanders. Inquisitor Greyfax: `{1},{T}: Tap target
+creature an opponent controls. Investigate.` — complete engine, alone, every turn. Derevi, Empyrial
+Tactician: one tap/untap per deployment, repeatable trigger gated on combat damage. Hylda of the Icy
+Crown: *"Whenever **you tap** an untapped creature an opponent controls…"* — contains **zero**
+ability to tap anything; on an empty board she is a 3/4 vanilla forever. The user's instinct ranked
+Hylda as one of the two "immediately repeatable" options precisely because her payoff per trigger is
+large.
+**Changes:** Size of payoff is not self-sufficiency. Before comparing commanders on power, write the
+one-line answer to "alone, next turn, this does ___" for each. Applies to any engine-vs-payoff
+choice, not just commanders.
+**Source:** inquisitor-greyfax — Greyfax over Hylda and Derevi.
+
+### When a colour's case rests on one staple, check whether that staple is a Game Changer — 2026-09-02
+
+**Claim:** A bracket-capped deck should price a colour by *what it uniquely adds after the Game
+Changer tax*, not by its reputation. A single GC staple can be most of a colour's argument, and at
+Bracket 3 it costs a third of the budget.
+**Evidence:** Green's case for a tap/untap deck is essentially Seedborn Muse, Murkfiend Liege and
+Glare of Subdual. `is:gamechanger` (54 cards) returns **Seedborn Muse**. At the Bracket 3 cap of 3,
+it competes head-on with Rhystic Study / Smothering Tithe / Cyclonic Rift. The colourless
+replacement, Unwinding Clock (*"Untap all artifacts you control during each other player's untap
+step"*), is **not** a Game Changer and untaps the deck's actual tappers, which are artifacts.
+**Changes:** When a colour-inclusion argument names 2–4 specific cards, run `is:gamechanger` over
+them before committing to the colour. A GC-taxed staple plus a colourless near-equivalent often
+collapses the case for the splash entirely.
+**Source:** inquisitor-greyfax — dropping green for black in an Esper vs Bant decision.
+
+### An untapper keyed to COLOUR skips your colourless artifacts — 2026-09-02
+
+**Claim:** Read the *scope* clause on every mass-untap and mass-tap effect. Ones keyed to colour
+miss artifacts and off-colour permanents entirely, which in an artifact-based engine is most of the
+board.
+**Evidence:** Murkfiend Liege — *"Untap all **green and/or blue** creatures you control during each
+other player's untap step."* In a deck whose tappers are Icy Manipulator, Hylda's Crown of Winter
+and Staff of Domination (all colourless artifacts) plus black assassins, it untaps almost nothing.
+Compare Seedborn Muse (*"Untap all permanents you control"*) and Unwinding Clock (*"all artifacts
+you control"*).
+**Changes:** For any "untap all X" or "tap all X", write down which permanents in the current list
+actually match X before scoring it. Same family as the colour-rider entries at "A lord keyed to
+COLOUR, not tribe, can wipe your own tokens" and "A rider that counts COLORS is near-dead in a
+mono-color deck."
+**Source:** inquisitor-greyfax — costing green's contribution card by card.
+
+### Measure total creature POWER before claiming a deck wins through combat — 2026-09-02
+
+**Claim:** "The board attacks and wins" is an assertion, not a plan. Count actual power against the
+120 life a four-player pod represents, and count how many creatures are engine parts rather than a
+clock.
+**Evidence:** An Esper tap/untap deck read as having a fine combat kill — 28 creatures. Pulling
+power/toughness for every one gave **69 total power**, with **12 creatures at power ≤ 2** (both
+assassins, Merieke Ri Berit, Stalking Assassin, Esper Sentinel, Fatestitcher, Vizier of Tumbling
+Sands, Spider-Woman…). A realistic seven-creature board is ~14 power — about nine unopposed swings
+to kill one table.
+**Changes:** In any engine/toolbox deck, creature *count* is not a clock: utility bodies with
+`{T}` abilities are 1/1s. Run the power count before writing a "how the game ends" note, and size
+the Win Conditions role from that number rather than from a default of 3. It also reprices anthems
+— an anthem over twelve small utility bodies (Elesh Norn, +2/+2 and −2/−2) is a combo piece, not
+a fatty.
+**Source:** inquisitor-greyfax — "how do we win with this deck?"
+**Refined by:** "Count UNBLOCKABLE power, not raw power" below — measuring is right, but raw
+power is the wrong denominator in a deck that taps blockers.
+
+### An alt-win permanent is a telegraph — score it by its floor, never its ceiling — 2026-09-02
+
+**Claim:** A permanent whose text contains "you win the game" announces itself and draws the
+table's next answer. It earns a slot only if the half that *isn't* the win is already worth
+playing.
+**Evidence:** Revel in Riches (`{4}{B}`) reaches its alt-win at ten Treasures — a multi-turn,
+fully visible countdown. Its floor is what justifies it in a deck with eleven effects that kill
+opponents' creatures: the Treasure half is immediate ramp, Smothering Tithe's Treasures count
+toward the same ten, and each Treasure entering triggers Junk Winder. Note which protection
+actually applies: Clever Concealment (*"any number of target nonland permanents you control phase
+out"*) and counterspells do; **Flawless Maneuver does not**, because indestructible is
+creatures-only.
+**Changes:** Split every alt-win card into "the win" and "the rest", and buy it on the rest.
+A deck relying on a telegraphed permanent still needs a **hidden** finisher — one that lives in
+hand and cannot be pre-emptively removed. Generalises to Approach of the Second Sun, Mechanized
+Production, Felidar Sovereign, Test of Endurance.
+**Source:** inquisitor-greyfax — the user's "it's most likely gonna get countered or removed
+immediately", which was correct.
+
+---
+
+### A mass untapper re-prices every {T} ability and every mana rock — re-derive the whole list — 2026-09-02
+
+**Claim:** Adding an "untap all X during each other player's untap step" effect is a **deck-wide
+verdict-invalidation event**, not a single card add. Every {T} ability in the deck silently
+multiplies by the number of opponents, and tapped-out mana rocks become mana available on
+opponents' turns. Re-score the whole list against it, including cards already cut.
+**Evidence:** iron-man V3 added Unwinding Clock (*"Untap all artifacts you control during each
+other player's untap step"*). Insight Engine (*"{2}, {T}: Put a charge counter on this artifact,
+then draw a card for each charge counter on it"*) had been valued on 2026-08-07 at one activation
+per turn and cut in the V2 package. With Clock it gets **four activations per cycle** with
+accumulating counters — 1+2+3+4 = 10 cards, then 26. The same Clock refreshes Sol Ring {2} +
+Arcane Signet {1} + Talisman {1} + Thran Dynamo {3} + Gilded Lotus {3} = **10 mana at every
+opponent's untap step**, which pays for those activations out of mana the deck could never have
+spent on its commander. Three other cards moved off the standing cut list on the same pass
+(Master Transmuter = 4 free deploys/cycle; Steel Overseer / Iron Spider = +4/+4 on the team per
+cycle; Ultron's "mana sink you can't feed" grounds softened).
+**Changes:** After adding a mass untapper, grep the list for `{T}` and for mana rocks and re-derive
+every one — including cards in the sideboard, because the effect can revive a card cut on rate.
+Same family as "An untapper keyed to COLOUR skips your colourless artifacts" (2026-09-02): read the
+scope clause, then count what actually matches it.
+**Source:** iron-man — Insight Engine returning to V3.
+
+---
+
+### Doubling POWER is a damage multiplier when a damage doubler is already on board — 2026-09-02
+
+**Claim:** In a deck holding a damage doubler, a cheap "double target creature's power" instant is
+not a combat pump — it is a second copy of the deck's biggest Equipment, and it converts any
+"deals damage equal to its power to each opponent" effect into a **table kill**. Score it in the
+finisher role, never the pump role.
+**Evidence:** Bulk Up ({1}{R}, *"Double target creature's power until end of turn"*) resolves as
++X/+0 with X locked at resolution, so it is cast after deploys and after blockers. With Mjölnir,
+Hammer of Thor (*"Double all damage equipped creature would deal"*) on a 5/5 commander: bare = 20
+damage, and with any second Equipment = 24+, matching what Embercleave ({4}{R}{R}) bought for 2
+mana instead of 6. The larger jump is non-combat — Chandra's Ignition (*"Target creature you
+control deals damage equal to its power to each other creature and each opponent"*) makes the
+creature the damage source, so Mjölnir doubles it: 6 power = 12 to each opponent (not lethal),
+12 power = **24 to each opponent** plus a full sweep, with no attack step, no blockers and no
+attack tax. **CORRECTED 2026-09-02 — see "Commander damage is COMBAT damage only" under Verified rulings:** that
+24 is life loss against a 40-life total, *not* a kill. This entry originally called the Ignition
+line a "table kill", which was wrong. The commander-damage half of the claim (24 in combat = a
+21-damage kill) is unaffected and stands.
+**Changes:** Whenever a deck runs a damage doubler, check the power-doubling instants before the
+additive Equipment tier — the multiplier tier scales with everything already on the creature, and
+per SKILL §2.5 these commute cleanly rather than being a redundant second multiplier. Also check
+whether the deck holds a damage-equal-to-power sweeper: the power doubler may be the difference
+between "big" and "wins the game".
+**Source:** iron-man — Bulk Up into V3.
+
+---
+
+
+### "Unattach" in a cost needs a BATTLEFIELD re-attacher — a free-attach trigger keyed to "from your hand" doesn't cover it — 2026-09-02
+
+**Claim:** An Equipment whose ability pays *"Unattach this"* as a cost is a **two-card engine**, not
+a standalone. Before scoring it, check that the deck can re-attach something **already on the
+battlefield** — free-attach effects keyed to an Equipment *entering* or coming *from your hand* do
+not qualify, and paying the equip cost every activation usually kills the card.
+**Evidence:** Surestrike Trident — *"{T}, Unattach Surestrike Trident: This creature deals damage
+equal to its power to target player or planeswalker. Equip {4}."* In iron-man V3 the commander's
+trigger reads *"you may put an artifact card **from your hand** onto the battlefield. If it's an
+Equipment, attach it"* — dead here, the Trident is already on the battlefield. Hammer of Nazahn
+(*"Whenever an Equipment **enters**, you may attach it"*) — also dead, same reason. What actually
+works: Brass Squire (*"{T}: Attach target Equipment you control to target creature you control"*)
+and Blacksmith's Talent level 2 (*"At the beginning of combat on your turn, attach target Equipment
+you control to up to one target creature"*). Without one of those it is one activation per turn
+cycle at {4} a re-equip; with Brass Squire plus a mass untapper it is three to four.
+**Changes:** Sort a deck's attach effects into three buckets before evaluating any unattach-cost
+card — *on enter*, *from hand*, and *from the battlefield* — and count only the third. The same
+split decides whether a stranded Equipment can ever be re-suited after removal.
+**Source:** iron-man — Surestrike Trident into V3.
+
+---
+
+### Count UNBLOCKABLE power, not raw power, in a deck that taps blockers — 2026-09-02
+
+**Claim:** Raw creature power only measures a clock when the defender can block. In a tap-down
+deck the denominator is "damage that connects", and small utility bodies stop being a liability.
+**Evidence:** An Esper tap/untap list was judged to have a weak combat kill on 69 total power with
+12 creatures at power ≤2. Re-derived with blockers tapped: a realistic seven-creature board is ~22
+power, **+6 from Inquisitor Greyfax's own "other creatures you control get +1/+0"** = **28
+unblockable**, or ~34 under Elesh Norn. That is a two-swing kill on one opponent, not the nine
+swings the raw count implied.
+**Changes:** Before adding fatties to a deck that can deny blocks (tappers, stun, "can't block",
+evasion granters), ask whether the bottleneck is *power* or *connecting*. If it is connecting,
+the correct additions are **enablers** (mass-tap, mass-evasion), not multipliers — a multiplier
+only doubles damage you could already deal. Also count the commander's own anthem clause; a
+`+1/+0` across six bodies is +6 that is easy to overlook.
+**Source:** inquisitor-greyfax — the user's "if we're tapping people's cards we can always connect
+on damage."
+
+### Read whether a doubler says ACTIVATED or TRIGGERED before pricing it — 2026-09-02
+
+**Claim:** Ability-doublers are worded for one kind of ability. A triggered-ability doubler is
+close to blank in a deck whose engine is activated abilities, however good the card looks.
+**Evidence:** Roaming Throne ({4}, $51.12) — *"If a **triggered** ability of another creature you
+control of the chosen type triggers, it triggers an additional time."* The deck it was proposed
+for runs its engine on **activated** abilities: Inquisitor Greyfax's `{1},{T}`, Icy Manipulator,
+Hylda's Crown of Winter, and every assassin's `{T}`. Naming Human (14 in the deck) would really
+only double Hylda. Greyfax herself is a Human whose ability is activated, so she is untouched, and
+Quake's printed type is "**Inhuman** Spy Hero" — not a Human at all.
+**Changes:** For any doubler, first classify the deck's engine as activated vs triggered, then
+check the doubler's wording against it. Also verify creature types from the printed type line
+rather than the character's name — "Inhuman", "Nonhuman" and similar are real types that fail a
+tribal naming.
+**Source:** inquisitor-greyfax — "do we need Roaming Throne in this deck?"
+
+### Read whether a cost reducer eats COLOURED or GENERIC mana — the two are not interchangeable — 2026-09-02
+
+> **Changes line SUPERSEDED** by "Scored a coloured-pip reducer as a discount and missed that it is a colour-FIXER" (Corrections). The claim stands; the guidance measured the wrong thing.
+
+**Claim:** "Costs {W}{U}{B}{R}{G} less" is not "costs 5 less." A reducer that touches only
+coloured pips saves at most one mana per colour present in the cost.
+**Evidence:** Morophon, the Boundless — *"Spells of the chosen type you cast cost {W}{U}{B}{R}{G}
+less to cast. This effect reduces only the amount of colored mana you pay."* Heliod, God of the
+Sun `{3}{W}` → `{3}` (saves 1); Iroas `{2}{R}{W}` → `{2}` (saves 2); Zodiark `{B}{B}{B}{B}{B}` →
+`{B}{B}{B}{B}` (saves 1). Mirror of the existing entry "Cost reduction only eats the GENERIC
+portion of a cost."
+**Changes:** When a reducer names coloured symbols, cost each candidate by counting *distinct
+colours in its cost*, not its mana value. It also steers the card pool: a coloured-only reducer
+rewards multicolour cards, which in a God deck means Theros devotion gods — a consequence worth
+seeing before committing to the commander.
+**Source:** god-tribal build-off — Morophon list.
+
+### In a commander build-off, hold the shell constant — 2026-09-02
+
+**Claim:** Comparing commanders is only meaningful if the 99 around them is the same wherever the
+colours allow; otherwise the comparison measures five manabases and five removal suites at once.
+**Evidence:** Four 5C God-tribal lists on one identical 69-card shell produced measurably
+different decks purely from commander + God selection — avg MV **3.02** (Sisay, everything must
+be fetchable) to **3.70** (Esika, everything should be cheat-worthy), devotion-gated Gods **5–11**.
+Those deltas are attributable *because* the shell was fixed.
+**Changes:** Build variants from shared part-files and an assembler (`research/parts/build.sh`)
+so the shared portion cannot drift between variants (§1.4), then report the deltas as the result.
+**Source:** god-tribal build-off.
+
+### Five-colour "God tribal" must count the devotion-gated Gods — they are enchantments there — 2026-09-02
+
+**Claim:** 25 of the 95 commander-legal Gods are Theros-style enchantment creatures that are only
+creatures at devotion ≥5 (mono) or ≥7 (two-colour). In a five-colour pile that threshold is
+rarely met, so each one is an indestructible enchantment with a static, not a body.
+**Evidence:** `t:god t:enchantment legal:commander` = 25; `-t:enchantment` = 70. The Morophon
+list, pushed multicolour by its reducer, carried **11** of them; Sisay's carried 6.
+**Changes:** For any multicolour God deck, report the devotion-gated count next to the God count,
+and value those cards on their static text (Purphoros's ETB damage, Iroas's damage prevention,
+Kruphix's mana bank) rather than their P/T. Tribal anthems and Jodah-style "legendary
+*creatures*" effects skip them entirely.
+**Source:** god-tribal build-off.
+
+
+
+### A token maker's self-sacrifice clause is a payoff in a dies-matters deck and a cost anywhere else — 2026-09-03
+
+**Claim:** Read a "create tokens … sacrifice them at end step" card twice — once as the deck it is
+in. In a deck with per-creature *enters* and *dies* payoffs the sacrifice clause is free death
+triggers; in a deck that wanted the bodies (blockers, artifact count, anthem targets) it is the
+reason to pass.
+**Evidence:** Infantry Shield (*"mobilize X, where X is its power"* — X tapped-and-attacking 1/1
+Warriors, sacrificed at the next end step, CR 702.181a). Iron Man passed it on 2026-09-02: the
+tokens never block, are red Warriors rather than artifacts, and miss every artifact-count payoff.
+The same card against Edgar's sacrifice list: each token is one Purphoros trigger (2 to each
+opponent), one Mirkwood Bats trigger on creation and another on sacrifice, and one trigger each on
+Blood Artist, Cruel Celebrant, Vengeful Bloodwitch, Zulaport Cutthroat and Bastion of Remembrance
+when it dies, plus one Grave Pact / Dictate of Erebos edict per opponent per token — all
+per-creature wordings, all verified via CR 603.2c. At 6 power that is roughly 36 life off each
+opponent from one attack, from one equipped creature exposed. Blade of the Bloodchief on the same
+creature then converts those deaths into +1/+1 counters, so the next attack makes more tokens.
+**Changes:** For any mobilize / "enters attacking, sacrifice at end" card, count the deck's
+per-creature enters- and dies-triggers before judging the body. The mana rule still applies
+(Infantry Shield is a non-Vampire spell in Edgar, so no eminence token) — it is an argument about
+what the tokens feed, not about rate.
+**Source:** edgar-markov — Infantry Shield re-derived for a second deck the day after Iron Man
+passed it.
+
+---
+
+### An X-spell under a cast-MV pump is a self-doubler — file X-spells as PUMP in a power-discount deck — 2026-09-08
+
+**Claim:** When a commander discounts spells by its own power and a permanent adds "+MV/+0" on
+cast, every {X} instant or sorcery doubles the commander's power for the price of its coloured
+pips, because X is set by the discount and the resulting MV is added straight back to the power.
+**Evidence:** CR 202.3e (*"X is treated as the number chosen for it while the object is on the
+stack"* — Livaan's trigger resolves above the spell and reads the full MV) · CR 601.2f (reductions
+come off generic) · Livaan, Cultist of Tiamat: *"target creature gets +X/+0 … where X is that
+spell's mana value"* · The Scarlet Witch: *"cost {X} less … where X is The Scarlet Witch's power."*
+Recurrence: X = ⌊(W + r)/k⌋, W' = W + kX + p ≈ 2W + r + p. Simulated (research/turn-5-chain-
+2026-09-08.md): seed 2, Storm King's Thunder X=2 for {R}{R}{R} → Wanda 7 → Jaya's X=7 for {R}{R},
+copied ×2 → 21 to each opponent; seed 4 → 55 each; seed 8 → 171 each. Five red pips in every row.
+**Changes:** In any deck pairing "costs less by power" with "+MV on cast", every X-spell goes in
+the pump role as well as its payoff role, and the seed (power on the commander before the first
+X-spell) is scored as a multiplier on the whole chain, never as "+N mana off one spell". Write the
+recurrence before assigning roles.
+**Source:** scarlet-witch — an opponent's turn-5 table kill with the same commander, 2026-09-08.
+
+---
+
+### `{X}{R}: +X/+0` pump instants double a power-discount commander with no engine on the board — 2026-09-08
+
+**Claim:** An instant that costs {X}{R} and gives +X/+0 is a one-pip power doubler for a commander
+whose discount equals its power, and a tripler under a cast-MV pump; they are the redundancy for
+a single engine creature.
+**Evidence:** Lunar Frenzy / Frantic Confrontation ({X}{R}, *"+X/+0 and gains first strike and
+trample"*), Enrage, Pedal to the Metal — Scryfall `id:r (t:instant or t:sorcery) (o:"gets +X/+0"
+or o:"gets +X/+X")` = 15 cards. Wanda at W: X = W + r for {R} → 2W + r; with Livaan's +X+1 →
+3W + r + 1. Bionic Blow ({X}{R}{R}) is the same plus removal for her pumped power. The only
+other red "+MV on cast" cards (Erratic Cyclops, Renegade Bull) pump themselves.
+**Changes:** When a build's chain hangs on one creature (Livaan is 1 of 99), search for spells
+whose X *is* the pump before reaching for tutors; and re-read any "one-shot pump, cut on
+principle" group against the recurrence, because these are not +3 for a card, they are ×2.
+**Source:** scarlet-witch — turn-5 chain investigation.
+
+---
+
+### In a power-discount deck the kill turn is bounded by COLOURED PIPS, not mana — 2026-09-08
+
+**Claim:** Once the commander's power exceeds the generic of the next spell, each further spell
+costs only its coloured pips; chain length is the count of red sources, and colourless mana
+cannot extend it.
+**Evidence:** Storm King's Thunder → Jaya's Immolating Inferno is {R}{R}{R} + {R}{R} whether the
+chain deals 21 or 1,378. Seething Song ({2}{R} → {R}{R}{R}{R}{R}) is +4 red pips when its {2} is
+paid with Sol Ring; Sol Ring, Nykthos' base ability, War Room, Rogue's Passage, Tyrite Sanctum and
+Forge of Heroes pay for nothing in the chain. Storm-Kiln Artist (*"cast or copy"*) and Ashling's
+magecraft fire per copy, so under a ×8 copy they are nine Treasures / nine loots; Electro,
+Urabrask and The Vision refund one pip per cast.
+**Changes:** For the kill turn count red sources, not total mana; rank rocks by colour; score
+per-spell engines as pip refunds and copy-triggered ones (Storm-Kiln, Ashling) above cast-only
+ones. Companion to "Coloured mana beats colourless in a mono-colour deck" (2026-08-04), which
+argued from banking; this is the stronger reason.
+**Source:** scarlet-witch — turn-5 chain investigation.
+
+---
+
+
+### The Game Changer count, not a combo, is usually what makes a list Bracket 4 — 2026-09-08
+
+**Claim:** When asked why a list is Bracket 4, compute the Game Changer count first. A cap of three
+is the constraint most lists actually break; infinite combos and mass land denial are rarer and
+often absent entirely.
+**Evidence:** scarlet-witch `DECK-B4.md` vs `DECK.md`, diffed by script: the 17-card swap added six
+Game Changers (Underworld Breach, Lion's Eye Diamond, Grim Monolith, Mana Vault, Chrome Mox, Mox
+Diamond) plus Gamble, on top of the base list's three — **ten against a cap of three**. Its only
+two-card infinite (Reiterate + Mana Geyser, buyback {3} for five mana copying a Geyser that adds
+six or more) is a *chosen-N* loop, which this pilot does not count as an "automatic or unstoppable"
+infinite (2026-09-06). So the combo was never the deciding factor; the count was.
+**Changes:** Answer "what makes this Bracket 4?" with `is:gamechanger` over the diff before
+reaching for combo analysis, and say which of the three B3 constraints (GC cap, mass land denial,
+chained extra turns, early two-card infinites) each card actually trips. Check the flag on lands
+and cheap rocks too — Ancient Tomb, Chrome Mox and Mox Diamond are all flagged.
+**Source:** scarlet-witch — the pilot's "what is the main difference that's making it bracket 4?"
+
+---
+
+### A damage multiplier belongs where damage is FLAT, and is dead weight where it is exponential — 2026-09-08
+
+**Claim:** Before seating a damage doubler/tripler, ask whether the deck's damage is *flat* (a
+constant per trigger or per cast) or *exponential* (an X the deck's own engine inflates). A
+multiplier converts a fixed factor; on flat damage that factor is the whole deck, and on
+exponential damage it is applied to a number already past what the format can absorb.
+**Evidence:** Same commander, two lists, opposite verdicts. In scarlet-witch `DECK.md` the damage
+is Longshot 2 + Fiery Inscription 2 + Guttersnipe 2 per cast, so Fiery Emancipation turns 6 into
+18 a spell — it is the difference between chipping and killing. In `DECK-V3.md` the damage is an
+X-spell chain: modelled at the coloured-pip floor with one seed, Storm King's Thunder into Jaya's
+Immolating Inferno is **55 to each of three targets for five red pips**, and one more link takes it
+to 406. Tripling that converts nothing — three opponents at 40 is a hard ceiling and overkill
+cannot be banked. Emancipation is not blank there (MV 6, so Livaan pumps Wanda by 6 as it
+resolves), it simply loses on the binding resource: at seed 4, **Lunar Frenzy is +9 power for one
+red pip; Emancipation is +6 for three.**
+**Changes:** Score a multiplier in the currency that actually binds the kill turn (here coloured
+pips, not mana), and against the *lethal threshold*, not against raw output. If the deck's damage
+already clears the threshold without the multiplier, the slot belongs to whatever extends the
+engine instead. Applies to Solphim, City on Fire, Angrath's Marauders and Torbran as well as
+Emancipation. Companion to "One multiplier is right, two is greedy" (2026-08-04) and its gating
+entry (2026-09-04) — this is the case where the right number is **zero**.
+**Source:** scarlet-witch — the pilot's "we don't need Fiery Emancipation any more?"
+
+---
+
+
+---
+
+### Applied an instant/sorcery-only discount to an enchantment in my own damage model — 2026-09-08
+
+**What happened:** Modelling whether the Scarlet Witch chain build wants Fiery Emancipation, I let
+The Scarlet Witch's reduction apply to it. Her text is *"**Instant and sorcery spells** you cast
+with mana value 4 or greater cost {X} less."* Fiery Emancipation is an **Enchantment**, so she
+reduces it by nothing; only Ruby Medallion / The Fire Crystal (red spells) and Longshot / Artist's
+Talent L2 (noncreature spells) touch it. The model priced it at {R}{R}{R} + 1 generic when the real
+cost with Ruby alone is {R}{R}{R} + 2, and it is 6 mana with no reducers at all. Solphim, a
+*creature*, gets no discount from her either **and** no Livaan pump, since Livaan reads *"whenever
+you cast a **noncreature** spell."*
+**Root cause:** The sim carried one `reduction = wanda + others` term for every card and gated it
+only on mana value, never on card type. SKILL §1.2 already says in as many words: *"Watch the
+reducer's exact wording: red spells vs noncreature spells vs instants and sorceries MV 4+. They
+cover different sets."* I wrote the gate for the MV half of her text and dropped the type half.
+**Guard:** In any cost model, store each reducer as (applies-to predicate, amount) and evaluate the
+predicate against the card's **type line** as well as its mana value. Before quoting a discounted
+cost for a permanent, say out loud which reducers are creature-legal, noncreature-only, or
+instant/sorcery-only. The conclusion here survived the bug — a multiplier still loses on pips per
+point of power — but the quoted costs were wrong by two mana and I published them.
+**Source:** scarlet-witch — the pilot asking whether to add a damage doubler back.
+
+
+### Teamwork is a SPELL keyword — it is not crew, Station, or convoke — 2026-09-09
+
+**Claim:** A card that triggers on "becomes tapped to pay a teamwork cost" does **not** trigger on
+crewing a Vehicle, stationing a Spacecraft, or convoking a spell.
+**Evidence:** CR 702.194a — "Teamwork N" means "As an additional cost to cast **this spell**, you
+may tap any number of creatures you control with total power N or more." It is an additional cost
+on a spell, in the 601.2b / 601.2f–h path. Crew (702.122a) and Station (702.184a) are activation
+costs of *abilities*; convoke (702.51a) is an alternative way to pay mana. Different mechanics.
+**Changes:** Before slotting a teamwork payoff, count the teamwork *spells* actually available in
+the colour identity — `bun run scripts/card.ts search 'id<=xy o:"Teamwork"'`. In UW that pool is
+nine cards and mostly filler, so Agent Maria Hill is a blank in a crew/Station deck no matter how
+much the flavour fits.
+**Source:** cap-living-legend — nearly added Agent Maria Hill as "draws a card every time you crew."
+
+### EDHREC synergy lists include cards that are not commander-legal — 2026-09-09
+
+**Claim:** A card appearing on an EDHREC commander page — including its New Cards section — is not
+evidence that the card is legal in Commander.
+**Evidence:** The Captain America, Living Legend page listed U.S.S. Enterprise-D, Galaxy-Class in
+New Cards; `bun run card` returns `commander: not_legal`. Same for Candela, Aegis of Adagia, Stoic
+Star-Captain and Squadron Carrier, which surfaced in a Scryfall Station search from the `yeoe`
+digital set.
+**Changes:** Run every EDHREC-sourced card through `bun run card` before it reaches a list, and
+check the `commander:` field, not just colour identity. This is deck-brain §2.2's "EDHREC is a lens,
+never source of truth" with a concrete failure mode attached.
+**Source:** cap-living-legend.
+
+
+### Overdraw past hand size is a graveyard engine — re-check dedicated yard-fillers after adding draw — 2026-09-09
+
+**Claim:** Once a deck draws past its maximum hand size every turn cycle, the cleanup-step discard
+(CR 514.1) becomes a reliable way to put cards in the graveyard. Any card whose job was *putting a
+specific card type into the yard* should be re-derived against that, because the draw engines may
+now do it for free.
+**Evidence:** iron-man V3 ran Goblin Engineer for its ETB — *"search your library for an artifact
+card, put it into your graveyard"* — to feed Goblin Welder. After Insight Engine (10 cards a cycle
+with Unwinding Clock) and Mind's Eye (three-plus a cycle) were added, the pilot discards several
+cards at every cleanup, and in a 60-artifact list those discards *are* fat artifacts. Engineer's
+setup role was covered by the draw package it was sitting next to; its return clause was capped at
+MV 3 where Welder has no cap. It was cut for the draw engine that replaced its function.
+**Changes:** After adding any draw engine, list the cards whose role is "get X into the graveyard"
+and ask whether overdraw now does it. Same family as "A mass untapper re-prices every {T} ability"
+— a new engine silently invalidates verdicts on cards that were never compared to it.
+**Source:** iron-man — Goblin Engineer out for Mind's Eye.
+
+---
+
+### Count the payoffs stacked on one enabler before adding another — name the dependency out loud — 2026-09-09
+
+**Claim:** When several adds are each justified by the same single permanent, the deck has
+acquired a concentration risk that no individual evaluation shows. Before the third such add,
+count them, name the enabler, and check how many ways the deck can find and protect it.
+**Evidence:** iron-man V3 justified Insight Engine (four activations a cycle instead of one),
+Surestrike Trident (three shots a cycle instead of one), and Mind's Eye (payable at all under the
+pilot's mana rule) on Unwinding Clock — one {4} artifact. The first two degrade gracefully without
+it (once per turn); Mind's Eye degrades to "hold {1}s on their turns," which the deck's own rule
+forbids. The count was only made explicit on the third add, by which point the deck had also cut
+one of its two Clock-finders (Goblin Engineer). Named as the residual risk; Fabricate, Padeem,
+Darksteel Forge and Goblin Welder recorded as the find/protect/recur set.
+**Changes:** Keep a running "depends on" note per engine card in the deck's decisions log. When an
+add's grounds start with "with X out…", write the count of cards already resting on X, and grade
+the add by how it plays *without* X — "once per turn" is acceptable, "dead under the mana rule" is
+a real cost that must be named.
+**Source:** iron-man — Mind's Eye into V3.
+
+---
+
+
+### Before running a sac-outlet tutor, audit whether the deck's TOKENS are the right card type — 2026-09-09
+
+**Claim:** A card like Kuldotha Forgemaster ("{T}, Sacrifice three artifacts: search for an artifact,
+put it onto the battlefield") is only castable-in-practice if the deck generates *disposable*
+artifacts. Counting "how many artifacts do I run" is the wrong measurement — most of them are
+load-bearing, and most artifact decks' tokens are not artifacts at all.
+**Evidence:** In cap-living-legend, 35 artifacts — and of six token producers, four made
+**non-artifact** tokens: Shorikai and Prodigy's Prototype make "1/1 colorless **Pilot creature**
+token," Royal Talon makes a white Soldier, Parhelion II makes an Angel. Only Retrofitter Foundry
+made true fodder, at {2} a Servo — two turns and {8} to fuel one activation.
+**Changes:** For any sacrifice-cost card, count **fodder**, not permanents: tokens of the right type,
+already-spent permanents, and lands you can afford to lose. Read the token's full type line — "Pilot
+creature token" and "Servo **artifact** creature token" look alike in a decklist and are not
+interchangeable. Also check for artifact *lands* (Ancient Den, Seat of the Synod) hiding in the count
+as MV-0 artifacts; sacrificing one costs a land drop.
+**Source:** cap-living-legend — pilot challenged Kuldotha Forgemaster with "what would we be sacking?"
+
+### Station counters equal POWER, so a power-scaling token is the best Spacecraft fuel — 2026-09-09
+
+**Claim:** In a Station deck, the value of a creature is its **power**, and a token whose power
+scales with the board is worth more than several small bodies.
+**Evidence:** CR 702.184a — Station is "Tap another untapped creature you control: Put charge
+counters equal to **its power** on this permanent." A Simulacrum Synthesizer Construct reading "+1/+1
+for each artifact you control" is a 10/10 on a board of ten artifacts; with a "first tap each turn
+untaps it" commander it stations **twice**, for 20 counters — Dawnsire's full threshold from one
+token. A base of 1–3 power creatures needs ten-plus taps for the same result.
+**Changes:** When evaluating creatures for a Station or crew deck, rank by power, not by mana value
+or by body count — and treat 0-power creatures (Ornithopter of Paradise, Apprentice Wizard) as
+contributing **nothing** to that plan regardless of how good their other text is.
+**Source:** cap-living-legend.
+
+### A cost reducer that reads "artifact spells" does NOT reduce an artifact-themed COMMANDER — check the front face's type line — 2026-09-09
+
+**Claim:** Before counting cost reducers as fixing a slow commander, read the commander's front
+face type line and the transform's nature. A reducer keyed to a card *type* misses a commander that
+is a different type, and no reducer ever touches an **activated** transform ability, because it is
+not a spell.
+**Evidence:** iron-man ran three reducers — Etherium Sculptor and Enthusiastic Mechanaut
+(*"Artifact spells you cast cost {1} less"*) and Cloud Key (same, naming artifact) — under a
+standing worry that "the commander lands late." But Tony Stark's front face is `{1}{U}` **Legendary
+Creature — Human Artificer Hero**, not an artifact, and the back face is reached by `{4}{U}{R}:
+Transform`, an **activated ability**. So none of the three reduce either half of the exact cost the
+deck most wants cheaper. Their real window is narrow: turns 1–4 before the flip, and after a board
+wipe, when artifacts must be hard-cast because the free-deploy trigger is unavailable.
+**Changes:** When a deck's stated problem is "the commander is too slow", verify the reducers
+actually apply to it before treating the reducer count as the fix. If they do not, the levers are
+ramp, a cost-reduction effect keyed to the right type, or a command-zone cheat — not more reducers.
+Also use this to rank within the reducer role: when none of them help the commander, the tiebreaker
+is what else each brings (a body that blocks and taps for mana beats a bare enchantment-like rock).
+**Source:** iron-man — ranking Cloud Key against Etherium Sculptor and Enthusiastic Mechanaut.
+
+---
+
+### A cheap token engine stops being cheap when better mana sinks arrive — re-price per-use costs after every engine add — 2026-09-09
+
+**Claim:** An engine with a **per-activation** cost is priced against the deck's *best alternative
+use of that mana*, not against its own rate. Adding a card-drawing mana sink silently re-prices
+every pay-to-use engine already in the list, and can turn a former bargain into the worst use of
+the same mana.
+**Evidence:** iron-man ran Retrofitter Foundry (`{2}, {T}`: 1/1 Servo) as a cheap token engine
+feeding Fateful Discovery. It was cheap while the deck had nothing else to spend Unwinding
+Clock-refreshed mana on. After Insight Engine (`{2}`: draw an escalating pile) and Mind's Eye
+(`{1}`: draw a card per opponent draw) joined, the same `{2}` bought a 1/1 instead of cards, and
+Thopter Spy Network already made a flying artifact token **free** every upkeep. The pilot spotted
+this before the assistant did.
+**Changes:** After adding any repeatable mana sink, list every card in the deck with a
+per-activation cost and ask what else that mana now buys. This is the mirror of the mass-untapper
+entry: an untapper multiplies how *often* you can pay, while a mana sink raises the *price* of
+paying for anything else.
+**Source:** iron-man — Retrofitter Foundry cut for Urza, Lord High Artificer.
+
+---
+
+
+### An "untap during each other player's untap step" effect is an engine MULTIPLIER, not defence — 2026-09-10
+
+**Claim:** Drumbellower / Unwinding Clock / Prop Room style effects should be priced as roughly
+**4x on every tap ability you control**, not as insurance against being tapped out.
+**Evidence:** In a four-player pod there are three other untap steps per turn cycle, so each `{T}`
+ability fires four times a cycle rather than once. Measured in cap-living-legend: Arcanis the
+Omnipotent goes from 6 cards a turn to 15 a cycle; Sanwell, Avenger Ace from two impulse-6s to five.
+Crew has no timing restriction (CR 702.122a is an activated ability with no "only as a sorcery"),
+so it also enables instant-speed crewing to block on an opponent's turn.
+**Changes:** In any deck with 5+ tap-activated abilities, rank these effects with the card-draw
+engines, not with the protection suite. Corollary: they are the correct answer for a commander whose
+own ability is gated to "during your turn."
+**Source:** cap-living-legend — Drumbellower is 45% of that commander's field and I benched it twice.
+
+### "Untap all creatures" and "untap all artifacts" are near-disjoint, not substitutes — 2026-09-10
+
+**Claim:** Running both Drumbellower and Unwinding Clock is not doubling up; each reaches permanents
+the other cannot.
+**Evidence:** Vehicles and Spacecraft are **artifacts, not creatures**, unless crewed or above their
+Station threshold — so a creature-untapper cannot untap an uncrewed Shorikai, Genesis Engine and its
+`{1},{T}: Draw two cards` ability. Conversely mana dorks, and any nonartifact creature with a `{T}`
+ability, are invisible to an artifact-untapper. Mana **rocks** are also artifacts-only, and untapping
+them is what makes instant-speed interaction on other players' turns actually payable.
+**Changes:** Check the *type line* of the permanents you actually need untapped before deciding one
+untapper is enough. This is the §2.5 "genuinely multiplicative" case, not the substitute case.
+**Source:** cap-living-legend.
+
+### A crew-cost reducer can silently turn off a "crewed by exactly N" payoff — 2026-09-10
+
+**Claim:** Cards that reward crewing with a specific number of creatures anti-synergise with cards
+that lower crew costs, because the cheaper crew number changes how many bodies you naturally tap.
+**Evidence:** Mighty Servant of Leuk-o: "Whenever this Vehicle becomes crewed for the first time each
+turn, **if it was crewed by exactly two creatures**, it gains [draw two]." Kotori, Pilot Prodigy:
+"Vehicles you control have **crew 2**." With Kotori out you crew Mighty Servant with a single
+2-power body and the bonus never triggers. Both cards were in the same 100 for three passes.
+**Changes:** This is deck-brain §1.3 ("check the card against your own board") applied to *cost
+reducers*, which is the easy case to miss — a reducer looks purely upside. Whenever a payoff counts
+permanents tapped, resources spent, or mana paid, list every cost reducer in the deck and re-check
+the count.
+**Source:** cap-living-legend.
+
+### An ability-borrowing card's value IS its sources — exclude them from the cut list — 2026-09-10
+
+**Claim:** When the incoming card gains, copies or counts abilities from other permanents you
+control, every one of those permanents is part of its value. Cutting one of them to make room
+degrades the new card in the same swap. Draw the cut from outside the source set, and also protect
+any enabler that turns the borrowed abilities on.
+**Evidence:** Marvin, Murderous Mimic — *"Marvin has all activated abilities of creatures you
+control that don't have the same name as this creature."* In iron-man V3 its sources were seven
+`{T}` creatures (Brass Squire, Master Transmuter, Steel Overseer, Iron Spider, Iron Lad, Goblin
+Welder, the front-face commander). Any of them as the cut would have removed one of Marvin's modes.
+Thousand-Year Elixir (*"activate abilities of creatures you control as though those creatures had
+haste"*) was also excluded, because gained `{T}` abilities obey CR 302.6 and Elixir is what lets
+Marvin use them the turn he lands. The cut came from a non-creature (Vedalken Orrery).
+**Changes:** Before nominating cuts for a "has all abilities of…", "for each…", or copy effect,
+list its sources and enablers from the current decklist and strike them from the candidate table.
+Same family as the count-scaler correction (don't cut a card whose count the incoming package grows).
+**Source:** iron-man — Marvin in for Vedalken Orrery.
+
+---
+
+
+### Damage doublers are effectively red-only — outside red, amplify COUNTERS instead — 2026-09-10
+
+**Claim:** A non-red deck cannot build a damage-doubler plan; the non-red analogue is +1/+1-counter
+amplification feeding a counter-to-damage converter.
+**Evidence:** Scryfall, commander-legal, "double that damage" / "twice that much damage" / "that much
+damage plus" / triple wording: 62 cards. Only 3 are W/U-legal — Inquisitor's Flail (combat damage,
+one creature), Pyromancer's Gauntlet (red spells only), Goblin Charbelcher (not a doubler) — and all
+three do nothing for pingers. The other 59 need red. Meanwhile white has real counter amplifiers
+(Lae'zel, Prairie Dog, Aetheric Amplifier) and colourless has converters (Walking Ballista,
+Triskelion, Monoskelion). Modelled in cap-living-legend: one Walking Ballista under Iron Spider +
+Steel Overseer + Lae'zel with an opponent-turn untapper ≈ 20 damage per round, versus 5 per round
+for a Prodigal Sorcerer.
+**Changes:** When a pilot asks for "damage doublers" in a deck without red, say so immediately with
+the measurement, then offer the counters route. Also: a `t:creature o:"{T}" o:"damage to"` search
+is full of false positives — prevention text and "attacking or blocking creature" archers. Classify
+by the target clause before counting the pool.
+**Source:** cap-living-legend — pilot asked for a tap-pinger + doubler variant of an Azorius deck.
+
+### A deck's real fragility is often the TYPE of its finishers, not how many it draws — 2026-09-10
+
+**Claim:** "What if we don't draw the win condition?" should be answered with a hypergeometric count
+*and* a card-type audit. Density is usually fine; concentration of type is usually the real risk.
+**Evidence:** cap-living-legend: 20 finisher-or-tutor cards in 99. Probability of seeing at least one
+from natural draws alone (ignoring its 10 draw engines): 88% by turn 3, 91% by turn 4, 96% by turn 7.
+But **13 of its 17 finishers are artifacts** — a single Vandalblast, Austere Command (artifact mode),
+Farewell or Bane of Progress blanks the whole plan, and the commander (a 3/4) is the only
+non-artifact threat left.
+**Changes:** When a pilot worries about a narrow win plan, run both numbers. If density is high but
+type concentration is high too, the fix is a **second axis of a different card type**, not more
+copies of the same finisher. For a hedge against artifact hate, prefer enchantment-based engines
+(Stark's Ingenuity, Wizard Class, Proft's Eidetic Memory) over artifact creatures that do the same
+job (Iron Man, Armored Avenger; Lyla) — the artifact versions die to the same sweeper.
+**Source:** cap-living-legend — "what are the other win cons if we don't draw those? Cap can't
+reliably attack."
+
+### Draw -> counter engines scale with the deck's draw count, and each drawn card is its own trigger — 2026-09-10
+
+**Claim:** In a deck that draws several cards a turn, a "whenever you draw a card, put a +1/+1 counter
+on target creature" permanent is a voltron engine that outpaces every tap-based counter placer.
+**Evidence:** CR 121.2 — "Cards may only be drawn one at a time. If a player is instructed to draw
+multiple cards, that player performs that many individual card draws," so "draw two" is two triggers.
+Modelled in cap-living-legend (commander starts 3/4, attacks unblocked, three draws a turn): one
+engine (Iron Man, Armored Avenger) alone gives lethal commander damage on the **third** swing; adding
+Agent Phil Coulson (a `{T}` ability the commander untaps) gives lethal on the **second**; adding
+Lae'zel (+1 per placement, verified per permanent) or Urdnan's double strike gives 35–54 on swing two.
+**Changes:** Before building a voltron-via-counters plan, count the deck's draws per turn — that
+number, not the counter placers, sets the clock. Pair the engine with evasion (the binding
+constraint on a commander that is otherwise small) and one-creature protection; commander damage is
+combat damage only (see the 2026-09-02 entry), so double strike and unblockability are the
+accelerants, not damage multipliers.
+**Source:** cap-living-legend.
+
+### Re-run §1.3 on every carried-over card when a variant changes the deck's creature count — 2026-09-10
+
+**Claim:** A card's self-hit status is a property of the list, not the card. Carrying a sweeper from a
+Vehicle list into a creature list can flip it from one-sided to self-destructive.
+**Evidence:** Supreme Verdict (destroy all creatures) was effectively one-sided in cap-living-legend
+`DECK.md`, because its win condition is Vehicles — artifacts that aren't creatures at sorcery speed.
+In `DECK-COUNTERS.md`, the win condition is the commander himself plus a board of counter engines;
+the same card kills Cap (paying commander tax again) and the whole engine. Replaced by Winds of
+Abandon, whose overload exiles only "each creature you don't control."
+**Changes:** When building a variant by subtraction (keep 70, swap 30), do not treat the kept 70 as
+pre-verified. Re-check every sweeper, symmetrical effect and "each creature" clause against the new
+win condition — especially cards whose one-sidedness came from the *old* list's card types.
+**Source:** cap-living-legend — `DECK-COUNTERS.md` build.
+
+### "Runs out of gas" is a card-flow problem — a cheaper curve makes it worse — 2026-09-10
+
+**Claim:** When a pilot says the deck runs out of cards mid-game, lowering the curve is the wrong fix:
+cheaper cards spend the hand faster for almost no extra plays. Measure repeatable draw first.
+**Evidence:** Edgar SACRIFICE, avg MV 2.90 (exactly the 6-deck field median), 20k-game goldfish.
+Swapping 3 MV4–5 cards for 3 cheap Vampires: cards in hand at T5 3.76 → 3.61, at T8 2.94 → 2.76,
+no spells in hand at T6 4.0% → 4.9%, spells cast by T8 8.4 → 8.6. An MV-neutral draw package instead
+held T8 at 3.42. The deck had 7 repeatable draw engines, so P(at least one by turn 5) = 57% on the
+play (hypergeometric, 99 cards): about 4 games in 10 had no engine at all.
+**Changes:** On an out-of-gas complaint, report (1) the curve against the field, (2) repeatable draw
+engines and P(>=1 by T5), noting which are conditional or sit at MV5+, before proposing anything. A
+cheap card earns its slot on this axis only if it replaces itself (a cantrip body) or stays a live
+topdeck late (a mana sink). Rummage effects (discard → draw, Blood tokens) are card-neutral and need a
+card in hand, so they do nothing in the empty-hand state — see the hand-size guard under Corrections.
+**Source:** edgar-markov — pilot: "runs out of cards to play at about turn 5".
+
+### For an untap commander, measure "second-tap use" per creature — Vehicles are the universal outlet — 2026-09-10
+
+**Claim:** A "first tap each turn untaps it" commander is worth (creatures) × (meaningful taps each).
+The yardstick is the share of creatures whose *second* tap has a use of its own; crew, station and
+convoke give every creature — tokens and vanilla bodies included — a first-tap use, so they are the
+outlet that makes "becomes tapped" payoffs fire twice.
+**Evidence:** Measured across three cap-living-legend lists: DECK.md (Vehicles) 17/27 creatures with a
+second-tap use and 18 outlets; DECK-COUNTERS (lifelink voltron) 15/31 and 3 outlets; DECK-ENGINE
+(rebuild: Vehicles + tap-ability creatures) 25/30 and 20 outlets. Crewing is a cost-tap (702.122a,
+603.2e), so Fallowsage / Tui and La / Mechan Navigator / Sanwell trigger on the crew tap and again on
+the second tap. The commander's EDHREC tap/untap theme (52 decks) is exactly this shape.
+**Changes:** When building around any untapper, count second-tap use and outlets before counting
+payoffs. A voltron plan uses such a commander poorly — the ability affects *other* creatures, and a
+vigilant commander's own untap is idle unless an outlet taps him.
+**Source:** cap-living-legend — pilot's "most reliably consistent way to maximise his ability."
+
+### Loop-audit heuristic: an untap circuit is infinite only with a surplus untap — 2026-09-10
+
+**Claim:** A set of untappers loops infinitely only if some effect yields more untaps than taps it
+costs (an untapper that doesn't tap itself, a 1-tap-2-untap effect that can reach another untapper,
+or mana returned on tap/untap). Otherwise every untap pays for exactly one tap and the turn has a fixed
+untap budget.
+**Evidence:** DECK-ENGINE audit (mtg-rules-expert): Ioreth ⇄ Thousand-Year Elixir ({1}) and Ioreth ⇄
+Minamo ({U}) are closed circuits with zero surplus — finite mana sinks. Ioreth's "untap two legendary
+creatures" is the only 1-for-2 effect, and no legendary creature in the list untaps anything. Marvin,
+Murderous Mimic (copies Ioreth's ability) would give the surplus — infinite. A tapped permanent can't
+pay a {T} cost again (107.5, 701.26a).
+**Changes:** Before adding any untapper, list the other untappers and ask "does this create a surplus
+untap?" Name the forbidden additions in the list header so they don't get added later.
+**Source:** cap-living-legend — DECK-ENGINE loop audit.
+
+### Mass untap on opponents' turns switches off "tapped creatures have X" protection — 2026-09-10
+
+**Claim:** Drumbellower / Unwinding Clock / Prop Room untap everything in each opponent's untap step,
+with no option to skip — so Adept Watershaper ("other tapped creatures have indestructible") and The
+Wandering Rescuer ("other tapped creatures have hexproof") protect nothing at the start of an
+opponent's turn.
+**Evidence:** Mass untap happens in the untap step with no priority (502.3, 502.4); the protection is
+conditional on being tapped. Re-tapping at instant speed (mana abilities, {T} abilities) restores it.
+**Changes:** Don't count Watershaper/Rescuer as opponents'-turn protection in a deck with a mass
+untapper — keep instant-speed tap outlets available, or treat them as your-turn protection plus a
+Split Up "destroy all tapped" enabler.
+**Source:** cap-living-legend — DECK-ENGINE audit.
+
+### A flood complaint is answered by spell//land MDFCs, not by cutting lands — 2026-09-10
+
+**Claim:** Swapping basics for spell//land MDFCs gives the flood profile of a lower land count while
+keeping the land-drop rate of the higher one. Cutting a land buys very little flood relief for a
+real cost in missed drops.
+**Evidence:** 200k-game sim, 99 cards, on the play. 36 → 34 lands: hitting the turn-4 land drop 62.2%
+→ 56.9%; five lands in a row across draws T2–T10 only 1.9% → 1.4%; late lands drawn 1.80 → 1.70
+per five draws. 34 lands + 2 MDFCs: turn-4 land drop 61.9% (≈36) and 9+ lands in the first 17 cards
+7.8% (better than 34). "Five in a row" at 36 lands is ~1 game in 50 — memorable, not structural.
+**Changes:** When a pilot reports flood, quantify the run probability first, then prefer MDFC-for-
+basic swaps. Rank MDFCs on the LAND face first (untapped for 3 life > always tapped), then the spell.
+In cast-trigger decks, remember reanimation MDFCs (Agadeem's Awakening) put creatures onto the
+battlefield — no cast triggers (see the Bloodghast correction).
+**Source:** edgar-markov — "some games I only draw lands, like 5 in a row".
 
 # Corrections
 
 Mistakes, root causes, and the guard that prevents a recurrence. Never delete these.
+
+---
+
+### Scored a damage-to-mana converter by WHEN its mana arrives instead of WHAT it is made of — 2026-09-08
+
+**What happened:** Cut Neheb, the Eternal from both Scarlet Witch chain builds with the grounds
+*"mana arrives postcombat, after damage."* The pilot corrected it: the damage **is** the input.
+*"At the beginning of each of your postcombat main phases, add {R} for each 1 life your opponents
+have lost this turn"* — so a precombat main that deals 21 to each of three opponents is **63 life
+lost = 63 red mana** for a second main phase, in the same turn, with sorcery speed available again.
+**Evidence:** CR 120.3a (damage to a player causes that much life loss), CR 500.1 (the postcombat
+main phase happens every turn whether or not you attack). Modelled at the pip floor: Wanda 2, five
+red, no other reducers — precombat Storm King's Thunder X=2 into Jaya's X=7 copied twice is 21 to
+each opponent, which is **not lethal** against 40. Neheb then adds 63 red; Past in Flames plus a
+re-cast Jaya's at X=80 kills the table. Neheb converts the deck's most common failure mode — a huge
+turn that falls short — into a win. With Electro or Ashling out (*"you don't lose unspent red mana
+as steps and phases end"*) the unspent remainder even banks into the next turn.
+**Root cause:** Filed the card by the *timing* of its output and never asked what its input was.
+The deck's defining output is bulk life loss, which is exactly this card's fuel, so the axis I
+scored on was the one axis that did not matter.
+**Changes:** For any "add mana for each X" permanent, identify X and check whether the deck
+*produces* X in bulk before judging the timing. Timing only matters once the size is known — a
+second main phase with 63 red is not "late mana", it is a second turn. Companion to "Name the
+deciding axis out loud" (2026-08-04); here the axis was named and it was the wrong one.
+**Source:** scarlet-witch — the pilot's "we get all that refunded postcombat... round 2 of spells."
+
+
+---
+
+### Priced a "first spell each turn" engine at one trigger per turn cycle — the ledger already said four — 2026-09-08
+
+**What happened:** Cutting Arcane Bombardment from the Scarlet Witch chain build, I wrote the
+grounds as *"its exiled pile grows by one card per turn, which is a value curve pointing the
+opposite way to a deck that means to win on turn 5."* The pilot pushed back: it triggers on *each
+turn*, so a cheap instant on each opponent's turn re-fires it. They were right, and **both halves
+of the correction were already in this file** — "'First spell each turn' is per player per turn of
+the game" (2026-08-23) and "'Exiled with' collections are cumulative — every trigger recopies the
+WHOLE pile" (2026-08-19), the latter written from a Scarlet Witch session and stating in as many
+words that an instant on an opponent's turn triggers it there too. Real output in a four-player pod
+is up to **four triggers a turn cycle**, each adding a card and recopying the entire pile.
+**Root cause:** Wrote a card's grounds from a gist instead of grepping LEDGER for the card name.
+The skill's own instruction is *"Read LEDGER.md before you reason about a card"* and it is
+grep-friendly precisely for this; "Arcane Bombardment" appears in it twice, both times with the
+fact I got wrong.
+**Guard:** Before writing grounds for a **cut**, grep the ledger for the card name, not only
+before an addition. A cut's grounds are the thing a future pass will trust and re-derive from, so
+a wrong rate in a cut is more durable damage than a wrong rate in a keep. Corollary for this card
+family: value "first spell each turn" engines as *turn count × pile size*, and check whether the
+deck has a cheap instant (or a free one — Deflecting Swat) to spend on each opponent's turn.
+**Source:** scarlet-witch — the pilot's "it's spell each turn so I can cast a random instant on
+someone's turn and rerun the whole playlist every turn."
+
+
+### Scored a symmetric wheel only as a refill and missed its disruption axis — 2026-08-21
+
+**What happened:** Proposed Path of the Pyromancer (self-only: discard your hand, add {R} per
+card, draw that many plus one) over Reforge the Soul (each player discards and draws seven) on the
+grounds that Path refills only you and pays mana, while Reforge "hands three opponents seven
+fresh cards." The pilot kept Reforge: *"it's a good bit of hand denial."*
+**Root cause:** Weighed the two wheels on one axis — how many cards *I* get and at what price —
+and treated the opponents' half purely as a cost. Oracle: *"Each player discards their hand, then
+draws seven cards."* The discard half is disruption: cast the turn before a kill turn, it strips
+every held counterspell and every assembled combo hand at sorcery speed, and seven random
+replacements rarely contain the same answer. For a deck whose big turn dies to one counterspell
+(mono-red, no counters of its own), that is protection-by-discard — the reason Wheel effects are
+storm staples, not just refills.
+**Guard:** Rate every symmetric wheel on two axes: refill (cards and mana for me) **and**
+disruption (what the table loses). A self-only wheel wins the first and scores zero on the second;
+it is not "strictly better" even when cheaper. State which axis the deck needs before comparing.
+**Source:** scarlet-witch — pilot's call during the 2026-08-21 pass.
+
+---
+
+
+### Scored rituals as "dead until the kill turn" in a deck that banks red mana — 2026-08-21
+
+**What happened:** Nominated Pyretic Ritual and Desperate Ritual as cuts for Scarlet Witch on the
+grounds that a ritual does nothing for seven turns and only matters on the explosive turn (the
+2026-06 "one-shot rituals belong to explosive-turn decks only" pattern). The pilot reported the
+opposite from play: they cast both rituals early, copy them (Pyromancer's Goggles, Repeated
+Reverberation), and bank the output under Electro — "regularly +10 mana just sitting there."
+**Root cause:** Applied the generic ritual heuristic without checking the deck's banking clause.
+Electro and Ashling read *"You don't lose unspent red mana as steps and phases end"* — that covers
+every red mana in the pool regardless of source, so under either of them a ritual is a deposit
+that persists across turns (LEDGER 2026-08-04, mana empties only at end of step/phase). With copy
+effects, one ritual is 6–9 banked mana. The "dead card" framing assumed the mana evaporates.
+**Guard:** Before calling any one-shot mana card dead outside the kill turn, check the deck for a
+banking clause (Electro, Ashling, Omnath-pattern, Kruphix, Horizon Stone, Upwelling) and for copy
+effects that hit it. If either is present, the ritual is early-game ramp with a delayed spend and
+should be ranked as such. The explosive-turn-only heuristic holds only when the mana can't be kept.
+**Source:** scarlet-witch — pilot's report during the 2026-08-21 damage pass; user's call.
+
+---
+
+
+### Read "+1/+1 for each land you control" as the deck's land COUNT — 2026-08-21
+
+**What happened:** Told the user Blackblade Reforged puts Wanda at "~34 power" and makes Crackle
+X=11 cost {R}{R}. Blackblade's text is *"Equipped creature gets +1/+1 for each land you
+control"* — lands on the battlefield, not lands in the 99. On turn 6–8 that is +6 to +10, so
+Wanda is a 10/11-ish, not a 35/36. The user's own figure ("even at 11/11, two unblocked swings
+kill someone") was the correct one. The same conflation sits in `decks/scarlet-witch/research/
+decisions.md` (2026-08-07: "At 33 lands that's +33/+33 on Wanda") and `sample-deck-analysis.md`
+("a 30+ power commander discounting every haymaker"); both overstate the card by ~3×.
+**Root cause:** Pattern-matched "per land" to the deck's land count because that number was
+already in the notes as the Blackblade argument for not cutting lands. The land-count argument
+(each land cut lowers the *ceiling*) is still valid; the power figure never was.
+**Guard:** For any "for each X you control" scaler, state the realistic battlefield count at the
+turn it matters (T4 / T6 / T8), never the deck count. Commander-damage math in particular: the
+threshold is 21, so "+N per land" needs N ≥ ~10 on the battlefield to be a two-swing kill.
+**Source:** scarlet-witch — the 2026-08-21 voltron-axis discussion; user's figure was right.
+
+---
+
+
+### Recommended a hand-size-taxed tutor to a deck that empties its hand — 2026-08-20
+
+**What happened:** Proposed Fervent Mastery ("search for three, discard three at random") for
+Scarlet Witch on the grounds that Wanda discounts it to {R}{R} and the deck's recursion (Past in
+Flames, Will of the Jeskai, Thor's ETB) recovers the discards. The user pointed out the floor: the
+deck's gameplan is to dump its hand every turn, so the typical hand when you draw Mastery is 0–2
+cards — at H=0 you fetch three and discard exactly those three. Wheel of Fortune, the proposed
+cut, has no such floor: play out the hand, then refill seven.
+**Root cause:** Scored the *mitigation* (recursion gets the discards back) above the *floor*
+(expected kept = 3H/(H+3), which is 0 at H=0), and never asked what the deck's hand size usually
+is when the card is cast. A tax that scales with hand size is the wrong shape for a
+hand-dumping deck regardless of how good the recovery is.
+**Guard:** For any card whose cost or tax is a function of hand size (random discard, "discard N",
+Hex Magic-style doubling), state the deck's typical hand size at the moment it would be cast
+before rating it. Gameplan docs usually say it outright ("you run out of cards before mana").
+**Source:** scarlet-witch — the 2026-08-20 tutor pass; user's call.
+
+---
+
+### Scored tapped Treasures as "next turn only" in a deck whose plan IS next turn — 2026-08-20
+
+**What happened:** Nominated Hit the Mother Lode as a cut partly because its Treasures enter
+tapped ("next turn's mana in a this-turn deck"). The user defended it: it reliably makes ~5
+Treasures. Re-derived: the discover card's expected MV is ~4–5 in this list, so 10 − MV ≈ 5–6
+Treasures, and tapped Treasures are permanents — they untap on the next turn and sit there until
+spent. For a deck whose whole plan is "survive to one turn, then spend everything," 3 mana on
+turn 5 for a free spell plus 5–6 mana banked for turn 6 is the shape the deck wants, not a
+downside.
+**Root cause:** Applied "tapped = slower" as a generic penalty without asking *when* this deck
+wants to spend mana. The same fact is a cost in a tempo deck and a feature in a one-big-turn deck.
+**Guard:** Before penalising "enters tapped" / "at the beginning of your next upkeep" mana, check
+the deck's spend turn. If mana is being banked for a later turn anyway (Electro/Ashling-style red
+banking, Treasure piles, Neheb), delayed mana is at par with immediate mana.
+**Source:** scarlet-witch — the 2026-08-20 tutor pass; user's call.
+
+---
+
 
 ### Repeated the "gap the deck had already filled" mistake twice in one document — 2026-08-10
 
@@ -1384,3 +4204,1816 @@ the grounds don't mention a line of rules text, either re-read it or note why it
 **Source:** iron-man — the user's "I think we should count this as a candidate for replacement."
 
 ---
+
+### Cut an anthem in the same package that multiplied its targets — the 2026-08-06 mistake, repeated — 2026-08-20
+
+**Claim:** Before cutting any card that scales off a count, re-score it against the count AFTER
+the package it's being cut in, not before. This is the second occurrence of the same failure.
+**Evidence:** iron-man V2 cut Krang, Utrom Warlord ("cheat-only top-end") in the same 14-swap
+package that grew artifact-creature bodies from ~7 to ~12 plus every Thopter and Construct token
+— exactly the set Krang's "other artifact creatures have flying, trample, indestructible, haste"
+multiplies. The pilot caught it on review; Krang also grants the flipped commander indestructible,
+since The Invincible Iron Man is an artifact creature. The LEDGER already held this pattern
+("Proposed cutting a card that the same swap package makes better — 2026-08-06") and it was not
+consulted for the cut list.
+**Changes:** When building a swap package, run the CUT list through a second pass **after** the
+IN list is fixed, asking each cut: "does anything entering this package feed you?" Grep the
+ledger for the pattern name before finalizing, not after the user objects.
+**Source:** iron-man — V2 amendment; the user's "since we're increasing creatures this gives all
+our creatures trample… might be worth prioritizing over Darksteel."
+
+---
+
+### Banked "doesn't-empty" mana survives its source dying — long enough to pay the LTB trigger — 2026-08-20
+
+**Claim:** When a permanent with an Omnath-style effect ("you don't lose unspent red mana as steps
+and phases end" — Electro, Assaulting Battery) leaves the battlefield, the banked mana is NOT lost
+immediately: pools empty only as a step or phase ends, so the mana stays available for the rest of
+that step/phase — and the step can't end while Electro's own leave trigger is on the stack, so the
+whole bank can be spent on his {X} damage trigger.
+**Evidence:** CR 500.5 / 703.4q (emptying is a turn-based action that happens only as a step/phase
+ends); CR 604.2 / 611.3b (the static effect stops the moment the permanent leaves); CR 500.2 (a
+step/phase in which players receive priority can't end while the stack is nonempty). Rider:
+CR 106.4b — a player retaining mana must announce their pool contents whenever they pass priority.
+**Changes:** Removal in response doesn't strand the battery — evaluate Electro-style cards knowing
+the stored mana converts into the leave-trigger X even when he's killed. Pilot note: announce the
+pool when passing priority.
+**Source:** user rules question on Electro, Assaulting Battery (spm / iron-man context); verified
+by mtg-rules-expert against rules version 2026-08-07.
+
+### Nominated a cut that the incoming card feeds — third repeat in one day — 2026-08-21
+
+**Claim:** The 2026-08-20 guard ("re-score the CUT list after the IN list is fixed") was not
+enough, because the check was done by role label, not by oracle text. When the incoming card is a
+*cast-matters* or *enters-matters* engine, grep the oracle text of every nominated cut for the
+trigger words ("cast", "without paying its mana cost", "enters", "create") before naming it.
+**Evidence:** iron-man V2 — The Vision and Scarlet Witch ("whenever you cast a spell") was being
+added and Buster Sword ("you may cast a spell from your hand … without paying its mana cost") was
+nominated as the cut on the grounds "its card-advantage rider is duplicated." The free cast is a
+cast: it triggers the very engine being added. The pilot caught it after the swap was applied.
+Same shape as Krang (anthem vs the creature count the package grew) earlier the same day.
+**Changes:** Before finalizing any swap, list the incoming card's trigger words and grep the cut
+candidates' oracle text for them — a mechanical step, not a judgment call. If any hit, the
+candidate is not a cut; it's a synergy.
+**Source:** iron-man — the user's "buster sword isn't just card draw, it's also a free cast."
+
+### Doubled trigger instances are separate stack objects — own targets, sequential, second sees post-first state — 2026-08-21
+
+**Claim:** When Panharmonicon (or any "triggers an additional time" effect) doubles an ETB trigger,
+the two instances are independent stack objects: each chooses its own target as it goes on the
+stack (may be different opponents), they resolve one at a time, and the second resolves against
+whatever state the first left behind — a doubled "look at the top nine" sees a *fresh* nine, since
+nothing is locked in at trigger time.
+**Evidence:** CR 603.2d (determine how many times it triggers, then it triggers that many times);
+CR 603.3 (each trigger goes on the stack as its own object with only its own text); CR 603.3d →
+601.2c (targets announced per instance as each is put on the stack; 115.3 only bars repeating a
+target within ONE instance); CR 608.1 / 608.2c (top object resolves alone, instructions followed
+at resolution). Panharmonicon keys on "entering" — cast or put onto the battlefield both qualify
+(608.3a). Dies triggers are leaves-the-battlefield triggers (603.6c / 700.4) and are NOT doubled.
+**Changes:** Price a doubled look-at-top-N / impulse-exile ETB as 2N fresh cards, not N seen twice;
+pilot note: you may split the two instances across two opponents. Name-collision gotcha: `bun run
+card "Black Cat"` returns the Zombie Cat (dies trigger, not doubled); the Spider-Man legend is
+**Black Cat, Cunning Thief** (ETB, doubled).
+**Source:** user rules question — Panharmonicon + Black Cat; verified by mtg-rules-expert against
+rules version 2026-08-07.
+
+### deckcheck under-reports mana sources when the deck cache is cold, with no warning — 2026-08-23
+
+**Claim:** `bun run deckcheck` reads land/rock data from `decks/<slug>/research/cards.txt` and
+counts only cards already cached; on a fresh deck folder it reported "lands 25 + rocks 5 = 30 ⚠️
+low" for a list with 35 lands and printed no hint that ten lands were simply uncached.
+**Evidence:** Same list, after `bun run carddata --file decks/<slug>/DECK.md`: "lands 35 + rocks 5 =
+40". The script header says uncached cards "simply don't count", but the output doesn't flag how
+many were skipped.
+**Changes:** Always run `carddata --file DECK.md` before `deckcheck` on a new or heavily edited
+list, and treat a low-sources warning on a fresh folder as "cache cold" first. (Tooling fix worth
+making: print the uncached count next to the total.)
+**Source:** lord-of-pain, first validation pass.
+
+### Glacial Chasm is a Game Changer — check the flag on lands too — 2026-08-23
+
+**Claim:** A re-derived Bracket 3 list picked up a fourth Game Changer because Glacial Chasm was
+added as "just a land". Scryfall's `game_changer` flag (surfaced by `bun run card --json` and
+counted by `bun run deckcheck`) is true for it.
+**Evidence:** `bun run card "Glacial Chasm" --json` → `"gameChanger": true`; `deckcheck` on the B3
+list reported 4 → Bracket 4+. Caught by re-running deckcheck on both lists after the edit.
+**Changes:** Every add — lands and artifacts included — goes through deckcheck on **every** list
+that carries it before the session ends; never assume the Game Changers list is spells-only.
+**Source:** lord-of-pain, lifegain pass.
+
+### Took a manabase from the EDHREC page and missed fetchlands — budget-weighted field signal, again — 2026-08-23
+
+**Claim:** Building a two-colour proxy manabase from the commander's EDHREC land list left out
+every off-colour fetchland, because they show at ~6% inclusion. The low number is price (they are
+$17–40 cards and the page is 85% Bracket 2–3), not play: any fetch that finds either of the deck's
+basic types fetches its shock/dual untapped and is a perfect dual.
+**Evidence:** The Lord of Pain page: Bloodstained Mire 34%, Marsh Flats / Polluted Delta / Arid
+Mesa ~6%; bracket_counts on the average-deck JSON = 849 B2 / 576 B3 / 214 B4. Caught when the
+user asked "are there other duals left?".
+**Changes:** For any proxy or unconstrained build, evaluate fetchlands explicitly and ignore their
+inclusion %; more generally, apply "Price-tier the sample field BEFORE counting card frequency"
+(2026-08-07) to the **land** slots too, not just spells.
+**Source:** lord-of-pain.
+
+### Cut the only cover for the non-targeting row and called it "weakest" — user caught it — 2026-08-24
+
+**Claim:** Kaya's Ghostform was cut from lord-of-pain as "one-shot insurance" without mapping the
+protection suite to the threat matrix first. Hexproof, indestructible and redirects all miss
+edicts, −X/−X wipes and exile wipes; Ghostform ("dies or is put into exile → return it to the
+battlefield") was the only card covering that row, and it also saves the full recast (5 mana with
+tax) not just the tax. The matrix lesson was already in this ledger (iron-man, 2026-08-21) and
+went unapplied.
+**Evidence:** Oracle text of Kaya's Ghostform vs Soul Shatter / Toxic Deluge / exile sweeps; the
+existing "Map voltron protection to a threat matrix" entry.
+**Changes:** Before cutting ANY protection piece, write the threat-matrix row it covers and check
+whether another card covers the same row. "Cheapest/most passive" is not the same as "most
+redundant". Also: when re-costing a commander death, count base + tax, not tax alone.
+**Source:** lord-of-pain — the user's pushback; they were right.
+
+### Master Transmuter self-blink: cost is paid at activation, so the same card can come back — 2026-08-24
+
+**Claim:** Master Transmuter can return artifact X to hand and put that same card X back onto the
+battlefield with the same activation — the return is part of the cost (paid immediately, no
+response window), the ability's resolution chooses "an artifact card from your hand" only at
+resolution time, and the card re-enters as a new object whose ETB abilities trigger again. Riders:
+it re-enters with no counters/attachments and is summoning-sick (CR 302.6); and because the return
+happens at activation, a single-target spell aimed at X fizzles under CR 608.2b even though the
+"same" card is back on the battlefield — the new object has no relation to the old target
+(CR 400.7). The redeploy is also not casting, so it can't be countered on the way back in.
+**Evidence:** CR 602.1a (everything before the colon is cost) + 602.2b/601.2h (costs paid during
+activation, before resolution, no priority in between per 117.3c); CR 608.2c (resolution-time
+choice); CR 400.7 (zone change = new object); CR 603.6a (ETB triggers fire); CR 608.2b (spell with
+only illegal targets doesn't resolve). Oracle verified 2026-08-24: "{U}, {T}, Return an artifact
+you control to its owner's hand: You may put an artifact card from your hand onto the battlefield."
+**Changes:** Count Master Transmuter-style bounce activations as BOTH an ETB-retrigger engine and
+single-target removal protection for artifacts — one card, two roles. The protection only beats
+battlefield-targeting effects; it does nothing against counterspells or sacrifice/edict effects.
+**Source:** iron-man — rules question about re-triggering ETBs and dodging targeted removal.
+
+### A DFC with an artifact back face is NOT an artifact card in hand — 2026-08-24
+
+**Claim:** In any zone other than the battlefield or stack, a double-faced card has only its front
+face's characteristics (CR 712.8a). Tony Stark // The Invincible Iron Man is a Legendary Creature —
+Human Artificer Hero on the front, so in hand it is not an artifact card: Master Transmuter (or any
+"put an artifact card from your hand onto the battlefield" effect, including The Invincible Iron
+Man's own combat trigger) cannot deploy it. On the battlefield the Transmuter cost CAN bounce him
+while transformed (back face up = artifact per CR 712.8e), which still fizzles single-target
+removal, but he must then be recast for {1}{U} (+ tax if commander) and re-transformed [THIS
+CLAUSE SUPERSEDED same day by "Commander tax applies only to command-zone casts" and "Tony Stark
+is a modal DFC": no tax from hand, and the {4}{U}{R} face is directly castable] — and a DFC
+put onto the battlefield from a non-stack zone enters front face up anyway (CR 712.14).
+**Evidence:** CR 712.8a, 712.8e, 712.14; oracle verified 2026-08-24 — front face "Legendary
+Creature — Human Artificer Hero", back face "Legendary Artifact Creature — Human Hero".
+**Changes:** Before counting any DFC as a hit for a type-worded effect ("artifact card",
+"creature card", tutors, cheat-into-play), check the FRONT face's type line — the back face is
+invisible everywhere except the battlefield/stack. Bounce-to-save still works on the transformed
+side; bounce-to-redeploy does not.
+**Source:** iron-man — Master Transmuter vs Tony Stark rules question.
+
+### Commander tax applies only to command-zone casts — user caught it — 2026-08-24
+
+**Claim:** The {2}-per-previous-cast "commander tax" applies ONLY when casting the commander from
+the command zone. A commander cast from hand (after a bounce, discard-recursion, etc.) costs its
+plain mana cost, and that cast doesn't increase the tax counter either — the counter counts only
+previous command-zone casts.
+**Evidence:** CR 903.8 — "A commander cast from the command zone costs an additional {2} for each
+previous time the player casting it has cast it from the command zone that game."
+**Changes:** When costing a commander rescue line (bounce-to-hand vs. letting it die to the
+command zone), the hand path costs base mana with NO tax — this is a real point in favor of
+bounce-to-save effects for commander decks. I asserted "+ tax" from hand and the user corrected
+me; verify 903.8 before ever adding tax to a non-command-zone cast.
+**Source:** iron-man — Master Transmuter rescue costing; the user's pushback, they were right.
+
+### Tony Stark is a modal DFC — the Iron Man face is castable straight from hand — 2026-08-24
+
+**Claim:** Tony Stark // The Invincible Iron Man is layout `modal_dfc` (a Marvel-set hybrid that
+is modal AND has a transform ability). From hand you may cast EITHER face (CR 712.11b) — so the
+recast path after a bounce is {4}{U}{R} for The Invincible Iron Man directly, not "{1}{U} then
+transform". I pattern-matched "has a Transform ability" to "transforming DFC, front-face casts
+only" and the user corrected me. Unchanged by this: in hand it still has only front-face
+characteristics (CR 712.8a) — 712.11b is a casting permission, not a characteristics change — so
+"put an artifact card from your hand onto the battlefield" effects (Master Transmuter, The
+Invincible Iron Man's own trigger) still can't deploy it, and a recast of either face is a spell
+that can be countered.
+**Evidence:** Scryfall layout field `modal_dfc` + keywords [Flying, Transform, Haste], verified
+2026-08-24 via `bun run card "Tony Stark" --json`; CR 712.11b (MDFC caster chooses the face
+before putting it on the stack); CR 712.8a.
+**Changes:** Never infer DFC kind from the presence of a transform ability — Marvel-set cards can
+be both modal and transforming. Check the Scryfall `layout` field (`--json`) whenever a line
+depends on which faces are castable.
+**Source:** iron-man — Master Transmuter recast costing; the user's pushback, they were right.
+
+### Tap-gated removal needs the deck to make OPPONENTS tap — the mirror of the attack-trigger rule — 2026-08-24
+
+**Claim:** A repeatable removal ability gated on the target being tapped (Royal Assassin, and the
+Icy-Manipulator-plus-Assassin family) is only real in a deck that *causes* opponents' creatures to
+tap: goad, forced combat, or its own tapper. In a deck that neither attacks nor goads, the gate is
+supplied only by opponents choosing to attack, which the deck cannot schedule.
+**Evidence:** Royal Assassin — "{T}: Destroy target tapped creature" — sits at 1% site-wide
+inclusion, and its top commanders are all forced-combat or Assassin-tribal (Queen Marchesa,
+Thantis the Warweaver, Xantcha, The Beamtown Bullies, Ramses). Mirror of the 2026-08-04 entry
+"A card that requires attacking is dead in a deck that doesn't attack": that one tests *your*
+behaviour, this one tests *theirs*.
+**Changes:** For any "target tapped/attacking/blocking creature" effect, ask which card in the
+list creates that state. If the answer is "an opponent's free choice", it is a rattlesnake, not
+removal — price it against dedicated deterrents (No Mercy, Crawlspace), not against Terminate.
+Second, stacked check: a 1/1 utility body must survive the deck's own sweepers — three wipes in
+lord-of-pain (Blasphemous Act, Toxic Deluge, Fraying Omnipotence) each kill it.
+**Source:** lord-of-pain — "should we run Royal Assassin?"
+
+### A "grows when others die" creature gains NOTHING from a board wipe — 2026-08-24
+
+**Claim:** A creature whose ability reads *"whenever another creature dies, put a +1/+1 counter on
+[itself]"* gets **zero** counters when it dies in the same event as everything else. The triggers
+all fire, they all resolve, and they all do nothing. Any death payoff keyed to its power uses its
+power **as it last existed on the battlefield** — counters it already had, never counters from the
+simultaneous deaths.
+**Evidence:** Elenda, the Dusk Rose vs Blasphemous Act. CR 120.3e/120.5 — damage only *marks*;
+CR 704.4 — SBAs aren't checked mid-resolution; CR 704.3 — all applicable SBAs are "performed
+**simultaneously as a single event**"; CR 603.10a — leaves-the-battlefield triggers look back in
+time, so all five "another creature dies" triggers DO fire (the rule's own example is this exact
+board); CR 400.7 + 122.6 — counters only go on battlefield objects, so each trigger resolves and
+accomplishes nothing; CR 608.2h + 113.7a + **704.8** ("that permanent's last known information is
+derived from the game state *before any of those state-based actions were performed*") — X is LKI
+power. Official Gatherer ruling agrees verbatim: *"If Elenda dies at the same time as another
+creature, both of its triggered abilities trigger. However, the first one won't do anything since
+you can't put a +1/+1 counter on Elenda."* Same answer for a "destroy all creatures" wrath
+(CR 701.8a + 608.2f) and for a simultaneous sacrifice wipe (CR 701.21a + 608.2e/f).
+**Changes:** Never price a "grows on death" creature as if a sweeper is its payoff — a wipe is its
+**worst** case, not its best. The counters are only real if the creature is still on the battlefield
+when the triggers *resolve*, which means it must survive the wipe. Two protection modes are NOT
+equivalent here: **indestructible** (Akroma's Will mode 2, Flawless Maneuver, Dawn's Truce) banks
+every counter and turns a later sac outlet into the full payout; **phasing** (Teferi's Protection —
+*"while they're phased out, they're treated as though they don't exist"*) survives but banks nothing,
+because a phased-out permanent's triggers never fire. Generalises to Elenda's Hierophant, Cordial
+Vampire, Blade of the Bloodchief, Ravenous Baloth-style "power = X" death payoffs, and any
+`X is its power` LKI count.
+**Source:** edgar-markov — "does Elenda get the +1/+1 before she dies to Blasphemous Act?"
+
+### Quoted a mana cost wrong with the correct cost on screen — 2026-09-02
+
+**Claim:** Re-read the tool output before quoting a cost; do not paraphrase a lookup you already
+ran from memory of what the card "should" cost.
+**Evidence:** Rated Unwind as "4 mana and can't counter creatures" in an evaluation, minutes after
+`bun run card "Unwind"` printed `{2}{U}` in the same session. `--json` confirmed `"manaCost":
+"{2}{U}", "cmc": 3`. The user caught it. The error inverted the verdict: at 3 mana with "untap up
+to three lands" the card is **mana-neutral** — a free counterspell that leaves the deck's `{1}`
+activations online on an opponent's turn — which moved it from "no" to a legitimate include.
+**Changes:** §1.2 costing is only as good as the number it starts from. When quoting a cost in an
+argument, quote it from the tool output in that message, not from recall — the failure mode is
+strongest on cards that feel familiar, exactly as §1.1 warns. When the user corrects a number,
+re-derive the verdict from scratch; the verdict may flip, not just the digit.
+**Source:** inquisitor-greyfax — "Unwind is 3 mana not 4".
+
+---
+
+### Over-applied §1.1b — a verdict resting on a PRINCIPLE does not expire when its rival leaves — 2026-09-02
+
+**What happened:** I proposed reviving Vision of Love / Demand Answers ({1}{R} instant, sac an
+artifact or discard, draw two) on the grounds that the recorded reason for passing it — *"lost to
+Insight Engine"* — had expired under §1.1b, because Insight Engine was no longer in the list. The
+pilot pushed back: *"this was moved out for a reason. why bring it back?"* They were right on both
+counts. It had never been in the 100 (it was proposed and reverted on their own call), and the
+reason it lost was **a principle, not a comparison**: a one-shot loses to a repeatable engine at
+the turn count the deck actually reaches. That principle is untouched by Insight Engine leaving,
+and the deck's whole V3 thesis is repeatable draw — so the card loses again, harder.
+**Cause:** §1.1b says verdicts expire because they are functions of a list that has changed. I
+applied it mechanically to the *named rival* instead of to the *grounds*. Some grounds are facts
+about the list (which expire); some are principles about card types (which do not).
+**Guard:** Before invoking §1.1b to revive a card, read the recorded grounds and classify them.
+If the grounds name a **specific card** ("lost to X"), the verdict expires when X leaves. If the
+grounds name a **category or principle** ("a one-shot loses to a repeatable engine", "a sorcery
+version of an instant is the worst copy"), the verdict survives, and reviving the card requires
+attacking the principle — not noting that one card that embodied it is gone.
+**Source:** iron-man — Vision of Love, withdrawn.
+
+---
+
+### Score a sweeper's self-hit at the board state it is actually CAST at — 2026-09-02
+
+**What happened:** I argued to cut Blasphemous Act (*"deals 13 damage to each creature"*) from
+iron-man V3 because it kills the 5/5 commander and the 11 artifact creatures V3 added on purpose,
+citing the deck's own brief that it cannot win without the commander on board. The pilot corrected
+me: *"you don't really blasphemous act if iron man is out, you do it a turn before to slow down the
+board state if someone is getting too far ahead… green players ramping out like 10/10 dinos."* A
+catch-up sweeper is cast **before** you deploy, at a board state where you are behind and empty.
+The self-hit I priced never occurs.
+**Cause:** I ran SKILL §1.3 ("check the card against your own board") against the deck's *goal*
+board rather than the board it is actually cast into. §1.3 is a real rule; I evaluated it at the
+wrong point in the game.
+**Guard:** For any sweeper, reset, or symmetric effect, first write down **the turn and board state
+at which it is cast** — behind and empty, or ahead and developed — and score the self-hit only
+against that board. A card whose whole job is catching up is played from an empty board by
+definition. (The cut still went through, but on different grounds: the surviving sweeper had become
+a win condition, so the second one was buying a covered effect.)
+**Source:** iron-man — Blasphemous Act, cut on the pilot's correction.
+
+---
+
+### Argued against a card on a line the pilot doesn't play — check the actual use case first — 2026-09-02
+
+**What happened:** I pushed to cut Ultron, Artificial Malevolence (*"Whenever another nontoken
+artifact you control enters, you may pay {2}… create a token that's a copy of it"*) across three
+sessions, partly on the ground that *"the legend rule blanks most of the copy targets."* The pilot
+named the line they actually play it for: *"ultron's biggest strength is getting him down turn 3
+and copying our ramp artifacts."* Every mana rock in the deck — Sol Ring, Arcane Signet, Talisman
+of Creativity, Thran Dynamo, Gilded Lotus — is **non-legendary**. The legend rule never touched
+that line at all. My objection described the Equipment half of the deck and was silently applied to
+a use case it does not reach.
+**Cause:** I scored a "whenever X enters, copy it" card against the *most valuable* things it could
+copy (legendary Equipment) rather than against the *cheapest and earliest* things it will actually
+copy. Early-game copy targets are usually rocks, and rocks are almost never legendary.
+**Guard:** For any copy/clone/token-of effect, list the targets by **the turn they are realistically
+copied on**, not by power level, and check the objection against each tier separately. More
+generally: when a pilot names a specific line, test the recorded grounds against *that* line before
+restating them — an argument that is true of a card's average case can be entirely absent from the
+case being played. Same family as "A cut-on-principle group's grounds may not cover every card it
+names" (2026-08-09), applied to a single card's own multiple modes.
+**Source:** iron-man — Ultron cut for Surestrike Trident.
+
+### Filed an overload spell as "tempo" and nearly cut the deck's alpha-strike button — 2026-09-02
+
+**Claim:** Read the *overload / kicker / escalate* line before assigning a card its role. The
+alternate cost is often a different card in a different role.
+**Evidence:** Cut Blustersquall from an Esper tap deck as "one-shot tempo in a deck that wins by
+grinding." Its overload is `{3}{U}`: **tap every creature you don't control.** In a deck whose kill
+is "tap the blockers and swing", that is the alpha-strike button — and with Hylda of the Icy Crown
+out it is also a dozen 4/4 tokens, and with Verity Circle a dozen cards. The user caught it.
+**Changes:** This is the **third instance** of the same failure in this repo — Jaya's Immolating
+Inferno ("a fourth X-spell", actually the second table-killer) and the Elenda cut both went the
+same way. Guard: before cutting any card, write down the role you are cutting it *from* and check
+that role against the card's **full** text including alternate costs. If a card has an overload,
+kicker or entwine line, evaluate the expensive mode as its real mode.
+**Source:** inquisitor-greyfax — closer pass; "we can't rely on 1 big creature."
+
+### Scored a coloured-pip reducer as a discount and missed that it is a colour-FIXER — 2026-09-02
+
+**Claim:** "Costs {W}{U}{B}{R}{G} less; reduces only coloured mana" is primarily a **fixing**
+effect, not a cost reduction. Its value is that the coloured *requirement* disappears, so the
+spell casts off any mana — decisive in a five-colour deck, and near-irrelevant as "one mana saved."
+**Evidence:** Morophon, the Boundless naming God. Measured across all 95 commander-legal Gods:
+**61 become fully generic** (no coloured pip left — Heliod `{3}{W}` → `{3}` casts off three
+Islands; Tom Bombadil `{W}{U}{B}{R}{G}` → `{0}`), 34 keep at least one pip (double-pip cards:
+Oketra `{3}{W}{W}` → `{3}{W}`, Zodiark → `{B}{B}{B}{B}`). Of the 61, 38 are real creatures rather
+than devotion-gated enchantments. The user caught it: *"the whole point of that is to convert
+colored gods to generic gods instead so you can use any mana."*
+**Changes:** Supersedes the *Changes* line of "Read whether a cost reducer eats COLOURED or
+GENERIC mana" above — the claim there (it is not "costs 5 less") stands, but the guidance to
+"count distinct colours" measured the wrong thing. For a coloured-only reducer, count **how many
+cards in the pool become castable with no coloured mana at all**; that is the deck it enables. It
+also inverts the pool choice: the Morophon list had been pushed toward multicolour Theros gods
+"for the bigger discount", which is exactly backwards — the discount is the same for every
+single-pip God, so pick the best *creatures* among the 61, not the most colours.
+**Source:** god-tribal build-off — Morophon list, corrected on user pushback.
+
+### Ranked a hate piece on average text and missed that the pilot's pod is its target — 2026-09-03
+
+**Claim:** A card whose trigger is keyed to what *opponents* do (Blood Seeker, Rampaging
+Ferocidon, Authority of the Consuls, Suppression Field) has no field-average value; it has a
+pod value. Score it against the decks the pilot actually sits across from, and ask before
+nominating it as the weakest body.
+**Evidence:** Blood Seeker — *"Whenever a creature an opponent controls enters, you may have
+that player lose 1 life"* — was nominated twice as the cut in Edgar's sacrifice build: not on the
+EDHREC Edgar page at all, 17% in the aggro theme, "opponent-dependent, 1 life at a time." The
+pilot: *"blood seeker is a hard counter to token decks."* Against a token deck it is a Blood
+Artist pointed at one player, on a {1}{B} Vampire body that also makes an eminence token. The
+field number measured the average pod, which does not exist.
+**Changes:** Before nominating any opponent-keyed card as a cut, name what it punishes and ask
+whether the pod plays it. Low field inclusion on a hate piece is evidence about the field's pods,
+not this one. Same family as "Argued against a card on a line the pilot doesn't play" (2026-09-02).
+**Source:** edgar-markov — Infantry Shield / draw pass. The pilot overrode the cut and was right.
+
+
+### A token copy of a mana rock is summoning-sick — mana abilities get no exemption — 2026-09-03
+
+**Claim:** When an effect turns a noncreature artifact copy into a creature as it enters (Ultron,
+Artificial Malevolence's *"becomes a 2/2 Robot Villain creature in addition to its other types"*),
+that token cannot activate its `{T}` mana ability the turn it is created. "It's only a mana ability"
+is not an exception.
+**Evidence:** CR 302.6 — a creature's activated ability with `{T}` in the cost can't be activated
+unless it has been under your control continuously since your most recent turn began; CR 605.3
+makes mana abilities follow the normal activated-ability rules (602.2) with only stack/timing
+exceptions, none touching 302.6. Haste (702.10b–c) is the only lift.
+**Changes:** Price any "copy a rock as a creature" line as **next-turn** mana, not this-turn — the
+turn-4 Ultron copy of a turn-4 rock taps on turn 5. Haste anthems (Krang, Utrom Warlord) are
+therefore ramp in that deck, not just combat. Same rule covers Karn, the Great Creator's animated
+rocks and Tezzeret's emblem.
+**Source:** ultron — founding build; verified by mtg-rules-expert against CR 2026-08-07.
+
+### Token copies of ETB artifacts keep the ETB; spell-copy and myriad tokens never trigger "nontoken" — 2026-09-03
+
+**Claim:** A token created as a copy of a permanent enters with that permanent's triggered abilities
+and its ETB fires (a token Portal to Phyrexia is a second triple edict). But a token produced by a
+*spell* copy (Echoes of Eternity), by myriad, or by Chrome Dome is a token — it never satisfies a
+"whenever another **nontoken** artifact enters" trigger, while it still counts as a creature
+entering for Glaring Fleshraker-style "another colorless creature enters" triggers.
+**Evidence:** CR 707.2/707.5 (copy acquires rules text; ETB abilities of a copy get a chance to
+trigger); CR 608.3f / 707.10f (a resolved permanent-spell copy becomes a token); CR 702.116a (myriad
+creates token copies); CR 603.6a (tokens entering are permanents entering). Sculpting Steel is the
+mirror case: a **card** entering as a copy is a nontoken artifact entering (707.5), and a copy of
+it uses the copied object's values (707.3).
+**Changes:** In a "copy on enter" deck, sort the copy engines into *card enters* (Sculpting Steel,
+Kuldotha Forgemaster, Prototype Portal's card? — no, Portal makes a token) and *token enters*
+before counting how many times the commander fires; only the first group feeds a "nontoken"
+trigger. Panharmonicon + Echoes of Eternity on such a trigger is three instances, not four
+(603.2d, already ledgered).
+**Source:** ultron — founding build; verified by mtg-rules-expert against CR 2026-08-07.
+
+### A cast-triggered "add mana" ability is not a mana ability, even with no target — 2026-09-03
+
+**Claim:** *"Whenever you cast a spell, add {R}…"* (The Vision and Scarlet Witch, Birgi, Electro)
+uses the stack. The mana arrives when the trigger resolves — above and before the spell that caused
+it — so it can never pay for that spell, only for the next one or a response, and it empties at end
+of step/phase unless something banks it.
+**Evidence:** CR 605.1b (a triggered mana ability must trigger from a mana ability or from mana
+being added); CR 605.5a (an ability that could add mana but triggers from another event follows
+normal trigger rules); CR 601.2h–i, 603.3 (costs paid, then cast-triggers go on the stack above
+the spell); CR 106.4 / 500.5 (emptying). Extends the Urabrask entry (2026-08-19), which turned on
+the *target* — the targetless version is still not a mana ability.
+**Changes:** Count a cast-refund commander as **net-zero on one-mana spells, never as free
+casting** — the first spell of the chain is paid in full. And the refund is only "banked" under a
+Leyline Tyrant / Electro / Ashling clause; without one it is a same-phase resource.
+**Source:** vision-scarlet-witch — founding build; verified by mtg-rules-expert.
+
+### Horizon Stone turns banked coloured mana colourless; Leyline Tyrant keeps red red — 2026-09-03
+
+**Claim:** Horizon Stone (*"If you would lose unspent mana, that mana becomes colorless instead"*)
+banks mana but strips its colour at each step/phase end, so the bank can pay generic and `{C}` only —
+never a `{R}` pip. Leyline Tyrant / Electro / Ashling (*"you don't lose unspent red mana"*) keep
+the colour. With both out, red stays red (nothing is "lost", so the Stone has no event to replace).
+**Evidence:** CR 107.4a (coloured costs can be paid only with mana of that colour); CR 107.4b–c;
+CR 614.1a (the Stone is a replacement on the "lose" event); CR 106.4.
+**Changes:** In a mono-colour deck with coloured pips on its payoffs, Horizon Stone is a strict
+downgrade on a colour-keyed banker; take it only in a colourless or generic-heavy shell. Also
+sharpens the 2026-08-04 entry: "colourless empties normally" is true, and under Horizon Stone
+"coloured becomes colourless" is the equivalent loss.
+**Source:** vision-scarlet-witch — founding build; verified by mtg-rules-expert.
+
+### The Ozolith catches a commander's counters on the way to the command zone — 2026-09-03
+
+**Claim:** When a commander with counters dies (or is exiled/tucked) and is moved to the command
+zone, The Ozolith's leaves-the-battlefield trigger sees the counters and puts that many on itself;
+at the next beginning of combat they can be moved onto the recast commander, a new object.
+**Evidence:** CR 603.6c (leaves-the-battlefield = moves from the battlefield to another zone);
+CR 603.10a (look-back); CR 903.9a–b (the command-zone move is a replacement on the zone change,
+still a leave); CR 122.8 (put the same number of each kind, not "move"); CR 400.7 / 122.2 (the
+recast is a new object but the trigger only needs "target creature").
+**Changes:** For any counter-growth voltron commander, The Ozolith is the one card that fills the
+*non-targeting / edict / exile-wrath* row of the protection matrix (2026-08-21) — not by saving the
+body but by saving the growth. Pilot sequencing: recast **precombat** so the beginning-of-combat
+trigger has a target.
+**Source:** vision-scarlet-witch — founding build; verified by mtg-rules-expert.
+
+### Commander's Plate on a colourless commander is protection from all five colours — 2026-09-03
+
+**Claim:** *"protection from each color that's not in your commander's color identity"* — a
+colourless identity contains no colours, so the equipped creature gets pro-W/U/B/R/G. It still
+does nothing against colourless removal, wraths that neither target nor damage, or edicts.
+**Evidence:** Oracle text of Commander's Plate; CR 702.16b–f for what protection covers (verified
+same pass for the mono-red case: pro-W/U/B/G stops Swords, green blockers and black creature
+damage; not Wrath of God, not an edict).
+**Changes:** In a colourless deck, Commander's Plate outranks Swiftfoot Boots and Lightning
+Greaves as the engine-protection Equipment: it also stops coloured blocks and coloured damage, and
+it never conflicts with any Equipment (all colourless). The fifth protection colour (red) is the
+one mono-red decks lack, so colourless commanders get the best Plate in the format.
+**Source:** ultron — founding build.
+
+### A one-pip cantrip gets nothing from a Medallion — count generic symbols before valuing reducers in a cheap-spell deck — 2026-09-03
+
+**Claim:** In a deck whose engine is `{R}` cantrips, Ruby Medallion / The Fire Crystal / Helm of
+Awakening reduce **none** of the engine spells — there is no generic to eat (CR 601.2f, ledger
+2026-08-07). Their whole value is on the two-plus-mana half of the list. Conversely a commander
+that *refunds* a mana per cast (The Vision and Scarlet Witch) is the only "discount" that reaches
+a one-pip spell, and it makes them net-free.
+**Evidence:** Oracle: Crash Through `{R}`, Expedite `{R}`, Crimson Wisps `{R}`, Might of the Meek
+`{R}` — 0 generic each. Ruby Medallion: *"Red spells you cast cost {1} less"*; 601.2f reduces the
+generic component only. The vision-scarlet-witch list holds 10 such cantrips and 7 reducer-eligible
+red spells.
+**Changes:** Before seating a reducer, count the cards in the list with ≥1 generic symbol; if the
+deck's engine is one-pip spells, the reducer is a support card for the other half, and a symmetric
+one (Helm of Awakening) is a pure gift to opponents. Same arithmetic decides Grapeshot decks,
+Cheerios lists and any "storm off cantrips" build.
+**Source:** vision-scarlet-witch — Helm of Awakening rejected.
+
+### A colourless mana doubler makes Basalt Monolith infinite — check the doubler before the rock — 2026-09-03
+
+**Claim:** Forsaken Monument (*"Whenever you tap a permanent for {C}, add an additional {C}"*) plus
+Basalt Monolith (*"{T}: Add {C}{C}{C}. {3}: Untap"*) is infinite colourless mana: tap for four, untap
+for three, net one per loop. Any X-outlet (Walking Ballista) is a table kill. This is a two-card
+infinite and disqualifies the pair at Bracket 3.
+**Evidence:** Oracle text of both; arithmetic.
+**Changes:** When a colourless deck seats a `{C}` doubler, grep the list for every "untap this"
+rock (Basalt Monolith, Grim Monolith with Power Artifact, Mana Vault + untappers) before calling it
+combo-free. The Monolith was 43% of the Ultron field and would have been auto-included.
+**Source:** ultron — founding build, Bracket 3 compliance pass.
+
+### EDHREC under-rates a mono-colour banker because the field doesn't bank — 2026-09-03
+
+**Claim:** Leyline Tyrant sits at 8% on The Vision and Scarlet Witch's page (278 decks) while
+Birgi (63%) and Electro (76%) lead — yet Tyrant is the only one of the three whose bank has no
+"until end of turn" clause *and* no colour-fizzle risk, and the pilot's stated plan is "bank mana."
+The crowd builds the commander as one-turn storm, so a cross-turn bank looks like a do-nothing
+4-drop to it.
+**Evidence:** EDHREC base/burn/storm views 2026-09-03 (Tyrant 8 / – / –; Braid of Fire 6%); oracle
+text of Tyrant, Birgi (*"Until end of turn, you don't lose this mana"*), Electro.
+**Changes:** When the pilot's plan names a mechanic the field's average build doesn't use (banking,
+tapping, edicts), read the low-inclusion cards for that mechanic explicitly instead of trusting the
+page order — same family as "Theme-filter the EDHREC page" (2026-08-21) and "Ranked a hate piece on
+average text" (2026-09-03).
+**Source:** vision-scarlet-witch — founding build.
+
+### "Remove all counters from all permanents" kills every planeswalker, yours included — 2026-09-03
+
+**Claim:** Loyalty counters are counters. A card that removes all counters from all permanents
+(Thief of Blood, Vampire Hexmage on one target) sends every planeswalker on the battlefield to the
+graveyard, and it does not distinguish your permanents from opponents'. "Prepared" is a
+designation, not a counter, so preparation cards are untouched.
+**Evidence:** CR 704.5i — *"If a planeswalker has loyalty 0, it's put into its owner's
+graveyard."* CR 614.1c — *"As [this permanent] enters"* effects are replacement effects, so there
+is no trigger to respond to after resolution. CR 722 / glossary "Prepared" — a designation.
+**Changes:** Before adding any mass counter-removal, list your own counter-bearing permanents —
++1/+1 growers, charge-counter artifacts (Door of Destinies), and planeswalkers — and count them
+as casualties. In a deck whose commander distributes +1/+1 counters, that count is the whole
+board. Score the card as a pod-specific hate piece, not as a body.
+**Source:** edgar-markov — pilot asked about Thief of Blood for both builds.
+
+### Carried a typed trigger-doubler's rejection across decks — Roaming Throne was skipped for two cast/enter-trigger commanders — 2026-09-04
+
+**What happened:** Roaming Throne (*"If a triggered ability of another creature you control of the
+chosen type triggers, it triggers an additional time"*) was left out of both new decks. Ultron,
+Artificial Malevolence is a Robot whose engine is one triggered ability per artifact entering; The
+Vision and Scarlet Witch is a Hero whose engine is one triggered ability per spell cast. Naming
+Robot / Hero doubles the commander outright — a second {2} token per artifact, {R}{R} and two
+counters per spell — and it was 37% of the Ultron field. The pilot asked *"no roaming throne for
+either deck?"*
+**Root cause:** the card's last two evaluations in this repo were rejections — inquisitor-greyfax
+(*"read whether a doubler says activated or triggered"*: the engine was activated abilities) and
+iron-man's own Throne reasoning (a combat trigger, doubled per type). I carried the *feeling* of
+those verdicts instead of their grounds, which name the engine type and do not describe either new
+commander. §1.1b applied to a card across decks, not just across time.
+**Guard:** for every commander whose engine is a triggered ability, run the doubler check as a
+mechanical step: (1) is the trigger **triggered** (not activated, not a once-per-turn clause)?
+(2) what creature type does the commander carry, and which other creatures in the 99 share it?
+(3) which doublers are already in and do they add (603.2d)? Roaming Throne belongs wherever (1)
+and (2) both pass. Companion fact from the same pass: Throne reads **creatures** only — it does
+not double Mirrorworks (a noncreature artifact) where Panharmonicon and Echoes of Eternity do.
+**Source:** ultron + vision-scarlet-witch — the pilot's question; both decks took the Throne.
+
+### "Target creature you control deals damage equal to its power" deals NOTHING if that creature is removed in response — no last-known-information fallback — 2026-09-04
+
+**Claim:** Soul's Fire, Chandra's Ignition, Origin of Thor chapter III and every other "target
+creature you control deals damage equal to its power to …" effect deal zero damage if the creature
+is exiled, bounced or killed in response. The spell still resolves (the other target is legal) but
+the damage clause needs information about an illegal target and fails outright. LKI does not save it.
+**Evidence:** CR 608.2b — *"Illegal targets, if any, won't be affected by parts of a resolving
+spell's effect for which they're illegal… If part of the effect requires information about an
+illegal target, it fails to determine any such information. Any part of the effect that requires
+that information won't happen."* 608.2 applies 608.2b before every other resolution step;
+608.2h / 113.7a (LKI) cover an ability's *source* or an untargeted referenced object, never an
+illegal target. Command-zone replacement (903.9a) changes nothing — the creature still left its zone.
+**Changes:** In a voltron list these are **finishers that must be cast with hexproof or a redirect
+held**, not answers to removal. Pilot line: Swiftfoot Boots / Champion's Helm on first, Deflecting
+Swat or Bolt Bend up, then the power-to-face spell. Same verified pass: a Twinferno-style copy may
+keep the same player as its "any target" — 601.2c's one-target-per-instance rule is per object, and
+the copy is its own spell (707.10, 707.10c) — and the copy resolves first (603.3, 608.1).
+**Source:** vision-scarlet-witch — Soul's Fire + Twinferno line; verified by mtg-rules-expert
+against CR 2026-08-07.
+
+### A token copy of a permanent has no counters and was never kicked — Chalice copies tap for nothing, Ballista copies die — 2026-09-04
+
+**Claim:** When an effect copies a *permanent* (Ultron, Mirrorworks, Prototype Portal, Helm of the
+Host, Chrome Dome, Sculpting Steel), the copy gets none of the original's counters and none of its
+casting choices. A copied Everflowing Chalice enters with zero charge counters and taps for nothing;
+a copied Walking Ballista or Hangarback Walker is a 0/0 that dies as a state-based action. Copying a
+*spell* (Echoes of Eternity, Lithoform Engine's third mode) is the opposite: the copy keeps X and
+kicked status.
+**Evidence:** CR 707.2 — copiable values are derived from printed text; choices made when casting
+(*"the value of X, whether it was kicked"*) are copied only *"for an object on the stack"*; *"status,
+counters, and stickers are not copied."* CR 107.3g — *"If a card in any zone other than the stack
+has an {X} in its mana cost, the value of {X} is treated as 0."* Everflowing Chalice's counters come
+from a kicker-linked "enters with" replacement (702.33e, 614.1c) that reads how many times *it* was
+kicked — the token never was. Printed "enters with N counters" replacements DO apply to the copy
+(614.12 reads the copy's own text): a token Threefold Thunderhulk gets its three, a token Big Mother
+Mouser its two.
+**Changes:** In a "copy on enter" deck, sort the rocks into fixed-output (Sol Ring, Dynamo, Lotus,
+Arc Reactor, Mightstone — copy them) and cast-choice-output (Chalice, Ballista, Hangarback, any
+X-cost artifact — never pay to copy the permanent). If an X-cost artifact is wanted as a copy target,
+the engine must copy the *spell* (Echoes), not the permanent.
+**Source:** ultron — the pilot asked whether a Chalice copy keeps its counters. Corrects the deck's
+own gameplan, which had said "Chalice copies enter with the same counters" — a claim written from
+recall, the exact §1.1 failure.
+
+### A spell cast during an ability's resolution ignores card-type timing; "without paying its mana cost" is the only cost that permission allows — 2026-09-04
+
+**Claim:** When an effect lets you cast a spell *during its own resolution* (Cosmic Cube's attack
+trigger, discover, Wanda's Vision, Arcane Bombardment), you may cast a sorcery, creature or
+enchantment at that moment even in combat — the sorcery restriction (307.1) governs casting from
+hand with priority, and the resolving effect is its own permission. And when the permission reads
+"without paying its mana cost," that alternative cost is the only way it lets you cast the card;
+you cannot elect to pay full price through it. Discover is the one template that offers an out —
+"if you don't cast it, put that card into your hand."
+**Evidence:** CR 608.2g — *"If an effect specifically instructs or allows a player to cast a spell
+during resolution, they do so by following the steps in rules 601.2a–i, except no player receives
+priority after it's cast. That spell becomes the topmost object on the stack, and the currently
+resolving spell or ability continues to resolve."* CR 601.3 (a spell may be cast only if a rule or
+effect allows it). CR 118.9 (the wording is an alternative cost) and 118.9b — *"An effect that
+allows you to cast a spell may require a certain alternative cost to be paid."* CR 701.57a (discover:
+*"If you don't cast it, put that card into your hand"*). Riders already ledgered: 118.9d (additional
+costs still apply), 107.3b (X = 0).
+**Changes:** Score attack-trigger and end-step free-cast engines as *unrestricted* card access — a
+Cube can drop a wrath or a multiplier mid-combat. And in a deck with X spells or discard-cost
+draw, prefer the *choose-from-N* engines (Cube) and discover (hand fallback) over random single-card
+engines (Wanda's Vision, Possibility Storm), where a Crackle hit is a lost card.
+**Source:** vision-scarlet-witch — the pilot's two Cosmic Cube questions; rules grepped directly
+from `rules/sections/` (608, 118, 601, 701).
+
+### "One multiplier is right, two is greedy" is gated on payoff density — 2026-09-04
+
+**Claim:** The second damage multiplier is a blank only in a deck whose payoffs are few. In a deck
+where nearly every permanent and every combat step is a payoff, a second multiplier is
+redundancy for the draw, exactly like a second copy of any other engine piece.
+**Evidence:** The 2026-08-04 rule came from scarlet-witch, which had two table-killers to
+multiply. vision-scarlet-witch has eight per-spell converters, a commander attacking every turn and
+five power-to-face spells — with any one of those on board a multiplier is live. Hypergeometric:
+one copy in 99 is seen in the first 15 cards ≈ 14%, two copies ≈ 27%. Multipliers commute (×3 and
+×2 = ×6, CR 616.1 order irrelevant for multiplication).
+**Changes:** Before applying the one-multiplier rule, count the multiplier's payoffs in the list.
+Under ~4, one is right. At 10+, the second is a consistency slot and the question becomes which
+two: prefer one enchantment (resilience) and one opponent-only wording (no self-hits) — Fiery
+Emancipation + Twinflame Tyrant — over two of the same shape.
+**Source:** vision-scarlet-witch — the pilot: *"you might say 2 sounds greedy but not really
+because we might never draw them."*
+
+### Argued the mass-recursion card on a resource-preservation axis and missed that its turn is the win — 2026-09-04
+
+**What happened:** Nominated Past in Flames as the cut for Wanda's Vision on the grounds that it
+exiles the graveyard Arcane Bombardment draws from, and that Increasing Vengeance and Flashback
+"already cover recasts." The pilot: *"isn't it technically better than Flashback, because Flashback
+only targets one spell and then that's it?"* Yes. Past in Flames gives *every* instant and sorcery
+flashback — in a deck of one-mana cantrips refunded by the commander, ten cards in the yard is ten
+more casts, ten counters, ten rounds of every pinger and ten draws in one turn — and it has its own
+flashback, so it happens twice. Preserving a pile for a slower engine is irrelevant on the turn
+that wins. Flashback (one card, once) was the cut.
+**Root cause:** Compared the two on the axis that was easiest to state (which one leaves the
+graveyard intact) instead of the one that decides (how big is the turn each one makes). Same
+family as "Argued the wrong side" (2026-08-04) and "Filed a card in the wrong role" (2026-08-04).
+**Guard:** For any recursion or copy card, write down the *size of the turn it produces* in this
+deck's spell count before comparing it on anything else. A card whose best turn wins the game is
+not cut for a card whose best turn is one extra spell.
+**Source:** vision-scarlet-witch — the pilot's pushback; they were right.
+
+### Lifelink pays on NONCOMBAT damage too — a lifelink Equipment on a "deals damage equal to its power" source is a life swing the size of the spell — 2026-09-04
+
+**Claim:** Lifelink is not a combat keyword. Any damage dealt by a source with lifelink gains its
+controller that much life, so Shadowspear or Basilisk Collar on the creature that Chandra's
+Ignition, Soul's Fire or Origin of Thor III names makes that spell gain life equal to its total
+damage — every opponent and every creature hit — and a damage multiplier multiplies the gain.
+**Evidence:** CR 702.15b — *"Damage dealt by a source with lifelink causes that source's controller,
+or its owner if it has no controller, to gain that much life (in addition to any other results that
+damage causes)."* Chandra's Ignition: *"Target creature you control deals damage…"* — the creature is
+the source (CR 120.2b → 120.7). Fiery Emancipation triples the damage, so the gain triples.
+**Changes:** In any deck with a power-to-face spell, score a one-mana lifelink Equipment as a
+finisher-adjacent card, not a defensive one: a 15-power Ignition across three opponents and a
+board is 45+ life. It answers "how do I survive three attack steps" better than a blocker does.
+**Source:** vision-scarlet-witch — the pilot's "shadowspear is the obvious choice"; rule grepped
+from `rules/sections/702-keyword-abilities.part1.md`.
+
+### Combo check counted one body per loop and forgot the eminence token — Oathsworn Vampire + Phyrexian Altar IS infinite under Edgar — 2026-09-06
+
+**What happened:** The 2026-08-25 combo check (`decks/edgar-markov/research/versions-comparison-2026-08-25.md`
+§5) cleared Oathsworn Vampire for the SACRIFICE build: *"Oathsworn costs {1}{B} to recast and
+Phyrexian Altar returns one mana per sacrifice … No loop."* It counted **one** sacrifice per
+iteration. Each recast is a Vampire spell, so Edgar's eminence makes a 1/1 token — a **second**
+body. Sac Oathsworn (+{B}), sac the token (+{B}), recast for {1}{B}, new token: net 0 mana, two
+deaths and one token per iteration, repeatable any number of times in one main phase.
+**Evidence:** Verified 2026-09-06 against the CR: casting from the graveyard is a real cast that
+fires cast-triggers (CR 112.1, 601.2a, 601.2i); the permission functions from the graveyard
+(CR 113.6f) and "gained life this turn" is a look-back that stays true once any gain has happened
+(CR 608.2i, 119.9) — Blood Artist's first trigger supplies it; Phyrexian Altar is a mana ability
+usable without the stack (CR 605.1a, 605.3b); only an empty stack is needed between casts
+(CR 117.1a, 505.6a). With Blood Artist / Zulaport / Cruel Celebrant / Vengeful Bloodwitch out that is
+infinite drain; with Grave Pact / Dictate of Erebos it is every opponent's board.
+**Root cause:** Costed the loop from the card in hand, not from what the commander adds to every
+cast. Eminence is an ability word (CR 207.2c) with no keyword entry, so it doesn't show up when
+you grep the loop's cards — it has to be remembered as a property of *every* Vampire cast.
+**Guard:** For any recursion loop in a deck whose commander or engine triggers **on cast**, add the
+trigger's output as a body / mana / card to the per-iteration ledger before declaring it
+mana-negative. Ashnod's Altar does **not** close this one (colourless can't pay the {B} floor —
+CR 601.2f, reducers eat generic only), which is why the live `DECK.md` and COMBAT are safe and
+SACRIFICE (Phyrexian Altar) is not at Bracket 3.
+**Source:** edgar-markov — the pilot asked whether Oathsworn Vampire was in the Edgar lists.
+
+### Nominated a cut on field signal and missed that the card's text held a second role — 2026-09-06
+
+**What happened:** Named Gauntlet of Power as the bottom row of Scarlet Witch's ramp role on the
+grounds "five mana, not on the Wanda page, 0/10 in the sample, symmetric" — and proposed it as the
+slot for Passionate Archaeologist. The pilot asked "do we need Gauntlet?" and the re-read showed
+the grounds were the crowd's, not the card's: *"Creatures of the chosen color get +1/+1"* puts +1
+power on The Scarlet Witch, and her power **is** the discount on every MV 4+ instant and sorcery —
+so Gauntlet is a permanent cost reducer in a deck with only four cards in the "pump her power"
+role, as well as a one-sided doubler on 21 basic Mountains whose surplus banks under Electro /
+Ashling. The 2026-08-04 add entry had recorded exactly this; the 2026-08-21 go-further list had
+re-filed it as a cut on inclusion alone.
+**Root cause:** SKILL §2.2 in reverse — read "0/10, not on page" as a verdict, then went looking
+for text to confirm it instead of costing the card's every clause against the deck (§1.2, §1.1b).
+**Guard:** Before nominating any cut, list every clause of its oracle text against the deck's
+roles and write the one that fires most often. A card that appears in two roles is never the
+bottom of either. Low inclusion is a prompt to re-read, not a reason.
+**Source:** scarlet-witch — Gauntlet of Power vs Passionate Archaeologist / Mana Flare; pilot's
+question.
+
+### "Choose one that hasn't been chosen this turn" caps a modal trigger at one use of each mode per turn — scored The Vision as a per-spell draw engine — 2026-09-08
+
+**What happened:** Recommended The Vision for the Ultron list as *"a card per noncreature spell on a
+2/5 vigilant flier"* with ~36 noncreature spells to feed it. Its trigger reads *"Whenever you cast a
+noncreature spell, choose one **that hasn't been chosen this turn** — Solar Beam · Density Control ·
+Technopathy — draw a card."* The draw mode can be chosen once per turn; the second and third
+noncreature spells in a turn can only pick double strike or indestructible. The pilot reported it
+*"felt really bad to play."*
+**Root cause:** Read the trigger condition and the modes, skipped the clause between them. Same
+failure as the Apex of Power free-cast (recalled the gist of a card instead of its text) — on a
+card whose text I had on screen in the same session.
+**Guard:** For any modal trigger, grep the oracle for "hasn't been chosen" / "only once each turn"
+/ "can't choose the same mode" before rating it as repeatable. Compare it to the uncapped card in
+the same role (Canoptek Spyder: a card per nontoken artifact creature, no cap) before seating it.
+The ledger already had the once-per-turn family in "Roaming Throne does NOT beat 'triggers only
+once each turn'" (2026-08-25) — the mode-cap wording is the same family and now sits beside it.
+**Source:** ultron — the pilot's "it felt really bad to play."
+
+---
+
+### Filed pump as "+N discount" and X-spells as "payoff"; told the pilot to wait for turn 6 and 12 mana while the list held a five-pip turn-5 kill — 2026-09-08
+
+**What happened:** `formulas.md` §7 scored Livaan as *"cast a mana value 5 spell and Wanda is
++5"*; `gameplan.md` §5 said *"T6+ — look for the turn … 12+ mana available, 3+ cards in hand"*;
+`considered-and-cut.md` cut one-shot pump on the grounds *"+2 or +3 power for one turn, roughly
+one extra discount — a bad trade."* An opponent with a near-identical list ended a game on turn 5
+by chaining X-spells under Livaan. The same line — turn 4 Livaan, turn 5 Storm King's Thunder X=2
+then Jaya's X=7 for five Mountains — has been castable from our list since 2026-07-01 and is
+lethal from a single Bonesplitter's worth of seed. Nobody had written it down.
+**Root cause:** Cards were filed by template (pump / copier / payoff / mana) and scored one at a
+time; the compounding between the roles — X sets MV, MV sets power, power sets the next X — was
+never derived, so every one-at-a-time verdict was right and the sum was wrong. Same family as
+Jaya's (2026-08-04, filed as "a fourth X-spell") and Bulk Up (a multiplier scored on a base of 2).
+The rival-lists pass of 2026-08-09 saw the shape (*"they have more ways to grow her"*) and still
+filed Unleash Fury and Bionic Blow as close calls.
+**Guard:** For any commander whose text reads one of its own stats, write the recurrence
+W' = f(W) per spell type *before* assigning roles. If f is superlinear, it is a chain deck: the
+pilot document needs the chain and its pip cost, not a mana threshold, and "seed" becomes a role
+with its own target count. The user's "SW plays like Bracket 4 even built like Bracket 3" was the
+correct read of the commander; the documents were the wrong read.
+**Source:** scarlet-witch — the 2026-09-08 report of an opponent's turn-5 kill;
+`research/turn-5-chain-2026-09-08.md`.
+
+---
+
+### The deck validator silently skipped every double-faced card — three cards never checked — 2026-09-08
+
+**What happened:** `bun run card --deck` — the command deck-brain §1.5 makes the validation gate
+for every list edit — indexed Scryfall results by their full name and looked them up by the
+decklist's name. Scryfall keys a double-faced card as `"Front // Back"`; a decklist line carries
+only the front face. The lookup missed and the loop did `if (!c) continue;`, so the card got **no
+price, no commander-legality check and no colour-identity check**, while the header still counted
+it in "79 unique found". In scarlet-witch that was Shatterskull Smashing, Valakut Awakening and
+**Urabrask** — three cards validated dozens of times over six weeks and never actually checked.
+**Root cause:** a silent-skip branch on a lookup miss, in a tool whose entire job is to report
+problems. The header's "79 unique found" made the omission look like success. `deck-pdf.ts` and
+`edhrec.ts` already had a `frontFace()` helper for exactly this; `card.ts` never adopted it.
+**Guard:** a validator may never `continue` past a record it cannot resolve — count it and print
+it. When a tool reports a total, cross-check the printed row count against the input count before
+trusting a clean run; `79 lines` next to 76 printed rows was visible the whole time. Fixed with an
+`indexByDeckName` helper in `scripts/lib/decklist.ts` (front face *and* full name, full names
+first so a real card is never shadowed by an alias) plus three regression tests.
+**Source:** scarlet-witch — found while validating the V2 promotion, 2026-09-08.
+
+
+### Used the attach-bucket test as a verdict on card quality, when it only answers one question — 2026-09-09
+
+**What happened:** Dismissed Hammer of Nazahn from a Captain America build with "its attach trigger
+is 'on enter', which does nothing for the Throw loop." The pilot pushed back: getting Equipment
+**onto** the commander is half the loop, and Hammer attaches every Equipment as it enters, in a deck
+casting Equipment most turns. They were right; the card went in.
+**Why it was wrong:** LEDGER 2026-09-02's three-bucket split (*on enter* / *from hand* / *from the
+battlefield*) answers exactly one question — **"can this re-attach an Equipment after I have paid an
+unattach cost?"** It is a filter for a specific mechanical need, not a quality ranking. Applying it
+as a verdict filed the card in one role and scored it only there, which is the §2.4 failure mode the
+skill already names (Jaya's Immolating Inferno dismissed as "a fourth X-spell").
+**The fact that decides it:** Captain America's Catch attaches *"up to **one** target Equipment"* per
+combat. A commander that moves one piece per turn can never build a stack of gear alone, so attach
+effects are the shared bottleneck on **both** win conditions at once — every extra Equipment on the
+commander is simultaneously more commander damage and more Throw fodder to choose from.
+**Changes:** Before letting any bucket/filter heuristic produce a cut, state the question that
+heuristic actually answers and check it is the question being asked. Then re-score the card in every
+role it occupies (§2.4). And for any "attach one per turn" commander, count total attach effects as a
+first-class role rather than a support role.
+**Source:** captain-america — the pilot's "for the throw loop to work we need equipment attached to
+him, so 'does nothing for the throw loop' is not true."
+
+---
+
+### EDHREC inclusion % is PER CARD, never co-occurrence — it can't tell you if one deck runs both — 2026-09-09
+
+**Claim:** Two inclusion percentages from the same commander page are not evidence about the same
+list. "69% run A and 51% run B" is fully consistent with almost no deck running both. Any argument of
+the form *"the field runs this anti-synergy, so it must be fine"* — or *"the field is wrong"* — is
+unsupported by the numbers on their own.
+**Evidence:** `bun run edhrec` reports per-card inclusion and synergy against the commander's deck
+pool; there is no pairwise or conditional statistic in the output. Worked case: Sword of War and
+Peace (69%) grants protection from red and unattaches Mjölnir, Hammer of Thor (51%, a {3}{R} card)
+under CR 702.16d — but the two percentages cannot say whether the overlap is 51% of decks or 5%.
+**Related, verified same pass:** a protection-Equipment anti-synergy is **conditional, not fatal** —
+CR 702.16d only fires while both are attached to the same creature. The real cost is "pick one per
+turn," which is a dead-configuration cost, not a broken card. Weigh that against what the protection
+buys: pro-red-and-white on a commander dodges Swords to Plowshares, Path to Exile, Generous Gift and
+most red burn, *and* grants evasion — which is why the field runs it.
+**Changes:** Never cite an inclusion percentage as evidence that two specific cards coexist, and
+never cite one to claim the field has made a mistake. State the interaction from the CR, state
+whether it is conditional or fatal, then decide on a named axis (§2.3). Here the axis was **which
+protection Equipment the deck's own damage multiplier survives** — Mjölnir doubles Throw damage as
+well as combat damage, unique to this build — and the answer flips in a combat-only list.
+**Source:** captain-america — the pilot's "if they were really that problematic, how come most decks
+are running it?"
+
+---
+
+### Cut three cards for being "redundant" — in singleton, the second copy is access, not waste — 2026-09-09
+
+**What happened:** Across one build I used redundancy as the stated grounds for three cuts — Reyav,
+Master Smith ("double strike doesn't stack with Halvar"), Blackblade Reforged ("Colossus Hammer
+already provides the +10 stat jump") and partly Sword of the Animist ("ramp is redundant at 42 mana
+sources"). The pilot pushed back: *"there's no such thing as 2 is redundant — if you just put 1 card
+in the deck there's absolutely no guarantee that you ever play that card, so having 2 of something
+helps."*
+**Why they're right:** the deck is 99 singleton cards. One copy of an effect is not access to that
+effect, it is a probability of access; a second card doing the same job roughly doubles it, and also
+insures against the first being removed. Non-stacking is not the same as blank — a second
+double-strike granter is a **spare key**, dead only in the narrow case where the first is already on
+the battlefield and unanswered.
+**Changes:** SKILL.md §2.5 rewritten from *"redundancy in multipliers is not [good]"* to a two-part
+test: (1) how load-bearing is the effect — if the plan needs it, run more copies even when they don't
+stack; (2) is the surplus copy a **substitute** (interchangeable, costs nearly nothing — run both), a
+**blank** (a bare multiplier with no payoff — the only real "two is greedy" case), or **genuinely
+multiplicative** (stacks, run several). "Redundant" is banned as a cut reason on its own; name the
+blank and why, or there is no argument.
+**Source:** captain-america — the pilot's review of five swaps.
+
+---
+
+### "Attach target Equipment ATTACHED TO a creature" only MOVES gear — it cannot pick up an unattached Equipment — 2026-09-09
+
+**Claim:** Attach effects split into two shapes that look identical in a decklist and are not
+interchangeable. *"Attach target Aura or Equipment **attached to a creature you control**"* (Halvar,
+God of Battle) can only relocate gear that is already on a creature. *"Attach any number of Auras and
+Equipment **you control**"* (Ardenn, Intrepid Archaeologist) has no such restriction and works on
+unattached gear. Only the second shape can re-suit after an unattach cost.
+**Evidence:** Oracle text of both, verified via `bun run card`. CR 701.3d — unattaching leaves the
+Equipment *"on the battlefield but not equipping anything"*, so it is attached to no creature and
+fails Halvar's targeting restriction; CR 608.2b rechecks targets on resolution. Same split applies to
+Codsworth (*"attach target Aura or Equipment **you control**"* — works) and Brass Squire (*"attach
+target Equipment **you control**"* — works).
+**Changes:** Extends the three-bucket test in "'Unattach' in a cost needs a BATTLEFIELD re-attacher"
+(2026-09-02). Sorting by *where the Equipment comes from* is not enough — inside the
+from-the-battlefield bucket, **read whether the effect requires the Equipment to be currently
+attached**. A "move it between creatures" effect is a *rescue* card (it saves gear when a carrier
+dies, or redirects a stat stick) and must not be counted toward the unattach engine. Halvar is a
+double-strike anthem plus a rescue effect in captain-america, not a Throw enabler.
+**Source:** captain-america — Halvar had been filed as an attach engine for three passes before the
+oracle text was re-read.
+
+### Presented an engine and a finisher as two mutually exclusive archetypes — 2026-09-09
+
+**Claim:** I offered the pilot a choice between "Vehicles/Spacecraft beatdown" and "tap-trigger
+value engine" as if they were alternatives. They are not — the second is the draw package the first
+requires, and both were always going in the deck.
+**Evidence:** The pilot answered the question with a question — *"so you think we should go with
+either 1 or 2?"* — which is the tell that the options weren't actually disjoint. The built list
+contains 10 tap-trigger draw cards and 13 Vehicles/Spacecraft; neither half was ever optional.
+**Changes:** Before putting archetype options to the pilot, check that each one names a **different
+answer to the same question**. Win-condition options must differ in *what kills*; engine options in
+*what draws*. If two options would coexist in one list, they are role slots, not archetypes — say so
+and ask about the top end instead.
+**Source:** cap-living-legend.
+
+### Dismissed an archetype as "weak" — the same error class as "redundant" — 2026-09-09
+
+**Claim:** I described a token-flood spine as one where "the individual cards are weakest," which is
+a bare verdict with no mechanism behind it, exactly what SKILL.md §2.5 forbids for "redundant."
+**Evidence:** The pilot pushed back — *"3 you're saying can be weak?"* Re-derived, the real
+statement is specific and falsifiable: the plan needs critical mass and a single wrath resets it.
+That is a *resilience* claim, and it does not argue against the token-makers themselves, which are
+the best crew and Station fuel in the deck because every token is another free tap.
+**Changes:** "Weak," "win-more," "durdly" and "not good enough" are the same failure as "redundant."
+Replace each with the mechanism — *"it needs N permanents and loses to one sweeper"*, *"it costs 4
+and does nothing without a payoff"*. If you can't name the mechanism, there is no argument.
+**Source:** cap-living-legend.
+
+### Called vigilance anti-synergistic with a "first tap each turn" untapper — it's the opposite — 2026-09-09
+
+**Claim:** I reasoned that vigilance on other creatures wastes a "whenever a creature becomes tapped
+during your turn, untap it" commander, because a vigilant attacker never taps and so never triggers
+it. Wrong conclusion from correct facts.
+**Evidence:** CR 702.20b — attacking doesn't tap a creature with vigilance. So the creature's
+once-per-turn untap allowance is **never spent on attacking** and is still available for a `{T}`
+ability, crew, or Station later that turn. Vigilance is redundant with the pseudo-vigilance the
+commander already grants; it is not a loss.
+**Changes:** With a "first tap each turn" untapper, rank vigilant creatures that also have `{T}`
+abilities **highest**, not lowest — they get the attack *and* the activation. The genuine
+anti-synergy is anything that taps your creatures early in your turn for no value, since each
+creature only gets one free untap.
+**Source:** cap-living-legend — Iron Spider, Stark Upgrade; Agent Phil Coulson; Iron Lad; Loran.
+
+### Added a 10-mana Equipment to a voltron list without costing its equip — 2026-09-10
+
+**Claim:** Batterskull went into cap-living-legend `DECK-COUNTERS.md` v2 on the strength of its text
+(+4/+4, vigilance, lifelink). Its real cost to reach the commander is {5} cast + equip {5} = 10 mana,
+the worst rate in the list. The pilot caught it: "batterskull is essentially 10 mana which is insanely
+bad."
+**Evidence:** Scored in the same pass: Aqueous Form 1, Shadowspear 3, Brotherhood Regalia 3 (equip
+legendary {1}), Maul of the Skyclaves 3 (auto-attach), Commander's Plate 4, Umezawa's Jitte 4,
+Sword of Feast and Famine 5, Loxodon Warhammer 6, Hulkbuster Armor 7 — Batterskull 10.
+**Changes:** This is deck-brain §1.2 ("cost the card out in this deck's mana") applied to Equipment:
+the comparison number is **cast + cheapest applicable equip onto the commander** (checking equip
+[quality] variants — legendary, commander, Hero), unless the deck runs a free-attach engine. Build a
+cost-to-commander table before choosing voltron gear. Batterskull's Stoneforge line (put into play
+for {1}{W}) still ends on a Germ, not on the commander.
+**Source:** cap-living-legend — pilot's Equipment critique.
+
+### An untap-on-tap trigger is UNTARGETED and source-independent — removal can't fizzle it — 2026-09-12
+
+**Claim:** Once a "whenever a creature you control becomes tapped… untap it" trigger is on the
+stack, an opponent cannot stop the untap by killing the creature or by killing the commander that
+made the trigger. Only an ability-countering effect actually answers it.
+**Evidence:** CR 113.7a — "once activated or triggered, an ability exists on the stack independently
+of its source… destruction or removal of the source after that time won't affect the ability." The
+trigger says "untap **it**", a back-reference, not "target", so CR 608.2b (all targets illegal →
+doesn't resolve) never applies and ward/hexproof/protection are irrelevant. CR 113.9 — a triggered
+ability on the stack "can be countered by effects that specifically counter abilities", not by
+spell-only counters. Killing the creature still leaves the trigger resolving into nothing (CR 400.7,
+the card in the graveyard is a new object). Costs already paid stay paid (CR 601.2h), so a crewed
+Vehicle stays crewed and a convoked spell stays cast.
+**Changes:** Don't price commander removal as an answer to the untap engine — it only stops *future*
+triggers. Conversely, don't count on the untap resolving if the opponent simply kills the creature:
+the trigger resolves, but the effect is empty, so the tempo loss is the same.
+**Source:** cap-living-legend — pilot asked for the full priority-window walkthrough.
+
+### On your turn, an OPPONENT's "becomes tapped" trigger resolves before yours — 2026-09-12
+
+**Claim:** APNAP ordering puts the active player's triggers on the stack first, so opponents' triggers
+from the same tap event land on top and resolve first — their payoff sees your creatures still tapped.
+**Evidence:** CR 603.3b — "each player, in APNAP order, puts each triggered ability they control…
+on the stack"; CR 101.4 for APNAP; last-on-first-off per CR 117.4 / 608.1.
+**Changes:** When an opponent runs a punisher keyed to creatures becoming tapped, assume it resolves
+with your board still tapped — your untap can't pre-empt it. Same ordering makes your own crew-tap
+a real cost against such a table.
+**Source:** cap-living-legend.
+
+### A second tap doesn't just fail to untap — it produces no trigger at all — 2026-09-12
+
+**Claim:** With an intervening-"if" first-time-only untapper, the second tap of a creature creates no
+stack object, so there is nothing for an opponent to respond to and no ordering decision to make.
+**Evidence:** CR 603.4 — "the ability checks whether the stated condition is true. The ability
+triggers **only if it is**; otherwise it does nothing", and it re-checks on resolution. Also: taps
+that happened earlier in the turn *before the untapper entered the battlefield* already burn the
+"first time" — the condition is a fact about the creature's turn history, not about the untapper.
+**Changes:** Sequence the free tap deliberately — don't spend a creature's first tap on a mana
+ability in upkeep if the plan needs it for crew later. And when flashing in such a commander
+mid-turn, creatures already tapped this turn get nothing.
+**Source:** cap-living-legend.
+
+### Crew is INSTANT speed; Station is sorcery speed — they are not interchangeable outlets — 2026-09-12
+
+**Claim:** Crew has no timing restriction and can be activated any time you hold priority, including
+on an opponent's turn and after blockers are declared. Station cannot — it is sorcery-timed.
+**Evidence:** CR 702.122a — "Crew N" means "Tap any number of other untapped creatures you control
+with total power N or greater: This permanent becomes an artifact creature until end of turn." No
+timing clause. CR 702.184a — Station ends with "Activate only as a sorcery."
+**Changes:** Count Vehicles as instant-speed ambush blockers and as a post-blockers surprise; count
+Spacecraft only as a main-phase sink. For a "during **your** turn" untapper the distinction shrinks —
+crewing on an opponent's turn gets no untap — but crewing at end of their turn, or after blockers on
+yours, is still live.
+**Source:** cap-living-legend.
+
+### Optimised taps-per-creature and filed sweepers under "trade-offs" — one T4-5 wipe ended the game — 2026-09-15
+
+**What happened:** DECK-ENGINE maximised "creatures that use their second tap" (25/30) and listed
+sweepers as a bullet under honest trade-offs. The pilot played it: *"takes so long to set up a usable
+board only to get boardwiped on turn 4-5 and basically you're out of the game after that, especially
+if captain america also got wiped and now he's in the command zone costing 5"* — and said it felt
+Bracket 2. Measured afterwards: 32 creatures, 19 with toughness ≤2 and 15 with power ≤1; 24 of the 28
+ramp/draw/utility cards were creatures; 4 real wipe answers; Extinguisher Battleship's ETB (4 damage
+to each creature) killed every creature in the deck including the commander.
+**Cause:** I optimised the metric (value per creature on the board) instead of the constraint (the
+board surviving to produce it), and scored "Vehicles dodge sorcery-speed wipes" as resilience without
+asking what crews them afterwards. Each engine piece was also weak alone (Archivist: a 4-mana 1/1).
+**Guard:** For any board-dependent engine, before calling it done, write down the pod's wipe turn and
+count (1) answers to a wipe, (2) noncreature sources of bodies or threats that survive one, and
+(3) how much of the value engine is creatures. Then run §1.3 on every symmetric ETB in the list. See
+"A crew-dependent win condition is only wipe-proof if its crew is".
+**Source:** cap-living-legend — pilot's play report on DECK-ENGINE.
+
+### A crew-dependent win condition is only wipe-proof if its crew is — 2026-09-15
+
+**Claim:** Vehicles and below-threshold Spacecraft survive creature wipes, but they are dead cards
+afterwards unless the deck has noncreature sources of creatures to crew or station them.
+**Evidence:** CR 702.122a (crew taps creatures) and 702.184a (station taps a creature). DECK-ENGINE had
+13 crew/station win conditions and 3 wipe-proof body sources (Shorikai's Pilot tokens, Urza's Saga,
+Mech Hangar animating a Vehicle). W/U options, oracle-checked: Mishra's Factory ({1}: 2/2 artifact
+creature), Mutavault, Mobilized District, Castle Ardenvale ({2}{W}{W},{T}: 1/1), Gideon, Ally of
+Zendikar (0: 2/2 every turn), The Wandering Emperor (−1: 2/2), Elspeth, Knight-Errant (+1: 1/1),
+Hangarback Walker (dies into X Thopters).
+**Changes:** In a Vehicles deck, score "wipe-proof crew" as its own role beside the Vehicles, and
+don't credit Vehicles with surviving a wipe until that role has several cards in it.
+**Source:** cap-living-legend.
+
+### Declining the command zone is a one-time choice — made before any recursion spell can be cast — 2026-09-15
+
+**Claim:** The option to move a dead commander to the command zone exists only at the state-based
+action check right after it lands in the graveyard. Decline it to recur the commander for free, and
+it stays in the graveyard even if the recursion spell is then countered.
+**Evidence:** CR 903.9a — "If a commander is in a graveyard or in exile and that object was put into
+that zone since the last time state-based actions were checked, its owner may put it into the command
+zone. This is a state-based action." SBAs are checked before anyone receives priority (CR 117.5), so the
+choice precedes casting an instant. Faith's Reward: "Return to the battlefield all permanent cards in
+your graveyard that were put there from the battlefield this turn."
+**Changes:** Leave the commander in the graveyard for a Faith's Reward / Brought Back line only when the
+spell is likely to resolve; against open counter mana, send it to the command zone.
+**Source:** cap-living-legend — resilience proposal.
+
+### deckcheck silently under-counts mana sources for cards missing from the deck's card cache — 2026-09-15
+
+**What happened:** A scratch list with three new lands reported "lands 32 + rocks 6 = 38 ⚠️ low (<40)".
+The real count was 35 + 6 = 41. None of the three lands were in `decks/cap-living-legend/research/cards.txt`.
+**Cause:** Observed, not traced: the count read 32 before `carddata` cached those cards and 35 after,
+with no warning either time — a cache miss falls through as "not a source".
+**Guard:** Run `bun run carddata --deck <slug>` (stdin works for scratch lists) before `deckcheck`
+whenever a list has new cards, and treat a source count that drops after a like-for-like land swap as
+a cache miss until proven otherwise.
+**Source:** cap-living-legend.
+
+### Blink resets a "first time this turn" untap for that creature — phasing does not — 2026-09-15
+
+**Claim:** A creature that is exiled and returned is a new object, so an intervening-if "first time
+that creature has become tapped this turn" untapper triggers for it again. Phasing keeps the history.
+**Evidence:** CR 400.7 ("becomes a new object with no memory of, or relation to, its previous
+existence"; none of 400.7a–m carries tap history) and 603.4 (the condition is checked against the new
+object). Contrast 702.26d: "Effects that check a phased-in permanent's history won't treat the
+phasing event as having caused the permanent to leave or enter the battlefield." The returned creature
+enters untapped (110.5b) and is summoning-sick for its OWN {T} abilities, mana abilities included
+(302.6, 605.1a), but can still be tapped for crew, station, convoke, Relic of Legends and Grand
+Architect costs. Thousand-Year Elixir restores its {T} abilities (702.10c). Trap: blinking it while the
+untap trigger for its old self is still on the stack wastes that untap (the trigger's "it" is the old
+object).
+**Changes:** Price a blink in an untap deck as "one extra cost-tap from that creature this turn", not
+"one extra ability activation", unless a haste-for-abilities source is out.
+**Source:** cap-living-legend — pilot's blink proposal (mtg-rules-expert, CR 2026-08-07).
+
+### End-step blink adds ETB value but no taps — only main-phase blinks refresh an untap engine — 2026-09-15
+
+**Claim:** Repeatable blink engines (Thassa, Deep-Dwelling; Soulherder; Teleportation Circle;
+Conjurer's Closet) and every "return at the beginning of the next end step" effect bring the creature
+back after both main phases, so the fresh untap from CR 400.7 has nothing to pay for. Only immediate
+blinks cast in a main phase (Ephemerate, Cloudshift, Ghostly Flicker, Restoration Angel), or Brago's
+post-combat-damage blink before main phase 2, turn blink into extra taps.
+**Evidence:** Oracle text of each ("At the beginning of your end step"; "at the beginning of the next
+end step"). Station is sorcery-speed (702.184a), so end-step taps cannot station. Brago, King Eternal:
+"Whenever Brago deals combat damage to a player, exile any number of target nonland permanents you
+control, then return those cards."
+**Changes:** In an untap-commander deck, value blink for its ETBs and as protection, not as a tap
+engine. The one repeatable instant-speed blink (Deadeye Navigator) is excluded for loops — see next entry.
+**Source:** cap-living-legend.
+
+### With a "first time each turn" untapper, blink is a purchasable surplus untap — Deadeye Navigator is the linchpin — 2026-09-15
+
+**Claim:** Captain America, Living Legend + Deadeye Navigator produces unbounded loops from small,
+commonly-run packages; without Navigator, no blink engine in W/U loops with the deck's mana creatures.
+**Evidence:** mtg-rules-expert audit. Navigator paired creature: "{1}{U}: Exile this creature, then
+return it." Each blink makes a new object (400.7), so Cap untaps it once more. Unbounded rows:
+Navigator + Relic of Legends (tap a legend twice = 2 any = {1}{U}, break-even infinite blinks/ETBs,
+lethal with Soulherder); Navigator + Thousand-Year Elixir + Palladium Myr + Silver Myr/Ornithopter of
+Paradise (+2 colorless per round); Navigator + Ioreth of the Healing House + Elixir; Navigator + Grand
+Architect + Elixir + a blue mana creature. All are optional activations (chosen-N under 104.4b /
+732.2a), but self-funding. End-step blinkers, Mistmeadow Witch (activations in the end step return a
+turn later, 513.2), Restoration Angel and Brago are safe.
+**Changes:** Never add Deadeye Navigator to a Captain America, Living Legend list. Re-run a loop audit
+before adding any other repeatable instant-speed blink.
+**Source:** cap-living-legend.
+
+### Ghostway exiles your tokens and stationed Spacecraft for good — prefer targeted blink or phasing — 2026-09-15
+
+**Claim:** A mass "exile each creature you control, return at end step" protects the board from a
+wipe but permanently loses tokens and resets stationed Spacecraft; targeted delayed blink (Eerie
+Interlude) and phasing avoid both.
+**Evidence:** Ghostway: "Exile each creature you control." Tokens off the battlefield cease to exist
+(CR 111.7, 111.8). A Spacecraft at threshold is a creature (721.2b), and counters don't survive a zone
+change (122.2). Eerie Interlude targets "any number of target creatures you control", so you choose.
+Phasing keeps counters, tokens, attachments and tapped status (702.26d, 702.26g, 110.5c). Also:
+Hangarback Walker blinked returns with 0 counters and dies with no Thopters; don't cast a delayed
+blink during an end step or the return waits a full turn (513.2).
+**Changes:** In a token or Spacecraft deck, rank board protection: phasing ≥ targeted delayed blink >
+indestructible (destroy/damage only) > mass blink.
+**Source:** cap-living-legend.
+
+### Bracket 2 allows zero Game Changers — dropping to B2 removes the cards that protect a fragile board — 2026-09-15
+
+**Claim:** Commander Brackets: Brackets 1–2 exclude Game Changers; Bracket 3 allows up to three. The
+repo's `deckcheck` only encodes the Bracket 3 cap.
+**Evidence:** Wizards, "Introducing Commander Brackets Beta" (magic.wizards.com): Bracket 2 "Core" has
+"no Game Changers, two-card combos, or mass land denial"; Bracket 3 "Upgraded" allows "up to three
+Game Changers". `scripts/deckcheck.ts` line 40: `BRACKET_3_MAX_GAME_CHANGERS = 3`, printing "3 (or lower)".
+**Changes:** When a pilot suggests "just make it Bracket 2" to fix a weak deck, list which Game Changers
+the move removes first. It usually strips protection (Teferi's Protection, Fierce Guardianship) or a
+reset (Cyclonic Rift), which makes a fragile deck worse, not more fairly matched.
+**Source:** cap-living-legend — pilot weighing B2 vs improving at B3.
+
+### A "first tap each turn" untapper ANTI-synergises with end-step tapped-creature payoffs — 2026-09-16
+
+**Claim:** Captain America, Living Legend untaps the first tap of each creature, so at your end step the
+board is untapped and Throne of the God-Pharaoh counts **zero** — unless every creature was tapped a
+second time. Tokens that ENTER tapped are exempt and count for free.
+**Evidence:** Cap's intervening-"if" (CR 603.4) fires once per creature per turn. Throne of the
+God-Pharaoh: "At the beginning of your end step, each opponent loses life equal to the number of tapped
+creatures you control." CR 603.2e — a permanent that enters tapped never "becomes tapped", so Cap's
+trigger never fires on it and it stays tapped (Adeline, Resplendent Cathar's tokens enter "tapped and
+attacking"). Crew has no frequency limit (702.122a), so crewing the same Vehicle twice taps the same
+creatures twice and the second tap sticks.
+**Changes:** Never score an end-step tapped-matters payoff by creature count in an untapper deck. Score
+it by **second taps available**: a free repeatable tapping outlet (Opposition, crew, Springleaf Drum)
+and token makers that create their tokens already tapped.
+**Source:** cap-living-legend — Throne of the God-Pharaoh evaluation (mtg-rules-expert, CR 2026-08-07).
+
+### Restricted "activate abilities of artifacts" mana pays an artifact's activation cost — Halo Fountain + Ioreth + Vedalken Engineer is free unbounded draw — 2026-09-16
+
+**Claim:** Vedalken Engineer's mana ("Spend this mana only to cast artifact spells or activate abilities
+of artifacts") legally pays Halo Fountain's {W}{W} activation cost, producing a zero-net-mana loop that
+draws a card every iteration.
+**Evidence:** Halo Fountain: "{W}{W}, {T}, Untap two tapped creatures you control: Draw a card." Lap:
+Fountain untaps Ioreth + Engineer and draws → Engineer taps for {W}{W} → Ioreth untaps Fountain. CR 106.6
+(spending restrictions), 609.4b, 605.1a/605.3b (mana abilities don't use the stack), 500.5 (the pool
+empties at end of step, not mid-step). Net mana 0, net cards +1. With Psychosis Crawler it is a
+deterministic table kill.
+**Changes:** Never let Halo Fountain, Ioreth of the Healing House and Vedalken Engineer share a list.
+Generally: when a restricted mana source says "activate abilities of artifacts", treat every artifact
+engine in the deck as a legal sink and re-run the loop audit.
+**Source:** cap-living-legend.
+
+### Two untappers that tap themselves form a closed pair — zero spare untaps, however much mana you have — 2026-09-16
+
+**Claim:** Ioreth ⇄ Thousand-Year Elixir and Ioreth ⇄ Minamo can never yield more than ~2 untaps for
+anything else, because each untapper taps itself to untap the other. Only a third untapper that can
+untap a NON-creature breaks the pair open.
+**Evidence:** A {T} cost can't be paid by an already-tapped permanent (CR 107.5, 118.3). If Elixir's
+untaps come only from Ioreth and Ioreth's only from Elixir, the two counts pin each other. In this pool
+only Ioreth can untap Halo Fountain (Minamo needs legendary, Elixir needs a creature, Cap needs a
+creature), which is why the Fountain circuit prices a spare creature-untap at {W}{W}.
+**Changes:** Audit untap circuits by **what each untapper may legally target** (legendary / creature /
+any permanent), not by mana. Type restrictions, not cost, decide whether a circuit is closed.
+**Source:** cap-living-legend.
+
+### Marvin + Ioreth is unbounded "becomes tapped" events — Psychosis Crawler turns it into a kill — 2026-09-16
+
+**Claim:** Marvin, Murderous Mimic copying Ioreth's "{T}: Untap another target permanent" lets the two
+untap each other for free forever. Net untaps are zero, but every lap is a "becomes tapped" event.
+**Evidence:** Marvin gains the activated abilities of other creatures you control; Ioreth: "{T}: Untap
+another target permanent." No mana is spent either way. Unctus, Grand Metatect grants other blue
+creatures "Whenever this creature becomes tapped, draw a card, then discard a card" and Ioreth is blue →
+unbounded looting; with Psychosis Crawler ("Whenever you draw a card, each opponent loses 1 life") that
+is unbounded drain.
+**Changes:** `DECK.md` holds Marvin + Unctus + Halo Fountain — never add Ioreth to that list. The
+existing "Marvin excluded from DECK-ENGINE" note now has a second, stronger reason.
+**Source:** cap-living-legend.
+
+### A "tap a creature you control: tap target permanent" ability can target the creature that pays for it — 2026-09-16
+
+**Claim:** Under a "first tap each turn, untap it" commander, one Opposition activation leaves a single
+creature tapped with no other creature involved: target that creature, then pay the cost by tapping it.
+The untap trigger resolves first, the ability then re-taps it, and the second tap sticks.
+**Evidence:** Targets are chosen at CR 601.2c, costs paid at 601.2h (applied to abilities by 602.2b), so
+the target is locked before the cost-tap happens. The cost-tap is a "becomes tapped" event (603.2e), so
+the untapper triggers and is put on the stack *above* the activated ability (603.3) and resolves first.
+The ability's own tap produces no trigger, because the intervening-"if" is now false (603.4). Crew does
+the same for a whole board at once: it has no frequency limit (702.122a), so crew pass 1 taps everyone
+and is refunded, crew pass 2 sticks.
+**Changes:** For an end-step "tapped creatures you control" payoff under a first-tap untapper, budget
+**two free taps per creature per turn** (a crew pass plus a free tap outlet), and do the tapping in
+response to the end-step trigger so blockers stay available through the turn.
+**Source:** cap-living-legend — Throne of the God-Pharaoh package (mtg-rules-expert, CR 2026-08-07).
+
+### A granted "becomes tapped, draw then discard" plus a free tapper can deck you — 2026-09-16
+
+**Claim:** Unctus, Grand Metatect grants *other blue creatures* a mandatory loot whenever they become
+tapped. With a free repeatable tap outlet and a first-tap untapper, that is two forced draws per blue
+creature per turn, and blue tokens inherit it — enough to empty your own library.
+**Evidence:** Unctus: "Other blue creatures you control have 'Whenever this creature becomes tapped,
+draw a card, then discard a card.'" The trigger is not optional. Pestered Wellguard's Faerie and
+Stonybrook Schoolmaster's Merfolk Wizard tokens are blue. Drawing from an empty library loses the game
+at the next state-based check (CR 104.3c). The taps themselves are voluntary, so this is not a mandatory
+loop — it is a self-inflicted one.
+**Changes:** In any deck pairing a lord-granted "becomes tapped → draw" with a free tapper, count the
+library before a mass tap pass, and prefer token makers whose tokens are off-colour for the lord.
+**Source:** cap-living-legend.
+
+### Singleton-exception cards scale linearly with a "first tap each turn" untapper — and set their own minimum count — 2026-09-16
+
+**Claim:** Persistent Petitioners ("A deck can have any number of cards named Persistent Petitioners";
+"{1}, {T}: Target player mills a card" / "Tap four untapped Advisors you control: Target player mills
+twelve cards") doubles its rate under a commander that untaps each creature's first tap: N Petitioners
+give 2N tap events, so **6N cards milled per turn**, doubled again by Bruvac the Grandiloquent. But the
+four-Advisor cost sets a hard floor — below four Advisors the ability is simply off.
+**Evidence:** Oracle text of both cards. Cap's untap is once per creature per turn (CR 603.4), so each
+Petitioner contributes exactly two taps. Tapping to pay another permanent's cost ignores summoning
+sickness (302.6), so Petitioners cast this turn still work. "Target player" is singular — milling a
+three-opponent pod is ~300 cards, three separate jobs.
+**Changes:** When adding an any-number card to a deck with a repeatable untapper, compute the rate as
+(copies × taps per copy) ÷ (cost in bodies), and check the floor first: a 4-body activation cost means
+four copies is the minimum that does anything, and one removal spell turns it off. Count the commander's
+creature types — a Soldier commander does not help an Advisor cost.
+**Source:** cap-living-legend — Petitioners package on Captain America, Living Legend.
+
+### Bracket is how reliably the deck wins, not its Game Changer count — 2026-09-16
+
+**What happened:** Asked whether a Persistent Petitioners deck would be Bracket 4, I answered "Bracket 2
+or 3" because the entire mill core carries zero Game Changers. The pilot corrected me: *"an engine is
+actually more important to what qualifies as a bracket 4 than what GCs you're running. you can have 0 GCs
+and win every single time on turn 5, that's not a bracket 3 deck, that's a bracket 4 deck."*
+**Cause:** I presented the hard criteria (GC cap, two-card infinites, mass land denial, chained extra
+turns) as the definition. They are a **floor** — things that force a deck upward — not a measure of power.
+Wizards' own text for Bracket 4 is about power and consistency ("Bring out your strongest decks and cards",
+"explosive starts, strong tutors, cheap combos"), and a deck that wins on a fixed early turn every game
+belongs there regardless of what its card list trips.
+**Guard:** Answer "what bracket is this?" in two parts, always: (1) the hard criteria that set a floor, and
+(2) the honest power read — what turn does it win, how consistently, and can the table interact with the
+plan. Never give (1) alone. This refines "The Game Changer count, not a combo, is usually what makes a list
+Bracket 4" (2026-09-08), which is a diagnosis heuristic for an existing list, not a definition of bracket.
+**Source:** cap-living-legend — Petitioners deck bracket question.
+
+### Two free "{T}: untap target permanent" creatures untap each other forever — and any "on untap" payoff makes it a win — 2026-09-16
+
+**Claim:** Kelpie Guide, Ioreth of the Healing House, Marvin Murderous Mimic and Aphetto Alchemist form a
+cluster: **any two of them is a two-card infinite untap**, at no mana. Pair that with Mesmeric Orb
+("whenever a permanent becomes untapped, that permanent's controller mills a card") and it is a free,
+instant-speed mill-out — i.e. a Thassa's Oracle win.
+**Evidence:** Kelpie Guide "{T}: Untap another target permanent you control"; Ioreth "{T}: Untap another
+target permanent". Cycle: tap A to untap B, tap B to untap A — the board returns to its prior state with no
+resource spent. Chosen, not mandatory, so CR 104.4b never applies; it is simply unbounded. A commander with
+a once-per-creature untap (intervening-if, 603.4) can never be the engine of this — it only ever adds a
+fixed +1 per creature.
+**Changes:** Run **at most one** of that cluster. Before adding any repeatable free untapper, check the deck
+for an "on untap" or "on becomes tapped" payoff — the payoff is what converts a harmless loop into a win.
+Also keep **Basalt Monolith** out of any Mesmeric Orb deck: it untaps itself for {3} while tapping for
+{C}{C}{C}, which is net-zero mana and therefore infinite self-mill on its own.
+**Source:** cap-living-legend — Petitioners mill audit (mtg-rules-expert, CR 2026-08-07).
+
+### Losing to an empty library is a state-based action you cannot respond to — 2026-09-16
+
+**Claim:** An empty library is not itself a loss; you lose only when you *attempt to draw* from it, and that
+loss happens before anyone gets priority. So a "win with an empty library" deck must empty out **after** its
+draw step, and Thassa's Oracle is strictly the safest payoff.
+**Evidence:** CR 104.3c ("draw the remaining cards and then lose the game the next time a player would
+receive priority"), 704.5b, and 117.5/704.3 — SBAs are checked before a player gets priority and before
+triggers go on the stack. Thassa's Oracle checks on **resolution of a triggered ability** with no draw
+involved; killing the Oracle in response does not stop it (603.3 — the trigger is independent; devotion is
+recounted per 608.2h, but 0 ≥ 0 still holds). Laboratory Maniac and Jace, Wielder of Mysteries both require
+actually attempting the draw, so they must survive a full turn cycle. CR 104.3f: simultaneous win and loss
+is a loss.
+**Changes:** In any self-mill deck, run the Oracle as the primary and the draw-replacement cards as backup,
+and treat "an opponent makes me draw" as the real answer to play around — not creature removal.
+**Source:** cap-living-legend.
+
+### "Whenever a player mills one or more X" triggers once per mill EVENT, not per card — 2026-09-16
+
+**Claim:** Zellix, Sanity Flayer makes one Horror per mill *instruction*, so ten small mills beat one
+Traumatize. The same shape applies to every "one or more" trigger.
+**Evidence:** CR 603.2c — an ability triggers once each time its trigger event occurs; one mill instruction
+is one event however many cards it moves. Bruvac the Grandiloquent doubles the *cards* milled, not the
+number of triggers.
+**Changes:** When a payoff says "one or more", count the deck's number of separate instructions, not its
+total volume — and prefer repeatable small effects (Persistent Petitioners' "{1}, {T}: mills a card") over
+one big sorcery for those payoffs.
+**Source:** cap-living-legend.
+
+### When two replacement effects apply, the AFFECTED player chooses the order — 2026-09-16
+
+**Claim:** With Bruvac the Grandiloquent and The Water Crystal both out, the opponent being milled picks
+which applies first, and will pick the one that mills them less. Plan on the smaller number.
+**Evidence:** CR 616.1 — if two or more replacement effects would apply to the same event, the affected
+player (or that permanent's controller) chooses one to apply. Bruvac doubles; Water Crystal adds four.
+Applying Bruvac first to N gives 2N+4; Water Crystal first gives 2N+8.
+**Changes:** Never add two mill multipliers and quote the best-case number; the victim controls the order.
+The same rule governs stacked damage-prevention and life-gain replacements aimed at opponents.
+**Source:** cap-living-legend.
+
+### An untapper commander only doubles the card types it can actually untap — 2026-09-16
+
+**Claim:** Captain America, Living Legend untaps *creatures* on *your* turn. Every artifact, land and
+sorcery in the deck gets nothing from the commander, so an artifact-based version of the same effect is
+worth half as much as a creature-based one.
+**Evidence:** Oracle text — "whenever a creature you control becomes tapped during your turn". Confirmed
+locally with `bun run card`. Consequence: Millstone/Codex Shredder/Keening Stone/Grindstone/Helm of
+Obedience are single-activation cards here, while Cathartic Adept, Vantress Gargoyle, Zellix and Stitcher
+Geralf all activate twice per turn.
+**Changes:** For any untapper commander, sort the candidate payoff pool by card type first and drop the
+types the commander cannot untap — before comparing individual cards on power.
+**Source:** cap-living-legend — Petitioners mill build.
+
+### Affinity makes an {X}{X} artifact creature free at X = artifacts ÷ 2 — X is chosen before the reduction — 2026-09-16
+
+**Claim:** Under an affinity-for-artifacts grant (Mycosynth Golem: *"Artifact creature spells you cast have affinity for artifacts"*), Walking Ballista or Hangarback Walker is cast at X = half your artifact count for {0}, because X is announced first and the affinity reduction is applied to the total afterwards.
+**Evidence:** CR 601.2b (X is announced as the spell is cast) · CR 601.2f (the total cost is the mana cost, then increases, then reductions, floored at {0}) · CR 702.41a (*"This spell costs {1} less to cast for each [artifact] you control"*). Ten artifacts: X = 5, total {10}, reduced by {10}.
+**Changes:** In an artifact deck with an affinity grant, score X-cost artifact creatures as *free bodies sized to the board*, not as mana sinks — the affinity card is their best enabler, and the deck's own gameplan should say so.
+**Source:** ultron — Hangarback Walker evaluation; the Mycosynth Golem line was missing from the gameplan for Ballista too.
+
+### An anthem turns the X = 0 copy problem off — a copied Ballista or Hangarback lives under +2/+2 — 2026-09-16
+
+**Claim:** The "never copy an X-cost artifact, the token is a 0/0" rule (ledger 2026-09-04) has an exception: a static +N/+N that covers the token (Ultron, Machine Overlord for Constructs, Forsaken Monument for colourless creatures) applies continuously, so the 0/0 token never has toughness 0 and survives as an N/N with no counters.
+**Evidence:** CR 704.5f (toughness 0 or less is put into the graveyard as a state-based action) · CR 611.3a (a static ability's continuous effect applies as long as the source is on the battlefield) — the anthem is already applying when state-based actions are checked. Walking Ballista's token then has its {4} counter ability; Hangarback Walker's token has {1},{T}.
+**Changes:** When an X-cost artifact is proposed for a copy-on-enter deck, check the deck's anthems before writing "never pay for the copy" — the honest line is "never, unless [anthem] is out."
+**Source:** ultron — Hangarback Walker in for Scrap Trawler.
+
+### An Aura that enchants a PLAYER can never be moved — and it dies with its victim — 2026-09-16
+
+**Claim:** A player-enchanting Aura (Fraying Sanity, most Curses) is locked to the player you cast it on.
+When that player leaves the game it goes to its OWNER's graveyard as a state-based action, and no
+"attach target Aura" effect can ever re-aim it.
+**Evidence:** The victim is chosen as the spell is cast (CR 115.1b, 601.2c) and targets can't change except
+where an effect explicitly says so (115.1); the Aura permanent targets nothing thereafter. CR 702.5d is the
+load-bearing rule: "Auras that can enchant a player can target and be attached to players. Such Auras can't
+target permanents and can't be attached to permanents" — so Aura Graft ("attached to a permanent") and
+Crown of the Ages ("attached to a creature") can never touch one, and an illegal attach attempt simply fails
+(701.3b, 303.4j). When the player leaves: 800.4a removes only objects *that player owns* (yours stays),
+701.3d counts the departure as "becoming unattached", and 704.5m / 303.4c then bin it in the same SBA loop —
+no player gets priority in between (704.3).
+**Changes:** Treat every player-Aura as a **one-opponent card with front-loaded value**. The only way to aim
+it at a second player is a fresh entry onto the battlefield — recast, blink, reanimate or copy it, where
+303.4f lets you choose a new player as it enters. Budget recursion (Sevinne's Reclamation reaches mana value
+3; Hall of Heliod's Generosity puts an enchantment on top of your library) or run an "each opponent" effect
+instead. Also: **hexproof does NOT remove or stop an attached Curse** (115.1b — the permanent doesn't
+target), but **protection does** (702.16c puts it in the graveyard as an SBA).
+**Source:** cap-living-legend — Fraying Sanity in the Petitioners mill deck.
+
+### Milling a player to zero does not eliminate them — they die at their next draw — 2026-09-16
+
+**Claim:** An empty library is not a loss condition. The player survives until they are *required to draw*,
+which in a four-player pod can be up to three full turns later — and every mill effect pointed at them in
+the meantime does literally nothing.
+**Evidence:** CR 104.3c — "If a player is required to draw more cards than are left in their library, they
+draw the remaining cards and then lose the game the next time a player would receive priority", implemented
+as the SBA in 704.5b. There is no state-based action for an empty library, and 608.2d/121.3 confirm an empty
+library doesn't make drawing impossible. Milling an empty library mills zero cards (701.17a).
+**Changes:** The moment an opponent's library is empty, **switch targets** — further mill at them is wasted.
+Count a mill deck's clock as "turns until each opponent's next draw step", not "cards remaining". Watch for
+graveyard-shuffle effects, which put the victim back in play and make your mill live again.
+**Source:** cap-living-legend.
+
+### "At the beginning of each end step" means EVERY player's end step — 2026-09-16
+
+**Claim:** Fraying Sanity triggers four times per turn rotation in a four-player game, not once, and its X is
+recounted each time — counting every card put into that player's graveyard from ANY source that turn, not
+just cards you milled.
+**Evidence:** Oracle text "At the beginning of each end step, enchanted player mills X cards, where X is the
+number of cards put into their graveyard from anywhere this turn." Gatherer rulings: X counts cards put there
+regardless of whether the Aura was on the battlefield at the time and even if they have since left the
+graveyard; multiple copies compound because they resolve one at a time. Removing the Aura in response to its
+own trigger does not stop the mill (113.7a, 608.2h) — only the player leaving does.
+**Changes:** Read "each end step" as a per-rotation multiplier when costing a card, and value effects that
+fill the victim's own graveyard (their discards, their creatures dying) as feeding it.
+**Source:** cap-living-legend.
+
+### Named variant lists by build order — a play report got filed against the wrong list — 2026-09-17
+
+**What happened:** In one folder I named the first Petitioners build `DECK-PETITIONERS.md` (8 copies inside
+an Advisor toolbox) and the later "as many Petitioners as possible" build `DECK-MILL.md` (33 copies). When
+the pilot said *"I love playing the petitioners deck"*, I recorded it against the 8-copy list and wrote a
+comparison telling them the 8-copy list was the one they enjoy. They had been playing the 33-copy list, and
+asked *"how come the mill deck is actually the one with the petitioners and not the one called
+petitioners?"*
+**Cause:** The file names described the order the lists were made, not what distinguishes them — and the
+pilot naturally refers to a list by what's in it. I then matched their informal name to a file name without
+checking which import file they had actually used.
+**Guard:** Name a variant list after the thing that sets it apart from its siblings (the win condition, the
+engine, the copy count), never after its build order or a theme every sibling shares. When a pilot reports
+on a list by an informal name and more than one list could fit, **confirm which file they played before
+recording the report** — ask for the import file or a distinguishing card count.
+**Source:** cap-living-legend — `DECK-MILL.md` ⇄ `DECK-PETITIONERS.md` rename.
+
+### Untap-step mill resolves in your upkeep — BEFORE your draw step — 2026-09-17
+
+**Claim:** Mesmeric Orb (and any "whenever a permanent becomes untapped" mill) mills you during your own
+upkeep, after your permanents untap and immediately before your draw. In a win-by-empty-library deck it can
+take your library to zero right before a mandatory draw, and you lose.
+**Evidence:** CR 501.1 (the beginning phase is untap, upkeep, draw, in that order); 502.4 (nothing resolves
+during the untap step — triggers are held until a player would next receive priority, "usually during the
+upkeep step"); 503.1a (those triggers go on the stack at the start of upkeep, before the active player gets
+priority); 104.3c / 704.5b (drawing from an empty library loses at the next state-based check). The same trap
+applies to a self-targeted end-step mill (Fraying Sanity enchanting yourself) that empties you on an
+opponent's turn.
+**Changes:** In a self-mill deck, land the draw-replacement piece (Jace, Wielder of Mysteries or Laboratory
+Maniac) BEFORE any mill source that can fire between your main phases. Without one, enter your turn with at
+least (permanents that will untap + 1) cards. Thassa's Oracle cannot rescue you from this — it has no flash,
+so it can only be cast in a main phase, which comes after the draw step. Empty yourself in main phase 1 and
+cast the Oracle in the same turn, or have Jace/Lab Man out first.
+**Source:** cap-living-legend — pilot asked how to win by decking themselves without losing.
+
+### A "target player draws N" spell is both a mill finisher and an instant kill on a decked opponent — 2026-09-17
+
+**Claim:** Aimed at a milled-out opponent, any draw-N spell makes them lose immediately instead of at their
+next draw step. Aimed at yourself with Laboratory Maniac or Jace, Wielder of Mysteries on the battlefield, it
+wins once your library runs dry partway through — so a self-mill deck does not need to mill to exactly zero.
+**Evidence:** CR 121.2 — "Cards may only be drawn one at a time. If a player is instructed to draw multiple
+cards, that player performs that many individual card draws", so a replacement like Lab Man's applies to the
+first individual draw from an empty library. CR 121.4 / 104.3c — a player who attempts to draw from an empty
+library loses the next time a player would receive priority. Mathemagics ({X}{X}{U}{U}, "target player draws
+2^X cards", mana value 2): X=0 costs {U}{U} and draws 1, which kills an opponent at zero; X=4 costs 10 and
+draws 16. Without a draw-replacement on the battlefield, aiming it at yourself for more than your library
+loses you the game.
+**Changes:** In any mill deck, count a cheap targeted draw spell as a **closer**: it removes the up-to-three-
+turn wait between emptying a library and that player losing. Prefer the exponential version (Mathemagics)
+for self-wins; instant versions (Stroke of Genius, Blue Sun's Zenith) trade efficiency for killing at instant
+speed. Mathemagics' mana value of 2 also makes it findable by MV-2 transmute tutors (Muddle the Mixture).
+**Source:** cap-living-legend — pilot asked whether Mathemagics belongs in the self-mill Petitioners list.
+
+### In a self-mill deck, count recursion by WHERE it can be cast from — 2026-09-17
+
+**Claim:** Hand-only recursion (Raise the Past, Return to the Ranks) fails in exactly the situation a
+self-mill deck creates: an empty hand and a full graveyard. Only recursion castable from the graveyard —
+flashback (Sevinne's Reclamation), aftermath (Dusk // Dawn's Dawn half) — is load-bearing there.
+**Evidence:** Oracle text. Raise the Past and Return to the Ranks have no graveyard-casting clause. Sevinne's
+Reclamation: "Flashback {4}{W}", and "If this spell was cast from a graveyard, you may copy this spell."
+Dawn: "Aftermath (Cast this spell only from your graveyard. Then exile it.) Return all creature cards with
+power 2 or less from your graveyard to your hand." Once a library is empty, every card the player owns is in
+hand, graveyard, on the battlefield or in exile — so a graveyard-castable recursion spell is guaranteed to be
+reachable unless it has already been used.
+**Changes:** When building a win-by-self-mill list, run at least two graveyard-castable recursion spells that
+reach the win condition, and check each win piece's mana value and card type against them (a planeswalker
+like Jace, Wielder of Mysteries is reachable by none of these).
+**Source:** cap-living-legend — "can I start milling myself and pick them up from the graveyard?"
+
+### Thassa's Oracle does not need an empty library — every on-colour permanent raises the bar — 2026-09-17
+
+**Claim:** Thassa's Oracle wins whenever your devotion to blue is at least the number of cards left in your
+library, and the Oracle itself counts. In a deck of blue creatures, that can be a double-digit number.
+**Evidence:** Oracle text — "look at the top X cards of your library, where X is your devotion to blue … If X
+is greater than or equal to the number of cards in your library, you win the game. (Each {U} in the mana costs
+of permanents you control counts toward your devotion to blue.)" Persistent Petitioners ({1}{U}) is 1 each;
+the Oracle ({U}{U}) is 2. Ten Petitioners on the battlefield plus the Oracle = 12: a win with 12 cards left.
+**Changes:** With the Oracle in hand, stop milling at your devotion count rather than zero — that leaves a
+buffer against the upkeep self-mill trap. With the Oracle still in the library, milling to zero is what
+guarantees it is reachable.
+**Source:** cap-living-legend.
+
+### Phasing never re-triggers an ETB — and phasing out in response shrinks devotion — 2026-09-17
+
+**Claim:** A permanent that phases out and back in does not "enter the battlefield", so enters-triggers
+(Thassa's Oracle's) do not fire again. And if an ETB that counts devotion is already on the stack, phasing
+out your own permanents in response lowers the count it will use.
+**Evidence:** CR 702.26d — "The phasing event doesn't actually cause a permanent to change zones … Zone-change
+triggers don't trigger when a permanent phases in or out." CR 702.26b — a phased-out permanent "is treated as
+though it does not exist." CR 700.5 — devotion counts mana symbols "among the mana costs of permanents that
+player controls", so phased-out permanents add nothing. CR 113.7a — the trigger itself still resolves after its
+source phases out. Thassa's Oracle computes X (devotion) on resolution.
+**Changes:** Never plan to reuse an ETB with a phasing effect — only a real zone change (blink, die and return,
+recursion) re-triggers it. In a devotion-to-X win (Thassa's Oracle), a mass phase-out such as Teferi's
+Protection in response drops devotion to zero, so the win then needs an EMPTY library; win at zero cards if a
+protection spell might be needed, rather than leaning on the devotion buffer.
+**Source:** cap-living-legend — "does Thassa's ETB still trigger if I phase her out?"
+
+### A damage-prevention shield makes painful fast mana free — and the mana ability still resolves — 2026-09-22
+
+**Claim:** Under a "prevent all damage that would be dealt to you" effect, every self-damaging
+accelerant (Ancient Tomb, Mana Vault, Grim Monolith, City of Traitors, painlands) costs nothing,
+because the damage is erased but the mana is still added. The same shield simultaneously turns OFF
+any card of yours that triggers on a creature dealing damage to you (No Mercy).
+**Evidence:** CR 615.6 — *"If damage that would be dealt is prevented, it never happens."* CR 603.2g
+— *"An event that's prevented or replaced won't trigger anything,"* whose own example is an ability
+that triggers on damage being dealt. But Ancient Tomb's *"{T}: Add {C}{C}. This land deals 2 damage
+to you"* is a single **activated mana ability** (CR 605.1a — no target, could add mana, and CR 605.1
+*"regardless of what other effects they may generate"*), which resolves immediately without the
+stack (CR 605.3b), so the mana is added and only the damage event is erased. Mana Vault's trigger
+event is *the beginning of your draw step*, not damage (CR 603.2b), so it still triggers, goes on
+the stack and resolves (CR 603.4) — with the damage prevented. Verified against
+`rules/sections/615-prevention-effects.md`, `603-handling-triggered-abilities.md`,
+`605-mana-abilities.md`.
+**Changes:** In a deck running Glacial Chasm (or any personal damage shield), score painful fast
+mana as strictly better than in a generic deck — the drawback is deleted while the acceleration is
+not. Apply the same check in reverse before seating any "whenever a creature deals damage to you"
+card (No Mercy, Stuffy Doll redirects) alongside the shield: the shield blanks it. Note the shield
+does **not** stop life loss (CR 615.1a, 119.3), so Seizan/Sheoldred-style drains still land.
+**Source:** lord-of-pain — "we don't have enough fast mana" in the Bracket 4 list.
+
+### Cost reducers are not mana sources — count what TAPS, and let deckcheck do it — 2026-09-22
+
+**Claim:** A "Ramp & cost reduction" section header is not a mana-source count. Medallions,
+Helm of Awakening, Semblance Anvil and Cloud Key reduce costs and tap for nothing; folding them
+into the source count inflates the figure and hides a real shortage.
+**Evidence:** lord-of-pain `research/decisions.md` recorded *"43 mana sources (35 lands + 7 rocks +
+Mana Flare)"* against a 9-card ramp section. `bun run deckcheck --file decks/lord-of-pain/DECK.md`
+reports **"Mana sources: lands 35 + rocks 5 = 40"** — Jet Medallion and Ruby Medallion are
+reducers, Rakdos, Lord of Riots is a reducer, and Mana Flare is symmetric (it gives three opponents
+what it gives you). The three-card gap was the whole of the deck's fast-mana problem.
+**Changes:** Never derive a mana-source count by reading a section header or summing a role row.
+Run `bun run deckcheck --file <list>` and quote its figure; if a card doesn't tap for mana, it
+belongs in a reducer count, stated separately. Same §1.4 trap as the swap list and the sideboard —
+a hand-maintained number drifts from the list it describes.
+**Source:** lord-of-pain — re-deriving the ramp count during the fast-mana pass.
+
+### An "Nth time this ability has resolved this turn" ladder counts RESOLUTIONS — a trigger doubler climbs it, and the drain rung is once per turn — 2026-09-22
+
+**Claim:** Vito, Fanatic of Aclazotz (*"Whenever you sacrifice another permanent, you gain 2 life if
+this is the first time this ability has resolved this turn. If it's the second time, each opponent
+loses 2 life. If it's the third time, create a 4/3 … token"*) with Roaming Throne naming Vampire:
+ONE sacrifice makes the ability trigger twice, and the two instances resolve as the first and second
+time — gain 2, then each opponent loses 2. A second sacrifice gives the third (the 4/3 flier) and a
+fourth resolution that does nothing. Without Throne the same ladder needs three sacrifices. Either
+way the drain rung fires **once per turn** — Vito's drain is capped at 2 per opponent per turn no
+matter how much you sacrifice.
+**Evidence:** CR 603.2d (triggers an additional time; each instance is a separate object per 603.3),
+603.4 (the "if this is the first time" clause follows "you gain 2 life", not the trigger condition,
+so it is not an intervening-if), 608.2h (the count is read as each instance resolves), 707.10b and
+603.7h (the game counts resolutions of "the same ability" per turn). Verified by mtg-rules-expert
+against rules version 2026-08-07.
+**Changes:** Score any "first/second/third time this ability has resolved" card as a per-turn cap,
+not a per-event drain — it competes with uncapped per-death drainers (Blood Artist, Zulaport
+Cutthroat, Elas il-Kor) on a different axis. Count trigger doublers as ladder accelerators — but
+only doublers whose wording matches: Throne (a Vampire's trigger) does, Teysa Karlov does NOT
+(sacrifice triggers are not dies triggers — see the 2026-09-10 Teysa entry).
+**Source:** edgar-markov — evaluating Vito, Fanatic of Aclazotz as a lower-salt commander for the drain
+list.
+
+### Replacing a commander: measure identity loss, page coverage and salt before arguing — 2026-09-22
+
+**Claim:** Three scripted measurements settle most of a "swap the commander, keep the deck" question
+before any card argument: `bun run card --deck <list> --id <new identity>` (exactly which cards
+leave), `bun run edhrec --deck <list> --commander "<candidate>"` (how much of the list that
+candidate's field already runs), and `bun run edhrec card "<candidate>"` (salt).
+**Evidence:** Edgar Markov (salt 2.05/4 — every candidate below is under 0.6) → Orzhov costs the
+SACRIFICE list 13 cards (9 red lands, Edgar, Chaos Warp, Infantry Shield, Purphoros) and the live
+list 19 (12 lands/Edgar + Florian, Chaos Warp, Purphoros, Shared Animosity, Stromkirk Captain,
+Vampire Socialite, Warleader's Call). A Scryfall scan of all 37 exact-Mardu commanders found no
+drain commander except Zurgo Stormrender (drains only when a *token* leaves while not attacking), so
+the archetype's commanders are Orzhov. Coverage of the SACRIFICE list on each candidate's page:
+Elenda 69/94 · Edgar, Charmed Groom 61/94 · Vito, Fanatic 56/95 · Elas il-Kor 49/95 · Teysa Karlov
+49/95.
+**Changes:** Run the three measurements first. The "keep all three colours" instinct was wrong here:
+the drain half of a Mardu list was already Orzhov, and red was mostly mana. A non-Vampire commander
+in a Vampire list also needs the SKILL §1.3 self-hit audit — Olivia's Wrath (−X/−X to each
+non-Vampire) and Anowon (each player sacrifices a non-Vampire) both punish Elas / Teysa in the
+command zone.
+**Source:** edgar-markov — lower-salt commander search.
+
+### A commander swap must replace the commander's JOB, not its colours — measure which half of the engine it supplied — 2026-09-22
+
+**What happened:** Asked for a lower-salt commander for the Edgar drain list, I ranked Orzhov *drain*
+commanders (Elas il-Kor, Teysa Karlov, Vito Fanatic) on salt, identity loss and page coverage. The
+pilot asked "how do we have token makers?" — and the measurement shows the drain was never Edgar's
+job. The 99 drains; Edgar supplied the **bodies**.
+**Evidence:** `bun run carddata --file DECK-SACRIFICE.md`: 33 of the 37 creature cards are Vampires,
+so eminence is 33 free 1/1 Vampire tokens per deck, one per Vampire cast. With Edgar gone the list
+holds 9 creature-token sources (Bloodline Keeper, Charismatic Conqueror, Elenda, Clavileño, Edgar
+Charmed Groom's Coffin, Carrier Thrall, Elspeth's +1, Black Market Connections, Infantry Shield — the
+last is red and leaves) of which only Bloodline Keeper, Elspeth and the Coffin repeat every turn.
+Every drain candidate I ranked adds zero bodies.
+**Changes:** Before ranking replacement commanders, write down what the old commander *produced per
+game* (bodies, mana, cards, damage) and check that either the new commander or the 99 replaces that
+output. Fodder engines that fill an eminence-sized hole in Orzhov: Oketra's Monument (token per
+creature spell cast — the closest 99-card analogue to eminence), Bitterblossom and Ophiomancer (per
+upkeep), Sorin, Lord of Innistrad and Legion's Landing // Adanto (Vampire tokens per turn), Mavren
+Fein (per attack), Pawn of Ulamog (per nontoken death). Commanders that supply bodies themselves:
+Caesar, Legion's Emperor (Mardu — two tokens per attack for one sacrifice, 98 of 99 cards unchanged),
+Teysa, Orzhov Scion (Spirit per black creature death — 32 of the 37 creatures qualify), Edgar,
+Charmed Groom (Coffin token per upkeep), Denethor (token per turn a creature died + drain outlet).
+**Source:** edgar-markov — the pilot's question caught it.
+
+### Score an aristocrats commander by which of the loop's three jobs it does from the command zone — 2026-09-22
+
+**Claim:** The tokens → sacrifice → drain loop has exactly three jobs (make bodies, an outlet, a
+per-death payoff). A commander is worth ranking by how many of the three it covers itself, because
+every job it covers is one the 99 need not draw into. Salt and colour depth are the tie-breaks.
+**Evidence:** Scryfall scan of every commander-legal legend with a token-making or death/sacrifice
+drain clause (`is:commander o:create o:token (o:"each opponent loses" …)` and the dies/sacrifice
+variant), EDHREC salt via `bun run edhrec card`, oracle via `bun run card`. Two-job commanders,
+salt out of 4: Zurgo Stormrender WBR 0.28 (mobilize bodies + "creature token leaves the
+battlefield: draw if it was attacking, otherwise each opponent loses 1"), Caesar WBR 0.48 (two
+Soldiers + a forced sacrifice per attack), Slimefoot BG 0.22 ({4}: Saproling + 1 damage each
+opponent per Saproling death), Chatterfang BG 0.96 (extra Squirrel per token event + {B} sac-X
+outlet), Dina BG 0.40 (gain → each opponent loses 1 + {1} sac outlet), Ayara B 0.41 (black creature
+enters → drain + tap-sac draw), Anje BR 0.35 ({2} sac → 2 each), Bontu B 0.00 ({1}{B} sac → 1
+each), Ghave WBG 0.29 (counter → Saproling, sac → counter), Wilhelt UB 0.52 (decayed Zombie per
+Zombie death + end-step sac draw), Gisa B 0.19 (sac → X Zombies). One-job: Teysa Karlov WB 0.53,
+Elas WB 0.43, Thalisse WB 0.29, Endrek Sahr B 0.27, Sek'Kuar BRG 0.22, Mazirek BG 0.36. Over 0.7 and
+therefore off the table for a "no salt" brief: Korvold 1.65, Chatterfang 0.96, Lathril 0.91,
+Marneus 0.87, Prossh 0.80, Meren 0.74. Edgar Markov sits at 2.05.
+**Changes:** Ask "which of the three jobs does the commander do?" before "which colours?". A
+one-job drain commander (Elas, Teysa) leaves both bodies and outlet to the 99 — the trap fallen into
+earlier this same day (see the "replace the commander's JOB" correction). Chatterfang + Pitiless
+Plunderer + any free outlet is an automatic infinite (each Squirrel death makes a Treasure token,
+which makes a Squirrel), so that pairing is out under the pilot's loop policy.
+**Source:** drain-from-scratch brief — "squirrels or fish or whatever, create tokens, sac em, drain".
+
+### A token sacrificed at the end step is no longer "attacking" — Zurgo Stormrender's own mobilize token drains rather than draws — 2026-09-22
+
+**Claim:** Zurgo Stormrender (*"Whenever a creature token you control leaves the battlefield, draw a
+card if it was attacking. Otherwise, each opponent loses 1 life."*) reads the token's last-known
+state. A token that leaves during combat (sacrificed after blocks, killed by a blocker) was attacking
+and draws; the same token sacrificed at the end step — which is when mobilize tokens go — was not,
+and drains 1 from each opponent. The ability triggers once per token in a wipe and still fires if
+Zurgo dies in the same wipe.
+**Evidence:** CR 702.181a (mobilize: sacrifice at the beginning of the next end step), 511.3 (all
+creatures are removed from combat as the end-of-combat step ends), 506.4 (a creature removed from
+combat stops being an attacking creature), 508.1k, 603.6c and 603.10a (leaves-the-battlefield
+triggers look back in time, so a sacrifice-as-cost to Ashnod's Altar / Viscera Seer / Goblin
+Bombardment triggers it), 608.2h (the "if it was attacking" check uses last-known information; not an
+intervening-if per 603.4), 603.2c (one trigger per token), 111.7 (a token's zone-change triggers fire
+before it ceases to exist). Verified by mtg-rules-expert against rules version 2026-08-07.
+**Changes:** For any "if it was attacking" or "if it was [state]" leaves trigger, the state is read
+from LKI at the moment it left, and combat status ends with the combat phase. Mobilize / "sacrifice
+at the next end step" tokens are therefore *non-attacking* when they die — they feed the drain half
+of Zurgo, never the draw half. To draw off Zurgo, sacrifice tokens after blockers are declared.
+**Source:** drain-from-scratch brief — Zurgo Stormrender evaluated as the commander.
+
+### Salt is a constraint to REPORT, not an objective to minimise — rank on power first — 2026-09-22
+
+**What happened:** The brief was "a drain deck that avoids the saltiness of Edgar". I read that as
+"pick the lowest-salt commander" and led with Zurgo Stormrender (0.28) over stronger engines. The
+pilot: *"we don't also just want the lowest salt one. we want something that's the best but if it has
+a high salty factor let me know."*
+**Evidence:** EDHREC salt out of 4 for the loop's strongest commanders — Korvold 1.65, Chatterfang
+0.96, Prossh 0.80, Teysa Karlov 0.53, Caesar 0.48, Ghave 0.29, Zurgo 0.28 — against Edgar at 2.05.
+Everything on the list is under half of Edgar; only Korvold is in the format's genuinely salty band.
+**Changes:** Rank commanders on what they do for the plan, then attach the salt score and the *play
+pattern* the pod will actually object to (a two-card infinite reputation, free command-zone value,
+mass edicts). Present the flag; let the pilot decide the trade. "Avoid X's saltiness" means "don't
+hand me another X", not "minimise the number".
+**Source:** drain-from-scratch brief. The pilot corrected the axis.
+
+### Fair-build exclusions for the strong token/sacrifice commanders — the pairings that go infinite — 2026-09-22
+
+**Claim:** Each of the high-power aristocrats commanders has a short list of 99-card pairings that
+form an automatic (no-choice) infinite. Cut the pairing, keep the commander; the pilot's loop policy
+bans only unstoppable loops (see the 2026-09-06 loop-policy memory).
+**Evidence:** From oracle text, all verified with `bun run card` on 2026-09-22:
+- **Chatterfang** (*"If one or more tokens would be created under your control, those tokens plus
+  that many 1/1 Squirrels are created instead. {B}, Sacrifice X Squirrels: …"*) + **Pitiless
+  Plunderer** (*"Whenever another creature you control dies, create a Treasure token"*): sacrifice a
+  Squirrel → Treasure + Squirrel; the Treasure pays Chatterfang's own {B}. Two cards, infinite deaths.
+  No free outlet even needed. Plunderer is the one hard exclusion.
+- **Ghave** (*"{1}, Remove a +1/+1 counter…: create a Saproling. {1}, Sacrifice a creature: put a
+  +1/+1 counter on target creature"*) + a mana-producing outlet (Ashnod's Altar, Phyrexian Altar,
+  Plunderer) + a counter-on-enter source (Cathars' Crusade, Ivy Lane Denizen) = infinite. Also
+  Doubling Season / Parallel Lives + a mana outlet. The clean rule is "no mana-producing sacrifice
+  outlets" — which removes the three best outlets and 67 % of Ghave lists run Ashnod's Altar.
+- **Prossh** (X Kobolds on cast, free sac outlet) + **Food Chain** (exile a creature: 1 + MV mana for
+  creature spells): exile Kobolds and Prossh, recast bigger, net +5 mana per cycle, unbounded ETB
+  triggers. Prossh + Plunderer + Ashnod's Altar is also unbounded growth (each Kobold = 3 mana, each
+  recast costs 2 more and makes 2 more). Exclude Food Chain and the Plunderer + Altar pair.
+- **Teysa Karlov** (dies triggers twice) + Plunderer + a creature that returns for ≤ 2 mana
+  (Reassembling Skeleton, Nether Traitor): two Treasures per death pay the return. Exclude Plunderer
+  or the cheap recursive bodies.
+- **Zurgo Stormrender / Caesar / Slimefoot / Elas / Dina**: no automatic two- or three-card infinite
+  found in the search; Plunderer is safe with Zurgo because Treasures are not creature tokens.
+**Changes:** When a strong commander's reputation is "combo", write down the specific pairings before
+ruling it out; usually one card carries the infinite and the rest of the deck is fair. Grep this
+entry before seating Pitiless Plunderer in any token deck — it is the common thread.
+**Source:** drain-from-scratch brief — ranking on power with salt reported.
+
+### Any anthem or enters-with-counters effect turns OFF Skullclamp — check before adding either — 2026-09-22
+
+**Claim:** Skullclamp (*"Equipped creature gets +1/−1. Whenever equipped creature dies, draw two
+cards."*) only draws because a 1/1 becomes a 1/0 and dies to the toughness-0 state-based action. Any
+static anthem or "enters with a +1/+1 counter" effect raises toughness to 2, the creature survives,
+and Skullclamp becomes a bad Equipment that shrinks your team.
+**Evidence:** CR 704.5f (toughness 0 or less → graveyard as an SBA). Cathars' Crusade
+(*"Whenever a creature you control enters, put a +1/+1 counter on each creature you control"*),
+Intangible Virtue (*"Creature tokens you control get +1/+1"*), Divine Visitation (tokens become 4/4
+Angels) and Honored Dreyleader each blank it. Same family as the 2026-08-25 Welcoming Vampire entry
+(*a payoff gated on power/toughness reads the creature as modified*), now pointed the other way: there
+the anthem switched off a trigger, here it switches off a **cost**.
+**Changes:** In any token deck running Skullclamp — one of the strongest draw engines in the
+archetype, and four cards per body under Teysa Karlov — count the anthems before adding one. Reject
+Cathars' Crusade, Intangible Virtue, Divine Visitation and token-lords on that ground and say so,
+because they otherwise look like auto-includes in a go-wide list. If an anthem is wanted anyway,
+Skullclamp still works on the turn it is equipped to a freshly-made token *before* the anthem lands,
+but treat that as a corner case, not a plan.
+**Source:** chatterfang / teysa-karlov founding build — Cathars' Crusade is a pilot favourite and was
+cut on this ground.
+
+### Generate STATUS.md from DECK.md — the authoritative pair is exactly the §1.4 drift trap — 2026-09-22
+
+**Claim:** `DECK.md` and `STATUS.md` must hold the same 100 card names, and hand-maintaining the
+second copy is the same mistake as hand-maintaining the swap list, the sideboard and MOXFIELD.txt.
+Generate the names from `DECK.md` and hand-edit only the status column.
+**Evidence:** decks/README.md requires them to agree card-for-card; SKILL §1.4 records three separate
+drifts (bracket swap list ×3, sideboard across three files). On the 2026-09-22 founding of
+`decks/chatterfang/` and `decks/teysa-karlov/` the STATUS files were generated with a five-line awk
+script that copies each `N Card Name` line and appends ` — PROXY`, then verified with
+`diff <(grep -E '^[0-9]+ ' DECK.md) <(grep -E '^[0-9]+ ' STATUS.md | sed 's/ — .*$//')` — zero diff on
+both decks at first run.
+**Changes:** On any new deck, generate STATUS.md rather than typing it, and run that diff as part of
+the §1.5 validation block alongside `bun run card --deck` and `bun run deck:moxfield`. The status
+words are the only hand-maintained part, so a later `OWNED` edit survives regeneration only if the
+script is re-run carefully — prefer editing the status word in place once the file exists.
+**Source:** chatterfang / teysa-karlov founding build.
+
+### Drain is a mono-black mechanic — a drain deck's second colour buys MULTIPLICATION, not more drain — 2026-09-23
+
+**Claim:** When picking colours for a tokens → sacrifice → drain deck, do not compare colour pairs on
+how many drain payoffs they unlock, because black already has essentially all of them. Compare them on
+**token doublers and token engines**, where the pairs differ enormously.
+**Evidence:** Scryfall counts, 2026-09-23. Drain payoffs (`(o:"dies" …) (o:"each opponent loses" …)
+-t:land`, commander-legal): mono-B **46**, BG **51**, WB **50**, UB **49** — the second colour adds
+three to five cards. Token doublers (`o:"twice that many of those tokens"`): mono-B **0**, UB **0**,
+BG **3** (Parallel Lives, Doubling Season, Primal Vigor), WB **5** (Anointed Procession, Mondrak,
+Ojer Taq, Exalted Sunborn, Kaya Geist Hunter).
+**Changes:** **Blue is the worst second colour for this archetype** — zero doublers and ~3 extra
+drainers — which rules out the best Zombie commanders (Wilhelt 0.52 salt rank #50, Gisa and Geralf,
+Grimgrin, The Scarab God) on colour rather than on the Zombie theme, and it is why Golgari and Orzhov
+won. Green and white are the colours that multiply. The corollary: **the token creature TYPE is almost
+never the deciding factor** — Zombies, Squirrels, Spirits and Saprolings all sacrifice identically.
+What matters is whether the commander attaches a body to *every* token event (Chatterfang) or only to
+a closed subset (Wilhelt needs a Zombie to die to make a Zombie).
+**Source:** chatterfang / teysa-karlov — pilot asked "why squirrels and not zombies?".
+
+### Check commander legality on Un-set / playtest / Mystery Booster cards before proposing them — 2026-09-23
+
+**Claim:** `bun run card` reports `commander: not_legal` and it must be read, not skipped. Cards from
+playtest and Mystery Booster products look like normal cards in search results and on Scryfall pages.
+**Evidence:** Meatsqueak, Hoard Lord (set `mbc`) — *"Whenever another creature dies, create a Food
+token… For every seven Foods you control, Squirrels you control get +3/+3"* — reads as a playable
+Squirrel payoff and is **not commander legal**. The pilot found it on Scryfall and proposed it.
+**Changes:** The legality field on every `bun run card` call is load-bearing, not decoration. Say
+"not commander legal" explicitly when passing on such a card, so the pilot knows it is a format
+problem rather than an evaluation.
+**Source:** chatterfang — pilot's Squirrel shortlist.
+
+### Two "add a token to every token event" replacement effects plus a sac-Food-makes-a-token trigger is an infinite — 2026-09-23
+
+**Claim:** Camellia, the Seedmiser (*"Whenever you sacrifice one or more Foods, create a 1/1 green
+Squirrel"*) plus Tippy-Toe, Terrific Partner or Peregrin Took (*"If you would create one or more
+tokens, instead create those tokens plus an additional Food token"*) is an unbounded loop in any deck
+with a mana-positive sacrifice outlet: **the Food pays for itself.**
+**Evidence:** Crack a Food ({2}, {T}, sacrifice) → Camellia triggers → create 1 Squirrel → replacement
+effects apply in the controller's chosen order (CR 616.1): Tippy-Toe makes it 1 Squirrel + 1 Food,
+then Chatterfang makes it 3 Squirrels + 1 Food. The Food is replaced, you netted +3 bodies and +3 life,
+and Ashnod's Altar converts one new Squirrel back into the {2} for the next crack. Foods are artifacts,
+not creatures, so a Food made this turn can be tapped immediately — no summoning sickness (CR 302.6
+applies to creatures only).
+**Changes:** **Tippy-Toe or Peregrin Took alone is safe and bounded** — cracking a Food creates no
+token, so nothing refills it. The loop needs a card that makes a token *when a Food is sacrificed*.
+Before seating Camellia (or Witch's Oven-style engines) next to a Food-adding replacement effect,
+check for that trigger. General form: **a replacement effect that adds a resource to every token
+event becomes infinite the moment spending that resource creates a token.**
+**Source:** chatterfang — the pilot proposed the Tippy-Toe / Vito / Ashnod's Altar drain line and
+correctly called it bounded; it stops being bounded if Camellia joins.
+
+### The Camellia / Food loop, verified — apply the Food-adder BEFORE the token-doubler, and the loop works without the commander — 2026-09-23
+
+**Claim:** Refines the earlier 2026-09-23 entry on Camellia + Tippy-Toe with the verified mechanics.
+Three points that change how the line is played and evaluated.
+**Evidence:** Verified by mtg-rules-expert against rules version 2026-08-07.
+- **Ordering is a real choice and it is worth a body.** Both Tippy-Toe/Peregrin Took and Chatterfang
+  are "instead" replacement effects on one creation event (CR 614.1a), so CR 616.1e lets the affected
+  player pick the order, and CR 614.16 confirms a token-creation replacement still applies to tokens
+  produced by *another* replacement effect, with CR 614.5 capping each at one application.
+  **Food-adder first → 3 Squirrels + 1 Food. Doubler first → only 2 Squirrels + 1 Food.** Always
+  apply the Food-adder first.
+- **Net per iteration**, sacrificing one Squirrel to Ashnod's Altar to fund the {2}: with Chatterfang
+  and correct ordering, **+2 Squirrels, ±0 Foods, ±0 mana, +3 life, one creature dies**. Chatterfang
+  first: +1 Squirrel. **Without Chatterfang at all: exactly ±0 on everything but +3 life and one
+  death per iteration** — so it is still an infinite *drain*, just not a growing board. The loop
+  therefore survives the commander being removed or taxed out, which is unusual.
+- **A Food sacrificed to pay a COST still triggers "whenever you sacrifice a Food"** (CR 601.2h via
+  602.2b — the cost is genuinely paid; CR 603.2g, only prevented or replaced events fail to trigger).
+  The trigger goes on the stack above the Food's own ability (CR 603.3, 117.3c), so the tokens arrive
+  before the life gain. **A Food token made this turn can tap immediately** — CR 302.6 and 602.5a
+  restrict *creatures* only, and a Food is a noncreature artifact (CR 111.10b).
+- **Bonus line missed on the first pass:** Camellia's own *"{2}, Forage"* can pay by sacrificing a
+  Food (CR 701.61a), which re-triggers her own Squirrel-making ability. That is the same loop with a
+  **board-wide +1/+1 counter on every other Squirrel per iteration** stapled on, so it wins through
+  combat as well as drain.
+- Practical: keep the whole loop inside one step, because mana pools empty at the end of each step
+  and phase (CR 106.4). Fresh Squirrels are summoning sick and cannot attack that turn, but they can
+  be sacrificed, since sacrificing involves no tapping (CR 701.21a).
+**Changes:** When two token-creation replacement effects are on the battlefield, **work out the
+ordering before playing the turn** — it is a free extra body every iteration and it is easy to get
+backwards. And when judging whether a loop "needs the commander", compute the net per iteration
+without them; a loop that is merely neutral without the commander is still a loop.
+**Source:** chatterfang — verifying the pilot's proposed Food/Vito drain line before recommending it.
+
+### In an aristocrats deck combat is not a second axis — blocked creatures ARE the drain engine, so keep anthems — 2026-09-23
+
+**Claim:** Do not cut an anthem out of a token/sacrifice deck purely because it interferes with a
+Skullclamp-style toughness-1 payoff. In a deck whose creatures dying is profitable, a wide attacking
+board is a *second route to the same win*, not a distraction: blockers that eat your tokens fire every
+death trigger you own, and a defender you remove is a token that connects.
+**Evidence:** Pilot, 2026-09-23, on restoring Chitterspitter after I cut it for the Skullclamp
+conflict: *"yeah we want to win with drain but it doesn't hurt having more options like wideboard
+aggro which most people can't defend against… combat isn't always so bad because if our creatures get
+blocked or we take out one of their defenders PING.. WE'RE DRAINING BABYYY."* Mechanically correct —
+a token that trades in combat is a death trigger on every Blood Artist, Zulaport, Bastion, Mirkwood
+Bats and Vito in the list, so attacking costs nothing the deck wanted to keep.
+**Changes:** Supersedes the *practical weighting* of the 2026-09-22 Skullclamp entry, not its rules
+content: the rule (CR 704.5f, an anthem stops a 1/1 dying to +1/−1) still holds, but "turns off
+Skullclamp" is a **cost to weigh, not a veto**. Weigh it against how much the anthem buys the combat
+route, and against whether the deck has non-Squirrel/off-type 1/1s the Clamp can still use. Only cards
+that are *purely* anthem with no other text (Sylvan Anthem, Squirrel Sovereign) should lose on this
+ground alone. Same family as the pod-tendencies rule: **name the tension and let the pilot choose,
+never silently exclude.**
+**Source:** chatterfang — pilot restored Chitterspitter over my cut.

@@ -5,14 +5,21 @@
  *    bun run card "Chaos Warp"                 # one card: cost, type, identity, price, legality
  *    bun run card "Chaos Warp" --set msc       # pin a specific printing
  *    bun run card "Chaos Warp" --json          # raw normalized JSON
- *    bun run card --deck decks/x/DECK.md       # price a whole decklist (batched, one call)
- *    bun run card --deck decks/x/DECK.md --id ur   # also flag cards outside the {U,R} identity
+ *    bun run card --deck chatterfang           # price a deck's main list (batched, one call)
+ *    bun run card --deck chatterfang --list b4 # another list of the same deck
+ *    bun run card --deck chatterfang --id ur   # override the identity check (default: the commanders')
+ *    bun run card --deck some/list.txt         # a pasted `1x Card` list still works
  *    bun run search "t:witch id<=ur"           # raw Scryfall search syntax -> list
  *    bun run cards:refresh                      # re-pull every cached card (prices + oracle)
  *
  *  Only the deck-legality/identity flags are opinions; everything else is straight Scryfall. */
-import { getCard, getCards, refreshAll } from "./lib/card-cache.ts";
+import { existsSync } from "node:fs";
+import { getCard, refreshAll, resolveNames } from "./lib/card-cache.ts";
 import { parseDecklist } from "./lib/decklist.ts";
+import { listNames, pickList, type DeckList } from "./lib/deck-model.ts";
+import { slugFromDeckArg } from "./lib/deck-research.ts";
+import { readDeck } from "./lib/deck-store.ts";
+import { identityOf } from "./lib/deck-stats.ts";
 import { fetchCardByName, searchCards, type CardSummary } from "./lib/scryfall.ts";
 
 const args = process.argv.slice(2);
@@ -25,7 +32,7 @@ const hasFlag = (name: string): boolean => args.includes(name);
 
 /** Positional args (everything that isn't a flag or a flag's value). */
 function positionals(): string[] {
-  const flagsWithValue = ["--set", "--deck", "--id"];
+  const flagsWithValue = ["--set", "--deck", "--id", "--list"];
   const out: string[] = [];
   for (let i = 0; i < args.length; i++) {
     const a = args[i];
@@ -61,26 +68,40 @@ function printCard(c: CardSummary): void {
   console.log(`Art: ${c.artist || "?"}  ·  ${c.scryfallUri}`);
 }
 
-async function runDeck(path: string): Promise<void> {
-  const text = await Bun.file(path).text();
-  const names = parseDecklist(text);
+/** The names to price: a deck's list from `deck.json`, or a pasted `1x Card` file. */
+async function deckNamesFor(arg: string): Promise<{ label: string; names: string[]; list: DeckList | null }> {
+  if (/\.(txt|md)$/i.test(arg) && existsSync(arg)) {
+    const names = parseDecklist(await Bun.file(arg).text());
+    return { label: arg, names, list: null };
+  }
+
+  const slug = slugFromDeckArg(arg);
+  const deck = await readDeck(slug);
+  const { id, list } = pickList(deck, flagValue("--list"));
+  return { label: `${slug}/${id}`, names: listNames(list), list };
+}
+
+async function runDeck(arg: string): Promise<void> {
+  const { label, names, list } = await deckNamesFor(arg);
   if (names.length === 0) {
-    console.error(`No "1x Card Name" lines found in ${path}`);
+    console.error(`No cards found in ${arg}`);
     process.exit(1);
   }
 
-  const { found, notFound } = await getCards(names);
-  const byName = new Map(found.map((c) => [c.name.toLowerCase(), c]));
-  const wantIdentity = flagValue("--id")?.toUpperCase().split("").filter((x) => "WUBRG".includes(x));
+  const { found, unresolved } = await resolveNames(names);
+  const explicitIdentity = flagValue("--id")?.toUpperCase().split("").filter((x) => "WUBRG".includes(x));
+  const infoByName: Record<string, CardSummary | undefined> = {};
+  for (const [name, card] of Object.entries(found)) infoByName[name] = card;
+  const wantIdentity = explicitIdentity ?? (list ? identityOf(list, infoByName) : undefined);
 
-  console.log(`DECK: ${path}   (${names.length} lines, ${byName.size} unique found)\n`);
+  console.log(`DECK: ${label}   (${names.length} cards, ${Object.keys(found).length} found)\n`);
   let total = 0;
   let priced = 0;
   const offColor: string[] = [];
   const illegal: string[] = [];
 
   for (const name of names) {
-    const c = byName.get(name.toLowerCase());
+    const c = found[name];
     if (!c) continue;
     if (c.usd != null) { total += c.usd; priced++; }
     if (c.commanderLegal !== "legal") illegal.push(`${c.name} (${c.commanderLegal})`);
@@ -92,7 +113,7 @@ async function runDeck(path: string): Promise<void> {
   }
 
   console.log(`\nTOTAL: $${total.toFixed(2)}   (priced ${priced}/${names.length})`);
-  if (notFound.length) console.log(`NOT FOUND (check spelling): ${notFound.join(", ")}`);
+  if (unresolved.length) console.log(`NOT FOUND (check spelling): ${unresolved.join(", ")}`);
   if (illegal.length) console.log(`NOT COMMANDER-LEGAL: ${illegal.join(", ")}`);
   if (wantIdentity && offColor.length)
     console.log(`OFF-IDENTITY (outside {${wantIdentity.join("")}}): ${offColor.join(", ")}`);
@@ -133,7 +154,7 @@ async function main(): Promise<void> {
 
   const name = positionals().join(" ");
   if (!name) {
-    console.error(`Usage: bun run card "<card name>"   |   --deck <path>   |   search "<query>"`);
+    console.error(`Usage: bun run card "<card name>"   |   --deck <slug> [--list id]   |   search "<query>"`);
     process.exit(1);
   }
   // A pinned set targets a specific printing, so it bypasses the by-name cache.

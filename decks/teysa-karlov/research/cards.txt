@@ -1,0 +1,359 @@
+# LOCAL CARD CACHE — teysa-karlov
+# Prices are a USD snapshot from Scryfall at the time each card was first cached.
+# Format:  ## Name / cost|type|CI|produces|usd / oracle
+
+## Teysa Karlov
+cost={2}{W}{B} | type=Legendary Creature — Human Advisor | CI=BW | produces=- | usd=$2.89
+If a creature dying causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time. Creature tokens you control have vigilance and lifelink.
+
+## Bojuka Bog
+cost=- | type=Land | CI=B | produces=B | usd=$1.39
+This land enters tapped. When this land enters, exile target player's graveyard. {T}: Add {B}.
+
+## Brightclimb Pathway // Grimclimb Pathway
+cost=- | type=Land // Land | CI=BW | produces=B,W | usd=$4.77
+Brightclimb Pathway: {T}: Add {W}. // Grimclimb Pathway: {T}: Add {B}.
+
+## Cabal Coffers
+cost=- | type=Land | CI=B | produces=B | usd=$31.34
+{2}, {T}: Add {B} for each Swamp you control.
+
+## Castle Ardenvale
+cost=- | type=Land | CI=W | produces=W | usd=$0.23
+This land enters tapped unless you control a Plains. {T}: Add {W}. {2}{W}{W}, {T}: Create a 1/1 white Human creature token.
+
+## Castle Locthwain
+cost=- | type=Land | CI=B | produces=B | usd=$4.29
+This land enters tapped unless you control a Swamp. {T}: Add {B}. {1}{B}{B}, {T}: Draw a card, then you lose life equal to the number of cards in your hand.
+
+## Caves of Koilos
+cost=- | type=Land | CI=BW | produces=B,C,W | usd=$?
+{T}: Add {C}. {T}: Add {W} or {B}. This land deals 1 damage to you.
+
+## Command Tower
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$?
+{T}: Add one mana of any color in your commander's color identity.
+
+## Concealed Courtyard
+cost=- | type=Land | CI=BW | produces=B,W | usd=$1.11
+This land enters tapped unless you control two or fewer other lands. {T}: Add {W} or {B}.
+
+## Eiganjo, Seat of the Empire
+cost=- | type=Legendary Land | CI=W | produces=W | usd=$5.66
+{T}: Add {W}. Channel — {2}{W}, Discard this card: It deals 4 damage to target attacking or blocking creature. This ability costs {1} less to activate for each legendary creature you control.
+
+## Fetid Heath
+cost=- | type=Land | CI=BW | produces=B,C,W | usd=$?
+{T}: Add {C}. {W/B}, {T}: Add {W}{W}, {W}{B}, or {B}{B}.
+
+## Godless Shrine
+cost=- | type=Land — Plains Swamp | CI=BW | produces=B,W | usd=$?
+({T}: Add {W} or {B}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## High Market
+cost=- | type=Land | CI=- | produces=C | usd=$0.45
+{T}: Add {C}. {T}, Sacrifice a creature: You gain 1 life.
+
+## Isolated Chapel
+cost=- | type=Land | CI=BW | produces=B,W | usd=$?
+This land enters tapped unless you control a Plains or a Swamp. {T}: Add {W} or {B}.
+
+## Mortuary Mire
+cost=- | type=Land | CI=B | produces=B | usd=$0.40
+This land enters tapped. When this land enters, you may put target creature card from your graveyard on top of your library. {T}: Add {B}.
+
+## Phyrexian Tower
+cost=- | type=Legendary Land | CI=B | produces=B,C | usd=$29.94
+{T}: Add {C}. {T}, Sacrifice a creature: Add {B}{B}.
+
+## Plains
+cost=- | type=Basic Land — Plains | CI=W | produces=W | usd=$?
+({T}: Add {W}.)
+
+## Scrubland
+cost=- | type=Land — Plains Swamp | CI=BW | produces=B,W | usd=$?
+({T}: Add {W} or {B}.)
+
+## Shattered Sanctum
+cost=- | type=Land | CI=BW | produces=B,W | usd=$2.01
+This land enters tapped unless you control two or more other lands. {T}: Add {W} or {B}.
+
+## Silent Clearing
+cost=- | type=Land | CI=BW | produces=B,W | usd=$5.67
+{T}, Pay 1 life: Add {W} or {B}. {1}, {T}, Sacrifice this land: Draw a card.
+
+## Swamp
+cost=- | type=Basic Land — Swamp | CI=B | produces=B | usd=$?
+({T}: Add {B}.)
+
+## Tainted Field
+cost=- | type=Land | CI=BW | produces=B,C,W | usd=$0.39
+{T}: Add {C}. {T}: Add {W} or {B}. Activate only if you control a Swamp.
+
+## Takenuma, Abandoned Mire
+cost=- | type=Legendary Land | CI=B | produces=B | usd=$11.85
+{T}: Add {B}. Channel — {3}{B}, Discard this card: Mill three cards, then return a creature or planeswalker card from your graveyard to your hand. This ability costs {1} less to activate for each legendary creature you control.
+
+## Urborg, Tomb of Yawgmoth
+cost=- | type=Legendary Land | CI=- | produces=B | usd=$57.08
+Each land is a Swamp in addition to its other land types.
+
+## Vault of the Archangel
+cost=- | type=Land | CI=BW | produces=C | usd=$1.03
+{T}: Add {C}. {2}{W}{B}, {T}: Creatures you control gain deathtouch and lifelink until end of turn.
+
+## Westvale Abbey // Ormendahl, Profane Prince
+cost=- | type=Land // Legendary Creature — Demon | CI=B | produces=C | usd=$3.43
+Westvale Abbey: {T}: Add {C}. {5}, {T}, Pay 1 life: Create a 1/1 white and black Human Cleric creature token. {5}, {T}, Sacrifice five creatures: Transform this land, then untap it. // Ormendahl, Profane Prince: Flying, lifelink, indestructible, haste
+
+## Arcane Signet
+cost={2} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$?
+{T}: Add one mana of any color in your commander's color identity.
+
+## Black Market Connections
+cost={2}{B} | type=Enchantment | CI=B | produces=- | usd=$9.15
+At the beginning of your first main phase, choose one or more — • Sell Contraband — Create a Treasure token. You lose 1 life. • Buy Information — Draw a card. You lose 2 life. • Hire a Mercenary — Create a 3/2 colorless Shapeshifter creature token with changeling. You lose 3 life. (It is every creature type.)
+
+## Bontu's Monument
+cost={3} | type=Legendary Artifact | CI=- | produces=- | usd=$4.44
+Black creature spells you cast cost {1} less to cast. Whenever you cast a creature spell, each opponent loses 1 life and you gain 1 life.
+
+## Orzhov Signet
+cost={2} | type=Artifact | CI=BW | produces=B,W | usd=$0.38
+{1}, {T}: Add {W}{B}.
+
+## Pitiless Plunderer
+cost={3}{B} | type=Creature — Human Pirate | CI=B | produces=B,G,R,U,W | usd=$4.62
+Whenever another creature you control dies, create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.")
+
+## Smothering Tithe
+cost={3}{W} | type=Enchantment | CI=W | produces=B,G,R,U,W | usd=$59.01
+Whenever an opponent draws a card, that player may pay {2}. If the player doesn't, you create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.")
+
+## Sol Ring
+cost={1} | type=Artifact | CI=- | produces=C | usd=$?
+{T}: Add {C}{C}.
+
+## Talisman of Hierarchy
+cost={2} | type=Artifact | CI=BW | produces=B,C,W | usd=$0.46
+{T}: Add {C}. {T}: Add {W} or {B}. This artifact deals 1 damage to you.
+
+## Corrupted Conviction
+cost={B} | type=Instant | CI=B | produces=- | usd=$0.37
+As an additional cost to cast this spell, sacrifice a creature. Draw two cards.
+
+## Deadly Dispute
+cost={1}{B} | type=Instant | CI=B | produces=B,G,R,U,W | usd=$0.31
+As an additional cost to cast this spell, sacrifice an artifact or creature. Draw two cards and create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.")
+
+## Grim Haruspex
+cost={2}{B} | type=Creature — Human Wizard | CI=B | produces=- | usd=$2.99
+Morph {B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.) Whenever another nontoken creature you control dies, draw a card.
+
+## Midnight Reaper
+cost={2}{B} | type=Creature — Zombie Knight | CI=B | produces=- | usd=$0.23
+Whenever a nontoken creature you control dies, this creature deals 1 damage to you and you draw a card.
+
+## Morbid Opportunist
+cost={2}{B} | type=Creature — Human Rogue | CI=B | produces=- | usd=$0.30
+Whenever one or more other creatures die, draw a card. This ability triggers only once each turn.
+
+## Phyrexian Arena
+cost={1}{B}{B} | type=Enchantment | CI=B | produces=- | usd=$4.81
+At the beginning of your upkeep, you draw a card and you lose 1 life.
+
+## Skullclamp
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$4.82
+Equipped creature gets +1/-1. Whenever equipped creature dies, draw two cards. Equip {1}
+
+## Vampiric Rites
+cost={B} | type=Enchantment | CI=B | produces=- | usd=$0.13
+{1}{B}, Sacrifice a creature: You gain 1 life and draw a card.
+
+## Village Rites
+cost={B} | type=Instant | CI=B | produces=- | usd=$0.88
+As an additional cost to cast this spell, sacrifice a creature. Draw two cards.
+
+## Anguished Unmaking
+cost={1}{W}{B} | type=Instant | CI=BW | produces=- | usd=$1.60
+Exile target nonland permanent. You lose 3 life.
+
+## Despark
+cost={W}{B} | type=Instant | CI=BW | produces=- | usd=$?
+Exile target permanent with mana value 4 or greater.
+
+## Generous Gift
+cost={2}{W} | type=Instant | CI=W | produces=- | usd=$0.71
+Destroy target permanent. Its controller creates a 3/3 green Elephant creature token.
+
+## Path to Exile
+cost={W} | type=Instant | CI=W | produces=- | usd=$?
+Exile target creature. Its controller may search their library for a basic land card, put that card onto the battlefield tapped, then shuffle.
+
+## Plumb the Forbidden
+cost={1}{B} | type=Instant | CI=B | produces=- | usd=$0.37
+As an additional cost to cast this spell, you may sacrifice one or more creatures. When you do, copy this spell for each creature sacrificed this way. You draw a card and lose 1 life.
+
+## Swords to Plowshares
+cost={W} | type=Instant | CI=W | produces=- | usd=$?
+Exile target creature. Its controller gains life equal to its power.
+
+## Vanishing Verse
+cost={W}{B} | type=Instant | CI=BW | produces=- | usd=$0.34
+Exile target monocolored permanent.
+
+## Kaya's Wrath
+cost={W}{W}{B}{B} | type=Sorcery | CI=BW | produces=- | usd=$0.46
+Destroy all creatures. You gain life equal to the number of creatures you controlled that were destroyed this way.
+
+## The Meathook Massacre
+cost={X}{B}{B} | type=Legendary Enchantment | CI=B | produces=- | usd=$25.23
+When The Meathook Massacre enters, each creature gets -X/-X until end of turn. Whenever a creature you control dies, each opponent loses 1 life. Whenever a creature an opponent controls dies, you gain 1 life.
+
+## Bitterblossom
+cost={1}{B} | type=Kindred Enchantment — Faerie | CI=B | produces=- | usd=$32.39
+At the beginning of your upkeep, you lose 1 life and create a 1/1 black Faerie Rogue creature token with flying.
+
+## Doomed Traveler
+cost={W} | type=Creature — Human Soldier | CI=W | produces=- | usd=$0.09
+When this creature dies, create a 1/1 white Spirit creature token with flying.
+
+## Elenda, the Dusk Rose
+cost={2}{W}{B} | type=Legendary Creature — Vampire Knight | CI=BW | produces=- | usd=$5.80
+Lifelink Whenever another creature dies, put a +1/+1 counter on Elenda. When Elenda dies, create X 1/1 white Vampire creature tokens with lifelink, where X is Elenda's power.
+
+## Hallowed Spiritkeeper
+cost={1}{W}{W} | type=Creature — Avatar | CI=W | produces=- | usd=$0.39
+Vigilance When this creature dies, create X 1/1 white Spirit creature tokens with flying, where X is the number of creature cards in your graveyard.
+
+## Hidden Stockpile
+cost={W}{B} | type=Enchantment | CI=BW | produces=- | usd=$0.30
+Revolt — At the beginning of your end step, if a permanent left the battlefield under your control this turn, create a 1/1 colorless Servo artifact creature token. {1}, Sacrifice a creature: Scry 1.
+
+## Hunted Witness
+cost={W} | type=Creature — Human | CI=W | produces=- | usd=$0.28
+When this creature dies, create a 1/1 white Soldier creature token with lifelink.
+
+## Imperious Oligarch
+cost={W}{B} | type=Creature — Human Cleric | CI=BW | produces=- | usd=$0.21
+Vigilance Afterlife 1 (When this creature dies, create a 1/1 white and black Spirit creature token with flying.)
+
+## Ministrant of Obligation
+cost={2}{W} | type=Creature — Human Cleric | CI=W | produces=- | usd=$0.33
+Afterlife 2 (When this creature dies, create two 1/1 white and black Spirit creature tokens with flying.)
+
+## Oketra's Monument
+cost={3} | type=Legendary Artifact | CI=- | produces=- | usd=$6.24
+White creature spells you cast cost {1} less to cast. Whenever you cast a creature spell, create a 1/1 white Warrior creature token with vigilance.
+
+## Open the Graves
+cost={3}{B}{B} | type=Enchantment | CI=B | produces=- | usd=$0.67
+Whenever a nontoken creature you control dies, create a 2/2 black Zombie creature token.
+
+## Ophiomancer
+cost={2}{B} | type=Creature — Human Shaman | CI=B | produces=- | usd=$1.44
+At the beginning of each upkeep, if you control no Snakes, create a 1/1 black Snake creature token with deathtouch.
+
+## Orzhov Enforcer
+cost={1}{B} | type=Creature — Human Rogue | CI=B | produces=- | usd=$0.19
+Deathtouch Afterlife 1 (When this creature dies, create a 1/1 white and black Spirit creature token with flying.)
+
+## Teysa, Orzhov Scion
+cost={1}{W}{B} | type=Legendary Creature — Human Advisor | CI=BW | produces=- | usd=$4.50
+Sacrifice three white creatures: Exile target creature. Whenever another black creature you control dies, create a 1/1 white Spirit creature token with flying.
+
+## Thalisse, Reverent Medium
+cost={3}{W}{B} | type=Legendary Creature — Human Cleric | CI=BW | produces=- | usd=$0.35
+At the beginning of each end step, create X 1/1 white Spirit creature tokens with flying, where X is the number of tokens you created this turn.
+
+## Anointed Procession
+cost={3}{W} | type=Enchantment | CI=W | produces=- | usd=$61.52
+If an effect would create one or more tokens under your control, it creates twice that many of those tokens instead.
+
+## Mondrak, Glory Dominus
+cost={2}{W}{W} | type=Legendary Creature — Phyrexian Horror | CI=W | produces=- | usd=$44.76
+If one or more tokens would be created under your control, twice that many of those tokens are created instead. {1}{W/P}{W/P}, Sacrifice two other artifacts and/or creatures: Put an indestructible counter on Mondrak. ({W/P} can be paid with either {W} or 2 life.)
+
+## Ashnod's Altar
+cost={3} | type=Artifact | CI=- | produces=C | usd=$17.14
+Sacrifice a creature: Add {C}{C}.
+
+## Carrion Feeder
+cost={B} | type=Creature — Zombie | CI=B | produces=- | usd=$4.66
+This creature can't block. Sacrifice a creature: Put a +1/+1 counter on this creature.
+
+## Phyrexian Altar
+cost={3} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$58.66
+Sacrifice a creature: Add one mana of any color.
+
+## Priest of Forgotten Gods
+cost={1}{B} | type=Creature — Human Cleric | CI=B | produces=B | usd=$0.60
+{T}, Sacrifice two other creatures: Any number of target players each lose 2 life and sacrifice a creature of their choice. You add {B}{B} and draw a card. (Activate only as an instant.)
+
+## Viscera Seer
+cost={B} | type=Creature — Vampire Wizard | CI=B | produces=- | usd=$0.42
+Sacrifice a creature: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+
+## Woe Strider
+cost={2}{B} | type=Creature — Horror | CI=B | produces=- | usd=$0.35
+When this creature enters, create a 0/1 white Goat creature token. Sacrifice another creature: Scry 1. Escape—{3}{B}{B}, Exile four other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.) This creature escapes with two +1/+1 counters on it.
+
+## Bastion of Remembrance
+cost={2}{B} | type=Enchantment | CI=B | produces=- | usd=$0.33
+When this enchantment enters, create a 1/1 white Human Soldier creature token. Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.
+
+## Blood Artist
+cost={1}{B} | type=Creature — Vampire | CI=B | produces=- | usd=$3.86
+Whenever this creature or another creature dies, target player loses 1 life and you gain 1 life.
+
+## Bloodletter of Aclazotz
+cost={1}{B}{B}{B} | type=Creature — Vampire Demon | CI=B | produces=- | usd=$38.36
+Flying If an opponent would lose life during your turn, they lose twice that much life instead. (Damage causes loss of life.)
+
+## Corpse Knight
+cost={W}{B} | type=Creature — Zombie Knight | CI=BW | produces=- | usd=$0.71
+Whenever another creature you control enters, each opponent loses 1 life.
+
+## Cruel Celebrant
+cost={W}{B} | type=Creature — Vampire | CI=BW | produces=- | usd=$3.33
+Whenever this creature or another creature or planeswalker you control dies, each opponent loses 1 life and you gain 1 life.
+
+## Elas il-Kor, Sadistic Pilgrim
+cost={W}{B} | type=Legendary Creature — Phyrexian Kor Cleric | CI=BW | produces=- | usd=$1.73
+Deathtouch Whenever another creature you control enters, you gain 1 life. Whenever another creature you control dies, each opponent loses 1 life.
+
+## Falkenrath Noble
+cost={3}{B} | type=Creature — Vampire Noble | CI=B | produces=- | usd=$0.29
+Flying Whenever this creature or another creature dies, target player loses 1 life and you gain 1 life.
+
+## Marauding Blight-Priest
+cost={2}{B} | type=Creature — Vampire Cleric | CI=B | produces=- | usd=$0.24
+Whenever you gain life, each opponent loses 1 life.
+
+## Marionette Apprentice
+cost={1}{B} | type=Creature — Human Artificer | CI=B | produces=- | usd=$2.62
+Fabricate 1 (When this creature enters, put a +1/+1 counter on it or create a 1/1 colorless Servo artifact creature token.) Whenever another creature or artifact you control is put into a graveyard from the battlefield, each opponent loses 1 life.
+
+## Mirkwood Bats
+cost={3}{B} | type=Creature — Bat | CI=B | produces=- | usd=$1.95
+Flying Whenever you create or sacrifice a token, each opponent loses 1 life.
+
+## Zulaport Cutthroat
+cost={1}{B} | type=Creature — Human Rogue Ally | CI=B | produces=- | usd=$1.23
+Whenever this creature or another creature you control dies, each opponent loses 1 life and you gain 1 life.
+
+## Elspeth, Storm Slayer
+cost={3}{W}{W} | type=Legendary Planeswalker — Elspeth | CI=W | produces=- | usd=$42.45
+If one or more tokens would be created under your control, twice that many of those tokens are created instead. +1: Create a 1/1 white Soldier creature token. 0: Put a +1/+1 counter on each creature you control. Those creatures gain flying until your next turn. −3: Destroy target creature an opponent controls with mana value 3 or greater.
+
+## Reassembling Skeleton
+cost={1}{B} | type=Creature — Skeleton Warrior | CI=B | produces=- | usd=$0.29
+{1}{B}: Return this card from your graveyard to the battlefield tapped.
+
+## Sorin, Lord of Innistrad
+cost={2}{W}{B} | type=Legendary Planeswalker — Sorin | CI=BW | produces=- | usd=$0.43
++1: Create a 1/1 black Vampire creature token with lifelink. −2: You get an emblem with "Creatures you control get +1/+0." −6: Destroy up to three target creatures and/or other planeswalkers. Return each card put into a graveyard this way to the battlefield under your control.
+
+## Vito, Thorn of the Dusk Rose
+cost={2}{B} | type=Legendary Creature — Vampire Cleric | CI=B | produces=- | usd=$11.99
+Whenever you gain life, target opponent loses that much life. {3}{B}{B}: Creatures you control gain lifelink until end of turn.

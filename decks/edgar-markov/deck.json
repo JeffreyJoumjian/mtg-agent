@@ -1,0 +1,619 @@
+{
+  "schema": 1,
+  "name": "Edgar Markov — Vampire Aristocrats",
+  "format": "commander",
+  "lists": {
+    "main": {
+      "label": "Main",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Edgar Markov", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp & Cost Reduction",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Ashnod's Altar", "qty": 1 },
+            { "name": "Herald's Horn", "qty": 1 },
+            { "name": "Patchwork Banner", "qty": 1 },
+            { "name": "Smothering Tithe", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Talisman of Hierarchy", "qty": 1 },
+            { "name": "Urza's Incubator", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Ancient Tomb", "qty": 1 },
+            { "name": "Blazemire Verge", "qty": 1 },
+            { "name": "Blood Crypt", "qty": 1 },
+            { "name": "Bojuka Bog", "qty": 1 },
+            { "name": "Cabal Coffers", "qty": 1 },
+            { "name": "Castle Locthwain", "qty": 1 },
+            { "name": "Cavern of Souls", "qty": 1 },
+            { "name": "Caves of Koilos", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Dragonskull Summit", "qty": 1 },
+            { "name": "Eiganjo, Seat of the Empire", "qty": 1 },
+            { "name": "Godless Shrine", "qty": 1 },
+            { "name": "Isolated Chapel", "qty": 1 },
+            { "name": "Luxury Suite", "qty": 1 },
+            { "name": "Minas Tirith", "qty": 1 },
+            { "name": "Mountain", "qty": 1 },
+            { "name": "Nomad Outpost", "qty": 1 },
+            { "name": "Path of Ancestry", "qty": 1 },
+            { "name": "Phyrexian Tower", "qty": 1 },
+            { "name": "Plains", "qty": 2 },
+            { "name": "Sacred Foundry", "qty": 1 },
+            { "name": "Savai Triome", "qty": 1 },
+            { "name": "Shattered Sanctum", "qty": 1 },
+            { "name": "Spectator Seating", "qty": 1 },
+            { "name": "Sulfurous Springs", "qty": 1 },
+            { "name": "Sundown Pass", "qty": 1 },
+            { "name": "Swamp", "qty": 4 },
+            { "name": "Takenuma, Abandoned Mire", "qty": 1 },
+            { "name": "Three Tree City", "qty": 1 },
+            { "name": "Urborg, Tomb of Yawgmoth", "qty": 1 },
+            { "name": "Vault of Champions", "qty": 1 },
+            { "name": "Vault of the Archangel", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw & Tutors",
+          "cards": [
+            { "name": "Black Market Connections", "qty": 1 },
+            { "name": "Deadly Dispute", "qty": 1 },
+            { "name": "Emeritus of Woe", "qty": 1 },
+            { "name": "Florian, Voldaren Scion", "qty": 1 },
+            { "name": "Plumb the Forbidden", "qty": 1 },
+            { "name": "Scheming Silvertongue", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal",
+          "cards": [
+            { "name": "Anowon, the Ruin Sage", "qty": 1 },
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Generous Gift", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Ruthless Lawbringer", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            { "name": "Olivia's Wrath", "qty": 1 },
+            { "name": "The Meathook Massacre", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection",
+          "cards": [
+            { "name": "Akroma's Will", "qty": 1 },
+            { "name": "Teferi's Protection", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Theme / Synergy — Vampires & Payoffs",
+          "cards": [
+            { "name": "Blade of the Bloodchief", "qty": 1 },
+            { "name": "Blood Artist", "qty": 1 },
+            { "name": "Bloodletter of Aclazotz", "qty": 1 },
+            { "name": "Bloodline Keeper", "qty": 1 },
+            { "name": "Captivating Vampire", "qty": 1 },
+            { "name": "Charismatic Conqueror", "qty": 1 },
+            { "name": "Clavileño, First of the Blessed", "qty": 1 },
+            { "name": "Cordial Vampire", "qty": 1 },
+            { "name": "Cruel Celebrant", "qty": 1 },
+            { "name": "Dictate of Erebos", "qty": 1 },
+            { "name": "Dusk Legion Duelist", "qty": 1 },
+            { "name": "Edgar, Charmed Groom", "qty": 1 },
+            { "name": "Elenda, the Dusk Rose", "qty": 1 },
+            { "name": "Elspeth, Storm Slayer", "qty": 1 },
+            { "name": "Indulgent Aristocrat", "qty": 1 },
+            { "name": "Knight of the Ebon Legion", "qty": 1 },
+            { "name": "Legion Lieutenant", "qty": 1 },
+            { "name": "Malakir Bloodwitch", "qty": 1 },
+            { "name": "Marauding Blight-Priest", "qty": 1 },
+            { "name": "Master of Dark Rites", "qty": 1 },
+            { "name": "Mirkwood Bats", "qty": 1 },
+            { "name": "Nullpriest of Oblivion", "qty": 1 },
+            { "name": "Phyrexian Reclamation", "qty": 1 },
+            { "name": "Purphoros, God of the Forge", "qty": 1 },
+            { "name": "Roaming Throne", "qty": 1 },
+            { "name": "Sanctum Seeker", "qty": 1 },
+            { "name": "Sangromancer", "qty": 1 },
+            { "name": "Sanguine Bond", "qty": 1 },
+            { "name": "Shared Animosity", "qty": 1 },
+            { "name": "Stromkirk Captain", "qty": 1 },
+            { "name": "Tainted Remedy", "qty": 1 },
+            { "name": "Twilight Prophet", "qty": 1 },
+            { "name": "Vampire Socialite", "qty": 1 },
+            { "name": "Vein Ripper", "qty": 1 },
+            { "name": "Vengeful Bloodwitch", "qty": 1 },
+            { "name": "Viscera Seer", "qty": 1 },
+            { "name": "Vito, Thorn of the Dusk Rose", "qty": 1 },
+            { "name": "Warleader's Call", "qty": 1 },
+            { "name": "Yahenni, Undying Partisan", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "combat": {
+      "label": "Combat",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Edgar Markov", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Ancient Tomb", "qty": 1 },
+            { "name": "Blazemire Verge", "qty": 1 },
+            { "name": "Blood Crypt", "qty": 1 },
+            { "name": "Bojuka Bog", "qty": 1 },
+            { "name": "Cabal Coffers", "qty": 1 },
+            { "name": "Castle Locthwain", "qty": 1 },
+            { "name": "Cavern of Souls", "qty": 1 },
+            { "name": "Caves of Koilos", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Dragonskull Summit", "qty": 1 },
+            { "name": "Eiganjo, Seat of the Empire", "qty": 1 },
+            { "name": "Emeria's Call", "qty": 1 },
+            { "name": "Godless Shrine", "qty": 1 },
+            { "name": "Isolated Chapel", "qty": 1 },
+            { "name": "Luxury Suite", "qty": 1 },
+            { "name": "Minas Tirith", "qty": 1 },
+            { "name": "Mountain", "qty": 1 },
+            { "name": "Path of Ancestry", "qty": 1 },
+            { "name": "Phyrexian Tower", "qty": 1 },
+            { "name": "Sacred Foundry", "qty": 1 },
+            { "name": "Savai Triome", "qty": 1 },
+            { "name": "Shattered Sanctum", "qty": 1 },
+            { "name": "Spectator Seating", "qty": 1 },
+            { "name": "Sulfurous Springs", "qty": 1 },
+            { "name": "Sundown Pass", "qty": 1 },
+            { "name": "Swamp", "qty": 4 },
+            { "name": "Tainted Field", "qty": 1 },
+            { "name": "Takenuma, Abandoned Mire", "qty": 1 },
+            { "name": "Three Tree City", "qty": 1 },
+            { "name": "Urborg, Tomb of Yawgmoth", "qty": 1 },
+            { "name": "Vault of Champions", "qty": 1 },
+            { "name": "Vault of the Archangel", "qty": 1 },
+            { "name": "Witch Enchanter", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp & Cost Reduction",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Herald's Horn", "qty": 1 },
+            { "name": "Patchwork Banner", "qty": 1 },
+            { "name": "Smothering Tithe", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Urza's Incubator", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lords & Anthems",
+          "cards": [
+            { "name": "Captivating Vampire", "qty": 1 },
+            { "name": "Door of Destinies", "qty": 1 },
+            { "name": "Edgar, Charmed Groom", "qty": 1 },
+            { "name": "Legion Lieutenant", "qty": 1 },
+            { "name": "Stromkirk Captain", "qty": 1 },
+            { "name": "Vanquisher's Banner", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Combat Multipliers",
+          "cards": [
+            { "name": "Blade of the Bloodchief", "qty": 1 },
+            { "name": "Drana, Liberator of Malakir", "qty": 1 },
+            { "name": "Elspeth, Storm Slayer", "qty": 1 },
+            { "name": "Shared Animosity", "qty": 1 },
+            { "name": "Vampire Socialite", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Evasion",
+          "cards": [
+            { "name": "Malakir Bloodwitch", "qty": 1 },
+            { "name": "Shadow Alley Denizen", "qty": 1 },
+            { "name": "Vampire Nocturnus", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Cheap Bodies — The Flood",
+          "cards": [
+            { "name": "Blood Artist", "qty": 1 },
+            { "name": "Blood Seeker", "qty": 1 },
+            { "name": "Cordial Vampire", "qty": 1 },
+            { "name": "Cruel Celebrant", "qty": 1 },
+            { "name": "Indulgent Aristocrat", "qty": 1 },
+            { "name": "Knight of the Ebon Legion", "qty": 1 },
+            { "name": "Vampire Cutthroat", "qty": 1 },
+            { "name": "Vampire of the Dire Moon", "qty": 1 },
+            { "name": "Vicious Conquistador", "qty": 1 },
+            { "name": "Viscera Seer", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Makers",
+          "cards": [
+            { "name": "Bloodline Keeper", "qty": 1 },
+            { "name": "Charismatic Conqueror", "qty": 1 },
+            { "name": "Elenda, the Dusk Rose", "qty": 1 },
+            { "name": "Mavren Fein, Dusk Apostle", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Attack Payoffs",
+          "cards": [
+            { "name": "Clavileño, First of the Blessed", "qty": 1 },
+            { "name": "Crossway Troublemakers", "qty": 1 },
+            { "name": "Preacher of the Schism", "qty": 1 },
+            { "name": "Sanctum Seeker", "qty": 1 },
+            { "name": "Warleader's Call", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Damage Multipliers & Converters",
+          "cards": [
+            { "name": "Bloodletter of Aclazotz", "qty": 1 },
+            { "name": "Mirkwood Bats", "qty": 1 },
+            { "name": "Purphoros, God of the Forge", "qty": 1 },
+            { "name": "Vito, Thorn of the Dusk Rose", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Black Market Connections", "qty": 1 },
+            { "name": "Deadly Dispute", "qty": 1 },
+            { "name": "Dusk Legion Duelist", "qty": 1 },
+            { "name": "Emeritus of Woe", "qty": 1 },
+            { "name": "Florian, Voldaren Scion", "qty": 1 },
+            { "name": "Phyrexian Arena", "qty": 1 },
+            { "name": "Scheming Silvertongue", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal",
+          "cards": [
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Generous Gift", "qty": 1 },
+            { "name": "Olivia's Wrath", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection",
+          "cards": [
+            { "name": "Akroma's Will", "qty": 1 },
+            { "name": "Teferi's Protection", "qty": 1 },
+            { "name": "Unbreakable Formation", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Utility Bodies",
+          "cards": [
+            { "name": "Nighthawk Scavenger", "qty": 1 },
+            { "name": "Nullpriest of Oblivion", "qty": 1 },
+            { "name": "Ruthless Lawbringer", "qty": 1 },
+            { "name": "Sorin, Imperious Bloodlord", "qty": 1 },
+            { "name": "Yahenni, Undying Partisan", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "sacrifice": {
+      "label": "Sacrifice",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Edgar Markov", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Agadeem's Awakening", "qty": 1 },
+            { "name": "Ancient Tomb", "qty": 1 },
+            { "name": "Blazemire Verge", "qty": 1 },
+            { "name": "Blood Crypt", "qty": 1 },
+            { "name": "Bojuka Bog", "qty": 1 },
+            { "name": "Brightclimb Pathway", "qty": 1 },
+            { "name": "Cabal Coffers", "qty": 1 },
+            { "name": "Castle Locthwain", "qty": 1 },
+            { "name": "Cavern of Souls", "qty": 1 },
+            { "name": "Caves of Koilos", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Dragonskull Summit", "qty": 1 },
+            { "name": "Eiganjo, Seat of the Empire", "qty": 1 },
+            { "name": "Godless Shrine", "qty": 1 },
+            { "name": "Isolated Chapel", "qty": 1 },
+            { "name": "Luxury Suite", "qty": 1 },
+            { "name": "Minas Tirith", "qty": 1 },
+            { "name": "Mountain", "qty": 1 },
+            { "name": "Path of Ancestry", "qty": 1 },
+            { "name": "Phyrexian Tower", "qty": 1 },
+            { "name": "Plains", "qty": 1 },
+            { "name": "Sacred Foundry", "qty": 1 },
+            { "name": "Shattered Sanctum", "qty": 1 },
+            { "name": "Spectator Seating", "qty": 1 },
+            { "name": "Sulfurous Springs", "qty": 1 },
+            { "name": "Sundown Pass", "qty": 1 },
+            { "name": "Swamp", "qty": 3 },
+            { "name": "Tainted Field", "qty": 1 },
+            { "name": "Takenuma, Abandoned Mire", "qty": 1 },
+            { "name": "Three Tree City", "qty": 1 },
+            { "name": "Urborg, Tomb of Yawgmoth", "qty": 1 },
+            { "name": "Vault of Champions", "qty": 1 },
+            { "name": "Vault of the Archangel", "qty": 1 },
+            { "name": "Witch Enchanter", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp & Cost Reduction",
+          "cards": [
+            { "name": "Herald's Horn", "qty": 1 },
+            { "name": "Patchwork Banner", "qty": 1 },
+            { "name": "Smothering Tithe", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Urza's Incubator", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Sacrifice Outlets",
+          "cards": [
+            { "name": "Ashnod's Altar", "qty": 1 },
+            { "name": "Bartolomé del Presidio", "qty": 1 },
+            { "name": "Indulgent Aristocrat", "qty": 1 },
+            { "name": "Master of Dark Rites", "qty": 1 },
+            { "name": "Phyrexian Altar", "qty": 1 },
+            { "name": "Viscera Seer", "qty": 1 },
+            { "name": "Yahenni, Undying Partisan", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Death Payoffs — Drain",
+          "cards": [
+            { "name": "Blood Artist", "qty": 1 },
+            { "name": "Cruel Celebrant", "qty": 1 },
+            { "name": "Indulging Patrician", "qty": 1 },
+            { "name": "Kalastria Highborn", "qty": 1 },
+            { "name": "Vengeful Bloodwitch", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Edicts & Wipe Punishment",
+          "cards": [
+            { "name": "Anowon, the Ruin Sage", "qty": 1 },
+            { "name": "Dictate of Erebos", "qty": 1 },
+            { "name": "Grave Pact", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Sweepers You Want To Cast",
+          "cards": [
+            { "name": "Olivia's Wrath", "qty": 1 },
+            { "name": "The Meathook Massacre", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Black Market Connections", "qty": 1 },
+            { "name": "Crossway Troublemakers", "qty": 1 },
+            { "name": "Deadly Dispute", "qty": 1 },
+            { "name": "Dusk Legion Zealot", "qty": 1 },
+            { "name": "Phyrexian Arena", "qty": 1 },
+            { "name": "Skullclamp", "qty": 1 },
+            { "name": "Twilight Prophet", "qty": 1 },
+            { "name": "Village Rites", "qty": 1 },
+            { "name": "Welcoming Vampire", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal",
+          "cards": [
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Generous Gift", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Ruthless Lawbringer", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection",
+          "cards": [
+            { "name": "Akroma's Will", "qty": 1 },
+            { "name": "Teferi's Protection", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Recursion",
+          "cards": [
+            { "name": "Phyrexian Reclamation", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lords & Anthems",
+          "cards": [
+            { "name": "Captivating Vampire", "qty": 1 },
+            { "name": "Edgar, Charmed Groom", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Engine Bodies & Multipliers",
+          "cards": [
+            { "name": "Anointed Procession", "qty": 1 },
+            { "name": "Blade of the Bloodchief", "qty": 1 },
+            { "name": "Blood Seeker", "qty": 1 },
+            { "name": "Bloodletter of Aclazotz", "qty": 1 },
+            { "name": "Bloodline Keeper", "qty": 1 },
+            { "name": "Carrier Thrall", "qty": 1 },
+            { "name": "Charismatic Conqueror", "qty": 1 },
+            { "name": "Clavileño, First of the Blessed", "qty": 1 },
+            { "name": "Cordial Vampire", "qty": 1 },
+            { "name": "Creeping Bloodsucker", "qty": 1 },
+            { "name": "Elenda, the Dusk Rose", "qty": 1 },
+            { "name": "Elspeth, Storm Slayer", "qty": 1 },
+            { "name": "Emeritus of Woe", "qty": 1 },
+            { "name": "Infantry Shield", "qty": 1 },
+            { "name": "Malakir Bloodwitch", "qty": 1 },
+            { "name": "Marauding Blight-Priest", "qty": 1 },
+            { "name": "Mirkwood Bats", "qty": 1 },
+            { "name": "Morlun, Devourer of Spiders", "qty": 1 },
+            { "name": "Purphoros, God of the Forge", "qty": 1 },
+            { "name": "Roaming Throne", "qty": 1 },
+            { "name": "Sangromancer", "qty": 1 },
+            { "name": "Vito, Thorn of the Dusk Rose", "qty": 1 }
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {
+    "Akroma's Will": { "status": "OWNED", "printing": {"set":"m3c","collectorNumber":"165"} },
+    "Ancient Tomb": { "status": "PROXY", "printing": {"set":"uma","collectorNumber":"236"} },
+    "Anowon, the Ruin Sage": { "status": "BUY", "note": "— recurring one-sided edict each upkeep", "printing": {"set":"voc","collectorNumber":"118"} },
+    "Arcane Signet": { "status": "OWNED", "printing": {"set":"eld","collectorNumber":"331"} },
+    "Ashnod's Altar": { "status": "OWNED", "printing": {"set":"cmm","collectorNumber":"368"} },
+    "Bartolomé del Presidio": { "printing": {"set":"lci","collectorNumber":"224"} },
+    "Black Market Connections": { "status": "OWNED", "printing": {"set":"clb","collectorNumber":"669"} },
+    "Blade of the Bloodchief": { "status": "BUY", "printing": {"set":"lcc","collectorNumber":"300"} },
+    "Blazemire Verge": { "status": "OWNED", "printing": {"set":"dsk","collectorNumber":"256"} },
+    "Blood Artist": { "status": "OWNED", "printing": {"set":"inr","collectorNumber":"97"} },
+    "Blood Crypt": { "status": "OWNED", "printing": {"set":"trk","collectorNumber":"278"} },
+    "Blood Seeker": { "printing": {"set":"dsc","collectorNumber":"77"} },
+    "Bloodletter of Aclazotz": { "status": "OWNED", "printing": {"set":"lci","collectorNumber":"92"} },
+    "Bloodline Keeper": { "status": "OWNED", "printing": {"set":"inr","collectorNumber":"98"} },
+    "Bojuka Bog": { "status": "OWNED", "printing": {"set":"plst","collectorNumber":"C18-238"} },
+    "Brightclimb Pathway": { "printing": {"set":"znr","collectorNumber":"259"} },
+    "Cabal Coffers": { "status": "PROXY", "note": "— engine with Urborg", "printing": {"set":"mh2","collectorNumber":"301"} },
+    "Captivating Vampire": { "status": "OWNED", "printing": {"set":"inr","collectorNumber":"100"} },
+    "Castle Locthwain": { "status": "OWNED", "printing": {"set":"eld","collectorNumber":"241"} },
+    "Cavern of Souls": { "status": "PROXY", "printing": {"set":"lci","collectorNumber":"269"} },
+    "Caves of Koilos": { "status": "OWNED", "printing": {"set":"dmu","collectorNumber":"244"} },
+    "Chaos Warp": { "status": "OWNED", "printing": {"set":"fic","collectorNumber":"291"} },
+    "Charismatic Conqueror": { "status": "BUY", "printing": {"set":"lcc","collectorNumber":"70"} },
+    "Clavileño, First of the Blessed": { "status": "OWNED", "printing": {"set":"lcc","collectorNumber":"2"} },
+    "Command Tower": { "status": "OWNED", "printing": {"set":"eld","collectorNumber":"333"} },
+    "Cordial Vampire": { "status": "OWNED", "printing": {"set":"lcc","collectorNumber":"189"} },
+    "Creeping Bloodsucker": { "printing": {"set":"j25","collectorNumber":"415"} },
+    "Crossway Troublemakers": { "printing": {"set":"fdn","collectorNumber":"518"} },
+    "Cruel Celebrant": { "status": "OWNED", "printing": {"set":"war","collectorNumber":"188"} },
+    "Deadly Dispute": { "status": "BUY", "printing": {"set":"afr","collectorNumber":"94"} },
+    "Dictate of Erebos": { "status": "OWNED", "printing": {"set":"sld","collectorNumber":"2204"} },
+    "Dragonskull Summit": { "status": "OWNED", "printing": {"set":"xln","collectorNumber":"252"} },
+    "Drana, Liberator of Malakir": { "printing": {"set":"bfz","collectorNumber":"109"} },
+    "Dusk Legion Duelist": { "status": "OWNED", "printing": {"set":"mom","collectorNumber":"11"} },
+    "Dusk Legion Zealot": { "printing": {"set":"lcc","collectorNumber":"194"} },
+    "Edgar Markov": { "status": "OWNED", "printing": {"set":"inr","collectorNumber":"234"} },
+    "Edgar, Charmed Groom": { "status": "OWNED", "printing": {"set":"vow","collectorNumber":"236"} },
+    "Eiganjo, Seat of the Empire": { "status": "OWNED", "printing": {"set":"neo","collectorNumber":"268"} },
+    "Elenda, the Dusk Rose": { "status": "OWNED", "printing": {"set":"rix","collectorNumber":"157"} },
+    "Elspeth, Storm Slayer": { "status": "OWNED", "printing": {"set":"tdm","collectorNumber":"11"} },
+    "Emeritus of Woe": { "status": "BUY", "note": "— replaces Demonic Tutor, frees a GC slot", "printing": {"set":"sos","collectorNumber":"80"} },
+    "Florian, Voldaren Scion": { "status": "BUY", "printing": {"set":"mid","collectorNumber":"223"} },
+    "Generous Gift": { "status": "OWNED", "printing": {"set":"cmm","collectorNumber":"26"} },
+    "Godless Shrine": { "status": "OWNED", "printing": {"set":"trk","collectorNumber":"285"} },
+    "Grave Pact": { "printing": {"set":"cmm","collectorNumber":"165"} },
+    "Herald's Horn": { "status": "BUY", "printing": {"set":"cmm","collectorNumber":"953"} },
+    "Indulgent Aristocrat": { "status": "OWNED", "printing": {"set":"soi","collectorNumber":"118"} },
+    "Indulging Patrician": { "printing": {"set":"m21","collectorNumber":"219"} },
+    "Infantry Shield": { "printing": {"set":"tdc","collectorNumber":"35"} },
+    "Isolated Chapel": { "status": "OWNED", "printing": {"set":"dom","collectorNumber":"241"} },
+    "Kalastria Highborn": { "printing": {"set":"fdn","collectorNumber":"753"} },
+    "Knight of the Ebon Legion": { "status": "OWNED", "printing": {"set":"m20","collectorNumber":"105"} },
+    "Legion Lieutenant": { "status": "OWNED", "printing": {"set":"rix","collectorNumber":"163"} },
+    "Luxury Suite": { "status": "BUY", "printing": {"set":"msc","collectorNumber":"252"} },
+    "Malakir Bloodwitch": { "status": "OWNED", "printing": {"set":"voc","collectorNumber":"131"} },
+    "Marauding Blight-Priest": { "status": "BUY", "printing": {"set":"znr","collectorNumber":"112"} },
+    "Master of Dark Rites": { "status": "BUY" },
+    "Mavren Fein, Dusk Apostle": { "printing": {"set":"xln","collectorNumber":"24"} },
+    "Minas Tirith": { "status": "OWNED", "printing": {"set":"ltr","collectorNumber":"256"} },
+    "Mirkwood Bats": { "status": "OWNED", "printing": {"set":"ltr","collectorNumber":"95"} },
+    "Mountain": { "status": "OWNED", "printing": {"set":"sld","collectorNumber":"362"} },
+    "Nighthawk Scavenger": { "printing": {"set":"znr","collectorNumber":"115"} },
+    "Nomad Outpost": { "status": "OWNED" },
+    "Nullpriest of Oblivion": { "status": "OWNED", "printing": {"set":"znr","collectorNumber":"118"} },
+    "Olivia's Wrath": { "status": "OWNED", "printing": {"set":"lcc","collectorNumber":"205"} },
+    "Patchwork Banner": { "status": "BUY", "printing": {"set":"msc","collectorNumber":"207"} },
+    "Path of Ancestry": { "status": "OWNED", "printing": {"set":"plst","collectorNumber":"M3C-363"} },
+    "Path to Exile": { "status": "OWNED", "printing": {"set":"cmm","collectorNumber":"49"} },
+    "Phyrexian Altar": { "printing": {"set":"plst","collectorNumber":"UMA-232"} },
+    "Phyrexian Arena": { "printing": {"set":"one","collectorNumber":"104"} },
+    "Phyrexian Reclamation": { "status": "BUY", "printing": {"set":"tdc","collectorNumber":"194"} },
+    "Phyrexian Tower": { "status": "PROXY", "printing": {"set":"uma","collectorNumber":"248"} },
+    "Plains": { "status": "OWNED", "printing": {"set":"sld","collectorNumber":"359"} },
+    "Plumb the Forbidden": { "status": "BUY", "printing": {"set":"stx","collectorNumber":"81"} },
+    "Preacher of the Schism": { "printing": {"set":"lci","collectorNumber":"113"} },
+    "Purphoros, God of the Forge": { "status": "OWNED", "printing": {"set":"cmm","collectorNumber":"246"} },
+    "Roaming Throne": { "status": "OWNED", "printing": {"set":"lci","collectorNumber":"258"} },
+    "Ruthless Lawbringer": { "status": "BUY", "printing": {"set":"otj","collectorNumber":"229"} },
+    "Sacred Foundry": { "status": "OWNED", "printing": {"set":"trk","collectorNumber":"295"} },
+    "Sanctum Seeker": { "status": "OWNED", "printing": {"set":"xln","collectorNumber":"120"} },
+    "Sangromancer": { "status": "BUY", "note": "— life floor; gain 3 per opponent creature death", "printing": {"set":"scd","collectorNumber":"103"} },
+    "Sanguine Bond": { "status": "OWNED" },
+    "Savai Triome": { "status": "PROXY", "printing": {"set":"iko","collectorNumber":"253"} },
+    "Scheming Silvertongue": { "status": "BUY", "printing": {"set":"sos","collectorNumber":"99"} },
+    "Shadow Alley Denizen": { "printing": {"set":"rvr","collectorNumber":"92"} },
+    "Shared Animosity": { "status": "OWNED", "printing": {"set":"ltc","collectorNumber":"226"} },
+    "Shattered Sanctum": { "status": "BUY", "printing": {"set":"sos","collectorNumber":"260"} },
+    "Skullclamp": { "printing": {"set":"plst","collectorNumber":"C20-251"} },
+    "Smothering Tithe": { "status": "PROXY", "printing": {"set":"rna","collectorNumber":"22"} },
+    "Sol Ring": { "status": "OWNED", "printing": {"set":"ltc","collectorNumber":"284"} },
+    "Sorin, Imperious Bloodlord": { "printing": {"set":"m20","collectorNumber":"115"} },
+    "Spectator Seating": { "status": "OWNED", "printing": {"set":"cmm","collectorNumber":"427"} },
+    "Stromkirk Captain": { "status": "OWNED", "printing": {"set":"voc","collectorNumber":"157"} },
+    "Sulfurous Springs": { "status": "OWNED", "printing": {"set":"dmu","collectorNumber":"256"} },
+    "Sundown Pass": { "status": "BUY", "printing": {"set":"sos","collectorNumber":"264"} },
+    "Swamp": { "status": "OWNED", "printing": {"set":"sld","collectorNumber":"361"} },
+    "Swords to Plowshares": { "status": "OWNED", "printing": {"set":"plst","collectorNumber":"VOC-99"} },
+    "Tainted Field": { "printing": {"set":"cmm","collectorNumber":"1039"} },
+    "Tainted Remedy": { "status": "BUY", "note": "— answers the lifegain decks in the pod" },
+    "Takenuma, Abandoned Mire": { "status": "OWNED", "printing": {"set":"neo","collectorNumber":"278"} },
+    "Talisman of Hierarchy": { "status": "OWNED", "printing": {"set":"soc","collectorNumber":"358"} },
+    "Teferi's Protection": { "status": "PROXY", "printing": {"set":"2x2","collectorNumber":"32"} },
+    "The Meathook Massacre": { "status": "OWNED", "printing": {"set":"inr","collectorNumber":"387"} },
+    "Three Tree City": { "status": "PROXY", "printing": {"set":"blb","collectorNumber":"260"} },
+    "Twilight Prophet": { "status": "OWNED", "printing": {"set":"mkc","collectorNumber":"143"} },
+    "Urborg, Tomb of Yawgmoth": { "status": "PROXY", "note": "— makes every land a Swamp; black 27→42", "printing": {"set":"m15","collectorNumber":"248"} },
+    "Urza's Incubator": { "status": "BUY", "printing": {"set":"pmh3","collectorNumber":"297p"} },
+    "Vampire Cutthroat": { "printing": {"set":"emn","collectorNumber":"110"} },
+    "Vampire Nocturnus": { "printing": {"set":"m13","collectorNumber":"113"} },
+    "Vampire of the Dire Moon": { "printing": {"set":"m20","collectorNumber":"120"} },
+    "Vampire Socialite": { "status": "OWNED", "printing": {"set":"mid","collectorNumber":"249"} },
+    "Vanquisher's Banner": { "printing": {"set":"xln","collectorNumber":"251"} },
+    "Vault of Champions": { "status": "PROXY", "printing": {"set":"cmm","collectorNumber":"436"} },
+    "Vault of the Archangel": { "status": "BUY", "printing": {"set":"tdc","collectorNumber":"410"} },
+    "Vein Ripper": { "status": "OWNED" },
+    "Vengeful Bloodwitch": { "status": "BUY", "note": "— 5th aristocrats drain; 5th Blight-Priest trigger per death", "printing": {"set":"fdn","collectorNumber":"76"} },
+    "Vicious Conquistador": { "printing": {"set":"xln","collectorNumber":"128"} },
+    "Village Rites": { "printing": {"set":"inr","collectorNumber":"137"} },
+    "Viscera Seer": { "status": "OWNED", "printing": {"set":"soc","collectorNumber":"229"} },
+    "Vito, Thorn of the Dusk Rose": { "status": "OWNED", "printing": {"set":"m21","collectorNumber":"127"} },
+    "Warleader's Call": { "status": "BUY", "printing": {"set":"mkm","collectorNumber":"242"} },
+    "Welcoming Vampire": { "printing": {"set":"tdc","collectorNumber":"140"} },
+    "Yahenni, Undying Partisan": { "status": "OWNED", "printing": {"set":"aer","collectorNumber":"74"} }
+  }
+}

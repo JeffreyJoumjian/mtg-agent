@@ -1,0 +1,232 @@
+# Global printings reserve — the copies actually owned, one line per card.
+#
+# Every deck's `bun run deck:moxfield` reads this file and pins each card it covers to this exact
+# set and collector number. A deck's own `research/printings.txt` holds ONLY that deck's overrides
+# and wins for any card it names. Grammar is the exporter's own: `1 Card Name (SET) NUMBER`, with
+# an optional `*F*` foil marker; quantities are ignored. Lines that don't match are skipped.
+#
+# Seeded 2026-09-08 from the pilot's Moxfield export of the Ultron list.
+
+1 Ultron, Artificial Malevolence (MSH) 252
+1 Ultron, Machine Overlord (MSC) 507
+
+1 Academy Ruins (PLST) 2XM-309
+1 Akiri, Fearless Voyager (ZNR) 220
+1 All Is Dust (CMM) 800
+1 Ancient Tomb (UMA) 236
+1 Arc Reactor (MSH) 243
+1 Ardenn, Intrepid Archaeologist (PLST) CMR-10
+1 Arena of Glory (PLST) MH3-215
+1 Argentum Armor (PLST) AFC-198
+1 Arid Mesa (MM3) 229
+1 Axgard Armory (KHM) 250
+1 Basilisk Collar (PIP) 225
+1 Blightsteel Colossus (SLD) 1079
+1 Boros Charm (FDN) 721
+1 Brass Squire (CMR) 460
+1 Brotherhood Regalia (ACR) 71
+1 Bruenor Battlehammer (AFR) 219
+1 Bureau Headmaster (ACR) 296
+1 Buried Ruin (2XM) 312
+1 Buster Sword (FIN) 255
+1 Canoptek Spyder (40K) 151
+1 Chief of the Foundry (KLD) 200
+1 Chimil, the Inner Sun (LCI) 249
+1 Cityscape Leveler (BRO) 233
+1 Cloud Key (TSR) 265
+1 Codsworth, Handy Helper (PIP) 14
+1 Colossus Hammer (M20) 223
+1 Command Beacon (PLST) C15-56
+1 Command Tower (ELD) 333
+1 Commander's Plate (SLD) 1733
+1 Cryptothrall (40K) 155
+1 Cybermen Squadron (WHO) 176
+1 Dalakos, Crafter of Wonders (THB) 212
+1 Darksteel Citadel (C18) 241
+1 Darksteel Forge (2XM) 248
+1 Deflecting Swat (CMM) 214
+1 Deserted Temple (MH3) 301
+1 Duplicant (DRC) 54
+1 Echoes of Eternity (MH3) 4
+1 Eiganjo, Seat of the Empire (NEO) 268
+1 Eldrazi Confluence (M3C) 32
+1 Enlightened Tutor (DMR) 6
+1 Esper Sentinel (PLST) MH2-12
+1 Everflowing Chalice (FIC) 343
+1 Excalibur, Sword of Eden (ACR) 169
+1 Fierce Guardianship (CMM) 94
+1 Fighter Class (AFR) 222
+1 Flooded Strand (KTK) 233
+1 Fomori Vault (BIG) 29
+1 Forge Anew (LTR) 17
+1 Forsaken Monument (ZNR) 244
+1 Foundry Inspector (KLD) 215
+1 Genji Glove (FIN) 258
+1 Gilded Lotus (40K) 239
+1 Glaring Fleshraker (MH3) 7
+1 Grand Abolisher (SLD) 1285
+1 Hallowed Fountain (TRK) 286
+1 Halvar, God of Battle (KHM) 15
+1 Hedron Archive (40K) 240
+1 Helm of the Host (DOM) 217
+1 Ichor Wellspring (2XM) 261
+1 Idol of Oblivion (PLST) M3C-297
+1 Illusionist's Bracers (RVR) 260
+1 Inventors' Fair (SLD) 1735
+1 Inventory Management (PIP) 105
+1 Iron Spider, Stark Upgrade (SPM) 166
+1 Island (THB) 251
+1 Jhoira's Familiar (DOM) 220
+1 Kaldra Compleat (CMM) 958
+1 Karn, Legacy Reforged (MAT) 49
+1 Karn, Scion of Urza (SLD) 1419
+1 Kozilek's Command (MH3) 11
+1 Krang, Utrom Warlord (TMT) 175
+1 Kuldotha Forgemaster (2XM) 266
+1 Liberator, Urza's Battlethopter (BRO) 237
+1 Meteor Golem (FDN) 256
+1 Meteor Sword (TLA) 258
+1 Mind Stone (WHO) 244
+1 Mirror Box (NEO) 250
+1 Mirrorpool (OGW) 174
+1 Mirrorworks (C18) 211
+1 Mishra's Workshop (OVNT) 2020C
+1 Mithril Coat (LTR) 245
+1 Mountain (THB) 253
+1 Mox Opal (2XM) 275
+1 Mycosynth Golem (5DN) 137
+1 Myr Battlesphere (2XM) 276
+1 Mystic Forge (40K) 246
+1 Nahiri, Forged in Fury (MAT) 36
+1 Null Elemental Blast (MH3) 12
+1 Open the Armory (SOI) 32
+1 Otawara, Soaring City (NEO) 271
+1 Palladium Myr (M21) 234
+1 Panharmonicon (SLD) 605
+1 Plains (THB) 250
+1 Plateau (OLGC) 2018A
+1 Portal to Phyrexia (BRO) 240
+1 Power Depot (MH2) 251
+1 Prismatic Vista (MH1) 244
+1 Prototype Portal (C18) 216
+1 Puresteel Paladin (CMM) 51
+1 Raugrin Triome (IKO) 251
+1 Roaming Throne (MAR) 99
+1 Rogue's Passage (WHO) 299
+1 Sacred Foundry (EOE) 256
+1 Sanctum of Ugin (BFZ) 242
+1 Scalding Tarn (MM3) 244
+1 Scavenger Grounds (MSC) 263
+1 Scrap Trawler (AER) 175
+1 Sculpting Steel (2XM) 286
+1 Sea of Clouds (PLST) BBD-84
+1 Semblance Anvil (SOM) 201
+1 Shadowspear (THB) 236
+1 Shrine of the Forsaken Gods (M3C) 376
+1 Single Combat (WAR) 30
+1 Skullclamp (MSC) 210
+1 Sol Ring (SLD) 1734
+1 Solemn Simulacrum (FDN) 257
+1 Sram, Senior Edificer (SLD) 461
+1 Steam Vents (TRK) 298
+1 Steel Overseer (M20) 239
+1 Stoneforge Mystic (2XM) 31
+1 Stonehewer Giant (PLST) 2XM-32
+1 Stridehangar Automaton (DRC) 19
+1 Sunforger (2XM) 293
+1 Sword of Feast and Famine (PLST) 2XM-296
+1 The Lonely Mountain (HOB) 187
+1 The Mightstone and Weakstone (BRO) 238
+1 The Mycosynth Gardens (ONE) 256
+1 The One Ring (LTR) 246
+1 The Reaver Cleaver (DMC) 8
+1 The Ten Rings (MSH) 251
+1 The Vision (MSH) 255
+1 Thespian's Stage (2XM) 327
+1 Thorin, Mountain-king (HOB) 114
+1 Thought Vessel (MSC) 222
+1 Thran Dynamo (MSC) 290
+1 Threefold Thunderhulk (LCI) 265
+1 Training Center (CMM) 434
+1 Training Grounds (MAT) 9
+1 Treasure Vault (AFR) 261
+1 Tundra (OLGC) 2015
+1 Ugin's Labyrinth (MH3) 233
+1 Ugin, Eye of the Storms (TDM) 382
+1 Ugin, the Ineffable (WAR) 2
+1 Ultima Weapon (FIN) 563
+1 Unwinding Clock (C18) 228
+1 Urza's Cave (MH3) 234
+1 Urza's Mine (CMM) 1051
+1 Urza's Power Plant (CMM) 1052
+1 Urza's Saga (PLST) MH2-259
+1 Urza's Tower (CMM) 1053
+1 Urza's Workshop (BRC) 28
+1 Vesuva (TSR) 289
+1 Volcanic Island (OLGC) 2018NA
+1 Walking Ballista (SLD) 58
+1 War Room (PLST) MKC-310
+1 Warping Wail (M3C) 162
+1 Wastes (OGW) 183
+1 Whirlwind of Thought (IKO) 215
+1 Winds of Abandon (PLST) MH1-37
+1 Wurmcoil Engine (2XM) 308
+1 Zirda, the Dawnwaker (IKO) 233
+
+# --- added 2026-09-10 from the Captain America, Living Legend list ---
+1 Adagia, Windswept Bastion (EOE) 250
+1 Adarkar Wastes (DMU) 243
+1 An Offer You Can't Refuse (SNC) 51
+1 Ancient Den (EOC) 148
+1 Apprentice Wizard (2XM) 40
+1 Arcanis the Omnipotent (FDN) 741
+1 Archway of Innovation (MH3) 214
+1 Cloudspire Captain (DFT) 9
+1 Cyclonic Rift (RVR) 40
+1 Dawnsire, Sunstar Dreadnought (EOE) 351
+1 Deserted Beach (FRA) 176
+1 Dovin's Veto (WAR) 193
+1 Emry, Lurker of the Loch (ELD) 43
+1 Extinguisher Battleship (EOE) 355
+1 Floodfarm Verge (DSK) 259
+1 Glacial Fortress (XLN) 255
+1 Grand Architect (2XM) 53
+1 Heart of Kiran (AER) 153
+1 Hotshot Mechanic (NEO) 16
+1 Into the Flood Maw (BLB) 52
+1 Kotori, Pilot Prodigy (NEC) 2
+1 Lita, Mechanical Engineer (J22) 6
+1 March of Otherworldly Light (NEO) 28
+1 Mech Hangar (NEO) 270
+1 Mechan Navigator (EOE) 64
+1 Mighty Servant of Leuk-o (CLB) 598
+1 Minamo, School at Water's Edge (CHK) 279
+1 Mu Yanling, Wind Rider (DFT) 52
+1 Mystic Gate (CMM) 1013
+1 Ornithopter of Paradise (PLST) MH2-232
+1 Parhelion II (WAR) 24
+1 Prairie Stream (BFZ) 241
+1 Prodigy's Prototype (NEO) 231
+1 Reaver Titan (40K) 163
+1 Retrofitter Foundry (DRC) 136
+1 Salvation Engine (DFT) 295
+1 Sanwell, Avenger Ace (BRC) 52
+1 Seachrome Coast (ONE) 258
+1 Seat of the Synod (EOC) 176
+1 Shorikai, Genesis Engine (NEC) 76
+1 Silver Myr (NEC) 158
+1 Simulacrum Synthesizer (BIG) 6
+1 Skysovereign, Consul Flagship (SPG) 93
+1 Smuggler's Copter (SLD) 446
+1 Split Up (DSK) 32
+1 Stroke of Midnight (WOE) 33
+1 Supreme Verdict (2X2) 280
+1 Swords to Plowshares (PMEI) 2026-4
+1 The Seriema (EOE) 323
+1 Thousand-Year Elixir (C21) 271
+1 Tui and La, Moon and Ocean (TLE) 96
+1 Unctus, Grand Metatect (ONE) 75
+1 Urza, Lord High Artificer (CMM) 130
+1 Uthros, Titanic Godcore (EOE) 260
+1 Vedalken Engineer (NEC) 100
+1 Whir of Invention (AER) 49

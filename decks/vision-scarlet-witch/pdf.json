@@ -1,0 +1,26 @@
+{
+  "title": "The Vision and Scarlet Witch — Mono-Red Spellslinger Voltron",
+  "subtitle": "The Vision and Scarlet Witch · Bracket 3 · 3/3 Game Changers · 100 cards",
+  "stats": [
+    ["Lands", "32"],
+    ["Red sources", "26"],
+    ["Cantrips", "7"],
+    ["Converters", "8"],
+    ["Protection", "8"],
+    ["Game Changers", "3/3"]
+  ],
+  "sideboard": [
+    { "name": "Blasphemous Act", "cost": "{8}{R}", "when": "Ramp tables; cast the turn before she lands. Displaces Fiery Confluence." },
+    { "name": "Vandalblast", "cost": "{R}", "when": "Artifact pods. Displaces Crash Through." },
+    { "name": "Pyroblast", "cost": "{R}", "when": "Two or more blue decks. Displaces Might of the Meek." },
+    { "name": "Underworld Breach", "cost": "{1}{R}", "when": "Bracket 4 only. Displaces Past in Flames." },
+    { "name": "Reiterate", "cost": "{1}{R}{R}", "when": "Bracket 4 only — infinite with Mana Geyser. Displaces Increasing Vengeance." },
+    { "name": "Thor, God of Thunder", "cost": "{3}{R}{R}", "when": "The list drifts toward MV 4+ spells. Displaces Thermo-Alchemist." },
+    { "name": "Electrostatic Field", "cost": "{1}{R}", "when": "Sweeper-heavy pods. Displaces Firebrand Archer." },
+    { "name": "Silver Shroud Costume", "cost": "{2}", "when": "Boards of fliers and reach. Displaces Impolite Entrance." },
+    { "name": "Desperate Ritual", "cost": "{1}{R}", "when": "A fifth ritual for the bank. Displaces Crimson Wisps." },
+    { "name": "Silent Arbiter", "cost": "{4}", "when": "Pods that leave stax pieces alone. Displaces Iron Man, Tony Stark." },
+    { "name": "Defense Grid", "cost": "{2}", "when": "Counterspell-heavy pod. Displaces Expedite." }
+  ],
+  "appendix": ["research/gameplan.md"]
+}

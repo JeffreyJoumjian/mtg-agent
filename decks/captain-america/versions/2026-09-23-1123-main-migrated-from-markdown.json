@@ -1,0 +1,457 @@
+{
+  "takenAt": "2026-09-23T11:23:10.625Z",
+  "listId": "main",
+  "label": "migrated from markdown",
+  "reason": "state at migration",
+  "list": {
+    "label": "Main",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Captain America, First Avenger",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Academy Ruins",
+            "qty": 1
+          },
+          {
+            "name": "Adarkar Wastes",
+            "qty": 1
+          },
+          {
+            "name": "Arena of Glory",
+            "qty": 1
+          },
+          {
+            "name": "Arid Mesa",
+            "qty": 1
+          },
+          {
+            "name": "Avengers Tower",
+            "qty": 1
+          },
+          {
+            "name": "Axgard Armory",
+            "qty": 1
+          },
+          {
+            "name": "Battlefield Forge",
+            "qty": 1
+          },
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Eiganjo, Seat of the Empire",
+            "qty": 1
+          },
+          {
+            "name": "Flooded Strand",
+            "qty": 1
+          },
+          {
+            "name": "Hallowed Fountain",
+            "qty": 1
+          },
+          {
+            "name": "Inventors' Fair",
+            "qty": 1
+          },
+          {
+            "name": "Island",
+            "qty": 2
+          },
+          {
+            "name": "Mountain",
+            "qty": 2
+          },
+          {
+            "name": "Otawara, Soaring City",
+            "qty": 1
+          },
+          {
+            "name": "Plains",
+            "qty": 3
+          },
+          {
+            "name": "Plateau",
+            "qty": 1
+          },
+          {
+            "name": "Prismatic Vista",
+            "qty": 1
+          },
+          {
+            "name": "Raugrin Triome",
+            "qty": 1
+          },
+          {
+            "name": "Rogue's Passage",
+            "qty": 1
+          },
+          {
+            "name": "Sacred Foundry",
+            "qty": 1
+          },
+          {
+            "name": "Scalding Tarn",
+            "qty": 1
+          },
+          {
+            "name": "Sea of Clouds",
+            "qty": 1
+          },
+          {
+            "name": "Shivan Reef",
+            "qty": 1
+          },
+          {
+            "name": "Spectator Seating",
+            "qty": 1
+          },
+          {
+            "name": "Steam Vents",
+            "qty": 1
+          },
+          {
+            "name": "The Lonely Mountain",
+            "qty": 1
+          },
+          {
+            "name": "Training Center",
+            "qty": 1
+          },
+          {
+            "name": "Tundra",
+            "qty": 1
+          },
+          {
+            "name": "Urza's Saga",
+            "qty": 1
+          },
+          {
+            "name": "Volcanic Island",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Ramp / Mana Rocks",
+        "cards": [
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Mox Opal",
+            "qty": 1
+          },
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Conviction",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Creativity",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Cost Reducers",
+        "cards": [
+          {
+            "name": "Bureau Headmaster",
+            "qty": 1
+          },
+          {
+            "name": "Fighter Class",
+            "qty": 1
+          },
+          {
+            "name": "Training Grounds",
+            "qty": 1
+          },
+          {
+            "name": "Zirda, the Dawnwaker",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Tutors",
+        "cards": [
+          {
+            "name": "Enlightened Tutor",
+            "qty": 1
+          },
+          {
+            "name": "Steelshaper's Gift",
+            "qty": 1
+          },
+          {
+            "name": "Stonehewer Giant",
+            "qty": 1
+          },
+          {
+            "name": "Stoneforge Mystic",
+            "qty": 1
+          },
+          {
+            "name": "Sunforger",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw / Engines",
+        "cards": [
+          {
+            "name": "Akiri, Fearless Voyager",
+            "qty": 1
+          },
+          {
+            "name": "Buster Sword",
+            "qty": 1
+          },
+          {
+            "name": "Esper Sentinel",
+            "qty": 1
+          },
+          {
+            "name": "Sram, Senior Edificer",
+            "qty": 1
+          },
+          {
+            "name": "The Mighty Thor, Jane Foster",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Attach Engines",
+        "cards": [
+          {
+            "name": "Ardenn, Intrepid Archaeologist",
+            "qty": 1
+          },
+          {
+            "name": "Brass Squire",
+            "qty": 1
+          },
+          {
+            "name": "Bruenor Battlehammer",
+            "qty": 1
+          },
+          {
+            "name": "Captain America, Living Legend",
+            "qty": 1
+          },
+          {
+            "name": "Codsworth, Handy Helper",
+            "qty": 1
+          },
+          {
+            "name": "Forge Anew",
+            "qty": 1
+          },
+          {
+            "name": "Hammer of Nazahn",
+            "qty": 1
+          },
+          {
+            "name": "Master Transmuter",
+            "qty": 1
+          },
+          {
+            "name": "Puresteel Paladin",
+            "qty": 1
+          },
+          {
+            "name": "Sigarda's Aid",
+            "qty": 1
+          },
+          {
+            "name": "Super-Soldier Serum",
+            "qty": 1
+          },
+          {
+            "name": "Thorin, Mountain-king",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Interaction & Protection",
+        "cards": [
+          {
+            "name": "Boros Charm",
+            "qty": 1
+          },
+          {
+            "name": "Captain America, Super-Soldier",
+            "qty": 1
+          },
+          {
+            "name": "Chaos Warp",
+            "qty": 1
+          },
+          {
+            "name": "Deflecting Swat",
+            "qty": 1
+          },
+          {
+            "name": "Dispatch",
+            "qty": 1
+          },
+          {
+            "name": "Fierce Guardianship",
+            "qty": 1
+          },
+          {
+            "name": "Flawless Maneuver",
+            "qty": 1
+          },
+          {
+            "name": "Generous Gift",
+            "qty": 1
+          },
+          {
+            "name": "Grand Abolisher",
+            "qty": 1
+          },
+          {
+            "name": "Path to Exile",
+            "qty": 1
+          },
+          {
+            "name": "Swords to Plowshares",
+            "qty": 1
+          },
+          {
+            "name": "Teferi's Protection",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Board Wipes",
+        "cards": [
+          {
+            "name": "Single Combat",
+            "qty": 1
+          },
+          {
+            "name": "Winds of Abandon",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Equipment — Throw Payload",
+        "cards": [
+          {
+            "name": "Argentum Armor",
+            "qty": 1
+          },
+          {
+            "name": "Excalibur, Sword of Eden",
+            "qty": 1
+          },
+          {
+            "name": "Genji Glove",
+            "qty": 1
+          },
+          {
+            "name": "Kaldra Compleat",
+            "qty": 1
+          },
+          {
+            "name": "Meteor Sword",
+            "qty": 1
+          },
+          {
+            "name": "Swordsman's Steel",
+            "qty": 1
+          },
+          {
+            "name": "Ultima Weapon",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Equipment — Riders & Voltron",
+        "cards": [
+          {
+            "name": "Basilisk Collar",
+            "qty": 1
+          },
+          {
+            "name": "Brotherhood Regalia",
+            "qty": 1
+          },
+          {
+            "name": "Colossus Hammer",
+            "qty": 1
+          },
+          {
+            "name": "Commander's Plate",
+            "qty": 1
+          },
+          {
+            "name": "Illusionist's Bracers",
+            "qty": 1
+          },
+          {
+            "name": "Mithril Coat",
+            "qty": 1
+          },
+          {
+            "name": "Mjölnir, Hammer of Thor",
+            "qty": 1
+          },
+          {
+            "name": "Shadowspear",
+            "qty": 1
+          },
+          {
+            "name": "Swiftfoot Boots",
+            "qty": 1
+          },
+          {
+            "name": "Sword of Feast and Famine",
+            "qty": 1
+          },
+          {
+            "name": "The Reaver Cleaver",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Evasion",
+        "cards": [
+          {
+            "name": "Dalakos, Crafter of Wonders",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

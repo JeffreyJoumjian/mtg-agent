@@ -1,0 +1,269 @@
+{
+  "schema": 1,
+  "name": "Captain America — Jeskai Equipment Voltron (Throw engine)",
+  "format": "commander",
+  "description": "**The engine:** every turn, Catch triggers at beginning of combat targeting the Equipment already\non Cap → hold priority → activate Throw, unattaching that same Equipment as the cost → Catch\nresolves and re-attaches it. Free damage every turn cycle, no equip cost. Letting Catch resolve\nwhile the gear is still attached wastes it (CR 701.3b). Grounds: `research/decisions.md`.",
+  "lists": {
+    "main": {
+      "label": "Main",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Captain America, First Avenger", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Academy Ruins", "qty": 1 },
+            { "name": "Adarkar Wastes", "qty": 1 },
+            { "name": "Arena of Glory", "qty": 1 },
+            { "name": "Arid Mesa", "qty": 1 },
+            { "name": "Avengers Tower", "qty": 1 },
+            { "name": "Axgard Armory", "qty": 1 },
+            { "name": "Battlefield Forge", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Eiganjo, Seat of the Empire", "qty": 1 },
+            { "name": "Flooded Strand", "qty": 1 },
+            { "name": "Hallowed Fountain", "qty": 1 },
+            { "name": "Inventors' Fair", "qty": 1 },
+            { "name": "Island", "qty": 2 },
+            { "name": "Mountain", "qty": 2 },
+            { "name": "Otawara, Soaring City", "qty": 1 },
+            { "name": "Plains", "qty": 3 },
+            { "name": "Plateau", "qty": 1 },
+            { "name": "Prismatic Vista", "qty": 1 },
+            { "name": "Raugrin Triome", "qty": 1 },
+            { "name": "Rogue's Passage", "qty": 1 },
+            { "name": "Sacred Foundry", "qty": 1 },
+            { "name": "Scalding Tarn", "qty": 1 },
+            { "name": "Sea of Clouds", "qty": 1 },
+            { "name": "Shivan Reef", "qty": 1 },
+            { "name": "Spectator Seating", "qty": 1 },
+            { "name": "Steam Vents", "qty": 1 },
+            { "name": "The Lonely Mountain", "qty": 1 },
+            { "name": "Training Center", "qty": 1 },
+            { "name": "Tundra", "qty": 1 },
+            { "name": "Urza's Saga", "qty": 1 },
+            { "name": "Volcanic Island", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp / Mana Rocks",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Mox Opal", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Talisman of Conviction", "qty": 1 },
+            { "name": "Talisman of Creativity", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Cost Reducers",
+          "cards": [
+            { "name": "Bureau Headmaster", "qty": 1 },
+            { "name": "Fighter Class", "qty": 1 },
+            { "name": "Training Grounds", "qty": 1 },
+            { "name": "Zirda, the Dawnwaker", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tutors",
+          "cards": [
+            { "name": "Enlightened Tutor", "qty": 1 },
+            { "name": "Steelshaper's Gift", "qty": 1 },
+            { "name": "Stoneforge Mystic", "qty": 1 },
+            { "name": "Stonehewer Giant", "qty": 1 },
+            { "name": "Sunforger", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw / Engines",
+          "cards": [
+            { "name": "Akiri, Fearless Voyager", "qty": 1 },
+            { "name": "Buster Sword", "qty": 1 },
+            { "name": "Esper Sentinel", "qty": 1 },
+            { "name": "Sram, Senior Edificer", "qty": 1 },
+            { "name": "The Mighty Thor, Jane Foster", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Attach Engines",
+          "cards": [
+            { "name": "Ardenn, Intrepid Archaeologist", "qty": 1 },
+            { "name": "Brass Squire", "qty": 1 },
+            { "name": "Bruenor Battlehammer", "qty": 1 },
+            { "name": "Captain America, Living Legend", "qty": 1 },
+            { "name": "Codsworth, Handy Helper", "qty": 1 },
+            { "name": "Forge Anew", "qty": 1 },
+            { "name": "Hammer of Nazahn", "qty": 1 },
+            { "name": "Master Transmuter", "qty": 1 },
+            { "name": "Puresteel Paladin", "qty": 1 },
+            { "name": "Sigarda's Aid", "qty": 1 },
+            { "name": "Super-Soldier Serum", "qty": 1 },
+            { "name": "Thorin, Mountain-king", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction & Protection",
+          "cards": [
+            { "name": "Boros Charm", "qty": 1 },
+            { "name": "Captain America, Super-Soldier", "qty": 1 },
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Deflecting Swat", "qty": 1 },
+            { "name": "Dispatch", "qty": 1 },
+            { "name": "Fierce Guardianship", "qty": 1 },
+            { "name": "Flawless Maneuver", "qty": 1 },
+            { "name": "Generous Gift", "qty": 1 },
+            { "name": "Grand Abolisher", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 },
+            { "name": "Teferi's Protection", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            { "name": "Single Combat", "qty": 1 },
+            { "name": "Winds of Abandon", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Equipment — Throw Payload",
+          "cards": [
+            { "name": "Argentum Armor", "qty": 1 },
+            { "name": "Excalibur, Sword of Eden", "qty": 1 },
+            { "name": "Genji Glove", "qty": 1 },
+            { "name": "Kaldra Compleat", "qty": 1 },
+            { "name": "Meteor Sword", "qty": 1 },
+            { "name": "Swordsman's Steel", "qty": 1 },
+            { "name": "Ultima Weapon", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Equipment — Riders & Voltron",
+          "cards": [
+            { "name": "Basilisk Collar", "qty": 1 },
+            { "name": "Brotherhood Regalia", "qty": 1 },
+            { "name": "Colossus Hammer", "qty": 1 },
+            { "name": "Commander's Plate", "qty": 1 },
+            { "name": "Illusionist's Bracers", "qty": 1 },
+            { "name": "Mithril Coat", "qty": 1 },
+            { "name": "Mjölnir, Hammer of Thor", "qty": 1 },
+            { "name": "Shadowspear", "qty": 1 },
+            { "name": "Swiftfoot Boots", "qty": 1 },
+            { "name": "Sword of Feast and Famine", "qty": 1 },
+            { "name": "The Reaver Cleaver", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Evasion",
+          "cards": [
+            { "name": "Dalakos, Crafter of Wonders", "qty": 1 }
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {
+    "Academy Ruins": { "status": "PROXY", "note": "— recurs a destroyed Equipment" },
+    "Adarkar Wastes": { "status": "PROXY", "note": "— untapped WU; free {C} mode means it often costs 0 life here" },
+    "Akiri, Fearless Voyager": { "status": "PROXY" },
+    "Arcane Signet": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"191"} },
+    "Ardenn, Intrepid Archaeologist": { "status": "PROXY", "note": "— mass attach from the battlefield" },
+    "Arena of Glory": { "status": "PROXY", "note": "— haste for a surprise commander swing" },
+    "Argentum Armor": { "status": "PROXY", "note": "— MV 6" },
+    "Arid Mesa": { "status": "PROXY" },
+    "Avengers Tower": { "status": "PROXY", "note": "— its any-colour mana can pay for Throw (Cap is a Hero source)", "printing": {"set":"msh","collectorNumber":"260"} },
+    "Axgard Armory": { "status": "PROXY", "note": "— sac to tutor an Equipment" },
+    "Basilisk Collar": { "status": "PROXY", "note": "— deathtouch + lifelink on Throw; never throw this one" },
+    "Battlefield Forge": { "status": "PROXY", "note": "— untapped RW" },
+    "Boros Charm": { "status": "PROXY", "note": "— indestructible covers ALL permanents, not just creatures" },
+    "Brass Squire": { "status": "PROXY", "note": "— from-battlefield attach, untapper-friendly" },
+    "Brotherhood Regalia": { "status": "PROXY", "note": "— can't be blocked, equip legendary {1}" },
+    "Bruenor Battlehammer": { "status": "PROXY", "note": "— a second free equip each turn + huge anthem" },
+    "Bureau Headmaster": { "status": "PROXY", "note": "— Equipment spells and equip both −{1}" },
+    "Buster Sword": { "status": "PROXY" },
+    "Captain America, First Avenger": { "status": "PROXY", "note": "— Throw {3} + Catch is the whole deck", "printing": {"set":"sld","collectorNumber":"1726"} },
+    "Captain America, Living Legend": { "status": "PROXY", "note": "— untaps Brass Squire / Stonehewer / Codsworth / Transmuter for a 2nd use", "printing": {"set":"msh","collectorNumber":"210"} },
+    "Captain America, Super-Soldier": { "status": "PROXY", "note": "— Cap is a Hero, so this gives him AND you hexproof", "printing": {"set":"msh","collectorNumber":"9"} },
+    "Chaos Warp": { "status": "PROXY", "printing": {"set":"mar","collectorNumber":"69"} },
+    "Codsworth, Handy Helper": { "status": "PROXY", "note": "— ward {2} on Cap, plus a from-battlefield attach" },
+    "Colossus Hammer": { "status": "PROXY", "note": "— +10/+10; equip {8} needs a free-equip enabler" },
+    "Command Tower": { "status": "PROXY" },
+    "Commander's Plate": { "status": "PROXY", "note": "— pro B/G only, so it can't strip on-colour gear" },
+    "Dalakos, Crafter of Wonders": { "status": "PROXY", "note": "— flying + haste on equipped creatures" },
+    "Deflecting Swat": { "status": "PROXY", "note": "— free redirect off the commander" },
+    "Dispatch": { "status": "PROXY", "note": "— metalcraft exile for {W}", "printing": {"set":"msc","collectorNumber":"130"} },
+    "Eiganjo, Seat of the Empire": { "status": "PROXY", "note": "— free removal on a land slot" },
+    "Enlightened Tutor": { "status": "PROXY" },
+    "Esper Sentinel": { "status": "PROXY" },
+    "Excalibur, Sword of Eden": { "status": "PROXY", "note": "— MV 12, the biggest Throw in the deck" },
+    "Fierce Guardianship": { "status": "PROXY" },
+    "Fighter Class": { "status": "PROXY", "note": "— tutors an Equipment on ETB, L2 makes equip −{2}" },
+    "Flawless Maneuver": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"1728"} },
+    "Flooded Strand": { "status": "PROXY" },
+    "Forge Anew": { "status": "PROXY", "note": "— instant-speed equip, first equip each turn free" },
+    "Generous Gift": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"133"} },
+    "Genji Glove": { "status": "PROXY", "note": "— MV 5; extra combat = a SECOND Catch trigger, plus double strike" },
+    "Grand Abolisher": { "status": "PROXY", "note": "— locks out interaction on your swing turn" },
+    "Hallowed Fountain": { "status": "PROXY" },
+    "Hammer of Nazahn": { "status": "PROXY", "note": "— free attach on EVERY Equipment ETB, plus indestructible", "printing": {"set":"msc","collectorNumber":"286"} },
+    "Illusionist's Bracers": { "status": "PROXY", "note": "— copies Throw" },
+    "Inventors' Fair": { "status": "PROXY", "note": "— artifact tutor, metalcraft is always on here" },
+    "Island": { "status": "PROXY" },
+    "Kaldra Compleat": { "status": "PROXY", "note": "— MV 7, living weapon" },
+    "Master Transmuter": { "status": "PROXY", "note": "— cheats a payload in; Hammer/Sigarda then attach it free and Puresteel/Thor draw 2" },
+    "Meteor Sword": { "status": "PROXY", "note": "— MV 7 at equip {3}, kills a permanent on ETB" },
+    "Mithril Coat": { "status": "PROXY", "note": "— flash indestructible, auto-attaches to Cap" },
+    "Mjölnir, Hammer of Thor": { "status": "PROXY", "note": "— doubles combat AND Throw; equip worthy {1}", "printing": {"set":"msh","collectorNumber":"146"} },
+    "Mountain": { "status": "PROXY" },
+    "Mox Opal": { "status": "PROXY", "note": "— metalcraft trivially on" },
+    "Otawara, Soaring City": { "status": "PROXY" },
+    "Path to Exile": { "status": "PROXY", "printing": {"set":"mar","collectorNumber":"47"} },
+    "Plains": { "status": "PROXY" },
+    "Plateau": { "status": "PROXY" },
+    "Prismatic Vista": { "status": "PROXY" },
+    "Puresteel Paladin": { "status": "PROXY", "note": "— equip {0} is the extra-Throw enabler" },
+    "Raugrin Triome": { "status": "PROXY" },
+    "Rogue's Passage": { "status": "PROXY", "note": "— the commander-damage enabler", "printing": {"set":"plst","collectorNumber":"MIC-179"} },
+    "Sacred Foundry": { "status": "PROXY" },
+    "Scalding Tarn": { "status": "PROXY" },
+    "Sea of Clouds": { "status": "PROXY" },
+    "Shadowspear": { "status": "PROXY", "note": "— strips hexproof/indestructible" },
+    "Shivan Reef": { "status": "PROXY", "note": "— untapped UR" },
+    "Sigarda's Aid": { "status": "PROXY", "note": "— flash Equipment in at instant speed", "printing": {"set":"sld","collectorNumber":"1727"} },
+    "Single Combat": { "status": "PROXY", "note": "— Cap survives, and nobody can rebuild for a turn" },
+    "Sol Ring": { "status": "PROXY" },
+    "Spectator Seating": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"268"} },
+    "Sram, Senior Edificer": { "status": "PROXY" },
+    "Steam Vents": { "status": "PROXY" },
+    "Steelshaper's Gift": { "status": "PROXY", "printing": {"set":"mar","collectorNumber":"50"} },
+    "Stoneforge Mystic": { "status": "PROXY" },
+    "Stonehewer Giant": { "status": "PROXY", "note": "— tutors an Equipment straight onto the battlefield ATTACHED" },
+    "Sunforger": { "status": "PROXY", "note": "— Catch re-attaches it free every turn = repeatable tutor" },
+    "Super-Soldier Serum": { "status": "PROXY", "note": "— attaches ANY NUMBER of Equipment on attack or block", "printing": {"set":"msh","collectorNumber":"38"} },
+    "Swiftfoot Boots": { "status": "PROXY", "note": "— hexproof, never shroud", "printing": {"set":"msc","collectorNumber":"216"} },
+    "Sword of Feast and Famine": { "status": "PROXY", "note": "— pro B/G is safe here; untap lands = a second Throw" },
+    "Swords to Plowshares": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"143"} },
+    "Swordsman's Steel": { "status": "PROXY", "note": "— draw per Equipment on ETB, +2/+2 per Equipment, MV 4 payload", "printing": {"set":"msc","collectorNumber":"752"} },
+    "Talisman of Conviction": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"217"} },
+    "Talisman of Creativity": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"218"} },
+    "Teferi's Protection": { "status": "PROXY", "printing": {"set":"mar","collectorNumber":"51"} },
+    "The Lonely Mountain": { "status": "PROXY", "note": "— fetchable Mountain, untapped whenever you control an Equipment" },
+    "The Mighty Thor, Jane Foster": { "status": "PROXY", "printing": {"set":"msh","collectorNumber":"222"} },
+    "The Reaver Cleaver": { "status": "PROXY", "note": "— Treasures equal to combat damage; fuels repeat Throws" },
+    "Thorin, Mountain-king": { "status": "PROXY", "note": "— mass attach from the battlefield, then Cap's power as removal" },
+    "Training Center": { "status": "PROXY" },
+    "Training Grounds": { "status": "PROXY", "note": "— Throw {3} → {1}; does NOT reduce equip (CR 702.6a)" },
+    "Tundra": { "status": "PROXY" },
+    "Ultima Weapon": { "status": "PROXY", "note": "— MV 7" },
+    "Urza's Saga": { "status": "PROXY", "note": "— fetches Colossus Hammer / Basilisk Collar / Sol Ring" },
+    "Volcanic Island": { "status": "PROXY" },
+    "Winds of Abandon": { "status": "PROXY", "note": "— overload is fully one-sided" },
+    "Zirda, the Dawnwaker": { "status": "PROXY", "note": "— Throw AND equip; maindeck, never as companion" }
+  }
+}

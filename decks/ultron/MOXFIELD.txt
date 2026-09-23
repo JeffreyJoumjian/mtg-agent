@@ -1,0 +1,93 @@
+1 Ultron, Artificial Malevolence (MSH) 252
+1 All Is Dust (CMM) 800
+1 Ancient Tomb (UMA) 236
+1 Arc Reactor (MSH) 243
+1 Blightsteel Colossus (SLD) 1079
+1 Buried Ruin (2XM) 312
+1 Canoptek Spyder (40K) 151
+1 Chimil, the Inner Sun (LCI) 249
+1 Cityscape Leveler (BRO) 233
+1 Cloud Key (TSR) 265
+1 Command Beacon (PLST) C15-56
+1 Commander's Plate (SLD) 1733
+1 Cryptothrall (40K) 155
+1 Cybermen Squadron (WHO) 176
+1 Darksteel Citadel (C18) 241
+1 Darksteel Forge (2XM) 248
+1 Deserted Temple (MH3) 301
+1 Duplicant (DRC) 54
+1 Echoes of Eternity (MH3) 4
+1 Eldrazi Confluence (M3C) 32
+1 Extraplanar Lens
+1 Fomori Vault (BIG) 29
+1 Forsaken Monument (ZNR) 244
+1 Foundry Inspector (KLD) 215
+1 Gilded Lotus (40K) 239
+1 Glaring Fleshraker (MH3) 7
+1 Hangarback Walker
+1 Hedron Archive (40K) 240
+1 Idol of Oblivion (PLST) M3C-297
+1 Inventors' Fair (SLD) 1735
+1 Iron Spider, Stark Upgrade (SPM) 166
+1 Jhoira's Familiar (DOM) 220
+1 Karn, Legacy Reforged (MAT) 49
+1 Kozilek's Command (MH3) 11
+1 Krang, Utrom Warlord (TMT) 175
+1 Kuldotha Forgemaster (2XM) 266
+1 Liberator, Urza's Battlethopter (BRO) 237
+1 Marvin, Murderous Mimic
+1 Meteor Golem (FDN) 256
+1 Mind Stone (WHO) 244
+1 Mind's Eye
+1 Mirror Box (NEO) 250
+1 Mirrorpool (OGW) 174
+1 Mirrorworks (C18) 211
+1 Mishra's Workshop (OVNT) 2020C
+1 Mox Opal (2XM) 275
+1 Mycosynth Golem (5DN) 137
+1 Myr Battlesphere (2XM) 276
+1 Mystic Forge (40K) 246
+1 Null Elemental Blast (MH3) 12
+1 Palladium Myr (M21) 234
+1 Panharmonicon (SLD) 605
+1 Platinum Angel
+1 Portal to Phyrexia (BRO) 240
+1 Power Depot (MH2) 251
+1 Prototype Portal (C18) 216
+1 Quicksilver Amulet
+1 Roaming Throne (MAR) 99
+1 Rogue's Passage (WHO) 299
+1 Sanctum of Ugin (BFZ) 242
+1 Scavenger Grounds (MSC) 263
+1 Sculpting Steel (2XM) 286
+1 Semblance Anvil (SOM) 201
+1 Shrine of the Forsaken Gods (M3C) 376
+1 Sol Ring (SLD) 1734
+1 Solemn Simulacrum (FDN) 257
+1 Steel Overseer (M20) 239
+1 The Mightstone and Weakstone (BRO) 238
+1 The Mycosynth Gardens (ONE) 256
+1 The One Ring (LTR) 246
+1 The Ten Rings (MSH) 251
+1 Thespian's Stage (2XM) 327
+1 Thought Vessel (MSC) 222
+1 Thran Dynamo (MSC) 290
+1 Thran Temporal Gateway
+1 Treasure Vault (AFR) 261
+1 Ugin, Eye of the Storms (TDM) 382
+1 Ugin, the Ineffable (WAR) 2
+1 Ugin's Labyrinth (MH3) 233
+1 Ultron, Machine Overlord (MSC) 507
+1 Unwinding Clock (C18) 228
+1 Urza's Cave (MH3) 234
+1 Urza's Mine (CMM) 1051
+1 Urza's Power Plant (CMM) 1052
+1 Urza's Saga (PLST) MH2-259
+1 Urza's Tower (CMM) 1053
+1 Urza's Workshop (BRC) 28
+1 Vesuva (TSR) 289
+1 Walking Ballista (SLD) 58
+1 War Room (PLST) MKC-310
+8 Wastes (OGW) 183
+1 Worn Powerstone
+1 Wurmcoil Engine (2XM) 308

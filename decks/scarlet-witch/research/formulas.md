@@ -149,13 +149,30 @@ expensive ones are nearly free.
 |---|---|---|
 | **Livaan, Cultist of Tiamat** | `+MV` of each noncreature spell you cast | until end of turn, **stacks per spell** |
 | **Cait Sith, Fortune Teller** | `+MV` of the exiled card, each combat | until end of turn |
-| **Blazing Shoal** | `+X` where X = MV of a red card you exile from hand — **free** | until end of turn |
+| **Runechanter's Pike** | `+X/+0` where X = instants and sorceries in your graveyard; first strike; equip {2} | permanent (shrinks when Past in Flames / Will / Mizzix's / Bombardment exile the yard) |
 | **Monstrous Rage** | `+3/+1`, and the Role token is **+1/+1 permanently** | permanent residue |
 | **Blackblade Reforged** | `+L/+L`; equip **{3}** (legendary), not {7} | permanent |
 | **Champion's Helm** | `+2/+2` and hexproof; equip {1} | permanent |
 | **Commander's Plate** | `+3/+3` and protection from W/U/B/G; equip {3} for commander | permanent |
 | **Forge of Heroes** | `+1/+1` counter on a commander that entered this turn | permanent |
 | **Tyrite Sanctum** | `{2},{T}`: God + a `+1/+1` counter; `{4},{T}`, sac: indestructible counter | permanent |
+
+**Livaan is the engine — and the engine is a recurrence, not a bonus.** Livaan's trigger reads the
+spell's **mana value**, and for an X-spell that is `kX + p` *as it sits on the stack* (CR 202.3e),
+where X is whatever Wanda's discount let you announce. So each X-spell you cast under Livaan
+roughly **doubles** her:
+
+```
+X      = floor((W + r) / k)        k = generic per point of X (Crackle 3, else 1)
+MV     = kX + p                    p = coloured pips — the only part you pay
+W'     = W + MV  ~=  2W + r + p
+```
+
+Storm King's Thunder (k=1, p=3) is the best first link because it doubles her *and* copies the
+next spell X times. Jaya's Immolating Inferno (k=1, p=2) is the best second link. Five red pips,
+21 to each opponent from a base-2 Wanda; 55 from a Wanda at 4. The `{X}{R}` pump instants
+(Lunar Frenzy, Frantic Confrontation, Enrage, Pedal to the Metal) do the same for **one** pip and
+need no Livaan at all. Full table: `research/turn-5-chain-2026-09-08.md`.
 
 **Livaan is the engine.** Cast a mana value 5 spell and Wanda is +5 for the rest of the turn —
 which is **{5} off every subsequent spell**, or **+1.67 to your X**. Cast three spells averaging
@@ -187,7 +204,7 @@ copy") and **Ashling** (same wording).
 | Card | What you get back | X-spells? |
 |---|---|---|
 | **Past in Flames** | flashback on every instant/sorcery in your yard, cost = mana cost | ✅ X works |
-| **Will of the Jeskai** | same, **plus** a wheel if you control your commander (choose both) | ✅ X works |
+| **Will of the Jeskai** | same, **plus** a wheel if you control your commander (choose both) — and the wheel resolves **first**, so everything you discard to it gains the flashback (CR 608.2c, 611.2c) | ✅ X works |
 | **Mizzix's Mastery** | exile one I/S from yard, cast a **free copy**; overload for all | ❌ X = 0 |
 | **Improvisation Capstone** | free-cast off the top; **Paradigm** = a free copy each first main phase | ❌ X = 0 |
 | **Arcane Bombardment** | exiles an I/S at random per turn, copies the whole pile free | ❌ X = 0 |

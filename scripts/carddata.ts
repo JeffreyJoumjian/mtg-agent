@@ -7,10 +7,13 @@
  * the source of truth (see `decks/README.md`).
  *
  * The deck comes from `--deck <slug>`, or is inferred from a `--file` path inside `decks/<slug>/`.
+ * With no names, no file and no stdin, the deck's own list (main, or `--list id`) is used.
  *
  * Usage (from the repo root):
  *   bun run carddata --deck edgar-markov "Blood Artist" "Sol Ring"
- *   bun run carddata --file decks/edgar-markov/DECK.md      # slug inferred from the path
+ *   bun run carddata --deck edgar-markov                      # every card of the main list
+ *   bun run carddata --deck edgar-markov --list combat        # another list
+ *   bun run carddata --file decks/edgar-markov/research/pool.txt   # a pasted list; slug inferred
  *   echo "1 Mirkwood Bats" | bun run carddata --deck edgar-markov
  */
 import { appendFileSync, mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
@@ -25,11 +28,14 @@ import {
   frontFace,
   parseKeepPile,
   readCacheText,
+  slugFromDeckArg,
 } from "./lib/deck-research.ts";
+import { listNames, pickList } from "./lib/deck-model.ts";
+import { readDeck } from "./lib/deck-store.ts";
 import { popFlag, readStdin } from "./lib/cli.ts";
 
 const USAGE =
-  "usage: carddata --deck <slug> <names…>  |  carddata --file decks/<slug>/<list>  (or pipe a list on stdin)";
+  "usage: carddata --deck <slug> [--list id] [<names…>]  |  carddata --file <list file>  (or pipe a list on stdin)";
 
 /** Fetch the misses in one `/cards/collection` call and append them to the cache.
  *  Network failure is reported but not fatal — the caller still prints whatever was cached. */
@@ -104,15 +110,21 @@ function readNames(filePath: string | undefined, positional: string[]): string[]
 
 const argv = process.argv.slice(2);
 const [deckFlag, afterDeck] = popFlag(argv, "--deck");
-const [fileFlag, rest] = popFlag(afterDeck, "--file");
+const [fileFlag, afterFile] = popFlag(afterDeck, "--file");
+const [listFlag, rest] = popFlag(afterFile, "--list");
 
-const slug = deckSlugFrom(deckFlag, fileFlag);
+const slug = deckSlugFrom(deckFlag ? slugFromDeckArg(deckFlag) : undefined, fileFlag);
 if (!slug) {
   console.error(USAGE);
   process.exit(1);
 }
 
-const names = readNames(fileFlag, rest.filter((a) => !a.startsWith("--")));
+let names = readNames(fileFlag, rest.filter((a) => !a.startsWith("--")));
+if (names.length === 0 && deckFlag) {
+  // No explicit names: describe the deck's own list.
+  const deck = await readDeck(slug);
+  names = listNames(pickList(deck, listFlag).list);
+}
 if (names.length === 0) {
   console.error(USAGE);
   process.exit(1);

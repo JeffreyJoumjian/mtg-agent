@@ -1,0 +1,94 @@
+1 Tony Stark
+1 Academy Ruins (PLST) 2XM-309
+1 Adaptive Omnitool
+1 Aettir and Priwen
+1 Aggravated Assault
+1 Ancient Tomb (UMA) 236
+1 Arcane Signet
+1 Archway of Innovation (MH3) 214
+1 Argentum Armor (PLST) AFC-198
+1 Armor Wars
+1 Basilisk Collar (PIP) 225
+1 Blacksmith's Talent
+1 Blasphemous Act
+1 Buster Sword (FIN) 255
+1 Captain America's Shield
+1 Cascade Bluffs
+1 Champion's Helm
+1 Chandra's Ignition
+1 Chaos Warp
+1 Cloud Key (TSR) 265
+1 Command Beacon (PLST) C15-56
+1 Command Tower (ELD) 333
+1 Commander's Plate (SLD) 1733
+1 Conqueror's Flail
+1 Counterspell
+1 Darksteel Citadel (C18) 241
+1 Darksteel Forge (2XM) 248
+1 Deflecting Swat (CMM) 214
+1 Embercleave
+1 Enthusiastic Mechanaut
+1 Etherium Sculptor
+1 Fabricate
+1 Fateful Discovery
+1 Fierce Guardianship (CMM) 94
+1 Foundry Inspector (KLD) 215
+1 Genji Glove (FIN) 258
+1 Gilded Lotus (40K) 239
+1 Goblin Engineer
+1 Goblin Welder
+1 Great Furnace
+1 Hammer of Nazahn
+1 Hulkbuster Armor
+1 Ingenious Artillerist
+1 Into the Flood Maw (BLB) 52
+1 Inventors' Fair (SLD) 1735
+1 Iron Man, Master of Machines
+1 Iron Man, Titan of Innovation
+4 Island (THB) 251
+1 Master Transmuter
+1 Meteor Sword (TLA) 258
+1 Mithril Coat (LTR) 245
+1 Mjölnir, Hammer of Thor
+4 Mountain (THB) 253
+1 Otawara, Soaring City (NEO) 271
+1 Panharmonicon (SLD) 605
+1 Portal to Phyrexia (BRO) 240
+1 Propaganda
+1 Riverglide Pathway
+1 Riverpyre Verge
+1 Roaming Throne (MAR) 99
+1 Sai, Master Thopterist
+1 Scorched Geyser
+1 Seat of the Synod (EOC) 176
+1 Shadowspear (THB) 236
+1 Shivan Reef
+1 Silverbluff Bridge
+1 Simulacrum Synthesizer (BIG) 6
+1 Sink into Stupor
+1 Sol Ring (SLD) 1734
+1 Steam Vents (TRK) 298
+1 Stormcarved Coast
+1 Strix Serenade
+1 Sulfur Falls
+1 Swan Song
+1 Sword of Feast and Famine (PLST) 2XM-296
+1 Talisman of Creativity
+1 The Mycosynth Gardens (ONE) 256
+1 The One Ring (LTR) 246
+1 The Reaver Cleaver (DMC) 8
+1 The Ten Rings (MSH) 251
+1 The Vision and Scarlet Witch
+1 Thran Dynamo (MSC) 290
+1 Thundering Falls
+1 Training Center (CMM) 434
+1 Treasure Vault (AFR) 261
+1 Turbulent Springs
+1 Ultima Weapon (FIN) 563
+1 Ultron, Artificial Malevolence (MSH) 252
+1 Urza's Saga (PLST) MH2-259
+1 Uthros, Titanic Godcore (EOE) 260
+1 Venser's Journal
+1 Volcanic Island (OLGC) 2018NA
+1 Wizard's Staff
+1 Wurmcoil Engine (2XM) 308

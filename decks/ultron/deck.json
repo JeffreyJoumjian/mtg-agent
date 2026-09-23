@@ -1,0 +1,258 @@
+{
+  "schema": 1,
+  "name": "Ultron — Colorless Artifact Replication",
+  "format": "commander",
+  "description": "Research: research/decisions.md · pilot notes: research/gameplan.md.\n\n**Gameplan:** every nontoken artifact you play is two artifacts. Land Ultron on turn 3, then\npay {2} on each rock, each cost reducer and each ETB artifact to get a 2/2 Robot Villain copy of\nit. Copy the rocks early (a Thran Dynamo token taps for three next turn), copy the value\nartifacts mid-game (Myr Battlesphere, Meteor Golem, Portal to Phyrexia, Wurmcoil Engine), and\nstack the copy engines — Mirrorworks is a second Ultron, Roaming Throne (naming Robot),\nPanharmonicon and Echoes of Eternity make him trigger four times, Mirror Box lets the legendary\ncopies stay. The tokens are Robot\nVillains, so Ultron, Machine Overlord and Steel Overseer grow them and Krang gives the whole\nboard flying, trample, indestructible and haste. Close with Krang, Cybermen Squadron's myriad\nswing, a copied Blightsteel Colossus, or Glaring Fleshraker pinging once per colorless creature.\n\n**Not voltron.** No Equipment package, no commander-damage plan. Ultron is the engine, and the\nprotection slots (Commander's Plate, Cryptothrall, Darksteel Forge) exist to keep the engine and\nthe board alive, not to make him swing.",
+  "lists": {
+    "main": {
+      "label": "Main",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Ultron, Artificial Malevolence", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Ancient Tomb", "qty": 1 },
+            { "name": "Buried Ruin", "qty": 1 },
+            { "name": "Command Beacon", "qty": 1 },
+            { "name": "Darksteel Citadel", "qty": 1 },
+            { "name": "Deserted Temple", "qty": 1 },
+            { "name": "Fomori Vault", "qty": 1 },
+            { "name": "Inventors' Fair", "qty": 1 },
+            { "name": "Mirrorpool", "qty": 1 },
+            { "name": "Mishra's Workshop", "qty": 1 },
+            { "name": "Power Depot", "qty": 1 },
+            { "name": "Rogue's Passage", "qty": 1 },
+            { "name": "Sanctum of Ugin", "qty": 1 },
+            { "name": "Scavenger Grounds", "qty": 1 },
+            { "name": "Shrine of the Forsaken Gods", "qty": 1 },
+            { "name": "The Mycosynth Gardens", "qty": 1 },
+            { "name": "Thespian's Stage", "qty": 1 },
+            { "name": "Treasure Vault", "qty": 1 },
+            { "name": "Ugin's Labyrinth", "qty": 1 },
+            { "name": "Urza's Cave", "qty": 1 },
+            { "name": "Urza's Mine", "qty": 1 },
+            { "name": "Urza's Power Plant", "qty": 1 },
+            { "name": "Urza's Saga", "qty": 1 },
+            { "name": "Urza's Tower", "qty": 1 },
+            { "name": "Urza's Workshop", "qty": 1 },
+            { "name": "Vesuva", "qty": 1 },
+            { "name": "War Room", "qty": 1 },
+            { "name": "Wastes", "qty": 8 }
+          ]
+        },
+        {
+          "name": "Ramp / Mana Rocks",
+          "cards": [
+            { "name": "Arc Reactor", "qty": 1 },
+            { "name": "Extraplanar Lens", "qty": 1 },
+            { "name": "Gilded Lotus", "qty": 1 },
+            { "name": "Hedron Archive", "qty": 1 },
+            { "name": "Karn, Legacy Reforged", "qty": 1 },
+            { "name": "Mind Stone", "qty": 1 },
+            { "name": "Mox Opal", "qty": 1 },
+            { "name": "Palladium Myr", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "The Mightstone and Weakstone", "qty": 1 },
+            { "name": "Thought Vessel", "qty": 1 },
+            { "name": "Thran Dynamo", "qty": 1 },
+            { "name": "Worn Powerstone", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Cost Reduction",
+          "cards": [
+            { "name": "Cloud Key", "qty": 1 },
+            { "name": "Foundry Inspector", "qty": 1 },
+            { "name": "Jhoira's Familiar", "qty": 1 },
+            { "name": "Semblance Anvil", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Canoptek Spyder", "qty": 1 },
+            { "name": "Chimil, the Inner Sun", "qty": 1 },
+            { "name": "Idol of Oblivion", "qty": 1 },
+            { "name": "Iron Spider, Stark Upgrade", "qty": 1 },
+            { "name": "Mind's Eye", "qty": 1 },
+            { "name": "The One Ring", "qty": 1 },
+            { "name": "The Ten Rings", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal & Interaction",
+          "cards": [
+            { "name": "All Is Dust", "qty": 1 },
+            { "name": "Cityscape Leveler", "qty": 1 },
+            { "name": "Duplicant", "qty": 1 },
+            { "name": "Eldrazi Confluence", "qty": 1 },
+            { "name": "Kozilek's Command", "qty": 1 },
+            { "name": "Meteor Golem", "qty": 1 },
+            { "name": "Null Elemental Blast", "qty": 1 },
+            { "name": "Ugin, Eye of the Storms", "qty": 1 },
+            { "name": "Ugin, the Ineffable", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Copy Engines",
+          "cards": [
+            { "name": "Echoes of Eternity", "qty": 1 },
+            { "name": "Mirror Box", "qty": 1 },
+            { "name": "Mirrorworks", "qty": 1 },
+            { "name": "Panharmonicon", "qty": 1 },
+            { "name": "Prototype Portal", "qty": 1 },
+            { "name": "Roaming Throne", "qty": 1 },
+            { "name": "Sculpting Steel", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Deployers",
+          "cards": [
+            { "name": "Quicksilver Amulet", "qty": 1 },
+            { "name": "Thran Temporal Gateway", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Payoffs & Engines",
+          "cards": [
+            { "name": "Cybermen Squadron", "qty": 1 },
+            { "name": "Forsaken Monument", "qty": 1 },
+            { "name": "Glaring Fleshraker", "qty": 1 },
+            { "name": "Krang, Utrom Warlord", "qty": 1 },
+            { "name": "Liberator, Urza's Battlethopter", "qty": 1 },
+            { "name": "Marvin, Murderous Mimic", "qty": 1 },
+            { "name": "Mystic Forge", "qty": 1 },
+            { "name": "Steel Overseer", "qty": 1 },
+            { "name": "Ultron, Machine Overlord", "qty": 1 },
+            { "name": "Unwinding Clock", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Bombs & ETB Artifacts",
+          "cards": [
+            { "name": "Blightsteel Colossus", "qty": 1 },
+            { "name": "Hangarback Walker", "qty": 1 },
+            { "name": "Kuldotha Forgemaster", "qty": 1 },
+            { "name": "Mycosynth Golem", "qty": 1 },
+            { "name": "Myr Battlesphere", "qty": 1 },
+            { "name": "Platinum Angel", "qty": 1 },
+            { "name": "Portal to Phyrexia", "qty": 1 },
+            { "name": "Solemn Simulacrum", "qty": 1 },
+            { "name": "Walking Ballista", "qty": 1 },
+            { "name": "Wurmcoil Engine", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection & Recursion",
+          "cards": [
+            { "name": "Commander's Plate", "qty": 1 },
+            { "name": "Cryptothrall", "qty": 1 },
+            { "name": "Darksteel Forge", "qty": 1 }
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {
+    "All Is Dust": { "status": "PROXY" },
+    "Ancient Tomb": { "status": "PROXY", "note": "💰 ★GAME CHANGER" },
+    "Arc Reactor": { "status": "PROXY" },
+    "Blightsteel Colossus": { "status": "PROXY", "note": "💰" },
+    "Buried Ruin": { "status": "PROXY" },
+    "Canoptek Spyder": { "status": "PROXY" },
+    "Chimil, the Inner Sun": { "status": "PROXY" },
+    "Cityscape Leveler": { "status": "PROXY" },
+    "Cloud Key": { "status": "PROXY" },
+    "Command Beacon": { "status": "PROXY" },
+    "Commander's Plate": { "status": "PROXY", "note": "💰" },
+    "Cryptothrall": { "status": "PROXY", "note": "💰" },
+    "Cybermen Squadron": { "status": "PROXY", "note": "💰" },
+    "Darksteel Citadel": { "status": "PROXY" },
+    "Darksteel Forge": { "status": "PROXY", "note": "💰" },
+    "Deserted Temple": { "status": "PROXY" },
+    "Duplicant": { "status": "PROXY" },
+    "Echoes of Eternity": { "status": "PROXY" },
+    "Eldrazi Confluence": { "status": "PROXY" },
+    "Extraplanar Lens": { "status": "PROXY" },
+    "Fomori Vault": { "status": "PROXY" },
+    "Forsaken Monument": { "status": "PROXY" },
+    "Foundry Inspector": { "status": "PROXY" },
+    "Gilded Lotus": { "status": "PROXY" },
+    "Glaring Fleshraker": { "status": "PROXY" },
+    "Hangarback Walker": { "status": "PROXY" },
+    "Hedron Archive": { "status": "PROXY" },
+    "Idol of Oblivion": { "status": "PROXY" },
+    "Inventors' Fair": { "status": "PROXY" },
+    "Iron Spider, Stark Upgrade": { "status": "PROXY" },
+    "Jhoira's Familiar": { "status": "PROXY" },
+    "Karn, Legacy Reforged": { "status": "PROXY", "note": "💰" },
+    "Kozilek's Command": { "status": "PROXY" },
+    "Krang, Utrom Warlord": { "status": "PROXY", "note": "💰" },
+    "Kuldotha Forgemaster": { "status": "PROXY" },
+    "Liberator, Urza's Battlethopter": { "status": "PROXY" },
+    "Marvin, Murderous Mimic": { "status": "PROXY" },
+    "Meteor Golem": { "status": "PROXY" },
+    "Mind Stone": { "status": "PROXY" },
+    "Mind's Eye": { "status": "PROXY" },
+    "Mirror Box": { "status": "PROXY" },
+    "Mirrorpool": { "status": "PROXY" },
+    "Mirrorworks": { "status": "PROXY" },
+    "Mishra's Workshop": { "status": "PROXY", "note": "★GAME CHANGER" },
+    "Mox Opal": { "status": "PROXY", "note": "💰" },
+    "Mycosynth Golem": { "status": "PROXY", "note": "💰" },
+    "Myr Battlesphere": { "status": "PROXY" },
+    "Mystic Forge": { "status": "PROXY" },
+    "Null Elemental Blast": { "status": "PROXY" },
+    "Palladium Myr": { "status": "PROXY" },
+    "Panharmonicon": { "status": "PROXY" },
+    "Platinum Angel": { "status": "PROXY" },
+    "Portal to Phyrexia": { "status": "PROXY", "note": "💰" },
+    "Power Depot": { "status": "PROXY" },
+    "Prototype Portal": { "status": "PROXY" },
+    "Quicksilver Amulet": { "status": "PROXY" },
+    "Roaming Throne": { "status": "PROXY", "note": "💰" },
+    "Rogue's Passage": { "status": "PROXY" },
+    "Sanctum of Ugin": { "status": "PROXY" },
+    "Scavenger Grounds": { "status": "PROXY" },
+    "Sculpting Steel": { "status": "PROXY" },
+    "Semblance Anvil": { "status": "PROXY" },
+    "Shrine of the Forsaken Gods": { "status": "PROXY" },
+    "Sol Ring": { "status": "PROXY" },
+    "Solemn Simulacrum": { "status": "PROXY" },
+    "Steel Overseer": { "status": "PROXY" },
+    "The Mightstone and Weakstone": { "status": "PROXY" },
+    "The Mycosynth Gardens": { "status": "PROXY" },
+    "The One Ring": { "status": "PROXY", "note": "💰 ★GAME CHANGER" },
+    "The Ten Rings": { "status": "PROXY" },
+    "Thespian's Stage": { "status": "PROXY" },
+    "Thought Vessel": { "status": "PROXY" },
+    "Thran Dynamo": { "status": "PROXY" },
+    "Thran Temporal Gateway": { "status": "PROXY" },
+    "Treasure Vault": { "status": "PROXY" },
+    "Ugin, Eye of the Storms": { "status": "PROXY", "note": "💰" },
+    "Ugin, the Ineffable": { "status": "PROXY" },
+    "Ugin's Labyrinth": { "status": "PROXY" },
+    "Ultron, Artificial Malevolence": { "status": "PROXY" },
+    "Ultron, Machine Overlord": { "status": "PROXY" },
+    "Unwinding Clock": { "status": "PROXY" },
+    "Urza's Cave": { "status": "PROXY" },
+    "Urza's Mine": { "status": "PROXY" },
+    "Urza's Power Plant": { "status": "PROXY" },
+    "Urza's Saga": { "status": "PROXY", "note": "💰" },
+    "Urza's Tower": { "status": "PROXY" },
+    "Urza's Workshop": { "status": "PROXY", "note": "💰" },
+    "Vesuva": { "status": "PROXY" },
+    "Walking Ballista": { "status": "PROXY" },
+    "War Room": { "status": "PROXY" },
+    "Wastes": { "status": "PROXY" },
+    "Worn Powerstone": { "status": "PROXY" },
+    "Wurmcoil Engine": { "status": "PROXY" }
+  }
+}

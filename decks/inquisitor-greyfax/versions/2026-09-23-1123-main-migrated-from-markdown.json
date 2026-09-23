@@ -1,0 +1,433 @@
+{
+  "takenAt": "2026-09-23T11:23:11.721Z",
+  "listId": "main",
+  "label": "migrated from markdown",
+  "reason": "state at migration",
+  "list": {
+    "label": "Main",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Inquisitor Greyfax",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Academy Ruins",
+            "qty": 1
+          },
+          {
+            "name": "Adarkar Wastes",
+            "qty": 1
+          },
+          {
+            "name": "Arcane Sanctum",
+            "qty": 1
+          },
+          {
+            "name": "Bojuka Bog",
+            "qty": 1
+          },
+          {
+            "name": "Caves of Koilos",
+            "qty": 1
+          },
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Concealed Courtyard",
+            "qty": 1
+          },
+          {
+            "name": "Darkslick Shores",
+            "qty": 1
+          },
+          {
+            "name": "Deserted Beach",
+            "qty": 1
+          },
+          {
+            "name": "Eiganjo, Seat of the Empire",
+            "qty": 1
+          },
+          {
+            "name": "Godless Shrine",
+            "qty": 1
+          },
+          {
+            "name": "Hallowed Fountain",
+            "qty": 1
+          },
+          {
+            "name": "Karn's Bastion",
+            "qty": 1
+          },
+          {
+            "name": "Minamo, School at Water's Edge",
+            "qty": 1
+          },
+          {
+            "name": "Otawara, Soaring City",
+            "qty": 1
+          },
+          {
+            "name": "Raffine's Tower",
+            "qty": 1
+          },
+          {
+            "name": "Reflecting Pool",
+            "qty": 1
+          },
+          {
+            "name": "Rogue's Passage",
+            "qty": 1
+          },
+          {
+            "name": "Seachrome Coast",
+            "qty": 1
+          },
+          {
+            "name": "Shattered Sanctum",
+            "qty": 1
+          },
+          {
+            "name": "Shipwreck Marsh",
+            "qty": 1
+          },
+          {
+            "name": "Takenuma, Abandoned Mire",
+            "qty": 1
+          },
+          {
+            "name": "Temple of Deceit",
+            "qty": 1
+          },
+          {
+            "name": "Temple of Enlightenment",
+            "qty": 1
+          },
+          {
+            "name": "Temple of Silence",
+            "qty": 1
+          },
+          {
+            "name": "Underground River",
+            "qty": 1
+          },
+          {
+            "name": "Urborg, Tomb of Yawgmoth",
+            "qty": 1
+          },
+          {
+            "name": "Watery Grave",
+            "qty": 1
+          },
+          {
+            "name": "Island",
+            "qty": 3
+          },
+          {
+            "name": "Plains",
+            "qty": 3
+          },
+          {
+            "name": "Swamp",
+            "qty": 2
+          }
+        ]
+      },
+      {
+        "name": "Ramp",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Azorius Signet",
+            "qty": 1
+          },
+          {
+            "name": "Dimir Signet",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Progress",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Dominance",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Hierarchy",
+            "qty": 1
+          },
+          {
+            "name": "Fellwar Stone",
+            "qty": 1
+          },
+          {
+            "name": "Smothering Tithe",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw",
+        "cards": [
+          {
+            "name": "Hylda of the Icy Crown",
+            "qty": 1
+          },
+          {
+            "name": "Verity Circle",
+            "qty": 1
+          },
+          {
+            "name": "Sharae of Numbing Depths",
+            "qty": 1
+          },
+          {
+            "name": "Sensational Spider-Man",
+            "qty": 1
+          },
+          {
+            "name": "Shorikai, Genesis Engine",
+            "qty": 1
+          },
+          {
+            "name": "Academy Manufactor",
+            "qty": 1
+          },
+          {
+            "name": "Esper Sentinel",
+            "qty": 1
+          },
+          {
+            "name": "Mystic Remora",
+            "qty": 1
+          },
+          {
+            "name": "Rhystic Study",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Removal",
+        "cards": [
+          {
+            "name": "Swords to Plowshares",
+            "qty": 1
+          },
+          {
+            "name": "Anguished Unmaking",
+            "qty": 1
+          },
+          {
+            "name": "Counterspell",
+            "qty": 1
+          },
+          {
+            "name": "Royal Assassin",
+            "qty": 1
+          },
+          {
+            "name": "King's Assassin",
+            "qty": 1
+          },
+          {
+            "name": "Stalking Assassin",
+            "qty": 1
+          },
+          {
+            "name": "Ethersworn Adjudicator",
+            "qty": 1
+          },
+          {
+            "name": "Visara the Dreadful",
+            "qty": 1
+          },
+          {
+            "name": "Merieke Ri Berit",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Board Wipes",
+        "cards": [
+          {
+            "name": "Sunblast Angel",
+            "qty": 1
+          },
+          {
+            "name": "Toxic Deluge",
+            "qty": 1
+          },
+          {
+            "name": "Cyclonic Rift",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Theme / Synergy",
+        "cards": [
+          {
+            "name": "Icy Manipulator",
+            "qty": 1
+          },
+          {
+            "name": "Hylda's Crown of Winter",
+            "qty": 1
+          },
+          {
+            "name": "Opposition",
+            "qty": 1
+          },
+          {
+            "name": "Dreamshackle Geist",
+            "qty": 1
+          },
+          {
+            "name": "Timin, Youthful Geist",
+            "qty": 1
+          },
+          {
+            "name": "Spider-Woman, Secret Agent",
+            "qty": 1
+          },
+          {
+            "name": "Quake, Agent of S.H.I.E.L.D.",
+            "qty": 1
+          },
+          {
+            "name": "Dungeon Geists",
+            "qty": 1
+          },
+          {
+            "name": "Kaito, Bane of Nightmares",
+            "qty": 1
+          },
+          {
+            "name": "Blustersquall",
+            "qty": 1
+          },
+          {
+            "name": "Junk Winder",
+            "qty": 1
+          },
+          {
+            "name": "Unwinding Clock",
+            "qty": 1
+          },
+          {
+            "name": "Clock of Omens",
+            "qty": 1
+          },
+          {
+            "name": "Thousand-Year Elixir",
+            "qty": 1
+          },
+          {
+            "name": "Magewright's Stone",
+            "qty": 1
+          },
+          {
+            "name": "Unstoppable Plan",
+            "qty": 1
+          },
+          {
+            "name": "Staff of Domination",
+            "qty": 1
+          },
+          {
+            "name": "Vizier of Tumbling Sands",
+            "qty": 1
+          },
+          {
+            "name": "Fatestitcher",
+            "qty": 1
+          },
+          {
+            "name": "Gideon's Avenger",
+            "qty": 1
+          },
+          {
+            "name": "Ghostly Prison",
+            "qty": 1
+          },
+          {
+            "name": "Propaganda",
+            "qty": 1
+          },
+          {
+            "name": "No Mercy",
+            "qty": 1
+          },
+          {
+            "name": "Swiftfoot Boots",
+            "qty": 1
+          },
+          {
+            "name": "Flawless Maneuver",
+            "qty": 1
+          },
+          {
+            "name": "Clever Concealment",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Win Conditions",
+        "cards": [
+          {
+            "name": "Revel in Riches",
+            "qty": 1
+          },
+          {
+            "name": "Debt to the Deathless",
+            "qty": 1
+          },
+          {
+            "name": "Exsanguinate",
+            "qty": 1
+          },
+          {
+            "name": "Elesh Norn, Grand Cenobite",
+            "qty": 1
+          },
+          {
+            "name": "Elspeth, Storm Slayer",
+            "qty": 1
+          },
+          {
+            "name": "Subjugator Angel",
+            "qty": 1
+          },
+          {
+            "name": "Tempest Caller",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

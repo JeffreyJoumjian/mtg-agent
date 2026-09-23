@@ -1,0 +1,387 @@
+# LOCAL CARD CACHE — chatterfang
+# Prices are a USD snapshot from Scryfall at the time each card was first cached.
+# Format:  ## Name / cost|type|CI|produces|usd / oracle
+
+## Chatterfang, Squirrel General
+cost={2}{G} | type=Legendary Creature — Squirrel Warrior | CI=BG | produces=- | usd=$11.69
+Forestwalk (This creature can't be blocked as long as defending player controls a Forest.) If one or more tokens would be created under your control, those tokens plus that many 1/1 green Squirrel creature tokens are created instead. {B}, Sacrifice X Squirrels: Target creature gets +X/-X until end of turn.
+
+## Barren Moor
+cost=- | type=Land | CI=B | produces=B | usd=$0.63
+This land enters tapped. {T}: Add {B}. Cycling {B} ({B}, Discard this card: Draw a card.)
+
+## Blooming Marsh
+cost=- | type=Land | CI=BG | produces=B,G | usd=$2.87
+This land enters tapped unless you control two or fewer other lands. {T}: Add {B} or {G}.
+
+## Bojuka Bog
+cost=- | type=Land | CI=B | produces=B | usd=$1.39
+This land enters tapped. When this land enters, exile target player's graveyard. {T}: Add {B}.
+
+## Cabal Coffers
+cost=- | type=Land | CI=B | produces=B | usd=$31.34
+{2}, {T}: Add {B} for each Swamp you control.
+
+## Castle Locthwain
+cost=- | type=Land | CI=B | produces=B | usd=$4.29
+This land enters tapped unless you control a Swamp. {T}: Add {B}. {1}{B}{B}, {T}: Draw a card, then you lose life equal to the number of cards in your hand.
+
+## Command Tower
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$?
+{T}: Add one mana of any color in your commander's color identity.
+
+## Darkbore Pathway // Slitherbore Pathway
+cost=- | type=Land // Land | CI=BG | produces=B,G | usd=$6.85
+Darkbore Pathway: {T}: Add {B}. // Slitherbore Pathway: {T}: Add {G}.
+
+## Forest
+cost=- | type=Basic Land — Forest | CI=G | produces=G | usd=$?
+({T}: Add {G}.)
+
+## Gaea's Cradle
+cost=- | type=Legendary Land | CI=G | produces=G | usd=$1643.14
+{T}: Add {G} for each creature you control.
+
+## Grim Backwoods
+cost=- | type=Land | CI=BG | produces=C | usd=$0.31
+{T}: Add {C}. {2}{B}{G}, {T}, Sacrifice a creature: Draw a card.
+
+## High Market
+cost=- | type=Land | CI=- | produces=C | usd=$0.45
+{T}: Add {C}. {T}, Sacrifice a creature: You gain 1 life.
+
+## Khalni Garden
+cost=- | type=Land | CI=G | produces=G | usd=$1.09
+This land enters tapped. When this land enters, create a 0/1 green Plant creature token. {T}: Add {G}.
+
+## Llanowar Wastes
+cost=- | type=Land | CI=BG | produces=B,C,G | usd=$0.63
+{T}: Add {C}. {T}: Add {B} or {G}. This land deals 1 damage to you.
+
+## Necroblossom Snarl
+cost=- | type=Land | CI=BG | produces=B,G | usd=$0.49
+As this land enters, you may reveal a Swamp or Forest card from your hand. If you don't, this land enters tapped. {T}: Add {B} or {G}.
+
+## Nurturing Peatland
+cost=- | type=Land | CI=BG | produces=B,G | usd=$6.80
+{T}, Pay 1 life: Add {B} or {G}. {1}, {T}, Sacrifice this land: Draw a card.
+
+## Overgrown Tomb
+cost=- | type=Land — Swamp Forest | CI=BG | produces=B,G | usd=$?
+({T}: Add {B} or {G}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## Phyrexian Tower
+cost=- | type=Legendary Land | CI=B | produces=B,C | usd=$29.94
+{T}: Add {C}. {T}, Sacrifice a creature: Add {B}{B}.
+
+## Swamp
+cost=- | type=Basic Land — Swamp | CI=B | produces=B | usd=$?
+({T}: Add {B}.)
+
+## Tainted Wood
+cost=- | type=Land | CI=BG | produces=B,C,G | usd=$0.40
+{T}: Add {C}. {T}: Add {B} or {G}. Activate only if you control a Swamp.
+
+## Takenuma, Abandoned Mire
+cost=- | type=Legendary Land | CI=B | produces=B | usd=$11.85
+{T}: Add {B}. Channel — {3}{B}, Discard this card: Mill three cards, then return a creature or planeswalker card from your graveyard to your hand. This ability costs {1} less to activate for each legendary creature you control.
+
+## Three Tree City
+cost=- | type=Legendary Land | CI=- | produces=B,C,G,R,U,W | usd=$31.54
+As Three Tree City enters, choose a creature type. {T}: Add {C}. {2}, {T}: Choose a color. Add an amount of mana of that color equal to the number of creatures you control of the chosen type.
+
+## Twilight Mire
+cost=- | type=Land | CI=BG | produces=B,C,G | usd=$0.37
+{T}: Add {C}. {B/G}, {T}: Add {B}{B}, {B}{G}, or {G}{G}.
+
+## Urborg, Tomb of Yawgmoth
+cost=- | type=Legendary Land | CI=- | produces=B | usd=$57.08
+Each land is a Swamp in addition to its other land types.
+
+## Woodland Cemetery
+cost=- | type=Land | CI=BG | produces=B,G | usd=$0.68
+This land enters tapped unless you control a Swamp or a Forest. {T}: Add {B} or {G}.
+
+## Yavimaya, Cradle of Growth
+cost=- | type=Legendary Land | CI=- | produces=G | usd=$18.47
+Each land is a Forest in addition to its other land types.
+
+## Arcane Signet
+cost={2} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$?
+{T}: Add one mana of any color in your commander's color identity.
+
+## Cryptolith Rite
+cost={1}{G} | type=Enchantment | CI=G | produces=B,G,R,U,W | usd=$14.27
+Creatures you control have "{T}: Add one mana of any color."
+
+## Cultivate
+cost={2}{G} | type=Sorcery | CI=G | produces=- | usd=$0.49
+Search your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.
+
+## Golgari Signet
+cost={2} | type=Artifact | CI=BG | produces=B,G | usd=$0.33
+{1}, {T}: Add {B}{G}.
+
+## Nature's Lore
+cost={1}{G} | type=Sorcery | CI=G | produces=- | usd=$1.80
+Search your library for a Forest card, put that card onto the battlefield, then shuffle.
+
+## Sakura-Tribe Elder
+cost={1}{G} | type=Creature — Snake Shaman | CI=G | produces=- | usd=$0.37
+Sacrifice this creature: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.
+
+## Sol Ring
+cost={1} | type=Artifact | CI=- | produces=C | usd=$?
+{T}: Add {C}{C}.
+
+## Tireless Provisioner
+cost={2}{G} | type=Creature — Elf Scout | CI=G | produces=B,G,R,U,W | usd=$4.15
+Landfall — Whenever a land you control enters, create a Food token or a Treasure token. (Food is an artifact with "{2}, {T}, Sacrifice this token: You gain 3 life." Treasure is an artifact with "{T}, Sacrifice this token: Add one mana of any color.")
+
+## Black Market Connections
+cost={2}{B} | type=Enchantment | CI=B | produces=- | usd=$9.15
+At the beginning of your first main phase, choose one or more — • Sell Contraband — Create a Treasure token. You lose 1 life. • Buy Information — Draw a card. You lose 2 life. • Hire a Mercenary — Create a 3/2 colorless Shapeshifter creature token with changeling. You lose 3 life. (It is every creature type.)
+
+## Deadly Dispute
+cost={1}{B} | type=Instant | CI=B | produces=B,G,R,U,W | usd=$0.31
+As an additional cost to cast this spell, sacrifice an artifact or creature. Draw two cards and create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.")
+
+## Idol of Oblivion
+cost={2} | type=Artifact | CI=- | produces=- | usd=$3.00
+{T}: Draw a card. Activate only if you created a token this turn. {8}, {T}, Sacrifice this artifact: Create a 10/10 colorless Eldrazi creature token.
+
+## Moldervine Reclamation
+cost={3}{B}{G} | type=Enchantment | CI=BG | produces=- | usd=$0.34
+Whenever a creature you control dies, you gain 1 life and draw a card.
+
+## Morbid Opportunist
+cost={2}{B} | type=Creature — Human Rogue | CI=B | produces=- | usd=$0.30
+Whenever one or more other creatures die, draw a card. This ability triggers only once each turn.
+
+## Skullclamp
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$4.82
+Equipped creature gets +1/-1. Whenever equipped creature dies, draw two cards. Equip {1}
+
+## Sylvan Library
+cost={1}{G} | type=Enchantment | CI=G | produces=- | usd=$28.68
+At the beginning of your draw step, you may draw two additional cards. If you do, choose two cards in your hand drawn this turn. For each of those cards, pay 4 life or put the card on top of your library.
+
+## Toski, Bearer of Secrets
+cost={3}{G} | type=Legendary Creature — Squirrel | CI=G | produces=- | usd=$7.90
+This spell can't be countered. Indestructible Toski attacks each combat if able. Whenever a creature you control deals combat damage to a player, draw a card.
+
+## Village Rites
+cost={B} | type=Instant | CI=B | produces=- | usd=$0.88
+As an additional cost to cast this spell, sacrifice a creature. Draw two cards.
+
+## Abrupt Decay
+cost={B}{G} | type=Instant | CI=BG | produces=- | usd=$2.61
+This spell can't be countered. Destroy target nonland permanent with mana value 3 or less.
+
+## Assassin's Trophy
+cost={B}{G} | type=Instant | CI=BG | produces=- | usd=$1.23
+Destroy target permanent an opponent controls. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle.
+
+## Beast Within
+cost={2}{G} | type=Instant | CI=G | produces=- | usd=$0.61
+Destroy target permanent. Its controller creates a 3/3 green Beast creature token.
+
+## Heroic Intervention
+cost={1}{G} | type=Instant | CI=G | produces=- | usd=$16.73
+Permanents you control gain hexproof and indestructible until end of turn.
+
+## Plumb the Forbidden
+cost={1}{B} | type=Instant | CI=B | produces=- | usd=$0.37
+As an additional cost to cast this spell, you may sacrifice one or more creatures. When you do, copy this spell for each creature sacrificed this way. You draw a card and lose 1 life.
+
+## Putrefy
+cost={1}{B}{G} | type=Instant | CI=BG | produces=- | usd=$0.30
+Destroy target artifact or creature. It can't be regenerated.
+
+## Tear Asunder
+cost={1}{G} | type=Instant | CI=BG | produces=- | usd=$0.21
+Kicker {1}{B} (You may pay an additional {1}{B} as you cast this spell.) Exile target artifact or enchantment. If this spell was kicked, exile target nonland permanent instead.
+
+## The Meathook Massacre
+cost={X}{B}{B} | type=Legendary Enchantment | CI=B | produces=- | usd=$25.23
+When The Meathook Massacre enters, each creature gets -X/-X until end of turn. Whenever a creature you control dies, each opponent loses 1 life. Whenever a creature an opponent controls dies, you gain 1 life.
+
+## Toxic Deluge
+cost={2}{B} | type=Sorcery | CI=B | produces=- | usd=$4.23
+As an additional cost to cast this spell, pay X life. All creatures get -X/-X until end of turn.
+
+## Academy Manufactor
+cost={3} | type=Artifact Creature — Assembly-Worker | CI=- | produces=- | usd=$9.66
+If you would create a Clue, Food, or Treasure token, instead create one of each.
+
+## Avenger of Zendikar
+cost={5}{G}{G} | type=Creature — Elemental | CI=G | produces=- | usd=$0.46
+When this creature enters, create a 0/1 green Plant creature token for each land you control. Landfall — Whenever a land you control enters, you may put a +1/+1 counter on each Plant creature you control.
+
+## Awakening Zone
+cost={2}{G} | type=Enchantment | CI=G | produces=C | usd=$0.37
+At the beginning of your upkeep, you may create a 0/1 colorless Eldrazi Spawn creature token. It has "Sacrifice this token: Add {C}."
+
+## Bitterblossom
+cost={1}{B} | type=Kindred Enchantment — Faerie | CI=B | produces=- | usd=$32.39
+At the beginning of your upkeep, you lose 1 life and create a 1/1 black Faerie Rogue creature token with flying.
+
+## Chatter of the Squirrel
+cost={G} | type=Sorcery | CI=G | produces=- | usd=$0.37
+Create a 1/1 green Squirrel creature token. Flashback {1}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+
+## Chitterspitter
+cost={2}{G} | type=Artifact | CI=G | produces=- | usd=$0.55
+At the beginning of your upkeep, you may sacrifice a token. If you do, put an acorn counter on this artifact. Squirrels you control get +1/+1 for each acorn counter on this artifact. {G}, {T}: Create a 1/1 green Squirrel creature token.
+
+## Deep Forest Hermit
+cost={3}{G}{G} | type=Creature — Elf Druid | CI=G | produces=- | usd=$0.62
+Vanishing 3 (This creature enters with three time counters on it. At the beginning of your upkeep, remove a time counter from it. When the last is removed, sacrifice it.) When this creature enters, create four 1/1 green Squirrel creature tokens. Squirrels you control get +1/+1.
+
+## From Beyond
+cost={3}{G} | type=Enchantment | CI=G | produces=C | usd=$1.40
+Devoid (This card has no color.) At the beginning of your upkeep, create a 1/1 colorless Eldrazi Scion creature token. It has "Sacrifice this token: Add {C}." {1}{G}, Sacrifice this enchantment: Search your library for an Eldrazi card, reveal it, put it into your hand, then shuffle.
+
+## Nested Shambler
+cost={B} | type=Creature — Zombie | CI=B | produces=- | usd=$0.23
+When this creature dies, create X tapped 1/1 green Squirrel creature tokens, where X is this creature's power.
+
+## Ophiomancer
+cost={2}{B} | type=Creature — Human Shaman | CI=B | produces=- | usd=$1.44
+At the beginning of each upkeep, if you control no Snakes, create a 1/1 black Snake creature token with deathtouch.
+
+## Scute Swarm
+cost={2}{G} | type=Creature — Insect | CI=G | produces=- | usd=$9.36
+Landfall — Whenever a land you control enters, create a 1/1 green Insect creature token. If you control six or more lands, create a token that's a copy of this creature instead.
+
+## Second Harvest
+cost={2}{G}{G} | type=Instant | CI=G | produces=- | usd=$5.50
+For each token you control, create a token that's a copy of that permanent.
+
+## Sprout Swarm
+cost={1}{G} | type=Instant | CI=G | produces=- | usd=$4.15
+Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.) Buyback {3} (You may pay an additional {3} as you cast this spell. If you do, put this card into your hand as it resolves.) Create a 1/1 green Saproling creature token.
+
+## Squirrel Nest
+cost={1}{G}{G} | type=Enchantment — Aura | CI=G | produces=- | usd=$0.30
+Enchant land Enchanted land has "{T}: Create a 1/1 green Squirrel creature token."
+
+## Tendershoot Dryad
+cost={4}{G} | type=Creature — Dryad | CI=G | produces=- | usd=$1.21
+Ascend (If you control ten or more permanents, you get the city's blessing for the rest of the game.) At the beginning of each upkeep, create a 1/1 green Saproling creature token. Saprolings you control get +2/+2 as long as you have the city's blessing.
+
+## Verdant Command
+cost={1}{G} | type=Instant | CI=G | produces=- | usd=$1.37
+Choose two — • Target player creates two tapped 1/1 green Squirrel creature tokens. • Counter target loyalty ability of a planeswalker. • Exile target card from a graveyard. • Target player gains 3 life.
+
+## Doubling Season
+cost={4}{G} | type=Enchantment | CI=G | produces=- | usd=$35.76
+If an effect would create one or more tokens under your control, it creates twice that many of those tokens instead. If an effect would put one or more counters on a permanent you control, it puts twice that many of those counters on that permanent instead.
+
+## Parallel Lives
+cost={3}{G} | type=Enchantment | CI=G | produces=- | usd=$40.22
+If an effect would create one or more tokens under your control, it creates twice that many of those tokens instead.
+
+## Ashnod's Altar
+cost={3} | type=Artifact | CI=- | produces=C | usd=$17.14
+Sacrifice a creature: Add {C}{C}.
+
+## Carrion Feeder
+cost={B} | type=Creature — Zombie | CI=B | produces=- | usd=$4.66
+This creature can't block. Sacrifice a creature: Put a +1/+1 counter on this creature.
+
+## Ravenous Squirrel
+cost={B/G} | type=Creature — Squirrel | CI=BG | produces=- | usd=$0.32
+Whenever you sacrifice an artifact or creature, put a +1/+1 counter on this creature. {1}{B}{G}, Sacrifice an artifact or creature: You gain 1 life and draw a card.
+
+## Viscera Seer
+cost={B} | type=Creature — Vampire Wizard | CI=B | produces=- | usd=$0.42
+Sacrifice a creature: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+
+## Woe Strider
+cost={2}{B} | type=Creature — Horror | CI=B | produces=- | usd=$0.35
+When this creature enters, create a 0/1 white Goat creature token. Sacrifice another creature: Scry 1. Escape—{3}{B}{B}, Exile four other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.) This creature escapes with two +1/+1 counters on it.
+
+## Bastion of Remembrance
+cost={2}{B} | type=Enchantment | CI=B | produces=- | usd=$0.33
+When this enchantment enters, create a 1/1 white Human Soldier creature token. Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.
+
+## Blood Artist
+cost={1}{B} | type=Creature — Vampire | CI=B | produces=- | usd=$3.86
+Whenever this creature or another creature dies, target player loses 1 life and you gain 1 life.
+
+## Dina, Soul Steeper
+cost={B}{G} | type=Legendary Creature — Dryad Druid | CI=BG | produces=- | usd=$0.32
+Whenever you gain life, each opponent loses 1 life. {1}, Sacrifice another creature: Dina gets +X/+0 until end of turn, where X is the sacrificed creature's power.
+
+## Falkenrath Noble
+cost={3}{B} | type=Creature — Vampire Noble | CI=B | produces=- | usd=$0.29
+Flying Whenever this creature or another creature dies, target player loses 1 life and you gain 1 life.
+
+## Marauding Blight-Priest
+cost={2}{B} | type=Creature — Vampire Cleric | CI=B | produces=- | usd=$0.24
+Whenever you gain life, each opponent loses 1 life.
+
+## Marionette Apprentice
+cost={1}{B} | type=Creature — Human Artificer | CI=B | produces=- | usd=$2.62
+Fabricate 1 (When this creature enters, put a +1/+1 counter on it or create a 1/1 colorless Servo artifact creature token.) Whenever another creature or artifact you control is put into a graveyard from the battlefield, each opponent loses 1 life.
+
+## Mirkwood Bats
+cost={3}{B} | type=Creature — Bat | CI=B | produces=- | usd=$1.95
+Flying Whenever you create or sacrifice a token, each opponent loses 1 life.
+
+## Nadier's Nightblade
+cost={2}{B} | type=Creature — Elf Warrior | CI=B | produces=- | usd=$0.42
+Whenever a token you control leaves the battlefield, each opponent loses 1 life and you gain 1 life.
+
+## Poison-Tip Archer
+cost={2}{B}{G} | type=Creature — Elf Archer | CI=BG | produces=- | usd=$2.39
+Reach (This creature can block creatures with flying.) Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.) Whenever another creature dies, each opponent loses 1 life.
+
+## Prosperous Innkeeper
+cost={1}{G} | type=Creature — Halfling Citizen | CI=G | produces=B,G,R,U,W | usd=$0.25
+When this creature enters, create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.") Whenever another creature you control enters, you gain 1 life.
+
+## Valley Rotcaller
+cost={1}{B} | type=Creature — Squirrel Warlock | CI=B | produces=- | usd=$2.78
+Menace Whenever this creature attacks, each opponent loses X life and you gain X life, where X is the number of other Squirrels, Bats, Lizards, and Rats you control.
+
+## Zulaport Cutthroat
+cost={1}{B} | type=Creature — Human Rogue Ally | CI=B | produces=- | usd=$1.23
+Whenever this creature or another creature you control dies, each opponent loses 1 life and you gain 1 life.
+
+## Bloodletter of Aclazotz
+cost={1}{B}{B}{B} | type=Creature — Vampire Demon | CI=B | produces=- | usd=$38.36
+Flying If an opponent would lose life during your turn, they lose twice that much life instead. (Damage causes loss of life.)
+
+## Gruesome Fate
+cost={2}{B} | type=Sorcery | CI=B | produces=- | usd=$1.15
+Each opponent loses 1 life for each creature you control.
+
+## Hazel of the Rootbloom
+cost={2}{B}{G} | type=Legendary Creature — Squirrel Druid | CI=BG | produces=B,G,R,U,W | usd=$3.49
+{T}, Pay 2 life, Tap X untapped tokens you control: Add X mana in any combination of colors. At the beginning of your end step, create a token that's a copy of target token you control. If that token is a Squirrel, instead create two tokens that are copies of it.
+
+## The Unbeatable Squirrel Girl
+cost={1}{G}{G}{G} | type=Legendary Creature — Squirrel Human Hero | CI=G | produces=- | usd=$2.59
+Do You Like Squirrels? — Whenever The Unbeatable Squirrel Girl enters or attacks, create a 1/1 green Squirrel creature token. I LOVE Squirrels! — {1}{G}{G}{G}: Create X 1/1 green Squirrel creature tokens, where X is the number of Squirrels you control.
+
+## Camellia, the Seedmiser
+cost={1}{B}{G} | type=Legendary Creature — Squirrel Warlock | CI=BG | produces=- | usd=$3.01
+Menace Other Squirrels you control have menace. Whenever you sacrifice one or more Foods, create a 1/1 green Squirrel creature token. {2}, Forage: Put a +1/+1 counter on each other Squirrel you control. (To forage, exile three cards from your graveyard or sacrifice a Food.)
+
+## Peregrin Took
+cost={2}{G} | type=Legendary Creature — Halfling Citizen | CI=G | produces=- | usd=$1.24
+If one or more tokens would be created under your control, those tokens plus an additional Food token are created instead. (It's an artifact with "{2}, {T}, Sacrifice this token: You gain 3 life.") Sacrifice three Foods: Draw a card.
+
+## Tippy-Toe, Terrific Partner
+cost={3}{G} | type=Legendary Creature — Squirrel Hero | CI=G | produces=- | usd=$2.65
+If you would create one or more tokens, instead create those tokens plus an additional Food token. (It's an artifact with "{2}, {T}, Sacrifice this token: You gain 3 life.") At the beginning of your end step, if you gained life this turn, draw a card.
+
+## Vito, Thorn of the Dusk Rose
+cost={2}{B} | type=Legendary Creature — Vampire Cleric | CI=B | produces=- | usd=$12.08
+Whenever you gain life, target opponent loses that much life. {3}{B}{B}: Creatures you control gain lifelink until end of turn.
+
+## Blade of the Bloodchief
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$7.49
+Whenever a creature dies, put a +1/+1 counter on equipped creature. If equipped creature is a Vampire, put two +1/+1 counters on it instead. Equip {1}

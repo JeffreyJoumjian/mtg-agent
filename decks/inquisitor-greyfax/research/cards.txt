@@ -1,0 +1,427 @@
+# LOCAL CARD CACHE — inquisitor-greyfax
+# Prices are a USD snapshot from Scryfall at the time each card was first cached.
+# Format:  ## Name / cost|type|CI|produces|usd / oracle
+
+## Inquisitor Greyfax
+cost={1}{W}{U}{B} | type=Legendary Creature — Human Inquisitor | CI=BUW | produces=- | usd=$?
+Vigilance Unquestionable Wisdom — Other creatures you control get +1/+0 and have vigilance. Hunt for Heresy — {1}, {T}: Tap target creature an opponent controls. Investigate. (Create a Clue token. It's an artifact with "{2}, Sacrifice this token: Draw a card.")
+
+## Academy Ruins
+cost=- | type=Legendary Land | CI=U | produces=C | usd=$8.24
+{T}: Add {C}. {1}{U}, {T}: Put target artifact card from your graveyard on top of your library.
+
+## Adarkar Wastes
+cost=- | type=Land | CI=UW | produces=C,U,W | usd=$0.35
+{T}: Add {C}. {T}: Add {W} or {U}. This land deals 1 damage to you.
+
+## Arcane Sanctum
+cost=- | type=Land | CI=BUW | produces=B,U,W | usd=$0.51
+This land enters tapped. {T}: Add {W}, {U}, or {B}.
+
+## Bojuka Bog
+cost=- | type=Land | CI=B | produces=B | usd=$1.42
+This land enters tapped. When this land enters, exile target player's graveyard. {T}: Add {B}.
+
+## Caves of Koilos
+cost=- | type=Land | CI=BW | produces=B,C,W | usd=$0.74
+{T}: Add {C}. {T}: Add {W} or {B}. This land deals 1 damage to you.
+
+## Command Tower
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$0.32
+{T}: Add one mana of any color in your commander's color identity.
+
+## Concealed Courtyard
+cost=- | type=Land | CI=BW | produces=B,W | usd=$1.00
+This land enters tapped unless you control two or fewer other lands. {T}: Add {W} or {B}.
+
+## Darkslick Shores
+cost=- | type=Land | CI=BU | produces=B,U | usd=$3.21
+This land enters tapped unless you control two or fewer other lands. {T}: Add {U} or {B}.
+
+## Deserted Beach
+cost=- | type=Land | CI=UW | produces=U,W | usd=$5.83
+This land enters tapped unless you control two or more other lands. {T}: Add {W} or {U}.
+
+## Eiganjo, Seat of the Empire
+cost=- | type=Legendary Land | CI=W | produces=W | usd=$5.47
+{T}: Add {W}. Channel — {2}{W}, Discard this card: It deals 4 damage to target attacking or blocking creature. This ability costs {1} less to activate for each legendary creature you control.
+
+## Godless Shrine
+cost=- | type=Land — Plains Swamp | CI=BW | produces=B,W | usd=$?
+({T}: Add {W} or {B}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## Hallowed Fountain
+cost=- | type=Land — Plains Island | CI=UW | produces=U,W | usd=$?
+({T}: Add {W} or {U}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## Karn's Bastion
+cost=- | type=Land | CI=- | produces=C | usd=$2.45
+{T}: Add {C}. {4}, {T}: Proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)
+
+## Minamo, School at Water's Edge
+cost=- | type=Legendary Land | CI=U | produces=U | usd=$59.66
+{T}: Add {U}. {U}, {T}: Untap target legendary permanent.
+
+## Otawara, Soaring City
+cost=- | type=Legendary Land | CI=U | produces=U | usd=$28.91
+{T}: Add {U}. Channel — {3}{U}, Discard this card: Return target artifact, creature, enchantment, or planeswalker to its owner's hand. This ability costs {1} less to activate for each legendary creature you control.
+
+## Raffine's Tower
+cost=- | type=Land — Plains Island Swamp | CI=BUW | produces=B,U,W | usd=$12.86
+({T}: Add {W}, {U}, or {B}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Rogue's Passage
+cost=- | type=Land | CI=- | produces=C | usd=$0.36
+{T}: Add {C}. {4}, {T}: Target creature can't be blocked this turn.
+
+## Seachrome Coast
+cost=- | type=Land | CI=UW | produces=U,W | usd=$0.49
+This land enters tapped unless you control two or fewer other lands. {T}: Add {W} or {U}.
+
+## Shattered Sanctum
+cost=- | type=Land | CI=BW | produces=B,W | usd=$2.71
+This land enters tapped unless you control two or more other lands. {T}: Add {W} or {B}.
+
+## Shipwreck Marsh
+cost=- | type=Land | CI=BU | produces=B,U | usd=$7.04
+This land enters tapped unless you control two or more other lands. {T}: Add {U} or {B}.
+
+## Takenuma, Abandoned Mire
+cost=- | type=Legendary Land | CI=B | produces=B | usd=$11.41
+{T}: Add {B}. Channel — {3}{B}, Discard this card: Mill three cards, then return a creature or planeswalker card from your graveyard to your hand. This ability costs {1} less to activate for each legendary creature you control.
+
+## Temple of Deceit
+cost=- | type=Land | CI=BU | produces=B,U | usd=$0.24
+This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {U} or {B}.
+
+## Temple of Enlightenment
+cost=- | type=Land | CI=UW | produces=U,W | usd=$0.28
+This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {W} or {U}.
+
+## Temple of Silence
+cost=- | type=Land | CI=BW | produces=B,W | usd=$0.33
+This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {W} or {B}.
+
+## Underground River
+cost=- | type=Land | CI=BU | produces=B,C,U | usd=$2.32
+{T}: Add {C}. {T}: Add {U} or {B}. This land deals 1 damage to you.
+
+## Watery Grave
+cost=- | type=Land — Island Swamp | CI=BU | produces=B,U | usd=$?
+({T}: Add {U} or {B}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## Island
+cost=- | type=Basic Land — Island | CI=U | produces=U | usd=$?
+({T}: Add {U}.)
+
+## Plains
+cost=- | type=Basic Land — Plains | CI=W | produces=W | usd=$?
+({T}: Add {W}.)
+
+## Swamp
+cost=- | type=Basic Land — Swamp | CI=B | produces=B | usd=$?
+({T}: Add {B}.)
+
+## Sol Ring
+cost={1} | type=Artifact | CI=- | produces=C | usd=$1.43
+{T}: Add {C}{C}.
+
+## Arcane Signet
+cost={2} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.47
+{T}: Add one mana of any color in your commander's color identity.
+
+## Azorius Signet
+cost={2} | type=Artifact | CI=UW | produces=U,W | usd=$0.29
+{1}, {T}: Add {W}{U}.
+
+## Dimir Signet
+cost={2} | type=Artifact | CI=BU | produces=B,U | usd=$1.18
+{1}, {T}: Add {U}{B}.
+
+## Orzhov Signet
+cost={2} | type=Artifact | CI=BW | produces=B,W | usd=$0.36
+{1}, {T}: Add {W}{B}.
+
+## Talisman of Progress
+cost={2} | type=Artifact | CI=UW | produces=C,U,W | usd=$0.35
+{T}: Add {C}. {T}: Add {W} or {U}. This artifact deals 1 damage to you.
+
+## Talisman of Dominance
+cost={2} | type=Artifact | CI=BU | produces=B,C,U | usd=$1.14
+{T}: Add {C}. {T}: Add {U} or {B}. This artifact deals 1 damage to you.
+
+## Talisman of Hierarchy
+cost={2} | type=Artifact | CI=BW | produces=B,C,W | usd=$0.45
+{T}: Add {C}. {T}: Add {W} or {B}. This artifact deals 1 damage to you.
+
+## Fellwar Stone
+cost={2} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$?
+{T}: Add one mana of any color that a land an opponent controls could produce.
+
+## Smothering Tithe
+cost={3}{W} | type=Enchantment | CI=W | produces=B,G,R,U,W | usd=$61.42
+Whenever an opponent draws a card, that player may pay {2}. If the player doesn't, you create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.")
+
+## Hylda of the Icy Crown
+cost={2}{W}{U} | type=Legendary Creature — Human Warlock | CI=UW | produces=- | usd=$4.02
+Whenever you tap an untapped creature an opponent controls, you may pay {1}. When you do, choose one — • Create a 4/4 white and blue Elemental creature token. • Put a +1/+1 counter on each creature you control. • Scry 2, then draw a card.
+
+## Verity Circle
+cost={2}{U} | type=Enchantment | CI=U | produces=- | usd=$0.91
+Whenever a creature an opponent controls becomes tapped, if it isn't being declared as an attacker, you may draw a card. {4}{U}: Tap target creature without flying.
+
+## Sharae of Numbing Depths
+cost={2}{W}{U} | type=Legendary Creature — Merfolk Wizard | CI=UW | produces=- | usd=$0.29
+When Sharae enters, tap target creature an opponent controls and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.) Whenever you tap one or more untapped creatures your opponents control, draw a card. This ability triggers only once each turn.
+
+## Sensational Spider-Man
+cost={1}{W}{U} | type=Legendary Creature — Spider Human Hero | CI=UW | produces=- | usd=$4.34
+Whenever Sensational Spider-Man attacks, tap target creature defending player controls and put a stun counter on it. Then you may remove up to three stun counters from among all permanents. Draw cards equal to the number of stun counters removed this way.
+
+## Sky Hussar
+cost={3}{W}{U} | type=Creature — Human Knight | CI=UW | produces=- | usd=$0.26
+Flying When this creature enters, untap all creatures you control. Forecast — Tap two untapped white and/or blue creatures you control, Reveal this card from your hand: Draw a card. (Activate only during your upkeep and only once each turn.)
+
+## Shorikai, Genesis Engine
+cost={2}{W}{U} | type=Legendary Artifact — Vehicle | CI=UW | produces=- | usd=$2.57
+{1}, {T}: Draw two cards, then discard a card. Create a 1/1 colorless Pilot creature token with "This token crews Vehicles as though its power were 2 greater." Crew 8 (Tap any number of creatures you control with total power 8 or more: This Vehicle becomes an artifact creature until end of turn.)
+
+## Esper Sentinel
+cost={W} | type=Artifact Creature — Human Soldier | CI=W | produces=- | usd=$61.27
+Whenever an opponent casts their first noncreature spell each turn, draw a card unless that player pays {X}, where X is this creature's power.
+
+## Mystic Remora
+cost={U} | type=Enchantment | CI=U | produces=- | usd=$12.22
+Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) Whenever an opponent casts a noncreature spell, you may draw a card unless that player pays {4}.
+
+## Night's Whisper
+cost={1}{B} | type=Sorcery | CI=B | produces=- | usd=$5.42
+You draw two cards and lose 2 life.
+
+## Rhystic Study
+cost={2}{U} | type=Enchantment | CI=U | produces=- | usd=$70.68
+Whenever an opponent casts a spell, you may draw a card unless that player pays {1}.
+
+## Swords to Plowshares
+cost={W} | type=Instant | CI=W | produces=- | usd=$1.44
+Exile target creature. Its controller gains life equal to its power.
+
+## Anguished Unmaking
+cost={1}{W}{B} | type=Instant | CI=BW | produces=- | usd=$1.32
+Exile target nonland permanent. You lose 3 life.
+
+## Counterspell
+cost={U}{U} | type=Instant | CI=U | produces=- | usd=$3.18
+Counter target spell.
+
+## Swan Song
+cost={U} | type=Instant | CI=U | produces=- | usd=$10.80
+Counter target enchantment, instant, or sorcery spell. Its controller creates a 2/2 blue Bird creature token with flying.
+
+## Royal Assassin
+cost={1}{B}{B} | type=Creature — Human Assassin | CI=B | produces=- | usd=$0.40
+{T}: Destroy target tapped creature.
+
+## King's Assassin
+cost={1}{B}{B} | type=Creature — Human Assassin | CI=B | produces=- | usd=$8.71
+{T}: Destroy target tapped creature. Activate only during your turn, before attackers are declared.
+
+## Stalking Assassin
+cost={1}{U}{B} | type=Creature — Human Assassin | CI=BU | produces=- | usd=$0.32
+{3}{U}, {T}: Tap target creature. {3}{B}, {T}: Destroy target tapped creature.
+
+## Ethersworn Adjudicator
+cost={4}{U} | type=Artifact Creature — Vedalken Knight | CI=BUW | produces=- | usd=$0.49
+Flying {1}{W}{B}, {T}: Destroy target creature or enchantment. {2}{U}: Untap this creature.
+
+## Triad of Fates
+cost={2}{W}{B} | type=Legendary Creature — Human Wizard | CI=BW | produces=- | usd=$0.16
+{1}, {T}: Put a fate counter on another target creature. {W}, {T}: Exile target creature that has a fate counter on it, then return it to the battlefield under its owner's control. {B}, {T}: Exile target creature that has a fate counter on it. Its controller draws two cards.
+
+## Visara the Dreadful
+cost={3}{B}{B}{B} | type=Legendary Creature — Gorgon | CI=B | produces=- | usd=$3.14
+Flying {T}: Destroy target creature. It can't be regenerated.
+
+## Merieke Ri Berit
+cost={W}{U}{B} | type=Legendary Creature — Human | CI=BUW | produces=- | usd=$2.94
+Merieke Ri Berit doesn't untap during your untap step. {T}: Gain control of target creature for as long as you control Merieke Ri Berit. When Merieke Ri Berit leaves the battlefield or becomes untapped, destroy that creature. It can't be regenerated.
+
+## Sunblast Angel
+cost={4}{W}{W} | type=Creature — Angel | CI=W | produces=- | usd=$0.63
+Flying When this creature enters, destroy all tapped creatures.
+
+## Toxic Deluge
+cost={2}{B} | type=Sorcery | CI=B | produces=- | usd=$4.01
+As an additional cost to cast this spell, pay X life. All creatures get -X/-X until end of turn.
+
+## Cyclonic Rift
+cost={1}{U} | type=Instant | CI=U | produces=- | usd=$39.37
+Return target nonland permanent you don't control to its owner's hand. Overload {6}{U} (You may cast this spell for its overload cost. If you do, change "target" in its text to "each.")
+
+## Icy Manipulator
+cost={4} | type=Artifact | CI=- | produces=- | usd=$0.21
+{1}, {T}: Tap target artifact, creature, or land.
+
+## Hylda's Crown of Winter
+cost={3} | type=Legendary Artifact | CI=- | produces=- | usd=$0.54
+{1}, {T}: Tap target creature. This ability costs {1} less to activate during your turn. {3}, Sacrifice Hylda's Crown of Winter: Draw a card for each tapped creature your opponents control.
+
+## Opposition
+cost={2}{U}{U} | type=Enchantment | CI=U | produces=- | usd=$1.10
+Tap an untapped creature you control: Tap target artifact, creature, or land.
+
+## Puppet Strings
+cost={3} | type=Artifact | CI=- | produces=- | usd=$0.73
+{2}, {T}: You may tap or untap target creature.
+
+## Dreamshackle Geist
+cost={1}{U}{U} | type=Creature — Spirit | CI=U | produces=- | usd=$0.33
+Flying At the beginning of combat on your turn, choose up to one — • Tap target creature. • Target creature doesn't untap during its controller's next untap step.
+
+## Court Street Denizen
+cost={2}{W} | type=Creature — Human Soldier | CI=W | produces=- | usd=$0.21
+Whenever another white creature you control enters, tap target creature an opponent controls.
+
+## Timin, Youthful Geist
+cost={4}{U} | type=Legendary Creature — Spirit | CI=U | produces=- | usd=$0.41
+Partner with Rhoda, Geist Avenger (When this creature enters, target player may put Rhoda into their hand from their library, then shuffle.) Flying At the beginning of each combat, tap up to one target creature.
+
+## Spider-Woman, Secret Agent
+cost={3}{W/U} | type=Legendary Creature — Spider Human Spy Hero | CI=UW | produces=- | usd=$0.16
+Flash When Spider-Woman enters, tap target creature an opponent controls. That creature can't become untapped for as long as you control Spider-Woman.
+
+## Quake, Agent of S.H.I.E.L.D.
+cost={2}{W} | type=Legendary Creature — Inhuman Spy Hero | CI=W | produces=- | usd=$0.16
+Seismic Takedown — Whenever you cast a noncreature spell, tap target creature or land.
+
+## Dungeon Geists
+cost={2}{U}{U} | type=Creature — Spirit | CI=U | produces=- | usd=$0.13
+Flying When this creature enters, tap target creature an opponent controls. That creature doesn't untap during its controller's untap step for as long as you control this creature.
+
+## Kaito, Bane of Nightmares
+cost={2}{U}{B} | type=Legendary Planeswalker — Kaito | CI=BU | produces=- | usd=$10.01
+Ninjutsu {1}{U}{B} ({1}{U}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.) During your turn, as long as Kaito has one or more loyalty counters on him, he's a 3/4 Ninja creature and has hexproof. +1: You get an emblem with "Ninjas you control get +1/+1." 0: Surveil 2. Then draw a card for each opponent who lost life this turn. −2: Tap target creature. Put two stun counters on it.
+
+## Blustersquall
+cost={U} | type=Instant | CI=U | produces=- | usd=$0.42
+Tap target creature you don't control. Overload {3}{U} (You may cast this spell for its overload cost. If you do, change "target" in its text to "each.")
+
+## Unwinding Clock
+cost={4} | type=Artifact | CI=- | produces=- | usd=$19.38
+Untap all artifacts you control during each other player's untap step.
+
+## Clock of Omens
+cost={4} | type=Artifact | CI=- | produces=- | usd=$4.82
+Tap two untapped artifacts you control: Untap target artifact.
+
+## Thousand-Year Elixir
+cost={3} | type=Artifact | CI=- | produces=- | usd=$14.70
+You may activate abilities of creatures you control as though those creatures had haste. {1}, {T}: Untap target creature.
+
+## Magewright's Stone
+cost={2} | type=Artifact | CI=- | produces=- | usd=$10.89
+{1}, {T}: Untap target creature that has an activated ability with {T} in its cost.
+
+## Manifold Key
+cost={1} | type=Artifact | CI=- | produces=- | usd=$1.52
+{1}, {T}: Untap another target artifact. {3}, {T}: Target creature can't be blocked this turn.
+
+## Staff of Domination
+cost={3} | type=Artifact | CI=- | produces=- | usd=$10.49
+{1}: Untap this artifact. {2}, {T}: You gain 1 life. {3}, {T}: Untap target creature. {4}, {T}: Tap target creature. {5}, {T}: Draw a card.
+
+## Vizier of Tumbling Sands
+cost={2}{U} | type=Creature — Human Cleric | CI=U | produces=- | usd=$0.18
+{T}: Untap another target permanent. Cycling {1}{U} ({1}{U}, Discard this card: Draw a card.) When you cycle this card, untap target permanent.
+
+## Fatestitcher
+cost={3}{U} | type=Creature — Zombie Wizard | CI=U | produces=- | usd=$0.89
+{T}: You may tap or untap another target permanent. Unearth {U} ({U}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)
+
+## Kelpie Guide
+cost={2}{U} | type=Creature — Beast | CI=U | produces=- | usd=$0.35
+{T}: Untap another target permanent you control. {T}: Tap target permanent. Activate only if you control eight or more lands.
+
+## Mirran Spy
+cost={2}{U} | type=Creature — Drone | CI=U | produces=- | usd=$0.19
+Flying Whenever you cast an artifact spell, you may untap target creature.
+
+## Chakram Retriever
+cost={4}{U} | type=Creature — Elemental Dog | CI=U | produces=- | usd=$5.86
+Partner with Chakram Slinger (When this creature enters, target player may put Chakram Slinger into their hand from their library, then shuffle.) Whenever you cast a spell during your turn, untap target creature.
+
+## Swiftfoot Boots
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$?
+Equipped creature has hexproof and haste. (It can't be the target of spells or abilities your opponents control. It can attack and {T} no matter when it came under your control.) Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Flawless Maneuver
+cost={2}{W} | type=Instant | CI=W | produces=- | usd=$20.94
+If you control a commander, you may cast this spell without paying its mana cost. Creatures you control gain indestructible until end of turn.
+
+## Clever Concealment
+cost={2}{W}{W} | type=Instant | CI=W | produces=- | usd=$4.97
+Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.) Any number of target nonland permanents you control phase out. (Treat them and anything attached to them as though they don't exist until your next turn.)
+
+## Elesh Norn, Grand Cenobite
+cost={5}{W}{W} | type=Legendary Creature — Phyrexian Praetor | CI=W | produces=- | usd=$20.35
+Vigilance Other creatures you control get +2/+2. Creatures your opponents control get -2/-2.
+
+## Gideon's Avenger
+cost={1}{W}{W} | type=Creature — Human Soldier | CI=W | produces=- | usd=$0.69
+Whenever a creature an opponent controls becomes tapped, put a +1/+1 counter on this creature.
+
+## Junk Winder
+cost={5}{U}{U} | type=Creature — Serpent | CI=U | produces=- | usd=$0.33
+Affinity for tokens (This spell costs {1} less to cast for each token you control.) Whenever a token you control enters, tap target nonland permanent an opponent controls. It doesn't untap during its controller's next untap step.
+
+## Reflecting Pool
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$15.60
+{T}: Add one mana of any type that a land you control could produce.
+
+## Urborg, Tomb of Yawgmoth
+cost=- | type=Legendary Land | CI=- | produces=B | usd=$55.87
+Each land is a Swamp in addition to its other land types.
+
+## Academy Manufactor
+cost={3} | type=Artifact Creature — Assembly-Worker | CI=- | produces=- | usd=$9.21
+If you would create a Clue, Food, or Treasure token, instead create one of each.
+
+## Unstoppable Plan
+cost={2}{U} | type=Enchantment | CI=U | produces=- | usd=$2.51
+At the beginning of your end step, untap all nonland permanents you control.
+
+## Ghostly Prison
+cost={2}{W} | type=Enchantment | CI=W | produces=- | usd=$5.86
+Creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you.
+
+## Propaganda
+cost={2}{U} | type=Enchantment | CI=U | produces=- | usd=$2.50
+Creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you.
+
+## No Mercy
+cost={2}{B}{B} | type=Enchantment | CI=B | produces=- | usd=$26.33
+Whenever a creature deals damage to you, destroy it.
+
+## Revel in Riches
+cost={4}{B} | type=Enchantment | CI=B | produces=B,G,R,U,W | usd=$18.93
+Whenever a creature an opponent controls dies, create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.") At the beginning of your upkeep, if you control ten or more Treasures, you win the game.
+
+## Debt to the Deathless
+cost={X}{W}{W}{B}{B} | type=Sorcery | CI=BW | produces=- | usd=$?
+Each opponent loses two times X life. You gain life equal to the life lost this way.
+
+## Exsanguinate
+cost={X}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$0.45
+Each opponent loses X life. You gain life equal to the life lost this way.
+
+## Elspeth, Storm Slayer
+cost={3}{W}{W} | type=Legendary Planeswalker — Elspeth | CI=W | produces=- | usd=$41.43
+If one or more tokens would be created under your control, twice that many of those tokens are created instead. +1: Create a 1/1 white Soldier creature token. 0: Put a +1/+1 counter on each creature you control. Those creatures gain flying until your next turn. −3: Destroy target creature an opponent controls with mana value 3 or greater.
+
+## Subjugator Angel
+cost={4}{W}{W} | type=Creature — Angel | CI=W | produces=- | usd=$0.33
+Flying When this creature enters, tap all creatures your opponents control.
+
+## Tempest Caller
+cost={2}{U}{U} | type=Creature — Merfolk Wizard | CI=U | produces=- | usd=$0.38
+When this creature enters, tap all creatures target opponent controls.

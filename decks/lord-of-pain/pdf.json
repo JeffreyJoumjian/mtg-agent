@@ -1,0 +1,299 @@
+{
+  "title": "The Lord of Pain — Rakdos Poisoned-Gift Group Slug",
+  "subtitle": "Bracket 4 · 6 Game Changers · Exquisite Blood + Sanguine Bond loop · 100 cards · built 2026-08-23, lifegain pass same day · Bracket 3 variant = 4 swaps (see swap page)",
+  "stats": [
+    [
+      "Lands",
+      "34 (33 tap for mana; 10 basic incl. 4 fetches, 3 MDFC)"
+    ],
+    [
+      "Mana sources",
+      "42 (34 lands + 8 rocks; 41 actually tap — Glacial Chasm doesn't)"
+    ],
+    [
+      "Cost reducers",
+      "Jet + Ruby Medallion, Rakdos"
+    ],
+    [
+      "Avg MV",
+      "3.22"
+    ],
+    [
+      "Creatures",
+      "22"
+    ],
+    [
+      "Gifts",
+      "6"
+    ],
+    [
+      "Draw-punishers",
+      "7"
+    ],
+    [
+      "Cast/upkeep/mana punishers",
+      "5"
+    ],
+    [
+      "Amplifiers",
+      "6"
+    ],
+    [
+      "Lifeline",
+      "5"
+    ],
+    [
+      "Removal + wipes",
+      "7 + 3"
+    ],
+    [
+      "Protection",
+      "7"
+    ],
+    [
+      "Win conditions",
+      "5"
+    ],
+    [
+      "Game Changers",
+      "6 (B4) / 3 (B3)"
+    ]
+  ],
+  "footer": "Every amplifier is opponent-only on purpose: the gift engines are symmetric, so a Fiery Emancipation would triple Spiteful Visions' pings on YOU. Your own damage comes back: Basilisk Collar/Whip of Erebos lifelink on the pingers, Glacial Chasm prevents all damage to you. One opponent draw under Solphim + Torture Pit with six punishers = 27. Replacement ordering is the damaged player's choice (CR 616.1): (1×2)+2+2 = 6, never (1+4)×2. Full math in research/formulas.md, pilot notes in research/gameplan.md.",
+  "swaps": [
+    {
+      "in": {
+        "name": "Shadowspear",
+        "cost": "{1}",
+        "text": "Equipped creature gets +1/+1, trample, lifelink. {1}: opponents' permanents lose hexproof and indestructible. Equip {2}."
+      },
+      "out": {
+        "name": "Sanguine Bond",
+        "cost": "{3}{B}{B}",
+        "text": "Whenever you gain life, target opponent loses that much life."
+      },
+      "why": "BRACKET 3 SWAP. Bond + Exquisite Blood (or + Bloodthirsty Conqueror) is a two-card infinite; taking Bond out removes both loops. Shadowspear is a second lifelink equipment for the commander.",
+      "back": "Any Bracket 4 table."
+    },
+    {
+      "in": {
+        "name": "Swamp",
+        "cost": "land",
+        "text": "Basic."
+      },
+      "out": {
+        "name": "Ancient Tomb",
+        "cost": "land",
+        "text": "{T}: Add {C}{C}. Deals 2 damage to you."
+      },
+      "why": "BRACKET 3 SWAP. Game Changer.",
+      "back": "Any Bracket 4 table."
+    },
+    {
+      "in": {
+        "name": "Imp's Mischief",
+        "cost": "{1}{B}",
+        "text": "Change the target of target spell with a single target. You lose life equal to that spell's mana value."
+      },
+      "out": {
+        "name": "Vampiric Tutor",
+        "cost": "{B}",
+        "text": "Search your library for a card and put it on top. Lose 2 life."
+      },
+      "why": "BRACKET 3 SWAP. Game Changer, and B3 wants tutors sparse. The redirect behind Deflecting Swat.",
+      "back": "Any Bracket 4 table."
+    },
+    {
+      "in": {
+        "name": "Leechridden Swamp",
+        "cost": "land",
+        "text": "Swamp; enters tapped. {B},{T}: each opponent loses 1 life (needs two black permanents)."
+      },
+      "out": {
+        "name": "Glacial Chasm",
+        "cost": "land",
+        "text": "Prevent all damage that would be dealt to you. Cumulative upkeep — pay 2 life. Sacrifice a land on entry; creatures you control can't attack; no mana."
+      },
+      "why": "BRACKET 3 SWAP. Glacial Chasm is on the Game Changers list.",
+      "back": "Any Bracket 4 table."
+    },
+    {
+      "out": {
+        "name": "Mana Vault",
+        "cost": "{1}",
+        "text": "Doesn't untap during your untap step. At the beginning of your upkeep, you may pay {4} to untap it. At the beginning of your draw step, if tapped, it deals 1 damage to you. {T}: Add {C}{C}{C}."
+      },
+      "in": {
+        "name": "Mind Stone",
+        "cost": "{2}",
+        "text": "{T}: Add {C}. {1}, {T}, Sacrifice this artifact: Draw a card."
+      },
+      "why": "BRACKET 3 SWAP. Game Changer. Mind Stone is the non-GC 2-drop that cashes in for a card late.",
+      "back": "Any Bracket 4 table."
+    },
+    {
+      "out": {
+        "name": "Grim Monolith",
+        "cost": "{2}",
+        "text": "Doesn't untap during your untap step. {T}: Add {C}{C}{C}. {4}: Untap this artifact."
+      },
+      "in": {
+        "name": "Basalt Monolith",
+        "cost": "{3}",
+        "text": "Doesn't untap during your untap step. {T}: Add {C}{C}{C}. {3}: Untap this artifact."
+      },
+      "why": "BRACKET 3 SWAP. Game Changer. Basalt is the same card one mana up, with a {3} untap instead of {4}.",
+      "back": "Any Bracket 4 table."
+    },
+    {
+      "out": {
+        "name": "Mox Diamond",
+        "cost": "{0}",
+        "text": "If this would enter, you may discard a land card instead. If you do, put it onto the battlefield. If you don't, put it into its owner's graveyard. {T}: Add one mana of any color."
+      },
+      "in": {
+        "name": "Thought Vessel",
+        "cost": "{2}",
+        "text": "You have no maximum hand size. {T}: Add {C}."
+      },
+      "why": "BRACKET 3 SWAP. Game Changer. Vessel is a second no-max-hand-size effect behind Reliquary Tower, which matters at 6+ draws a turn.",
+      "back": "Any Bracket 4 table."
+    }
+  ],
+  "sideboard": [
+    {
+      "name": "Teferi's Puzzle Box",
+      "cost": "{4}",
+      "when": "Chaos-friendly, counter-light tables — hand+3 punished draws per player per turn; you can't hold answers past your draw step. Displaces No Mercy."
+    },
+    {
+      "name": "Shadowspear",
+      "cost": "{1}",
+      "when": "Second lifelink equipment for the commander (already the B3 Sanguine swap). Displaces No Mercy."
+    },
+    {
+      "name": "Bloodchief Ascension",
+      "cost": "{B}",
+      "when": "Grindy pod — arms in 3 end steps, then 2 per card into their graveyard (14 per wheel). Displaces Seizan."
+    },
+    {
+      "name": "Burning Inquiry",
+      "cost": "{R}",
+      "when": "1-mana wheel-lite: 3 draws × punishers per opponent. Displaces Fraying Omnipotence."
+    },
+    {
+      "name": "Leechridden Swamp",
+      "cost": "land",
+      "when": "B3 tables (Glacial Chasm is a Game Changer), or when the 35th land must tap for mana. Displaces Glacial Chasm."
+    },
+    {
+      "name": "Lightning Greaves",
+      "cost": "{2}",
+      "when": "You need haste+shroud more than self-targeting (Coat attach, Collar equip, Witch's Clinic). Displaces Swiftfoot Boots."
+    },
+    {
+      "name": "Imp's Mischief",
+      "cost": "{1}{B}",
+      "when": "Combo/counter-heavy pod — second redirect, spells only, costs life = MV (already the B3 Vampiric swap). Displaces Vial Smasher."
+    },
+    {
+      "name": "Brash Taunter",
+      "cost": "{4}{R}",
+      "when": "Creature-heavy pod — Taunter + Blasphemous Act is 13 (×2 Solphim) to one player. Displaces Fraying Omnipotence."
+    },
+    {
+      "name": "Kardur, Doomscourge",
+      "cost": "{2}{B}{R}",
+      "when": "Go-wide attackers; goad + drain. Displaces No Mercy."
+    },
+    {
+      "name": "Mindcrank",
+      "cost": "{2}",
+      "when": "B4 only — infinite with Bloodchief Ascension (bring both) at 3 counters. Displaces Fraying Omnipotence + Seizan."
+    },
+    {
+      "name": "Wheel of Misfortune",
+      "cost": "{2}{R}",
+      "when": "A second true wheel. Displaces Fraying Omnipotence."
+    },
+    {
+      "name": "Stormfist Crusader",
+      "cost": "{B}{R}",
+      "when": "Low-curve pod; 2-drop gift/ping. Displaces Seizan."
+    },
+    {
+      "name": "Master of the Feast",
+      "cost": "{1}{B}{B}",
+      "when": "Pure 'here, have a card' 5/5 flier. Displaces Dark Ritual."
+    },
+    {
+      "name": "Court of Ambition",
+      "cost": "{2}{B}{B}",
+      "when": "Grindy pod; 3 life or discard per upkeep, monarch baits attacks away. Displaces Manabarbs."
+    },
+    {
+      "name": "Wild Evocation",
+      "cost": "{5}{R}",
+      "when": "Chaos table — forced free cast each upkeep triggers Lord/Kaervek/Quandary. Displaces Seizan."
+    },
+    {
+      "name": "Repercussion",
+      "cost": "{1}{R}{R}",
+      "when": "Opponents creature-heavy, you are not: Blasphemous Act = 13 × their creatures to each of them. Displaces Fraying Omnipotence."
+    },
+    {
+      "name": "Ob Nixilis, the Hate-Twisted",
+      "cost": "{3}{B}{B}",
+      "when": "8th draw-punisher that is also removal. Displaces Manabarbs."
+    },
+    {
+      "name": "Archfiend of Despair",
+      "cost": "{6}{B}{B}",
+      "when": "Second Wound Reflection for long Coffers games. Displaces Wound Reflection or runs alongside."
+    },
+    {
+      "name": "Kefka, Dancing Mad",
+      "cost": "{5}{B}{R}",
+      "when": "'I cast your cards and you pay for them' finisher. Displaces Heartless Hidetsugu."
+    },
+    {
+      "name": "Chandra, Awakened Inferno",
+      "cost": "{4}{R}{R}",
+      "when": "Enchantment-removal-heavy pod; emblems can't be answered. Displaces Manabarbs."
+    },
+    {
+      "name": "Withering Torment",
+      "cost": "{2}{B}",
+      "when": "Extra enchantment answer (Leyline of Sanctity blanks the commander). Displaces Feed the Swarm."
+    },
+    {
+      "name": "Tempting Contract",
+      "cost": "{4}",
+      "when": "You want the Treasure gift back (bigger opposing spells → bigger Lord/Kaervek hits). Displaces Rakdos, Lord of Riots."
+    },
+    {
+      "name": "Bolt Bend",
+      "cost": "{3}{R}",
+      "when": "Third redirect behind Deflecting Swat; costs {R} with the commander out. Single-target spells only. Displaces Mox Diamond."
+    },
+    {
+      "name": "Mana Flare",
+      "cost": "{2}{R}",
+      "when": "Table where the extra mana poisons them more than it helps them. It gives three opponents what it gives you. Displaces Dark Ritual."
+    },
+    {
+      "name": "Bojuka Bog",
+      "cost": "—",
+      "when": "Reanimator pod — a second graveyard exile behind Rakdos Charm. Enters tapped. Displaces Mana Vault."
+    },
+    {
+      "name": "Scrawling Crawler",
+      "cost": "{3}",
+      "when": "Grindy pod with no amplifier in sight — its 1 life per opponent draw is life loss, which Solphim/Torbran/Torture Pit cannot multiply, so its value collapses exactly when the deck is winning. Displaces Grim Monolith."
+    }
+  ],
+  "appendix": [
+    "research/gameplan.md",
+    "research/formulas.md"
+  ]
+}

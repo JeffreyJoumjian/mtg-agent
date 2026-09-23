@@ -12,16 +12,28 @@
 
 import { request, toSummary, type CardSummary } from "./lib/scryfall";
 import { DATA_DIR } from "./lib/paths";
+import { resolveNames } from "./lib/card-cache";
+import { commandersOf, pickList } from "./lib/deck-model";
+import { listDeckSlugs, readDeck } from "./lib/deck-store";
 import { resolve } from "node:path";
 
-/** Colour identity per deck, maintained by hand because DECK.md doesn't encode it.
- *  Keep in sync with the commanders in decks/. A card fits a deck when its colour
- *  identity is a subset of the deck's. */
-const DECKS: Record<string, string[]> = {
-  "edgar-markov": ["W", "B", "R"],
-  "iron-man": ["U", "R"],
-  "scarlet-witch": ["R"],
-};
+/** Colour identity per deck, derived from each deck's commanders (main list) via the card cache.
+ *  A card fits a deck when its colour identity is a subset of the deck's. */
+async function deckIdentities(): Promise<Record<string, string[]>> {
+  const out: Record<string, string[]> = {};
+
+  for (const slug of await listDeckSlugs()) {
+    const deck = await readDeck(slug);
+    const commanders = commandersOf(pickList(deck).list);
+    const { found } = await resolveNames(commanders);
+    const identity: Record<string, true> = {};
+    for (const card of Object.values(found)) {
+      for (const c of card.colorIdentity) identity[c] = true;
+    }
+    out[slug] = ["W", "U", "B", "R", "G"].filter((c) => identity[c]);
+  }
+  return out;
+}
 
 const code = (process.argv[2] ?? "").toLowerCase();
 
@@ -69,7 +81,7 @@ const topKeywords = Object.entries(keywordCounts)
   .join(" · ");
 console.log(`Top keywords: ${topKeywords}\n`);
 
-for (const [slug, identity] of Object.entries(DECKS)) {
+for (const [slug, identity] of Object.entries(await deckIdentities())) {
   const fits = cards.filter(
     (c) => c.commanderLegal === "legal" && !c.colorIdentity.some((color) => !identity.includes(color)),
   );

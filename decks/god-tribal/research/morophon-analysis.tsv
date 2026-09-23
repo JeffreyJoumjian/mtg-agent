@@ -1,0 +1,95 @@
+GENERIC	creature	Anzrag, the Quake-Mole	0
+GENERIC	creature	Ares, God of War	0
+GENERIC	creature	Atreus, Impulsive Son	0
+GENERIC	creature	Bane, Lord of Darkness	0
+GENERIC	creature	Bast, Panther Goddess	0
+GENERIC	creature	Bhaal, Lord of Murder	0
+GENERIC	creature	Bontu the Glorified	0
+GENERIC	creature	Havi, the All-Father	0
+GENERIC	creature	Hazoret the Fervent	0
+GENERIC	creature	Hazoret, Godseeker	0
+GENERIC	creature	Inga and Esika	0
+GENERIC	creature	Jorn, God of Winter // Kaldring, the Rimestaff	0
+GENERIC	creature	Kefnet the Mindful	0
+GENERIC	creature	Ketramose, the New Dawn	0
+GENERIC	creature	Kid Loki	0
+GENERIC	creature	Kratos, Stoic Father	0
+GENERIC	creature	Lady Loki, Agent of Chaos	0
+GENERIC	creature	Loki Laufeyson	0
+GENERIC	creature	Loki, God of Mischief	0
+GENERIC	creature	Loki, Lord of Misrule	0
+GENERIC	creature	Loki, the Deceiver	0
+GENERIC	creature	Myrkul, Lord of Bones	0
+GENERIC	creature	Oketra the True	0
+GENERIC	creature	Rhonas the Indomitable	0
+GENERIC	creature	Sab-Sunen, Luxa Embodied	0
+GENERIC	creature	Sif's Spearmaster	0
+GENERIC	creature	The Ancient One	0
+GENERIC	creature	The Capitoline Triad	0
+GENERIC	creature	The Locust God	0
+GENERIC	creature	The Mighty Thor, Jane Foster	0
+GENERIC	creature	The Scarab God	0
+GENERIC	creature	The Scorpion God	0
+GENERIC	creature	The Warring Triad	0
+GENERIC	creature	Thor Odinson	0
+GENERIC	creature	Tiamat	0
+GENERIC	creature	Tom Bombadil	0
+GENERIC	creature	Ultima, Origin of Oblivion	0
+GENERIC	creature	Valkyrior Skyrider	0
+GENERIC	devotion	Athreos, God of Passage	0
+GENERIC	devotion	Athreos, Shroud-Veiled	0
+GENERIC	devotion	Ephara, God of the Polis	0
+GENERIC	devotion	Erebos, Bleak-Hearted	0
+GENERIC	devotion	Erebos, God of the Dead	0
+GENERIC	devotion	Heliod, God of the Sun	0
+GENERIC	devotion	Heliod, Sun-Crowned	0
+GENERIC	devotion	Invasion of Theros // Ephara, Ever-Sheltering	0
+GENERIC	devotion	Iroas, God of Victory	0
+GENERIC	devotion	Karametra, God of Harvests	0
+GENERIC	devotion	Keranos, God of Storms	0
+GENERIC	devotion	Klothys, God of Destiny	0
+GENERIC	devotion	Kruphix, God of Horizons	0
+GENERIC	devotion	Mogis, God of Slaughter	0
+GENERIC	devotion	Nylea, God of the Hunt	0
+GENERIC	devotion	Nylea, Keen-Eyed	0
+GENERIC	devotion	Pharika, God of Affliction	0
+GENERIC	devotion	Phenax, God of Deception	0
+GENERIC	devotion	Purphoros, Bronze-Blooded	0
+GENERIC	devotion	Purphoros, God of the Forge	0
+GENERIC	devotion	Thassa, Deep-Dwelling	0
+GENERIC	devotion	Thassa, God of the Sea	0
+GENERIC	devotion	Xenagos, God of Revels	0
+needs 1 pip(s)	creature	Aclazotz, Deepest Betrayal // Temple of the Dead	1
+needs 1 pip(s)	creature	Asmodeus the Archfiend	1
+needs 1 pip(s)	creature	Birgi, God of Storytelling // Harnfel, Horn of Bounty	1
+needs 1 pip(s)	creature	Cosima, God of the Voyage // The Omenkeel	1
+needs 1 pip(s)	creature	Djeru and Hazoret	1
+needs 1 pip(s)	creature	Egon, God of Death // Throne of Death	1
+needs 1 pip(s)	creature	Eirdu, Carrier of Dawn // Isilu, Carrier of Twilight	1
+needs 1 pip(s)	creature	God-Eternal Bontu	1
+needs 1 pip(s)	creature	God-Eternal Kefnet	1
+needs 1 pip(s)	creature	God-Eternal Oketra	1
+needs 1 pip(s)	creature	God-Eternal Rhonas	1
+needs 1 pip(s)	creature	Ilharg, the Raze-Boar	1
+needs 1 pip(s)	creature	Loki, God of Lies	1
+needs 1 pip(s)	creature	Ojer Axonil, Deepest Might // Temple of Power	1
+needs 1 pip(s)	creature	Ojer Kaslem, Deepest Growth // Temple of Cultivation	1
+needs 1 pip(s)	creature	Ojer Pakpatiq, Deepest Epoch // Temple of Cyclical Time	1
+needs 1 pip(s)	creature	Ojer Taq, Deepest Foundation // Temple of Civilization	1
+needs 1 pip(s)	creature	Reidane, God of the Worthy // Valkmira, Protector's Shield	1
+needs 1 pip(s)	creature	Surtr, Fiery Jötun	1
+needs 1 pip(s)	creature	Svyelun of Sea and Sky	1
+needs 1 pip(s)	creature	Thor, Asgard's Avenger	1
+needs 1 pip(s)	creature	Thor, God of Thunder	1
+needs 1 pip(s)	creature	Thor, Guardian of Midgard	1
+needs 1 pip(s)	creature	Valki, God of Lies // Tibalt, Cosmic Impostor	1
+needs 1 pip(s)	creature	Venat, Heart of Hydaelyn // Hydaelyn, the Mothercrystal	1
+needs 1 pip(s)	devotion	Heliod, the Radiant Dawn // Heliod, the Warped Eclipse	1
+needs 2 pip(s)	creature	Alrund, God of the Cosmos // Hakka, Whispering Raven	2
+needs 2 pip(s)	creature	Esika, God of the Tree // The Prismatic Bridge	2
+needs 2 pip(s)	creature	Halvar, God of Battle // Sword of the Realms	2
+needs 2 pip(s)	creature	Kolvori, God of Kinship // The Ringhart Crest	2
+needs 2 pip(s)	creature	Kratos, God of War	2
+needs 2 pip(s)	creature	Tergrid, God of Fright // Tergrid's Lantern	2
+needs 2 pip(s)	creature	Toralf, God of Fury // Toralf's Hammer	2
+needs 4 pip(s)	creature	Zodiark, Umbral God	4

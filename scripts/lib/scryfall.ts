@@ -18,8 +18,28 @@ const HEADERS = {
 /** Scryfall asks for 50–100 ms between requests; we use 100 ms to be a good citizen. */
 const THROTTLE_MS = 100;
 
+/** The three image sizes the tooling renders: chips (`small`), tiles (`normal`), banners (`artCrop`). */
+export interface CardImages {
+  small: string | null;
+  normal: string | null;
+  artCrop: string | null;
+}
+
+/** One face of a card. Single-faced cards have exactly one; transform / modal DFCs have two. */
+export interface CardFace {
+  name: string;
+  manaCost: string;
+  typeLine: string;
+  oracleText: string;
+  images: CardImages;
+}
+
 /** The compact, agent-friendly shape we care about — a projection of Scryfall's card object. */
 export interface CardSummary {
+  /** Scryfall's id for this printing. Empty string on entries cached before this field existed. */
+  id: string;
+  /** Scryfall's oracle id — the same across every printing of the card. */
+  oracleId: string;
   name: string;
   manaCost: string;
   cmc: number;
@@ -49,7 +69,12 @@ export interface CardSummary {
   commanderLegal: string;
   artist: string;
   scryfallUri: string;
+  /** The `normal` image of the front face — kept for older callers; prefer `images` / `faces`. */
   imageUri: string | null;
+  /** Front-face images at every size the tooling uses. */
+  images: CardImages;
+  /** Every face, front first. Always at least one entry. */
+  faces: CardFace[];
 }
 
 let lastRequestAt = 0;
@@ -98,7 +123,35 @@ export function toSummary(card: any): CardSummary {
   const oracleText =
     card.oracle_text ?? faces.map((f: any) => f.oracle_text).filter(Boolean).join("\n//\n");
 
+  const imagesOf = (src: any): CardImages => ({
+    small: src?.image_uris?.small ?? null,
+    normal: src?.image_uris?.normal ?? null,
+    artCrop: src?.image_uris?.art_crop ?? null,
+  });
+  const faceList: CardFace[] =
+    faces.length > 0
+      ? faces.map((f: any) => ({
+          name: f.name ?? card.name,
+          manaCost: f.mana_cost ?? "",
+          typeLine: f.type_line ?? "",
+          oracleText: f.oracle_text ?? "",
+          images: imagesOf(f),
+        }))
+      : [
+          {
+            name: card.name,
+            manaCost: card.mana_cost ?? "",
+            typeLine: card.type_line ?? "",
+            oracleText: card.oracle_text ?? "",
+            images: imagesOf(card),
+          },
+        ];
+  // Split / adventure / flip layouts carry one image on the card; transform / MDFC carry one per face.
+  const images = card.image_uris ? imagesOf(card) : faceList[0].images;
+
   return {
+    id: card.id ?? "",
+    oracleId: card.oracle_id ?? "",
     name: card.name,
     manaCost: card.mana_cost ?? faces.map((f: any) => f.mana_cost).filter(Boolean).join(" // "),
     cmc: card.cmc ?? 0,
@@ -121,7 +174,9 @@ export function toSummary(card: any): CardSummary {
     commanderLegal: card.legalities?.commander ?? "unknown",
     artist: card.artist ?? "",
     scryfallUri: (card.scryfall_uri ?? "").split("?")[0],
-    imageUri: card.image_uris?.normal ?? faces[0]?.image_uris?.normal ?? null,
+    imageUri: images.normal,
+    images,
+    faces: faceList,
   };
 }
 

@@ -1,0 +1,149 @@
+# Captain America, Living Legend — Azorius Lifelink Voltron (variant)
+
+Commander: Captain America, Living Legend (UW)
+Bracket: 3   ·   Total: 100/100
+
+Game Changers (3/3 — at the bracket 3 cap): Cyclonic Rift · Enlightened Tutor · Teferi's Protection
+
+> Variant of `DECK.md`. v2, rebuilt 2026-09-10 after the pilot's audit of v1 (too few Equipment, no
+> flying/trample, no "creature enters" payoffs, too many counter cards that couldn't reach Cap).
+> **Cap is the threat, and he grows by gaining life.** Lifelink Equipment (Shadowspear, Loxodon
+> Warhammer, Batterskull) + **Light of Promise** ("whenever you gain life, put THAT MANY +1/+1
+> counters on this creature") roughly doubles his power every connected hit: with Commander's Plate
+> and Shadowspear he swings for 7, gains 7, becomes 14/15, and the second hit is 21 commander damage.
+> Soul Warden / Auriok Champion turn ANY creature entering (opponents' too) into life gain, which
+> Heliod and Archangel of Thune turn into counters. Evasion: Maul of the Skyclaves (flying), Aqueous
+> Form and Brotherhood Regalia (unblockable), trample on the lifelink gear.
+>
+> **Piloting rule: never give Cap pro-white or pro-blue.** It strips his own Auras (Light of Promise
+> and Maul are white; Aqueous Form and Stark's Ingenuity are blue). Protect him with hexproof —
+> Patriot, Swiftfoot Boots, Super-Soldier. See `research/gameplan.md`.
+>
+> **Heliod + Walking Ballista is a two-card instant-speed kill** (Ballista needs 2+ counters). It's a
+> chosen loop, allowed under the pilot's loop policy — mention it to the table.
+>
+> Grounds: `research/decisions.md` (2026-09-10 entries). `STATUS.md` mirrors `DECK.md` only.
+
+## Commander (1)
+1x Captain America, Living Legend
+
+## Lands (35)
+1x Abandoned Air Temple
+1x Academy Ruins
+1x Adarkar Wastes
+1x Ancient Den
+1x Avengers Tower
+1x Command Tower
+1x Deserted Beach
+1x Eiganjo, Seat of the Empire
+1x Flooded Strand
+1x Floodfarm Verge
+1x Glacial Fortress
+1x Hallowed Fountain
+1x Inventors' Fair
+3x Island
+1x Karn's Bastion
+1x Minamo, School at Water's Edge
+1x Mystic Gate
+1x Otawara, Soaring City
+7x Plains
+1x Prairie Stream
+1x Prismatic Vista
+1x Rogue's Passage
+1x Sea of Clouds
+1x Seachrome Coast
+1x Seat of the Synod
+1x Tundra
+1x Urza's Saga
+
+## Ramp (5)
+1x Apprentice Wizard
+1x Arcane Signet
+1x Ornithopter of Paradise
+1x Relic of Legends
+1x Sol Ring
+
+## Card Draw (3)
+1x Arcanis the Omnipotent
+1x Marvin, Murderous Mimic
+1x Shorikai, Genesis Engine
+
+## Equipment & Auras — Voltron (11)
+1x Aqueous Form
+1x Batterskull
+1x Brotherhood Regalia
+1x Commander's Plate
+1x Light of Promise
+1x Loxodon Warhammer
+1x Maul of the Skyclaves
+1x Shadowspear
+1x Stark's Ingenuity
+1x Swiftfoot Boots
+1x Sword of Feast and Famine
+
+## Equipment Tutors & Engines (6)
+1x Enlightened Tutor *GC*
+1x Puresteel Paladin
+1x Sram, Senior Edificer
+1x Steelshaper's Gift
+1x Stoneforge Mystic
+1x Whir of Invention
+
+## Draw → Counters (2)
+1x Iron Man, Armored Avenger
+1x Proft's Eidetic Memory
+
+## Life Gain → Counters (5)
+1x Archangel of Thune
+1x Auriok Champion
+1x Bard the Bowman
+1x Heliod, Sun-Crowned
+1x Soul Warden
+
+## Tap Counter Engines & Amplifier (3)
+1x Agent Phil Coulson
+1x Keensight Mentor
+1x Lae'zel, Vlaakith's Champion
+
+## Token Makers (3)
+1x Adeline, Resplendent Cathar
+1x Brimaz, King of Oreskos
+1x Nadir Kraken
+
+## Untappers (2)
+1x Drumbellower
+1x Thousand-Year Elixir
+
+## Evasion & Double Strike (3)
+1x K-9, Mark I
+1x The Destined Thief
+1x Urdnan, Dromoka Warrior
+
+## Finishers (1)
+1x Walking Ballista
+
+## Interaction (10)
+1x Counterspell
+1x Cyclonic Rift *GC*
+1x Dispatch
+1x Dovin's Veto
+1x Generous Gift
+1x Into the Flood Maw
+1x March of Otherworldly Light
+1x Path to Exile
+1x Stroke of Midnight
+1x Swords to Plowshares
+
+## Board Wipes (2)
+1x Split Up
+1x Winds of Abandon
+
+## Protection (8)
+1x Captain America, Super-Soldier
+1x Clever Concealment
+1x Giver of Runes
+1x Kid Loki
+1x Mother of Runes
+1x Patriot, Shield Wielder
+1x Teferi's Protection *GC*
+1x The Ozolith

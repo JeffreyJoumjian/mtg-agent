@@ -1,0 +1,411 @@
+# LOCAL CARD CACHE — vision-scarlet-witch
+# Prices are a USD snapshot from Scryfall at the time each card was first cached.
+# Format:  ## Name / cost|type|CI|produces|usd / oracle
+
+## The Vision and Scarlet Witch
+cost={2}{R}{R} | type=Legendary Artifact Creature — Mutant Hero | CI=R | produces=R | usd=$34.06
+Flying Whenever you cast a spell, add {R} and put a +1/+1 counter on The Vision and Scarlet Witch.
+
+## Ancient Tomb
+cost=- | type=Land | CI=- | produces=C | usd=$133.66
+{T}: Add {C}{C}. This land deals 2 damage to you.
+
+## Cavern of Souls
+cost=- | type=Land | CI=- | produces=B,C,G,R,U,W | usd=$50.06
+As this land enters, choose a creature type. {T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast a creature spell of the chosen type, and that spell can't be countered.
+
+## Command Beacon
+cost=- | type=Land | CI=- | produces=C | usd=$9.68
+{T}: Add {C}. {T}, Sacrifice this land: Put your commander into your hand from the command zone.
+
+## Rogue's Passage
+cost=- | type=Land | CI=- | produces=C | usd=$0.36
+{T}: Add {C}. {4}, {T}: Target creature can't be blocked this turn.
+
+## Tyrite Sanctum
+cost=- | type=Land | CI=- | produces=C | usd=$2.71
+{T}: Add {C}. {2}, {T}: Target legendary creature becomes a God in addition to its other types. Put a +1/+1 counter on it. {4}, {T}, Sacrifice this land: Put an indestructible counter on target God.
+
+## Forge of Heroes
+cost=- | type=Land | CI=- | produces=C | usd=$0.35
+{T}: Add {C}. {T}: Choose target commander that entered this turn. Put a +1/+1 counter on it if it's a creature and a loyalty counter on it if it's a planeswalker.
+
+## Fire Nation Palace
+cost=- | type=Land | CI=R | produces=R | usd=$1.86
+This land enters tapped unless you control a basic land. {T}: Add {R}. {1}{R}, {T}: Target creature you control gains firebending 4 until end of turn. (Whenever it attacks, add {R}{R}{R}{R}. This mana lasts until end of combat.)
+
+## Lindblum, Industrial Regency // Mage Siege
+cost={2}{R} | type=Land — Town // Instant — Adventure | CI=R | produces=R | usd=$2.84
+Lindblum, Industrial Regency: This land enters tapped. {T}: Add {R}. // Mage Siege: Create a 0/1 black Wizard creature token with "Whenever you cast a noncreature spell, this token deals 1 damage to each opponent."
+
+## Sokenzan, Crucible of Defiance
+cost=- | type=Legendary Land | CI=R | produces=R | usd=$2.29
+{T}: Add {R}. Channel — {3}{R}, Discard this card: Create two 1/1 colorless Spirit creature tokens. They gain haste until end of turn. This ability costs {1} less to activate for each legendary creature you control.
+
+## Arena of Glory
+cost=- | type=Land | CI=R | produces=R | usd=$8.25
+This land enters tapped unless you control a Mountain. {T}: Add {R}. {R}, {T}, Exert this land: Add {R}{R}. If that mana is spent on a creature spell, it gains haste until end of turn. (An exerted permanent won't untap during your next untap step.)
+
+## Valakut Awakening // Valakut Stoneforge
+cost={2}{R} | type=Instant // Land | CI=R | produces=R | usd=$16.60
+Valakut Awakening: Put any number of cards from your hand on the bottom of your library, then draw that many cards plus one. // Valakut Stoneforge: This land enters tapped. {T}: Add {R}.
+
+## Shatterskull Smashing // Shatterskull, the Hammer Pass
+cost={X}{R}{R} | type=Sorcery // Land | CI=R | produces=R | usd=$8.84
+Shatterskull Smashing: Shatterskull Smashing deals X damage divided as you choose among up to two target creatures and/or planeswalkers. If X is 6 or more, Shatterskull Smashing deals twice X damage divided as you choose among them instead. // Shatterskull, the Hammer Pass: As this land enters, you may pay 3 life. If you don't, it enters tapped. {T}: Add {R}.
+
+## Mountain
+cost=- | type=Basic Land — Mountain | CI=R | produces=R | usd=$?
+({T}: Add {R}.)
+
+## Sol Ring
+cost={1} | type=Artifact | CI=- | produces=C | usd=$1.54
+{T}: Add {C}{C}.
+
+## Arcane Signet
+cost={2} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.59
+{T}: Add one mana of any color in your commander's color identity.
+
+## Ruby Medallion
+cost={2} | type=Artifact | CI=- | produces=- | usd=$14.85
+Red spells you cast cost {1} less to cast.
+
+## The Fire Crystal
+cost={2}{R}{R} | type=Legendary Artifact | CI=R | produces=- | usd=$6.13
+Red spells you cast cost {1} less to cast. Creatures you control have haste. {4}{R}{R}, {T}: Create a token that's a copy of target creature you control. Sacrifice it at the beginning of the next end step.
+
+## Mox Amber
+cost={0} | type=Legendary Artifact | CI=- | produces=B,G,R,U,W | usd=$85.89
+{T}: Add one mana of any color among legendary creatures and planeswalkers you control.
+
+## Lotus Petal
+cost={0} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$?
+{T}, Sacrifice this artifact: Add one mana of any color.
+
+## Tablet of Discovery
+cost={2}{R} | type=Artifact | CI=R | produces=R | usd=$2.01
+When this artifact enters, mill a card. You may play that card this turn. (To mill a card, put the top card of your library into your graveyard.) {T}: Add {R}. {T}: Add {R}{R}. Spend this mana only to cast instant and sorcery spells.
+
+## Pyretic Ritual
+cost={1}{R} | type=Instant | CI=R | produces=R | usd=$5.98
+Add {R}{R}{R}.
+
+## Seething Song
+cost={2}{R} | type=Instant | CI=R | produces=R | usd=$12.29
+Add {R}{R}{R}{R}{R}.
+
+## Mana Geyser
+cost={3}{R}{R} | type=Sorcery | CI=R | produces=R | usd=$1.11
+Add {R} for each tapped land your opponents control.
+
+## Jeska's Will
+cost={2}{R} | type=Sorcery | CI=R | produces=R | usd=$38.37
+Choose one. If you control a commander as you cast this spell, you may choose both instead. • Add {R} for each card in target opponent's hand. • Exile the top three cards of your library. You may play them this turn.
+
+## Electro, Assaulting Battery
+cost={1}{R}{R} | type=Legendary Creature — Human Villain | CI=R | produces=R | usd=$4.90
+Flying You don't lose unspent red mana as steps and phases end. Whenever you cast an instant or sorcery spell, add {R}. When Electro leaves the battlefield, you may pay {X}. When you do, he deals X damage to target player.
+
+## Ashling, Flame Dancer
+cost={2}{R}{R} | type=Legendary Creature — Elemental Shaman | CI=R | produces=R | usd=$5.43
+You don't lose unspent red mana as steps and phases end. Magecraft — Whenever you cast or copy an instant or sorcery spell, discard a card, then draw a card. If this is the second time this ability has resolved this turn, Ashling deals 2 damage to each opponent and each creature they control. If it's the third time, add {R}{R}{R}{R}.
+
+## Leyline Tyrant
+cost={2}{R}{R} | type=Creature — Dragon | CI=R | produces=- | usd=$2.40
+Flying You don't lose unspent red mana as steps and phases end. When this creature dies, you may pay any amount of {R}. When you do, it deals that much damage to any target.
+
+## Birgi, God of Storytelling // Harnfel, Horn of Bounty
+cost={2}{R}{4}{R} | type=Legendary Creature — God // Legendary Artifact | CI=R | produces=R | usd=$30.86
+Birgi, God of Storytelling: Whenever you cast a spell, add {R}. Until end of turn, you don't lose this mana as steps and phases end. Creatures you control can boast twice during each of your turns rather than once. // Harnfel, Horn of Bounty: Discard a card: Exile the top two cards of your library. You may play those cards this turn.
+
+## Braid of Fire
+cost={1}{R} | type=Enchantment | CI=R | produces=R | usd=$23.80
+Cumulative upkeep—Add {R}. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)
+
+## Storm-Kiln Artist
+cost={3}{R} | type=Creature — Dwarf Shaman | CI=R | produces=B,G,R,U,W | usd=$1.41
+This creature gets +1/+0 for each artifact you control. Magecraft — Whenever you cast or copy an instant or sorcery spell, create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.")
+
+## Runaway Steam-Kin
+cost={1}{R} | type=Creature — Elemental | CI=R | produces=R | usd=$1.40
+Whenever you cast a red spell, if this creature has fewer than three +1/+1 counters on it, put a +1/+1 counter on this creature. Remove three +1/+1 counters from this creature: Add {R}{R}{R}.
+
+## Urabrask // The Great Work
+cost={2}{R}{R} | type=Legendary Creature — Phyrexian Praetor // Enchantment — Saga | CI=R | produces=R | usd=$16.30
+Urabrask: First strike Whenever you cast an instant or sorcery spell, Urabrask deals 1 damage to target opponent. Add {R}. {R}: Exile Urabrask, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery and only if you've cast three or more instant and/or sorcery spells this turn. // The Great Work: (As this Saga enters and after your draw step, add a lore counter.) I — This Saga deals 3 damage to target opponent and each creature they control. II — Create three Treasure tokens. III — Until end of turn, you may cast instant and sorcery spells from any graveyard. If a spell cast this way would be put into a graveyard, exile it instead. Exile this Saga, then return it to the battlefield (front face up).
+
+## Crash Through
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$0.12
+Creatures you control gain trample until end of turn. (Each of those creatures can deal excess combat damage to the player or planeswalker it's attacking.) Draw a card.
+
+## Might of the Meek
+cost={R} | type=Instant | CI=R | produces=- | usd=$0.28
+Target creature gains trample until end of turn. It also gets +1/+0 until end of turn if you control a Mouse. Draw a card.
+
+## Impolite Entrance
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$0.30
+Target creature gains trample and haste until end of turn. Draw a card.
+
+## Ancestral Anger
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$0.21
+Target creature gains trample and gets +X/+0 until end of turn, where X is 1 plus the number of cards named Ancestral Anger in your graveyard. Draw a card.
+
+## Fists of Flame
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$0.18
+Draw a card. Until end of turn, target creature gains trample and gets +1/+0 for each card you've drawn this turn. (A creature with trample can deal excess combat damage to the player or planeswalker it's attacking.)
+
+## Warlord's Fury
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$0.28
+Creatures you control gain first strike until end of turn. Draw a card.
+
+## Renegade Tactics
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$0.14
+Target creature can't block this turn. Draw a card.
+
+## Expedite
+cost={R} | type=Instant | CI=R | produces=- | usd=$0.65
+Target creature gains haste until end of turn. Draw a card.
+
+## Crimson Wisps
+cost={R} | type=Instant | CI=R | produces=- | usd=$2.75
+Target creature becomes red and gains haste until end of turn. (It can attack and {T} this turn.) Draw a card.
+
+## Overmaster
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$2.75
+The next instant or sorcery spell you cast this turn can't be countered. Draw a card.
+
+## The One Ring
+cost={4} | type=Legendary Artifact | CI=- | produces=- | usd=$122.35
+Indestructible When The One Ring enters, if you cast it, you gain protection from everything until your next turn. At the beginning of your upkeep, you lose 1 life for each burden counter on The One Ring. {T}: Put a burden counter on The One Ring, then draw a card for each burden counter on The One Ring.
+
+## Faithless Looting
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$0.36
+Draw two cards, then discard two cards. Flashback {2}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+
+## Big Score
+cost={3}{R} | type=Instant | CI=R | produces=B,G,R,U,W | usd=$0.38
+As an additional cost to cast this spell, discard a card. Draw two cards and create two Treasure tokens. (They're artifacts with "{T}, Sacrifice this token: Add one mana of any color.")
+
+## Hex Magic
+cost={2}{R} | type=Sorcery — Arcane | CI=R | produces=- | usd=$0.62
+Exile all the cards from your hand, then draw that many cards. Until the end of your next turn, you may play cards exiled this way.
+
+## Wheel of Fortune
+cost={2}{R} | type=Sorcery | CI=R | produces=- | usd=$?
+Each player discards their hand, then draws seven cards.
+
+## Wiccan, Young Avenger
+cost={3}{R} | type=Legendary Creature — Mutant Warlock Hero | CI=R | produces=- | usd=$0.22
+Whenever you cast a noncreature spell, exile the top card of your library. Until your next end step, you may play that card.
+
+## Artist's Talent
+cost={1}{R} | type=Enchantment — Class | CI=R | produces=- | usd=$5.81
+(Gain the next level as a sorcery to add its ability.) Whenever you cast a noncreature spell, you may discard a card. If you do, draw a card. {2}{R}: Level 2 Noncreature spells you cast cost {1} less to cast. {2}{R}: Level 3 If a source you control would deal noncombat damage to an opponent or a permanent an opponent controls, it deals that much damage plus 2 instead.
+
+## Guttersnipe
+cost={2}{R} | type=Creature — Goblin Shaman | CI=R | produces=- | usd=$0.50
+Whenever you cast an instant or sorcery spell, this creature deals 2 damage to each opponent.
+
+## Firebrand Archer
+cost={1}{R} | type=Creature — Human Archer | CI=R | produces=- | usd=$0.28
+Whenever you cast a noncreature spell, this creature deals 1 damage to each opponent.
+
+## Kessig Flamebreather
+cost={1}{R} | type=Creature — Human Shaman | CI=R | produces=- | usd=$3.39
+Whenever you cast a noncreature spell, this creature deals 1 damage to each opponent.
+
+## Coruscation Mage
+cost={1}{R} | type=Creature — Otter Wizard | CI=R | produces=- | usd=$2.10
+Offspring {2} (You may pay an additional {2} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.) Whenever you cast a noncreature spell, this creature deals 1 damage to each opponent.
+
+## Thermo-Alchemist
+cost={1}{R} | type=Creature — Human Shaman | CI=R | produces=- | usd=$0.37
+Defender {T}: This creature deals 1 damage to each opponent. Whenever you cast an instant or sorcery spell, untap this creature.
+
+## Fiery Inscription
+cost={2}{R} | type=Enchantment | CI=R | produces=- | usd=$0.62
+When this enchantment enters, the Ring tempts you. Whenever you cast an instant or sorcery spell, this enchantment deals 2 damage to each opponent.
+
+## Longshot, Rebel Bowman
+cost={3}{R} | type=Legendary Creature — Human Rebel Ally | CI=R | produces=- | usd=$7.75
+Reach (This creature can block creatures with flying.) Noncreature spells you cast cost {1} less to cast. Whenever you cast a noncreature spell, Longshot deals 2 damage to each opponent.
+
+## Grapeshot
+cost={1}{R} | type=Sorcery | CI=R | produces=- | usd=$0.38
+Grapeshot deals 1 damage to any target. Storm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)
+
+## Deflecting Swat
+cost={2}{R} | type=Instant | CI=R | produces=- | usd=$71.36
+If you control a commander, you may cast this spell without paying its mana cost. You may choose new targets for target spell or ability.
+
+## Bolt Bend
+cost={3}{R} | type=Instant | CI=R | produces=- | usd=$4.88
+This spell costs {3} less to cast if you control a creature with power 4 or greater. Change the target of target spell or ability with a single target.
+
+## Champion's Helm
+cost={3} | type=Artifact — Equipment | CI=- | produces=- | usd=$3.14
+Equipped creature gets +2/+2. As long as equipped creature is legendary, it has hexproof. (It can't be the target of spells or abilities your opponents control.) Equip {1}
+
+## Swiftfoot Boots
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$?
+Equipped creature has hexproof and haste. (It can't be the target of spells or abilities your opponents control. It can attack and {T} no matter when it came under your control.) Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Commander's Plate
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$47.74
+Equipped creature gets +3/+3 and has protection from each color that's not in your commander's color identity. Equip commander {3} Equip {5}
+
+## Mithril Coat
+cost={3} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$30.63
+Flash Indestructible When Mithril Coat enters, attach it to target legendary creature you control. Equipped creature has indestructible. Equip {3}
+
+## Conqueror's Flail
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$5.17
+Equipped creature gets +1/+1 for each color among permanents you control. As long as this Equipment is attached to a creature, your opponents can't cast spells during your turn. Equip {2}
+
+## Hexing Squelcher
+cost={1}{R} | type=Creature — Goblin Sorcerer | CI=R | produces=- | usd=$21.56
+This spell can't be countered. Ward—Pay 2 life. Spells you control can't be countered. Other creatures you control have "Ward—Pay 2 life."
+
+## The Ozolith
+cost={1} | type=Legendary Artifact | CI=- | produces=- | usd=$65.16
+Whenever a creature you control leaves the battlefield, if it had counters on it, put those counters on The Ozolith. At the beginning of combat on your turn, if The Ozolith has counters on it, you may move all counters from The Ozolith onto target creature.
+
+## Blackblade Reforged
+cost={2} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$2.57
+Equipped creature gets +1/+1 for each land you control. Equip legendary creature {3} Equip {7}
+
+## Embercleave
+cost={4}{R}{R} | type=Legendary Artifact — Equipment | CI=R | produces=- | usd=$10.88
+Flash This spell costs {1} less to cast for each attacking creature you control. When Embercleave enters, attach it to target creature you control. Equipped creature gets +1/+1 and has double strike and trample. Equip {3}
+
+## Bulk Up
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$0.33
+Double target creature's power until end of turn. Flashback {4}{R}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+
+## Twinferno
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$0.34
+Choose one — • When you cast your next instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy. • Target creature you control gains double strike until end of turn. (It deals both first-strike and regular combat damage.)
+
+## Past in Flames
+cost={3}{R} | type=Sorcery | CI=R | produces=- | usd=$4.02
+Each instant and sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost. Flashback {4}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+
+## Flashback
+cost={R} | type=Instant | CI=R | produces=- | usd=$3.81
+Target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost. (You may cast that card from your graveyard for its flashback cost. Then exile it.)
+
+## Chaos Warp
+cost={2}{R} | type=Instant | CI=R | produces=- | usd=$?
+The owner of target permanent shuffles it into their library, then reveals the top card of their library. If it's a permanent card, they put it onto the battlefield.
+
+## Lightning Bolt
+cost={R} | type=Instant | CI=R | produces=- | usd=$0.70
+Lightning Bolt deals 3 damage to any target.
+
+## Abrade
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$0.31
+Choose one — • Abrade deals 3 damage to target creature. • Destroy target artifact.
+
+## Fiery Confluence
+cost={2}{R}{R} | type=Sorcery | CI=R | produces=- | usd=$0.50
+Choose three. You may choose the same mode more than once. • Fiery Confluence deals 1 damage to each creature. • Fiery Confluence deals 2 damage to each opponent. • Destroy target artifact.
+
+## Aetherflux Reservoir
+cost={4} | type=Artifact | CI=- | produces=- | usd=$20.53
+Whenever you cast a spell, you gain 1 life for each spell you've cast this turn. Pay 50 life: This artifact deals 50 damage to any target.
+
+## Chandra's Ignition
+cost={3}{R}{R} | type=Sorcery | CI=R | produces=- | usd=$8.17
+Target creature you control deals damage equal to its power to each other creature and each opponent.
+
+## Crackle with Power
+cost={X}{X}{X}{R}{R} | type=Sorcery | CI=R | produces=- | usd=$8.02
+Crackle with Power deals five times X damage to each of up to X targets.
+
+## Kediss, Emberclaw Familiar
+cost={1}{R} | type=Legendary Creature — Elemental Lizard | CI=R | produces=- | usd=$5.06
+Whenever a commander you control deals combat damage to an opponent, it deals that much damage to each other opponent. Partner (You can have two commanders if both have partner.)
+
+## Roaming Throne
+cost={4} | type=Artifact Creature — Golem | CI=- | produces=- | usd=$49.98
+Ward {2} As this creature enters, choose a creature type. This creature is the chosen type in addition to its other types. If a triggered ability of another creature you control of the chosen type triggers, it triggers an additional time.
+
+## Origin of Thor
+cost={2}{R} | type=Enchantment — Saga | CI=R | produces=- | usd=$0.27
+(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.) I — You may discard a card. If you do, draw two cards. II — Whenever you cast a spell this turn, put a +1/+1 counter on target creature you control. III — Target creature you control deals damage equal to its power to each opponent.
+
+## Soul's Fire
+cost={2}{R} | type=Instant | CI=R | produces=- | usd=$0.24
+Target creature you control deals damage equal to its power to any target.
+
+## Increasing Vengeance
+cost={R}{R} | type=Instant | CI=R | produces=- | usd=$0.98
+Copy target instant or sorcery spell you control. If this spell was cast from a graveyard, copy that spell twice instead. You may choose new targets for the copies. Flashback {3}{R}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+
+## Arcane Bombardment
+cost={4}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$6.55
+Whenever you cast your first instant or sorcery spell each turn, exile an instant or sorcery card at random from your graveyard. Then copy each card exiled with this enchantment. You may cast any number of the copies without paying their mana costs.
+
+## Fiery Emancipation
+cost={3}{R}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$14.61
+If a source you control would deal damage to a permanent or player, it deals triple that damage to that permanent or player instead.
+
+## Twinflame Tyrant
+cost={3}{R}{R} | type=Creature — Dragon | CI=R | produces=- | usd=$25.78
+Flying If a source you control would deal damage to an opponent or a permanent an opponent controls, it deals double that damage instead.
+
+## Wanda's Vision
+cost={3}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$4.45
+Whenever you cast your second spell each turn, exile cards from the top of your library until you exile a nonland card. You may cast that card without paying its mana cost.
+
+## Cosmic Cube
+cost={5} | type=Artifact | CI=- | produces=- | usd=$11.79
+Ward {2} Whenever you attack, look at the top six cards of your library. You may cast a spell from among them with mana value less than or equal to the greatest power among attacking creatures you control without paying its mana cost. Put the rest on the bottom of your library in a random order.
+
+## Silent Arbiter
+cost={4} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$10.52
+No more than one creature can attack each combat. No more than one creature can block each combat.
+
+## Shadowspear
+cost={1} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$35.12
+Equipped creature gets +1/+1 and has trample and lifelink. {1}: Permanents your opponents control lose hexproof and indestructible until end of turn. Equip {2}
+
+## Loki Laufeyson
+cost={1}{R} | type=Legendary Creature — God Sorcerer Villain | CI=R | produces=- | usd=$0.28
+{1}, {T}: When you next cast an instant or sorcery spell with mana value less than or equal to Loki's power this turn, copy that spell. You may choose new targets for the copy. Power-up — {4}{R}: Put two +1/+1 counters on Loki. (Activate each power-up ability only once. Reduce the cost by his mana cost if he entered this turn.)
+
+## Iron Man, Tony Stark
+cost={3}{R}{R} | type=Legendary Artifact Creature — Human Hero | CI=R | produces=- | usd=$3.86
+Flying (This creature can't be blocked except by creatures with flying or reach.) Attacking creatures you control get +1/+0. Whenever you cast a red spell, create a 2/1 colorless Robot Hero artifact creature token with flying.
+
+## Neheb, the Eternal
+cost={3}{R}{R} | type=Legendary Creature — Zombie Minotaur Warrior | CI=R | produces=R | usd=$8.60
+Afflict 3 (Whenever this creature becomes blocked, defending player loses 3 life.) At the beginning of each of your postcombat main phases, add {R} for each 1 life your opponents have lost this turn.
+
+## War Room
+cost=- | type=Land | CI=- | produces=C | usd=$5.36
+{T}: Add {C}. {3}, {T}, Pay life equal to the number of colors in your commanders' color identity: Draw a card.
+
+## Vision of Love
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$0.30
+You may sacrifice an artifact or discard a card. If you do, draw two cards.
+
+## Thrill of Possibility
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$0.33
+As an additional cost to cast this spell, discard a card. Draw two cards.
+
+## Welding Jar
+cost={0} | type=Artifact | CI=- | produces=- | usd=$2.52
+Sacrifice this artifact: Regenerate target artifact.
+
+## Mizzium Mortars
+cost={1}{R} | type=Sorcery | CI=R | produces=- | usd=$0.41
+Mizzium Mortars deals 4 damage to target creature you don't control. Overload {3}{R}{R}{R} (You may cast this spell for its overload cost. If you do, change "target" in its text to "each.")
+
+## Delayed Blast Fireball
+cost={1}{R}{R} | type=Instant | CI=R | produces=- | usd=$17.08
+Delayed Blast Fireball deals 2 damage to each opponent and each creature they control. If this spell was cast from exile, it deals 5 damage to each opponent and each creature they control instead. Foretell {4}{R}{R} (During your turn, you may pay {2} and exile this card from your hand face down. Cast it on a later turn for its foretell cost.)
+
+## Jaya's Immolating Inferno
+cost={X}{R}{R} | type=Legendary Sorcery | CI=R | produces=- | usd=$2.83
+(You may cast a legendary sorcery only if you control a legendary creature or planeswalker.) Jaya's Immolating Inferno deals X damage to each of up to three targets.

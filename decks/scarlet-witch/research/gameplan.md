@@ -48,7 +48,7 @@ POSTCOMBAT MAIN
 HOLD FOREVER
   → Deflecting Swat (free with commander)
   → Mithril Coat (flash — for the wrath)
-  → Blazing Shoal (until you have an uncastable fat red card)
+  → Runechanter's Pike: equip Wanda on a quiet turn — +1 discount per instant/sorcery in the yard, permanently
   → Mana Geyser (until they're tapped out)
 
 NEVER
@@ -114,7 +114,7 @@ Base 2. It goes up from:
 - **Livaan** — +X/+0 where X is the mana value of the noncreature spell you just cast. **Always
   point it at Wanda.** Cast a 5-drop, she's +5 for the turn.
 - **Cait Sith** — +X/+0 each combat, X = the exiled card's mana value.
-- **Blazing Shoal** — free: exile a red card of mana value X from hand, +X/+0. Ceiling is +10.
+- **Runechanter's Pike** — +X/+0 where X = instants and sorceries in your graveyard; equip {2}. Permanent — ~+6 to +12 by turn 7 — but Past in Flames / Will / Mizzix's / Bombardment exile the yard and shrink it.
 - **Monstrous Rage** — +3/+1 and a **permanent** +1/+1 Role.
 - **Blackblade Reforged** — +1/+1 per land. Equip is **{3}** because she's legendary, not {7}.
 - **Forge of Heroes** / **Tyrite Sanctum** — permanent +1/+1 counters.
@@ -160,10 +160,41 @@ Ring** for cards > a **pump** on Wanda > a payoff you're holding.
 This is also when you cast **Fiery Inscription** or **Longshot** — they're cheap, they accumulate,
 and they make the eventual turn lethal instead of merely large.
 
+### The chain — read this before the turn-by-turn below
+
+**Added 2026-09-08, and it overrides the "wait for turn 6, 12+ mana" advice further down.**
+With **Livaan** on the battlefield, every X-spell costs only its **coloured pips** and roughly
+**doubles Wanda's power before it resolves** — X counts toward mana value while the spell is on
+the stack (CR 202.3e), and Livaan's trigger reads that mana value.
+
+```
+X  = (Wanda's power + other reducers) / generic-per-X    (Crackle 3, everything else 1)
+Wanda' = Wanda + the spell's mana value
+```
+
+**The line, from five Mountains on turn 5:** Storm King's Thunder at **X=2** for {R}{R}{R} → Wanda
+is 7 → Jaya's Immolating Inferno at **X=7** for {R}{R}, copied twice → **21 to each opponent.**
+
+| Wanda before | Jaya's X | copies | to each opponent |
+|---|---|---|---|
+| 2 | 7 | 2 | 21 |
+| 4 | 11 | 4 | 55 |
+| 6 | 15 | 6 | 105 |
+| 8 | 19 | 8 | 171 |
+
+The first column is why a **Bonesplitter matters more than a Sol Ring** on this axis: a seed on
+Wanda before the first X-spell is multiplied by every link after it. Count **red sources**, not
+total mana — Sol Ring, Ancient Tomb, Rogue's Passage, Forge of Heroes and Tyrite Sanctum pay for
+equips and Livaan, and contribute nothing to the chain itself.
+
+Full workings, the equipment pool and the version of the deck built around this:
+`research/turn-5-chain-2026-09-08.md` and `DECK-V3.md`.
+
 ### T6+ — look for the turn
 
 You want, all at once: **12+ mana available, 3+ cards in hand, a payoff, and one protection spell
-up.** See §8.
+up.** See §8. **That is the threshold for the grind plan.** If Livaan is out, the chain above needs
+far less — five red pips and two X-spells — so check it first every turn from turn 5.
 
 ### Mulligans
 
@@ -181,10 +212,9 @@ cast on curve.
 
 | Card | **HOLD unless…** | Why |
 |---|---|---|
-| **Blazing Shoal** | you have a red card of mana value 6+ in hand that you **can't cast this turn** | It's free, but it costs two cards. Pitching Apex of Power for +10 is great; pitching a 2-drop for +2 is a waste. **Never pitch a card you could actually cast this turn.** |
 | **Mana Geyser** | your opponents are **tapped out** | It counts *their* tapped lands. Cast it in your main phase after a big turn cycle, not on an empty board. It's often 0–3 mana on turn 4 and 12+ on turn 8. |
 | **Rousing Refrain** *(sideboard)* | opponents are holding cards | Scales off *their* hand size. Dead against a table that's dumped its grip. |
-| **Wheel of Fortune / Reforge the Soul** | your hand is **2 cards or fewer** | You're refilling *yourself*. Wheeling with 5 good cards hands three opponents a fresh 7 and gains you nothing. |
+| **Wheel of Fortune / Reforge the Soul** | your hand is **2 cards or fewer** — or the table is holding sculpted hands you want gone | You're refilling *yourself*. Wheeling with 5 good cards hands three opponents a fresh 7 and gains you nothing. |
 | **Reforge the Soul** | *(exception)* you draw it as your first card of the turn | **Miracle {1}{R}** — cast it immediately for two mana. Watch for this every draw step. |
 | **Deflecting Swat** | someone targets you or Wanda | It's **free** with your commander out. There is no reason to ever cast it proactively. Hold it every single turn. |
 | **Mithril Coat** | a wrath or a removal spell is on the stack | It has **flash**. Casting it on your own turn wastes its entire point. |
@@ -204,6 +234,7 @@ cast on curve.
 - **Wanda herself.** Every turn she isn't out is a turn everything costs 2 more.
 - **Ruby Medallion, Longshot, Fiery Inscription.** Cheap, permanent, compounding.
 - **Livaan.** It's 3 mana and it turns every subsequent spell into a discount.
+- **Runechanter's Pike** — {2} (free after Longshot + Artist's Talent); equip Wanda on a quiet turn. It only gets bigger.
 - **Reforge the Soul off the top** — miracle for {1}{R}.
 
 ---
@@ -220,6 +251,43 @@ discounts these.
 **Increasing Vengeance**, **Repeated Reverberation**, **Return the Favor**, **Storm King's
 Thunder**. The copy keeps your X and can **re-use the same targets** — the "no duplicate targets"
 rule is per spell, and a copy is a separate spell.
+
+**How the stack looks, and what survives a counterspell.** Your copiers come in two kinds, and a
+counter hits them differently.
+
+*Cast after the spell, aimed at it* — **Reiterate**, **Increasing Vengeance**, **Return the Favor**:
+
+```
+cast S, then the copier       S, Reiterate              (Reiterate on top)
+Reiterate resolves            S, copy                   (copy on top, resolves first)
+```
+
+- Copier countered → no copy, S is fine. A countered Reiterate does **not** come back with buyback.
+- **S countered while the copier waits → the copier has no target and does nothing.** No copy, and
+  no buyback either, because Reiterate never resolved.
+
+*Set up before the spell, or triggered by its mana* — **Storm King's Thunder**, **Repeated
+Reverberation**, **Pyromancer's Goggles**, **Twinferno**:
+
+```
+Storm King's Thunder resolves (sets up the trigger)
+cast S                        S, trigger                (trigger on top)
+trigger resolves              S, copy, copy, ...        (copies on top, resolve first)
+```
+
+- **S countered before the trigger resolves → you still get every copy.** The trigger doesn't
+  target S, so it copies S from memory (official ruling on all three cards).
+- Only two things stop it: countering **Storm King's Thunder itself** before it resolves (then no
+  trigger exists), or a Stifle-style effect on the trigger. Goggles' tap is a mana ability, so it
+  can't be responded to at all.
+
+**So against counterspells the trigger family is the safe one** — a counter aimed at your payoff
+still leaves you the copies. The moment to protect is Storm King's Thunder sitting on the stack.
+
+Either way, once a copy exists it is its own spell: it can be countered on its own, countering the
+original doesn't touch it, and it is **not cast**. Hexing Squelcher's *"spells you control can't be
+countered"* does protect copies. Spider-Punk's *"spells and abilities can't be countered"* also
+protects the copy trigger from being Stifled.
 
 **❌ Free-casting → X = 0, deals nothing.** **Improvisation Capstone**,
 **Mizzix's Mastery**, **Electrodominance**, **Arcane Bombardment**. If Apex exiles Crackle with
@@ -268,6 +336,69 @@ The order matters more in this deck than almost any other. The default:
    g. Neheb triggers: {R} for each 1 life your opponents lost this turn.
    h. THIS is where the X-spell goes. Count your reducers, do the division, cast it.
 ```
+
+### Ashling's discard — hold your instants, don't feed her your hand
+
+Ashling's magecraft is *"discard a card, then draw a card"* and it is **mandatory**. Play it wrong
+and she eats the spell you were about to cast.
+
+**The wrong line.** Hand is two instants. Cast the first, let the trigger resolve — your hand is not
+empty, so you must discard, and your only card is the second spell. It goes to the graveyard and
+never resolves.
+
+**The right line.** Cast the first spell, and while its trigger is on the stack **cast the second
+one too** (you never lost priority — you don't need to "hold" it in any rules sense). Now:
+
+```
+TOP     2nd spell's trigger   -> hand empty: discard NOTHING, draw a card
+        2nd spell
+        1st spell's trigger   -> hand has that fresh card: discard IT, draw again
+BOTTOM  1st spell
+```
+
+**You cannot reach zero discards** — the first trigger to resolve draws you the card the next one
+eats. But you have swapped "discard a real spell" for "discard an unknown draw", which is strictly
+better. General rule: **hold N instants, draw N, discard N−1**, and none of your N spells is lost.
+
+Three riders that matter at the table:
+
+- **Every resolution starts a new round of priority** (CR 117.3b, 117.4). On your turn you act
+  first after each one, so the "cast it or lose it" decision comes up once per trigger, not once
+  per turn. Opponents get the same window after every resolution too — they can let one copy
+  resolve and counter the next.
+- **Storm King's Thunder trap:** it is itself an instant, so casting it triggers Ashling, and that
+  trigger sits above it. If that trigger draws you an instant and you cast it while the Thunder is
+  still on the stack, **it is not copied** — the copy trigger only exists once the Thunder has
+  resolved. Let the Thunder resolve, then cast the spell you want copied. And if you are holding
+  two instants to dodge Ashling's discards, the Thunder copies whichever you cast **first**, so
+  cast the payoff first.
+- **Casting the card you just drew is free** — it does not increase
+  your total discards. Each pending trigger below eats exactly one card either way; casting simply
+  changes *which* card gets pitched, and you get the spell's effect for nothing. So if the draw is
+  an instant you can afford and want, cast it.
+  What you cannot rescue: a **land** (playing one needs an empty stack), a **sorcery**, or anything
+  you can't pay for. Those get eaten by the next trigger.
+  **And a discard here is softer than it looks** — an instant or sorcery in the graveyard is fuel
+  for Past in Flames, Will of the Jeskai, Underworld Breach and Arcane Bombardment, and it grows
+  Runechanter's Pike. A discarded X-spell can be flashed back at a **real X**. Pitching a land is
+  the only true loss, and if you hold more than one card **you** choose which to discard.
+- **Sorceries can't do this** (they need an empty stack), so two sorceries in hand means one dies.
+  But you *can* cast a sorcery and then respond to its own magecraft trigger with an instant — that
+  saves the instant exactly the same way.
+- **The held line reverses resolution order** — the second spell resolves *first*. That breaks any
+  line where the first spell needs to resolve for the second to work, and it is why **you cannot
+  hold a ritual under a big spell**: you have to pay costs as you cast, and the ritual has not
+  resolved yet, so its mana is not there. Rituals resolve before you cast the thing they pay for.
+
+**Empty hand is fine, not a waste.** With no cards the discard is simply skipped, you **still draw**,
+and the resolution **still counts** toward the 2nd (2 damage to each opponent and each of their
+creatures) and the 3rd ({R}{R}{R}{R}). An empty hand turns her into a straight +1 card.
+
+**Count your library on a big turn.** She triggers on *cast **or copy***, so a Storm King's Thunder
+turn at X=8 is **ten** resolutions — the Thunder's own cast, the copied spell's cast, and eight
+copies — which is **ten draws**. If you deck yourself the ability still finishes resolving (damage
+and mana happen), and you lose at the next state-based check. If that damage kills your last
+opponent simultaneously, the game is a **draw**, not a win.
 
 ### Why Neheb rewrites the turn
 
@@ -369,16 +500,41 @@ or when you're going off anyway and the {3} discount pays for the tax within the
 you the choice, take Crackle to hand instead. The 10 mana Apex adds is what makes *next* turn's
 hard-cast Crackle enormous.
 
-### 🔁 Scenario 8 — Big graveyard, Will of the Jeskai in hand
+### 🔁 Scenario 8 — Will of the Jeskai, with or without a big graveyard
 
 Will of the Jeskai gives everything in your yard **flashback equal to its mana cost** — which for
-an X-spell **includes X**, so you get to choose a real X.
+an X-spell **includes X**, so you get to choose a real X, and Wanda still discounts that cost.
 
-Best line: cast the X-spell once, let it hit the yard, *then* Will of the Jeskai and flash it back
-bigger with the mana you've accumulated. You get two X-spells out of one card.
+**The line everyone misses: the wheel FEEDS the flashback.** With your commander out you take both
+modes, and modes resolve in **printed order** (CR 608.2c), so the discard happens *first*. The set
+of cards that gains flashback is fixed when that second effect **begins** (CR 611.2c), by which
+point everything you just pitched is already in the graveyard. **So every instant and sorcery you
+discard to the wheel comes back with flashback** — you are not throwing your hand away, you are
+converting it into a graveyard you can cast from, *and* drawing five on top.
 
-**Also:** with your commander out, Will of the Jeskai takes **both** modes. Don't forget the wheel
-half.
+So you do **not** need a big graveyard for this card. A hand full of expensive spells you cannot
+cast yet is the ideal setup: pitch them, draw five, then flash back whichever ones the mana now
+supports. Held X-spells survive this — a discarded Crackle with Power or Jaya's Immolating Inferno
+flashes back at a **real X**.
+
+The older line still works when your hand is empty: cast an X-spell, let it hit the yard, *then*
+Will of the Jeskai and flash it back bigger. Two X-spells out of one card.
+
+**What does NOT come back:** the five cards you just drew. They are in hand when the effect begins,
+and the set never grows afterwards (CR 611.2c) — discard one later this turn and it has no
+flashback. Cards exiled and returned are new objects and lose the grant too.
+
+**Costs to say out loud before you cast it:**
+
+- It reads *"each player"*. Every opponent may wheel as well, and an opponent with **zero** cards
+  may still "discard" nothing and draw five. That is the real price in multiplayer.
+- Mode 2 says *"**your** graveyard"* — their discards gain them nothing.
+- Declining the discard means no draw; it is one package, chosen during resolution, by each player
+  in APNAP order with you first (CR 608.2d–f).
+- Nobody can respond between the two modes — no player gets priority during resolution
+  (CR 608.2g) — so your graveyard cannot be exiled in the gap.
+- Flashback exiles the card as it resolves, and a flashed-back **sorcery** still needs sorcery
+  timing. Do it in a main phase.
 
 ### 🧮 Scenario 9 — You're flooded: 20 mana, 1 card in hand
 
@@ -413,6 +569,10 @@ planeswalkers and battles.
 
 **Miracle it for {1}{R} immediately.** Everyone discards and draws seven. You're the one with a
 mana engine and a 3-mana commander; a fresh seven cards is worth far more to you than to them.
+**The other reason to wheel:** it's hand denial — the blue player's held counterspell and the
+combo player's assembled hand go to the graveyard before your kill turn, and seven random cards
+rarely include the exact answer again. Reforge at {R}{R} with Wanda out (MV 5) or Wheel of
+Fortune at {R} the turn before you go off is the closest thing mono-red has to a discard spell.
 
 ### 🏹 Scenario 13 — Thor and Longshot are both out
 
@@ -482,6 +642,53 @@ Before every big spell:
 8. **Chandra's Ignition at 2 power.** Deals 2. Pump first.
 9. **Attacking with Wanda for no reason.** She's a 2/3 that runs your entire deck. Leave her home
    unless Blackblade + Rogue's Passage is the actual plan.
-10. **Pitching a castable card to Blazing Shoal.** Only pitch what you can't cast.
+10. **Equipping Runechanter's Pike and then exiling your own graveyard.** Past in Flames, Will of the Jeskai, Mizzix's Mastery and Arcane Bombardment all shrink it — count what stays before you commit to the swing.
 11. **Not counting Valakut triggers.** Three damage a Mountain adds up.
 12. **Tapping Ancient Tomb when Mountains would do.** Two life a pop is real.
+
+---
+
+## 14. Playing the promoted list (V2, now `DECK.md`) — what changed at the table
+
+This shape exists because of one report: *eight turns of nothing, then very strong.* It was
+`DECK-V2.md` until 2026-09-08, when it was promoted to `DECK.md`; the retired V1 is in
+`versions/2026-09-08-v1-retired.md`. The list moved three
+slots into **spell → damage conversion** (Guttersnipe, Fated Firepower, Nico Minoru), one ritual-
+shaped slot into burn (Boltwave), and the tenth win condition into a tutor (Gamble). Everything in
+§§1–13 still applies; these are the overrides.
+
+**The reframe:** you are no longer waiting for one enormous turn. With a converter out, every
+spell you cast is damage — so **turns 4–7 are spell-casting turns, not setup turns.**
+
+- **Converter before engine.** On turns 3–5 the priority order is now: Wanda → **Longshot /
+  Fiery Inscription / Guttersnipe / Fated Firepower / Thor / Nico** → *then* Electro / Ashling /
+  Urabrask → then draw. Two converters out turns a five-spell turn into 20–40 to each opponent
+  without a payoff card. Gamble finds whichever piece you're missing — cast it on a **full hand**
+  (1/N to bin the target; a binned instant/sorcery comes back via Past in Flames, Will, Thor's ETB
+  or Volcanic Vision).
+- **Rituals are deposits.** Once Electro or Ashling is out, cast and copy the rituals early and
+  bank the red — you already do this; V2 just writes it down. Spend it on the turn the converters
+  are down.
+- **Fated Firepower goes in at the end of an opponent's turn** (flash). X = your spare mana minus 3
+  plus your reducer count; with Ruby + Fire Crystal + Longshot + Artist's Talent L2 out, X=4 costs
+  {R}{R}{R}. Every damage instance to an opponent or their permanents is then +X: Longshot 2+X,
+  Inscription 2+X, Guttersnipe 2+X, Boltwave 3+X, Confluence 3×(2+X) each for {R}{R}.
+- **Say the per-spell number out loud** the way you say the discount: "Longshot 2, Inscription 2,
+  Guttersnipe 2, plus Firepower 4 each = 18 to each opponent per spell." Then count spells, not
+  mana.
+- **Nico Minoru** triggers on any cast from *not your hand*: Wiccan's exiles, impulse cards,
+  flashbacks, Mizzix's / Bombardment copies, Thor's ETB. Her own ability ({2}{R},T, discard) free-
+  casts off the top — **X = 0 on an X-spell** and you can't choose what it hits, so count the
+  X-spells left in the library before you activate.
+- **Confluence with pingers out:** take "2 to each opponent" three times (6 each, 3×(2+X) under
+  Firepower). The creature mode is one of three *choices* — it only kills your board if you pick
+  it. **Chandra's Ignition is not a choice**: every creature pinger dies on the Ignition turn, after
+  its cast trigger resolved. Enchantment converters (Inscription, Firepower) survive.
+- **Blackblade on Wanda by turn 5 when drawn.** +1/+1 per land you *control* — 6–10 in practice,
+  not 33. Swing through Rogue's Passage when a player is within two hits (21 commander damage);
+  the lost life also feeds Neheb postcombat. A one-player road, not a table kill — but it is the
+  road that works on turn 6.
+- **The X-spell is the closer, not the plan.** With three converters and Firepower out, a
+  three-spell turn is lethal without it. Crackle is for the turn you have it and the mana.
+- **Mulligans:** V1's rule plus one — a hand with a converter and Wanda is a keep on four lands;
+  a hand of pure mana is now a ship, not a keep.

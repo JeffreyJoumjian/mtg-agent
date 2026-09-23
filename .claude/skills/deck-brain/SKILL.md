@@ -20,6 +20,32 @@ you** — see §1.1b, which is the rule this skill most often gets broken on.
 
 ---
 
+## 0. Standing constraints from the pilot
+
+Facts about how *this* pilot plays, which override any default assumption. Confirmed directly by
+the user; they hold until the user says otherwise.
+
+### 0.1 Everything is proxied — price is not a build constraint
+
+**The pilot proxies every card unless they say otherwise for a specific deck** (confirmed
+2026-09-08). So:
+
+- **Never cut, downgrade, or avoid a card because of its price.** No "budget alternative" unless
+  the user asks for one. Build the best version of the list, then let bracket and the role
+  skeleton (§2.1) do the trimming.
+- **Never present price as an argument in a swap or a cut.** It is not a deciding axis (§2.3).
+  Reporting a total for information is fine; using it as a reason is not.
+- `bun run card --deck` is still run on every edit — but for **legality and colour identity**
+  (§1.5), not for the price column.
+- In `deck.json`, a card's `cards[name].status` **defaults to `PROXY` when absent** — leave it
+  unset unless there is a reason. `OWNED` is for cards the user has actually said they own
+  (`bun run deck:meta <slug> --card "Name" --status OWNED`); `BUY` and `CONSIDERING` are the other
+  two values. There is no 💰 marker any more.
+- The real constraints that remain are **bracket, colour identity, the role skeleton, and the
+  pod** — not money.
+
+---
+
 ## 1. The rules that are not negotiable
 
 These exist because each one was violated at real cost. They are ordered by how much damage
@@ -107,25 +133,36 @@ turns this off, and what does this turn off in my own deck?*
 
 Compute it. The Bracket 3 → Bracket 4 swap list drifted **three separate times** while it was
 hand-edited; it stopped drifting the moment it was diffed from the two files by script. Same
-lesson, second form: the sideboard lived in **three** places (`DECK.md`, `SIDEBOARD.md`,
-`pdf.json`) with three different counts, and the `DECK.md` copy still listed two cards as
-sideboard material two days after they were moved into the 100.
+lesson, second form: in the Markdown era the sideboard lived in **three** places (`DECK.md`,
+`SIDEBOARD.md`, `pdf.json`) with three different counts, and the `DECK.md` copy still listed two
+cards as sideboard material two days after they were moved into the 100.
 
 **One source of truth; everything else is a pointer.** If two files must both carry a fact,
-generate one from the other or reconcile them in the same edit.
+generate one from the other or reconcile them in the same edit. Today the list lives only in
+`deck.json`; `MOXFIELD*.txt` is generated from it and `research/sideboard.md` is prose about it.
 
 ### 1.5 Snapshot, then validate
 
-Before a destructive edit: `cp DECK.md versions/YYYY-MM-DD-<label>.md`.
-After any change to a list:
+Read a list with `bun run deck:show <slug> [--list <id>]`. Change it with **`bun run deck:edit`**
+— it is the snapshot: every apply writes the list it replaces to `versions/`, appends a line to
+`history.jsonl`, and regenerates `MOXFIELD*.txt`, so there is no "copy the file first" step to
+forget. Prefer it over hand-editing `deck.json`; `--dry-run` previews the stat deltas without
+writing.
 
 ```bash
-bun run card --deck decks/<slug>/DECK.md --id <colors>   # legality + colour identity + price
-bun run deck:pdf <slug>                                   # regenerate, or the PDF silently lies
+bun run deck:edit <slug> --label "<label>" --why "<grounds>" \
+    --add "New Card@Section" --remove "Old Card" --replaces "Old Card->New Card"
+bun run card --deck <slug> [--list <id>]   # legality + colour identity (defaults to the commanders')
+bun run deck:pdf <slug> [list-id]          # regenerate, or the PDF silently lies
 ```
 
-Also verify **section headers match their contents** and **both bracket lists still total 100** —
-header counts drift silently.
+`MOXFIELD*.txt` is **derived from `deck.json`** — never hand-edit it. It is the same §1.4 trap as
+the swap list and the sideboard: a second copy of the 100 that drifts the moment it is maintained
+by hand. If you did hand-edit `deck.json` (a new pool list, a rename), run
+`bun run deck:moxfield <slug>` afterwards, because only the apply path regenerates it for you.
+
+Also check the `deck:show` stats footer for **every `"kind": "deck"` list still totalling 100** —
+the CLI prints the total after each apply, and a variant list that nobody re-ran drifts silently.
 
 ---
 
@@ -200,11 +237,30 @@ three things: a clause missed in the oracle text, the wrong axis weighted, or a 
 wrong role (Jaya's Immolating Inferno was dismissed as "a fourth X-spell" when it is the deck's
 **second table-killer**). When you feel most certain, check those three first.
 
-### 2.5 Redundancy in payoffs is good; redundancy in multipliers is not
+### 2.5 "Redundant" is not a cut reason — in singleton, access is the scarce thing
 
-A multiplier alone does nothing — it needs a payoff to multiply. Two multipliers is two potential
-blanks. **One is right, two is greedy** — *unless* both are genuinely multiplicative, in which
-case they commute and stack cleanly (see LEDGER §Replacement-effect ordering).
+**Corrected 2026-09-09 by the pilot, after this rule was over-applied three times in one build.**
+In a 100-card singleton deck, one copy of an effect is no guarantee you ever draw it. A second card
+doing the same job is **consistency**, not waste: it roughly doubles how often the deck has the
+effect available at all, and it is insurance against the first being answered. **Never cut a card
+with "we already have one of these."**
+
+The real test is two questions, in order:
+
+1. **How load-bearing is the effect?** If the plan needs it to win or to survive, more copies is
+   correct *even when they do not stack*.
+2. **What does the surplus copy cost once you have the first?** Sort it into one of three:
+   - **Substitute** — non-stacking but interchangeable (a second double-strike granter, a second
+     cost reducer, a second unblockable enabler). The surplus copy costs almost nothing; it is a
+     spare key. **Run both.**
+   - **Blank** — does nothing without a payoff you may not have. A bare *multiplier* is the classic
+     case: it needs something to multiply, so two can be two dead cards. This is the **only** case
+     where "one is right, two is greedy" holds, and even then only where payoff density is low.
+   - **Genuinely multiplicative** — they commute and stack cleanly (see LEDGER §Replacement-effect
+     ordering). Run as many as the curve allows.
+
+So the phrase to reach for is never "redundant." It is *"this is a blank alongside the first,
+because X"* — and if you cannot name X, there is no argument for the cut.
 
 ---
 
@@ -213,13 +269,18 @@ case they commute and stack cleanly (see LEDGER §Replacement-effect ordering).
 Every deck carries the same documentation shape (see `decks/README.md` for the full layout). The
 non-obvious parts:
 
+- **`deck.json`** is the list. Read it with `bun run deck:show`, change it with `bun run deck:edit`
+  (its `--why` becomes the history line's rationale — put the grounds there, not just the label),
+  and keep per-card tags / status / notes in `cards[name]` via `bun run deck:meta`. Never write a
+  `DECK.md` or `STATUS.md`; they no longer exist.
 - **`research/decisions.md`** is append-only. Never rewrite history; add a dated entry. Include
   what was **rejected and why**, not just what was taken. Record the rejection as **the grounds,
   not the verdict** — *"passed because the deck had 6 sac outlets and 21 cards at MV4+"* beats
   *"passed, do not re-litigate."* Grounds can be re-checked; a bare verdict can only be obeyed.
   **Never write "do not re-litigate."** Per §1.1b the next reader's job is to re-derive, and the
   entry's value is handing them the grounds to test.
-- **`SIDEBOARD.md`** carries the "displaces" card for every entry, so a swap is never ambiguous.
+- **`research/sideboard.md`** carries the "displaces" card for every entry, so a swap is never
+  ambiguous. (The cards themselves may also sit in a `"kind": "pool"` list in `deck.json`.)
 - **`research/gameplan.md`** is for the pilot: hold-lists, sequencing, scenarios.
   **`research/formulas.md`** is for the math.
 - Log **corrections** in the decision log, plainly. The Apex correction is more valuable than

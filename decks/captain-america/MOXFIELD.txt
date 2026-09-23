@@ -1,0 +1,96 @@
+1 Captain America, First Avenger (SLD) 1726
+1 Academy Ruins (PLST) 2XM-309
+1 Adarkar Wastes (DMU) 243
+1 Akiri, Fearless Voyager (ZNR) 220
+1 Arcane Signet (MSC) 191
+1 Ardenn, Intrepid Archaeologist (PLST) CMR-10
+1 Arena of Glory (PLST) MH3-215
+1 Argentum Armor (PLST) AFC-198
+1 Arid Mesa (MM3) 229
+1 Avengers Tower (MSH) 260
+1 Axgard Armory (KHM) 250
+1 Basilisk Collar (PIP) 225
+1 Battlefield Forge
+1 Boros Charm (FDN) 721
+1 Brass Squire (CMR) 460
+1 Brotherhood Regalia (ACR) 71
+1 Bruenor Battlehammer (AFR) 219
+1 Bureau Headmaster (ACR) 296
+1 Buster Sword (FIN) 255
+1 Captain America, Living Legend (MSH) 210
+1 Captain America, Super-Soldier (MSH) 9
+1 Chaos Warp (MAR) 69
+1 Codsworth, Handy Helper (PIP) 14
+1 Colossus Hammer (M20) 223
+1 Command Tower (ELD) 333
+1 Commander's Plate (SLD) 1733
+1 Dalakos, Crafter of Wonders (THB) 212
+1 Deflecting Swat (CMM) 214
+1 Dispatch (MSC) 130
+1 Eiganjo, Seat of the Empire (NEO) 268
+1 Enlightened Tutor (DMR) 6
+1 Esper Sentinel (PLST) MH2-12
+1 Excalibur, Sword of Eden (ACR) 169
+1 Fierce Guardianship (CMM) 94
+1 Fighter Class (AFR) 222
+1 Flawless Maneuver (SLD) 1728
+1 Flooded Strand (KTK) 233
+1 Forge Anew (LTR) 17
+1 Generous Gift (MSC) 133
+1 Genji Glove (FIN) 258
+1 Grand Abolisher (SLD) 1285
+1 Hallowed Fountain (TRK) 286
+1 Hammer of Nazahn (MSC) 286
+1 Illusionist's Bracers (RVR) 260
+1 Inventors' Fair (SLD) 1735
+2 Island (THB) 251
+1 Kaldra Compleat (CMM) 958
+1 Master Transmuter
+1 Meteor Sword (TLA) 258
+1 Mithril Coat (LTR) 245
+1 Mjölnir, Hammer of Thor (MSH) 146
+2 Mountain (THB) 253
+1 Mox Opal (2XM) 275
+1 Otawara, Soaring City (NEO) 271
+1 Path to Exile (MAR) 47
+3 Plains (THB) 250
+1 Plateau (OLGC) 2018A
+1 Prismatic Vista (MH1) 244
+1 Puresteel Paladin (CMM) 51
+1 Raugrin Triome (IKO) 251
+1 Rogue's Passage (PLST) MIC-179
+1 Sacred Foundry (EOE) 256
+1 Scalding Tarn (MM3) 244
+1 Sea of Clouds (PLST) BBD-84
+1 Shadowspear (THB) 236
+1 Shivan Reef
+1 Sigarda's Aid (SLD) 1727
+1 Single Combat (WAR) 30
+1 Sol Ring (SLD) 1734
+1 Spectator Seating (MSC) 268
+1 Sram, Senior Edificer (SLD) 461
+1 Steam Vents (TRK) 298
+1 Steelshaper's Gift (MAR) 50
+1 Stoneforge Mystic (2XM) 31
+1 Stonehewer Giant (PLST) 2XM-32
+1 Sunforger (2XM) 293
+1 Super-Soldier Serum (MSH) 38
+1 Swiftfoot Boots (MSC) 216
+1 Sword of Feast and Famine (PLST) 2XM-296
+1 Swords to Plowshares (MSC) 143
+1 Swordsman's Steel (MSC) 752
+1 Talisman of Conviction (MSC) 217
+1 Talisman of Creativity (MSC) 218
+1 Teferi's Protection (MAR) 51
+1 The Lonely Mountain (HOB) 187
+1 The Mighty Thor, Jane Foster (MSH) 222
+1 The Reaver Cleaver (DMC) 8
+1 Thorin, Mountain-king (HOB) 114
+1 Training Center (CMM) 434
+1 Training Grounds (MAT) 9
+1 Tundra (OLGC) 2015
+1 Ultima Weapon (FIN) 563
+1 Urza's Saga (PLST) MH2-259
+1 Volcanic Island (OLGC) 2018NA
+1 Winds of Abandon (PLST) MH1-37
+1 Zirda, the Dawnwaker (IKO) 233

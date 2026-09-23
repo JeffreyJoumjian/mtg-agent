@@ -1,0 +1,451 @@
+{
+  "schema": 1,
+  "name": "The Lord of Pain — Decklist (Bracket 4)",
+  "format": "commander",
+  "description": "**Gameplan:** Rakdos group-slug with a poisoned-gift engine. Hand every opponent extra cards,\nextra mana and free spells (Howling Mine, Font of Mythos, Temple Bell, Seizan,\nDescent into Avernus) so that they draw more, cast more and\ncast bigger — then bill every one of those actions: each draw (Underworld Dreams, Fate\nUnraveler, Kederekt Parasite, Sheoldred, Razorkin Needlehead, Orcish Bowmasters,\nSpiteful Visions), each first spell of the turn (The Lord of Pain — you pick who eats\nthe damage), every spell (Kaervek, Painful Quandary), every upkeep (Mogis, Seizan), every\nland tapped (Manabarbs). Amplify it with opponent-only boosters (Solphim, Torbran, Torture\nPit, Twinflame Tyrant, Bloodletter, Wound Reflection) and keep yourself alive on Exquisite Blood /\nBloodthirsty Conqueror / Sheoldred while the commander stops them gaining anything back.\nClose with wheels into the draw-punishers, Torment of Hailfire / Exsanguinate / Gray Merchant,\nHeartless Hidetsugu under a doubler, or the Exquisite Blood + Sanguine Bond loop.\nYour own damage comes back as life: Basilisk Collar on the commander, Whip of Erebos on every\npinger, and Glacial Chasm prevents all damage dealt to you.",
+  "lists": {
+    "main": {
+      "label": "Main",
+      "kind": "deck",
+      "bracket": 4,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "The Lord of Pain", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Ancient Tomb", "qty": 1 },
+            { "name": "Badlands", "qty": 1 },
+            { "name": "Blackcleave Cliffs", "qty": 1 },
+            { "name": "Blazemire Verge", "qty": 1 },
+            { "name": "Blood Crypt", "qty": 1 },
+            { "name": "Bloodsoaked Insight", "qty": 1 },
+            { "name": "Bloodstained Mire", "qty": 1 },
+            { "name": "Cabal Coffers", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Dragonskull Summit", "qty": 1 },
+            { "name": "Fell the Profane", "qty": 1 },
+            { "name": "Foreboding Ruins", "qty": 1 },
+            { "name": "Glacial Chasm", "qty": 1 },
+            { "name": "Graven Cairns", "qty": 1 },
+            { "name": "Haunted Ridge", "qty": 1 },
+            { "name": "Luxury Suite", "qty": 1 },
+            { "name": "Malakir Rebirth", "qty": 1 },
+            { "name": "Marsh Flats", "qty": 1 },
+            { "name": "Mount Doom", "qty": 1 },
+            { "name": "Mountain", "qty": 4 },
+            { "name": "Polluted Delta", "qty": 1 },
+            { "name": "Reliquary Tower", "qty": 1 },
+            { "name": "Smoldering Marsh", "qty": 1 },
+            { "name": "Sulfurous Springs", "qty": 1 },
+            { "name": "Swamp", "qty": 2 },
+            { "name": "Tainted Peak", "qty": 1 },
+            { "name": "Urborg, Tomb of Yawgmoth", "qty": 1 },
+            { "name": "Verdant Catacombs", "qty": 1 },
+            { "name": "Witch's Clinic", "qty": 1 },
+            { "name": "Wooded Foothills", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp & cost reduction",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Dark Ritual", "qty": 1 },
+            { "name": "Fellwar Stone", "qty": 1 },
+            { "name": "Grim Monolith", "qty": 1 },
+            { "name": "Jet Medallion", "qty": 1 },
+            { "name": "Mana Vault", "qty": 1 },
+            { "name": "Mox Diamond", "qty": 1 },
+            { "name": "Rakdos Signet", "qty": 1 },
+            { "name": "Rakdos, Lord of Riots", "qty": 1 },
+            { "name": "Ruby Medallion", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Talisman of Indulgence", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw — yours",
+          "cards": [
+            { "name": "Jeska's Will", "qty": 1 },
+            { "name": "Valgavoth, Harrower of Souls", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tutors",
+          "cards": [
+            { "name": "Demonic Tutor", "qty": 1 },
+            { "name": "Vampiric Tutor", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection & defense",
+          "cards": [
+            { "name": "Deflecting Swat", "qty": 1 },
+            { "name": "Hexing Squelcher", "qty": 1 },
+            { "name": "Kaya's Ghostform", "qty": 1 },
+            { "name": "Mithril Coat", "qty": 1 },
+            { "name": "No Mercy", "qty": 1 },
+            { "name": "Swiftfoot Boots", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal",
+          "cards": [
+            { "name": "Bedevil", "qty": 1 },
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Deadly Rollick", "qty": 1 },
+            { "name": "Feed the Swarm", "qty": 1 },
+            { "name": "Infernal Grasp", "qty": 1 },
+            { "name": "Rakdos Charm", "qty": 1 },
+            { "name": "Terminate", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            { "name": "Blasphemous Act", "qty": 1 },
+            { "name": "Fraying Omnipotence", "qty": 1 },
+            { "name": "Toxic Deluge", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Gifts — the poisoned generosity",
+          "cards": [
+            { "name": "Descent into Avernus", "qty": 1 },
+            { "name": "Font of Mythos", "qty": 1 },
+            { "name": "Howling Mine", "qty": 1 },
+            { "name": "Seizan, Perverter of Truth", "qty": 1 },
+            { "name": "Spiteful Visions", "qty": 1 },
+            { "name": "Temple Bell", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Draw punishers",
+          "cards": [
+            { "name": "Fate Unraveler", "qty": 1 },
+            { "name": "Kederekt Parasite", "qty": 1 },
+            { "name": "Orcish Bowmasters", "qty": 1 },
+            { "name": "Razorkin Needlehead", "qty": 1 },
+            { "name": "Sheoldred, the Apocalypse", "qty": 1 },
+            { "name": "Underworld Dreams", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Cast / upkeep / mana punishers",
+          "cards": [
+            { "name": "Kaervek the Merciless", "qty": 1 },
+            { "name": "Manabarbs", "qty": 1 },
+            { "name": "Mogis, God of Slaughter", "qty": 1 },
+            { "name": "Painful Quandary", "qty": 1 },
+            { "name": "Vial Smasher the Fierce", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Amplifiers",
+          "cards": [
+            { "name": "Bloodletter of Aclazotz", "qty": 1 },
+            { "name": "Solphim, Mayhem Dominus", "qty": 1 },
+            { "name": "Spiked Corridor", "qty": 1 },
+            { "name": "Torbran, Thane of Red Fell", "qty": 1 },
+            { "name": "Twinflame Tyrant", "qty": 1 },
+            { "name": "Wound Reflection", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lifeline",
+          "cards": [
+            { "name": "Basilisk Collar", "qty": 1 },
+            { "name": "Bloodthirsty Conqueror", "qty": 1 },
+            { "name": "Exquisite Blood", "qty": 1 },
+            { "name": "Sanguine Bond", "qty": 1 },
+            { "name": "Whip of Erebos", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Win Conditions",
+          "cards": [
+            { "name": "Exsanguinate", "qty": 1 },
+            { "name": "Gray Merchant of Asphodel", "qty": 1 },
+            { "name": "Heartless Hidetsugu", "qty": 1 },
+            { "name": "Torment of Hailfire", "qty": 1 },
+            { "name": "Wheel of Fortune", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "b3": {
+      "label": "B3",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "The Lord of Pain", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Badlands", "qty": 1 },
+            { "name": "Blackcleave Cliffs", "qty": 1 },
+            { "name": "Blazemire Verge", "qty": 1 },
+            { "name": "Blood Crypt", "qty": 1 },
+            { "name": "Bloodsoaked Insight", "qty": 1 },
+            { "name": "Bloodstained Mire", "qty": 1 },
+            { "name": "Cabal Coffers", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Dragonskull Summit", "qty": 1 },
+            { "name": "Fell the Profane", "qty": 1 },
+            { "name": "Foreboding Ruins", "qty": 1 },
+            { "name": "Graven Cairns", "qty": 1 },
+            { "name": "Haunted Ridge", "qty": 1 },
+            { "name": "Leechridden Swamp", "qty": 1 },
+            { "name": "Luxury Suite", "qty": 1 },
+            { "name": "Malakir Rebirth", "qty": 1 },
+            { "name": "Marsh Flats", "qty": 1 },
+            { "name": "Mount Doom", "qty": 1 },
+            { "name": "Mountain", "qty": 4 },
+            { "name": "Polluted Delta", "qty": 1 },
+            { "name": "Reliquary Tower", "qty": 1 },
+            { "name": "Smoldering Marsh", "qty": 1 },
+            { "name": "Sulfurous Springs", "qty": 1 },
+            { "name": "Swamp", "qty": 3 },
+            { "name": "Tainted Peak", "qty": 1 },
+            { "name": "Urborg, Tomb of Yawgmoth", "qty": 1 },
+            { "name": "Verdant Catacombs", "qty": 1 },
+            { "name": "Witch's Clinic", "qty": 1 },
+            { "name": "Wooded Foothills", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp & cost reduction",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Basalt Monolith", "qty": 1 },
+            { "name": "Dark Ritual", "qty": 1 },
+            { "name": "Fellwar Stone", "qty": 1 },
+            { "name": "Jet Medallion", "qty": 1 },
+            { "name": "Mind Stone", "qty": 1 },
+            { "name": "Rakdos Signet", "qty": 1 },
+            { "name": "Rakdos, Lord of Riots", "qty": 1 },
+            { "name": "Ruby Medallion", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Talisman of Indulgence", "qty": 1 },
+            { "name": "Thought Vessel", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw — yours",
+          "cards": [
+            { "name": "Jeska's Will", "qty": 1 },
+            { "name": "Valgavoth, Harrower of Souls", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tutors",
+          "cards": [
+            { "name": "Demonic Tutor", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection & defense",
+          "cards": [
+            { "name": "Deflecting Swat", "qty": 1 },
+            { "name": "Hexing Squelcher", "qty": 1 },
+            { "name": "Imp's Mischief", "qty": 1 },
+            { "name": "Kaya's Ghostform", "qty": 1 },
+            { "name": "Mithril Coat", "qty": 1 },
+            { "name": "No Mercy", "qty": 1 },
+            { "name": "Swiftfoot Boots", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal",
+          "cards": [
+            { "name": "Bedevil", "qty": 1 },
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Deadly Rollick", "qty": 1 },
+            { "name": "Feed the Swarm", "qty": 1 },
+            { "name": "Infernal Grasp", "qty": 1 },
+            { "name": "Rakdos Charm", "qty": 1 },
+            { "name": "Terminate", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            { "name": "Blasphemous Act", "qty": 1 },
+            { "name": "Fraying Omnipotence", "qty": 1 },
+            { "name": "Toxic Deluge", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Gifts — the poisoned generosity",
+          "cards": [
+            { "name": "Descent into Avernus", "qty": 1 },
+            { "name": "Font of Mythos", "qty": 1 },
+            { "name": "Howling Mine", "qty": 1 },
+            { "name": "Seizan, Perverter of Truth", "qty": 1 },
+            { "name": "Spiteful Visions", "qty": 1 },
+            { "name": "Temple Bell", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Draw punishers",
+          "cards": [
+            { "name": "Fate Unraveler", "qty": 1 },
+            { "name": "Kederekt Parasite", "qty": 1 },
+            { "name": "Orcish Bowmasters", "qty": 1 },
+            { "name": "Razorkin Needlehead", "qty": 1 },
+            { "name": "Sheoldred, the Apocalypse", "qty": 1 },
+            { "name": "Underworld Dreams", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Cast / upkeep / mana punishers",
+          "cards": [
+            { "name": "Kaervek the Merciless", "qty": 1 },
+            { "name": "Manabarbs", "qty": 1 },
+            { "name": "Mogis, God of Slaughter", "qty": 1 },
+            { "name": "Painful Quandary", "qty": 1 },
+            { "name": "Vial Smasher the Fierce", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Amplifiers",
+          "cards": [
+            { "name": "Bloodletter of Aclazotz", "qty": 1 },
+            { "name": "Solphim, Mayhem Dominus", "qty": 1 },
+            { "name": "Spiked Corridor", "qty": 1 },
+            { "name": "Torbran, Thane of Red Fell", "qty": 1 },
+            { "name": "Twinflame Tyrant", "qty": 1 },
+            { "name": "Wound Reflection", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lifeline",
+          "cards": [
+            { "name": "Basilisk Collar", "qty": 1 },
+            { "name": "Bloodthirsty Conqueror", "qty": 1 },
+            { "name": "Exquisite Blood", "qty": 1 },
+            { "name": "Shadowspear", "qty": 1 },
+            { "name": "Whip of Erebos", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Win Conditions",
+          "cards": [
+            { "name": "Exsanguinate", "qty": 1 },
+            { "name": "Gray Merchant of Asphodel", "qty": 1 },
+            { "name": "Heartless Hidetsugu", "qty": 1 },
+            { "name": "Torment of Hailfire", "qty": 1 },
+            { "name": "Wheel of Fortune", "qty": 1 }
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {
+    "Ancient Tomb": { "status": "PROXY", "note": "💰", "printing": {"set":"uma","collectorNumber":"236"} },
+    "Arcane Signet": { "status": "PROXY", "printing": {"set":"40k","collectorNumber":"227"} },
+    "Badlands": { "status": "PROXY", "printing": {"set":"30a","collectorNumber":"273"} },
+    "Basilisk Collar": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"1920"} },
+    "Bedevil": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"182"} },
+    "Blackcleave Cliffs": { "status": "PROXY", "printing": {"set":"dsc","collectorNumber":"263"} },
+    "Blasphemous Act": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"1998"} },
+    "Blazemire Verge": { "status": "PROXY", "note": "💰", "printing": {"set":"dsk","collectorNumber":"329"} },
+    "Blood Crypt": { "status": "PROXY", "printing": {"set":"trk","collectorNumber":"278"} },
+    "Bloodletter of Aclazotz": { "status": "PROXY", "note": "💰", "printing": {"set":"lci","collectorNumber":"92"} },
+    "Bloodsoaked Insight": { "status": "PROXY", "printing": {"set":"mh3","collectorNumber":"252"} },
+    "Bloodstained Mire": { "status": "PROXY", "note": "💰", "printing": {"set":"mh3","collectorNumber":"216"} },
+    "Bloodthirsty Conqueror": { "status": "PROXY", "note": "💰", "printing": {"set":"fdn","collectorNumber":"58"} },
+    "Cabal Coffers": { "status": "PROXY", "note": "💰", "printing": {"set":"mh2","collectorNumber":"301"} },
+    "Chaos Warp": { "status": "PROXY", "printing": {"set":"mar","collectorNumber":"69"} },
+    "Command Tower": { "status": "PROXY", "printing": {"set":"c21","collectorNumber":"284"} },
+    "Dark Ritual": { "status": "PROXY" },
+    "Deadly Rollick": { "status": "PROXY", "note": "💰", "printing": {"set":"cmm","collectorNumber":"695"} },
+    "Deflecting Swat": { "status": "PROXY", "note": "💰", "printing": {"set":"cmm","collectorNumber":"698"} },
+    "Demonic Tutor": { "status": "PROXY", "note": "💰", "printing": {"set":"j20","collectorNumber":"4"} },
+    "Descent into Avernus": { "status": "PROXY", "note": "💰", "printing": {"set":"clb","collectorNumber":"169"} },
+    "Dragonskull Summit": { "status": "PROXY", "printing": {"set":"dsc","collectorNumber":"271"} },
+    "Exquisite Blood": { "status": "PROXY", "note": "💰", "printing": {"set":"lcc","collectorNumber":"195"} },
+    "Exsanguinate": { "status": "PROXY", "printing": {"set":"fdn","collectorNumber":"173"} },
+    "Fate Unraveler": { "status": "PROXY", "printing": {"set":"dsc","collectorNumber":"141"} },
+    "Feed the Swarm": { "status": "PROXY", "printing": {"set":"dsc","collectorNumber":"78"} },
+    "Fell the Profane": { "status": "PROXY", "printing": {"set":"mh3","collectorNumber":"244"} },
+    "Fellwar Stone": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"1040"} },
+    "Font of Mythos": { "status": "PROXY", "note": "💰", "printing": {"set":"plst","collectorNumber":"CON-136"} },
+    "Foreboding Ruins": { "status": "PROXY", "printing": {"set":"dsc","collectorNumber":"277"} },
+    "Fraying Omnipotence": { "status": "PROXY", "printing": {"set":"m19","collectorNumber":"97"} },
+    "Glacial Chasm": { "status": "PROXY", "printing": {"set":"v12","collectorNumber":"7"} },
+    "Graven Cairns": { "status": "PROXY", "printing": {"set":"fic","collectorNumber":"401"} },
+    "Gray Merchant of Asphodel": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"C14-146"} },
+    "Grim Monolith": { "status": "PROXY", "note": "💰" },
+    "Haunted Ridge": { "status": "PROXY", "note": "💰", "printing": {"set":"who","collectorNumber":"286"} },
+    "Heartless Hidetsugu": { "status": "PROXY", "printing": {"set":"cns","collectorNumber":"144"} },
+    "Hexing Squelcher": { "status": "PROXY", "note": "💰", "printing": {"set":"ecl","collectorNumber":"145"} },
+    "Howling Mine": { "status": "PROXY", "printing": {"set":"cmd","collectorNumber":"251"} },
+    "Infernal Grasp": { "status": "PROXY", "printing": {"set":"inr","collectorNumber":"310"} },
+    "Jeska's Will": { "status": "PROXY", "note": "💰", "printing": {"set":"cmr","collectorNumber":"187"} },
+    "Jet Medallion": { "status": "PROXY", "note": "💰", "printing": {"set":"mh3","collectorNumber":"292"} },
+    "Kaervek the Merciless": { "status": "PROXY", "printing": {"set":"2x2","collectorNumber":"236"} },
+    "Kaya's Ghostform": { "status": "PROXY", "printing": {"set":"war","collectorNumber":"94"} },
+    "Kederekt Parasite": { "status": "PROXY", "note": "💰", "printing": {"set":"plst","collectorNumber":"CON-48"} },
+    "Luxury Suite": { "status": "PROXY", "note": "💰", "printing": {"set":"msc","collectorNumber":"252"} },
+    "Malakir Rebirth": { "status": "PROXY", "printing": {"set":"znr","collectorNumber":"111"} },
+    "Mana Vault": { "status": "PROXY", "note": "💰" },
+    "Manabarbs": { "status": "PROXY", "printing": {"set":"m10","collectorNumber":"149"} },
+    "Marsh Flats": { "status": "PROXY", "note": "💰" },
+    "Mithril Coat": { "status": "PROXY", "note": "💰", "printing": {"set":"ltr","collectorNumber":"245"} },
+    "Mogis, God of Slaughter": { "status": "PROXY", "printing": {"set":"dsc","collectorNumber":"89"} },
+    "Mount Doom": { "status": "PROXY", "note": "💰", "printing": {"set":"hoc","collectorNumber":"50"} },
+    "Mountain": { "status": "PROXY", "printing": {"set":"thb","collectorNumber":"253"} },
+    "Mox Diamond": { "status": "PROXY", "note": "💰" },
+    "No Mercy": { "status": "PROXY", "note": "💰", "printing": {"set":"p22","collectorNumber":"9"} },
+    "Orcish Bowmasters": { "status": "PROXY", "note": "💰", "printing": {"set":"ltr","collectorNumber":"103"} },
+    "Painful Quandary": { "status": "PROXY", "printing": {"set":"fdn","collectorNumber":"179"} },
+    "Polluted Delta": { "status": "PROXY", "note": "💰" },
+    "Rakdos Charm": { "status": "PROXY", "printing": {"set":"c17","collectorNumber":"190"} },
+    "Rakdos Signet": { "status": "PROXY", "printing": {"set":"afc","collectorNumber":"214"} },
+    "Rakdos, Lord of Riots": { "status": "PROXY", "printing": {"set":"dsc","collectorNumber":"230"} },
+    "Razorkin Needlehead": { "status": "PROXY", "printing": {"set":"dsk","collectorNumber":"347"} },
+    "Reliquary Tower": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"M19-254"} },
+    "Ruby Medallion": { "status": "PROXY", "note": "💰", "printing": {"set":"cm2","collectorNumber":"212"} },
+    "Sanguine Bond": { "status": "PROXY", "printing": {"set":"c13","collectorNumber":"92"} },
+    "Seizan, Perverter of Truth": { "status": "PROXY", "printing": {"set":"mul","collectorNumber":"15"} },
+    "Sheoldred, the Apocalypse": { "status": "PROXY", "note": "💰", "printing": {"set":"dmu","collectorNumber":"107"} },
+    "Smoldering Marsh": { "status": "PROXY", "printing": {"set":"fic","collectorNumber":"425"} },
+    "Sol Ring": { "status": "PROXY", "printing": {"set":"ltc","collectorNumber":"284"} },
+    "Solphim, Mayhem Dominus": { "status": "PROXY", "note": "💰", "printing": {"set":"one","collectorNumber":"150"} },
+    "Spiked Corridor": { "status": "PROXY", "printing": {"set":"dsc","collectorNumber":"28"} },
+    "Spiteful Visions": { "status": "PROXY", "printing": {"set":"dsc","collectorNumber":"233"} },
+    "Sulfurous Springs": { "status": "PROXY", "printing": {"set":"pdmu","collectorNumber":"256p"} },
+    "Swamp": { "status": "PROXY", "printing": {"set":"thb","collectorNumber":"252"} },
+    "Swiftfoot Boots": { "status": "PROXY", "printing": {"set":"fic","collectorNumber":"361"} },
+    "Tainted Peak": { "status": "PROXY", "printing": {"set":"afc","collectorNumber":"266"} },
+    "Talisman of Indulgence": { "status": "PROXY", "printing": {"set":"fic","collectorNumber":"366"} },
+    "Temple Bell": { "status": "PROXY", "printing": {"set":"c13","collectorNumber":"265"} },
+    "Terminate": { "status": "PROXY", "printing": {"set":"scd","collectorNumber":"249"} },
+    "The Lord of Pain": { "status": "PROXY", "note": "💰", "printing": {"set":"dsc","collectorNumber":"3"} },
+    "Torbran, Thane of Red Fell": { "status": "PROXY", "printing": {"set":"eld","collectorNumber":"147"} },
+    "Torment of Hailfire": { "status": "PROXY", "note": "💰", "printing": {"set":"plst","collectorNumber":"HOU-77"} },
+    "Toxic Deluge": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"161"} },
+    "Twinflame Tyrant": { "status": "PROXY", "note": "💰", "printing": {"set":"fdn","collectorNumber":"97"} },
+    "Underworld Dreams": { "status": "PROXY", "printing": {"set":"thb","collectorNumber":"121"} },
+    "Urborg, Tomb of Yawgmoth": { "status": "PROXY", "note": "💰", "printing": {"set":"uma","collectorNumber":"254"} },
+    "Valgavoth, Harrower of Souls": { "status": "PROXY", "note": "💰", "printing": {"set":"dsc","collectorNumber":"6"} },
+    "Vampiric Tutor": { "status": "PROXY", "note": "💰", "printing": {"set":"soa","collectorNumber":"35"} },
+    "Verdant Catacombs": { "status": "PROXY", "note": "💰" },
+    "Vial Smasher the Fierce": { "status": "PROXY", "printing": {"set":"dsc","collectorNumber":"239"} },
+    "Wheel of Fortune": { "status": "PROXY", "printing": {"set":"30a","collectorNumber":"476"} },
+    "Whip of Erebos": { "status": "PROXY", "note": "💰", "printing": {"set":"dsc","collectorNumber":"159"} },
+    "Witch's Clinic": { "status": "PROXY", "note": "💰", "printing": {"set":"c21","collectorNumber":"81"} },
+    "Wooded Foothills": { "status": "PROXY", "note": "💰" },
+    "Wound Reflection": { "status": "PROXY", "note": "💰", "printing": {"set":"2xm","collectorNumber":"113"} }
+  }
+}

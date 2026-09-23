@@ -1,0 +1,25 @@
+{
+  "title": "Chatterfang, Squirrel General \u2014 Acorn Economy",
+  "subtitle": "Bracket 3 \u00b7 1/3 Game Changers \u00b7 tokens \u2192 sacrifice \u2192 drain \u00b7 one declared combo \u00b7 100 cards",
+  "stats": [
+    [
+      "Nonland",
+      "64"
+    ],
+    [
+      "Avg MV",
+      "2.73"
+    ],
+    [
+      "Outlets",
+      "10"
+    ],
+    [
+      "Drainers",
+      "12"
+    ]
+  ],
+  "appendix": [
+    "research/gameplan.md"
+  ]
+}

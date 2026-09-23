@@ -1,0 +1,701 @@
+{
+  "schema": 1,
+  "name": "God Tribal — commander build-off",
+  "format": "commander",
+  "lists": {
+    "esika": {
+      "label": "Esika",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Esika, God of the Tree", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Cascading Cataracts", "qty": 1 },
+            { "name": "Cavern of Souls", "qty": 1 },
+            { "name": "City of Brass", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Exotic Orchard", "qty": 1 },
+            { "name": "Forest", "qty": 3 },
+            { "name": "Gods' Eye, Gate to the Reikai", "qty": 1 },
+            { "name": "Indatha Triome", "qty": 1 },
+            { "name": "Island", "qty": 3 },
+            { "name": "Jetmir's Garden", "qty": 1 },
+            { "name": "Ketria Triome", "qty": 1 },
+            { "name": "Mana Confluence", "qty": 1 },
+            { "name": "Mountain", "qty": 3 },
+            { "name": "Path of Ancestry", "qty": 1 },
+            { "name": "Plains", "qty": 3 },
+            { "name": "Plaza of Heroes", "qty": 1 },
+            { "name": "Raffine's Tower", "qty": 1 },
+            { "name": "Raugrin Triome", "qty": 1 },
+            { "name": "Reflecting Pool", "qty": 1 },
+            { "name": "Savai Triome", "qty": 1 },
+            { "name": "Secluded Courtyard", "qty": 1 },
+            { "name": "Spara's Headquarters", "qty": 1 },
+            { "name": "Swamp", "qty": 2 },
+            { "name": "The World Tree", "qty": 1 },
+            { "name": "Tyrite Sanctum", "qty": 1 },
+            { "name": "Unclaimed Territory", "qty": 1 },
+            { "name": "Xander's Lounge", "qty": 1 },
+            { "name": "Zagoth Triome", "qty": 1 },
+            { "name": "Ziatora's Proving Ground", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp",
+          "cards": [
+            { "name": "Altar of the Pantheon", "qty": 1 },
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Birds of Paradise", "qty": 1 },
+            { "name": "Bloom Tender", "qty": 1 },
+            { "name": "Chromatic Lantern", "qty": 1 },
+            { "name": "Cultivate", "qty": 1 },
+            { "name": "Faeburrow Elder", "qty": 1 },
+            { "name": "Farseek", "qty": 1 },
+            { "name": "Fellwar Stone", "qty": 1 },
+            { "name": "Nature's Lore", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Three Visits", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tribal Payoffs",
+          "cards": [
+            { "name": "Herald's Horn", "qty": 1 },
+            { "name": "Icon of Ancestry", "qty": 1 },
+            { "name": "Kindred Discovery", "qty": 1 },
+            { "name": "Roaming Throne", "qty": 1 },
+            { "name": "Urza's Incubator", "qty": 1 },
+            { "name": "Vanquisher's Banner", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction",
+          "cards": [
+            { "name": "Akroma's Will", "qty": 1 },
+            { "name": "Anguished Unmaking", "qty": 1 },
+            { "name": "Assassin's Trophy", "qty": 1 },
+            { "name": "Austere Command", "qty": 1 },
+            { "name": "Counterspell", "qty": 1 },
+            { "name": "Heroic Intervention", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Guardian Project", "qty": 1 },
+            { "name": "Reki, the History of Kamigawa", "qty": 1 },
+            { "name": "Rhystic Study", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Commander Package",
+          "cards": [
+            { "name": "Thran Temporal Gateway", "qty": 1 },
+            { "name": "Honor-Worn Shaku", "qty": 1 },
+            { "name": "Heroes' Podium", "qty": 1 },
+            { "name": "Day of Destiny", "qty": 1 },
+            { "name": "Skyshroud Claim", "qty": 1 },
+            { "name": "Smothering Tithe", "qty": 1 },
+            { "name": "Fierce Guardianship", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Gods",
+          "cards": [
+            { "name": "Aclazotz, Deepest Betrayal", "qty": 1 },
+            { "name": "Alrund, God of the Cosmos", "qty": 1 },
+            { "name": "Asmodeus the Archfiend", "qty": 1 },
+            { "name": "God-Eternal Bontu", "qty": 1 },
+            { "name": "God-Eternal Kefnet", "qty": 1 },
+            { "name": "God-Eternal Oketra", "qty": 1 },
+            { "name": "God-Eternal Rhonas", "qty": 1 },
+            { "name": "Halvar, God of Battle", "qty": 1 },
+            { "name": "Havi, the All-Father", "qty": 1 },
+            { "name": "Ilharg, the Raze-Boar", "qty": 1 },
+            { "name": "Inga and Esika", "qty": 1 },
+            { "name": "Iroas, God of Victory", "qty": 1 },
+            { "name": "Keranos, God of Storms", "qty": 1 },
+            { "name": "Kolvori, God of Kinship", "qty": 1 },
+            { "name": "Myrkul, Lord of Bones", "qty": 1 },
+            { "name": "Ojer Kaslem, Deepest Growth", "qty": 1 },
+            { "name": "Ojer Taq, Deepest Foundation", "qty": 1 },
+            { "name": "Purphoros, God of the Forge", "qty": 1 },
+            { "name": "Surtr, Fiery Jötun", "qty": 1 },
+            { "name": "Thassa, Deep-Dwelling", "qty": 1 },
+            { "name": "The Capitoline Triad", "qty": 1 },
+            { "name": "Thor, God of Thunder", "qty": 1 },
+            { "name": "Venat, Heart of Hydaelyn", "qty": 1 },
+            { "name": "Xenagos, God of Revels", "qty": 1 },
+            { "name": "Zodiark, Umbral God", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "jodah": {
+      "label": "Jodah",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Jodah, the Unifier", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Cascading Cataracts", "qty": 1 },
+            { "name": "Cavern of Souls", "qty": 1 },
+            { "name": "City of Brass", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Exotic Orchard", "qty": 1 },
+            { "name": "Forest", "qty": 3 },
+            { "name": "Gods' Eye, Gate to the Reikai", "qty": 1 },
+            { "name": "Indatha Triome", "qty": 1 },
+            { "name": "Island", "qty": 3 },
+            { "name": "Jetmir's Garden", "qty": 1 },
+            { "name": "Ketria Triome", "qty": 1 },
+            { "name": "Mana Confluence", "qty": 1 },
+            { "name": "Mountain", "qty": 3 },
+            { "name": "Path of Ancestry", "qty": 1 },
+            { "name": "Plains", "qty": 3 },
+            { "name": "Plaza of Heroes", "qty": 1 },
+            { "name": "Raffine's Tower", "qty": 1 },
+            { "name": "Raugrin Triome", "qty": 1 },
+            { "name": "Reflecting Pool", "qty": 1 },
+            { "name": "Savai Triome", "qty": 1 },
+            { "name": "Secluded Courtyard", "qty": 1 },
+            { "name": "Spara's Headquarters", "qty": 1 },
+            { "name": "Swamp", "qty": 2 },
+            { "name": "The World Tree", "qty": 1 },
+            { "name": "Tyrite Sanctum", "qty": 1 },
+            { "name": "Unclaimed Territory", "qty": 1 },
+            { "name": "Xander's Lounge", "qty": 1 },
+            { "name": "Zagoth Triome", "qty": 1 },
+            { "name": "Ziatora's Proving Ground", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp",
+          "cards": [
+            { "name": "Altar of the Pantheon", "qty": 1 },
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Birds of Paradise", "qty": 1 },
+            { "name": "Bloom Tender", "qty": 1 },
+            { "name": "Chromatic Lantern", "qty": 1 },
+            { "name": "Cultivate", "qty": 1 },
+            { "name": "Faeburrow Elder", "qty": 1 },
+            { "name": "Farseek", "qty": 1 },
+            { "name": "Fellwar Stone", "qty": 1 },
+            { "name": "Nature's Lore", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Three Visits", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tribal Payoffs",
+          "cards": [
+            { "name": "Herald's Horn", "qty": 1 },
+            { "name": "Icon of Ancestry", "qty": 1 },
+            { "name": "Kindred Discovery", "qty": 1 },
+            { "name": "Roaming Throne", "qty": 1 },
+            { "name": "Urza's Incubator", "qty": 1 },
+            { "name": "Vanquisher's Banner", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction",
+          "cards": [
+            { "name": "Akroma's Will", "qty": 1 },
+            { "name": "Anguished Unmaking", "qty": 1 },
+            { "name": "Assassin's Trophy", "qty": 1 },
+            { "name": "Austere Command", "qty": 1 },
+            { "name": "Counterspell", "qty": 1 },
+            { "name": "Heroic Intervention", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Guardian Project", "qty": 1 },
+            { "name": "Reki, the History of Kamigawa", "qty": 1 },
+            { "name": "Rhystic Study", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Commander Package",
+          "cards": [
+            { "name": "Day of Destiny", "qty": 1 },
+            { "name": "Heroes' Podium", "qty": 1 },
+            { "name": "Arvad the Cursed", "qty": 1 },
+            { "name": "Mirror Box", "qty": 1 },
+            { "name": "Kethis, the Hidden Hand", "qty": 1 },
+            { "name": "Bard Class", "qty": 1 },
+            { "name": "Smothering Tithe", "qty": 1 },
+            { "name": "Cyclonic Rift", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Gods",
+          "cards": [
+            { "name": "Aclazotz, Deepest Betrayal", "qty": 1 },
+            { "name": "Alrund, God of the Cosmos", "qty": 1 },
+            { "name": "Asmodeus the Archfiend", "qty": 1 },
+            { "name": "Erebos, God of the Dead", "qty": 1 },
+            { "name": "God-Eternal Bontu", "qty": 1 },
+            { "name": "God-Eternal Kefnet", "qty": 1 },
+            { "name": "God-Eternal Oketra", "qty": 1 },
+            { "name": "God-Eternal Rhonas", "qty": 1 },
+            { "name": "Halvar, God of Battle", "qty": 1 },
+            { "name": "Havi, the All-Father", "qty": 1 },
+            { "name": "Ilharg, the Raze-Boar", "qty": 1 },
+            { "name": "Iroas, God of Victory", "qty": 1 },
+            { "name": "Keranos, God of Storms", "qty": 1 },
+            { "name": "Kolvori, God of Kinship", "qty": 1 },
+            { "name": "Kruphix, God of Horizons", "qty": 1 },
+            { "name": "Myrkul, Lord of Bones", "qty": 1 },
+            { "name": "Ojer Kaslem, Deepest Growth", "qty": 1 },
+            { "name": "Ojer Taq, Deepest Foundation", "qty": 1 },
+            { "name": "Purphoros, God of the Forge", "qty": 1 },
+            { "name": "Surtr, Fiery Jötun", "qty": 1 },
+            { "name": "Thassa, Deep-Dwelling", "qty": 1 },
+            { "name": "Thor, God of Thunder", "qty": 1 },
+            { "name": "Venat, Heart of Hydaelyn", "qty": 1 },
+            { "name": "Xenagos, God of Revels", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "kratos-atreus": {
+      "label": "Kratos Atreus",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Kratos, Stoic Father", "qty": 1 },
+            { "name": "Atreus, Impulsive Son", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Adarkar Wastes", "qty": 1 },
+            { "name": "Battlefield Forge", "qty": 1 },
+            { "name": "Cavern of Souls", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Deserted Beach", "qty": 1 },
+            { "name": "Exotic Orchard", "qty": 1 },
+            { "name": "Gods' Eye, Gate to the Reikai", "qty": 1 },
+            { "name": "Hallowed Fountain", "qty": 1 },
+            { "name": "Inspiring Vantage", "qty": 1 },
+            { "name": "Island", "qty": 3 },
+            { "name": "Minamo, School at Water's Edge", "qty": 1 },
+            { "name": "Mountain", "qty": 3 },
+            { "name": "Mystic Monastery", "qty": 1 },
+            { "name": "Path of Ancestry", "qty": 1 },
+            { "name": "Plains", "qty": 4 },
+            { "name": "Plaza of Heroes", "qty": 1 },
+            { "name": "Raugrin Triome", "qty": 1 },
+            { "name": "Reflecting Pool", "qty": 1 },
+            { "name": "Sacred Foundry", "qty": 1 },
+            { "name": "Seachrome Coast", "qty": 1 },
+            { "name": "Secluded Courtyard", "qty": 1 },
+            { "name": "Shivan Reef", "qty": 1 },
+            { "name": "Spirebluff Canal", "qty": 1 },
+            { "name": "Steam Vents", "qty": 1 },
+            { "name": "Stormcarved Coast", "qty": 1 },
+            { "name": "Sundown Pass", "qty": 1 },
+            { "name": "Tyrite Sanctum", "qty": 1 },
+            { "name": "Unclaimed Territory", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Azorius Signet", "qty": 1 },
+            { "name": "Boros Signet", "qty": 1 },
+            { "name": "Fellwar Stone", "qty": 1 },
+            { "name": "Izzet Signet", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Talisman of Conviction", "qty": 1 },
+            { "name": "Talisman of Creativity", "qty": 1 },
+            { "name": "Talisman of Progress", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Untap Package",
+          "cards": [
+            { "name": "Kelpie Guide", "qty": 1 },
+            { "name": "Magewright's Stone", "qty": 1 },
+            { "name": "Staff of Domination", "qty": 1 },
+            { "name": "Thousand-Year Elixir", "qty": 1 },
+            { "name": "Unstoppable Plan", "qty": 1 },
+            { "name": "Vizier of Tumbling Sands", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tribal Payoffs",
+          "cards": [
+            { "name": "Herald's Horn", "qty": 1 },
+            { "name": "Icon of Ancestry", "qty": 1 },
+            { "name": "Kindred Discovery", "qty": 1 },
+            { "name": "Roaming Throne", "qty": 1 },
+            { "name": "Urza's Incubator", "qty": 1 },
+            { "name": "Vanquisher's Banner", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction",
+          "cards": [
+            { "name": "Austere Command", "qty": 1 },
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Counterspell", "qty": 1 },
+            { "name": "Cyclonic Rift", "qty": 1 },
+            { "name": "Fierce Guardianship", "qty": 1 },
+            { "name": "Flawless Maneuver", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 },
+            { "name": "Wrath of God", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Rhystic Study", "qty": 1 },
+            { "name": "Tome of Legends", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Gods",
+          "cards": [
+            { "name": "Alrund, God of the Cosmos", "qty": 1 },
+            { "name": "Birgi, God of Storytelling", "qty": 1 },
+            { "name": "Cosima, God of the Voyage", "qty": 1 },
+            { "name": "Djeru and Hazoret", "qty": 1 },
+            { "name": "Ephara, God of the Polis", "qty": 1 },
+            { "name": "God-Eternal Kefnet", "qty": 1 },
+            { "name": "God-Eternal Oketra", "qty": 1 },
+            { "name": "Halvar, God of Battle", "qty": 1 },
+            { "name": "Hazoret, Godseeker", "qty": 1 },
+            { "name": "Heliod, Sun-Crowned", "qty": 1 },
+            { "name": "Ilharg, the Raze-Boar", "qty": 1 },
+            { "name": "Iroas, God of Victory", "qty": 1 },
+            { "name": "Keranos, God of Storms", "qty": 1 },
+            { "name": "Kratos, God of War", "qty": 1 },
+            { "name": "Ojer Axonil, Deepest Might", "qty": 1 },
+            { "name": "Ojer Pakpatiq, Deepest Epoch", "qty": 1 },
+            { "name": "Ojer Taq, Deepest Foundation", "qty": 1 },
+            { "name": "Oketra the True", "qty": 1 },
+            { "name": "Purphoros, God of the Forge", "qty": 1 },
+            { "name": "Reidane, God of the Worthy", "qty": 1 },
+            { "name": "Sif's Spearmaster", "qty": 1 },
+            { "name": "Surtr, Fiery Jötun", "qty": 1 },
+            { "name": "Thassa, Deep-Dwelling", "qty": 1 },
+            { "name": "The Locust God", "qty": 1 },
+            { "name": "The Mighty Thor, Jane Foster", "qty": 1 },
+            { "name": "Thor Odinson", "qty": 1 },
+            { "name": "Thor, Asgard's Avenger", "qty": 1 },
+            { "name": "Thor, God of Thunder", "qty": 1 },
+            { "name": "Toralf, God of Fury", "qty": 1 },
+            { "name": "Valkyrior Skyrider", "qty": 1 },
+            { "name": "Venat, Heart of Hydaelyn", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "morophon": {
+      "label": "Morophon",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Morophon, the Boundless", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Cascading Cataracts", "qty": 1 },
+            { "name": "Cavern of Souls", "qty": 1 },
+            { "name": "City of Brass", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Exotic Orchard", "qty": 1 },
+            { "name": "Forest", "qty": 3 },
+            { "name": "Gods' Eye, Gate to the Reikai", "qty": 1 },
+            { "name": "Indatha Triome", "qty": 1 },
+            { "name": "Island", "qty": 3 },
+            { "name": "Jetmir's Garden", "qty": 1 },
+            { "name": "Ketria Triome", "qty": 1 },
+            { "name": "Mana Confluence", "qty": 1 },
+            { "name": "Mountain", "qty": 3 },
+            { "name": "Path of Ancestry", "qty": 1 },
+            { "name": "Plains", "qty": 3 },
+            { "name": "Plaza of Heroes", "qty": 1 },
+            { "name": "Raffine's Tower", "qty": 1 },
+            { "name": "Raugrin Triome", "qty": 1 },
+            { "name": "Reflecting Pool", "qty": 1 },
+            { "name": "Savai Triome", "qty": 1 },
+            { "name": "Secluded Courtyard", "qty": 1 },
+            { "name": "Spara's Headquarters", "qty": 1 },
+            { "name": "Swamp", "qty": 2 },
+            { "name": "The World Tree", "qty": 1 },
+            { "name": "Tyrite Sanctum", "qty": 1 },
+            { "name": "Unclaimed Territory", "qty": 1 },
+            { "name": "Xander's Lounge", "qty": 1 },
+            { "name": "Zagoth Triome", "qty": 1 },
+            { "name": "Ziatora's Proving Ground", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp",
+          "cards": [
+            { "name": "Altar of the Pantheon", "qty": 1 },
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Birds of Paradise", "qty": 1 },
+            { "name": "Bloom Tender", "qty": 1 },
+            { "name": "Chromatic Lantern", "qty": 1 },
+            { "name": "Cultivate", "qty": 1 },
+            { "name": "Faeburrow Elder", "qty": 1 },
+            { "name": "Farseek", "qty": 1 },
+            { "name": "Fellwar Stone", "qty": 1 },
+            { "name": "Nature's Lore", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Three Visits", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tribal Payoffs",
+          "cards": [
+            { "name": "Herald's Horn", "qty": 1 },
+            { "name": "Icon of Ancestry", "qty": 1 },
+            { "name": "Kindred Discovery", "qty": 1 },
+            { "name": "Roaming Throne", "qty": 1 },
+            { "name": "Urza's Incubator", "qty": 1 },
+            { "name": "Vanquisher's Banner", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction",
+          "cards": [
+            { "name": "Akroma's Will", "qty": 1 },
+            { "name": "Anguished Unmaking", "qty": 1 },
+            { "name": "Assassin's Trophy", "qty": 1 },
+            { "name": "Austere Command", "qty": 1 },
+            { "name": "Counterspell", "qty": 1 },
+            { "name": "Heroic Intervention", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Guardian Project", "qty": 1 },
+            { "name": "Reki, the History of Kamigawa", "qty": 1 },
+            { "name": "Rhystic Study", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Commander Package",
+          "cards": [
+            { "name": "Ancient Tomb", "qty": 1 },
+            { "name": "Mana Vault", "qty": 1 },
+            { "name": "Maskwood Nexus", "qty": 1 },
+            { "name": "Skyshroud Claim", "qty": 1 },
+            { "name": "Kodama's Reach", "qty": 1 },
+            { "name": "Swiftfoot Boots", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Gods",
+          "cards": [
+            { "name": "Anzrag, the Quake-Mole", "qty": 1 },
+            { "name": "Athreos, God of Passage", "qty": 1 },
+            { "name": "Bane, Lord of Darkness", "qty": 1 },
+            { "name": "Bast, Panther Goddess", "qty": 1 },
+            { "name": "Bhaal, Lord of Murder", "qty": 1 },
+            { "name": "God-Eternal Bontu", "qty": 1 },
+            { "name": "God-Eternal Kefnet", "qty": 1 },
+            { "name": "God-Eternal Oketra", "qty": 1 },
+            { "name": "God-Eternal Rhonas", "qty": 1 },
+            { "name": "Havi, the All-Father", "qty": 1 },
+            { "name": "Inga and Esika", "qty": 1 },
+            { "name": "Iroas, God of Victory", "qty": 1 },
+            { "name": "Keranos, God of Storms", "qty": 1 },
+            { "name": "Kolvori, God of Kinship", "qty": 1 },
+            { "name": "Kruphix, God of Horizons", "qty": 1 },
+            { "name": "Myrkul, Lord of Bones", "qty": 1 },
+            { "name": "Oketra the True", "qty": 1 },
+            { "name": "Purphoros, God of the Forge", "qty": 1 },
+            { "name": "The Locust God", "qty": 1 },
+            { "name": "The Mighty Thor, Jane Foster", "qty": 1 },
+            { "name": "The Scarab God", "qty": 1 },
+            { "name": "The Scorpion God", "qty": 1 },
+            { "name": "Thor Odinson", "qty": 1 },
+            { "name": "Tiamat", "qty": 1 },
+            { "name": "Tom Bombadil", "qty": 1 },
+            { "name": "Xenagos, God of Revels", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "sisay": {
+      "label": "Sisay",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Sisay, Weatherlight Captain", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Cascading Cataracts", "qty": 1 },
+            { "name": "Cavern of Souls", "qty": 1 },
+            { "name": "City of Brass", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Exotic Orchard", "qty": 1 },
+            { "name": "Forest", "qty": 3 },
+            { "name": "Gods' Eye, Gate to the Reikai", "qty": 1 },
+            { "name": "Indatha Triome", "qty": 1 },
+            { "name": "Island", "qty": 3 },
+            { "name": "Jetmir's Garden", "qty": 1 },
+            { "name": "Ketria Triome", "qty": 1 },
+            { "name": "Mana Confluence", "qty": 1 },
+            { "name": "Mountain", "qty": 3 },
+            { "name": "Path of Ancestry", "qty": 1 },
+            { "name": "Plains", "qty": 3 },
+            { "name": "Plaza of Heroes", "qty": 1 },
+            { "name": "Raffine's Tower", "qty": 1 },
+            { "name": "Raugrin Triome", "qty": 1 },
+            { "name": "Reflecting Pool", "qty": 1 },
+            { "name": "Savai Triome", "qty": 1 },
+            { "name": "Secluded Courtyard", "qty": 1 },
+            { "name": "Spara's Headquarters", "qty": 1 },
+            { "name": "Swamp", "qty": 2 },
+            { "name": "The World Tree", "qty": 1 },
+            { "name": "Tyrite Sanctum", "qty": 1 },
+            { "name": "Unclaimed Territory", "qty": 1 },
+            { "name": "Xander's Lounge", "qty": 1 },
+            { "name": "Zagoth Triome", "qty": 1 },
+            { "name": "Ziatora's Proving Ground", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp",
+          "cards": [
+            { "name": "Altar of the Pantheon", "qty": 1 },
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Birds of Paradise", "qty": 1 },
+            { "name": "Bloom Tender", "qty": 1 },
+            { "name": "Chromatic Lantern", "qty": 1 },
+            { "name": "Cultivate", "qty": 1 },
+            { "name": "Faeburrow Elder", "qty": 1 },
+            { "name": "Farseek", "qty": 1 },
+            { "name": "Fellwar Stone", "qty": 1 },
+            { "name": "Nature's Lore", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Three Visits", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tribal Payoffs",
+          "cards": [
+            { "name": "Herald's Horn", "qty": 1 },
+            { "name": "Icon of Ancestry", "qty": 1 },
+            { "name": "Kindred Discovery", "qty": 1 },
+            { "name": "Roaming Throne", "qty": 1 },
+            { "name": "Urza's Incubator", "qty": 1 },
+            { "name": "Vanquisher's Banner", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction",
+          "cards": [
+            { "name": "Akroma's Will", "qty": 1 },
+            { "name": "Anguished Unmaking", "qty": 1 },
+            { "name": "Assassin's Trophy", "qty": 1 },
+            { "name": "Austere Command", "qty": 1 },
+            { "name": "Counterspell", "qty": 1 },
+            { "name": "Heroic Intervention", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Guardian Project", "qty": 1 },
+            { "name": "Reki, the History of Kamigawa", "qty": 1 },
+            { "name": "Rhystic Study", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Commander Package",
+          "cards": [
+            { "name": "Captain Sisay", "qty": 1 },
+            { "name": "Time of Need", "qty": 1 },
+            { "name": "Yoshimaru, Ever Faithful", "qty": 1 },
+            { "name": "Konda's Banner", "qty": 1 },
+            { "name": "Godsend", "qty": 1 },
+            { "name": "Honor-Worn Shaku", "qty": 1 },
+            { "name": "Smothering Tithe", "qty": 1 },
+            { "name": "Cyclonic Rift", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Gods",
+          "cards": [
+            { "name": "Aclazotz, Deepest Betrayal", "qty": 1 },
+            { "name": "Athreos, God of Passage", "qty": 1 },
+            { "name": "Birgi, God of Storytelling", "qty": 1 },
+            { "name": "Cosima, God of the Voyage", "qty": 1 },
+            { "name": "Erebos, God of the Dead", "qty": 1 },
+            { "name": "God-Eternal Bontu", "qty": 1 },
+            { "name": "God-Eternal Kefnet", "qty": 1 },
+            { "name": "God-Eternal Oketra", "qty": 1 },
+            { "name": "God-Eternal Rhonas", "qty": 1 },
+            { "name": "Halvar, God of Battle", "qty": 1 },
+            { "name": "Hazoret, Godseeker", "qty": 1 },
+            { "name": "Heliod, Sun-Crowned", "qty": 1 },
+            { "name": "Inga and Esika", "qty": 1 },
+            { "name": "Iroas, God of Victory", "qty": 1 },
+            { "name": "Kolvori, God of Kinship", "qty": 1 },
+            { "name": "Ojer Axonil, Deepest Might", "qty": 1 },
+            { "name": "Ojer Pakpatiq, Deepest Epoch", "qty": 1 },
+            { "name": "Ojer Taq, Deepest Foundation", "qty": 1 },
+            { "name": "Purphoros, God of the Forge", "qty": 1 },
+            { "name": "Reidane, God of the Worthy", "qty": 1 },
+            { "name": "Rhonas the Indomitable", "qty": 1 },
+            { "name": "Thassa, Deep-Dwelling", "qty": 1 },
+            { "name": "The Mighty Thor, Jane Foster", "qty": 1 },
+            { "name": "Venat, Heart of Hydaelyn", "qty": 1 }
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {
+  }
+}

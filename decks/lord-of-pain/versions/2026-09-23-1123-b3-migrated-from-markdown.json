@@ -1,0 +1,463 @@
+{
+  "takenAt": "2026-09-23T11:23:12.136Z",
+  "listId": "b3",
+  "label": "migrated from markdown",
+  "reason": "state at migration",
+  "list": {
+    "label": "B3",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "The Lord of Pain",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Blood Crypt",
+            "qty": 1
+          },
+          {
+            "name": "Badlands",
+            "qty": 1
+          },
+          {
+            "name": "Bloodstained Mire",
+            "qty": 1
+          },
+          {
+            "name": "Marsh Flats",
+            "qty": 1
+          },
+          {
+            "name": "Polluted Delta",
+            "qty": 1
+          },
+          {
+            "name": "Verdant Catacombs",
+            "qty": 1
+          },
+          {
+            "name": "Wooded Foothills",
+            "qty": 1
+          },
+          {
+            "name": "Dragonskull Summit",
+            "qty": 1
+          },
+          {
+            "name": "Sulfurous Springs",
+            "qty": 1
+          },
+          {
+            "name": "Blackcleave Cliffs",
+            "qty": 1
+          },
+          {
+            "name": "Luxury Suite",
+            "qty": 1
+          },
+          {
+            "name": "Graven Cairns",
+            "qty": 1
+          },
+          {
+            "name": "Tainted Peak",
+            "qty": 1
+          },
+          {
+            "name": "Smoldering Marsh",
+            "qty": 1
+          },
+          {
+            "name": "Haunted Ridge",
+            "qty": 1
+          },
+          {
+            "name": "Blazemire Verge",
+            "qty": 1
+          },
+          {
+            "name": "Foreboding Ruins",
+            "qty": 1
+          },
+          {
+            "name": "Mount Doom",
+            "qty": 1
+          },
+          {
+            "name": "Urborg, Tomb of Yawgmoth",
+            "qty": 1
+          },
+          {
+            "name": "Cabal Coffers",
+            "qty": 1
+          },
+          {
+            "name": "Witch's Clinic",
+            "qty": 1
+          },
+          {
+            "name": "Reliquary Tower",
+            "qty": 1
+          },
+          {
+            "name": "Leechridden Swamp",
+            "qty": 1
+          },
+          {
+            "name": "Malakir Rebirth",
+            "qty": 1
+          },
+          {
+            "name": "Fell the Profane",
+            "qty": 1
+          },
+          {
+            "name": "Bloodsoaked Insight",
+            "qty": 1
+          },
+          {
+            "name": "Swamp",
+            "qty": 3
+          },
+          {
+            "name": "Mountain",
+            "qty": 4
+          }
+        ]
+      },
+      {
+        "name": "Ramp & cost reduction",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Mind Stone",
+            "qty": 1
+          },
+          {
+            "name": "Basalt Monolith",
+            "qty": 1
+          },
+          {
+            "name": "Thought Vessel",
+            "qty": 1
+          },
+          {
+            "name": "Dark Ritual",
+            "qty": 1
+          },
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Rakdos Signet",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Indulgence",
+            "qty": 1
+          },
+          {
+            "name": "Fellwar Stone",
+            "qty": 1
+          },
+          {
+            "name": "Jet Medallion",
+            "qty": 1
+          },
+          {
+            "name": "Ruby Medallion",
+            "qty": 1
+          },
+          {
+            "name": "Rakdos, Lord of Riots",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw — yours",
+        "cards": [
+          {
+            "name": "Valgavoth, Harrower of Souls",
+            "qty": 1
+          },
+          {
+            "name": "Jeska's Will",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Tutors",
+        "cards": [
+          {
+            "name": "Demonic Tutor",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Protection & defense",
+        "cards": [
+          {
+            "name": "Swiftfoot Boots",
+            "qty": 1
+          },
+          {
+            "name": "Mithril Coat",
+            "qty": 1
+          },
+          {
+            "name": "Imp's Mischief",
+            "qty": 1
+          },
+          {
+            "name": "Deflecting Swat",
+            "qty": 1
+          },
+          {
+            "name": "Kaya's Ghostform",
+            "qty": 1
+          },
+          {
+            "name": "Hexing Squelcher",
+            "qty": 1
+          },
+          {
+            "name": "No Mercy",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Removal",
+        "cards": [
+          {
+            "name": "Terminate",
+            "qty": 1
+          },
+          {
+            "name": "Bedevil",
+            "qty": 1
+          },
+          {
+            "name": "Infernal Grasp",
+            "qty": 1
+          },
+          {
+            "name": "Rakdos Charm",
+            "qty": 1
+          },
+          {
+            "name": "Chaos Warp",
+            "qty": 1
+          },
+          {
+            "name": "Feed the Swarm",
+            "qty": 1
+          },
+          {
+            "name": "Deadly Rollick",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Board Wipes",
+        "cards": [
+          {
+            "name": "Blasphemous Act",
+            "qty": 1
+          },
+          {
+            "name": "Toxic Deluge",
+            "qty": 1
+          },
+          {
+            "name": "Fraying Omnipotence",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Gifts — the poisoned generosity",
+        "cards": [
+          {
+            "name": "Howling Mine",
+            "qty": 1
+          },
+          {
+            "name": "Font of Mythos",
+            "qty": 1
+          },
+          {
+            "name": "Temple Bell",
+            "qty": 1
+          },
+          {
+            "name": "Spiteful Visions",
+            "qty": 1
+          },
+          {
+            "name": "Seizan, Perverter of Truth",
+            "qty": 1
+          },
+          {
+            "name": "Descent into Avernus",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Draw punishers",
+        "cards": [
+          {
+            "name": "Underworld Dreams",
+            "qty": 1
+          },
+          {
+            "name": "Fate Unraveler",
+            "qty": 1
+          },
+          {
+            "name": "Kederekt Parasite",
+            "qty": 1
+          },
+          {
+            "name": "Sheoldred, the Apocalypse",
+            "qty": 1
+          },
+          {
+            "name": "Razorkin Needlehead",
+            "qty": 1
+          },
+          {
+            "name": "Orcish Bowmasters",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Cast / upkeep / mana punishers",
+        "cards": [
+          {
+            "name": "Kaervek the Merciless",
+            "qty": 1
+          },
+          {
+            "name": "Vial Smasher the Fierce",
+            "qty": 1
+          },
+          {
+            "name": "Painful Quandary",
+            "qty": 1
+          },
+          {
+            "name": "Mogis, God of Slaughter",
+            "qty": 1
+          },
+          {
+            "name": "Manabarbs",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Amplifiers",
+        "cards": [
+          {
+            "name": "Solphim, Mayhem Dominus",
+            "qty": 1
+          },
+          {
+            "name": "Torbran, Thane of Red Fell",
+            "qty": 1
+          },
+          {
+            "name": "Spiked Corridor",
+            "qty": 1
+          },
+          {
+            "name": "Twinflame Tyrant",
+            "qty": 1
+          },
+          {
+            "name": "Bloodletter of Aclazotz",
+            "qty": 1
+          },
+          {
+            "name": "Wound Reflection",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lifeline",
+        "cards": [
+          {
+            "name": "Exquisite Blood",
+            "qty": 1
+          },
+          {
+            "name": "Bloodthirsty Conqueror",
+            "qty": 1
+          },
+          {
+            "name": "Basilisk Collar",
+            "qty": 1
+          },
+          {
+            "name": "Shadowspear",
+            "qty": 1
+          },
+          {
+            "name": "Whip of Erebos",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Win Conditions",
+        "cards": [
+          {
+            "name": "Torment of Hailfire",
+            "qty": 1
+          },
+          {
+            "name": "Exsanguinate",
+            "qty": 1
+          },
+          {
+            "name": "Gray Merchant of Asphodel",
+            "qty": 1
+          },
+          {
+            "name": "Wheel of Fortune",
+            "qty": 1
+          },
+          {
+            "name": "Heartless Hidetsugu",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}
