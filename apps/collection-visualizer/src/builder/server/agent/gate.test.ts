@@ -37,7 +37,7 @@ test("writes: research and the ledger pass with a notice, other deck files ask, 
     path: "decks/chatterfang/research/notes.md",
   });
   expect(verdict("Edit", { file_path: "/repo/decks/chatterfang/research/decisions.md" })).toEqual("allow-notify");
-  expect(verdict("Edit", { file_path: ".claude/skills/deck-brain/LEDGER.md" })).toEqual("allow-notify");
+  expect(verdict("Edit", { file_path: ".claude/skills/deck-brain/ledger/triggers.md" })).toEqual("allow-notify");
   expect(verdict("Write", { file_path: "decks/chatterfang/pdf.json" })).toEqual("ask");
   expect(verdict("Edit", { file_path: "decks/chatterfang/deck.json" })).toEqual("deny");
   expect(verdict("Write", { file_path: "decks/chatterfang/history.jsonl" })).toEqual("deny");
@@ -60,8 +60,16 @@ test("anything else is denied", () => {
   expect(verdict("KillShell", {})).toEqual("deny");
 });
 
-test("the ledger is append-only: Edit passes with a notice, a whole-file Write asks", () => {
-  expect(verdict("Edit", { file_path: ".claude/skills/deck-brain/LEDGER.md" })).toEqual("allow-notify");
-  expect(verdict("MultiEdit", { file_path: ".claude/skills/deck-brain/LEDGER.md" })).toEqual("allow-notify");
-  expect(verdict("Write", { file_path: ".claude/skills/deck-brain/LEDGER.md" })).toEqual("ask");
+test("ledger topic files take edits with a notice, a whole-file Write asks, generated and archived files are refused", () => {
+  expect(verdict("Edit", { file_path: ".claude/skills/deck-brain/ledger/triggers.md" })).toEqual("allow-notify");
+  expect(verdict("MultiEdit", { file_path: ".claude/skills/deck-brain/ledger/card-evaluation.md" })).toEqual("allow-notify");
+  expect(verdict("Write", { file_path: ".claude/skills/deck-brain/ledger/triggers.md" })).toEqual("ask");
+  expect(verdict("Edit", { file_path: ".claude/skills/deck-brain/ledger/INDEX.md" })).toEqual("deny");
+  expect(verdict("Edit", { file_path: ".claude/skills/deck-brain/ledger/CARDS.md" })).toEqual("deny");
+  expect(verdict("Edit", { file_path: ".claude/skills/deck-brain/ledger/archive/LEDGER-2026-09-29.md" })).toEqual("deny");
+});
+
+test("the agent may look up the ledger and refresh its indexes", () => {
+  expect(verdict("Bash", { command: 'bun run lookup "Roaming Throne"' })).toEqual("allow");
+  expect(verdict("Bash", { command: "bun run ledger:index" })).toEqual("allow");
 });

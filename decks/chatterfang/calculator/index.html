@@ -1,0 +1,740 @@
+<title>Acorn Cascade</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #eceee7;
+    --surface: #f7f8f4;
+    --surface-2: #e2e5db;
+    --ink: #1e1d16;
+    --slate: #6b6f63;
+    --hair: #cdd1c4;
+    --moss: #4f7038;
+    --moss-soft: #dde6d2;
+    --oxblood: #8a3f3c;
+    --oxblood-soft: #eedbd9;
+    --acorn: #a97b3c;
+    --acorn-soft: #f0e3cd;
+
+    --clue: #5d7f99;
+    --food: #a9713c;
+    --treasure: #c19a2e;
+    --squirrel: #4f7038;
+    --other: #77748c;
+
+    --display: "Fraunces", Georgia, "Times New Roman", serif;
+    --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper: #13150e; --surface: #1b1e15; --surface-2: #262a1e;
+      --ink: #e7e8df; --slate: #9aa08f; --hair: #333825;
+      --moss: #8fb96d; --moss-soft: #22301a;
+      --oxblood: #d2867e; --oxblood-soft: #33201f;
+      --acorn: #d8a860; --acorn-soft: #33270f;
+      --clue: #86abc6; --food: #d29a63; --treasure: #e2bf5c; --squirrel: #8fb96d; --other: #a7a3bd;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #13150e; --surface: #1b1e15; --surface-2: #262a1e;
+    --ink: #e7e8df; --slate: #9aa08f; --hair: #333825;
+    --moss: #8fb96d; --moss-soft: #22301a;
+    --oxblood: #d2867e; --oxblood-soft: #33201f;
+    --acorn: #d8a860; --acorn-soft: #33270f;
+    --clue: #86abc6; --food: #d29a63; --treasure: #e2bf5c; --squirrel: #8fb96d; --other: #a7a3bd;
+  }
+
+  body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: none; margin: 0; padding-inline: 20px; }
+  @media (max-width: 600px) { .wrap { padding-inline: 14px; } }
+
+  header.top { border-bottom: 1px solid var(--hair); background: var(--surface); }
+  header.top .wrap { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; padding-block: 10px; }
+  header.top h1 { font-family: var(--display); font-size: 19px; font-weight: 700; margin: 0; letter-spacing: -.01em; }
+  header.top .sub { font-size: 12.5px; color: var(--slate); margin: 0; }
+  header.top .rules { margin-left: auto; font-family: var(--mono); font-size: 10.5px; color: var(--slate); }
+
+  h2 { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--slate); margin: 24px 0 10px; font-weight: 500; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  h2 .hint { text-transform: none; letter-spacing: 0; font-family: var(--body); font-size: 12px; }
+  h2 .live { margin-left: auto; font-size: 12px; letter-spacing: 0; text-transform: none; color: var(--moss); font-weight: 600; }
+  h2 .live.hot { color: var(--oxblood); }
+
+  .rule { height: 2px; background: var(--hair); margin: 30px 0 0; }
+
+  /* ---------- card tiles ---------- */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(126px, 1fr)); gap: 10px; align-items: start; }
+  .tile { display: flex; flex-direction: column; gap: 6px; border: 1px solid var(--hair); border-radius: 8px; background: var(--surface); padding: 8px; cursor: pointer; font: inherit; color: inherit; text-align: left; }
+  .tile[aria-pressed="true"] { border-color: var(--moss); box-shadow: 0 0 0 1px var(--moss), 0 2px 10px rgba(0,0,0,.14); }
+  .tile:focus-visible { outline: 3px solid var(--acorn); outline-offset: 2px; }
+  .frame { position: relative; display: block; border-radius: 5px; overflow: hidden; }
+  .frame img { display: block; width: 100%; aspect-ratio: 488 / 680; object-fit: cover; background: var(--surface-2); }
+  .tile[aria-pressed="false"] .frame img { filter: grayscale(1) contrast(.85); opacity: .35; }
+  .badge { position: absolute; top: 5px; right: 5px; font-family: var(--mono); font-size: 8.5px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; padding: 2.5px 6px; border-radius: 3px; color: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+  .badge.adder { background: #4f7038; }
+  .badge.splitter { background: #a97b3c; }
+  .badge.doubler { background: #8a3f3c; }
+  .badge.token { background: #5d7f99; }
+  .badge.death { background: #6b4a7a; }
+  .badge.conv { background: #b3562f; }
+  .tile[aria-pressed="false"] .badge { opacity: .4; }
+  .tile .cap { font-size: 11.5px; line-height: 1.22; font-weight: 600; }
+  .tile .rl { font-family: var(--mono); font-size: 9.5px; color: var(--slate); line-height: 1.3; }
+  .tile[aria-pressed="false"] .cap, .tile[aria-pressed="false"] .rl { opacity: .5; }
+
+  /* ---------- inputs ---------- */
+  .inputs { display: flex; gap: 12px 20px; align-items: flex-end; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--hair); border-radius: 6px; padding: 13px 16px; }
+  label.fld { display: grid; gap: 4px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); }
+  input[type=number], select { font: 500 14px var(--mono); color: var(--ink); background: var(--surface-2); border: 1px solid var(--hair); border-radius: 4px; padding: 7px 8px; }
+  input[type=number] { width: 78px; }
+  input:focus-visible, select:focus-visible { outline: 2px solid var(--acorn); outline-offset: 1px; }
+  .presets { display: flex; flex-wrap: wrap; gap: 5px; flex: 1 1 240px; }
+  .preset { font: 500 11.5px var(--body); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--hair); background: var(--surface-2); color: var(--ink); cursor: pointer; }
+  .preset:hover { border-color: var(--moss); color: var(--moss); }
+  .preset:focus-visible { outline: 2px solid var(--acorn); outline-offset: 1px; }
+
+  /* ---------- stat tiles ---------- */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); gap: 1px; background: var(--hair); border: 1px solid var(--hair); border-radius: 6px; overflow: hidden; }
+  .cell { background: var(--surface); padding: 12px 15px; }
+  .cell.hero { background: var(--moss-soft); }
+  .cell.kill { background: var(--oxblood-soft); }
+  .cell .k { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); }
+  .cell .v { font-family: var(--mono); font-size: 27px; font-weight: 600; font-variant-numeric: tabular-nums; margin-top: 2px; line-height: 1.05; }
+  .cell.hero .v { font-size: 35px; }
+  .cell.kill .v { color: var(--oxblood); }
+  .cell .n { font-size: 11.5px; color: var(--slate); line-height: 1.35; margin-top: 3px; }
+
+  .breakdown { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 12px; font-variant-numeric: tabular-nums; padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--hair); }
+  .chip i { width: 9px; height: 9px; border-radius: 2px; display: block; }
+  .chip.zero { opacity: .36; }
+
+  /* ---------- chain ---------- */
+  .chainscroll { overflow-x: auto; overflow-y: hidden; padding-bottom: 10px; }
+  .chain { display: flex; align-items: stretch; min-width: min-content; }
+  /* every card the same width, including the not-in-play ones */
+  .step { flex: 0 0 162px; display: flex; flex-direction: column; gap: 7px; background: var(--surface); border: 1px solid var(--hair); border-radius: 8px; padding: 10px; text-align: left; font: inherit; color: inherit; }
+  button.step { cursor: pointer; }
+  button.step:focus-visible { outline: 3px solid var(--acorn); outline-offset: 2px; }
+  .step.seedstep { border-color: var(--ink); }
+  .step.finalstep { border-color: var(--moss); box-shadow: 0 0 0 1px var(--moss); }
+  /* on the battlefield but nothing for it to apply to */
+  .step.idle { border-style: dashed; }
+  .step.idle .nm, .step.idle .did { opacity: .7; }
+  /* not on the battlefield */
+  .step.off { border-style: dashed; background: none; }
+  .step.off .frame img { filter: grayscale(1) contrast(.8); opacity: .3; }
+  .step.off .badge { opacity: .38; }
+  .step.off .nm, .step.off .did { opacity: .46; }
+  .step.off:hover { border-color: var(--moss); border-style: solid; }
+  .step.off:hover .frame img { filter: none; opacity: .68; }
+  .addhint { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); text-align: center; padding: 6px 0 1px; }
+  .step.off:hover .addhint { color: var(--moss); }
+  .arrow.dim { opacity: .3; }
+  .arrow { flex: 0 0 20px; display: grid; place-items: center; color: var(--slate); font-size: 15px; }
+  .step .idx { font-family: var(--mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); }
+  .step .frame img { aspect-ratio: 488 / 290; object-position: 50% 16%; }
+  .step .nm { font-family: var(--display); font-size: 14px; font-weight: 600; line-height: 1.16; }
+  .step .did { font-size: 11px; color: var(--slate); line-height: 1.38; margin: 0; flex: 1 1 auto; }
+  .step .did em { color: var(--ink); font-style: normal; font-weight: 600; }
+  .step .seedart { height: 46px; display: grid; place-items: center; background: var(--surface-2); border-radius: 5px; font-family: var(--mono); font-size: 10.5px; color: var(--slate); text-align: center; }
+
+  /* vertical token list instead of a stacked bar */
+  .tlist { display: grid; gap: 1px; padding: 6px 7px; background: var(--surface-2); border-radius: 5px; }
+  .tlist .row { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .tlist .row i { width: 7px; height: 7px; border-radius: 2px; flex: 0 0 auto; }
+  .tlist .row b { font-weight: 600; min-width: 2.4ch; text-align: right; }
+  .tlist .row span { color: var(--slate); font-size: 10.5px; }
+  .tlist .row.new b, .tlist .row.new span { color: var(--moss); }
+  .tot { display: flex; align-items: baseline; justify-content: space-between; gap: 5px; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  .tot .n { font-size: 19px; font-weight: 600; }
+  .tot .d { font-size: 10.5px; color: var(--moss); font-weight: 600; }
+  .tot .lb { font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--slate); }
+  .addhint { font-size: 9px; }
+
+  /* ---------- damage table ---------- */
+  .tblwrap { overflow-x: auto; border: 1px solid var(--hair); border-radius: 6px; background: var(--surface); }
+  table.dmg { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  table.dmg th { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); font-weight: 500; text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--hair); white-space: nowrap; }
+  table.dmg td { padding: 8px 12px; border-bottom: 1px solid var(--hair); vertical-align: middle; }
+  table.dmg tr:last-child td { border-bottom: 0; }
+  table.dmg .num { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  table.dmg .src { display: flex; align-items: center; gap: 9px; min-width: 190px; }
+  table.dmg .src img { width: 34px; height: 34px; object-fit: cover; object-position: 50% 16%; border-radius: 4px; display: block; flex: 0 0 auto; }
+  table.dmg .src b { font-weight: 600; font-size: 13px; line-height: 1.2; }
+  table.dmg .what { color: var(--slate); font-size: 12.5px; }
+  table.dmg tr.grp td { background: var(--surface-2); font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); padding: 6px 12px; }
+  table.dmg tr.sum td { background: var(--oxblood-soft); font-weight: 600; }
+  table.dmg tr.sum .num { font-size: 16px; }
+  table.dmg tr.onetarget .num { color: var(--acorn); }
+
+  /* ---------- drain groups, three columns ---------- */
+  .dgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
+  @media (max-width: 1000px) { .dgrid { grid-template-columns: 1fr; } }
+  .dcol { border: 1px solid var(--hair); border-radius: 8px; background: var(--surface); padding: 12px; border-top: 3px solid var(--edge); }
+  .dcol.g-token { --edge: #5d7f99; }
+  .dcol.g-death { --edge: #6b4a7a; }
+  .dcol.g-conv  { --edge: #b3562f; }
+  .dcol h4 { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--edge); margin: 0 0 3px; font-weight: 600; }
+  .dcol .blurb { font-size: 11.5px; color: var(--slate); margin: 0 0 10px; line-height: 1.35; }
+  .dcol .cards { grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 8px; }
+
+  footer.foot { margin: 30px 0 36px; padding-top: 14px; border-top: 1px solid var(--hair); font-size: 12px; color: var(--slate); max-width: 100ch; }
+  footer.foot code { font-family: var(--mono); font-size: 11px; background: var(--surface-2); padding: 1px 5px; border-radius: 3px; }
+  footer.foot p { margin: 0 0 6px; }
+
+  #zoom { position: fixed; z-index: 90; width: 300px; pointer-events: none; filter: drop-shadow(0 14px 34px rgba(0,0,0,.42)); }
+  #zoom img { display: block; width: 100%; border-radius: 13px; }
+  #zoom[hidden] { display: none !important; }
+  @media (max-width: 560px) { #zoom { width: 200px; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <h1>Acorn Cascade</h1>
+    <p class="sub">Click what you control. Everything below updates as you toggle.</p>
+    <span class="rules">CR 614.5 &#183; 616.1 &#183; 603.2c</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h2>The token that starts it</h2>
+  <div class="inputs">
+    <label class="fld" for="seedN">How many
+      <input type="number" id="seedN" min="1" max="99" step="1" value="1">
+    </label>
+    <label class="fld" for="seedT">Of what
+      <select id="seedT">
+        <option value="treasure">Treasure</option>
+        <option value="food">Food</option>
+        <option value="clue">Clue</option>
+        <option value="squirrel">Squirrel</option>
+        <option value="other">Other (Plant, Faerie&#8230;)</option>
+      </select>
+    </label>
+    <div class="presets" id="presets"></div>
+  </div>
+
+  <h2>What the event makes</h2>
+  <div class="tiles" id="tokentiles"></div>
+  <div class="breakdown" id="breakdown"></div>
+
+  <h2>Resolution, left to right, in the order that maximises it
+    <span class="hint">click any card to switch that effect on or off</span>
+    <span class="live" id="live1"></span></h2>
+  <div class="chainscroll"><div class="chain" id="chain"></div></div>
+
+  <div class="rule"></div>
+
+  <h2>What it deals <span class="hint">sacrifice what you just made</span>
+    <span class="live hot" id="live2"></span></h2>
+  <div class="tiles" id="dmgtiles"></div>
+  <div class="tblwrap" style="margin-top:10px"><table class="dmg" id="dmgtable"></table></div>
+
+  <h2>How much of it you sacrifice</h2>
+  <div class="inputs">
+    <label class="fld" for="opps">Opponents
+      <input type="number" id="opps" min="1" max="9" step="1" value="3">
+    </label>
+    <label class="fld" for="sacC">Creature tokens sacrificed
+      <input type="number" id="sacC" min="0" max="9999" step="1" value="0">
+    </label>
+    <label class="fld" for="sacA">Artifact tokens sacrificed
+      <input type="number" id="sacA" min="0" max="9999" step="1" value="0">
+    </label>
+    <div class="presets">
+      <button type="button" class="preset" id="sacAll">Sacrifice every creature token</button>
+      <button type="button" class="preset" id="sacNone">Sacrifice nothing</button>
+    </div>
+  </div>
+
+  <h2>Drain payoffs you control <span class="hint">click a card to switch it on or off</span></h2>
+  <div class="dgrid">
+    <div class="dcol g-token">
+      <h4>Per token and per sacrifice</h4>
+      <p class="blurb">Fire on the event itself, and again on everything you sacrifice.</p>
+      <div class="cards" id="board-token"></div>
+    </div>
+    <div class="dcol g-death">
+      <h4>Death triggers and lifegain</h4>
+      <p class="blurb">Fire once per creature that dies. Their lifegain is what the converters read.</p>
+      <div class="cards" id="board-death"></div>
+    </div>
+    <div class="dcol g-conv">
+      <h4>Converters and multipliers</h4>
+      <p class="blurb">Turn each lifegain event into life loss, then double the whole total.</p>
+      <div class="cards" id="board-conv"></div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <p>One token-creation event. Each replacement effect gets <b>one</b> opportunity to apply
+    (<code>CR 614.5</code>), you choose the order (<code>CR 616.1</code>), and after each application you
+    choose again from whatever is <i>now</i> applicable (<code>CR 616.1f</code>). The solver tries every
+    legal ordering and shows the best.</p>
+    <p>Lifegain counts as <b>separate events</b>, because that is how converters see it: twenty deaths each
+    gaining 1 life is twenty Dina triggers, not one. <b>Blood Artist</b> and <b>Vito</b> say
+    &#8220;target&#8221;, so they hit <b>one</b> opponent; everything else says &#8220;each opponent&#8221;.</p>
+  </footer>
+</main>
+
+<div id="zoom" hidden><img alt="" id="zoomimg"></div>
+
+<script>
+  var $ = function (id) { return document.getElementById(id); };
+
+  var TYPES = [
+    { k: "clue",     label: "Clue",     css: "var(--clue)" },
+    { k: "food",     label: "Food",     css: "var(--food)" },
+    { k: "treasure", label: "Treasure", css: "var(--treasure)" },
+    { k: "squirrel", label: "Squirrel", css: "var(--squirrel)" },
+    { k: "other",    label: "Other",    css: "var(--other)" }
+  ];
+
+  function blank() { return { clue: 0, food: 0, treasure: 0, squirrel: 0, other: 0 }; }
+  function copy(s) { return { clue: s.clue, food: s.food, treasure: s.treasure, squirrel: s.squirrel, other: s.other }; }
+  function total(s) { return s.clue + s.food + s.treasure + s.squirrel + s.other; }
+  function artifacts(s) { return s.clue + s.food + s.treasure; }
+
+  var EFFECTS = [
+    { id: "peregrin", name: "Peregrin Took", img: "img/peregrin-took.jpg", kind: "adder", rule: "+1 Food / event",
+      apply: function (s) { if (total(s) < 1) return null; var n = copy(s); n.food += 1; return n; },
+      say: function () { return "Adds <em>one Food</em> to the whole event — once, not per token."; } },
+    { id: "tippytoe", name: "Tippy-Toe", img: "img/tippy-toe-terrific-partner.jpg", kind: "adder", rule: "+1 Food / event",
+      apply: function (s) { if (total(s) < 1) return null; var n = copy(s); n.food += 1; return n; },
+      say: function () { return "Adds <em>one Food</em> to the whole event — once, not per token."; } },
+    { id: "bilbo", name: "Bilbo", img: "img/bilbo-fellow-conspirator.jpg", kind: "splitter", rule: "Food +Treasure",
+      apply: function (s) { if (s.food < 1) return null; var n = copy(s); n.treasure += s.food; return n; },
+      say: function (b) { return "Every Food gains a Treasure beside it — <em>+" + b.food + " Treasure</em>."; } },
+    { id: "manufactor", name: "Academy Manufactor", img: "img/academy-manufactor.jpg", kind: "splitter", rule: "C/F/T one of each",
+      apply: function (s) { var n = artifacts(s); if (n < 1) return null; var o = copy(s); o.clue = n; o.food = n; o.treasure = n; return o; },
+      say: function (b) { var n = artifacts(b); return "All <em>" + n + "</em> Clue/Food/Treasure become one of each — <em>" + n + " of all three</em>. Blind to Squirrels."; } },
+    { id: "chatterfang", name: "Chatterfang", img: "img/chatterfang-squirrel-general.jpg", kind: "doubler", rule: "+1 Squirrel / token",
+      apply: function (s) { if (total(s) < 1) return null; var n = copy(s); n.squirrel += total(s); return n; },
+      say: function (b) { return "Matches the event one for one — <em>+" + total(b) + " Squirrels</em>."; } },
+    { id: "doublingseason", name: "Doubling Season", img: "img/doubling-season.jpg", kind: "doubler", rule: "x2 everything",
+      apply: function (s) { if (total(s) < 1) return null; return { clue: s.clue * 2, food: s.food * 2, treasure: s.treasure * 2, squirrel: s.squirrel * 2, other: s.other * 2 }; },
+      say: function (b) { return "Doubles the event — <em>" + total(b) + " → " + total(b) * 2 + "</em>."; } },
+    { id: "parallellives", name: "Parallel Lives", img: "img/parallel-lives.jpg", kind: "doubler", rule: "x2 everything",
+      apply: function (s) { if (total(s) < 1) return null; return { clue: s.clue * 2, food: s.food * 2, treasure: s.treasure * 2, squirrel: s.squirrel * 2, other: s.other * 2 }; },
+      say: function (b) { return "Doubles the event — <em>" + total(b) + " → " + total(b) * 2 + "</em>."; } }
+  ];
+
+  var DRAIN = [
+    { id: "plunderer", name: "Pitiless Plunderer", img: "img/pitiless-plunderer.jpg", kind: "token",
+      rule: "death → Treasure", what: "a Treasure per creature death — the repeater" },
+    { id: "bats", name: "Mirkwood Bats", img: "img/mirkwood-bats.jpg", kind: "token",
+      rule: "create or sac", what: "every token created, and every token sacrificed",
+      each: function (c) { return c.created + c.sacC + c.sacA; } },
+    { id: "marionette", name: "Marionette Apprentice", img: "img/marionette-apprentice.jpg", kind: "token",
+      rule: "creature OR artifact", what: "every creature and every artifact you sacrifice",
+      each: function (c) { return c.sacC + c.sacA; } },
+
+    { id: "zulaport", name: "Zulaport Cutthroat", img: "img/zulaport-cutthroat.jpg", kind: "death",
+      rule: "your creature dies", what: "each creature token you sacrifice",
+      each: function (c) { return c.sacC; }, events: function (c) { return c.sacC; }, per: 1 },
+    { id: "bastion", name: "Bastion of Remembrance", img: "img/bastion-of-remembrance.jpg", kind: "death",
+      rule: "your creature dies", what: "each creature token you sacrifice",
+      each: function (c) { return c.sacC; }, events: function (c) { return c.sacC; }, per: 1 },
+    { id: "cauldron", name: "Cauldron of Essence", img: "img/cauldron-of-essence.jpg", kind: "death",
+      rule: "your creature dies", what: "each creature token you sacrifice",
+      each: function (c) { return c.sacC; }, events: function (c) { return c.sacC; }, per: 1 },
+    { id: "nightblade", name: "Nadier's Nightblade", img: "img/nadiers-nightblade.jpg", kind: "death",
+      rule: "a token leaves play", what: "each token that leaves the battlefield",
+      each: function (c) { return c.sacC + c.sacA; }, events: function (c) { return c.sacC + c.sacA; }, per: 1 },
+    { id: "bloodartist", name: "Blood Artist", img: "img/blood-artist.jpg", kind: "death",
+      rule: "any death — TARGET", what: "each creature death, but only one opponent",
+      one: function (c) { return c.sacC; }, events: function (c) { return c.sacC; }, per: 1 },
+    { id: "moldervine", name: "Moldervine Reclamation", img: "img/moldervine-reclamation.jpg", kind: "death",
+      rule: "gain + draw", what: "1 life and 1 card per creature death",
+      events: function (c) { return c.sacC; }, per: 1, draws: function (c) { return c.sacC; } },
+    { id: "innkeeper", name: "Prosperous Innkeeper", img: "img/prosperous-innkeeper.jpg", kind: "death",
+      rule: "creature enters", what: "every creature token entering",
+      events: function (c) { return c.creaturesIn; }, per: 1 },
+
+    { id: "dina", name: "Dina, Soul Steeper", img: "img/dina-soul-steeper.jpg", kind: "conv",
+      rule: "1 each opp / event", what: "one per lifegain EVENT, not per life" },
+    { id: "starscape", name: "Starscape Cleric", img: "img/starscape-cleric.jpg", kind: "conv",
+      rule: "1 each opp / event", what: "one per lifegain EVENT, not per life" },
+    { id: "vito", name: "Vito, Thorn of the Dusk Rose", img: "img/vito-thorn-of-the-dusk-rose.jpg", kind: "conv",
+      rule: "that much — TARGET", what: "the full life total, but only one opponent" },
+    { id: "bloodletter", name: "Bloodletter of Aclazotz", img: "img/bloodletter-of-aclazotz.jpg", kind: "conv",
+      rule: "x2 on your turn", what: "doubles every point above, on your turn only" }
+  ];
+
+  var PRESETS = [
+    { label: "Pitiless Plunderer", n: 1, t: "treasure" },
+    { label: "Tireless Provisioner", n: 1, t: "treasure" },
+    { label: "Tireless Tracker", n: 1, t: "clue" },
+    { label: "Camellia forage", n: 1, t: "food" },
+    { label: "Bitterblossom", n: 1, t: "other" },
+    { label: "Deep Forest Hermit", n: 4, t: "squirrel" },
+    { label: "Avenger on 8 lands", n: 8, t: "other" },
+    { label: "Squirrel Girl at 20", n: 20, t: "squirrel" }
+  ];
+
+  var on = {};
+  ["chatterfang", "manufactor", "bilbo", "peregrin", "tippytoe", "bats", "plunderer"].forEach(function (k) { on[k] = true; });
+  var sacTouched = false;
+
+  try {
+    var saved = localStorage.getItem("acorn-cascade-v4");
+    if (saved) {
+      var o = JSON.parse(saved);
+      if (o && typeof o === "object") {
+        if (o.on) on = o.on;
+        if (o.seedN) $("seedN").value = o.seedN;
+        if (o.seedT) $("seedT").value = o.seedT;
+        if (o.opps) $("opps").value = o.opps;
+        if (o.sacC != null) { $("sacC").value = o.sacC; sacTouched = true; }
+        if (o.sacA != null) $("sacA").value = o.sacA;
+      }
+    }
+  } catch (e) { /* private window or blocked storage - defaults are fine */ }
+
+  function save() {
+    try {
+      localStorage.setItem("acorn-cascade-v4", JSON.stringify({
+        on: on, seedN: $("seedN").value, seedT: $("seedT").value,
+        opps: $("opps").value, sacC: $("sacC").value, sacA: $("sacA").value
+      }));
+    } catch (e) { /* ignore */ }
+  }
+
+  function run(seed, plan) {
+    var state = copy(seed), used = {}, steps = [];
+    for (var guard = 0; guard < plan.length; guard++) {
+      var picked = null;
+      for (var i = 0; i < plan.length; i++) {
+        var e = plan[i];
+        if (used[e.id]) continue;
+        var next = e.apply(state);
+        if (next === null) continue;
+        picked = { e: e, next: next };
+        break;
+      }
+      if (!picked) break;
+      steps.push({ effect: picked.e, before: state, after: picked.next });
+      used[picked.e.id] = true;
+      state = picked.next;
+    }
+    return { steps: steps, final: state };
+  }
+
+  function permute(list) {
+    if (list.length <= 1) return [list];
+    var out = [];
+    for (var i = 0; i < list.length; i++) {
+      var rest = list.slice(0, i).concat(list.slice(i + 1));
+      permute(rest).forEach(function (p) { out.push([list[i]].concat(p)); });
+    }
+    return out;
+  }
+
+  function solve(seed, active) {
+    if (!active.length) return { best: { steps: [], final: copy(seed) } };
+    var plans = permute(active), best = null;
+    for (var i = 0; i < plans.length; i++) {
+      var r = run(seed, plans[i]);
+      if (!best || total(r.final) > total(best.final)) best = r;
+    }
+    return { best: best };
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  function tileHtml(e) {
+    return '<button type="button" class="tile" data-id="' + e.id + '" aria-pressed="' + (on[e.id] ? "true" : "false") +
+      '" aria-label="' + esc(e.name) + '">' +
+      '<span class="frame"><img src="' + esc(e.img) + '" alt="' + esc(e.name) + '" loading="lazy" data-art="' +
+      esc(e.img) + '" data-name="' + esc(e.name) + '">' +
+      '<span class="badge ' + e.kind + '">' + esc(e.kind) + "</span></span>" +
+      '<span class="cap">' + esc(e.name) + '</span><span class="rl">' + esc(e.rule) + "</span></button>";
+  }
+
+  function tlist(state, before) {
+    var rows = TYPES.filter(function (ty) { return state[ty.k]; }).map(function (ty) {
+      var grew = before && state[ty.k] > before[ty.k];
+      return '<span class="row' + (grew ? " new" : "") + '"><i style="background:' + ty.css + '"></i>' +
+        "<b>" + state[ty.k] + "</b><span>" + ty.label + (state[ty.k] === 1 ? "" : "s") + "</span></span>";
+    });
+    return '<div class="tlist">' + (rows.join("") || '<span class="row"><b>0</b><span>tokens</span></span>') + "</div>";
+  }
+
+  function artHtml(e) {
+    return '<span class="frame"><img src="' + esc(e.img) + '" alt="' + esc(e.name) + '" data-art="' + esc(e.img) +
+      '" data-name="' + esc(e.name) + '" loading="lazy"><span class="badge ' + e.kind + '">' + esc(e.kind) + "</span></span>";
+  }
+
+  /** The seed card: where the event starts. Not clickable. */
+  function seedHtml(sub, state) {
+    return '<div class="step seedstep"><span class="idx">start</span>' +
+      '<div class="seedart">the event begins</div><span class="nm">Created</span>' +
+      '<p class="did">' + sub + "</p>" + tlist(state, null) +
+      '<div class="tot"><span class="n">' + total(state) + '</span><span class="lb">token' +
+      (total(state) === 1 ? "" : "s") + "</span></div></div>";
+  }
+
+  /** An effect that applied: numbered, with the running count after it. */
+  function appliedHtml(idx, e, sub, state, before, last) {
+    var t = total(state), d = t - total(before);
+    return '<button type="button" class="step ' + (last ? "finalstep" : "") + '" data-id="' + e.id +
+      '" aria-pressed="true"><span class="idx">step ' + idx + "</span>" + artHtml(e) +
+      '<span class="nm">' + esc(e.name) + '</span><p class="did">' + sub + "</p>" + tlist(state, before) +
+      '<div class="tot"><span class="n">' + t + (d > 0 ? ' <span class="d">+' + d + "</span>" : "") +
+      '</span><span class="lb">token' + (t === 1 ? "" : "s") + "</span></div></button>";
+  }
+
+  /** On the battlefield, but it had nothing to apply to. */
+  function idleHtml(e, why) {
+    return '<button type="button" class="step idle" data-id="' + e.id + '" aria-pressed="true">' +
+      '<span class="idx">no effect</span>' + artHtml(e) +
+      '<span class="nm">' + esc(e.name) + '</span><p class="did">' + why + "</p>" +
+      '<div class="addhint">on the battlefield</div></button>';
+  }
+
+  /** Not on the battlefield. Click to add it. */
+  function offHtml(e) {
+    return '<button type="button" class="step off" data-id="' + e.id + '" aria-pressed="false">' +
+      '<span class="idx">not in play</span>' + artHtml(e) +
+      '<span class="nm">' + esc(e.name) + '</span><p class="did">' + esc(e.rule) + "</p>" +
+      '<div class="addhint">+ add to board</div></button>';
+  }
+
+  function cell(k, v, n, cls) {
+    return '<div class="cell ' + (cls || "") + '"><div class="k">' + k + '</div><div class="v">' + v +
+      '</div>' + (n ? '<div class="n">' + n + "</div>" : "") + "</div>";
+  }
+
+  function byId(id) {
+    for (var i = 0; i < DRAIN.length; i++) if (DRAIN[i].id === id) return DRAIN[i];
+    return null;
+  }
+
+  function render() {
+    ["token", "death", "conv"].forEach(function (g) {
+      $("board-" + g).innerHTML = DRAIN.filter(function (d) { return d.kind === g; }).map(tileHtml).join("");
+    });
+
+    var n = Math.max(1, Math.min(99, parseInt($("seedN").value, 10) || 1));
+    var tKey = $("seedT").value;
+    var seed = blank();
+    seed[tKey] = n;
+    var tLabel = TYPES.filter(function (x) { return x.k === tKey; })[0].label;
+
+    var active = EFFECTS.filter(function (e) { return on[e.id]; });
+    var best = solve(seed, active).best, fin = best.final, t = total(fin);
+    var creaturesIn = fin.squirrel + fin.other;
+
+    if (!sacTouched) $("sacC").value = creaturesIn;
+
+    $("live1").textContent = t + " token" + (t === 1 ? "" : "s");
+    $("tokentiles").innerHTML =
+      cell("Tokens created", t, "From " + n + " " + esc(tLabel) + (n === 1 ? "" : "s") + " through " +
+        best.steps.length + " effect" + (best.steps.length === 1 ? "" : "s") + " — multiplied " +
+        (Math.round((t / n) * 10) / 10) + "×.", "hero") +
+      cell("Creature tokens", creaturesIn, "What the death triggers count.") +
+      cell("Mana from Treasures", fin.treasure, "Each taps and sacrifices for one mana of any colour.") +
+      cell("Cards from Clues", fin.clue, "{2} each.");
+
+    $("breakdown").innerHTML = TYPES.map(function (ty) {
+      return '<span class="chip' + (fin[ty.k] ? "" : " zero") + '"><i style="background:' + ty.css + '"></i>' +
+        fin[ty.k] + " " + ty.label + (fin[ty.k] === 1 ? "" : "s") + "</span>";
+    }).join("");
+
+    // Canonical position for every effect, taken from the all-on solve, so a card that is
+    // switched off still sits where it would go once you add it.
+    var canon = {};
+    solve(seed, EFFECTS).best.steps.forEach(function (st, i) { canon[st.effect.id] = i; });
+    EFFECTS.forEach(function (e, i) { if (canon[e.id] == null) canon[e.id] = 90 + i; });
+
+    var applied = {};
+    best.steps.forEach(function (st) { applied[st.effect.id] = st; });
+
+    // Merge: walk the applied steps in solved order, dropping in every not-yet-placed
+    // off/idle card whose canonical rank comes before the next applied one.
+    var others = EFFECTS.filter(function (e) { return !applied[e.id]; })
+      .sort(function (a, b) { return canon[a.id] - canon[b.id]; });
+    var oi = 0, num = 0;
+    var parts = [seedHtml("Something creates <em>" + n + " " + esc(tLabel) + (n === 1 ? "" : "s") + "</em>.", seed)];
+    var dim = [];
+
+    function flushOthersBefore(rank) {
+      while (oi < others.length && canon[others[oi].id] < rank) {
+        var e = others[oi++];
+        dim.push(parts.length);
+        parts.push(on[e.id]
+          ? idleHtml(e, e.id === "bilbo"
+              ? "No Food in this event yet, so it has nothing to split. It waits, and applies the moment something makes one."
+              : "Nothing in this event for it to apply to.")
+          : offHtml(e));
+      }
+    }
+
+    best.steps.forEach(function (st, i) {
+      flushOthersBefore(canon[st.effect.id]);
+      num++;
+      parts.push(appliedHtml(num, st.effect, st.effect.say(st.before), st.after, st.before,
+        i === best.steps.length - 1));
+    });
+    flushOthersBefore(Infinity);
+
+    $("chain").innerHTML = parts.map(function (p, i) {
+      return i === 0 ? p : '<span class="arrow' + (dim.indexOf(i) >= 0 || dim.indexOf(i - 1) >= 0 ? " dim" : "") +
+        '" aria-hidden="true">&#8594;</span>' + p;
+    }).join("");
+
+    // ---- damage
+    var opps = Math.max(1, Math.min(9, parseInt($("opps").value, 10) || 1));
+    var sacC = Math.max(0, Math.min(creaturesIn, parseInt($("sacC").value, 10) || 0));
+    var sacA = Math.max(0, Math.min(artifacts(fin), parseInt($("sacA").value, 10) || 0));
+    var ctx = { created: t, creaturesIn: creaturesIn, sacC: sacC, sacA: sacA };
+
+    var rows = [], eachSum = 0, oneSum = 0, lifeEvents = 0, lifeGained = 0, draws = 0;
+
+    DRAIN.forEach(function (d) {
+      if (!on[d.id] || d.kind === "conv") return;
+      var e = d.each ? d.each(ctx) : 0;
+      var o = d.one ? d.one(ctx) : 0;
+      var ev = d.events ? d.events(ctx) : 0;
+      if (ev) { lifeEvents += ev; lifeGained += ev * (d.per || 1); }
+      if (d.draws) draws += d.draws(ctx);
+      if (e || o) { eachSum += e; oneSum += o; rows.push({ d: d, each: e, one: o }); }
+      else if (ev) { rows.push({ d: d, each: 0, one: 0, note: ev + " lifegain event" + (ev === 1 ? "" : "s") + ", +" + (ev * (d.per || 1)) + " life" }); }
+      else if (d.id === "plunderer") { rows.push({ d: d, each: 0, one: 0, note: "makes the Treasures that start each new event" }); }
+    });
+
+    var convRows = [];
+    if (on.dina) { eachSum += lifeEvents; convRows.push({ d: byId("dina"), each: lifeEvents, one: 0 }); }
+    if (on.starscape) { eachSum += lifeEvents; convRows.push({ d: byId("starscape"), each: lifeEvents, one: 0 }); }
+    if (on.vito) { oneSum += lifeGained; convRows.push({ d: byId("vito"), each: 0, one: lifeGained }); }
+
+    var mult = on.bloodletter ? 2 : 1;
+    var eachFinal = eachSum * mult, oneFinal = oneSum * mult;
+    var tableTotal = eachFinal * opps + oneFinal;
+
+    function rowHtml(r) {
+      var d = r.d, across = r.each ? r.each * opps : r.one;
+      return "<tr" + (r.one && !r.each ? " class='onetarget'" : "") + "><td><span class='src'>" +
+        "<img src='" + esc(d.img) + "' alt='' data-art='" + esc(d.img) + "' data-name='" + esc(d.name) + "'>" +
+        "<b>" + esc(d.name) + "</b></span></td><td class='what'>" +
+        (r.note ? esc(r.note) : esc(d.what) + (r.one && !r.each ? " — one target only" : "")) +
+        "</td><td class='num'>" + (r.note ? "—" : (r.each ? r.each : "—")) +
+        "</td><td class='num'>" + (r.note ? "—" : across) + "</td></tr>";
+    }
+
+    var html = "<thead><tr><th>Source</th><th>What it counts</th><th class='num'>To each opponent</th>" +
+      "<th class='num'>Across the table</th></tr></thead><tbody>";
+    if (rows.length) {
+      html += "<tr class='grp'><td colspan='4'>Direct triggers</td></tr>" + rows.map(rowHtml).join("");
+    }
+    if (convRows.length) {
+      html += "<tr class='grp'><td colspan='4'>Converters — reading " + lifeEvents +
+        " lifegain event" + (lifeEvents === 1 ? "" : "s") + " totalling " + lifeGained + " life</td></tr>" +
+        convRows.map(rowHtml).join("");
+    }
+    if (on.bloodletter) {
+      html += "<tr class='grp'><td colspan='4'>Multiplier</td></tr><tr><td><span class='src'>" +
+        "<img src='img/bloodletter-of-aclazotz.jpg' alt='' data-art='img/bloodletter-of-aclazotz.jpg' data-name='Bloodletter of Aclazotz'>" +
+        "<b>Bloodletter of Aclazotz</b></span></td><td class='what'>doubles every point above — on your turn only</td>" +
+        "<td class='num'>× 2</td><td class='num'>× 2</td></tr>";
+    }
+    if (!rows.length && !convRows.length) {
+      html += "<tr><td colspan='4' class='what'>No drain payoffs switched on. Turn on Mirkwood Bats, " +
+        "Zulaport Cutthroat or Bastion of Remembrance below to see what this board kills with.</td></tr>";
+    } else {
+      html += "<tr class='sum'><td><b>Total</b></td><td class='what'>" +
+        (mult > 1 ? "after Bloodletter doubling" : "no multiplier") + "</td>" +
+        "<td class='num'>" + eachFinal + "</td><td class='num'>" + tableTotal + "</td></tr>";
+    }
+    $("dmgtable").innerHTML = html + "</tbody>";
+
+    var lethal = eachFinal >= 40;
+    $("live2").textContent = eachFinal + " to each" + (lethal ? " · lethal" : "");
+    $("dmgtiles").innerHTML =
+      cell("To each opponent", eachFinal, lethal
+        ? "<b>Lethal from 40.</b> Every opponent dies to this alone."
+        : "Needs " + (40 - eachFinal) + " more to kill from 40.", lethal ? "kill" : "hero") +
+      cell("Across the table", tableTotal, "Over " + opps + " opponent" + (opps === 1 ? "" : "s") +
+        (oneFinal ? ", including " + oneFinal + " single-target" : "") + ".") +
+      cell("Life you gain", lifeGained, lifeEvents + " separate event" + (lifeEvents === 1 ? "" : "s") +
+        " — that count is what the converters multiply.") +
+      cell("Cards drawn", draws, draws ? "Off Moldervine Reclamation." : "Switch on Moldervine Reclamation.");
+
+    save();
+  }
+
+  ["board-token", "board-death", "board-conv"].forEach(function (id) {
+    $(id).addEventListener("click", function (ev) {
+      var b = ev.target.closest(".tile");
+      if (!b) return;
+      on[b.dataset.id] = !on[b.dataset.id];
+      render();
+    });
+  });
+
+  // The chain is also the on/off control for the replacement effects.
+  $("chain").addEventListener("click", function (ev) {
+    var b = ev.target.closest("button.step");
+    if (!b) return;
+    on[b.dataset.id] = !on[b.dataset.id];
+    render();
+  });
+  ["seedN", "opps", "sacA"].forEach(function (id) { $(id).addEventListener("input", render); });
+  $("sacC").addEventListener("input", function () { sacTouched = true; render(); });
+  $("seedT").addEventListener("change", render);
+  $("sacAll").addEventListener("click", function () { sacTouched = false; render(); });
+  $("sacNone").addEventListener("click", function () { sacTouched = true; $("sacC").value = 0; $("sacA").value = 0; render(); });
+
+  $("presets").innerHTML = PRESETS.map(function (p, i) {
+    return '<button type="button" class="preset" data-i="' + i + '">' + esc(p.label) + "</button>";
+  }).join("");
+  $("presets").addEventListener("click", function (ev) {
+    var b = ev.target.closest(".preset");
+    if (!b) return;
+    var p = PRESETS[parseInt(b.dataset.i, 10)];
+    $("seedN").value = p.n;
+    $("seedT").value = p.t;
+    sacTouched = false;
+    render();
+  });
+
+  var zoom = $("zoom"), zoomImg = $("zoomimg");
+  function placeZoom(rect) {
+    var w = zoom.offsetWidth || 300, h = zoom.offsetHeight || 418, pad = 10;
+    var left = rect.right + 14;
+    if (left + w > window.innerWidth - pad) left = rect.left - w - 14;
+    if (left < pad) left = Math.max(pad, (window.innerWidth - w) / 2);
+    var top = Math.min(Math.max(pad, rect.top + rect.height / 2 - h / 2), window.innerHeight - h - pad);
+    zoom.style.left = left + "px";
+    zoom.style.top = top + "px";
+  }
+  document.addEventListener("pointerover", function (e) {
+    var el = e.target.closest("[data-art]");
+    if (!el) return;
+    zoomImg.src = el.dataset.art;
+    zoomImg.alt = el.dataset.name || "";
+    zoom.hidden = false;
+    placeZoom(el.getBoundingClientRect());
+  });
+  document.addEventListener("pointerout", function (e) {
+    var el = e.target.closest("[data-art]");
+    if (!el) return;
+    if (e.relatedTarget && el.contains(e.relatedTarget)) return;
+    zoom.hidden = true;
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") zoom.hidden = true; });
+  window.addEventListener("scroll", function () { zoom.hidden = true; }, { passive: true });
+  window.addEventListener("resize", function () { zoom.hidden = true; });
+
+  render();
+</script>

@@ -47,7 +47,7 @@ export function NewDeckForm() {
           <p className="text-[12px] text-muted-foreground">
             The folder is named from it. The agent asks about the commander once you are in.
           </p>
-          {create.error && <p className="text-[12px] text-rose-300">{String(create.error)}</p>}
+          {create.error && <p className="text-[12px] text-bad">{String(create.error)}</p>}
           <div className="flex justify-end">
             <Button type="submit" size="sm" disabled={!name.trim() || create.isPending}>
               {create.isPending ? "Creating…" : "Create"}

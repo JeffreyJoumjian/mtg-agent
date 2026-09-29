@@ -1,0 +1,440 @@
+{
+  "takenAt": "2026-09-24T14:36:45.624Z",
+  "listId": "main",
+  "label": "Llanowar Elves in",
+  "reason": "before Llanowar Elves in",
+  "list": {
+    "label": "Main",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Ghave, Guru of Spores",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Bayou",
+            "qty": 1
+          },
+          {
+            "name": "Blooming Marsh",
+            "qty": 1
+          },
+          {
+            "name": "Branchloft Pathway",
+            "qty": 1
+          },
+          {
+            "name": "Brightclimb Pathway",
+            "qty": 1
+          },
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Concealed Courtyard",
+            "qty": 1
+          },
+          {
+            "name": "Darkbore Pathway",
+            "qty": 1
+          },
+          {
+            "name": "Forest",
+            "qty": 4
+          },
+          {
+            "name": "Gaea's Cradle",
+            "qty": 1
+          },
+          {
+            "name": "Gavony Township",
+            "qty": 1
+          },
+          {
+            "name": "Godless Shrine",
+            "qty": 1
+          },
+          {
+            "name": "Indatha Triome",
+            "qty": 1
+          },
+          {
+            "name": "Isolated Chapel",
+            "qty": 1
+          },
+          {
+            "name": "Marsh Flats",
+            "qty": 1
+          },
+          {
+            "name": "Overgrown Tomb",
+            "qty": 1
+          },
+          {
+            "name": "Phyrexian Tower",
+            "qty": 1
+          },
+          {
+            "name": "Plains",
+            "qty": 3
+          },
+          {
+            "name": "Sandsteppe Citadel",
+            "qty": 1
+          },
+          {
+            "name": "Savannah",
+            "qty": 1
+          },
+          {
+            "name": "Scrubland",
+            "qty": 1
+          },
+          {
+            "name": "Sunpetal Grove",
+            "qty": 1
+          },
+          {
+            "name": "Swamp",
+            "qty": 3
+          },
+          {
+            "name": "Temple Garden",
+            "qty": 1
+          },
+          {
+            "name": "Urborg, Tomb of Yawgmoth",
+            "qty": 1
+          },
+          {
+            "name": "Verdant Catacombs",
+            "qty": 1
+          },
+          {
+            "name": "Windswept Heath",
+            "qty": 1
+          },
+          {
+            "name": "Woodland Cemetery",
+            "qty": 1
+          },
+          {
+            "name": "Yavimaya, Cradle of Growth",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Ramp & Mana",
+        "cards": [
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Avacyn's Pilgrim",
+            "qty": 1
+          },
+          {
+            "name": "Birds of Paradise",
+            "qty": 1
+          },
+          {
+            "name": "Cryptolith Rite",
+            "qty": 1
+          },
+          {
+            "name": "Cultivate",
+            "qty": 1
+          },
+          {
+            "name": "Farseek",
+            "qty": 1
+          },
+          {
+            "name": "Nature's Lore",
+            "qty": 1
+          },
+          {
+            "name": "Sakura-Tribe Elder",
+            "qty": 1
+          },
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Three Visits",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw",
+        "cards": [
+          {
+            "name": "Black Market Connections",
+            "qty": 1
+          },
+          {
+            "name": "Deadly Dispute",
+            "qty": 1
+          },
+          {
+            "name": "Idol of Oblivion",
+            "qty": 1
+          },
+          {
+            "name": "Mentor of the Meek",
+            "qty": 1
+          },
+          {
+            "name": "Moldervine Reclamation",
+            "qty": 1
+          },
+          {
+            "name": "Skullclamp",
+            "qty": 1
+          },
+          {
+            "name": "Sylvan Library",
+            "qty": 1
+          },
+          {
+            "name": "Village Rites",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Removal & Interaction",
+        "cards": [
+          {
+            "name": "Anguished Unmaking",
+            "qty": 1
+          },
+          {
+            "name": "Assassin's Trophy",
+            "qty": 1
+          },
+          {
+            "name": "Aura Shards",
+            "qty": 1
+          },
+          {
+            "name": "Beast Within",
+            "qty": 1
+          },
+          {
+            "name": "Heroic Intervention",
+            "qty": 1
+          },
+          {
+            "name": "Path to Exile",
+            "qty": 1
+          },
+          {
+            "name": "Swords to Plowshares",
+            "qty": 1
+          },
+          {
+            "name": "Teferi's Protection",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Board Wipes",
+        "cards": [
+          {
+            "name": "Austere Command",
+            "qty": 1
+          },
+          {
+            "name": "The Meathook Massacre",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Token Engines",
+        "cards": [
+          {
+            "name": "Adeline, Resplendent Cathar",
+            "qty": 1
+          },
+          {
+            "name": "Bitterbloom Bearer",
+            "qty": 1
+          },
+          {
+            "name": "Bitterblossom",
+            "qty": 1
+          },
+          {
+            "name": "Court of Grace",
+            "qty": 1
+          },
+          {
+            "name": "Lingering Souls",
+            "qty": 1
+          },
+          {
+            "name": "Mycoloth",
+            "qty": 1
+          },
+          {
+            "name": "Ocelot Pride",
+            "qty": 1
+          },
+          {
+            "name": "Rosie Cotton of South Lane",
+            "qty": 1
+          },
+          {
+            "name": "Scute Swarm",
+            "qty": 1
+          },
+          {
+            "name": "Second Harvest",
+            "qty": 1
+          },
+          {
+            "name": "Slimefoot, the Stowaway",
+            "qty": 1
+          },
+          {
+            "name": "Sprout Swarm",
+            "qty": 1
+          },
+          {
+            "name": "Tendershoot Dryad",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Counter Engines",
+        "cards": [
+          {
+            "name": "Cathars' Crusade",
+            "qty": 1
+          },
+          {
+            "name": "Hardened Scales",
+            "qty": 1
+          },
+          {
+            "name": "Kami of Whispered Hopes",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Token Doublers",
+        "cards": [
+          {
+            "name": "Anointed Procession",
+            "qty": 1
+          },
+          {
+            "name": "Chatterfang, Squirrel General",
+            "qty": 1
+          },
+          {
+            "name": "Doubling Season",
+            "qty": 1
+          },
+          {
+            "name": "Elspeth, Storm Slayer",
+            "qty": 1
+          },
+          {
+            "name": "Mondrak, Glory Dominus",
+            "qty": 1
+          },
+          {
+            "name": "Parallel Lives",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Sacrifice Outlets",
+        "cards": [
+          {
+            "name": "Ashnod's Altar",
+            "qty": 1
+          },
+          {
+            "name": "Phyrexian Altar",
+            "qty": 1
+          },
+          {
+            "name": "Priest of Forgotten Gods",
+            "qty": 1
+          },
+          {
+            "name": "Viscera Seer",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Drain Payoffs",
+        "cards": [
+          {
+            "name": "Bastion of Remembrance",
+            "qty": 1
+          },
+          {
+            "name": "Blood Artist",
+            "qty": 1
+          },
+          {
+            "name": "Cruel Celebrant",
+            "qty": 1
+          },
+          {
+            "name": "Dictate of Erebos",
+            "qty": 1
+          },
+          {
+            "name": "Elas il-Kor, Sadistic Pilgrim",
+            "qty": 1
+          },
+          {
+            "name": "Grave Pact",
+            "qty": 1
+          },
+          {
+            "name": "Marionette Apprentice",
+            "qty": 1
+          },
+          {
+            "name": "Mirkwood Bats",
+            "qty": 1
+          },
+          {
+            "name": "Pitiless Plunderer",
+            "qty": 1
+          },
+          {
+            "name": "Zulaport Cutthroat",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

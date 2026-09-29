@@ -10,8 +10,8 @@ description: >-
 # Update the MTG rules
 
 This skill refreshes the chunked Comprehensive Rules from the official source and rebuilds
-all derived files (`rules/sections`, `rules/glossary`, `manifest.json`, `rules.json`,
-`meta.json`) plus a `CHANGELOG.md` diff against the previous version.
+all derived files (`rules/sections`, `rules/glossary`, `rules/INDEX.md`, `manifest.json`,
+`rules.json`, `meta.json`) plus a `CHANGELOG.md` diff against the previous version.
 
 ## Steps
 
@@ -41,6 +41,10 @@ all derived files (`rules/sections`, `rules/glossary`, `manifest.json`, `rules.j
    (added / removed / changed rule counts, and notable changed rule numbers). If the build
    reported "No rule text changes," tell the user they were already up to date.
 
+   Then say what the update means for the deck-brain ledger: its rulings were verified against
+   the previous version, and `bun run lookup` now marks each one it prints ✓ (none of its cited
+   rules changed) or ⚠ (re-check them before relying on it).
+
 5. **Offer to commit** the regenerated files (the changelog plus everything under `rules/`)
    so the update is captured in git, e.g.:
    ```bash
@@ -52,5 +56,6 @@ all derived files (`rules/sections`, `rules/glossary`, `manifest.json`, `rules.j
 
 - The build is a **clean rebuild** — chunking is deterministic, so re-running on the same
   input always yields identical files. The only stateful part is the diff, which compares
-  the new `rules.json` against the previous one.
+  the new `rules.json` against the previous one; a rebuild of the same source keeps the
+  existing `CHANGELOG.md`.
 - Everything is zero-dependency Bun + TypeScript; there is no install step.

@@ -264,9 +264,9 @@
           "cards": [
             { "name": "Clavileño, First of the Blessed", "qty": 1 },
             { "name": "Crossway Troublemakers", "qty": 1 },
-            { "name": "Preacher of the Schism", "qty": 1 },
             { "name": "Sanctum Seeker", "qty": 1 },
-            { "name": "Warleader's Call", "qty": 1 }
+            { "name": "Warleader's Call", "qty": 1 },
+            { "name": "Windcrag Siege", "qty": 1 }
           ]
         },
         {
@@ -469,11 +469,12 @@
             { "name": "Blood Seeker", "qty": 1 },
             { "name": "Bloodletter of Aclazotz", "qty": 1 },
             { "name": "Bloodline Keeper", "qty": 1 },
-            { "name": "Carrier Thrall", "qty": 1 },
+            { "name": "Bloodline Recollector", "qty": 1 },
             { "name": "Charismatic Conqueror", "qty": 1 },
             { "name": "Clavileño, First of the Blessed", "qty": 1 },
             { "name": "Cordial Vampire", "qty": 1 },
             { "name": "Creeping Bloodsucker", "qty": 1 },
+            { "name": "Edgar, Ancient Bloodlord", "qty": 1 },
             { "name": "Elenda, the Dusk Rose", "qty": 1 },
             { "name": "Elspeth, Storm Slayer", "qty": 1 },
             { "name": "Emeritus of Woe", "qty": 1 },
@@ -481,7 +482,6 @@
             { "name": "Malakir Bloodwitch", "qty": 1 },
             { "name": "Marauding Blight-Priest", "qty": 1 },
             { "name": "Mirkwood Bats", "qty": 1 },
-            { "name": "Morlun, Devourer of Spiders", "qty": 1 },
             { "name": "Purphoros, God of the Forge", "qty": 1 },
             { "name": "Roaming Throne", "qty": 1 },
             { "name": "Sangromancer", "qty": 1 },

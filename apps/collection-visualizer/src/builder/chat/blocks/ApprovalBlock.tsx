@@ -17,7 +17,7 @@ export function ApprovalBlock(props: ApprovalBlockProps) {
   const decided = item.decision !== null;
 
   return (
-    <div className={`rounded-lg border p-3 ${decided ? "border-dashed opacity-70" : "border-amber-400/50"}`}>
+    <div className={`rounded-lg border p-3 ${decided ? "border-dashed opacity-70" : "border-warn/50"}`}>
       <div className="flex items-center justify-between gap-2">
         <div className="min-w-0 text-[13px]">
           <span className="font-medium">{item.tool}</span> <span className="text-muted-foreground">{item.path}</span>

@@ -17,12 +17,15 @@
     "deckcheck": "bun run scripts/deckcheck.ts",
     "test": "bun test test/",
     "deck:pdf": "bun run scripts/deck-pdf.ts",
+    "deck:proposal": "bun run scripts/deck-proposal.ts",
     "deck:moxfield": "bun run scripts/deck-moxfield.ts",
     "deck:migrate": "bun run scripts/deck-migrate.ts",
     "deck": "bun run scripts/deck.ts",
     "deck:show": "bun run scripts/deck.ts show",
     "deck:edit": "bun run scripts/deck.ts edit",
-    "deck:meta": "bun run scripts/deck.ts meta"
+    "deck:meta": "bun run scripts/deck.ts meta",
+    "lookup": "bun run scripts/ledger.ts lookup",
+    "ledger:index": "bun run scripts/ledger.ts index"
   },
   "engines": {
     "bun": ">=1.3.14"

@@ -44,6 +44,7 @@
 1 Kaervek the Merciless (2X2) 236
 1 Kaya's Ghostform (WAR) 94
 1 Kederekt Parasite (PLST) CON-48
+1 Lich's Relic
 1 Luxury Suite (MSC) 252
 1 Malakir Rebirth (ZNR) 111
 1 Mana Vault
@@ -78,7 +79,6 @@
 1 Tainted Peak (AFC) 266
 1 Talisman of Indulgence (FIC) 366
 1 Temple Bell (C13) 265
-1 Terminate (SCD) 249
 1 Torbran, Thane of Red Fell (ELD) 147
 1 Torment of Hailfire (PLST) HOU-77
 1 Toxic Deluge (MSC) 161

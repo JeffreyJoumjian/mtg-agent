@@ -31,8 +31,8 @@ export function StatRow(props: StatRowProps) {
             {fmt(change.before)}
           </span>
           <span className="mx-1 text-muted-foreground">→</span>
-          <span className="font-medium text-amber-400">{fmt(change.after)}</span>
-          <span className="ml-1 text-[11px] text-amber-400/80">
+          <span className="font-medium text-warn">{fmt(change.after)}</span>
+          <span className="ml-1 text-[11px] text-warn/80">
             ({change.delta > 0 ? "+" : ""}
             {fmt(change.delta)})
           </span>

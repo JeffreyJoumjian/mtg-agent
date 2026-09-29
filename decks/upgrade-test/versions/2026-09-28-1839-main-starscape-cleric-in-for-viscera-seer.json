@@ -1,0 +1,432 @@
+{
+  "takenAt": "2026-09-28T18:39:16.127Z",
+  "listId": "main",
+  "label": "Starscape Cleric in for Viscera Seer",
+  "reason": "before Starscape Cleric in for Viscera Seer",
+  "list": {
+    "label": "Main",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Chatterfang, Squirrel General",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Barren Moor",
+            "qty": 1
+          },
+          {
+            "name": "Blooming Marsh",
+            "qty": 1
+          },
+          {
+            "name": "Bojuka Bog",
+            "qty": 1
+          },
+          {
+            "name": "Cabal Coffers",
+            "qty": 1
+          },
+          {
+            "name": "Castle Locthwain",
+            "qty": 1
+          },
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Darkbore Pathway",
+            "qty": 1
+          },
+          {
+            "name": "Forest",
+            "qty": 6
+          },
+          {
+            "name": "Gaea's Cradle",
+            "qty": 1
+          },
+          {
+            "name": "Grim Backwoods",
+            "qty": 1
+          },
+          {
+            "name": "High Market",
+            "qty": 1
+          },
+          {
+            "name": "Khalni Garden",
+            "qty": 1
+          },
+          {
+            "name": "Llanowar Wastes",
+            "qty": 1
+          },
+          {
+            "name": "Misty Rainforest",
+            "qty": 1
+          },
+          {
+            "name": "Necroblossom Snarl",
+            "qty": 1
+          },
+          {
+            "name": "Nurturing Peatland",
+            "qty": 1
+          },
+          {
+            "name": "Overgrown Tomb",
+            "qty": 1
+          },
+          {
+            "name": "Phyrexian Tower",
+            "qty": 1
+          },
+          {
+            "name": "Swamp",
+            "qty": 5
+          },
+          {
+            "name": "Tainted Wood",
+            "qty": 1
+          },
+          {
+            "name": "Takenuma, Abandoned Mire",
+            "qty": 1
+          },
+          {
+            "name": "Three Tree City",
+            "qty": 1
+          },
+          {
+            "name": "Twilight Mire",
+            "qty": 1
+          },
+          {
+            "name": "Urborg, Tomb of Yawgmoth",
+            "qty": 1
+          },
+          {
+            "name": "Verdant Catacombs",
+            "qty": 1
+          },
+          {
+            "name": "Woodland Cemetery",
+            "qty": 1
+          },
+          {
+            "name": "Yavimaya, Cradle of Growth",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Ramp & Mana",
+        "cards": [
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Circle of Dreams Druid",
+            "qty": 1
+          },
+          {
+            "name": "Concordant Crossroads",
+            "qty": 1
+          },
+          {
+            "name": "Cryptolith Rite",
+            "qty": 1
+          },
+          {
+            "name": "Cultivate",
+            "qty": 1
+          },
+          {
+            "name": "Dryad of the Ilysian Grove",
+            "qty": 1
+          },
+          {
+            "name": "Elvish Mystic",
+            "qty": 1
+          },
+          {
+            "name": "Gardenize",
+            "qty": 1
+          },
+          {
+            "name": "Llanowar Elves",
+            "qty": 1
+          },
+          {
+            "name": "Nature's Lore",
+            "qty": 1
+          },
+          {
+            "name": "Ninja Pizza",
+            "qty": 1
+          },
+          {
+            "name": "Oracle of Mul Daya",
+            "qty": 1
+          },
+          {
+            "name": "Pitiless Plunderer",
+            "qty": 1
+          },
+          {
+            "name": "Sakura-Tribe Elder",
+            "qty": 1
+          },
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Tireless Provisioner",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw",
+        "cards": [
+          {
+            "name": "Black Market Connections",
+            "qty": 1
+          },
+          {
+            "name": "Deadly Dispute",
+            "qty": 1
+          },
+          {
+            "name": "Moldervine Reclamation",
+            "qty": 1
+          },
+          {
+            "name": "Skullclamp",
+            "qty": 1
+          },
+          {
+            "name": "Sylvan Library",
+            "qty": 1
+          },
+          {
+            "name": "Tireless Tracker",
+            "qty": 1
+          },
+          {
+            "name": "Village Rites",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Removal & Interaction",
+        "cards": [
+          {
+            "name": "Assassin's Trophy",
+            "qty": 1
+          },
+          {
+            "name": "Beast Within",
+            "qty": 1
+          },
+          {
+            "name": "Heroic Intervention",
+            "qty": 1
+          },
+          {
+            "name": "Plumb the Forbidden",
+            "qty": 1
+          },
+          {
+            "name": "Tear Asunder",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Board Wipes",
+        "cards": [
+          {
+            "name": "Blasphemous Edict",
+            "qty": 1
+          },
+          {
+            "name": "The Meathook Massacre",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Token Engines",
+        "cards": [
+          {
+            "name": "Academy Manufactor",
+            "qty": 1
+          },
+          {
+            "name": "Avenger of Zendikar",
+            "qty": 1
+          },
+          {
+            "name": "Bilbo, Fellow Conspirator",
+            "qty": 1
+          },
+          {
+            "name": "Bitterblossom",
+            "qty": 1
+          },
+          {
+            "name": "Camellia, the Seedmiser",
+            "qty": 1
+          },
+          {
+            "name": "Hazel of the Rootbloom",
+            "qty": 1
+          },
+          {
+            "name": "Peregrin Took",
+            "qty": 1
+          },
+          {
+            "name": "Scute Swarm",
+            "qty": 1
+          },
+          {
+            "name": "Second Harvest",
+            "qty": 1
+          },
+          {
+            "name": "The Unbeatable Squirrel Girl",
+            "qty": 1
+          },
+          {
+            "name": "Tippy-Toe, Terrific Partner",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Token Doublers",
+        "cards": [
+          {
+            "name": "Doubling Season",
+            "qty": 1
+          },
+          {
+            "name": "Parallel Lives",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Sacrifice Outlets",
+        "cards": [
+          {
+            "name": "Ashnod's Altar",
+            "qty": 1
+          },
+          {
+            "name": "Carrion Feeder",
+            "qty": 1
+          },
+          {
+            "name": "Ravenous Squirrel",
+            "qty": 1
+          },
+          {
+            "name": "Viscera Seer",
+            "qty": 1
+          },
+          {
+            "name": "Woe Strider",
+            "qty": 1
+          },
+          {
+            "name": "Yawgmoth, Thran Physician",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Drain Payoffs",
+        "cards": [
+          {
+            "name": "Bastion of Remembrance",
+            "qty": 1
+          },
+          {
+            "name": "Blood Artist",
+            "qty": 1
+          },
+          {
+            "name": "Cauldron of Essence",
+            "qty": 1
+          },
+          {
+            "name": "Dina, Soul Steeper",
+            "qty": 1
+          },
+          {
+            "name": "Marionette Apprentice",
+            "qty": 1
+          },
+          {
+            "name": "Mirkwood Bats",
+            "qty": 1
+          },
+          {
+            "name": "Nadier's Nightblade",
+            "qty": 1
+          },
+          {
+            "name": "Prosperous Innkeeper",
+            "qty": 1
+          },
+          {
+            "name": "Valley Rotcaller",
+            "qty": 1
+          },
+          {
+            "name": "Vito, Thorn of the Dusk Rose",
+            "qty": 1
+          },
+          {
+            "name": "Zulaport Cutthroat",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Finishers & Equipment",
+        "cards": [
+          {
+            "name": "Bloodletter of Aclazotz",
+            "qty": 1
+          },
+          {
+            "name": "Craterhoof Behemoth",
+            "qty": 1
+          },
+          {
+            "name": "Gruesome Fate",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

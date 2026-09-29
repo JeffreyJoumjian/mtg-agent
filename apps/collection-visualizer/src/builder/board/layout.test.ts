@@ -69,3 +69,23 @@ test("bucketByMv groups nonland cards by mana value with a 7+ bucket and lands a
   expect(out.find((b) => b.mv === "7+")?.cards.map((c) => c.name)).toEqual(["Big"]);
   expect(out.find((b) => b.mv === "Lands")?.cards.map((c) => c.name)).toEqual(["Forest"]);
 });
+
+test("pinCommanders lifts every commander section out of the scrolling columns, keeping order", () => {
+  const { pinCommanders } = require("./layout") as typeof import("./layout");
+  const sections = layoutSections(list(), null, "current");
+  const { pinned, scrolling } = pinCommanders(sections);
+
+  expect(pinned.map((s) => s.name)).toEqual(["Commander"]);
+  expect(scrolling.map((s) => s.name)).toEqual(["Lands", "Ramp"]);
+});
+
+test("pinCommanders pins nothing for a pool without a commander section", () => {
+  const { pinCommanders } = require("./layout") as typeof import("./layout");
+  const sections = layoutSections(
+    { label: "Pool", kind: "pool", sections: [{ name: "Ideas", cards: [] }] },
+    null,
+    "current",
+  );
+
+  expect(pinCommanders(sections)).toEqual({ pinned: [], scrolling: sections });
+});

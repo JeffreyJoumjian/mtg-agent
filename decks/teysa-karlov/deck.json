@@ -50,7 +50,6 @@
           "cards": [
             { "name": "Arcane Signet", "qty": 1 },
             { "name": "Black Market Connections", "qty": 1 },
-            { "name": "Bontu's Monument", "qty": 1 },
             { "name": "Orzhov Signet", "qty": 1 },
             { "name": "Pitiless Plunderer", "qty": 1 },
             { "name": "Smothering Tithe", "qty": 1 },
@@ -87,25 +86,27 @@
         {
           "name": "Board Wipes",
           "cards": [
-            { "name": "Kaya's Wrath", "qty": 1 },
             { "name": "The Meathook Massacre", "qty": 1 }
           ]
         },
         {
           "name": "Token Engines",
           "cards": [
+            { "name": "Adeline, Resplendent Cathar", "qty": 1 },
+            { "name": "Bitterbloom Bearer", "qty": 1 },
             { "name": "Bitterblossom", "qty": 1 },
+            { "name": "Court of Grace", "qty": 1 },
             { "name": "Doomed Traveler", "qty": 1 },
             { "name": "Elenda, the Dusk Rose", "qty": 1 },
             { "name": "Hallowed Spiritkeeper", "qty": 1 },
-            { "name": "Hidden Stockpile", "qty": 1 },
-            { "name": "Hunted Witness", "qty": 1 },
             { "name": "Imperious Oligarch", "qty": 1 },
+            { "name": "Lingering Souls", "qty": 1 },
             { "name": "Ministrant of Obligation", "qty": 1 },
+            { "name": "Ocelot Pride", "qty": 1 },
             { "name": "Oketra's Monument", "qty": 1 },
-            { "name": "Open the Graves", "qty": 1 },
             { "name": "Ophiomancer", "qty": 1 },
             { "name": "Orzhov Enforcer", "qty": 1 },
+            { "name": "Sengir Autocrat", "qty": 1 },
             { "name": "Teysa, Orzhov Scion", "qty": 1 },
             { "name": "Thalisse, Reverent Medium", "qty": 1 }
           ]
@@ -121,7 +122,6 @@
           "name": "Sacrifice Outlets",
           "cards": [
             { "name": "Ashnod's Altar", "qty": 1 },
-            { "name": "Carrion Feeder", "qty": 1 },
             { "name": "Phyrexian Altar", "qty": 1 },
             { "name": "Priest of Forgotten Gods", "qty": 1 },
             { "name": "Viscera Seer", "qty": 1 },
@@ -137,7 +137,6 @@
             { "name": "Corpse Knight", "qty": 1 },
             { "name": "Cruel Celebrant", "qty": 1 },
             { "name": "Elas il-Kor, Sadistic Pilgrim", "qty": 1 },
-            { "name": "Falkenrath Noble", "qty": 1 },
             { "name": "Marauding Blight-Priest", "qty": 1 },
             { "name": "Marionette Apprentice", "qty": 1 },
             { "name": "Mirkwood Bats", "qty": 1 },
@@ -148,6 +147,7 @@
           "name": "Recursion & Finishers",
           "cards": [
             { "name": "Elspeth, Storm Slayer", "qty": 1 },
+            { "name": "Luminous Broodmoth", "qty": 1 },
             { "name": "Reassembling Skeleton", "qty": 1 },
             { "name": "Sorin, Lord of Innistrad", "qty": 1 },
             { "name": "Vito, Thorn of the Dusk Rose", "qty": 1 }

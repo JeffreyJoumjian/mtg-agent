@@ -1,12 +1,23 @@
+import type { Printing } from "@mtg/deck-model.ts";
 /** Query keys and hooks over the builder's server functions. The query cache is the single source
  *  of truth for fetched data; components never copy it into other state. */
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import type { ChangeSet } from "@mtg/change-set.ts";
 import { previewKeyOf } from "./staged";
-import { addListFn, createDeckFn, getDeck, getDeckIndex, renameCardFn, setCardMetaFn } from "../api/decks";
+import {
+  addListFn,
+  archiveDeckFn,
+  createDeckFn,
+  getArchivedDecks,
+  getDeck,
+  getDeckIndex,
+  renameCardFn,
+  restoreDeckFn,
+  setCardMetaFn,
+} from "../api/decks";
 import { applyChanges, previewChanges } from "../api/changes";
 import { getHistory, getVersion } from "../api/history";
-import { searchCardsFn } from "../api/search";
+import { printingsFn, searchCardsFn } from "../api/search";
 import {
   getChatStatus,
   interruptChat,
@@ -19,6 +30,8 @@ import {
 
 export const deckKeys = {
   index: ["decks"] as const,
+  /** Under the index key, so invalidating the index refreshes both. */
+  archived: ["decks", "archived"] as const,
   deck: (slug: string) => ["deck", slug] as const,
   history: (slug: string) => ["deck", slug, "history"] as const,
   version: (slug: string, file: string) => ["deck", slug, "version", file] as const,
@@ -39,11 +52,28 @@ export function useHistory(slug: string) {
   return useQuery({ queryKey: deckKeys.history(slug), queryFn: () => getHistory({ data: { slug } }) });
 }
 
-export function useVersion(slug: string, file: string | null, listId?: string) {
+/** Which stop of the history to load: its snapshot (null for the live list), the list it belongs
+ *  to, and the snapshot before its change when it has one. */
+export interface VersionStop {
+  listId: string | null;
+  file: string | null;
+  changeFile: string | null;
+}
+
+export function useVersion(slug: string, stop: VersionStop | null) {
+  const key = stop ? `${stop.listId ?? ""}|${stop.file ?? ""}|${stop.changeFile ?? ""}` : "";
   return useQuery({
-    queryKey: [...deckKeys.version(slug, file ?? ""), listId ?? ""],
-    queryFn: () => getVersion({ data: { slug, file: file ?? "", ...(listId ? { listId } : {}) } }),
-    enabled: file !== null,
+    queryKey: deckKeys.version(slug, key),
+    queryFn: () =>
+      getVersion({
+        data: {
+          slug,
+          file: stop?.file ?? null,
+          changeFile: stop?.changeFile ?? null,
+          ...(stop?.listId ? { listId: stop.listId } : {}),
+        },
+      }),
+    enabled: stop !== null,
   });
 }
 
@@ -94,8 +124,12 @@ export function useApplyChanges(slug: string) {
 export function useSetCardMeta(slug: string) {
   const invalidate = useInvalidateDeck(slug);
   return useMutation({
-    mutationFn: (updates: { name: string; meta: { status?: string; tags?: string[]; note?: string } }[]) =>
-      setCardMetaFn({ data: { slug, updates } }),
+    mutationFn: (
+      updates: {
+        name: string;
+        meta: { status?: string; tags?: string[]; note?: string; printing?: Printing | null };
+      }[],
+    ) => setCardMetaFn({ data: { slug, updates } }),
     onSuccess: invalidate,
   });
 }
@@ -113,6 +147,29 @@ export function useAddList(slug: string) {
   return useMutation({
     mutationFn: (args: { label: string; kind: "deck" | "pool" }) => addListFn({ data: { slug, ...args } }),
     onSuccess: invalidate,
+  });
+}
+
+export function useArchivedDecks() {
+  return useQuery({ queryKey: deckKeys.archived, queryFn: () => getArchivedDecks() });
+}
+
+export function useArchiveDeck() {
+  const client = useQueryClient();
+  return useMutation({
+    mutationFn: (slug: string) => archiveDeckFn({ data: { slug } }),
+    onSuccess: (_result, slug) => {
+      client.removeQueries({ queryKey: deckKeys.deck(slug) });
+      void client.invalidateQueries({ queryKey: deckKeys.index });
+    },
+  });
+}
+
+export function useRestoreDeck() {
+  const client = useQueryClient();
+  return useMutation({
+    mutationFn: (slug: string) => restoreDeckFn({ data: { slug } }),
+    onSuccess: () => void client.invalidateQueries({ queryKey: deckKeys.index }),
   });
 }
 
@@ -142,4 +199,15 @@ export function useChatActions(slug: string) {
       refreshStatus();
     },
   };
+}
+
+/** Every printing of a card, for the popover's printing picker. Printings change rarely, so a
+ *  day of staleness is fine. */
+export function usePrintings(name: string, enabled = true) {
+  return useQuery({
+    queryKey: ["printings", name],
+    queryFn: () => printingsFn({ data: { name } }),
+    enabled: enabled && name.trim().length > 0,
+    staleTime: 24 * 3_600_000,
+  });
 }

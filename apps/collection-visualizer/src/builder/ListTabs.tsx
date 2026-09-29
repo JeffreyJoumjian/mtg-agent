@@ -75,7 +75,7 @@ export function ListTabs(props: ListTabsProps) {
                 <SelectItem value="deck">Deck — a 100-card variant</SelectItem>
               </SelectContent>
             </Select>
-            {addList.error && <p className="text-[12px] text-rose-300">{String(addList.error)}</p>}
+            {addList.error && <p className="text-[12px] text-bad">{String(addList.error)}</p>}
             <div className="flex justify-end">
               <Button type="submit" size="sm" disabled={!label.trim() || addList.isPending}>
                 Add list

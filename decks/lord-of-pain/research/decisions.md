@@ -507,3 +507,20 @@ not the pilot's copy: Dark Ritual, Grim Monolith, Mana Vault, Mox Diamond (B4 ad
 Monolith, Imp's Mischief, Leechridden Swamp (B3-only); Marsh Flats, Polluted Delta, Verdant
 Catacombs, Wooded Foothills (fetches, both lists). Mind Stone, Thought Vessel and Shadowspear are
 already covered by the global reserve.
+
+---
+
+## 2026-09-28 — Reality Fracture (FRA/FRC) set review: Lich's Relic in both lists
+
+Full review: `research/fra-set-review-2026-09-28.md` (129-card pool).
+
+- **Applied to `main` (B4) and `b3`: Lich's Relic in, Terminate out** (pilot approved). For {B}+{2}
+  it destroys up to one creature or planeswalker per opponent. Terminate was the lowest-ranked
+  removal and hits creatures only, so no permanent-type coverage is lost. The card is in both lists,
+  so the B4 → B3 derivation is unchanged. Snapshots: `versions/2026-09-28-1602-{main,b3}-fra-lich-s-relic-in-terminate-out.json`.
+- **Declined: Tomik, Izzet Sparkmage for Vial Smasher the Fierce.** The pilot keeps Vial Smasher. On
+  Tomik: *"it's only a +1 to the damage so not sure if worth it, especially since the opponent
+  chooses which one to apply first"* (CR 616.1). Whether any other slot is worth it is worked in the
+  review file's follow-up section.
+
+Validation: both lists clean, legal and on-identity, 100 cards each. PDF regenerated from `main`.

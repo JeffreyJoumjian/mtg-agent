@@ -1,8 +1,11 @@
-import { Library, Layers, Swords } from "lucide-react";
+import { Library, Layers, Moon, Sun, Swords } from "lucide-react";
+import { useAtom } from "jotai";
+import { settingsAtom } from "~/lib/state/store";
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarHeader,
@@ -21,6 +24,8 @@ const NAV = [
 
 export function AppSidebar() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const [settings, setSettings] = useAtom(settingsAtom);
+  const dark = settings.theme === "dark";
 
   return (
     <Sidebar collapsible="icon">
@@ -55,6 +60,20 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter className="border-t">
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+              tooltip={dark ? "Light mode" : "Dark mode"}
+              onClick={() => setSettings({ ...settings, theme: dark ? "light" : "dark" })}
+            >
+              {dark ? <Sun /> : <Moon />}
+              <span>{dark ? "Light mode" : "Dark mode"}</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
     </Sidebar>
   );
 }

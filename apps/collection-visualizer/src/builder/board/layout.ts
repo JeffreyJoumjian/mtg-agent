@@ -1,8 +1,7 @@
 /** Pure layout for the board: which cards sit in which column, and in what staged state. */
-import { applyChangeSet } from "@mtg/change-set.ts";
+import { applyChangeSet, type ChangeEntry } from "@mtg/change-set.ts";
 import { isLandCard, type CardInfo } from "../model/cards";
-import type { DeckList, ListEntry } from "@mtg/deck-model.ts";
-import type { Staged } from "../state/staged";
+import { isCommanderSection, type DeckList, type ListEntry } from "@mtg/deck-model.ts";
 
 export type CardState = "current" | "added" | "removed" | "moved" | "changed";
 
@@ -20,12 +19,25 @@ export interface LaidOutSection {
 
 const key = (name: string): string => name.trim().toLowerCase();
 
+/** The commander section(s) stay in view while the rest of the board scrolls: split them out,
+ *  keeping the list's own order on both sides. */
+export function pinCommanders(sections: LaidOutSection[]): { pinned: LaidOutSection[]; scrolling: LaidOutSection[] } {
+  return {
+    pinned: sections.filter((s) => isCommanderSection(s.name)),
+    scrolling: sections.filter((s) => !isCommanderSection(s.name)),
+  };
+}
+
 /**
  * `current`: the list as on disk. `after`: the staged set applied — added cards in their new
  * section, removed cards still in their old spot but marked, moved cards in their destination,
  * quantity changes reflected. With nothing staged the two modes are identical.
  */
-export function layoutSections(list: DeckList, staged: Staged | null, mode: "current" | "after"): LaidOutSection[] {
+export function layoutSections(
+  list: DeckList,
+  staged: { entries: ChangeEntry[] } | null,
+  mode: "current" | "after",
+): LaidOutSection[] {
   const asIs = list.sections.map((s) => ({
     name: s.name,
     cards: s.cards.map((c) => ({ ...c, state: "current" as const })),

@@ -1,7 +1,7 @@
 // Server function for the add-a-card box: Scryfall search through the root client.
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { resolveCards, searchCards } from "../server/cards";
+import { printingsFor, resolveCards, searchCards } from "../server/cards";
 
 /** Resolve a few names for chat chips and galleries — cards that may not be in the deck. */
 export const lookupCardsFn = createServerFn({ method: "GET" })
@@ -19,3 +19,8 @@ export const searchCardsFn = createServerFn({ method: "GET" })
       return { cards: [], error: /no cards|404/i.test(message) ? null : message };
     }
   });
+
+/** Every printing of a card, oldest first, for the printing picker. */
+export const printingsFn = createServerFn({ method: "GET" })
+  .validator((data: unknown) => z.object({ name: z.string().trim().min(1) }).parse(data))
+  .handler(async ({ data }) => printingsFor(data.name));

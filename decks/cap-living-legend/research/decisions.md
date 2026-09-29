@@ -1326,3 +1326,30 @@ so ten Petitioners out wins at 12 cards left. With the Oracle in hand, stop ther
 upkeep self-mill trap; with it still in the library, mill to zero so it is guaranteed reachable.
 
 Validated: 100 cards · 40 mana sources · 3 Game Changers · no legality or identity flags · sections match.
+
+---
+
+## 2026-09-28 — Reality Fracture (FRA/FRC) set review: four swaps applied
+
+Full review: `research/fra-set-review-2026-09-28.md` (148-card pool × 5 lists). The pilot approved
+these (snapshots under `versions/2026-09-28-1602-*`):
+
+- **`petitioners`: Cruel Calculations in, one Persistent Petitioners out (27 → 26).** It draws X, where
+  X is the number of cards milled from the target player's library this turn. With Jace or Lab Man
+  out, drawing from your own emptied library wins. The list had one draw card.
+- **`petitioners`: Generous Revival in, Return to the Ranks out.** A third graveyard-castable
+  recursion piece (flashback) beside Sevinne's Reclamation and Dawn. It returns Thassa's Oracle or
+  Lab Man straight to the battlefield.
+- **`engine`: The Theorist, Jace Beleren in, Fallowsage out.** A draw engine that survives the
+  creature wipes that ended the pilot's games. Each draw on an opponent's draw step is also a
+  Psychosis Crawler ping.
+- **`counters`: Yoshimaru, Beloved Companion in, Bard the Bowman out.** +1 counter on every
+  placement. **Combo flag:** Heliod, Sun-Crowned + Walking Ballista now works from X=1, because
+  Ballista enters with X+1 (CR 614.1c / 122.6). That is a chosen-N loop under the pilot's policy.
+
+**Declined: Grand Crescendo for Akroma's Will in `engine`.** Pilot: *"akroma is giving us protection
+which grand crescendo isn't."* The review had called the flying/double-strike mode dead in a
+non-combat list, but Akroma's other mode (lifelink, indestructible and protection from each colour) is
+what the pilot values.
+
+Validation: all three changed lists clean, legal and on-identity, 100 cards each.

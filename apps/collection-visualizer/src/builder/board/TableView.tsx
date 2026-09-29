@@ -85,7 +85,7 @@ export function TableView(props: TableViewProps) {
                       {pill.text}
                     </span>
                   )}
-                  {!r.card && <span className="ml-2 text-[11px] text-amber-400">unresolved</span>}
+                  {!r.card && <span className="ml-2 text-[11px] text-warn">unresolved</span>}
                 </td>
                 <td className="px-2 py-1">
                   <ManaCost cost={manaToShow(r.card?.manaCost ?? "", r.card?.producedMana)} size="size-3" />

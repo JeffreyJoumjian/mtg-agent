@@ -871,3 +871,60 @@ Plunderer <- Anowon (removes the self-hit; creature count unchanged). Generous G
 --- 2026-09-15: Pitiless Plunderer ON HOLD (pilot: "for now let's just try the first swap" = Creeping Bloodsucker only)
 No change applied. Dictate of Erebos and Anowon both stay. The interaction ranking and the Plunderer loop
 flag above remain on record for a later re-test after games with Creeping Bloodsucker.
+
+---
+
+## 2026-09-28 — Reality Fracture (FRA/FRC) set review: pilot's calls
+
+Full review: `research/fra-set-review-2026-09-28.md` (206-card pool × 3 lists).
+
+**Standing direction from the pilot:** *"we can essentially ignore edgar main going forward. aggro
+and drain are our 2 actual decks"*. The live lists are **`combat`** (aggro) and **`sacrifice`**
+(drain). `main` gets no further proposals.
+
+- **Applied to `combat`: Windcrag Siege in, Preacher of the Schism out** (pilot approved). Mardu mode
+  doubles the six attack triggers already in the list: Edgar's counters, Sanctum Seeker, Shared
+  Animosity, Mavren Fein, Conquistador and Clavileño. Snapshot:
+  `versions/2026-09-28-1602-combat-fra-windcrag-siege-in-preacher-of-the-schism-out.json`.
+- **Protected by the pilot:**
+  - **Malakir Bloodwitch**, *"she is a finisher"*. Rejected as the cut for Bloodline Recollector.
+  - **Clavileño, First of the Blessed**. Rejected as the cut for Edgar, Ancient Bloodlord in
+    `sacrifice`.
+  - **Generous Gift**. Rejected as the cut for Lich's Relic: *"generous gift is permanent destruction
+    and we can't get rid of permanent destruction and replace it with only creature destruction."*
+    **Rule for future passes:** a creature-only answer never replaces an any-permanent answer.
+- **Wanted, slot pending:** Bloodline Recollector in both `combat` and `sacrifice` (Emeritus of Woe is
+  the pilot's fallback cut, "but try to find other candidates first"); Edgar, Ancient Bloodlord in
+  `sacrifice` (for the lifegain); Lich's Relic in `sacrifice` against a creature-only cut. Worked in
+  the review file's follow-up section.
+- **Dropped:** Edgar, Ancient Bloodlord for Legion Lieutenant in `main` (main is no longer worked on).
+
+### Applied 2026-09-28 (pilot approved): Bloodline Recollector in `sacrifice`, Carrier Thrall out
+
+Both are MV2 Vampires, so both trigger eminence. Recollector re-prepares at each end step where 3+
+creatures died, and its {B} copy draws three. Thrall's fodder job is covered by eminence tokens and
+five free outlets. Curve unchanged. Snapshot:
+`versions/2026-09-28-1704-sacrifice-fra-bloodline-recollector-in-carrier-thrall-out.json`.
+
+**Pilot's standing rules for `sacrifice`, stated this pass:** *"we need card draw as much as possible
+in the edgar deck"*, so no card-draw cuts. Cordial Vampire is protected (*"really strong"*). Lich's
+Relic is dropped (*"no need to add lich then"*). Edgar, Ancient Bloodlord's cut is still open: the
+pilot suggested Dusk Legion Zealot, but Zealot is itself a card-draw card (ETB: draw a card, lose 1
+life). Put back to the pilot.
+
+### Applied 2026-09-28 (pilot's call): Edgar, Ancient Bloodlord in `sacrifice`, Morlun out
+
+Pilot: *"he's maybe good late game but early game he's a cost sink and dusk legion is still allowing
+us to draw. i would like to swap out morlun and see how it goes."* Dusk Legion Zealot and Cordial
+Vampire are kept.
+
+- **Edgar AB** (WB 2/3 Vampire, triggers eminence): gains 1 life per other creature or planeswalker
+  death. The list's three lifegain converters (Vito, Marauding Blight-Priest, Indulging Patrician)
+  turn that into drain. It is also a {2} sac outlet that grows him and gives menace.
+- **What was given up:** Morlun is scalable. With Incubator + Herald's Horn both out, {B}{B} buys
+  X=3 (a 5/4 lifelinker that deals 3). Without them its early cast is small, which is the pilot's
+  "cost sink". **Re-check after play:** if the list runs out of reach in the late game, Morlun is the
+  first card back.
+
+Curve unchanged (MV 2 for MV 2). Snapshot:
+`versions/2026-09-28-1715-sacrifice-fra-edgar-ancient-bloodlord-in-morlun-out.json`.

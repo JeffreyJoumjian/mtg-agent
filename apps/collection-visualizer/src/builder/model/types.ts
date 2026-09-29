@@ -36,7 +36,11 @@ export const cardMetaPatchSchema = z.object({
   status: cardStatusSchema.optional(),
   tags: z.array(z.string()).optional(),
   note: z.string().optional(),
-  printing: z.object({ set: z.string(), collectorNumber: z.string(), foil: z.boolean().optional() }).optional(),
+  /** `null` clears a pinned printing; the store drops the key. */
+  printing: z
+    .object({ set: z.string().min(1), collectorNumber: z.string().min(1), foil: z.boolean().optional() })
+    .nullable()
+    .optional(),
 });
 
 /** One deck on the index page. */
@@ -50,6 +54,15 @@ export interface DeckIndexEntry {
   bracket: number | null;
   lists: { id: string; label: string; kind: "deck" | "pool"; size: number }[];
   lastChange: { label: string; at: string } | null;
+  /** When the deck came to be: the oldest snapshot or history line, else the folder's birth time.
+   *  Null when nothing is known. */
+  created: string | null;
   /** Set when deck.json could not be parsed; the entry still lists so the user can see it. */
   error?: string;
+}
+
+/** A deck sitting in `decks/_archive/`, out of the index until it is restored. */
+export interface ArchivedDeck {
+  slug: string;
+  name: string;
 }

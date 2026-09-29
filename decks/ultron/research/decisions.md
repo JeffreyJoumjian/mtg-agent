@@ -430,3 +430,39 @@ Hangarback Walker has no entry in the global printings reserve yet (eight unpinn
 sources, sticker $1331.32. `MOXFIELD.txt` regenerated. The PDF regenerated (04:15) but
 `deck:pdf`'s final temp-file cleanup threw on Bun 1.1.15 (`Bun.file().delete` is missing before
 1.3); the repo pins 1.3.14 in `.bumrc` — the temp HTML was removed by hand.
+
+---
+
+## 2026-09-28 — Reality Fracture (FRA/FRC) set review: open
+
+Full review: `research/fra-set-review-2026-09-28.md`. Nothing applied yet.
+- **Memnarch, the Warden.** The pilot likes it but worries it is *"a bit expensive for ultron"*, and
+  is unsure about the Canoptek Spyder cut because of the MV change. They also asked whether Iron Man
+  is the better home.
+- **Hall of Echoes.** The pilot doesn't mind it, but cutting a Wastes weakens the deck's
+  Wastes-doubling card. They asked for a **manabase optimization pass**: cut lands whose abilities
+  rarely get paid for, because the mana is better spent developing the board and paying for
+  Ultron's trigger.
+
+Both are worked in the review file's follow-up section.
+
+### Applied 2026-09-28 (pilot approved): Memnarch in, and the manabase pass
+
+- **Memnarch, the Warden in, Canoptek Spyder out.** Real cost here is about 4–7 mana (cost reducers,
+  Thran Temporal Gateway / Quicksilver Amulet for {4} at instant speed, Kuldotha Forgemaster, Tron
+  and Workshop mana). It draws one card per artifact on every attack and is indestructible. MV 7+ goes
+  13 → 14; MV ≤ 2 and MV ≤ 3 don't change; avg MV 4.47 → 4.55. Its draw is mandatory, so count the
+  library before attacking.
+- **Fomori Vault → Planar Nexus.** It is every nonbasic land type, so it counts as an Urza's Mine,
+  Power-Plant **and** Tower (official ruling 2024-06-07). Any one Tron land plus Nexus makes Tron
+  mana.
+- **Mirrorpool → Hall of Echoes.** Enters untapped and works every turn, with the legend rule off. It
+  can be a second Ultron or a second Memnarch.
+- **Rogue's Passage → a 9th Wastes.** Its {4} activation was rarely paid. Nine Wastes also help
+  Extraplanar Lens, raising the chance of 2+ Wastes by turn 6 from 25% to 30%.
+
+Tapped lands 3 → 2. The pilot's principle for the pass: *"remove lands that we don't get to trigger
+often because we'd rather spend the mana elsewhere and develop the board and pay for ultron's
+trigger."* **Not changed:** Scavenger Grounds (graveyard hate; pod-dependent, pilot's call) and Power
+Depot (enters tapped but counts as an artifact; first cut if tapped lands become a problem).
+Validated: legal, on-identity, 100 cards. PDF regenerated.

@@ -1,0 +1,2516 @@
+[
+ {
+  "oldLine": 14,
+  "oldTitle": "Replacement effects are ordered by the AFFECTED player",
+  "oldDate": "2026-08-06",
+  "id": "repl-001"
+ },
+ {
+  "oldLine": 36,
+  "oldTitle": "Free-casting an X-spell forces X = 0; cost reduction does not",
+  "oldDate": "2026-08-04",
+  "id": "cost-001"
+ },
+ {
+  "oldLine": 53,
+  "oldTitle": "Mana value is not what you paid",
+  "oldDate": "2026-08-06",
+  "id": "cost-003"
+ },
+ {
+  "oldLine": 64,
+  "oldTitle": "Cost reduction only eats the GENERIC portion of a cost",
+  "oldDate": "2026-08-07",
+  "id": "cost-004"
+ },
+ {
+  "oldLine": 78,
+  "oldTitle": "The postcombat main phase happens whether or not you attack",
+  "oldDate": "2026-08-02",
+  "id": "dmg-003"
+ },
+ {
+  "oldLine": 88,
+  "oldTitle": "Mana empties only at end of step/phase, so \"don't lose unspent\" banks across turns",
+  "oldDate": "2026-08-04",
+  "id": "cost-002"
+ },
+ {
+  "oldLine": 100,
+  "oldTitle": "One instance of \"target\" can't hit the same thing twice",
+  "oldDate": "2026-08-02",
+  "id": "trig-004"
+ },
+ {
+  "oldLine": 110,
+  "oldTitle": "Copies inherit X and every other choice",
+  "oldDate": "2026-08-02",
+  "id": "zone-001"
+ },
+ {
+  "oldLine": 119,
+  "oldTitle": "Modal spells with a repeated mode deal separate damage instances",
+  "oldDate": "2026-08-06",
+  "id": "dmg-004"
+ },
+ {
+  "oldLine": 129,
+  "oldTitle": "Dies-triggers look back; \"whenever you gain life\" does not",
+  "oldDate": "2026-07-31",
+  "id": "trig-001"
+ },
+ {
+  "oldLine": 138,
+  "oldTitle": "Anthems apply as a creature enters, before ETB triggers check it",
+  "oldDate": "2026-07-31",
+  "id": "trig-002"
+ },
+ {
+  "oldLine": 149,
+  "oldTitle": "Simultaneous lifelink sources are separate life-gain events",
+  "oldDate": "2026-07-31",
+  "id": "dmg-001"
+ },
+ {
+  "oldLine": 158,
+  "oldTitle": "Toughness 0 ignores indestructible",
+  "oldDate": "2026-07-31",
+  "id": "dmg-002"
+ },
+ {
+  "oldLine": 167,
+  "oldTitle": "Eminence triggers on cast, from the command zone",
+  "oldDate": "2026-07-31",
+  "id": "trig-003"
+ },
+ {
+  "oldLine": 175,
+  "oldTitle": "Casting a \"prepared\" copy is a normal cast, and the copy is only the back face",
+  "oldDate": "2026-08-06",
+  "id": "zone-002"
+ },
+ {
+  "oldLine": 194,
+  "oldTitle": "Bloodthirst keys on damage; drain decks never turn it on",
+  "oldDate": "2026-08-06",
+  "id": "dmg-005"
+ },
+ {
+  "oldLine": 206,
+  "oldTitle": "A type-restricted edict is skipped entirely, never substituted",
+  "oldDate": "2026-08-06",
+  "id": "dmg-006"
+ },
+ {
+  "oldLine": 219,
+  "oldTitle": "End-step graveyard recursion is an intervening-if — the step doesn't back up",
+  "oldDate": "2026-08-06",
+  "id": "trig-005"
+ },
+ {
+  "oldLine": 230,
+  "oldTitle": "Protection from a colour UNATTACHES your own Equipment of that colour",
+  "oldDate": "2026-08-07",
+  "id": "equip-001"
+ },
+ {
+  "oldLine": 247,
+  "oldTitle": "Living weapon and For Mirrodin! walk the Equipment off onto their own token",
+  "oldDate": "2026-08-07",
+  "id": "equip-002"
+ },
+ {
+  "oldLine": 274,
+  "oldTitle": "A MODAL DFC commander can be recast as either face from the command zone",
+  "oldDate": "2026-08-07",
+  "id": "zone-003"
+ },
+ {
+  "oldLine": 292,
+  "oldTitle": "Equipment survives its creature leaving — it unattaches and stays",
+  "oldDate": "2026-08-07",
+  "id": "equip-003"
+ },
+ {
+  "oldLine": 306,
+  "oldTitle": "\"Attach\" is not \"target\", so shroud doesn't stop an attach effect",
+  "oldDate": "2026-08-07",
+  "id": "equip-004"
+ },
+ {
+  "oldLine": 319,
+  "oldTitle": "Trample assignment ignores damage-modifying effects, so tramplers beat chump blocks",
+  "oldDate": "2026-08-07",
+  "id": "dmg-007"
+ },
+ {
+  "oldLine": 336,
+  "oldTitle": "Doubling a commander's trigger: match the CREATURE TYPE, not the trigger event",
+  "oldDate": "2026-08-07",
+  "id": "trig-006"
+ },
+ {
+  "oldLine": 354,
+  "oldTitle": "Trigger-doublers ADD one instance each; they never compound",
+  "oldDate": "2026-08-09",
+  "id": "trig-007"
+ },
+ {
+  "oldLine": 370,
+  "oldTitle": "An Adventure half is its own cast, with only its own characteristics",
+  "oldDate": "2026-08-09",
+  "id": "zone-002"
+ },
+ {
+  "oldLine": 385,
+  "oldTitle": "Cost reducers cut the commander tax, so they compound on a recast commander",
+  "oldDate": "2026-08-18",
+  "id": "cost-005"
+ },
+ {
+  "oldLine": 401,
+  "oldTitle": "A modal DFC's mana value on the battlefield is the face that's up",
+  "oldDate": "2026-08-18",
+  "id": "zone-004"
+ },
+ {
+  "oldLine": 419,
+  "oldTitle": "The current CR lets a modal DFC transform — the 2021 MDFC rulings boilerplate is stale",
+  "oldDate": "2026-08-18",
+  "id": "zone-005"
+ },
+ {
+  "oldLine": 436,
+  "oldTitle": "Read the PRINTED CARD to tell a modal DFC from a transforming one",
+  "oldDate": "2026-08-18",
+  "id": "zone-006"
+ },
+ {
+  "oldLine": 460,
+  "oldTitle": "Commander tax is face-agnostic; the face choice is remade every cast",
+  "oldDate": "2026-08-18",
+  "id": "cost-006"
+ },
+ {
+  "oldLine": 478,
+  "oldTitle": "Colour identity reads every half of a card; protection reads only the battlefield face",
+  "oldDate": "2026-08-19",
+  "id": "zone-007"
+ },
+ {
+  "oldLine": 497,
+  "oldTitle": "\"That player\" in a per-player trigger points at each affected player, not the turn's owner",
+  "oldDate": "2026-08-19",
+  "id": "trig-008"
+ },
+ {
+  "oldLine": 522,
+  "oldTitle": "Transforming is NOT \"a creature enters\" — but entering transformed is",
+  "oldDate": "2026-08-19",
+  "id": "trig-009"
+ },
+ {
+  "oldLine": 547,
+  "oldTitle": "Summoning sickness never blocks being tapped by an effect",
+  "oldDate": "2026-08-19",
+  "id": "tap-001"
+ },
+ {
+  "oldLine": 570,
+  "oldTitle": "Deathtouch on a SPELL turns any damage sweep into a board wipe",
+  "oldDate": "2026-08-19",
+  "id": "dmg-008"
+ },
+ {
+  "oldLine": 594,
+  "oldTitle": "Trigger-doublers count at TRIGGER time — deploying one mid-resolution doubles nothing",
+  "oldDate": "2026-08-19",
+  "id": "trig-010"
+ },
+ {
+  "oldLine": 615,
+  "oldTitle": "\"Exiled with\" collections are cumulative — every trigger recopies the WHOLE pile, once each",
+  "oldDate": "2026-08-19",
+  "id": "trig-011"
+ },
+ {
+  "oldLine": 638,
+  "oldTitle": "A targeted trigger that adds mana is NOT a mana ability — the mana fizzles with the target",
+  "oldDate": "2026-08-19",
+  "id": "cost-007"
+ },
+ {
+  "oldLine": 660,
+  "oldTitle": "Artifact tokens are legal bounce-fodder for Master Transmuter-style costs",
+  "oldDate": "2026-08-20",
+  "id": "cost-008"
+ },
+ {
+  "oldLine": 682,
+  "oldTitle": "\"Without paying its mana cost\" never waives ADDITIONAL costs",
+  "oldDate": "2026-08-20",
+  "id": "cost-009"
+ },
+ {
+  "oldLine": 699,
+  "oldTitle": "\"Dies\" means battlefield → graveyard only; exile, bounce and tuck are not deaths",
+  "oldDate": "2026-08-21",
+  "id": "trig-012"
+ },
+ {
+  "oldLine": 718,
+  "oldTitle": "Non-tap activated abilities repeat freely while holding priority; sacrifice costs are paid at once",
+  "oldDate": "2026-08-21",
+  "id": "trig-013"
+ },
+ {
+  "oldLine": 741,
+  "oldTitle": "\"Another target player\" in a trigger means other than the player named by the trigger",
+  "oldDate": "2026-08-23",
+  "id": "trig-015"
+ },
+ {
+  "oldLine": 756,
+  "oldTitle": "\"First spell each turn\" is per player per turn of the game, and it reads game history",
+  "oldDate": "2026-08-23",
+  "id": "trig-016"
+ },
+ {
+  "oldLine": 769,
+  "oldTitle": "An alternative cost (incl. free casts) leaves mana value unchanged",
+  "oldDate": "2026-08-23",
+  "id": "cost-003"
+ },
+ {
+  "oldLine": 783,
+  "oldTitle": "The draw-step draw happens BEFORE \"beginning of draw step\" triggers",
+  "oldDate": "2026-08-23",
+  "id": "trig-017"
+ },
+ {
+  "oldLine": 798,
+  "oldTitle": "A villainous choice CAN be answered with the impossible option",
+  "oldDate": "2026-08-24",
+  "id": "trig-018"
+ },
+ {
+  "oldLine": 818,
+  "oldTitle": "Sacrifice IS a death — \"died this turn\" is self-enabling, not a gate",
+  "oldDate": "2026-08-25",
+  "id": "trig-012"
+ },
+ {
+  "oldLine": 833,
+  "oldTitle": "Roaming Throne does NOT beat \"This ability triggers only once each turn\"",
+  "oldDate": "2026-08-25",
+  "id": "trig-020"
+ },
+ {
+  "oldLine": 851,
+  "oldTitle": "Multiple lifelink sources = separate life-gain events (CR 702.15e)",
+  "oldDate": "2026-08-25",
+  "id": "dmg-001"
+ },
+ {
+  "oldLine": 864,
+  "oldTitle": "Welcoming Vampire's power check includes anthems and entering counters",
+  "oldDate": "2026-08-25",
+  "id": "trig-002"
+ },
+ {
+  "oldLine": 878,
+  "oldTitle": "Battlefield-recursion bypasses cast-triggers; hand-recursion preserves them",
+  "oldDate": "2026-08-25",
+  "id": "trig-003"
+ },
+ {
+  "oldLine": 899,
+  "oldTitle": "A tapped permanent is a legal target for \"tap target …\" — the rider still happens",
+  "oldDate": "2026-09-02",
+  "id": "tap-003"
+ },
+ {
+  "oldLine": 926,
+  "oldTitle": "Goad and forced attacks do NOT feed \"whenever you tap\" payoffs",
+  "oldDate": "2026-09-02",
+  "id": "tap-004"
+ },
+ {
+  "oldLine": 943,
+  "oldTitle": "Commander damage is COMBAT damage only — a power-doubler feeds the sweeper, not the 21",
+  "oldDate": "2026-09-02",
+  "id": "dmg-010"
+ },
+ {
+  "oldLine": 970,
+  "oldTitle": "A replacement-effect additive on already-combat damage counts in FULL as commander damage",
+  "oldDate": "2026-09-08",
+  "id": "dmg-010"
+ },
+ {
+  "oldLine": 1000,
+  "oldTitle": "\"Whenever ONE OR MORE creatures die\" fires once per batch — a mass sacrifice is one counter",
+  "oldDate": "2026-09-03",
+  "id": "trig-021"
+ },
+ {
+  "oldLine": 1024,
+  "oldTitle": "\"Gain 1 life for each\" is ONE life-gain event — and it happens after the destroy, so the creatures it killed never see it",
+  "oldDate": "2026-09-06",
+  "id": "dmg-015"
+ },
+ {
+  "oldLine": 1042,
+  "oldTitle": "A copy of an exiled card is cast FROM EXILE — Arcane Bombardment and Mizzix's Mastery fire \"cast from exile\" and \"cast from anywhere but hand\"",
+  "oldDate": "2026-09-06",
+  "id": "zone-010"
+ },
+ {
+  "oldLine": 1061,
+  "oldTitle": "A Background is a normal enchantment in the 99 — the granted ability works on any commander",
+  "oldDate": "2026-09-06",
+  "id": "zone-011"
+ },
+ {
+  "oldLine": 1077,
+  "oldTitle": "\"Creatures you control can't be targeted … this turn\" covers creatures that enter LATER in the turn, and fizzles removal already on the stack",
+  "oldDate": "2026-09-06",
+  "id": "trig-022"
+ },
+ {
+  "oldLine": 1095,
+  "oldTitle": "\"No maximum hand size\" vs \"your maximum hand size is ten\" — later timestamp wins",
+  "oldDate": "2026-09-06",
+  "id": "zone-012"
+ },
+ {
+  "oldLine": 1111,
+  "oldTitle": "Cost reducers eat the GENERIC part of buyback too — Reiterate with buyback is {R}{R} under four reducers",
+  "oldDate": "2026-09-06",
+  "id": "cost-005"
+ },
+ {
+  "oldLine": 1131,
+  "oldTitle": "\"Regenerate target artifact\" saves an artifact-creature commander — and only from destruction",
+  "oldDate": "2026-09-07",
+  "id": "dmg-016"
+ },
+ {
+  "oldLine": 1149,
+  "oldTitle": "The Ozolith carries keyword counters too — an indestructible counter survives the commander leaving",
+  "oldDate": "2026-09-07",
+  "id": "repl-002"
+ },
+ {
+  "oldLine": 1163,
+  "oldTitle": "Tyrite Sanctum's God type is permanent — the two-step indestructible works on any legendary creature",
+  "oldDate": "2026-09-07",
+  "id": "dmg-017"
+ },
+ {
+  "oldLine": 1177,
+  "oldTitle": "Kicker payments share ONE discount budget with X — every kick costs a point of X",
+  "oldDate": "2026-09-08",
+  "id": "cost-005"
+ },
+ {
+  "oldLine": 1202,
+  "oldTitle": "A beginning-of-combat ATTACH trigger plus an unattach-cost ability is a free extra activation",
+  "oldDate": "2026-09-08",
+  "id": "equip-006"
+ },
+ {
+  "oldLine": 1225,
+  "oldTitle": "Unattaching as a COST strips the Equipment's granted abilities before the effect resolves",
+  "oldDate": "2026-09-08",
+  "id": "equip-007"
+ },
+ {
+  "oldLine": 1249,
+  "oldTitle": "An activated ability survives its source's removal, so an unattach/sac outlet is removal insurance",
+  "oldDate": "2026-09-08",
+  "id": "equip-008"
+ },
+ {
+  "oldLine": 1269,
+  "oldTitle": "Mana value on the battlefield is the PRINTED cost, and {X} there counts as zero",
+  "oldDate": "2026-09-08",
+  "id": "cost-003"
+ },
+ {
+  "oldLine": 1288,
+  "oldTitle": "One-mana cost-reduction floors do NOT stack, and Training Grounds misses equip costs",
+  "oldDate": "2026-09-08",
+  "id": "cost-016"
+ },
+ {
+  "oldLine": 1314,
+  "oldTitle": "A companion's condition is checked INCLUDING your commander, and companion is nothing like a commander",
+  "oldDate": "2026-09-08",
+  "id": "zone-013"
+ },
+ {
+  "oldLine": 1352,
+  "oldTitle": "An \"enter as a copy\" Equipment copying a LEGENDARY target dies to the legend rule on arrival",
+  "oldDate": "2026-09-08",
+  "id": "equip-009"
+ },
+ {
+  "oldLine": 1376,
+  "oldTitle": "An additional combat PHASE carries its own beginning-of-combat step; an added STEP does not",
+  "oldDate": "2026-09-08",
+  "id": "dmg-018"
+ },
+ {
+  "oldLine": 1401,
+  "oldTitle": "One cost payment buys ONE ability — two unattach-cost abilities on the same Equipment need a re-attach between them",
+  "oldDate": "2026-09-09",
+  "id": "equip-010"
+ },
+ {
+  "oldLine": 1427,
+  "oldTitle": "\"The first equip ability each turn is free\" effects do NOT stack",
+  "oldDate": "2026-09-09",
+  "id": "equip-011"
+ },
+ {
+  "oldLine": 1445,
+  "oldTitle": "A \"{T}: Attach target Equipment\" ability is NOT equip, so it works at instant speed",
+  "oldDate": "2026-09-09",
+  "id": "equip-012"
+ },
+ {
+  "oldLine": 1464,
+  "oldTitle": "\"Becomes tapped\" triggers on COST-taps, not just \"tap target creature\"",
+  "oldDate": "2026-09-09",
+  "id": "tap-008"
+ },
+ {
+  "oldLine": 1481,
+  "oldTitle": "A trigger caused by a cost-tap always resolves AFTER the spell that caused it",
+  "oldDate": "2026-09-09",
+  "id": "tap-009"
+ },
+ {
+  "oldLine": 1495,
+  "oldTitle": "Crew stays crewed after the crewers untap, and they can crew a second Vehicle",
+  "oldDate": "2026-09-09",
+  "id": "equip-013"
+ },
+ {
+  "oldLine": 1509,
+  "oldTitle": "\"Activate only as a sorcery\" is a TIMING restriction, not a per-turn cap",
+  "oldDate": "2026-09-09",
+  "id": "trig-013"
+ },
+ {
+  "oldLine": 1522,
+  "oldTitle": "Untapping an attacker doesn't remove it from combat, and the untap lands before blockers",
+  "oldDate": "2026-09-09",
+  "id": "tap-010"
+ },
+ {
+  "oldLine": 1536,
+  "oldTitle": "Divided damage (\"among one, two, or three targets\") can be aimed at your OWN permanents",
+  "oldDate": "2026-09-09",
+  "id": "dmg-020"
+ },
+ {
+  "oldLine": 1553,
+  "oldTitle": "When a doubler and a prevention-with-a-rider both hit YOUR creature, YOU pick the order",
+  "oldDate": "2026-09-09",
+  "id": "repl-001"
+ },
+ {
+  "oldLine": 1572,
+  "oldTitle": "A copied activated ability reuses the ORIGINAL's cost objects, and can't redivide its damage",
+  "oldDate": "2026-09-09",
+  "id": "zone-014"
+ },
+ {
+  "oldLine": 1590,
+  "oldTitle": "Paying a cost with the permanent that grants the trigger loses the trigger",
+  "oldDate": "2026-09-09",
+  "id": "equip-007"
+ },
+ {
+  "oldLine": 1607,
+  "oldTitle": "Unpreventable damage still fires a prevention effect's rider",
+  "oldDate": "2026-09-09",
+  "id": "dmg-021"
+ },
+ {
+  "oldLine": 1622,
+  "oldTitle": "A copy effect on a permanent already on the battlefield does NOT trigger ETBs",
+  "oldDate": "2026-09-09",
+  "id": "zone-015"
+ },
+ {
+  "oldLine": 1636,
+  "oldTitle": "Copy effects don't copy counters or status, so counter-gated cards are dead copy targets",
+  "oldDate": "2026-09-09",
+  "id": "zone-009"
+ },
+ {
+  "oldLine": 1651,
+  "oldTitle": "Attacking and summoning sickness key on control of the PERMANENT, not on how long it's been a creature",
+  "oldDate": "2026-09-09",
+  "id": "tap-011"
+ },
+ {
+  "oldLine": 1665,
+  "oldTitle": "A crew effect is a layer-4 NONCOPY effect and survives being re-copied",
+  "oldDate": "2026-09-09",
+  "id": "equip-014"
+ },
+ {
+  "oldLine": 1679,
+  "oldTitle": "\"Whenever a CREATURE you control becomes tapped\" ignores a noncreature artifact tapping",
+  "oldDate": "2026-09-09",
+  "id": "tap-012"
+ },
+ {
+  "oldLine": 1692,
+  "oldTitle": "Lae'zel's \"+1 counter\" applies PER PERMANENT on an \"each\" placement",
+  "oldDate": "2026-09-10",
+  "id": "repl-004"
+ },
+ {
+  "oldLine": 1707,
+  "oldTitle": "Stuffy Doll + Guilty Conscience is a mandatory loop that any damage starts",
+  "oldDate": "2026-09-10",
+  "id": "loop-003"
+ },
+ {
+  "oldLine": 1722,
+  "oldTitle": "Delney's power-2 gate turns OFF under your own counter engine",
+  "oldDate": "2026-09-10",
+  "id": "repl-005"
+ },
+ {
+  "oldLine": 1734,
+  "oldTitle": "An opponent-turn untapper does nothing for a creature in the round it was cast",
+  "oldDate": "2026-09-10",
+  "id": "tap-014"
+ },
+ {
+  "oldLine": 1747,
+  "oldTitle": "Protection from a colour fizzles your OWN pending abilities from that colour's sources",
+  "oldDate": "2026-09-10",
+  "id": "dmg-022"
+ },
+ {
+  "oldLine": 1767,
+  "oldTitle": "An untap-on-tap trigger always gives opponents a window while the permanent is still tapped",
+  "oldDate": "2026-09-10",
+  "id": "tap-015"
+ },
+ {
+  "oldLine": 1781,
+  "oldTitle": "\"Loses flying\" vs \"have flying\" is decided by TIMESTAMP, and an Equipment re-stamps on every attach",
+  "oldDate": "2026-09-10",
+  "id": "equip-017"
+ },
+ {
+  "oldLine": 1796,
+  "oldTitle": "Heliod + Walking Ballista needs TWO counters to start — with one, Ballista dies first",
+  "oldDate": "2026-09-10",
+  "id": "loop-004"
+ },
+ {
+  "oldLine": 1811,
+  "oldTitle": "Life-gain payoffs count EVENTS or AMOUNT — the difference is an order of magnitude on lifelink",
+  "oldDate": "2026-09-10",
+  "id": "dmg-023"
+ },
+ {
+  "oldLine": 1827,
+  "oldTitle": "Protection Equipment on your own commander: pick it by YOUR colours, and it strips your own Auras",
+  "oldDate": "2026-09-10",
+  "id": "equip-001"
+ },
+ {
+  "oldLine": 1845,
+  "oldTitle": "Double strike + lifelink + an amount-scaled counter trigger grows the creature BETWEEN damage steps",
+  "oldDate": "2026-09-10",
+  "id": "dmg-024"
+ },
+ {
+  "oldLine": 1862,
+  "oldTitle": "Wizard's Staff doubles abilities GRANTED to the creature, not the attachments' own triggers",
+  "oldDate": "2026-09-10",
+  "id": "equip-018"
+ },
+ {
+  "oldLine": 1878,
+  "oldTitle": "Two lifelink sources on one creature are one lifelink — score the second as zero",
+  "oldDate": "2026-09-10",
+  "id": "dmg-025"
+ },
+ {
+  "oldLine": 1890,
+  "oldTitle": "\"Attach any number of target Equipment\" on attack is not equip — no cost, no timing, and it steals",
+  "oldDate": "2026-09-10",
+  "id": "equip-012"
+ },
+ {
+  "oldLine": 1905,
+  "oldTitle": "Teysa Karlov doubles DIES triggers (Skullclamp included), never SACRIFICE triggers",
+  "oldDate": "2026-09-10",
+  "id": "trig-024"
+ },
+ {
+  "oldLine": 1923,
+  "oldTitle": "Elesh Norn doubles \"enters\" triggers from ANY player's permanent — but not the triggers downstream of them",
+  "oldDate": "2026-09-10",
+  "id": "trig-025"
+ },
+ {
+  "oldLine": 1942,
+  "oldTitle": "A doubled attach trigger is removal insurance, not a second attachment",
+  "oldDate": "2026-09-10",
+  "id": "equip-019"
+ },
+ {
+  "oldLine": 1956,
+  "oldTitle": "N counters from one instruction are ONE placement event — a \"+1\" amplifier adds once",
+  "oldDate": "2026-09-10",
+  "id": "repl-004"
+ },
+ {
+  "oldLine": 1972,
+  "oldTitle": "A card that GRANTS a {T} ability to a colour turns the whole creature base into tap engines",
+  "oldDate": "2026-09-10",
+  "id": "tap-016"
+ },
+ {
+  "oldLine": 1989,
+  "oldTitle": "Protection from a CARD TYPE doesn't strip Auras/Equipment — but blocks your own creature sources",
+  "oldDate": "2026-09-10",
+  "id": "equip-020"
+ },
+ {
+  "oldLine": 2004,
+  "oldTitle": "Vorinclex doubles YOUR planeswalkers' starting loyalty and halves opponents'",
+  "oldDate": "2026-09-12",
+  "id": "repl-006"
+ },
+ {
+  "oldLine": 2024,
+  "oldTitle": "\"If YOU would put\" doubles loyalty-ability costs; \"if an EFFECT would put\" does not",
+  "oldDate": "2026-09-12",
+  "id": "repl-007"
+ },
+ {
+  "oldLine": 2044,
+  "oldTitle": "A counter/token doubler entering SIMULTANEOUSLY with its target does not apply",
+  "oldDate": "2026-09-12",
+  "id": "repl-008"
+ },
+ {
+  "oldLine": 2062,
+  "oldTitle": "Over-crewing adds ZERO power, but a second crew activation re-triggers \"becomes crewed\"",
+  "oldDate": "2026-09-13",
+  "id": "equip-024"
+ },
+ {
+  "oldLine": 2081,
+  "oldTitle": "Crewing after blockers are declared does nothing — a Vehicle's defence is staying UNCREWED",
+  "oldDate": "2026-09-13",
+  "id": "equip-023"
+ },
+ {
+  "oldLine": 2099,
+  "oldTitle": "\"Attacks a player\" is a strictly narrower trigger than \"attacks\" — a planeswalker swing turns it off",
+  "oldDate": "2026-09-13",
+  "id": "trig-026"
+ },
+ {
+  "oldLine": 2117,
+  "oldTitle": "\"Attacks and isn't blocked\" is the ONE attack-shaped trigger that fires for a token put onto the battlefield attacking",
+  "oldDate": "2026-09-13",
+  "id": "trig-027"
+ },
+ {
+  "oldLine": 2135,
+  "oldTitle": "A myriad-shaped ability that SACRIFICES its tokens is an aristocrats engine; real myriad exiles and gives nothing",
+  "oldDate": "2026-09-13",
+  "id": "repl-009"
+ },
+ {
+  "oldLine": 2154,
+  "oldTitle": "Sequential \"loses half their life\" triggers recompute on resolution and compound",
+  "oldDate": "2026-09-13",
+  "id": "dmg-026"
+ },
+ {
+  "oldLine": 2173,
+  "oldTitle": "A modal spell's modes resolve in PRINTED order, and a mid-resolution graveyard counts",
+  "oldDate": "2026-09-16",
+  "id": "trig-028"
+ },
+ {
+  "oldLine": 2203,
+  "oldTitle": "A \"whenever you cast\" pump resolves BEFORE the spell that triggered it — so a doubler doubles its own trigger",
+  "oldDate": "2026-09-16",
+  "id": "trig-029"
+ },
+ {
+  "oldLine": 2230,
+  "oldTitle": "\"Damage can't be prevented\" beats ONE of four defence families — sort the opponent's card before hoping",
+  "oldDate": "2026-09-16",
+  "id": "dmg-027"
+ },
+ {
+  "oldLine": 2267,
+  "oldTitle": "\"Another target\" forbids repeats even across several uses of \"target\"; a kicked spell's copies stay kicked",
+  "oldDate": "2026-09-16",
+  "id": "trig-004"
+ },
+ {
+  "oldLine": 2292,
+  "oldTitle": "\"Cast\" permissions never touch lands; \"play\" does, but still spends your land drop",
+  "oldDate": "2026-09-16",
+  "id": "zone-018"
+ },
+ {
+  "oldLine": 2316,
+  "oldTitle": "A copier that TARGETS the spell dies with it; a \"when you next cast\" copy trigger does not",
+  "oldDate": "2026-09-16",
+  "id": "zone-019"
+ },
+ {
+  "oldLine": 2345,
+  "oldTitle": "Every resolution opens a fresh priority round, and the ACTIVE player acts first",
+  "oldDate": "2026-09-16",
+  "id": "trig-030"
+ },
+ {
+  "oldLine": 2371,
+  "oldTitle": "Living weapon loses the Germ tug-of-war to any TRIGGERED attach effect",
+  "oldDate": "2026-09-18",
+  "id": "equip-002"
+ },
+ {
+  "oldLine": 2403,
+  "oldTitle": "No effect makes permanents instants/sorceries, and one would blank them",
+  "oldDate": "2026-09-28",
+  "id": "zone-025"
+ },
+ {
+  "oldLine": 2433,
+  "oldTitle": "Role skeleton beats ranked lists",
+  "oldDate": "2026-08-02",
+  "id": "build-005"
+ },
+ {
+  "oldLine": 2443,
+  "oldTitle": "Measure the sample field before committing to an archetype",
+  "oldDate": "2026-07-30",
+  "id": "build-003"
+ },
+ {
+  "oldLine": 2452,
+  "oldTitle": "Field signal thresholds",
+  "oldDate": "2026-07-31",
+  "id": "build-004"
+ },
+ {
+  "oldLine": 2462,
+  "oldTitle": "One multiplier is right, two is greedy",
+  "oldDate": "2026-08-04",
+  "id": "eval-002"
+ },
+ {
+  "oldLine": 2472,
+  "oldTitle": "A card that requires attacking is dead in a deck that doesn't attack",
+  "oldDate": "2026-08-04",
+  "id": "eval-003"
+ },
+ {
+  "oldLine": 2482,
+  "oldTitle": "Coloured mana beats colourless in a mono-colour deck, by more than it looks",
+  "oldDate": "2026-08-04",
+  "id": "build-006"
+ },
+ {
+  "oldLine": 2492,
+  "oldTitle": "Check the enabling synergy still exists after the cut that removed it",
+  "oldDate": "2026-08-04",
+  "id": "eval-004"
+ },
+ {
+  "oldLine": 2500,
+  "oldTitle": "One-shot rituals belong to explosive-turn decks only",
+  "oldDate": "2026-06",
+  "id": "build-001"
+ },
+ {
+  "oldLine": 2509,
+  "oldTitle": "Prefer the permanent answer over the one-shot when the role is structural",
+  "oldDate": "2026-08-06",
+  "id": "build-007"
+ },
+ {
+  "oldLine": 2519,
+  "oldTitle": "Name the deciding axis out loud",
+  "oldDate": "2026-08-04",
+  "id": "eval-005"
+ },
+ {
+  "oldLine": 2530,
+  "oldTitle": "A justification that named a COUNT expires when the count changes",
+  "oldDate": "2026-08-06",
+  "id": "eval-004"
+ },
+ {
+  "oldLine": 2543,
+  "oldTitle": "A lord keyed to COLOUR, not tribe, can wipe your own tokens",
+  "oldDate": "2026-08-06",
+  "id": "eval-008"
+ },
+ {
+  "oldLine": 2555,
+  "oldTitle": "A mana sink competes with the engine when the engine is \"cast spells\"",
+  "oldDate": "2026-08-06",
+  "id": "eval-009"
+ },
+ {
+  "oldLine": 2568,
+  "oldTitle": "Measure your own curve against the field BEFORE adding top-end",
+  "oldDate": "2026-08-06",
+  "id": "build-008"
+ },
+ {
+  "oldLine": 2583,
+  "oldTitle": "Cost reducers are the one effect where redundancy is unambiguously right",
+  "oldDate": "2026-08-07",
+  "id": "eval-002"
+ },
+ {
+  "oldLine": 2594,
+  "oldTitle": "Before cutting a resource, check what scales off its COUNT",
+  "oldDate": "2026-08-07",
+  "id": "eval-013"
+ },
+ {
+  "oldLine": 2607,
+  "oldTitle": "Card advantage is the stat most often under-built",
+  "oldDate": "2026-06",
+  "id": "build-002"
+ },
+ {
+  "oldLine": 2615,
+  "oldTitle": "Price-tier the sample field BEFORE counting card frequency",
+  "oldDate": "2026-08-07",
+  "id": "build-009"
+ },
+ {
+  "oldLine": 2633,
+  "oldTitle": "Improve the strongest single list; don't average the field",
+  "oldDate": "2026-08-07",
+  "id": "build-010"
+ },
+ {
+  "oldLine": 2648,
+  "oldTitle": "A commander's own free-deployment trigger changes which tutors are good",
+  "oldDate": "2026-08-07",
+  "id": "build-011"
+ },
+ {
+  "oldLine": 2662,
+  "oldTitle": "A creature copy of a noncreature effect costs MORE in a deck with noncreature reducers",
+  "oldDate": "2026-08-09",
+  "id": "eval-017"
+ },
+ {
+  "oldLine": 2682,
+  "oldTitle": "\"Exiles it instead\" removal switches off a death-trigger deck's own engine",
+  "oldDate": "2026-08-09",
+  "id": "eval-018"
+ },
+ {
+  "oldLine": 2697,
+  "oldTitle": "Sweep a new set by indexing once, filtering by identity, classifying 100%",
+  "oldDate": "2026-08-09",
+  "id": "tool-007"
+ },
+ {
+  "oldLine": 2713,
+  "oldTitle": "WHEN a pump triggers decides whether it can discount anything",
+  "oldDate": "2026-08-09",
+  "id": "eval-019"
+ },
+ {
+  "oldLine": 2732,
+  "oldTitle": "A cut-on-principle group's grounds may not cover every card it names",
+  "oldDate": "2026-08-09",
+  "id": "eval-020"
+ },
+ {
+  "oldLine": 2748,
+  "oldTitle": "A rider that counts COLORS is near-dead in a mono-color deck — read each ability separately",
+  "oldDate": "2026-08-10",
+  "id": "eval-021"
+ },
+ {
+  "oldLine": 2765,
+  "oldTitle": "A \"don't cast your artifacts\" deck still has to cast its commander",
+  "oldDate": "2026-08-18",
+  "id": "eval-022"
+ },
+ {
+  "oldLine": 2786,
+  "oldTitle": "Count the coloured PERMANENTS, not the deck's colour identity, for a per-colour rider",
+  "oldDate": "2026-08-19",
+  "id": "eval-021"
+ },
+ {
+  "oldLine": 2807,
+  "oldTitle": "\"Protection\" is not one role — creature protection does not cover the combat step",
+  "oldDate": "2026-08-19",
+  "id": "build-013"
+ },
+ {
+  "oldLine": 2825,
+  "oldTitle": "A repeated in-game failure outranks every list-derived verdict it touches",
+  "oldDate": "2026-08-20",
+  "id": "eval-023"
+ },
+ {
+  "oldLine": 2841,
+  "oldTitle": "When reducers and the cheat engine both key on one card type, off-type cards pay a DOUBLE tax",
+  "oldDate": "2026-08-20",
+  "id": "eval-017"
+ },
+ {
+  "oldLine": 2860,
+  "oldTitle": "Mono-red's to-hand tutor pool is two cards, and one is a Game Changer",
+  "oldDate": "2026-08-20",
+  "id": "build-014"
+ },
+ {
+  "oldLine": 2880,
+  "oldTitle": "Count the conversion layer before the mana layer in a spellslinger deck",
+  "oldDate": "2026-08-21",
+  "id": "build-015"
+ },
+ {
+  "oldLine": 2901,
+  "oldTitle": "Theme-filter the EDHREC page when a pass moves a deck toward a sub-archetype",
+  "oldDate": "2026-08-21",
+  "id": "build-016"
+ },
+ {
+  "oldLine": 2918,
+  "oldTitle": "Map voltron protection to a threat matrix — no Equipment fills the non-targeting row",
+  "oldDate": "2026-08-21",
+  "id": "eval-026"
+ },
+ {
+  "oldLine": 2942,
+  "oldTitle": "In a symmetric-punisher deck, only opponent-restricted amplifiers are safe",
+  "oldDate": "2026-08-23",
+  "id": "eval-028"
+ },
+ {
+  "oldLine": 2961,
+  "oldTitle": "A symmetric copy of a one-sided static the commander already provides is a strict downgrade",
+  "oldDate": "2026-08-23",
+  "id": "eval-029"
+ },
+ {
+  "oldLine": 2973,
+  "oldTitle": "Half-life effects under amplifiers: a doubler kills even totals, doubler + additive kills all",
+  "oldDate": "2026-08-23",
+  "id": "dmg-009"
+ },
+ {
+  "oldLine": 2989,
+  "oldTitle": "Score an Equipment (or any two-mode card) on BOTH modes before rejecting it",
+  "oldDate": "2026-08-25",
+  "id": "eval-010"
+ },
+ {
+  "oldLine": 3003,
+  "oldTitle": "An \"opponent's creature dies\" trigger is not opponent-dependent in an edict deck",
+  "oldDate": "2026-08-25",
+  "id": "eval-030"
+ },
+ {
+  "oldLine": 3018,
+  "oldTitle": "Attach a fragile utility permanent to the least-targeted creature, not the best one",
+  "oldDate": "2026-08-25",
+  "id": "equip-005"
+ },
+ {
+  "oldLine": 3034,
+  "oldTitle": "Rank commander candidates by \"what does this do next turn, ALONE?\"",
+  "oldDate": "2026-09-02",
+  "id": "build-018"
+ },
+ {
+  "oldLine": 3052,
+  "oldTitle": "When a colour's case rests on one staple, check whether that staple is a Game Changer",
+  "oldDate": "2026-09-02",
+  "id": "build-019"
+ },
+ {
+  "oldLine": 3067,
+  "oldTitle": "An untapper keyed to COLOUR skips your colourless artifacts",
+  "oldDate": "2026-09-02",
+  "id": "tap-005"
+ },
+ {
+  "oldLine": 3083,
+  "oldTitle": "Measure total creature POWER before claiming a deck wins through combat",
+  "oldDate": "2026-09-02",
+  "id": "build-020"
+ },
+ {
+  "oldLine": 3102,
+  "oldTitle": "An alt-win permanent is a telegraph — score it by its floor, never its ceiling",
+  "oldDate": "2026-09-02",
+  "id": "eval-031"
+ },
+ {
+  "oldLine": 3123,
+  "oldTitle": "A mass untapper re-prices every {T} ability and every mana rock — re-derive the whole list",
+  "oldDate": "2026-09-02",
+  "id": "tap-006"
+ },
+ {
+  "oldLine": 3147,
+  "oldTitle": "Doubling POWER is a damage multiplier when a damage doubler is already on board",
+  "oldDate": "2026-09-02",
+  "id": "dmg-011"
+ },
+ {
+  "oldLine": 3175,
+  "oldTitle": "\"Unattach\" in a cost needs a BATTLEFIELD re-attacher — a free-attach trigger keyed to \"from your hand\" doesn't cover it",
+  "oldDate": "2026-09-02",
+  "id": "equip-006"
+ },
+ {
+  "oldLine": 3197,
+  "oldTitle": "Count UNBLOCKABLE power, not raw power, in a deck that taps blockers",
+  "oldDate": "2026-09-02",
+  "id": "build-020"
+ },
+ {
+  "oldLine": 3214,
+  "oldTitle": "Read whether a doubler says ACTIVATED or TRIGGERED before pricing it",
+  "oldDate": "2026-09-02",
+  "id": "eval-032"
+ },
+ {
+  "oldLine": 3230,
+  "oldTitle": "Read whether a cost reducer eats COLOURED or GENERIC mana — the two are not interchangeable",
+  "oldDate": "2026-09-02",
+  "id": "cost-013"
+ },
+ {
+  "oldLine": 3247,
+  "oldTitle": "In a commander build-off, hold the shell constant",
+  "oldDate": "2026-09-02",
+  "id": "build-021"
+ },
+ {
+  "oldLine": 3259,
+  "oldTitle": "Five-colour \"God tribal\" must count the devotion-gated Gods — they are enchantments there",
+  "oldDate": "2026-09-02",
+  "id": "build-022"
+ },
+ {
+  "oldLine": 3274,
+  "oldTitle": "A token maker's self-sacrifice clause is a payoff in a dies-matters deck and a cost anywhere else",
+  "oldDate": "2026-09-03",
+  "id": "eval-035"
+ },
+ {
+  "oldLine": 3299,
+  "oldTitle": "An X-spell under a cast-MV pump is a self-doubler — file X-spells as PUMP in a power-discount deck",
+  "oldDate": "2026-09-08",
+  "id": "cost-017"
+ },
+ {
+  "oldLine": 3319,
+  "oldTitle": "`{X}{R}: +X/+0` pump instants double a power-discount commander with no engine on the board",
+  "oldDate": "2026-09-08",
+  "id": "eval-036"
+ },
+ {
+  "oldLine": 3336,
+  "oldTitle": "In a power-discount deck the kill turn is bounded by COLOURED PIPS, not mana",
+  "oldDate": "2026-09-08",
+  "id": "build-024"
+ },
+ {
+  "oldLine": 3356,
+  "oldTitle": "The Game Changer count, not a combo, is usually what makes a list Bracket 4",
+  "oldDate": "2026-09-08",
+  "id": "build-025"
+ },
+ {
+  "oldLine": 3375,
+  "oldTitle": "A damage multiplier belongs where damage is FLAT, and is dead weight where it is exponential",
+  "oldDate": "2026-09-08",
+  "id": "dmg-019"
+ },
+ {
+  "oldLine": 3403,
+  "oldTitle": "Applied an instant/sorcery-only discount to an enchantment in my own damage model",
+  "oldDate": "2026-09-08",
+  "id": "cost-018"
+ },
+ {
+  "oldLine": 3425,
+  "oldTitle": "Teamwork is a SPELL keyword — it is not crew, Station, or convoke",
+  "oldDate": "2026-09-09",
+  "id": "equip-015"
+ },
+ {
+  "oldLine": 3439,
+  "oldTitle": "EDHREC synergy lists include cards that are not commander-legal",
+  "oldDate": "2026-09-09",
+  "id": "tool-010"
+ },
+ {
+  "oldLine": 3453,
+  "oldTitle": "Overdraw past hand size is a graveyard engine — re-check dedicated yard-fillers after adding draw",
+  "oldDate": "2026-09-09",
+  "id": "eval-039"
+ },
+ {
+  "oldLine": 3472,
+  "oldTitle": "Count the payoffs stacked on one enabler before adding another — name the dependency out loud",
+  "oldDate": "2026-09-09",
+  "id": "build-026"
+ },
+ {
+  "oldLine": 3493,
+  "oldTitle": "Before running a sac-outlet tutor, audit whether the deck's TOKENS are the right card type",
+  "oldDate": "2026-09-09",
+  "id": "eval-040"
+ },
+ {
+  "oldLine": 3510,
+  "oldTitle": "Station counters equal POWER, so a power-scaling token is the best Spacecraft fuel",
+  "oldDate": "2026-09-09",
+  "id": "equip-016"
+ },
+ {
+  "oldLine": 3524,
+  "oldTitle": "A cost reducer that reads \"artifact spells\" does NOT reduce an artifact-themed COMMANDER — check the front face's type line",
+  "oldDate": "2026-09-09",
+  "id": "cost-018"
+ },
+ {
+  "oldLine": 3546,
+  "oldTitle": "A cheap token engine stops being cheap when better mana sinks arrive — re-price per-use costs after every engine add",
+  "oldDate": "2026-09-09",
+  "id": "eval-009"
+ },
+ {
+  "oldLine": 3567,
+  "oldTitle": "An \"untap during each other player's untap step\" effect is an engine MULTIPLIER, not defence",
+  "oldDate": "2026-09-10",
+  "id": "tap-006"
+ },
+ {
+  "oldLine": 3581,
+  "oldTitle": "\"Untap all creatures\" and \"untap all artifacts\" are near-disjoint, not substitutes",
+  "oldDate": "2026-09-10",
+  "id": "tap-005"
+ },
+ {
+  "oldLine": 3594,
+  "oldTitle": "A crew-cost reducer can silently turn off a \"crewed by exactly N\" payoff",
+  "oldDate": "2026-09-10",
+  "id": "equip-021"
+ },
+ {
+  "oldLine": 3608,
+  "oldTitle": "An ability-borrowing card's value IS its sources — exclude them from the cut list",
+  "oldDate": "2026-09-10",
+  "id": "eval-041"
+ },
+ {
+  "oldLine": 3629,
+  "oldTitle": "Damage doublers are effectively red-only — outside red, amplify COUNTERS instead",
+  "oldDate": "2026-09-10",
+  "id": "build-030"
+ },
+ {
+  "oldLine": 3647,
+  "oldTitle": "A deck's real fragility is often the TYPE of its finishers, not how many it draws",
+  "oldDate": "2026-09-10",
+  "id": "build-031"
+ },
+ {
+  "oldLine": 3664,
+  "oldTitle": "Draw -> counter engines scale with the deck's draw count, and each drawn card is its own trigger",
+  "oldDate": "2026-09-10",
+  "id": "eval-042"
+ },
+ {
+  "oldLine": 3681,
+  "oldTitle": "Re-run §1.3 on every carried-over card when a variant changes the deck's creature count",
+  "oldDate": "2026-09-10",
+  "id": "eval-043"
+ },
+ {
+  "oldLine": 3695,
+  "oldTitle": "\"Runs out of gas\" is a card-flow problem — a cheaper curve makes it worse",
+  "oldDate": "2026-09-10",
+  "id": "build-032"
+ },
+ {
+  "oldLine": 3711,
+  "oldTitle": "For an untap commander, measure \"second-tap use\" per creature — Vehicles are the universal outlet",
+  "oldDate": "2026-09-10",
+  "id": "tap-017"
+ },
+ {
+  "oldLine": 3727,
+  "oldTitle": "Loop-audit heuristic: an untap circuit is infinite only with a surplus untap",
+  "oldDate": "2026-09-10",
+  "id": "loop-005"
+ },
+ {
+  "oldLine": 3742,
+  "oldTitle": "Mass untap on opponents' turns switches off \"tapped creatures have X\" protection",
+  "oldDate": "2026-09-10",
+  "id": "tap-018"
+ },
+ {
+  "oldLine": 3755,
+  "oldTitle": "A flood complaint is answered by spell//land MDFCs, not by cutting lands",
+  "oldDate": "2026-09-10",
+  "id": "build-033"
+ },
+ {
+  "oldLine": 3776,
+  "oldTitle": "Scored a damage-to-mana converter by WHEN its mana arrives instead of WHAT it is made of",
+  "oldDate": "2026-09-08",
+  "id": "eval-037"
+ },
+ {
+  "oldLine": 3802,
+  "oldTitle": "Priced a \"first spell each turn\" engine at one trigger per turn cycle — the ledger already said four",
+  "oldDate": "2026-09-08",
+  "id": "eval-038"
+ },
+ {
+  "oldLine": 3826,
+  "oldTitle": "Scored a symmetric wheel only as a refill and missed its disruption axis",
+  "oldDate": "2026-08-21",
+  "id": "eval-027"
+ },
+ {
+  "oldLine": 3847,
+  "oldTitle": "Scored rituals as \"dead until the kill turn\" in a deck that banks red mana",
+  "oldDate": "2026-08-21",
+  "id": "eval-025"
+ },
+ {
+  "oldLine": 3868,
+  "oldTitle": "Read \"+1/+1 for each land you control\" as the deck's land COUNT",
+  "oldDate": "2026-08-21",
+  "id": "eval-013"
+ },
+ {
+  "oldLine": 3888,
+  "oldTitle": "Recommended a hand-size-taxed tutor to a deck that empties its hand",
+  "oldDate": "2026-08-20",
+  "id": "eval-024"
+ },
+ {
+  "oldLine": 3907,
+  "oldTitle": "Scored tapped Treasures as \"next turn only\" in a deck whose plan IS next turn",
+  "oldDate": "2026-08-20",
+  "id": "eval-025"
+ },
+ {
+  "oldLine": 3926,
+  "oldTitle": "Repeated the \"gap the deck had already filled\" mistake twice in one document",
+  "oldDate": "2026-08-10",
+  "id": "eval-015"
+ },
+ {
+  "oldLine": 3944,
+  "oldTitle": "Fabricated a free-cast clause on Apex of Power",
+  "oldDate": "2026-08-04",
+  "id": "eval-006"
+ },
+ {
+  "oldLine": 3954,
+  "oldTitle": "Hand-maintained a derived list; it drifted three times",
+  "oldDate": "2026-08-04",
+  "id": "tool-004"
+ },
+ {
+  "oldLine": 3961,
+  "oldTitle": "The same content in three files produced three different counts",
+  "oldDate": "2026-08-06",
+  "id": "tool-004"
+ },
+ {
+  "oldLine": 3970,
+  "oldTitle": "Assumed a file format instead of checking it",
+  "oldDate": "2026-08-03",
+  "id": "tool-001"
+ },
+ {
+  "oldLine": 3978,
+  "oldTitle": "Under-read oracle text on a card the user was defending",
+  "oldDate": "2026-08-05",
+  "id": "eval-006"
+ },
+ {
+  "oldLine": 3987,
+  "oldTitle": "Filed a card in the wrong role and cut it on that basis",
+  "oldDate": "2026-08-04",
+  "id": "eval-007"
+ },
+ {
+  "oldLine": 3995,
+  "oldTitle": "Called a sorcery a defensive card",
+  "oldDate": "2026-08-02",
+  "id": "eval-001"
+ },
+ {
+  "oldLine": 4004,
+  "oldTitle": "Wrote a destructive glob without a guard",
+  "oldDate": "2026-08-03",
+  "id": "tool-002"
+ },
+ {
+  "oldLine": 4013,
+  "oldTitle": "Broke a template literal with backticks inside a CSS comment",
+  "oldDate": "2026-08-03",
+  "id": "tool-003"
+ },
+ {
+  "oldLine": 4021,
+  "oldTitle": "Argued the wrong side and the user's counter-argument won",
+  "oldDate": "2026-08-04",
+  "id": "eval-005"
+ },
+ {
+  "oldLine": 4033,
+  "oldTitle": "Evaluated an activated ability for only its obvious use",
+  "oldDate": "2026-08-06",
+  "id": "eval-010"
+ },
+ {
+  "oldLine": 4046,
+  "oldTitle": "Proposed cutting a card that the same swap package makes better",
+  "oldDate": "2026-08-06",
+  "id": "eval-011"
+ },
+ {
+  "oldLine": 4059,
+  "oldTitle": "Nominated a cut from a group of four without ranking the group",
+  "oldDate": "2026-08-06",
+  "id": "eval-012"
+ },
+ {
+  "oldLine": 4075,
+  "oldTitle": "The skill's own \"don't re-litigate\" framing was causing the anchoring",
+  "oldDate": "2026-08-06",
+  "id": "eval-004"
+ },
+ {
+  "oldLine": 4098,
+  "oldTitle": "Trusted a stale cached field instead of the authoritative list",
+  "oldDate": "2026-08-07",
+  "id": "tool-005"
+ },
+ {
+  "oldLine": 4114,
+  "oldTitle": "Claimed a cost below a spell's coloured floor",
+  "oldDate": "2026-08-07",
+  "id": "cost-004"
+ },
+ {
+  "oldLine": 4124,
+  "oldTitle": "A cut's stated grounds were arithmetically wrong",
+  "oldDate": "2026-08-07",
+  "id": "eval-014"
+ },
+ {
+  "oldLine": 4135,
+  "oldTitle": "An oracle-text sweep missed a card because only two trigger wordings were searched",
+  "oldDate": "2026-08-07",
+  "id": "tool-006"
+ },
+ {
+  "oldLine": 4146,
+  "oldTitle": "Recommended a card as filling a gap the deck had already filled",
+  "oldDate": "2026-08-07",
+  "id": "eval-015"
+ },
+ {
+  "oldLine": 4160,
+  "oldTitle": "A relocated Equipment still delivers its GLOBAL clauses",
+  "oldDate": "2026-08-07",
+  "id": "equip-002"
+ },
+ {
+  "oldLine": 4178,
+  "oldTitle": "Judged a card by its splashiest ability and missed that it was a free board wipe",
+  "oldDate": "2026-08-07",
+  "id": "eval-016"
+ },
+ {
+  "oldLine": 4195,
+  "oldTitle": "Compared cards head-to-head before counting roles, and nearly rebuilt a coherent deck into an average one",
+  "oldDate": "2026-08-07",
+  "id": "build-012"
+ },
+ {
+  "oldLine": 4217,
+  "oldTitle": "A successful defense recorded incomplete grounds — and the omission nearly cost the card later",
+  "oldDate": "2026-08-19",
+  "id": "eval-016"
+ },
+ {
+  "oldLine": 4235,
+  "oldTitle": "Cut an anthem in the same package that multiplied its targets — the 2026-08-06 mistake, repeated",
+  "oldDate": "2026-08-20",
+  "id": "eval-011"
+ },
+ {
+  "oldLine": 4254,
+  "oldTitle": "Banked \"doesn't-empty\" mana survives its source dying — long enough to pay the LTB trigger",
+  "oldDate": "2026-08-20",
+  "id": "cost-010"
+ },
+ {
+  "oldLine": 4271,
+  "oldTitle": "Nominated a cut that the incoming card feeds — third repeat in one day",
+  "oldDate": "2026-08-21",
+  "id": "eval-011"
+ },
+ {
+  "oldLine": 4287,
+  "oldTitle": "Doubled trigger instances are separate stack objects — own targets, sequential, second sees post-first state",
+  "oldDate": "2026-08-21",
+  "id": "trig-014"
+ },
+ {
+  "oldLine": 4307,
+  "oldTitle": "deckcheck under-reports mana sources when the deck cache is cold, with no warning",
+  "oldDate": "2026-08-23",
+  "id": "tool-008"
+ },
+ {
+  "oldLine": 4320,
+  "oldTitle": "Glacial Chasm is a Game Changer — check the flag on lands too",
+  "oldDate": "2026-08-23",
+  "id": "build-017"
+ },
+ {
+  "oldLine": 4331,
+  "oldTitle": "Took a manabase from the EDHREC page and missed fetchlands — budget-weighted field signal, again",
+  "oldDate": "2026-08-23",
+  "id": "build-009"
+ },
+ {
+  "oldLine": 4345,
+  "oldTitle": "Cut the only cover for the non-targeting row and called it \"weakest\" — user caught it",
+  "oldDate": "2026-08-24",
+  "id": "eval-026"
+ },
+ {
+  "oldLine": 4360,
+  "oldTitle": "Master Transmuter self-blink: cost is paid at activation, so the same card can come back",
+  "oldDate": "2026-08-24",
+  "id": "cost-011"
+ },
+ {
+  "oldLine": 4380,
+  "oldTitle": "A DFC with an artifact back face is NOT an artifact card in hand",
+  "oldDate": "2026-08-24",
+  "id": "zone-003"
+ },
+ {
+  "oldLine": 4400,
+  "oldTitle": "Commander tax applies only to command-zone casts — user caught it",
+  "oldDate": "2026-08-24",
+  "id": "cost-012"
+ },
+ {
+  "oldLine": 4414,
+  "oldTitle": "Tony Stark is a modal DFC — the Iron Man face is castable straight from hand",
+  "oldDate": "2026-08-24",
+  "id": "zone-003"
+ },
+ {
+  "oldLine": 4433,
+  "oldTitle": "Tap-gated removal needs the deck to make OPPONENTS tap — the mirror of the attack-trigger rule",
+  "oldDate": "2026-08-24",
+  "id": "tap-002"
+ },
+ {
+  "oldLine": 4451,
+  "oldTitle": "A \"grows when others die\" creature gains NOTHING from a board wipe",
+  "oldDate": "2026-08-24",
+  "id": "trig-019"
+ },
+ {
+  "oldLine": 4480,
+  "oldTitle": "Quoted a mana cost wrong with the correct cost on screen",
+  "oldDate": "2026-09-02",
+  "id": "eval-006"
+ },
+ {
+  "oldLine": 4497,
+  "oldTitle": "Over-applied §1.1b — a verdict resting on a PRINCIPLE does not expire when its rival leaves",
+  "oldDate": "2026-09-02",
+  "id": "eval-004"
+ },
+ {
+  "oldLine": 4519,
+  "oldTitle": "Score a sweeper's self-hit at the board state it is actually CAST at",
+  "oldDate": "2026-09-02",
+  "id": "eval-033"
+ },
+ {
+  "oldLine": 4540,
+  "oldTitle": "Argued against a card on a line the pilot doesn't play — check the actual use case first",
+  "oldDate": "2026-09-02",
+  "id": "eval-034"
+ },
+ {
+  "oldLine": 4561,
+  "oldTitle": "Filed an overload spell as \"tempo\" and nearly cut the deck's alpha-strike button",
+  "oldDate": "2026-09-02",
+  "id": "eval-007"
+ },
+ {
+  "oldLine": 4576,
+  "oldTitle": "Scored a coloured-pip reducer as a discount and missed that it is a colour-FIXER",
+  "oldDate": "2026-09-02",
+  "id": "cost-013"
+ },
+ {
+  "oldLine": 4596,
+  "oldTitle": "Ranked a hate piece on average text and missed that the pilot's pod is its target",
+  "oldDate": "2026-09-03",
+  "id": "eval-030"
+ },
+ {
+  "oldLine": 4614,
+  "oldTitle": "A token copy of a mana rock is summoning-sick — mana abilities get no exemption",
+  "oldDate": "2026-09-03",
+  "id": "tap-007"
+ },
+ {
+  "oldLine": 4630,
+  "oldTitle": "Token copies of ETB artifacts keep the ETB; spell-copy and myriad tokens never trigger \"nontoken\"",
+  "oldDate": "2026-09-03",
+  "id": "zone-008"
+ },
+ {
+  "oldLine": 4649,
+  "oldTitle": "A cast-triggered \"add mana\" ability is not a mana ability, even with no target",
+  "oldDate": "2026-09-03",
+  "id": "cost-007"
+ },
+ {
+  "oldLine": 4665,
+  "oldTitle": "Horizon Stone turns banked coloured mana colourless; Leyline Tyrant keeps red red",
+  "oldDate": "2026-09-03",
+  "id": "cost-014"
+ },
+ {
+  "oldLine": 4679,
+  "oldTitle": "The Ozolith catches a commander's counters on the way to the command zone",
+  "oldDate": "2026-09-03",
+  "id": "repl-002"
+ },
+ {
+  "oldLine": 4694,
+  "oldTitle": "Commander's Plate on a colourless commander is protection from all five colours",
+  "oldDate": "2026-09-03",
+  "id": "dmg-012"
+ },
+ {
+  "oldLine": 4708,
+  "oldTitle": "A one-pip cantrip gets nothing from a Medallion — count generic symbols before valuing reducers in a cheap-spell deck",
+  "oldDate": "2026-09-03",
+  "id": "cost-004"
+ },
+ {
+  "oldLine": 4725,
+  "oldTitle": "A colourless mana doubler makes Basalt Monolith infinite — check the doubler before the rock",
+  "oldDate": "2026-09-03",
+  "id": "loop-001"
+ },
+ {
+  "oldLine": 4737,
+  "oldTitle": "EDHREC under-rates a mono-colour banker because the field doesn't bank",
+  "oldDate": "2026-09-03",
+  "id": "build-023"
+ },
+ {
+  "oldLine": 4752,
+  "oldTitle": "\"Remove all counters from all permanents\" kills every planeswalker, yours included",
+  "oldDate": "2026-09-03",
+  "id": "repl-003"
+ },
+ {
+  "oldLine": 4767,
+  "oldTitle": "Carried a typed trigger-doubler's rejection across decks — Roaming Throne was skipped for two cast/enter-trigger commanders",
+  "oldDate": "2026-09-04",
+  "id": "eval-032"
+ },
+ {
+  "oldLine": 4789,
+  "oldTitle": "\"Target creature you control deals damage equal to its power\" deals NOTHING if that creature is removed in response — no last-known-information fallback",
+  "oldDate": "2026-09-04",
+  "id": "dmg-013"
+ },
+ {
+  "oldLine": 4809,
+  "oldTitle": "A token copy of a permanent has no counters and was never kicked — Chalice copies tap for nothing, Ballista copies die",
+  "oldDate": "2026-09-04",
+  "id": "zone-009"
+ },
+ {
+  "oldLine": 4833,
+  "oldTitle": "A spell cast during an ability's resolution ignores card-type timing; \"without paying its mana cost\" is the only cost that permission allows",
+  "oldDate": "2026-09-04",
+  "id": "cost-015"
+ },
+ {
+  "oldLine": 4857,
+  "oldTitle": "\"One multiplier is right, two is greedy\" is gated on payoff density",
+  "oldDate": "2026-09-04",
+  "id": "eval-002"
+ },
+ {
+  "oldLine": 4874,
+  "oldTitle": "Argued the mass-recursion card on a resource-preservation axis and missed that its turn is the win",
+  "oldDate": "2026-09-04",
+  "id": "eval-005"
+ },
+ {
+  "oldLine": 4892,
+  "oldTitle": "Lifelink pays on NONCOMBAT damage too — a lifelink Equipment on a \"deals damage equal to its power\" source is a life swing the size of the spell",
+  "oldDate": "2026-09-04",
+  "id": "dmg-014"
+ },
+ {
+  "oldLine": 4908,
+  "oldTitle": "Combo check counted one body per loop and forgot the eminence token — Oathsworn Vampire + Phyrexian Altar IS infinite under Edgar",
+  "oldDate": "2026-09-06",
+  "id": "loop-002"
+ },
+ {
+  "oldLine": 4933,
+  "oldTitle": "Nominated a cut on field signal and missed that the card's text held a second role",
+  "oldDate": "2026-09-06",
+  "id": "eval-016"
+ },
+ {
+  "oldLine": 4952,
+  "oldTitle": "\"Choose one that hasn't been chosen this turn\" caps a modal trigger at one use of each mode per turn — scored The Vision as a per-spell draw engine",
+  "oldDate": "2026-09-08",
+  "id": "trig-023"
+ },
+ {
+  "oldLine": 4972,
+  "oldTitle": "Filed pump as \"+N discount\" and X-spells as \"payoff\"; told the pilot to wait for turn 6 and 12 mana while the list held a five-pip turn-5 kill",
+  "oldDate": "2026-09-08",
+  "id": "eval-036"
+ },
+ {
+  "oldLine": 4997,
+  "oldTitle": "The deck validator silently skipped every double-faced card — three cards never checked",
+  "oldDate": "2026-09-08",
+  "id": "tool-009"
+ },
+ {
+  "oldLine": 5017,
+  "oldTitle": "Used the attach-bucket test as a verdict on card quality, when it only answers one question",
+  "oldDate": "2026-09-09",
+  "id": "equip-006"
+ },
+ {
+  "oldLine": 5041,
+  "oldTitle": "EDHREC inclusion % is PER CARD, never co-occurrence — it can't tell you if one deck runs both",
+  "oldDate": "2026-09-09",
+  "id": "build-027"
+ },
+ {
+  "oldLine": 5066,
+  "oldTitle": "Cut three cards for being \"redundant\" — in singleton, the second copy is access, not waste",
+  "oldDate": "2026-09-09",
+  "id": "eval-002"
+ },
+ {
+  "oldLine": 5089,
+  "oldTitle": "\"Attach target Equipment ATTACHED TO a creature\" only MOVES gear — it cannot pick up an unattached Equipment",
+  "oldDate": "2026-09-09",
+  "id": "equip-006"
+ },
+ {
+  "oldLine": 5110,
+  "oldTitle": "Presented an engine and a finisher as two mutually exclusive archetypes",
+  "oldDate": "2026-09-09",
+  "id": "build-028"
+ },
+ {
+  "oldLine": 5124,
+  "oldTitle": "Dismissed an archetype as \"weak\" — the same error class as \"redundant\"",
+  "oldDate": "2026-09-09",
+  "id": "build-029"
+ },
+ {
+  "oldLine": 5137,
+  "oldTitle": "Called vigilance anti-synergistic with a \"first tap each turn\" untapper — it's the opposite",
+  "oldDate": "2026-09-09",
+  "id": "tap-013"
+ },
+ {
+  "oldLine": 5152,
+  "oldTitle": "Added a 10-mana Equipment to a voltron list without costing its equip",
+  "oldDate": "2026-09-10",
+  "id": "equip-022"
+ },
+ {
+  "oldLine": 5168,
+  "oldTitle": "An untap-on-tap trigger is UNTARGETED and source-independent — removal can't fizzle it",
+  "oldDate": "2026-09-12",
+  "id": "tap-019"
+ },
+ {
+  "oldLine": 5186,
+  "oldTitle": "On your turn, an OPPONENT's \"becomes tapped\" trigger resolves before yours",
+  "oldDate": "2026-09-12",
+  "id": "tap-020"
+ },
+ {
+  "oldLine": 5197,
+  "oldTitle": "A second tap doesn't just fail to untap — it produces no trigger at all",
+  "oldDate": "2026-09-12",
+  "id": "tap-021"
+ },
+ {
+  "oldLine": 5210,
+  "oldTitle": "Crew is INSTANT speed; Station is sorcery speed — they are not interchangeable outlets",
+  "oldDate": "2026-09-12",
+  "id": "equip-023"
+ },
+ {
+  "oldLine": 5223,
+  "oldTitle": "Optimised taps-per-creature and filed sweepers under \"trade-offs\" — one T4-5 wipe ended the game",
+  "oldDate": "2026-09-15",
+  "id": "build-034"
+ },
+ {
+  "oldLine": 5241,
+  "oldTitle": "A crew-dependent win condition is only wipe-proof if its crew is",
+  "oldDate": "2026-09-15",
+  "id": "equip-025"
+ },
+ {
+  "oldLine": 5255,
+  "oldTitle": "Declining the command zone is a one-time choice — made before any recursion spell can be cast",
+  "oldDate": "2026-09-15",
+  "id": "zone-016"
+ },
+ {
+  "oldLine": 5269,
+  "oldTitle": "deckcheck silently under-counts mana sources for cards missing from the deck's card cache",
+  "oldDate": "2026-09-15",
+  "id": "tool-008"
+ },
+ {
+  "oldLine": 5280,
+  "oldTitle": "Blink resets a \"first time this turn\" untap for that creature — phasing does not",
+  "oldDate": "2026-09-15",
+  "id": "tap-022"
+ },
+ {
+  "oldLine": 5297,
+  "oldTitle": "End-step blink adds ETB value but no taps — only main-phase blinks refresh an untap engine",
+  "oldDate": "2026-09-15",
+  "id": "tap-022"
+ },
+ {
+  "oldLine": 5312,
+  "oldTitle": "With a \"first time each turn\" untapper, blink is a purchasable surplus untap — Deadeye Navigator is the linchpin",
+  "oldDate": "2026-09-15",
+  "id": "loop-006"
+ },
+ {
+  "oldLine": 5328,
+  "oldTitle": "Ghostway exiles your tokens and stationed Spacecraft for good — prefer targeted blink or phasing",
+  "oldDate": "2026-09-15",
+  "id": "zone-017"
+ },
+ {
+  "oldLine": 5343,
+  "oldTitle": "Bracket 2 allows zero Game Changers — dropping to B2 removes the cards that protect a fragile board",
+  "oldDate": "2026-09-15",
+  "id": "build-035"
+ },
+ {
+  "oldLine": 5355,
+  "oldTitle": "A \"first tap each turn\" untapper ANTI-synergises with end-step tapped-creature payoffs",
+  "oldDate": "2026-09-16",
+  "id": "tap-023"
+ },
+ {
+  "oldLine": 5371,
+  "oldTitle": "Restricted \"activate abilities of artifacts\" mana pays an artifact's activation cost — Halo Fountain + Ioreth + Vedalken Engineer is free unbounded draw",
+  "oldDate": "2026-09-16",
+  "id": "loop-007"
+ },
+ {
+  "oldLine": 5386,
+  "oldTitle": "Two untappers that tap themselves form a closed pair — zero spare untaps, however much mana you have",
+  "oldDate": "2026-09-16",
+  "id": "loop-005"
+ },
+ {
+  "oldLine": 5399,
+  "oldTitle": "Marvin + Ioreth is unbounded \"becomes tapped\" events — Psychosis Crawler turns it into a kill",
+  "oldDate": "2026-09-16",
+  "id": "loop-008"
+ },
+ {
+  "oldLine": 5412,
+  "oldTitle": "A \"tap a creature you control: tap target permanent\" ability can target the creature that pays for it",
+  "oldDate": "2026-09-16",
+  "id": "tap-023"
+ },
+ {
+  "oldLine": 5428,
+  "oldTitle": "A granted \"becomes tapped, draw then discard\" plus a free tapper can deck you",
+  "oldDate": "2026-09-16",
+  "id": "loop-009"
+ },
+ {
+  "oldLine": 5442,
+  "oldTitle": "Singleton-exception cards scale linearly with a \"first tap each turn\" untapper — and set their own minimum count",
+  "oldDate": "2026-09-16",
+  "id": "tap-024"
+ },
+ {
+  "oldLine": 5459,
+  "oldTitle": "Bracket is how reliably the deck wins, not its Game Changer count",
+  "oldDate": "2026-09-16",
+  "id": "build-025"
+ },
+ {
+  "oldLine": 5476,
+  "oldTitle": "Two free \"{T}: untap target permanent\" creatures untap each other forever — and any \"on untap\" payoff makes it a win",
+  "oldDate": "2026-09-16",
+  "id": "loop-008"
+ },
+ {
+  "oldLine": 5493,
+  "oldTitle": "Losing to an empty library is a state-based action you cannot respond to",
+  "oldDate": "2026-09-16",
+  "id": "zone-020"
+ },
+ {
+  "oldLine": 5509,
+  "oldTitle": "\"Whenever a player mills one or more X\" triggers once per mill EVENT, not per card",
+  "oldDate": "2026-09-16",
+  "id": "trig-021"
+ },
+ {
+  "oldLine": 5521,
+  "oldTitle": "When two replacement effects apply, the AFFECTED player chooses the order",
+  "oldDate": "2026-09-16",
+  "id": "repl-001"
+ },
+ {
+  "oldLine": 5532,
+  "oldTitle": "An untapper commander only doubles the card types it can actually untap",
+  "oldDate": "2026-09-16",
+  "id": "tap-005"
+ },
+ {
+  "oldLine": 5545,
+  "oldTitle": "Affinity makes an {X}{X} artifact creature free at X = artifacts ÷ 2 — X is chosen before the reduction",
+  "oldDate": "2026-09-16",
+  "id": "cost-019"
+ },
+ {
+  "oldLine": 5552,
+  "oldTitle": "An anthem turns the X = 0 copy problem off — a copied Ballista or Hangarback lives under +2/+2",
+  "oldDate": "2026-09-16",
+  "id": "zone-009"
+ },
+ {
+  "oldLine": 5559,
+  "oldTitle": "An Aura that enchants a PLAYER can never be moved — and it dies with its victim",
+  "oldDate": "2026-09-16",
+  "id": "equip-026"
+ },
+ {
+  "oldLine": 5580,
+  "oldTitle": "Milling a player to zero does not eliminate them — they die at their next draw",
+  "oldDate": "2026-09-16",
+  "id": "zone-020"
+ },
+ {
+  "oldLine": 5594,
+  "oldTitle": "\"At the beginning of each end step\" means EVERY player's end step",
+  "oldDate": "2026-09-16",
+  "id": "trig-031"
+ },
+ {
+  "oldLine": 5608,
+  "oldTitle": "Named variant lists by build order — a play report got filed against the wrong list",
+  "oldDate": "2026-09-17",
+  "id": "tool-011"
+ },
+ {
+  "oldLine": 5625,
+  "oldTitle": "Untap-step mill resolves in your upkeep — BEFORE your draw step",
+  "oldDate": "2026-09-17",
+  "id": "zone-021"
+ },
+ {
+  "oldLine": 5643,
+  "oldTitle": "A \"target player draws N\" spell is both a mill finisher and an instant kill on a decked opponent",
+  "oldDate": "2026-09-17",
+  "id": "zone-022"
+ },
+ {
+  "oldLine": 5661,
+  "oldTitle": "In a self-mill deck, count recursion by WHERE it can be cast from",
+  "oldDate": "2026-09-17",
+  "id": "build-036"
+ },
+ {
+  "oldLine": 5677,
+  "oldTitle": "Thassa's Oracle does not need an empty library — every on-colour permanent raises the bar",
+  "oldDate": "2026-09-17",
+  "id": "zone-023"
+ },
+ {
+  "oldLine": 5690,
+  "oldTitle": "Phasing never re-triggers an ETB — and phasing out in response shrinks devotion",
+  "oldDate": "2026-09-17",
+  "id": "zone-024"
+ },
+ {
+  "oldLine": 5706,
+  "oldTitle": "A damage-prevention shield makes painful fast mana free — and the mana ability still resolves",
+  "oldDate": "2026-09-22",
+  "id": "cost-020"
+ },
+ {
+  "oldLine": 5729,
+  "oldTitle": "Cost reducers are not mana sources — count what TAPS, and let deckcheck do it",
+  "oldDate": "2026-09-22",
+  "id": "tool-012"
+ },
+ {
+  "oldLine": 5745,
+  "oldTitle": "An \"Nth time this ability has resolved this turn\" ladder counts RESOLUTIONS — a trigger doubler climbs it, and the drain rung is once per turn",
+  "oldDate": "2026-09-22",
+  "id": "trig-032"
+ },
+ {
+  "oldLine": 5768,
+  "oldTitle": "Replacing a commander: measure identity loss, page coverage and salt before arguing",
+  "oldDate": "2026-09-22",
+  "id": "build-037"
+ },
+ {
+  "oldLine": 5789,
+  "oldTitle": "A commander swap must replace the commander's JOB, not its colours — measure which half of the engine it supplied",
+  "oldDate": "2026-09-22",
+  "id": "build-038"
+ },
+ {
+  "oldLine": 5812,
+  "oldTitle": "Score an aristocrats commander by which of the loop's three jobs it does from the command zone",
+  "oldDate": "2026-09-22",
+  "id": "build-039"
+ },
+ {
+  "oldLine": 5839,
+  "oldTitle": "A token sacrificed at the end step is no longer \"attacking\" — Zurgo Stormrender's own mobilize token drains rather than draws",
+  "oldDate": "2026-09-22",
+  "id": "trig-033"
+ },
+ {
+  "oldLine": 5860,
+  "oldTitle": "Salt is a constraint to REPORT, not an objective to minimise — rank on power first",
+  "oldDate": "2026-09-22",
+  "id": "build-040"
+ },
+ {
+  "oldLine": 5875,
+  "oldTitle": "Fair-build exclusions for the strong token/sacrifice commanders — the pairings that go infinite",
+  "oldDate": "2026-09-22",
+  "id": "loop-010"
+ },
+ {
+  "oldLine": 5906,
+  "oldTitle": "Any anthem or enters-with-counters effect turns OFF Skullclamp — check before adding either",
+  "oldDate": "2026-09-22",
+  "id": "equip-027"
+ },
+ {
+  "oldLine": 5927,
+  "oldTitle": "Generate STATUS.md from DECK.md — the authoritative pair is exactly the §1.4 drift trap",
+  "oldDate": "2026-09-22",
+  "id": "tool-004"
+ },
+ {
+  "oldLine": 5944,
+  "oldTitle": "Drain is a mono-black mechanic — a drain deck's second colour buys MULTIPLICATION, not more drain",
+  "oldDate": "2026-09-23",
+  "id": "build-041"
+ },
+ {
+  "oldLine": 5963,
+  "oldTitle": "Check commander legality on Un-set / playtest / Mystery Booster cards before proposing them",
+  "oldDate": "2026-09-23",
+  "id": "tool-010"
+ },
+ {
+  "oldLine": 5975,
+  "oldTitle": "Two \"add a token to every token event\" replacement effects plus a sac-Food-makes-a-token trigger is an infinite",
+  "oldDate": "2026-09-23",
+  "id": "loop-011"
+ },
+ {
+  "oldLine": 5995,
+  "oldTitle": "The Camellia / Food loop, verified — apply the Food-adder BEFORE the token-doubler, and the loop works without the commander",
+  "oldDate": "2026-09-23",
+  "id": "loop-011"
+ },
+ {
+  "oldLine": 6029,
+  "oldTitle": "In an aristocrats deck combat is not a second axis — blocked creatures ARE the drain engine, so keep anthems",
+  "oldDate": "2026-09-23",
+  "id": "eval-044"
+ },
+ {
+  "oldLine": 6050,
+  "oldTitle": "Three token replacements at once: adders, then converters, then multipliers",
+  "oldDate": "2026-09-24",
+  "id": "repl-010"
+ },
+ {
+  "oldLine": 6070,
+  "oldTitle": "Token-copy effects are token creation — every copy, and every replacement-added token, fires \"whenever you create a token\"",
+  "oldDate": "2026-09-24",
+  "id": "repl-011"
+ },
+ {
+  "oldLine": 6087,
+  "oldTitle": "Teysa Karlov does not beat \"triggers only once each turn\" either — Morbid Opportunist still draws 1",
+  "oldDate": "2026-09-24",
+  "id": "trig-020"
+ },
+ {
+  "oldLine": 6116,
+  "oldTitle": "\"Dies → leaves a token\" bodies are not token engines — count death-independent makers separately",
+  "oldDate": "2026-09-24",
+  "id": "build-038"
+ },
+ {
+  "oldLine": 6138,
+  "oldTitle": "Requiem Angel keys on NON-SPIRIT deaths, not nontoken — the founding rejection misread it",
+  "oldDate": "2026-09-24",
+  "id": "eval-006"
+ },
+ {
+  "oldLine": 6152,
+  "oldTitle": "Attack-trigger doublers (Isshin, Windcrag Siege) double \"whenever you attack\" commander triggers",
+  "oldDate": "2026-09-24",
+  "id": "trig-034"
+ },
+ {
+  "oldLine": 6167,
+  "oldTitle": "Tokens added by a doubler inherit the \"sacrifice them later\" instruction — doubled mobilize is a death engine",
+  "oldDate": "2026-09-24",
+  "id": "repl-012"
+ },
+ {
+  "oldLine": 6180,
+  "oldTitle": "Ghave loop math depends on the outlet's mana — Phyrexian Altar + ONE token doubler is not a loop",
+  "oldDate": "2026-09-24",
+  "id": "loop-010"
+ },
+ {
+  "oldLine": 6195,
+  "oldTitle": "Rosie Cotton + Basking Broodscale is a two-card infinite inside the 99",
+  "oldDate": "2026-09-24",
+  "id": "loop-012"
+ },
+ {
+  "oldLine": 6209,
+  "oldTitle": "Chatterfang + Pitiless Plunderer is chosen-N, not automatic — and the pilot now opts in to combos",
+  "oldDate": "2026-09-24",
+  "id": "loop-010"
+ },
+ {
+  "oldLine": 6227,
+  "oldTitle": "Score a \"choose two\" wipe by its best PAIR of modes against your own board, not its best single mode",
+  "oldDate": "2026-09-24",
+  "id": "eval-045"
+ },
+ {
+  "oldLine": 6243,
+  "oldTitle": "Two kinds of \"tap creatures for mana\" — only the granted-{T} kind needs haste",
+  "oldDate": "2026-09-25",
+  "id": "tap-025"
+ },
+ {
+  "oldLine": 6266,
+  "oldTitle": "A mass-pump ETB grants trample, not haste — this turn's tokens still cannot attack",
+  "oldDate": "2026-09-25",
+  "id": "tap-026"
+ },
+ {
+  "oldLine": 6283,
+  "oldTitle": "In a drain deck, MANY small lifegain events beat one big one — and check whether the converter targets",
+  "oldDate": "2026-09-25",
+  "id": "dmg-015"
+ },
+ {
+  "oldLine": 6303,
+  "oldTitle": "\"Triggers an additional time\" makes two separate EVENTS, so a token-adder replacement applies twice",
+  "oldDate": "2026-09-25",
+  "id": "repl-013"
+ },
+ {
+  "oldLine": 6325,
+  "oldTitle": "A token COPY of a permanent spell is not \"created\" — token-adders and per-token drain both miss it",
+  "oldDate": "2026-09-25",
+  "id": "repl-011"
+ },
+ {
+  "oldLine": 6343,
+  "oldTitle": "CORRECTION: Peregrin Took and Tippy-Toe are per-EVENT token-adders, not Food-adders",
+  "oldDate": "2026-09-25",
+  "id": "repl-014"
+ },
+ {
+  "oldLine": 6360,
+  "oldTitle": "Replacement-effect ordering law: fixed adders, then splitters, then multipliers",
+  "oldDate": "2026-09-25",
+  "id": "repl-010"
+ },
+ {
+  "oldLine": 6378,
+  "oldTitle": "Academy Manufactor replaces a whole BATCH, not one token of it",
+  "oldDate": "2026-09-25",
+  "id": "repl-015"
+ },
+ {
+  "oldLine": 6394,
+  "oldTitle": "A loop is only a draw if EVERY action in it is mandatory — screen new adds for the closing link",
+  "oldDate": "2026-09-25",
+  "id": "loop-013"
+ },
+ {
+  "oldLine": 6413,
+  "oldTitle": "Type-changing your own board into artifacts is a defensive downgrade, not just an upside",
+  "oldDate": "2026-09-25",
+  "id": "eval-046"
+ },
+ {
+  "oldLine": 6434,
+  "oldTitle": "Blasphemous Edict counts ALL creatures for its alternative cost and is locked on cast",
+  "oldDate": "2026-09-25",
+  "id": "cost-021"
+ },
+ {
+  "oldLine": 6454,
+  "oldTitle": "Section counts measure slots, not function — a ramp count can rise while ramp gets worse",
+  "oldDate": "2026-09-25",
+  "id": "build-042"
+ },
+ {
+  "oldLine": 6473,
+  "oldTitle": "An {X} spell is counted at its printed mana value and silently understates the curve",
+  "oldDate": "2026-09-25",
+  "id": "build-043"
+ },
+ {
+  "oldLine": 6487,
+  "oldTitle": "Cheap converters beat expensive engines in a deck that already has too much engine",
+  "oldDate": "2026-09-25",
+  "id": "eval-047"
+ },
+ {
+  "oldLine": 6504,
+  "oldTitle": "Read a deck-checker's SUB-SCORES, never the headline number alone",
+  "oldDate": "2026-09-25",
+  "id": "tool-013"
+ },
+ {
+  "oldLine": 6521,
+  "oldTitle": "Deck checkers count dead tutors and auto-detected combos — audit both before trusting a comparison",
+  "oldDate": "2026-09-25",
+  "id": "tool-014"
+ },
+ {
+  "oldLine": 6539,
+  "oldTitle": "\"Until end of turn, whenever…\" is a delayed trigger with a duration — it re-fires every event, and each activation is its own copy",
+  "oldDate": "2026-09-25",
+  "id": "trig-035"
+ },
+ {
+  "oldLine": 6563,
+  "oldTitle": "\"Conditional\" is only a real cut reason if the deck fails to meet the condition",
+  "oldDate": "2026-09-25/26",
+  "id": "eval-030"
+ },
+ {
+  "oldLine": 6581,
+  "oldTitle": "In a go-wide deck, board-reading mana is not \"engine\" - cut it last",
+  "oldDate": "2026-09-26",
+  "id": "eval-047"
+ },
+ {
+  "oldLine": 6598,
+  "oldTitle": "\"Creature OR artifact put into a graveyard\" is a mana-payoff in a Treasure/Food deck",
+  "oldDate": "2026-09-26",
+  "id": "eval-048"
+ },
+ {
+  "oldLine": 6615,
+  "oldTitle": "A lifegain CONVERTER multiplies every life-gaining drainer; it is not another drainer",
+  "oldDate": "2026-09-26",
+  "id": "dmg-028"
+ },
+ {
+  "oldLine": 6632,
+  "oldTitle": "REFINEMENT: token DOUBLERS commute; only the splitters fix Chatterfang's position",
+  "oldDate": "2026-09-26",
+  "id": "repl-010"
+ },
+ {
+  "oldLine": 6660,
+  "oldTitle": "Descend counts CARDS — a token dying never descends",
+  "oldDate": "2026-09-28",
+  "id": "zone-026"
+ },
+ {
+  "oldLine": 6700,
+  "oldTitle": "A pilot-supplied pool plus the commander's EDHREC page is NOT a format sweep",
+  "oldDate": "2026-09-28",
+  "id": "tool-015"
+ },
+ {
+  "oldLine": 6722,
+  "oldTitle": "A fight outlet is a DEATH outlet, not a SACRIFICE outlet",
+  "oldDate": "2026-09-28",
+  "id": "trig-036"
+ },
+ {
+  "oldLine": 6748,
+  "oldTitle": "Golden Guardian + Hexhaven Invigorator: a self-contained ramp package",
+  "oldDate": "2026-09-28",
+  "id": "eval-049"
+ },
+ {
+  "oldLine": 6772,
+  "oldTitle": "Hexhaven Invigorator's real lever is INDESTRUCTIBLE, and deathtouch is a trap",
+  "oldDate": "2026-09-28",
+  "id": "eval-050"
+ },
+ {
+  "oldLine": 6798,
+  "oldTitle": "REFINEMENT: a parallel set sweep needs a pre-warmed cache, read-only lookups and a coverage script",
+  "oldDate": "2026-09-28",
+  "id": "tool-007"
+ },
+ {
+  "oldLine": 6815,
+  "oldTitle": "Pre-release Scryfall legality is \"not_legal\" — never file a pass on it",
+  "oldDate": "2026-09-28",
+  "id": "tool-016"
+ },
+ {
+  "oldLine": 6826,
+  "oldTitle": "Generic \"from outside the game\" effects are blanks in Commander",
+  "oldDate": "2026-09-28",
+  "id": "zone-027"
+ },
+ {
+  "oldLine": 6837,
+  "oldTitle": "\"Commander's colour identity\" mana makes nothing under a colourless commander",
+  "oldDate": "2026-09-28",
+  "id": "cost-022"
+ },
+ {
+  "oldLine": 6848,
+  "oldTitle": "A mandatory artifact-token → creature-token replacement deletes Treasure mana and loops with Treasure-on-death",
+  "oldDate": "2026-09-28",
+  "id": "loop-014"
+ },
+ {
+  "oldLine": 6864,
+  "oldTitle": "A Torpor-style \"entering doesn't trigger\" static can switch off your own commander",
+  "oldDate": "2026-09-28",
+  "id": "eval-051"
+ },
+ {
+  "oldLine": 6876,
+  "oldTitle": "A symmetric \"during combat, can't activate abilities\" lock turns off your own combat-step engines",
+  "oldDate": "2026-09-28",
+  "id": "eval-051"
+ },
+ {
+  "oldLine": 6889,
+  "oldTitle": "An attack-trigger doubler gives Genji Glove exactly two extra combats, and the third attack needs vigilance",
+  "oldDate": "2026-09-28",
+  "id": "equip-028"
+ },
+ {
+  "oldLine": 6901,
+  "oldTitle": "An end-step \"if N creatures died this turn\" check never sees that end step's own delayed sacrifices",
+  "oldDate": "2026-09-28",
+  "id": "trig-005"
+ },
+ {
+  "oldLine": 6916,
+  "oldTitle": "Empower Jace: one token, one activation a turn, and a doubler kills the spare",
+  "oldDate": "2026-09-28",
+  "id": "repl-016"
+ },
+ {
+  "oldLine": 6933,
+  "oldTitle": "A +1-per-instance damage additive is a doubler on a ping engine; compare it to multipliers by instance count",
+  "oldDate": "2026-09-28",
+  "id": "dmg-029"
+ },
+ {
+  "oldLine": 6947,
+  "oldTitle": "A death-counter mana enchantment is wipe-proof ramp; file it as an engine slot, never as early ramp",
+  "oldDate": "2026-09-28",
+  "id": "build-044"
+ },
+ {
+  "oldLine": 6962,
+  "oldTitle": "A lifegain → +1/+1 counter body is a counter engine for a counter-spending commander, and can close a loop",
+  "oldDate": "2026-09-28",
+  "id": "loop-015"
+ },
+ {
+  "oldLine": 6976,
+  "oldTitle": "Loop-audit copy-lands and mana-costed untappers like free untappers",
+  "oldDate": "2026-09-28",
+  "id": "loop-005"
+ },
+ {
+  "oldLine": 6991,
+  "oldTitle": "Check new-set cards against the decision log by oracle text, not by name",
+  "oldDate": "2026-09-28",
+  "id": "tool-017"
+ },
+ {
+  "oldLine": 7000,
+  "oldTitle": "A creature that copies a spell effect loses to the spell in cast-trigger decks",
+  "oldDate": "2026-09-28",
+  "id": "eval-017"
+ },
+ {
+  "oldLine": 7012,
+  "oldTitle": "A graveyard-return clause the deck meets passively makes a card repeatable",
+  "oldDate": "2026-09-28",
+  "id": "eval-052"
+ },
+ {
+  "oldLine": 7023,
+  "oldTitle": "An instant-speed token maker turns \"once each turn\" triggers into one per player's turn",
+  "oldDate": "2026-09-28",
+  "id": "trig-037"
+ },
+ {
+  "oldLine": 7034,
+  "oldTitle": "Tinybones-style \"a player discards\" triggers once per discarding player",
+  "oldDate": "2026-09-28",
+  "id": "trig-021"
+ },
+ {
+  "oldLine": 7048,
+  "oldTitle": "Equipment on the commander buys a removal magnet, not a bonus",
+  "oldDate": "2026-09-28",
+  "id": "eval-053"
+ },
+ {
+  "oldLine": 7066,
+  "oldTitle": "Re-read the FULL oracle text before ranking a card for a cut — a role label hides half the card",
+  "oldDate": "2026-09-28",
+  "id": "eval-016"
+ },
+ {
+  "oldLine": 7085,
+  "oldTitle": "CORRECTION: a creature-only answer never replaces an any-permanent answer",
+  "oldDate": "2026-09-28",
+  "id": "eval-054"
+ },
+ {
+  "oldLine": 7100,
+  "oldTitle": "CORRECTION: rate a modal card on the mode the deck actually uses",
+  "oldDate": "2026-09-28",
+  "id": "eval-010"
+ },
+ {
+  "oldLine": 7115,
+  "oldTitle": "CORRECTION: say WHICH card a doubler doubles; don't credit the commander with a payoff's trigger",
+  "oldDate": "2026-09-28",
+  "id": "eval-055"
+ },
+ {
+  "oldLine": 7129,
+  "oldTitle": "CORRECTION: a drain-on-ETB \"reach\" creature is a finisher to the pilot, not a cut candidate for draw",
+  "oldDate": "2026-09-28",
+  "id": "eval-007"
+ },
+ {
+  "oldLine": 7140,
+  "oldTitle": "\"Counter bait\" and \"surprise lethal\" are real functions — a vacuum evaluation misses both",
+  "oldDate": "2026-09-28",
+  "id": "eval-056"
+ },
+ {
+  "oldLine": 7163,
+  "oldTitle": "A ramp spell that PUTS a land onto the battlefield is a landfall card",
+  "oldDate": "2026-09-28",
+  "id": "eval-057"
+ },
+ {
+  "oldLine": 7182,
+  "oldTitle": "The Enduring cycle returns exactly ONCE — and a sac outlet launders an exile into a death",
+  "oldDate": "2026-09-28",
+  "id": "trig-038"
+ },
+ {
+  "oldLine": 7218,
+  "oldTitle": "A granted \"{T}: Add mana\" is summoning-sick on the CREATURE, including the granter itself",
+  "oldDate": "2026-09-28",
+  "id": "tap-025"
+ },
+ {
+  "oldLine": 7239,
+  "oldTitle": "N separate token events beat one event making N tokens, by ~4x",
+  "oldDate": "2026-09-28",
+  "id": "repl-013"
+ },
+ {
+  "oldLine": 7265,
+  "oldTitle": "Check whether your own combo pieces are legal fodder for your own sacrifice cost",
+  "oldDate": "2026-09-28",
+  "id": "loop-016"
+ }
+]

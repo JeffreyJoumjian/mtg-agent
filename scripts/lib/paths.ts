@@ -48,6 +48,7 @@ export const RAW_DIR = resolve(RULES_DIR, "raw");
 export const SECTIONS_DIR = resolve(RULES_DIR, "sections");
 export const GLOSSARY_DIR = resolve(RULES_DIR, "glossary");
 export const MANIFEST_PATH = resolve(RULES_DIR, "manifest.json");
+export const RULES_INDEX_PATH = resolve(RULES_DIR, "INDEX.md");
 export const RULES_JSON_PATH = resolve(RULES_DIR, "rules.json");
 export const META_PATH = resolve(RULES_DIR, "meta.json");
 export const CHANGELOG_PATH = resolve(REPO_ROOT, "CHANGELOG.md");
@@ -56,8 +57,12 @@ export const CHANGELOG_PATH = resolve(REPO_ROOT, "CHANGELOG.md");
  *  cache; `decks/` holds one folder per deck (see decks/README.md). */
 export const DATA_DIR = resolve(REPO_ROOT, "data");
 export const CARD_CACHE_PATH = resolve(DATA_DIR, "card-cache.json");
+export const RULINGS_CACHE_PATH = resolve(DATA_DIR, "rulings-cache.json");
 export const EDHREC_CACHE_PATH = resolve(DATA_DIR, "edhrec-cache.json");
 export const DECKS_DIR = resolve(REPO_ROOT, "decks");
+
+/** The deck-brain ledger: one Markdown file per topic, plus the generated INDEX.md and CARDS.md. */
+export const LEDGER_DIR = resolve(REPO_ROOT, ".claude", "skills", "deck-brain", "ledger");
 
 /** Convert an absolute path to a repo-relative POSIX path for storage in the manifest. */
 export function repoRelative(absPath: string): string {

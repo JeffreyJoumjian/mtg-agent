@@ -6,8 +6,9 @@ and work doesn't get lost.
 
 > **This file covers *where things go*. For *how to decide* — card evaluation, cuts, swaps,
 > rulings, and what's already been settled — invoke the `deck-brain` skill first.** Its
-> `LEDGER.md` is append-only: when a session produces a lesson that would change a future decision
-> on a different card or deck, write it there before finishing. Decisions specific to one deck go
+> ledger (`.claude/skills/deck-brain/ledger/`, searched with `bun run lookup`) learns: when a session
+> produces a lesson that would change a future decision on a different card or deck, file it there
+> before finishing. Decisions specific to one deck go
 > in that deck's `research/decisions.md`.
 
 ## Per-deck layout
@@ -294,6 +295,13 @@ directly; it proposes. See `apps/collection-visualizer/README.md`.
   `MOXFIELD*.txt`, `history.jsonl` or anything in `versions/`.
 - A card's status / tags / note / printing → `bun run deck:meta`, or the card popover in the app.
 - About to gut/rebuild the deck → nothing extra: every apply snapshots what it replaces.
-- Don't leave loose files in `decks/` root — everything belongs to a deck folder. The one
-  exception is `decks/_printings.txt`, the cross-deck printings reserve (underscore-prefixed, like
-  `_TEMPLATE/`, so it never reads as a deck).
+- A deck you are done with → **Archive** it from the decks page in the app. Nothing is deleted:
+  the whole folder moves to `decks/_archive/<slug>/` (underscore-prefixed, so it no longer lists
+  as a deck), and **Restore** on the same page moves it back. Moving the folder by hand does the
+  same thing.
+- Don't leave loose files in `decks/` root — everything belongs to a deck folder. The two
+  exceptions are `decks/_printings.txt`, the cross-deck printings reserve, and `decks/_notes.md`,
+  the per-deck standing notes (both underscore-prefixed, like `_TEMPLATE/` and `_archive/`, so they
+  never read as a deck).
+- A standing per-deck fact (which lists are live, a loop hazard, a pilot constraint, an artifact
+  URL) → that deck's section of `decks/_notes.md`; its grounds still go in `research/decisions.md`.

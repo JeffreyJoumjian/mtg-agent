@@ -5,8 +5,7 @@ import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle-group";
 import type { PreviewResult } from "../api/changes";
 import type { CardView } from "../model/cards";
 import type { Staged, StagedEntry } from "../state/staged";
-import { DeltaTable } from "./DeltaTable";
-import { DiffColumns } from "./DiffColumns";
+import { DiffPanel } from "./DiffPanel";
 
 interface StagedPanelProps {
   staged: Staged;
@@ -24,8 +23,9 @@ interface StagedPanelProps {
   onDiscard: () => void;
 }
 
-/** Slides up over the board when something is staged: the diff, every number that moves, the
- *  with/without toggle, and the two buttons that end it — Apply writes, Discard forgets. */
+/** Sits beneath the board when something is staged, in a split the user can drag: the diff, every
+ *  number that moves, the with/without toggle, and the two buttons that end it — Apply writes,
+ *  Discard forgets. */
 export function StagedPanel(props: StagedPanelProps) {
   const { staged, preview } = props;
   const failures = preview && !preview.ok ? preview.failures : [];
@@ -33,8 +33,8 @@ export function StagedPanel(props: StagedPanelProps) {
   const fromAgent = staged.origin !== null;
 
   return (
-    <div className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85">
-      <div className="flex flex-wrap items-center gap-2 border-b px-3 py-2">
+    <div className="flex h-full min-h-0 flex-col bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85">
+      <div className="flex shrink-0 flex-wrap items-center gap-2 border-b px-3 py-2">
         <span className="text-[13px] font-medium">
           {count} staged {count === 1 ? "change" : "changes"}
           {fromAgent && <span className="ml-1.5 text-[12px] font-normal text-muted-foreground">from the agent</span>}
@@ -69,9 +69,9 @@ export function StagedPanel(props: StagedPanelProps) {
         </div>
       </div>
 
-      {props.error && <p className="border-b bg-rose-400/10 px-3 py-1.5 text-[13px] text-rose-300">{props.error}</p>}
+      {props.error && <p className="shrink-0 border-b bg-bad/10 px-3 py-1.5 text-[13px] text-bad">{props.error}</p>}
       {failures.length > 0 && (
-        <ul className="border-b bg-rose-400/10 px-3 py-1.5 text-[13px] text-rose-300">
+        <ul className="shrink-0 border-b bg-bad/10 px-3 py-1.5 text-[13px] text-bad">
           {failures.map((f, i) => (
             <li key={i}>
               {f.entry.op} {f.entry.name}: {f.reason}
@@ -80,18 +80,14 @@ export function StagedPanel(props: StagedPanelProps) {
         </ul>
       )}
 
-      <div className="grid max-h-72 grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-4 overflow-y-auto px-3 py-2">
-        <div>
-          {staged.origin?.rationale && (
-            <p className="mb-2 text-[13px] leading-snug text-muted-foreground">{staged.origin.rationale}</p>
-          )}
-          <DiffColumns entries={staged.entries} cards={props.cards} onRemoveEntry={props.onRemoveEntry} />
-        </div>
-        <div>
-          {props.previewLoading && !preview && <p className="text-[12px] text-muted-foreground">Computing…</p>}
-          {preview?.ok && <DeltaTable changes={preview.changes} />}
-        </div>
-      </div>
+      <DiffPanel
+        entries={staged.entries}
+        cards={props.cards}
+        changes={preview?.ok ? preview.changes : undefined}
+        loading={props.previewLoading && !preview}
+        rationale={staged.origin?.rationale}
+        onRemoveEntry={props.onRemoveEntry}
+      />
     </div>
   );
 }

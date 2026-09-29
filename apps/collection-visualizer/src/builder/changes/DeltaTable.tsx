@@ -51,8 +51,8 @@ export function DeltaTable(props: DeltaTableProps) {
               <span className="shrink-0">
                 <span className="text-muted-foreground">{fmt(c.key, c.before)}</span>
                 <span className="mx-1 text-muted-foreground">→</span>
-                <span className="font-medium text-amber-400">{fmt(c.key, c.after)}</span>
-                <span className="ml-1 text-[11px] text-amber-400/80">
+                <span className="font-medium text-warn">{fmt(c.key, c.after)}</span>
+                <span className="ml-1 text-[11px] text-warn/80">
                   ({c.delta > 0 ? "+" : ""}
                   {fmt(c.key, c.delta)})
                 </span>

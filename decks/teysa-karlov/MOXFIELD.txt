@@ -1,18 +1,18 @@
 1 Teysa Karlov
+1 Adeline, Resplendent Cathar
 1 Anguished Unmaking
 1 Anointed Procession
 1 Arcane Signet
 1 Ashnod's Altar
 1 Bastion of Remembrance
+1 Bitterbloom Bearer
 1 Bitterblossom
 1 Black Market Connections
 1 Blood Artist
 1 Bloodletter of Aclazotz
 1 Bojuka Bog
-1 Bontu's Monument
 1 Brightclimb Pathway
 1 Cabal Coffers
-1 Carrion Feeder
 1 Castle Ardenvale
 1 Castle Locthwain
 1 Caves of Koilos
@@ -20,6 +20,7 @@
 1 Concealed Courtyard
 1 Corpse Knight
 1 Corrupted Conviction
+1 Court of Grace
 1 Cruel Celebrant
 1 Deadly Dispute
 1 Despark
@@ -28,18 +29,16 @@
 1 Elas il-Kor, Sadistic Pilgrim
 1 Elenda, the Dusk Rose
 1 Elspeth, Storm Slayer
-1 Falkenrath Noble
 1 Fetid Heath
 1 Generous Gift
 1 Godless Shrine
 1 Grim Haruspex
 1 Hallowed Spiritkeeper
-1 Hidden Stockpile
 1 High Market
-1 Hunted Witness
 1 Imperious Oligarch
 1 Isolated Chapel
-1 Kaya's Wrath
+1 Lingering Souls
+1 Luminous Broodmoth
 1 Marauding Blight-Priest
 1 Marionette Apprentice
 1 Midnight Reaper
@@ -48,8 +47,8 @@
 1 Mondrak, Glory Dominus
 1 Morbid Opportunist
 1 Mortuary Mire
+1 Ocelot Pride
 1 Oketra's Monument
-1 Open the Graves
 1 Ophiomancer
 1 Orzhov Enforcer
 1 Orzhov Signet
@@ -63,6 +62,7 @@
 1 Priest of Forgotten Gods
 1 Reassembling Skeleton
 1 Scrubland
+1 Sengir Autocrat
 1 Shattered Sanctum
 1 Silent Clearing
 1 Skullclamp (MSC) 210

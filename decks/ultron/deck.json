@@ -23,12 +23,11 @@
             { "name": "Command Beacon", "qty": 1 },
             { "name": "Darksteel Citadel", "qty": 1 },
             { "name": "Deserted Temple", "qty": 1 },
-            { "name": "Fomori Vault", "qty": 1 },
+            { "name": "Hall of Echoes", "qty": 1 },
             { "name": "Inventors' Fair", "qty": 1 },
-            { "name": "Mirrorpool", "qty": 1 },
             { "name": "Mishra's Workshop", "qty": 1 },
+            { "name": "Planar Nexus", "qty": 1 },
             { "name": "Power Depot", "qty": 1 },
-            { "name": "Rogue's Passage", "qty": 1 },
             { "name": "Sanctum of Ugin", "qty": 1 },
             { "name": "Scavenger Grounds", "qty": 1 },
             { "name": "Shrine of the Forsaken Gods", "qty": 1 },
@@ -44,7 +43,7 @@
             { "name": "Urza's Workshop", "qty": 1 },
             { "name": "Vesuva", "qty": 1 },
             { "name": "War Room", "qty": 1 },
-            { "name": "Wastes", "qty": 8 }
+            { "name": "Wastes", "qty": 9 }
           ]
         },
         {
@@ -77,10 +76,10 @@
         {
           "name": "Card Draw",
           "cards": [
-            { "name": "Canoptek Spyder", "qty": 1 },
             { "name": "Chimil, the Inner Sun", "qty": 1 },
             { "name": "Idol of Oblivion", "qty": 1 },
             { "name": "Iron Spider, Stark Upgrade", "qty": 1 },
+            { "name": "Memnarch, the Warden", "qty": 1 },
             { "name": "Mind's Eye", "qty": 1 },
             { "name": "The One Ring", "qty": 1 },
             { "name": "The Ten Rings", "qty": 1 }

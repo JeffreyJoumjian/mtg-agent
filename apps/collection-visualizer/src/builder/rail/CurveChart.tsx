@@ -27,7 +27,12 @@ export function CurveChart(props: CurveChartProps) {
         </span>
       </div>
       <ChartContainer config={config} className="aspect-auto w-full" style={{ height: props.height ?? 96 }}>
-        <BarChart data={props.histogram} margin={{ left: 0, right: 0, top: 4, bottom: 0 }} barCategoryGap={3}>
+        <BarChart
+          accessibilityLayer={false}
+          data={props.histogram}
+          margin={{ left: 0, right: 0, top: 4, bottom: 0 }}
+          barCategoryGap={3}
+        >
           <XAxis dataKey="mv" tickLine={false} axisLine={false} tick={{ fontSize: 10 }} interval={0} />
           <ChartTooltip
             cursor={{ fill: "var(--accent)" }}

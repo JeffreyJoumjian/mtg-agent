@@ -15,11 +15,16 @@ export interface GateDecision {
 
 const ALWAYS_ALLOWED = ["Read", "Glob", "Grep", "TodoWrite", "Skill", "Task", "WebFetch", "WebSearch", "LS"];
 
-/** Read-only commands the agent may run from the repo root. Everything else is denied. */
-const BASH_ALLOWLIST = [/^bun run (card|edhrec|carddata|deckcheck|deck:show)(\s|$)/, /^bun run scripts\/card\.ts\s/];
+/** Commands the agent may run from the repo root: read-only ones, plus `ledger:index`, which only
+ *  regenerates the ledger's two derived index files. Everything else is denied. */
+const BASH_ALLOWLIST = [
+  /^bun run (card|edhrec|carddata|deckcheck|deck:show|lookup|ledger:index)(\s|$)/,
+  /^bun run scripts\/card\.ts\s/,
+];
 const BASH_CHAINING = /[;&|`$<>]/;
 
 const WRITE_TOOLS = ["Write", "Edit", "MultiEdit"];
+const LEDGER_DIR = ".claude/skills/deck-brain/ledger/";
 
 /** A repo-relative POSIX path, or null when the path escapes the repo. */
 function repoPath(raw: string, repoRoot: string): string | null {
@@ -47,7 +52,7 @@ export function classifyToolUse(tool: string, input: Record<string, unknown>, ct
     return {
       verdict: "deny",
       reason:
-        "Only `bun run card`, `bun run edhrec`, `bun run carddata`, `bun run deckcheck` and `bun run deck:show` are allowed here. To change the deck, call mcp__deck-ui__propose_changes.",
+        "Only `bun run card`, `bun run edhrec`, `bun run carddata`, `bun run deckcheck`, `bun run deck:show`, `bun run lookup` and `bun run ledger:index` are allowed here. To change the deck, call mcp__deck-ui__propose_changes.",
     };
   }
 
@@ -56,9 +61,17 @@ export function classifyToolUse(tool: string, input: Record<string, unknown>, ct
     const path = repoPath(raw, ctx.repoRoot);
     if (!path) return { verdict: "deny", reason: "Writes outside the repo are not allowed." };
 
-    // The ledger is append-only knowledge: an Edit adds to it, a whole-file Write could erase it.
-    if (path === ".claude/skills/deck-brain/LEDGER.md")
-      return tool === "Write" ? { verdict: "ask", path } : { verdict: "allow-notify", path };
+    // The ledger's topic files take edits (new entries, extended ones); a whole-file Write could erase
+    // one, so it asks. INDEX.md and CARDS.md are generated, and archive/ is the record of the old file.
+    if (path.startsWith(LEDGER_DIR)) {
+      const inside = path.slice(LEDGER_DIR.length);
+      if (inside.startsWith("archive/"))
+        return { verdict: "deny", reason: "The ledger archive is the record of the pre-split LEDGER.md and stays as it is." };
+      if (inside === "INDEX.md" || inside === "CARDS.md")
+        return { verdict: "deny", reason: "INDEX.md and CARDS.md are generated. Edit a topic file, then run `bun run ledger:index`." };
+      if (inside.endsWith(".md") && !inside.includes("/"))
+        return tool === "Write" ? { verdict: "ask", path } : { verdict: "allow-notify", path };
+    }
 
     const deckPrefix = `decks/${ctx.slug}/`;
     if (path.startsWith(deckPrefix)) {

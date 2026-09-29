@@ -1,5 +1,5 @@
 import { test, expect } from "bun:test";
-import { pairEntries } from "./pairs";
+import { countPaired, pairEntries } from "./pairs";
 import type { ChangeEntry } from "@mtg/change-set.ts";
 
 test("pairEntries joins an add that replaces a removed card into one swap row", () => {
@@ -20,6 +20,20 @@ test("pairEntries joins an add that replaces a removed card into one swap row", 
   ]);
 });
 
+test("pairEntries lifts swaps above the other rows whatever the entry order", () => {
+  const entries: ChangeEntry[] = [
+    { op: "add", name: "Deathrite Shaman", section: "Ramp" },
+    { op: "remove", name: "Cultivate" },
+    { op: "add", name: "Skullclamp", section: "Card Draw", replaces: "Idol of Oblivion" },
+    { op: "remove", name: "Idol of Oblivion" },
+  ];
+  expect(pairEntries(entries) as unknown).toEqual([
+    { kind: "swap", out: entries[3], in: entries[2], why: undefined },
+    { kind: "add", in: entries[0] },
+    { kind: "remove", out: entries[1] },
+  ]);
+});
+
 test("pairEntries keeps an add whose `replaces` names a card that is not being removed as a plain add", () => {
   const entries: ChangeEntry[] = [{ op: "add", name: "A", section: "X", replaces: "Ghost" }];
   expect(pairEntries(entries) as unknown).toEqual([{ kind: "add", in: entries[0] }]);
@@ -35,4 +49,17 @@ test("pairEntries matches replaces case-insensitively and never pairs a remove t
     { kind: "swap", out: entries[0], in: entries[1], why: undefined },
     { kind: "add", in: entries[2] },
   ]);
+});
+
+test("countPaired counts a swap once and the rest by kind", () => {
+  const entries: ChangeEntry[] = [
+    { op: "remove", name: "Idol of Oblivion" },
+    { op: "add", name: "Skullclamp", section: "Card Draw", replaces: "Idol of Oblivion" },
+    { op: "remove", name: "Cultivate" },
+    { op: "add", name: "Deathrite Shaman", section: "Ramp" },
+    { op: "add", name: "Sol Ring", section: "Ramp" },
+    { op: "move", name: "Bojuka Bog", section: "Utility" },
+    { op: "qty", name: "Forest", qty: 6 },
+  ];
+  expect(countPaired(entries)).toEqual({ swaps: 1, added: 2, removed: 1, moved: 1, qty: 1 });
 });

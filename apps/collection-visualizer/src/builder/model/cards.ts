@@ -15,6 +15,7 @@ export interface CardView extends CardInfo {
   layout: string;
   rarity: string;
   set: string;
+  setName?: string;
   collectorNumber: string;
   scryfallUri: string;
   power?: string;
@@ -49,12 +50,54 @@ export function toCardView(s: CardSummary): CardView {
     layout: s.layout,
     rarity: s.rarity,
     set: s.set,
+    ...(s.setName !== undefined ? { setName: s.setName } : {}),
     collectorNumber: s.collectorNumber,
     scryfallUri: s.scryfallUri,
     ...(s.power !== undefined ? { power: s.power } : {}),
     ...(s.toughness !== undefined ? { toughness: s.toughness } : {}),
     keywords: s.keywords,
   };
+}
+
+/** `ltc|264`: a pinned printing as one string — the same key the server cache uses. */
+export function printingKey(p: { set: string; collectorNumber: string }): string {
+  return `${p.set.toLowerCase()}|${p.collectorNumber.trim()}`;
+}
+
+/** The view wearing another printing's face: images, set and number, rarity, Scryfall page. Oracle
+ *  text, cost and price stay — a printing is only ever a different picture of the same card, and a
+ *  pin that points at a different card altogether is ignored. */
+export function withPrinting(view: CardView, printing: CardView): CardView {
+  if (printing.oracleId && view.oracleId && printing.oracleId !== view.oracleId) return view;
+
+  return {
+    ...view,
+    id: printing.id,
+    images: printing.images,
+    faces: printing.faces,
+    set: printing.set,
+    ...(printing.setName !== undefined ? { setName: printing.setName } : {}),
+    collectorNumber: printing.collectorNumber,
+    rarity: printing.rarity,
+    scryfallUri: printing.scryfallUri,
+  };
+}
+
+/** Every card whose meta pins a printing, shown as that printing wherever its data is here. */
+export function applyPinnedPrintings(
+  cards: Record<string, CardView>,
+  meta: Record<string, { printing?: { set: string; collectorNumber: string } }>,
+  printings: Record<string, CardView>,
+): Record<string, CardView> {
+  const out: Record<string, CardView> = { ...cards };
+  for (const [name, view] of Object.entries(cards)) {
+    const pin = meta[name]?.printing;
+    if (!pin) continue;
+
+    const printing = printings[printingKey(pin)];
+    if (printing) out[name] = withPrinting(view, printing);
+  }
+  return out;
 }
 
 /** An image URL for a card at a size, for a face index (out-of-range faces fall back to the front). */

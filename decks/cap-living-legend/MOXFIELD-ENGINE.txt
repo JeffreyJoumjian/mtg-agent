@@ -25,7 +25,6 @@
 1 Eerie Interlude
 1 Fabricate
 1 Faith's Reward
-1 Fallowsage
 1 Fierce Guardianship (CMM) 94
 1 Flawless Maneuver
 1 Flooded Strand (KTK) 233
@@ -77,6 +76,7 @@
 1 Swords to Plowshares (PMEI) 2026-4
 1 Teferi's Protection (MAR) 51
 1 The Seriema (EOE) 323
+1 The Theorist, Jace Beleren
 1 The Wandering Emperor
 1 The Wandering Rescuer
 1 Throne of the God-Pharaoh

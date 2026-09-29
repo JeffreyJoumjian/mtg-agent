@@ -1,0 +1,258 @@
+{
+  "schema": 1,
+  "name": "Ghave, Guru of Spores — \"Spore Bank\"",
+  "format": "commander",
+  "description": "Identity: **the commander is the token engine.** Ghave banks +1/+1 counters and cashes them into Saprolings for {1} each, then buys counters back by sacrificing. White and green doublers multiply both halves; the drain suite and Grave Pact turn every death into damage.",
+  "lists": {
+    "main": {
+      "label": "Main",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Ghave, Guru of Spores", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Bayou", "qty": 1 },
+            { "name": "Blooming Marsh", "qty": 1 },
+            { "name": "Branchloft Pathway", "qty": 1 },
+            { "name": "Brightclimb Pathway", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Concealed Courtyard", "qty": 1 },
+            { "name": "Darkbore Pathway", "qty": 1 },
+            { "name": "Forest", "qty": 4 },
+            { "name": "Gaea's Cradle", "qty": 1 },
+            { "name": "Gavony Township", "qty": 1 },
+            { "name": "Godless Shrine", "qty": 1 },
+            { "name": "Indatha Triome", "qty": 1 },
+            { "name": "Isolated Chapel", "qty": 1 },
+            { "name": "Marsh Flats", "qty": 1 },
+            { "name": "Overgrown Tomb", "qty": 1 },
+            { "name": "Phyrexian Tower", "qty": 1 },
+            { "name": "Plains", "qty": 3 },
+            { "name": "Sandsteppe Citadel", "qty": 1 },
+            { "name": "Savannah", "qty": 1 },
+            { "name": "Scrubland", "qty": 1 },
+            { "name": "Sunpetal Grove", "qty": 1 },
+            { "name": "Swamp", "qty": 3 },
+            { "name": "Temple Garden", "qty": 1 },
+            { "name": "Urborg, Tomb of Yawgmoth", "qty": 1 },
+            { "name": "Verdant Catacombs", "qty": 1 },
+            { "name": "Windswept Heath", "qty": 1 },
+            { "name": "Woodland Cemetery", "qty": 1 },
+            { "name": "Yavimaya, Cradle of Growth", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp & Mana",
+          "cards": [
+            { "name": "Birds of Paradise", "qty": 1 },
+            { "name": "Cryptolith Rite", "qty": 1 },
+            { "name": "Cultivate", "qty": 1 },
+            { "name": "Farseek", "qty": 1 },
+            { "name": "Icetill Explorer", "qty": 1 },
+            { "name": "Llanowar Elves", "qty": 1 },
+            { "name": "Nature's Lore", "qty": 1 },
+            { "name": "Oracle of Mul Daya", "qty": 1 },
+            { "name": "Sakura-Tribe Elder", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Three Visits", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Black Market Connections", "qty": 1 },
+            { "name": "Deadly Dispute", "qty": 1 },
+            { "name": "Idol of Oblivion", "qty": 1 },
+            { "name": "Mentor of the Meek", "qty": 1 },
+            { "name": "Moldervine Reclamation", "qty": 1 },
+            { "name": "Skullclamp", "qty": 1 },
+            { "name": "Sylvan Library", "qty": 1 },
+            { "name": "Tireless Tracker", "qty": 1 },
+            { "name": "Village Rites", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal & Interaction",
+          "cards": [
+            { "name": "Anguished Unmaking", "qty": 1 },
+            { "name": "Assassin's Trophy", "qty": 1 },
+            { "name": "Aura Shards", "qty": 1 },
+            { "name": "Beast Within", "qty": 1 },
+            { "name": "Heroic Intervention", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 },
+            { "name": "Teferi's Protection", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            { "name": "The Meathook Massacre", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Engines",
+          "cards": [
+            { "name": "Adeline, Resplendent Cathar", "qty": 1 },
+            { "name": "Avenger of Zendikar", "qty": 1 },
+            { "name": "Bitterblossom", "qty": 1 },
+            { "name": "Brightcap Badger", "qty": 1 },
+            { "name": "Lingering Souls", "qty": 1 },
+            { "name": "March of the Multitudes", "qty": 1 },
+            { "name": "Pest Infestation", "qty": 1 },
+            { "name": "Rosie Cotton of South Lane", "qty": 1 },
+            { "name": "Scute Swarm", "qty": 1 },
+            { "name": "Second Harvest", "qty": 1 },
+            { "name": "Slimefoot, the Stowaway", "qty": 1 },
+            { "name": "Springheart Nantuko", "qty": 1 },
+            { "name": "Tendershoot Dryad", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Counter Engines",
+          "cards": [
+            { "name": "Hardened Scales", "qty": 1 },
+            { "name": "Kami of Whispered Hopes", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Doublers",
+          "cards": [
+            { "name": "Anointed Procession", "qty": 1 },
+            { "name": "Chatterfang, Squirrel General", "qty": 1 },
+            { "name": "Doubling Season", "qty": 1 },
+            { "name": "Elspeth, Storm Slayer", "qty": 1 },
+            { "name": "Mondrak, Glory Dominus", "qty": 1 },
+            { "name": "Parallel Lives", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Sacrifice Outlets",
+          "cards": [
+            { "name": "Ashnod's Altar", "qty": 1 },
+            { "name": "Phyrexian Altar", "qty": 1 },
+            { "name": "Priest of Forgotten Gods", "qty": 1 },
+            { "name": "Viscera Seer", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Drain Payoffs",
+          "cards": [
+            { "name": "Bastion of Remembrance", "qty": 1 },
+            { "name": "Blood Artist", "qty": 1 },
+            { "name": "Cruel Celebrant", "qty": 1 },
+            { "name": "Dictate of Erebos", "qty": 1 },
+            { "name": "Elas il-Kor, Sadistic Pilgrim", "qty": 1 },
+            { "name": "Grave Pact", "qty": 1 },
+            { "name": "Marionette Apprentice", "qty": 1 },
+            { "name": "Mirkwood Bats", "qty": 1 },
+            { "name": "Pitiless Plunderer", "qty": 1 },
+            { "name": "Zulaport Cutthroat", "qty": 1 }
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {
+    "Adeline, Resplendent Cathar": { "printing": {"set":"mid","collectorNumber":"1"} },
+    "Anguished Unmaking": { "printing": {"set":"soi","collectorNumber":"242"} },
+    "Anointed Procession": { "printing": {"set":"akh","collectorNumber":"2"} },
+    "Arcane Signet": { "printing": {"set":"pf25","collectorNumber":"10"} },
+    "Ashnod's Altar": { "printing": {"set":"cmm","collectorNumber":"368"} },
+    "Assassin's Trophy": { "printing": {"set":"mkm","collectorNumber":"187"} },
+    "Aura Shards": { "printing": {"set":"sld","collectorNumber":"2694"} },
+    "Avacyn's Pilgrim": { "printing": {"set":"plst","collectorNumber":"MIC-132"} },
+    "Bastion of Remembrance": { "printing": {"set":"iko","collectorNumber":"73"} },
+    "Bayou": { "printing": {"set":"30a","collectorNumber":"274"} },
+    "Beast Within": { "printing": {"set":"plst","collectorNumber":"LCC-233"} },
+    "Birds of Paradise": { "printing": {"set":"plst","collectorNumber":"GK2-82"} },
+    "Bitterbloom Bearer": { "printing": {"set":"ecl","collectorNumber":"88"} },
+    "Bitterblossom": { "printing": {"set":"uma","collectorNumber":"85"} },
+    "Black Market Connections": { "printing": {"set":"clb","collectorNumber":"669"} },
+    "Blood Artist": { "printing": {"set":"plst","collectorNumber":"INR-97"} },
+    "Blooming Marsh": { "printing": {"set":"otj","collectorNumber":"266"} },
+    "Branchloft Pathway": { "printing": {"set":"znr","collectorNumber":"284"} },
+    "Brightcap Badger": { "printing": {"set":"blc","collectorNumber":"28"} },
+    "Brightclimb Pathway": { "printing": {"set":"slu","collectorNumber":"14"} },
+    "Cathars' Crusade": { "printing": {"set":"inr","collectorNumber":"483"} },
+    "Chatterfang, Squirrel General": { "printing": {"set":"blc","collectorNumber":"82"} },
+    "Command Tower": { "printing": {"set":"sld","collectorNumber":"2812"} },
+    "Concealed Courtyard": { "printing": {"set":"otj","collectorNumber":"268"} },
+    "Court of Grace": { "printing": {"set":"sld","collectorNumber":"2685"} },
+    "Cruel Celebrant": { "printing": {"set":"war","collectorNumber":"188"} },
+    "Cryptolith Rite": { "printing": {"set":"inr","collectorNumber":"316"} },
+    "Cultivate": { "printing": {"set":"m21","collectorNumber":"177"} },
+    "Darkbore Pathway": { "printing": {"set":"slu","collectorNumber":"17"} },
+    "Deadly Dispute": { "printing": {"set":"afr","collectorNumber":"94"} },
+    "Dictate of Erebos": { "printing": {"set":"sld","collectorNumber":"2204"} },
+    "Doubling Season": { "printing": {"set":"fdn","collectorNumber":"216"} },
+    "Elas il-Kor, Sadistic Pilgrim": { "printing": {"set":"dmu","collectorNumber":"198"} },
+    "Elspeth, Storm Slayer": { "printing": {"set":"tdm","collectorNumber":"11"} },
+    "Farseek": { "printing": {"set":"blc","collectorNumber":"119"} },
+    "Forest": { "printing": {"set":"p23","collectorNumber":"10"} },
+    "Gaea's Cradle": { "printing": {"set":"olgc","collectorNumber":"2014"} },
+    "Gavony Township": { "printing": {"set":"c20","collectorNumber":"276"} },
+    "Ghave, Guru of Spores": { "printing": {"set":"plst","collectorNumber":"C16-200"} },
+    "Godless Shrine": { "printing": {"set":"trk","collectorNumber":"285"} },
+    "Grave Pact": { "printing": {"set":"cmm","collectorNumber":"165"} },
+    "Hardened Scales": { "printing": {"set":"pip","collectorNumber":"200"} },
+    "Heroic Intervention": { "printing": {"set":"afc","collectorNumber":"161"} },
+    "Idol of Oblivion": { "printing": {"set":"plst","collectorNumber":"M3C-297"} },
+    "Indatha Triome": { "printing": {"set":"iko","collectorNumber":"248"} },
+    "Isolated Chapel": { "printing": {"set":"dom","collectorNumber":"241"} },
+    "Kami of Whispered Hopes": { "printing": {"set":"mom","collectorNumber":"196"} },
+    "Lingering Souls": { "printing": {"set":"inr","collectorNumber":"30"} },
+    "Llanowar Elves": { "printing": {"set":"fdn","collectorNumber":"227"} },
+    "Marionette Apprentice": { "printing": {"set":"plst","collectorNumber":"MH3-100"} },
+    "Marsh Flats": { "printing": {"set":"slu","collectorNumber":"1"} },
+    "Mentor of the Meek": { "printing": {"set":"fdn","collectorNumber":"578"} },
+    "Mirkwood Bats": { "printing": {"set":"ltr","collectorNumber":"95"} },
+    "Moldervine Reclamation": { "printing": {"set":"m20","collectorNumber":"214"} },
+    "Mondrak, Glory Dominus": { "printing": {"set":"one","collectorNumber":"23"} },
+    "Mycoloth": { "printing": {"set":"plst","collectorNumber":"CMA-129"} },
+    "Nature's Lore": { "printing": {"set":"plst","collectorNumber":"CMM-904"} },
+    "Ocelot Pride": { "printing": {"set":"mh3","collectorNumber":"38"} },
+    "Overgrown Tomb": { "printing": {"set":"grn","collectorNumber":"253"} },
+    "Parallel Lives": { "printing": {"set":"isd","collectorNumber":"199"} },
+    "Path to Exile": { "printing": {"set":"plst","collectorNumber":"BLC-147"} },
+    "Phyrexian Altar": { "printing": {"set":"plst","collectorNumber":"UMA-232"} },
+    "Phyrexian Tower": { "printing": {"set":"uma","collectorNumber":"248"} },
+    "Pitiless Plunderer": { "printing": {"set":"spg","collectorNumber":"5"} },
+    "Plains": { "printing": {"set":"p23","collectorNumber":"6"} },
+    "Priest of Forgotten Gods": { "printing": {"set":"rna","collectorNumber":"83"} },
+    "Rosie Cotton of South Lane": { "printing": {"set":"ltr","collectorNumber":"27"} },
+    "Sakura-Tribe Elder": { "printing": {"set":"pl25","collectorNumber":"4"} },
+    "Sandsteppe Citadel": { "printing": {"set":"tdm","collectorNumber":"266"} },
+    "Savannah": { "printing": {"set":"30a","collectorNumber":"276"} },
+    "Scrubland": { "printing": {"set":"30a","collectorNumber":"277"} },
+    "Scute Swarm": { "printing": {"set":"znr","collectorNumber":"203"} },
+    "Second Harvest": { "printing": {"set":"blc","collectorNumber":"123"} },
+    "Skullclamp": { "printing": {"set":"tdc","collectorNumber":"103"} },
+    "Slimefoot, the Stowaway": { "printing": {"set":"dom","collectorNumber":"205"} },
+    "Sol Ring": { "printing": {"set":"msc","collectorNumber":"214"} },
+    "Sunpetal Grove": { "printing": {"set":"tdc","collectorNumber":"399"} },
+    "Swamp": { "printing": {"set":"p23","collectorNumber":"8"} },
+    "Swords to Plowshares": { "printing": {"set":"sld","collectorNumber":"2804"} },
+    "Sylvan Library": { "printing": {"set":"dmr","collectorNumber":"179"} },
+    "Teferi's Protection": { "printing": {"set":"2x2","collectorNumber":"32"} },
+    "Temple Garden": { "printing": {"set":"trk","collectorNumber":"301"} },
+    "Tendershoot Dryad": { "printing": {"set":"soc","collectorNumber":"125"} },
+    "The Meathook Massacre": { "printing": {"set":"inr","collectorNumber":"387"} },
+    "Three Visits": { "printing": {"set":"plst","collectorNumber":"CMR-261"} },
+    "Urborg, Tomb of Yawgmoth": { "printing": {"set":"m15","collectorNumber":"248"} },
+    "Verdant Catacombs": { "printing": {"set":"mm3","collectorNumber":"249"} },
+    "Village Rites": { "printing": {"set":"inr","collectorNumber":"137"} },
+    "Viscera Seer": { "printing": {"set":"soc","collectorNumber":"229"} },
+    "Windswept Heath": { "printing": {"set":"ktk","collectorNumber":"248"} },
+    "Woodland Cemetery": { "printing": {"set":"dom","collectorNumber":"248"} },
+    "Yavimaya, Cradle of Growth": { "printing": {"set":"sld","collectorNumber":"2813"} },
+    "Zulaport Cutthroat": { "printing": {"set":"sld","collectorNumber":"1982"} }
+  }
+}

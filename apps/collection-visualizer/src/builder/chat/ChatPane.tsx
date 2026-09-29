@@ -134,7 +134,7 @@ export function ChatPane(props: ChatPaneProps) {
               return (
                 <p
                   key={item.id}
-                  className={`text-[12px] ${item.level === "error" ? "text-rose-300" : "text-muted-foreground"}`}
+                  className={`text-[12px] ${item.level === "error" ? "text-bad" : "text-muted-foreground"}`}
                 >
                   {item.text}
                 </p>
@@ -148,7 +148,7 @@ export function ChatPane(props: ChatPaneProps) {
             <span className="inline-block size-1.5 animate-pulse rounded-full bg-muted-foreground" /> thinking
           </div>
         )}
-        {props.reconnecting && <p className="text-[12px] text-amber-300">Reconnecting to the deck session…</p>}
+        {props.reconnecting && <p className="text-[12px] text-warn">Reconnecting to the deck session…</p>}
       </div>
       <Composer
         busy={state.busy}

@@ -5,6 +5,7 @@
  *    bun run card "Chaos Warp"                 # one card: cost, type, identity, price, legality
  *    bun run card "Chaos Warp" --set msc       # pin a specific printing
  *    bun run card "Chaos Warp" --json          # raw normalized JSON
+ *    bun run card "Chaos Warp" --rulings       # plus its official (Gatherer) and Scryfall rulings
  *    bun run card --deck chatterfang           # price a deck's main list (batched, one call)
  *    bun run card --deck chatterfang --list b4 # another list of the same deck
  *    bun run card --deck chatterfang --id ur   # override the identity check (default: the commanders')
@@ -14,7 +15,7 @@
  *
  *  Only the deck-legality/identity flags are opinions; everything else is straight Scryfall. */
 import { existsSync } from "node:fs";
-import { getCard, refreshAll, resolveNames } from "./lib/card-cache.ts";
+import { getCard, getRulings, refreshAll, resolveNames } from "./lib/card-cache.ts";
 import { parseDecklist } from "./lib/decklist.ts";
 import { listNames, pickList, type DeckList } from "./lib/deck-model.ts";
 import { slugFromDeckArg } from "./lib/deck-research.ts";
@@ -160,10 +161,18 @@ async function main(): Promise<void> {
   // A pinned set targets a specific printing, so it bypasses the by-name cache.
   const pinnedSet = flagValue("--set");
   const card = pinnedSet ? await fetchCardByName(name.trim(), pinnedSet) : await getCard(name.trim());
+  // Entries cached before `id` existed can't key a rulings request, so re-fetch those once.
+  const rulings = hasFlag("--rulings") ? await getRulings(card.id ? card : await fetchCardByName(card.name)) : null;
+
   if (hasFlag("--json")) {
-    console.log(JSON.stringify(card, null, 2));
-  } else {
-    printCard(card);
+    console.log(JSON.stringify(rulings ? { ...card, rulings } : card, null, 2));
+    return;
+  }
+
+  printCard(card);
+  if (rulings) {
+    console.log(rulings.length ? `\nRulings (${rulings.length}; wotc = official Gatherer ruling):` : "\nRulings: none published.");
+    for (const r of rulings) console.log(`- ${r.publishedAt} [${r.source}] ${r.comment}`);
   }
 }
 

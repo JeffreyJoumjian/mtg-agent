@@ -24,7 +24,7 @@ export function ChangeSetCard(props: ChangeSetCardProps) {
 
   const status =
     item.status === "applied" ? (
-      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-400/15 px-2 py-0.5 text-[11px] font-medium text-emerald-300">
+      <span className="inline-flex items-center gap-1 rounded-full bg-good/15 px-2 py-0.5 text-[11px] font-medium text-good">
         <Check className="size-3" /> Applied
       </span>
     ) : item.status === "dismissed" ? (
@@ -32,7 +32,7 @@ export function ChangeSetCard(props: ChangeSetCardProps) {
         <X className="size-3" /> Dismissed
       </span>
     ) : (
-      <span className="inline-flex items-center gap-1 rounded-full bg-amber-400/15 px-2 py-0.5 text-[11px] font-medium text-amber-300">
+      <span className="inline-flex items-center gap-1 rounded-full bg-warn/15 px-2 py-0.5 text-[11px] font-medium text-warn">
         <Clock className="size-3" /> Waiting in the staged panel
       </span>
     );

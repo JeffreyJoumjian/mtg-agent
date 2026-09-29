@@ -4,7 +4,6 @@
 1 Arc Reactor (MSH) 243
 1 Blightsteel Colossus (SLD) 1079
 1 Buried Ruin (2XM) 312
-1 Canoptek Spyder (40K) 151
 1 Chimil, the Inner Sun (LCI) 249
 1 Cityscape Leveler (BRO) 233
 1 Cloud Key (TSR) 265
@@ -19,11 +18,11 @@
 1 Echoes of Eternity (MH3) 4
 1 Eldrazi Confluence (M3C) 32
 1 Extraplanar Lens
-1 Fomori Vault (BIG) 29
 1 Forsaken Monument (ZNR) 244
 1 Foundry Inspector (KLD) 215
 1 Gilded Lotus (40K) 239
 1 Glaring Fleshraker (MH3) 7
+1 Hall of Echoes
 1 Hangarback Walker
 1 Hedron Archive (40K) 240
 1 Idol of Oblivion (PLST) M3C-297
@@ -36,11 +35,11 @@
 1 Kuldotha Forgemaster (2XM) 266
 1 Liberator, Urza's Battlethopter (BRO) 237
 1 Marvin, Murderous Mimic
+1 Memnarch, the Warden
 1 Meteor Golem (FDN) 256
 1 Mind Stone (WHO) 244
 1 Mind's Eye
 1 Mirror Box (NEO) 250
-1 Mirrorpool (OGW) 174
 1 Mirrorworks (C18) 211
 1 Mishra's Workshop (OVNT) 2020C
 1 Mox Opal (2XM) 275
@@ -50,13 +49,13 @@
 1 Null Elemental Blast (MH3) 12
 1 Palladium Myr (M21) 234
 1 Panharmonicon (SLD) 605
+1 Planar Nexus
 1 Platinum Angel
 1 Portal to Phyrexia (BRO) 240
 1 Power Depot (MH2) 251
 1 Prototype Portal (C18) 216
 1 Quicksilver Amulet
 1 Roaming Throne (MAR) 99
-1 Rogue's Passage (WHO) 299
 1 Sanctum of Ugin (BFZ) 242
 1 Scavenger Grounds (MSC) 263
 1 Sculpting Steel (2XM) 286
@@ -88,6 +87,6 @@
 1 Vesuva (TSR) 289
 1 Walking Ballista (SLD) 58
 1 War Room (PLST) MKC-310
-8 Wastes (OGW) 183
+9 Wastes (OGW) 183
 1 Worn Powerstone
 1 Wurmcoil Engine (2XM) 308

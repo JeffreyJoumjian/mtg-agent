@@ -1,0 +1,17 @@
+{
+  "takenAt": "2026-09-24T13:22:50.373Z",
+  "listId": "main",
+  "label": "Founding build",
+  "reason": "before Founding build",
+  "list": {
+    "label": "Main",
+    "kind": "deck",
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": []
+      }
+    ],
+    "bracket": 3
+  }
+}

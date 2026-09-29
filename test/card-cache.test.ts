@@ -69,3 +69,57 @@ test("resolveNames falls back to stale cache entries when Scryfall is unreachabl
     await rm(dir, { recursive: true, force: true });
   }
 });
+
+test("a cache file that fails to parse is moved aside, never overwritten", async () => {
+  const { resolveNames } = require("../scripts/lib/card-cache.ts");
+  const { mkdtemp, writeFile, readFile, readdir, rm } = require("node:fs/promises");
+  const { join } = require("node:path");
+  const { tmpdir } = require("node:os");
+  const dir = await mkdtemp(join(tmpdir(), "card-cache-"));
+  const cachePath = join(dir, "card-cache.json");
+  await writeFile(cachePath, '{ "sol ring": { "summary": { "id": "x", "na');
+  try {
+    await resolveNames(["Sol Ring"], Date.now(), {
+      cachePath,
+      fetchCollection: async () => ({ found: [{ id: "1", name: "Sol Ring" }], notFound: [] }),
+      fetchCardByName: async () => {
+        throw new Error("unused");
+      },
+    });
+    const aside = (await readdir(dir)).filter((f: string) => f.startsWith("card-cache.corrupt-"));
+    expect(aside.length).toEqual(1);
+    expect(await readFile(join(dir, aside[0]), "utf8")).toEqual('{ "sol ring": { "summary": { "id": "x", "na');
+    expect(Object.keys(JSON.parse(await readFile(cachePath, "utf8")))).toEqual(["sol ring"]);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
+
+test("getRulings serves a fresh cached copy by oracle id and refetches a stale one", async () => {
+  const { getRulings } = require("../scripts/lib/card-cache.ts");
+  const { mkdtemp, readFile, rm } = require("node:fs/promises");
+  const { join } = require("node:path");
+  const { tmpdir } = require("node:os");
+  const dir = await mkdtemp(join(tmpdir(), "rulings-cache-"));
+  const cachePath = join(dir, "rulings-cache.json");
+  const fetched: string[] = [];
+  const fetchRulings = async (id: string) => {
+    fetched.push(id);
+    return [{ source: "wotc", publishedAt: "2019-01-25", comment: `ruling ${fetched.length}` }];
+  };
+  const teysa = { id: "print-1", oracleId: "oracle-teysa" };
+  const day = 24 * 60 * 60 * 1000;
+  try {
+    const first = await getRulings(teysa, 1000, { cachePath, fetchRulings });
+    const cached = await getRulings({ id: "print-2", oracleId: "oracle-teysa" }, 1000 + day - 1, { cachePath, fetchRulings });
+    const refetched = await getRulings(teysa, 1000 + day + 1, { cachePath, fetchRulings });
+    expect(first).toEqual([{ source: "wotc", publishedAt: "2019-01-25", comment: "ruling 1" }]);
+    expect(cached).toEqual(first);
+    expect(refetched[0].comment).toEqual("ruling 2");
+    expect(fetched).toEqual(["print-1", "print-1"]);
+    expect(Object.keys(JSON.parse(await readFile(cachePath, "utf8")))).toEqual(["oracle-teysa"]);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});

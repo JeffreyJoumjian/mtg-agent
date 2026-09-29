@@ -454,3 +454,88 @@ dropping real removal from 4 to 3 is too thin for Bracket 3.
 Both cards are MV 3, so the curve is unchanged at **2.73**. Token Engines 17 → 18, Card Draw 8 → 7.
 Validated: 100 cards, no off-identity or illegal cards, headers match, DECK/STATUS names diff clean,
 MOXFIELD regenerated.
+
+---
+
+## 2026-09-24 — Pitiless Plunderer in, Golgari Signet out: the pilot opts in to combos
+
+The pilot: *"i want to start trying to play with combos a little bit and if people complain too often
+then i'll consider taking them out."* They asked for Plunderer here and chose the cut themselves.
+
+**What changed in the grounds.** The founding entry called Chatterfang + Plunderer an *automatic*
+infinite. That was wrong. Every iteration needs a sacrifice the pilot activates, so it is chosen-N
+(LEDGER 2026-09-24, "Chatterfang + Pitiless Plunderer is chosen-N, not automatic"). It was only ever
+out because of the "no two-card infinite" brief, and the pilot has now overridden that brief.
+
+**The swap.** Golgari Signet → Pitiless Plunderer (in Ramp & Mana). Plunderer's Treasures (each brings
+a Squirrel) cover the Signet's ramp, so the ramp count stays 8. I had proposed cutting Poison-Tip Archer
+instead. The pilot preferred the Signet, which keeps the drain count at 12.
+
+**The loop** (gameplan §8a): `{B}`, sacrifice a Squirrel to Chatterfang → Treasure + Squirrel → repeat.
+One death and +1/−1 on a target per iteration, nothing spent. With Ashnod's Altar it is infinite
+colourless mana. **Live from turn 4.** Official Bracket 3 text rules out early two-card combos, and
+the pilot has been told once. The pod's reaction is the test.
+
+Validated: `bun run card --deck chatterfang` 89/89 found, no flags. 100/100, Game Changers 1/3.
+
+## 2026-09-24 — Llanowar Elves in, Poison-Tip Archer out
+
+Pilot's idea ("both green decks should probably have llanowar elves"). I picked the cut and the pilot
+approved it. A turn-1 dork means a turn-2 Chatterfang. Poison-Tip Archer was the only 4-MV drainer, and
+it gains no life, so it fed none of Vito, Dina or Blight-Priest. The alternative offered was Arcane
+Signet, which survives our own Toxic Deluge where Elves does not. Drainers 12 → 11. Avg MV 2.77 → 2.72.
+Validated 89/89, 100/100.
+
+## 2026-09-25 — Landfall package: Tracker, Oracle, two fetchlands
+
+The pilot's direction from the Ghave rebuild (*"maybe we should play more cards that let us play
+multiple lands per turn in both decks"*, but only if Chatterfang benefits). **It does.** Chatterfang
+adds a Squirrel to every landfall token, and the list already ran Tireless Provisioner, Scute Swarm and
+Avenger of Zendikar. It had no extra land drops and no fetchlands. The pilot approved all three
+changes:
+
+| In | Out | Grounds |
+|---|---|---|
+| Tireless Tracker | Squirrel Nest | A Clue (plus a Squirrel) per land is card draw. Nest was a fixed one-per-turn maker, the kind the pilot now wants less of. |
+| Oracle of Mul Daya | Ophiomancer | An extra land drop and lands off the top of the library. Ophiomancer was another fixed per-upkeep maker, and the pilot had called it bad in the Teysa list. |
+| Verdant Catacombs, Misty Rainforest | 1 Forest, 1 Swamp | Land for land. Each fetch is two landfall triggers and thins the deck. |
+
+Avg MV 2.72 → 2.73. Lands stay at 36. Validated 91/91, 100/100, Game Changers 1/3.
+
+## 2026-09-28 — The Mycotyrant passed over (and why it was never evaluated)
+
+**Raised by the pilot**, not by me: *"why The Mycotyrant never showed up in any of your research."*
+Audited honestly — it appears **nowhere** in this repo, and that was a gap in method rather than a
+judgement. It **is** returned by the plain sweep
+`id<=bg type:creature cmc<=3 o:"create" o:"creature token" legal:commander`; I had built the search
+space from the pilot's pasted 66-card pool plus Chatterfang's EDHREC page, and it appears **zero**
+times on that page (1% of all decks). Logged as a transferable process lesson in `deck-brain`
+LEDGER — *a pilot-supplied pool plus the commander's EDHREC page is not a format sweep*.
+
+**Grounds for the pass, verified against the CR** (not "already settled" — re-derivable):
+
+- The end-step trigger makes X tokens where X = **times you descended**. CR 700.11 counts
+  *"permanent **cards** put into that player's graveyard from anywhere."* CR 111.6 / 108.2b: a token
+  is not a card. The Lost Caverns of Ixalan release notes reject the CR 111.7 graveyard-trip argument
+  explicitly. **Sacrificing Squirrels, Foods, Treasures and Clues descends zero times.**
+- It is an **anti-synergy**, not merely a non-synergy: the more the engine is tuned to eat tokens,
+  the less it descends.
+- **Measured X in this list: 0–2 on a typical turn.** No repeatable self-mill; only Takenuma's
+  one-shot channel (~3), Barren Moor cycling (1) and six self-sacrificing lands (1 each). Feeding
+  outlets real creature cards *would* descend, but the 52 nonland permanent cards are the engine.
+- Second clause also dead: P/T counts Fungi and/or Saprolings, and Tendershoot Dryad was cut in
+  wave 4, so the deck has **zero of both** — a 3-mana 1/1 with trample.
+
+**The pilot's proposed loop does not exist.** *"Each token death refunds itself — kill 5, 5 enter
+back and Chatterfang doubles it"* — 5 token deaths is X = 0. Corrected with citations; the pilot
+accepted and closed it: *"we don't need it in the chatterfang deck… we're not a mill deck we're a
+sac tokens deck."*
+
+**Not a knock on the card.** Commander rank #271, 9,284 decks, Aristocrats theme at 201 — and its
+single most-played card is **Mirkwood Bats at 64% / +0.45 synergy**, this deck's best payoff. It is a
+self-mill commander; mill is the only cheap repeatable way to put *cards* in your own graveyard.
+**Filed as a candidate fourth deck, not a Chatterfang piece.** Two cards surfaced by that page that
+are worth a look here on their own merits and were never flagged: **Insidious Roots** (13% on
+Chatterfang's page — grants creature tokens *"{T}: Add one mana of any color"*, the Cryptolith Rite
+effect the pilot asked to keep, plus a token engine) and **Syr Konrad, the Grim** (damage ping, the
+axis the pilot says they like most).

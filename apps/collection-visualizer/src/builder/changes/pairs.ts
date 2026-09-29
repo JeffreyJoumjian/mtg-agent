@@ -1,5 +1,5 @@
 /** Pure: fold a change set's entries into the rows the diff view draws — a remove and the add that
- *  `replaces` it become one swap row; everything else stays a single-sided row, in entry order. */
+ *  `replaces` it become one swap row. Swaps come first, then everything else in entry order. */
 import type { ChangeEntry } from "@mtg/change-set.ts";
 
 export type AddEntry = Extract<ChangeEntry, { op: "add" }>;
@@ -34,23 +34,45 @@ export function pairEntries<T extends ChangeEntry>(entries: T[]): PairedRow[] {
     consumedAdd[addIndex] = true;
   });
 
-  const rows: PairedRow[] = [];
+  const swaps: PairedRow[] = [];
+  const rest: PairedRow[] = [];
   entries.forEach((entry, i) => {
     if (entry.op === "remove") {
       const addIndex = pairedAdd[i];
       if (addIndex !== undefined) {
         const added = entries[addIndex] as AddEntry;
-        rows.push({ kind: "swap", out: entry as RemoveEntry, in: added, why: added.why ?? entry.why });
+        swaps.push({ kind: "swap", out: entry as RemoveEntry, in: added, why: added.why ?? entry.why });
       } else {
-        rows.push({ kind: "remove", out: entry as RemoveEntry });
+        rest.push({ kind: "remove", out: entry as RemoveEntry });
       }
     } else if (entry.op === "add") {
-      if (!consumedAdd[i]) rows.push({ kind: "add", in: entry as AddEntry });
+      if (!consumedAdd[i]) rest.push({ kind: "add", in: entry as AddEntry });
     } else if (entry.op === "move") {
-      rows.push({ kind: "move", entry: entry as MoveEntry });
+      rest.push({ kind: "move", entry: entry as MoveEntry });
     } else {
-      rows.push({ kind: "qty", entry: entry as QtyEntry });
+      rest.push({ kind: "qty", entry: entry as QtyEntry });
     }
   });
-  return rows;
+  return [...swaps, ...rest];
+}
+
+export interface PairedCounts {
+  swaps: number;
+  added: number;
+  removed: number;
+  moved: number;
+  qty: number;
+}
+
+/** How many of each row a set draws — a swap counts once, not as an add and a remove. */
+export function countPaired(entries: ChangeEntry[]): PairedCounts {
+  const counts: PairedCounts = { swaps: 0, added: 0, removed: 0, moved: 0, qty: 0 };
+  for (const row of pairEntries(entries)) {
+    if (row.kind === "swap") counts.swaps += 1;
+    else if (row.kind === "add") counts.added += 1;
+    else if (row.kind === "remove") counts.removed += 1;
+    else if (row.kind === "move") counts.moved += 1;
+    else counts.qty += 1;
+  }
+  return counts;
 }

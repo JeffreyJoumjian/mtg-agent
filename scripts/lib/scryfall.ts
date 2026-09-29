@@ -88,7 +88,10 @@ async function throttle(): Promise<void> {
  *  transient 5xx errors — Scryfall throws intermittent 503s under load. Returns parsed JSON. */
 export async function request(path: string, init?: RequestInit, attempt = 0): Promise<any> {
   await throttle();
-  const res = await fetch(`${API}${path}`, { ...init, headers: { ...HEADERS, ...init?.headers } });
+  const res = await fetch(`${API}${path}`, {
+    ...init,
+    headers: { ...HEADERS, ...init?.headers },
+  });
 
   if (res.status === 429) {
     const retryAfter = Number(res.headers.get("retry-after") ?? "1");
@@ -111,7 +114,11 @@ export async function request(path: string, init?: RequestInit, attempt = 0): Pr
 }
 
 export class ScryfallError extends Error {
-  constructor(message: string, readonly status: number, readonly body: unknown) {
+  constructor(
+    message: string,
+    readonly status: number,
+    readonly body: unknown,
+  ) {
     super(message);
     this.name = "ScryfallError";
   }
@@ -121,7 +128,11 @@ export class ScryfallError extends Error {
 export function toSummary(card: any): CardSummary {
   const faces = Array.isArray(card.card_faces) ? card.card_faces : [];
   const oracleText =
-    card.oracle_text ?? faces.map((f: any) => f.oracle_text).filter(Boolean).join("\n//\n");
+    card.oracle_text ??
+    faces
+      .map((f: any) => f.oracle_text)
+      .filter(Boolean)
+      .join("\n//\n");
 
   const imagesOf = (src: any): CardImages => ({
     small: src?.image_uris?.small ?? null,
@@ -153,9 +164,19 @@ export function toSummary(card: any): CardSummary {
     id: card.id ?? "",
     oracleId: card.oracle_id ?? "",
     name: card.name,
-    manaCost: card.mana_cost ?? faces.map((f: any) => f.mana_cost).filter(Boolean).join(" // "),
+    manaCost:
+      card.mana_cost ??
+      faces
+        .map((f: any) => f.mana_cost)
+        .filter(Boolean)
+        .join(" // "),
     cmc: card.cmc ?? 0,
-    typeLine: card.type_line ?? faces.map((f: any) => f.type_line).filter(Boolean).join(" // "),
+    typeLine:
+      card.type_line ??
+      faces
+        .map((f: any) => f.type_line)
+        .filter(Boolean)
+        .join(" // "),
     oracleText: oracleText ?? "",
     power: card.power ?? faces[0]?.power,
     toughness: card.toughness ?? faces[0]?.toughness,
@@ -220,6 +241,52 @@ export async function fetchCollection(names: string[]): Promise<CollectionResult
   return { found, notFound };
 }
 
+export interface PrintingRef {
+  set: string;
+  collectorNumber: string;
+}
+
+export interface PrintingCollectionResult {
+  found: CardSummary[];
+  /** Printings Scryfall does not know — a wrong set code or number. */
+  notFound: PrintingRef[];
+}
+
+/** Batch-fetch specific printings by set code and collector number via `/cards/collection`. */
+export async function fetchPrintingsByNumber(refs: PrintingRef[]): Promise<PrintingCollectionResult> {
+  const found: CardSummary[] = [];
+  const notFound: PrintingRef[] = [];
+
+  for (let i = 0; i < refs.length; i += 75) {
+    const chunk = refs.slice(i, i + 75);
+    const body = await request(`/cards/collection`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        identifiers: chunk.map((r) => ({ set: r.set.toLowerCase(), collector_number: r.collectorNumber })),
+      }),
+    });
+    for (const card of body.data ?? []) found.push(toSummary(card));
+    for (const nf of body.not_found ?? []) {
+      notFound.push({ set: String(nf.set ?? ""), collectorNumber: String(nf.collector_number ?? "") });
+    }
+  }
+  return { found, notFound };
+}
+
+export interface Ruling {
+  /** `wotc` for an official Gatherer ruling, `scryfall` for Scryfall's own note. */
+  source: string;
+  publishedAt: string;
+  comment: string;
+}
+
+/** A card's rulings, oldest first. Rulings belong to the oracle card, so any printing's id works. */
+export async function fetchRulings(cardId: string): Promise<Ruling[]> {
+  const body = await request(`/cards/${cardId}/rulings`);
+  return (body.data ?? []).map((r: any) => ({ source: String(r.source ?? ""), publishedAt: String(r.published_at ?? ""), comment: String(r.comment ?? "") }));
+}
+
 /** Run a Scryfall search query, following pagination up to `maxPages` (175 cards/page). */
 export async function searchCards(query: string, maxPages = 4): Promise<CardSummary[]> {
   const results: CardSummary[] = [];
@@ -240,4 +307,36 @@ export async function searchCards(query: string, maxPages = 4): Promise<CardSumm
     page += 1;
   }
   return results;
+}
+
+/** Every printing of a card, oldest first: a `unique=prints` search on the exact name. An unknown
+ *  name is an empty list, not an error. Three pages (525 printings) covers even basic lands. */
+export async function fetchPrintings(name: string): Promise<CardSummary[]> {
+  const q = new URLSearchParams({
+    q: `!"${name}"`,
+    unique: "prints",
+    order: "released",
+    dir: "asc",
+  });
+  const out: CardSummary[] = [];
+  let path: string | null = `/cards/search?${q}`;
+  let page = 0;
+
+  try {
+    while (path && page < 3) {
+      const body: any = await request(path);
+      for (const card of body.data ?? []) out.push(toSummary(card));
+      if (body.has_more && body.next_page) {
+        const next = new URL(body.next_page);
+        path = next.pathname + next.search;
+      } else {
+        path = null;
+      }
+      page++;
+    }
+  } catch (err) {
+    if (err instanceof ScryfallError && err.status === 404) return [];
+    throw err;
+  }
+  return out;
 }

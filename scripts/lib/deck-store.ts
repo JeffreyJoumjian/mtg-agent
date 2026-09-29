@@ -23,7 +23,14 @@ import {
 } from "./deck-model.ts";
 import { applyChangeSet, type ApplyFailure, type ChangeEntry, type ChangeSet } from "./change-set.ts";
 import { computeStats, deckIdentity, diffStats, type CardInfo, type DeckStats, type StatChange } from "./deck-stats.ts";
-import { GLOBAL_PRINTINGS_PATH, mergePrintings, moxfieldFileFor, parsePrintings, printingsFromMeta, toMoxfield } from "./moxfield.ts";
+import {
+  GLOBAL_PRINTINGS_PATH,
+  mergePrintings,
+  moxfieldFileFor,
+  parsePrintings,
+  printingsFromMeta,
+  toMoxfield,
+} from "./moxfield.ts";
 import { parseLegacyDeckMd } from "./legacy-deck.ts";
 
 export interface StoreOptions {
@@ -64,8 +71,7 @@ export interface HistoryEntry {
 }
 
 export type ApplyOutcome =
-  | { ok: true; deck: Deck; entry: HistoryEntry; moxfield: string[] }
-  | { ok: false; failures: ApplyFailure[] };
+  { ok: true; deck: Deck; entry: HistoryEntry; moxfield: string[] } | { ok: false; failures: ApplyFailure[] };
 
 export interface VersionRef {
   /** File name inside `versions/`. */
@@ -94,11 +100,11 @@ export function deckDir(slug: string, opts?: StoreOptions): string {
   return join(decksDirOf(opts), slug);
 }
 
-/** Every folder under `decks/` that holds a `deck.json`, `_`-prefixed folders excluded. */
-export async function listDeckSlugs(opts?: StoreOptions): Promise<string[]> {
+/** Every folder under `dir` that holds a `deck.json`, `_`- and `.`-prefixed folders excluded. */
+async function slugsIn(dir: string): Promise<string[]> {
   let names: string[];
   try {
-    names = await readdir(decksDirOf(opts));
+    names = await readdir(dir);
   } catch {
     return [];
   }
@@ -107,10 +113,62 @@ export async function listDeckSlugs(opts?: StoreOptions): Promise<string[]> {
   for (const name of names.sort()) {
     if (name.startsWith("_") || name.startsWith(".")) continue;
 
-    const hasDeck = await exists(join(decksDirOf(opts), name, "deck.json"));
+    const hasDeck = await exists(join(dir, name, "deck.json"));
     if (hasDeck) slugs.push(name);
   }
   return slugs;
+}
+
+/** Every folder under `decks/` that holds a `deck.json`, `_`-prefixed folders excluded. */
+export async function listDeckSlugs(opts?: StoreOptions): Promise<string[]> {
+  return slugsIn(decksDirOf(opts));
+}
+
+/** Where archived decks live: `decks/_archive/<slug>/`. Underscore-prefixed, so nothing lists it
+ *  as a deck; the folder is moved whole, so nothing is lost and a restore is the same move back. */
+export const ARCHIVE_DIR = "_archive";
+
+export function archiveDir(opts?: StoreOptions): string {
+  return join(decksDirOf(opts), ARCHIVE_DIR);
+}
+
+export async function listArchivedSlugs(opts?: StoreOptions): Promise<string[]> {
+  return slugsIn(archiveDir(opts));
+}
+
+function assertSlug(slug: string): void {
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(slug)) throw new Error(`not a deck slug: ${slug}`);
+}
+
+/** Move a deck folder, untouched, into `decks/_archive/`. */
+export async function archiveDeck(slug: string, opts?: StoreOptions): Promise<void> {
+  assertSlug(slug);
+  const from = deckDir(slug, opts);
+  const to = join(archiveDir(opts), slug);
+
+  const isDeck = await exists(join(from, "deck.json"));
+  if (!isDeck) throw new Error(`no deck at ${from}`);
+
+  const taken = await exists(to);
+  if (taken) throw new Error(`an archived deck already uses ${to}`);
+
+  await mkdir(archiveDir(opts), { recursive: true });
+  await rename(from, to);
+}
+
+/** Move an archived deck folder back into `decks/`. */
+export async function restoreDeck(slug: string, opts?: StoreOptions): Promise<void> {
+  assertSlug(slug);
+  const from = join(archiveDir(opts), slug);
+  const to = deckDir(slug, opts);
+
+  const isDeck = await exists(join(from, "deck.json"));
+  if (!isDeck) throw new Error(`no archived deck at ${from}`);
+
+  const taken = await exists(to);
+  if (taken) throw new Error(`a deck already uses ${to}`);
+
+  await rename(from, to);
 }
 
 async function exists(path: string): Promise<boolean> {
@@ -215,7 +273,15 @@ export async function applyToDeck(
   const deck = await readDeck(slug, opts);
   const current = deck.lists[cs.listId];
   if (!current) {
-    return { ok: false, failures: [{ entry: { op: "remove", name: "" }, reason: `no list "${cs.listId}" in ${slug}` }] };
+    return {
+      ok: false,
+      failures: [
+        {
+          entry: { op: "remove", name: "" },
+          reason: `no list "${cs.listId}" in ${slug}`,
+        },
+      ],
+    };
   }
 
   const applied = applyChangeSet(current, cs.entries);
@@ -230,11 +296,20 @@ export async function applyToDeck(
 
   const snapshot = await writeSnapshot(
     slug,
-    { takenAt: now.toISOString(), listId: cs.listId, label: cs.label, reason: `before ${cs.label}`, list: current },
+    {
+      takenAt: now.toISOString(),
+      listId: cs.listId,
+      label: cs.label,
+      reason: `before ${cs.label}`,
+      list: current,
+    },
     opts,
   );
 
-  const updated: Deck = { ...deck, lists: { ...deck.lists, [cs.listId]: next } };
+  const updated: Deck = {
+    ...deck,
+    lists: { ...deck.lists, [cs.listId]: next },
+  };
   await writeDeck(slug, updated, opts);
   const moxfield = await regenerateMoxfield(slug, updated, opts);
 
@@ -283,21 +358,32 @@ function spellingInLists(deck: Deck, name: string): string | null {
  *  a name that is in no list is refused, so no orphan entry can hide from the stats and the
  *  Moxfield pins. An explicit empty `tags` array clears tags; an explicit empty string clears a
  *  note. Immediate and unversioned — bookkeeping, not a deck change. */
+/** A metadata patch: every field optional; `printing: null` unpins the printing. */
+export type CardMetaPatch = Partial<Omit<CardMeta, "printing">> & {
+  printing?: CardMeta["printing"] | null;
+};
+
 export async function setCardMeta(
   slug: string,
-  updates: { name: string; meta: Partial<CardMeta> }[],
+  updates: { name: string; meta: CardMetaPatch }[],
   opts?: StoreOptions,
 ): Promise<Deck> {
   const deck = await readDeck(slug, opts);
   const cards = { ...deck.cards };
 
   for (const { name: requested, meta } of updates) {
-    const name = spellingInLists(deck, requested) ?? Object.keys(cards).find((k) => k.toLowerCase() === requested.trim().toLowerCase()) ?? null;
+    const name =
+      spellingInLists(deck, requested) ??
+      Object.keys(cards).find((k) => k.toLowerCase() === requested.trim().toLowerCase()) ??
+      null;
     if (!name) throw new Error(`${requested} is in no list of ${slug} — add it first, then tag it`);
 
     const merged: CardMeta = { ...(cards[name] ?? {}) };
     if (meta.status !== undefined) merged.status = meta.status;
-    if (meta.printing !== undefined) merged.printing = meta.printing;
+    if (meta.printing !== undefined) {
+      if (meta.printing) merged.printing = meta.printing;
+      else delete merged.printing;
+    }
     if (meta.tags !== undefined) {
       if (meta.tags.length > 0) merged.tags = [...new Set(meta.tags)];
       else delete merged.tags;

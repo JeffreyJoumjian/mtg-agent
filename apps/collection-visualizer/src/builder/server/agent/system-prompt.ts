@@ -28,11 +28,13 @@ looking at is on screen next to this chat, so you never need to list the whole d
 - You cannot edit deck.json, history.jsonl or versions/ yourself; the tools below are the only way
   a list changes, and every change becomes a snapshot + history entry automatically.
 - Research notes go in decks/${slug}/research/ (writable without approval). Durable lessons go in
-  .claude/skills/deck-brain/LEDGER.md (append-only, writable). Other files under decks/${slug}/ ask
+  the deck-brain ledger's topic files (.claude/skills/deck-brain/ledger/, format in its SKILL.md §4;
+  run \`bun run ledger:index\` after adding one). Other files under decks/${slug}/ ask
   the user for approval in the UI; a denial is the user changing their mind, not a failure.
 
 ## Before any deck decision
-Invoke the deck-brain skill (it is loaded) and grep its LEDGER for the cards and patterns in play.
+Invoke the deck-brain skill (it is loaded) and run \`bun run lookup "<card>"\` for the cards in play: it
+prints the ledger's entries and every deck's decision-log sections that mention them.
 Re-derive verdicts against the list in front of you; cite facts, not old verdicts. Verify every
 card claim with \`bun run card\` — never from memory.
 

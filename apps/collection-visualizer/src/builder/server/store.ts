@@ -11,26 +11,34 @@ import {
   type Deck,
   type DeckList,
 } from "@mtg/deck-model.ts";
+import { stat } from "node:fs/promises";
 import {
+  ARCHIVE_DIR,
   applyToDeck,
+  archiveDeck,
   createDeck,
+  deckDir,
+  listArchivedSlugs,
   listDeckSlugs,
+  listVersions,
   readDeck,
+  restoreDeck,
   readHistory,
   renameCard,
   setCardMeta,
   writeDeck,
   DeckFileError,
   type ApplyOutcome,
+  type CardMetaPatch,
   type HistoryEntry,
   type StoreOptions,
 } from "@mtg/deck-store.ts";
 import { identityOf, type CardInfo } from "@mtg/deck-stats.ts";
 import type { CardMeta } from "@mtg/deck-model.ts";
 import type { ChangeSet } from "@mtg/change-set.ts";
-import type { DeckIndexEntry } from "../model/types";
-import { cardImage, type CardView } from "../model/cards";
-import { resolveCards } from "./cards";
+import type { ArchivedDeck, DeckIndexEntry } from "../model/types";
+import { applyPinnedPrintings, cardImage, type CardView } from "../model/cards";
+import { resolveCards, resolvePrintings } from "./cards";
 import { noteOwnWrite } from "./watcher";
 
 export interface LoadedDeck {
@@ -82,13 +90,28 @@ export async function loadDeck(slug: string): Promise<LoadedDeck> {
     };
   }
 
-  const { cards, unresolved, degraded } = await resolveCards(allNames(deck));
+  const { cards, unresolved, degraded } = await resolveCards(allNames(deck), deck.cards);
   return { slug, deck, cards, unresolved, ...(degraded ? { cardDataError: degraded } : {}) };
 }
 
 /** The `CardInfo` map the stats engine wants, from a resolved card map. */
 export function infoMap(cards: Record<string, CardView>): Record<string, CardInfo | undefined> {
   return cards;
+}
+
+/** When a deck came to be: the oldest thing on record — a snapshot, a history line — or, for a
+ *  deck with no record yet, its folder's birth time. Null only when nothing is known. */
+async function createdAt(slug: string, history: HistoryEntry[], opts?: StoreOptions): Promise<string | null> {
+  const versions = await listVersions(slug, opts);
+  const dates = [...versions.map((v) => v.takenAt), ...history.map((h) => h.at)];
+  try {
+    const st = await stat(deckDir(slug, opts));
+    // Some filesystems report no birth time (the epoch); ignore anything implausible.
+    if (st.birthtimeMs > Date.UTC(2000, 0, 1)) dates.push(st.birthtime.toISOString());
+  } catch {
+    // A folder that vanished mid-scan: no date.
+  }
+  return dates.length > 0 ? dates.sort()[0] : null;
 }
 
 export async function loadDeckIndex(): Promise<DeckIndexEntry[]> {
@@ -102,13 +125,22 @@ export async function loadDeckIndex(): Promise<DeckIndexEntry[]> {
     }
   }
 
-  // One batched lookup for every commander on the page.
+  // One batched lookup for every commander on the page, and one for the printings they pin.
   const commanderNames = loaded.flatMap((l) => (l.deck ? commandersOf(pickList(l.deck).list) : []));
-  const { cards } = await resolveCards(commanderNames);
+  const pins = loaded.flatMap((l) =>
+    l.deck
+      ? commandersOf(pickList(l.deck).list).flatMap((name) => {
+          const pin = l.deck?.cards[name]?.printing;
+          return pin ? [pin] : [];
+        })
+      : [],
+  );
+  const [{ cards }, printings] = await Promise.all([resolveCards(commanderNames), resolvePrintings(pins)]);
 
   const entries: DeckIndexEntry[] = [];
   for (const { slug, deck, error } of loaded) {
     if (!deck) {
+      const created = await createdAt(slug, []);
       entries.push({
         slug,
         name: slug,
@@ -118,6 +150,7 @@ export async function loadDeckIndex(): Promise<DeckIndexEntry[]> {
         bracket: null,
         lists: [],
         lastChange: null,
+        created,
         error,
       });
       continue;
@@ -125,12 +158,16 @@ export async function loadDeckIndex(): Promise<DeckIndexEntry[]> {
 
     const primary = pickList(deck).list;
     const commanders = commandersOf(primary);
+    const lead = commanders[0] ?? "";
+    const leadView = cards[lead];
+    const art = leadView ? applyPinnedPrintings({ [lead]: leadView }, deck.cards, printings)[lead] : undefined;
     const history = await readHistory(slug);
+    const created = await createdAt(slug, history);
     entries.push({
       slug,
       name: deck.name,
       commanders,
-      commanderArt: cardImage(cards[commanders[0] ?? ""], "artCrop"),
+      commanderArt: cardImage(art, "artCrop"),
       identity: identityOf(primary, cards),
       bracket: primary.bracket ?? null,
       lists: Object.entries(deck.lists).map(([id, list]) => ({
@@ -140,9 +177,36 @@ export async function loadDeckIndex(): Promise<DeckIndexEntry[]> {
         size: listSize(list),
       })),
       lastChange: history[0] ? { label: history[0].label, at: history[0].at } : null,
+      created,
     });
   }
   return entries;
+}
+
+/** The decks in `decks/_archive/`, by name; a folder whose deck.json will not parse lists by slug. */
+export async function loadArchivedDecks(opts?: StoreOptions): Promise<ArchivedDeck[]> {
+  const slugs = await listArchivedSlugs(opts);
+  const inArchive: StoreOptions = { ...opts, decksDir: deckDir(ARCHIVE_DIR, opts) };
+  const out: ArchivedDeck[] = [];
+  for (const slug of slugs) {
+    let name = slug;
+    try {
+      const deck = await readDeck(slug, inArchive);
+      name = deck.name;
+    } catch {
+      // Listed by slug; the folder still comes back whole on restore.
+    }
+    out.push({ slug, name });
+  }
+  return out;
+}
+
+export async function archive(slug: string, opts?: StoreOptions): Promise<void> {
+  await archiveDeck(slug, opts);
+}
+
+export async function unarchive(slug: string, opts?: StoreOptions): Promise<void> {
+  await restoreDeck(slug, opts);
 }
 
 export async function applyChangeSetToDeck(
@@ -156,7 +220,7 @@ export async function applyChangeSetToDeck(
 
 export async function updateCardMeta(
   slug: string,
-  updates: { name: string; meta: Partial<CardMeta> }[],
+  updates: { name: string; meta: CardMetaPatch }[],
   opts?: StoreOptions,
 ): Promise<Deck> {
   return setCardMeta(slug, updates, withOwnWrites(opts));

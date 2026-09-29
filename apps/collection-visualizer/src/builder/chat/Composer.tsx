@@ -44,7 +44,7 @@ export function Composer(props: ComposerProps) {
   return (
     <div className="border-t p-2">
       {props.pendingKind && (
-        <p className="mb-1 px-1 text-[12px] text-amber-300">
+        <p className="mb-1 px-1 text-[12px] text-warn">
           The agent is waiting on the {props.pendingKind === "proposal" ? "staged change" : props.pendingKind} above.
           Typing here answers it with your words instead.
         </p>

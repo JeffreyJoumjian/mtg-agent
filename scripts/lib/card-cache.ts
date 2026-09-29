@@ -8,10 +8,10 @@
  *
  *  This is a snapshot/convenience layer, not source of truth: delete `data/card-cache.json`
  *  and it rebuilds itself on the next lookup. */
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
-import { CARD_CACHE_PATH } from "./paths.ts";
-import { fetchCardByName, fetchCollection, type CardSummary } from "./scryfall.ts";
+import { CARD_CACHE_PATH, RULINGS_CACHE_PATH } from "./paths.ts";
+import { fetchCardByName, fetchCollection, fetchPrintingsByNumber, fetchRulings, type CardSummary, type Ruling } from "./scryfall.ts";
 
 const TTL_MS = 24 * 60 * 60 * 1000;
 
@@ -22,17 +22,12 @@ interface CacheEntry {
 type CacheFile = Record<string, CacheEntry>;
 
 const key = (name: string): string => normalizeCardName(name).toLowerCase();
-const isFresh = (entry: CacheEntry, now: number): boolean => now - entry.fetchedAt < TTL_MS;
+const isFresh = (entry: { fetchedAt: number }, now: number): boolean => now - entry.fetchedAt < TTL_MS;
 
 /** Canonical spelling for matching and storage: NFC, straight quotes, single spaces. Accents are
  *  kept — Scryfall's own name for the card has them. */
 export function normalizeCardName(name: string): string {
-  return name
-    .normalize("NFC")
-    .replace(/[‘’ʼ]/g, "'")
-    .replace(/[“”]/g, '"')
-    .replace(/\s+/g, " ")
-    .trim();
+  return name.normalize("NFC").replace(/[‘’ʼ]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, " ").trim();
 }
 
 /** Match key: normalised, lower-cased, accents stripped — so `Bartolome` finds `Bartolomé`. Only
@@ -85,17 +80,33 @@ export function matchRequested(requested: string[], cards: CardSummary[]): Resol
   return { found, unresolved };
 }
 
-async function load(path = CARD_CACHE_PATH): Promise<CacheFile> {
+/** Read a JSON cache file. Missing → empty. Unparseable → moved aside to `<name>.corrupt-<ms>.json`
+ *  and treated as empty, so the next save can never overwrite (and lose) a cache it couldn't read. */
+async function load<T extends object = CacheFile>(path = CARD_CACHE_PATH): Promise<T> {
+  let text: string;
   try {
-    return JSON.parse(await readFile(path, "utf8")) as CacheFile;
+    text = await readFile(path, "utf8");
   } catch {
-    return {};
+    return {} as T;
+  }
+
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    const aside = `${path.replace(/\.json$/, "")}.corrupt-${Date.now()}.json`;
+    await rename(path, aside).catch(() => {});
+    console.error(`${path} could not be parsed; moved it to ${aside} and started an empty cache.`);
+    return {} as T;
   }
 }
 
-async function save(cache: CacheFile, path = CARD_CACHE_PATH): Promise<void> {
+/** Write via a sibling temp file and an atomic rename, so a concurrent reader (another `bun run
+ *  card`, the app) sees the old cache or the new one, never a half-written file. */
+async function save(cache: object, path = CARD_CACHE_PATH): Promise<void> {
   await mkdir(dirname(path), { recursive: true });
-  await writeFile(path, JSON.stringify(cache, null, 2) + "\n");
+  const tmp = `${path}.${process.pid}.${Date.now()}.${Math.random().toString(36).slice(2)}.tmp`;
+  await writeFile(tmp, JSON.stringify(cache, null, 2) + "\n");
+  await rename(tmp, path);
 }
 
 /** The keys a fetched card is stored under: its full name, and its front face unless another
@@ -236,15 +247,119 @@ export async function resolveNames(names: string[], now = Date.now(), deps: Reso
   return { found, unresolved, ...(degraded ? { degraded } : {}) };
 }
 
+/** `ltc|264`: how a pinned printing is keyed, in this cache and in the app. */
+export function printingKey(ref: { set: string; collectorNumber: string }): string {
+  return `${ref.set.toLowerCase()}|${ref.collectorNumber.trim()}`;
+}
+
+/** Printing entries live in the same file under this prefix, apart from the by-name entries, so a
+ *  pinned printing never masquerades as the card's default. */
+const PRINTING_PREFIX = "printing:";
+
+export interface PrintingDeps {
+  cachePath?: string;
+  fetchPrintingsByNumber?: typeof fetchPrintingsByNumber;
+}
+
+/**
+ * The card data for specific printings — what a deck pins with `printing` — keyed by
+ * {@link printingKey}. Fresh entries come from the cache; the rest are fetched in one batch. A
+ * printing Scryfall does not know is simply absent, never stored, so a typo'd pin is retried next
+ * time and the caller falls back to the default printing. If Scryfall is unreachable, stale entries
+ * are served and the rest are absent.
+ */
+export async function getPrintings(
+  refs: { set: string; collectorNumber: string }[],
+  now = Date.now(),
+  deps: PrintingDeps = {},
+): Promise<Record<string, CardSummary>> {
+  const cachePath = deps.cachePath ?? CARD_CACHE_PATH;
+  const fetchMany = deps.fetchPrintingsByNumber ?? fetchPrintingsByNumber;
+
+  const wanted: Record<string, { set: string; collectorNumber: string }> = {};
+  for (const ref of refs) {
+    if (ref.set && ref.collectorNumber) wanted[printingKey(ref)] = ref;
+  }
+  const keys = Object.keys(wanted);
+  if (keys.length === 0) return {};
+
+  const cache = await load(cachePath);
+  const out: Record<string, CardSummary> = {};
+  const stale: Record<string, CardSummary> = {};
+  const misses: string[] = [];
+  for (const k of keys) {
+    const hit = cache[PRINTING_PREFIX + k];
+
+    if (hit && isFresh(hit, now) && hit.summary.id) {
+      out[k] = hit.summary;
+    } else {
+      misses.push(k);
+      if (hit) stale[k] = hit.summary;
+    }
+  }
+  if (misses.length === 0) return out;
+
+  try {
+    const batch = await fetchMany(misses.map((k) => wanted[k]));
+    for (const summary of batch.found) {
+      const k = printingKey(summary);
+      out[k] = summary;
+      cache[PRINTING_PREFIX + k] = { summary, fetchedAt: now };
+    }
+    if (batch.found.length > 0) await save(cache, cachePath);
+  } catch {
+    // Scryfall unreachable: what the cache has, however old, beats no image.
+    for (const k of misses) {
+      if (stale[k]) out[k] = stale[k];
+    }
+  }
+  return out;
+}
+
+export interface RulingsDeps {
+  cachePath?: string;
+  fetchRulings?: typeof fetchRulings;
+}
+
+/** A card's official and Scryfall rulings, cached per oracle id in `data/rulings-cache.json` for
+ *  the same 24 h as card data. Any printing's id fetches them; the oracle id keys them. */
+export async function getRulings(
+  card: { id: string; oracleId: string },
+  now = Date.now(),
+  deps: RulingsDeps = {},
+): Promise<Ruling[]> {
+  const cachePath = deps.cachePath ?? RULINGS_CACHE_PATH;
+  const fetchMany = deps.fetchRulings ?? fetchRulings;
+  const cache = await load<Record<string, { rulings: Ruling[]; fetchedAt: number }>>(cachePath);
+  const hit = cache[card.oracleId];
+
+  if (hit && isFresh(hit, now)) return hit.rulings;
+
+  const rulings = await fetchMany(card.id);
+  cache[card.oracleId] = { rulings, fetchedAt: now };
+  await save(cache, cachePath);
+  return rulings;
+}
+
 /** Re-fetch every card currently in the cache (prices + oracle) in batched requests. */
 export async function refreshAll(now = Date.now()): Promise<number> {
   const cache = await load();
-  const names = [...new Set(Object.values(cache).map((e) => e.summary.name))];
-  if (names.length === 0) return 0;
+  const byName = Object.entries(cache).filter(([k]) => !k.startsWith(PRINTING_PREFIX));
+  const pinned = Object.entries(cache).filter(([k]) => k.startsWith(PRINTING_PREFIX));
+  const names = [...new Set(byName.map(([, e]) => e.summary.name))];
+  if (names.length === 0 && pinned.length === 0) return 0;
 
-  const { found } = await fetchCollection(names);
   const fresh: CacheFile = {};
+  const { found } = names.length > 0 ? await fetchCollection(names) : { found: [] };
   for (const summary of found) fresh[key(summary.name)] = { summary, fetchedAt: now };
+
+  // Pinned printings refresh by set and number, and stay under their own keys.
+  const refs = pinned.map(([, e]) => ({ set: e.summary.set, collectorNumber: e.summary.collectorNumber }));
+  const printings = refs.length > 0 ? await fetchPrintingsByNumber(refs) : { found: [] };
+  for (const summary of printings.found) {
+    fresh[PRINTING_PREFIX + printingKey(summary)] = { summary, fetchedAt: now };
+  }
+
   await save(fresh);
-  return found.length;
+  return found.length + printings.found.length;
 }

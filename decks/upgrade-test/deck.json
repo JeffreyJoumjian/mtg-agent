@@ -1,0 +1,252 @@
+{
+  "schema": 1,
+  "name": "Upgrade Test — Chatterfang",
+  "format": "commander",
+  "description": "Playtest fork of decks/chatterfang taken 2026-09-25 with all 13 recommended swaps from the Acorn Economy Upgrade proposal applied in one go, so the pilot can pilot it rather than adjudicate it card by card. The parent list is untouched. Proposal artifact: https://claude.ai/artifact/Qgp3cNcdmKWoE8fPZMxvQB",
+  "lists": {
+    "main": {
+      "label": "Main",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Chatterfang, Squirrel General", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Barren Moor", "qty": 1 },
+            { "name": "Blooming Marsh", "qty": 1 },
+            { "name": "Bojuka Bog", "qty": 1 },
+            { "name": "Cabal Coffers", "qty": 1 },
+            { "name": "Castle Locthwain", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Darkbore Pathway", "qty": 1 },
+            { "name": "Forest", "qty": 6 },
+            { "name": "Gaea's Cradle", "qty": 1 },
+            { "name": "Grim Backwoods", "qty": 1 },
+            { "name": "High Market", "qty": 1 },
+            { "name": "Khalni Garden", "qty": 1 },
+            { "name": "Llanowar Wastes", "qty": 1 },
+            { "name": "Misty Rainforest", "qty": 1 },
+            { "name": "Necroblossom Snarl", "qty": 1 },
+            { "name": "Nurturing Peatland", "qty": 1 },
+            { "name": "Overgrown Tomb", "qty": 1 },
+            { "name": "Phyrexian Tower", "qty": 1 },
+            { "name": "Swamp", "qty": 5 },
+            { "name": "Tainted Wood", "qty": 1 },
+            { "name": "Takenuma, Abandoned Mire", "qty": 1 },
+            { "name": "Three Tree City", "qty": 1 },
+            { "name": "Twilight Mire", "qty": 1 },
+            { "name": "Urborg, Tomb of Yawgmoth", "qty": 1 },
+            { "name": "Verdant Catacombs", "qty": 1 },
+            { "name": "Woodland Cemetery", "qty": 1 },
+            { "name": "Yavimaya, Cradle of Growth", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp & Mana",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Circle of Dreams Druid", "qty": 1 },
+            { "name": "Concordant Crossroads", "qty": 1 },
+            { "name": "Cryptolith Rite", "qty": 1 },
+            { "name": "Cultivate", "qty": 1 },
+            { "name": "Dryad of the Ilysian Grove", "qty": 1 },
+            { "name": "Elvish Mystic", "qty": 1 },
+            { "name": "Gardenize", "qty": 1 },
+            { "name": "Llanowar Elves", "qty": 1 },
+            { "name": "Nature's Lore", "qty": 1 },
+            { "name": "Ninja Pizza", "qty": 1 },
+            { "name": "Oracle of Mul Daya", "qty": 1 },
+            { "name": "Pitiless Plunderer", "qty": 1 },
+            { "name": "Sakura-Tribe Elder", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Tireless Provisioner", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Black Market Connections", "qty": 1 },
+            { "name": "Deadly Dispute", "qty": 1 },
+            { "name": "Moldervine Reclamation", "qty": 1 },
+            { "name": "Skullclamp", "qty": 1 },
+            { "name": "Sylvan Library", "qty": 1 },
+            { "name": "Tireless Tracker", "qty": 1 },
+            { "name": "Village Rites", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal & Interaction",
+          "cards": [
+            { "name": "Assassin's Trophy", "qty": 1 },
+            { "name": "Beast Within", "qty": 1 },
+            { "name": "Heroic Intervention", "qty": 1 },
+            { "name": "Plumb the Forbidden", "qty": 1 },
+            { "name": "Tear Asunder", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            { "name": "Blasphemous Edict", "qty": 1 },
+            { "name": "The Meathook Massacre", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Engines",
+          "cards": [
+            { "name": "Academy Manufactor", "qty": 1 },
+            { "name": "Avenger of Zendikar", "qty": 1 },
+            { "name": "Bilbo, Fellow Conspirator", "qty": 1 },
+            { "name": "Bitterblossom", "qty": 1 },
+            { "name": "Camellia, the Seedmiser", "qty": 1 },
+            { "name": "Hazel of the Rootbloom", "qty": 1 },
+            { "name": "Peregrin Took", "qty": 1 },
+            { "name": "Scute Swarm", "qty": 1 },
+            { "name": "Second Harvest", "qty": 1 },
+            { "name": "The Unbeatable Squirrel Girl", "qty": 1 },
+            { "name": "Tippy-Toe, Terrific Partner", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Doublers",
+          "cards": [
+            { "name": "Doubling Season", "qty": 1 },
+            { "name": "Parallel Lives", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Sacrifice Outlets",
+          "cards": [
+            { "name": "Ashnod's Altar", "qty": 1 },
+            { "name": "Carrion Feeder", "qty": 1 },
+            { "name": "Ravenous Squirrel", "qty": 1 },
+            { "name": "Woe Strider", "qty": 1 },
+            { "name": "Yawgmoth, Thran Physician", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Drain Payoffs",
+          "cards": [
+            { "name": "Bastion of Remembrance", "qty": 1 },
+            { "name": "Blood Artist", "qty": 1 },
+            { "name": "Cauldron of Essence", "qty": 1 },
+            { "name": "Dina, Soul Steeper", "qty": 1 },
+            { "name": "Marionette Apprentice", "qty": 1 },
+            { "name": "Mirkwood Bats", "qty": 1 },
+            { "name": "Nadier's Nightblade", "qty": 1 },
+            { "name": "Prosperous Innkeeper", "qty": 1 },
+            { "name": "Starscape Cleric", "qty": 1 },
+            { "name": "Valley Rotcaller", "qty": 1 },
+            { "name": "Vito, Thorn of the Dusk Rose", "qty": 1 },
+            { "name": "Zulaport Cutthroat", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Finishers & Equipment",
+          "cards": [
+            { "name": "Bloodletter of Aclazotz", "qty": 1 },
+            { "name": "Craterhoof Behemoth", "qty": 1 },
+            { "name": "Gruesome Fate", "qty": 1 }
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {
+    "Abrupt Decay": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"2468"} },
+    "Academy Manufactor": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"MH2-219"} },
+    "Arcane Signet": { "status": "PROXY", "printing": {"set":"pf25","collectorNumber":"10"} },
+    "Ashnod's Altar": { "status": "PROXY", "printing": {"set":"cmm","collectorNumber":"368"} },
+    "Assassin's Trophy": { "status": "PROXY", "printing": {"set":"mkm","collectorNumber":"187"} },
+    "Avenger of Zendikar": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"1900"} },
+    "Barren Moor": { "status": "PROXY", "printing": {"set":"fdc","collectorNumber":"295"} },
+    "Bastion of Remembrance": { "status": "PROXY", "printing": {"set":"tle","collectorNumber":"160"} },
+    "Beast Within": { "status": "PROXY", "printing": {"set":"who","collectorNumber":"819"} },
+    "Bitterblossom": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"12"} },
+    "Black Market Connections": { "status": "PROXY", "printing": {"set":"clb","collectorNumber":"669"} },
+    "Blade of the Bloodchief": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"C17-204"} },
+    "Blood Artist": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"INR-97"} },
+    "Bloodletter of Aclazotz": { "status": "PROXY", "printing": {"set":"lci","collectorNumber":"92"} },
+    "Blooming Marsh": { "status": "PROXY", "printing": {"set":"otj","collectorNumber":"266"} },
+    "Bojuka Bog": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"C18-238"} },
+    "Cabal Coffers": { "status": "PROXY", "printing": {"set":"mh2","collectorNumber":"301"} },
+    "Camellia, the Seedmiser": { "status": "PROXY", "printing": {"set":"blb","collectorNumber":"207"} },
+    "Carrion Feeder": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"MH1-81"} },
+    "Castle Locthwain": { "status": "PROXY", "printing": {"set":"eld","collectorNumber":"241"} },
+    "Chatterfang, Squirrel General": { "status": "PROXY", "printing": {"set":"blc","collectorNumber":"95"} },
+    "Chitterspitter": { "status": "PROXY", "printing": {"set":"blc","collectorNumber":"211"} },
+    "Command Tower": { "status": "PROXY", "printing": {"set":"fic","collectorNumber":"484"} },
+    "Cryptolith Rite": { "status": "PROXY", "printing": {"set":"inr","collectorNumber":"316"} },
+    "Cultivate": { "status": "PROXY", "printing": {"set":"m21","collectorNumber":"177"} },
+    "Darkbore Pathway": { "status": "PROXY", "printing": {"set":"khm","collectorNumber":"254"} },
+    "Deadly Dispute": { "status": "PROXY", "printing": {"set":"afr","collectorNumber":"94"} },
+    "Deep Forest Hermit": { "status": "PROXY", "printing": {"set":"blc","collectorNumber":"213"} },
+    "Dina, Soul Steeper": { "status": "PROXY", "printing": {"set":"stx","collectorNumber":"178"} },
+    "Doubling Season": { "status": "PROXY", "printing": {"set":"fdn","collectorNumber":"216"} },
+    "Forest": { "status": "PROXY", "printing": {"set":"p23","collectorNumber":"10"} },
+    "From Beyond": { "status": "PROXY", "printing": {"set":"bfz","collectorNumber":"167"} },
+    "Gaea's Cradle": { "status": "PROXY", "printing": {"set":"olgc","collectorNumber":"2014"} },
+    "Golgari Signet": { "status": "PROXY", "printing": {"set":"rvr","collectorNumber":"258"} },
+    "Grim Backwoods": { "status": "PROXY", "printing": {"set":"soc","collectorNumber":"377"} },
+    "Gruesome Fate": { "status": "PROXY", "printing": {"set":"rix","collectorNumber":"75"} },
+    "Hazel of the Rootbloom": { "status": "PROXY", "printing": {"set":"blc","collectorNumber":"2"} },
+    "Heroic Intervention": { "status": "PROXY", "printing": {"set":"afc","collectorNumber":"161"} },
+    "High Market": { "status": "PROXY", "printing": {"set":"2xm","collectorNumber":"321"} },
+    "Idol of Oblivion": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"M3C-297"} },
+    "Khalni Garden": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"DDR-28"} },
+    "Llanowar Wastes": { "status": "PROXY", "printing": {"set":"bro","collectorNumber":"264"} },
+    "Marauding Blight-Priest": { "status": "PROXY", "printing": {"set":"znr","collectorNumber":"112"} },
+    "Marionette Apprentice": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"MH3-100"} },
+    "Mirkwood Bats": { "status": "PROXY", "printing": {"set":"ltr","collectorNumber":"421"} },
+    "Moldervine Reclamation": { "status": "PROXY", "printing": {"set":"m20","collectorNumber":"214"} },
+    "Nadier's Nightblade": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"BLC-184"} },
+    "Nature's Lore": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"CMM-904"} },
+    "Necroblossom Snarl": { "status": "PROXY", "printing": {"set":"ltc","collectorNumber":"321"} },
+    "Nested Shambler": { "status": "PROXY", "printing": {"set":"blc","collectorNumber":"185"} },
+    "Nurturing Peatland": { "status": "PROXY", "printing": {"set":"mh1","collectorNumber":"243"} },
+    "Ophiomancer": { "status": "PROXY", "printing": {"set":"soc","collectorNumber":"118"} },
+    "Overgrown Tomb": { "status": "PROXY", "printing": {"set":"trk","collectorNumber":"289"} },
+    "Parallel Lives": { "status": "PROXY", "printing": {"set":"isd","collectorNumber":"199"} },
+    "Peregrin Took": { "status": "PROXY", "printing": {"set":"ltr","collectorNumber":"181"} },
+    "Phyrexian Tower": { "status": "PROXY", "printing": {"set":"uma","collectorNumber":"248"} },
+    "Plumb the Forbidden": { "status": "PROXY", "printing": {"set":"stx","collectorNumber":"81"} },
+    "Poison-Tip Archer": { "status": "PROXY", "printing": {"set":"m19","collectorNumber":"220"} },
+    "Prosperous Innkeeper": { "status": "PROXY", "printing": {"set":"afr","collectorNumber":"200"} },
+    "Ravenous Squirrel": { "status": "PROXY", "printing": {"set":"blc","collectorNumber":"258"} },
+    "Sakura-Tribe Elder": { "status": "PROXY", "printing": {"set":"pl25","collectorNumber":"4"} },
+    "Scute Swarm": { "status": "PROXY", "printing": {"set":"znr","collectorNumber":"203"} },
+    "Second Harvest": { "status": "PROXY", "printing": {"set":"blc","collectorNumber":"123"} },
+    "Skullclamp": { "status": "PROXY", "printing": {"set":"tdc","collectorNumber":"103"} },
+    "Sol Ring": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"214"} },
+    "Squirrel Nest": { "status": "PROXY", "printing": {"set":"dmr","collectorNumber":"177"} },
+    "Swamp": { "status": "PROXY", "printing": {"set":"sos","collectorNumber":"269"} },
+    "Sylvan Library": { "status": "PROXY", "printing": {"set":"dmr","collectorNumber":"179"} },
+    "Tainted Wood": { "status": "PROXY", "printing": {"set":"cmm","collectorNumber":"1040"} },
+    "Takenuma, Abandoned Mire": { "status": "PROXY", "printing": {"set":"neo","collectorNumber":"278"} },
+    "Tear Asunder": { "status": "PROXY", "printing": {"set":"dmu","collectorNumber":"183"} },
+    "Tendershoot Dryad": { "status": "PROXY", "printing": {"set":"soc","collectorNumber":"125"} },
+    "The Meathook Massacre": { "status": "PROXY", "printing": {"set":"inr","collectorNumber":"387"} },
+    "The Unbeatable Squirrel Girl": { "status": "PROXY", "printing": {"set":"msh","collectorNumber":"371"} },
+    "Three Tree City": { "status": "PROXY", "printing": {"set":"blb","collectorNumber":"260"} },
+    "Tippy-Toe, Terrific Partner": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"734"} },
+    "Tireless Provisioner": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"2057"} },
+    "Toxic Deluge": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"161"} },
+    "Twilight Mire": { "status": "PROXY", "printing": {"set":"2xm","collectorNumber":"328"} },
+    "Urborg, Tomb of Yawgmoth": { "status": "PROXY", "printing": {"set":"m15","collectorNumber":"248"} },
+    "Valley Rotcaller": { "status": "PROXY", "printing": {"set":"blb","collectorNumber":"119"} },
+    "Verdant Command": { "status": "PROXY", "printing": {"set":"mh2","collectorNumber":"182"} },
+    "Village Rites": { "status": "PROXY", "printing": {"set":"inr","collectorNumber":"137"} },
+    "Viscera Seer": { "status": "PROXY", "printing": {"set":"soc","collectorNumber":"229"} },
+    "Vito, Thorn of the Dusk Rose": { "status": "PROXY", "printing": {"set":"j25","collectorNumber":"71"} },
+    "Woe Strider": { "status": "PROXY", "printing": {"set":"thb","collectorNumber":"123"} },
+    "Woodland Cemetery": { "status": "PROXY", "printing": {"set":"dom","collectorNumber":"248"} },
+    "Yavimaya, Cradle of Growth": { "status": "PROXY", "printing": {"set":"m3c","collectorNumber":"409"} },
+    "Zulaport Cutthroat": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"1982"} }
+  }
+}

@@ -186,3 +186,54 @@ value currently so let's leave it out."* Grounds to re-test against if this is r
 Human count of 10 is real and the card would take doubled drains to tripled; what it costs is 4 mana
 on a 4/4 that does nothing else, and a name that locks in one type. It gets materially better if
 Maskwood Nexus is ever added, because every creature then counts.
+
+---
+
+## 2026-09-24 — Token-maker rebuild after ten stalled games
+
+**The report.** The pilot played ten games: *"no reliable way to create tokens at all… all of which I'm
+on turn 10 and I genuinely can't do anything."*
+
+**The diagnosis, measured against the founding list:**
+- Of the 14 "Token Engines", only **6 cards in the whole list made a token without anything dying
+  first** (Bitterblossom, Ophiomancer, Oketra's Monument, Black Market Connections, Sorin, Elspeth
+  Storm Slayer). Each made one per turn. Seven more were one-shot "dies → leaves a token" bodies,
+  which are fodder, not engines. **None made 3+ bodies at once.**
+- About 30 cards needed fodder to do anything: 11 drain payoffs, ~10 outlets, and 7 of the 9 draw
+  cards. Only Phyrexian Arena and Black Market Connections drew on an empty board, so running out of
+  fodder also shut off card draw.
+- Hypergeometric, on the draw: 48% to see one death-independent maker by turn 3, 55% by turn 5.
+- My founding entry named the risk (*"the 99 has to carry the token half"*) but counted the leave-a-
+  token bodies as having carried it. They hadn't. (LEDGER 2026-09-24.)
+
+**Applied (pilot approved all seven):**
+
+| In | Out | Grounds |
+|---|---|---|
+| Adeline, Resplendent Cathar | Open the Graves | 3 Humans per attack, no death needed. Open the Graves was 5 mana and triggers on nontoken deaths only. |
+| Lingering Souls | Falkenrath Noble | 4 flying bodies from one card. Noble was 4 mana for Blood Artist's job. |
+| Court of Grace | Bontu's Monument | A body every upkeep (4/4 Angel while monarch) plus monarch card draw on an empty board. Bontu's drain is a cast trigger, not doubled by Teysa. |
+| Bitterbloom Bearer | Hidden Stockpile | A second Bitterblossom on a flying flash body. Stockpile's Servo needed something to leave first. |
+| Sengir Autocrat | Carrion Feeder | 3 black Serfs at once, each making a Spirit off Teysa, Orzhov Scion when it dies. Outlets were never the bottleneck. |
+| Ocelot Pride | Hunted Witness | Same 1-drop slot. A Cat every end step you gained life, and with the city's blessing it copies the turn's tokens. Witness made one token, ever. |
+| Luminous Broodmoth | Kaya's Wrath | Every non-flyer dies twice. Kaya's Wrath wiped a board the deck struggled to build. Meathook stays as the one wipe. The alternative cut offered was Mortuary Mire, to keep two wipes. |
+
+Result: death-independent makers **6 → 12**; odds of seeing one by turn 3 on the draw **48% → 74%**,
+by turn 5 **55% → 81%**; avg MV 2.61 → 2.63; Game Changers still 1/3 (Smothering Tithe). Validated with
+`bun run card --deck teysa-karlov`: 89/89 found, no off-identity, no illegal cards, 100 total.
+
+**Considered and not cut, re-scored against the post-swap board (SKILL §1.1b):** Thalisse, Corpse
+Knight, Mirkwood Bats and Morbid Opportunist all looked weak only because the fodder wasn't there.
+Each one scales with token *creation* or with deaths on every player's turn.
+
+**Next tier, not taken yet:** Secure the Wastes, Lurrus of the Dream-Den (a ≤2-MV permanent back
+from the graveyard every turn), Hero of Bladehold, Grave Titan, Pawn of Ulamog (53% of Teysa decks on
+EDHREC) and Requiem Angel.
+
+**Correction to the founding entry.** It rejected Requiem Angel as *"keyed on nontoken creatures
+dying"*. That is wrong: its oracle reads *"another **non-Spirit** creature"*, so tokens count. It was
+grouped with Field of Souls, which really is nontoken-only, without re-reading either. Requiem Angel is
+a live candidate at 6 mana (LEDGER 2026-09-24).
+
+**Open question, still unanswered:** was the pilot flooding in the stalled games? With 36 lands and
+5 mana rocks on a 2.63 curve, cutting one land is on the table if so.

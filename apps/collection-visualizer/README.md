@@ -89,8 +89,9 @@ UI tools (an in-process MCP server, `deck-ui`):
 
 **The gate** (`src/builder/server/agent/gate.ts`, the whole policy, tested in isolation): the agent
 may read anything, use skills, subagents and the web, and run only
-`bun run card | edhrec | carddata | deckcheck | deck:show`. It writes freely under
-`decks/<slug>/research/` and may append to the deck-brain `LEDGER.md`; any other write under its
+`bun run card | edhrec | carddata | deckcheck | deck:show | lookup | ledger:index`. It writes freely
+under `decks/<slug>/research/` and may edit the deck-brain ledger's topic files (never its generated
+`INDEX.md`/`CARDS.md` or its `archive/`); any other write under its
 deck needs a click; and it can **never** write `deck.json`, `history.jsonl` or anything in
 `versions/` — it must propose.
 

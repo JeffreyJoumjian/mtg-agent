@@ -1,15 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { useAtom } from "jotai";
-import { History } from "lucide-react";
-import { Group, Panel, Separator } from "react-resizable-panels";
+import { Check, ChevronLeft, Copy, History, MessageSquare, X } from "lucide-react";
+import { Group, Panel, Separator, usePanelRef } from "react-resizable-panels";
 import { MAIN_LIST } from "@mtg/deck-model.ts";
 import type { ChangeEntry, ChangeSet } from "@mtg/change-set.ts";
 import { computeStats, deckIdentity } from "@mtg/deck-stats.ts";
+import { printingsFromMeta, toMoxfield } from "@mtg/moxfield.ts";
 import { Button } from "~/components/ui/button";
 import { SidebarTrigger } from "~/components/ui/sidebar";
 import { DeckBoard } from "~/builder/board/DeckBoard";
-import { StatsRail } from "~/builder/rail/StatsRail";
+import { DEFAULT_VIEW } from "~/builder/board/ViewSwitcher";
+import { DetailsSheet } from "~/builder/bar/DetailsSheet";
+import { StatsBar } from "~/builder/bar/StatsBar";
+import { BottomSplit } from "~/builder/board/BottomSplit";
 import { StagedPanel } from "~/builder/changes/StagedPanel";
 import { ChatPane } from "~/builder/chat/ChatPane";
 import { DeckCardsProvider } from "~/builder/chat/cards-context";
@@ -18,14 +22,18 @@ import type { Effort } from "~/builder/chat/Composer";
 import { ListTabs } from "~/builder/ListTabs";
 import {
   activeListAtom,
+  boardGroupAtom,
   boardViewAtom,
   chatModelAtom,
+  collapsedGroupsAtom,
   highlightTagAtom,
   paneLayoutAtom,
+  panesAtom,
   previewModeAtom,
   selectedCardAtom,
   stagedAtom,
 } from "~/builder/state/atoms";
+import { paneState, setPane } from "~/builder/state/panes";
 import { useApplyChanges, useChatActions, useDeck, usePreview } from "~/builder/state/queries";
 import { addEntry, clearStaged, mergeAgentProposal, removeEntryAt, toChangeSet } from "~/builder/state/staged";
 
@@ -51,8 +59,23 @@ function Workbench() {
   const [viewAll, setViewAll] = useAtom(boardViewAtom);
   const [modelAll, setModelAll] = useAtom(chatModelAtom);
   const [layout, setLayout] = useAtom(paneLayoutAtom);
+  const [panesAll, setPanesAll] = useAtom(panesAtom);
+  const panes = paneState(panesAll, slug);
+  const chatRef = usePanelRef();
+  const [detailsOpen, setDetailsOpen] = useState(false);
+  const [groupAll, setGroupAll] = useAtom(boardGroupAtom);
+  const [collapsedAll, setCollapsedAll] = useAtom(collapsedGroupsAtom);
+  const [copied, setCopied] = useState(false);
   const [label, setLabel] = useState("");
   const [applyError, setApplyError] = useState<string | null>(null);
+
+  const setChatOpen = (open: boolean) => setPanesAll((all) => setPane(all, slug, "chat", open));
+  const toggleChat = () => {
+    const open = !panes.chat;
+    if (open) chatRef.current?.expand();
+    else chatRef.current?.collapse();
+    setChatOpen(open);
+  };
 
   const chat = useDeckChat(slug, {
     onProposal: (requestId, changeSet) => {
@@ -66,6 +89,16 @@ function Workbench() {
   const apply = useApplyChanges(slug);
 
   const deck = deckQuery.data?.deck;
+  const panelsMounted = Boolean(deck && !deckQuery.data?.error);
+
+  // The panel keeps its own size in the saved layout; the stored open/closed choice wins on mount.
+  useEffect(() => {
+    if (!panelsMounted) return;
+    if (!panes.chat) chatRef.current?.collapse();
+    // Only on mount and when the deck changes: a toggle already moved the panel itself.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug, panelsMounted]);
+
   const listIds = deck ? Object.keys(deck.lists) : [];
   const activeId =
     deck && activeAll[slug] && deck.lists[activeAll[slug]]
@@ -98,14 +131,14 @@ function Workbench() {
 
   if (deckQuery.isPending) return <p className="p-4 text-[13px] text-muted-foreground">Loading {slug}…</p>;
   if (deckQuery.error || !deckQuery.data || !deck) {
-    return <p className="p-4 text-[13px] text-rose-300">{String(deckQuery.error ?? "not found")}</p>;
+    return <p className="p-4 text-[13px] text-bad">{String(deckQuery.error ?? "not found")}</p>;
   }
 
   const { cards, error, cardDataError } = deckQuery.data;
   if (error) {
     return (
       <div className="p-4 text-[13px]">
-        <p className="mb-1 font-medium text-rose-300">decks/{slug}/deck.json could not be read.</p>
+        <p className="mb-1 font-medium text-bad">decks/{slug}/deck.json could not be read.</p>
         <pre className="rounded-md bg-muted p-2 text-[12px] whitespace-pre-wrap">{error}</pre>
       </div>
     );
@@ -119,12 +152,16 @@ function Workbench() {
   const allCards = { ...cards, ...(preview.data?.ok ? preview.data.cards : {}) };
   const identity = deckIdentity(deck, cards);
   const stats = computeStats(list, cards, deck.cards, identity);
-  const view = viewAll[slug] ?? "board";
+  const after = preview.data?.ok && stagedHere ? preview.data.after : null;
+  const changes = preview.data?.ok && stagedHere ? preview.data.changes : [];
+  const view = viewAll[slug] ?? DEFAULT_VIEW;
   const chatModel = modelAll[slug] ?? { model: null, effort: null };
 
   const stage = (entry: ChangeEntry) => {
     setStaged(addEntry(staged, activeId, entry));
     setApplyError(null);
+    // Show the board as it will be, the same as when the agent proposes a change.
+    setPreviewMode("after");
   };
 
   const finish = () => {
@@ -168,6 +205,15 @@ function Workbench() {
     if (origin) answerAgent(origin.requestId, { status: "dismissed", reason: "discarded in the staged panel" }, "");
   };
 
+  // The Moxfield import text, printings included — the same lines deck:edit writes to MOXFIELD.txt.
+  const copyList = () => {
+    const { lines } = toMoxfield(list, printingsFromMeta(deck.cards));
+    void navigator.clipboard.writeText(lines.join("\n")).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    });
+  };
+
   return (
     <DeckCardsProvider cards={allCards}>
       <div className="flex h-full min-h-0 flex-col">
@@ -183,10 +229,21 @@ function Workbench() {
                 <History /> History
               </Link>
             </Button>
+            <Button variant="outline" size="sm" onClick={copyList}>
+              {copied ? <Check /> : <Copy />} {copied ? "Copied" : "Copy list"}
+            </Button>
+            <Button
+              variant={panes.chat ? "secondary" : "outline"}
+              size="sm"
+              aria-pressed={panes.chat}
+              onClick={toggleChat}
+            >
+              <MessageSquare /> Chat
+            </Button>
           </div>
         </div>
         {cardDataError && (
-          <p className="border-b bg-amber-400/10 px-3 py-1.5 text-[12px] text-amber-300">
+          <p className="border-b bg-warn/10 px-3 py-1.5 text-[12px] text-warn">
             Card data may be stale: {cardDataError}
           </p>
         )}
@@ -197,98 +254,156 @@ function Workbench() {
           defaultLayout={layout ?? undefined}
           onLayoutChanged={(next) => setLayout(next as Record<string, number>)}
         >
-          <Panel id="rail" defaultSize="19%" minSize="14%" className="h-full min-w-0 border-r">
-            <StatsRail
-              stats={stats}
-              after={preview.data?.ok && stagedHere ? preview.data.after : null}
-              changes={preview.data?.ok && stagedHere ? preview.data.changes : []}
-              highlightTag={highlightTag}
-              onHighlightTag={setHighlightTag}
-              header={
-                <div className="border-b px-2 py-1.5">
-                  <ListTabs
-                    slug={slug}
-                    deck={deck}
-                    active={activeId}
-                    onChange={(id) => setActiveAll((a) => ({ ...a, [slug]: id }))}
+          <Panel id="board" minSize="30%" className="flex h-full min-w-0">
+            <BottomSplit
+              id="deck"
+              top={
+                <DeckBoard
+                  slug={slug}
+                  list={list}
+                  cards={allCards}
+                  meta={deck.cards}
+                  staged={stagedHere}
+                  previewMode={previewMode}
+                  view={view}
+                  groupBy={groupAll[slug] ?? "type"}
+                  collapsed={collapsedAll[slug] ?? []}
+                  selected={selected}
+                  highlightTag={highlightTag}
+                  onView={(v) => setViewAll((a) => ({ ...a, [slug]: v }))}
+                  onGroupBy={(g) => setGroupAll((a) => ({ ...a, [slug]: g }))}
+                  onToggleGroup={(name) =>
+                    setCollapsedAll((a) => {
+                      const now = a[slug] ?? [];
+                      return { ...a, [slug]: now.includes(name) ? now.filter((n) => n !== name) : [...now, name] };
+                    })
+                  }
+                  onSelect={setSelected}
+                  onStage={stage}
+                  tabs={
+                    <ListTabs
+                      slug={slug}
+                      deck={deck}
+                      active={activeId}
+                      onChange={(id) => setActiveAll((a) => ({ ...a, [slug]: id }))}
+                    />
+                  }
+                />
+              }
+              bottom={
+                stagedHere && stagedHere.entries.length > 0 ? (
+                  <StagedPanel
+                    staged={stagedHere}
+                    cards={allCards}
+                    preview={preview.data}
+                    previewLoading={preview.isFetching}
+                    previewMode={previewMode}
+                    label={label}
+                    applying={apply.isPending}
+                    error={applyError}
+                    onPreviewMode={setPreviewMode}
+                    onLabel={setLabel}
+                    onRemoveEntry={(entry) => setStaged(removeEntryAt(staged, stagedHere.entries.indexOf(entry)))}
+                    onApply={onApply}
+                    onDiscard={onDiscard}
+                  />
+                ) : null
+              }
+            />
+            {!panes.chat && <ChatEdgeTab onClick={toggleChat} />}
+          </Panel>
+          <Separator className="w-1 bg-border/40 transition hover:bg-ring data-[separator=active]:bg-ring" />
+          <Panel
+            id="chat"
+            panelRef={chatRef}
+            collapsible
+            collapsedSize={0}
+            defaultSize="30%"
+            minSize="20%"
+            onResize={(size) => {
+              const open = size.inPixels > 0;
+              if (open !== panes.chat) setChatOpen(open);
+            }}
+            className={`h-full min-w-0 ${panes.chat ? "border-l" : ""}`}
+          >
+            {panes.chat && (
+              <div className="flex h-full min-h-0 flex-col">
+                <div className="flex h-8 shrink-0 items-center gap-2 border-b px-3 text-[12px]">
+                  <span className="font-semibold">Chat</span>
+                  <button
+                    type="button"
+                    aria-label="Hide chat"
+                    onClick={toggleChat}
+                    className="ml-auto rounded-md p-1 text-muted-foreground hover:bg-accent hover:text-foreground"
+                  >
+                    <X className="size-3.5" />
+                  </button>
+                </div>
+                <div className="min-h-0 flex-1">
+                  <ChatPane
+                    state={chat.state}
+                    ready={chat.ready}
+                    reconnecting={chat.reconnecting}
+                    cards={allCards}
+                    model={chatModel.model}
+                    effort={chatModel.effort as Effort | null}
+                    onSend={(text) => void actions.send(text, activeId)}
+                    onResolve={(requestId, outcome) =>
+                      answerAgent(requestId, outcome, "The agent was no longer waiting on that request.")
+                    }
+                    onApprove={(requestId, decision) => void actions.approve(requestId, decision)}
+                    onStop={() => void actions.interrupt()}
+                    onModel={(model, effort) => {
+                      setModelAll((a) => ({ ...a, [slug]: { model, effort } }));
+                      void actions.setModel(model, effort);
+                    }}
+                    onNewConversation={() => {
+                      if (window.confirm("Start a new conversation? The current one is archived, not deleted.")) {
+                        void actions.newConversation();
+                      }
+                    }}
+                    onStageProposal={(requestId, cs) => {
+                      setStaged(mergeAgentProposal(staged, { requestId, changeSet: cs }));
+                      setActiveAll((a) => ({ ...a, [slug]: cs.listId }));
+                      setPreviewMode("after");
+                    }}
+                    onDismissProposal={(requestId, reason) => {
+                      answerAgent(requestId, { status: "dismissed", reason }, "");
+                      if (staged?.origin?.requestId === requestId) finish();
+                    }}
                   />
                 </div>
-              }
-            />
-          </Panel>
-          <Separator className="w-1 bg-border/40 transition hover:bg-ring data-[resize-handle-active]:bg-ring" />
-          <Panel id="board" minSize="30%" className="flex h-full min-w-0 flex-col">
-            <div className="min-h-0 flex-1">
-              <DeckBoard
-                slug={slug}
-                list={list}
-                cards={allCards}
-                meta={deck.cards}
-                staged={stagedHere}
-                previewMode={previewMode}
-                view={view}
-                selected={selected}
-                highlightTag={highlightTag}
-                onView={(v) => setViewAll((a) => ({ ...a, [slug]: v }))}
-                onSelect={setSelected}
-                onStage={stage}
-              />
-            </div>
-            {stagedHere && stagedHere.entries.length > 0 && (
-              <StagedPanel
-                staged={stagedHere}
-                cards={allCards}
-                preview={preview.data}
-                previewLoading={preview.isFetching}
-                previewMode={previewMode}
-                label={label}
-                applying={apply.isPending}
-                error={applyError}
-                onPreviewMode={setPreviewMode}
-                onLabel={setLabel}
-                onRemoveEntry={(entry) => setStaged(removeEntryAt(staged, stagedHere.entries.indexOf(entry)))}
-                onApply={onApply}
-                onDiscard={onDiscard}
-              />
+              </div>
             )}
           </Panel>
-          <Separator className="w-1 bg-border/40 transition hover:bg-ring data-[resize-handle-active]:bg-ring" />
-          <Panel id="chat" defaultSize="30%" minSize="20%" className="h-full min-w-0 border-l">
-            <ChatPane
-              state={chat.state}
-              ready={chat.ready}
-              reconnecting={chat.reconnecting}
-              cards={allCards}
-              model={chatModel.model}
-              effort={chatModel.effort as Effort | null}
-              onSend={(text) => void actions.send(text, activeId)}
-              onResolve={(requestId, outcome) =>
-                answerAgent(requestId, outcome, "The agent was no longer waiting on that request.")
-              }
-              onApprove={(requestId, decision) => void actions.approve(requestId, decision)}
-              onStop={() => void actions.interrupt()}
-              onModel={(model, effort) => {
-                setModelAll((a) => ({ ...a, [slug]: { model, effort } }));
-                void actions.setModel(model, effort);
-              }}
-              onNewConversation={() => {
-                if (window.confirm("Start a new conversation? The current one is archived, not deleted.")) {
-                  void actions.newConversation();
-                }
-              }}
-              onStageProposal={(requestId, cs) => {
-                setStaged(mergeAgentProposal(staged, { requestId, changeSet: cs }));
-                setActiveAll((a) => ({ ...a, [slug]: cs.listId }));
-                setPreviewMode("after");
-              }}
-              onDismissProposal={(requestId, reason) => {
-                answerAgent(requestId, { status: "dismissed", reason }, "");
-                if (staged?.origin?.requestId === requestId) finish();
-              }}
-            />
-          </Panel>
         </Group>
+
+        <StatsBar stats={stats} after={after} changes={changes} onDetails={() => setDetailsOpen(true)} />
+        <DetailsSheet
+          open={detailsOpen}
+          onOpenChange={setDetailsOpen}
+          stats={stats}
+          after={after}
+          changes={changes}
+          highlightTag={highlightTag}
+          onHighlightTag={setHighlightTag}
+        />
       </div>
     </DeckCardsProvider>
+  );
+}
+
+/** The thin strip left behind when the chat is closed: one click brings it back. */
+function ChatEdgeTab(props: { onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      aria-label="Show chat"
+      onClick={props.onClick}
+      className="flex w-6 shrink-0 flex-col items-center justify-center gap-2 border-l bg-sidebar text-[11px] font-semibold text-muted-foreground hover:text-foreground"
+    >
+      <ChevronLeft className="size-3" />
+      <span className="[writing-mode:vertical-rl]">Chat</span>
+    </button>
   );
 }

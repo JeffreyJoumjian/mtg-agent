@@ -1,17 +1,19 @@
 ---
 name: deck-brain
-description: The accumulated decision-making method and knowledge base for this repo's Magic decks. Read this BEFORE answering any Magic question or making any deck decision — card evaluation, cuts, swaps, upgrades, rules interactions, manabase calls, bracket questions, "should I run X", "is the deck final", "what about card Y". It carries the verified rulings, the evaluation patterns, and the mistakes already made so they aren't made twice. It is also APPEND-ONLY LEARNING — every session that produces a durable lesson writes it back into LEDGER.md before finishing.
+description: The accumulated decision-making method and knowledge base for this repo's Magic decks. Read this BEFORE answering any Magic question or making any deck decision — card evaluation, cuts, swaps, upgrades, rules interactions, manabase calls, bracket questions, "should I run X", "is the deck final", "what about card Y". It carries the verified rulings, the evaluation patterns, and the mistakes already made so they aren't made twice. It also LEARNS — every session that produces a durable lesson files it in the ledger before finishing.
 ---
 
 # Deck Brain
 
-The method and the memory behind every deck in `decks/`. Two files:
+The method and the memory behind every deck in `decks/`:
 
 - **`SKILL.md`** (this file) — *how to decide*. Stable. Changes rarely.
-- **`LEDGER.md`** — *what we've learned*. *Append-only.* Grows every session.
+- **`ledger/`** — *what we've learned*: one file per topic, every entry with an id, a Kind (ruling,
+  pattern or correction) and the cards and rules it names. `ledger/INDEX.md` lists every entry and
+  `ledger/CARDS.md` maps each card to its entries. Grows every session (§4).
 
-**Read `LEDGER.md` before you reason about a card.** It is grep-friendly — search the card name,
-the rule number, or the pattern name first.
+**Look it up before you reason about a card:** `bun run lookup "<card | rule number | term>"` prints
+every matching ledger entry whole, plus the decision-log sections of every deck that mention it.
 
 But read it for **facts, not verdicts.** A rules citation, an oracle quote or a measurement stays
 true; *"card X beats card Y here"* was only ever true of the list as it stood that day, and every
@@ -54,7 +56,9 @@ breaking them did.
 ### 1.1 Verify, never recall
 
 **Every card claim goes through `bun run card "<name>"`. Every rules claim goes through
-`rules/sections/`** (grep it, or dispatch `mtg-rules-expert`).
+`rules/sections/`**: a ruling the ledger already holds, re-checked against the rules it cites (lookup
+shows no ⚠), or a fresh answer from `mtg-rules-expert` for a new interaction, a ⚠ ruling, or one the
+pilot disputes.
 
 This is rule one because recalling instead of checking put a fabricated "free-cast" clause on
 **Apex of Power** into four documents and cost the user a real game. The card says *"you may
@@ -95,7 +99,7 @@ So:
 - **When the user questions a call, re-derive it from scratch.** Do not defend it from the notes —
   the notes are what you're checking.
 
-Grep `LEDGER.md` for the *facts*. Re-derive the *verdicts*.
+Look up the *facts* (`bun run lookup`). Re-derive the *verdicts*.
 
 ### 1.2 Cost the card out in *this deck's* mana before comparing anything
 
@@ -256,8 +260,8 @@ The real test is two questions, in order:
    - **Blank** — does nothing without a payoff you may not have. A bare *multiplier* is the classic
      case: it needs something to multiply, so two can be two dead cards. This is the **only** case
      where "one is right, two is greedy" holds, and even then only where payoff density is low.
-   - **Genuinely multiplicative** — they commute and stack cleanly (see LEDGER §Replacement-effect
-     ordering). Run as many as the curve allows.
+   - **Genuinely multiplicative** — they commute and stack cleanly (ledger
+     repl-001). Run as many as the curve allows.
 
 So the phrase to reach for is never "redundant." It is *"this is a blank alongside the first,
 because X"* — and if you cannot name X, there is no argument for the cut.
@@ -286,44 +290,99 @@ non-obvious parts:
 - Log **corrections** in the decision log, plainly. The Apex correction is more valuable than
   most of the card choices around it.
 
+### 3.1 Every upgrade pass gets a proposal artifact — and it is updated, never re-created
+
+The pilot reads proposals on a published page, not in chat scrollback (*"i'm afraid to use the chat
+there and lose history"*). **One artifact per deck, updated in place for the life of that deck.**
+
+The split is the §1.4 rule again: the **grounds** are hand-written, **everything else is generated.**
+
+| File | Who writes it |
+|---|---|
+| `decks/<slug>/research/proposal.json` | **You.** Waves, swaps, the deciding axis, the grounds, the interaction list, the self-hit cost, and the passed-over cards with reasons. |
+| `decks/<slug>/artifact/proposal.json` + `img/` | **`bun run deck:proposal <slug>`.** Oracle text, mana cost, P/T, salt, inclusion %, Game Changer status, card art, and the current/approved/projected deck stats — all from `deck.json` and the caches. |
+| `decks/<slug>/artifact/index.html` | Written once per deck, then left alone. |
+
+The loop for any swap conversation:
+
+1. Edit `research/proposal.json` — add a wave, or move a wave's `status`.
+2. `bun run deck:proposal <slug>` — regenerates data and pulls any new card art.
+3. Republish the artifact **to the same URL** (`url` from a different conversation; the same
+   `file_path` within the one that created it). Never publish a second artifact for the same deck.
+4. Only after the pilot approves, run `bun run deck:edit` and set that wave to `"applied"`.
+
+`status` per wave drives the page and the maths: `proposed` (on the table), `approved` (pilot said
+yes, not yet applied), `applied` (in `deck.json`), `declined` (kept visible with its reason — the
+record of what was considered is the point). The stat rail shows **current → projected** across
+every non-declined wave, so the pilot sees what the whole package does to the curve, the role counts
+and the Game Changer budget before agreeing to any of it.
+
+Two things this catches that chat does not: a package that quietly raises average mana value (the
+Chatterfang pass moved it 2.73 → 3.00, which is exactly the "too slow" complaint it was meant to
+fix), and a role skeleton going out of balance (§2.1) while you are looking at individual cards.
+
+**One thing it did not catch, so state these by hand.** Average MV alone hid a real regression —
+report **MV ≤ 2 and MV ≤ 3 counts** beside it, because that is what a win-turn estimate actually
+reads, and name the realistic cast cost of any `{X}` spell, which every tool counts at its printed
+mana value. Each swap carries an optional `verdict` (`kept` / `reverted` / `pending`) with
+`verdictWhy`, set after the list has been played or measured — that is how the page stays a record
+of what was learned rather than only what was proposed. `compareTo` in the proposal file names a
+second deck (the playtest fork) whose stats are **measured from its own `deck.json`**, never
+projected.
+
+Each deck's artifact URLs live in its section of `decks/_notes.md`, so a future session can find
+the page without re-publishing.
+
 ---
 
 ## 4. The capture protocol — this is what makes it learn
 
-**Before you finish any session that produced a durable lesson, append it to `LEDGER.md`.**
+**Before you finish any session that produced a durable lesson, file it in the ledger.**
 
 Durable means it would change a future decision on a *different* card or a *different* deck.
 Deck-specific choices go in that deck's `research/decisions.md` instead.
 
 Capture when any of these happen:
 
-| Trigger | Goes to |
+| Trigger | Kind |
 |---|---|
-| A rules interaction was verified against the CR | `LEDGER.md` → **Verified rulings** |
-| An evaluation heuristic proved itself (or failed) | `LEDGER.md` → **Evaluation patterns** |
-| You got something wrong | `LEDGER.md` → **Corrections** |
-| The user overrode you and was right | `LEDGER.md` → **Corrections** |
-| A card was rejected for a transferable reason | `LEDGER.md` → **Evaluation patterns** |
-| A tooling or process failure | `LEDGER.md` → **Corrections** |
+| A rules interaction was verified against the CR | ruling |
+| An evaluation heuristic proved itself (or failed) | pattern |
+| A card was rejected for a transferable reason | pattern |
+| You got something wrong, or the user overrode you and was right | correction |
+| A tooling or process failure | correction, in `tooling-and-process.md` |
 
-Entry format — keep it strict so the file stays greppable:
+**Where it goes:** the topic file that owns the subject (`ledger/INDEX.md` lists them). Run
+`bun run lookup` first: when an entry already states the fact, extend that entry with the new case,
+example, source and date instead of writing a second one.
+
+**Entry format** — strict, so lookups and the indexes work (`bun run ledger:index --check` and the
+test suite enforce it):
 
 ```markdown
-### <Short title> — <YYYY-MM-DD>
+### <Short title> {#<file prefix>-<next free number>}
 
+**Kind:** ruling · **Verified:** <YYYY-MM-DD> against CR <version in rules/meta.json>
+**Cards:** every card named, Scryfall spelling, front face only, separated by `; `
+**Rules:** every CR number cited, ascending
 **Claim:** one sentence.
 **Evidence:** CR citation, oracle text, or the measurement.
 **Changes:** what a future decision should do differently.
-**Source:** deck slug / what prompted it.
+**Source:** deck slug (date) / what prompted it.
 ```
+
+A pattern or correction uses `**Kind:** pattern · **Recorded:** <YYYY-MM-DD>` (or `correction`).
+Drop the Cards or Rules line when there are none. Add new entries at the end of the topic file, then
+run `bun run ledger:index` to refresh `INDEX.md` and `CARDS.md`.
 
 Rules for the ledger:
 
-- **Append, don't rewrite.** If an entry turns out wrong, add a new entry that supersedes it and
-  edit the old one to say `SUPERSEDED by <title>` — never delete the record of the mistake.
+- **Keep the record of a mistake.** When an entry turns out wrong, correct it in place and add a
+  `**History:**` line with what it used to claim, when, and why it changed. The pre-split
+  `LEDGER.md` is kept whole in `ledger/archive/`.
 - **One fact per entry.** No omnibus entries.
 - **Cite or don't claim.** An entry with no CR number, no oracle quote, and no measurement is a
-  hunch, and hunches are what this file exists to replace.
-- If `LEDGER.md` passes ~2000 lines, split it into `rulings.md` / `patterns.md` / `corrections.md`
-  and leave `LEDGER.md` as an index. Until then it stays one greppable file — splitting early costs
-  more (three files to search, an index to keep honest) than a long file does.
+  hunch, and hunches are what the ledger exists to replace.
+- **A ruling names the rules version it was checked against.** After a rules update,
+  `bun run lookup` marks each older ruling ✓ (none of its cited rules changed) or ⚠ (re-check them).
+  Re-verify a ⚠ entry before relying on it, then update its Verified line.

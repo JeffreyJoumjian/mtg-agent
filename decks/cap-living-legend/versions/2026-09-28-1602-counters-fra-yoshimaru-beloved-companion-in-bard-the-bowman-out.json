@@ -1,0 +1,461 @@
+{
+  "takenAt": "2026-09-28T16:02:41.557Z",
+  "listId": "counters",
+  "label": "FRA: Yoshimaru, Beloved Companion in, Bard the Bowman out",
+  "reason": "before FRA: Yoshimaru, Beloved Companion in, Bard the Bowman out",
+  "list": {
+    "label": "Counters",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Captain America, Living Legend",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Abandoned Air Temple",
+            "qty": 1
+          },
+          {
+            "name": "Academy Ruins",
+            "qty": 1
+          },
+          {
+            "name": "Adarkar Wastes",
+            "qty": 1
+          },
+          {
+            "name": "Ancient Den",
+            "qty": 1
+          },
+          {
+            "name": "Avengers Tower",
+            "qty": 1
+          },
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Deserted Beach",
+            "qty": 1
+          },
+          {
+            "name": "Eiganjo, Seat of the Empire",
+            "qty": 1
+          },
+          {
+            "name": "Flooded Strand",
+            "qty": 1
+          },
+          {
+            "name": "Floodfarm Verge",
+            "qty": 1
+          },
+          {
+            "name": "Glacial Fortress",
+            "qty": 1
+          },
+          {
+            "name": "Hallowed Fountain",
+            "qty": 1
+          },
+          {
+            "name": "Inventors' Fair",
+            "qty": 1
+          },
+          {
+            "name": "Island",
+            "qty": 3
+          },
+          {
+            "name": "Karn's Bastion",
+            "qty": 1
+          },
+          {
+            "name": "Minamo, School at Water's Edge",
+            "qty": 1
+          },
+          {
+            "name": "Mystic Gate",
+            "qty": 1
+          },
+          {
+            "name": "Otawara, Soaring City",
+            "qty": 1
+          },
+          {
+            "name": "Plains",
+            "qty": 7
+          },
+          {
+            "name": "Prairie Stream",
+            "qty": 1
+          },
+          {
+            "name": "Prismatic Vista",
+            "qty": 1
+          },
+          {
+            "name": "Rogue's Passage",
+            "qty": 1
+          },
+          {
+            "name": "Sea of Clouds",
+            "qty": 1
+          },
+          {
+            "name": "Seachrome Coast",
+            "qty": 1
+          },
+          {
+            "name": "Seat of the Synod",
+            "qty": 1
+          },
+          {
+            "name": "Tundra",
+            "qty": 1
+          },
+          {
+            "name": "Urza's Saga",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Ramp",
+        "cards": [
+          {
+            "name": "Apprentice Wizard",
+            "qty": 1
+          },
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Ornithopter of Paradise",
+            "qty": 1
+          },
+          {
+            "name": "Relic of Legends",
+            "qty": 1
+          },
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw",
+        "cards": [
+          {
+            "name": "Arcanis the Omnipotent",
+            "qty": 1
+          },
+          {
+            "name": "Marvin, Murderous Mimic",
+            "qty": 1
+          },
+          {
+            "name": "Shorikai, Genesis Engine",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Equipment & Auras — Voltron",
+        "cards": [
+          {
+            "name": "Basilisk Collar",
+            "qty": 1
+          },
+          {
+            "name": "Commander's Plate",
+            "qty": 1
+          },
+          {
+            "name": "Light of Promise",
+            "qty": 1
+          },
+          {
+            "name": "Maul of the Skyclaves",
+            "qty": 1
+          },
+          {
+            "name": "Mithril Coat",
+            "qty": 1
+          },
+          {
+            "name": "Pippin, Guard of the Citadel",
+            "qty": 1
+          },
+          {
+            "name": "Shadowspear",
+            "qty": 1
+          },
+          {
+            "name": "Stark's Ingenuity",
+            "qty": 1
+          },
+          {
+            "name": "Super-Soldier Serum",
+            "qty": 1
+          },
+          {
+            "name": "Swiftfoot Boots",
+            "qty": 1
+          },
+          {
+            "name": "Sword of Feast and Famine",
+            "qty": 1
+          },
+          {
+            "name": "Sword of Vengeance",
+            "qty": 1
+          },
+          {
+            "name": "Umezawa's Jitte",
+            "qty": 1
+          },
+          {
+            "name": "Unctus, Grand Metatect",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Equipment Tutors & Engines",
+        "cards": [
+          {
+            "name": "Enlightened Tutor",
+            "qty": 1
+          },
+          {
+            "name": "Puresteel Paladin",
+            "qty": 1
+          },
+          {
+            "name": "Resplendent Mentor",
+            "qty": 1
+          },
+          {
+            "name": "Sram, Senior Edificer",
+            "qty": 1
+          },
+          {
+            "name": "Stoneforge Mystic",
+            "qty": 1
+          },
+          {
+            "name": "Stonehewer Giant",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Draw → Counters",
+        "cards": [
+          {
+            "name": "Archivist",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Life Gain → Counters",
+        "cards": [
+          {
+            "name": "Archangel of Thune",
+            "qty": 1
+          },
+          {
+            "name": "Auriok Champion",
+            "qty": 1
+          },
+          {
+            "name": "Bard the Bowman",
+            "qty": 1
+          },
+          {
+            "name": "Elesh Norn, Mother of Machines",
+            "qty": 1
+          },
+          {
+            "name": "Heliod, Sun-Crowned",
+            "qty": 1
+          },
+          {
+            "name": "Soul Warden",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Tap Counter Engines & Amplifier",
+        "cards": [
+          {
+            "name": "Agent Phil Coulson",
+            "qty": 1
+          },
+          {
+            "name": "Lae'zel, Vlaakith's Champion",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Token Makers",
+        "cards": [
+          {
+            "name": "Adeline, Resplendent Cathar",
+            "qty": 1
+          },
+          {
+            "name": "Brimaz, King of Oreskos",
+            "qty": 1
+          },
+          {
+            "name": "Elspeth, Storm Slayer",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Untappers",
+        "cards": [
+          {
+            "name": "Drumbellower",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Evasion & Double Strike",
+        "cards": [
+          {
+            "name": "Akroma's Will",
+            "qty": 1
+          },
+          {
+            "name": "The Destined Thief",
+            "qty": 1
+          },
+          {
+            "name": "Urdnan, Dromoka Warrior",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Finishers",
+        "cards": [
+          {
+            "name": "Walking Ballista",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Interaction",
+        "cards": [
+          {
+            "name": "Counterspell",
+            "qty": 1
+          },
+          {
+            "name": "Cyclonic Rift",
+            "qty": 1
+          },
+          {
+            "name": "Dispatch",
+            "qty": 1
+          },
+          {
+            "name": "Dovin's Veto",
+            "qty": 1
+          },
+          {
+            "name": "Generous Gift",
+            "qty": 1
+          },
+          {
+            "name": "Gideon's Lawkeeper",
+            "qty": 1
+          },
+          {
+            "name": "March of Otherworldly Light",
+            "qty": 1
+          },
+          {
+            "name": "Path to Exile",
+            "qty": 1
+          },
+          {
+            "name": "Stroke of Midnight",
+            "qty": 1
+          },
+          {
+            "name": "Swords to Plowshares",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Board Wipes",
+        "cards": [
+          {
+            "name": "Split Up",
+            "qty": 1
+          },
+          {
+            "name": "Winds of Abandon",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Protection",
+        "cards": [
+          {
+            "name": "Captain America, Super-Soldier",
+            "qty": 1
+          },
+          {
+            "name": "Clever Concealment",
+            "qty": 1
+          },
+          {
+            "name": "Giver of Runes",
+            "qty": 1
+          },
+          {
+            "name": "Mother of Runes",
+            "qty": 1
+          },
+          {
+            "name": "Patriot, Shield Wielder",
+            "qty": 1
+          },
+          {
+            "name": "Teferi's Protection",
+            "qty": 1
+          },
+          {
+            "name": "The Ozolith",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

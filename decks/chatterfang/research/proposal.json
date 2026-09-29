@@ -1,0 +1,558 @@
+{
+  "title": "Acorn Economy Upgrade",
+  "subtitle": "Every recommendation, its grounds, and what happened when the whole package was actually built",
+  "listId": "main",
+  "diagnosis": [
+    "**HELD ADDS — the short list, in priority order.** Researched, costed and wanted; waiting only on a slot. **1. Enduring Vitality** {1}{G}{G} — Cryptolith Rite's exact granted ability on a 3/3 vigilance body that returns from the graveyard as an enchantment when it dies as a creature; also a second route to the Concordant Crossroads + Unbeatable Squirrel Girl line, which currently needs Cryptolith Rite specifically. **2. Marauding Blight-Priest** {2}{B} — converter #4, *each* opponent loses 1, the same shape as Starscape Cleric; my wave-2 grounds for cutting it (*\"a strictly worse Vito\"* and *\"three converters is more than the lifegain sources support\"*) are both void — it is not a worse Vito on a many-small-events profile, and the fuel count is now 15. **3. Essence Warden** {G} — MV 1, and *no* \"you control\" clause, so opponents' creatures entering also feed the converters. **4. Enduring Tenacity** {2}{B}{B} — the only converter that survives a board wipe and keeps working; single-target, so it overlaps Vito. **5. Bogwater Lumaret** {B}{G} and **Greenhouse Propagator** {2}{G} — both superseded: fuel is not the constraint, and Essence Warden is the cheaper version of the same line.",
+    "**CLOSE CUTS — seven cards the pilot protected, and why the grounds held.** Recorded so none of these gets re-nominated without new evidence. **Ninja Pizza** — it converts Foods that would otherwise sit *idle* into mana, so my \"it competes with Camellia's forage and Bilbo's split\" objection only bites on Foods actually being foraged. **Cultivate** — it is **two** landfall triggers (one land to the battlefield, one to hand for a later drop), not the \"zero synergy\" card I called it. **Elvish Mystic** — turn-one acceleration, which the pilot has asked for repeatedly. **Craterhoof Behemoth** — the last combat kill route now that Orcrist has gone; a curve number is not worth retiring an axis. **Second Harvest** — the only doubling effect that works *after* the board exists, and it is an instant. **Bitterblossom** — the earliest recurring engine, an enchantment so wipes miss it, and two tokens plus two Mirkwood Bats triggers a turn with Chatterfang. **Bloodletter of Aclazotz** — counter bait *and* surprise lethal, two functions no per-card rate analysis sees; and its condition is met constantly by 15 fuel sources, so \"conditional\" was never a real cut reason.",
+    "The number that kills in this list is **tokens created in one turn**, not tokens standing on board. With Mirkwood Bats, Prosperous Innkeeper and one lifegain converter out, every single token that *enters* is worth 4 damage to every opponent - Bats triggers once per token, not once per batch (CR 603.2c).",
+    "That means Avenger of Zendikar on 8 lands is already 16 tokens entering and 64 damage to each opponent, with no sacrifice loop at all. The deck isn't getting there because it is short on mana, short on single-event token bursts, and short on ways to convert a wide board into a win that don't route through the combo.",
+    "A per-upkeep drip can never trigger Mirkwood Bats more than twice a turn. That is why the 1-token-per-turn cards feel like nothing, and it is the axis this package was built on: fewer sources that make one token, more sources that make many at once, plus real converters.",
+    "**What actually happened when the package was built.** All 13 swaps went into `decks/upgrade-test` on 2026-09-25. A deck reviewer then put the estimated win turn at **6.6 for the parent vs 7.5 for the fork** - the fork was slower, which is the opposite of the complaint it was meant to fix. The measurement held up: cards at mana value 2 or less had fallen **30 to 24**, and the ramp had quietly got worse, not better.",
+    "**The error was mine and it was specific.** I cut Cultivate and Sakura-Tribe Elder - unconditional early ramp that puts lands on the battlefield - and added Awaken the Woods (dead at X=0), Circle of Dreams Druid (needs a board, then a turn) and Ancient Greenwarden (six mana). The Ramp & Mana section count went 10 to 13, which made it look like *more* ramp on my own stat rail. Worth knowing: **Awaken the Woods reads as mana value 2 in every stats tool** because it is {X}{G}{G}, but really costs 5 at X=3 - so the reviewer's 7.5 was optimistic, not harsh.",
+    "**The pattern that survived.** Every addition that genuinely fixed 'I only win with the combo' is cheap: Blasphemous Edict at one mana with 13 creatures out, Champion of Lambholt at 3, Orcrist at 3, Yawgmoth at 4. The four that moved the curve - Awaken the Woods, Ancient Greenwarden, Mycoloth, Circle of Dreams Druid - were all *more engine*, which is the half the deck already had too much of. Wave 4 reverts exactly those four and the fork now sits at **2.89 average mana value with 26 cheap cards**, keeping every converter.",
+    "**Measured on CommanderBracket, both lists, same run (2026-09-25).** The fork is still 7.5 after the curve correction, against 6.6 for the parent - but the rest of the readout goes the other way, and the sub-scores are where the argument actually is.",
+    "**Fork better:** deck health 66 to 69, mana 74 to **84**, ramp by turn 3 55% to 59%, two ramp by turn 3 15% to 19%, archenemy level Casual to **Contender**. Those are exactly the numbers wave 4 was aimed at, so the curve correction did land. **Flat:** interaction 72 both, 3 lands by turn 3 70% both, keepable opener 95% both, Game Changers 1 both. **Both decks sit inside Bracket 3's 6-8 band** - the pin moved from the fast edge of B3 toward the middle, not out of it.",
+    "**The one number that did not move is the one this whole package was supposed to fix: engine, 51 to 50.** The additions changed *what* the deck does - converters instead of drip - without making the engine stronger. That is the honest verdict on the package.",
+    "**Two caveats on the 6.6.** The parent is credited with **1 tutor** and the fork with **0**; the parent's only tutor is From Beyond's \"search for an Eldrazi card\", and there are no Eldrazi in the deck - so part of the parent's faster reading rests on a tutor that cannot find anything. And the fork is scored with **7 combos against the parent's 5**: Ninja Pizza created an infinite with Camellia and Peregrin Took, and Concordant Crossroads created one with The Unbeatable Squirrel Girl and Cryptolith Rite. **Two combos were added that were never proposed as combos.** Worth knowing before the deck hits a table."
+  ],
+  "waves": [
+    {
+      "id": "wave-1",
+      "label": "Wave 1 — a win that isn't the combo",
+      "status": "approved",
+      "note": "Craterhoof and Concordant Crossroads are one purchase, not two: Craterhoof grants trample, NOT haste, so without a haste source the tokens you made this turn get +X/+X and still cannot attack (CR 302.6; only haste lifts it, 702.10b).  \n_Applied in decks/upgrade-test for playtesting; not yet applied to decks/chatterfang._",
+      "swaps": [
+        {
+          "in": "Craterhoof Behemoth",
+          "out": "From Beyond",
+          "section": "Finishers & Equipment",
+          "axis": "X is the NUMBER of creatures, not the greatest power",
+          "grounds": "This is the answer to 'the only way I've won is the combo'. X counts creatures, which is why Craterhoof beats Overwhelming Stampede and Pathbreaker Ibex here — their X is your biggest creature, which is a 1/1 Squirrel. X is locked once on resolution and includes Craterhoof itself (CR 608.2h, 611.2d), and the affected set is locked then too (611.2c), so deploy every token BEFORE letting the trigger resolve. From Beyond is 4 mana for 2 bodies a turn and its Eldrazi tutor mode is dead — there are no Eldrazi in the deck.",
+          "interactions": [
+            "Champion of Lambholt — makes the alpha strike unblockable instead of hopeful",
+            "Blood Artist, Bastion of Remembrance, Zulaport Cutthroat — chump blocks trade and still drain",
+            "Concordant Crossroads — required for this turn's tokens to attack at all"
+          ],
+          "cost": "Salt 1.44/4 — the saltiest card in the package. Chatterfang himself is 0.96 and Edgar was 2.05. People groan at Craterhoof because it ends games from nowhere.",
+          "verdict": "kept",
+          "verdictWhy": "The one expensive card worth its slot - it is the whole point of the package. Needs Concordant Crossroads to include this turn's tokens."
+        },
+        {
+          "in": "Concordant Crossroads",
+          "out": "Tendershoot Dryad",
+          "section": "Ramp & Mana",
+          "axis": "one mana unlocks both attacking AND mana from fresh tokens",
+          "grounds": "Cryptolith Rite, Enduring Vitality, Jaheira and Springleaf Parade all grant the TOKEN a {T} ability, which CR 302.6 blocks the turn it arrives. Haste is the only lift (702.10c). One green mana for 'all creatures have haste' is the best rate available. Tendershoot Dryad is 5 mana for 2 bodies a turn and needs the city's blessing before its anthem does anything — 13% of Chatterfang decks run it.",
+          "interactions": [
+            "Cryptolith Rite — fresh tokens tap for mana the turn they are made",
+            "Craterhoof Behemoth — this turn's tokens can actually swing",
+            "Valley Rotcaller — attack the turn you go wide",
+            "The Unbeatable Squirrel Girl, Circle of Dreams Druid — usable the turn they land"
+          ],
+          "cost": "Symmetric — opponents' creatures get haste too. In a deck that goes wide the turn it wins, the asymmetry barely matters.",
+          "verdict": "kept",
+          "verdictWhy": "One mana, and it turns on both the attack and the mana from fresh tokens."
+        },
+        {
+          "in": "Ancient Greenwarden",
+          "out": "Bitterblossom",
+          "section": "Ramp & Mana",
+          "axis": "a trigger-doubler and a token-doubler are separate purchases that multiply",
+          "grounds": "Play lands from the graveyard AND every landfall trigger fires twice. Because 'triggers an additional time' produces two separately resolving triggers (CR 603.2d), each is its own token-creation EVENT, and Chatterfang's replacement effect gets one opportunity per event (614.5) — so one land drop with Scute Swarm is 4 bodies and 4 Mirkwood Bats triggers, not 2 and 2. It reaches only abilities a LAND ENTERING caused: Avenger's landfall counters yes, Avenger's own ETB Plant-making no. Bitterblossom is the best of the per-upkeep drip cards on rate and still exactly the shape you asked me to cut.",
+          "interactions": [
+            "Scute Swarm — two copies per land drop",
+            "Tireless Provisioner — two Food/Treasure per land, each feeding Academy Manufactor",
+            "Tireless Tracker — two Clues per land",
+            "Verdant Catacombs, Misty Rainforest, Nurturing Peatland, Barren Moor — replayed from the graveyard",
+            "Awaken the Woods — every Forest Dryad token is a land entering"
+          ],
+          "verdict": "reverted",
+          "verdictWhy": "Six mana in a deck that was already too slow. The landfall doubling is real but it never came down in time. Back to Sakura-Tribe Elder."
+        },
+        {
+          "in": "Mycoloth",
+          "out": "Marauding Blight-Priest",
+          "section": "Token Engines",
+          "axis": "8-16 bodies per upkeep instead of 2",
+          "grounds": "Devour 4 Squirrels on the way in — that is 4 death triggers immediately — it enters with 8 counters and then makes 8 Saprolings, which Chatterfang turns into 16 tokens EVERY upkeep. Salt 0.22. Marauding Blight-Priest is a strictly worse Vito at the same cost, and three lifegain converters is one more than the deck's lifegain sources support.",
+          "interactions": [
+            "Mirkwood Bats — 16 triggers per upkeep",
+            "Prosperous Innkeeper into Vito, Thorn of the Dusk Rose — 16 gain events, 16 drains",
+            "Doubling Season, Parallel Lives — Doubling Season also doubles the devour counters"
+          ],
+          "verdict": "reverted",
+          "verdictWhy": "Five mana and it wants a board already there - it rewards the half of the deck that was already working. Back to Bitterblossom, which is a turn-2 engine."
+        },
+        {
+          "in": "Circle of Dreams Druid",
+          "out": "Blade of the Bloodchief",
+          "section": "Ramp & Mana",
+          "axis": "the mana to actually cast the top end",
+          "grounds": "Fifteen creatures means fifteen mana from one tap. It is a second Gaea's Cradle in a spell slot and the only way The Unbeatable Squirrel Girl's {1}{G}{G}{G} sink becomes repeatable in a single turn. Salt 0.61. Blade of the Bloodchief was your own pick so this cut is your call — it grows one creature and drains nobody, which makes it the weakest card against the plan.",
+          "interactions": [
+            "The Unbeatable Squirrel Girl — X Squirrels per activation, repeatable",
+            "Gaea's Cradle, Cryptolith Rite — stacking mana off the same board",
+            "Concordant Crossroads — lets it tap the turn it lands",
+            "Maskwood Nexus — would make every creature a Vampire and rescue Blade of the Bloodchief if you want to keep it"
+          ],
+          "verdict": "kept",
+          "verdictWhy": "**Restored in wave 5 — my revert was wrong.** The pilot: *\"bodies don't really matter if it takes us an extra 2-3 turns to have enough mana to play the cards we have.\"* My grounds for cutting it (\"conditional, needs a board\") do not survive contact with this deck: making a board is the one thing it does reliably, so Circle is a payoff for the deck's floor rather than a card needing setup. Wave 4 also proved the point negatively - it fixed the curve and the win turn stayed 7.5."
+        }
+      ]
+    },
+    {
+      "id": "wave-2",
+      "label": "Wave 2 — Food and Treasure multiplication",
+      "status": "approved",
+      "note": "CORRECTION to what I told you earlier: Peregrin Took and Tippy-Toe are NOT Food-adders. Both read 'if one or more tokens would be created, those tokens plus an additional Food token are created instead' — they fire on EVERY token-creation event, of any kind, and add exactly one Food per event. That makes them the engine's untapped-Food faucet, and it makes the stack far better than I described.  \n_Applied in decks/upgrade-test for playtesting; not yet applied to decks/chatterfang._",
+      "swaps": [
+        {
+          "in": "Orcrist, Goblin-cleaver",
+          "out": "Verdant Command",
+          "section": "Finishers & Equipment",
+          "axis": "the largest single token event available to this deck, repeatable every combat",
+          "grounds": "'Choose a creature type. Create a Treasure token for each creature you control of that type.' Equip it to Chatterfang, who has FORESTWALK and is therefore unblockable against any green deck. Verified: one hit with 15 Squirrels out creates 15 Treasures as one event; Academy Manufactor turns that into 15 Clues + 15 Foods + 15 Treasures (Gatherer ruling 6/18/2021), and Chatterfang applied LAST adds 45 Squirrels — 90 tokens. With Peregrin Took, Tippy-Toe and Bilbo also out, the same hit is 114 tokens. Every one is a Mirkwood Bats trigger.",
+          "interactions": [
+            "Chatterfang, Squirrel General — forestwalk carries the equipment through green decks",
+            "Academy Manufactor — triples the whole batch, not just one token",
+            "Peregrin Took, Tippy-Toe, Terrific Partner — +1 Food each, per event, before Manufactor splits",
+            "Champion of Lambholt — the backup way to connect against non-green decks",
+            "Mirkwood Bats — one trigger per token created"
+          ],
+          "cost": "6 mana all-in (3 cast + 3 equip) and it needs combat damage to connect.",
+          "verdict": "kept",
+          "verdictWhy": "Three to cast. The largest token event in the deck and it does not cost curve."
+        },
+        {
+          "in": "Bilbo, Fellow Conspirator",
+          "out": "Nested Shambler",
+          "section": "Token Engines",
+          "axis": "it is the splitter that doubles what Academy Manufactor gets to triple",
+          "grounds": "'If you would create a Food token, instead create a Food token and a Treasure token.' Verified ordering: Bilbo BEFORE Manufactor, because Bilbo hands Manufactor a second eligible token which Manufactor then triples. One plain 'create a Food' with Bilbo + Manufactor + Chatterfang is 12 tokens; add Peregrin and Tippy-Toe and it is 36. Every other ordering is worse. Nested Shambler is a 1-mana body you defended and I agree it earns a slot on rate — it is simply the smallest thing left in this section.",
+          "interactions": [
+            "Academy Manufactor — Bilbo first, Manufactor second, Chatterfang always last",
+            "Peregrin Took, Tippy-Toe, Terrific Partner — their added Foods each become a Food AND a Treasure",
+            "Tireless Provisioner, Camellia, the Seedmiser, Prosperous Innkeeper, Deadly Dispute, Pitiless Plunderer — eight live Food/Treasure/Clue sources already in the list"
+          ],
+          "verdict": "kept",
+          "verdictWhy": "Three mana, and it is the splitter that doubles what Academy Manufactor triples."
+        },
+        {
+          "in": "Ninja Pizza",
+          "out": "Idol of Oblivion",
+          "section": "Ramp & Mana",
+          "axis": "turns the deck's Foods into Treasures and adds a free token event every turn",
+          "grounds": "'Foods you control have {T}, Sacrifice this artifact: Add one mana of any color' plus a free Food each second main phase. A real Food token is a NONCREATURE artifact — no summoning sickness — so it taps and sacrifices for mana the instant it is created. With Academy Manufactor that free Food is 3 artifacts plus 3 Squirrels every turn for no mana. Idol of Oblivion draws one card per turn off a single tap; this is a better use of the slot in a deck already running seven other draw sources.",
+          "interactions": [
+            "Academy Manufactor — the per-turn Food becomes one of each",
+            "Peregrin Took, Tippy-Toe — their added Foods are untapped, so they are this turn's mana",
+            "Camellia, the Seedmiser — forage costs a Food, and Pizza makes Foods free mana",
+            "Nuka-Cola Vending Machine — sacrificing a Food for mana then makes a Treasure"
+          ],
+          "verdict": "kept",
+          "verdictWhy": "Three mana, free Food every turn, and it turns the deck's Foods into untapped mana."
+        },
+        {
+          "in": "Cauldron of Essence",
+          "out": "Dina, Soul Steeper",
+          "section": "Drain Payoffs",
+          "axis": "the same drain trigger on a permanent type that board wipes miss",
+          "grounds": "'Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life' — Bastion of Remembrance's text on an ARTIFACT, so it survives Toxic Deluge, The Meathook Massacre and every creature wipe, and it carries a graveyard-reanimation mode on top. Dina drains 1 per lifegain EVENT to each opponent, which is real, but she is the third such converter behind Vito and the one whose body contributes least.",
+          "interactions": [
+            "Blasphemous Edict, Toxic Deluge — Cauldron is still there afterwards to bank the triggers",
+            "Prosperous Innkeeper — the 1 life per death feeds Vito, Thorn of the Dusk Rose",
+            "Blood Artist, Zulaport Cutthroat, Nadier's Nightblade, Marionette Apprentice — stacks to 5 drains per death"
+          ],
+          "verdict": "kept",
+          "verdictWhy": "Cauldron stays - an artifact-bodied drain survives wipes. But the CUT was wrong: Dina is back in wave 6. She is a multiplier on the drain package, not a fifth flat drainer."
+        }
+      ]
+    },
+    {
+      "id": "wave-3",
+      "label": "Wave 3 — converters and a one-sided wipe",
+      "status": "approved",
+      "swaps": [
+        {
+          "in": "Blasphemous Edict",
+          "out": "Toxic Deluge",
+          "section": "Board Wipes",
+          "axis": "a one-mana sweeper that only ever points the wrong way for everyone else",
+          "grounds": "Verified in full: the thirteen-creature check counts EVERY creature on the battlefield, not just yours, and it is locked when you cast (CR 601.2f) so opponents cannot respond by shrinking the board. You choose your own thirteen (701.21a), a player with fewer sacrifices all they have (101.3), all the sacrifices are simultaneous (608.2f), and your death payoffs trigger once per creature and look back in time (603.2c, 603.10a) — so a payoff you sacrificed yourself still triggers for all thirteen. You feed it Squirrel tokens, opponents feed it real creatures, and you bank thirteen death triggers. Toxic Deluge kills your own board for a lot more mana.",
+          "interactions": [
+            "Blood Artist, Bastion of Remembrance, Zulaport Cutthroat, Nadier's Nightblade, Mirkwood Bats, Marionette Apprentice — 13 triggers each",
+            "Cauldron of Essence — an artifact, so it survives to bank them",
+            "Chatterfang, Squirrel General — keep him out of your thirteen and the board rebuilds"
+          ],
+          "cost": "Salt 0.70/4.",
+          "verdict": "kept",
+          "verdictWhy": "One mana with 13 creatures on the battlefield. The cheapest converter in the package by a distance."
+        },
+        {
+          "in": "Yawgmoth, Thran Physician",
+          "out": "Sakura-Tribe Elder",
+          "section": "Sacrifice Outlets",
+          "axis": "the deck has nine outlets and almost none that PAY for the sacrifice",
+          "grounds": "'Pay 1 life, Sacrifice another creature: Put a -1/-1 counter on up to one target creature and draw a card.' A free outlet that draws AND kills opponents' creatures, bounded only by your life total. Salt 1.15 and — I checked the list — NOT a Game Changer, which makes it the best value-per-restriction card in the pool. Sakura-Tribe Elder ramps once and chumps once; this is the engine that converts twenty spare bodies into twenty cards.",
+          "interactions": [
+            "Every token in the deck — fodder that draws",
+            "Blood Artist, Bastion of Remembrance, Zulaport Cutthroat, Cauldron of Essence — a drain per activation",
+            "Mirkwood Bats — sacrificing a token drains as well as drawing",
+            "Skullclamp — Yawgmoth's -1/-1 counters kill a clamped 1/1 and draw two more"
+          ],
+          "verdict": "kept",
+          "verdictWhy": "Four mana, and it is an outlet, a draw engine and removal at once. Never a dead draw."
+        },
+        {
+          "in": "Champion of Lambholt",
+          "out": "Abrupt Decay",
+          "section": "Token Engines",
+          "axis": "it is what makes Craterhoof and Orcrist reliable instead of hopeful",
+          "grounds": "'Creatures with power less than this creature's power can't block creatures you control', and it grows with every creature entering. After one Avenger of Zendikar it is a 17/17 and your whole team is unblockable. Salt 0.58. Abrupt Decay is narrow (mana value 3 or less) and dropping removal from 4 to 3 is the real cost here — flag it if you would rather cut elsewhere.",
+          "interactions": [
+            "Craterhoof Behemoth — 20 unblockable trampling bodies",
+            "Orcrist, Goblin-cleaver — guarantees the Treasure trigger connects without forestwalk",
+            "Valley Rotcaller — guarantees the attack trigger",
+            "Avenger of Zendikar, Mycoloth — every token entering is another counter"
+          ],
+          "cost": "The +1/+1 counters land only on Champion itself, so Skullclamp is unaffected.",
+          "verdict": "kept",
+          "verdictWhy": "Three mana and it is what makes Craterhoof and Orcrist connect."
+        },
+        {
+          "in": "Awaken the Woods",
+          "out": "Cultivate",
+          "section": "Ramp & Mana",
+          "axis": "one card that is simultaneously a mass land drop, a mass token event and permanent ramp",
+          "grounds": "X 1/1 Forest Dryad LAND creature tokens. Each one is a token for Chatterfang to double AND a land entering, so X=5 fires Scute Swarm, Tireless Provisioner and Tireless Tracker five times each — ten times with Ancient Greenwarden out — and leaves you five extra lands permanently. Salt 0.39. You asked to keep Cultivate, so this cut is your call; it is the weakest ramp slot now that Oracle of Mul Daya and the fetchlands are in.",
+          "interactions": [
+            "Scute Swarm, Tireless Provisioner, Tireless Tracker — X landfall triggers each",
+            "Ancient Greenwarden — doubles every one of them",
+            "Gaea's Cradle, Circle of Dreams Druid, Cryptolith Rite — the Dryads are creatures AND lands",
+            "Chatterfang, Squirrel General — X Squirrels on top of the X Dryads"
+          ],
+          "cost": "The Dryads are creatures, so they die to creature wipes and take your lands with them.",
+          "verdict": "reverted",
+          "verdictWhy": "The worst offender. Reads as mana value 2 everywhere but really costs 5 at X=3, so it silently understated the curve in my own stat rail. Back to Cultivate."
+        }
+      ],
+      "note": "_Applied in decks/upgrade-test for playtesting; not yet applied to decks/chatterfang._"
+    },
+    {
+      "id": "wave-4",
+      "label": "Wave 4 - curve correction",
+      "status": "applied",
+      "note": "Applied to decks/upgrade-test after the reviewer's 6.6 vs 7.5 reading. This wave exists because waves 1 and 3 over-corrected toward expensive engine pieces; it reverts the four that moved the curve and keeps every converter.",
+      "swaps": [
+        {
+          "in": "Cultivate",
+          "out": "Awaken the Woods",
+          "section": "Ramp & Mana",
+          "verdict": "kept",
+          "axis": "unconditional ramp beats conditional ramp when the complaint is speed",
+          "grounds": "Cultivate puts a land on the battlefield on turn 3 with no board required and fixes colours. Awaken the Woods does nothing at X=0 and costs 5 for a meaningful X - and it reads as mana value 2 to every stats tool, which is how it hid.",
+          "interactions": [
+            "Oracle of Mul Daya - more lands in hand to play off the top",
+            "Scute Swarm, Tireless Provisioner, Tireless Tracker - the land drop is still a landfall trigger"
+          ]
+        },
+        {
+          "in": "Sakura-Tribe Elder",
+          "out": "Ancient Greenwarden",
+          "section": "Ramp & Mana",
+          "verdict": "kept",
+          "axis": "a two-mana body that ramps and chump-blocks, versus a six-mana engine",
+          "grounds": "Sakura-Tribe Elder ramps on turn 2, blocks once, and is a free sacrifice for every drain payoff on the way out. Ancient Greenwarden doubles landfall properly but six mana is unreachable in the turns that were the problem.",
+          "interactions": [
+            "Blood Artist, Bastion of Remembrance, Zulaport Cutthroat - the Elder's own death drains",
+            "Carrion Feeder, Viscera Seer - it is sacrifice fodder that already paid for itself"
+          ]
+        },
+        {
+          "in": "Bitterblossom",
+          "out": "Mycoloth",
+          "section": "Token Engines",
+          "verdict": "kept",
+          "axis": "a turn-2 engine that never stops, versus a turn-5 engine that needs a board",
+          "grounds": "I cut Bitterblossom in wave 1 for being the per-upkeep drip, which was right on rate and wrong on timing - it is the only two-mana card in the deck that makes a body every single turn from turn 3 onward, and with Chatterfang that is two. Mycoloth makes far more, but only once you already have the board that wins anyway.",
+          "interactions": [
+            "Chatterfang, Squirrel General - every Faerie brings a Squirrel",
+            "Mirkwood Bats - two creation triggers every upkeep",
+            "Skullclamp - a 1/1 flier is two cards"
+          ],
+          "cost": "This is a straight reversal of my own wave-1 reasoning. The drip is weak; being unable to act before turn 5 is weaker."
+        },
+        {
+          "in": "Verdant Command",
+          "out": "Circle of Dreams Druid",
+          "section": "Token Engines",
+          "verdict": "kept",
+          "axis": "two mana at instant speed beats three mana that needs a board and a turn",
+          "grounds": "Verdant Command is four bodies for two mana with Chatterfang, at instant speed, with modal flexibility. Circle of Dreams Druid is the bigger effect but it is summoning sick, needs a wide board first, and does nothing on the turns that were losing us the game.",
+          "interactions": [
+            "Chatterfang, Squirrel General - two Squirrels become four",
+            "Mirkwood Bats, Prosperous Innkeeper - four creation triggers at instant speed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wave-5",
+      "label": "Wave 5 - mana back in",
+      "status": "applied",
+      "note": "Wave 4 was an over-correction. It reverted four cards to fix the curve and the CommanderBracket win turn did not move (7.5 before and after), so the curve was never what the metric was reading. This wave restores the mana the deck actually needs, and still lowers the curve: avg MV 2.89 to 2.83, MV<=2 26 to 27.",
+      "swaps": [
+        {
+          "in": "Circle of Dreams Druid",
+          "out": "Champion of Lambholt",
+          "section": "Ramp & Mana",
+          "verdict": "kept",
+          "axis": "mana that scales with the board is not conditional in a deck that always has a board",
+          "grounds": "One tap for one green per creature is what pays for Avenger of Zendikar, Craterhoof, Orcrist's equip and The Unbeatable Squirrel Girl's sink in the same turn. Champion of Lambholt was the THIRD combat-dependent finisher behind Craterhoof, Orcrist and Valley Rotcaller, and it enabled a kill rather than being one - the least load-bearing card in the package.",
+          "interactions": [
+            "The Unbeatable Squirrel Girl - makes the {1}{G}{G}{G} sink repeatable in one turn",
+            "Avenger of Zendikar, Craterhoof Behemoth - the top end this deck could not reach",
+            "Concordant Crossroads - lets Circle tap the turn it lands",
+            "Gaea's Cradle, Cryptolith Rite - three ways to read the same board as mana"
+          ],
+          "cost": "Summoning sick without haste, {G}{G}{G} is a real cost on turn 3, and it dies to everything."
+        },
+        {
+          "in": "Elvish Mystic",
+          "out": "Deep Forest Hermit",
+          "section": "Ramp & Mana",
+          "verdict": "kept",
+          "axis": "a second turn-1 dork beats a five-mana token burst that breaks Skullclamp",
+          "grounds": "A turn-1 dork is a turn-2 Chatterfang. Deep Forest Hermit is 5 mana for four Squirrels, and its 'Squirrels you control get +1/+1' anthem turns off Skullclamp on every token in the deck - a cost the list was quietly paying every game.",
+          "interactions": [
+            "Chatterfang, Squirrel General - turn-2 commander",
+            "Skullclamp - the Hermit leaving means 1/1 tokens stay clampable",
+            "Circle of Dreams Druid - another body for the count"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wave-6",
+      "label": "Wave 6 - Dina back in",
+      "status": "applied",
+      "note": "Correction wave. I nominated Marionette Apprentice as the cut and the pilot overruled it: Marionette triggers on ARTIFACTS hitting the graveyard, and this list holds 12 artifact-token sources plus 11 effects that sacrifice or crack one. With Ninja Pizza out, every mana made off a Food is a Marionette trigger at each opponent. It stays.",
+      "swaps": [
+        {
+          "in": "Dina, Soul Steeper",
+          "out": "Verdant Command",
+          "section": "Drain Payoffs",
+          "verdict": "kept",
+          "axis": "Dina multiplies the drain package; she is not a fifth copy of it",
+          "grounds": "Blood Artist, Zulaport Cutthroat, Bastion of Remembrance, Cauldron of Essence and Nadier's Nightblade each GAIN life per death. One creature dying with four of them out is four separate lifegain events (CR 119.3, 119.9), so Dina fires four times for 1 to EACH opponent on top of the original four drains. The list has 16 lifegain event sources. Vito converts the same events but reads 'target opponent' and hits one player; Dina hits each - they are not redundant. Verdant Command was the last pure one-shot in Token Engines; everything else there is repeatable or a multiplier.",
+          "interactions": [
+            "Blood Artist, Zulaport Cutthroat, Bastion of Remembrance, Cauldron of Essence - four gain events per death, four Dina triggers",
+            "Prosperous Innkeeper - a gain event per creature entering",
+            "Vito, Thorn of the Dusk Rose - converts the same events at one target opponent",
+            "Peregrin Took, Tippy-Toe, Terrific Partner, Ninja Pizza - Foods gain 3 life each"
+          ],
+          "cost": "Runner-up cut was Bitterblossom, kept because two tokens every upkeep is two Mirkwood Bats triggers every upkeep."
+        }
+      ]
+    },
+    {
+      "label": "Wave 7 — mana the token engine pays for",
+      "status": "applied",
+      "note": "Pilot-sourced 2026-09-28, applied the same day. **Curve-neutral by construction** — avg MV stays **2.83**, MV≤2 stays **27**, MV≤3 stays **49**, verified after the apply. Two MV-3 cards in, two MV-3 cards out. **Ninja Pizza was pulled from the cut list at the pilot's direction**, on grounds I had not weighed: it converts Foods that would otherwise *sit idle* into mana, so the \"it competes with forage\" objection only bites on the Foods you were actually going to forage. That also keeps the Ninja Pizza + Camellia + Peregrin Took combo in the list. **Greenhouse Propagator is held, not declined** — there is no clean third cut. Every remaining MV-3 card is load-bearing, and Propagator only duplicates Prosperous Innkeeper's line, so it loses to everything it would displace. **Standing caveat:** CommanderBracket rated this fork's mana its *strongest* stat (84/100) while win turn was the weakness (7.5) — this wave makes a strong stat stronger and may measure flat. Worth trying because the curve is untouched.",
+      "swaps": [
+        {
+          "in": "Gardenize",
+          "out": "Orcrist, Goblin-cleaver",
+          "section": "Ramp & Mana",
+          "verdict": "pending",
+          "axis": "a permanent, wipe-proof mana engine that the token engine pays for",
+          "grounds": "**The counters are permanent and the mana recurs.** Sacrifice ten Squirrels once and it adds ten green at the beginning of *every* first main phase thereafter — a ratchet, not a ritual. Tokens count, because a token genuinely *dies* (CR 111.7); this is the exact inverse of The Mycotyrant, where the token never counted. It is an **enchantment**, so it is the only mana source in the deck that a creature wipe cannot answer — compare Cryptolith Rite and Circle of Dreams Druid, which both need the bodies alive. Answers the pilot's own diagnosis that *bodies don't matter if it takes an extra 2-3 turns to have enough mana*. **Previously rejected by me as not commander-legal** — that was a stale cache read; the tool reports legal.",
+          "interactions": [
+            "Doubling Season — doubles the CHARGE COUNTERS too, so every creature death is 2 counters, verified oracle text",
+            "Ashnod's Altar, Carrion Feeder, Viscera Seer, Woe Strider, Yawgmoth, Thran Physician — five free outlets, unlimited deaths per turn",
+            "The Meathook Massacre, Blasphemous Edict — a mass death event is a mass counter event",
+            "Hazel of the Rootbloom, Cryptolith Rite — board-based mana a wipe answers; Gardenize is the copy it cannot"
+          ],
+          "cost": "Dead the turn it lands — no counters yet. Mana arrives the turn AFTER the deaths and only in your **precombat main phase**, so never at instant speed. **Green only** — Chatterfang's own {B} sacrifice ability and the whole drain suite still need black elsewhere. Parallel Lives does NOT double the counters; only Doubling Season does. **Orcrist out, on a playtest finding:** the pilot used it successfully across games, but it wants to go on a non-commander body — equipping Chatterfang raised his threat profile and drew removal. The deck's four kill routes need no combat step. If the voltron variant is ever built, Orcrist is its centrepiece."
+        },
+        {
+          "in": "Dryad of the Ilysian Grove",
+          "out": "Chitterspitter",
+          "section": "Ramp & Mana",
+          "verdict": "pending",
+          "axis": "an extra land drop is never worth one card here — it is a multiplied token event",
+          "grounds": "A **second** extra-land-drop that **stacks with Oracle of Mul Daya** for three lands a turn. Four landfall payoffs are live, so each extra drop is a Food or Treasure (Provisioner), a Clue (Tracker), and an Insect plus a **self-copy at six lands** (Scute Swarm) — and each of those tokens then runs Academy Manufactor into Chatterfang into the doublers, with Mirkwood Bats pinging per token. Free second line: *lands you control are every basic land type* makes Gaea's Cradle tap for any colour and fixes B/G outright. 8% of all decks, salt 0.49.",
+          "interactions": [
+            "Oracle of Mul Daya — they STACK; two additional drops is three lands a turn",
+            "Scute Swarm — at six lands every drop is another copy of Scute Swarm, and the copies copy",
+            "Tireless Tracker, Tireless Provisioner — a Clue and a Food/Treasure per extra drop, into Manufactor and Chatterfang",
+            "Gaea's Cradle — becomes every basic type, so it taps for black as well as green",
+            "Avenger of Zendikar — more lands is a bigger Plant pile on arrival"
+          ],
+          "cost": "It is a **creature**, so unlike an enchantment it dies to the wipes this deck fears, and it needs a spare land in hand to do anything. **Chitterspitter out, on the strongest possible evidence:** the pilot never cast it once across every game played — *\"three mana for +1/+1 next turn\"* lost every comparison to three mana of immediate value. It did do three jobs (a once-per-turn sac outlet that DOES trigger Mirkwood Bats, a growing Squirrel anthem, a {G} token maker), which is why I flagged it as the debatable cut; never being cast beats any of that on the only axis that counts."
+        }
+      ]
+    },
+    {
+      "label": "Wave 8 — held candidates, waiting on a slot",
+      "status": "declined",
+      "note": "**None of these is rejected on merit — all are held for want of a slot.** Kept visible because the record of what was considered is the point. See the short list at the top of this page for the priority order. The deck is 100/100 and the pilot has protected seven cards from the cut list, each on grounds that held up under checking — three of them corrected real errors in my card reading. **Revisit the moment a card underperforms in play**, which is exactly how Chitterspitter's slot came free: the pilot reported never having cast it once.",
+      "swaps": [
+        {
+          "in": "Enduring Vitality",
+          "section": "Ramp & Mana",
+          "verdict": "pending",
+          "axis": "run it ALONGSIDE Cryptolith Rite, never instead of it — verified 2026-09-28",
+          "grounds": "Grants **the same ability as Cryptolith Rite word for word** on a 3/3 vigilance creature, and when it dies **as a creature** it returns as an enchantment that keeps granting it (the static ability survives, because a type change is layer 4 and ability removal is layer 6 — CR 613.1d vs 613.1f, 604.2). Also a **second route** to the Concordant Crossroads + The Unbeatable Squirrel Girl line, which today needs Cryptolith Rite specifically. **Rules-verified: it returns exactly ONCE.** The *\"if it was a creature\"* clause is an intervening \"if\" (CR 603.4) judged on last known information (603.10a), so once it is a noncreature enchantment the condition fails and nothing ever reaches the stack. **The killer interaction for THIS deck:** because the return triggers off any trip to the graveyard, **sacrificing it to one of the five free outlets converts it into the wipe-proof enchantment form on demand** (CR 701.21a + 700.4; 603.10a covers sacrifice triggers) — so a Swords to Plowshares or Leyline Binding aimed at it can be **laundered into a death**, which also pays Blood Artist, Zulaport Cutthroat, Bastion of Remembrance, Cauldron of Essence and Marionette Apprentice on the way out. Cryptolith Rite never gives you a death trigger at all.",
+          "cost": "**Do NOT swap it for Cryptolith Rite.** As an Enchantment Creature it satisfies **both** removal pools (CR 205.2b), so roughly twice as many cards in the format can answer it. Against a **creature** wipe it only *ties* Cryptolith Rite — both end as a noncreature permanent granting the ability, but Enduring Vitality paid its one return, its body and its own mana-dork slot to get there, while Cryptolith Rite was never a legal target. **Exile and bounce beat it outright** (Swords to Plowshares, Anguished Unmaking, Farewell, Cyclonic Rift) — no graveyard trip means no *dies* means no trigger. It is also summoning sick on its own granted ability (CR 302.6 attaches to the creature being tapped, and it grants the ability to itself), and in enchantment form it **stops tapping for mana itself**. Swapping would also cost MV≤2 27 → 26. Correct play: run both, they fail to different answers."
+        },
+        {
+          "in": "Marauding Blight-Priest",
+          "section": "Drain Payoffs",
+          "verdict": "pending",
+          "axis": "converter #4 — and my original grounds for cutting it are void",
+          "grounds": "*\"Whenever you gain life, each opponent loses 1 life\"* — the same shape as Starscape Cleric, one mana more, on a 3/2 that can block. I cut this in wave 2 calling it *\"a strictly worse Vito at the same cost\"* and claiming *\"three lifegain converters is one more than the deck's lifegain sources support.\"* **Both are wrong now.** Against 15 sources that each gain exactly 1 life at a time, *each opponent loses 1* beats Vito's single-target *that much* by 3x in a four-player pod — they are different cards, not better and worse."
+        },
+        {
+          "in": "Essence Warden",
+          "section": "Drain Payoffs",
+          "verdict": "pending",
+          "axis": "MV 1, and it counts the opponents' creatures too",
+          "grounds": "*\"Whenever another creature enters, you gain 1 life\"* — **no \"you control\" clause**, so every creature anybody plays is a separate lifegain event feeding Dina, Vito and Starscape Cleric. It drains people on their own turns. MV 1 makes it the only add here that improves the curve outright. Lower ceiling than a converter, because it is the 16th fuel source against 3 converters."
+        },
+        {
+          "in": "Enduring Tenacity",
+          "section": "Drain Payoffs",
+          "verdict": "pending",
+          "axis": "the only converter that survives a wipe and keeps converting",
+          "grounds": "*\"Whenever you gain life, target opponent loses that much life\"* plus the Enduring return-as-enchantment clause. Addresses the deck's actual losing condition rather than its curve. Held because MV 4 and single-target puts it behind Starscape Cleric and Marauding Blight-Priest, and it overlaps Vito's exact role."
+        },
+        {
+          "in": "Bogwater Lumaret",
+          "section": "Drain Payoffs",
+          "verdict": "pending",
+          "axis": "superseded — fuel is not the constraint",
+          "grounds": "*\"Whenever this creature or another creature you control enters, you gain 1 life\"* on a 2/2 in exact BG colours. A third copy of a fuel effect the deck already has twice, in a list measured at 15 fuel against 3 converters. Essence Warden does the same job for one mana and counts opponents' creatures as well."
+        },
+        {
+          "in": "Greenhouse Propagator",
+          "section": "Drain Payoffs",
+          "verdict": "pending",
+          "axis": "superseded by cheaper versions of both halves",
+          "grounds": "*\"Whenever another creature you control enters, you gain 1 life\"* plus {T}: Add {G}. The most expensive version of the weakest of the effects considered: Essence Warden is the same line two mana cheaper, and Starscape Cleric is the converter that actually multiplies the deck's 15 fuel sources."
+        }
+      ]
+    },
+    {
+      "label": "Wave 9 — the converter the deck was missing",
+      "status": "applied",
+      "note": "Applied 2026-09-28. A **one-card** wave on purpose: the pilot had protected seven cards from the cut list on grounds that held, so forcing a second add meant breaking something that works. Measured: avg MV 2.83 → 2.84, **MV≤2 unchanged at 27, MV≤3 unchanged at 49**.",
+      "swaps": [
+        {
+          "in": "Starscape Cleric",
+          "out": "Viscera Seer",
+          "section": "Drain Payoffs",
+          "verdict": "pending",
+          "axis": "15 fuel sources, 2 converters — the converter is the bottleneck",
+          "grounds": "Counted from deck.json: **15** cards in the list gain you life, against only **2** that turn lifegain into life loss (Dina, Vito). A converter multiplies all fifteen; a sixteenth fuel source would only add one more thing for two cards to multiply. And *each opponent loses 1 life* is the right shape, because **all fifteen gain exactly 1 life at a time** — on that profile it beats Vito's single-target *that much* threefold in a four-player pod.",
+          "interactions": [
+            "Dina, Soul Steeper, Vito, Thorn of the Dusk Rose — converter #3 alongside them; each 1-life gain now drains three ways",
+            "Bastion of Remembrance, Cauldron of Essence, Zulaport Cutthroat, Nadier's Nightblade, Blood Artist — five per-death gains, each now a separate drain",
+            "Chatterfang, Squirrel General, Mirkwood Bats — Offspring CREATES a token copy, so Chatterfang adds a Squirrel and Bats pings for both",
+            "Doubling Season — doubles the Offspring token, giving three converters off one card",
+            "Vito, Thorn of the Dusk Rose — its {3}{B}{B} lifelink mode makes every connecting Squirrel a separate gain event"
+          ],
+          "cost": "A 2/1 that **can't block**, so it adds nothing defensively. Offspring costs an extra {2}{B} on top. **Viscera Seer out:** the one genuinely surplus card — Woe Strider strictly dominates it (free sacrifice, scry 1, *and* a Goat, *and* escape recursion), and five free outlets remain plus Chatterfang, three lands and three spells when one in play is enough. Sacrifice Outlets 6 → 5."
+        }
+      ]
+    }
+  ],
+  "passed": [
+    {
+      "name": "Ygra, Eater of All",
+      "why": "I pitched this hard and the rules check talked me down. 'Other creatures are Food artifacts' does turn on Ninja Pizza, Camellia's forage and Thornvault Forager on your whole board — but the granted ability has {T} in its cost, so summoning-sick tokens cannot use it; it is next-turn mana only. Worse, it makes your entire board artifacts: Null Rod, Collector Ouphe, Stony Silence and Karn shut off every activated ability you own INCLUDING Chatterfang's own sacrifice ability, and Vandalblast or Bane of Progress becomes a one-sided wipe. And because every creature is a Food, any opponent can pay Ygra's ward by sacrificing a spare token. Strong in a vacuum, a liability in a pod. Salt 0.93."
+    },
+    {
+      "name": "Gardenize",
+      "why": "**CORRECTED 2026-09-28 — this rejection was wrong.** I filed it as not commander-legal on a stale cache read taken before that set was live. `bun run card` now reports **legal**. Re-evaluated from scratch and it is one of the strongest cards available to this deck — see Wave 7, where it is the headline add. Kept here as the record of the bad call."
+    },
+    {
+      "name": "Scurry of Squirrels",
+      "why": "I wanted this to be great. Double myriad makes 6 copies against 3 opponents and Chatterfang adds 6 Squirrels — but Chatterfang's Gatherer rulings confirm the added Squirrels inherit 'exile at end of combat'. You keep nothing and get no death triggers, only the 12 creation triggers off Mirkwood Bats and Prosperous Innkeeper. Playable at roughly 24 damage a swing, but not the board-builder it looks like."
+    },
+    {
+      "name": "Bolas's Citadel",
+      "why": "A Game Changer at salt 1.72 — the saltiest card in the pool. Its 'sacrifice ten nonland permanents: each opponent loses 10 life' is a genuine one-card kill and the low curve makes casting off the top real. Held back only because you have 2 Game Changer slots and this spends one on the loudest possible card. Say the word and it goes in."
+    },
+    {
+      "name": "Bloodroot Apothecary",
+      "why": "Its ETB gives an OPPONENT a Treasure too, and toxic 2 is an axis this deck will never finish."
+    },
+    {
+      "name": "Preposterous Proportions",
+      "why": "7 mana for +10/+10. Craterhoof costs one more, is bigger at any board over 10 creatures, and grants trample."
+    },
+    {
+      "name": "Awakening Zone",
+      "why": "Precisely the per-upkeep drip you asked me to cut — the same card as From Beyond, which is already on the cut list."
+    },
+    {
+      "name": "Banner of Kinship",
+      "why": "5 mana, no drain, no evasion, and it turns off Skullclamp. Champion of Lambholt does the same job better for 3."
+    },
+    {
+      "name": "Arasta of the Endless Web",
+      "why": "Depends on opponents casting instants and sorceries. No floor."
+    },
+    {
+      "name": "Jaheira, Friend of the Forest",
+      "why": "'Tokens you control have {T}: Add {G}' is the granted-ability kind, so fresh tokens cannot use it without haste — the same wall as Cryptolith Rite. Fine card, but it does not fix the problem you named."
+    },
+    {
+      "name": "Springleaf Parade",
+      "why": "Same summoning-sickness wall, and its own X Shapeshifters arrive sick so it never taps for mana on the turn it lands. The changeling upside is real (they count as Squirrels for Chatterfang and Camellia) — this is the best of the near-misses."
+    },
+    {
+      "name": "Arachnogenesis",
+      "why": "A genuine blowout against an alpha strike and it does make tokens, but it is reactive. Sideboard-grade here, not core."
+    },
+    {
+      "name": "Eldrazi Monument",
+      "why": "Flying and indestructible for the whole team with a free death trigger every upkeep is a serious combat card. Held back because the +1/+1 turns off Skullclamp and the deck already has a lot of five-drops. Salt 0.69."
+    },
+    {
+      "name": "Sephiroth, Fabled SOLDIER",
+      "why": "On the fourth creature death in a turn it transforms and gives you an EMBLEM, which cannot be removed — a permanent, wipe-proof drain payoff. Genuinely strong; it lost to Cauldron of Essence only on cost and on salt 1.43."
+    },
+    {
+      "name": "Species Specialist",
+      "why": "Name Squirrel and draw on every Squirrel death, uncapped — the card Morbid Opportunist wanted to be before we cut it for being once-per-turn. Salt 0.28. First card in if you want more draw."
+    },
+    {
+      "name": "Warren Soultrader",
+      "why": "'Pay 1 life, Sacrifice another creature: Create a Treasure' — with Chatterfang that Treasure brings a Squirrel, so it loops on your life total alone. It is more combo, and you told me the combo is the part that already works."
+    },
+    {
+      "name": "Swarmyard Massacre",
+      "why": "Two Squirrels, then every creature that is not an Insect, Rat, Spider or Squirrel gets -1/-1 for each one you control — a one-sided wipe at 10 Squirrels. Salt 0.35. Lost the Board Wipes slot to Blasphemous Edict, which also banks 13 death triggers. Note it kills your own non-Squirrel drainers, Mirkwood Bats included."
+    },
+    {
+      "name": "Nuka-Cola Vending Machine",
+      "why": "Closes the loop with Ninja Pizza: sacrifice a Food for mana, get a Treasure, get a Squirrel. Its Treasures enter TAPPED though, so they are next-turn mana. Second wave."
+    },
+    {
+      "name": "Crop Rotation",
+      "why": "A Game Changer at salt 0.92 that instant-speed tutors Gaea's Cradle. The cheapest way to spend a Game Changer slot if you want one."
+    },
+    {
+      "name": "The Mycotyrant",
+      "why": "Raised by the pilot 2026-09-28 after it appeared in none of my research — a real gap, not a rejection: it IS returned by the plain sweep `id<=bg type:creature cmc<=3 o:\"create\" o:\"creature token\"`, and I had built the search space out of the pasted pool plus Chatterfang's EDHREC page, where it appears zero times. Evaluated now and it is a clean pass, on the mechanic. Its end-step trigger makes X tokens where X = times you DESCENDED, and CR 700.11 counts \"permanent CARDS put into your graveyard\" — CR 111.6 and 108.2b say a token is not a card, and the Lost Caverns of Ixalan release notes reject the 111.7 graveyard-trip argument by name. So sacrificing Squirrels, Foods, Treasures and Clues descends ZERO times. It is an anti-synergy: the more the engine is tuned to eat tokens, the less it descends. Measured in this list, X = 0–2 on a typical turn — no repeatable self-mill at all, just Takenuma's one-shot channel, Barren Moor cycling and six self-sacrificing lands. Feeding outlets real creature cards instead would descend, but those 52 cards are the engine, not fodder. Second clause is dead too: P/T counts Fungi and/or Saprolings, and with Tendershoot Dryad cut in wave 4 this deck has zero of both, so it is a 3-mana 1/1 trample. Salt 0.27. NOT a knock on the card — it is commander rank #271 in 9,284 decks and its most-played card is Mirkwood Bats at 64%, which is this deck's best payoff. It is a self-mill commander, and mill is the only cheap repeatable way to put CARDS in your own graveyard. Filed as a possible fourth deck, not a Chatterfang piece."
+    }
+  ],
+  "compareTo": {
+    "slug": "upgrade-test",
+    "label": "upgrade-test (playtest fork)",
+    "note": "The fork as it stands after the curve correction. Measured from its own deck.json, not projected."
+  }
+}

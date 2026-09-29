@@ -258,3 +258,26 @@ without the cost reduction). Cass, Hand of Vengeance (moves gear to *another cre
 commander — he is in the command zone — so it suits a backup body rather than rebuilding Cap).
 Captain America Team Leader / Wings of Freedom (both key off *other Heroes*; there are three).
 Captain America Liberator (its tutor caps at mana value 3, missing every payload).
+
+---
+
+## 2026-09-28 — Reality Fracture (FRA/FRC) set review: Windcrag Siege questioned, not applied
+
+Full review: `research/fra-set-review-2026-09-28.md`. The pilot asked how Windcrag Siege "triggers
+Cap's ability twice". **It doesn't.** Catch is a beginning-of-combat trigger and Throw is an activated
+ability, and the Siege's Mardu mode only affects triggers caused by a creature attacking. The summary
+line "three Catches and three Throws a turn" was loose. That extra Catch exists only because the
+Siege doubles **Genji Glove's** attack trigger, which makes two extra combats, each with its own
+beginning-of-combat Catch. The Siege's direct doubles in this list:
+- Genji Glove's extra combat
+- Argentum Armor's and Ultima Weapon's destroys
+- Akiri's draw
+- The Mighty Thor's blink
+- Fighter Class L3's forced block
+- Super-Soldier Serum's attach (no gain)
+
+All of them need a specific card out and attacking. Explained to the pilot; the decision is theirs.
+
+**Resolved 2026-09-28: dropped.** After the explanation above, the pilot passed: *"nah drop it"*.
+Esper Sentinel stays. Grounds on file: Windcrag Siege is only a payoff doubler here. It needs Genji
+Glove, Argentum Armor, Ultima Weapon, Akiri or Thor on the battlefield and attacking.

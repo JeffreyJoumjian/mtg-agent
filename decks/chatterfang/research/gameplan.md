@@ -14,9 +14,9 @@ Blight-Priest. Removing a blocker just means the rest connects. **Either way you
 
 | | MV≤1 | MV2 | MV3 | MV4 | MV5 | MV6+ | avg |
 |---|---|---|---|---|---|---|---|
-| Nonland (64) | 8 | 23 | 20 | 8 | 4 | 1 | **2.70** |
+| Nonland (64) | 9 | 21 | 19 | 10 | 4 | 1 | **2.73** |
 
-MV≤2 is 31 cards. This is a **lighter** deck than the Edgar sacrifice list (2.90) — you should have
+MV≤2 is 30 cards. This is a **lighter** deck than the Edgar sacrifice list (2.90) — you should have
 a play every turn from turn 1.
 
 ## 2. The three numbers to track
@@ -30,8 +30,8 @@ a play every turn from turn 1.
 
 ## 3. Opening
 
-**T1–T2:** Bitterblossom, Blade of the Bloodchief, Viscera Seer, Carrion Feeder, Ravenous Squirrel,
-a signet. Bitterblossom on turn 2 is a Faerie *and* a Squirrel every upkeep for the rest of the game.
+**T1–T2:** Llanowar Elves (turn-2 Chatterfang), Bitterblossom, Blade of the Bloodchief, Viscera Seer,
+Carrion Feeder, Ravenous Squirrel, Arcane Signet. Bitterblossom on turn 2 is a Faerie *and* a Squirrel every upkeep for the rest of the game.
 
 **T3 — the fork:**
 - No board → **Chatterfang**. He is the engine; everything after him is worth double.
@@ -60,10 +60,25 @@ fine dying in the same wipe — dies-triggers look back.
 1 to each (Zulaport), and 2 more to each from Dina (two separate gain events). With Blight-Priest
 that is 4 to each per token. **Roughly 13 across the table per 1/1**, doubled by Bloodletter.
 
+## 5b. Landfall — every land is a token and a Squirrel (added 2026-09-25)
+
+Chatterfang adds a Squirrel to every token, and four cards make a token per land. Tireless Provisioner
+makes a Food or Treasure, Tireless Tracker makes a Clue (card draw), Scute Swarm makes an Insect (a
+copy of itself once you have six lands), and Avenger of Zendikar makes a Plant per land when it
+enters, then puts a counter on each Plant per land. **Oracle of Mul Daya** gives a second land drop
+and lets you play lands off the top of your library. **Verdant Catacombs** and **Misty Rainforest**
+are two landfall triggers each (the fetch, then the land it finds). Misty finds a Forest or
+Overgrown Tomb.
+
+> One land with Provisioner + Tracker + Scute Swarm out = Treasure, Clue, Insect **and three
+> Squirrels**. A fetchland is twice that.
+
 ## 6. Sequencing within your turn
 
-1. **Upkeep** — Bitterblossom, Ophiomancer, Tendershoot Dryad, From Beyond, Chitterspitter.
-2. **Main 1 — Bloodletter FIRST if you have it.** Then token makers, then the payoff.
+1. **Upkeep** — Bitterblossom, Tendershoot Dryad, From Beyond, Chitterspitter. With Oracle of Mul
+   Daya out, check the top of your library before you draw.
+2. **Main 1 — Bloodletter FIRST if you have it.** Then landfall payoffs, **then** your land drop(s),
+   then the other token makers, then the payoff.
 3. **Tap for value before you sacrifice** — Gaea's Cradle and Three Tree City read the board, and a
    sacrificed Squirrel is one less mana. Cryptolith Rite means a token can tap for mana *and then*
    be sacrificed.
@@ -78,9 +93,30 @@ you sacrifice**, not after — it counts creatures you *control*.
 Otherwise: build to 15+ tokens, then in one turn sacrifice everything to Ashnod's Altar with three
 drainers out. Second Harvest doubles the board first if you have it.
 
-## 8. The finish — one combo, one big turn
+## 8. The finish — two combos, one big turn
 
-### 8a. The combo (assembles ~turn 8+)
+### 8a. The fast loop — Chatterfang + Pitiless Plunderer (live from turn 4)
+
+*Added 2026-09-24 when the pilot opted in to combos. Pull Plunderer if the pod objects.*
+
+With **Chatterfang + Pitiless Plunderer** out and one Squirrel:
+
+1. Activate Chatterfang: `{B}`, sacrifice 1 Squirrel → target creature gets +1/−1.
+2. The Squirrel dies → Plunderer makes a **Treasure** → Chatterfang adds a **Squirrel**.
+3. The Treasure pays the next `{B}`. Repeat as many times as you choose.
+
+> **Per iteration: one death, −1 toughness on a creature you target, nothing spent.** Every drainer
+> fires each time. With **Ashnod's Altar** as the outlet instead, each death also nets `{C}{C}` —
+> infinite colourless mana.
+
+- **Aim the −1s at the biggest blocker or commander first.** The loop is also a one-sided sweeper.
+- **No opposing creature to target?** Target the Squirrel you are about to sacrifice. Targets are
+  chosen before costs are paid (CR 601.2c, 601.2h), so the ability then does nothing (608.2b) —
+  but the sacrifice already happened, so Plunderer still triggers.
+- ⚠️ It assembles on **turn 4**. Tell the table it's in the deck; official Bracket 3 rules out early
+  two-card combos, and the pod's reaction is the test.
+
+### 8b. The Food loop (assembles ~turn 8+)
 
 **Camellia, the Seedmiser + Tippy-Toe OR Peregrin Took + Ashnod's Altar**, plus one Food and any
 drain payoff. 10 mana to assemble (9 with Took); the Altar is already a staple you want anyway.
@@ -110,7 +146,7 @@ through combat as well as drain.
 **With Academy Manufactor out** the Food the loop returns becomes Clue + Food + Treasure, so each
 iteration is far bigger. With both Tippy-Toe *and* Peregrin Took you net an extra Food per loop too.
 
-### 8b. No combo? Then the big turn
+### 8c. No combo? Then the big turn
 
 **The Unbeatable Squirrel Girl.** `{1}{G}{G}{G}: create X Squirrels, where X is the number of
 Squirrels you control` — and Chatterfang matches that number again, so each activation roughly
@@ -141,3 +177,5 @@ Fate** first, which reads your creature count. **Second Harvest** doubles the bo
 6. **Forgetting Mirkwood Bats triggers twice per token** — once on create, once on sacrifice.
 7. **Applying Chatterfang BEFORE the Food-adder.** Tippy-Toe or Peregrin Took must be applied first
    or you lose a Squirrel every single time. See §8.
+8. **Running the Plunderer loop with no drainer out** when a turn's wait would add one. It is a
+   board wipe for them either way, but the kill needs Blood Artist, Zulaport or Bastion.

@@ -1809,3 +1809,32 @@ Section counts: Cheat, Attach & Untap 6 → 5; Artifact Payoffs / Creatures 10 �
 flags, sticker **$1,343.80**. Moxfield list regenerated — 100 maindeck / 24 sideboard. **Eight new
 proxies: Bulk Up, Insight Engine, Surestrike Trident, Silent Arbiter, Mind's Eye, Urza Lord High
 Artificer, Iron Lad Diverging Destiny, Marvin Murderous Mimic.**
+
+---
+
+## 2026-09-28 — Reality Fracture (FRA/FRC) set review
+
+Full review: `research/fra-set-review-2026-09-28.md`. The proposed v3 swap (Geist of Saint Thalia
+for Cloud Key) got no comment from the pilot, so it is dropped under their "no comment = drop" rule
+for this pass. **Open:** the pilot asked whether Memnarch, the Warden belongs here instead of Ultron
+(*"he struggles with draw too"*). This is worked in the review file's follow-up section.
+
+### Applied 2026-09-28 (pilot approved): Memnarch, the Warden in `v3`, Wurmcoil Engine out
+
+**Silent Arbiter stays. Brotherhood Regalia stays parked** (pilot, 2026-09-28). Memnarch does
+Wurmcoil's job under the Arbiter defence plan, and does it better:
+- An 8/9 indestructible body, plus two Myr blockers.
+- At MV 10 it is always the highest-MV artifact, so Padeem draws every upkeep.
+- On any turn the pilot picks Memnarch as the one attacker instead of Tony, it draws one card per
+  artifact: 8–12 on a normal board.
+
+This corrects the first review's claim that the draw "never fires" under Arbiter. Arbiter caps
+attackers at one; it doesn't make that one the commander.
+
+Costs: Wurmcoil's lifelink and deathtouch, and its 6-mana hard-cast without Tony. Memnarch
+realistically arrives through Tony's free combat deploy or Master Transmuter. Avg MV 3.45 → 3.51.
+Snapshot: `versions/2026-09-28-1715-v3-fra-memnarch-the-warden-in-wurmcoil-engine-out.json`.
+
+> **Re-add trigger:** if Arbiter is ever cut (with Regalia unparked for evasion), Memnarch draws 8–12
+> on every combat alongside the commander. Master of Machines and Titan of Innovation come back under
+> the same trigger.

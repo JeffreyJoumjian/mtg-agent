@@ -14,11 +14,11 @@
 1 Blood Seeker (DSC) 77
 1 Bloodletter of Aclazotz (LCI) 92
 1 Bloodline Keeper (INR) 98
+1 Bloodline Recollector
 1 Bojuka Bog (PLST) C18-238
 1 Brightclimb Pathway (ZNR) 259
 1 Cabal Coffers (MH2) 301
 1 Captivating Vampire (INR) 100
-1 Carrier Thrall
 1 Castle Locthwain (ELD) 241
 1 Cavern of Souls (LCI) 269
 1 Caves of Koilos (DMU) 244
@@ -34,6 +34,7 @@
 1 Dictate of Erebos (SLD) 2204
 1 Dragonskull Summit (XLN) 252
 1 Dusk Legion Zealot (LCC) 194
+1 Edgar, Ancient Bloodlord
 1 Edgar, Charmed Groom (VOW) 236
 1 Eiganjo, Seat of the Empire (NEO) 268
 1 Elenda, the Dusk Rose (RIX) 157
@@ -54,7 +55,6 @@
 1 Master of Dark Rites
 1 Minas Tirith (LTR) 256
 1 Mirkwood Bats (LTR) 95
-1 Morlun, Devourer of Spiders
 1 Mountain (SLD) 362
 1 Olivia's Wrath (LCC) 205
 1 Patchwork Banner (MSC) 207

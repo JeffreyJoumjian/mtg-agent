@@ -1056,3 +1056,33 @@ rather than cards, Rite of Flame is the first card back in.
 Snapshots: `versions/2026-09-16-b4-before-apex.md` and
 `versions/2026-09-16-b4-before-rite-of-flame-cut.md`. B4 still 100 cards, 10 Game Changers, all
 commander-legal, mono-red, headers matching contents.
+
+---
+
+## 2026-09-28 — Widening Wanda's discount to permanents: nothing to take
+
+**Question (pilot):** is there a card, red or otherwise, that makes every card you control count as
+an instant or sorcery, so the permanents also get The Scarlet Witch's discount?
+
+**Finding:** no printed card does it, and one would blank the creatures it touched: an instant or
+sorcery can't be a permanent (CR 110.4), so the spell would resolve into the graveyard (CR 608.3e).
+The only route is a card with a separately cast spell half at MV 4+ (Adventure / Omen / MDFC /
+Prepare). Red options were Amethyst Dragon, Smaug, Song-Mad Treachery and Strife Scholar. Full
+search and citations are in deck-brain LEDGER, "No effect makes permanents instants/sorceries".
+
+**Declined, pilot's grounds:** *"they're all too slow."* Each has a spell half costing five or six
+printed mana, and the permanent half costs full price with no discount from her. None added to any
+list.
+
+---
+
+## 2026-09-28 — Reality Fracture (FRA/FRC) set review: pilot's calls
+
+Full review: `research/fra-set-review-2026-09-28.md`.
+
+- **Declined: Command the Stage for `main`** (pilot: yes for WandaVision, *"not scarlet witch"*).
+- **Declined: Stingcaster Mage** in all three lists. Pilot: *"it's a slow card not worth it"*. It was
+  SIDE for `v3` only.
+- **Open (pilot's question):** should Braid of Fire, just cut from WandaVision, go into `v3` and
+  `b4`? Evaluated in the review file's follow-up section. Pyre Rhymer // Molten Tide is the parent
+  review's competing SIDE pick for `v3`.

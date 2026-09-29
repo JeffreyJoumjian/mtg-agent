@@ -2,13 +2,41 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { listIdFromLabel } from "@mtg/deck-model.ts";
+import type { CardMetaPatch } from "@mtg/deck-store.ts";
 import { cardMetaPatchSchema } from "../model/types";
-import { addList, createNewDeck, loadDeck, loadDeckIndex, renameDeckCard, updateCardMeta } from "../server/store";
+import {
+  addList,
+  archive,
+  createNewDeck,
+  loadArchivedDecks,
+  loadDeck,
+  loadDeckIndex,
+  renameDeckCard,
+  unarchive,
+  updateCardMeta,
+} from "../server/store";
 import { canonicalNames } from "../server/cards";
 
 const slugSchema = z.string().regex(/^[a-z0-9-]+$/);
 
 export const getDeckIndex = createServerFn({ method: "GET" }).handler(async () => loadDeckIndex());
+
+export const getArchivedDecks = createServerFn({ method: "GET" }).handler(async () => loadArchivedDecks());
+
+/** Move the deck folder to `decks/_archive/`; nothing is deleted. */
+export const archiveDeckFn = createServerFn({ method: "POST" })
+  .validator((data: unknown) => z.object({ slug: slugSchema }).parse(data))
+  .handler(async ({ data }) => {
+    await archive(data.slug);
+    return { ok: true };
+  });
+
+export const restoreDeckFn = createServerFn({ method: "POST" })
+  .validator((data: unknown) => z.object({ slug: slugSchema }).parse(data))
+  .handler(async ({ data }) => {
+    await unarchive(data.slug);
+    return { ok: true };
+  });
 
 export const getDeck = createServerFn({ method: "GET" })
   .validator((data: unknown) => z.object({ slug: slugSchema }).parse(data))
@@ -42,7 +70,7 @@ export const setCardMetaFn = createServerFn({ method: "POST" })
       .parse(data),
   )
   .handler(async ({ data }) => {
-    await updateCardMeta(data.slug, data.updates as { name: string; meta: Record<string, unknown> }[]);
+    await updateCardMeta(data.slug, data.updates as { name: string; meta: CardMetaPatch }[]);
     return { ok: true };
   });
 

@@ -5,6 +5,7 @@
 1 Clever Concealment (MSC) 125
 1 Command Tower (MSC) 233
 1 Counterspell (MAR) 52
+1 Cruel Calculations
 1 Deserted Beach (FRA) 176
 1 Dovin's Veto (WAR) 193
 1 Drumbellower
@@ -14,6 +15,7 @@
 1 Flooded Strand (KTK) 233
 1 Floodfarm Verge (DSK) 259
 1 Fraying Sanity
+1 Generous Revival
 1 Ghostly Prison
 1 Glacial Fortress (XLN) 255
 1 Grand Arbiter Augustin IV
@@ -34,13 +36,12 @@
 1 Omen Hawker
 1 Otawara, Soaring City (NEO) 271
 1 Path to Exile (MAR) 47
-27 Persistent Petitioners
+26 Persistent Petitioners
 6 Plains (THB) 250
 1 Prairie Stream (BFZ) 241
 1 Prismatic Vista (MH1) 244
 1 Propaganda
 1 Raise the Past
-1 Return to the Ranks
 1 Sea of Clouds (PLST) BBD-84
 1 Seachrome Coast (ONE) 258
 1 Sevinne's Reclamation

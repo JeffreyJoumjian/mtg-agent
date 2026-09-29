@@ -13,7 +13,6 @@
 1 Archivist
 1 Auriok Champion
 1 Avengers Tower (MSH) 260
-1 Bard the Bowman
 1 Basilisk Collar (PIP) 225
 1 Brimaz, King of Oreskos
 1 Captain America, Super-Soldier (MSH) 352
@@ -90,3 +89,4 @@
 1 Urza's Saga (PLST) MH2-259
 1 Walking Ballista (SLD) 58
 1 Winds of Abandon (PLST) MH1-37
+1 Yoshimaru, Beloved Companion

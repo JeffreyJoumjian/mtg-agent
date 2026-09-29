@@ -484,3 +484,28 @@ of turn, later a draw) recorded as the alternative if the pilot prefers to prote
 Not changed: `DECK.md`, `STATUS.md`, `SIDEBOARD.md`, `gameplan.md` (still scripts Aetherflux —
 stale since 2026-09-04, fix when DECK.md is next touched), PDF. Validated 100/100, headers match,
 80/80 found, no flags, 3/3 GC, $1,039.30. `MOXFIELD-SPELLSLINGER.txt` generated.
+
+---
+
+## 2026-09-28 — Reality Fracture (FRA/FRC) set review: pilot's calls
+
+Full review: `research/fra-set-review-2026-09-28.md` (72-card mono-red pool, every card classified).
+
+- **Applied to `main`: Command the Stage in, Braid of Fire out** (pilot approved). Grounds: it
+  returns from the graveyard every upkeep after a turn in which an opponent took noncombat damage
+  (CR 113.6m), and the pingers make that every turn. Braid ranked last of five in Mana Banking, and
+  the pilot's reported gaps were card flow and blockers, not mana. Snapshot:
+  `versions/2026-09-28-1602-main-fra-command-the-stage-in-braid-of-fire-out.json`.
+- **Not taken (the pilot didn't pick them up):** Tomik, Izzet Sparkmage for Firebrand Archer in
+  `main` and `spellslinger`. Grounds on file: +1 per damage event, worth less under Fiery
+  Emancipation because opponents order the replacements (CR 616.1).
+- **Declined: Stingcaster Mage.** Pilot: *"it's a slow card not worth it"*. The review had it NO here:
+  it is a weaker Flashback, since a creature cast fires none of the 8 noncreature pingers.
+
+### Reverted 2026-09-28 (pilot's call): Braid of Fire back in, Command the Stage out
+
+The pilot asked the same day to undo the FRA swap above. `main` now matches its pre-review state
+card for card, verified against
+`versions/2026-09-28-1602-main-fra-command-the-stage-in-braid-of-fire-out.json`. Revert snapshot:
+`versions/2026-09-28-1840-main-revert-braid-of-fire-back-in-command-the-stage-out.json`. No reason
+given; Command the Stage stays out of both Wanda decks. Net FRA result for WandaVision: no changes.
