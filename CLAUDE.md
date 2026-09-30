@@ -142,9 +142,6 @@ background process you start.
 - Work on `main` (the user says "master") and push straight to it; branches and PRs only when asked.
   When asked to commit, make one or a few large commits with a body grouped by area; a commit
   spanning unrelated areas is fine.
-- **Exception:** the deck-builder rebuild lives on `deck-builder-rebuild`
-  ([PR #2](https://github.com/JeffreyJoumjian/mtg-agent/pull/2)). Until that PR merges, commit and
-  push deck-builder work there.
 - Loose root files (screenshots, `libristo.json`, scratch files) stay out of commits unless the user
   asks for them.
 - **No authorship of any kind** in commits or PRs: no `Co-Authored-By`, no "Generated with", and not
