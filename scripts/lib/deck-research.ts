@@ -15,6 +15,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { DECKS_DIR } from "./paths.ts";
 import { cleanCardName } from "./decklist.ts";
+import { commandersOf, pickList, type Deck } from "./deck-model.ts";
 
 /** One entry in a decklist or keep-pile: a cleaned card name and how many copies. */
 export interface DeckEntry {
@@ -236,14 +237,19 @@ export function loadFieldSamples(slug: string): string[][] {
 }
 
 /**
- * Pull the commander out of a `DECK.md`: the `Commander:` header line (minus any trailing
- * parenthetical like `(UR)` or `(mono-red)`), else the first card under the `## Commander`
- * section. Returns null when neither names one.
+ * The first commander of a list in a `deck.json` (the `main` list unless `listId` says
+ * otherwise). Returns null when the list has no Commander section or it is empty.
  */
-export function commanderFromDeck(text: string): string | null {
-  const headerLine = text.match(/^Commander:\s*(.+)$/m)?.[1];
-  if (headerLine) return headerLine.replace(/\s*\([^)]*\)\s*$/, "").trim();
+export function commanderFromDeck(deck: Deck, listId?: string): string | null {
+  const { list } = pickList(deck, listId);
+  return commandersOf(list)[0] ?? null;
+}
 
-  const section = text.match(/^## Commander[^\n]*\n([\s\S]*?)(?=^## |$(?![\s\S]))/m)?.[1] ?? "";
-  return parseKeepPile(section)[0]?.name ?? null;
+/**
+ * The deck slug behind a `--deck` argument, which may be a bare slug (`chatterfang`), a deck
+ * folder (`decks/chatterfang`) or the file itself (`decks/chatterfang/deck.json`).
+ */
+export function slugFromDeckArg(arg: string): string {
+  const posix = arg.split("\\").join("/");
+  return posix.match(/(?:^|\/)decks\/([a-z0-9-]+)(?:\/.*)?$/)?.[1] ?? arg;
 }

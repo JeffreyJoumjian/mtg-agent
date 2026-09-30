@@ -1,8 +1,11 @@
-import { Library, Layers, Swords } from "lucide-react";
+import { Library, Layers, Moon, Sun, Swords } from "lucide-react";
+import { useAtom } from "jotai";
+import { settingsAtom } from "~/lib/state/store";
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarHeader,
@@ -11,21 +14,23 @@ import {
   SidebarMenuItem,
 } from "~/components/ui/sidebar";
 
-/** `Collections` is deliberately broader than the sets it lists today — it's where user-made lists
- *  will live alongside them, which is why the nav item and the heading inside it differ. */
+/** Decks are the home route. `Collection` is the owned-card library; `Collections` is deliberately
+ *  broader than the sets it lists today — it's where user-made lists will live alongside them. */
 const NAV = [
-  { to: "/", label: "Library", icon: Library },
+  { to: "/", label: "Decks", icon: Swords },
+  { to: "/collection", label: "Collection", icon: Library },
   { to: "/collections", label: "Collections", icon: Layers },
-  { to: "/decks", label: "Decks", icon: Swords },
 ] as const;
 
 export function AppSidebar() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const [settings, setSettings] = useAtom(settingsAtom);
+  const dark = settings.theme === "dark";
 
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader className="h-[61px] justify-center border-b px-4 group-data-[collapsible=icon]:px-2">
-        <span className="truncate font-semibold group-data-[collapsible=icon]:hidden">MTG Collection</span>
+        <span className="truncate font-semibold group-data-[collapsible=icon]:hidden">MTG Workbench</span>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
@@ -35,7 +40,13 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.to}>
                   <SidebarMenuButton
                     asChild
-                    isActive={item.to === "/" ? pathname === "/" : pathname.startsWith(item.to)}
+                    isActive={
+                      item.to === "/"
+                        ? pathname === "/" || pathname.startsWith("/decks")
+                        : item.to === "/collection"
+                          ? pathname === "/collection"
+                          : pathname.startsWith(item.to)
+                    }
                     tooltip={item.label}
                   >
                     <Link to={item.to}>
@@ -49,6 +60,20 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter className="border-t">
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+              tooltip={dark ? "Light mode" : "Dark mode"}
+              onClick={() => setSettings({ ...settings, theme: dark ? "light" : "dark" })}
+            >
+              {dark ? <Sun /> : <Moon />}
+              <span>{dark ? "Light mode" : "Dark mode"}</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
     </Sidebar>
   );
 }

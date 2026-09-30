@@ -8,10 +8,10 @@
  *
  *  This is a snapshot/convenience layer, not source of truth: delete `data/card-cache.json`
  *  and it rebuilds itself on the next lookup. */
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
-import { CARD_CACHE_PATH } from "./paths.ts";
-import { fetchCardByName, fetchCollection, type CardSummary } from "./scryfall.ts";
+import { CARD_CACHE_PATH, RULINGS_CACHE_PATH } from "./paths.ts";
+import { fetchCardByName, fetchCollection, fetchPrintingsByNumber, fetchRulings, type CardSummary, type Ruling } from "./scryfall.ts";
 
 const TTL_MS = 24 * 60 * 60 * 1000;
 
@@ -21,20 +21,112 @@ interface CacheEntry {
 }
 type CacheFile = Record<string, CacheEntry>;
 
-const key = (name: string): string => name.trim().toLowerCase();
-const isFresh = (entry: CacheEntry, now: number): boolean => now - entry.fetchedAt < TTL_MS;
+const key = (name: string): string => normalizeCardName(name).toLowerCase();
+const isFresh = (entry: { fetchedAt: number }, now: number): boolean => now - entry.fetchedAt < TTL_MS;
 
-async function load(): Promise<CacheFile> {
+/** Canonical spelling for matching and storage: NFC, straight quotes, single spaces. Accents are
+ *  kept — Scryfall's own name for the card has them. */
+export function normalizeCardName(name: string): string {
+  return name.normalize("NFC").replace(/[‘’ʼ]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, " ").trim();
+}
+
+/** Match key: normalised, lower-cased, accents stripped — so `Bartolome` finds `Bartolomé`. Only
+ *  ever used for comparison; the stored name is always Scryfall's. */
+export function matchKey(name: string): string {
+  return normalizeCardName(name).toLowerCase().normalize("NFD").replace(/\p{M}/gu, "");
+}
+
+/** The name a deck file uses for a card: the front face. `Valakut Awakening`, never
+ *  `Valakut Awakening // Valakut Stoneforge` — the convention every tool here shares. */
+export function deckName(summary: { name: string }): string {
+  return summary.name.split(" // ")[0].trim();
+}
+
+export interface ResolveResult {
+  /** Keyed by the name exactly as the caller requested it, so no caller re-derives a key. */
+  found: Record<string, CardSummary>;
+  /** Requested names nothing matched — a typo, a card Scryfall does not know, or Scryfall being
+   *  unreachable. Never persisted: the next lookup tries again. */
+  unresolved: string[];
+  /** Set when Scryfall could not be reached: stale cache entries were served instead, and names
+   *  with no cached entry at all are in `unresolved` only for that reason. */
+  degraded?: string;
+}
+
+/** Pair requested names with fetched cards. A card matches its full name and its front face, and
+ *  a real card whose name equals another card's front face is never shadowed by the alias. Pure. */
+export function matchRequested(requested: string[], cards: CardSummary[]): ResolveResult {
+  const byKey: Record<string, CardSummary> = {};
+  for (const card of cards) {
+    byKey[matchKey(card.name)] = card;
+  }
+  for (const card of cards) {
+    const front = card.name.split(" // ")[0];
+    const frontKey = matchKey(front);
+
+    if (front !== card.name && !(frontKey in byKey)) {
+      byKey[frontKey] = card;
+    }
+  }
+
+  const found: Record<string, CardSummary> = {};
+  const unresolved: string[] = [];
+  for (const name of requested) {
+    const hit = byKey[matchKey(name)];
+
+    if (hit) found[name] = hit;
+    else unresolved.push(name);
+  }
+  return { found, unresolved };
+}
+
+/** Read a JSON cache file. Missing → empty. Unparseable → moved aside to `<name>.corrupt-<ms>.json`
+ *  and treated as empty, so the next save can never overwrite (and lose) a cache it couldn't read. */
+async function load<T extends object = CacheFile>(path = CARD_CACHE_PATH): Promise<T> {
+  let text: string;
   try {
-    return JSON.parse(await readFile(CARD_CACHE_PATH, "utf8")) as CacheFile;
+    text = await readFile(path, "utf8");
   } catch {
-    return {};
+    return {} as T;
+  }
+
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    const aside = `${path.replace(/\.json$/, "")}.corrupt-${Date.now()}.json`;
+    await rename(path, aside).catch(() => {});
+    console.error(`${path} could not be parsed; moved it to ${aside} and started an empty cache.`);
+    return {} as T;
   }
 }
 
-async function save(cache: CacheFile): Promise<void> {
-  await mkdir(dirname(CARD_CACHE_PATH), { recursive: true });
-  await writeFile(CARD_CACHE_PATH, JSON.stringify(cache, null, 2) + "\n");
+/** Write via a sibling temp file and an atomic rename, so a concurrent reader (another `bun run
+ *  card`, the app) sees the old cache or the new one, never a half-written file. */
+async function save(cache: object, path = CARD_CACHE_PATH): Promise<void> {
+  await mkdir(dirname(path), { recursive: true });
+  const tmp = `${path}.${process.pid}.${Date.now()}.${Math.random().toString(36).slice(2)}.tmp`;
+  await writeFile(tmp, JSON.stringify(cache, null, 2) + "\n");
+  await rename(tmp, path);
+}
+
+/** The keys a fetched card is stored under: its full name, and its front face unless another
+ *  fetched card owns that name outright (same shadowing rule as {@link matchRequested}). Without
+ *  the front-face key every deck line for a double-faced card would miss the cache forever. */
+export function cacheKeysFor(summary: { name: string }, others: { name: string }[]): string[] {
+  const keys = [key(summary.name)];
+  const front = deckName(summary);
+
+  if (front !== summary.name && !others.some((o) => o.name !== summary.name && key(o.name) === key(front))) {
+    keys.push(key(front));
+  }
+  return keys;
+}
+
+/** Network and storage seams, injectable for tests. */
+export interface ResolveDeps {
+  cachePath?: string;
+  fetchCollection?: typeof fetchCollection;
+  fetchCardByName?: typeof fetchCardByName;
 }
 
 /** Get one card, using the cache when fresh and falling back to a named lookup otherwise. */
@@ -87,15 +179,187 @@ export async function getCards(names: string[], now = Date.now()): Promise<DeckL
   return { found, notFound };
 }
 
+/** Resolve names through the cache, then one batched fetch for the misses, then a fuzzy single
+ *  lookup for anything still missing (typos, accents Scryfall spells differently). Entries cached
+ *  before `id` existed are treated as misses so they pick up the new fields.
+ *
+ *  Never stores a negative result — an absent card is reported in `unresolved` and retried on the
+ *  next call. Persisting "not found" is what made cards vanish from the old workbench for good. */
+export async function resolveNames(names: string[], now = Date.now(), deps: ResolveDeps = {}): Promise<ResolveResult> {
+  const cachePath = deps.cachePath ?? CARD_CACHE_PATH;
+  const fetchMany = deps.fetchCollection ?? fetchCollection;
+  const fetchOne = deps.fetchCardByName ?? fetchCardByName;
+
+  const unique = [...new Set(names.map(normalizeCardName).filter(Boolean))];
+  const cache = await load(cachePath);
+  const cached: CardSummary[] = [];
+  const stale: CardSummary[] = [];
+  const misses: string[] = [];
+
+  for (const name of unique) {
+    const hit = cache[key(name)] ?? cache[key(name.split(" // ")[0])];
+
+    if (hit && isFresh(hit, now) && hit.summary.id) cached.push(hit.summary);
+    else {
+      misses.push(name);
+      if (hit) stale.push(hit.summary);
+    }
+  }
+
+  const fetched: CardSummary[] = [];
+  let degraded: string | undefined;
+  if (misses.length > 0) {
+    try {
+      const batch = await fetchMany(misses.map((n) => n.split(" // ")[0]));
+      fetched.push(...batch.found);
+
+      const stillMissing = matchRequested(misses, batch.found).unresolved;
+      for (const name of stillMissing) {
+        try {
+          const fuzzy = await fetchOne(name);
+          fetched.push(fuzzy);
+        } catch {
+          // Genuinely unknown: report it, store nothing.
+        }
+      }
+    } catch (err) {
+      // Scryfall unreachable: serve what the cache has, however old, and say so.
+      degraded = `Scryfall unreachable (${err instanceof Error ? err.message : String(err)}); showing cached card data`;
+    }
+
+    if (fetched.length > 0) {
+      for (const summary of fetched) {
+        for (const k of cacheKeysFor(summary, fetched)) cache[k] = { summary, fetchedAt: now };
+      }
+      await save(cache, cachePath);
+    }
+  }
+
+  const matched = matchRequested(unique, [...cached, ...fetched, ...(degraded ? stale : [])]);
+  const found: Record<string, CardSummary> = {};
+  const unresolved: string[] = [];
+  for (const original of names) {
+    const hit = matched.found[normalizeCardName(original)];
+
+    if (hit) found[original] = hit;
+    else unresolved.push(original);
+  }
+  return { found, unresolved, ...(degraded ? { degraded } : {}) };
+}
+
+/** `ltc|264`: how a pinned printing is keyed, in this cache and in the app. */
+export function printingKey(ref: { set: string; collectorNumber: string }): string {
+  return `${ref.set.toLowerCase()}|${ref.collectorNumber.trim()}`;
+}
+
+/** Printing entries live in the same file under this prefix, apart from the by-name entries, so a
+ *  pinned printing never masquerades as the card's default. */
+const PRINTING_PREFIX = "printing:";
+
+export interface PrintingDeps {
+  cachePath?: string;
+  fetchPrintingsByNumber?: typeof fetchPrintingsByNumber;
+}
+
+/**
+ * The card data for specific printings — what a deck pins with `printing` — keyed by
+ * {@link printingKey}. Fresh entries come from the cache; the rest are fetched in one batch. A
+ * printing Scryfall does not know is simply absent, never stored, so a typo'd pin is retried next
+ * time and the caller falls back to the default printing. If Scryfall is unreachable, stale entries
+ * are served and the rest are absent.
+ */
+export async function getPrintings(
+  refs: { set: string; collectorNumber: string }[],
+  now = Date.now(),
+  deps: PrintingDeps = {},
+): Promise<Record<string, CardSummary>> {
+  const cachePath = deps.cachePath ?? CARD_CACHE_PATH;
+  const fetchMany = deps.fetchPrintingsByNumber ?? fetchPrintingsByNumber;
+
+  const wanted: Record<string, { set: string; collectorNumber: string }> = {};
+  for (const ref of refs) {
+    if (ref.set && ref.collectorNumber) wanted[printingKey(ref)] = ref;
+  }
+  const keys = Object.keys(wanted);
+  if (keys.length === 0) return {};
+
+  const cache = await load(cachePath);
+  const out: Record<string, CardSummary> = {};
+  const stale: Record<string, CardSummary> = {};
+  const misses: string[] = [];
+  for (const k of keys) {
+    const hit = cache[PRINTING_PREFIX + k];
+
+    if (hit && isFresh(hit, now) && hit.summary.id) {
+      out[k] = hit.summary;
+    } else {
+      misses.push(k);
+      if (hit) stale[k] = hit.summary;
+    }
+  }
+  if (misses.length === 0) return out;
+
+  try {
+    const batch = await fetchMany(misses.map((k) => wanted[k]));
+    for (const summary of batch.found) {
+      const k = printingKey(summary);
+      out[k] = summary;
+      cache[PRINTING_PREFIX + k] = { summary, fetchedAt: now };
+    }
+    if (batch.found.length > 0) await save(cache, cachePath);
+  } catch {
+    // Scryfall unreachable: what the cache has, however old, beats no image.
+    for (const k of misses) {
+      if (stale[k]) out[k] = stale[k];
+    }
+  }
+  return out;
+}
+
+export interface RulingsDeps {
+  cachePath?: string;
+  fetchRulings?: typeof fetchRulings;
+}
+
+/** A card's official and Scryfall rulings, cached per oracle id in `data/rulings-cache.json` for
+ *  the same 24 h as card data. Any printing's id fetches them; the oracle id keys them. */
+export async function getRulings(
+  card: { id: string; oracleId: string },
+  now = Date.now(),
+  deps: RulingsDeps = {},
+): Promise<Ruling[]> {
+  const cachePath = deps.cachePath ?? RULINGS_CACHE_PATH;
+  const fetchMany = deps.fetchRulings ?? fetchRulings;
+  const cache = await load<Record<string, { rulings: Ruling[]; fetchedAt: number }>>(cachePath);
+  const hit = cache[card.oracleId];
+
+  if (hit && isFresh(hit, now)) return hit.rulings;
+
+  const rulings = await fetchMany(card.id);
+  cache[card.oracleId] = { rulings, fetchedAt: now };
+  await save(cache, cachePath);
+  return rulings;
+}
+
 /** Re-fetch every card currently in the cache (prices + oracle) in batched requests. */
 export async function refreshAll(now = Date.now()): Promise<number> {
   const cache = await load();
-  const names = [...new Set(Object.values(cache).map((e) => e.summary.name))];
-  if (names.length === 0) return 0;
+  const byName = Object.entries(cache).filter(([k]) => !k.startsWith(PRINTING_PREFIX));
+  const pinned = Object.entries(cache).filter(([k]) => k.startsWith(PRINTING_PREFIX));
+  const names = [...new Set(byName.map(([, e]) => e.summary.name))];
+  if (names.length === 0 && pinned.length === 0) return 0;
 
-  const { found } = await fetchCollection(names);
   const fresh: CacheFile = {};
+  const { found } = names.length > 0 ? await fetchCollection(names) : { found: [] };
   for (const summary of found) fresh[key(summary.name)] = { summary, fetchedAt: now };
+
+  // Pinned printings refresh by set and number, and stay under their own keys.
+  const refs = pinned.map(([, e]) => ({ set: e.summary.set, collectorNumber: e.summary.collectorNumber }));
+  const printings = refs.length > 0 ? await fetchPrintingsByNumber(refs) : { found: [] };
+  for (const summary of printings.found) {
+    fresh[PRINTING_PREFIX + printingKey(summary)] = { summary, fetchedAt: now };
+  }
+
   await save(fresh);
-  return found.length;
+  return found.length + printings.found.length;
 }

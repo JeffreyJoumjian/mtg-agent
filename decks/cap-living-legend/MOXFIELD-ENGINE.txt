@@ -1,0 +1,91 @@
+1 Captain America, Living Legend (MSH) 210
+1 Academy Ruins (PLST) 2XM-309
+1 Adagia, Windswept Bastion (EOE) 250
+1 Adarkar Wastes (DMU) 243
+1 Adept Watershaper
+1 Akroma's Will
+1 Ancient Den (EOC) 148
+1 Anointed Procession
+1 Approach of the Second Sun
+1 Arcane Signet (MSC) 191
+1 Arcanis the Omnipotent (FDN) 741
+1 Archway of Innovation (MH3) 214
+1 Avengers Tower (MSH) 260
+1 Belladonna Took
+1 Bruvac the Grandiloquent
+1 Castle Ardenvale
+1 Clever Concealment (MSC) 125
+1 Command Beacon (PLST) C15-56
+1 Command Tower (MSC) 233
+1 Counterspell (MAR) 52
+1 Cyclonic Rift (RVR) 40
+1 Deserted Beach (FRA) 176
+1 Dispatch (MSC) 130
+1 Dovin's Veto (WAR) 193
+1 Eerie Interlude
+1 Fabricate
+1 Faith's Reward
+1 Fierce Guardianship (CMM) 94
+1 Flawless Maneuver
+1 Flooded Strand (KTK) 233
+1 Floodfarm Verge (DSK) 259
+1 Generous Gift (MSC) 133
+1 Gideon, Ally of Zendikar
+1 Giver of Runes
+1 Glacial Fortress (XLN) 255
+1 Guardian of Faith
+1 Hallowed Fountain (TRK) 286
+1 Halo Fountain
+1 Hangarback Walker
+1 Ioreth of the Healing House
+4 Island (THB) 251
+1 Jace, Wielder of Mysteries
+1 Kotori, Pilot Prodigy (NEC) 2
+1 March of Otherworldly Light (NEO) 28
+1 Mech Hangar (NEO) 270
+1 Mechan Navigator (EOE) 64
+1 Minamo, School at Water's Edge (CHK) 279
+1 Mishra's Factory
+1 Mondrak, Glory Dominus
+1 Monument to Endurance
+1 Mother of Runes
+1 Myrel, Shield of Argive
+1 Mystic Gate (CMM) 1013
+1 Opposition
+1 Otawara, Soaring City (NEO) 271
+1 Palladium Myr (M21) 234
+1 Path to Exile (MAR) 47
+4 Persistent Petitioners
+1 Pestered Wellguard
+1 Pippin, Guard of the Citadel
+4 Plains (THB) 250
+1 Prairie Stream (BFZ) 241
+1 Prismatic Vista (MH1) 244
+1 Psychosis Crawler
+1 Relic of Legends (MSC) 209
+1 Restoration Angel
+1 Sea of Clouds (PLST) BBD-84
+1 Seachrome Coast (ONE) 258
+1 Seat of the Synod (EOC) 176
+1 Shorikai, Genesis Engine (NEC) 76
+1 Skyclave Apparition
+1 Smuggler's Copter (SLD) 446
+1 Sol Ring (SLD) 1734
+1 Springleaf Drum
+1 Stonybrook Schoolmaster
+1 Swords to Plowshares (PMEI) 2026-4
+1 Teferi's Protection (MAR) 51
+1 The Seriema (EOE) 323
+1 The Theorist, Jace Beleren
+1 The Wandering Emperor
+1 The Wandering Rescuer
+1 Throne of the God-Pharaoh
+1 Tribute Mage
+1 Trophy Mage
+1 Tui and La, Moon and Ocean (TLE) 96
+1 Tundra (OLGC) 2015
+1 Unctus, Grand Metatect (ONE) 75
+1 Urza, Lord High Artificer (CMM) 130
+1 Urza's Saga (PLST) MH2-259
+1 Uthros, Titanic Godcore (EOE) 260
+1 Winds of Abandon (PLST) MH1-37

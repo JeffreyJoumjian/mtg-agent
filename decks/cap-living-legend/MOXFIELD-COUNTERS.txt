@@ -1,0 +1,92 @@
+1 Captain America, Living Legend (MSH) 210
+1 Abandoned Air Temple
+1 Academy Ruins (PLST) 2XM-309
+1 Adarkar Wastes (DMU) 243
+1 Adeline, Resplendent Cathar
+1 Agent Phil Coulson
+1 Akroma's Will
+1 Ancient Den (EOC) 148
+1 Apprentice Wizard (2XM) 40
+1 Arcane Signet (MSC) 191
+1 Arcanis the Omnipotent (FDN) 741
+1 Archangel of Thune
+1 Archivist
+1 Auriok Champion
+1 Avengers Tower (MSH) 260
+1 Basilisk Collar (PIP) 225
+1 Brimaz, King of Oreskos
+1 Captain America, Super-Soldier (MSH) 352
+1 Clever Concealment (MSC) 125
+1 Command Tower (MSC) 233
+1 Commander's Plate (SLD) 1733
+1 Counterspell (MAR) 52
+1 Cyclonic Rift (RVR) 40
+1 Deserted Beach (FRA) 176
+1 Dispatch (MSC) 130
+1 Dovin's Veto (WAR) 193
+1 Drumbellower
+1 Eiganjo, Seat of the Empire (NEO) 268
+1 Elesh Norn, Mother of Machines
+1 Elspeth, Storm Slayer
+1 Enlightened Tutor (DMR) 6
+1 Flooded Strand (KTK) 233
+1 Floodfarm Verge (DSK) 259
+1 Generous Gift (MSC) 133
+1 Gideon's Lawkeeper
+1 Giver of Runes
+1 Glacial Fortress (XLN) 255
+1 Hallowed Fountain (TRK) 286
+1 Heliod, Sun-Crowned
+1 Inventors' Fair (SLD) 1735
+3 Island (THB) 251
+1 Karn's Bastion
+1 Lae'zel, Vlaakith's Champion
+1 Light of Promise
+1 March of Otherworldly Light (NEO) 28
+1 Marvin, Murderous Mimic
+1 Maul of the Skyclaves
+1 Minamo, School at Water's Edge (CHK) 279
+1 Mithril Coat (LTR) 245
+1 Mother of Runes
+1 Mystic Gate (CMM) 1013
+1 Ornithopter of Paradise (PLST) MH2-232
+1 Otawara, Soaring City (NEO) 271
+1 Path to Exile (MAR) 47
+1 Patriot, Shield Wielder
+1 Pippin, Guard of the Citadel
+7 Plains (THB) 250
+1 Prairie Stream (BFZ) 241
+1 Prismatic Vista (MH1) 244
+1 Puresteel Paladin (CMM) 51
+1 Relic of Legends (MSC) 209
+1 Resplendent Mentor
+1 Rogue's Passage (WHO) 299
+1 Sea of Clouds (PLST) BBD-84
+1 Seachrome Coast (ONE) 258
+1 Seat of the Synod (EOC) 176
+1 Shadowspear (THB) 236
+1 Shorikai, Genesis Engine (NEC) 76
+1 Sol Ring (SLD) 1734
+1 Soul Warden
+1 Split Up (DSK) 32
+1 Sram, Senior Edificer (SLD) 461
+1 Stark's Ingenuity
+1 Stoneforge Mystic (2XM) 31
+1 Stonehewer Giant (PLST) 2XM-32
+1 Stroke of Midnight (WOE) 33
+1 Super-Soldier Serum
+1 Swiftfoot Boots (MSC) 216
+1 Sword of Feast and Famine (PLST) 2XM-296
+1 Sword of Vengeance
+1 Swords to Plowshares (PMEI) 2026-4
+1 Teferi's Protection (MAR) 51
+1 The Destined Thief
+1 The Ozolith
+1 Tundra (OLGC) 2015
+1 Umezawa's Jitte
+1 Unctus, Grand Metatect (ONE) 75
+1 Urdnan, Dromoka Warrior
+1 Urza's Saga (PLST) MH2-259
+1 Walking Ballista (SLD) 58
+1 Winds of Abandon (PLST) MH1-37
+1 Yoshimaru, Beloved Companion

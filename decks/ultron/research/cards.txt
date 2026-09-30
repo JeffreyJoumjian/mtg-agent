@@ -1,0 +1,423 @@
+# LOCAL CARD CACHE — ultron
+# Prices are a USD snapshot from Scryfall at the time each card was first cached.
+# Format:  ## Name / cost|type|CI|produces|usd / oracle
+
+## Ultron, Artificial Malevolence
+cost={3} | type=Legendary Artifact Creature — Robot Villain | CI=- | produces=- | usd=$11.24
+Whenever another nontoken artifact you control enters, you may pay {2}. If you do, create a token that's a copy of it. If the token isn't a creature, it becomes a 2/2 Robot Villain creature in addition to its other types.
+
+## Ancient Tomb
+cost=- | type=Land | CI=- | produces=C | usd=$133.66
+{T}: Add {C}{C}. This land deals 2 damage to you.
+
+## Mishra's Workshop
+cost=- | type=Land | CI=- | produces=C | usd=$?
+{T}: Add {C}{C}{C}. Spend this mana only to cast artifact spells.
+
+## Urza's Mine
+cost=- | type=Land — Urza's Mine | CI=- | produces=C | usd=$1.12
+{T}: Add {C}. If you control an Urza's Power-Plant and an Urza's Tower, add {C}{C} instead.
+
+## Urza's Power Plant
+cost=- | type=Land — Urza's Power-Plant | CI=- | produces=C | usd=$1.77
+{T}: Add {C}. If you control an Urza's Mine and an Urza's Tower, add {C}{C} instead.
+
+## Urza's Tower
+cost=- | type=Land — Urza's Tower | CI=- | produces=C | usd=$0.89
+{T}: Add {C}. If you control an Urza's Mine and an Urza's Power-Plant, add {C}{C}{C} instead.
+
+## Urza's Saga
+cost=- | type=Enchantment Land — Urza's Saga | CI=- | produces=C | usd=$38.54
+(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.) I — This Saga gains "{T}: Add {C}." II — This Saga gains "{2}, {T}: Create a 0/0 colorless Construct artifact creature token with 'This token gets +1/+1 for each artifact you control.'" III — Search your library for an artifact card with mana cost {0} or {1}, put it onto the battlefield, then shuffle.
+
+## Urza's Cave
+cost=- | type=Land — Urza's Cave | CI=- | produces=C | usd=$1.66
+{T}: Add {C}. {3}, {T}, Sacrifice this land: Search your library for a land card, put it onto the battlefield tapped, then shuffle.
+
+## Darksteel Citadel
+cost=- | type=Artifact Land | CI=- | produces=C | usd=$3.38
+Indestructible {T}: Add {C}.
+
+## Buried Ruin
+cost=- | type=Land | CI=- | produces=C | usd=$0.40
+{T}: Add {C}. {2}, {T}, Sacrifice this land: Return target artifact card from your graveyard to your hand.
+
+## Inventors' Fair
+cost=- | type=Legendary Land | CI=- | produces=C | usd=$18.74
+At the beginning of your upkeep, if you control three or more artifacts, you gain 1 life. {T}: Add {C}. {4}, {T}, Sacrifice Inventors' Fair: Search your library for an artifact card, reveal it, put it into your hand, then shuffle. Activate only if you control three or more artifacts.
+
+## The Mycosynth Gardens
+cost=- | type=Land — Sphere | CI=- | produces=B,C,G,R,U,W | usd=$0.34
+{T}: Add {C}. {1}, {T}: Add one mana of any color. {X}, {T}: This land becomes a copy of target nontoken artifact you control with mana value X.
+
+## Treasure Vault
+cost=- | type=Artifact Land | CI=- | produces=C | usd=$2.42
+{T}: Add {C}. {X}{X}, {T}, Sacrifice this land: Create X Treasure tokens.
+
+## Fomori Vault
+cost=- | type=Land | CI=- | produces=C | usd=$13.45
+{T}: Add {C}. {3}, {T}, Discard a card: Look at the top X cards of your library, where X is the number of artifacts you control. Put one of those cards into your hand and the rest on the bottom of your library in a random order.
+
+## Command Beacon
+cost=- | type=Land | CI=- | produces=C | usd=$9.68
+{T}: Add {C}. {T}, Sacrifice this land: Put your commander into your hand from the command zone.
+
+## War Room
+cost=- | type=Land | CI=- | produces=C | usd=$5.72
+{T}: Add {C}. {3}, {T}, Pay life equal to the number of colors in your commanders' color identity: Draw a card.
+
+## Deserted Temple
+cost=- | type=Land | CI=- | produces=C | usd=$0.70
+{T}: Add {C}. {1}, {T}: Untap target land.
+
+## Thespian's Stage
+cost=- | type=Land | CI=- | produces=C | usd=$0.48
+{T}: Add {C}. {2}, {T}: This land becomes a copy of target land, except it has this ability.
+
+## Vesuva
+cost=- | type=Land | CI=- | produces=- | usd=$3.84
+You may have this land enter tapped as a copy of any land on the battlefield.
+
+## Mirrorpool
+cost=- | type=Land | CI=- | produces=C | usd=$3.74
+This land enters tapped. {T}: Add {C}. {2}{C}, {T}, Sacrifice this land: Copy target instant or sorcery spell you control. You may choose new targets for the copy. {4}{C}, {T}, Sacrifice this land: Create a token that's a copy of target creature you control.
+
+## Scavenger Grounds
+cost=- | type=Land — Desert | CI=- | produces=C | usd=$0.25
+{T}: Add {C}. {2}, {T}, Sacrifice a Desert: Exile all graveyards.
+
+## Rogue's Passage
+cost=- | type=Land | CI=- | produces=C | usd=$0.36
+{T}: Add {C}. {4}, {T}: Target creature can't be blocked this turn.
+
+## Shrine of the Forsaken Gods
+cost=- | type=Land | CI=- | produces=C | usd=$0.36
+{T}: Add {C}. {T}: Add {C}{C}. Spend this mana only to cast colorless spells. Activate only if you control seven or more lands.
+
+## Sanctum of Ugin
+cost=- | type=Land | CI=- | produces=C | usd=$3.13
+{T}: Add {C}. Whenever you cast a colorless spell with mana value 7 or greater, you may sacrifice this land. If you do, search your library for a colorless creature card, reveal it, put it into your hand, then shuffle.
+
+## Power Depot
+cost=- | type=Artifact Land | CI=- | produces=B,C,G,R,U,W | usd=$0.78
+This land enters tapped. {T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast artifact spells or activate abilities of artifacts. Modular 1
+
+## Wastes
+cost=- | type=Basic Land | CI=- | produces=C | usd=$1.43
+{T}: Add {C}.
+
+## Sol Ring
+cost={1} | type=Artifact | CI=- | produces=C | usd=$1.54
+{T}: Add {C}{C}.
+
+## Thran Dynamo
+cost={4} | type=Artifact | CI=- | produces=C | usd=$4.95
+{T}: Add {C}{C}{C}.
+
+## Mind Stone
+cost={2} | type=Artifact | CI=- | produces=C | usd=$?
+{T}: Add {C}. {1}, {T}, Sacrifice this artifact: Draw a card.
+
+## Thought Vessel
+cost={2} | type=Artifact | CI=- | produces=C | usd=$?
+You have no maximum hand size. {T}: Add {C}.
+
+## Arc Reactor
+cost={5} | type=Artifact | CI=- | produces=C | usd=$1.28
+Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.) This artifact enters tapped. {T}: Add {C}{C}{C}.
+
+## Hedron Archive
+cost={4} | type=Artifact | CI=- | produces=C | usd=$?
+{T}: Add {C}{C}. {2}, {T}, Sacrifice this artifact: Draw two cards.
+
+## Mox Opal
+cost={0} | type=Legendary Artifact | CI=- | produces=B,G,R,U,W | usd=$241.32
+Metalcraft — {T}: Add one mana of any color. Activate only if you control three or more artifacts.
+
+## Gilded Lotus
+cost={5} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.59
+{T}: Add three mana of any one color.
+
+## Palladium Myr
+cost={3} | type=Artifact Creature — Myr | CI=- | produces=C | usd=$1.10
+{T}: Add {C}{C}.
+
+## Everflowing Chalice
+cost={0} | type=Artifact | CI=- | produces=C | usd=$0.37
+Multikicker {2} (You may pay an additional {2} any number of times as you cast this spell.) This artifact enters with a charge counter on it for each time it was kicked. {T}: Add {C} for each charge counter on this artifact.
+
+## The Mightstone and Weakstone
+cost={5} | type=Legendary Artifact — Powerstone | CI=- | produces=C | usd=$5.28
+When The Mightstone and Weakstone enters, choose one — • Draw two cards. • Target creature gets -5/-5 until end of turn. {T}: Add {C}{C}. This mana can't be spent to cast nonartifact spells. (Melds with Urza, Lord Protector.)
+
+## Karn, Legacy Reforged
+cost={5} | type=Legendary Artifact Creature — Golem | CI=- | produces=C | usd=$20.94
+Karn's power and toughness are each equal to the greatest mana value among artifacts you control. At the beginning of your upkeep, add {C} for each artifact you control. This mana can't be spent to cast nonartifact spells. Until end of turn, you don't lose this mana as steps and phases end.
+
+## Foundry Inspector
+cost={3} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$0.40
+Artifact spells you cast cost {1} less to cast.
+
+## Cloud Key
+cost={3} | type=Artifact | CI=- | produces=- | usd=$2.05
+As this artifact enters, choose artifact, creature, enchantment, instant, or sorcery. Spells you cast of the chosen type cost {1} less to cast.
+
+## Jhoira's Familiar
+cost={4} | type=Artifact Creature — Bird | CI=- | produces=- | usd=$2.59
+Flying Historic spells you cast cost {1} less to cast. (Artifacts, legendaries, and Sagas are historic.)
+
+## Semblance Anvil
+cost={3} | type=Artifact | CI=- | produces=- | usd=$6.83
+Imprint — When this artifact enters, you may exile a nonland card from your hand. Spells you cast that share a card type with the exiled card cost {2} less to cast.
+
+## The One Ring
+cost={4} | type=Legendary Artifact | CI=- | produces=- | usd=$122.35
+Indestructible When The One Ring enters, if you cast it, you gain protection from everything until your next turn. At the beginning of your upkeep, you lose 1 life for each burden counter on The One Ring. {T}: Put a burden counter on The One Ring, then draw a card for each burden counter on The One Ring.
+
+## Idol of Oblivion
+cost={2} | type=Artifact | CI=- | produces=- | usd=$2.09
+{T}: Draw a card. Activate only if you created a token this turn. {8}, {T}, Sacrifice this artifact: Create a 10/10 colorless Eldrazi creature token.
+
+## Canoptek Spyder
+cost={5} | type=Artifact Creature — Spider | CI=- | produces=- | usd=$15.64
+Flying Fabricator Claw Array — Whenever another nontoken artifact creature or Vehicle you control enters, draw a card.
+
+## The Ten Rings
+cost={8} | type=Legendary Artifact | CI=- | produces=- | usd=$15.48
+Your maximum hand size is ten. At the beginning of your end step, if you have fewer than ten cards in hand, draw cards equal to the difference.
+
+## Ichor Wellspring
+cost={2} | type=Artifact | CI=- | produces=- | usd=$1.51
+When this artifact enters or is put into a graveyard from the battlefield, draw a card.
+
+## Skullclamp
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$6.04
+Equipped creature gets +1/-1. Whenever equipped creature dies, draw two cards. Equip {1}
+
+## Sensei's Divining Top
+cost={1} | type=Artifact | CI=- | produces=- | usd=$42.26
+{1}: Look at the top three cards of your library, then put them back in any order. {T}: Draw a card, then put this artifact on top of its owner's library.
+
+## Iron Spider, Stark Upgrade
+cost={3} | type=Legendary Artifact Creature — Spider Hero | CI=- | produces=- | usd=$1.67
+Vigilance {T}: Put a +1/+1 counter on each artifact creature and/or Vehicle you control. {2}, Remove two +1/+1 counters from among artifacts you control: Draw a card.
+
+## All Is Dust
+cost={7} | type=Kindred Sorcery — Eldrazi | CI=- | produces=- | usd=$5.92
+Each player sacrifices all permanents they control that are one or more colors.
+
+## Ugin, the Ineffable
+cost={6} | type=Legendary Planeswalker — Ugin | CI=- | produces=- | usd=$2.23
+Colorless spells you cast cost {2} less to cast. +1: Exile the top card of your library face down and look at it. Create a 2/2 colorless Spirit creature token. When that token leaves the battlefield, put the exiled card into your hand. −3: Destroy target permanent that's one or more colors.
+
+## Ugin, Eye of the Storms
+cost={7} | type=Legendary Planeswalker — Ugin | CI=- | produces=C | usd=$39.57
+When you cast this spell, exile up to one target permanent that's one or more colors. Whenever you cast a colorless spell, exile up to one target permanent that's one or more colors. +2: You gain 3 life and draw a card. 0: Add {C}{C}{C}. −11: Search your library for any number of colorless nonland cards, exile them, then shuffle. Until end of turn, you may cast those cards without paying their mana costs.
+
+## Meteor Golem
+cost={7} | type=Artifact Creature — Golem | CI=- | produces=- | usd=$0.22
+When this creature enters, destroy target nonland permanent an opponent controls.
+
+## Duplicant
+cost={6} | type=Artifact Creature — Shapeshifter | CI=- | produces=- | usd=$0.31
+Imprint — When this creature enters, you may exile target nontoken creature. As long as a card exiled with this creature is a creature card, this creature has the power, toughness, and creature types of the last creature card exiled with it. It's still a Shapeshifter.
+
+## Kozilek's Command
+cost={X}{C}{C} | type=Kindred Instant — Eldrazi | CI=- | produces=C | usd=$7.80
+Choose two — • Target player creates X 0/1 colorless Eldrazi Spawn creature tokens with "Sacrifice this token: Add {C}." • Target player scries X, then draws a card. • Exile target creature with mana value X or less. • Exile up to X target cards from graveyards.
+
+## Warping Wail
+cost={1}{C} | type=Instant | CI=- | produces=C | usd=$1.30
+({C} represents colorless mana.) Choose one — • Exile target creature with power or toughness 1 or less. • Counter target sorcery spell. • Create a 1/1 colorless Eldrazi Scion creature token. It has "Sacrifice this token: Add {C}."
+
+## Null Elemental Blast
+cost={C} | type=Instant | CI=- | produces=- | usd=$0.40
+Choose one — • Counter target multicolored spell. • Destroy target multicolored permanent.
+
+## Cityscape Leveler
+cost={8} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$13.16
+Trample When you cast this spell and whenever this creature attacks, destroy up to one target nonland permanent. Its controller creates a tapped Powerstone token. Unearth {8}
+
+## Mirrorworks
+cost={5} | type=Artifact | CI=- | produces=- | usd=$2.77
+Whenever another nontoken artifact you control enters, you may pay {2}. If you do, create a token that's a copy of that artifact.
+
+## Sculpting Steel
+cost={3} | type=Artifact | CI=- | produces=- | usd=$3.41
+You may have this artifact enter as a copy of any artifact on the battlefield.
+
+## Prototype Portal
+cost={4} | type=Artifact | CI=- | produces=- | usd=$0.76
+Imprint — When this artifact enters, you may exile an artifact card from your hand. {X}, {T}: Create a token that's a copy of the exiled card. X is the mana value of that card.
+
+## Echoes of Eternity
+cost={3}{C}{C}{C} | type=Kindred Enchantment — Eldrazi | CI=- | produces=- | usd=$2.68
+If a triggered ability of a colorless spell you control or another colorless permanent you control triggers, that ability triggers an additional time. Whenever you cast a colorless spell, copy it. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)
+
+## Panharmonicon
+cost={4} | type=Artifact | CI=- | produces=- | usd=$6.82
+If an artifact or creature entering causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time.
+
+## Mirror Box
+cost={3} | type=Artifact | CI=- | produces=- | usd=$5.65
+The "legend rule" doesn't apply to permanents you control. Each legendary creature you control gets +1/+1. Each nontoken creature you control gets +1/+1 for each other creature you control with the same name as that creature.
+
+## Helm of the Host
+cost={4} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$6.25
+At the beginning of combat on your turn, create a token that's a copy of equipped creature, except the token isn't legendary. That token gains haste. Equip {5}
+
+## Chrome Dome
+cost={2} | type=Artifact Creature — Robot Ninja | CI=- | produces=- | usd=$1.35
+Other artifact creatures you control get +1/+0. {5}: Create a token that's a copy of another target artifact you control. That token gains haste. Sacrifice it at the beginning of the next end step.
+
+## Forsaken Monument
+cost={5} | type=Legendary Artifact | CI=- | produces=C | usd=$6.37
+Colorless creatures you control get +2/+2. Whenever you tap a permanent for {C}, add an additional {C}. Whenever you cast a colorless spell, you gain 2 life.
+
+## Steel Overseer
+cost={2} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$0.37
+{T}: Put a +1/+1 counter on each artifact creature you control.
+
+## Chief of the Foundry
+cost={3} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$0.22
+Other artifact creatures you control get +1/+1.
+
+## Ultron, Machine Overlord
+cost={5} | type=Legendary Artifact Creature — Robot Villain | CI=- | produces=- | usd=$3.63
+Flying Other Robots and Constructs you control get +2/+2.
+
+## Krang, Utrom Warlord
+cost={9} | type=Legendary Artifact Creature — Utrom Robot | CI=- | produces=- | usd=$22.88
+Flying, trample, indestructible, haste Other artifact creatures you control have flying, trample, indestructible, and haste.
+
+## Glaring Fleshraker
+cost={2}{C} | type=Creature — Eldrazi Drone | CI=- | produces=C | usd=$1.39
+Whenever you cast a colorless spell, create a 0/1 colorless Eldrazi Spawn creature token with "Sacrifice this token: Add {C}." Whenever another colorless creature you control enters, this creature deals 1 damage to each opponent.
+
+## Stridehangar Automaton
+cost={3} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$2.79
+Thopters you control get +1/+1. If one or more artifact tokens would be created under your control, those tokens plus an additional 1/1 colorless Thopter artifact creature token with flying are created instead.
+
+## Cybermen Squadron
+cost={7} | type=Artifact Creature — Cyberman | CI=- | produces=- | usd=$26.18
+Nonlegendary artifact creatures you control have myriad. (Whenever a creature with myriad attacks, for each opponent other than defending player, you may create a token copy that's tapped and attacking that player or a planeswalker they control. Exile the tokens at end of combat.)
+
+## Unwinding Clock
+cost={4} | type=Artifact | CI=- | produces=- | usd=$19.46
+Untap all artifacts you control during each other player's untap step.
+
+## Mystic Forge
+cost={4} | type=Artifact | CI=- | produces=- | usd=$3.34
+You may look at the top card of your library any time. You may cast artifact spells and colorless spells from the top of your library. {T}, Pay 1 life: Exile the top card of your library.
+
+## Liberator, Urza's Battlethopter
+cost={3} | type=Legendary Artifact Creature — Thopter | CI=- | produces=- | usd=$6.75
+Flash Flying You may cast colorless spells and artifact spells as though they had flash. Whenever you cast a spell, if the amount of mana spent to cast that spell is greater than Liberator's power, put a +1/+1 counter on Liberator.
+
+## Myr Battlesphere
+cost={7} | type=Artifact Creature — Myr Construct | CI=- | produces=- | usd=$0.35
+When this creature enters, create four 1/1 colorless Myr artifact creature tokens. Whenever this creature attacks, you may tap X untapped Myr you control. If you do, this creature gets +X/+0 until end of turn and deals X damage to the player or planeswalker it's attacking.
+
+## Wurmcoil Engine
+cost={6} | type=Artifact Creature — Phyrexian Wurm | CI=- | produces=- | usd=$10.93
+Deathtouch, lifelink When this creature dies, create a 3/3 colorless Phyrexian Wurm artifact creature token with deathtouch and a 3/3 colorless Phyrexian Wurm artifact creature token with lifelink.
+
+## Solemn Simulacrum
+cost={4} | type=Artifact Creature — Golem | CI=- | produces=- | usd=$0.29
+When this creature enters, you may search your library for a basic land card, put that card onto the battlefield tapped, then shuffle. When this creature dies, you may draw a card.
+
+## Portal to Phyrexia
+cost={9} | type=Artifact | CI=- | produces=- | usd=$50.98
+When this artifact enters, each opponent sacrifices three creatures of their choice. At the beginning of your upkeep, put target creature card from a graveyard onto the battlefield under your control. It's a Phyrexian in addition to its other types.
+
+## Blightsteel Colossus
+cost={12} | type=Artifact Creature — Phyrexian Golem | CI=- | produces=- | usd=$38.75
+Trample, infect, indestructible If Blightsteel Colossus would be put into a graveyard from anywhere, reveal Blightsteel Colossus and shuffle it into its owner's library instead.
+
+## Kuldotha Forgemaster
+cost={5} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$10.79
+{T}, Sacrifice three artifacts: Search your library for an artifact card, put it onto the battlefield, then shuffle.
+
+## Mycosynth Golem
+cost={11} | type=Artifact Creature — Golem | CI=- | produces=- | usd=$50.51
+Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.) Artifact creature spells you cast have affinity for artifacts. (They cost {1} less to cast for each artifact you control.)
+
+## Walking Ballista
+cost={X}{X} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$10.73
+This creature enters with X +1/+1 counters on it. {4}: Put a +1/+1 counter on this creature. Remove a +1/+1 counter from this creature: It deals 1 damage to any target.
+
+## Threefold Thunderhulk
+cost={7} | type=Artifact Creature — Gnome | CI=- | produces=- | usd=$0.37
+This creature enters with three +1/+1 counters on it. Whenever this creature enters or attacks, create a number of 1/1 colorless Gnome artifact creature tokens equal to its power. {2}, Sacrifice another artifact: Put a +1/+1 counter on this creature.
+
+## Cryptothrall
+cost={4} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$34.14
+Protector — Other artifact creatures you control have hexproof.
+
+## Darksteel Forge
+cost={9} | type=Artifact | CI=- | produces=- | usd=$47.65
+Artifacts you control have indestructible. (Effects that say "destroy" don't destroy them. Artifact creatures with indestructible can't be destroyed by damage.)
+
+## Commander's Plate
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$47.74
+Equipped creature gets +3/+3 and has protection from each color that's not in your commander's color identity. Equip commander {3} Equip {5}
+
+## Scrap Trawler
+cost={3} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$3.12
+Whenever this creature dies or another artifact you control is put into a graveyard from the battlefield, return to your hand target artifact card in your graveyard with lesser mana value.
+
+## Karn, Scion of Urza
+cost={4} | type=Legendary Planeswalker — Karn | CI=- | produces=- | usd=$3.87
++1: Reveal the top two cards of your library. An opponent chooses one of them. Put that card into your hand and exile the other with a silver counter on it. −1: Put a card you own with a silver counter on it from exile into your hand. −2: Create a 0/0 colorless Construct artifact creature token with "This token gets +1/+1 for each artifact you control."
+
+## Roaming Throne
+cost={4} | type=Artifact Creature — Golem | CI=- | produces=- | usd=$49.98
+Ward {2} As this creature enters, choose a creature type. This creature is the chosen type in addition to its other types. If a triggered ability of another creature you control of the chosen type triggers, it triggers an additional time.
+
+## Urza's Workshop
+cost=- | type=Land — Urza's | CI=- | produces=C | usd=$20.69
+{T}: Add {C}. Metalcraft — {T}: Add {C} for each Urza's land you control. Activate only if you control three or more artifacts.
+
+## Ugin's Labyrinth
+cost=- | type=Land | CI=- | produces=C | usd=$13.60
+Imprint — When this land enters, you may exile a colorless card with mana value 7 or greater from your hand. {T}: Add {C}. If a card is exiled with this land, add {C}{C} instead. {T}: Return the exiled card to its owner's hand.
+
+## Chimil, the Inner Sun
+cost={6} | type=Legendary Artifact | CI=- | produces=- | usd=$9.73
+Spells you control can't be countered. At the beginning of your end step, discover 5. (Exile cards from the top of your library until you exile a nonland card with mana value 5 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)
+
+## The Vision
+cost={4} | type=Legendary Artifact Creature — Robot Hero | CI=- | produces=- | usd=$1.00
+Flying, vigilance Whenever you cast a noncreature spell, choose one that hasn't been chosen this turn — • Solar Beam — The Vision gains double strike until end of turn. • Density Control — The Vision gains indestructible until end of turn. • Technopathy — Draw a card.
+
+## Eldrazi Confluence
+cost={2}{C}{C} | type=Instant | CI=- | produces=C | usd=$11.97
+Choose three. You may choose the same mode more than once. • Target creature gets +3/-3 until end of turn. • Exile target nonland permanent, then return it to the battlefield tapped under its owner's control. • Create a 1/1 colorless Eldrazi Scion creature token with "Sacrifice this token: Add {C}."
+
+## Worn Powerstone
+cost={3} | type=Artifact | CI=- | produces=C | usd=$0.39
+This artifact enters tapped. {T}: Add {C}{C}.
+
+## Extraplanar Lens
+cost={3} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$13.12
+Imprint — When this artifact enters, you may exile target land you control. Whenever a land with the same name as the exiled card is tapped for mana, its controller adds one mana of any type that land produced.
+
+## Thran Temporal Gateway
+cost={4} | type=Legendary Artifact | CI=- | produces=- | usd=$0.53
+{4}, {T}: You may put a historic permanent card from your hand onto the battlefield. (Artifacts, legendaries, and Sagas are historic.)
+
+## Quicksilver Amulet
+cost={4} | type=Artifact | CI=- | produces=- | usd=$3.19
+{4}, {T}: You may put a creature card from your hand onto the battlefield.
+
+## Mind's Eye
+cost={5} | type=Artifact | CI=- | produces=- | usd=$5.35
+Whenever an opponent draws a card, you may pay {1}. If you do, draw a card.
+
+## Marvin, Murderous Mimic
+cost={2} | type=Legendary Artifact Creature — Toy | CI=- | produces=- | usd=$3.85
+Marvin has all activated abilities of creatures you control that don't have the same name as this creature.
+
+## Platinum Angel
+cost={7} | type=Artifact Creature — Angel | CI=- | produces=- | usd=$9.97
+Flying You can't lose the game and your opponents can't win the game.

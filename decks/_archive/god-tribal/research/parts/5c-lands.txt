@@ -1,0 +1,29 @@
+1x Command Tower
+1x Path of Ancestry
+1x Cavern of Souls
+1x The World Tree
+1x Tyrite Sanctum
+1x Gods' Eye, Gate to the Reikai
+1x Plaza of Heroes
+1x Secluded Courtyard
+1x Unclaimed Territory
+1x Exotic Orchard
+1x Reflecting Pool
+1x Mana Confluence
+1x City of Brass
+1x Cascading Cataracts
+1x Spara's Headquarters
+1x Raffine's Tower
+1x Xander's Lounge
+1x Ziatora's Proving Ground
+1x Jetmir's Garden
+1x Indatha Triome
+1x Ketria Triome
+1x Raugrin Triome
+1x Savai Triome
+1x Zagoth Triome
+3x Plains
+3x Island
+2x Swamp
+3x Mountain
+3x Forest

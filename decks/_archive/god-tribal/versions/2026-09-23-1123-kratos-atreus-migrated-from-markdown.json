@@ -1,0 +1,425 @@
+{
+  "takenAt": "2026-09-23T11:23:11.705Z",
+  "listId": "kratos-atreus",
+  "label": "migrated from markdown",
+  "reason": "state at migration",
+  "list": {
+    "label": "Kratos Atreus",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Kratos, Stoic Father",
+            "qty": 1
+          },
+          {
+            "name": "Atreus, Impulsive Son",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Path of Ancestry",
+            "qty": 1
+          },
+          {
+            "name": "Cavern of Souls",
+            "qty": 1
+          },
+          {
+            "name": "Tyrite Sanctum",
+            "qty": 1
+          },
+          {
+            "name": "Gods' Eye, Gate to the Reikai",
+            "qty": 1
+          },
+          {
+            "name": "Plaza of Heroes",
+            "qty": 1
+          },
+          {
+            "name": "Secluded Courtyard",
+            "qty": 1
+          },
+          {
+            "name": "Unclaimed Territory",
+            "qty": 1
+          },
+          {
+            "name": "Exotic Orchard",
+            "qty": 1
+          },
+          {
+            "name": "Reflecting Pool",
+            "qty": 1
+          },
+          {
+            "name": "Minamo, School at Water's Edge",
+            "qty": 1
+          },
+          {
+            "name": "Raugrin Triome",
+            "qty": 1
+          },
+          {
+            "name": "Hallowed Fountain",
+            "qty": 1
+          },
+          {
+            "name": "Steam Vents",
+            "qty": 1
+          },
+          {
+            "name": "Sacred Foundry",
+            "qty": 1
+          },
+          {
+            "name": "Adarkar Wastes",
+            "qty": 1
+          },
+          {
+            "name": "Shivan Reef",
+            "qty": 1
+          },
+          {
+            "name": "Battlefield Forge",
+            "qty": 1
+          },
+          {
+            "name": "Seachrome Coast",
+            "qty": 1
+          },
+          {
+            "name": "Spirebluff Canal",
+            "qty": 1
+          },
+          {
+            "name": "Inspiring Vantage",
+            "qty": 1
+          },
+          {
+            "name": "Deserted Beach",
+            "qty": 1
+          },
+          {
+            "name": "Stormcarved Coast",
+            "qty": 1
+          },
+          {
+            "name": "Sundown Pass",
+            "qty": 1
+          },
+          {
+            "name": "Mystic Monastery",
+            "qty": 1
+          },
+          {
+            "name": "Plains",
+            "qty": 4
+          },
+          {
+            "name": "Island",
+            "qty": 3
+          },
+          {
+            "name": "Mountain",
+            "qty": 3
+          }
+        ]
+      },
+      {
+        "name": "Ramp",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Fellwar Stone",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Progress",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Creativity",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Conviction",
+            "qty": 1
+          },
+          {
+            "name": "Azorius Signet",
+            "qty": 1
+          },
+          {
+            "name": "Izzet Signet",
+            "qty": 1
+          },
+          {
+            "name": "Boros Signet",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Untap Package",
+        "cards": [
+          {
+            "name": "Thousand-Year Elixir",
+            "qty": 1
+          },
+          {
+            "name": "Magewright's Stone",
+            "qty": 1
+          },
+          {
+            "name": "Unstoppable Plan",
+            "qty": 1
+          },
+          {
+            "name": "Staff of Domination",
+            "qty": 1
+          },
+          {
+            "name": "Vizier of Tumbling Sands",
+            "qty": 1
+          },
+          {
+            "name": "Kelpie Guide",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Tribal Payoffs",
+        "cards": [
+          {
+            "name": "Herald's Horn",
+            "qty": 1
+          },
+          {
+            "name": "Vanquisher's Banner",
+            "qty": 1
+          },
+          {
+            "name": "Urza's Incubator",
+            "qty": 1
+          },
+          {
+            "name": "Icon of Ancestry",
+            "qty": 1
+          },
+          {
+            "name": "Kindred Discovery",
+            "qty": 1
+          },
+          {
+            "name": "Roaming Throne",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Interaction",
+        "cards": [
+          {
+            "name": "Swords to Plowshares",
+            "qty": 1
+          },
+          {
+            "name": "Path to Exile",
+            "qty": 1
+          },
+          {
+            "name": "Cyclonic Rift",
+            "qty": 1
+          },
+          {
+            "name": "Chaos Warp",
+            "qty": 1
+          },
+          {
+            "name": "Counterspell",
+            "qty": 1
+          },
+          {
+            "name": "Wrath of God",
+            "qty": 1
+          },
+          {
+            "name": "Austere Command",
+            "qty": 1
+          },
+          {
+            "name": "Flawless Maneuver",
+            "qty": 1
+          },
+          {
+            "name": "Fierce Guardianship",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw",
+        "cards": [
+          {
+            "name": "Rhystic Study",
+            "qty": 1
+          },
+          {
+            "name": "Tome of Legends",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Gods",
+        "cards": [
+          {
+            "name": "Iroas, God of Victory",
+            "qty": 1
+          },
+          {
+            "name": "Keranos, God of Storms",
+            "qty": 1
+          },
+          {
+            "name": "Ephara, God of the Polis",
+            "qty": 1
+          },
+          {
+            "name": "Heliod, Sun-Crowned",
+            "qty": 1
+          },
+          {
+            "name": "Purphoros, God of the Forge",
+            "qty": 1
+          },
+          {
+            "name": "Thassa, Deep-Dwelling",
+            "qty": 1
+          },
+          {
+            "name": "God-Eternal Oketra",
+            "qty": 1
+          },
+          {
+            "name": "God-Eternal Kefnet",
+            "qty": 1
+          },
+          {
+            "name": "Ojer Taq, Deepest Foundation",
+            "qty": 1
+          },
+          {
+            "name": "Ojer Axonil, Deepest Might",
+            "qty": 1
+          },
+          {
+            "name": "Ojer Pakpatiq, Deepest Epoch",
+            "qty": 1
+          },
+          {
+            "name": "Halvar, God of Battle",
+            "qty": 1
+          },
+          {
+            "name": "Birgi, God of Storytelling",
+            "qty": 1
+          },
+          {
+            "name": "Alrund, God of the Cosmos",
+            "qty": 1
+          },
+          {
+            "name": "Toralf, God of Fury",
+            "qty": 1
+          },
+          {
+            "name": "Reidane, God of the Worthy",
+            "qty": 1
+          },
+          {
+            "name": "Cosima, God of the Voyage",
+            "qty": 1
+          },
+          {
+            "name": "Ilharg, the Raze-Boar",
+            "qty": 1
+          },
+          {
+            "name": "The Locust God",
+            "qty": 1
+          },
+          {
+            "name": "Surtr, Fiery Jötun",
+            "qty": 1
+          },
+          {
+            "name": "Thor, God of Thunder",
+            "qty": 1
+          },
+          {
+            "name": "Thor Odinson",
+            "qty": 1
+          },
+          {
+            "name": "The Mighty Thor, Jane Foster",
+            "qty": 1
+          },
+          {
+            "name": "Kratos, God of War",
+            "qty": 1
+          },
+          {
+            "name": "Djeru and Hazoret",
+            "qty": 1
+          },
+          {
+            "name": "Hazoret, Godseeker",
+            "qty": 1
+          },
+          {
+            "name": "Oketra the True",
+            "qty": 1
+          },
+          {
+            "name": "Venat, Heart of Hydaelyn",
+            "qty": 1
+          },
+          {
+            "name": "Valkyrior Skyrider",
+            "qty": 1
+          },
+          {
+            "name": "Sif's Spearmaster",
+            "qty": 1
+          },
+          {
+            "name": "Thor, Asgard's Avenger",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

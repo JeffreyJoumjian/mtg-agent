@@ -1,0 +1,91 @@
+1 Esika, God of the Tree
+1 Thran Temporal Gateway
+1 Honor-Worn Shaku
+1 Heroes' Podium
+1 Day of Destiny
+1 Skyshroud Claim
+1 Smothering Tithe
+1 Fierce Guardianship (CMM) 94
+1 Aclazotz, Deepest Betrayal
+1 Akroma's Will
+1 Alrund, God of the Cosmos
+1 Altar of the Pantheon
+1 Anguished Unmaking
+1 Arcane Signet
+1 Asmodeus the Archfiend
+1 Assassin's Trophy
+1 Austere Command
+1 Birds of Paradise
+1 Bloom Tender
+1 Cascading Cataracts
+1 Cavern of Souls
+1 Chromatic Lantern
+1 City of Brass
+1 Command Tower (ELD) 333
+1 Counterspell
+1 Cultivate
+1 Exotic Orchard
+1 Faeburrow Elder
+1 Farseek
+1 Fellwar Stone
+3 Forest
+1 God-Eternal Bontu
+1 God-Eternal Kefnet
+1 God-Eternal Oketra
+1 God-Eternal Rhonas
+1 Gods' Eye, Gate to the Reikai
+1 Guardian Project
+1 Halvar, God of Battle (KHM) 15
+1 Havi, the All-Father
+1 Herald's Horn
+1 Heroic Intervention
+1 Icon of Ancestry
+1 Ilharg, the Raze-Boar
+1 Indatha Triome
+1 Inga and Esika
+1 Iroas, God of Victory
+3 Island (THB) 251
+1 Jetmir's Garden
+1 Keranos, God of Storms
+1 Ketria Triome
+1 Kindred Discovery
+1 Kolvori, God of Kinship
+1 Mana Confluence
+3 Mountain (THB) 253
+1 Myrkul, Lord of Bones
+1 Nature's Lore
+1 Ojer Kaslem, Deepest Growth
+1 Ojer Taq, Deepest Foundation
+1 Path of Ancestry
+1 Path to Exile
+3 Plains (THB) 250
+1 Plaza of Heroes
+1 Purphoros, God of the Forge
+1 Raffine's Tower
+1 Raugrin Triome (IKO) 251
+1 Reflecting Pool
+1 Reki, the History of Kamigawa
+1 Rhystic Study
+1 Roaming Throne (MAR) 99
+1 Savai Triome
+1 Secluded Courtyard
+1 Sol Ring (SLD) 1734
+1 Spara's Headquarters
+1 Surtr, Fiery Jötun
+2 Swamp
+1 Swords to Plowshares (PMEI) 2026-4
+1 Thassa, Deep-Dwelling
+1 The Capitoline Triad
+1 The World Tree
+1 Thor, God of Thunder
+1 Three Visits
+1 Tyrite Sanctum
+1 Unclaimed Territory
+1 Urza's Incubator
+1 Vanquisher's Banner
+1 Venat, Heart of Hydaelyn
+1 Xander's Lounge
+1 Xenagos, God of Revels
+1 Zagoth Triome
+1 Ziatora's Proving Ground
+1 Zodiark, Umbral God

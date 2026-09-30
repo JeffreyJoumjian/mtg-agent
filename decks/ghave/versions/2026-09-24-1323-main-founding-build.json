@@ -1,0 +1,57 @@
+{
+  "takenAt": "2026-09-24T13:23:10.878Z",
+  "listId": "main",
+  "label": "Founding build",
+  "reason": "before Founding build",
+  "list": {
+    "label": "Main",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": []
+      },
+      {
+        "name": "Lands",
+        "cards": []
+      },
+      {
+        "name": "Ramp & Mana",
+        "cards": []
+      },
+      {
+        "name": "Card Draw",
+        "cards": []
+      },
+      {
+        "name": "Removal & Interaction",
+        "cards": []
+      },
+      {
+        "name": "Board Wipes",
+        "cards": []
+      },
+      {
+        "name": "Token Engines",
+        "cards": []
+      },
+      {
+        "name": "Counter Engines",
+        "cards": []
+      },
+      {
+        "name": "Token Doublers",
+        "cards": []
+      },
+      {
+        "name": "Sacrifice Outlets",
+        "cards": []
+      },
+      {
+        "name": "Drain Payoffs",
+        "cards": []
+      }
+    ]
+  }
+}

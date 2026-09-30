@@ -1,0 +1,79 @@
+1 The Scarlet Witch (MSH) 368
+1 Arcane Bombardment (SNC) 101
+1 Arcane Signet (FIC) 332
+1 Arena of Glory (MH3) 215
+1 Artist's Talent (BLB) 124
+1 Ashling, Flame Dancer (MH3) 115
+1 Big Score (SNC) 102
+1 Blackblade Reforged (CMR) 457
+1 Boltwave (FDN) 79
+1 Brass's Bounty (RIX) 94
+1 Castle Embereth (TDC) 347
+1 Champion's Helm (FIC) 337
+1 Chandra's Ignition (LCC) 220
+1 Chaos Warp (MAR) 69
+1 Commander's Plate (CMR) 305
+1 Commune with Lava (C20) 149
+1 Conqueror's Flail (FIC) 340
+1 Crackle with Power (STX) 95
+1 Deflecting Swat (CMM) 214
+1 Desperate Ritual (UMA) 127
+1 Disrupt Decorum (CLB) 789
+1 Electro, Assaulting Battery (SPM) 76
+1 Electrodominance (RNA) 99
+1 Fated Firepower (TLA) 132
+1 Fiery Confluence (TLE) 165
+1 Fiery Emancipation (M21) 366
+1 Fiery Inscription (LTR) 126
+1 Forge of Heroes (FIC) 395
+1 Gamble (DMR) 121
+1 Gauntlet of Power (DMR) 223
+1 Guttersnipe (TDC) 217
+1 Hex Magic (MSH) 133
+1 Hit the Mother Lode (LCI) 153
+1 Ignite the Future (AFC) 129
+1 Inspired Tinkering (CLB) 183
+1 Jaya's Immolating Inferno (DOM) 133
+1 Jeska's Will (CLB) 799
+1 Kazuul, Tyrant of the Cliffs (SCD) 148
+1 Livaan, Cultist of Tiamat (CLB) 188
+1 Longshot, Rebel Bowman (TLE) 120
+1 Mana Geyser (CNS) 147
+1 Mines of Moria (LTR) 257
+1 Mithril Coat (LTR) 245
+1 Mizzix's Mastery (RVR) 118
+22 Mountain (THB) 253
+1 Neheb, the Eternal (CMM) 244
+1 Nico Minoru, Runaway (MSC) 700
+1 Nykthos, Shrine to Nyx (PPRO) 2022-3
+1 Past in Flames (PLST) MM3-105
+1 Pyretic Ritual (SLD) 1064
+1 Pyromancer's Goggles (FDN) 677
+1 Reforge the Soul (INR) 167
+1 Repeated Reverberation (M20) 156
+1 Return the Favor (OTJ) 142
+1 Rogue's Passage (PLST) C17-272
+1 Ruby Medallion (CMM) 405
+1 Runechanter's Pike (ISD) 231
+1 Seething Song (PLST) C21-179
+1 Shatterskull Smashing (ZNR) 161
+1 Sol Ring (SLD) 2683
+1 Storm King's Thunder (CLB) 196
+1 Storm-Kiln Artist (CMM) 644
+1 The Fire Crystal (FIN) 135
+1 The One Ring (LTR) 246
+1 The Vision and Scarlet Witch (MSC) 707
+1 Thor, God of Thunder (MSH) 156
+1 Tyrite Sanctum (DMC) 240
+1 Unexpected Windfall (AFR) 164
+1 Untimely Malfunction (DSK) 161
+1 Urabrask (MOM) 169
+1 Valakut Awakening (ZNR) 174
+1 Valakut, the Molten Pinnacle (ZNE) 29
+1 Vandalblast (VOC) 152
+1 Volcanic Vision (DTK) 167
+1 War Room (CMR) 361
+1 Wheel of Fortune (30A) 179
+1 Wiccan, Young Avenger (MSC) 557
+1 Will of the Jeskai (TDC) 40
+1 Zuko's Exile (TLA) 3

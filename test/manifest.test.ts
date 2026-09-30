@@ -37,3 +37,26 @@ test("buildKeywords drops stopwords and short tokens from the title", () => {
   expect(keywords).toContain("golden");
   expect(keywords).toContain("rules");
 });
+
+test("renderRulesIndex lists every section file by chapter, with each part's rule range and keyword labels", () => {
+  const { renderRulesIndex } = require("../scripts/lib/manifest.ts");
+  const out = renderRulesIndex({
+    version: "2026-08-07",
+    effectiveDate: "August 7, 2026",
+    chapters: [
+      { num: 1, title: "Game Concepts", sections: ["100"] },
+      { num: 7, title: "Additional Rules", sections: ["702"] },
+    ],
+    chunks: [
+      { num: "100", title: "General", chapter: 1, file: "rules/sections/100-general.md" },
+      {
+        num: "702", title: "Keyword Abilities", chapter: 7, file: "rules/sections/702-keyword-abilities.part1.md", part: 1,
+        ruleRange: ["702.1", "702.19f"], labels: ["Most abilities describe exactly what they do in the card’...", "Deathtouch", "Trample"],
+      },
+    ],
+  });
+  expect(out).toContain("Version 2026-08-07 (effective August 7, 2026)");
+  expect(out).toContain("## 1. Game Concepts\n\n- 100 General → 100-general.md\n");
+  expect(out).toContain("- 702 Keyword Abilities, part 1 (702.1–702.19f) → 702-keyword-abilities.part1.md: Deathtouch, Trample\n");
+  expect(out).not.toContain("Most abilities describe");
+});

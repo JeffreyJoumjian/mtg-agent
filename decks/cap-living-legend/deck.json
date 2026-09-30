@@ -1,0 +1,887 @@
+{
+  "schema": 1,
+  "name": "Captain America, Living Legend — Azorius Free-Crew Vehicles",
+  "format": "commander",
+  "description": "**The engine:** every creature you control gets \"the first time it becomes tapped during your\nturn, untap it\" (CR 603.2e — cause-agnostic, so cost-taps count). That erases every tap cost in\nthe deck: Crew is free and your blockers stay up, Station fires TWICE per creature per turn,\nevery mana dork taps for double, convoke and improvise cost nothing, and the whole team gets\npseudo-vigilance (CR 508.2b puts the untap before blockers; CR 506.4b keeps them attacking).\n\n**Two limits that shape the list.** (1) The trigger says \"during your turn\" — Cap does NOTHING\non opponents' turns, so the deck must be proactive, and untappers that work on their turns\n(Lita, Unwinding Clock effects) are covering a real hole. (2) The untap always resolves AFTER\nthe spell/ability that caused the tap is fully cast (CR 601.2i → 603.3), so the bonus mana can\nnever pay for the spell that generated it — tap with priority first, then cast.\n\nGrounds: `research/decisions.md`.",
+  "lists": {
+    "main": {
+      "label": "Main",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Captain America, Living Legend", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Academy Ruins", "qty": 1 },
+            { "name": "Adagia, Windswept Bastion", "qty": 1 },
+            { "name": "Adarkar Wastes", "qty": 1 },
+            { "name": "Ancient Den", "qty": 1 },
+            { "name": "Archway of Innovation", "qty": 1 },
+            { "name": "Avengers Tower", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Deserted Beach", "qty": 1 },
+            { "name": "Eiganjo, Seat of the Empire", "qty": 1 },
+            { "name": "Flooded Strand", "qty": 1 },
+            { "name": "Floodfarm Verge", "qty": 1 },
+            { "name": "Glacial Fortress", "qty": 1 },
+            { "name": "Hallowed Fountain", "qty": 1 },
+            { "name": "Inventors' Fair", "qty": 1 },
+            { "name": "Island", "qty": 4 },
+            { "name": "Mech Hangar", "qty": 1 },
+            { "name": "Minamo, School at Water's Edge", "qty": 1 },
+            { "name": "Mystic Gate", "qty": 1 },
+            { "name": "Otawara, Soaring City", "qty": 1 },
+            { "name": "Plains", "qty": 4 },
+            { "name": "Prairie Stream", "qty": 1 },
+            { "name": "Prismatic Vista", "qty": 1 },
+            { "name": "Rogue's Passage", "qty": 1 },
+            { "name": "Sea of Clouds", "qty": 1 },
+            { "name": "Seachrome Coast", "qty": 1 },
+            { "name": "Seat of the Synod", "qty": 1 },
+            { "name": "Tundra", "qty": 1 },
+            { "name": "Urza's Saga", "qty": 1 },
+            { "name": "Uthros, Titanic Godcore", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp — Doubled Dorks & Rocks",
+          "cards": [
+            { "name": "Apprentice Wizard", "qty": 1 },
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Grand Architect", "qty": 1 },
+            { "name": "Ornithopter of Paradise", "qty": 1 },
+            { "name": "Palladium Myr", "qty": 1 },
+            { "name": "Relic of Legends", "qty": 1 },
+            { "name": "Silver Myr", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Urza, Lord High Artificer", "qty": 1 },
+            { "name": "Vedalken Engineer", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw — Tap-Trigger Engines",
+          "cards": [
+            { "name": "Arcanis the Omnipotent", "qty": 1 },
+            { "name": "Emry, Lurker of the Loch", "qty": 1 },
+            { "name": "Esper Sentinel", "qty": 1 },
+            { "name": "Marvin, Murderous Mimic", "qty": 1 },
+            { "name": "Mechan Navigator", "qty": 1 },
+            { "name": "Sanwell, Avenger Ace", "qty": 1 },
+            { "name": "Shorikai, Genesis Engine", "qty": 1 },
+            { "name": "Sram, Senior Edificer", "qty": 1 },
+            { "name": "Tui and La, Moon and Ocean", "qty": 1 },
+            { "name": "Unctus, Grand Metatect", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Untappers, Crew & Station Fuel",
+          "cards": [
+            { "name": "Cloudspire Captain", "qty": 1 },
+            { "name": "Drumbellower", "qty": 1 },
+            { "name": "Hotshot Mechanic", "qty": 1 },
+            { "name": "Kotori, Pilot Prodigy", "qty": 1 },
+            { "name": "Lita, Mechanical Engineer", "qty": 1 },
+            { "name": "Prodigy's Prototype", "qty": 1 },
+            { "name": "Retrofitter Foundry", "qty": 1 },
+            { "name": "Simulacrum Synthesizer", "qty": 1 },
+            { "name": "Thousand-Year Elixir", "qty": 1 },
+            { "name": "Unwinding Clock", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Vehicles & Spacecraft — Payload",
+          "cards": [
+            { "name": "Dawnsire, Sunstar Dreadnought", "qty": 1 },
+            { "name": "Extinguisher Battleship", "qty": 1 },
+            { "name": "Parhelion II", "qty": 1 },
+            { "name": "Reaver Titan", "qty": 1 },
+            { "name": "Royal Talon Fighter Jet", "qty": 1 },
+            { "name": "Salvation Engine", "qty": 1 },
+            { "name": "Skysovereign, Consul Flagship", "qty": 1 },
+            { "name": "Smuggler's Copter", "qty": 1 },
+            { "name": "The Seriema", "qty": 1 },
+            { "name": "The Thanos-Copter", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Payoffs & Finishers",
+          "cards": [
+            { "name": "Halo Fountain", "qty": 1 },
+            { "name": "Iron Spider, Stark Upgrade", "qty": 1 },
+            { "name": "Krang, Utrom Warlord", "qty": 1 },
+            { "name": "Mu Yanling, Wind Rider", "qty": 1 },
+            { "name": "Shuri, Wakandan Inventor", "qty": 1 },
+            { "name": "Steel Overseer", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tutors & Recursion",
+          "cards": [
+            { "name": "Enlightened Tutor", "qty": 1 },
+            { "name": "Whir of Invention", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction",
+          "cards": [
+            { "name": "Counterspell", "qty": 1 },
+            { "name": "Cyclonic Rift", "qty": 1 },
+            { "name": "Dispatch", "qty": 1 },
+            { "name": "Dovin's Veto", "qty": 1 },
+            { "name": "Generous Gift", "qty": 1 },
+            { "name": "Into the Flood Maw", "qty": 1 },
+            { "name": "March of Otherworldly Light", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Stroke of Midnight", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            { "name": "Split Up", "qty": 1 },
+            { "name": "Supreme Verdict", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection",
+          "cards": [
+            { "name": "Captain America, Super-Soldier", "qty": 1 },
+            { "name": "Clever Concealment", "qty": 1 },
+            { "name": "Swiftfoot Boots", "qty": 1 },
+            { "name": "Teferi's Protection", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "counters": {
+      "label": "Counters",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Captain America, Living Legend", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Abandoned Air Temple", "qty": 1 },
+            { "name": "Academy Ruins", "qty": 1 },
+            { "name": "Adarkar Wastes", "qty": 1 },
+            { "name": "Ancient Den", "qty": 1 },
+            { "name": "Avengers Tower", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Deserted Beach", "qty": 1 },
+            { "name": "Eiganjo, Seat of the Empire", "qty": 1 },
+            { "name": "Flooded Strand", "qty": 1 },
+            { "name": "Floodfarm Verge", "qty": 1 },
+            { "name": "Glacial Fortress", "qty": 1 },
+            { "name": "Hallowed Fountain", "qty": 1 },
+            { "name": "Inventors' Fair", "qty": 1 },
+            { "name": "Island", "qty": 3 },
+            { "name": "Karn's Bastion", "qty": 1 },
+            { "name": "Minamo, School at Water's Edge", "qty": 1 },
+            { "name": "Mystic Gate", "qty": 1 },
+            { "name": "Otawara, Soaring City", "qty": 1 },
+            { "name": "Plains", "qty": 7 },
+            { "name": "Prairie Stream", "qty": 1 },
+            { "name": "Prismatic Vista", "qty": 1 },
+            { "name": "Rogue's Passage", "qty": 1 },
+            { "name": "Sea of Clouds", "qty": 1 },
+            { "name": "Seachrome Coast", "qty": 1 },
+            { "name": "Seat of the Synod", "qty": 1 },
+            { "name": "Tundra", "qty": 1 },
+            { "name": "Urza's Saga", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp",
+          "cards": [
+            { "name": "Apprentice Wizard", "qty": 1 },
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Ornithopter of Paradise", "qty": 1 },
+            { "name": "Relic of Legends", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Arcanis the Omnipotent", "qty": 1 },
+            { "name": "Marvin, Murderous Mimic", "qty": 1 },
+            { "name": "Shorikai, Genesis Engine", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Equipment & Auras — Voltron",
+          "cards": [
+            { "name": "Basilisk Collar", "qty": 1 },
+            { "name": "Commander's Plate", "qty": 1 },
+            { "name": "Light of Promise", "qty": 1 },
+            { "name": "Maul of the Skyclaves", "qty": 1 },
+            { "name": "Mithril Coat", "qty": 1 },
+            { "name": "Pippin, Guard of the Citadel", "qty": 1 },
+            { "name": "Shadowspear", "qty": 1 },
+            { "name": "Stark's Ingenuity", "qty": 1 },
+            { "name": "Super-Soldier Serum", "qty": 1 },
+            { "name": "Swiftfoot Boots", "qty": 1 },
+            { "name": "Sword of Feast and Famine", "qty": 1 },
+            { "name": "Sword of Vengeance", "qty": 1 },
+            { "name": "Umezawa's Jitte", "qty": 1 },
+            { "name": "Unctus, Grand Metatect", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Equipment Tutors & Engines",
+          "cards": [
+            { "name": "Enlightened Tutor", "qty": 1 },
+            { "name": "Puresteel Paladin", "qty": 1 },
+            { "name": "Resplendent Mentor", "qty": 1 },
+            { "name": "Sram, Senior Edificer", "qty": 1 },
+            { "name": "Stoneforge Mystic", "qty": 1 },
+            { "name": "Stonehewer Giant", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Draw → Counters",
+          "cards": [
+            { "name": "Archivist", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Life Gain → Counters",
+          "cards": [
+            { "name": "Archangel of Thune", "qty": 1 },
+            { "name": "Auriok Champion", "qty": 1 },
+            { "name": "Elesh Norn, Mother of Machines", "qty": 1 },
+            { "name": "Heliod, Sun-Crowned", "qty": 1 },
+            { "name": "Soul Warden", "qty": 1 },
+            { "name": "Yoshimaru, Beloved Companion", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tap Counter Engines & Amplifier",
+          "cards": [
+            { "name": "Agent Phil Coulson", "qty": 1 },
+            { "name": "Lae'zel, Vlaakith's Champion", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Makers",
+          "cards": [
+            { "name": "Adeline, Resplendent Cathar", "qty": 1 },
+            { "name": "Brimaz, King of Oreskos", "qty": 1 },
+            { "name": "Elspeth, Storm Slayer", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Untappers",
+          "cards": [
+            { "name": "Drumbellower", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Evasion & Double Strike",
+          "cards": [
+            { "name": "Akroma's Will", "qty": 1 },
+            { "name": "The Destined Thief", "qty": 1 },
+            { "name": "Urdnan, Dromoka Warrior", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Finishers",
+          "cards": [
+            { "name": "Walking Ballista", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction",
+          "cards": [
+            { "name": "Counterspell", "qty": 1 },
+            { "name": "Cyclonic Rift", "qty": 1 },
+            { "name": "Dispatch", "qty": 1 },
+            { "name": "Dovin's Veto", "qty": 1 },
+            { "name": "Generous Gift", "qty": 1 },
+            { "name": "Gideon's Lawkeeper", "qty": 1 },
+            { "name": "March of Otherworldly Light", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Stroke of Midnight", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            { "name": "Split Up", "qty": 1 },
+            { "name": "Winds of Abandon", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection",
+          "cards": [
+            { "name": "Captain America, Super-Soldier", "qty": 1 },
+            { "name": "Clever Concealment", "qty": 1 },
+            { "name": "Giver of Runes", "qty": 1 },
+            { "name": "Mother of Runes", "qty": 1 },
+            { "name": "Patriot, Shield Wielder", "qty": 1 },
+            { "name": "Teferi's Protection", "qty": 1 },
+            { "name": "The Ozolith", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "engine": {
+      "label": "Engine",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Captain America, Living Legend", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Academy Ruins", "qty": 1 },
+            { "name": "Adagia, Windswept Bastion", "qty": 1 },
+            { "name": "Adarkar Wastes", "qty": 1 },
+            { "name": "Ancient Den", "qty": 1 },
+            { "name": "Archway of Innovation", "qty": 1 },
+            { "name": "Avengers Tower", "qty": 1 },
+            { "name": "Castle Ardenvale", "qty": 1 },
+            { "name": "Command Beacon", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Deserted Beach", "qty": 1 },
+            { "name": "Flooded Strand", "qty": 1 },
+            { "name": "Floodfarm Verge", "qty": 1 },
+            { "name": "Glacial Fortress", "qty": 1 },
+            { "name": "Hallowed Fountain", "qty": 1 },
+            { "name": "Island", "qty": 4 },
+            { "name": "Mech Hangar", "qty": 1 },
+            { "name": "Minamo, School at Water's Edge", "qty": 1 },
+            { "name": "Mishra's Factory", "qty": 1 },
+            { "name": "Mystic Gate", "qty": 1 },
+            { "name": "Otawara, Soaring City", "qty": 1 },
+            { "name": "Plains", "qty": 4 },
+            { "name": "Prairie Stream", "qty": 1 },
+            { "name": "Prismatic Vista", "qty": 1 },
+            { "name": "Sea of Clouds", "qty": 1 },
+            { "name": "Seachrome Coast", "qty": 1 },
+            { "name": "Seat of the Synod", "qty": 1 },
+            { "name": "Tundra", "qty": 1 },
+            { "name": "Urza's Saga", "qty": 1 },
+            { "name": "Uthros, Titanic Godcore", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp — Mana Creatures & Rocks",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Palladium Myr", "qty": 1 },
+            { "name": "Relic of Legends", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Springleaf Drum", "qty": 1 },
+            { "name": "Urza, Lord High Artificer", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Win Conditions — No Combat Required",
+          "cards": [
+            { "name": "Approach of the Second Sun", "qty": 1 },
+            { "name": "Halo Fountain", "qty": 1 },
+            { "name": "Jace, Wielder of Mysteries", "qty": 1 },
+            { "name": "Monument to Endurance", "qty": 1 },
+            { "name": "Psychosis Crawler", "qty": 1 },
+            { "name": "Throne of the God-Pharaoh", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Mill — Tap Payoff",
+          "cards": [
+            { "name": "Bruvac the Grandiloquent", "qty": 1 },
+            { "name": "Persistent Petitioners", "qty": 4 }
+          ]
+        },
+        {
+          "name": "Finders",
+          "cards": [
+            { "name": "Fabricate", "qty": 1 },
+            { "name": "Tribute Mage", "qty": 1 },
+            { "name": "Trophy Mage", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Makers",
+          "cards": [
+            { "name": "Myrel, Shield of Argive", "qty": 1 },
+            { "name": "Pestered Wellguard", "qty": 1 },
+            { "name": "Stonybrook Schoolmaster", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Doublers & Payoff",
+          "cards": [
+            { "name": "Anointed Procession", "qty": 1 },
+            { "name": "Belladonna Took", "qty": 1 },
+            { "name": "Mondrak, Glory Dominus", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tap Outlets — Free Second Taps",
+          "cards": [
+            { "name": "Kotori, Pilot Prodigy", "qty": 1 },
+            { "name": "Opposition", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tap Draw & Becomes-Tapped Payoffs",
+          "cards": [
+            { "name": "Arcanis the Omnipotent", "qty": 1 },
+            { "name": "Mechan Navigator", "qty": 1 },
+            { "name": "Shorikai, Genesis Engine", "qty": 1 },
+            { "name": "The Theorist, Jace Beleren", "qty": 1 },
+            { "name": "Tui and La, Moon and Ocean", "qty": 1 },
+            { "name": "Unctus, Grand Metatect", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tap Utility — Protection & Untap",
+          "cards": [
+            { "name": "Adept Watershaper", "qty": 1 },
+            { "name": "Giver of Runes", "qty": 1 },
+            { "name": "Ioreth of the Healing House", "qty": 1 },
+            { "name": "Mother of Runes", "qty": 1 },
+            { "name": "Pippin, Guard of the Citadel", "qty": 1 },
+            { "name": "The Wandering Rescuer", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Vehicles & Spacecraft — Tap Outlets",
+          "cards": [
+            { "name": "Smuggler's Copter", "qty": 1 },
+            { "name": "The Seriema", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Wipe-Proof Crew & Recovery",
+          "cards": [
+            { "name": "Faith's Reward", "qty": 1 },
+            { "name": "Gideon, Ally of Zendikar", "qty": 1 },
+            { "name": "Hangarback Walker", "qty": 1 },
+            { "name": "The Wandering Emperor", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction",
+          "cards": [
+            { "name": "Counterspell", "qty": 1 },
+            { "name": "Cyclonic Rift", "qty": 1 },
+            { "name": "Dispatch", "qty": 1 },
+            { "name": "Dovin's Veto", "qty": 1 },
+            { "name": "Generous Gift", "qty": 1 },
+            { "name": "March of Otherworldly Light", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Skyclave Apparition", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            { "name": "Winds of Abandon", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection — Let the Wipe Resolve",
+          "cards": [
+            { "name": "Akroma's Will", "qty": 1 },
+            { "name": "Clever Concealment", "qty": 1 },
+            { "name": "Eerie Interlude", "qty": 1 },
+            { "name": "Fierce Guardianship", "qty": 1 },
+            { "name": "Flawless Maneuver", "qty": 1 },
+            { "name": "Guardian of Faith", "qty": 1 },
+            { "name": "Restoration Angel", "qty": 1 },
+            { "name": "Teferi's Protection", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "mill": {
+      "label": "Mill",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Captain America, Living Legend", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Academy Ruins", "qty": 1 },
+            { "name": "Adarkar Wastes", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Deserted Beach", "qty": 1 },
+            { "name": "Flooded Strand", "qty": 1 },
+            { "name": "Floodfarm Verge", "qty": 1 },
+            { "name": "Glacial Fortress", "qty": 1 },
+            { "name": "Hallowed Fountain", "qty": 1 },
+            { "name": "Island", "qty": 12 },
+            { "name": "Minamo, School at Water's Edge", "qty": 1 },
+            { "name": "Mystic Gate", "qty": 1 },
+            { "name": "Mystic Sanctuary", "qty": 1 },
+            { "name": "Otawara, Soaring City", "qty": 1 },
+            { "name": "Plains", "qty": 6 },
+            { "name": "Prairie Stream", "qty": 1 },
+            { "name": "Prismatic Vista", "qty": 1 },
+            { "name": "Sea of Clouds", "qty": 1 },
+            { "name": "Seachrome Coast", "qty": 1 },
+            { "name": "Tundra", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Advisors — the Engine",
+          "cards": [
+            { "name": "Azor's Elocutors", "qty": 1 },
+            { "name": "Bruvac the Grandiloquent", "qty": 1 },
+            { "name": "Grand Arbiter Augustin IV", "qty": 1 },
+            { "name": "Jacob Hauken, Inspector", "qty": 1 },
+            { "name": "Ledger Shredder", "qty": 1 },
+            { "name": "Masako the Humorless", "qty": 1 },
+            { "name": "Mavinda, Students' Advocate", "qty": 1 },
+            { "name": "Omen Hawker", "qty": 1 },
+            { "name": "Persistent Petitioners", "qty": 8 },
+            { "name": "Urianger Augurelt", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Creature Mill — Doubled by Cap",
+          "cards": [
+            { "name": "Cathartic Adept", "qty": 1 },
+            { "name": "Emry, Lurker of the Loch", "qty": 1 },
+            { "name": "Ioreth of the Healing House", "qty": 1 },
+            { "name": "Jace, Vryn's Prodigy", "qty": 1 },
+            { "name": "Stitcher Geralf", "qty": 1 },
+            { "name": "Vantress Gargoyle", "qty": 1 },
+            { "name": "Zellix, Sanity Flayer", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Mass Mill & Self-Mill",
+          "cards": [
+            { "name": "Fraying Sanity", "qty": 1 },
+            { "name": "Increasing Confusion", "qty": 1 },
+            { "name": "Maddening Cacophony", "qty": 1 },
+            { "name": "Mesmeric Orb", "qty": 1 },
+            { "name": "The Water Crystal", "qty": 1 },
+            { "name": "Traumatize", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Replay the Petitioners You Milled",
+          "cards": [
+            { "name": "Dusk", "qty": 1 },
+            { "name": "Raise the Past", "qty": 1 },
+            { "name": "Return to the Ranks", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Win Conditions",
+          "cards": [
+            { "name": "Jace, Wielder of Mysteries", "qty": 1 },
+            { "name": "Laboratory Maniac", "qty": 1 },
+            { "name": "Thassa's Oracle", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Free Tap Outlets",
+          "cards": [
+            { "name": "Opposition", "qty": 1 },
+            { "name": "Springleaf Drum", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Draw — Dig for Petitioners",
+          "cards": [
+            { "name": "Brainstorm", "qty": 1 },
+            { "name": "Dig Through Time", "qty": 1 },
+            { "name": "Fact or Fiction", "qty": 1 },
+            { "name": "Mystic Remora", "qty": 1 },
+            { "name": "Ponder", "qty": 1 },
+            { "name": "Preordain", "qty": 1 },
+            { "name": "Rhystic Study", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Mind Stone", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Talisman of Progress", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Defence — You Are Always Tapped Out",
+          "cards": [
+            { "name": "Adept Watershaper", "qty": 1 },
+            { "name": "Ghostly Prison", "qty": 1 },
+            { "name": "Propaganda", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction & Protection",
+          "cards": [
+            { "name": "An Offer You Can't Refuse", "qty": 1 },
+            { "name": "Clever Concealment", "qty": 1 },
+            { "name": "Counterspell", "qty": 1 },
+            { "name": "Dovin's Veto", "qty": 1 },
+            { "name": "Flawless Maneuver", "qty": 1 },
+            { "name": "Generous Gift", "qty": 1 },
+            { "name": "Guardian of Faith", "qty": 1 },
+            { "name": "March of Otherworldly Light", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Swan Song", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 },
+            { "name": "Winds of Abandon", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "petitioners": {
+      "label": "Petitioners",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Captain America, Living Legend", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Adarkar Wastes", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Deserted Beach", "qty": 1 },
+            { "name": "Flooded Strand", "qty": 1 },
+            { "name": "Floodfarm Verge", "qty": 1 },
+            { "name": "Glacial Fortress", "qty": 1 },
+            { "name": "Hallowed Fountain", "qty": 1 },
+            { "name": "Holdout Settlement", "qty": 1 },
+            { "name": "Island", "qty": 12 },
+            { "name": "Minamo, School at Water's Edge", "qty": 1 },
+            { "name": "Mystic Gate", "qty": 1 },
+            { "name": "Otawara, Soaring City", "qty": 1 },
+            { "name": "Plains", "qty": 6 },
+            { "name": "Prairie Stream", "qty": 1 },
+            { "name": "Prismatic Vista", "qty": 1 },
+            { "name": "Sea of Clouds", "qty": 1 },
+            { "name": "Seachrome Coast", "qty": 1 },
+            { "name": "Survivors' Encampment", "qty": 1 },
+            { "name": "Tundra", "qty": 1 }
+          ]
+        },
+        {
+          "name": "The Engine",
+          "cards": [
+            { "name": "Cruel Calculations", "qty": 1 },
+            { "name": "Persistent Petitioners", "qty": 26 }
+          ]
+        },
+        {
+          "name": "Win Conditions — Mill Yourself",
+          "cards": [
+            { "name": "Jace, Wielder of Mysteries", "qty": 1 },
+            { "name": "Laboratory Maniac", "qty": 1 },
+            { "name": "Mathemagics", "qty": 1 },
+            { "name": "Thassa's Oracle", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Self-Mill",
+          "cards": [
+            { "name": "Fraying Sanity", "qty": 1 },
+            { "name": "Mesmeric Orb", "qty": 1 },
+            { "name": "Traumatize", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Get the Win Back — Recursion & Tutors",
+          "cards": [
+            { "name": "Dusk", "qty": 1 },
+            { "name": "Generous Revival", "qty": 1 },
+            { "name": "Muddle the Mixture", "qty": 1 },
+            { "name": "Raise the Past", "qty": 1 },
+            { "name": "Sevinne's Reclamation", "qty": 1 },
+            { "name": "Snapcaster Mage", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Support Advisors",
+          "cards": [
+            { "name": "Grand Arbiter Augustin IV", "qty": 1 },
+            { "name": "Masako the Humorless", "qty": 1 },
+            { "name": "Omen Hawker", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Defence — You Are Always Tapped Out",
+          "cards": [
+            { "name": "Adept Watershaper", "qty": 1 },
+            { "name": "Ghostly Prison", "qty": 1 },
+            { "name": "Propaganda", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp & Cost Reducers",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Drumbellower", "qty": 1 },
+            { "name": "Fellwar Stone", "qty": 1 },
+            { "name": "Herald's Horn", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Springleaf Drum", "qty": 1 },
+            { "name": "Talisman of Progress", "qty": 1 },
+            { "name": "Urza's Incubator", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction",
+          "cards": [
+            { "name": "Counterspell", "qty": 1 },
+            { "name": "Dovin's Veto", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Swan Song", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection",
+          "cards": [
+            { "name": "Clever Concealment", "qty": 1 },
+            { "name": "Flawless Maneuver", "qty": 1 },
+            { "name": "Guardian of Faith", "qty": 1 },
+            { "name": "Teferi's Protection", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Draw",
+          "cards": [
+            { "name": "Mystic Remora", "qty": 1 }
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {
+    "Academy Ruins": { "status": "PROXY", "note": "— recurs a destroyed Vehicle or Spacecraft" },
+    "Adagia, Windswept Bastion": { "status": "PROXY", "note": "— a LAND with Station; 12+ copies an artifact as a legend" },
+    "Adarkar Wastes": { "status": "PROXY", "note": "— untapped WU" },
+    "Ancient Den": { "status": "PROXY", "note": "— artifact land, feeds Urza / improvise / metalcraft" },
+    "Apprentice Wizard": { "status": "PROXY", "note": "— {U},{T} for {C}{C}{C}, twice a turn = 6 mana for {U}{U}" },
+    "Arcane Signet": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"191"} },
+    "Arcanis the Omnipotent": { "status": "PROXY", "note": "— 6 cards a turn" },
+    "Archway of Innovation": { "status": "PROXY", "note": "— grants improvise; your artifact creatures untap after tapping" },
+    "Avengers Tower": { "status": "PROXY", "note": "— Hero-only mana plus a Hero dig; Cap is a Hero", "printing": {"set":"msh","collectorNumber":"260"} },
+    "Captain America, Living Legend": { "status": "PROXY", "note": "— every creature's first tap each of your turns is free", "printing": {"set":"msh","collectorNumber":"210"} },
+    "Captain America, Super-Soldier": { "status": "PROXY", "note": "— hexproof for you and your Heroes; Cap is a Hero", "printing": {"set":"msh","collectorNumber":"352"} },
+    "Clever Concealment": { "status": "PROXY", "note": "— convoke costs nothing here", "printing": {"set":"msc","collectorNumber":"125"} },
+    "Cloudspire Captain": { "status": "PROXY", "note": "— Vehicle anthem + crews as though power +2" },
+    "Command Tower": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"233"} },
+    "Counterspell": { "status": "PROXY", "printing": {"set":"mar","collectorNumber":"52"} },
+    "Cyclonic Rift": { "status": "PROXY" },
+    "Dawnsire, Sunstar Dreadnought": { "status": "PROXY", "note": "— 20 power stationed in ONE turn; 100 damage on attack" },
+    "Deserted Beach": { "status": "PROXY" },
+    "Dispatch": { "status": "PROXY", "note": "— metalcraft exile for {W}", "printing": {"set":"msc","collectorNumber":"130"} },
+    "Dovin's Veto": { "status": "PROXY" },
+    "Drumbellower": { "status": "PROXY", "note": "— untaps CREATURES on each opponent's untap step: ~4 activations per cycle, not 1" },
+    "Eiganjo, Seat of the Empire": { "status": "PROXY", "note": "— free removal on a land slot" },
+    "Emry, Lurker of the Loch": { "status": "PROXY", "note": "— two artifact rebuys from the yard per turn" },
+    "Enlightened Tutor": { "status": "PROXY" },
+    "Esper Sentinel": { "status": "PROXY" },
+    "Extinguisher Battleship": { "status": "PROXY", "note": "— removal + sweeper on ETB, 10/10 flier at 5 counters" },
+    "Flooded Strand": { "status": "PROXY" },
+    "Floodfarm Verge": { "status": "PROXY" },
+    "Generous Gift": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"133"} },
+    "Glacial Fortress": { "status": "PROXY" },
+    "Grand Architect": { "status": "PROXY", "note": "— every blue creature taps for {C}{C}, twice = 4 each" },
+    "Hallowed Fountain": { "status": "PROXY" },
+    "Halo Fountain": { "status": "PROXY", "note": "— alt-win; Unwinding Clock gives it ~5 activations per turn cycle" },
+    "Hotshot Mechanic": { "status": "PROXY", "note": "— {W} 2/1 that crews as a 4" },
+    "Into the Flood Maw": { "status": "PROXY" },
+    "Inventors' Fair": { "status": "PROXY", "note": "— artifact tutor, metalcraft is always on here", "printing": {"set":"sld","collectorNumber":"1735"} },
+    "Iron Spider, Stark Upgrade": { "status": "PROXY", "note": "— vigilance + counters on every artifact creature AND Vehicle, twice a turn", "printing": {"set":"spm","collectorNumber":"166"} },
+    "Island": { "status": "PROXY" },
+    "Kotori, Pilot Prodigy": { "status": "PROXY", "note": "— every Vehicle becomes crew 2" },
+    "Krang, Utrom Warlord": { "status": "PROXY", "note": "— crewed Vehicles get flying, trample, indestructible, haste" },
+    "Lita, Mechanical Engineer": { "status": "PROXY", "note": "— untaps artifact creatures at END STEP; covers the hole Cap leaves on opponents' turns" },
+    "March of Otherworldly Light": { "status": "PROXY" },
+    "Marvin, Murderous Mimic": { "status": "PROXY", "note": "— copies your best {T} ability; an artifact creature, so BOTH untappers hit him" },
+    "Mech Hangar": { "status": "PROXY", "note": "— makes a Vehicle a creature without crewing" },
+    "Mechan Navigator": { "status": "PROXY", "note": "— loots on every tap" },
+    "Minamo, School at Water's Edge": { "status": "PROXY", "note": "— a THIRD Shorikai activation each turn" },
+    "Mu Yanling, Wind Rider": { "status": "PROXY", "note": "— Vehicles you control HAVE FLYING; free 3/2 Vehicle token; draws off fliers" },
+    "Mystic Gate": { "status": "PROXY" },
+    "Ornithopter of Paradise": { "status": "PROXY", "note": "— 2 any-colour per turn, and it flies" },
+    "Otawara, Soaring City": { "status": "PROXY" },
+    "Palladium Myr": { "status": "PROXY", "note": "— 4 colourless per turn" },
+    "Parhelion II": { "status": "PROXY", "note": "— 8 power of flying angels EVERY attack" },
+    "Path to Exile": { "status": "PROXY", "printing": {"set":"mar","collectorNumber":"47"} },
+    "Plains": { "status": "PROXY" },
+    "Prairie Stream": { "status": "PROXY" },
+    "Prismatic Vista": { "status": "PROXY" },
+    "Prodigy's Prototype": { "status": "PROXY", "note": "— a Pilot token every time Vehicles attack" },
+    "Reaver Titan": { "status": "PROXY", "note": "— 10/10 pro-MV3, 5 damage to each opponent on attack" },
+    "Relic of Legends": { "status": "PROXY", "note": "— taps a LEGEND as a cost, so Cap untaps it: 2 any-colour per legend per turn", "printing": {"set":"msc","collectorNumber":"209"} },
+    "Retrofitter Foundry": { "status": "PROXY", "note": "— token engine = more free taps" },
+    "Rogue's Passage": { "status": "PROXY" },
+    "Royal Talon Fighter Jet": { "status": "PROXY", "note": "— X soldiers on enter and on every attack; crew fuel that scales", "printing": {"set":"msc","collectorNumber":"321"} },
+    "Salvation Engine": { "status": "PROXY", "note": "— +2/+2 to artifact creatures, artifact recursion on attack" },
+    "Sanwell, Avenger Ace": { "status": "PROXY", "note": "— TWO impulse-6s per turn off a 2-drop" },
+    "Sea of Clouds": { "status": "PROXY" },
+    "Seachrome Coast": { "status": "PROXY" },
+    "Seat of the Synod": { "status": "PROXY", "note": "— artifact land" },
+    "Shorikai, Genesis Engine": { "status": "PROXY", "note": "— 4 cards + 2 Pilots per turn; also the crew-8 body" },
+    "Shuri, Wakandan Inventor": { "status": "PROXY", "note": "— artifact spells -{1}; copy a crewed cheap Vehicle into Parhelion II, twice a turn", "printing": {"set":"msh","collectorNumber":"75"} },
+    "Silver Myr": { "status": "PROXY", "note": "— 2 blue per turn" },
+    "Simulacrum Synthesizer": { "status": "PROXY", "note": "— a Construct sized by artifact count on each of 20 MV3+ artifacts; the Station fuel the deck lacked" },
+    "Skysovereign, Consul Flagship": { "status": "PROXY", "note": "— repeatable 3 damage" },
+    "Smuggler's Copter": { "status": "PROXY", "note": "— crew 1, loots on attack or block" },
+    "Sol Ring": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"1734"} },
+    "Split Up": { "status": "PROXY", "note": "— your board untaps, theirs doesn't; \"destroy all tapped\" is one-sided" },
+    "Sram, Senior Edificer": { "status": "PROXY", "note": "— draws on every Vehicle spell" },
+    "Steel Overseer": { "status": "PROXY", "note": "— counters on artifact creatures, twice a turn" },
+    "Stroke of Midnight": { "status": "PROXY" },
+    "Supreme Verdict": { "status": "PROXY", "note": "— uncounterable, and your Vehicles aren't creatures at sorcery speed" },
+    "Swiftfoot Boots": { "status": "PROXY", "note": "— hexproof, never shroud (deck-brain §1.3)", "printing": {"set":"msc","collectorNumber":"216"} },
+    "Swords to Plowshares": { "status": "PROXY" },
+    "Teferi's Protection": { "status": "PROXY", "printing": {"set":"mar","collectorNumber":"51"} },
+    "The Seriema": { "status": "PROXY", "note": "— tutors a legend; tapped legends get indestructible" },
+    "The Thanos-Copter": { "status": "PROXY", "note": "— turns all Vehicles on, draws on Vehicle damage", "printing": {"set":"msc","collectorNumber":"753"} },
+    "Thousand-Year Elixir": { "status": "PROXY", "note": "— beats summoning sickness on every {T} engine (CR 302.6)" },
+    "Tui and La, Moon and Ocean": { "status": "PROXY", "note": "— draw on tap, +1/+1 on the untap, twice a turn" },
+    "Tundra": { "status": "PROXY" },
+    "Unctus, Grand Metatect": { "status": "PROXY", "note": "— every other blue creature loots on tap" },
+    "Unwinding Clock": { "status": "PROXY", "note": "— untaps ARTIFACTS on each opponent's untap step: Shorikai, the rocks, Halo Fountain" },
+    "Urza, Lord High Artificer": { "status": "PROXY", "note": "— every artifact creature taps twice for {U}; makes a Construct" },
+    "Urza's Saga": { "status": "PROXY", "note": "— fetches Springleaf-tier rocks / Swiftfoot Boots" },
+    "Uthros, Titanic Godcore": { "status": "PROXY", "note": "— a LAND with Station; 12+ taps for {U} per artifact" },
+    "Vedalken Engineer": { "status": "PROXY", "note": "— 4 mana per turn for artifacts" },
+    "Whir of Invention": { "status": "PROXY", "note": "— improvise; the artifact creatures you tap untap again" }
+  }
+}

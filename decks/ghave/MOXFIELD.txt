@@ -1,0 +1,93 @@
+1 Ghave, Guru of Spores (PLST) C16-200
+1 Adeline, Resplendent Cathar (MID) 1
+1 Anguished Unmaking (SOI) 242
+1 Anointed Procession (AKH) 2
+1 Ashnod's Altar (CMM) 368
+1 Assassin's Trophy (MKM) 187
+1 Aura Shards (SLD) 2694
+1 Avenger of Zendikar
+1 Bastion of Remembrance (IKO) 73
+1 Bayou (30A) 274
+1 Beast Within (PLST) LCC-233
+1 Birds of Paradise (PLST) GK2-82
+1 Bitterblossom (UMA) 85
+1 Black Market Connections (CLB) 669
+1 Blood Artist (PLST) INR-97
+1 Blooming Marsh (OTJ) 266
+1 Branchloft Pathway (ZNR) 284
+1 Brightcap Badger (BLC) 28
+1 Brightclimb Pathway (SLU) 14
+1 Chatterfang, Squirrel General (BLC) 82
+1 Command Tower (SLD) 2812
+1 Concealed Courtyard (OTJ) 268
+1 Cruel Celebrant (WAR) 188
+1 Cryptolith Rite (INR) 316
+1 Cultivate (M21) 177
+1 Darkbore Pathway (SLU) 17
+1 Deadly Dispute (AFR) 94
+1 Dictate of Erebos (SLD) 2204
+1 Doubling Season (FDN) 216
+1 Elas il-Kor, Sadistic Pilgrim (DMU) 198
+1 Elspeth, Storm Slayer (TDM) 11
+1 Farseek (BLC) 119
+4 Forest (P23) 10
+1 Gaea's Cradle (OLGC) 2014
+1 Gavony Township (C20) 276
+1 Godless Shrine (TRK) 285
+1 Grave Pact (CMM) 165
+1 Hardened Scales (PIP) 200
+1 Heroic Intervention (AFC) 161
+1 Icetill Explorer
+1 Idol of Oblivion (PLST) M3C-297
+1 Indatha Triome (IKO) 248
+1 Isolated Chapel (DOM) 241
+1 Kami of Whispered Hopes (MOM) 196
+1 Lingering Souls (INR) 30
+1 Llanowar Elves (FDN) 227
+1 March of the Multitudes
+1 Marionette Apprentice (PLST) MH3-100
+1 Marsh Flats (SLU) 1
+1 Mentor of the Meek (FDN) 578
+1 Mirkwood Bats (LTR) 95
+1 Moldervine Reclamation (M20) 214
+1 Mondrak, Glory Dominus (ONE) 23
+1 Nature's Lore (PLST) CMM-904
+1 Oracle of Mul Daya
+1 Overgrown Tomb (GRN) 253
+1 Parallel Lives (ISD) 199
+1 Path to Exile (PLST) BLC-147
+1 Pest Infestation
+1 Phyrexian Altar (PLST) UMA-232
+1 Phyrexian Tower (UMA) 248
+1 Pitiless Plunderer (SPG) 5
+3 Plains (P23) 6
+1 Priest of Forgotten Gods (RNA) 83
+1 Rosie Cotton of South Lane (LTR) 27
+1 Sakura-Tribe Elder (PL25) 4
+1 Sandsteppe Citadel (TDM) 266
+1 Savannah (30A) 276
+1 Scrubland (30A) 277
+1 Scute Swarm (ZNR) 203
+1 Second Harvest (BLC) 123
+1 Skullclamp (TDC) 103
+1 Slimefoot, the Stowaway (DOM) 205
+1 Sol Ring (MSC) 214
+1 Springheart Nantuko
+1 Sunpetal Grove (TDC) 399
+3 Swamp (P23) 8
+1 Swords to Plowshares (SLD) 2804
+1 Sylvan Library (DMR) 179
+1 Teferi's Protection (2X2) 32
+1 Temple Garden (TRK) 301
+1 Tendershoot Dryad (SOC) 125
+1 The Meathook Massacre (INR) 387
+1 Three Visits (PLST) CMR-261
+1 Tireless Tracker
+1 Urborg, Tomb of Yawgmoth (M15) 248
+1 Verdant Catacombs (MM3) 249
+1 Village Rites (INR) 137
+1 Viscera Seer (SOC) 229
+1 Windswept Heath (KTK) 248
+1 Woodland Cemetery (DOM) 248
+1 Yavimaya, Cradle of Growth (SLD) 2813
+1 Zulaport Cutthroat (SLD) 1982

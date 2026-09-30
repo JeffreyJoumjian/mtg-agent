@@ -1,0 +1,414 @@
+{
+  "takenAt": "2026-09-23T11:23:12.353Z",
+  "listId": "b4",
+  "label": "migrated from markdown",
+  "reason": "state at migration",
+  "list": {
+    "label": "B4",
+    "kind": "deck",
+    "bracket": 4,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "The Scarlet Witch",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Ancient Tomb",
+            "qty": 1
+          },
+          {
+            "name": "City of Traitors",
+            "qty": 1
+          },
+          {
+            "name": "Valakut, the Molten Pinnacle",
+            "qty": 1
+          },
+          {
+            "name": "Castle Embereth",
+            "qty": 1
+          },
+          {
+            "name": "Arena of Glory",
+            "qty": 1
+          },
+          {
+            "name": "Mines of Moria",
+            "qty": 1
+          },
+          {
+            "name": "Shatterskull Smashing",
+            "qty": 1
+          },
+          {
+            "name": "Valakut Awakening",
+            "qty": 1
+          },
+          {
+            "name": "Forge of Heroes",
+            "qty": 1
+          },
+          {
+            "name": "Tyrite Sanctum",
+            "qty": 1
+          },
+          {
+            "name": "Mountain",
+            "qty": 18
+          }
+        ]
+      },
+      {
+        "name": "Fast mana, rituals and cost reduction",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Mana Vault",
+            "qty": 1
+          },
+          {
+            "name": "Grim Monolith",
+            "qty": 1
+          },
+          {
+            "name": "Chrome Mox",
+            "qty": 1
+          },
+          {
+            "name": "Mox Diamond",
+            "qty": 1
+          },
+          {
+            "name": "Mox Amber",
+            "qty": 1
+          },
+          {
+            "name": "Lotus Petal",
+            "qty": 1
+          },
+          {
+            "name": "Lion's Eye Diamond",
+            "qty": 1
+          },
+          {
+            "name": "Explosive Welcome",
+            "qty": 1
+          },
+          {
+            "name": "Ruby Medallion",
+            "qty": 1
+          },
+          {
+            "name": "The Fire Crystal",
+            "qty": 1
+          },
+          {
+            "name": "Artist's Talent",
+            "qty": 1
+          },
+          {
+            "name": "Pyretic Ritual",
+            "qty": 1
+          },
+          {
+            "name": "Desperate Ritual",
+            "qty": 1
+          },
+          {
+            "name": "Seething Song",
+            "qty": 1
+          },
+          {
+            "name": "Apex of Power",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Per-spell and per-damage engines",
+        "cards": [
+          {
+            "name": "Electro, Assaulting Battery",
+            "qty": 1
+          },
+          {
+            "name": "Storm-Kiln Artist",
+            "qty": 1
+          },
+          {
+            "name": "Ashling, Flame Dancer",
+            "qty": 1
+          },
+          {
+            "name": "Birgi, God of Storytelling",
+            "qty": 1
+          },
+          {
+            "name": "Neheb, the Eternal",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Seed — power on Wanda before the first X-spell",
+        "cards": [
+          {
+            "name": "Bonesplitter",
+            "qty": 1
+          },
+          {
+            "name": "Coral Sword",
+            "qty": 1
+          },
+          {
+            "name": "Inventor's Axe",
+            "qty": 1
+          },
+          {
+            "name": "Hero's Blade",
+            "qty": 1
+          },
+          {
+            "name": "Runechanter's Pike",
+            "qty": 1
+          },
+          {
+            "name": "Monstrous Rage",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "The pump engine",
+        "cards": [
+          {
+            "name": "Livaan, Cultist of Tiamat",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Doublers — X-spells and power doublers",
+        "cards": [
+          {
+            "name": "Storm King's Thunder",
+            "qty": 1
+          },
+          {
+            "name": "Jaya's Immolating Inferno",
+            "qty": 1
+          },
+          {
+            "name": "Crackle with Power",
+            "qty": 1
+          },
+          {
+            "name": "Commune with Lava",
+            "qty": 1
+          },
+          {
+            "name": "Electrodominance",
+            "qty": 1
+          },
+          {
+            "name": "Comet Storm",
+            "qty": 1
+          },
+          {
+            "name": "Lunar Frenzy",
+            "qty": 1
+          },
+          {
+            "name": "Frantic Confrontation",
+            "qty": 1
+          },
+          {
+            "name": "Bionic Blow",
+            "qty": 1
+          },
+          {
+            "name": "Unleash Fury",
+            "qty": 1
+          },
+          {
+            "name": "Bulk Up",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Copy and recur",
+        "cards": [
+          {
+            "name": "Underworld Breach",
+            "qty": 1
+          },
+          {
+            "name": "Reiterate",
+            "qty": 1
+          },
+          {
+            "name": "Repeated Reverberation",
+            "qty": 1
+          },
+          {
+            "name": "Increasing Vengeance",
+            "qty": 1
+          },
+          {
+            "name": "Return the Favor",
+            "qty": 1
+          },
+          {
+            "name": "Pyromancer's Goggles",
+            "qty": 1
+          },
+          {
+            "name": "Past in Flames",
+            "qty": 1
+          },
+          {
+            "name": "Will of the Jeskai",
+            "qty": 1
+          },
+          {
+            "name": "Arcane Bombardment",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card draw & selection",
+        "cards": [
+          {
+            "name": "The One Ring",
+            "qty": 1
+          },
+          {
+            "name": "Gamble",
+            "qty": 1
+          },
+          {
+            "name": "Jeska's Will",
+            "qty": 1
+          },
+          {
+            "name": "Wheel of Fortune",
+            "qty": 1
+          },
+          {
+            "name": "Faithless Looting",
+            "qty": 1
+          },
+          {
+            "name": "Big Score",
+            "qty": 1
+          },
+          {
+            "name": "Unexpected Windfall",
+            "qty": 1
+          },
+          {
+            "name": "Hex Magic",
+            "qty": 1
+          },
+          {
+            "name": "Ignite the Future",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Damage conversion & closers",
+        "cards": [
+          {
+            "name": "Thor, God of Thunder",
+            "qty": 1
+          },
+          {
+            "name": "Longshot, Rebel Bowman",
+            "qty": 1
+          },
+          {
+            "name": "Chandra's Ignition",
+            "qty": 1
+          },
+          {
+            "name": "Solphim, Mayhem Dominus",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Protection",
+        "cards": [
+          {
+            "name": "Conqueror's Flail",
+            "qty": 1
+          },
+          {
+            "name": "Deflecting Swat",
+            "qty": 1
+          },
+          {
+            "name": "Commander's Plate",
+            "qty": 1
+          },
+          {
+            "name": "Champion's Helm",
+            "qty": 1
+          },
+          {
+            "name": "Mithril Coat",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Removal & interaction",
+        "cards": [
+          {
+            "name": "Chaos Warp",
+            "qty": 1
+          },
+          {
+            "name": "Vandalblast",
+            "qty": 1
+          },
+          {
+            "name": "Untimely Malfunction",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Reach and refuel that also seed",
+        "cards": [
+          {
+            "name": "Mana Geyser",
+            "qty": 1
+          },
+          {
+            "name": "Blazing Crescendo",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Rules gotchas that are new here",
+        "cards": []
+      }
+    ]
+  }
+}

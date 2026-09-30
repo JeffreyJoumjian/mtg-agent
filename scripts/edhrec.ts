@@ -9,14 +9,16 @@
  *    bun run edhrec commander "Atraxa" --theme infect    # one theme's version of the page
  *    bun run edhrec commander "Tony Stark" --all         # every cardlist, not just headliners
  *    bun run edhrec card "Sol Ring"                      # inclusion, salt, top commanders
- *    bun run edhrec --deck decks/x/DECK.md               # coverage + ranked ideas for the deck
- *    bun run edhrec --deck decks/x/DECK.md --ideas 40    # more ideas (default 25)
+ *    bun run edhrec --deck chatterfang                   # coverage + ranked ideas for the main list
+ *    bun run edhrec --deck chatterfang --list b4         # another list of the same deck
+ *    bun run edhrec --deck chatterfang --ideas 40        # more ideas (default 25)
  *    bun run edhrec ... --json                           # raw normalized JSON */
 import { getCardPage, getCommanderPage } from "./lib/edhrec-cache.ts";
 import type { EdhrecCardStat, EdhrecCommanderPage } from "./lib/edhrec.ts";
 import { crossRefDeck } from "./lib/edhrec.ts";
-import { parseDecklist } from "./lib/decklist.ts";
-import { commanderFromDeck } from "./lib/deck-research.ts";
+import { listNames, pickList } from "./lib/deck-model.ts";
+import { commanderFromDeck, slugFromDeckArg } from "./lib/deck-research.ts";
+import { readDeck } from "./lib/deck-store.ts";
 
 const args = process.argv.slice(2);
 
@@ -27,7 +29,7 @@ function flagValue(name: string): string | undefined {
 const hasFlag = (name: string): boolean => args.includes(name);
 
 function positionals(): string[] {
-  const flagsWithValue = ["--theme", "--deck", "--commander", "--ideas"];
+  const flagsWithValue = ["--theme", "--deck", "--commander", "--ideas", "--list"];
   const out: string[] = [];
   for (let i = 0; i < args.length; i++) {
     const a = args[i];
@@ -90,17 +92,19 @@ async function runCard(name: string): Promise<void> {
   }
 }
 
-async function runDeck(path: string, theme?: string): Promise<void> {
-  const text = await Bun.file(path).text();
-  const names = parseDecklist(text);
+async function runDeck(arg: string, theme?: string): Promise<void> {
+  const slug = slugFromDeckArg(arg);
+  const deck = await readDeck(slug);
+  const { id, list } = pickList(deck, flagValue("--list"));
+  const names = listNames(list);
   if (names.length === 0) {
-    console.error(`No "1x Card Name" lines found in ${path}`);
+    console.error(`No cards in ${slug}/${id}`);
     process.exit(1);
   }
 
-  const commander = flagValue("--commander") ?? commanderFromDeck(text);
+  const commander = flagValue("--commander") ?? commanderFromDeck(deck, id);
   if (!commander) {
-    console.error(`Could not find the commander in ${path} — pass it with --commander "Name"`);
+    console.error(`Could not find the commander in ${slug}/${id} — pass it with --commander "Name"`);
     process.exit(1);
   }
 
@@ -146,7 +150,7 @@ async function main(): Promise<void> {
   console.error(
     `Usage: bun run edhrec commander "<name>" [--theme <slug>] [--all]\n` +
       `       bun run edhrec card "<name>"\n` +
-      `       bun run edhrec --deck decks/<slug>/DECK.md [--commander "<name>"] [--ideas N]\n` +
+      `       bun run edhrec --deck <slug> [--list id] [--commander "<name>"] [--ideas N]\n` +
       `       (any mode: --json)`,
   );
   process.exit(1);

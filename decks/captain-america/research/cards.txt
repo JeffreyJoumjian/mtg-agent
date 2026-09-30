@@ -1,0 +1,443 @@
+# LOCAL CARD CACHE — captain-america
+# Prices are a USD snapshot from Scryfall at the time each card was first cached.
+# Format:  ## Name / cost|type|CI|produces|usd / oracle
+
+## Captain America, First Avenger
+cost={R}{W}{U} | type=Legendary Creature — Human Soldier Hero | CI=RUW | produces=- | usd=$7.71
+Throw ... — {3}, Unattach an Equipment from Captain America: He deals damage equal to that Equipment's mana value divided as you choose among one, two, or three targets. ... Catch — At the beginning of combat on your turn, attach up to one target Equipment you control to Captain America.
+
+## Academy Ruins
+cost=- | type=Legendary Land | CI=U | produces=C | usd=$8.70
+{T}: Add {C}. {1}{U}, {T}: Put target artifact card from your graveyard on top of your library.
+
+## Arena of Glory
+cost=- | type=Land | CI=R | produces=R | usd=$8.61
+This land enters tapped unless you control a Mountain. {T}: Add {R}. {R}, {T}, Exert this land: Add {R}{R}. If that mana is spent on a creature spell, it gains haste until end of turn. (An exerted permanent won't untap during your next untap step.)
+
+## Arid Mesa
+cost=- | type=Land | CI=- | produces=- | usd=$33.69
+{T}, Pay 1 life, Sacrifice this land: Search your library for a Mountain or Plains card, put it onto the battlefield, then shuffle.
+
+## Avengers Tower
+cost=- | type=Land | CI=- | produces=B,C,G,R,U,W | usd=$0.23
+{T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast a Hero spell or to activate an ability of a Hero source. {4}, {T}: Look at the top three cards of your library. You may reveal a Hero card from among them and put it into your hand. Put the rest on the bottom of your library in any order.
+
+## Axgard Armory
+cost=- | type=Land | CI=RW | produces=W | usd=$0.38
+This land enters tapped. {T}: Add {W}. {1}{R}{R}{W}, {T}, Sacrifice this land: Search your library for an Aura card and/or an Equipment card, reveal them, put them into your hand, then shuffle.
+
+## Command Tower
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$0.30
+{T}: Add one mana of any color in your commander's color identity.
+
+## Eiganjo, Seat of the Empire
+cost=- | type=Legendary Land | CI=W | produces=W | usd=$5.35
+{T}: Add {W}. Channel — {2}{W}, Discard this card: It deals 4 damage to target attacking or blocking creature. This ability costs {1} less to activate for each legendary creature you control.
+
+## Elegant Parlor
+cost=- | type=Land — Mountain Plains | CI=RW | produces=R,W | usd=$10.80
+({T}: Add {R} or {W}.) This land enters tapped. When this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+
+## Flooded Strand
+cost=- | type=Land | CI=- | produces=- | usd=$15.86
+{T}, Pay 1 life, Sacrifice this land: Search your library for a Plains or Island card, put it onto the battlefield, then shuffle.
+
+## Hallowed Fountain
+cost=- | type=Land — Plains Island | CI=UW | produces=U,W | usd=$?
+({T}: Add {W} or {U}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## Inventors' Fair
+cost=- | type=Legendary Land | CI=- | produces=C | usd=$17.81
+At the beginning of your upkeep, if you control three or more artifacts, you gain 1 life. {T}: Add {C}. {4}, {T}, Sacrifice Inventors' Fair: Search your library for an artifact card, reveal it, put it into your hand, then shuffle. Activate only if you control three or more artifacts.
+
+## Island
+cost=- | type=Basic Land — Island | CI=U | produces=U | usd=$?
+({T}: Add {U}.)
+
+## Meticulous Archive
+cost=- | type=Land — Plains Island | CI=UW | produces=U,W | usd=$12.65
+({T}: Add {W} or {U}.) This land enters tapped. When this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+
+## Mountain
+cost=- | type=Basic Land — Mountain | CI=R | produces=R | usd=$?
+({T}: Add {R}.)
+
+## Otawara, Soaring City
+cost=- | type=Legendary Land | CI=U | produces=U | usd=$28.90
+{T}: Add {U}. Channel — {3}{U}, Discard this card: Return target artifact, creature, enchantment, or planeswalker to its owner's hand. This ability costs {1} less to activate for each legendary creature you control.
+
+## Plains
+cost=- | type=Basic Land — Plains | CI=W | produces=W | usd=$?
+({T}: Add {W}.)
+
+## Plateau
+cost=- | type=Land — Mountain Plains | CI=RW | produces=R,W | usd=$?
+({T}: Add {R} or {W}.)
+
+## Prismatic Vista
+cost=- | type=Land | CI=- | produces=- | usd=$33.24
+{T}, Pay 1 life, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield, then shuffle.
+
+## Raugrin Triome
+cost=- | type=Land — Island Mountain Plains | CI=RUW | produces=R,U,W | usd=$15.15
+({T}: Add {U}, {R}, or {W}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Rogue's Passage
+cost=- | type=Land | CI=- | produces=C | usd=$0.36
+{T}: Add {C}. {4}, {T}: Target creature can't be blocked this turn.
+
+## Sacred Foundry
+cost=- | type=Land — Mountain Plains | CI=RW | produces=R,W | usd=$?
+({T}: Add {R} or {W}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## Scalding Tarn
+cost=- | type=Land | CI=- | produces=- | usd=$39.94
+{T}, Pay 1 life, Sacrifice this land: Search your library for an Island or Mountain card, put it onto the battlefield, then shuffle.
+
+## Sea of Clouds
+cost=- | type=Land | CI=UW | produces=U,W | usd=$20.12
+This land enters tapped unless you have two or more opponents. {T}: Add {W} or {U}.
+
+## Spectator Seating
+cost=- | type=Land | CI=RW | produces=R,W | usd=$6.44
+This land enters tapped unless you have two or more opponents. {T}: Add {R} or {W}.
+
+## Steam Vents
+cost=- | type=Land — Island Mountain | CI=RU | produces=R,U | usd=$?
+({T}: Add {U} or {R}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## Thundering Falls
+cost=- | type=Land — Island Mountain | CI=RU | produces=R,U | usd=$16.10
+({T}: Add {U} or {R}.) This land enters tapped. When this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+
+## Training Center
+cost=- | type=Land | CI=RU | produces=R,U | usd=$18.48
+This land enters tapped unless you have two or more opponents. {T}: Add {U} or {R}.
+
+## Tundra
+cost=- | type=Land — Plains Island | CI=UW | produces=U,W | usd=$?
+({T}: Add {W} or {U}.)
+
+## Urza's Saga
+cost=- | type=Enchantment Land — Urza's Saga | CI=- | produces=C | usd=$39.19
+(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.) I — This Saga gains "{T}: Add {C}." II — This Saga gains "{2}, {T}: Create a 0/0 colorless Construct artifact creature token with 'This token gets +1/+1 for each artifact you control.'" III — Search your library for an artifact card with mana cost {0} or {1}, put it onto the battlefield, then shuffle.
+
+## Volcanic Island
+cost=- | type=Land — Island Mountain | CI=RU | produces=R,U | usd=$?
+({T}: Add {U} or {R}.)
+
+## Arcane Signet
+cost={2} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.60
+{T}: Add one mana of any color in your commander's color identity.
+
+## Mox Opal
+cost={0} | type=Legendary Artifact | CI=- | produces=B,G,R,U,W | usd=$240.21
+Metalcraft — {T}: Add one mana of any color. Activate only if you control three or more artifacts.
+
+## Sol Ring
+cost={1} | type=Artifact | CI=- | produces=C | usd=$1.54
+{T}: Add {C}{C}.
+
+## Sword of the Animist
+cost={2} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$6.37
+Equipped creature gets +1/+1. Whenever equipped creature attacks, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle. Equip {2}
+
+## Talisman of Conviction
+cost={2} | type=Artifact | CI=RW | produces=C,R,W | usd=$0.36
+{T}: Add {C}. {T}: Add {R} or {W}. This artifact deals 1 damage to you.
+
+## Talisman of Creativity
+cost={2} | type=Artifact | CI=RU | produces=C,R,U | usd=$1.91
+{T}: Add {C}. {T}: Add {U} or {R}. This artifact deals 1 damage to you.
+
+## Talisman of Progress
+cost={2} | type=Artifact | CI=UW | produces=C,U,W | usd=$0.37
+{T}: Add {C}. {T}: Add {W} or {U}. This artifact deals 1 damage to you.
+
+## Bureau Headmaster
+cost={R}{W} | type=Creature — Human Assassin | CI=RW | produces=- | usd=$5.82
+Equipment spells you cast cost {1} less to cast. Equip abilities you activate cost {1} less to activate.
+
+## Fighter Class
+cost={R}{W} | type=Enchantment — Class | CI=RW | produces=- | usd=$9.30
+(Gain the next level as a sorcery to add its ability.) When this Class enters, search your library for an Equipment card, reveal it, put it into your hand, then shuffle. {1}{R}{W}: Level 2 Equip abilities you activate cost {2} less to activate. {3}{R}{W}: Level 3 Whenever a creature you control attacks, up to one target creature blocks it this combat if able.
+
+## Training Grounds
+cost={U} | type=Enchantment | CI=U | produces=- | usd=$11.57
+Activated abilities of creatures you control cost {2} less to activate. This effect can't reduce the mana in that cost to less than one mana.
+
+## Zirda, the Dawnwaker
+cost={1}{R/W}{R/W} | type=Legendary Creature — Elemental Fox | CI=RW | produces=- | usd=$1.75
+Companion — Each permanent card in your starting deck has an activated ability. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.) Abilities you activate that aren't mana abilities cost {2} less to activate. This effect can't reduce the mana in that cost to less than one mana. {1}, {T}: Target creature can't block this turn.
+
+## Enlightened Tutor
+cost={W} | type=Instant | CI=W | produces=- | usd=$36.12
+Search your library for an artifact or enchantment card, reveal it, then shuffle and put that card on top.
+
+## Open the Armory
+cost={1}{W} | type=Sorcery | CI=W | produces=- | usd=$3.10
+Search your library for an Aura or Equipment card, reveal it, put it into your hand, then shuffle.
+
+## Steelshaper's Gift
+cost={W} | type=Sorcery | CI=W | produces=- | usd=$10.56
+Search your library for an Equipment card, reveal that card, put it into your hand, then shuffle.
+
+## Stoneforge Mystic
+cost={1}{W} | type=Creature — Kor Artificer | CI=W | produces=- | usd=$31.45
+When this creature enters, you may search your library for an Equipment card, reveal it, put it into your hand, then shuffle. {1}{W}, {T}: You may put an Equipment card from your hand onto the battlefield.
+
+## Sunforger
+cost={3} | type=Artifact — Equipment | CI=RW | produces=- | usd=$4.04
+Equipped creature gets +4/+0. {R}{W}, Unattach this Equipment: Search your library for a red or white instant card with mana value 4 or less and cast that card without paying its mana cost. Then shuffle. Equip {3}
+
+## Akiri, Fearless Voyager
+cost={1}{R}{W} | type=Legendary Creature — Kor Warrior | CI=RW | produces=- | usd=$1.35
+Whenever you attack a player with one or more equipped creatures, draw a card. {W}: You may unattach an Equipment from a creature you control. If you do, tap that creature and it gains indestructible until end of turn.
+
+## Buster Sword
+cost={3} | type=Artifact — Equipment | CI=- | produces=- | usd=$54.65
+Equipped creature gets +3/+2. Whenever equipped creature deals combat damage to a player, draw a card, then you may cast a spell from your hand with mana value less than or equal to that damage without paying its mana cost. Equip {2}
+
+## Esper Sentinel
+cost={W} | type=Artifact Creature — Human Soldier | CI=W | produces=- | usd=$62.55
+Whenever an opponent casts their first noncreature spell each turn, draw a card unless that player pays {X}, where X is this creature's power.
+
+## Mask of Memory
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$0.39
+Whenever equipped creature deals combat damage to a player, you may draw two cards. If you do, discard a card. Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Mystic Remora
+cost={U} | type=Enchantment | CI=U | produces=- | usd=$12.49
+Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) Whenever an opponent casts a noncreature spell, you may draw a card unless that player pays {4}.
+
+## Nahiri, Forged in Fury
+cost={4}{R}{W} | type=Legendary Creature — Kor Artificer | CI=RW | produces=- | usd=$8.43
+Affinity for Equipment (This spell costs {1} less to cast for each Equipment you control.) Whenever an equipped creature you control attacks, exile the top card of your library. You may play that card this turn. You may cast Equipment spells this way without paying their mana costs.
+
+## Sram, Senior Edificer
+cost={1}{W} | type=Legendary Creature — Dwarf Advisor | CI=W | produces=- | usd=$1.40
+Whenever you cast an Aura, Equipment, or Vehicle spell, draw a card.
+
+## The Mighty Thor, Jane Foster
+cost={1}{W}{U} | type=Legendary Creature — Human God Hero | CI=UW | produces=- | usd=$0.42
+Flying Whenever The Mighty Thor attacks, exile up to one target nontoken artifact or creature, then return that card to the battlefield tapped under its owner's control. Whenever an Equipment you control enters, draw a card.
+
+## Whirlwind of Thought
+cost={1}{U}{R}{W} | type=Enchantment | CI=RUW | produces=- | usd=$0.23
+Whenever you cast a noncreature spell, draw a card.
+
+## Ardenn, Intrepid Archaeologist
+cost={2}{W} | type=Legendary Creature — Kor Scout | CI=W | produces=- | usd=$4.03
+At the beginning of combat on your turn, you may attach any number of Auras and Equipment you control to target permanent or player. Partner (You can have two commanders if both have partner.)
+
+## Brass Squire
+cost={3} | type=Artifact Creature — Myr | CI=- | produces=- | usd=$1.23
+{T}: Attach target Equipment you control to target creature you control.
+
+## Bruenor Battlehammer
+cost={2}{R}{W} | type=Legendary Creature — Dwarf Warrior | CI=RW | produces=- | usd=$1.58
+Each creature you control gets +2/+0 for each Equipment attached to it. You may pay {0} rather than pay the equip cost of the first equip ability you activate each turn.
+
+## Codsworth, Handy Helper
+cost={2}{W} | type=Legendary Artifact Creature — Robot | CI=W | produces=W | usd=$24.97
+Commanders you control have ward {2}. {T}: Add {W}{W}. Spend this mana only to cast Aura and/or Equipment spells. {T}: Attach target Aura or Equipment you control to target creature you control. Activate only as a sorcery.
+
+## Forge Anew
+cost={2}{W} | type=Enchantment | CI=W | produces=- | usd=$6.00
+When this enchantment enters, return target Equipment card from your graveyard to the battlefield. During your turn, you may activate equip abilities any time you could cast an instant. You may pay {0} rather than pay the equip cost of the first equip ability you activate during each of your turns.
+
+## Halvar, God of Battle // Sword of the Realms
+cost={2}{W}{W}{1}{W} | type=Legendary Creature — God // Legendary Artifact — Equipment | CI=W | produces=- | usd=$23.25
+Halvar, God of Battle: Creatures you control that are enchanted or equipped have double strike. At the beginning of each combat, you may attach target Aura or Equipment attached to a creature you control to target creature you control. // Sword of the Realms: Equipped creature gets +2/+0 and has vigilance. Whenever equipped creature dies, return it to its owner's hand. Equip {1}{W}
+
+## Puresteel Paladin
+cost={W}{W} | type=Creature — Human Knight | CI=W | produces=- | usd=$2.60
+Whenever an Equipment you control enters, you may draw a card. Metalcraft — Equipment you control have equip {0} as long as you control three or more artifacts.
+
+## Sigarda's Aid
+cost={W} | type=Enchantment | CI=W | produces=- | usd=$20.31
+You may cast Aura and Equipment spells as though they had flash. Whenever an Equipment you control enters, you may attach it to target creature you control.
+
+## Boros Charm
+cost={R}{W} | type=Instant | CI=RW | produces=- | usd=$?
+Choose one — • Boros Charm deals 4 damage to target player or planeswalker. • Permanents you control gain indestructible until end of turn. • Target creature gains double strike until end of turn.
+
+## Chaos Warp
+cost={2}{R} | type=Instant | CI=R | produces=- | usd=$?
+The owner of target permanent shuffles it into their library, then reveals the top card of their library. If it's a permanent card, they put it onto the battlefield.
+
+## Deflecting Swat
+cost={2}{R} | type=Instant | CI=R | produces=- | usd=$72.31
+If you control a commander, you may cast this spell without paying its mana cost. You may choose new targets for target spell or ability.
+
+## Dispatch
+cost={W} | type=Instant | CI=W | produces=- | usd=$0.32
+Tap target creature. Metalcraft — If you control three or more artifacts, exile that creature.
+
+## Fierce Guardianship
+cost={2}{U} | type=Instant | CI=U | produces=- | usd=$61.71
+If you control a commander, you may cast this spell without paying its mana cost. Counter target noncreature spell.
+
+## Flawless Maneuver
+cost={2}{W} | type=Instant | CI=W | produces=- | usd=$21.09
+If you control a commander, you may cast this spell without paying its mana cost. Creatures you control gain indestructible until end of turn.
+
+## Generous Gift
+cost={2}{W} | type=Instant | CI=W | produces=- | usd=$0.94
+Destroy target permanent. Its controller creates a 3/3 green Elephant creature token.
+
+## Grand Abolisher
+cost={W}{W} | type=Creature — Human Cleric | CI=W | produces=- | usd=$18.40
+During your turn, your opponents can't cast spells or activate abilities of artifacts, creatures, or enchantments.
+
+## Path to Exile
+cost={W} | type=Instant | CI=W | produces=- | usd=$1.48
+Exile target creature. Its controller may search their library for a basic land card, put that card onto the battlefield tapped, then shuffle.
+
+## Swords to Plowshares
+cost={W} | type=Instant | CI=W | produces=- | usd=$1.56
+Exile target creature. Its controller gains life equal to its power.
+
+## Teferi's Protection
+cost={2}{W} | type=Instant | CI=W | produces=- | usd=$49.01
+Until your next turn, your life total can't change and you gain protection from everything. All permanents you control phase out. (While they're phased out, they're treated as though they don't exist. They phase in before you untap during your untap step.) Exile Teferi's Protection.
+
+## Single Combat
+cost={3}{W}{W} | type=Sorcery | CI=W | produces=- | usd=$0.65
+Each player chooses a creature or planeswalker they control, then sacrifices the rest. Players can't cast creature or planeswalker spells until the end of your next turn.
+
+## Winds of Abandon
+cost={1}{W} | type=Sorcery | CI=W | produces=- | usd=$4.32
+Exile target creature you don't control. For each creature exiled this way, its controller searches their library for a basic land card. Those players put those cards onto the battlefield tapped, then shuffle. Overload {4}{W}{W} (You may cast this spell for its overload cost. If you do, change "target" in its text to "each.")
+
+## Argentum Armor
+cost={6} | type=Artifact — Equipment | CI=- | produces=- | usd=$2.99
+Equipped creature gets +6/+6. Whenever equipped creature attacks, destroy target permanent. Equip {6}
+
+## Batterskull
+cost={5} | type=Artifact — Equipment | CI=- | produces=- | usd=$5.23
+Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.) Equipped creature gets +4/+4 and has vigilance and lifelink. {3}: Return this Equipment to its owner's hand. Equip {5}
+
+## Excalibur, Sword of Eden
+cost={12} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$18.86
+This spell costs {X} less to cast, where X is the total mana value of historic permanents you control. (Artifacts, legendaries, and Sagas are historic.) Equipped creature gets +10/+0 and has vigilance. Equip legendary creature {2}
+
+## Kaldra Compleat
+cost={7} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$9.66
+Living weapon Indestructible Equipped creature gets +5/+5 and has first strike, trample, indestructible, haste, and "Whenever this creature deals combat damage to a creature, exile that creature." Equip {7}
+
+## Meteor Sword
+cost={7} | type=Artifact — Equipment | CI=- | produces=- | usd=$0.30
+When this Equipment enters, destroy target permanent. Equipped creature gets +3/+3. Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Ultima Weapon
+cost={7} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$5.07
+Whenever equipped creature attacks, destroy target creature an opponent controls. Equipped creature gets +7/+7. Equip {7}
+
+## Basilisk Collar
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$6.28
+Equipped creature has deathtouch and lifelink. (Any amount of damage it deals to a creature is enough to destroy it. Damage dealt by this creature also causes you to gain that much life.) Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Brotherhood Regalia
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$9.75
+Equipped creature has ward {2}, is an Assassin in addition to its other types, and can't be blocked. Equip legendary creature {1} Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Colossus Hammer
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$2.60
+Equipped creature gets +10/+10 and loses flying. Equip {8} ({8}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Commander's Plate
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$49.48
+Equipped creature gets +3/+3 and has protection from each color that's not in your commander's color identity. Equip commander {3} Equip {5}
+
+## Illusionist's Bracers
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$6.31
+Whenever an ability of equipped creature is activated, if it isn't a mana ability, copy that ability. You may choose new targets for the copy. Equip {3}
+
+## Mithril Coat
+cost={3} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$32.31
+Flash Indestructible When Mithril Coat enters, attach it to target legendary creature you control. Equipped creature has indestructible. Equip {3}
+
+## Mjölnir, Hammer of Thor
+cost={3}{R} | type=Legendary Artifact — Equipment | CI=R | produces=- | usd=$22.85
+When Mjölnir enters, it deals 4 damage to up to one target creature. Double all damage equipped creature would deal. Equip worthy {1} (A creature is worthy if it's a legendary non-Villain that's red and/or white.) {2}{R}, Discard this card: It deals 2 damage to each creature.
+
+## Shadowspear
+cost={1} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$34.49
+Equipped creature gets +1/+1 and has trample and lifelink. {1}: Permanents your opponents control lose hexproof and indestructible until end of turn. Equip {2}
+
+## Swiftfoot Boots
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$?
+Equipped creature has hexproof and haste. (It can't be the target of spells or abilities your opponents control. It can attack and {T} no matter when it came under your control.) Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Sword of Feast and Famine
+cost={3} | type=Artifact — Equipment | CI=- | produces=- | usd=$40.74
+Equipped creature gets +2/+2 and has protection from black and from green. Whenever equipped creature deals combat damage to a player, that player discards a card and you untap all lands you control. Equip {2}
+
+## Dalakos, Crafter of Wonders
+cost={1}{U}{R} | type=Legendary Creature — Merfolk Artificer | CI=RU | produces=C | usd=$0.36
+{T}: Add {C}{C}. Spend this mana only to cast artifact spells or activate abilities of artifacts. Equipped creatures you control have flying and haste.
+
+## Reyav, Master Smith
+cost={R}{W} | type=Legendary Creature — Dwarf Artificer | CI=RW | produces=- | usd=$0.28
+Whenever a creature you control that's enchanted or equipped attacks, that creature gains double strike until end of turn.
+
+## Stonehewer Giant
+cost={3}{W}{W} | type=Creature — Giant Warrior | CI=W | produces=- | usd=$8.63
+Vigilance {1}{W}, {T}: Search your library for an Equipment card, put it onto the battlefield, attach it to a creature you control, then shuffle.
+
+## Hammer of Nazahn
+cost={4} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$15.01
+Whenever Hammer of Nazahn or another Equipment you control enters, you may attach that Equipment to target creature you control. Equipped creature gets +2/+0 and has indestructible. Equip {4}
+
+## Inventory Management
+cost={R}{W} | type=Instant | CI=RW | produces=- | usd=$3.26
+Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.) For each Aura and Equipment you control, you may attach it to a creature you control.
+
+## Super-Soldier Serum
+cost={1}{W} | type=Enchantment — Aura | CI=W | produces=- | usd=$1.13
+Enchant creature Enchanted creature gets +2/+2, has first strike and vigilance, and is a legendary Soldier in addition to its other types. Whenever enchanted creature attacks or blocks, attach any number of target Equipment you control to it.
+
+## Genji Glove
+cost={5} | type=Artifact — Equipment | CI=- | produces=- | usd=$12.32
+Equipped creature has double strike. Whenever equipped creature attacks, if it's the first combat phase of the turn, untap it. After this phase, there is an additional combat phase. Equip {3}
+
+## Adarkar Wastes
+cost=- | type=Land | CI=UW | produces=C,U,W | usd=$0.39
+{T}: Add {C}. {T}: Add {W} or {U}. This land deals 1 damage to you.
+
+## Battlefield Forge
+cost=- | type=Land | CI=RW | produces=C,R,W | usd=$0.33
+{T}: Add {C}. {T}: Add {R} or {W}. This land deals 1 damage to you.
+
+## Shivan Reef
+cost=- | type=Land | CI=RU | produces=C,R,U | usd=$0.24
+{T}: Add {C}. {T}: Add {U} or {R}. This land deals 1 damage to you.
+
+## The Lonely Mountain
+cost=- | type=Land — Mountain | CI=R | produces=R | usd=$0.62
+({T}: Add {R}.) This land enters tapped unless you control an Equipment. {4}{R}, {T}: Create a 2/2 red Dwarf creature token. This ability costs {1} less to activate for each Equipment you control. Activate only as a sorcery.
+
+## Captain America, Living Legend
+cost={1}{W}{U} | type=Legendary Creature — Human Soldier Hero | CI=UW | produces=- | usd=$0.28
+Vigilance Whenever a creature you control becomes tapped during your turn, if it's the first time that creature has become tapped this turn, untap it.
+
+## Master Transmuter
+cost={3}{U} | type=Artifact Creature — Human Artificer | CI=U | produces=- | usd=$5.69
+{U}, {T}, Return an artifact you control to its owner's hand: You may put an artifact card from your hand onto the battlefield.
+
+## Thorin, Mountain-king
+cost={3}{R} | type=Legendary Creature — Dwarf Noble | CI=R | produces=- | usd=$4.58
+Trample When Thorin enters, attach any number of target Equipment you control to target creature you control. When one or more Equipment become attached to that creature this way, that creature deals damage equal to its power to up to one target creature.
+
+## Captain America, Super-Soldier
+cost={1}{W}{W} | type=Legendary Creature — Human Soldier Hero | CI=W | produces=- | usd=$3.77
+First strike Captain America enters with a shield counter on him. (If he would be dealt damage or destroyed, remove a shield counter from him instead.) As long as Captain America has a shield counter on him, you and other Heroes you control have hexproof.
+
+## Swordsman's Steel
+cost={4} | type=Artifact — Equipment | CI=- | produces=- | usd=$13.35
+When this Equipment enters, draw a card for each Equipment you control. Equipped creature gets +2/+2 for each Equipment you control. Equip {3}
+
+## The Reaver Cleaver
+cost={2}{R} | type=Legendary Artifact — Equipment | CI=R | produces=- | usd=$35.21
+Equipped creature gets +1/+1 and has trample and "Whenever this creature deals combat damage to a player or planeswalker, create that many Treasure tokens." Equip {3}

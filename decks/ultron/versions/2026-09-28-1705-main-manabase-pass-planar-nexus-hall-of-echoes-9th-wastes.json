@@ -1,0 +1,440 @@
+{
+  "takenAt": "2026-09-28T17:05:07.822Z",
+  "listId": "main",
+  "label": "Manabase pass: Planar Nexus, Hall of Echoes, 9th Wastes",
+  "reason": "before Manabase pass: Planar Nexus, Hall of Echoes, 9th Wastes",
+  "list": {
+    "label": "Main",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Ultron, Artificial Malevolence",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Ancient Tomb",
+            "qty": 1
+          },
+          {
+            "name": "Buried Ruin",
+            "qty": 1
+          },
+          {
+            "name": "Command Beacon",
+            "qty": 1
+          },
+          {
+            "name": "Darksteel Citadel",
+            "qty": 1
+          },
+          {
+            "name": "Deserted Temple",
+            "qty": 1
+          },
+          {
+            "name": "Fomori Vault",
+            "qty": 1
+          },
+          {
+            "name": "Inventors' Fair",
+            "qty": 1
+          },
+          {
+            "name": "Mirrorpool",
+            "qty": 1
+          },
+          {
+            "name": "Mishra's Workshop",
+            "qty": 1
+          },
+          {
+            "name": "Power Depot",
+            "qty": 1
+          },
+          {
+            "name": "Rogue's Passage",
+            "qty": 1
+          },
+          {
+            "name": "Sanctum of Ugin",
+            "qty": 1
+          },
+          {
+            "name": "Scavenger Grounds",
+            "qty": 1
+          },
+          {
+            "name": "Shrine of the Forsaken Gods",
+            "qty": 1
+          },
+          {
+            "name": "The Mycosynth Gardens",
+            "qty": 1
+          },
+          {
+            "name": "Thespian's Stage",
+            "qty": 1
+          },
+          {
+            "name": "Treasure Vault",
+            "qty": 1
+          },
+          {
+            "name": "Ugin's Labyrinth",
+            "qty": 1
+          },
+          {
+            "name": "Urza's Cave",
+            "qty": 1
+          },
+          {
+            "name": "Urza's Mine",
+            "qty": 1
+          },
+          {
+            "name": "Urza's Power Plant",
+            "qty": 1
+          },
+          {
+            "name": "Urza's Saga",
+            "qty": 1
+          },
+          {
+            "name": "Urza's Tower",
+            "qty": 1
+          },
+          {
+            "name": "Urza's Workshop",
+            "qty": 1
+          },
+          {
+            "name": "Vesuva",
+            "qty": 1
+          },
+          {
+            "name": "War Room",
+            "qty": 1
+          },
+          {
+            "name": "Wastes",
+            "qty": 8
+          }
+        ]
+      },
+      {
+        "name": "Ramp / Mana Rocks",
+        "cards": [
+          {
+            "name": "Arc Reactor",
+            "qty": 1
+          },
+          {
+            "name": "Extraplanar Lens",
+            "qty": 1
+          },
+          {
+            "name": "Gilded Lotus",
+            "qty": 1
+          },
+          {
+            "name": "Hedron Archive",
+            "qty": 1
+          },
+          {
+            "name": "Karn, Legacy Reforged",
+            "qty": 1
+          },
+          {
+            "name": "Mind Stone",
+            "qty": 1
+          },
+          {
+            "name": "Mox Opal",
+            "qty": 1
+          },
+          {
+            "name": "Palladium Myr",
+            "qty": 1
+          },
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "The Mightstone and Weakstone",
+            "qty": 1
+          },
+          {
+            "name": "Thought Vessel",
+            "qty": 1
+          },
+          {
+            "name": "Thran Dynamo",
+            "qty": 1
+          },
+          {
+            "name": "Worn Powerstone",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Cost Reduction",
+        "cards": [
+          {
+            "name": "Cloud Key",
+            "qty": 1
+          },
+          {
+            "name": "Foundry Inspector",
+            "qty": 1
+          },
+          {
+            "name": "Jhoira's Familiar",
+            "qty": 1
+          },
+          {
+            "name": "Semblance Anvil",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw",
+        "cards": [
+          {
+            "name": "Chimil, the Inner Sun",
+            "qty": 1
+          },
+          {
+            "name": "Idol of Oblivion",
+            "qty": 1
+          },
+          {
+            "name": "Iron Spider, Stark Upgrade",
+            "qty": 1
+          },
+          {
+            "name": "Memnarch, the Warden",
+            "qty": 1
+          },
+          {
+            "name": "Mind's Eye",
+            "qty": 1
+          },
+          {
+            "name": "The One Ring",
+            "qty": 1
+          },
+          {
+            "name": "The Ten Rings",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Removal & Interaction",
+        "cards": [
+          {
+            "name": "All Is Dust",
+            "qty": 1
+          },
+          {
+            "name": "Cityscape Leveler",
+            "qty": 1
+          },
+          {
+            "name": "Duplicant",
+            "qty": 1
+          },
+          {
+            "name": "Eldrazi Confluence",
+            "qty": 1
+          },
+          {
+            "name": "Kozilek's Command",
+            "qty": 1
+          },
+          {
+            "name": "Meteor Golem",
+            "qty": 1
+          },
+          {
+            "name": "Null Elemental Blast",
+            "qty": 1
+          },
+          {
+            "name": "Ugin, Eye of the Storms",
+            "qty": 1
+          },
+          {
+            "name": "Ugin, the Ineffable",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Copy Engines",
+        "cards": [
+          {
+            "name": "Echoes of Eternity",
+            "qty": 1
+          },
+          {
+            "name": "Mirror Box",
+            "qty": 1
+          },
+          {
+            "name": "Mirrorworks",
+            "qty": 1
+          },
+          {
+            "name": "Panharmonicon",
+            "qty": 1
+          },
+          {
+            "name": "Prototype Portal",
+            "qty": 1
+          },
+          {
+            "name": "Roaming Throne",
+            "qty": 1
+          },
+          {
+            "name": "Sculpting Steel",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Deployers",
+        "cards": [
+          {
+            "name": "Quicksilver Amulet",
+            "qty": 1
+          },
+          {
+            "name": "Thran Temporal Gateway",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Payoffs & Engines",
+        "cards": [
+          {
+            "name": "Cybermen Squadron",
+            "qty": 1
+          },
+          {
+            "name": "Forsaken Monument",
+            "qty": 1
+          },
+          {
+            "name": "Glaring Fleshraker",
+            "qty": 1
+          },
+          {
+            "name": "Krang, Utrom Warlord",
+            "qty": 1
+          },
+          {
+            "name": "Liberator, Urza's Battlethopter",
+            "qty": 1
+          },
+          {
+            "name": "Marvin, Murderous Mimic",
+            "qty": 1
+          },
+          {
+            "name": "Mystic Forge",
+            "qty": 1
+          },
+          {
+            "name": "Steel Overseer",
+            "qty": 1
+          },
+          {
+            "name": "Ultron, Machine Overlord",
+            "qty": 1
+          },
+          {
+            "name": "Unwinding Clock",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Bombs & ETB Artifacts",
+        "cards": [
+          {
+            "name": "Blightsteel Colossus",
+            "qty": 1
+          },
+          {
+            "name": "Hangarback Walker",
+            "qty": 1
+          },
+          {
+            "name": "Kuldotha Forgemaster",
+            "qty": 1
+          },
+          {
+            "name": "Mycosynth Golem",
+            "qty": 1
+          },
+          {
+            "name": "Myr Battlesphere",
+            "qty": 1
+          },
+          {
+            "name": "Platinum Angel",
+            "qty": 1
+          },
+          {
+            "name": "Portal to Phyrexia",
+            "qty": 1
+          },
+          {
+            "name": "Solemn Simulacrum",
+            "qty": 1
+          },
+          {
+            "name": "Walking Ballista",
+            "qty": 1
+          },
+          {
+            "name": "Wurmcoil Engine",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Protection & Recursion",
+        "cards": [
+          {
+            "name": "Commander's Plate",
+            "qty": 1
+          },
+          {
+            "name": "Cryptothrall",
+            "qty": 1
+          },
+          {
+            "name": "Darksteel Forge",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

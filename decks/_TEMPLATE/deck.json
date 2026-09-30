@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "name": "<Deck Name>",
+  "format": "commander",
+  "lists": {
+    "main": {
+      "label": "Main",
+      "kind": "deck",
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+          ]
+        },
+        {
+          "name": "Ramp",
+          "cards": [
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+          ]
+        },
+        {
+          "name": "Removal",
+          "cards": [
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+          ]
+        },
+        {
+          "name": "Theme / Synergy",
+          "cards": [
+          ]
+        },
+        {
+          "name": "Win Conditions",
+          "cards": [
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {
+  }
+}

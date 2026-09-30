@@ -373,3 +373,571 @@ Freerunning {2}{R} (You may cast this spell for its freerunning cost if you deal
 ## Savage Beating
 cost={3}{R}{R} | type=Instant | CI=R | produces=- | usd=$10.69
 Cast this spell only during combat on your turn. Choose one — • Creatures you control gain double strike until end of turn. • Untap all creatures you control. After this phase, there is an additional combat phase. Entwine {1}{R} (Choose both if you pay the entwine cost.)
+
+## Aetherize
+cost={3}{U} | type=Instant | CI=U | produces=- | usd=$0.60
+Return all attacking creatures to their owner's hand.
+
+## Arcane Denial
+cost={1}{U} | type=Instant | CI=U | produces=- | usd=$1.63
+Counter target spell. Its controller may draw up to two cards at the beginning of the next turn's upkeep. You draw a card at the beginning of the next turn's upkeep.
+
+## Argentum Armor
+cost={6} | type=Artifact — Equipment | CI=- | produces=- | usd=$2.90
+Equipped creature gets +6/+6. Whenever equipped creature attacks, destroy target permanent. Equip {6}
+
+## Auton Soldier
+cost={4}{U}{U} | type=Artifact Creature — Alien Soldier | CI=U | produces=- | usd=$10.78
+You may have this creature enter as a copy of any creature on the battlefield, except it isn't legendary, is an artifact in addition to its other types, and has myriad. (Whenever it attacks, for each opponent other than defending player, you may create a token copy that's tapped and attacking that player or a planeswalker they control. Exile the tokens at end of combat.)
+
+## Basilisk Collar
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$6.64
+Equipped creature has deathtouch and lifelink. (Any amount of damage it deals to a creature is enough to destroy it. Damage dealt by this creature also causes you to gain that much life.) Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Bender's Waterskin
+cost={3} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$1.07
+Untap this artifact during each other player's untap step. {T}: Add one mana of any color.
+
+## Blacksmith's Talent
+cost={R} | type=Enchantment — Class | CI=R | produces=- | usd=$0.31
+(Gain the next level as a sorcery to add its ability.) When this Class enters, create a colorless Equipment artifact token named Sword with "Equipped creature gets +1/+1" and equip {2}. {2}{R}: Level 2 At the beginning of combat on your turn, attach target Equipment you control to up to one target creature you control. {3}{R}: Level 3 During your turn, equipped creatures you control have double strike and haste.
+
+## Blightsteel Colossus
+cost={12} | type=Artifact Creature — Phyrexian Golem | CI=- | produces=- | usd=$39.07
+Trample, infect, indestructible If Blightsteel Colossus would be put into a graveyard from anywhere, reveal Blightsteel Colossus and shuffle it into its owner's library instead.
+
+## Buried Ruin
+cost=- | type=Land | CI=- | produces=C | usd=$0.41
+{T}: Add {C}. {2}, {T}, Sacrifice this land: Return target artifact card from your graveyard to your hand.
+
+## Captain America's Shield
+cost={2} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$1.05
+Indestructible Equipped creature gets +0/+8 and has vigilance. Whenever equipped creature attacks, tap target creature defending player controls. Equip {2}
+
+## Chromatic Orrery
+cost={7} | type=Legendary Artifact | CI=- | produces=C | usd=$35.31
+You may spend mana as though it were mana of any color. {T}: Add {C}{C}{C}{C}{C}. {5}, {T}: Draw a card for each color among permanents you control.
+
+## Cityscape Leveler
+cost={8} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$13.50
+Trample When you cast this spell and whenever this creature attacks, destroy up to one target nonland permanent. Its controller creates a tapped Powerstone token. Unearth {8}
+
+## Cloud Key
+cost={3} | type=Artifact | CI=- | produces=- | usd=$2.59
+As this artifact enters, choose artifact, creature, enchantment, instant, or sorcery. Spells you cast of the chosen type cost {1} less to cast.
+
+## Combustible Gearhulk
+cost={4}{R}{R} | type=Artifact Creature — Construct | CI=R | produces=- | usd=$0.39
+First strike When this creature enters, target opponent may have you draw three cards. If the player doesn't, you mill three cards, then this creature deals damage to that player equal to the total mana value of those cards.
+
+## Cosmic Cube
+cost={5} | type=Artifact | CI=- | produces=- | usd=$10.13
+Ward {2} Whenever you attack, look at the top six cards of your library. You may cast a spell from among them with mana value less than or equal to the greatest power among attacking creatures you control without paying its mana cost. Put the rest on the bottom of your library in a random order.
+
+## Crystal Skull, Isu Spyglass
+cost={2}{U}{U} | type=Legendary Artifact | CI=U | produces=U | usd=$2.14
+You may look at the top card of your library any time. You may play historic lands and cast historic spells from the top of your library. (Artifacts, legendaries, and Sagas are historic.) {T}: Add {U}.
+
+## Cyberdrive Awakener
+cost={5}{U} | type=Artifact Creature — Construct | CI=U | produces=- | usd=$1.81
+Flying Other artifact creatures you control have flying. When this creature enters, each noncreature artifact you control becomes a 4/4 artifact creature until end of turn.
+
+## Daretti, Scrap Savant
+cost={3}{R} | type=Legendary Planeswalker — Daretti | CI=R | produces=- | usd=$1.49
++2: Discard up to two cards, then draw that many cards. −2: Sacrifice an artifact. If you do, return target artifact card from your graveyard to the battlefield. −10: You get an emblem with "Whenever an artifact is put into your graveyard from the battlefield, return that card to the battlefield at the beginning of the next end step." Daretti, Scrap Savant can be your commander.
+
+## Darksteel Monolith
+cost={8} | type=Artifact | CI=- | produces=- | usd=$27.28
+Indestructible Once each turn, you may pay {0} rather than pay the mana cost for a colorless spell you cast from your hand.
+
+## Desynchronization
+cost={2}{U}{U} | type=Instant | CI=U | produces=- | usd=$5.40
+Return each nonland permanent that's not historic to its owner's hand. (Artifacts, legendaries, and Sagas are historic.)
+
+## Emry, Lurker of the Loch
+cost={2}{U} | type=Legendary Creature — Merfolk Wizard | CI=U | produces=- | usd=$0.59
+Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.) When Emry enters, mill four cards. {T}: Choose target artifact card in your graveyard. You may cast that card this turn. (You still pay its costs. Timing rules still apply.)
+
+## Enthusiastic Mechanaut
+cost={U}{R} | type=Artifact Creature — Goblin Artificer | CI=RU | produces=- | usd=$0.29
+Flying Artifact spells you cast cost {1} less to cast.
+
+## Etherium Sculptor
+cost={1}{U} | type=Artifact Creature — Vedalken Artificer | CI=U | produces=- | usd=$0.86
+Artifact spells you cast cost {1} less to cast.
+
+## Foundry Inspector
+cost={3} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$0.37
+Artifact spells you cast cost {1} less to cast.
+
+## Gilded Lotus
+cost={5} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.55
+{T}: Add three mana of any one color.
+
+## Hulkbuster Armor
+cost={4} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$3.03
+Equipped creature has base power and toughness 9/9 and has flying. Equip Hero {3} Equip {6}
+
+## Iron Lad, Diverging Destiny
+cost={2}{U} | type=Legendary Artifact Creature — Human Hero | CI=U | produces=- | usd=$0.26
+Flying, vigilance You may look at the top card of your library any time. {T}: Reveal the top card of your library. If it's an artifact card, draw a card.
+
+## Iron Lad, Young Avenger
+cost={2}{U/R} | type=Legendary Artifact Creature — Human Hero | CI=RU | produces=- | usd=$0.29
+Flying (This creature can't be blocked except by creatures with flying or reach.) Noncreature spells you cast cost {1} less to cast.
+
+## Iron Man, Armored Avenger
+cost={3}{U} | type=Legendary Artifact Creature — Human Hero | CI=U | produces=- | usd=$3.65
+Flying Whenever you draw a card, put a +1/+1 counter on target creature. Whenever Iron Man attacks, other attacking modified creatures gain flying until end of turn. (Equipment, Auras you control, and counters are modifications.)
+
+## Iron Man, Bleeding Edge
+cost={3}{U}{U} | type=Legendary Artifact Creature — Human Hero | CI=U | produces=- | usd=$2.68
+Flying Whenever you cast an artifact spell, you may copy it, except the copy isn't legendary. Do this only once each turn. (The copy becomes a token.)
+
+## Iron Man, Futurist Paragon
+cost={4}{U}{U} | type=Legendary Artifact Creature — Human Hero | CI=U | produces=- | usd=$2.78
+Flying At the beginning of combat on your turn, target artifact or creature becomes an artifact creature with base power and toughness 5/5 and gains flying.
+
+## Iron Man, Master of Machines
+cost={2}{U}{R} | type=Legendary Artifact Creature — Human Hero | CI=RU | produces=- | usd=$0.29
+Flying, vigilance Iron Man gets +1/+0 for each other artifact you control. Whenever Iron Man attacks, if an artifact entered the battlefield under your control this turn, draw a card.
+
+## Iron Man, Modern Marvel
+cost={2}{U}{U} | type=Legendary Artifact Creature — Human Hero | CI=U | produces=- | usd=$13.16
+Flying (This creature can't be blocked except by creatures with flying or reach.) Other artifact creatures you control get +1/+1. Whenever Iron Man attacks, if you control another artifact creature, draw a card.
+
+## Iron Spider, Stark Upgrade
+cost={3} | type=Legendary Artifact Creature — Spider Hero | CI=- | produces=- | usd=$2.20
+Vigilance {T}: Put a +1/+1 counter on each artifact creature and/or Vehicle you control. {2}, Remove two +1/+1 counters from among artifacts you control: Draw a card.
+
+## Ironheart, Clever Champion
+cost={4}{U} | type=Legendary Artifact Creature — Human Hero | CI=U | produces=- | usd=$0.41
+Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.) Flying Noncreature spells you cast have improvise.
+
+## Jhoira's Familiar
+cost={4} | type=Artifact Creature — Bird | CI=- | produces=- | usd=$2.43
+Flying Historic spells you cast cost {1} less to cast. (Artifacts, legendaries, and Sagas are historic.)
+
+## Jhoira, Weatherlight Captain
+cost={2}{U}{R} | type=Legendary Creature — Human Artificer | CI=RU | produces=- | usd=$0.50
+Whenever you cast a historic spell, draw a card. (Artifacts, legendaries, and Sagas are historic.)
+
+## Kaldra Compleat
+cost={7} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$9.32
+Living weapon Indestructible Equipped creature gets +5/+5 and has first strike, trample, indestructible, haste, and "Whenever this creature deals combat damage to a creature, exile that creature." Equip {7}
+
+## Kappa Cannoneer
+cost={5}{U} | type=Artifact Creature — Turtle Warrior | CI=U | produces=- | usd=$0.36
+Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.) Ward {4} Whenever this creature or another artifact you control enters, put a +1/+1 counter on this creature. It can't be blocked this turn.
+
+## Karn, Legacy Reforged
+cost={5} | type=Legendary Artifact Creature — Golem | CI=- | produces=C | usd=$21.71
+Karn's power and toughness are each equal to the greatest mana value among artifacts you control. At the beginning of your upkeep, add {C} for each artifact you control. This mana can't be spent to cast nonartifact spells. Until end of turn, you don't lose this mana as steps and phases end.
+
+## Lady Octopus, Inspired Inventor
+cost={U} | type=Legendary Creature — Human Scientist Villain | CI=U | produces=- | usd=$0.82
+Whenever you draw your first or second card each turn, put an ingenuity counter on Lady Octopus. {T}: You may cast an artifact spell from your hand with mana value less than or equal to the number of ingenuity counters on Lady Octopus without paying its mana cost.
+
+## Lightning Greaves
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$4.47
+Equipped creature has haste and shroud. (It can't be the target of spells or abilities.) Equip {0}
+
+## Mana Drain
+cost={U}{U} | type=Instant | CI=U | produces=C | usd=$57.25
+Counter target spell. At the beginning of your next main phase, add an amount of {C} equal to that spell's mana value.
+
+## Master Transmuter
+cost={3}{U} | type=Artifact Creature — Human Artificer | CI=U | produces=- | usd=$6.14
+{U}, {T}, Return an artifact you control to its owner's hand: You may put an artifact card from your hand onto the battlefield.
+
+## Mechanized Production
+cost={2}{U}{U} | type=Enchantment — Aura | CI=U | produces=- | usd=$3.00
+Enchant artifact you control At the beginning of your upkeep, create a token that's a copy of enchanted artifact. Then if you control eight or more artifacts with the same name as one another, you win the game.
+
+## Meteor Sword
+cost={7} | type=Artifact — Equipment | CI=- | produces=- | usd=$0.25
+When this Equipment enters, destroy target permanent. Equipped creature gets +3/+3. Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Mystic Forge
+cost={4} | type=Artifact | CI=- | produces=- | usd=$2.88
+You may look at the top card of your library any time. You may cast artifact spells and colorless spells from the top of your library. {T}, Pay 1 life: Exile the top card of your library.
+
+## Nettlecyst
+cost={3} | type=Artifact — Equipment | CI=- | produces=- | usd=$3.78
+Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.) Equipped creature gets +1/+1 for each artifact and/or enchantment you control. Equip {2}
+
+## Padeem, Consul of Innovation
+cost={3}{U} | type=Legendary Creature — Vedalken Artificer | CI=U | produces=- | usd=$2.00
+Artifacts you control have hexproof. (They can't be the targets of spells or abilities your opponents control.) At the beginning of your upkeep, if you control the artifact with the greatest mana value or tied for the greatest mana value, draw a card.
+
+## Pinnacle Emissary
+cost={1}{U}{R} | type=Artifact Creature — Robot | CI=RU | produces=- | usd=$1.39
+Whenever you cast an artifact spell, create a 1/1 colorless Drone artifact creature token with flying and "This token can block only creatures with flying." Warp {U/R} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)
+
+## Propaganda
+cost={2}{U} | type=Enchantment | CI=U | produces=- | usd=$2.54
+Creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you.
+
+## Reliquary Tower
+cost=- | type=Land | CI=- | produces=C | usd=$4.49
+You have no maximum hand size. {T}: Add {C}.
+
+## Sai, Master Thopterist
+cost={2}{U} | type=Legendary Creature — Human Artificer | CI=U | produces=- | usd=$0.63
+Whenever you cast an artifact spell, create a 1/1 colorless Thopter artifact creature token with flying. {1}{U}, Sacrifice two artifacts: Draw a card.
+
+## Scour for Scrap
+cost={3}{U} | type=Instant | CI=U | produces=- | usd=$0.33
+Choose one or both — • Search your library for an artifact card, reveal it, put it into your hand, then shuffle. • Return target artifact card from your graveyard to your hand.
+
+## Sculpting Steel
+cost={3} | type=Artifact | CI=- | produces=- | usd=$3.49
+You may have this artifact enter as a copy of any artifact on the battlefield.
+
+## Sensei's Divining Top
+cost={1} | type=Artifact | CI=- | produces=- | usd=$42.47
+{1}: Look at the top three cards of your library, then put them back in any order. {T}: Draw a card, then put this artifact on top of its owner's library.
+
+## Shadowspear
+cost={1} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$32.73
+Equipped creature gets +1/+1 and has trample and lifelink. {1}: Permanents your opponents control lose hexproof and indestructible until end of turn. Equip {2}
+
+## Shuri, Wakandan Inventor
+cost={1}{U} | type=Legendary Creature — Human Artificer Hero | CI=U | produces=- | usd=$0.29
+Artifact spells you cast cost {1} less to cast. {1}, {T}: Target artifact you control becomes a copy of a second target artifact you control until end of turn, except it isn't legendary. Activate only as a sorcery.
+
+## Solemn Simulacrum
+cost={4} | type=Artifact Creature — Golem | CI=- | produces=- | usd=$0.33
+When this creature enters, you may search your library for a basic land card, put that card onto the battlefield tapped, then shuffle. When this creature dies, you may draw a card.
+
+## Spellskite
+cost={2} | type=Artifact Creature — Phyrexian Horror | CI=U | produces=- | usd=$7.68
+{U/P}: Change a target of target spell or ability to this creature. ({U/P} can be paid with either {U} or 2 life.)
+
+## Stark's Ingenuity
+cost={2}{U} | type=Enchantment — Aura | CI=U | produces=- | usd=$2.13
+Enchant creature you control When this Aura enters, you may pay {X}. If you do, draw X cards. Whenever you draw a card, put a +1/+1 counter on enchanted creature.
+
+## Steel Overseer
+cost={2} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$0.37
+{T}: Put a +1/+1 counter on each artifact creature you control.
+
+## Storm the Vault // Vault of Catlacan
+cost={2}{U}{R} | type=Legendary Enchantment // Legendary Land | CI=RU | produces=B,G,R,U,W | usd=$6.37
+Storm the Vault: Whenever one or more creatures you control deal combat damage to a player, create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.") At the beginning of your end step, if you control five or more artifacts, transform Storm the Vault. // Vault of Catlacan: (Transforms from Storm the Vault.) {T}: Add one mana of any color. {T}: Add {U} for each artifact you control.
+
+## Sword of the Animist
+cost={2} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$5.86
+Equipped creature gets +1/+1. Whenever equipped creature attacks, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle. Equip {2}
+
+## Swordsman's Steel
+cost={4} | type=Artifact — Equipment | CI=- | produces=- | usd=$13.02
+When this Equipment enters, draw a card for each Equipment you control. Equipped creature gets +2/+2 for each Equipment you control. Equip {3}
+
+## The Aetherspark
+cost={4} | type=Legendary Artifact Planeswalker — Equipment | CI=- | produces=B,G,R,U,W | usd=$23.70
+As long as The Aetherspark is attached to a creature, The Aetherspark can't be attacked and has "Whenever equipped creature deals combat damage during your turn, put that many loyalty counters on The Aetherspark." +1: Attach The Aetherspark to up to one target creature you control. Put a +1/+1 counter on that creature. −5: Draw two cards. −10: Add ten mana of any one color.
+
+## The Key to the Vault
+cost={1}{U} | type=Legendary Artifact — Equipment | CI=U | produces=- | usd=$0.57
+Whenever equipped creature deals combat damage to a player, look at that many cards from the top of your library. You may exile a nonland card from among them. Put the rest on the bottom of your library in a random order. You may cast the exiled card without paying its mana cost. Equip {2}{U}
+
+## The Reality Chip
+cost={1}{U} | type=Legendary Artifact Creature — Equipment Jellyfish | CI=U | produces=- | usd=$4.41
+You may look at the top card of your library any time. As long as The Reality Chip is attached to a creature, you may play lands and cast spells from the top of your library. Reconfigure {2}{U} ({2}{U}: Attach to target creature you control; or unattach from a creature. Reconfigure only as a sorcery. While attached, this isn't a creature.)
+
+## The Walls of Ba Sing Se
+cost={8} | type=Legendary Artifact Creature — Wall | CI=- | produces=- | usd=$24.96
+Defender Other permanents you control have indestructible.
+
+## Thopter Spy Network
+cost={2}{U}{U} | type=Enchantment | CI=U | produces=- | usd=$0.46
+At the beginning of your upkeep, if you control an artifact, create a 1/1 colorless Thopter artifact creature token with flying. Whenever one or more artifact creatures you control deal combat damage to a player, draw a card.
+
+## Thought Monitor
+cost={6}{U} | type=Artifact Creature — Construct | CI=U | produces=- | usd=$0.35
+Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.) Flying When this creature enters, draw two cards.
+
+## Trash for Treasure
+cost={2}{R} | type=Sorcery | CI=R | produces=- | usd=$1.57
+As an additional cost to cast this spell, sacrifice an artifact. Return target artifact card from your graveyard to the battlefield.
+
+## Ultron, Artificial Malevolence
+cost={3} | type=Legendary Artifact Creature — Robot Villain | CI=- | produces=- | usd=$12.06
+Whenever another nontoken artifact you control enters, you may pay {2}. If you do, create a token that's a copy of it. If the token isn't a creature, it becomes a 2/2 Robot Villain creature in addition to its other types.
+
+## Untimely Malfunction
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$8.89
+Choose one — • Destroy target artifact. • Change the target of target spell or ability with a single target. • One or two target creatures can't block this turn.
+
+## Unwinding Clock
+cost={4} | type=Artifact | CI=- | produces=- | usd=$19.08
+Untap all artifacts you control during each other player's untap step.
+
+## Urza, Lord High Artificer
+cost={2}{U}{U} | type=Legendary Creature — Human Artificer | CI=U | produces=U | usd=$15.56
+When Urza enters, create a 0/0 colorless Construct artifact creature token with "This token gets +1/+1 for each artifact you control." Tap an untapped artifact you control: Add {U}. {5}: Shuffle your library, then exile the top card. Until end of turn, you may play that card without paying its mana cost.
+
+## Vandalblast
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$1.03
+Destroy target artifact you don't control. Overload {4}{R} (You may cast this spell for its overload cost. If you do, change "target" in its text to "each.")
+
+## Vision Quest
+cost={X}{U}{R} | type=Sorcery | CI=RU | produces=- | usd=$0.31
+Search your library and/or graveyard for an artifact creature card with mana value X or less and put it onto the battlefield with X additional +1/+1 counters on it. If X is 4 or greater, it gains haste until end of turn. If you search your library this way, shuffle.
+
+## Vision, Spectral Synthezoid
+cost={6}{U}{U} | type=Legendary Artifact Creature — Robot Hero | CI=U | produces=- | usd=$0.32
+Flying Once during each of your turns, you may cast a noncreature or Robot spell from your hand without paying its mana cost.
+
+## War Machine, Avenging Arsenal
+cost={4}{R} | type=Legendary Artifact Creature — Human Hero | CI=R | produces=- | usd=$0.40
+Flying Whenever War Machine attacks, attacking modified creatures you control gain double strike until end of turn. (Equipment, Auras you control, and counters are modifications.)
+
+## Weapons Manufacturing
+cost={1}{R} | type=Enchantment | CI=R | produces=- | usd=$2.38
+Whenever a nontoken artifact you control enters, create a colorless artifact token named Munitions with "When this token leaves the battlefield, it deals 2 damage to any target."
+
+## Whir of Invention
+cost={X}{U}{U}{U} | type=Instant | CI=U | produces=- | usd=$5.64
+Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.) Search your library for an artifact card with mana value X or less, put it onto the battlefield, then shuffle.
+
+## Wurmcoil Engine
+cost={6} | type=Artifact Creature — Phyrexian Wurm | CI=- | produces=- | usd=$11.06
+Deathtouch, lifelink When this creature dies, create a 3/3 colorless Phyrexian Wurm artifact creature token with deathtouch and a 3/3 colorless Phyrexian Wurm artifact creature token with lifelink.
+
+## Swiftfoot Boots
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$?
+Equipped creature has hexproof and haste. (It can't be the target of spells or abilities your opponents control. It can attack and {T} no matter when it came under your control.) Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Semblance Anvil
+cost={3} | type=Artifact | CI=- | produces=- | usd=$7.19
+Imprint — When this artifact enters, you may exile a nonland card from your hand. Spells you cast that share a card type with the exiled card cost {2} less to cast.
+
+## Ruby Medallion
+cost={2} | type=Artifact | CI=- | produces=- | usd=$13.08
+Red spells you cast cost {1} less to cast.
+
+## Sapphire Medallion
+cost={2} | type=Artifact | CI=- | produces=- | usd=$7.24
+Blue spells you cast cost {1} less to cast.
+
+## Training Grounds
+cost={U} | type=Enchantment | CI=U | produces=- | usd=$10.07
+Activated abilities of creatures you control cost {2} less to activate. This effect can't reduce the mana in that cost to less than one mana.
+
+## Command Beacon
+cost=- | type=Land | CI=- | produces=C | usd=$9.17
+{T}: Add {C}. {T}, Sacrifice this land: Put your commander into your hand from the command zone.
+
+## Fateful Discovery
+cost={3}{U}{U} | type=Enchantment | CI=U | produces=- | usd=$5.99
+Whenever an artifact you control enters, draw a card.
+
+## Conqueror's Flail
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$4.08
+Equipped creature gets +1/+1 for each color among permanents you control. As long as this Equipment is attached to a creature, your opponents can't cast spells during your turn. Equip {2}
+
+## Hammer of Nazahn
+cost={4} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$15.93
+Whenever Hammer of Nazahn or another Equipment you control enters, you may attach that Equipment to target creature you control. Equipped creature gets +2/+0 and has indestructible. Equip {4}
+
+## Wizard's Staff
+cost={1}{U} | type=Artifact — Equipment | CI=U | produces=- | usd=$5.14
+Equipped creature has prowess. (Whenever its controller casts a noncreature spell, that creature gets +1/+1 until end of turn.) If a triggered ability of equipped creature triggers, that ability triggers an additional time. Equip Wizard {1} Equip {3}
+
+## Reckless Fireweaver
+cost={1}{R} | type=Creature — Human Artificer | CI=R | produces=- | usd=$0.50
+Whenever an artifact you control enters, this creature deals 1 damage to each opponent.
+
+## Ingenious Artillerist
+cost={2}{R} | type=Creature — Human Artificer | CI=R | produces=- | usd=$1.85
+Whenever one or more artifacts you control enter, this creature deals that much damage to each opponent.
+
+## Firebrand Archer
+cost={1}{R} | type=Creature — Human Archer | CI=R | produces=- | usd=$0.27
+Whenever you cast a noncreature spell, this creature deals 1 damage to each opponent.
+
+## Nettle Drone
+cost={2}{R} | type=Creature — Eldrazi Drone | CI=R | produces=- | usd=$0.21
+Devoid (This card has no color.) {T}: This creature deals 1 damage to each opponent. Whenever you cast a colorless spell, untap this creature.
+
+## Molten Nursery
+cost={2}{R} | type=Enchantment | CI=R | produces=- | usd=$0.13
+Devoid (This card has no color.) Whenever you cast a colorless spell, this enchantment deals 1 damage to any target.
+
+## Saheeli Rai
+cost={1}{U}{R} | type=Legendary Planeswalker — Saheeli | CI=RU | produces=- | usd=$1.60
++1: Scry 1. Saheeli Rai deals 1 damage to each opponent. −2: Create a token that's a copy of target artifact or creature you control, except it's an artifact in addition to its other types. That token gains haste. Exile it at the beginning of the next end step. −7: Search your library for up to three artifact cards with different names, put them onto the battlefield, then shuffle.
+
+## Electrostatic Field
+cost={1}{R} | type=Creature — Wall | CI=R | produces=- | usd=$2.30
+Defender Whenever you cast an instant or sorcery spell, this creature deals 1 damage to each opponent.
+
+## Sword of Kaldra
+cost={4} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$21.33
+Equipped creature gets +5/+5. Whenever equipped creature deals damage to a creature, exile that creature. (Exile it only if it's still on the battlefield.) Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Sword of Light and Shadow
+cost={3} | type=Artifact — Equipment | CI=- | produces=- | usd=$14.63
+Equipped creature gets +2/+2 and has protection from white and from black. Whenever equipped creature deals combat damage to a player, you gain 3 life and you may return up to one target creature card from your graveyard to your hand. Equip {2}
+
+## Sword of Truth and Justice
+cost={3} | type=Artifact — Equipment | CI=- | produces=- | usd=$31.65
+Equipped creature gets +2/+2 and has protection from white and from blue. Whenever equipped creature deals combat damage to a player, put a +1/+1 counter on a creature you control, then proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.) Equip {2}
+
+## Sword of Vengeance
+cost={3} | type=Artifact — Equipment | CI=- | produces=- | usd=$1.08
+Equipped creature gets +2/+0 and has first strike, vigilance, trample, and haste. Equip {3}
+
+## Sword of Wealth and Power
+cost={3} | type=Artifact — Equipment | CI=- | produces=- | usd=$21.43
+Equipped creature gets +2/+2 and has protection from instants and from sorceries. Whenever equipped creature deals combat damage to a player, create a Treasure token. When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy. Equip {2}
+
+## Sword of Body and Mind
+cost={3} | type=Artifact — Equipment | CI=- | produces=- | usd=$19.12
+Equipped creature gets +2/+2 and has protection from green and from blue. Whenever equipped creature deals combat damage to a player, you create a 2/2 green Wolf creature token and that player mills ten cards. Equip {2}
+
+## Rogue's Passage
+cost=- | type=Land | CI=- | produces=C | usd=$0.38
+{T}: Add {C}. {4}, {T}: Target creature can't be blocked this turn.
+
+## Panharmonicon
+cost={4} | type=Artifact | CI=- | produces=- | usd=$7.01
+If an artifact or creature entering causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time.
+
+## Riverglide Pathway // Lavaglide Pathway
+cost=- | type=Land // Land | CI=RU | produces=R,U | usd=$5.49
+Riverglide Pathway: {T}: Add {U}. // Lavaglide Pathway: {T}: Add {R}.
+
+## Academy Manufactor
+cost={3} | type=Artifact Creature — Assembly-Worker | CI=- | produces=- | usd=$8.28
+If you would create a Clue, Food, or Treasure token, instead create one of each.
+
+## Xorn
+cost={2}{R} | type=Creature — Elemental | CI=R | produces=- | usd=$10.20
+If you would create one or more Treasure tokens, instead create those tokens plus an additional Treasure token.
+
+## Efficient Construction
+cost={3}{U} | type=Enchantment | CI=U | produces=- | usd=$0.95
+Whenever you cast an artifact spell, create a 1/1 colorless Thopter artifact creature token with flying.
+
+## Vedalken Orrery
+cost={4} | type=Artifact | CI=- | produces=- | usd=$18.38
+You may cast spells as though they had flash.
+
+## Shimmer Myr
+cost={3} | type=Artifact Creature — Myr | CI=- | produces=- | usd=$0.39
+Flash You may cast artifact spells as though they had flash.
+
+## Myr Retriever
+cost={2} | type=Artifact Creature — Myr | CI=- | produces=- | usd=$3.48
+When this creature dies, return another target artifact card from your graveyard to your hand.
+
+## Junk Diver
+cost={3} | type=Artifact Creature — Bird | CI=- | produces=- | usd=$0.28
+Flying When this creature dies, return another target artifact card from your graveyard to your hand.
+
+## Goldspan Dragon
+cost={3}{R}{R} | type=Creature — Dragon | CI=R | produces=B,G,R,U,W | usd=$9.93
+Flying, haste Whenever this creature attacks or becomes the target of a spell, create a Treasure token. Treasures you control have "{T}, Sacrifice this artifact: Add two mana of any one color."
+
+## Brass's Bounty
+cost={6}{R} | type=Sorcery | CI=R | produces=B,G,R,U,W | usd=$0.55
+For each land you control, create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.")
+
+## Chief Engineer
+cost={1}{U} | type=Creature — Vedalken Artificer | CI=U | produces=- | usd=$0.87
+Artifact spells you cast have convoke. (Your creatures can help cast those spells. Each creature you tap while casting an artifact spell pays for {1} or one mana of that creature's color.)
+
+## Rook Turret
+cost={3}{U} | type=Artifact Creature — Construct | CI=U | produces=- | usd=$0.20
+Flying Whenever another artifact you control enters, you may draw a card. If you do, discard a card.
+
+## Transplant Theorist
+cost={3}{U} | type=Artifact Creature — Phyrexian Artificer | CI=U | produces=- | usd=$0.24
+Whenever this creature or another artifact you control enters, you may draw a card. If you do, discard a card. {2}: Put target card from your graveyard on the bottom of your library.
+
+## Surge Conductor
+cost={3} | type=Artifact Creature — Robot | CI=- | produces=- | usd=$0.38
+Whenever another nontoken artifact you control enters, proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)
+
+## Mirrorworks
+cost={5} | type=Artifact | CI=- | produces=- | usd=$2.79
+Whenever another nontoken artifact you control enters, you may pay {2}. If you do, create a token that's a copy of that artifact.
+
+## Crashing Drawbridge
+cost={2} | type=Artifact Creature — Wall | CI=- | produces=- | usd=$0.75
+Defender {T}: Creatures you control gain haste until end of turn.
+
+## Thousand-Year Elixir
+cost={3} | type=Artifact | CI=- | produces=- | usd=$14.55
+You may activate abilities of creatures you control as though those creatures had haste. {1}, {T}: Untap target creature.
+
+## Fervor
+cost={2}{R} | type=Enchantment | CI=R | produces=- | usd=$4.25
+Creatures you control have haste. (They can attack and {T} as soon as they come under your control.)
+
+## Hammer of Purphoros
+cost={1}{R}{R} | type=Legendary Enchantment Artifact | CI=R | produces=- | usd=$0.36
+Creatures you control have haste. {2}{R}, {T}, Sacrifice a land: Create a 3/3 colorless Golem enchantment artifact creature token.
+
+## Akroma's Memorial
+cost={7} | type=Legendary Artifact | CI=- | produces=- | usd=$34.70
+Creatures you control have flying, first strike, vigilance, trample, haste, and protection from black and from red.
+
+## Urabrask the Hidden
+cost={3}{R}{R} | type=Legendary Creature — Phyrexian Praetor | CI=R | produces=- | usd=$4.67
+Creatures you control have haste. Creatures your opponents control enter tapped.
+
+## Manifold Key
+cost={1} | type=Artifact | CI=- | produces=- | usd=$1.62
+{1}, {T}: Untap another target artifact. {3}, {T}: Target creature can't be blocked this turn.
+
+## Cyberman Patrol
+cost={2} | type=Artifact Creature — Cyberman | CI=- | produces=- | usd=$19.40
+Artifact creatures you control have afflict 3. (Whenever a creature with afflict 3 becomes blocked, defending player loses 3 life.)
+
+## Retrofitter Foundry
+cost={1} | type=Artifact | CI=- | produces=- | usd=$1.37
+{3}: Untap this artifact. {2}, {T}: Create a 1/1 colorless Servo artifact creature token. {1}, {T}, Sacrifice a Servo: Create a 1/1 colorless Thopter artifact creature token with flying. {T}, Sacrifice a Thopter: Create a 4/4 colorless Construct artifact creature token.
+
+## Master of Etherium
+cost={2}{U} | type=Artifact Creature — Vedalken Wizard | CI=U | produces=- | usd=$0.72
+Master of Etherium's power and toughness are each equal to the number of artifacts you control. Other artifact creatures you control get +1/+1.
+
+## Chief of the Foundry
+cost={3} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$0.22
+Other artifact creatures you control get +1/+1.
+
+## Clock of Omens
+cost={4} | type=Artifact | CI=- | produces=- | usd=$4.90
+Tap two untapped artifacts you control: Untap target artifact.
+
+## Kuldotha Forgemaster
+cost={5} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$11.06
+{T}, Sacrifice three artifacts: Search your library for an artifact card, put it onto the battlefield, then shuffle.
+
+## Cranial Plating
+cost={2} | type=Artifact — Equipment | CI=B | produces=- | usd=$0.38
+Equipped creature gets +1/+0 for each artifact you control. {B}{B}: Attach this Equipment to target creature you control. Equip {1}
+
+## Brass Squire
+cost={3} | type=Artifact Creature — Myr | CI=- | produces=- | usd=$1.25
+{T}: Attach target Equipment you control to target creature you control.
+
+## Hero's Blade
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$0.28
+Equipped creature gets +3/+2. Whenever a legendary creature you control enters, you may attach this Equipment to it. Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Grafted Wargear
+cost={3} | type=Artifact — Equipment | CI=- | produces=- | usd=$0.31
+Equipped creature gets +3/+2. Whenever this Equipment becomes unattached from a permanent, sacrifice that permanent. Equip {0} ({0}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Firion, Wild Rose Warrior
+cost={2}{R} | type=Legendary Creature — Human Rebel Warrior | CI=R | produces=- | usd=$0.74
+Equipped creatures you control have haste. Whenever a nontoken Equipment you control enters, create a token that's a copy of it, except it has "This Equipment's equip abilities cost {2} less to activate." Sacrifice that token at the beginning of the next upkeep.
+
+## Doc Ock's Tentacles
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$0.39
+Whenever a creature you control with mana value 5 or greater enters, you may attach this Equipment to it. Equipped creature gets +4/+4. Equip {5}

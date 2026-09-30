@@ -1,0 +1,470 @@
+{
+  "takenAt": "2026-09-28T17:15:32.484Z",
+  "listId": "sacrifice",
+  "label": "FRA: Edgar, Ancient Bloodlord in, Morlun out",
+  "reason": "before FRA: Edgar, Ancient Bloodlord in, Morlun out",
+  "list": {
+    "label": "Sacrifice",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Edgar Markov",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Agadeem's Awakening",
+            "qty": 1
+          },
+          {
+            "name": "Ancient Tomb",
+            "qty": 1
+          },
+          {
+            "name": "Blazemire Verge",
+            "qty": 1
+          },
+          {
+            "name": "Blood Crypt",
+            "qty": 1
+          },
+          {
+            "name": "Bojuka Bog",
+            "qty": 1
+          },
+          {
+            "name": "Brightclimb Pathway",
+            "qty": 1
+          },
+          {
+            "name": "Cabal Coffers",
+            "qty": 1
+          },
+          {
+            "name": "Castle Locthwain",
+            "qty": 1
+          },
+          {
+            "name": "Cavern of Souls",
+            "qty": 1
+          },
+          {
+            "name": "Caves of Koilos",
+            "qty": 1
+          },
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Dragonskull Summit",
+            "qty": 1
+          },
+          {
+            "name": "Eiganjo, Seat of the Empire",
+            "qty": 1
+          },
+          {
+            "name": "Godless Shrine",
+            "qty": 1
+          },
+          {
+            "name": "Isolated Chapel",
+            "qty": 1
+          },
+          {
+            "name": "Luxury Suite",
+            "qty": 1
+          },
+          {
+            "name": "Minas Tirith",
+            "qty": 1
+          },
+          {
+            "name": "Mountain",
+            "qty": 1
+          },
+          {
+            "name": "Path of Ancestry",
+            "qty": 1
+          },
+          {
+            "name": "Phyrexian Tower",
+            "qty": 1
+          },
+          {
+            "name": "Plains",
+            "qty": 1
+          },
+          {
+            "name": "Sacred Foundry",
+            "qty": 1
+          },
+          {
+            "name": "Shattered Sanctum",
+            "qty": 1
+          },
+          {
+            "name": "Spectator Seating",
+            "qty": 1
+          },
+          {
+            "name": "Sulfurous Springs",
+            "qty": 1
+          },
+          {
+            "name": "Sundown Pass",
+            "qty": 1
+          },
+          {
+            "name": "Swamp",
+            "qty": 3
+          },
+          {
+            "name": "Tainted Field",
+            "qty": 1
+          },
+          {
+            "name": "Takenuma, Abandoned Mire",
+            "qty": 1
+          },
+          {
+            "name": "Three Tree City",
+            "qty": 1
+          },
+          {
+            "name": "Urborg, Tomb of Yawgmoth",
+            "qty": 1
+          },
+          {
+            "name": "Vault of Champions",
+            "qty": 1
+          },
+          {
+            "name": "Vault of the Archangel",
+            "qty": 1
+          },
+          {
+            "name": "Witch Enchanter",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Ramp & Cost Reduction",
+        "cards": [
+          {
+            "name": "Herald's Horn",
+            "qty": 1
+          },
+          {
+            "name": "Patchwork Banner",
+            "qty": 1
+          },
+          {
+            "name": "Smothering Tithe",
+            "qty": 1
+          },
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Urza's Incubator",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Sacrifice Outlets",
+        "cards": [
+          {
+            "name": "Ashnod's Altar",
+            "qty": 1
+          },
+          {
+            "name": "Bartolomé del Presidio",
+            "qty": 1
+          },
+          {
+            "name": "Indulgent Aristocrat",
+            "qty": 1
+          },
+          {
+            "name": "Master of Dark Rites",
+            "qty": 1
+          },
+          {
+            "name": "Phyrexian Altar",
+            "qty": 1
+          },
+          {
+            "name": "Viscera Seer",
+            "qty": 1
+          },
+          {
+            "name": "Yahenni, Undying Partisan",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Death Payoffs — Drain",
+        "cards": [
+          {
+            "name": "Blood Artist",
+            "qty": 1
+          },
+          {
+            "name": "Cruel Celebrant",
+            "qty": 1
+          },
+          {
+            "name": "Indulging Patrician",
+            "qty": 1
+          },
+          {
+            "name": "Kalastria Highborn",
+            "qty": 1
+          },
+          {
+            "name": "Vengeful Bloodwitch",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Edicts & Wipe Punishment",
+        "cards": [
+          {
+            "name": "Anowon, the Ruin Sage",
+            "qty": 1
+          },
+          {
+            "name": "Dictate of Erebos",
+            "qty": 1
+          },
+          {
+            "name": "Grave Pact",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Sweepers You Want To Cast",
+        "cards": [
+          {
+            "name": "Olivia's Wrath",
+            "qty": 1
+          },
+          {
+            "name": "The Meathook Massacre",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw",
+        "cards": [
+          {
+            "name": "Black Market Connections",
+            "qty": 1
+          },
+          {
+            "name": "Crossway Troublemakers",
+            "qty": 1
+          },
+          {
+            "name": "Deadly Dispute",
+            "qty": 1
+          },
+          {
+            "name": "Dusk Legion Zealot",
+            "qty": 1
+          },
+          {
+            "name": "Phyrexian Arena",
+            "qty": 1
+          },
+          {
+            "name": "Skullclamp",
+            "qty": 1
+          },
+          {
+            "name": "Twilight Prophet",
+            "qty": 1
+          },
+          {
+            "name": "Village Rites",
+            "qty": 1
+          },
+          {
+            "name": "Welcoming Vampire",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Removal",
+        "cards": [
+          {
+            "name": "Chaos Warp",
+            "qty": 1
+          },
+          {
+            "name": "Generous Gift",
+            "qty": 1
+          },
+          {
+            "name": "Path to Exile",
+            "qty": 1
+          },
+          {
+            "name": "Ruthless Lawbringer",
+            "qty": 1
+          },
+          {
+            "name": "Swords to Plowshares",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Protection",
+        "cards": [
+          {
+            "name": "Akroma's Will",
+            "qty": 1
+          },
+          {
+            "name": "Teferi's Protection",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Recursion",
+        "cards": [
+          {
+            "name": "Phyrexian Reclamation",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lords & Anthems",
+        "cards": [
+          {
+            "name": "Captivating Vampire",
+            "qty": 1
+          },
+          {
+            "name": "Edgar, Charmed Groom",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Engine Bodies & Multipliers",
+        "cards": [
+          {
+            "name": "Anointed Procession",
+            "qty": 1
+          },
+          {
+            "name": "Blade of the Bloodchief",
+            "qty": 1
+          },
+          {
+            "name": "Blood Seeker",
+            "qty": 1
+          },
+          {
+            "name": "Bloodletter of Aclazotz",
+            "qty": 1
+          },
+          {
+            "name": "Bloodline Keeper",
+            "qty": 1
+          },
+          {
+            "name": "Bloodline Recollector",
+            "qty": 1
+          },
+          {
+            "name": "Charismatic Conqueror",
+            "qty": 1
+          },
+          {
+            "name": "Clavileño, First of the Blessed",
+            "qty": 1
+          },
+          {
+            "name": "Cordial Vampire",
+            "qty": 1
+          },
+          {
+            "name": "Creeping Bloodsucker",
+            "qty": 1
+          },
+          {
+            "name": "Elenda, the Dusk Rose",
+            "qty": 1
+          },
+          {
+            "name": "Elspeth, Storm Slayer",
+            "qty": 1
+          },
+          {
+            "name": "Emeritus of Woe",
+            "qty": 1
+          },
+          {
+            "name": "Infantry Shield",
+            "qty": 1
+          },
+          {
+            "name": "Malakir Bloodwitch",
+            "qty": 1
+          },
+          {
+            "name": "Marauding Blight-Priest",
+            "qty": 1
+          },
+          {
+            "name": "Mirkwood Bats",
+            "qty": 1
+          },
+          {
+            "name": "Morlun, Devourer of Spiders",
+            "qty": 1
+          },
+          {
+            "name": "Purphoros, God of the Forge",
+            "qty": 1
+          },
+          {
+            "name": "Roaming Throne",
+            "qty": 1
+          },
+          {
+            "name": "Sangromancer",
+            "qty": 1
+          },
+          {
+            "name": "Vito, Thorn of the Dusk Rose",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

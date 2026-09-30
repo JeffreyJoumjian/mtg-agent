@@ -1,0 +1,120 @@
+1 Tony Stark // The Invincible Iron Man (MSH) 363
+1 Academy Ruins (DRC) 58
+1 Ancient Tomb (UMA) 236
+1 Archway of Innovation (MH3) 214
+1 Cascade Bluffs (BLC) 297
+1 Command Beacon (TDC) 352
+1 Command Tower (MSC) 233
+1 Darksteel Citadel (PLST) MM2-238
+1 Great Furnace (PLST) C18-250
+1 Inventors' Fair (SLD) 1735
+4 Island (THB) 251
+4 Mountain (THB) 253
+1 Otawara, Soaring City (NEO) 271
+1 Riverglide Pathway // Lavaglide Pathway (ZNR) 264
+1 Riverpyre Verge (DFT) 260
+1 Scorched Geyser (MSC) 264
+1 Seat of the Synod (J22) 820
+1 Shivan Reef (C20) 310
+1 Silverbluff Bridge (MH2) 255
+1 Steam Vents (GRN) 257
+1 Stormcarved Coast (WHO) 308
+1 Sulfur Falls (DOM) 247
+1 The Mycosynth Gardens (EOC) 168
+1 Thundering Falls (MKM) 269
+1 Training Center (CMM) 434
+1 Treasure Vault (DRC) 180
+1 Turbulent Springs (SOC) 57
+1 Urza's Saga (PLST) MH2-259
+1 Uthros, Titanic Godcore (EOE) 260
+1 Volcanic Island (OLGC) 2018NA
+1 Sink into Stupor // Soporific Springs (MH3) 241
+1 Sol Ring (SLD) 1734
+1 Arcane Signet (ZNC) 106
+1 Talisman of Creativity (MSC) 218
+1 Thran Dynamo (MSC) 290
+1 Gilded Lotus (MSC) 199
+1 Urza, Lord High Artificer
+1 Etherium Sculptor (NEC) 92
+1 Enthusiastic Mechanaut (EOC) 114
+1 Cloud Key (TSR) 265
+1 Fateful Discovery (HOB) 40
+1 Thopter Spy Network
+1 Insight Engine
+1 Iron Lad, Diverging Destiny
+1 The One Ring (LTR) 791
+1 The Ten Rings (MSH) 251
+1 Mind's Eye
+1 Goblin Welder (CM2) 101
+1 Fabricate (SLD) 7124
+1 Master Transmuter (PLST) CON-31
+1 Blacksmith's Talent (BLB) 125
+1 Thousand-Year Elixir
+1 Manifold Key
+1 Unwinding Clock
+1 Padeem, Consul of Innovation
+1 Into the Flood Maw (BLB) 52
+1 Mana Drain
+1 Counterspell (PLST) A25-50
+1 Chaos Warp (MOC) 273
+1 Deflecting Swat (C20) 50
+1 Fierce Guardianship (C20) 35
+1 Propaganda (MSC) 151
+1 Chandra's Ignition (LCC) 220
+1 Bulk Up
+1 Adaptive Omnitool (DRC) 16
+1 Basilisk Collar (AFC) 199
+1 Shadowspear (THB) 236
+1 Captain America's Shield (MSH) 244
+1 Commander's Plate (SLD) 1733
+1 Conqueror's Flail (2X2) 302
+1 Champion's Helm (FIC) 337
+1 Hammer of Nazahn (MSC) 286
+1 Mithril Coat (LTR) 245
+1 Sword of Feast and Famine (ACR) 99
+1 Wizard's Staff (HOB) 59
+1 The Reaver Cleaver (PLST) DMC-8
+1 Mjölnir, Hammer of Thor (MSH) 146
+1 Genji Glove (FIN) 258
+1 Aettir and Priwen (FIN) 253
+1 Embercleave (ELD) 120
+1 Argentum Armor (GN3) 113
+1 Surestrike Trident
+1 Ultima Weapon (FIN) 563
+1 Krang, Utrom Warlord
+1 Iron Spider, Stark Upgrade
+1 Steel Overseer
+1 Brass Squire
+1 Simulacrum Synthesizer (PBIG) 6p
+1 Roaming Throne (MAR) 99
+1 Darksteel Forge (M14) 206
+1 Portal to Phyrexia (BRO) 240
+1 Wurmcoil Engine (2XM) 308
+1 Silent Arbiter
+1 Marvin, Murderous Mimic
+
+// Sideboard
+1 Aggravated Assault (E02) 25
+1 Arc Reactor (MSH) 243
+1 Armor Wars (MSH) 203
+1 Blackblade Reforged (DMC) 178
+1 Blasphemous Act (SLD) 1998
+1 Buster Sword (FIN) 255
+1 Foundry Inspector (KLD) 215
+1 Goblin Engineer (MH1) 128
+1 Hulkbuster Armor (MSC) 107
+1 Ingenious Artillerist (CLB) 182
+1 Iron Man, Titan of Innovation (SLD) 1731
+1 Iron Man, Master of Machines (MSH) 216
+1 Meteor Sword (TLA) 258
+1 Panharmonicon (PIP) 237
+1 Retrofitter Foundry
+1 Sai, Master Thopterist (M19) 69
+1 Shuri, Wakandan Inventor (MSH) 75
+1 Strix Serenade (MH3) 71
+1 Swan Song (LTC) 197
+1 The Reality Chip
+1 The Vision and Scarlet Witch (MSC) 707
+1 Ultron, Artificial Malevolence (MSH) 252
+1 Vedalken Orrery
+1 Venser's Journal (C21) 273

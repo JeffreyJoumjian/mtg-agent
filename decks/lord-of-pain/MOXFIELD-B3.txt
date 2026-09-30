@@ -1,0 +1,95 @@
+1 The Lord of Pain (DSC) 3
+1 Arcane Signet (40K) 227
+1 Badlands (30A) 273
+1 Basalt Monolith
+1 Basilisk Collar (SLD) 1920
+1 Bedevil (MSC) 182
+1 Blackcleave Cliffs (DSC) 263
+1 Blasphemous Act (SLD) 1998
+1 Blazemire Verge (DSK) 329
+1 Blood Crypt (TRK) 278
+1 Bloodletter of Aclazotz (LCI) 92
+1 Bloodsoaked Insight (MH3) 252
+1 Bloodstained Mire (MH3) 216
+1 Bloodthirsty Conqueror (FDN) 58
+1 Cabal Coffers (MH2) 301
+1 Chaos Warp (MAR) 69
+1 Command Tower (C21) 284
+1 Dark Ritual
+1 Deadly Rollick (CMM) 695
+1 Deflecting Swat (CMM) 698
+1 Demonic Tutor (J20) 4
+1 Descent into Avernus (CLB) 169
+1 Dragonskull Summit (DSC) 271
+1 Exquisite Blood (LCC) 195
+1 Exsanguinate (FDN) 173
+1 Fate Unraveler (DSC) 141
+1 Feed the Swarm (DSC) 78
+1 Fell the Profane (MH3) 244
+1 Fellwar Stone (SLD) 1040
+1 Font of Mythos (PLST) CON-136
+1 Foreboding Ruins (DSC) 277
+1 Fraying Omnipotence (M19) 97
+1 Graven Cairns (FIC) 401
+1 Gray Merchant of Asphodel (PLST) C14-146
+1 Haunted Ridge (WHO) 286
+1 Heartless Hidetsugu (CNS) 144
+1 Hexing Squelcher (ECL) 145
+1 Howling Mine (CMD) 251
+1 Imp's Mischief
+1 Infernal Grasp (INR) 310
+1 Jeska's Will (CMR) 187
+1 Jet Medallion (MH3) 292
+1 Kaervek the Merciless (2X2) 236
+1 Kaya's Ghostform (WAR) 94
+1 Kederekt Parasite (PLST) CON-48
+1 Leechridden Swamp
+1 Lich's Relic
+1 Luxury Suite (MSC) 252
+1 Malakir Rebirth (ZNR) 111
+1 Manabarbs (M10) 149
+1 Marsh Flats
+1 Mind Stone (WHO) 244
+1 Mithril Coat (LTR) 245
+1 Mogis, God of Slaughter (DSC) 89
+1 Mount Doom (HOC) 50
+4 Mountain (THB) 253
+1 No Mercy (P22) 9
+1 Orcish Bowmasters (LTR) 103
+1 Painful Quandary (FDN) 179
+1 Polluted Delta
+1 Rakdos Charm (C17) 190
+1 Rakdos Signet (AFC) 214
+1 Rakdos, Lord of Riots (DSC) 230
+1 Razorkin Needlehead (DSK) 347
+1 Reliquary Tower (PLST) M19-254
+1 Ruby Medallion (CM2) 212
+1 Seizan, Perverter of Truth (MUL) 15
+1 Shadowspear (THB) 236
+1 Sheoldred, the Apocalypse (DMU) 107
+1 Smoldering Marsh (FIC) 425
+1 Sol Ring (LTC) 284
+1 Solphim, Mayhem Dominus (ONE) 150
+1 Spiked Corridor (DSC) 28
+1 Spiteful Visions (DSC) 233
+1 Sulfurous Springs (PDMU) 256p
+3 Swamp (THB) 252
+1 Swiftfoot Boots (FIC) 361
+1 Tainted Peak (AFC) 266
+1 Talisman of Indulgence (FIC) 366
+1 Temple Bell (C13) 265
+1 Thought Vessel (MSC) 222
+1 Torbran, Thane of Red Fell (ELD) 147
+1 Torment of Hailfire (PLST) HOU-77
+1 Toxic Deluge (MSC) 161
+1 Twinflame Tyrant (FDN) 97
+1 Underworld Dreams (THB) 121
+1 Urborg, Tomb of Yawgmoth (UMA) 254
+1 Valgavoth, Harrower of Souls (DSC) 6
+1 Verdant Catacombs
+1 Vial Smasher the Fierce (DSC) 239
+1 Wheel of Fortune (30A) 476
+1 Whip of Erebos (DSC) 159
+1 Witch's Clinic (C21) 81
+1 Wooded Foothills
+1 Wound Reflection (2XM) 113

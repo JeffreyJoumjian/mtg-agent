@@ -1,0 +1,1407 @@
+# LOCAL CARD CACHE — lord-of-pain
+# Prices are a USD snapshot from Scryfall at the time each card was first cached.
+# Format:  ## Name / cost|type|CI|produces|usd / oracle
+
+## Abrade
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$0.33
+Choose one — • Abrade deals 3 damage to target creature. • Destroy target artifact.
+
+## Ankh of Mishra
+cost={2} | type=Artifact | CI=- | produces=- | usd=$?
+Whenever a land enters, this artifact deals 2 damage to that land's controller.
+
+## Archfiend of Despair
+cost={6}{B}{B} | type=Creature — Demon | CI=B | produces=- | usd=$25.97
+Flying Your opponents can't gain life. At the beginning of each end step, each opponent loses life equal to the life that player lost this turn. (Damage causes loss of life.)
+
+## Backlash
+cost={1}{B}{R} | type=Instant | CI=BR | produces=- | usd=$1.21
+Tap target untapped creature. That creature deals damage equal to its power to its controller.
+
+## Baleful Mastery
+cost={3}{B} | type=Instant | CI=B | produces=- | usd=$2.79
+You may pay {1}{B} rather than pay this spell's mana cost. If the {1}{B} cost was paid, an opponent draws a card. Exile target creature or planeswalker.
+
+## Basilisk Collar
+cost={1} | type=Artifact — Equipment | CI=- | produces=- | usd=$5.76
+Equipped creature has deathtouch and lifelink. (Any amount of damage it deals to a creature is enough to destroy it. Damage dealt by this creature also causes you to gain that much life.) Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Bedevil
+cost={B}{B}{R} | type=Instant | CI=BR | produces=- | usd=$0.31
+Destroy target artifact, creature, or planeswalker.
+
+## Big Score
+cost={3}{R} | type=Instant | CI=R | produces=B,G,R,U,W | usd=$0.36
+As an additional cost to cast this spell, discard a card. Draw two cards and create two Treasure tokens. (They're artifacts with "{T}, Sacrifice this token: Add one mana of any color.")
+
+## Blasphemous Act
+cost={8}{R} | type=Sorcery | CI=R | produces=- | usd=$0.83
+This spell costs {1} less to cast for each creature on the battlefield. Blasphemous Act deals 13 damage to each creature.
+
+## Blasphemous Edict
+cost={3}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$4.57
+You may pay {B} rather than pay this spell's mana cost if there are thirteen or more creatures on the battlefield. Each player sacrifices thirteen creatures of their choice.
+
+## Blood Artist
+cost={1}{B} | type=Creature — Vampire | CI=B | produces=- | usd=$3.45
+Whenever this creature or another creature dies, target player loses 1 life and you gain 1 life.
+
+## Blood Pact
+cost={2}{B} | type=Instant | CI=B | produces=- | usd=$0.32
+Target player draws two cards and loses 2 life.
+
+## Blood Seeker
+cost={1}{B} | type=Creature — Vampire Shaman | CI=B | produces=- | usd=$0.37
+Whenever a creature an opponent controls enters, you may have that player lose 1 life.
+
+## Blood for the Blood God!
+cost={8}{B}{B}{R} | type=Instant | CI=BR | produces=- | usd=$9.35
+This spell costs {1} less to cast for each creature that died this turn. Discard your hand, then draw eight cards. Blood for the Blood God! deals 8 damage to each opponent. Exile Blood for the Blood God!
+
+## Bloodchief Ascension
+cost={B} | type=Enchantment | CI=B | produces=- | usd=$20.21
+At the beginning of each end step, if an opponent lost 2 or more life this turn, you may put a quest counter on this enchantment. (Damage causes loss of life.) Whenever a card is put into an opponent's graveyard from anywhere, if this enchantment has three or more quest counters on it, you may have that player lose 2 life. If you do, you gain 2 life.
+
+## Bloodletter of Aclazotz
+cost={1}{B}{B}{B} | type=Creature — Vampire Demon | CI=B | produces=- | usd=$36.33
+Flying If an opponent would lose life during your turn, they lose twice that much life instead. (Damage causes loss of life.)
+
+## Bloodthirsty Conqueror
+cost={3}{B}{B} | type=Creature — Vampire Knight | CI=B | produces=- | usd=$34.41
+Flying, deathtouch Whenever an opponent loses life, you gain that much life. (Damage causes loss of life.)
+
+## Bojuka Bog
+cost=- | type=Land | CI=B | produces=B | usd=$1.88
+This land enters tapped. When this land enters, exile target player's graveyard. {T}: Add {B}.
+
+## Bolt Bend
+cost={3}{R} | type=Instant | CI=R | produces=- | usd=$6.11
+This spell costs {3} less to cast if you control a creature with power 4 or greater. Change the target of target spell or ability with a single target.
+
+## Braids, Arisen Nightmare
+cost={1}{B}{B} | type=Legendary Creature — Nightmare | CI=B | produces=- | usd=$4.86
+At the beginning of your end step, you may sacrifice an artifact, creature, enchantment, land, or planeswalker. If you do, each opponent may sacrifice a permanent of their choice that shares a card type with it. For each opponent who doesn't, that player loses 2 life and you draw a card.
+
+## Brash Taunter
+cost={4}{R} | type=Creature — Goblin | CI=R | produces=- | usd=$2.96
+Indestructible Whenever this creature is dealt damage, it deals that much damage to target opponent. {2}{R}, {T}: This creature fights another target creature.
+
+## Chandra's Incinerator
+cost={5}{R} | type=Creature — Elemental | CI=R | produces=- | usd=$2.99
+This spell costs {X} less to cast, where X is the total amount of noncombat damage dealt to your opponents this turn. Trample Whenever a source you control deals noncombat damage to an opponent, this creature deals that much damage to target creature or planeswalker that player controls.
+
+## Chandra, Awakened Inferno
+cost={4}{R}{R} | type=Legendary Planeswalker — Chandra | CI=R | produces=- | usd=$8.13
+This spell can't be countered. +2: Each opponent gets an emblem with "At the beginning of your upkeep, this emblem deals 1 damage to you." −3: Chandra deals 3 damage to each non-Elemental creature. −X: Chandra deals X damage to target creature or planeswalker. If a permanent dealt damage this way would die this turn, exile it instead.
+
+## Chaos Warp
+cost={2}{R} | type=Instant | CI=R | produces=- | usd=$?
+The owner of target permanent shuffles it into their library, then reveals the top card of their library. If it's a permanent card, they put it onto the battlefield.
+
+## Citadel of Pain
+cost={2}{R} | type=Enchantment | CI=R | produces=- | usd=$4.07
+At the beginning of each player's end step, this enchantment deals X damage to that player, where X is the number of untapped lands they control.
+
+## City on Fire
+cost={5}{R}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$11.83
+Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.) If a source you control would deal damage to a permanent or player, it deals triple that damage instead.
+
+## Combustible Gearhulk
+cost={4}{R}{R} | type=Artifact Creature — Construct | CI=R | produces=- | usd=$0.38
+First strike When this creature enters, target opponent may have you draw three cards. If the player doesn't, you mill three cards, then this creature deals damage to that player equal to the total mana value of those cards.
+
+## Crawlspace
+cost={3} | type=Artifact | CI=- | produces=- | usd=$10.84
+No more than two creatures can attack you each combat.
+
+## Curtains' Call
+cost={5}{B} | type=Instant | CI=B | produces=- | usd=$0.51
+Undaunted (This spell costs {1} less to cast for each opponent.) Destroy two target creatures.
+
+## Damnation
+cost={2}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$21.21
+Destroy all creatures. They can't be regenerated.
+
+## Dark Ritual
+cost={B} | type=Instant | CI=B | produces=B | usd=$6.08
+Add {B}{B}{B}.
+
+## Darkness
+cost={B} | type=Instant | CI=B | produces=- | usd=$24.18
+Prevent all combat damage that would be dealt this turn.
+
+## Deadly Rollick
+cost={3}{B} | type=Instant | CI=B | produces=- | usd=$27.28
+If you control a commander, you may cast this spell without paying its mana cost. Exile target creature.
+
+## Deadly Tempest
+cost={4}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$0.96
+Destroy all creatures. Each player loses life equal to the number of creatures they controlled that were destroyed this way.
+
+## Deadpool, Trading Card
+cost={2}{B}{R} | type=Legendary Creature — Mutant Mercenary Hero | CI=BR | produces=- | usd=$19.10
+As Deadpool enters, you may exchange his text box and another creature's. At the beginning of your upkeep, you lose 3 life. {3}, Sacrifice this creature: Each other player draws a card.
+
+## Decree of Pain
+cost={6}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$0.33
+Destroy all creatures. They can't be regenerated. Draw a card for each creature destroyed this way. Cycling {3}{B}{B} ({3}{B}{B}, Discard this card: Draw a card.) When you cycle this card, all creatures get -2/-2 until end of turn.
+
+## Deflecting Swat
+cost={2}{R} | type=Instant | CI=R | produces=- | usd=$69.23
+If you control a commander, you may cast this spell without paying its mana cost. You may choose new targets for target spell or ability.
+
+## Delirium
+cost={1}{B}{R} | type=Instant | CI=BR | produces=- | usd=$1.86
+Cast this spell only during an opponent's turn. Tap target creature that player controls. That creature deals damage equal to its power to the player. Prevent all combat damage that would be dealt to and dealt by the creature this turn.
+
+## Descent into Avernus
+cost={2}{R} | type=Enchantment | CI=R | produces=- | usd=$13.23
+At the beginning of your upkeep, put two descent counters on this enchantment. Then each player creates X Treasure tokens and this enchantment deals X damage to each player, where X is the number of descent counters on this enchantment.
+
+## Diabolic Tutor
+cost={2}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$2.35
+Search your library for a card, put that card into your hand, then shuffle.
+
+## Dictate of the Twin Gods
+cost={3}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$2.76
+Flash If a source would deal damage to a permanent or player, it deals double that damage to that permanent or player instead.
+
+## Disrupt Decorum
+cost={2}{R}{R} | type=Sorcery | CI=R | produces=- | usd=$4.81
+Goad all creatures you don't control. (Until your next turn, those creatures attack each combat if able and attack a player other than you if able.)
+
+## Enchanter's Bane
+cost={1}{R} | type=Enchantment | CI=R | produces=- | usd=$0.28
+At the beginning of your end step, target enchantment deals damage equal to its mana value to its controller unless that player sacrifices it.
+
+## Ensnared by the Mara
+cost={2}{R}{R} | type=Sorcery | CI=R | produces=- | usd=$7.36
+Each opponent faces a villainous choice — They exile cards from the top of their library until they exile a nonland card, then you may cast that card without paying its mana cost, or that player exiles the top four cards of their library and Ensnared by the Mara deals damage equal to the total mana value of those exiled cards to that player.
+
+## Exquisite Blood
+cost={4}{B} | type=Enchantment | CI=B | produces=- | usd=$38.76
+Whenever an opponent loses life, you gain that much life.
+
+## Exsanguinate
+cost={X}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$0.40
+Each opponent loses X life. You gain life equal to the life lost this way.
+
+## Fate Unraveler
+cost={3}{B} | type=Enchantment Creature — Hag | CI=B | produces=- | usd=$3.41
+Whenever an opponent draws a card, this creature deals 1 damage to that player.
+
+## Fated Firepower
+cost={X}{R}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$4.15
+Flash This enchantment enters with X fire counters on it. If a source you control would deal damage to an opponent or a permanent an opponent controls, it deals that much damage plus an amount of damage equal to the number of fire counters on this enchantment instead.
+
+## Feed the Swarm
+cost={1}{B} | type=Sorcery | CI=B | produces=- | usd=$0.16
+Destroy target creature or enchantment an opponent controls. You lose life equal to that permanent's mana value.
+
+## Fiendish Duo
+cost={4}{R}{R} | type=Creature — Devil | CI=R | produces=- | usd=$2.44
+First strike (This creature deals combat damage before creatures without first strike.) If a source would deal damage to an opponent, it deals double that damage to that player instead.
+
+## Fiery Emancipation
+cost={3}{R}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$14.15
+If a source you control would deal damage to a permanent or player, it deals triple that damage to that permanent or player instead.
+
+## Font of Mythos
+cost={4} | type=Artifact | CI=- | produces=- | usd=$15.34
+At the beginning of each player's draw step, that player draws two additional cards.
+
+## Furnace of Rath
+cost={1}{R}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$7.19
+If a source would deal damage to a permanent or player, it deals double that damage to that permanent or player instead.
+
+## Ghirapur Orrery
+cost={4} | type=Artifact | CI=- | produces=- | usd=$0.43
+Each player may play an additional land on each of their turns. At the beginning of each player's upkeep, if that player has no cards in hand, that player draws three cards.
+
+## Gleeful Arsonist
+cost={2}{R} | type=Creature — Human Wizard | CI=R | produces=- | usd=$7.26
+Whenever an opponent casts a noncreature spell, this creature deals damage equal to its power to that player. Undying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)
+
+## Grab the Prize
+cost={1}{R} | type=Sorcery | CI=R | produces=- | usd=$0.47
+As an additional cost to cast this spell, discard a card. Draw two cards. If the discarded card wasn't a land card, Grab the Prize deals 2 damage to each opponent.
+
+## Gratuitous Violence
+cost={2}{R}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$?
+If a creature you control would deal damage to a permanent or player, it deals double that damage instead.
+
+## Gray Merchant of Asphodel
+cost={3}{B}{B} | type=Creature — Zombie | CI=B | produces=- | usd=$5.76
+When this creature enters, each opponent loses X life, where X is your devotion to black. You gain life equal to the life lost this way. (Each {B} in the mana costs of permanents you control counts toward your devotion to black.)
+
+## Grievous Wound
+cost={3}{B}{B} | type=Enchantment — Aura | CI=B | produces=- | usd=$0.55
+Enchant player Enchanted player can't gain life. Whenever enchanted player is dealt damage, they lose half their life, rounded up.
+
+## Harsh Mentor
+cost={1}{R} | type=Creature — Human Cleric | CI=R | produces=- | usd=$0.28
+Whenever an opponent activates an ability of an artifact, creature, or land on the battlefield, if it isn't a mana ability, this creature deals 2 damage to that player.
+
+## Havoc Festival
+cost={4}{B}{R} | type=Enchantment | CI=BR | produces=- | usd=$0.45
+Players can't gain life. At the beginning of each player's upkeep, that player loses half their life, rounded up.
+
+## Hawkeye, Young Avenger
+cost={3}{R} | type=Legendary Creature — Human Archer Hero | CI=R | produces=- | usd=$0.38
+Reach If a source you control would deal noncombat damage to an opponent or a permanent an opponent controls, instead it deals that much damage plus X, where X is Hawkeye's power.
+
+## Helm of Awakening
+cost={2} | type=Artifact | CI=- | produces=- | usd=$2.72
+Spells cost {1} less to cast.
+
+## Hexing Squelcher
+cost={1}{R} | type=Creature — Goblin Sorcerer | CI=R | produces=- | usd=$21.91
+This spell can't be countered. Ward—Pay 2 life. Spells you control can't be countered. Other creatures you control have "Ward—Pay 2 life."
+
+## Howling Mine
+cost={2} | type=Artifact | CI=- | produces=- | usd=$5.36
+At the beginning of each player's draw step, if this artifact is untapped, that player draws an additional card.
+
+## Imp's Mischief
+cost={1}{B} | type=Instant | CI=B | produces=- | usd=$7.16
+Change the target of target spell with a single target. You lose life equal to that spell's mana value.
+
+## Infernal Grasp
+cost={1}{B} | type=Instant | CI=B | produces=- | usd=$0.34
+Destroy target creature. You lose 2 life.
+
+## Jeska's Will
+cost={2}{R} | type=Sorcery | CI=R | produces=R | usd=$40.49
+Choose one. If you control a commander as you cast this spell, you may choose both instead. • Add {R} for each card in target opponent's hand. • Exile the top three cards of your library. You may play them this turn.
+
+## Jet Medallion
+cost={2} | type=Artifact | CI=- | produces=- | usd=$11.25
+Black spells you cast cost {1} less to cast.
+
+## Kaervek the Merciless
+cost={5}{B}{R} | type=Legendary Creature — Human Shaman | CI=BR | produces=- | usd=$0.35
+Whenever an opponent casts a spell, Kaervek deals damage equal to that spell's mana value to any target.
+
+## Kardur, Doomscourge
+cost={2}{B}{R} | type=Legendary Creature — Demon Berserker | CI=BR | produces=- | usd=$2.31
+When Kardur enters, until your next turn, creatures your opponents control attack each combat if able and attack a player other than you if able. Whenever an attacking creature dies, each opponent loses 1 life and you gain 1 life.
+
+## Kaya's Ghostform
+cost={B} | type=Enchantment — Aura | CI=B | produces=- | usd=$3.24
+Enchant creature or planeswalker you control When enchanted permanent dies or is put into exile, return that card to the battlefield under your control.
+
+## Kederekt Parasite
+cost={B} | type=Creature — Horror | CI=B | produces=- | usd=$8.44
+Whenever an opponent draws a card, if you control a red permanent, you may have this creature deal 1 damage to that player.
+
+## Keen Duelist
+cost={1}{B} | type=Creature — Human Wizard | CI=B | produces=- | usd=$0.32
+At the beginning of your upkeep, you and target opponent each reveal the top card of your library. You each lose life equal to the mana value of the card revealed by the other player. You each put the card you revealed into your hand.
+
+## Kefka, Dancing Mad
+cost={5}{B}{R} | type=Legendary Creature — Human Wizard | CI=BR | produces=- | usd=$0.39
+During your turn, Kefka has indestructible. At the beginning of your end step, exile a card at random from each opponent's graveyard. You may cast any number of spells from among cards exiled this way without paying their mana costs. Then each player who owns a spell you cast this way loses life equal to its mana value.
+
+## Leechridden Swamp
+cost=- | type=Land — Swamp | CI=B | produces=B | usd=$0.85
+({T}: Add {B}.) This land enters tapped. {B}, {T}: Each opponent loses 1 life. Activate only if you control two or more black permanents.
+
+## Lightning Bolt
+cost={R} | type=Instant | CI=R | produces=- | usd=$0.97
+Lightning Bolt deals 3 damage to any target.
+
+## Lightning Greaves
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$4.76
+Equipped creature has haste and shroud. (It can't be the target of spells or abilities.) Equip {0}
+
+## Maddening Hex
+cost={1}{R}{R} | type=Enchantment — Aura Curse | CI=R | produces=- | usd=$4.66
+Enchant player Whenever enchanted player casts a noncreature spell, roll a d6. This Aura deals damage to that player equal to the result. Then attach this Aura to another one of your opponents chosen at random.
+
+## Mai, Scornful Striker
+cost={1}{B} | type=Legendary Creature — Human Noble Ally | CI=B | produces=- | usd=$0.91
+First strike Whenever a player casts a noncreature spell, they lose 2 life.
+
+## Manabarbs
+cost={3}{R} | type=Enchantment | CI=R | produces=- | usd=$4.50
+Whenever a player taps a land for mana, this enchantment deals 1 damage to that player.
+
+## Mask of Griselbrand
+cost={1}{B}{B} | type=Legendary Artifact — Equipment | CI=B | produces=- | usd=$0.69
+Equipped creature has flying and lifelink. Whenever equipped creature dies, you may pay X life, where X is its power. If you do, draw X cards. Equip {3}
+
+## Massacre Wurm
+cost={3}{B}{B}{B} | type=Creature — Phyrexian Wurm | CI=B | produces=- | usd=$1.68
+When this creature enters, creatures your opponents control get -2/-2 until end of turn. Whenever a creature an opponent controls dies, that player loses 2 life.
+
+## Maximum Carnage
+cost={4}{R} | type=Enchantment — Saga | CI=R | produces=R | usd=$0.84
+(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.) I — Until your next turn, each creature attacks each combat if able and attacks a player other than you if able. II — Add {R}{R}{R}. III — This Saga deals 5 damage to each opponent.
+
+## Mayhem Devil
+cost={1}{B}{R} | type=Creature — Devil | CI=BR | produces=- | usd=$0.32
+Whenever a player sacrifices a permanent, this creature deals 1 damage to any target.
+
+## Meathook Massacre II
+cost={X}{X}{B}{B}{B}{B} | type=Legendary Enchantment | CI=B | produces=- | usd=$2.61
+When Meathook Massacre II enters, each player sacrifices X creatures of their choice. Whenever a creature you control dies, you may pay 3 life. If you do, return that card under your control with a finality counter on it. Whenever a creature an opponent controls dies, they may pay 3 life. If they don't, return that card under your control with a finality counter on it.
+
+## Mithril Coat
+cost={3} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$31.81
+Flash Indestructible When Mithril Coat enters, attach it to target legendary creature you control. Equipped creature has indestructible. Equip {3}
+
+## Mjölnir, Hammer of Thor
+cost={3}{R} | type=Legendary Artifact — Equipment | CI=R | produces=- | usd=$22.19
+When Mjölnir enters, it deals 4 damage to up to one target creature. Double all damage equipped creature would deal. Equip worthy {1} (A creature is worthy if it's a legendary non-Villain that's red and/or white.) {2}{R}, Discard this card: It deals 2 damage to each creature.
+
+## Mogis, God of Slaughter
+cost={2}{B}{R} | type=Legendary Enchantment Creature — God | CI=BR | produces=- | usd=$5.23
+Indestructible As long as your devotion to black and red is less than seven, Mogis isn't a creature. At the beginning of each opponent's upkeep, Mogis deals 2 damage to that player unless they sacrifice a creature of their choice.
+
+## Morbid Opportunist
+cost={2}{B} | type=Creature — Human Rogue | CI=B | produces=- | usd=$0.34
+Whenever one or more other creatures die, draw a card. This ability triggers only once each turn.
+
+## Night's Whisper
+cost={1}{B} | type=Sorcery | CI=B | produces=- | usd=$5.39
+You draw two cards and lose 2 life.
+
+## Nightshade Harvester
+cost={3}{B} | type=Creature — Elf Shaman | CI=B | produces=- | usd=$0.32
+Whenever a land an opponent controls enters, that player loses 1 life. Put a +1/+1 counter on this creature.
+
+## No Mercy
+cost={2}{B}{B} | type=Enchantment | CI=B | produces=- | usd=$26.13
+Whenever a creature deals damage to you, destroy it.
+
+## Not Dead After All
+cost={B} | type=Instant | CI=B | produces=- | usd=$2.07
+Until end of turn, target creature you control gains "When this creature dies, return it to the battlefield tapped under its owner's control, then create a Wicked Role token attached to it." (Enchanted creature gets +1/+1. When this token is put into a graveyard, each opponent loses 1 life.)
+
+## Ob Nixilis, the Hate-Twisted
+cost={3}{B}{B} | type=Legendary Planeswalker — Nixilis | CI=B | produces=- | usd=$0.39
+Whenever an opponent draws a card, Ob Nixilis deals 1 damage to that player. −2: Destroy target creature. Its controller draws two cards.
+
+## Ojer Axonil, Deepest Might // Temple of Power
+cost={2}{R}{R} | type=Legendary Creature — God // Land | CI=R | produces=R | usd=$21.76
+Ojer Axonil, Deepest Might: Trample If a red source you control would deal an amount of noncombat damage less than Ojer Axonil's power to an opponent, that source deals damage equal to Ojer Axonil's power instead. When Ojer Axonil dies, return it to the battlefield tapped and transformed under its owner's control. // Temple of Power: (Transforms from Ojer Axonil, Deepest Might.) {T}: Add {R}. {2}{R}, {T}: Transform this land. Activate only if red sources you controlled dealt 4 or more noncombat damage this turn and only as a sorcery.
+
+## Pain Magnification
+cost={1}{B}{R} | type=Enchantment | CI=BR | produces=- | usd=$1.02
+Whenever an opponent is dealt 3 or more damage by a single source, that player discards a card.
+
+## Pain for All
+cost={2}{R} | type=Enchantment — Aura | CI=R | produces=- | usd=$1.81
+Enchant creature you control When this Aura enters, enchanted creature deals damage equal to its power to any other target. Whenever enchanted creature is dealt damage, it deals that much damage to each opponent.
+
+## Painful Quandary
+cost={3}{B}{B} | type=Enchantment | CI=B | produces=- | usd=$2.18
+Whenever an opponent casts a spell, that player loses 5 life unless they discard a card.
+
+## Palantír of Orthanc
+cost={3} | type=Legendary Artifact | CI=- | produces=- | usd=$20.58
+At the beginning of your end step, put an influence counter on Palantír of Orthanc and scry 2. Then target opponent may have you draw a card. If that player doesn't, you mill X cards, where X is the number of influence counters on Palantír of Orthanc, and that player loses life equal to the total mana value of those cards.
+
+## Parker Luck
+cost={2}{B} | type=Enchantment | CI=B | produces=- | usd=$0.32
+At the beginning of your end step, two target players each reveal the top card of their library. They each lose life equal to the mana value of the card revealed by the other player. Then they each put the card they revealed into their hand.
+
+## Phyresis
+cost={1}{B} | type=Enchantment — Aura | CI=B | produces=- | usd=$2.81
+Enchant creature Enchanted creature has infect. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+
+## Phyrexian Arena
+cost={1}{B}{B} | type=Enchantment | CI=B | produces=- | usd=$4.00
+At the beginning of your upkeep, you draw a card and you lose 1 life.
+
+## Polluted Bonds
+cost={3}{B}{B} | type=Enchantment | CI=B | produces=- | usd=$9.77
+Whenever a land an opponent controls enters, that player loses 2 life and you gain 2 life.
+
+## Powerbalance
+cost={R}{R} | type=Enchantment | CI=R | produces=- | usd=$0.34
+Whenever an opponent casts a spell, you may reveal the top card of your library. If you do, you may cast that card without paying its mana cost if the two spells have the same mana value.
+
+## Price of Progress
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$7.98
+Price of Progress deals damage to each player equal to twice the number of nonbasic lands that player controls.
+
+## Protection Racket
+cost={2}{B} | type=Enchantment | CI=B | produces=- | usd=$3.86
+At the beginning of your upkeep, repeat the following process for each opponent in turn order. Reveal the top card of your library. That player may pay life equal to that card's mana value. If they do, exile that card. Otherwise, put it into your hand.
+
+## Rakdos Charm
+cost={B}{R} | type=Instant | CI=BR | produces=- | usd=$0.40
+Choose one — • Exile target player's graveyard. • Destroy target artifact. • Each creature deals 1 damage to its controller.
+
+## Rampaging Ferocidon
+cost={2}{R} | type=Creature — Dinosaur | CI=R | produces=- | usd=$2.08
+Menace Players can't gain life. Whenever another creature enters, this creature deals 1 damage to that creature's controller.
+
+## Razorkin Needlehead
+cost={R}{R} | type=Creature — Human Assassin | CI=R | produces=- | usd=$4.63
+This creature has first strike during your turn. Whenever an opponent draws a card, this creature deals 1 damage to them.
+
+## Read the Bones
+cost={2}{B} | type=Sorcery | CI=B | produces=- | usd=$0.35
+Scry 2, then draw two cards. You lose 2 life. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)
+
+## Reanimate
+cost={B} | type=Sorcery | CI=B | produces=- | usd=$9.42
+Put target creature card from a graveyard onto the battlefield under your control. You lose life equal to that card's mana value.
+
+## Redirect Lightning
+cost={R} | type=Instant — Lesson | CI=R | produces=- | usd=$12.45
+As an additional cost to cast this spell, pay 5 life or pay {2}. Change the target of target spell or ability with a single target.
+
+## Repercussion
+cost={1}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$13.26
+Whenever a creature is dealt damage, this enchantment deals that much damage to that creature's controller.
+
+## Resurrection Orb
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$16.86
+Equipped creature has lifelink. Whenever equipped creature dies, return that card to the battlefield under its owner's control at the beginning of the next end step. Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Return the Favor
+cost={R}{R} | type=Instant | CI=R | produces=- | usd=$0.94
+Spree (Choose one or more additional costs.) + {1} — Copy target instant spell, sorcery spell, activated ability, or triggered ability. You may choose new targets for the copy. + {1} — Change the target of target spell or ability with a single target.
+
+## Roiling Vortex
+cost={1}{R} | type=Enchantment | CI=R | produces=- | usd=$1.99
+At the beginning of each player's upkeep, this enchantment deals 1 damage to them. Whenever a player casts a spell, if no mana was spent to cast that spell, this enchantment deals 5 damage to that player. {R}: Your opponents can't gain life this turn.
+
+## Ruby Medallion
+cost={2} | type=Artifact | CI=- | produces=- | usd=$13.90
+Red spells you cast cost {1} less to cast.
+
+## Rug of Smothering
+cost={3} | type=Artifact Creature — Construct | CI=- | produces=- | usd=$0.52
+Flying Whenever a player casts a spell, they lose 1 life for each spell they've cast this turn.
+
+## Sadistic Shell Game
+cost={4}{B} | type=Sorcery | CI=B | produces=- | usd=$0.38
+Starting with the next opponent in turn order, each player chooses a creature you don't control. Destroy the chosen creatures.
+
+## Sanguine Bond
+cost={3}{B}{B} | type=Enchantment | CI=B | produces=- | usd=$6.61
+Whenever you gain life, target opponent loses that much life.
+
+## Scrawling Crawler
+cost={3} | type=Artifact Creature — Phyrexian Construct | CI=- | produces=- | usd=$7.75
+At the beginning of your upkeep, each player draws a card. Whenever an opponent draws a card, that player loses 1 life.
+
+## Scytheclaw Raptor
+cost={2}{R} | type=Creature — Dinosaur | CI=R | produces=- | usd=$0.30
+Whenever a player casts a spell, if it's not their turn, this creature deals 4 damage to them.
+
+## Seething Song
+cost={2}{R} | type=Instant | CI=R | produces=R | usd=$12.34
+Add {R}{R}{R}{R}{R}.
+
+## Seizan, Perverter of Truth
+cost={3}{B}{B} | type=Legendary Creature — Demon Spirit | CI=B | produces=- | usd=$2.00
+At the beginning of each player's upkeep, that player loses 2 life and draws two cards.
+
+## Shadowspear
+cost={1} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$33.51
+Equipped creature gets +1/+1 and has trample and lifelink. {1}: Permanents your opponents control lose hexproof and indestructible until end of turn. Equip {2}
+
+## Sheoldred, the Apocalypse
+cost={2}{B}{B} | type=Legendary Creature — Phyrexian Praetor | CI=B | produces=- | usd=$99.54
+Deathtouch Whenever you draw a card, you gain 2 life. Whenever an opponent draws a card, they lose 2 life.
+
+## Sign in Blood
+cost={B}{B} | type=Sorcery | CI=B | produces=- | usd=$3.44
+Target player draws two cards and loses 2 life.
+
+## Snuff Out
+cost={3}{B} | type=Instant | CI=B | produces=- | usd=$10.99
+If you control a Swamp, you may pay 4 life rather than pay this spell's mana cost. Destroy target nonblack creature. It can't be regenerated.
+
+## Solemn Simulacrum
+cost={4} | type=Artifact Creature — Golem | CI=- | produces=- | usd=$0.35
+When this creature enters, you may search your library for a basic land card, put that card onto the battlefield tapped, then shuffle. When this creature dies, you may draw a card.
+
+## Solphim, Mayhem Dominus
+cost={2}{R}{R} | type=Legendary Creature — Phyrexian Horror | CI=R | produces=- | usd=$23.70
+If a source you control would deal noncombat damage to an opponent or a permanent an opponent controls, it deals double that damage to that player or permanent instead. {1}{R/P}{R/P}, Discard two cards: Put an indestructible counter on Solphim. ({R/P} can be paid with either {R} or 2 life.)
+
+## Soul Shatter
+cost={2}{B} | type=Instant | CI=B | produces=- | usd=$3.62
+Each opponent sacrifices a creature or planeswalker with the greatest mana value among creatures and planeswalkers they control.
+
+## Sower of Discord
+cost={4}{B}{B} | type=Creature — Demon | CI=B | produces=- | usd=$4.37
+Flying As this creature enters, choose two players. Whenever damage is dealt to one of the chosen players, the other chosen player also loses that much life.
+
+## Spellshock
+cost={2}{R} | type=Enchantment | CI=R | produces=- | usd=$?
+Whenever a player casts a spell, this enchantment deals 2 damage to that player.
+
+## Spinerock Knoll
+cost=- | type=Land | CI=R | produces=R | usd=$1.43
+Hideaway 4 (When this land enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom in a random order.) This land enters tapped. {T}: Add {R}. {R}, {T}: You may play the exiled card without paying its mana cost if an opponent was dealt 7 or more damage this turn.
+
+## Spiteful Visions
+cost={2}{B/R}{B/R} | type=Enchantment | CI=BR | produces=- | usd=$0.59
+At the beginning of each player's draw step, that player draws an additional card. Whenever a player draws a card, this enchantment deals 1 damage to that player.
+
+## Stormfist Crusader
+cost={B}{R} | type=Creature — Human Knight | CI=BR | produces=- | usd=$0.74
+Menace At the beginning of your upkeep, each player draws a card and loses 1 life.
+
+## Sulfuric Vortex
+cost={1}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$1.48
+At the beginning of each player's upkeep, this enchantment deals 2 damage to that player. If a player would gain life, that player gains no life instead.
+
+## Swiftfoot Boots
+cost={2} | type=Artifact — Equipment | CI=- | produces=- | usd=$?
+Equipped creature has hexproof and haste. (It can't be the target of spells or abilities your opponents control. It can attack and {T} no matter when it came under your control.) Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)
+
+## Syr Konrad, the Grim
+cost={3}{B}{B} | type=Legendary Creature — Human Knight | CI=B | produces=- | usd=$1.11
+Whenever another creature dies, or a creature card is put into a graveyard from anywhere other than the battlefield, or a creature card leaves your graveyard, Syr Konrad deals 1 damage to each opponent. {1}{B}: Each player mills a card. (They each put the top card of their library into their graveyard.)
+
+## Tectonic Giant
+cost={2}{R}{R} | type=Creature — Elemental Giant | CI=R | produces=- | usd=$0.35
+Whenever this creature attacks or becomes the target of a spell an opponent controls, choose one — • This creature deals 3 damage to each opponent. • Exile the top two cards of your library. Choose one of them. Until the end of your next turn, you may play that card.
+
+## Temple Bell
+cost={3} | type=Artifact | CI=- | produces=- | usd=$6.37
+{T}: Each player draws a card.
+
+## Tempting Contract
+cost={4} | type=Artifact | CI=- | produces=- | usd=$10.80
+At the beginning of your upkeep, each opponent may create a Treasure token. For each opponent who does, you create a Treasure token.
+
+## Terminate
+cost={B}{R} | type=Instant | CI=BR | produces=- | usd=$0.32
+Destroy target creature. It can't be regenerated.
+
+## The Frightful Four
+cost={3}{B} | type=Legendary Creature — Villain | CI=B | produces=- | usd=$0.41
+Menace Whenever an opponent casts their first noncreature spell each turn, that player loses life equal to that spell's mana value.
+
+## The Meathook Massacre
+cost={X}{B}{B} | type=Legendary Enchantment | CI=B | produces=- | usd=$27.15
+When The Meathook Massacre enters, each creature gets -X/-X until end of turn. Whenever a creature you control dies, each opponent loses 1 life. Whenever a creature an opponent controls dies, you gain 1 life.
+
+## Theater of Horrors
+cost={1}{B}{R} | type=Enchantment | CI=BR | produces=- | usd=$0.33
+At the beginning of your upkeep, exile the top card of your library. During your turn, if an opponent lost life this turn, you may play lands and cast spells from among cards exiled with this enchantment. {3}{R}: This enchantment deals 1 damage to target opponent or planeswalker.
+
+## Thrill of Possibility
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$0.27
+As an additional cost to cast this spell, discard a card. Draw two cards.
+
+## Torment of Hailfire
+cost={X}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$38.26
+Repeat the following process X times. Each opponent loses 3 life unless that player sacrifices a nonland permanent of their choice or discards a card.
+
+## Toxic Deluge
+cost={2}{B} | type=Sorcery | CI=B | produces=- | usd=$4.57
+As an additional cost to cast this spell, pay X life. All creatures get -X/-X until end of turn.
+
+## Twinflame Tyrant
+cost={3}{R}{R} | type=Creature — Dragon | CI=R | produces=- | usd=$26.13
+Flying If a source you control would deal damage to an opponent or a permanent an opponent controls, it deals double that damage instead.
+
+## Underworld Dreams
+cost={B}{B}{B} | type=Enchantment | CI=B | produces=- | usd=$1.27
+Whenever an opponent draws a card, this enchantment deals 1 damage to that player.
+
+## Unexpected Windfall
+cost={2}{R}{R} | type=Instant | CI=R | produces=B,G,R,U,W | usd=$4.31
+As an additional cost to cast this spell, discard a card. Draw two cards and create two Treasure tokens. (They're artifacts with "{T}, Sacrifice this token: Add one mana of any color.")
+
+## Untimely Malfunction
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$8.65
+Choose one — • Destroy target artifact. • Change the target of target spell or ability with a single target. • One or two target creatures can't block this turn.
+
+## Urborg, Tomb of Yawgmoth
+cost=- | type=Legendary Land | CI=- | produces=B | usd=$54.84
+Each land is a Swamp in addition to its other land types.
+
+## Valakut Awakening // Valakut Stoneforge
+cost={2}{R} | type=Instant // Land | CI=R | produces=R | usd=$18.16
+Valakut Awakening: Put any number of cards from your hand on the bottom of your library, then draw that many cards plus one. // Valakut Stoneforge: This land enters tapped. {T}: Add {R}.
+
+## Valgavoth, Harrower of Souls
+cost={2}{B}{R} | type=Legendary Creature — Elder Demon | CI=BR | produces=- | usd=$20.58
+Flying Ward—Pay 2 life. Whenever an opponent loses life for the first time during each of their turns, put a +1/+1 counter on Valgavoth and draw a card.
+
+## Vampiric Link
+cost={B} | type=Enchantment — Aura | CI=B | produces=- | usd=$3.79
+Enchant creature Whenever enchanted creature deals damage, you gain that much life.
+
+## Vandalblast
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$1.09
+Destroy target artifact you don't control. Overload {4}{R} (You may cast this spell for its overload cost. If you do, change "target" in its text to "each.")
+
+## Vial Smasher the Fierce
+cost={1}{B}{R} | type=Legendary Creature — Goblin Berserker | CI=BR | produces=- | usd=$2.50
+Whenever you cast your first spell each turn, choose an opponent at random. Vial Smasher deals damage equal to that spell's mana value to that player or a planeswalker that player controls. Partner (You can have two commanders if both have partner.)
+
+## Wayfarer's Bauble
+cost={1} | type=Artifact | CI=- | produces=- | usd=$4.67
+{2}, {T}, Sacrifice this artifact: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.
+
+## Whip of Erebos
+cost={2}{B}{B} | type=Legendary Enchantment Artifact | CI=B | produces=- | usd=$8.69
+Creatures you control have lifelink. {2}{B}{B}, {T}: Return target creature card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step. If it would leave the battlefield, exile it instead of putting it anywhere else. Activate only as a sorcery.
+
+## Witch's Clinic
+cost=- | type=Land | CI=- | produces=C | usd=$14.41
+{T}: Add {C}. {2}, {T}: Target commander gains lifelink until end of turn.
+
+## Wound Reflection
+cost={5}{B} | type=Enchantment | CI=B | produces=- | usd=$14.22
+At the beginning of each end step, each opponent loses life equal to the life they lost this turn. (Damage causes loss of life.)
+
+## Zo-Zu the Punisher
+cost={1}{R}{R} | type=Legendary Creature — Goblin Warrior | CI=R | produces=- | usd=$7.90
+Whenever a land enters, Zo-Zu deals 2 damage to that land's controller.
+
+## Torbran, Thane of Red Fell
+cost={1}{R}{R}{R} | type=Legendary Creature — Dwarf Noble | CI=R | produces=- | usd=$4.99
+If a red source you control would deal damage to an opponent or a permanent an opponent controls, it deals that much damage plus 2 instead.
+
+## Heartless Hidetsugu
+cost={3}{R}{R} | type=Legendary Creature — Ogre Shaman | CI=R | produces=- | usd=$2.81
+{T}: Heartless Hidetsugu deals damage to each player equal to half that player's life total, rounded down.
+
+## Orcish Bowmasters
+cost={1}{B} | type=Creature — Orc Archer | CI=B | produces=- | usd=$46.57
+Flash When this creature enters and whenever an opponent draws a card except the first one they draw in each of their draw steps, this creature deals 1 damage to any target. Then amass Orcs 1.
+
+## Demonic Tutor
+cost={1}{B} | type=Sorcery | CI=B | produces=- | usd=$62.08
+Search your library for a card, put that card into your hand, then shuffle.
+
+## Vampiric Tutor
+cost={B} | type=Instant | CI=B | produces=- | usd=$55.00
+Search your library for a card, then shuffle and put that card on top. You lose 2 life.
+
+## Wheel of Fortune
+cost={2}{R} | type=Sorcery | CI=R | produces=- | usd=$?
+Each player discards their hand, then draws seven cards.
+
+## Wheel of Misfortune
+cost={2}{R} | type=Sorcery | CI=R | produces=- | usd=$8.24
+Each player secretly chooses a number 0 or greater, then all players reveal those numbers simultaneously and determine the highest and lowest numbers revealed this way. Wheel of Misfortune deals damage equal to the highest number to each player who chose that number. Each player who didn't choose the lowest number discards their hand, then draws seven cards.
+
+## Magus of the Wheel
+cost={2}{R} | type=Creature — Human Wizard | CI=R | produces=- | usd=$1.50
+{1}{R}, {T}, Sacrifice this creature: Each player discards their hand, then draws seven cards.
+
+## Reforge the Soul
+cost={3}{R}{R} | type=Sorcery | CI=R | produces=- | usd=$6.30
+Each player discards their hand, then draws seven cards. Miracle {1}{R} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)
+
+## Burning Inquiry
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$3.47
+Each player draws three cards, then discards three cards at random.
+
+## Molten Psyche
+cost={1}{R}{R} | type=Sorcery | CI=R | produces=- | usd=$4.49
+Each player shuffles the cards from their hand into their library, then draws that many cards. Metalcraft — If you control three or more artifacts, Molten Psyche deals damage to each opponent equal to the number of cards that player has drawn this turn.
+
+## Bloodsoaked Insight // Sanguine Morass
+cost={5}{B/R}{B/R} | type=Sorcery // Land | CI=BR | produces=B,R | usd=$0.32
+Bloodsoaked Insight: This spell costs {1} less to cast for each 1 life your opponents have lost this turn. Target opponent exiles the top three cards of their library. Until the end of your next turn, you may play those cards. If you cast a spell this way, mana of any type can be spent to cast it. // Sanguine Morass: This land enters tapped. {T}: Add {B} or {R}.
+
+## Teferi's Puzzle Box
+cost={4} | type=Artifact | CI=- | produces=- | usd=$17.81
+At the beginning of each player's draw step, that player puts the cards in their hand on the bottom of their library in any order, then draws that many cards.
+
+## Mana Flare
+cost={2}{R} | type=Enchantment | CI=R | produces=B,G,R,U,W | usd=$?
+Whenever a player taps a land for mana, that player adds one mana of any type that land produced.
+
+## Wild Evocation
+cost={5}{R} | type=Enchantment | CI=R | produces=- | usd=$1.16
+At the beginning of each player's upkeep, that player reveals a card at random from their hand. If it's a land card, the player puts it onto the battlefield. Otherwise, the player casts it without paying its mana cost if able.
+
+## Humble Defector
+cost={1}{R} | type=Creature — Human Rogue | CI=R | produces=- | usd=$0.36
+{T}: Draw two cards. Target opponent gains control of this creature. Activate only during your turn.
+
+## Akroan Horse
+cost={4} | type=Artifact Creature — Horse | CI=- | produces=- | usd=$0.43
+Defender When this creature enters, an opponent gains control of it. At the beginning of your upkeep, each opponent creates a 1/1 white Soldier creature token.
+
+## Court of Ambition
+cost={2}{B}{B} | type=Enchantment | CI=B | produces=- | usd=$5.72
+When this enchantment enters, you become the monarch. At the beginning of your upkeep, each opponent loses 3 life unless they discard a card. If you're the monarch, instead each opponent loses 6 life unless they discard two cards.
+
+## Prisoner's Dilemma
+cost={3}{R}{R} | type=Sorcery | CI=R | produces=- | usd=$5.70
+Each opponent secretly chooses silence or snitch, then the choices are revealed. If each opponent chose silence, Prisoner's Dilemma deals 4 damage to each of them. If each opponent chose snitch, Prisoner's Dilemma deals 8 damage to each of them. Otherwise, Prisoner's Dilemma deals 12 damage to each opponent who chose silence. Flashback {5}{R}{R}
+
+## Khârn the Betrayer
+cost={3}{R} | type=Legendary Creature — Astartes Berserker | CI=R | produces=- | usd=$6.71
+Berzerker — Khârn the Betrayer attacks or blocks each combat if able. Sigil of Corruption — When you lose control of Khârn the Betrayer, draw two cards. The Betrayer — If damage would be dealt to Khârn the Betrayer, prevent that damage and an opponent of your choice gains control of it.
+
+## Coveted Jewel
+cost={6} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.24
+When this artifact enters, draw three cards. {T}: Add three mana of any one color. Whenever one or more creatures an opponent controls attack you and aren't blocked, that player draws three cards and gains control of this artifact. Untap it.
+
+## Anvil of Bogardan
+cost={2} | type=Artifact | CI=- | produces=- | usd=$48.19
+Players have no maximum hand size. At the beginning of each player's draw step, that player draws an additional card, then discards a card.
+
+## Curse of Opulence
+cost={R} | type=Enchantment — Aura Curse | CI=R | produces=B,G,R,U,W | usd=$3.57
+Enchant player Whenever enchanted player is attacked, create a Gold token. Each opponent attacking that player does the same. (A Gold token is an artifact with "Sacrifice this token: Add one mana of any color.")
+
+## Share the Spoils
+cost={1}{R} | type=Enchantment | CI=R | produces=- | usd=$3.57
+When this enchantment enters and whenever an opponent loses the game, exile the top card of each player's library. During each player's turn, that player may play a land or cast a spell from among cards exiled with this enchantment, and they may spend mana as though it were mana of any color to cast that spell. When they do, exile the top card of their library.
+
+## Captive Audience
+cost={5}{B}{R} | type=Enchantment | CI=BR | produces=- | usd=$3.98
+This enchantment enters under the control of an opponent of your choice. At the beginning of your upkeep, choose one that hasn't been chosen — • Your life total becomes 4. • Discard your hand. • Each opponent creates five 2/2 black Zombie creature tokens.
+
+## Mindcrank
+cost={2} | type=Artifact | CI=- | produces=- | usd=$11.90
+Whenever an opponent loses life, that player mills that many cards. (Damage causes loss of life.)
+
+## Pain Distributor
+cost={2}{R} | type=Creature — Devil Citizen | CI=R | produces=- | usd=$5.54
+Menace Whenever a player casts their first spell each turn, they create a Treasure token. Whenever an artifact an opponent controls is put into a graveyard from the battlefield, this creature deals 1 damage to that player.
+
+## Rakdos, Lord of Riots
+cost={B}{B}{R}{R} | type=Legendary Creature — Demon | CI=BR | produces=- | usd=$1.29
+You can't cast Rakdos unless an opponent lost life this turn. Flying, trample Creature spells you cast cost {1} less to cast for each 1 life your opponents have lost this turn.
+
+## Star Athlete
+cost={1}{R}{R} | type=Creature — Human Warrior | CI=R | produces=- | usd=$0.75
+Menace Whenever this creature attacks, choose up to one target nonland permanent. Its controller may sacrifice it. If they don't, this creature deals 5 damage to that player. Blitz {3}{R} (If you cast this spell for its blitz cost, it gains haste and "When this creature dies, draw a card." Sacrifice it at the beginning of the next end step.)
+
+## Florian, Voldaren Scion
+cost={1}{B}{R} | type=Legendary Creature — Vampire Noble | CI=BR | produces=- | usd=$0.36
+First strike At the beginning of each of your postcombat main phases, look at the top X cards of your library, where X is the total amount of life your opponents lost this turn. Exile one of those cards and put the rest on the bottom of your library in a random order. You may play the exiled card this turn.
+
+## Withering Torment
+cost={2}{B} | type=Instant | CI=B | produces=- | usd=$0.77
+Destroy target creature or enchantment. You lose 2 life.
+
+## Suspended Sentence
+cost={3}{B} | type=Instant | CI=B | produces=- | usd=$0.85
+Destroy target creature an opponent controls. That player loses 3 life. Exile Suspended Sentence with three time counters on it. Suspend 3—{1}{B} (Rather than cast this card from your hand, you may pay {1}{B} and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, you may cast it without paying its mana cost.)
+
+## Tibalt's Trickery
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$11.10
+Counter target spell. Choose 1, 2, or 3 at random. Its controller mills that many cards, then exiles cards from the top of their library until they exile a nonland card with a different name than that spell. They may cast that card without paying its mana cost. Then they put the exiled cards on the bottom of their library in a random order.
+
+## Malakir Rebirth // Malakir Mire
+cost={B} | type=Instant // Land | CI=B | produces=B | usd=$12.72
+Malakir Rebirth: Choose target creature. You lose 2 life. Until end of turn, that creature gains "When this creature dies, return it to the battlefield tapped under its owner's control." // Malakir Mire: This land enters tapped. {T}: Add {B}.
+
+## Fell the Profane // Fell Mire
+cost={2}{B}{B} | type=Instant // Land | CI=B | produces=B | usd=$4.36
+Fell the Profane: Destroy target creature or planeswalker. // Fell Mire: As this land enters, you may pay 3 life. If you don't, it enters tapped. {T}: Add {B}.
+
+## Black Market Connections
+cost={2}{B} | type=Enchantment | CI=B | produces=- | usd=$10.13
+At the beginning of your first main phase, choose one or more — • Sell Contraband — Create a Treasure token. You lose 1 life. • Buy Information — Draw a card. You lose 2 life. • Hire a Mercenary — Create a 3/2 colorless Shapeshifter creature token with changeling. You lose 3 life. (It is every creature type.)
+
+## Spiked Corridor // Torture Pit
+cost={3}{R} // {3}{R} | type=Enchantment — Room // Enchantment — Room | CI=R | produces=- | usd=$5.75
+Spiked Corridor: When you unlock this door, create three 1/1 red Devil creature tokens with "When this token dies, it deals 1 damage to any target." (You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.) // Torture Pit: If a source you control would deal noncombat damage to an opponent, it deals that much damage plus 2 instead. (You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)
+
+## The Rollercrusher Ride
+cost={X}{2}{R} | type=Legendary Enchantment | CI=R | produces=- | usd=$0.56
+Delirium — If a source you control would deal noncombat damage to a permanent or player while there are four or more card types among cards in your graveyard, it deals double that damage instead. When The Rollercrusher Ride enters, it deals X damage to each of up to X target creatures.
+
+## Eidolon of the Great Revel
+cost={R}{R} | type=Enchantment Creature — Spirit | CI=R | produces=- | usd=$2.67
+Whenever a player casts a spell with mana value 3 or less, this creature deals 2 damage to that player.
+
+## Pyrostatic Pillar
+cost={1}{R} | type=Enchantment | CI=R | produces=- | usd=$2.74
+Whenever a player casts a spell with mana value 3 or less, this enchantment deals 2 damage to that player.
+
+## Dragonlord Kolaghan
+cost={4}{B}{R} | type=Legendary Creature — Elder Dragon | CI=BR | produces=- | usd=$10.65
+Flying, haste Other creatures you control have haste. Whenever an opponent casts a creature or planeswalker spell with the same name as a card in their graveyard, that player loses 10 life.
+
+## Erebos, God of the Dead
+cost={3}{B} | type=Legendary Enchantment Creature — God | CI=B | produces=- | usd=$10.12
+Indestructible As long as your devotion to black is less than five, Erebos isn't a creature. (Each {B} in the mana costs of permanents you control counts toward your devotion to black.) Your opponents can't gain life. {1}{B}, Pay 2 life: Draw a card.
+
+## Balor
+cost={3}{R}{R} | type=Creature — Demon | CI=R | produces=- | usd=$5.17
+Flying Whenever this creature attacks or dies, choose one or more. Each mode must target a different player. • Target opponent draws three cards, then discards three cards at random. • Target opponent sacrifices a nontoken artifact of their choice. • This creature deals damage to target opponent equal to the number of cards in their hand.
+
+## Chains of Mephistopheles
+cost={1}{B} | type=Enchantment | CI=B | produces=- | usd=$?
+If a player would draw a card except the first one they draw in each of their draw steps, that player discards a card instead. If the player discards a card this way, they draw a card. If the player doesn't discard a card this way, they mill a card.
+
+## Black Vise
+cost={1} | type=Artifact | CI=- | produces=- | usd=$?
+As this artifact enters, choose an opponent. At the beginning of the chosen player's upkeep, this artifact deals X damage to that player, where X is the number of cards in their hand minus 4.
+
+## Iron Maiden
+cost={3} | type=Artifact | CI=- | produces=- | usd=$12.23
+At the beginning of each opponent's upkeep, this artifact deals X damage to that player, where X is the number of cards in their hand minus 4.
+
+## Ebony Owl Netsuke
+cost={2} | type=Artifact | CI=- | produces=- | usd=$2.27
+At the beginning of each opponent's upkeep, if that player has seven or more cards in hand, this artifact deals 4 damage to that player.
+
+## Viseling
+cost={4} | type=Artifact Creature — Phyrexian Construct | CI=- | produces=- | usd=$0.40
+At the beginning of each opponent's upkeep, this creature deals X damage to that player, where X is the number of cards in their hand minus 4.
+
+## Wheel of Torture
+cost={3} | type=Artifact | CI=- | produces=- | usd=$1.05
+At the beginning of each opponent's upkeep, this artifact deals X damage to that player, where X is 3 minus the number of cards in their hand.
+
+## Sire of Insanity
+cost={4}{B}{R} | type=Creature — Demon | CI=BR | produces=- | usd=$0.47
+At the beginning of each end step, each player discards their hand.
+
+## Fatal Lore
+cost={2}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$0.66
+An opponent chooses one — • You draw three cards. • You destroy up to two target creatures that player controls. They can't be regenerated. That player draws up to three cards.
+
+## Curse of Obsession
+cost={4}{R} | type=Enchantment — Aura Curse | CI=R | produces=- | usd=$0.35
+Enchant player At the beginning of enchanted player's draw step, that player draws two additional cards. At the beginning of enchanted player's end step, that player discards their hand.
+
+## Possibility Storm
+cost={3}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$2.66
+Whenever a player casts a spell from their hand, that player exiles it, then exiles cards from the top of their library until they exile a card that shares a card type with it. That player may cast that card without paying its mana cost. Then they put all cards exiled with this enchantment on the bottom of their library in a random order.
+
+## Gonti, Night Minister
+cost={2}{B}{B} | type=Legendary Creature — Aetherborn Rogue | CI=B | produces=- | usd=$1.00
+Whenever a player casts a spell they don't own, that player creates a Treasure token. Whenever a creature deals combat damage to one of your opponents, its controller looks at the top card of that opponent's library and exiles it face down. They may play that card for as long as it remains exiled. Mana of any type can be spent to cast a spell this way.
+
+## Scab-Clan Berserker
+cost={1}{R}{R} | type=Creature — Human Berserker | CI=R | produces=- | usd=$0.33
+Haste Renown 1 (When this creature deals combat damage to a player, if it isn't renowned, put a +1/+1 counter on it and it becomes renowned.) Whenever an opponent casts a noncreature spell, if this creature is renowned, this creature deals 2 damage to that player.
+
+## Mindsparker
+cost={1}{R}{R} | type=Creature — Elemental | CI=R | produces=- | usd=$0.08
+First strike (This creature deals combat damage before creatures without first strike.) Whenever an opponent casts a white or blue instant or sorcery spell, this creature deals 2 damage to that player.
+
+## Price of Glory
+cost={2}{R} | type=Enchantment | CI=R | produces=- | usd=$14.18
+Whenever a player taps a land for mana, if it's not that player's turn, destroy that land.
+
+## Burning Earth
+cost={3}{R} | type=Enchantment | CI=R | produces=- | usd=$2.63
+Whenever a player taps a nonbasic land for mana, this enchantment deals 1 damage to that player.
+
+## Acidic Soil
+cost={2}{R} | type=Sorcery | CI=R | produces=- | usd=$1.96
+Acidic Soil deals damage to each player equal to the number of lands they control.
+
+## Tempt with Vengeance
+cost={X}{R} | type=Sorcery | CI=R | produces=- | usd=$0.33
+Tempting offer — Create X 1/1 red Elemental creature tokens with haste. Each opponent may create X 1/1 red Elemental creature tokens with haste. For each opponent who does, create X 1/1 red Elemental creature tokens with haste.
+
+## Risky Move
+cost={3}{R}{R}{R} | type=Enchantment | CI=R | produces=- | usd=$1.21
+At the beginning of each player's upkeep, that player gains control of this enchantment. When you gain control of this enchantment from another player, choose a creature you control and an opponent. Flip a coin. If you lose the flip, that opponent gains control of that creature.
+
+## Life of the Party
+cost={3}{R} | type=Creature — Elemental | CI=R | produces=- | usd=$11.17
+First strike, trample, haste Whenever this creature attacks, it gets +X/+0 until end of turn, where X is the number of creatures you control. When this creature enters, if it's not a token, each opponent creates a token that's a copy of it. The tokens are goaded for the rest of the game. (They attack each combat if able and attack a player other than you if able.)
+
+## Rankle and Torbran
+cost={1}{B}{B}{R}{R} | type=Legendary Creature — Faerie Dwarf | CI=BR | produces=- | usd=$0.34
+Flying, first strike, haste Whenever Rankle and Torbran deals combat damage to a player or battle, choose any number — • Each player creates a Treasure token. • Each player sacrifices a creature of their choice. • If a source would deal damage to a player or battle this turn, it deals that much damage plus 2 instead.
+
+## Capital Punishment
+cost={4}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$5.76
+Council's dilemma — Starting with you, each player votes for death or taxes. Each opponent sacrifices a creature of their choice for each death vote and discards a card for each taxes vote.
+
+## Obosh, the Preypiercer
+cost={3}{B/R}{B/R} | type=Legendary Creature — Hellion Horror | CI=BR | produces=- | usd=$0.27
+Companion — Your starting deck contains only cards with odd mana values and land cards. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.) If a source you control with an odd mana value would deal damage to a permanent or player, it deals double that damage to that permanent or player instead.
+
+## Ayara, First of Locthwain
+cost={B}{B}{B} | type=Legendary Creature — Elf Noble | CI=B | produces=- | usd=$7.79
+Whenever Ayara or another black creature you control enters, each opponent loses 1 life and you gain 1 life. {T}, Sacrifice another black creature: Draw a card.
+
+## Kokusho, the Evening Star
+cost={4}{B}{B} | type=Legendary Creature — Dragon Spirit | CI=B | produces=- | usd=$26.06
+Flying When Kokusho dies, each opponent loses 5 life. You gain life equal to the life lost this way.
+
+## Monument to Endurance
+cost={3} | type=Artifact | CI=- | produces=- | usd=$19.16
+Whenever you discard a card, choose one that hasn't been chosen this turn — • Draw a card. • Create a Treasure token. • Each opponent loses 3 life.
+
+## Hidetsugu's Second Rite
+cost={3}{R} | type=Instant | CI=R | produces=- | usd=$0.16
+If target player has exactly 10 life, Hidetsugu's Second Rite deals 10 damage to that player.
+
+## Zurzoth, Chaos Rider
+cost={2}{R} | type=Legendary Creature — Devil | CI=R | produces=- | usd=$1.89
+Whenever an opponent draws their first card each turn, if it's not their turn, you create a 1/1 red Devil creature token with "When this token dies, it deals 1 damage to any target." Whenever one or more Devils you control attack one or more players, you and those players each draw a card, then discard a card at random.
+
+## Jinxed Idol
+cost={2} | type=Artifact | CI=- | produces=- | usd=$?
+At the beginning of your upkeep, this artifact deals 2 damage to you. Sacrifice a creature: Target opponent gains control of this artifact.
+
+## Harmless Offering
+cost={2}{R} | type=Sorcery | CI=R | produces=- | usd=$0.18
+Target opponent gains control of target permanent you control.
+
+## Fraying Omnipotence
+cost={3}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$0.76
+Each player loses half their life, then discards half the cards in their hand, then sacrifices half the creatures they control of their choice. Round up each time.
+
+## Ob Nixilis, the Adversary
+cost={1}{B}{R} | type=Legendary Planeswalker — Nixilis | CI=BR | produces=- | usd=$1.57
+Casualty X. The copy isn't legendary and has starting loyalty X. (As you cast this spell, you may sacrifice a creature with power X. When you do, copy this spell. The copy becomes a token.) +1: Each opponent loses 2 life unless they discard a card. If you control a Demon or Devil, you gain 2 life. −2: Create a 1/1 red Devil creature token with "When this token dies, it deals 1 damage to any target." −7: Target player draws seven cards and loses 7 life.
+
+## Angrath's Marauders
+cost={5}{R}{R} | type=Creature — Human Pirate | CI=R | produces=- | usd=$0.62
+If a source you control would deal damage to a permanent or player, it deals double that damage to that permanent or player instead.
+
+## Fear of Burning Alive
+cost={4}{R}{R} | type=Enchantment Creature — Nightmare | CI=R | produces=- | usd=$0.25
+When this creature enters, it deals 4 damage to each opponent. Delirium — Whenever a source you control deals noncombat damage to an opponent, if there are four or more card types among cards in your graveyard, this creature deals that amount of damage to target creature that player controls.
+
+## Persistent Constrictor
+cost={4}{B} | type=Creature — Zombie Snake | CI=B | produces=- | usd=$12.23
+At the beginning of each opponent's upkeep, they lose 1 life and you put a -1/-1 counter on up to one target creature they control. Persist (When this creature dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner's control with a -1/-1 counter on it.)
+
+## Unstoppable Slasher
+cost={2}{B} | type=Creature — Zombie Assassin | CI=B | produces=- | usd=$5.44
+Deathtouch Whenever this creature deals combat damage to a player, they lose half their life, rounded up. When this creature dies, if it had no counters on it, return it to the battlefield tapped under its owner's control with two stun counters on it.
+
+## Screaming Nemesis
+cost={2}{R} | type=Creature — Spirit | CI=R | produces=- | usd=$7.64
+Haste Whenever this creature is dealt damage, it deals that much damage to any other target. If a player is dealt damage this way, they can't gain life for the rest of the game.
+
+## Massacre Girl
+cost={3}{B}{B} | type=Legendary Creature — Human Assassin | CI=B | produces=- | usd=$0.53
+Menace When Massacre Girl enters, each other creature gets -1/-1 until end of turn. Whenever a creature dies this turn, each creature other than Massacre Girl gets -1/-1 until end of turn.
+
+## Xantcha, Sleeper Agent
+cost={1}{B}{R} | type=Legendary Creature — Phyrexian Minion | CI=BR | produces=- | usd=$1.75
+Xantcha enters under the control of an opponent of your choice. Xantcha attacks each combat if able and can't attack its owner or planeswalkers its owner controls. {3}: Xantcha's controller loses 2 life and you draw a card. Any player may activate this ability.
+
+## Shadow of Mortality
+cost={13}{B}{B} | type=Creature — Avatar | CI=B | produces=- | usd=$0.87
+If your life total is less than your starting life total, this spell costs {X} less to cast, where X is the difference.
+
+## Guff Rewrites History
+cost={2}{R} | type=Instant | CI=R | produces=- | usd=$3.51
+For each player, choose target nonenchantment, nonland permanent that player controls. Those permanents' owners shuffle them into their libraries. Each player who controlled one of those permanents exiles cards from the top of their library until they exile a nonland card, then puts the rest on the bottom of their library in a random order. Each player may cast the nonland card they exiled without paying its mana cost.
+
+## Transforming Flourish
+cost={2}{R} | type=Instant | CI=R | produces=- | usd=$0.26
+Demonstrate (When you cast this spell, you may copy it. If you do, choose an opponent to also copy it. Players may choose new targets for their copies.) Destroy target artifact or creature you don't control. If that permanent is destroyed this way, its controller exiles cards from the top of their library until they exile a nonland card, then they may cast that card without paying its mana cost.
+
+## Mutinous Massacre
+cost={3}{B}{B}{R}{R} | type=Sorcery | CI=BR | produces=- | usd=$0.31
+Choose odd or even. Destroy each creature with mana value of the chosen quality. Then gain control of all creatures until end of turn. Untap them. They gain haste until end of turn. (Zero is even.)
+
+## Creative Technique
+cost={4}{R} | type=Sorcery | CI=R | produces=- | usd=$0.32
+Demonstrate (When you cast this spell, you may copy it. If you do, choose an opponent to also copy it.) Shuffle your library, then reveal cards from the top of it until you reveal a nonland card. Exile that card and put the rest on the bottom of your library in a random order. You may cast the exiled card without paying its mana cost.
+
+## Decorum Dissertation
+cost={3}{B}{B} | type=Sorcery — Lesson | CI=B | produces=- | usd=$5.30
+Target player draws two cards and loses 2 life. Paradigm (Then exile this spell. After you first resolve a spell with this name, you may cast a copy of it from exile without paying its mana cost at the beginning of each of your first main phases.)
+
+## Mob Verdict
+cost={2}{R}{R} | type=Sorcery | CI=R | produces=- | usd=$0.40
+Secret council — Each player secretly votes for another player, then those votes are revealed. For each vote an opponent received, Mob Verdict deals 2 damage to that player and each creature that player controls. For each vote you received, draw a card.
+
+## Scheming Symmetry
+cost={B} | type=Sorcery | CI=B | produces=- | usd=$8.65
+Choose two target players. Each of them searches their library for a card, then shuffles and puts that card on top.
+
+## Allure of the Unknown
+cost={3}{B}{R} | type=Sorcery | CI=BR | produces=- | usd=$0.22
+Reveal the top six cards of your library. An opponent exiles a nonland card from among them, then you put the rest into your hand. That opponent may cast the exiled card without paying its mana cost.
+
+## Light Up the Stage
+cost={2}{R} | type=Sorcery | CI=R | produces=- | usd=$0.36
+Spectacle {R} (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.) Exile the top two cards of your library. Until the end of your next turn, you may play those cards.
+
+## Mana Geyser
+cost={3}{R}{R} | type=Sorcery | CI=R | produces=R | usd=$1.19
+Add {R} for each tapped land your opponents control.
+
+## Boltwave
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$3.02
+Boltwave deals 3 damage to each opponent.
+
+## Cursed Mirror
+cost={2}{R} | type=Artifact | CI=R | produces=R | usd=$0.50
+{T}: Add {R}. As this artifact enters, you may have it become a copy of any creature on the battlefield until end of turn, except it has haste.
+
+## Séance Board
+cost={2} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$3.59
+Morbid — At the beginning of each end step, if a creature died this turn, put a soul counter on this artifact. {T}: Add X mana of any one color, where X is the number of soul counters on this artifact. Spend this mana only to cast instant, sorcery, Demon, and Spirit spells.
+
+## Victory Chimes
+cost={3} | type=Artifact | CI=- | produces=C | usd=$5.62
+Untap this artifact during each other player's untap step. {T}: A player of your choice adds {C}.
+
+## Gilded Lotus
+cost={5} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.50
+{T}: Add three mana of any one color.
+
+## Thran Dynamo
+cost={4} | type=Artifact | CI=- | produces=C | usd=$4.22
+{T}: Add {C}{C}{C}.
+
+## Commander's Sphere
+cost={3} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.33
+{T}: Add one mana of any color in your commander's color identity. Sacrifice this artifact: Draw a card.
+
+## Wishclaw Talisman
+cost={1}{B} | type=Artifact | CI=B | produces=- | usd=$1.83
+This artifact enters with three wish counters on it. {1}, {T}, Remove a wish counter from this artifact: Search your library for a card, put it into your hand, then shuffle. An opponent gains control of this artifact. Activate only during your turn.
+
+## Hithlain Rope
+cost={2} | type=Artifact | CI=- | produces=- | usd=$0.51
+This artifact can't be sacrificed. {1}, {T}: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle. The player to your right gains control of this artifact. {2}, {T}: Draw a card. The player to your right gains control of this artifact.
+
+## Dark Fortress
+cost=- | type=Land | CI=BR | produces=B,C,R | usd=$2.20
+{T}: Add {C}. {T}: Add {B} or {R}. Activate only if this land entered this turn or if you control a basic land.
+
+## Daredevil, Fearless Fighter
+cost={2}{R} | type=Legendary Creature — Human Hero | CI=R | produces=- | usd=$1.11
+Whenever a source you control deals damage to you, Daredevil deals that much damage to target opponent. Whenever Daredevil attacks, exile the top card of your library. Daredevil deals damage to you equal to that card's mana value. You may play it this turn.
+
+## Bastion of Remembrance
+cost={2}{B} | type=Enchantment | CI=B | produces=- | usd=$0.32
+When this enchantment enters, create a 1/1 white Human Soldier creature token. Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.
+
+## The One Ring
+cost={4} | type=Legendary Artifact | CI=- | produces=- | usd=$113.72
+Indestructible When The One Ring enters, if you cast it, you gain protection from everything until your next turn. At the beginning of your upkeep, you lose 1 life for each burden counter on The One Ring. {T}: Put a burden counter on The One Ring, then draw a card for each burden counter on The One Ring.
+
+## Bolas's Citadel
+cost={3}{B}{B}{B} | type=Legendary Artifact | CI=B | produces=- | usd=$14.64
+You may look at the top card of your library any time. You may play lands and cast spells from the top of your library. If you cast a spell this way, pay life equal to its mana value rather than pay its mana cost. {T}, Sacrifice ten nonland permanents: Each opponent loses 10 life.
+
+## Ancient Tomb
+cost=- | type=Land | CI=- | produces=C | usd=$135.11
+{T}: Add {C}{C}. This land deals 2 damage to you.
+
+## Sol Ring
+cost={1} | type=Artifact | CI=- | produces=C | usd=$1.56
+{T}: Add {C}{C}.
+
+## Arcane Signet
+cost={2} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.50
+{T}: Add one mana of any color in your commander's color identity.
+
+## Talisman of Indulgence
+cost={2} | type=Artifact | CI=BR | produces=B,C,R | usd=$1.77
+{T}: Add {C}. {T}: Add {B} or {R}. This artifact deals 1 damage to you.
+
+## Rakdos Signet
+cost={2} | type=Artifact | CI=BR | produces=B,R | usd=$3.82
+{1}, {T}: Add {B}{R}.
+
+## Fellwar Stone
+cost={2} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$?
+{T}: Add one mana of any color that a land an opponent controls could produce.
+
+## Mind Stone
+cost={2} | type=Artifact | CI=- | produces=C | usd=$?
+{T}: Add {C}. {1}, {T}, Sacrifice this artifact: Draw a card.
+
+## Thought Vessel
+cost={2} | type=Artifact | CI=- | produces=C | usd=$?
+You have no maximum hand size. {T}: Add {C}.
+
+## Command Tower
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$0.30
+{T}: Add one mana of any color in your commander's color identity.
+
+## Dragonskull Summit
+cost=- | type=Land | CI=BR | produces=B,R | usd=$0.49
+This land enters tapped unless you control a Swamp or a Mountain. {T}: Add {B} or {R}.
+
+## Smoldering Marsh
+cost=- | type=Land — Swamp Mountain | CI=BR | produces=B,R | usd=$0.33
+({T}: Add {B} or {R}.) This land enters tapped unless you control two or more basic lands.
+
+## Tainted Peak
+cost=- | type=Land | CI=BR | produces=B,C,R | usd=$1.20
+{T}: Add {C}. {T}: Add {B} or {R}. Activate only if you control a Swamp.
+
+## Sulfurous Springs
+cost=- | type=Land | CI=BR | produces=B,C,R | usd=$1.44
+{T}: Add {C}. {T}: Add {B} or {R}. This land deals 1 damage to you.
+
+## Graven Cairns
+cost=- | type=Land | CI=BR | produces=B,C,R | usd=$4.68
+{T}: Add {C}. {B/R}, {T}: Add {B}{B}, {B}{R}, or {R}{R}.
+
+## Foreboding Ruins
+cost=- | type=Land | CI=BR | produces=B,R | usd=$0.29
+As this land enters, you may reveal a Swamp or Mountain card from your hand. If you don't, this land enters tapped. {T}: Add {B} or {R}.
+
+## Blood Crypt
+cost=- | type=Land — Swamp Mountain | CI=BR | produces=B,R | usd=$?
+({T}: Add {B} or {R}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## Shadowblood Ridge
+cost=- | type=Land | CI=BR | produces=B,R | usd=$0.36
+{1}, {T}: Add {B}{R}.
+
+## Exotic Orchard
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$?
+{T}: Add one mana of any color that a land an opponent controls could produce.
+
+## Luxury Suite
+cost=- | type=Land | CI=BR | produces=B,R | usd=$8.85
+This land enters tapped unless you have two or more opponents. {T}: Add {B} or {R}.
+
+## Blazemire Verge
+cost=- | type=Land | CI=BR | produces=B,R | usd=$9.41
+{T}: Add {B}. {T}: Add {R}. Activate only if you control a Swamp or a Mountain.
+
+## Temple of Malice
+cost=- | type=Land | CI=BR | produces=B,R | usd=$0.23
+This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {B} or {R}.
+
+## Haunted Ridge
+cost=- | type=Land | CI=BR | produces=B,R | usd=$8.50
+This land enters tapped unless you control two or more other lands. {T}: Add {B} or {R}.
+
+## Blackcleave Cliffs
+cost=- | type=Land | CI=BR | produces=B,R | usd=$2.68
+This land enters tapped unless you control two or fewer other lands. {T}: Add {B} or {R}.
+
+## Bloodstained Mire
+cost=- | type=Land | CI=- | produces=- | usd=$18.51
+{T}, Pay 1 life, Sacrifice this land: Search your library for a Swamp or Mountain card, put it onto the battlefield, then shuffle.
+
+## Canyon Slough
+cost=- | type=Land — Swamp Mountain | CI=BR | produces=B,R | usd=$0.22
+({T}: Add {B} or {R}.) This land enters tapped. Cycling {2} ({2}, Discard this card: Draw a card.)
+
+## Badlands
+cost=- | type=Land — Swamp Mountain | CI=BR | produces=B,R | usd=$?
+({T}: Add {B} or {R}.)
+
+## Mount Doom
+cost=- | type=Legendary Land | CI=BR | produces=B,R | usd=$8.75
+{T}, Pay 1 life: Add {B} or {R}. {1}{B}{R}, {T}: Mount Doom deals 1 damage to each opponent. {5}{B}{R}, {T}, Sacrifice Mount Doom and a legendary artifact: Choose up to two creatures, then destroy the rest. Activate only as a sorcery.
+
+## Reliquary Tower
+cost=- | type=Land | CI=- | produces=C | usd=$3.54
+You have no maximum hand size. {T}: Add {C}.
+
+## Maze of Ith
+cost=- | type=Land | CI=- | produces=- | usd=$9.64
+{T}: Untap target attacking creature. Prevent all combat damage that would be dealt to and dealt by that creature this turn.
+
+## Command Beacon
+cost=- | type=Land | CI=- | produces=C | usd=$9.62
+{T}: Add {C}. {T}, Sacrifice this land: Put your commander into your hand from the command zone.
+
+## Castle Locthwain
+cost=- | type=Land | CI=B | produces=B | usd=$4.54
+This land enters tapped unless you control a Swamp. {T}: Add {B}. {1}{B}{B}, {T}: Draw a card, then you lose life equal to the number of cards in your hand.
+
+## Takenuma, Abandoned Mire
+cost=- | type=Legendary Land | CI=B | produces=B | usd=$10.41
+{T}: Add {B}. Channel — {3}{B}, Discard this card: Mill three cards, then return a creature or planeswalker card from your graveyard to your hand. This ability costs {1} less to activate for each legendary creature you control.
+
+## Rogue's Passage
+cost=- | type=Land | CI=- | produces=C | usd=$0.36
+{T}: Add {C}. {4}, {T}: Target creature can't be blocked this turn.
+
+## Shivan Gorge
+cost=- | type=Legendary Land | CI=R | produces=C | usd=$1.05
+{T}: Add {C}. {2}{R}, {T}: Shivan Gorge deals 1 damage to each opponent.
+
+## Temple of the False God
+cost=- | type=Land | CI=- | produces=C | usd=$0.26
+{T}: Add {C}{C}. Activate only if you control five or more lands.
+
+## Cabal Coffers
+cost=- | type=Land | CI=B | produces=B | usd=$29.85
+{2}, {T}: Add {B} for each Swamp you control.
+
+## Kolaghan's Command
+cost={1}{B}{R} | type=Instant | CI=BR | produces=- | usd=$0.38
+Choose two — • Return target creature card from your graveyard to your hand. • Target player discards a card. • Destroy target artifact. • Kolaghan's Command deals 2 damage to any target.
+
+## Toralf, God of Fury // Toralf's Hammer
+cost={2}{R}{R}{1}{R} | type=Legendary Creature — God // Legendary Artifact — Equipment | CI=R | produces=- | usd=$5.02
+Toralf, God of Fury: Trample Whenever a creature or planeswalker an opponent controls is dealt excess noncombat damage, Toralf deals damage equal to the excess to any target other than that permanent. // Toralf's Hammer: Equipped creature has "{1}{R}, {T}, Unattach Toralf's Hammer: It deals 3 damage to any target. Return Toralf's Hammer to its owner's hand." Equipped creature gets +3/+0 as long as it's legendary. Equip {1}{R}
+
+## Hellkite Tyrant
+cost={4}{R}{R} | type=Creature — Dragon | CI=R | produces=- | usd=$5.18
+Flying, trample Whenever this creature deals combat damage to a player, gain control of all artifacts that player controls. At the beginning of your upkeep, if you control twenty or more artifacts, you win the game.
+
+## Vexing Bauble
+cost={1} | type=Artifact | CI=- | produces=- | usd=$2.18
+Whenever a player casts a spell, if no mana was spent to cast it, counter that spell. {1}, {T}, Sacrifice this artifact: Draw a card.
+
+## Darksteel Plate
+cost={3} | type=Artifact — Equipment | CI=- | produces=- | usd=$6.51
+Indestructible Equipped creature has indestructible. Equip {2}
+
+## Hammer of Nazahn
+cost={4} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$16.64
+Whenever Hammer of Nazahn or another Equipment you control enters, you may attach that Equipment to target creature you control. Equipped creature gets +2/+0 and has indestructible. Equip {4}
+
+## Tibalt, Rakish Instigator
+cost={2}{R} | type=Legendary Planeswalker — Tibalt | CI=R | produces=- | usd=$0.27
+Your opponents can't gain life. −2: Create a 1/1 red Devil creature token with "When this token dies, it deals 1 damage to any target."
+
+## Sunbird's Invocation
+cost={5}{R} | type=Enchantment | CI=R | produces=- | usd=$0.37
+Whenever you cast a spell from your hand, reveal the top X cards of your library, where X is that spell's mana value. You may cast a spell with mana value X or less from among cards revealed this way without paying its mana cost. Put the rest on the bottom of your library in a random order.
+
+## Ruination Rioter
+cost={R}{G} | type=Creature — Human Berserker | CI=GR | produces=- | usd=$0.23
+When this creature dies, you may have it deal damage to any target equal to the number of land cards in your graveyard.
+
+## Goblin Game
+cost={5}{R}{R} | type=Sorcery | CI=R | produces=- | usd=$1.78
+Each player hides at least one item, then all players reveal them simultaneously. Each player loses life equal to the number of items they revealed. The player who revealed the fewest items then loses half their life, rounded up. If two or more players are tied for fewest, each loses half their life, rounded up.
+
+## Hive Mind
+cost={5}{U} | type=Enchantment | CI=U | produces=- | usd=$9.25
+Whenever a player casts an instant or sorcery spell, each other player copies that spell. Each of those players may choose new targets for their copy.
+
+## Knowledge Pool
+cost={6} | type=Artifact | CI=- | produces=- | usd=$1.06
+Imprint — When this artifact enters, each player exiles the top three cards of their library. Whenever a player casts a spell from their hand, that player exiles it. If the player does, they may cast a spell from among other cards exiled with this artifact without paying its mana cost.
+
+## Nath's Buffoon
+cost={1}{B} | type=Creature — Goblin Rogue | CI=B | produces=- | usd=$0.07
+Protection from Elves
+
+## Avarice Totem
+cost={1} | type=Artifact | CI=- | produces=- | usd=$0.41
+{5}: Exchange control of this artifact and target nonland permanent.
+
+## Wedding Ring
+cost={2}{W}{W} | type=Artifact | CI=W | produces=- | usd=$10.09
+When this artifact enters, if it was cast, target opponent creates a token that's a copy of it. Whenever an opponent who controls an artifact named Wedding Ring draws a card during their turn, you draw a card. Whenever an opponent who controls an artifact named Wedding Ring gains life during their turn, you gain that much life.
+
+## Howling Golem
+cost={3} | type=Artifact Creature — Golem | CI=- | produces=- | usd=$0.24
+Whenever this creature attacks or blocks, each player draws a card.
+
+## Otherworld Atlas
+cost={4} | type=Artifact — Book | CI=- | produces=- | usd=$1.56
+{T}: Put a charge counter on this artifact. {T}: Each player draws a card for each charge counter on this artifact.
+
+## Horn of Greed
+cost={3} | type=Artifact | CI=- | produces=- | usd=$17.35
+Whenever a player plays a land, that player draws a card.
+
+## Winter Sky
+cost={R} | type=Sorcery | CI=R | produces=- | usd=$1.91
+Flip a coin. If you win the flip, Winter Sky deals 1 damage to each creature and each player. If you lose the flip, each player draws a card.
+
+## Master of the Feast
+cost={1}{B}{B} | type=Enchantment Creature — Demon | CI=B | produces=- | usd=$5.36
+Flying At the beginning of your upkeep, each opponent draws a card.
+
+## Dire Undercurrents
+cost={3}{U/B}{U/B} | type=Enchantment | CI=BU | produces=- | usd=$4.50
+Whenever a blue creature you control enters, you may have target player draw a card. Whenever a black creature you control enters, you may have target player discard a card.
+
+## Forced Fruition
+cost={4}{U}{U} | type=Enchantment | CI=U | produces=- | usd=$7.74
+Whenever an opponent casts a spell, that player draws seven cards.
+
+## Cruelclaw's Heist
+cost={B}{B} | type=Sorcery | CI=B | produces=- | usd=$0.30
+Gift a card (You may promise an opponent a gift as you cast this spell. If you do, they draw a card before its other effects.) Target opponent reveals their hand. You choose a nonland card from it. Exile that card. If the gift was promised, you may cast that card for as long as it remains exiled, and mana of any type can be spent to cast it.
+
+## Coiling Rebirth
+cost={3}{B}{B} | type=Sorcery | CI=B | produces=- | usd=$0.29
+Gift a card (You may promise an opponent a gift as you cast this spell. If you do, they draw a card before its other effects.) Return target creature card from your graveyard to the battlefield. Then if the gift was promised and that creature isn't legendary, create a token that's a copy of that creature, except it's 1/1.
+
+## Nocturnal Hunger
+cost={2}{B} | type=Instant | CI=B | produces=- | usd=$0.15
+Gift a Food (You may promise an opponent a gift as you cast this spell. If you do, they create a Food token before its other effects. It's an artifact with "{2}, {T}, Sacrifice this token: You gain 3 life.") Destroy target creature. If the gift wasn't promised, you lose 2 life.
+
+## Consumed by Greed
+cost={1}{B}{B} | type=Instant | CI=B | produces=- | usd=$0.20
+Gift a card (You may promise an opponent a gift as you cast this spell. If you do, they draw a card before its other effects.) Target opponent sacrifices a creature with the greatest power among creatures they control. If the gift was promised, return target creature card from your graveyard to your hand.
+
+## Sazacap's Brew
+cost={1}{R} | type=Instant | CI=R | produces=- | usd=$0.29
+Gift a tapped Fish (You may promise an opponent a gift as you cast this spell. If you do, they create a tapped 1/1 blue Fish creature token before its other effects.) As an additional cost to cast this spell, discard a card. Target player draws two cards. If the gift was promised, target creature you control gets +2/+0 until end of turn.
+
+## Valley Rally
+cost={2}{R} | type=Instant | CI=R | produces=- | usd=$0.20
+Gift a Food (You may promise an opponent a gift as you cast this spell. If you do, they create a Food token before its other effects. It's an artifact with "{2}, {T}, Sacrifice this token: You gain 3 life.") Creatures you control get +2/+0 until end of turn. If the gift was promised, target creature you control gains first strike until end of turn.
+
+## Blooming Blast
+cost={1}{R} | type=Instant | CI=R | produces=B,G,R,U,W | usd=$0.22
+Gift a Treasure (You may promise an opponent a gift as you cast this spell. If you do, they create a Treasure token before its other effects. It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.") Blooming Blast deals 2 damage to target creature. If the gift was promised, Blooming Blast also deals 3 damage to that creature's controller.
+
+## Wildfire Howl
+cost={1}{R}{R} | type=Sorcery | CI=R | produces=- | usd=$0.14
+Gift a card (You may promise an opponent a gift as you cast this spell. If you do, they draw a card before its other effects.) Wildfire Howl deals 2 damage to each creature. If the gift was promised, instead Wildfire Howl deals 1 damage to any target and 2 damage to each creature.
+
+## Starforged Sword
+cost={4} | type=Artifact — Equipment | CI=- | produces=- | usd=$0.19
+Gift a tapped Fish (You may promise an opponent a gift as you cast this spell. If you do, when it enters, they create a tapped 1/1 blue Fish creature token.) When this Equipment enters, if the gift was promised, attach this Equipment to target creature you control. Equipped creature gets +3/+3 and loses flying. Equip {3}
+
+## Gate to the Afterlife
+cost={3} | type=Artifact | CI=- | produces=- | usd=$0.24
+Whenever a nontoken creature you control dies, you gain 1 life. Then you may draw a card. If you do, discard a card. {2}, {T}, Sacrifice this artifact: Search your graveyard, hand, and/or library for a card named God-Pharaoh's Gift and put it onto the battlefield. If you search your library this way, shuffle. Activate only if there are six or more creature cards in your graveyard.
+
+## The Lord of Pain
+cost={3}{B}{R} | type=Legendary Creature — Human Assassin | CI=BR | produces=- | usd=$9.17
+Menace Your opponents can't gain life. Whenever a player casts their first spell each turn, choose another target player. The Lord of Pain deals damage equal to that spell's mana value to the chosen player.
+
+## Swamp
+cost=- | type=Basic Land — Swamp | CI=B | produces=B | usd=$?
+({T}: Add {B}.)
+
+## Mountain
+cost=- | type=Basic Land — Mountain | CI=R | produces=R | usd=$?
+({T}: Add {R}.)
+
+## Glacial Chasm
+cost=- | type=Land | CI=- | produces=- | usd=$?
+Cumulative upkeep—Pay 2 life. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) When this land enters, sacrifice a land. Creatures you control can't attack. Prevent all damage that would be dealt to you.
+
+## Marsh Flats
+cost=- | type=Land | CI=- | produces=- | usd=$30.85
+{T}, Pay 1 life, Sacrifice this land: Search your library for a Plains or Swamp card, put it onto the battlefield, then shuffle.
+
+## Polluted Delta
+cost=- | type=Land | CI=- | produces=- | usd=$20.62
+{T}, Pay 1 life, Sacrifice this land: Search your library for an Island or Swamp card, put it onto the battlefield, then shuffle.
+
+## Verdant Catacombs
+cost=- | type=Land | CI=- | produces=- | usd=$28.38
+{T}, Pay 1 life, Sacrifice this land: Search your library for a Swamp or Forest card, put it onto the battlefield, then shuffle.
+
+## Wooded Foothills
+cost=- | type=Land | CI=- | produces=- | usd=$17.65
+{T}, Pay 1 life, Sacrifice this land: Search your library for a Mountain or Forest card, put it onto the battlefield, then shuffle.
+
+## Mana Vault
+cost={1} | type=Artifact | CI=- | produces=C | usd=$120.34
+This artifact doesn't untap during your untap step. At the beginning of your upkeep, you may pay {4}. If you do, untap this artifact. At the beginning of your draw step, if this artifact is tapped, it deals 1 damage to you. {T}: Add {C}{C}{C}.
+
+## Grim Monolith
+cost={2} | type=Artifact | CI=- | produces=C | usd=$481.97
+This artifact doesn't untap during your untap step. {T}: Add {C}{C}{C}. {4}: Untap this artifact.
+
+## Mox Diamond
+cost={0} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$?
+If this artifact would enter, you may discard a land card instead. If you do, put this artifact onto the battlefield. If you don't, put it into its owner's graveyard. {T}: Add one mana of any color.
+
+## Basalt Monolith
+cost={3} | type=Artifact | CI=- | produces=C | usd=$5.09
+This artifact doesn't untap during your untap step. {T}: Add {C}{C}{C}. {3}: Untap this artifact.

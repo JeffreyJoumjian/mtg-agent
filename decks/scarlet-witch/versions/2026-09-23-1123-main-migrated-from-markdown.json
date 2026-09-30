@@ -1,0 +1,388 @@
+{
+  "takenAt": "2026-09-23T11:23:12.353Z",
+  "listId": "main",
+  "label": "migrated from markdown",
+  "reason": "state at migration",
+  "list": {
+    "label": "Main",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "The Scarlet Witch",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Valakut, the Molten Pinnacle",
+            "qty": 1
+          },
+          {
+            "name": "Nykthos, Shrine to Nyx",
+            "qty": 1
+          },
+          {
+            "name": "War Room",
+            "qty": 1
+          },
+          {
+            "name": "Rogue's Passage",
+            "qty": 1
+          },
+          {
+            "name": "Tyrite Sanctum",
+            "qty": 1
+          },
+          {
+            "name": "Forge of Heroes",
+            "qty": 1
+          },
+          {
+            "name": "Castle Embereth",
+            "qty": 1
+          },
+          {
+            "name": "Arena of Glory",
+            "qty": 1
+          },
+          {
+            "name": "Shatterskull Smashing",
+            "qty": 1
+          },
+          {
+            "name": "Valakut Awakening",
+            "qty": 1
+          },
+          {
+            "name": "Mines of Moria",
+            "qty": 1
+          },
+          {
+            "name": "Mountain",
+            "qty": 22
+          }
+        ]
+      },
+      {
+        "name": "Ramp — rocks, rituals and cost reduction",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "The Fire Crystal",
+            "qty": 1
+          },
+          {
+            "name": "Ruby Medallion",
+            "qty": 1
+          },
+          {
+            "name": "Pyromancer's Goggles",
+            "qty": 1
+          },
+          {
+            "name": "Pyretic Ritual",
+            "qty": 1
+          },
+          {
+            "name": "Desperate Ritual",
+            "qty": 1
+          },
+          {
+            "name": "Seething Song",
+            "qty": 1
+          },
+          {
+            "name": "Jeska's Will",
+            "qty": 1
+          },
+          {
+            "name": "Mana Geyser",
+            "qty": 1
+          },
+          {
+            "name": "Brass's Bounty",
+            "qty": 1
+          },
+          {
+            "name": "Artist's Talent",
+            "qty": 1
+          },
+          {
+            "name": "Gauntlet of Power",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Ramp — per-spell mana engines",
+        "cards": [
+          {
+            "name": "Electro, Assaulting Battery",
+            "qty": 1
+          },
+          {
+            "name": "Urabrask",
+            "qty": 1
+          },
+          {
+            "name": "Ashling, Flame Dancer",
+            "qty": 1
+          },
+          {
+            "name": "Neheb, the Eternal",
+            "qty": 1
+          },
+          {
+            "name": "Storm-Kiln Artist",
+            "qty": 1
+          },
+          {
+            "name": "The Vision and Scarlet Witch",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw & selection",
+        "cards": [
+          {
+            "name": "Big Score",
+            "qty": 1
+          },
+          {
+            "name": "Unexpected Windfall",
+            "qty": 1
+          },
+          {
+            "name": "Inspired Tinkering",
+            "qty": 1
+          },
+          {
+            "name": "Commune with Lava",
+            "qty": 1
+          },
+          {
+            "name": "Ignite the Future",
+            "qty": 1
+          },
+          {
+            "name": "Hex Magic",
+            "qty": 1
+          },
+          {
+            "name": "Wiccan, Young Avenger",
+            "qty": 1
+          },
+          {
+            "name": "Wheel of Fortune",
+            "qty": 1
+          },
+          {
+            "name": "Reforge the Soul",
+            "qty": 1
+          },
+          {
+            "name": "Will of the Jeskai",
+            "qty": 1
+          },
+          {
+            "name": "The One Ring",
+            "qty": 1
+          },
+          {
+            "name": "Hit the Mother Lode",
+            "qty": 1
+          },
+          {
+            "name": "Gamble",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Theme / Synergy — pump her power to grow the discount",
+        "cards": [
+          {
+            "name": "Livaan, Cultist of Tiamat",
+            "qty": 1
+          },
+          {
+            "name": "Blackblade Reforged",
+            "qty": 1
+          },
+          {
+            "name": "Runechanter's Pike",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Theme / Synergy — copy and recur",
+        "cards": [
+          {
+            "name": "Mizzix's Mastery",
+            "qty": 1
+          },
+          {
+            "name": "Past in Flames",
+            "qty": 1
+          },
+          {
+            "name": "Repeated Reverberation",
+            "qty": 1
+          },
+          {
+            "name": "Arcane Bombardment",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Damage conversion — pingers, boosters and burn",
+        "cards": [
+          {
+            "name": "Guttersnipe",
+            "qty": 1
+          },
+          {
+            "name": "Nico Minoru, Runaway",
+            "qty": 1
+          },
+          {
+            "name": "Fated Firepower",
+            "qty": 1
+          },
+          {
+            "name": "Boltwave",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Protection",
+        "cards": [
+          {
+            "name": "Deflecting Swat",
+            "qty": 1
+          },
+          {
+            "name": "Return the Favor",
+            "qty": 1
+          },
+          {
+            "name": "Conqueror's Flail",
+            "qty": 1
+          },
+          {
+            "name": "Champion's Helm",
+            "qty": 1
+          },
+          {
+            "name": "Mithril Coat",
+            "qty": 1
+          },
+          {
+            "name": "Commander's Plate",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Removal & Defence",
+        "cards": [
+          {
+            "name": "Chaos Warp",
+            "qty": 1
+          },
+          {
+            "name": "Kazuul, Tyrant of the Cliffs",
+            "qty": 1
+          },
+          {
+            "name": "Vandalblast",
+            "qty": 1
+          },
+          {
+            "name": "Untimely Malfunction",
+            "qty": 1
+          },
+          {
+            "name": "Zuko's Exile",
+            "qty": 1
+          },
+          {
+            "name": "Fiery Confluence",
+            "qty": 1
+          },
+          {
+            "name": "Volcanic Vision",
+            "qty": 1
+          },
+          {
+            "name": "Disrupt Decorum",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Win Conditions",
+        "cards": [
+          {
+            "name": "Crackle with Power",
+            "qty": 1
+          },
+          {
+            "name": "Chandra's Ignition",
+            "qty": 1
+          },
+          {
+            "name": "Thor, God of Thunder",
+            "qty": 1
+          },
+          {
+            "name": "Longshot, Rebel Bowman",
+            "qty": 1
+          },
+          {
+            "name": "Fiery Inscription",
+            "qty": 1
+          },
+          {
+            "name": "Storm King's Thunder",
+            "qty": 1
+          },
+          {
+            "name": "Electrodominance",
+            "qty": 1
+          },
+          {
+            "name": "Jaya's Immolating Inferno",
+            "qty": 1
+          },
+          {
+            "name": "Fiery Emancipation",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Rules gotchas",
+        "cards": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "schema": 1,
+  "name": "Teysa Karlov — \"Afterlife\"",
+  "format": "commander",
+  "description": "Identity: **every death happens twice.** Make cheap bodies that leave something behind, sacrifice\nthem, and let Teysa double every drain, every Spirit and every Skullclamp draw on the way out.",
+  "lists": {
+    "main": {
+      "label": "Main",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Teysa Karlov", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Bojuka Bog", "qty": 1 },
+            { "name": "Brightclimb Pathway", "qty": 1 },
+            { "name": "Cabal Coffers", "qty": 1 },
+            { "name": "Castle Ardenvale", "qty": 1 },
+            { "name": "Castle Locthwain", "qty": 1 },
+            { "name": "Caves of Koilos", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Concealed Courtyard", "qty": 1 },
+            { "name": "Eiganjo, Seat of the Empire", "qty": 1 },
+            { "name": "Fetid Heath", "qty": 1 },
+            { "name": "Godless Shrine", "qty": 1 },
+            { "name": "High Market", "qty": 1 },
+            { "name": "Isolated Chapel", "qty": 1 },
+            { "name": "Mortuary Mire", "qty": 1 },
+            { "name": "Phyrexian Tower", "qty": 1 },
+            { "name": "Plains", "qty": 6 },
+            { "name": "Scrubland", "qty": 1 },
+            { "name": "Shattered Sanctum", "qty": 1 },
+            { "name": "Silent Clearing", "qty": 1 },
+            { "name": "Swamp", "qty": 7 },
+            { "name": "Tainted Field", "qty": 1 },
+            { "name": "Takenuma, Abandoned Mire", "qty": 1 },
+            { "name": "Urborg, Tomb of Yawgmoth", "qty": 1 },
+            { "name": "Vault of the Archangel", "qty": 1 },
+            { "name": "Westvale Abbey", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp & Mana",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Black Market Connections", "qty": 1 },
+            { "name": "Orzhov Signet", "qty": 1 },
+            { "name": "Pitiless Plunderer", "qty": 1 },
+            { "name": "Smothering Tithe", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Talisman of Hierarchy", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Corrupted Conviction", "qty": 1 },
+            { "name": "Deadly Dispute", "qty": 1 },
+            { "name": "Grim Haruspex", "qty": 1 },
+            { "name": "Midnight Reaper", "qty": 1 },
+            { "name": "Morbid Opportunist", "qty": 1 },
+            { "name": "Phyrexian Arena", "qty": 1 },
+            { "name": "Skullclamp", "qty": 1 },
+            { "name": "Vampiric Rites", "qty": 1 },
+            { "name": "Village Rites", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal & Interaction",
+          "cards": [
+            { "name": "Anguished Unmaking", "qty": 1 },
+            { "name": "Despark", "qty": 1 },
+            { "name": "Generous Gift", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Plumb the Forbidden", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 },
+            { "name": "Vanishing Verse", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            { "name": "The Meathook Massacre", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Engines",
+          "cards": [
+            { "name": "Adeline, Resplendent Cathar", "qty": 1 },
+            { "name": "Bitterbloom Bearer", "qty": 1 },
+            { "name": "Bitterblossom", "qty": 1 },
+            { "name": "Court of Grace", "qty": 1 },
+            { "name": "Doomed Traveler", "qty": 1 },
+            { "name": "Elenda, the Dusk Rose", "qty": 1 },
+            { "name": "Hallowed Spiritkeeper", "qty": 1 },
+            { "name": "Imperious Oligarch", "qty": 1 },
+            { "name": "Lingering Souls", "qty": 1 },
+            { "name": "Ministrant of Obligation", "qty": 1 },
+            { "name": "Ocelot Pride", "qty": 1 },
+            { "name": "Oketra's Monument", "qty": 1 },
+            { "name": "Ophiomancer", "qty": 1 },
+            { "name": "Orzhov Enforcer", "qty": 1 },
+            { "name": "Sengir Autocrat", "qty": 1 },
+            { "name": "Teysa, Orzhov Scion", "qty": 1 },
+            { "name": "Thalisse, Reverent Medium", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Doublers",
+          "cards": [
+            { "name": "Anointed Procession", "qty": 1 },
+            { "name": "Mondrak, Glory Dominus", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Sacrifice Outlets",
+          "cards": [
+            { "name": "Ashnod's Altar", "qty": 1 },
+            { "name": "Phyrexian Altar", "qty": 1 },
+            { "name": "Priest of Forgotten Gods", "qty": 1 },
+            { "name": "Viscera Seer", "qty": 1 },
+            { "name": "Woe Strider", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Drain Payoffs",
+          "cards": [
+            { "name": "Bastion of Remembrance", "qty": 1 },
+            { "name": "Blood Artist", "qty": 1 },
+            { "name": "Bloodletter of Aclazotz", "qty": 1 },
+            { "name": "Corpse Knight", "qty": 1 },
+            { "name": "Cruel Celebrant", "qty": 1 },
+            { "name": "Elas il-Kor, Sadistic Pilgrim", "qty": 1 },
+            { "name": "Marauding Blight-Priest", "qty": 1 },
+            { "name": "Marionette Apprentice", "qty": 1 },
+            { "name": "Mirkwood Bats", "qty": 1 },
+            { "name": "Zulaport Cutthroat", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Recursion & Finishers",
+          "cards": [
+            { "name": "Elspeth, Storm Slayer", "qty": 1 },
+            { "name": "Luminous Broodmoth", "qty": 1 },
+            { "name": "Reassembling Skeleton", "qty": 1 },
+            { "name": "Sorin, Lord of Innistrad", "qty": 1 },
+            { "name": "Vito, Thorn of the Dusk Rose", "qty": 1 }
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {
+    "Anguished Unmaking": { "status": "PROXY" },
+    "Anointed Procession": { "status": "PROXY" },
+    "Arcane Signet": { "status": "PROXY" },
+    "Ashnod's Altar": { "status": "PROXY" },
+    "Bastion of Remembrance": { "status": "PROXY" },
+    "Bitterblossom": { "status": "PROXY" },
+    "Black Market Connections": { "status": "PROXY" },
+    "Blood Artist": { "status": "PROXY" },
+    "Bloodletter of Aclazotz": { "status": "PROXY" },
+    "Bojuka Bog": { "status": "PROXY" },
+    "Bontu's Monument": { "status": "PROXY" },
+    "Brightclimb Pathway": { "status": "PROXY" },
+    "Cabal Coffers": { "status": "PROXY" },
+    "Carrion Feeder": { "status": "PROXY" },
+    "Castle Ardenvale": { "status": "PROXY" },
+    "Castle Locthwain": { "status": "PROXY" },
+    "Caves of Koilos": { "status": "PROXY" },
+    "Command Tower": { "status": "PROXY" },
+    "Concealed Courtyard": { "status": "PROXY" },
+    "Corpse Knight": { "status": "PROXY" },
+    "Corrupted Conviction": { "status": "PROXY" },
+    "Cruel Celebrant": { "status": "PROXY" },
+    "Deadly Dispute": { "status": "PROXY" },
+    "Despark": { "status": "PROXY" },
+    "Doomed Traveler": { "status": "PROXY" },
+    "Eiganjo, Seat of the Empire": { "status": "PROXY" },
+    "Elas il-Kor, Sadistic Pilgrim": { "status": "PROXY" },
+    "Elenda, the Dusk Rose": { "status": "PROXY" },
+    "Elspeth, Storm Slayer": { "status": "PROXY" },
+    "Falkenrath Noble": { "status": "PROXY" },
+    "Fetid Heath": { "status": "PROXY" },
+    "Generous Gift": { "status": "PROXY" },
+    "Godless Shrine": { "status": "PROXY" },
+    "Grim Haruspex": { "status": "PROXY" },
+    "Hallowed Spiritkeeper": { "status": "PROXY" },
+    "Hidden Stockpile": { "status": "PROXY" },
+    "High Market": { "status": "PROXY" },
+    "Hunted Witness": { "status": "PROXY" },
+    "Imperious Oligarch": { "status": "PROXY" },
+    "Isolated Chapel": { "status": "PROXY" },
+    "Kaya's Wrath": { "status": "PROXY" },
+    "Marauding Blight-Priest": { "status": "PROXY" },
+    "Marionette Apprentice": { "status": "PROXY" },
+    "Midnight Reaper": { "status": "PROXY" },
+    "Ministrant of Obligation": { "status": "PROXY" },
+    "Mirkwood Bats": { "status": "PROXY" },
+    "Mondrak, Glory Dominus": { "status": "PROXY" },
+    "Morbid Opportunist": { "status": "PROXY" },
+    "Mortuary Mire": { "status": "PROXY" },
+    "Oketra's Monument": { "status": "PROXY" },
+    "Open the Graves": { "status": "PROXY" },
+    "Ophiomancer": { "status": "PROXY" },
+    "Orzhov Enforcer": { "status": "PROXY" },
+    "Orzhov Signet": { "status": "PROXY" },
+    "Path to Exile": { "status": "PROXY" },
+    "Phyrexian Altar": { "status": "PROXY" },
+    "Phyrexian Arena": { "status": "PROXY" },
+    "Phyrexian Tower": { "status": "PROXY" },
+    "Pitiless Plunderer": { "status": "PROXY" },
+    "Plains": { "status": "PROXY" },
+    "Plumb the Forbidden": { "status": "PROXY" },
+    "Priest of Forgotten Gods": { "status": "PROXY" },
+    "Reassembling Skeleton": { "status": "PROXY" },
+    "Scrubland": { "status": "PROXY" },
+    "Shattered Sanctum": { "status": "PROXY" },
+    "Silent Clearing": { "status": "PROXY" },
+    "Skullclamp": { "status": "PROXY" },
+    "Smothering Tithe": { "status": "PROXY" },
+    "Sol Ring": { "status": "PROXY" },
+    "Sorin, Lord of Innistrad": { "status": "PROXY" },
+    "Swamp": { "status": "PROXY" },
+    "Swords to Plowshares": { "status": "PROXY" },
+    "Tainted Field": { "status": "PROXY" },
+    "Takenuma, Abandoned Mire": { "status": "PROXY" },
+    "Talisman of Hierarchy": { "status": "PROXY" },
+    "Teysa Karlov": { "status": "PROXY" },
+    "Teysa, Orzhov Scion": { "status": "PROXY" },
+    "Thalisse, Reverent Medium": { "status": "PROXY" },
+    "The Meathook Massacre": { "status": "PROXY" },
+    "Urborg, Tomb of Yawgmoth": { "status": "PROXY" },
+    "Vampiric Rites": { "status": "PROXY" },
+    "Vanishing Verse": { "status": "PROXY" },
+    "Vault of the Archangel": { "status": "PROXY" },
+    "Village Rites": { "status": "PROXY" },
+    "Viscera Seer": { "status": "PROXY" },
+    "Vito, Thorn of the Dusk Rose": { "status": "PROXY" },
+    "Westvale Abbey": { "status": "PROXY" },
+    "Woe Strider": { "status": "PROXY" },
+    "Zulaport Cutthroat": { "status": "PROXY" }
+  }
+}

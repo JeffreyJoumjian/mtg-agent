@@ -1,0 +1,381 @@
+{
+  "takenAt": "2026-09-23T11:23:10.605Z",
+  "listId": "mill",
+  "label": "migrated from markdown",
+  "reason": "state at migration",
+  "list": {
+    "label": "Mill",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Captain America, Living Legend",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Academy Ruins",
+            "qty": 1
+          },
+          {
+            "name": "Adarkar Wastes",
+            "qty": 1
+          },
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Deserted Beach",
+            "qty": 1
+          },
+          {
+            "name": "Flooded Strand",
+            "qty": 1
+          },
+          {
+            "name": "Floodfarm Verge",
+            "qty": 1
+          },
+          {
+            "name": "Glacial Fortress",
+            "qty": 1
+          },
+          {
+            "name": "Hallowed Fountain",
+            "qty": 1
+          },
+          {
+            "name": "Island",
+            "qty": 12
+          },
+          {
+            "name": "Minamo, School at Water's Edge",
+            "qty": 1
+          },
+          {
+            "name": "Mystic Gate",
+            "qty": 1
+          },
+          {
+            "name": "Mystic Sanctuary",
+            "qty": 1
+          },
+          {
+            "name": "Otawara, Soaring City",
+            "qty": 1
+          },
+          {
+            "name": "Plains",
+            "qty": 6
+          },
+          {
+            "name": "Prairie Stream",
+            "qty": 1
+          },
+          {
+            "name": "Prismatic Vista",
+            "qty": 1
+          },
+          {
+            "name": "Sea of Clouds",
+            "qty": 1
+          },
+          {
+            "name": "Seachrome Coast",
+            "qty": 1
+          },
+          {
+            "name": "Tundra",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Advisors — the Engine",
+        "cards": [
+          {
+            "name": "Persistent Petitioners",
+            "qty": 8
+          },
+          {
+            "name": "Azor's Elocutors",
+            "qty": 1
+          },
+          {
+            "name": "Bruvac the Grandiloquent",
+            "qty": 1
+          },
+          {
+            "name": "Grand Arbiter Augustin IV",
+            "qty": 1
+          },
+          {
+            "name": "Jacob Hauken, Inspector",
+            "qty": 1
+          },
+          {
+            "name": "Ledger Shredder",
+            "qty": 1
+          },
+          {
+            "name": "Masako the Humorless",
+            "qty": 1
+          },
+          {
+            "name": "Mavinda, Students' Advocate",
+            "qty": 1
+          },
+          {
+            "name": "Omen Hawker",
+            "qty": 1
+          },
+          {
+            "name": "Urianger Augurelt",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Creature Mill — Doubled by Cap",
+        "cards": [
+          {
+            "name": "Cathartic Adept",
+            "qty": 1
+          },
+          {
+            "name": "Emry, Lurker of the Loch",
+            "qty": 1
+          },
+          {
+            "name": "Ioreth of the Healing House",
+            "qty": 1
+          },
+          {
+            "name": "Jace, Vryn's Prodigy",
+            "qty": 1
+          },
+          {
+            "name": "Stitcher Geralf",
+            "qty": 1
+          },
+          {
+            "name": "Vantress Gargoyle",
+            "qty": 1
+          },
+          {
+            "name": "Zellix, Sanity Flayer",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Mass Mill & Self-Mill",
+        "cards": [
+          {
+            "name": "Fraying Sanity",
+            "qty": 1
+          },
+          {
+            "name": "Increasing Confusion",
+            "qty": 1
+          },
+          {
+            "name": "Maddening Cacophony",
+            "qty": 1
+          },
+          {
+            "name": "Mesmeric Orb",
+            "qty": 1
+          },
+          {
+            "name": "The Water Crystal",
+            "qty": 1
+          },
+          {
+            "name": "Traumatize",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Replay the Petitioners You Milled",
+        "cards": [
+          {
+            "name": "Dusk",
+            "qty": 1
+          },
+          {
+            "name": "Raise the Past",
+            "qty": 1
+          },
+          {
+            "name": "Return to the Ranks",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Win Conditions",
+        "cards": [
+          {
+            "name": "Jace, Wielder of Mysteries",
+            "qty": 1
+          },
+          {
+            "name": "Laboratory Maniac",
+            "qty": 1
+          },
+          {
+            "name": "Thassa's Oracle",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Free Tap Outlets",
+        "cards": [
+          {
+            "name": "Opposition",
+            "qty": 1
+          },
+          {
+            "name": "Springleaf Drum",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Draw — Dig for Petitioners",
+        "cards": [
+          {
+            "name": "Brainstorm",
+            "qty": 1
+          },
+          {
+            "name": "Dig Through Time",
+            "qty": 1
+          },
+          {
+            "name": "Fact or Fiction",
+            "qty": 1
+          },
+          {
+            "name": "Mystic Remora",
+            "qty": 1
+          },
+          {
+            "name": "Ponder",
+            "qty": 1
+          },
+          {
+            "name": "Preordain",
+            "qty": 1
+          },
+          {
+            "name": "Rhystic Study",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Ramp",
+        "cards": [
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Mind Stone",
+            "qty": 1
+          },
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Progress",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Defence — You Are Always Tapped Out",
+        "cards": [
+          {
+            "name": "Adept Watershaper",
+            "qty": 1
+          },
+          {
+            "name": "Ghostly Prison",
+            "qty": 1
+          },
+          {
+            "name": "Propaganda",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Interaction & Protection",
+        "cards": [
+          {
+            "name": "An Offer You Can't Refuse",
+            "qty": 1
+          },
+          {
+            "name": "Clever Concealment",
+            "qty": 1
+          },
+          {
+            "name": "Counterspell",
+            "qty": 1
+          },
+          {
+            "name": "Dovin's Veto",
+            "qty": 1
+          },
+          {
+            "name": "Flawless Maneuver",
+            "qty": 1
+          },
+          {
+            "name": "Generous Gift",
+            "qty": 1
+          },
+          {
+            "name": "Guardian of Faith",
+            "qty": 1
+          },
+          {
+            "name": "March of Otherworldly Light",
+            "qty": 1
+          },
+          {
+            "name": "Path to Exile",
+            "qty": 1
+          },
+          {
+            "name": "Swan Song",
+            "qty": 1
+          },
+          {
+            "name": "Swords to Plowshares",
+            "qty": 1
+          },
+          {
+            "name": "Winds of Abandon",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

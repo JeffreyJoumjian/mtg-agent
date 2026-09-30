@@ -1,0 +1,435 @@
+{
+  "takenAt": "2026-09-23T11:23:11.917Z",
+  "listId": "main",
+  "label": "migrated from markdown",
+  "reason": "state at migration",
+  "list": {
+    "label": "Main",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Tony Stark",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Academy Ruins",
+            "qty": 1
+          },
+          {
+            "name": "Ancient Tomb",
+            "qty": 1
+          },
+          {
+            "name": "Archway of Innovation",
+            "qty": 1
+          },
+          {
+            "name": "Cascade Bluffs",
+            "qty": 1
+          },
+          {
+            "name": "Command Beacon",
+            "qty": 1
+          },
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Darksteel Citadel",
+            "qty": 1
+          },
+          {
+            "name": "Fomori Vault",
+            "qty": 1
+          },
+          {
+            "name": "Great Furnace",
+            "qty": 1
+          },
+          {
+            "name": "Inventors' Fair",
+            "qty": 1
+          },
+          {
+            "name": "Island",
+            "qty": 3
+          },
+          {
+            "name": "Mountain",
+            "qty": 6
+          },
+          {
+            "name": "Otawara, Soaring City",
+            "qty": 1
+          },
+          {
+            "name": "Riverpyre Verge",
+            "qty": 1
+          },
+          {
+            "name": "Scorched Geyser",
+            "qty": 1
+          },
+          {
+            "name": "Seat of the Synod",
+            "qty": 1
+          },
+          {
+            "name": "Shivan Reef",
+            "qty": 1
+          },
+          {
+            "name": "Silverbluff Bridge",
+            "qty": 1
+          },
+          {
+            "name": "Steam Vents",
+            "qty": 1
+          },
+          {
+            "name": "Stormcarved Coast",
+            "qty": 1
+          },
+          {
+            "name": "Sulfur Falls",
+            "qty": 1
+          },
+          {
+            "name": "The Mycosynth Gardens",
+            "qty": 1
+          },
+          {
+            "name": "Thundering Falls",
+            "qty": 1
+          },
+          {
+            "name": "Training Center",
+            "qty": 1
+          },
+          {
+            "name": "Treasure Vault",
+            "qty": 1
+          },
+          {
+            "name": "Turbulent Springs",
+            "qty": 1
+          },
+          {
+            "name": "Urza's Saga",
+            "qty": 1
+          },
+          {
+            "name": "Uthros, Titanic Godcore",
+            "qty": 1
+          },
+          {
+            "name": "Volcanic Island",
+            "qty": 1
+          },
+          {
+            "name": "Sink into Stupor",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Ramp / Mana Rocks",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Mind Stone",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Creativity",
+            "qty": 1
+          },
+          {
+            "name": "Thought Vessel",
+            "qty": 1
+          },
+          {
+            "name": "Thran Dynamo",
+            "qty": 1
+          },
+          {
+            "name": "Arc Reactor",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw",
+        "cards": [
+          {
+            "name": "Insight Engine",
+            "qty": 1
+          },
+          {
+            "name": "Armor Wars",
+            "qty": 1
+          },
+          {
+            "name": "Fateful Discovery",
+            "qty": 1
+          },
+          {
+            "name": "The One Ring",
+            "qty": 1
+          },
+          {
+            "name": "Thoughtcast",
+            "qty": 1
+          },
+          {
+            "name": "The Ten Rings",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Tutors / Recursion",
+        "cards": [
+          {
+            "name": "Goblin Welder",
+            "qty": 1
+          },
+          {
+            "name": "Goblin Engineer",
+            "qty": 1
+          },
+          {
+            "name": "Fabricate",
+            "qty": 1
+          },
+          {
+            "name": "Solve the Equation",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Interaction",
+        "cards": [
+          {
+            "name": "An Offer You Can't Refuse",
+            "qty": 1
+          },
+          {
+            "name": "Galvanic Blast",
+            "qty": 1
+          },
+          {
+            "name": "Into the Flood Maw",
+            "qty": 1
+          },
+          {
+            "name": "Strix Serenade",
+            "qty": 1
+          },
+          {
+            "name": "Swan Song",
+            "qty": 1
+          },
+          {
+            "name": "Counterspell",
+            "qty": 1
+          },
+          {
+            "name": "Mystic Reflection",
+            "qty": 1
+          },
+          {
+            "name": "Chaos Warp",
+            "qty": 1
+          },
+          {
+            "name": "Deflecting Swat",
+            "qty": 1
+          },
+          {
+            "name": "Fierce Guardianship",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Board Wipes",
+        "cards": [
+          {
+            "name": "Chandra's Ignition",
+            "qty": 1
+          },
+          {
+            "name": "Blasphemous Act",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Equipment (Voltron Payload)",
+        "cards": [
+          {
+            "name": "Commander's Plate",
+            "qty": 1
+          },
+          {
+            "name": "Adaptive Omnitool",
+            "qty": 1
+          },
+          {
+            "name": "Conqueror's Flail",
+            "qty": 1
+          },
+          {
+            "name": "Buster Sword",
+            "qty": 1
+          },
+          {
+            "name": "Champion's Helm",
+            "qty": 1
+          },
+          {
+            "name": "Hammer of Nazahn",
+            "qty": 1
+          },
+          {
+            "name": "Mithril Coat",
+            "qty": 1
+          },
+          {
+            "name": "Sword of Feast and Famine",
+            "qty": 1
+          },
+          {
+            "name": "Wizard's Staff",
+            "qty": 1
+          },
+          {
+            "name": "The Reaver Cleaver",
+            "qty": 1
+          },
+          {
+            "name": "Mjölnir, Hammer of Thor",
+            "qty": 1
+          },
+          {
+            "name": "Genji Glove",
+            "qty": 1
+          },
+          {
+            "name": "Hexplate Wallbreaker",
+            "qty": 1
+          },
+          {
+            "name": "Aettir and Priwen",
+            "qty": 1
+          },
+          {
+            "name": "Embercleave",
+            "qty": 1
+          },
+          {
+            "name": "Ultima Weapon",
+            "qty": 1
+          },
+          {
+            "name": "Excalibur, Sword of Eden",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Artifact Payoffs / Creatures",
+        "cards": [
+          {
+            "name": "Professional Face-Breaker",
+            "qty": 1
+          },
+          {
+            "name": "Simulacrum Synthesizer",
+            "qty": 1
+          },
+          {
+            "name": "Knuckles the Echidna",
+            "qty": 1
+          },
+          {
+            "name": "Phyrexian Metamorph",
+            "qty": 1
+          },
+          {
+            "name": "Roaming Throne",
+            "qty": 1
+          },
+          {
+            "name": "Iron Man, Titan of Innovation",
+            "qty": 1
+          },
+          {
+            "name": "Iron Man, Tony Stark",
+            "qty": 1
+          },
+          {
+            "name": "Extinguisher Battleship",
+            "qty": 1
+          },
+          {
+            "name": "Darksteel Forge",
+            "qty": 1
+          },
+          {
+            "name": "Krang, Utrom Warlord",
+            "qty": 1
+          },
+          {
+            "name": "Portal to Phyrexia",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Extra Combats",
+        "cards": [
+          {
+            "name": "Great Train Heist",
+            "qty": 1
+          },
+          {
+            "name": "Aggravated Assault",
+            "qty": 1
+          },
+          {
+            "name": "Seize the Day",
+            "qty": 1
+          },
+          {
+            "name": "Overpowering Attack",
+            "qty": 1
+          },
+          {
+            "name": "Savage Beating",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

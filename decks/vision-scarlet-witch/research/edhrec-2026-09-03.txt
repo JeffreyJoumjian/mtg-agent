@@ -1,0 +1,1108 @@
+$ bun run scripts/edhrec.ts commander "The Vision and Scarlet Witch" --all
+EDHREC: The Vision and Scarlet Witch — 278 decks · rank #2,555
+https://edhrec.com/commanders/the-vision-and-scarlet-witch
+Themes: Spellslinger (19) · Burn (18) · Storm (11) · +1/+1 Counters (8) · Aggro (7) · Chaos (3) · Combo (2) · Flying (2) · Voltron (2) · Artifacts (1) · Cantrips (1) · Cheerios (1) · +7 more
+
+New Cards:  (synergy · inclusion)
+   +0.06    7%  Gandalf, Goblins' Bane                  
+   +0.02    5%  Glóin the Mighty                        
+   -0.02    4%  Desert Were-Worm                        
+   +0.01    2%  Smaug's Fury                            
+   -0.01    2%  Last Light of Durin's Day               
+
+High Synergy Cards:  (synergy · inclusion)
+   +0.71   80%  Grapeshot                               
+   +0.66   76%  Electro, Assaulting Battery             
+   +0.57   63%  Hex Magic                               
+   +0.55   71%  Storm-Kiln Artist                       
+   +0.52   56%  Overmaster                              
+   +0.51   63%  Birgi, God of Storytelling              
+   +0.50   55%  Vision of Love                          
+   +0.48   59%  Expedite                                
+   +0.47   53%  Ashling, Flame Dancer                   
+   +0.46   61%  Pyretic Ritual                          
+
+Top Cards:  (synergy · inclusion)
+   +0.20   77%  Ruby Medallion                          
+   +0.31   67%  Lightning Bolt                          
+   +0.27   67%  Faithless Looting                       
+   +0.32   64%  Seething Song                           
+   -0.00   61%  Chaos Warp                              
+   +0.42   59%  Runaway Steam-Kin                       
+   +0.27   58%  Big Score                               
+   +0.43   57%  Guttersnipe                             
+   +0.22   55%  Thrill of Possibility                   
+   +0.23   54%  Mana Geyser                             
+
+Game Changers:  (synergy · inclusion)
+   +0.31   66%  Jeska's Will                            
+   +0.17   39%  Gamble                                  
+   +0.28   37%  Underworld Breach                       
+   +0.07   18%  The One Ring                            
+   +0.05   17%  Ancient Tomb                            
+   +0.06   13%  Chrome Mox                              
+   +0.03   11%  Mana Vault                              
+   +0.05    9%  Mox Diamond                             
+   +0.06    7%  Lion's Eye Diamond                      
+
+Creatures:  (synergy · inclusion)
+   +0.27   49%  Hexing Squelcher                        
+   +0.38   44%  Urabrask                                
+   +0.36   43%  Coruscation Mage                        
+   +0.33   42%  Firebrand Archer                        
+   +0.35   40%  Longshot, Rebel Bowman                  
+   +0.38   40%  The Scarlet Witch                       
+   +0.37   38%  The Vision                              
+   +0.33   36%  Grinning Ignus                          
+   +0.33   34%  Wiccan, Young Avenger                   
+   +0.25   32%  Kessig Flamebreather                    
+   +0.23   30%  Young Pyromancer                        
+   +0.20   28%  Dualcaster Mage                         
+   +0.22   24%  Thor, God of Thunder                    
+   +0.16   22%  Electrostatic Field                     
+   +0.09   21%  Pinnacle Monk                           
+   +0.06   20%  Ragavan, Nimble Pilferer                
+   +0.08   19%  Simian Spirit Guide                     
+   +0.13   18%  Blazing Firesinger                      
+   -0.05   18%  Torbran, Thane of Red Fell              
+   +0.15   18%  Emeritus of Conflict                    
+   +0.09   14%  Erebor Flamesmith                       
+   -0.03   14%  Neheb, the Eternal                      
+   +0.10   14%  Firebending Student                     
+   +0.11   13%  Molten-Core Maestro                     
+   +0.12   13%  Loki Laufeyson                          
+   +0.09   13%  Hawkeye, Young Avenger                  
+   +0.08   12%  Avatar Roku, Firebender                 
+   +0.02   11%  Imperial Recruiter                      
+   -0.13   10%  Professional Face-Breaker               
+   +0.10   10%  Quicksilver, Brash Blur                 
+   +0.04   10%  Treasonous Ogre                         
+   +0.02   10%  Ojer Axonil, Deepest Might              
+   +0.09    9%  Iron Man, Tony Stark                    
+   +0.09    9%  Speed, Young Avenger                    
+   +0.06    9%  Dragon's Rage Channeler                 
+   +0.08    8%  Vision, Synthezoid Avenger              
+   -0.06    8%  Solphim, Mayhem Dominus                 
+   +0.01    8%  Leyline Tyrant                          
+   +0.04    8%  Spider-Punk                             
+   +0.05    8%  Naktamun Lorespinner                    
+   +0.01    7%  Thermo-Alchemist                        
+   -0.00    7%  Kediss, Emberclaw Familiar              
+   +0.05    7%  Thor, Asgard's Avenger                  
+   -0.06    6%  Twinflame Tyrant                        
+   -0.03    6%  Magus of the Wheel                      
+   -0.07    6%  Etali, Primal Storm                     
+   +0.03    5%  Firespitter Whelp                       
+   +0.03    5%  Bothersome Quasit                       
+
+Instants:  (synergy · inclusion)
+   +0.42   51%  Flashback                               
+   +0.38   50%  Desperate Ritual                        
+   +0.21   49%  Deflecting Swat                         
+   +0.07   49%  Abrade                                  
+   +0.38   45%  Crimson Wisps                           
+   +0.28   45%  Redirect Lightning                      
+   +0.19   44%  Unexpected Windfall                     
+   +0.09   38%  Untimely Malfunction                    
+   +0.15   38%  Demand Answers                          
+   +0.20   37%  Pyroblast                               
+   +0.19   37%  Valakut Awakening                       
+   +0.31   36%  Might of the Meek                       
+   +0.12   32%  Bolt Bend                               
+   +0.11   29%  Red Elemental Blast                     
+   +0.07   29%  Return the Favor                        
+   +0.22   27%  Reiterate                               
+   +0.20   25%  The Last Agni Kai                       
+   +0.13   24%  Reverberate                             
+   +0.17   23%  Blazing Crescendo                       
+   +0.12   19%  Fists of Flame                          
+   +0.16   18%  Needle Drop                             
+   +0.12   17%  Lightning Strike                        
+   -0.05   16%  Tibalt's Trickery                       
+   +0.09   15%  Shock                                   
+   +0.09   15%  Electrodominance                        
+   +0.09   13%  Twinferno                               
+   +0.09   12%  Stun                                    
+   +0.02   12%  Flare of Duplication                    
+   +0.04   12%  Bulk Up                                 
+   +0.08   10%  Gut Shot                                
+   +0.05   10%  Monstrous Rage                          
+   +0.08    9%  Vivi's Persistence                      
+   +0.04    8%  Fling                                   
+   +0.04    8%  Accelerate                              
+   +0.02    8%  Temur Battle Rage                       
+   +0.07    7%  Reroute                                 
+   +0.04    6%  Opera Love Song                         
+   +0.03    6%  Increasing Vengeance                    
+   +0.04    6%  Burst Lightning                         
+   +0.01    6%  Spikefield Hazard                       
+   +0.02    6%  Laughing Mad                            
+   -0.07    5%  Wild Magic Surge                        
+   +0.01    5%  Comet Storm                             
+   +0.05    5%  Team Tactics                            
+   -0.09    5%  Battle Hymn                             
+   +0.03    5%  Electric Revelation                     
+
+Sorceries:  (synergy · inclusion)
+   +0.45   51%  Crash Through                           
+   -0.07   47%  Blasphemous Act                         
+   +0.05   46%  Vandalblast                             
+   +0.38   45%  Past in Flames                          
+   +0.34   42%  Renegade Tactics                        
+   +0.34   37%  Warlord's Fury                          
+   +0.30   36%  Impolite Entrance                       
+   +0.27   35%  Reckless Impulse                        
+   +0.30   35%  Ancestral Anger                         
+   +0.25   33%  Wrenn's Resolve                         
+   +0.23   32%  Rite of Flame                           
+   +0.22   28%  Mizzix's Mastery                        
+   +0.19   28%  Chandra's Ignition                      
+   +0.10   24%  Seize the Spoils                        
+   +0.17   24%  Strike It Rich                          
+   +0.21   24%  Rile                                    
+   +0.22   24%  Bonus Round                             
+   +0.12   23%  Cathartic Reunion                       
+   +0.11   23%  Light Up the Stage                      
+   +0.12   21%  Wheel of Fortune                        
+   +0.15   20%  Crackle with Power                      
+   +0.15   19%  Will of the Jeskai                      
+   +0.14   16%  Romantic Rendezvous                     
+   +0.08   15%  Boltwave                                
+   +0.04   13%  Shatterskull Smashing                   
+   +0.03   13%  Empty the Warrens                       
+   +0.11   12%  Heroes' Hangout                         
+   +0.06   12%  Improvisation Capstone                  
+   -0.02   11%  Sundering Eruption                      
+   +0.03   10%  Grab the Prize                          
+   +0.09   10%  Asgardian Inspiration                   
+   +0.04   10%  Twinflame                               
+   +0.08   10%  Winds of Change                         
+   +0.01   10%  Tormenting Voice                        
+   +0.08    9%  Steal the Show                          
+   -0.02    9%  Wheel of Misfortune                     
+   +0.06    9%  Ignite the Future                       
+   +0.06    8%  Magmatic Insight                        
+   +0.07    8%  Apex of Power                           
+   +0.07    8%  Galvanic Relay                          
+   +0.06    8%  Haze of Rage                            
+   +0.03    7%  Molten Duplication                      
+   +0.02    6%  Seize the Day                           
+   -0.01    6%  Fiery Confluence                        
+   +0.01    6%  Pirate's Pillage                        
+   +0.03    6%  Jaya's Immolating Inferno               
+   +0.06    6%  Storm of Memories                       
+   +0.06    6%  Ignite Memories                         
+   -0.01    6%  Reforge the Soul                        
+   +0.04    6%  Avengers Disassembled                   
+
+Utility Artifacts:  (synergy · inclusion)
+   -0.01   39%  Swiftfoot Boots                         
+   +0.11   35%  The Fire Crystal                        
+   -0.02   32%  Lightning Greaves                       
+   +0.28   29%  Aetherflux Reservoir                    
+   +0.08   21%  Commander's Plate                       
+   +0.15   18%  Sensei's Divining Top                   
+   +0.09   17%  Mjölnir, Hammer of Thor                 
+   +0.10   12%  The Ten Rings                           
+   +0.10   12%  Helm of Awakening                       
+   +0.01   12%  Mithril Coat                            
+   +0.09   10%  Primal Amulet                           
+   +0.08   10%  Defense Grid                            
+   +0.08    9%  The Ozolith                             
+   -0.04    8%  The Reaver Cleaver                      
+   +0.07    8%  Mishra's Bauble                         
+   +0.01    7%  Whispersilk Cloak                       
+   +0.03    6%  Vexing Bauble                           
+   +0.05    6%  Cosmic Cube                             
+   +0.04    5%  Urza's Bauble                           
+
+Enchantments:  (synergy · inclusion)
+   +0.41   42%  Wanda's Vision                          
+   +0.32   37%  Artist's Talent                         
+   +0.21   27%  Fiery Inscription                       
+   -0.02   18%  Blood Moon                              
+   -0.02   14%  Fiery Emancipation                      
+   +0.10   13%  Double Vision                           
+   +0.08   11%  Dragon Mantle                           
+   +0.08   10%  Rite of the Dragoncaller                
+   +0.09   10%  Origin of Thor                          
+   +0.03    8%  Fated Firepower                         
+   -0.16    8%  Impact Tremors                          
+   +0.04    7%  Cool but Rude                           
+   +0.05    7%  Arcane Bombardment                      
+   +0.00    7%  Powerbalance                            
+   +0.02    6%  Braid of Fire                           
+   +0.04    6%  All Will Be One                         
+   +0.04    5%  Death to Our Enemies                    
+   +0.05    5%  Super Speed                             
+
+Planeswalkers:  (synergy · inclusion)
+   -0.00   11%  Chandra, Torch of Defiance              
+
+Utility Lands:  (synergy · inclusion)
+   +0.10   35%  Valakut, the Molten Pinnacle            
+   +0.08   32%  Rogue's Passage                         
+   +0.01   31%  War Room                                
+   +0.21   31%  Fire Nation Palace                      
+   +0.09   28%  Nykthos, Shrine to Nyx                  
+   +0.04   25%  Arena of Glory                          
+   +0.11   23%  Reliquary Tower                         
+   +0.07   19%  Command Beacon                          
+   +0.15   19%  Lindblum, Industrial Regency            
+   +0.08   15%  Shinka, the Bloodsoaked Keep            
+   -0.03   13%  Castle Embereth                         
+   -0.00   11%  Urza's Saga                             
+   -0.06   10%  Forgotten Cave                          
+   +0.05    8%  Crystal Vein                            
+   -0.06    8%  Spinerock Knoll                         
+   -0.06    6%  Mines of Moria                          
+   -0.02    6%  Sokenzan, Crucible of Defiance          
+   -0.08    5%  Buried Ruin                             
+   +0.02    5%  Emergence Zone                          
+   -0.07    5%  Great Furnace                           
+
+Mana Artifacts:  (synergy · inclusion)
+   -0.00   84%  Sol Ring                                
+   -0.02   59%  Arcane Signet                           
+   +0.18   27%  Tablet of Discovery                     
+   +0.14   23%  Lotus Petal                             
+   +0.13   19%  Mox Amber                               
+   +0.11   17%  Pyromancer's Goggles                    
+   +0.02   14%  Thought Vessel                          
+   -0.18   13%  Mind Stone                              
+   +0.07   13%  Mox Opal                                
+   -0.04   13%  Fellwar Stone                           
+   -0.14   10%  Fire Diamond                            
+   -0.17    5%  Cursed Mirror                           
+
+Lands:  (synergy · inclusion)
+   +0.02   97%  Mountain                                
+   +0.19   37%  Valakut Awakening                       
+   +0.09   21%  Pinnacle Monk                           
+   +0.04   13%  Shatterskull Smashing                   
+   +0.06   12%  Gemstone Caverns                        
+   -0.02   11%  Sundering Eruption                      
+   -0.15    9%  Myriad Landscape                        
+   +0.04    8%  Arid Mesa                               
+   -0.03    7%  Cavern of Souls                         
+   +0.03    6%  Wooded Foothills                        
+   +0.03    6%  Scalding Tarn                           
+   +0.02    6%  Bloodstained Mire                       
+   +0.01    6%  Command Tower                           
+   +0.01    6%  Spikefield Hazard                       
+   +0.03    5%  Prismatic Vista                         
+$ bun run scripts/edhrec.ts commander "The Vision and Scarlet Witch" --theme burn --all
+EDHREC: The Vision and Scarlet Witch — 18 decks · rank #2,555
+https://edhrec.com/commanders/the-vision-and-scarlet-witch
+Themes: Spellslinger (19) · Burn (18) · Storm (11) · +1/+1 Counters (8) · Aggro (7) · Chaos (3) · Combo (2) · Flying (2) · Voltron (2) · Artifacts (1) · Cantrips (1) · Cheerios (1) · +7 more
+
+New Cards:  (synergy · inclusion)
+   +0.21   22%  Gandalf, Goblins' Bane                  
+   +0.10   13%  Last Light of Durin's Day               
+
+High Synergy Cards:  (synergy · inclusion)
+   +0.88   94%  Coruscation Mage                        
+   +0.86   94%  Grapeshot                               
+   +0.67   72%  Vision of Love                          
+   +0.67   83%  Storm-Kiln Artist                       
+   +0.67   78%  Electro, Assaulting Battery             
+   +0.66   72%  Hex Magic                               
+   +0.58   67%  Firebrand Archer                        
+   +0.58   72%  Guttersnipe                             
+   +0.58   67%  Flashback                               
+   +0.58   72%  Pyretic Ritual                          
+
+Top Cards:  (synergy · inclusion)
+   +0.47   83%  Lightning Bolt                          
+   +0.40   72%  Big Score                               
+   +0.35   67%  Seething Song                           
+   +0.27   67%  Faithless Looting                       
+   +0.06   67%  Chaos Warp                              
+   +0.50   67%  Runaway Steam-Kin                       
+   +0.10   67%  Ruby Medallion                          
+   +0.49   61%  Birgi, God of Storytelling              
+   +0.19   61%  Abrade                                  
+   +0.28   61%  Thrill of Possibility                   
+
+Game Changers:  (synergy · inclusion)
+   +0.31   67%  Jeska's Will                            
+   +0.41   50%  Underworld Breach                       
+   +0.06   28%  Gamble                                  
+   +0.10   22%  Ancient Tomb                            
+   -0.00   11%  The One Ring                            
+   -0.02    6%  Mana Vault                              
+   -0.01    6%  Chrome Mox                              
+   +0.04    6%  Lion's Eye Diamond                      
+   +0.02    6%  Mox Diamond                             
+
+Creatures:  (synergy · inclusion)
+   +0.54   56%  The Scarlet Witch                       
+   +0.49   56%  Kessig Flamebreather                    
+   +0.34   56%  Hexing Squelcher                        
+   +0.49   56%  Ashling, Flame Dancer                   
+   +0.39   44%  Urabrask                                
+   +0.37   44%  Young Pyromancer                        
+   +0.40   44%  Longshot, Rebel Bowman                  
+   +0.43   44%  The Vision                              
+   +0.38   39%  Wiccan, Young Avenger                   
+   +0.16   39%  Torbran, Thane of Red Fell              
+   +0.31   39%  Dualcaster Mage                         
+   +0.31   33%  Grinning Ignus                          
+   +0.16   33%  Neheb, the Eternal                      
+   +0.24   28%  Hawkeye, Young Avenger                  
+   +0.20   22%  Molten-Core Maestro                     
+   +0.17   22%  Blazing Firesinger                      
+   -0.01   22%  Professional Face-Breaker               
+   +0.10   22%  Pinnacle Monk                           
+   +0.11   17%  Electrostatic Field                     
+   +0.14   17%  Thor, God of Thunder                    
+   +0.15   17%  Loki Laufeyson                          
+   +0.16   17%  Speed, Young Avenger                    
+   +0.16   17%  Hulkling, Young Avenger                 
+   +0.05   17%  Simian Spirit Guide                     
+   +0.09   17%  Ojer Axonil, Deepest Might              
+   +0.03   17%  Ragavan, Nimble Pilferer                
+   +0.13   17%  Spider-Punk                             
+   +0.02   11%  Imperial Recruiter                      
+   +0.10   11%  Stormsplitter                           
+   +0.09   11%  Bothersome Quasit                       
+   +0.10   11%  Soul-Scar Mage                          
+   +0.11   11%  Wonder Man, Hollywood Hero              
+   +0.11   11%  Quinjet Technician                      
+   +0.09   11%  Thor, Asgard's Avenger                  
+   +0.10   11%  Hawkeye, Master Marksman                
+   +0.11   11%  Human Torch, Johnny Storm               
+   +0.10   11%  Prismari Pianist                        
+   +0.07   11%  Taurean Mauler                          
+   +0.04   11%  Leyline Tyrant                          
+   +0.10   11%  Manaform Hellkite                       
+   -0.01   11%  Anger                                   
+   +0.11   11%  Iron Man, Tony Stark                    
+   +0.02   11%  Magus of the Wheel                      
+   +0.06   11%  Laelia, the Blade Reforged              
+   +0.09   11%  Ornithopter                             
+   +0.11   11%  Photon, Mighty Marvel                   
+   +0.06   11%  Erebor Flamesmith                       
+   +0.03    6%  Dragon's Rage Channeler                 
+   -0.07    6%  Etali, Primal Storm                     
+   +0.03    6%  Party Thrasher                          
+
+Instants:  (synergy · inclusion)
+   +0.45   56%  Expedite                                
+   +0.43   56%  Desperate Ritual                        
+   +0.31   56%  Unexpected Windfall                     
+   +0.43   50%  Crimson Wisps                           
+   +0.16   44%  Untimely Malfunction                    
+   +0.22   44%  Demand Answers                          
+   +0.27   44%  Redirect Lightning                      
+   +0.21   39%  Pyroblast                               
+   +0.29   33%  Might of the Meek                       
+   +0.15   33%  Red Elemental Blast                     
+   +0.15   33%  Valakut Awakening                       
+   +0.06   28%  Return the Favor                        
+   +0.24   28%  Reiterate                               
+   +0.22   28%  Electrodominance                        
+   -0.01   28%  Deflecting Swat                         
+   +0.17   22%  The Last Agni Kai                       
+   +0.13   17%  Fling                                   
+   +0.11   17%  Blazing Crescendo                       
+   -0.05   17%  Tibalt's Trickery                       
+   +0.14   17%  Needle Drop                             
+   +0.05   17%  Reverberate                             
+   +0.14   17%  Stun                                    
+   +0.12   17%  Lightning Strike                        
+   -0.02   11%  Wild Magic Surge                        
+   +0.05   11%  Siege Smash                             
+   +0.08   11%  Twinferno                               
+   +0.11   11%  Reroute                                 
+   +0.05   11%  Shock                                   
+   +0.09   11%  Burst Lightning                         
+   -0.08   11%  Bolt Bend                               
+   +0.01   11%  Flare of Duplication                    
+   +0.07   11%  Kazuul's Fury                           
+   +0.03   11%  Bulk Up                                 
+   +0.11   11%  Marvelous Melee                         
+   +0.04    6%  Faithless Salvaging                     
+   +0.03    6%  Mogg Salvage                            
+   +0.02    6%  Zoyowa's Justice                        
+   +0.05    6%  Radiate                                 
+   -0.00    6%  Temur Battle Rage                       
+   +0.04    6%  March of Reckless Joy                   
+   -0.09    6%  Battle Hymn                             
+   +0.04    6%  Fork                                    
+   +0.05    6%  Savage Alliance                         
+   +0.03    6%  Soul's Fire                             
+   +0.01    6%  Monstrous Rage                          
+   +0.02    6%  Accelerate                              
+   +0.01    6%  Spikefield Hazard                       
+   +0.03    6%  Final Fortune                           
+   +0.02    6%  Ghostfire Slice                         
+   +0.02    6%  Brute Force                             
+
+Sorceries:  (synergy · inclusion)
+   +0.24   56%  Mana Geyser                             
+   +0.09   50%  Vandalblast                             
+   -0.03   50%  Blasphemous Act                         
+   +0.35   44%  Rite of Flame                           
+   +0.40   44%  Overmaster                              
+   +0.39   44%  Ancestral Anger                         
+   +0.31   39%  Past in Flames                          
+   +0.33   39%  Crash Through                           
+   +0.25   33%  Reckless Impulse                        
+   +0.22   33%  Light Up the Stage                      
+   +0.26   33%  Wrenn's Resolve                         
+   +0.25   28%  Rile                                    
+   +0.26   28%  Bonus Round                             
+   +0.14   28%  Seize the Spoils                        
+   +0.25   28%  Warlord's Fury                          
+   +0.21   28%  Renegade Tactics                        
+   +0.22   28%  Impolite Entrance                       
+   +0.12   22%  Cathartic Reunion                       
+   +0.17   22%  Crackle with Power                      
+   +0.16   22%  Mizzix's Mastery                        
+   +0.15   22%  Strike It Rich                          
+   +0.21   22%  Asgardian Inspiration                   
+   +0.07   17%  Empty the Warrens                       
+   +0.04   17%  Sundering Eruption                      
+   +0.16   17%  Heroes' Hangout                         
+   +0.07   11%  Will of the Jeskai                      
+   +0.02   11%  Shatterskull Smashing                   
+   +0.06   11%  Glimpse the Impossible                  
+   +0.05   11%  Twinflame                               
+   +0.02   11%  Wheel of Fortune                        
+   +0.08   11%  Highway Robbery                         
+   +0.08   11%  Jaya's Immolating Inferno               
+   +0.02   11%  Chandra's Ignition                      
+   +0.09   11%  Romantic Rendezvous                     
+   +0.10   11%  Steal the Show                          
+   +0.01    6%  Witch's Mark                            
+   +0.02    6%  End the Festivities                     
+   +0.04    6%  Ensnared by the Mara                    
+   +0.05    6%  Immolating Gyre                         
+   +0.04    6%  Playful Shove                           
+   +0.04    6%  Inner Fire                              
+   +0.05    6%  Lava Spike                              
+   -0.02    6%  Fiery Confluence                        
+   +0.05    6%  Dragon's Approach                       
+   +0.03    6%  Rousing Refrain                         
+   +0.04    6%  Season of the Bold                      
+   +0.05    6%  Mutiny                                  
+   +0.03    6%  Magmatic Insight                        
+   +0.05    6%  Elemental Eruption                      
+   +0.03    6%  Ignite the Future                       
+
+Utility Artifacts:  (synergy · inclusion)
+   +0.05   39%  Lightning Greaves                       
+   +0.32   33%  Aetherflux Reservoir                    
+   -0.07   33%  Swiftfoot Boots                         
+   +0.10   33%  The Fire Crystal                        
+   +0.17   28%  Mithril Coat                            
+   +0.09   22%  Commander's Plate                       
+   +0.09   17%  Mjölnir, Hammer of Thor                 
+   +0.14   17%  The Ten Rings                           
+   +0.08   11%  Sensei's Divining Top                   
+   +0.10   11%  The Ozolith                             
+   +0.09   11%  Defense Grid                            
+   -0.01   11%  The Reaver Cleaver                      
+   +0.10   11%  Mishra's Bauble                         
+   +0.10   11%  Primal Amulet                           
+   +0.09   11%  Silver Shroud Costume                   
+   +0.05    6%  Spidersilk Net                          
+   +0.05    6%  Chaos Wand                              
+   +0.05    6%  Tormod's Crypt                          
+   +0.05    6%  Bone Saw                                
+   +0.05    6%  Urza's Bauble                           
+   +0.04    6%  Soul-Guide Lantern                      
+   -0.08    6%  Wayfarer's Bauble                       
+   +0.02    6%  Vexing Bauble                           
+   -0.02    6%  Diamond Pick-Axe                        
+   +0.04    6%  Bitterthorn, Nissa's Animus             
+   +0.04    6%  Cloudstone Curio                        
+   +0.05    6%  Font of Mythos                          
+   +0.05    6%  Spellbook                               
+   +0.00    6%  Whispersilk Cloak                       
+   +0.05    6%  Cathar's Shield                         
+   +0.05    6%  Thrumming Stone                         
+   +0.01    6%  Darksteel Plate                         
+   +0.02    6%  Winter Moon                             
+   -0.00    6%  Goldvein Pick                           
+   +0.00    6%  Brotherhood Regalia                     
+   +0.04    6%  Howling Mine                            
+   -0.04    6%  Sword of the Animist                    
+   +0.04    6%  Welding Jar                             
+   +0.05    6%  Dragonfire Blade                        
+   +0.04    6%  Helm of Awakening                       
+   +0.05    6%  The Regalia                             
+   +0.05    6%  Long-Range Sensor                       
+   +0.03    6%  Fire Nation Turret                      
+   +0.05    6%  The Ooze                                
+   +0.05    6%  Arcade Cabinet                          
+   +0.04    6%  Coin of Mastery                         
+   +0.05    6%  Diary of Dreams                         
+   +0.04    6%  Hawkeye's Bow                           
+
+Enchantments:  (synergy · inclusion)
+   +0.54   56%  Wanda's Vision                          
+   +0.39   44%  Artist's Talent                         
+   +0.26   28%  Double Vision                           
+   +0.16   22%  Fiery Inscription                       
+   -0.02   22%  Impact Tremors                          
+   +0.02   22%  Blood Moon                              
+   +0.18   22%  Fated Firepower                         
+   +0.08   11%  Dragon Mantle                           
+   +0.04   11%  Powerbalance                            
+   +0.07   11%  Valakut Exploration                     
+   +0.10   11%  Death to Our Enemies                    
+   -0.05    6%  Descent into Avernus                    
+   +0.04    6%  Leyline of Punishment                   
+   +0.04    6%  All Will Be One                         
+   +0.04    6%  Rite of the Dragoncaller                
+   -0.10    6%  Fiery Emancipation                      
+   +0.02    6%  Passionate Archaeologist                
+   +0.04    6%  Stolen Strategy                         
+   +0.05    6%  The Flux                                
+   +0.05    6%  Return the Past                         
+   +0.04    6%  Vessel of Volatility                    
+   +0.05    6%  Share the Spoils                        
+   +0.04    6%  Spiked Corridor // Torture Pit          
+   +0.01    6%  Spiteful Banditry                       
+   +0.04    6%  Shadow of the Goblin                    
+   +0.02    6%  Maximum Carnage                         
+   +0.03    6%  The Legend of Roku                      
+   +0.05    6%  Lasting Tarfire                         
+   +0.02    6%  Cool but Rude                           
+   +0.05    6%  Pick Up the Pace                        
+   +0.05    6%  Origin of Thor                          
+
+Planeswalkers:  (synergy · inclusion)
+   -0.00   11%  Chandra, Torch of Defiance              
+   +0.03    6%  Chandra, Hope's Beacon                  
+
+Utility Lands:  (synergy · inclusion)
+   +0.46   56%  Fire Nation Palace                      
+   +0.20   44%  Rogue's Passage                         
+   +0.41   44%  Lindblum, Industrial Regency            
+   +0.15   39%  Valakut, the Molten Pinnacle            
+   +0.09   39%  War Room                                
+   +0.19   39%  Nykthos, Shrine to Nyx                  
+   +0.21   33%  Command Beacon                          
+   +0.12   28%  Forgotten Cave                          
+   +0.01   22%  Arena of Glory                          
+   +0.06   22%  Castle Embereth                         
+   +0.09   17%  Shinka, the Bloodsoaked Keep            
+   +0.05   17%  Urza's Saga                             
+   +0.04   17%  Reliquary Tower                         
+   +0.08   11%  Emergence Zone                          
+   +0.08   11%  Geier Reach Sanitarium                  
+   +0.06   11%  Bonders' Enclave                        
+   +0.02    6%  Hanweir Battlements                     
+   +0.05    6%  Lotus Field                             
+   +0.02    6%  Desert of the Fervent                   
+   +0.03    6%  Flamekin Village                        
+   +0.02    6%  Maze of Ith                             
+   -0.09    6%  Spinerock Knoll                         
+   -0.05    6%  Dwarven Mine                            
+   +0.05    6%  Balduvian Trading Post                  
+   +0.05    6%  Looming Spires                          
+   +0.03    6%  Terrain Generator                       
+   +0.03    6%  Muraganda Raceway                       
+   +0.01    6%  Smoldering Crater                       
+   -0.03    6%  Sokenzan, Crucible of Defiance          
+   -0.03    6%  Temple of the False God                 
+   +0.02    6%  Strip Mine                              
+   +0.05    6%  Dust Bowl                               
+   +0.05    6%  Avishkar Raceway                        
+   +0.03    6%  City of Traitors                        
+   -0.02    6%  Den of the Bugbear                      
+   -0.07    6%  Great Furnace                           
+   +0.03    6%  Field of Ruin                           
+   +0.04    6%  Amonkhet Raceway                        
+
+Mana Artifacts:  (synergy · inclusion)
+   -0.01   83%  Sol Ring                                
+   -0.11   50%  Arcane Signet                           
+   +0.22   28%  Pyromancer's Goggles                    
+   +0.14   22%  Tablet of Discovery                     
+   +0.08   17%  Lotus Petal                             
+   +0.06   11%  Mox Amber                               
+   +0.04   11%  Springleaf Drum                         
+   +0.09   11%  Loki's Scepter                          
+   -0.17    6%  Cursed Mirror                           
+   -0.06    6%  Throne of Eldraine                      
+   +0.03    6%  Carnelian Orb of Dragonkind             
+   -0.11    6%  Fellwar Stone                           
+   -0.18    6%  Fire Diamond                            
+   -0.25    6%  Mind Stone                              
+   +0.04    6%  Mox Jasper                              
+   +0.04    6%  Orb of Dragonkind                       
+   -0.00    6%  Mox Opal                                
+
+Lands:  (synergy · inclusion)
+   -0.00   94%  Mountain                                
+   +0.15   33%  Valakut Awakening                       
+   +0.10   22%  Pinnacle Monk                           
+   +0.07   17%  Cavern of Souls                         
+   +0.11   17%  Gemstone Caverns                        
+   +0.13   17%  Arid Mesa                               
+   +0.04   17%  Sundering Eruption                      
+   +0.02   11%  Shatterskull Smashing                   
+   +0.07   11%  Kazuul's Fury                           
+   +0.03    6%  Prismatic Vista                         
+   +0.03    6%  Fabled Passage                          
+   +0.03    6%  Terramorphic Expanse                    
+   +0.02    6%  Urza's Cave                             
+   +0.04    6%  Maelstrom of the Spirit Dragon          
+   +0.04    6%  Ash Barrens                             
+   +0.05    6%  Horizon of Progress                     
+   +0.02    6%  Wooded Foothills                        
+   +0.01    6%  Spikefield Hazard                       
+   +0.01    6%  Demolition Field                        
+   +0.03    6%  Plaza of Heroes                         
+   -0.01    6%  Snow-Covered Mountain                   
+   +0.02    6%  Scalding Tarn                           
+   +0.01    6%  Bloodstained Mire                       
+   +0.05    6%  Surveillance Room                       
+$ bun run scripts/edhrec.ts commander "The Vision and Scarlet Witch" --theme storm --all
+EDHREC: The Vision and Scarlet Witch — 11 decks · rank #2,555
+https://edhrec.com/commanders/the-vision-and-scarlet-witch
+Themes: Spellslinger (19) · Burn (18) · Storm (11) · +1/+1 Counters (8) · Aggro (7) · Chaos (3) · Combo (2) · Flying (2) · Voltron (2) · Artifacts (1) · Cantrips (1) · Cheerios (1) · +7 more
+
+High Synergy Cards:  (synergy · inclusion)
+   +0.91  100%  Grapeshot                               
+   +0.79   91%  Birgi, God of Storytelling              
+   +0.76   91%  Pyretic Ritual                          
+   +0.75   82%  Crimson Wisps                           
+   +0.74   91%  Runaway Steam-Kin                       
+   +0.69   73%  Overmaster                              
+   +0.67   73%  Crash Through                           
+   +0.66   73%  Coruscation Mage                        
+   +0.62   73%  Expedite                                
+   +0.62   73%  Electro, Assaulting Battery             
+
+Top Cards:  (synergy · inclusion)
+   +0.34   91%  Ruby Medallion                          
+   +0.50   82%  Seething Song                           
+   +0.42   82%  Faithless Looting                       
+   +0.37   73%  Lightning Bolt                          
+   +0.40   73%  Thrill of Possibility                   
+   +0.57   73%  Storm-Kiln Artist                       
+   +0.58   73%  Guttersnipe                             
+   +0.60   73%  Desperate Ritual                        
+   +0.58   64%  Urabrask                                
+   +0.03   64%  Chaos Warp                              
+
+Game Changers:  (synergy · inclusion)
+   +0.64  100%  Jeska's Will                            
+   +0.46   55%  Underworld Breach                       
+   +0.33   55%  Gamble                                  
+   +0.33   45%  Ancient Tomb                            
+   +0.25   36%  The One Ring                            
+   +0.11   18%  Mana Vault                              
+   +0.11   18%  Chrome Mox                              
+   +0.14   18%  Mox Diamond                             
+   +0.08    9%  Lion's Eye Diamond                      
+
+Creatures:  (synergy · inclusion)
+   +0.57   64%  Ashling, Flame Dancer                   
+   +0.46   55%  Firebrand Archer                        
+   +0.33   55%  Hexing Squelcher                        
+   +0.37   45%  Dualcaster Mage                         
+   +0.39   45%  Kessig Flamebreather                    
+   +0.41   45%  Longshot, Rebel Bowman                  
+   +0.44   45%  The Scarlet Witch                       
+   +0.44   45%  Wiccan, Young Avenger                   
+   +0.29   36%  Young Pyromancer                        
+   +0.19   36%  Neheb, the Eternal                      
+   +0.34   36%  Grinning Ignus                          
+   +0.14   27%  Ragavan, Nimble Pilferer                
+   +0.16   27%  Simian Spirit Guide                     
+   +0.15   27%  Pinnacle Monk                           
+   +0.26   27%  The Vision                              
+   +0.16   18%  Bothersome Quasit                       
+   -0.04   18%  Torbran, Thane of Red Fell              
+   +0.16   18%  Molten-Core Maestro                     
+   +0.08    9%  Soul-Scar Mage                          
+   -0.15    9%  Professional Face-Breaker               
+   +0.07    9%  Krark, the Thumbless                    
+   +0.03    9%  Thermo-Alchemist                        
+   +0.03    9%  Electrostatic Field                     
+   +0.08    9%  Stormsplitter                           
+   +0.08    9%  Walking Ballista                        
+   +0.06    9%  Containment Construct                   
+   +0.07    9%  Rose, Cutthroat Raider                  
+   +0.06    9%  Glint-Horn Buccaneer                    
+   +0.02    9%  Magus of the Moon                       
+   +0.05    9%  Axgard Cavalry                          
+   +0.04    9%  Erebor Flamesmith                       
+   +0.03    9%  Treasonous Ogre                         
+   +0.07    9%  Flaming Tyrannosaurus                   
+   +0.08    9%  Hideous Taskmaster                      
+   +0.04    9%  Laelia, the Blade Reforged              
+   +0.07    9%  Stormscale Scion                        
+   -0.03    9%  Anger                                   
+   +0.09    9%  Crackling Spellslinger                  
+   +0.08    9%  Zell Dincht                             
+   +0.06    9%  Vengeful Ancestor                       
+   +0.08    9%  Manaform Hellkite                       
+   +0.02    9%  Leyline Tyrant                          
+   +0.08    9%  Summon: G.F. Cerberus                   
+   +0.09    9%  Spider-Gwen, Free Spirit                
+   +0.09    9%  Taxi Driver                             
+   +0.05    9%  Spider-Punk                             
+   +0.08    9%  Fire Sages                              
+   +0.06    9%  Firebending Student                     
+   +0.06    9%  Avatar Roku, Firebender                 
+   +0.08    9%  Iroh, Dragon of the West                
+
+Instants:  (synergy · inclusion)
+   +0.32   64%  Big Score                               
+   +0.21   64%  Abrade                                  
+   +0.45   64%  Valakut Awakening                       
+   +0.55   64%  Flashback                               
+   +0.50   55%  Might of the Meek                       
+   +0.50   55%  Reiterate                               
+   +0.30   55%  Unexpected Windfall                     
+   +0.26   55%  Deflecting Swat                         
+   +0.37   55%  Pyroblast                               
+   +0.37   55%  Redirect Lightning                      
+   +0.17   45%  Untimely Malfunction                    
+   +0.26   45%  Bolt Bend                               
+   +0.41   45%  Vision of Love                          
+   +0.18   36%  Red Elemental Blast                     
+   +0.13   36%  Demand Answers                          
+   +0.31   36%  The Last Agni Kai                       
+   +0.22   27%  Electrodominance                        
+   +0.22   27%  Blazing Crescendo                       
+   +0.20   27%  Fists of Flame                          
+   +0.17   27%  Flare of Duplication                    
+   +0.14   18%  Fling                                   
+   -0.04   18%  Return the Favor                        
+   +0.06   18%  Wild Magic Surge                        
+   -0.03   18%  Tibalt's Trickery                       
+   +0.16   18%  Needle Drop                             
+   +0.15   18%  Gut Shot                                
+   +0.14   18%  Comet Storm                             
+   +0.07   18%  Reverberate                             
+   +0.15   18%  Increasing Vengeance                    
+   +0.14   18%  Kazuul's Fury                           
+   +0.16   18%  Opera Love Song                         
+   +0.17   18%  Vivi's Persistence                      
+   +0.09    9%  Firestorm                               
+   +0.05    9%  Zoyowa's Justice                        
+   +0.03    9%  Temur Battle Rage                       
+   +0.08    9%  Fury Storm                              
+   +0.03    9%  Siege Smash                             
+   +0.07    9%  Fork                                    
+   +0.09    9%  Savage Alliance                         
+   +0.06    9%  Invoke Calamity                         
+   +0.05    9%  Spikefield Hazard                       
+   +0.07    9%  Final Fortune                           
+   +0.05    9%  Ghostfire Slice                         
+   +0.03    9%  Shock                                   
+   +0.07    9%  Burst Lightning                         
+   +0.06    9%  Pyrokinesis                             
+   +0.06    9%  Stun                                    
+   +0.09    9%  Misthios's Fury                         
+   +0.01    9%  Price of Progress                       
+   +0.06    9%  Commune with Lava                       
+
+Sorceries:  (synergy · inclusion)
+   +0.10   64%  Blasphemous Act                         
+   +0.57   64%  Hex Magic                               
+   +0.52   55%  Rile                                    
+   +0.13   55%  Vandalblast                             
+   +0.47   55%  Past in Flames                          
+   +0.47   55%  Renegade Tactics                        
+   +0.45   55%  Rite of Flame                           
+   +0.47   55%  Wrenn's Resolve                         
+   +0.23   55%  Mana Geyser                             
+   +0.49   55%  Impolite Entrance                       
+   +0.43   45%  Bonus Round                             
+   +0.38   45%  Reckless Impulse                        
+   +0.42   45%  Warlord's Fury                          
+   +0.34   45%  Light Up the Stage                      
+   +0.40   45%  Ancestral Anger                         
+   +0.29   36%  Strike It Rich                          
+   +0.17   27%  Cathartic Reunion                       
+   +0.22   27%  Crackle with Power                      
+   +0.21   27%  Mizzix's Mastery                        
+   +0.13   27%  Seize the Spoils                        
+   +0.26   27%  Galvanic Relay                          
+   +0.18   27%  Wheel of Fortune                        
+   +0.15   27%  Sundering Eruption                      
+   +0.26   27%  Asgardian Inspiration                   
+   +0.14   18%  Will of the Jeskai                      
+   +0.09   18%  Empty the Warrens                       
+   +0.09   18%  Shatterskull Smashing                   
+   +0.13   18%  Glimpse the Impossible                  
+   +0.15   18%  Ignite the Future                       
+   +0.17   18%  Path of the Pyromancer                  
+   +0.16   18%  Highway Robbery                         
+   +0.16   18%  Winds of Change                         
+   +0.15   18%  Jaya's Immolating Inferno               
+   +0.17   18%  Heroes' Hangout                         
+   +0.13   18%  Improvisation Capstone                  
+   +0.17   18%  Steal the Show                          
+   +0.04    9%  Witch's Mark                            
+   +0.06    9%  Infernal Plunge                         
+   -0.01    9%  Wheel of Misfortune                     
+   +0.08    9%  Ensnared by the Mara                    
+   +0.06    9%  Irencrag Feat                           
+   +0.06    9%  Inspired Tinkering                      
+   +0.06    9%  Reckless Charge                         
+   +0.07    9%  Rousing Refrain                         
+   +0.09    9%  Ignite Memories                         
+   +0.07    9%  Magmatic Insight                        
+   +0.03    9%  Twinflame                               
+   +0.08    9%  Elemental Eruption                      
+   +0.09    9%  Fiery Encore                            
+   +0.04    9%  Molten Duplication                      
+
+Utility Artifacts:  (synergy · inclusion)
+   +0.62   64%  Aetherflux Reservoir                    
+   -0.04   36%  Swiftfoot Boots                         
+   +0.03   36%  Lightning Greaves                       
+   +0.24   27%  Sensei's Divining Top                   
+   +0.25   27%  Defense Grid                            
+   +0.16   27%  Mithril Coat                            
+   +0.04   27%  The Fire Crystal                        
+   +0.06   18%  The Reaver Cleaver                      
+   +0.17   18%  Primal Amulet                           
+   +0.05   18%  Commander's Plate                       
+   +0.08    9%  The Ozolith                             
+   +0.09    9%  Twinning Staff                          
+   +0.06    9%  Vexing Bauble                           
+   +0.08    9%  Library of Leng                         
+   +0.08    9%  Howling Mine                            
+   +0.07    9%  Fire Nation Turret                      
+
+Enchantments:  (synergy · inclusion)
+   +0.50   55%  Artist's Talent                         
+   +0.35   36%  Wanda's Vision                          
+   +0.03   27%  Impact Tremors                          
+   +0.07   27%  Blood Moon                              
+   +0.15   18%  Dragon Mantle                           
+   +0.12   18%  Fiery Inscription                       
+   +0.16   18%  Double Vision                           
+   +0.14   18%  Fated Firepower                         
+   +0.07    9%  Arcane Bombardment                      
+   +0.02    9%  Powerbalance                            
+   +0.08    9%  The Flux                                
+   +0.08    9%  Return the Past                         
+   +0.05    9%  Valakut Exploration                     
+   +0.08    9%  Spiked Corridor // Torture Pit          
+   -0.07    9%  Goblin Bombardment                      
+   +0.04    9%  Spiteful Banditry                       
+   +0.06    9%  Maximum Carnage                         
+   +0.06    9%  The Legend of Roku                      
+   +0.08    9%  Death to Our Enemies                    
+
+Planeswalkers:  (synergy · inclusion)
+   +0.16   27%  Chandra, Torch of Defiance              
+   +0.06    9%  Chandra, Dressed to Kill                
+
+Utility Lands:  (synergy · inclusion)
+   +0.52   82%  War Room                                
+   +0.39   64%  Valakut, the Molten Pinnacle            
+   +0.38   45%  Shinka, the Bloodsoaked Keep            
+   +0.26   45%  Nykthos, Shrine to Nyx                  
+   +0.15   36%  Arena of Glory                          
+   +0.20   36%  Castle Embereth                         
+   +0.12   36%  Rogue's Passage                         
+   +0.27   36%  Fire Nation Palace                      
+   +0.11   27%  Forgotten Cave                          
+   +0.15   27%  Command Beacon                          
+   +0.24   27%  Lindblum, Industrial Regency            
+   +0.15   18%  Crystal Vein                            
+   +0.15   18%  Geier Reach Sanitarium                  
+   +0.06   18%  Reliquary Tower                         
+   +0.10   18%  Sokenzan, Crucible of Defiance          
+   +0.16   18%  City of Traitors                        
+   +0.06    9%  Hanweir Battlements                     
+   -0.04    9%  Buried Ruin                             
+   -0.02    9%  Urza's Saga                             
+   -0.05    9%  Spinerock Knoll                         
+   +0.06    9%  Emergence Zone                          
+   -0.01    9%  Dwarven Mine                            
+   +0.08    9%  Looming Spires                          
+   +0.04    9%  Smoldering Crater                       
+   +0.06    9%  Sandstone Needle                        
+   +0.04    9%  Bonders' Enclave                        
+   +0.02    9%  Den of the Bugbear                      
+
+Mana Artifacts:  (synergy · inclusion)
+   -0.02   82%  Sol Ring                                
+   +0.12   73%  Arcane Signet                           
+   +0.27   36%  Lotus Petal                             
+   +0.13   18%  Mox Amber                               
+   +0.02   18%  Fellwar Stone                           
+   +0.12   18%  Mox Opal                                
+   +0.10   18%  Tablet of Discovery                     
+   +0.16   18%  Loki's Scepter                          
+   +0.02    9%  Commander's Sphere                      
+   -0.00    9%  Heraldic Banner                         
+   -0.14    9%  Cursed Mirror                           
+   -0.22    9%  Mind Stone                              
+   +0.03    9%  Pyromancer's Goggles                    
+   +0.09    9%  Potioner's Trove                        
+
+Lands:  (synergy · inclusion)
+   +0.05  100%  Mountain                                
+   +0.45   64%  Valakut Awakening                       
+   +0.31   36%  Gemstone Caverns                        
+   +0.15   27%  Sundering Eruption                      
+   +0.15   27%  Pinnacle Monk                           
+   +0.09   18%  Shatterskull Smashing                   
+   +0.14   18%  Kazuul's Fury                           
+   +0.06    9%  Prismatic Vista                         
+   +0.04    9%  Command Tower                           
+   -0.14    9%  Myriad Landscape                        
+   +0.06    9%  Urza's Cave                             
+   +0.09    9%  Unclaimed Territory                     
+   +0.05    9%  Wooded Foothills                        
+   +0.09    9%  Secluded Courtyard                      
+   +0.05    9%  Spikefield Hazard                       
+   -0.01    9%  Cavern of Souls                         
+   +0.07    9%  Plaza of Heroes                         
+   +0.05    9%  Arid Mesa                               
+   +0.05    9%  Scalding Tarn                           
+   +0.08    9%  Abstergo Entertainment                  
+   +0.05    9%  Bloodstained Mire                       
+$ bun run scripts/edhrec.ts commander "The Vision and Scarlet Witch" --theme voltron --all
+EDHREC: The Vision and Scarlet Witch — 2 decks · rank #2,555
+https://edhrec.com/commanders/the-vision-and-scarlet-witch
+Themes: Spellslinger (19) · Burn (18) · Storm (11) · +1/+1 Counters (8) · Aggro (7) · Chaos (3) · Combo (2) · Flying (2) · Voltron (2) · Artifacts (1) · Cantrips (1) · Cheerios (1) · +7 more
+
+Game Changers:  (synergy · inclusion)
+   +0.64  100%  Jeska's Will                            
+   +0.28   50%  Gamble                                  
+
+Creatures:  (synergy · inclusion)
+   +0.94  100%  Coruscation Mage                        
+   +0.93  100%  Young Pyromancer                        
+   +0.83  100%  Runaway Steam-Kin                       
+   +0.97  100%  Grinning Ignus                          
+   +0.89  100%  Electro, Assaulting Battery             
+   +0.99  100%  Loki Laufeyson                          
+   +0.47   50%  Party Thrasher                          
+   +0.26   50%  Professional Face-Breaker               
+   +0.47   50%  Firespitter Whelp                       
+   +0.50   50%  Burning Prophet                         
+   +0.41   50%  Firebrand Archer                        
+   +0.45   50%  Urabrask                                
+   +0.44   50%  Defiler of Instinct                     
+   +0.47   50%  Frenzied Goblin                         
+   +0.27   50%  Torbran, Thane of Red Fell              
+   +0.42   50%  Dualcaster Mage                         
+   +0.34   50%  Storm-Kiln Artist                       
+   +0.47   50%  Reckless Barbarian                      
+   +0.36   50%  Guttersnipe                             
+   +0.43   50%  Kediss, Emberclaw Familiar              
+   +0.40   50%  Magus of the Wheel                      
+   +0.38   50%  Pinnacle Monk                           
+   +0.43   50%  Leyline Tyrant                          
+   +0.38   50%  Birgi, God of Storytelling              
+   +0.50   50%  Harnesser of Storms                     
+   +0.46   50%  Taurean Mauler                          
+   +0.45   50%  Longshot, Rebel Bowman                  
+   +0.50   50%  Boar-q-pine                             
+   +0.48   50%  Thunderdrum Soloist                     
+   +0.50   50%  Tackle Artist                           
+   +0.49   50%  The Vision                              
+   +0.47   50%  Thor, God of Thunder                    
+   +0.48   50%  The Scarlet Witch                       
+   +0.50   50%  Iron Man, Tony Stark                    
+   +0.50   50%  Loki, God of Lies                       
+
+Instants:  (synergy · inclusion)
+   +0.67  100%  Thrill of Possibility                   
+   +0.64  100%  Lightning Bolt                          
+   +0.68  100%  Big Score                               
+   +0.91  100%  Flashback                               
+   +0.95  100%  Vision of Love                          
+   -0.11   50%  Chaos Warp                              
+   +0.45   50%  Might of the Meek                       
+   +0.49   50%  Radiate                                 
+   +0.39   50%  Expedite                                
+   +0.38   50%  Desperate Ritual                        
+   +0.25   50%  Unexpected Windfall                     
+   +0.44   50%  Siege Smash                             
+   +0.47   50%  Soul's Fire                             
+   +0.45   50%  Blazing Crescendo                       
+   +0.45   50%  Monstrous Rage                          
+   +0.18   50%  Seething Song                           
+   +0.48   50%  Needle Drop                             
+   +0.35   50%  Pyretic Ritual                          
+   +0.47   50%  Twinferno                               
+   +0.46   50%  Brute Force                             
+   +0.49   50%  Cast into the Fire                      
+   +0.31   50%  Red Elemental Blast                     
+   +0.33   50%  Pyroblast                               
+   +0.08   50%  Abrade                                  
+   +0.42   50%  Bulk Up                                 
+   +0.33   50%  Redirect Lightning                      
+   +0.49   50%  Wisecrack                               
+
+Sorceries:  (synergy · inclusion)
+   +0.60  100%  Faithless Looting                       
+   +0.92  100%  Reckless Impulse                        
+   +0.91  100%  Grapeshot                               
+   +0.98  100%  Romantic Rendezvous                     
+   +0.94  100%  Hex Magic                               
+   +0.09   50%  Vandalblast                             
+   +0.42   50%  Fiery Confluence                        
+   +0.44   50%  Crash Through                           
+   +0.48   50%  Rousing Refrain                         
+   +0.49   50%  Season of the Bold                      
+   +0.50   50%  Mutiny                                  
+   +0.48   50%  Magmatic Insight                        
+   +0.47   50%  Warlord's Fury                          
+   -0.03   50%  Blasphemous Act                         
+   +0.44   50%  Twinflame                               
+   +0.41   50%  Rite of Flame                           
+   +0.39   50%  Light Up the Stage                      
+   +0.42   50%  Wrenn's Resolve                         
+   +0.19   50%  Mana Geyser                             
+   +0.45   50%  Ancestral Anger                         
+   +0.41   50%  Chandra's Ignition                      
+   +0.48   50%  Shattering Spree                        
+   +0.48   50%  Brotherhood's End                       
+   +0.49   50%  Avengers Disassembled                   
+
+Utility Artifacts:  (synergy · inclusion)
+   +0.43  100%  Ruby Medallion                          
+   +0.98  100%  The Ten Rings                           
+   +0.48   50%  Defense Grid                            
+   +0.42   50%  Diamond Pick-Axe                        
+   +0.48   50%  Aetherflux Reservoir                    
+   +0.48   50%  Silver Shroud Costume                   
+   +0.44   50%  Goldvein Pick                           
+   +0.16   50%  Lightning Greaves                       
+   +0.27   50%  The Fire Crystal                        
+   +0.42   50%  Mjölnir, Hammer of Thor                 
+   +0.49   50%  Cosmic Cube                             
+
+Enchantments:  (synergy · inclusion)
+   +0.95  100%  Artist's Talent                         
+   +0.49   50%  Festival of Embers                      
+   +0.46   50%  Valakut Exploration                     
+   +0.48   50%  Wanda's Vision                          
+   +0.49   50%  Origin of Thor                          
+
+Utility Lands:  (synergy · inclusion)
+   +0.90  100%  Fire Nation Palace                      
+   +0.26   50%  Valakut, the Molten Pinnacle            
+   +0.29   50%  Arena of Glory                          
+   +0.20   50%  War Room                                
+   +0.26   50%  Rogue's Passage                         
+   +0.46   50%  Lindblum, Industrial Regency            
+   +0.50   50%  Petrified Hamlet                        
+
+Mana Artifacts:  (synergy · inclusion)
+   -0.34   50%  Sol Ring                                
+   +0.44   50%  Pyromancer's Goggles                    
+   +0.42   50%  Tablet of Discovery                     
+
+Lands:  (synergy · inclusion)
+   +0.05  100%  Mountain                                
+   +0.38   50%  Pinnacle Monk                           

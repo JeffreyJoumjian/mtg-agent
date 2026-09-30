@@ -1,0 +1,417 @@
+{
+  "takenAt": "2026-09-23T11:23:12.787Z",
+  "listId": "spellslinger",
+  "label": "migrated from markdown",
+  "reason": "state at migration",
+  "list": {
+    "label": "Spellslinger",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "The Vision and Scarlet Witch",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Ancient Tomb",
+            "qty": 1
+          },
+          {
+            "name": "Cavern of Souls",
+            "qty": 1
+          },
+          {
+            "name": "Command Beacon",
+            "qty": 1
+          },
+          {
+            "name": "War Room",
+            "qty": 1
+          },
+          {
+            "name": "Tyrite Sanctum",
+            "qty": 1
+          },
+          {
+            "name": "Fire Nation Palace",
+            "qty": 1
+          },
+          {
+            "name": "Lindblum, Industrial Regency",
+            "qty": 1
+          },
+          {
+            "name": "Sokenzan, Crucible of Defiance",
+            "qty": 1
+          },
+          {
+            "name": "Arena of Glory",
+            "qty": 1
+          },
+          {
+            "name": "Valakut Awakening",
+            "qty": 1
+          },
+          {
+            "name": "Shatterskull Smashing",
+            "qty": 1
+          },
+          {
+            "name": "Mountain",
+            "qty": 21
+          }
+        ]
+      },
+      {
+        "name": "Rocks & Cost Reduction",
+        "cards": [
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Ruby Medallion",
+            "qty": 1
+          },
+          {
+            "name": "The Fire Crystal",
+            "qty": 1
+          },
+          {
+            "name": "Mox Amber",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Rituals",
+        "cards": [
+          {
+            "name": "Pyretic Ritual",
+            "qty": 1
+          },
+          {
+            "name": "Seething Song",
+            "qty": 1
+          },
+          {
+            "name": "Mana Geyser",
+            "qty": 1
+          },
+          {
+            "name": "Jeska's Will",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Mana Banking",
+        "cards": [
+          {
+            "name": "Electro, Assaulting Battery",
+            "qty": 1
+          },
+          {
+            "name": "Ashling, Flame Dancer",
+            "qty": 1
+          },
+          {
+            "name": "Leyline Tyrant",
+            "qty": 1
+          },
+          {
+            "name": "Birgi, God of Storytelling",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Mana Engines",
+        "cards": [
+          {
+            "name": "Neheb, the Eternal",
+            "qty": 1
+          },
+          {
+            "name": "Storm-Kiln Artist",
+            "qty": 1
+          },
+          {
+            "name": "Urabrask",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Trigger Doubler",
+        "cards": [
+          {
+            "name": "Roaming Throne",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Cantrips",
+        "cards": [
+          {
+            "name": "Crash Through",
+            "qty": 1
+          },
+          {
+            "name": "Might of the Meek",
+            "qty": 1
+          },
+          {
+            "name": "Impolite Entrance",
+            "qty": 1
+          },
+          {
+            "name": "Ancestral Anger",
+            "qty": 1
+          },
+          {
+            "name": "Fists of Flame",
+            "qty": 1
+          },
+          {
+            "name": "Crimson Wisps",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw",
+        "cards": [
+          {
+            "name": "The One Ring",
+            "qty": 1
+          },
+          {
+            "name": "Faithless Looting",
+            "qty": 1
+          },
+          {
+            "name": "Big Score",
+            "qty": 1
+          },
+          {
+            "name": "Hex Magic",
+            "qty": 1
+          },
+          {
+            "name": "Wheel of Fortune",
+            "qty": 1
+          },
+          {
+            "name": "Artist's Talent",
+            "qty": 1
+          },
+          {
+            "name": "Wiccan, Young Avenger",
+            "qty": 1
+          },
+          {
+            "name": "Vision of Love",
+            "qty": 1
+          },
+          {
+            "name": "Thrill of Possibility",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Converters — spells into damage",
+        "cards": [
+          {
+            "name": "Guttersnipe",
+            "qty": 1
+          },
+          {
+            "name": "Firebrand Archer",
+            "qty": 1
+          },
+          {
+            "name": "Kessig Flamebreather",
+            "qty": 1
+          },
+          {
+            "name": "Coruscation Mage",
+            "qty": 1
+          },
+          {
+            "name": "Thermo-Alchemist",
+            "qty": 1
+          },
+          {
+            "name": "Fiery Inscription",
+            "qty": 1
+          },
+          {
+            "name": "Longshot, Rebel Bowman",
+            "qty": 1
+          },
+          {
+            "name": "Grapeshot",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Copy & Recursion",
+        "cards": [
+          {
+            "name": "Loki Laufeyson",
+            "qty": 1
+          },
+          {
+            "name": "Increasing Vengeance",
+            "qty": 1
+          },
+          {
+            "name": "Arcane Bombardment",
+            "qty": 1
+          },
+          {
+            "name": "Past in Flames",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Free-Cast Engine",
+        "cards": [
+          {
+            "name": "Wanda's Vision",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Damage Multipliers",
+        "cards": [
+          {
+            "name": "Fiery Emancipation",
+            "qty": 1
+          },
+          {
+            "name": "Twinflame Tyrant",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Protection",
+        "cards": [
+          {
+            "name": "Deflecting Swat",
+            "qty": 1
+          },
+          {
+            "name": "Champion's Helm",
+            "qty": 1
+          },
+          {
+            "name": "Commander's Plate",
+            "qty": 1
+          },
+          {
+            "name": "Mithril Coat",
+            "qty": 1
+          },
+          {
+            "name": "Shadowspear",
+            "qty": 1
+          },
+          {
+            "name": "Conqueror's Flail",
+            "qty": 1
+          },
+          {
+            "name": "Hexing Squelcher",
+            "qty": 1
+          },
+          {
+            "name": "The Ozolith",
+            "qty": 1
+          },
+          {
+            "name": "Welding Jar",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Removal & One-Sided Sweeps",
+        "cards": [
+          {
+            "name": "Chaos Warp",
+            "qty": 1
+          },
+          {
+            "name": "Lightning Bolt",
+            "qty": 1
+          },
+          {
+            "name": "Fiery Confluence",
+            "qty": 1
+          },
+          {
+            "name": "Mizzium Mortars",
+            "qty": 1
+          },
+          {
+            "name": "Delayed Blast Fireball",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Win Conditions",
+        "cards": [
+          {
+            "name": "Chandra's Ignition",
+            "qty": 1
+          },
+          {
+            "name": "Origin of Thor",
+            "qty": 1
+          },
+          {
+            "name": "Soul's Fire",
+            "qty": 1
+          },
+          {
+            "name": "Crackle with Power",
+            "qty": 1
+          },
+          {
+            "name": "Aetherflux Reservoir",
+            "qty": 1
+          },
+          {
+            "name": "Jaya's Immolating Inferno",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "The swap from DECK.md — computed from both files, not hand-maintained",
+        "cards": []
+      }
+    ]
+  }
+}

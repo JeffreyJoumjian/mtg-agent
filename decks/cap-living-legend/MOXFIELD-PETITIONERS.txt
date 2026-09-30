@@ -1,0 +1,59 @@
+1 Captain America, Living Legend (MSH) 210
+1 Adarkar Wastes (DMU) 243
+1 Adept Watershaper
+1 Arcane Signet (MSC) 191
+1 Clever Concealment (MSC) 125
+1 Command Tower (MSC) 233
+1 Counterspell (MAR) 52
+1 Cruel Calculations
+1 Deserted Beach (FRA) 176
+1 Dovin's Veto (WAR) 193
+1 Drumbellower
+1 Dusk
+1 Fellwar Stone
+1 Flawless Maneuver
+1 Flooded Strand (KTK) 233
+1 Floodfarm Verge (DSK) 259
+1 Fraying Sanity
+1 Generous Revival
+1 Ghostly Prison
+1 Glacial Fortress (XLN) 255
+1 Grand Arbiter Augustin IV
+1 Guardian of Faith
+1 Hallowed Fountain (TRK) 286
+1 Herald's Horn
+1 Holdout Settlement
+12 Island (THB) 251
+1 Jace, Wielder of Mysteries
+1 Laboratory Maniac
+1 Masako the Humorless
+1 Mathemagics
+1 Mesmeric Orb
+1 Minamo, School at Water's Edge (CHK) 279
+1 Muddle the Mixture
+1 Mystic Gate (CMM) 1013
+1 Mystic Remora
+1 Omen Hawker
+1 Otawara, Soaring City (NEO) 271
+1 Path to Exile (MAR) 47
+26 Persistent Petitioners
+6 Plains (THB) 250
+1 Prairie Stream (BFZ) 241
+1 Prismatic Vista (MH1) 244
+1 Propaganda
+1 Raise the Past
+1 Sea of Clouds (PLST) BBD-84
+1 Seachrome Coast (ONE) 258
+1 Sevinne's Reclamation
+1 Snapcaster Mage
+1 Sol Ring (SLD) 1734
+1 Springleaf Drum
+1 Survivors' Encampment
+1 Swan Song
+1 Swords to Plowshares (PMEI) 2026-4
+1 Talisman of Progress
+1 Teferi's Protection (MAR) 51
+1 Thassa's Oracle
+1 Traumatize
+1 Tundra (OLGC) 2015
+1 Urza's Incubator

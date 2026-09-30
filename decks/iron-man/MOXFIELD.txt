@@ -1,0 +1,93 @@
+1 Tony Stark (MSH) 363
+1 Academy Ruins (PLST) 2XM-309
+1 Adaptive Omnitool (FDC) 243
+1 Aettir and Priwen (FIN) 253
+1 Aggravated Assault
+1 An Offer You Can't Refuse (SNC) 51
+1 Ancient Tomb (UMA) 236
+1 Arc Reactor (MSH) 243
+1 Arcane Signet (SLD) 908
+1 Archway of Innovation (MH3) 214
+1 Armor Wars
+1 Blasphemous Act
+1 Buster Sword (FIN) 255
+1 Cascade Bluffs (CMM) 990
+1 Champion's Helm (FIC) 337
+1 Chandra's Ignition (ORI) 137
+1 Chaos Warp (PLST) DRC-48
+1 Command Beacon (PLST) C15-56
+1 Command Tower (ELD) 333
+1 Commander's Plate (SLD) 1733
+1 Conqueror's Flail (2X2) 302
+1 Counterspell (MAR) 52
+1 Darksteel Citadel (C18) 241
+1 Darksteel Forge (2XM) 248
+1 Deflecting Swat (CMM) 214
+1 Embercleave (ELD) 120
+1 Excalibur, Sword of Eden (ACR) 169
+1 Extinguisher Battleship (EOE) 355
+1 Fabricate (SLD) 7124
+1 Fateful Discovery (HOB) 40
+1 Fierce Guardianship (CMM) 94
+1 Fomori Vault (BIG) 29
+1 Galvanic Blast
+1 Genji Glove (FIN) 258
+1 Goblin Engineer
+1 Goblin Welder (CM2) 101
+1 Great Furnace (PLST) C18-250
+1 Great Train Heist
+1 Hammer of Nazahn (MSC) 427
+1 Hexplate Wallbreaker
+1 Insight Engine (EOC) 6
+1 Into the Flood Maw (BLB) 52
+1 Inventors' Fair (SLD) 1735
+1 Iron Man, Titan of Innovation
+1 Iron Man, Tony Stark
+3 Island (THB) 251
+1 Knuckles the Echidna
+1 Krang, Utrom Warlord (TMT) 175
+1 Mind Stone (WHO) 244
+1 Mithril Coat (LTR) 245
+1 Mjölnir, Hammer of Thor (MSH) 146
+6 Mountain (THB) 253
+1 Mystic Reflection
+1 Otawara, Soaring City (NEO) 271
+1 Overpowering Attack
+1 Phyrexian Metamorph
+1 Portal to Phyrexia (BRO) 240
+1 Professional Face-Breaker
+1 Riverpyre Verge (DFT) 260
+1 Roaming Throne (MAR) 99
+1 Savage Beating
+1 Scorched Geyser (MSC) 264
+1 Seat of the Synod (EOC) 176
+1 Seize the Day
+1 Shivan Reef (DMU) 255
+1 Silverbluff Bridge (EOC) 180
+1 Simulacrum Synthesizer (BIG) 6
+1 Sink into Stupor (MH3) 241
+1 Sol Ring (SLD) 1734
+1 Solve the Equation
+1 Steam Vents (TRK) 298
+1 Stormcarved Coast (SOS) 263
+1 Strix Serenade
+1 Sulfur Falls (DOM) 247
+1 Swan Song
+1 Sword of Feast and Famine (PLST) 2XM-296
+1 Talisman of Creativity (MSC) 218
+1 The Mycosynth Gardens (ONE) 256
+1 The One Ring (LTR) 246
+1 The Reaver Cleaver (DMC) 8
+1 The Ten Rings (MSH) 251
+1 Thought Vessel (MSC) 222
+1 Thoughtcast
+1 Thran Dynamo (MSC) 290
+1 Thundering Falls (MKM) 269
+1 Training Center (CMM) 434
+1 Treasure Vault (AFR) 261
+1 Turbulent Springs (SOC) 57
+1 Ultima Weapon (FIN) 563
+1 Urza's Saga (PLST) MH2-259
+1 Uthros, Titanic Godcore (EOE) 260
+1 Volcanic Island (OLGC) 2018NA
+1 Wizard's Staff (HOB) 59

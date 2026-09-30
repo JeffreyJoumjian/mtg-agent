@@ -1,0 +1,875 @@
+# LOCAL CARD CACHE — god-tribal
+# Prices are a USD snapshot from Scryfall at the time each card was first cached.
+# Format:  ## Name / cost|type|CI|produces|usd / oracle
+
+## Aclazotz, Deepest Betrayal // Temple of the Dead
+cost={3}{B}{B} | type=Legendary Creature — Bat God // Land | CI=B | produces=B | usd=$10.37
+Aclazotz, Deepest Betrayal: Flying, lifelink Whenever Aclazotz attacks, each opponent discards a card. For each opponent who can't, you draw a card. Whenever an opponent discards a land card, create a 1/1 black Bat creature token with flying. When Aclazotz dies, return it to the battlefield tapped and transformed under its owner's control. // Temple of the Dead: (Transforms from Aclazotz, Deepest Betrayal.) {T}: Add {B}. {2}{B}, {T}: Transform this land. Activate only if a player has one or fewer cards in hand and only as a sorcery.
+
+## Alrund, God of the Cosmos // Hakka, Whispering Raven
+cost={3}{U}{U}{1}{U} | type=Legendary Creature — God // Legendary Creature — Bird | CI=U | produces=- | usd=$1.20
+Alrund, God of the Cosmos: Alrund gets +1/+1 for each card in your hand and each foretold card you own in exile. At the beginning of your end step, choose a card type, then reveal the top two cards of your library. Put all cards of the chosen type revealed this way into your hand and the rest on the bottom of your library in any order. // Hakka, Whispering Raven: Flying Whenever Hakka deals combat damage to a player, return it to its owner's hand, then scry 2.
+
+## Anzrag, the Quake-Mole
+cost={2}{R}{G} | type=Legendary Creature — Mole God | CI=GR | produces=- | usd=$6.48
+Whenever Anzrag becomes blocked, untap each creature you control. After this phase, there is an additional combat phase. {3}{R}{R}{G}{G}: Anzrag must be blocked each combat this turn if able.
+
+## Ares, God of War
+cost={1}{B}{R} | type=Legendary Creature — God Warrior Villain | CI=BR | produces=- | usd=$0.34
+Ares attacks each combat if able. Whenever an attacking creature you control dies, return that card to its owner's hand.
+
+## Asmodeus the Archfiend
+cost={4}{B}{B} | type=Legendary Creature — Devil God | CI=B | produces=- | usd=$0.38
+Binding Contract — If you would draw a card, exile the top card of your library face down instead. {B}{B}{B}: Draw seven cards. {B}: Return all cards exiled with Asmodeus to their owner's hand and you lose that much life.
+
+## Athreos, God of Passage
+cost={1}{W}{B} | type=Legendary Enchantment Creature — God | CI=BW | produces=- | usd=$14.75
+Indestructible As long as your devotion to white and black is less than seven, Athreos isn't a creature. Whenever another creature you own dies, return it to your hand unless target opponent pays 3 life.
+
+## Athreos, Shroud-Veiled
+cost={4}{W}{B} | type=Legendary Enchantment Creature — God | CI=BW | produces=- | usd=$0.95
+Indestructible As long as your devotion to white and black is less than seven, Athreos isn't a creature. At the beginning of your end step, put a coin counter on another target creature. Whenever a creature with a coin counter on it dies or is put into exile, return that card to the battlefield under your control.
+
+## Atreus, Impulsive Son
+cost={1}{U}{R} | type=Legendary Creature — God Archer | CI=RU | produces=- | usd=$5.70
+Reach {3}, {T}: Draw a card for each experience counter you have, then discard a card. Atreus deals 2 damage to each opponent. Partner—Father & son (You can have two commanders if both have this ability.)
+
+## Bane, Lord of Darkness
+cost={1}{W}{U}{B} | type=Legendary Creature — God | CI=BUW | produces=- | usd=$0.25
+As long as your life total is less than or equal to half your starting life total, Bane has indestructible. Whenever another nontoken creature you control dies, target opponent may have you draw a card. If they don't, you may put a creature card with equal or lesser toughness from your hand onto the battlefield.
+
+## Bast, Panther Goddess
+cost={2}{G}{W} | type=Legendary Creature — Cat God | CI=GW | produces=- | usd=$1.25
+Reach, trample, indestructible Bast can't attack or block unless you control three or more creatures. Whenever you attack, target attacking creature gets +X/+X until end of turn, where X is the number of creatures you control.
+
+## Bhaal, Lord of Murder
+cost={2}{B}{R}{G} | type=Legendary Creature — God | CI=BGR | produces=- | usd=$0.25
+As long as your life total is less than or equal to half your starting life total, Bhaal has indestructible. Whenever another nontoken creature you control dies, put a +1/+1 counter on target creature and goad it.
+
+## Birgi, God of Storytelling // Harnfel, Horn of Bounty
+cost={2}{R}{4}{R} | type=Legendary Creature — God // Legendary Artifact | CI=R | produces=R | usd=$30.73
+Birgi, God of Storytelling: Whenever you cast a spell, add {R}. Until end of turn, you don't lose this mana as steps and phases end. Creatures you control can boast twice during each of your turns rather than once. // Harnfel, Horn of Bounty: Discard a card: Exile the top two cards of your library. You may play those cards this turn.
+
+## Bontu the Glorified
+cost={2}{B} | type=Legendary Creature — God | CI=B | produces=- | usd=$3.73
+Menace, indestructible Bontu can't attack or block unless a creature died under your control this turn. {1}{B}, Sacrifice another creature: Scry 1. Each opponent loses 1 life and you gain 1 life.
+
+## Cosima, God of the Voyage // The Omenkeel
+cost={2}{U}{1}{U} | type=Legendary Creature — God // Legendary Artifact — Vehicle | CI=U | produces=- | usd=$1.34
+Cosima, God of the Voyage: At the beginning of your upkeep, you may exile Cosima. If you do, it gains "Whenever a land you control enters, if Cosima is exiled, you may put a voyage counter on it. If you don't, return Cosima to the battlefield with X +1/+1 counters on it and draw X cards, where X is the number of voyage counters on it." // The Omenkeel: Whenever a Vehicle you control deals combat damage to a player, that player exiles that many cards from the top of their library. You may play lands from among those cards for as long as they remain exiled. Crew 1
+
+## Djeru and Hazoret
+cost={2}{R}{R}{W} | type=Legendary Creature — Human God | CI=RW | produces=- | usd=$0.44
+As long as you have one or fewer cards in hand, Djeru and Hazoret has vigilance and haste. Whenever Djeru and Hazoret attacks, look at the top six cards of your library. You may exile a legendary creature card from among them. Put the rest on the bottom of your library in a random order. Until end of turn, you may cast the exiled card without paying its mana cost.
+
+## Egon, God of Death // Throne of Death
+cost={2}{B}{B} | type=Legendary Creature — God // Legendary Artifact | CI=B | produces=- | usd=$0.33
+Egon, God of Death: Deathtouch At the beginning of your upkeep, exile two cards from your graveyard. If you can't, sacrifice Egon and draw a card. // Throne of Death: At the beginning of your upkeep, mill a card. {2}{B}, {T}, Exile a creature card from your graveyard: Draw a card.
+
+## Eirdu, Carrier of Dawn // Isilu, Carrier of Twilight
+cost={3}{W}{W} | type=Legendary Creature — Elemental God // Legendary Creature — Elemental God | CI=BW | produces=- | usd=$2.76
+Eirdu, Carrier of Dawn: Flying, lifelink Creature spells you cast have convoke. (Your creatures can help cast those spells. Each creature you tap while casting a creature spell pays for {1} or one mana of that creature's color.) At the beginning of your first main phase, you may pay {B}. If you do, transform Eirdu. // Isilu, Carrier of Twilight: Flying, lifelink Each other nontoken creature you control has persist. (When it dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner's control with a -1/-1 counter on it.) At the beginning of your first main phase, you may pay {W}. If you do, transform Isilu.
+
+## Ephara, God of the Polis
+cost={2}{W}{U} | type=Legendary Enchantment Creature — God | CI=UW | produces=- | usd=$7.81
+Indestructible As long as your devotion to white and blue is less than seven, Ephara isn't a creature. At the beginning of each upkeep, if you had another creature enter the battlefield under your control last turn, draw a card.
+
+## Erebos, Bleak-Hearted
+cost={3}{B} | type=Legendary Enchantment Creature — God | CI=B | produces=- | usd=$1.86
+Indestructible As long as your devotion to black is less than five, Erebos isn't a creature. Whenever another creature you control dies, you may pay 2 life. If you do, draw a card. {1}{B}, Sacrifice another creature: Target creature gets -2/-1 until end of turn.
+
+## Erebos, God of the Dead
+cost={3}{B} | type=Legendary Enchantment Creature — God | CI=B | produces=- | usd=$10.33
+Indestructible As long as your devotion to black is less than five, Erebos isn't a creature. (Each {B} in the mana costs of permanents you control counts toward your devotion to black.) Your opponents can't gain life. {1}{B}, Pay 2 life: Draw a card.
+
+## Esika, God of the Tree // The Prismatic Bridge
+cost={1}{G}{G}{W}{U}{B}{R}{G} | type=Legendary Creature — God // Legendary Enchantment | CI=BGRUW | produces=B,G,R,U,W | usd=$21.42
+Esika, God of the Tree: Vigilance {T}: Add one mana of any color. Other legendary creatures you control have vigilance and "{T}: Add one mana of any color." // The Prismatic Bridge: At the beginning of your upkeep, reveal cards from the top of your library until you reveal a creature or planeswalker card. Put that card onto the battlefield and the rest on the bottom of your library in a random order.
+
+## God-Eternal Bontu
+cost={3}{B}{B} | type=Legendary Creature — Zombie God | CI=B | produces=- | usd=$0.24
+Menace When God-Eternal Bontu enters, sacrifice any number of other permanents, then draw that many cards. When God-Eternal Bontu dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.
+
+## God-Eternal Kefnet
+cost={2}{U}{U} | type=Legendary Creature — Zombie God | CI=U | produces=- | usd=$2.88
+Flying You may reveal the first card you draw each turn as you draw it. Whenever you reveal an instant or sorcery card this way, copy that card and you may cast the copy. That copy costs {2} less to cast. When God-Eternal Kefnet dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.
+
+## God-Eternal Oketra
+cost={3}{W}{W} | type=Legendary Creature — Zombie God | CI=W | produces=- | usd=$1.92
+Double strike Whenever you cast a creature spell, create a 4/4 black Zombie Warrior creature token with vigilance. When God-Eternal Oketra dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.
+
+## God-Eternal Rhonas
+cost={3}{G}{G} | type=Legendary Creature — Zombie God | CI=G | produces=- | usd=$5.36
+Deathtouch When God-Eternal Rhonas enters, double the power of each other creature you control until end of turn. Those creatures gain vigilance until end of turn. When God-Eternal Rhonas dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.
+
+## Halvar, God of Battle // Sword of the Realms
+cost={2}{W}{W}{1}{W} | type=Legendary Creature — God // Legendary Artifact — Equipment | CI=W | produces=- | usd=$25.22
+Halvar, God of Battle: Creatures you control that are enchanted or equipped have double strike. At the beginning of each combat, you may attach target Aura or Equipment attached to a creature you control to target creature you control. // Sword of the Realms: Equipped creature gets +2/+0 and has vigilance. Whenever equipped creature dies, return it to its owner's hand. Equip {1}{W}
+
+## Havi, the All-Father
+cost={3}{R}{G}{W} | type=Legendary Creature — God Warrior | CI=GRW | produces=- | usd=$0.34
+Havi has indestructible as long as there are four or more historic cards in your graveyard. (Artifacts, legendaries, and Sagas are historic.) Sage Project — Whenever Havi or another legendary creature you control dies, return target legendary creature card with lesser mana value from your graveyard to the battlefield tapped.
+
+## Hazoret the Fervent
+cost={3}{R} | type=Legendary Creature — God | CI=R | produces=- | usd=$0.72
+Indestructible, haste Hazoret can't attack or block unless you have one or fewer cards in hand. {2}{R}, Discard a card: Hazoret deals 2 damage to each opponent.
+
+## Hazoret, Godseeker
+cost={1}{R} | type=Legendary Creature — God | CI=R | produces=- | usd=$0.59
+Indestructible, haste Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.) {1}, {T}: Target creature with power 2 or less can't be blocked this turn. Hazoret can't attack or block unless you have max speed.
+
+## Heliod, God of the Sun
+cost={3}{W} | type=Legendary Enchantment Creature — God | CI=W | produces=- | usd=$3.92
+Indestructible As long as your devotion to white is less than five, Heliod isn't a creature. (Each {W} in the mana costs of permanents you control counts toward your devotion to white.) Other creatures you control have vigilance. {2}{W}{W}: Create a 2/1 white Cleric enchantment creature token.
+
+## Heliod, Sun-Crowned
+cost={2}{W} | type=Legendary Enchantment Creature — God | CI=W | produces=- | usd=$20.68
+Indestructible As long as your devotion to white is less than five, Heliod isn't a creature. Whenever you gain life, put a +1/+1 counter on target creature or enchantment you control. {1}{W}: Another target creature gains lifelink until end of turn.
+
+## Heliod, the Radiant Dawn // Heliod, the Warped Eclipse
+cost={2}{W}{W} | type=Legendary Enchantment Creature — God // Legendary Enchantment Creature — Phyrexian God | CI=UW | produces=- | usd=$2.00
+Heliod, the Radiant Dawn: When Heliod enters, return target enchantment card that isn't a God from your graveyard to your hand. {3}{U/P}: Transform Heliod. Activate only as a sorcery. ({U/P} can be paid with either {U} or 2 life.) // Heliod, the Warped Eclipse: You may cast spells as though they had flash. Spells you cast cost {1} less to cast for each card your opponents have drawn this turn.
+
+## Ilharg, the Raze-Boar
+cost={3}{R}{R} | type=Legendary Creature — Boar God | CI=R | produces=- | usd=$11.00
+Trample Whenever Ilharg attacks, you may put a creature card from your hand onto the battlefield tapped and attacking. Return that creature to your hand at the beginning of the next end step. When Ilharg dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.
+
+## Inga and Esika
+cost={2}{G}{U} | type=Legendary Creature — Human God | CI=GU | produces=B,G,R,U,W | usd=$2.81
+Creatures you control have vigilance and "{T}: Add one mana of any color. Spend this mana only to cast a creature spell." Whenever you cast a creature spell, if three or more mana from creatures was spent to cast it, draw a card.
+
+## Invasion of Theros // Ephara, Ever-Sheltering
+cost={2}{W} | type=Battle — Siege // Legendary Enchantment Creature — God | CI=UW | produces=- | usd=$0.53
+Invasion of Theros: (As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.) When this Siege enters, search your library for an Aura, God, or Demigod card, reveal it, put it into your hand, then shuffle. // Ephara, Ever-Sheltering: Ephara has lifelink and indestructible as long as you control at least three other enchantments. Whenever another enchantment you control enters, draw a card.
+
+## Iroas, God of Victory
+cost={2}{R}{W} | type=Legendary Enchantment Creature — God | CI=RW | produces=- | usd=$12.05
+Indestructible As long as your devotion to red and white is less than seven, Iroas isn't a creature. Creatures you control have menace. Prevent all damage that would be dealt to attacking creatures you control.
+
+## Jorn, God of Winter // Kaldring, the Rimestaff
+cost={2}{G}{1}{U}{B} | type=Legendary Snow Creature — God // Legendary Snow Artifact | CI=BGU | produces=- | usd=$0.32
+Jorn, God of Winter: Whenever Jorn attacks, untap each snow permanent you control. // Kaldring, the Rimestaff: {T}: You may play target snow permanent card from your graveyard this turn. If you do, it enters tapped.
+
+## Karametra, God of Harvests
+cost={3}{G}{W} | type=Legendary Enchantment Creature — God | CI=GW | produces=- | usd=$5.14
+Indestructible As long as your devotion to green and white is less than seven, Karametra isn't a creature. Whenever you cast a creature spell, you may search your library for a Forest or Plains card, put it onto the battlefield tapped, then shuffle.
+
+## Kefnet the Mindful
+cost={2}{U} | type=Legendary Creature — God | CI=U | produces=- | usd=$0.46
+Flying, indestructible Kefnet can't attack or block unless you have seven or more cards in hand. {3}{U}: Draw a card, then you may return a land you control to its owner's hand.
+
+## Keranos, God of Storms
+cost={3}{U}{R} | type=Legendary Enchantment Creature — God | CI=RU | produces=- | usd=$11.64
+Indestructible As long as your devotion to blue and red is less than seven, Keranos isn't a creature. Reveal the first card you draw on each of your turns. Whenever you reveal a land card this way, draw a card. Whenever you reveal a nonland card this way, Keranos deals 3 damage to any target.
+
+## Ketramose, the New Dawn
+cost={1}{W}{B} | type=Legendary Creature — God | CI=BW | produces=- | usd=$3.56
+Menace, lifelink, indestructible Ketramose can't attack or block unless there are seven or more cards in exile. Whenever one or more cards are put into exile from graveyards and/or the battlefield during your turn, you draw a card and lose 1 life.
+
+## Kid Loki
+cost={U} | type=Legendary Creature — God Hero Villain | CI=U | produces=- | usd=$0.29
+Each creature you control that you've put one or more +1/+1 counters on this turn has hexproof. Whenever you draw your second card each turn, put a +1/+1 counter on Kid Loki.
+
+## Klothys, God of Destiny
+cost={1}{R}{G} | type=Legendary Enchantment Creature — God | CI=GR | produces=G,R | usd=$2.37
+Indestructible As long as your devotion to red and green is less than seven, Klothys isn't a creature. At the beginning of your first main phase, exile target card from a graveyard. If it was a land card, add {R} or {G}. Otherwise, you gain 2 life and Klothys deals 2 damage to each opponent.
+
+## Kolvori, God of Kinship // The Ringhart Crest
+cost={2}{G}{G}{1}{G} | type=Legendary Creature — God // Legendary Artifact | CI=G | produces=G | usd=$0.35
+Kolvori, God of Kinship: As long as you control three or more legendary creatures, Kolvori gets +4/+2 and has vigilance. {1}{G}, {T}: Look at the top six cards of your library. You may reveal a legendary creature card from among them and put it into your hand. Put the rest on the bottom of your library in a random order. // The Ringhart Crest: As The Ringhart Crest enters, choose a creature type. {T}: Add {G}. Spend this mana only to cast a creature spell of the chosen type or a legendary creature spell.
+
+## Kratos, God of War
+cost={R}{R}{R} | type=Legendary Creature — God Warrior | CI=R | produces=- | usd=$48.39
+Double strike All creatures have haste. At the beginning of each player's end step, Kratos deals damage to that player equal to the number of creatures that player controls that didn't attack this turn.
+
+## Kratos, Stoic Father
+cost={2}{R}{W} | type=Legendary Creature — God Warrior | CI=RW | produces=- | usd=$10.02
+Whenever you attack with one or more Gods and whenever a God dies, you get an experience counter. At the beginning of your end step, put a number of +1/+1 counters on target creature equal to the number of experience counters you have. Partner—Father & son (You can have two commanders if both have this ability.)
+
+## Kruphix, God of Horizons
+cost={3}{G}{U} | type=Legendary Enchantment Creature — God | CI=GU | produces=- | usd=$4.36
+Indestructible As long as your devotion to green and blue is less than seven, Kruphix isn't a creature. You have no maximum hand size. If you would lose unspent mana, that mana becomes colorless instead.
+
+## Lady Loki, Agent of Chaos
+cost={5}{R} | type=Legendary Creature — God Sorcerer Villain | CI=R | produces=- | usd=$0.31
+Whenever you cast your first instant, sorcery, or Villain spell each turn, exile it, then exile cards from the top of your library until you exile a nonland card. Lady Loki deals damage to each opponent equal to the difference between that spell's mana value and that nonland card's mana value. You may cast that card without paying its mana cost.
+
+## Loki Laufeyson
+cost={1}{R} | type=Legendary Creature — God Sorcerer Villain | CI=R | produces=- | usd=$0.30
+{1}, {T}: When you next cast an instant or sorcery spell with mana value less than or equal to Loki's power this turn, copy that spell. You may choose new targets for the copy. Power-up — {4}{R}: Put two +1/+1 counters on Loki. (Activate each power-up ability only once. Reduce the cost by his mana cost if he entered this turn.)
+
+## Loki, God of Lies
+cost={1}{R}{R} | type=Legendary Creature — God Sorcerer Villain | CI=R | produces=- | usd=$1.44
+Whenever you cast a spell that targets only a single creature, gain control of that creature until end of turn. If it's your turn, untap that creature and it gains haste until end of turn.
+
+## Loki, God of Mischief
+cost={1}{U} | type=Legendary Creature — God Sorcerer Villain | CI=U | produces=- | usd=$2.49
+Whenever a player or permanent becomes the target of an ability you control, draw a card. This ability triggers only once each turn.
+
+## Loki, Lord of Misrule
+cost={3}{U} | type=Legendary Creature — God Sorcerer Villain | CI=U | produces=- | usd=$35.01
+{U}, {T}: Choose target creature you control. Each creature you control other than the chosen creature becomes a copy of that creature until end of turn, except it isn't legendary. Activate only as a sorcery.
+
+## Loki, the Deceiver
+cost={1}{U}{B}{R} | type=Legendary Creature — God Sorcerer Villain | CI=BRU | produces=- | usd=$0.36
+Whenever Loki attacks, create a tapped and attacking token that's a copy of another target Villain you control, except it isn't legendary and it's an Illusion in addition to its other types. Sacrifice that token at the beginning of the next end step. Whenever one or more Villains you control deal combat damage to a player, draw a card.
+
+## Mogis, God of Slaughter
+cost={2}{B}{R} | type=Legendary Enchantment Creature — God | CI=BR | produces=- | usd=$5.45
+Indestructible As long as your devotion to black and red is less than seven, Mogis isn't a creature. At the beginning of each opponent's upkeep, Mogis deals 2 damage to that player unless they sacrifice a creature of their choice.
+
+## Myrkul, Lord of Bones
+cost={4}{W}{B}{G} | type=Legendary Creature — God | CI=BGW | produces=- | usd=$0.30
+As long as your life total is less than or equal to half your starting life total, Myrkul has indestructible. Whenever another nontoken creature you control dies, you may exile it. If you do, create a token that's a copy of that card, except it's an enchantment and loses all other card types.
+
+## Nylea, God of the Hunt
+cost={3}{G} | type=Legendary Enchantment Creature — God | CI=G | produces=- | usd=$9.76
+Indestructible As long as your devotion to green is less than five, Nylea isn't a creature. (Each {G} in the mana costs of permanents you control counts toward your devotion to green.) Other creatures you control have trample. {3}{G}: Target creature gets +2/+2 until end of turn.
+
+## Nylea, Keen-Eyed
+cost={3}{G} | type=Legendary Enchantment Creature — God | CI=G | produces=- | usd=$6.06
+Indestructible As long as your devotion to green is less than five, Nylea isn't a creature. Creature spells you cast cost {1} less to cast. {2}{G}: Reveal the top card of your library. If it's a creature card, put it into your hand. Otherwise, you may put it into your graveyard.
+
+## Ojer Axonil, Deepest Might // Temple of Power
+cost={2}{R}{R} | type=Legendary Creature — God // Land | CI=R | produces=R | usd=$21.14
+Ojer Axonil, Deepest Might: Trample If a red source you control would deal an amount of noncombat damage less than Ojer Axonil's power to an opponent, that source deals damage equal to Ojer Axonil's power instead. When Ojer Axonil dies, return it to the battlefield tapped and transformed under its owner's control. // Temple of Power: (Transforms from Ojer Axonil, Deepest Might.) {T}: Add {R}. {2}{R}, {T}: Transform this land. Activate only if red sources you controlled dealt 4 or more noncombat damage this turn and only as a sorcery.
+
+## Ojer Kaslem, Deepest Growth // Temple of Cultivation
+cost={3}{G}{G} | type=Legendary Creature — God // Land | CI=G | produces=G | usd=$7.25
+Ojer Kaslem, Deepest Growth: Trample Whenever Ojer Kaslem deals combat damage to a player, reveal that many cards from the top of your library. You may put a creature card and/or a land card from among them onto the battlefield. Put the rest on the bottom in a random order. When Ojer Kaslem dies, return it to the battlefield tapped and transformed under its owner's control. // Temple of Cultivation: (Transforms from Ojer Kaslem, Deepest Growth.) {T}: Add {G}. {2}{G}, {T}: Transform this land. Activate only if you control ten or more permanents and only as a sorcery.
+
+## Ojer Pakpatiq, Deepest Epoch // Temple of Cyclical Time
+cost={2}{U}{U} | type=Legendary Creature — God // Land | CI=U | produces=U | usd=$4.66
+Ojer Pakpatiq, Deepest Epoch: Flying Whenever you cast an instant spell from your hand, it gains rebound. (Exile it as it resolves. At the beginning of your next upkeep, you may cast it from exile without paying its mana cost.) When Ojer Pakpatiq dies, return it to the battlefield tapped and transformed under its owner's control with three time counters on it. // Temple of Cyclical Time: (Transforms from Ojer Pakpatiq, Deepest Epoch.) {T}: Add {U}. Remove a time counter from this land. {2}{U}, {T}: Transform this land. Activate only if it has no time counters on it and only as a sorcery.
+
+## Ojer Taq, Deepest Foundation // Temple of Civilization
+cost={4}{W}{W} | type=Legendary Creature — God // Land | CI=W | produces=W | usd=$29.11
+Ojer Taq, Deepest Foundation: Vigilance If one or more creature tokens would be created under your control, three times that many of those tokens are created instead. When Ojer Taq dies, return it to the battlefield tapped and transformed under its owner's control. // Temple of Civilization: (Transforms from Ojer Taq, Deepest Foundation.) {T}: Add {W}. {2}{W}, {T}: Transform this land. Activate only if you attacked with three or more creatures this turn and only as a sorcery.
+
+## Oketra the True
+cost={3}{W} | type=Legendary Creature — God | CI=W | produces=- | usd=$3.85
+Double strike, indestructible Oketra can't attack or block unless you control at least three other creatures. {3}{W}: Create a 1/1 white Warrior creature token with vigilance.
+
+## Pharika, God of Affliction
+cost={1}{B}{G} | type=Legendary Enchantment Creature — God | CI=BG | produces=- | usd=$4.23
+Indestructible As long as your devotion to black and green is less than seven, Pharika isn't a creature. {B}{G}: Exile target creature card from a graveyard. Its owner creates a 1/1 black and green Snake enchantment creature token with deathtouch.
+
+## Phenax, God of Deception
+cost={3}{U}{B} | type=Legendary Enchantment Creature — God | CI=BU | produces=- | usd=$16.43
+Indestructible As long as your devotion to blue and black is less than seven, Phenax isn't a creature. Creatures you control have "{T}: Target player mills X cards, where X is this creature's toughness."
+
+## Purphoros, Bronze-Blooded
+cost={4}{R} | type=Legendary Enchantment Creature — God | CI=R | produces=- | usd=$3.67
+Indestructible As long as your devotion to red is less than five, Purphoros isn't a creature. Other creatures you control have haste. {2}{R}: You may put a red creature card or an artifact creature card from your hand onto the battlefield. Sacrifice it at the beginning of the next end step.
+
+## Purphoros, God of the Forge
+cost={3}{R} | type=Legendary Enchantment Creature — God | CI=R | produces=- | usd=$29.86
+Indestructible As long as your devotion to red is less than five, Purphoros isn't a creature. Whenever another creature you control enters, Purphoros deals 2 damage to each opponent. {2}{R}: Creatures you control get +1/+0 until end of turn.
+
+## Reidane, God of the Worthy // Valkmira, Protector's Shield
+cost={2}{W}{3}{W} | type=Legendary Creature — God // Legendary Artifact | CI=W | produces=- | usd=$0.48
+Reidane, God of the Worthy: Flying, vigilance Snow lands your opponents control enter tapped. Noncreature spells your opponents cast with mana value 4 or greater cost {2} more to cast. // Valkmira, Protector's Shield: If a source an opponent controls would deal damage to you or a permanent you control, prevent 1 of that damage. Whenever you or another permanent you control becomes the target of a spell or ability an opponent controls, counter that spell or ability unless its controller pays {1}.
+
+## Rhonas the Indomitable
+cost={2}{G} | type=Legendary Creature — God | CI=G | produces=- | usd=$5.01
+Deathtouch, indestructible Rhonas can't attack or block unless you control another creature with power 4 or greater. {2}{G}: Another target creature gets +2/+0 and gains trample until end of turn.
+
+## Sab-Sunen, Luxa Embodied
+cost={3}{G}{U} | type=Legendary Creature — God | CI=GU | produces=- | usd=$2.34
+Reach, trample, indestructible Sab-Sunen can't attack or block unless it has an even number of counters on it. (Zero is even.) At the beginning of your first main phase, put a +1/+1 counter on Sab-Sunen. Then if it has an odd number of counters on it, draw two cards.
+
+## Sif's Spearmaster
+cost={2}{R} | type=Creature — God Warrior Hero | CI=R | produces=- | usd=$0.28
+{T}: This creature deals damage equal to its power to target opponent.
+
+## Surtr, Fiery Jötun
+cost={3}{R}{R} | type=Legendary Creature — Giant God Warrior | CI=R | produces=- | usd=$11.79
+Trample (This creature can deal excess combat damage to the player it's attacking.) Whenever you cast a historic spell, Surtr deals 3 damage to any target. (Artifacts, legendaries, and Sagas are historic.)
+
+## Svyelun of Sea and Sky
+cost={1}{U}{U} | type=Legendary Creature — Merfolk God | CI=U | produces=- | usd=$0.41
+Svyelun has indestructible as long as you control at least two other Merfolk. Whenever Svyelun attacks, draw a card. Other Merfolk you control have ward {1}. (Whenever another Merfolk you control becomes the target of a spell or ability an opponent controls, counter it unless that player pays {1}.)
+
+## Tergrid, God of Fright // Tergrid's Lantern
+cost={3}{B}{B}{3}{B} | type=Legendary Creature — God // Legendary Artifact | CI=B | produces=- | usd=$19.09
+Tergrid, God of Fright: Menace Whenever an opponent sacrifices a nontoken permanent or discards a permanent card, you may put that card from a graveyard onto the battlefield under your control. // Tergrid's Lantern: {T}: Target player loses 3 life unless they sacrifice a nonland permanent of their choice or discard a card. {3}{B}: Untap Tergrid's Lantern.
+
+## Thassa, Deep-Dwelling
+cost={3}{U} | type=Legendary Enchantment Creature — God | CI=U | produces=- | usd=$26.71
+Indestructible As long as your devotion to blue is less than five, Thassa isn't a creature. At the beginning of your end step, exile up to one other target creature you control, then return that card to the battlefield under your control. {3}{U}: Tap another target creature.
+
+## Thassa, God of the Sea
+cost={2}{U} | type=Legendary Enchantment Creature — God | CI=U | produces=- | usd=$3.72
+Indestructible As long as your devotion to blue is less than five, Thassa isn't a creature. (Each {U} in the mana costs of permanents you control counts toward your devotion to blue.) At the beginning of your upkeep, scry 1. {1}{U}: Target creature you control can't be blocked this turn.
+
+## The Ancient One
+cost={U}{B} | type=Legendary Creature — Spirit God | CI=BU | produces=- | usd=$2.05
+Descend 8 — The Ancient One can't attack or block unless there are eight or more permanent cards in your graveyard. {2}{U}{B}: Draw a card, then discard a card. When you discard a card this way, target player mills cards equal to its mana value.
+
+## The Capitoline Triad
+cost={10} | type=Legendary Creature — God Artificer | CI=- | produces=- | usd=$2.03
+Those Who Came Before — This spell costs {1} less to cast for each historic card in your graveyard. (Artifacts, legendaries, and Sagas are historic.) Exile any number of historic cards from your graveyard with total mana value 30 or greater: You get an emblem with "Creatures you control have base power and toughness 9/9."
+
+## The Locust God
+cost={4}{U}{R} | type=Legendary Creature — God | CI=RU | produces=- | usd=$7.28
+Flying Whenever you draw a card, create a 1/1 blue and red Insect creature token with flying and haste. {2}{U}{R}: Draw a card, then discard a card. When The Locust God dies, return it to its owner's hand at the beginning of the next end step.
+
+## The Mighty Thor, Jane Foster
+cost={1}{W}{U} | type=Legendary Creature — Human God Hero | CI=UW | produces=- | usd=$0.41
+Flying Whenever The Mighty Thor attacks, exile up to one target nontoken artifact or creature, then return that card to the battlefield tapped under its owner's control. Whenever an Equipment you control enters, draw a card.
+
+## The Scarab God
+cost={3}{U}{B} | type=Legendary Creature — God | CI=BU | produces=- | usd=$4.76
+At the beginning of your upkeep, each opponent loses X life and you scry X, where X is the number of Zombies you control. {2}{U}{B}: Exile target creature card from a graveyard. Create a token that's a copy of it, except it's a 4/4 black Zombie. When The Scarab God dies, return it to its owner's hand at the beginning of the next end step.
+
+## The Scorpion God
+cost={3}{B}{R} | type=Legendary Creature — God | CI=BR | produces=- | usd=$0.28
+Whenever a creature with a -1/-1 counter on it dies, draw a card. {1}{B}{R}: Put a -1/-1 counter on another target creature. When The Scorpion God dies, return it to its owner's hand at the beginning of the next end step.
+
+## The Warring Triad
+cost={3} | type=Legendary Artifact Creature — God | CI=- | produces=B,G,R,U,W | usd=$0.65
+Flying, trample, haste As long as there are fewer than eight cards in your graveyard, The Warring Triad isn't a creature. {T}, Mill a card: Target player adds one mana of any color. (Activate only as an instant.)
+
+## Thor Odinson
+cost={3}{R}{W} | type=Legendary Creature — God Warrior Hero | CI=RW | produces=- | usd=$0.25
+Flying, vigilance, prowess, prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn twice.)
+
+## Thor, Asgard's Avenger
+cost={2}{R}{R} | type=Legendary Creature — God Warrior Hero | CI=R | produces=- | usd=$0.34
+Flying If another source you control would deal damage to an opponent or a permanent an opponent controls, it deals that much damage plus 1 instead.
+
+## Thor, God of Thunder
+cost={3}{R}{R} | type=Legendary Creature — God Warrior Hero | CI=R | produces=- | usd=$11.72
+Flying When Thor enters, exile target Equipment, instant, or sorcery card from your graveyard. Until the end of your next turn, you may play that card. Whenever you cast a noncreature spell, Thor deals damage equal to that spell's mana value to any target.
+
+## Thor, Guardian of Midgard
+cost={3}{R}{R} | type=Legendary Creature — God Warrior Hero | CI=R | produces=- | usd=$2.88
+Flying Whenever a source you control deals noncombat damage to an opponent, you may exile that many cards from the top of your library. You may play those cards this turn.
+
+## Tiamat
+cost={2}{W}{U}{B}{R}{G} | type=Legendary Creature — Dragon God | CI=BGRUW | produces=- | usd=$23.26
+Flying When Tiamat enters, if you cast it, search your library for up to five Dragon cards not named Tiamat that each have different names, reveal them, put them into your hand, then shuffle.
+
+## Tom Bombadil
+cost={W}{U}{B}{R}{G} | type=Legendary Creature — God Bard | CI=BGRUW | produces=- | usd=$4.40
+As long as there are four or more lore counters among Sagas you control, Tom Bombadil has hexproof and indestructible. Whenever the final chapter ability of a Saga you control resolves, reveal cards from the top of your library until you reveal a Saga card. Put that card onto the battlefield and the rest on the bottom of your library in a random order. This ability triggers only once each turn.
+
+## Toralf, God of Fury // Toralf's Hammer
+cost={2}{R}{R}{1}{R} | type=Legendary Creature — God // Legendary Artifact — Equipment | CI=R | produces=- | usd=$5.26
+Toralf, God of Fury: Trample Whenever a creature or planeswalker an opponent controls is dealt excess noncombat damage, Toralf deals damage equal to the excess to any target other than that permanent. // Toralf's Hammer: Equipped creature has "{1}{R}, {T}, Unattach Toralf's Hammer: It deals 3 damage to any target. Return Toralf's Hammer to its owner's hand." Equipped creature gets +3/+0 as long as it's legendary. Equip {1}{R}
+
+## Ultima, Origin of Oblivion
+cost={5} | type=Legendary Creature — God | CI=- | produces=C | usd=$1.26
+Flying Whenever Ultima attacks, put a blight counter on target land. For as long as that land has a blight counter on it, it loses all land types and abilities and has "{T}: Add {C}." Whenever you tap a land for {C}, add an additional {C}.
+
+## Valki, God of Lies // Tibalt, Cosmic Impostor
+cost={1}{B}{5}{B}{R} | type=Legendary Creature — God // Legendary Planeswalker — Tibalt | CI=BR | produces=R | usd=$3.49
+Valki, God of Lies: When Valki enters, each opponent reveals their hand. For each opponent, exile a creature card they revealed this way until Valki leaves the battlefield. {X}: Choose a creature card exiled with Valki with mana value X. Valki becomes a copy of that card. // Tibalt, Cosmic Impostor: As Tibalt enters, you get an emblem with "You may play cards exiled with Tibalt, Cosmic Impostor, and you may spend mana as though it were mana of any color to cast those spells." +2: Exile the top card of each player's library. −3: Exile target artifact or creature. −8: Exile all graveyards. Add {R}{R}{R}.
+
+## Valkyrior Skyrider
+cost={4}{W} | type=Creature — God Warrior Hero | CI=W | produces=- | usd=$0.23
+Flying (This creature can't be blocked except by creatures with flying or reach.) When this creature enters, you gain 4 life.
+
+## Venat, Heart of Hydaelyn // Hydaelyn, the Mothercrystal
+cost={1}{W}{W} | type=Legendary Creature — Elder Wizard // Legendary Creature — God | CI=W | produces=- | usd=$1.80
+Venat, Heart of Hydaelyn: Whenever you cast a legendary spell, draw a card. This ability triggers only once each turn. Hero's Sundering — {7}, {T}: Exile target nonland permanent. Transform Venat. Activate only as a sorcery. // Hydaelyn, the Mothercrystal: Indestructible Blessing of Light — At the beginning of combat on your turn, put a +1/+1 counter on another target creature you control. Until your next turn, it gains indestructible. If that creature is legendary, draw a card.
+
+## Xenagos, God of Revels
+cost={3}{R}{G} | type=Legendary Enchantment Creature — God | CI=GR | produces=- | usd=$10.79
+Indestructible As long as your devotion to red and green is less than seven, Xenagos isn't a creature. At the beginning of combat on your turn, another target creature you control gains haste and gets +X/+X until end of turn, where X is that creature's power.
+
+## Zodiark, Umbral God
+cost={B}{B}{B}{B}{B} | type=Legendary Creature — God | CI=B | produces=- | usd=$0.82
+Indestructible When Zodiark enters, each player sacrifices half the non-God creatures they control of their choice, rounded down. Whenever a player sacrifices another creature, put a +1/+1 counter on Zodiark.
+
+## Herald's Horn
+cost={3} | type=Artifact | CI=- | produces=- | usd=$5.73
+As this artifact enters, choose a creature type. Creature spells you cast of the chosen type cost {1} less to cast. At the beginning of your upkeep, look at the top card of your library. If it's a creature card of the chosen type, you may reveal it and put it into your hand.
+
+## Vanquisher's Banner
+cost={5} | type=Artifact | CI=- | produces=- | usd=$5.27
+As this artifact enters, choose a creature type. Creatures you control of the chosen type get +1/+1. Whenever you cast a creature spell of the chosen type, draw a card.
+
+## Urza's Incubator
+cost={3} | type=Artifact | CI=- | produces=- | usd=$19.94
+As this artifact enters, choose a creature type. Creature spells of the chosen type cost {2} less to cast.
+
+## Icon of Ancestry
+cost={3} | type=Artifact | CI=- | produces=- | usd=$0.39
+As this artifact enters, choose a creature type. Creatures you control of the chosen type get +1/+1. {3}, {T}: Look at the top three cards of your library. You may reveal a creature card of the chosen type from among them and put it into your hand. Put the rest on the bottom of your library in a random order.
+
+## Kindred Discovery
+cost={3}{U}{U} | type=Enchantment | CI=U | produces=- | usd=$6.11
+As this enchantment enters, choose a creature type. Whenever a creature you control of the chosen type enters or attacks, draw a card.
+
+## Coat of Arms
+cost={5} | type=Artifact | CI=- | produces=- | usd=$20.11
+Each creature gets +1/+1 for each other creature on the battlefield that shares at least one creature type with it. (For example, if two Goblin Warriors and a Goblin Shaman are on the battlefield, each gets +2/+2.)
+
+## Path of Ancestry
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$?
+This land enters tapped. {T}: Add one mana of any color in your commander's color identity. When that mana is spent to cast a creature spell that shares a creature type with your commander, scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+
+## Cavern of Souls
+cost=- | type=Land | CI=- | produces=B,C,G,R,U,W | usd=$49.96
+As this land enters, choose a creature type. {T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast a creature spell of the chosen type, and that spell can't be countered.
+
+## Roaming Throne
+cost={4} | type=Artifact Creature — Golem | CI=- | produces=- | usd=$50.49
+Ward {2} As this creature enters, choose a creature type. This creature is the chosen type in addition to its other types. If a triggered ability of another creature you control of the chosen type triggers, it triggers an additional time.
+
+## Tyrite Sanctum
+cost=- | type=Land | CI=- | produces=C | usd=$2.69
+{T}: Add {C}. {2}, {T}: Target legendary creature becomes a God in addition to its other types. Put a +1/+1 counter on it. {4}, {T}, Sacrifice this land: Put an indestructible counter on target God.
+
+## Gods' Eye, Gate to the Reikai
+cost=- | type=Legendary Land | CI=- | produces=C | usd=$0.90
+{T}: Add {C}. When Gods' Eye is put into a graveyard from the battlefield, create a 1/1 colorless Spirit creature token.
+
+## Altar of the Pantheon
+cost={3} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.33
+Your devotion to each color and each combination of colors is increased by one. {T}: Add one mana of any color. If you control a God, a Demigod, or a legendary enchantment, you gain 1 life.
+
+## The World Tree
+cost=- | type=Land | CI=BGRUW | produces=B,G,R,U,W | usd=$6.48
+This land enters tapped. {T}: Add {G}. As long as you control six or more lands, lands you control have "{T}: Add one mana of any color." {W}{W}{U}{U}{B}{B}{R}{R}{G}{G}, {T}, Sacrifice this land: Search your library for any number of God cards, put them onto the battlefield, then shuffle.
+
+## Godsend
+cost={1}{W}{W} | type=Legendary Artifact — Equipment | CI=W | produces=- | usd=$3.04
+Equipped creature gets +3/+3. Whenever equipped creature blocks or becomes blocked by one or more creatures, you may exile one of those creatures. Your opponents can't cast spells with the same name as a card exiled with Godsend. Equip {3}
+
+## Maskwood Nexus
+cost={4} | type=Artifact | CI=- | produces=- | usd=$2.47
+Creatures you control are every creature type. The same is true for creature spells you control and creature cards you own that aren't on the battlefield. {3}, {T}: Create a 2/2 blue Shapeshifter creature token with changeling. (It is every creature type.)
+
+## Three Tree City
+cost=- | type=Legendary Land | CI=- | produces=B,C,G,R,U,W | usd=$28.08
+As Three Tree City enters, choose a creature type. {T}: Add {C}. {2}, {T}: Choose a color. Add an amount of mana of that color equal to the number of creatures you control of the chosen type.
+
+## Secluded Courtyard
+cost=- | type=Land | CI=- | produces=B,C,G,R,U,W | usd=$0.30
+As this land enters, choose a creature type. {T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast a creature spell of the chosen type or activate an ability of a creature source of the chosen type.
+
+## Unclaimed Territory
+cost=- | type=Land | CI=- | produces=B,C,G,R,U,W | usd=$0.28
+As this land enters, choose a creature type. {T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast a creature spell of the chosen type.
+
+## Time of Need
+cost={1}{G} | type=Sorcery | CI=G | produces=- | usd=$4.75
+Search your library for a legendary creature card, reveal it, put it into your hand, then shuffle.
+
+## Captain Sisay
+cost={2}{G}{W} | type=Legendary Creature — Human Soldier | CI=GW | produces=- | usd=$14.22
+{T}: Search your library for a legendary card, reveal that card, put it into your hand, then shuffle.
+
+## Reki, the History of Kamigawa
+cost={2}{G} | type=Legendary Creature — Human Shaman | CI=G | produces=- | usd=$16.44
+Whenever you cast a legendary spell, draw a card.
+
+## Yoshimaru, Ever Faithful
+cost={W} | type=Legendary Creature — Dog | CI=W | produces=- | usd=$8.26
+Whenever another legendary permanent you control enters, put a +1/+1 counter on Yoshimaru. Partner (You can have two commanders if both have partner.)
+
+## Kethis, the Hidden Hand
+cost={W}{B}{G} | type=Legendary Creature — Elf Advisor | CI=BGW | produces=- | usd=$3.62
+Legendary spells you cast cost {1} less to cast. Exile two legendary cards from your graveyard: Until end of turn, each legendary card in your graveyard gains "You may play this card from your graveyard."
+
+## Honor-Worn Shaku
+cost={3} | type=Artifact | CI=- | produces=C | usd=$0.43
+{T}: Add {C}. Tap an untapped legendary permanent you control: Untap this artifact.
+
+## Thran Temporal Gateway
+cost={4} | type=Legendary Artifact | CI=- | produces=- | usd=$0.51
+{4}, {T}: You may put a historic permanent card from your hand onto the battlefield. (Artifacts, legendaries, and Sagas are historic.)
+
+## Heroes' Podium
+cost={5} | type=Legendary Artifact | CI=- | produces=- | usd=$0.53
+Each legendary creature you control gets +1/+1 for each other legendary creature you control. {X}, {T}: Look at the top X cards of your library. You may reveal a legendary creature card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.
+
+## Day of Destiny
+cost={3}{W} | type=Legendary Enchantment | CI=W | produces=- | usd=$0.32
+Legendary creatures you control get +2/+2.
+
+## Konda's Banner
+cost={2} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$12.17
+Konda's Banner can be attached only to a legendary creature. Creatures that share a color with equipped creature get +1/+1. Creatures that share a creature type with equipped creature get +1/+1. Equip {2}
+
+## Blackblade Reforged
+cost={2} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$2.60
+Equipped creature gets +1/+1 for each land you control. Equip legendary creature {3} Equip {7}
+
+## Mirror Box
+cost={3} | type=Artifact | CI=- | produces=- | usd=$5.65
+The "legend rule" doesn't apply to permanents you control. Each legendary creature you control gets +1/+1. Each nontoken creature you control gets +1/+1 for each other creature you control with the same name as that creature.
+
+## Plaza of Heroes
+cost=- | type=Land | CI=- | produces=B,C,G,R,U,W | usd=$4.77
+{T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast a legendary spell. {T}: Add one mana of any color among legendary permanents you control. {3}, {T}, Exile this land: Target legendary creature gains hexproof and indestructible until end of turn.
+
+## Shadowspear
+cost={1} | type=Legendary Artifact — Equipment | CI=- | produces=- | usd=$35.47
+Equipped creature gets +1/+1 and has trample and lifelink. {1}: Permanents your opponents control lose hexproof and indestructible until end of turn. Equip {2}
+
+## Bard Class
+cost={R}{G} | type=Enchantment — Class | CI=GR | produces=- | usd=$0.95
+(Gain the next level as a sorcery to add its ability.) Legendary creatures you control enter with an additional +1/+1 counter on them. {R}{G}: Level 2 Legendary spells you cast cost {R}{G} less to cast. This effect reduces only the amount of colored mana you pay. {3}{R}{G}: Level 3 Whenever you cast a legendary spell, exile the top two cards of your library. You may play them this turn.
+
+## Mox Amber
+cost={0} | type=Legendary Artifact | CI=- | produces=B,G,R,U,W | usd=$86.31
+{T}: Add one mana of any color among legendary creatures and planeswalkers you control.
+
+## Tome of Legends
+cost={2} | type=Artifact — Book | CI=- | produces=- | usd=$0.32
+This artifact enters with a page counter on it. Whenever your commander enters or attacks, put a page counter on this artifact. {1}, {T}, Remove a page counter from this artifact: Draw a card.
+
+## Guardian Project
+cost={3}{G} | type=Enchantment | CI=G | produces=- | usd=$14.88
+Whenever a nontoken creature you control enters, if it doesn't have the same name as another creature you control or a creature card in your graveyard, draw a card.
+
+## Primevals' Glorious Rebirth
+cost={5}{W}{B} | type=Legendary Sorcery | CI=BW | produces=- | usd=$1.49
+(You may cast a legendary sorcery only if you control a legendary creature or planeswalker.) Return all legendary permanent cards from your graveyard to the battlefield.
+
+## Ratadrabik of Urborg
+cost={2}{W}{B} | type=Legendary Creature — Zombie Wizard | CI=BW | produces=- | usd=$2.07
+Vigilance, ward {2} Other Zombies you control have vigilance. Whenever another legendary creature you control dies, create a token that's a copy of that creature, except it's not legendary and it's a 2/2 black Zombie in addition to its other colors and types.
+
+## Arvad the Cursed
+cost={3}{W}{B} | type=Legendary Creature — Vampire Knight | CI=BW | produces=- | usd=$0.38
+Deathtouch, lifelink Other legendary creatures you control get +2/+2.
+
+## Jegantha, the Wellspring
+cost={4}{R/G} | type=Legendary Creature — Elemental Elk | CI=BGRUW | produces=B,G,R,U,W | usd=$0.31
+Companion — No card in your starting deck has more than one of the same mana symbol in its mana cost. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.) {T}: Add {W}{U}{B}{R}{G}. This mana can't be spent to pay generic mana costs.
+
+## Chromatic Lantern
+cost={3} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$?
+Lands you control have "{T}: Add one mana of any color." {T}: Add one mana of any color.
+
+## Prismatic Omen
+cost={1}{G} | type=Enchantment | CI=G | produces=- | usd=$6.73
+Lands you control are every basic land type in addition to their other types.
+
+## Dryad of the Ilysian Grove
+cost={2}{G} | type=Enchantment Creature — Nymph Dryad | CI=G | produces=- | usd=$11.05
+You may play an additional land on each of your turns. Lands you control are every basic land type in addition to their other types.
+
+## Bloom Tender
+cost={1}{G} | type=Creature — Elf Druid | CI=G | produces=B,G,R,U,W | usd=$13.35
+Vivid — {T}: For each color among permanents you control, add one mana of that color.
+
+## Faeburrow Elder
+cost={1}{G}{W} | type=Creature — Treefolk Druid | CI=GW | produces=B,G,R,U,W | usd=$0.40
+Vigilance This creature gets +1/+1 for each color among permanents you control. {T}: For each color among permanents you control, add one mana of that color.
+
+## Birds of Paradise
+cost={G} | type=Creature — Bird | CI=G | produces=B,G,R,U,W | usd=$9.45
+Flying {T}: Add one mana of any color.
+
+## Farseek
+cost={1}{G} | type=Sorcery | CI=G | produces=- | usd=$0.43
+Search your library for a Plains, Island, Swamp, or Mountain card, put it onto the battlefield tapped, then shuffle.
+
+## Nature's Lore
+cost={1}{G} | type=Sorcery | CI=G | produces=- | usd=$2.98
+Search your library for a Forest card, put that card onto the battlefield, then shuffle.
+
+## Three Visits
+cost={1}{G} | type=Sorcery | CI=G | produces=- | usd=$5.56
+Search your library for a Forest card, put it onto the battlefield, then shuffle.
+
+## Kodama's Reach
+cost={2}{G} | type=Sorcery — Arcane | CI=G | produces=- | usd=$1.65
+Search your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.
+
+## Cultivate
+cost={2}{G} | type=Sorcery | CI=G | produces=- | usd=$0.37
+Search your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.
+
+## Skyshroud Claim
+cost={3}{G} | type=Sorcery | CI=G | produces=- | usd=$1.09
+Search your library for up to two Forest cards, put them onto the battlefield, then shuffle.
+
+## Arcane Signet
+cost={2} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.51
+{T}: Add one mana of any color in your commander's color identity.
+
+## Sol Ring
+cost={1} | type=Artifact | CI=- | produces=C | usd=$1.48
+{T}: Add {C}{C}.
+
+## Fellwar Stone
+cost={2} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$?
+{T}: Add one mana of any color that a land an opponent controls could produce.
+
+## Commander's Sphere
+cost={3} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$0.36
+{T}: Add one mana of any color in your commander's color identity. Sacrifice this artifact: Draw a card.
+
+## Cascading Cataracts
+cost=- | type=Land | CI=- | produces=B,C,G,R,U,W | usd=$2.03
+Indestructible {T}: Add {C}. {5}, {T}: Add five mana in any combination of colors.
+
+## Exotic Orchard
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$?
+{T}: Add one mana of any color that a land an opponent controls could produce.
+
+## Reflecting Pool
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$15.66
+{T}: Add one mana of any type that a land you control could produce.
+
+## Mana Confluence
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$34.68
+{T}, Pay 1 life: Add one mana of any color.
+
+## City of Brass
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$11.88
+Whenever this land becomes tapped, it deals 1 damage to you. {T}: Add one mana of any color.
+
+## Command Tower
+cost=- | type=Land | CI=- | produces=B,G,R,U,W | usd=$0.32
+{T}: Add one mana of any color in your commander's color identity.
+
+## Spara's Headquarters
+cost=- | type=Land — Forest Plains Island | CI=GUW | produces=G,U,W | usd=$13.67
+({T}: Add {G}, {W}, or {U}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Raffine's Tower
+cost=- | type=Land — Plains Island Swamp | CI=BUW | produces=B,U,W | usd=$12.75
+({T}: Add {W}, {U}, or {B}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Xander's Lounge
+cost=- | type=Land — Island Swamp Mountain | CI=BRU | produces=B,R,U | usd=$13.47
+({T}: Add {U}, {B}, or {R}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Ziatora's Proving Ground
+cost=- | type=Land — Swamp Mountain Forest | CI=BGR | produces=B,G,R | usd=$9.96
+({T}: Add {B}, {R}, or {G}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Jetmir's Garden
+cost=- | type=Land — Mountain Forest Plains | CI=GRW | produces=G,R,W | usd=$16.69
+({T}: Add {R}, {G}, or {W}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Indatha Triome
+cost=- | type=Land — Plains Swamp Forest | CI=BGW | produces=B,G,W | usd=$19.05
+({T}: Add {W}, {B}, or {G}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Ketria Triome
+cost=- | type=Land — Forest Island Mountain | CI=GRU | produces=G,R,U | usd=$18.50
+({T}: Add {G}, {U}, or {R}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Raugrin Triome
+cost=- | type=Land — Island Mountain Plains | CI=RUW | produces=R,U,W | usd=$15.06
+({T}: Add {U}, {R}, or {W}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Savai Triome
+cost=- | type=Land — Mountain Plains Swamp | CI=BRW | produces=B,R,W | usd=$18.15
+({T}: Add {R}, {W}, or {B}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Zagoth Triome
+cost=- | type=Land — Swamp Forest Island | CI=BGU | produces=B,G,U | usd=$23.37
+({T}: Add {B}, {G}, or {U}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+
+## Swords to Plowshares
+cost={W} | type=Instant | CI=W | produces=- | usd=$1.45
+Exile target creature. Its controller gains life equal to its power.
+
+## Path to Exile
+cost={W} | type=Instant | CI=W | produces=- | usd=$1.33
+Exile target creature. Its controller may search their library for a basic land card, put that card onto the battlefield tapped, then shuffle.
+
+## Generous Gift
+cost={2}{W} | type=Instant | CI=W | produces=- | usd=$0.87
+Destroy target permanent. Its controller creates a 3/3 green Elephant creature token.
+
+## Beast Within
+cost={2}{G} | type=Instant | CI=G | produces=- | usd=$0.60
+Destroy target permanent. Its controller creates a 3/3 green Beast creature token.
+
+## Anguished Unmaking
+cost={1}{W}{B} | type=Instant | CI=BW | produces=- | usd=$1.26
+Exile target nonland permanent. You lose 3 life.
+
+## Assassin's Trophy
+cost={B}{G} | type=Instant | CI=BG | produces=- | usd=$0.83
+Destroy target permanent an opponent controls. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle.
+
+## Counterspell
+cost={U}{U} | type=Instant | CI=U | produces=- | usd=$3.16
+Counter target spell.
+
+## Wrath of God
+cost={2}{W}{W} | type=Sorcery | CI=W | produces=- | usd=$4.08
+Destroy all creatures. They can't be regenerated.
+
+## Austere Command
+cost={4}{W}{W} | type=Sorcery | CI=W | produces=- | usd=$0.30
+Choose two — • Destroy all artifacts. • Destroy all enchantments. • Destroy all creatures with mana value 3 or less. • Destroy all creatures with mana value 4 or greater.
+
+## Heroic Intervention
+cost={1}{G} | type=Instant | CI=G | produces=- | usd=$16.04
+Permanents you control gain hexproof and indestructible until end of turn.
+
+## Flawless Maneuver
+cost={2}{W} | type=Instant | CI=W | produces=- | usd=$21.21
+If you control a commander, you may cast this spell without paying its mana cost. Creatures you control gain indestructible until end of turn.
+
+## Akroma's Will
+cost={3}{W} | type=Instant | CI=W | produces=- | usd=$14.24
+Choose one. If you control a commander as you cast this spell, you may choose both instead. • Creatures you control gain flying, vigilance, and double strike until end of turn. • Creatures you control gain lifelink, indestructible, and protection from each color until end of turn.
+
+## Boros Charm
+cost={R}{W} | type=Instant | CI=RW | produces=- | usd=$?
+Choose one — • Boros Charm deals 4 damage to target player or planeswalker. • Permanents you control gain indestructible until end of turn. • Target creature gains double strike until end of turn.
+
+## Rhystic Study
+cost={2}{U} | type=Enchantment | CI=U | produces=- | usd=$71.67
+Whenever an opponent casts a spell, you may draw a card unless that player pays {1}.
+
+## Beast Whisperer
+cost={2}{G}{G} | type=Creature — Elf Druid | CI=G | produces=- | usd=$8.80
+Whenever you cast a creature spell, draw a card.
+
+## The Immortal Sun
+cost={6} | type=Legendary Artifact | CI=- | produces=- | usd=$13.62
+Players can't activate planeswalkers' loyalty abilities. At the beginning of your draw step, draw an additional card. Spells you cast cost {1} less to cast. Creatures you control get +1/+1.
+
+## Sisay, Weatherlight Captain
+cost={2}{W} | type=Legendary Creature — Human Soldier | CI=BGRUW | produces=- | usd=$2.73
+Sisay gets +1/+1 for each color among other legendary permanents you control. {W}{U}{B}{R}{G}: Search your library for a legendary permanent card with mana value less than Sisay's power, put that card onto the battlefield, then shuffle.
+
+## Plains
+cost=- | type=Basic Land — Plains | CI=W | produces=W | usd=$?
+({T}: Add {W}.)
+
+## Island
+cost=- | type=Basic Land — Island | CI=U | produces=U | usd=$?
+({T}: Add {U}.)
+
+## Swamp
+cost=- | type=Basic Land — Swamp | CI=B | produces=B | usd=$?
+({T}: Add {B}.)
+
+## Mountain
+cost=- | type=Basic Land — Mountain | CI=R | produces=R | usd=$?
+({T}: Add {R}.)
+
+## Forest
+cost=- | type=Basic Land — Forest | CI=G | produces=G | usd=$?
+({T}: Add {G}.)
+
+## Jodah, the Unifier
+cost={W}{U}{B}{R}{G} | type=Legendary Creature — Human Wizard | CI=BGRUW | produces=- | usd=$3.43
+Legendary creatures you control get +X/+X, where X is the number of legendary creatures you control. Whenever you cast a legendary spell from your hand, exile cards from the top of your library until you exile a legendary nonland card with lesser mana value. You may cast that card without paying its mana cost. Put the rest on the bottom of your library in a random order.
+
+## Morophon, the Boundless
+cost={7} | type=Legendary Creature — Shapeshifter | CI=BGRUW | produces=- | usd=$8.58
+Changeling (This card is every creature type.) As Morophon enters, choose a creature type. Spells of the chosen type you cast cost {W}{U}{B}{R}{G} less to cast. This effect reduces only the amount of colored mana you pay. Other creatures you control of the chosen type get +1/+1.
+
+## Minamo, School at Water's Edge
+cost=- | type=Legendary Land | CI=U | produces=U | usd=$59.66
+{T}: Add {U}. {U}, {T}: Untap target legendary permanent.
+
+## Hallowed Fountain
+cost=- | type=Land — Plains Island | CI=UW | produces=U,W | usd=$?
+({T}: Add {W} or {U}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## Steam Vents
+cost=- | type=Land — Island Mountain | CI=RU | produces=R,U | usd=$?
+({T}: Add {U} or {R}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## Sacred Foundry
+cost=- | type=Land — Mountain Plains | CI=RW | produces=R,W | usd=$?
+({T}: Add {R} or {W}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+
+## Adarkar Wastes
+cost=- | type=Land | CI=UW | produces=C,U,W | usd=$0.35
+{T}: Add {C}. {T}: Add {W} or {U}. This land deals 1 damage to you.
+
+## Shivan Reef
+cost=- | type=Land | CI=RU | produces=C,R,U | usd=$0.27
+{T}: Add {C}. {T}: Add {U} or {R}. This land deals 1 damage to you.
+
+## Battlefield Forge
+cost=- | type=Land | CI=RW | produces=C,R,W | usd=$0.30
+{T}: Add {C}. {T}: Add {R} or {W}. This land deals 1 damage to you.
+
+## Seachrome Coast
+cost=- | type=Land | CI=UW | produces=U,W | usd=$0.49
+This land enters tapped unless you control two or fewer other lands. {T}: Add {W} or {U}.
+
+## Spirebluff Canal
+cost=- | type=Land | CI=RU | produces=R,U | usd=$5.33
+This land enters tapped unless you control two or fewer other lands. {T}: Add {U} or {R}.
+
+## Inspiring Vantage
+cost=- | type=Land | CI=RW | produces=R,W | usd=$2.02
+This land enters tapped unless you control two or fewer other lands. {T}: Add {R} or {W}.
+
+## Deserted Beach
+cost=- | type=Land | CI=UW | produces=U,W | usd=$5.90
+This land enters tapped unless you control two or more other lands. {T}: Add {W} or {U}.
+
+## Stormcarved Coast
+cost=- | type=Land | CI=RU | produces=R,U | usd=$2.41
+This land enters tapped unless you control two or more other lands. {T}: Add {U} or {R}.
+
+## Sundown Pass
+cost=- | type=Land | CI=RW | produces=R,W | usd=$2.78
+This land enters tapped unless you control two or more other lands. {T}: Add {R} or {W}.
+
+## Mystic Monastery
+cost=- | type=Land | CI=RUW | produces=R,U,W | usd=$0.26
+This land enters tapped. {T}: Add {U}, {R}, or {W}.
+
+## Talisman of Progress
+cost={2} | type=Artifact | CI=UW | produces=C,U,W | usd=$0.40
+{T}: Add {C}. {T}: Add {W} or {U}. This artifact deals 1 damage to you.
+
+## Talisman of Creativity
+cost={2} | type=Artifact | CI=RU | produces=C,R,U | usd=$1.68
+{T}: Add {C}. {T}: Add {U} or {R}. This artifact deals 1 damage to you.
+
+## Talisman of Conviction
+cost={2} | type=Artifact | CI=RW | produces=C,R,W | usd=$0.37
+{T}: Add {C}. {T}: Add {R} or {W}. This artifact deals 1 damage to you.
+
+## Azorius Signet
+cost={2} | type=Artifact | CI=UW | produces=U,W | usd=$0.29
+{1}, {T}: Add {W}{U}.
+
+## Izzet Signet
+cost={2} | type=Artifact | CI=RU | produces=R,U | usd=$0.44
+{1}, {T}: Add {U}{R}.
+
+## Boros Signet
+cost={2} | type=Artifact | CI=RW | produces=R,W | usd=$0.61
+{1}, {T}: Add {R}{W}.
+
+## Thousand-Year Elixir
+cost={3} | type=Artifact | CI=- | produces=- | usd=$14.77
+You may activate abilities of creatures you control as though those creatures had haste. {1}, {T}: Untap target creature.
+
+## Magewright's Stone
+cost={2} | type=Artifact | CI=- | produces=- | usd=$10.91
+{1}, {T}: Untap target creature that has an activated ability with {T} in its cost.
+
+## Unstoppable Plan
+cost={2}{U} | type=Enchantment | CI=U | produces=- | usd=$2.51
+At the beginning of your end step, untap all nonland permanents you control.
+
+## Staff of Domination
+cost={3} | type=Artifact | CI=- | produces=- | usd=$10.88
+{1}: Untap this artifact. {2}, {T}: You gain 1 life. {3}, {T}: Untap target creature. {4}, {T}: Tap target creature. {5}, {T}: Draw a card.
+
+## Vizier of Tumbling Sands
+cost={2}{U} | type=Creature — Human Cleric | CI=U | produces=- | usd=$0.18
+{T}: Untap another target permanent. Cycling {1}{U} ({1}{U}, Discard this card: Draw a card.) When you cycle this card, untap target permanent.
+
+## Kelpie Guide
+cost={2}{U} | type=Creature — Beast | CI=U | produces=- | usd=$0.35
+{T}: Untap another target permanent you control. {T}: Tap target permanent. Activate only if you control eight or more lands.
+
+## Chaos Warp
+cost={2}{R} | type=Instant | CI=R | produces=- | usd=$?
+The owner of target permanent shuffles it into their library, then reveals the top card of their library. If it's a permanent card, they put it onto the battlefield.

@@ -1,15 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { getDeckSession } from "~/server/deck-agent/manager";
-import { isValidSlug } from "~/lib/deck/slug";
-import type { WireEvent } from "~/lib/deck/chat-events";
+import { randomUUID } from "node:crypto";
+import { getDeckSession } from "~/builder/server/agent/manager";
+import { subscribeDeck } from "~/builder/server/watcher";
+import { sseResponse } from "~/builder/server/sse";
+import type { WireEvent } from "~/builder/chat/events";
 
-/** SSE stream of the deck session's transcript. First frame is a `hello` replay of the full
- *  history so a refreshed tab (or a reconnecting EventSource) rebuilds its state. */
+/** SSE stream of the deck session's transcript plus `deck-changed` pings from the file watcher.
+ *  First frame is a `hello` replay of the full history so a refreshed tab rebuilds its state. */
 export const Route = createFileRoute("/api/decks/$slug/stream")({
   server: {
     handlers: {
       GET: async ({ params }) => {
-        if (!isValidSlug(params.slug)) {
+        if (!/^[a-z0-9-]+$/.test(params.slug)) {
           return new Response("bad slug", { status: 400 });
         }
         const session = await getDeckSession(params.slug);
@@ -27,7 +29,8 @@ export const Route = createFileRoute("/api/decks/$slug/stream")({
             };
 
             send({ kind: "hello", events: session.history() });
-            const unsubscribe = session.subscribe(send);
+            const unsubscribeChat = session.subscribe(send);
+            const unsubscribeDeck = subscribeDeck(params.slug, () => send({ kind: "deck-changed", id: randomUUID() }));
             const ping = setInterval(() => {
               try {
                 controller.enqueue(enc.encode(": ping\n\n"));
@@ -36,7 +39,8 @@ export const Route = createFileRoute("/api/decks/$slug/stream")({
               }
             }, 15000);
             cleanup = () => {
-              unsubscribe();
+              unsubscribeChat();
+              unsubscribeDeck();
               clearInterval(ping);
             };
           },
@@ -45,13 +49,7 @@ export const Route = createFileRoute("/api/decks/$slug/stream")({
           },
         });
 
-        return new Response(stream, {
-          headers: {
-            "Content-Type": "text/event-stream",
-            "Cache-Control": "no-cache",
-            Connection: "keep-alive",
-          },
-        });
+        return sseResponse(stream);
       },
     },
   },

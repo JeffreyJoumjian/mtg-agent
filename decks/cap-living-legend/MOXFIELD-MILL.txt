@@ -1,0 +1,77 @@
+1 Captain America, Living Legend (MSH) 210
+1 Academy Ruins (PLST) 2XM-309
+1 Adarkar Wastes (DMU) 243
+1 Adept Watershaper
+1 An Offer You Can't Refuse (SNC) 51
+1 Arcane Signet (MSC) 191
+1 Azor's Elocutors
+1 Brainstorm
+1 Bruvac the Grandiloquent
+1 Cathartic Adept
+1 Clever Concealment (MSC) 125
+1 Command Tower (MSC) 233
+1 Counterspell (MAR) 52
+1 Deserted Beach (FRA) 176
+1 Dig Through Time
+1 Dovin's Veto (WAR) 193
+1 Dusk
+1 Emry, Lurker of the Loch (ELD) 43
+1 Fact or Fiction
+1 Flawless Maneuver
+1 Flooded Strand (KTK) 233
+1 Floodfarm Verge (DSK) 259
+1 Fraying Sanity
+1 Generous Gift (MSC) 133
+1 Ghostly Prison
+1 Glacial Fortress (XLN) 255
+1 Grand Arbiter Augustin IV
+1 Guardian of Faith
+1 Hallowed Fountain (TRK) 286
+1 Increasing Confusion
+1 Ioreth of the Healing House
+12 Island (THB) 251
+1 Jace, Vryn's Prodigy
+1 Jace, Wielder of Mysteries
+1 Jacob Hauken, Inspector
+1 Laboratory Maniac
+1 Ledger Shredder
+1 Maddening Cacophony
+1 March of Otherworldly Light (NEO) 28
+1 Masako the Humorless
+1 Mavinda, Students' Advocate
+1 Mesmeric Orb
+1 Minamo, School at Water's Edge (CHK) 279
+1 Mind Stone (WHO) 244
+1 Mystic Gate (CMM) 1013
+1 Mystic Remora
+1 Mystic Sanctuary
+1 Omen Hawker
+1 Opposition
+1 Otawara, Soaring City (NEO) 271
+1 Path to Exile (MAR) 47
+8 Persistent Petitioners
+6 Plains (THB) 250
+1 Ponder
+1 Prairie Stream (BFZ) 241
+1 Preordain
+1 Prismatic Vista (MH1) 244
+1 Propaganda
+1 Raise the Past
+1 Return to the Ranks
+1 Rhystic Study
+1 Sea of Clouds (PLST) BBD-84
+1 Seachrome Coast (ONE) 258
+1 Sol Ring (SLD) 1734
+1 Springleaf Drum
+1 Stitcher Geralf
+1 Swan Song
+1 Swords to Plowshares (PMEI) 2026-4
+1 Talisman of Progress
+1 Thassa's Oracle
+1 The Water Crystal
+1 Traumatize
+1 Tundra (OLGC) 2015
+1 Urianger Augurelt
+1 Vantress Gargoyle
+1 Winds of Abandon (PLST) MH1-37
+1 Zellix, Sanity Flayer

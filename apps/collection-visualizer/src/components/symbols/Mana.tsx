@@ -49,6 +49,16 @@ function Pip(props: { token: string; size: string }) {
 /** Official mana pip SVGs (colored circle + glyph), bundled at build time via Vite `?raw`. */
 const SVG: Record<ColorSymbol, string> = { W: wSvg, U: uSvg, B: bSvg, R: rSvg, G: gSvg };
 
+/** The circle fill of each bundled pip, for charts that colour a bar by its mana colour. A test
+ *  keeps these in step with `src/assets/mana/*.svg`. */
+export const MANA_COLORS: Record<ColorSymbol, string> = {
+  W: "#F8F6D8",
+  U: "#C1D7E9",
+  B: "#CAC5C0",
+  R: "#E49977",
+  G: "#A3C095",
+};
+
 interface ManaSymbolProps {
   sym: ColorSymbol;
   className?: string;

@@ -1,0 +1,883 @@
+$ bun run scripts/edhrec.ts commander "Ultron, Artificial Malevolence" --all
+EDHREC: Ultron, Artificial Malevolence — 4,447 decks · rank #638
+https://edhrec.com/commanders/ultron-artificial-malevolence
+Themes: Artifacts (291) · Tokens (115) · Clones (83) · Combo (63) · Affinity (37) · Ramp (33) · Robots (25) · Historic (24) · +1/+1 Counters (20) · Spell Copy (17) · Tron (16) · Equipment (12) · +56 more
+
+New Cards:  (synergy · inclusion)
+   +0.01    2%  Bag End Banquet                         
+   -0.00    2%  Crystalline Entity                      
+   -0.00    2%  Darksteel Angel                         
+   +0.01    1%  Giant's Boulder                         
+   +0.01    1%  The Everforger                          
+
+High Synergy Cards:  (synergy · inclusion)
+   +0.53   59%  Idol of Oblivion                        
+   +0.51   67%  Krang, Utrom Warlord                    
+   +0.49   61%  Cybermen Squadron                       
+   +0.49   80%  Cloud Key                               
+   +0.45   53%  Cyberman Patrol                         
+   +0.42   54%  Iron Spider, Stark Upgrade              
+   +0.41   59%  Cryptothrall                            
+   +0.40   68%  Steel Overseer                          
+   +0.39   55%  Karn, Legacy Reforged                   
+   +0.39   89%  Foundry Inspector                       
+
+Top Cards:  (synergy · inclusion)
+   -0.00   88%  Forsaken Monument                       
+   -0.05   81%  All Is Dust                             
+   +0.03   77%  Mystic Forge                            
+   +0.10   75%  Echoes of Eternity                      
+   +0.07   71%  Null Elemental Blast                    
+   +0.26   67%  Unwinding Clock                         
+   -0.03   66%  Palladium Myr                           
+   +0.33   66%  Sculpting Steel                         
+   +0.30   66%  Jhoira's Familiar                       
+   +0.37   62%  Myr Retriever                           
+
+Game Changers:  (synergy · inclusion)
+   +0.07   36%  The One Ring                            
+   -0.02   32%  Ancient Tomb                            
+   -0.03   22%  Mana Vault                              
+   +0.06   18%  Mishra's Workshop                       
+   -0.02   11%  Grim Monolith                           
+   -0.04    6%  Field of the Dead                       
+
+Creatures:  (synergy · inclusion)
+   +0.33   59%  Scrap Trawler                           
+   -0.01   59%  Glaring Fleshraker                      
+   +0.12   58%  Liberator, Urza's Battlethopter         
+   +0.06   57%  Solemn Simulacrum                       
+   +0.25   47%  Shimmer Myr                             
+   +0.27   44%  Wurmcoil Engine                         
+   +0.33   44%  Chrome Dome                             
+   +0.27   44%  Mycosynth Golem                         
+   +0.19   42%  Blightsteel Colossus                    
+   +0.26   40%  Junk Diver                              
+   +0.09   40%  Meteor Golem                            
+   -0.02   40%  Ultima, Origin of Oblivion              
+   +0.29   39%  The Vision                              
+   +0.22   38%  Kuldotha Forgemaster                    
+   +0.30   38%  Ultron, Machine Overlord                
+   +0.22   37%  Roaming Throne                          
+   +0.15   34%  Myr Battlesphere                        
+   +0.21   33%  Chief of the Foundry                    
+   +0.21   33%  Canoptek Spyder                         
+   +0.01   29%  Metalwork Colossus                      
+   +0.10   29%  Walking Ballista                        
+   +0.18   28%  Big Mother Mouser                       
+   -0.04   26%  Ornithopter of Paradise                 
+   +0.07   25%  Metalworker                             
+   +0.14   23%  Scrawling Crawler                       
+   +0.13   22%  Lodestone Golem                         
+   +0.05   22%  Cityscape Leveler                       
+   +0.19   22%  Stridehangar Automaton                  
+   +0.10   21%  Darksteel Colossus                      
+   +0.03   20%  Zenith Chronicler                       
+   +0.11   19%  Panther Robot                           
+   +0.03   18%  Platinum Angel                          
+   +0.01   16%  Threefold Thunderhulk                   
+   +0.05   16%  The Walls of Ba Sing Se                 
+   +0.10   15%  H.E.R.B.I.E. Scout Unit                 
+   +0.11   15%  Ultron Drone                            
+   -0.07   14%  Hedron Crawler                          
+   +0.05   13%  Darksteel Juggernaut                    
+   -0.06   12%  Crashing Drawbridge                     
+   -0.17   12%  Wandering Archaic                       
+   -0.07   12%  Steel Hellkite                          
+   +0.04   12%  Triplicate Titan                        
+   +0.05   11%  Marvin, Murderous Mimic                 
+   -0.26   10%  Skittering Cicada                       
+   -0.01   10%  Duplicant                               
+   -0.16   10%  Burnished Hart                          
+   -0.11    9%  Stonecoil Serpent                       
+   +0.03    9%  Automated Artificer                     
+   -0.06    9%  Manakin                                 
+   -0.02    8%  Molecule Man                            
+
+Instants:  (synergy · inclusion)
+   +0.10   56%  Eldritch Immunity                       
+   -0.06   52%  Warping Wail                            
+   -0.07   34%  Kozilek's Command                       
+   -0.06   21%  Eldrazi Confluence                      
+   -0.24   19%  Titan's Presence                        
+   +0.03   18%  Zuko's Exile                            
+   -0.22   16%  Desecrate Reality                       
+   -0.08   11%  Spatial Contortion                      
+   -0.36    9%  Not of This World                       
+   -0.13    8%  Scour from Existence                    
+
+Sorceries:  (synergy · inclusion)
+   +0.11   40%  Selective Obliteration                  
+   -0.19   23%  Rise of the Eldrazi                     
+   -0.07    9%  Introduction to Annihilation            
+   -0.22    9%  Calamity of the Titans                  
+   -0.02    8%  Environmental Sciences                  
+   -0.05    7%  Introduction to Prophecy                
+   -0.05    7%  Gruesome Slaughter                      
+
+Utility Artifacts:  (synergy · inclusion)
+   +0.03   54%  Lightning Greaves                       
+   +0.22   50%  Chimil, the Inner Sun                   
+   +0.23   46%  Darksteel Forge                         
+   +0.30   45%  Semblance Anvil                         
+   +0.19   44%  Portal to Phyrexia                      
+   +0.19   43%  The Ten Rings                           
+   +0.07   41%  Manifold Key                            
+   +0.30   41%  Krark-Clan Ironworks                    
+   +0.06   40%  Commander's Plate                       
+   +0.35   39%  Panharmonicon                           
+   +0.08   37%  Mind's Eye                              
+   +0.07   35%  Sensei's Divining Top                   
+   +0.10   34%  Voltaic Key                             
+   -0.15   32%  Darksteel Monolith                      
+   -0.05   31%  Swiftfoot Boots                         
+   +0.22   30%  Ashnod's Altar                          
+   +0.17   28%  Cosmic Cube                             
+   -0.10   26%  Expedition Map                          
+   +0.11   26%  Clock of Omens                          
+   +0.15   24%  Mirrorworks                             
+   +0.20   24%  Ichor Wellspring                        
+   -0.01   20%  Moonsilver Key                          
+   +0.13   19%  Adaptive Omnitool                       
+   +0.13   19%  Aetherflux Reservoir                    
+   +0.05   19%  The Endstone                            
+   +0.02   19%  Rings of Brighthearth                   
+   +0.06   17%  Nettlecyst                              
+   -0.07   17%  Mirage Mirror                           
+   -0.04   15%  Akroma's Memorial                       
+   +0.09   14%  Skullclamp                              
+   +0.02   14%  Staff of Domination                     
+   +0.12   13%  Mirror Box                              
+   +0.01   13%  The Immortal Sun                        
+   +0.04   12%  Spine of Ish Sah                        
+   +0.10   12%  Conjurer's Closet                       
+   +0.09   11%  Thousand-Year Elixir                    
+   +0.01   11%  Helm of the Host                        
+   +0.04   10%  Mycosynth Lattice                       
+   +0.09   10%  Banner of Kinship                       
+   +0.06   10%  Welding Jar                             
+   +0.02    9%  God-Pharaoh's Statue                    
+   +0.02    9%  Shadowspear                             
+   +0.03    8%  Howling Mine                            
+   +0.04    7%  Coin of Mastery                         
+   -0.04    7%  Wayfarer's Bauble                       
+   -0.03    7%  Trading Post                            
+   +0.01    7%  Strionic Resonator                      
+   -0.11    7%  Planar Bridge                           
+   -0.00    6%  Mithril Coat                            
+   +0.04    6%  Iron Man Armor                          
+
+Enchantments:  (synergy · inclusion)
+   -0.16    6%  Eldrazi Conscription                    
+
+Planeswalkers:  (synergy · inclusion)
+   -0.20   54%  Ugin, the Ineffable                     
+   -0.06   44%  Ugin, Eye of the Storms                 
+   +0.21   41%  Tezzeret, Cruel Captain                 
+   -0.21   19%  Ugin, the Spirit Dragon                 
+   -0.02   14%  Karn, the Great Creator                 
+   -0.03    8%  Karn, Living Legacy                     
+   -0.02    6%  Karn, Scion of Urza                     
+
+Utility Lands:  (synergy · inclusion)
+   -0.01   83%  Urza's Power Plant                      
+   -0.01   82%  Urza's Mine                             
+   -0.02   82%  Urza's Tower                            
+   +0.29   79%  Darksteel Citadel                       
+   +0.16   70%  Buried Ruin                             
+   -0.05   70%  Shrine of the Forsaken Gods             
+   +0.20   65%  Inventors' Fair                         
+   +0.00   61%  Reliquary Tower                         
+   -0.07   59%  War Room                                
+   +0.08   58%  Urza's Workshop                         
+   -0.00   55%  Tomb of the Spirit Dragon               
+   +0.10   52%  Urza's Saga                             
+   -0.14   48%  Rogue's Passage                         
+   +0.27   44%  Treasure Vault                          
+   -0.13   42%  Temple of the False God                 
+   +0.19   38%  Fomori Vault                            
+   +0.01   37%  Thespian's Stage                        
+   -0.03   37%  Scavenger Grounds                       
+   +0.08   35%  Urza's Factory                          
+   -0.04   32%  Zhalfirin Void                          
+   +0.09   31%  Muraganda Raceway                       
+   +0.08   28%  Deserted Temple                         
+   -0.08   27%  Ugin's Labyrinth                        
+   -0.03   26%  Arcane Lighthouse                       
+   -0.25   26%  Bonders' Enclave                        
+   -0.11   25%  Blast Zone                              
+   +0.00   25%  Command Beacon                          
+   +0.04   24%  Vesuva                                  
+   +0.11   21%  Fountainport                            
+   -0.18   20%  Sanctum of Ugin                         
+   -0.09   18%  Geier Reach Sanitarium                  
+   -0.16   18%  Guildless Commons                       
+   -0.00   17%  Karn's Bastion                          
+   +0.09   17%  Secluded Starforge                      
+   +0.04   16%  Adventurer's Inn                        
+   -0.02   16%  Strip Mine                              
+   +0.06   15%  Petrified Hamlet                        
+   -0.02   15%  Crystal Vein                            
+   -0.01   14%  Homeward Path                           
+   -0.15   13%  Arch of Orazca                          
+   -0.05   13%  Radiant Fountain                        
+   -0.02   12%  Mikokoro, Center of the Sea             
+   -0.01   12%  Wasteland                               
+   +0.02   12%  Emergence Zone                          
+   +0.06   11%  The Great Mound                         
+   -0.14    9%  Tyrite Sanctum                          
+   -0.15    9%  Sea Gate Wreckage                       
+   +0.04    8%  The Gold Saucer                         
+   -0.01    7%  Amonkhet Raceway                        
+   -0.16    7%  Mage-Ring Network                       
+
+Mana Artifacts:  (synergy · inclusion)
+   +0.03   97%  Sol Ring                                
+   +0.05   84%  Thran Dynamo                            
+   +0.00   69%  Mind Stone                              
+   +0.00   62%  Thought Vessel                          
+   -0.04   60%  Hedron Archive                          
+   +0.35   57%  Arc Reactor                             
+   -0.01   43%  Basalt Monolith                         
+   -0.12   38%  Worn Powerstone                         
+   +0.03   35%  The Eternity Elevator                   
+   -0.21   34%  Everflowing Chalice                     
+   -0.14   27%  Dreamstone Hedron                       
+   +0.12   26%  Gilded Lotus                            
+   +0.08   19%  The Mightstone and Weakstone            
+   +0.05   18%  Mox Opal                                
+   -0.01   18%  Liquimetal Torque                       
+   +0.13   18%  Coveted Jewel                           
+   +0.05   15%  Fellwar Stone                           
+   +0.05   13%  Arcane Signet                           
+   +0.11   12%  Intelligence Bobblehead                 
+   +0.10   11%  Luck Bobblehead                         
+   +0.10   11%  Agility Bobblehead                      
+   +0.10   11%  Endurance Bobblehead                    
+   +0.10   11%  Perception Bobblehead                   
+   +0.10   11%  Strength Bobblehead                     
+   -0.06   11%  Stonespeaker Crystal                    
+   +0.08   10%  Patchwork Banner                        
+   +0.09   10%  Charisma Bobblehead                     
+   -0.01    9%  Prismatic Lens                          
+   -0.00    8%  Sisay's Ring                            
+   +0.01    8%  Blinkmoth Urn                           
+   +0.05    8%  Darksteel Ingot                         
+   +0.05    8%  Shuri's Fabricator                      
+   +0.07    8%  Powerstone Shard                        
+   +0.02    7%  Lotus Petal                             
+   -0.01    7%  Sonic Screwdriver                       
+   -0.01    6%  Sol Talisman                            
+   -0.02    6%  Pristine Talisman                       
+   +0.00    5%  Ur-Golem's Eye                          
+
+Lands:  (synergy · inclusion)
+   +0.03   88%  Wastes                                  
+   +0.09   62%  Urza's Cave                             
+   +0.15   46%  The Mycosynth Gardens                   
+   +0.01   22%  Planar Nexus                            
+   +0.04   17%  Talon Gates of Madara                   
+   +0.11   15%  Power Depot                             
+   -0.05   13%  Crystal Grotto                          
+   -0.01   13%  Demolition Field                        
+   +0.05   12%  Surveillance Room                       
+   +0.00   12%  Abstergo Entertainment                  
+   +0.09   11%  Scene of the Crime                      
+   +0.07   11%  Castle Doom                             
+   -0.02   11%  Snow-Covered Wastes                     
+   -0.02   11%  Conduit Pylons                          
+   -0.01    9%  Myriad Landscape                        
+   +0.00    9%  Hall of Tagsin                          
+   -0.03    9%  The Grey Havens                         
+   -0.04    9%  Hidden Grotto                           
+   -0.01    8%  Ash Barrens                             
+   -0.00    8%  Gemstone Caverns                        
+   -0.10    7%  Cavern of Souls                         
+   +0.02    6%  Plaza of Heroes                         
+$ bun run scripts/edhrec.ts commander "Ultron, Artificial Malevolence" --theme clones --all
+EDHREC: Ultron, Artificial Malevolence — 83 decks · rank #638
+https://edhrec.com/commanders/ultron-artificial-malevolence
+Themes: Artifacts (291) · Tokens (115) · Clones (83) · Combo (63) · Affinity (37) · Ramp (33) · Robots (25) · Historic (24) · +1/+1 Counters (20) · Spell Copy (17) · Tron (16) · Equipment (12) · +56 more
+
+New Cards:  (synergy · inclusion)
+   +0.05    6%  Bag End Banquet                         
+   +0.02    3%  The Everforger                          
+   +0.02    2%  Giant's Boulder                         
+   -0.01    2%  Crystalline Entity                      
+
+High Synergy Cards:  (synergy · inclusion)
+   +0.58   70%  Cybermen Squadron                       
+   +0.56   72%  Krang, Utrom Warlord                    
+   +0.52   58%  Idol of Oblivion                        
+   +0.46   54%  Cyberman Patrol                         
+   +0.45   57%  Iron Spider, Stark Upgrade              
+   +0.42   67%  Myr Retriever                           
+   +0.41   72%  Cloud Key                               
+   +0.40   43%  Panharmonicon                           
+   +0.38   88%  Foundry Inspector                       
+   +0.36   64%  Steel Overseer                          
+
+Top Cards:  (synergy · inclusion)
+   +0.02   90%  Forsaken Monument                       
+   -0.02   83%  All Is Dust                             
+   +0.14   78%  Echoes of Eternity                      
+   +0.14   78%  Null Elemental Blast                    
+   -0.03   71%  Mystic Forge                            
+   +0.33   66%  Sculpting Steel                         
+   -0.07   63%  Palladium Myr                           
+   +0.36   61%  Scrap Trawler                           
+   +0.10   61%  Solemn Simulacrum                       
+   +0.14   60%  Eldritch Immunity                       
+
+Game Changers:  (synergy · inclusion)
+   +0.15   43%  The One Ring                            
+   +0.02   36%  Ancient Tomb                            
+   +0.06   31%  Mana Vault                              
+   +0.06   17%  Mishra's Workshop                       
+   +0.03   16%  Grim Monolith                           
+   -0.00   10%  Field of the Dead                       
+
+Creatures:  (synergy · inclusion)
+   +0.25   60%  Jhoira's Familiar                       
+   -0.02   58%  Glaring Fleshraker                      
+   +0.36   54%  Cryptothrall                            
+   +0.05   52%  Liberator, Urza's Battlethopter         
+   +0.35   52%  Karn, Legacy Reforged                   
+   +0.31   46%  Junk Diver                              
+   +0.34   45%  Chrome Dome                             
+   +0.20   42%  Shimmer Myr                             
+   +0.25   42%  Mycosynth Golem                         
+   +0.09   40%  Meteor Golem                            
+   +0.30   40%  The Vision                              
+   +0.31   39%  Ultron, Machine Overlord                
+   +0.22   39%  Wurmcoil Engine                         
+   +0.23   37%  Roaming Throne                          
+   +0.22   37%  Kuldotha Forgemaster                    
+   +0.17   36%  Myr Battlesphere                        
+   +0.13   36%  Blightsteel Colossus                    
+   +0.23   35%  Canoptek Spyder                         
+   -0.13   29%  Ultima, Origin of Oblivion              
+   +0.19   28%  Scrawling Crawler                       
+   +0.11   28%  Cityscape Leveler                       
+   +0.15   27%  Chief of the Foundry                    
+   +0.17   27%  Big Mother Mouser                       
+   +0.07   25%  Metalworker                             
+   -0.05   24%  Ornithopter of Paradise                 
+   +0.05   24%  Walking Ballista                        
+   -0.04   24%  Metalwork Colossus                      
+   +0.21   24%  Stridehangar Automaton                  
+   +0.12   23%  Darksteel Colossus                      
+   +0.15   23%  Panther Robot                           
+   +0.01   18%  Zenith Chronicler                       
+   +0.03   18%  Platinum Angel                          
+   +0.08   18%  Duplicant                               
+   +0.09   17%  Triplicate Titan                        
+   +0.02   17%  Threefold Thunderhulk                   
+   -0.06   16%  Hedron Crawler                          
+   +0.06   16%  Lodestone Golem                         
+   +0.09   14%  H.E.R.B.I.E. Scout Unit                 
+   +0.08   14%  Marvin, Murderous Mimic                 
+   +0.05   13%  Darksteel Juggernaut                    
+   +0.07   13%  Automated Artificer                     
+   +0.10   13%  Ultron Drone                            
+   -0.06   12%  Hangarback Walker                       
+   +0.04   11%  Voltaic Construct                       
+   -0.11    8%  Steel Hellkite                          
+   +0.05    8%  Technodrome                             
+   -0.11    7%  Crashing Drawbridge                     
+   +0.02    7%  Canoptek Scarab Swarm                   
+   -0.12    7%  Stonecoil Serpent                       
+   +0.04    7%  Virulent Silencer                       
+
+Instants:  (synergy · inclusion)
+   +0.01   58%  Warping Wail                            
+   -0.08   34%  Kozilek's Command                       
+   +0.09   23%  Zuko's Exile                            
+   -0.06   22%  Eldrazi Confluence                      
+   -0.23   19%  Titan's Presence                        
+   -0.21   17%  Desecrate Reality                       
+   -0.13    8%  Scour from Existence                    
+   -0.10    8%  Spatial Contortion                      
+   -0.38    7%  Not of This World                       
+
+Sorceries:  (synergy · inclusion)
+   +0.17   46%  Selective Obliteration                  
+   -0.25   17%  Rise of the Eldrazi                     
+   -0.02   10%  Gruesome Slaughter                      
+   -0.06   10%  Introduction to Annihilation            
+   -0.22    8%  Calamity of the Titans                  
+   -0.02    7%  Environmental Sciences                  
+
+Utility Artifacts:  (synergy · inclusion)
+   +0.18   59%  Unwinding Clock                         
+   +0.01   52%  Lightning Greaves                       
+   +0.22   47%  Portal to Phyrexia                      
+   +0.31   46%  Semblance Anvil                         
+   +0.20   42%  Darksteel Forge                         
+   +0.19   42%  The Ten Rings                           
+   +0.11   40%  Chimil, the Inner Sun                   
+   +0.28   39%  Krark-Clan Ironworks                    
+   +0.03   37%  Commander's Plate                       
+   +0.01   35%  Manifold Key                            
+   +0.05   34%  Mind's Eye                              
+   +0.05   33%  Sensei's Divining Top                   
+   +0.22   31%  Mirrorworks                             
+   +0.22   30%  Ashnod's Altar                          
+   +0.24   30%  Adaptive Omnitool                       
+   +0.18   29%  Cosmic Cube                             
+   -0.20   27%  Darksteel Monolith                      
+   +0.02   25%  Voltaic Key                             
+   -0.12   24%  Swiftfoot Boots                         
+   +0.09   23%  Clock of Omens                          
+   +0.08   22%  The Endstone                            
+   +0.16   20%  Ichor Wellspring                        
+   -0.05   19%  Mirage Mirror                           
+   -0.17   19%  Expedition Map                          
+   +0.17   19%  Conjurer's Closet                       
+   +0.17   18%  Mirror Box                              
+   +0.12   18%  Aetherflux Reservoir                    
+   +0.13   18%  Skullclamp                              
+   +0.07   16%  Spine of Ish Sah                        
+   +0.03   14%  Nettlecyst                              
+   -0.07   13%  Moonsilver Key                          
+   +0.11   13%  Thousand-Year Elixir                    
+   -0.06   13%  Akroma's Memorial                       
+   -0.04   12%  Rings of Brighthearth                   
+   +0.06   12%  Strionic Resonator                      
+   -0.00   12%  Staff of Domination                     
+   +0.10   11%  Symmetry Matrix                         
+   +0.01   11%  Helm of the Host                        
+   +0.04   11%  Mycosynth Lattice                       
+   +0.07   11%  Eldrazi Monument                        
+   +0.07   11%  Welding Jar                             
+   +0.02   10%  God-Pharaoh's Statue                    
+   +0.08   10%  Reaver Titan                            
+   -0.03   10%  The Immortal Sun                        
+   -0.01   10%  Trading Post                            
+   +0.05   10%  Mishra's Bauble                         
+   +0.02   10%  Shadowspear                             
+   +0.02    8%  Lithoform Engine                        
+   +0.05    8%  Soul-Guide Lantern                      
+   +0.07    8%  Banner of Kinship                       
+
+Enchantments:  (synergy · inclusion)
+   -0.16    6%  Eldrazi Conscription                    
+
+Planeswalkers:  (synergy · inclusion)
+   -0.25   48%  Ugin, the Ineffable                     
+   +0.20   40%  Tezzeret, Cruel Captain                 
+   -0.13   37%  Ugin, Eye of the Storms                 
+   -0.28   12%  Ugin, the Spirit Dragon                 
+   -0.05   11%  Karn, the Great Creator                 
+   +0.00    8%  Karn, Scion of Urza                     
+
+Utility Lands:  (synergy · inclusion)
+   +0.35   84%  Darksteel Citadel                       
+   -0.07   77%  Urza's Tower                            
+   -0.07   77%  Urza's Power Plant                      
+   -0.08   76%  Urza's Mine                             
+   -0.02   73%  Shrine of the Forsaken Gods             
+   +0.10   64%  Buried Ruin                             
+   +0.18   63%  Inventors' Fair                         
+   -0.09   58%  War Room                                
+   -0.03   58%  Reliquary Tower                         
+   -0.01   54%  Tomb of the Spirit Dragon               
+   +0.10   52%  Urza's Saga                             
+   -0.00   49%  Urza's Workshop                         
+   -0.18   45%  Rogue's Passage                         
+   +0.24   40%  Treasure Vault                          
+   +0.19   37%  Fomori Vault                            
+   +0.01   37%  Thespian's Stage                        
+   -0.21   34%  Temple of the False God                 
+   -0.07   33%  Scavenger Grounds                       
+   +0.11   33%  Muraganda Raceway                       
+   -0.07   29%  Blast Zone                              
+   +0.09   29%  Vesuva                                  
+   -0.09   28%  Zhalfirin Void                          
+   +0.01   28%  Urza's Factory                          
+   -0.23   28%  Bonders' Enclave                        
+   -0.00   24%  Command Beacon                          
+   +0.04   24%  Deserted Temple                         
+   -0.07   23%  Arcane Lighthouse                       
+   -0.14   22%  Ugin's Labyrinth                        
+   +0.13   22%  Secluded Starforge                      
+   -0.16   18%  Guildless Commons                       
+   +0.09   18%  Petrified Hamlet                        
+   -0.01   17%  Crystal Vein                            
+   +0.06   17%  Fountainport                            
+   -0.01   17%  Strip Mine                              
+   -0.23   16%  Sanctum of Ugin                         
+   -0.02   16%  Karn's Bastion                          
+   +0.00   14%  Mikokoro, Center of the Sea             
+   -0.14   13%  Geier Reach Sanitarium                  
+   -0.02   13%  Homeward Path                           
+   +0.00   13%  Adventurer's Inn                        
+   +0.02   12%  Emergence Zone                          
+   +0.07   12%  The Great Mound                         
+   -0.02   11%  Wasteland                               
+   -0.12   11%  Mage-Ring Network                       
+   +0.01   11%  Ghost Quarter                           
+   -0.17   11%  Arch of Orazca                          
+   -0.01   11%  Scorched Ruins                          
+   +0.08   11%  Diamond City                            
+   -0.08   10%  Radiant Fountain                        
+   +0.02   10%  Amonkhet Raceway                        
+
+Mana Artifacts:  (synergy · inclusion)
+   +0.05   99%  Sol Ring                                
+   +0.12   92%  Thran Dynamo                            
+   +0.04   69%  Hedron Archive                          
+   -0.07   61%  Mind Stone                              
+   +0.38   60%  Arc Reactor                             
+   -0.04   58%  Thought Vessel                          
+   -0.00   45%  Basalt Monolith                         
+   +0.03   35%  The Eternity Elevator                   
+   -0.21   34%  Everflowing Chalice                     
+   -0.18   31%  Worn Powerstone                         
+   -0.10   30%  Dreamstone Hedron                       
+   +0.14   28%  Gilded Lotus                            
+   +0.01   19%  Liquimetal Torque                       
+   +0.09   19%  The Mightstone and Weakstone            
+   +0.06   17%  Fellwar Stone                           
+   +0.12   17%  Coveted Jewel                           
+   +0.14   16%  Intelligence Bobblehead                 
+   +0.13   14%  Agility Bobblehead                      
+   -0.03   14%  Stonespeaker Crystal                    
+   +0.12   13%  Luck Bobblehead                         
+   -0.00   13%  Mox Opal                                
+   +0.11   12%  Strength Bobblehead                     
+   +0.11   12%  Perception Bobblehead                   
+   +0.03   11%  Blinkmoth Urn                           
+   +0.10   11%  Endurance Bobblehead                    
+   +0.10   11%  Powerstone Shard                        
+   +0.10   11%  Charisma Bobblehead                     
+   +0.08   11%  Darksteel Ingot                         
+   +0.08   10%  Patchwork Banner                        
+   +0.01   10%  Sisay's Ring                            
+   +0.01   10%  Sonic Screwdriver                       
+   +0.07    9%  Shuri's Fabricator                      
+   +0.00    8%  Pristine Talisman                       
+   +0.03    8%  Lotus Petal                             
+   -0.00    7%  Arcane Signet                           
+   -0.02    7%  Chromatic Orrery                        
+   -0.03    7%  Prismatic Lens                          
+   -0.01    6%  Sol Talisman                            
+
+Lands:  (synergy · inclusion)
+   +0.02   87%  Wastes                                  
+   +0.11   64%  Urza's Cave                             
+   +0.16   47%  The Mycosynth Gardens                   
+   +0.05   27%  Planar Nexus                            
+   +0.16   20%  Power Depot                             
+   +0.04   17%  Talon Gates of Madara                   
+   +0.04   16%  Abstergo Entertainment                  
+   +0.12   14%  Scene of the Crime                      
+   +0.05   13%  Gemstone Caverns                        
+   -0.04   13%  Crystal Grotto                          
+   +0.06   13%  Surveillance Room                       
+   -0.04   10%  Demolition Field                        
+   -0.02    8%  Myriad Landscape                        
+   -0.04    8%  Conduit Pylons                          
+   -0.04    8%  Snow-Covered Wastes                     
+   +0.04    8%  Plaza of Heroes                         
+   -0.04    8%  The Grey Havens                         
+   +0.03    8%  Castle Doom                             
+   -0.01    7%  Ash Barrens                             
+   +0.02    7%  Rumble Arena                            
+   +0.06    7%  Villainous Hideout                      
+   +0.03    6%  Capital City                            
+$ bun run scripts/edhrec.ts commander "Ultron, Artificial Malevolence" --theme tokens --all
+EDHREC: Ultron, Artificial Malevolence — 115 decks · rank #638
+https://edhrec.com/commanders/ultron-artificial-malevolence
+Themes: Artifacts (291) · Tokens (115) · Clones (83) · Combo (63) · Affinity (37) · Ramp (33) · Robots (25) · Historic (24) · +1/+1 Counters (20) · Spell Copy (17) · Tron (16) · Equipment (12) · +56 more
+
+New Cards:  (synergy · inclusion)
+   +0.04    5%  Bag End Banquet                         
+   +0.02    5%  Crystalline Entity                      
+   +0.02    2%  Giant's Boulder                         
+   +0.02    2%  Hobbit Hole                             
+
+High Synergy Cards:  (synergy · inclusion)
+   +0.67   73%  Idol of Oblivion                        
+   +0.53   70%  Krang, Utrom Warlord                    
+   +0.51   63%  Cybermen Squadron                       
+   +0.49   57%  Cyberman Patrol                         
+   +0.47   59%  Iron Spider, Stark Upgrade              
+   +0.47   75%  Steel Overseer                          
+   +0.46   77%  Cloud Key                               
+   +0.41   52%  Chrome Dome                             
+   +0.39   64%  Scrap Trawler                           
+   +0.38   71%  Sculpting Steel                         
+
+Top Cards:  (synergy · inclusion)
+   +0.02   90%  Forsaken Monument                       
+   +0.36   86%  Foundry Inspector                       
+   -0.02   83%  All Is Dust                             
+   +0.19   83%  Echoes of Eternity                      
+   +0.04   78%  Mystic Forge                            
+   +0.07   71%  Null Elemental Blast                    
+   +0.11   70%  Glaring Fleshraker                      
+   +0.23   64%  Unwinding Clock                         
+   -0.08   62%  Palladium Myr                           
+   +0.36   61%  Myr Retriever                           
+
+Game Changers:  (synergy · inclusion)
+   +0.09   37%  The One Ring                            
+   +0.00   35%  Ancient Tomb                            
+   -0.01   24%  Mana Vault                              
+   +0.00   13%  Grim Monolith                           
+   +0.01   12%  Mishra's Workshop                       
+   -0.04    6%  Field of the Dead                       
+
+Creatures:  (synergy · inclusion)
+   +0.06   57%  Solemn Simulacrum                       
+   +0.11   57%  Liberator, Urza's Battlethopter         
+   +0.18   54%  Jhoira's Familiar                       
+   +0.31   50%  Cryptothrall                            
+   +0.31   45%  Junk Diver                              
+   +0.28   44%  Karn, Legacy Reforged                   
+   +0.03   44%  Ultima, Origin of Oblivion              
+   +0.30   40%  The Vision                              
+   +0.08   39%  Meteor Golem                            
+   +0.16   38%  Shimmer Myr                             
+   +0.26   37%  Chief of the Foundry                    
+   +0.21   37%  Kuldotha Forgemaster                    
+   +0.19   36%  Wurmcoil Engine                         
+   +0.19   34%  Roaming Throne                          
+   +0.15   34%  Walking Ballista                        
+   +0.16   33%  Mycosynth Golem                         
+   +0.20   32%  Canoptek Spyder                         
+   +0.24   31%  Ultron, Machine Overlord                
+   +0.28   30%  Stridehangar Automaton                  
+   +0.11   30%  Myr Battlesphere                        
+   +0.06   29%  Blightsteel Colossus                    
+   +0.17   27%  Big Mother Mouser                       
+   +0.07   25%  Metalworker                             
+   -0.03   24%  Metalwork Colossus                      
+   +0.14   23%  Scrawling Crawler                       
+   +0.06   23%  Cityscape Leveler                       
+   +0.10   19%  Lodestone Golem                         
+   +0.03   18%  Threefold Thunderhulk                   
+   +0.12   18%  H.E.R.B.I.E. Scout Unit                 
+   +0.07   17%  Darksteel Colossus                      
+   -0.12   17%  Ornithopter of Paradise                 
+   +0.09   17%  Panther Robot                           
+   -0.06   15%  Hedron Crawler                          
+   -0.02   15%  Zenith Chronicler                       
+   +0.04   15%  Duplicant                               
+   +0.05   13%  Darksteel Juggernaut                    
+   -0.05   13%  Hangarback Walker                       
+   +0.10   13%  Ultron Drone                            
+   -0.08   11%  Steel Hellkite                          
+   +0.07   10%  Virulent Silencer                       
+   -0.01   10%  The Walls of Ba Sing Se                 
+   +0.06    9%  Adaptive Automaton                      
+   +0.01    9%  Triplicate Titan                        
+   +0.03    9%  Automated Artificer                     
+   -0.11    9%  Stonecoil Serpent                       
+   -0.06    9%  Platinum Angel                          
+   +0.02    9%  Voltaic Construct                       
+   +0.08    9%  Relentless X-ATM092                     
+   -0.29    8%  Skittering Cicada                       
+   -0.03    8%  Molecule Man                            
+
+Instants:  (synergy · inclusion)
+   +0.11   57%  Eldritch Immunity                       
+   -0.05   52%  Warping Wail                            
+   -0.12   30%  Kozilek's Command                       
+   -0.03   24%  Eldrazi Confluence                      
+   +0.07   22%  Zuko's Exile                            
+   -0.24   18%  Titan's Presence                        
+   -0.26   12%  Desecrate Reality                       
+   -0.10    9%  Spatial Contortion                      
+   -0.14    8%  Scour from Existence                    
+
+Sorceries:  (synergy · inclusion)
+   +0.14   43%  Selective Obliteration                  
+   -0.28   14%  Rise of the Eldrazi                     
+   -0.06   10%  Introduction to Annihilation            
+   -0.06    6%  Gruesome Slaughter                      
+   -0.08    5%  Introduction to Prophecy                
+
+Utility Artifacts:  (synergy · inclusion)
+   +0.03   54%  Lightning Greaves                       
+   +0.20   49%  Chimil, the Inner Sun                   
+   +0.31   45%  Semblance Anvil                         
+   +0.22   44%  Darksteel Forge                         
+   +0.18   43%  Portal to Phyrexia                      
+   +0.18   42%  The Ten Rings                           
+   +0.07   41%  Manifold Key                            
+   +0.07   41%  Commander's Plate                       
+   +0.35   39%  Panharmonicon                           
+   +0.27   38%  Krark-Clan Ironworks                    
+   +0.27   38%  Cosmic Cube                             
+   +0.08   36%  Sensei's Divining Top                   
+   +0.07   36%  Mind's Eye                              
+   +0.08   32%  Voltaic Key                             
+   +0.24   32%  Ashnod's Altar                          
+   -0.06   30%  Swiftfoot Boots                         
+   -0.07   29%  Expedition Map                          
+   +0.18   27%  Mirrorworks                             
+   -0.20   26%  Darksteel Monolith                      
+   +0.18   24%  Adaptive Omnitool                       
+   +0.10   24%  The Endstone                            
+   +0.18   23%  Ichor Wellspring                        
+   +0.07   22%  Clock of Omens                          
+   +0.08   19%  Nettlecyst                              
+   +0.13   19%  Aetherflux Reservoir                    
+   +0.06   18%  Staff of Domination                     
+   +0.08   17%  Spine of Ish Sah                        
+   +0.14   17%  Thousand-Year Elixir                    
+   -0.07   17%  Mirage Mirror                           
+   +0.11   16%  Skullclamp                              
+   -0.01   16%  Rings of Brighthearth                   
+   -0.06   15%  Moonsilver Key                          
+   +0.13   15%  Mirror Box                              
+   -0.04   15%  Akroma's Memorial                       
+   +0.13   14%  Banner of Kinship                       
+   +0.02   13%  Wayfarer's Bauble                       
+   +0.11   13%  Conjurer's Closet                       
+   +0.09   13%  Welding Jar                             
+   +0.01   11%  Trading Post                            
+   +0.01   10%  Helm of the Host                        
+   +0.08   10%  Iron Man Armor                          
+   +0.06   10%  The Regalia                             
+   -0.03    9%  The Immortal Sun                        
+   +0.01    9%  Shadowspear                             
+   +0.06    8%  Reaver Titan                            
+   +0.03    8%  Mishra's Bauble                         
+   +0.03    7%  Soul-Guide Lantern                      
+   -0.11    7%  Planar Bridge                           
+   +0.00    7%  Mycosynth Lattice                       
+   -0.01    6%  Lithoform Engine                        
+
+Enchantments:  (synergy · inclusion)
+   -0.17    5%  Eldrazi Conscription                    
+
+Planeswalkers:  (synergy · inclusion)
+   -0.24   50%  Ugin, the Ineffable                     
+   +0.25   45%  Tezzeret, Cruel Captain                 
+   -0.08   42%  Ugin, Eye of the Storms                 
+   -0.22   18%  Ugin, the Spirit Dragon                 
+   -0.01   15%  Karn, the Great Creator                 
+   +0.03   11%  Karn, Scion of Urza                     
+   -0.01   10%  Karn, Living Legacy                     
+
+Utility Lands:  (synergy · inclusion)
+   +0.02   85%  Urza's Tower                            
+   +0.01   84%  Urza's Power Plant                      
+   -0.00   83%  Urza's Mine                             
+   +0.33   83%  Darksteel Citadel                       
+   +0.21   75%  Buried Ruin                             
+   -0.03   72%  Shrine of the Forsaken Gods             
+   +0.27   71%  Inventors' Fair                         
+   +0.01   68%  War Room                                
+   +0.06   61%  Tomb of the Spirit Dragon               
+   +0.08   57%  Urza's Workshop                         
+   -0.04   57%  Reliquary Tower                         
+   +0.13   55%  Urza's Saga                             
+   -0.13   50%  Rogue's Passage                         
+   +0.31   47%  Treasure Vault                          
+   +0.05   45%  Scavenger Grounds                       
+   +0.22   43%  Muraganda Raceway                       
+   -0.12   43%  Temple of the False God                 
+   +0.03   40%  Thespian's Stage                        
+   +0.09   36%  Urza's Factory                          
+   +0.04   34%  Arcane Lighthouse                       
+   -0.04   33%  Zhalfirin Void                          
+   +0.15   33%  Fomori Vault                            
+   -0.06   30%  Blast Zone                              
+   +0.10   30%  Deserted Temple                         
+   +0.03   27%  Command Beacon                          
+   +0.17   26%  Petrified Hamlet                        
+   -0.10   25%  Ugin's Labyrinth                        
+   -0.26   25%  Bonders' Enclave                        
+   +0.05   24%  Vesuva                                  
+   +0.15   23%  Secluded Starforge                      
+   +0.11   22%  Fountainport                            
+   -0.19   19%  Sanctum of Ugin                         
+   -0.09   18%  Geier Reach Sanitarium                  
+   +0.00   18%  Strip Mine                              
+   +0.05   17%  Adventurer's Inn                        
+   -0.01   17%  Crystal Vein                            
+   -0.17   17%  Guildless Commons                       
+   -0.02   16%  Radiant Fountain                        
+   +0.08   16%  Amonkhet Raceway                        
+   -0.14   14%  Arch of Orazca                          
+   -0.00   14%  Mikokoro, Center of the Sea             
+   +0.10   14%  The Gold Saucer                         
+   -0.04   13%  Karn's Bastion                          
+   +0.07   13%  The Great Mound                         
+   -0.01   12%  Wasteland                               
+   +0.02   12%  Emergence Zone                          
+   +0.09   11%  Diamond City                            
+   +0.02   10%  Arid Archway                            
+   -0.01   10%  Scorched Ruins                          
+   -0.13   10%  Tyrite Sanctum                          
+
+Mana Artifacts:  (synergy · inclusion)
+   +0.03   97%  Sol Ring                                
+   +0.10   90%  Thran Dynamo                            
+   +0.04   72%  Mind Stone                              
+   +0.05   67%  Thought Vessel                          
+   +0.02   66%  Hedron Archive                          
+   +0.26   49%  Arc Reactor                             
+   +0.00   45%  Basalt Monolith                         
+   -0.12   37%  Worn Powerstone                         
+   -0.20   35%  Everflowing Chalice                     
+   -0.04   29%  The Eternity Elevator                   
+   -0.14   26%  Dreamstone Hedron                       
+   +0.10   24%  Gilded Lotus                            
+   +0.13   23%  The Mightstone and Weakstone            
+   +0.02   21%  Liquimetal Torque                       
+   +0.13   18%  Coveted Jewel                           
+   +0.05   18%  Mox Opal                                
+   +0.07   17%  Fellwar Stone                           
+   +0.12   14%  Patchwork Banner                        
+   +0.13   14%  Agility Bobblehead                      
+   -0.03   14%  Stonespeaker Crystal                    
+   +0.11   14%  Shuri's Fabricator                      
+   +0.12   13%  Intelligence Bobblehead                 
+   +0.12   13%  Luck Bobblehead                         
+   +0.12   13%  Perception Bobblehead                   
+   +0.11   12%  Endurance Bobblehead                    
+   +0.11   12%  Strength Bobblehead                     
+   +0.08   10%  Charisma Bobblehead                     
+   +0.01   10%  Sisay's Ring                            
+   +0.01   10%  Sonic Screwdriver                       
+   -0.01   10%  Prismatic Lens                          
+   +0.06    9%  Darksteel Ingot                         
+   +0.07    8%  Powerstone Shard                        
+   +0.00    8%  Sol Talisman                            
+   +0.03    8%  All-Fates Scroll                        
+   +0.02    7%  Lotus Petal                             
+   +0.00    7%  Ring of the Lucii                       
+   +0.05    7%  Vibranium Mining Mech                   
+   +0.01    6%  Ur-Golem's Eye                          
+   -0.03    5%  Pristine Talisman                       
+
+Lands:  (synergy · inclusion)
+   +0.02   87%  Wastes                                  
+   +0.13   66%  Urza's Cave                             
+   +0.15   45%  The Mycosynth Gardens                   
+   +0.01   23%  Planar Nexus                            
+   +0.14   19%  Castle Doom                             
+   +0.14   18%  Power Depot                             
+   +0.05   17%  Talon Gates of Madara                   
+   +0.04   17%  Demolition Field                        
+   +0.14   17%  Scene of the Crime                      
+   +0.03   16%  Snow-Covered Wastes                     
+   +0.08   15%  Surveillance Room                       
+   +0.03   15%  Abstergo Entertainment                  
+   +0.01   14%  Conduit Pylons                          
+   +0.06   10%  Plaza of Heroes                         
+   -0.02   10%  The Grey Havens                         
+   -0.03   10%  Hidden Grotto                           
+   -0.08   10%  Crystal Grotto                          
+   +0.01   10%  Hall of Tagsin                          
+   +0.00    9%  Gemstone Caverns                        
+   -0.02    8%  Myriad Landscape                        
+   +0.06    7%  Villainous Hideout                      
+   -0.02    7%  Ash Barrens                             
+   -0.10    7%  Cavern of Souls                         
+   +0.04    7%  Capital City                            

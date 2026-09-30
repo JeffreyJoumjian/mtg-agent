@@ -1019,3 +1019,43 @@ Flying Whenever a creature an opponent controls dies, you may gain 3 life. Whene
 ## Tainted Remedy
 cost={2}{B} | type=Enchantment | CI=B | produces=- | usd=$9.02
 If an opponent would gain life, that player loses that much life instead.
+
+## Brightclimb Pathway // Grimclimb Pathway
+cost=- | type=Land // Land | CI=BW | produces=B,W | usd=$4.77
+Brightclimb Pathway: {T}: Add {W}. // Grimclimb Pathway: {T}: Add {B}.
+
+## Witch Enchanter // Witch-Blessed Meadow
+cost={3}{W} | type=Creature — Human Warlock // Land | CI=W | produces=W | usd=$5.86
+Witch Enchanter: When this creature enters, destroy target artifact or enchantment an opponent controls. // Witch-Blessed Meadow: As this land enters, you may pay 3 life. If you don't, it enters tapped. {T}: Add {W}.
+
+## Phyrexian Altar
+cost={3} | type=Artifact | CI=- | produces=B,G,R,U,W | usd=$58.66
+Sacrifice a creature: Add one mana of any color.
+
+## Indulging Patrician
+cost={1}{W}{B} | type=Creature — Vampire Noble | CI=BW | produces=- | usd=$0.34
+Flying Lifelink (Damage dealt by this creature also causes you to gain that much life.) At the beginning of your end step, if you gained 3 or more life this turn, each opponent loses 3 life.
+
+## Crossway Troublemakers
+cost={5}{B} | type=Creature — Vampire | CI=B | produces=- | usd=$0.34
+Attacking Vampires you control have deathtouch and lifelink. (Any amount of damage they deal to a creature is enough to destroy it. Damage dealt by those creatures also causes their controller to gain that much life.) Whenever a Vampire you control dies, you may pay 2 life. If you do, draw a card.
+
+## Blood Seeker
+cost={1}{B} | type=Creature — Vampire Shaman | CI=B | produces=- | usd=$0.39
+Whenever a creature an opponent controls enters, you may have that player lose 1 life.
+
+## Carrier Thrall
+cost={1}{B} | type=Creature — Vampire | CI=B | produces=C | usd=$0.26
+When this creature dies, create a 1/1 colorless Eldrazi Scion creature token. It has "Sacrifice this token: Add {C}."
+
+## Creeping Bloodsucker
+cost={1}{B} | type=Creature — Vampire | CI=B | produces=- | usd=$4.92
+At the beginning of your upkeep, this creature deals 1 damage to each opponent. You gain life equal to the damage dealt this way.
+
+## Infantry Shield
+cost={2}{R} | type=Artifact — Equipment | CI=R | produces=- | usd=$1.08
+Equipped creature has menace and mobilize X, where X is its power. (Whenever it attacks, create X tapped and attacking 1/1 red Warrior creature tokens. Sacrifice them at the beginning of the next end step.) Equip {2}
+
+## Morlun, Devourer of Spiders
+cost={X}{B}{B} | type=Legendary Creature — Vampire Villain | CI=B | produces=- | usd=$0.44
+Lifelink Morlun enters with X +1/+1 counters on him. When Morlun enters, he deals X damage to target opponent.

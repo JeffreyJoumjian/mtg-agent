@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "command -v pkill >/dev/null 2>&1 && pkill -f \"mtg-agent.*node_modules/\\.bin/[v]ite\" 2>/dev/null; exit 0",
+            "command": "[ -n \"$MTG_AGENT_EMBEDDED\" ] && exit 0; command -v pkill >/dev/null 2>&1 && pkill -f \"mtg-agent.*node_modules/\\.bin/[v]ite\" 2>/dev/null; exit 0",
             "statusMessage": "Stopping this repo's dev servers"
           }
         ]

@@ -254,16 +254,31 @@ test("popFlag handles two flags being popped in sequence", () => {
   expect(rest).toEqual(["x"]);
 });
 
-test("commanderFromDeck reads the Commander: header line, dropping a trailing parenthetical", () => {
-  const text = "# Iron Man\n\nCommander: Tony Stark // The Invincible Iron Man (UR)\nBracket: 3\n";
-  expect(commanderFromDeck(text)).toEqual("Tony Stark // The Invincible Iron Man");
+
+// ---------------------------------------------------------------- deck.json era
+
+test("slugFromDeckArg accepts a bare slug, a deck folder, or a deck.json path", () => {
+  const { slugFromDeckArg } = require("../scripts/lib/deck-research.ts");
+  expect(slugFromDeckArg("chatterfang")).toEqual("chatterfang");
+  expect(slugFromDeckArg("decks/chatterfang")).toEqual("chatterfang");
+  expect(slugFromDeckArg("decks/chatterfang/")).toEqual("chatterfang");
+  expect(slugFromDeckArg("decks/chatterfang/deck.json")).toEqual("chatterfang");
+  expect(slugFromDeckArg("/abs/mtg-agent/decks/iron-man/deck.json")).toEqual("iron-man");
 });
 
-test("commanderFromDeck falls back to the first card in the ## Commander section", () => {
-  const text = "# Deck\n\n## Commander (1)\n\n1x The Scarlet Witch\n\n## Lands (33)\n\n1x Mountain\n";
-  expect(commanderFromDeck(text)).toEqual("The Scarlet Witch");
-});
-
-test("commanderFromDeck returns null when a list names no commander", () => {
-  expect(commanderFromDeck("## Lands\n1x Mountain\n")).toEqual(null);
+test("commanderFromDeck reads the Commander section of the chosen list", () => {
+  const deck = {
+    schema: 1,
+    name: "x",
+    format: "commander",
+    lists: {
+      main: { label: "Main", kind: "deck", sections: [{ name: "Commander (1)", cards: [{ name: "Edgar Markov", qty: 1 }] }] },
+      alt: { label: "Alt", kind: "deck", sections: [{ name: "Commander", cards: [{ name: "Zed", qty: 1 }] }] },
+      none: { label: "None", kind: "pool", sections: [{ name: "Pocket", cards: [{ name: "Sol Ring", qty: 1 }] }] },
+    },
+    cards: {},
+  } as any;
+  expect(commanderFromDeck(deck)).toEqual("Edgar Markov");
+  expect(commanderFromDeck(deck, "alt")).toEqual("Zed");
+  expect(commanderFromDeck(deck, "none")).toEqual(null);
 });

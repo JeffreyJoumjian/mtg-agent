@@ -1,0 +1,89 @@
+1 Teysa Karlov
+1 Adeline, Resplendent Cathar
+1 Anguished Unmaking
+1 Anointed Procession
+1 Arcane Signet
+1 Ashnod's Altar
+1 Bastion of Remembrance
+1 Bitterbloom Bearer
+1 Bitterblossom
+1 Black Market Connections
+1 Blood Artist
+1 Bloodletter of Aclazotz
+1 Bojuka Bog
+1 Brightclimb Pathway
+1 Cabal Coffers
+1 Castle Ardenvale
+1 Castle Locthwain
+1 Caves of Koilos
+1 Command Tower (ELD) 333
+1 Concealed Courtyard
+1 Corpse Knight
+1 Corrupted Conviction
+1 Court of Grace
+1 Cruel Celebrant
+1 Deadly Dispute
+1 Despark
+1 Doomed Traveler
+1 Eiganjo, Seat of the Empire (NEO) 268
+1 Elas il-Kor, Sadistic Pilgrim
+1 Elenda, the Dusk Rose
+1 Elspeth, Storm Slayer
+1 Fetid Heath
+1 Generous Gift
+1 Godless Shrine
+1 Grim Haruspex
+1 Hallowed Spiritkeeper
+1 High Market
+1 Imperious Oligarch
+1 Isolated Chapel
+1 Lingering Souls
+1 Luminous Broodmoth
+1 Marauding Blight-Priest
+1 Marionette Apprentice
+1 Midnight Reaper
+1 Ministrant of Obligation
+1 Mirkwood Bats
+1 Mondrak, Glory Dominus
+1 Morbid Opportunist
+1 Mortuary Mire
+1 Ocelot Pride
+1 Oketra's Monument
+1 Ophiomancer
+1 Orzhov Enforcer
+1 Orzhov Signet
+1 Path to Exile
+1 Phyrexian Altar
+1 Phyrexian Arena
+1 Phyrexian Tower
+1 Pitiless Plunderer
+6 Plains (THB) 250
+1 Plumb the Forbidden
+1 Priest of Forgotten Gods
+1 Reassembling Skeleton
+1 Scrubland
+1 Sengir Autocrat
+1 Shattered Sanctum
+1 Silent Clearing
+1 Skullclamp (MSC) 210
+1 Smothering Tithe
+1 Sol Ring (SLD) 1734
+1 Sorin, Lord of Innistrad
+7 Swamp
+1 Swords to Plowshares (PMEI) 2026-4
+1 Tainted Field
+1 Takenuma, Abandoned Mire
+1 Talisman of Hierarchy
+1 Teysa, Orzhov Scion
+1 Thalisse, Reverent Medium
+1 The Meathook Massacre
+1 Urborg, Tomb of Yawgmoth
+1 Vampiric Rites
+1 Vanishing Verse
+1 Vault of the Archangel
+1 Village Rites
+1 Viscera Seer
+1 Vito, Thorn of the Dusk Rose
+1 Westvale Abbey
+1 Woe Strider
+1 Zulaport Cutthroat

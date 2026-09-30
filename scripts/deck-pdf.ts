@@ -2,11 +2,11 @@
 /**
  * Generate a printable deck + swap-log + sideboard PDF for any deck in `decks/`.
  *
- *   bun run deck:pdf <deck-slug>
+ *   bun run deck:pdf <deck-slug> [list-id]
  *   bun run deck:pdf edgar-markov
  *
  * Reads:
- *   decks/<slug>/DECK.md          the decklist, grouped under `## Role (n)` headers
+ *   decks/<slug>/deck.json        the list (main unless a list id is given), grouped by section
  *   decks/<slug>/pdf.json         title / stats / swaps / sideboard / upgrades  (see PdfData)
  *
  * `swaps` is the build's decision history — what came in, what went out, why.
@@ -23,7 +23,9 @@
 
 import { existsSync, mkdirSync, readdirSync } from "node:fs";
 import { REPO_ROOT } from "./lib/paths.ts";
-import { CARD_LINE as DECKLIST_CARD_LINE, cleanCardName } from "./lib/decklist.ts";
+import { resolveNames } from "./lib/card-cache.ts";
+import { listNames, pickList, type DeckList } from "./lib/deck-model.ts";
+import { readDeck } from "./lib/deck-store.ts";
 import { join } from "node:path";
 
 // ---------------------------------------------------------------- types
@@ -68,14 +70,6 @@ type SwapSection = {
 /** Basics default to a plain black-bordered printing unless `set` says otherwise. */
 const DEFAULT_BASIC_SET = "m21";
 const BASICS = ["Plains", "Island", "Swamp", "Mountain", "Forest"];
-
-/**
- * One decklist line: `1 Sol Ring` or `1x Sol Ring` (the convention in `decks/README.md`).
- * Capture 1 is the quantity, capture 2 the still-annotated name — pass it through
- * `cleanCardName` before rendering or looking it up. Shared with `lib/decklist.ts` so the
- * PDF and the card tool can never disagree about what a line means.
- */
-const CARD_LINE = DECKLIST_CARD_LINE;
 
 /** Contents of `decks/<slug>/pdf.json`. */
 type PdfData = {
@@ -366,50 +360,39 @@ function renderMarkdown(md: string, symbols: Record<string, string>): string {
 // ---------------------------------------------------------------- card metadata
 
 /**
- * Mana cost / MV / type / produced-mana for every card in the decklist,
- * cached per deck so re-runs are offline.
+ * Mana cost / MV / type / produced-mana for every card in the list, from the shared card cache
+ * (`data/card-cache.json`), keyed by lower-cased front face.
  */
-async function loadDeckMeta(slug: string, names: string[]): Promise<Record<string, any>> {
-  const cachePath = join(REPO_ROOT, "data", `deck-meta-${slug}.json`);
-  let cache: Record<string, any> = existsSync(cachePath) ? await Bun.file(cachePath).json() : {};
+async function loadDeckMeta(names: string[]): Promise<Record<string, any>> {
+  const { found, unresolved } = await resolveNames(names);
+  for (const nf of unresolved) console.warn(`  ! no card data for "${nf}"`);
 
-  const missing = names.filter((n) => !cache[frontFace(n).toLowerCase()]);
-  if (missing.length) {
-    console.log(`fetching card data for ${missing.length} card(s)…`);
-    const { fetchCollection } = await import("./lib/scryfall.ts");
-    const res = await fetchCollection([...new Set(missing.map(frontFace))]);
-    for (const c of res.found) cache[frontFace(c.name).toLowerCase()] = c;
-    for (const nf of res.notFound) console.warn(`  ! no card data for "${nf}"`);
-    mkdirSync(join(REPO_ROOT, "data"), { recursive: true });
-    await Bun.write(cachePath, JSON.stringify(cache));
-  }
-  return cache;
+  const meta: Record<string, any> = {};
+  for (const [name, card] of Object.entries(found)) meta[frontFace(name).toLowerCase()] = card;
+  return meta;
 }
 
 // ---------------------------------------------------------------- html
 
 /**
- * Render `DECK.md`'s `## Role (n)` sections into a three-column checklist.
+ * Render the list's sections into a three-column checklist.
  * Nonland cards get their mana cost + MV; lands get the mana they can produce.
  */
 function renderDecklist(
-  deckMd: string,
+  list: DeckList,
   meta: Record<string, any>,
   symbols: Record<string, string>,
   identity: Set<string>,
-  appendix: { title: string; html: string }[],
 ): string {
   let html = "";
-  for (const block of deckMd.split(/^## /m).slice(1)) {
-    const [heading, ...rest] = block.split("\n");
-    const cards = rest.filter((l) => CARD_LINE.test(l.trim()));
-    if (!cards.length) continue;
+  for (const section of list.sections) {
+    if (section.cards.length === 0) continue;
 
-    const items = cards.map((line) => {
-      const m = line.trim().match(CARD_LINE);
-      if (!m) return `<li>${esc(line.trim())}</li>`;
-      const [, qty] = m;
-      const name = cleanCardName(m[2]);
+    const count = section.cards.reduce((n, c) => n + c.qty, 0);
+    const heading = `${section.name} (${count})`;
+    const items = section.cards.map((entry) => {
+      const qty = String(entry.qty);
+      const name = entry.name;
       const card = meta[frontFace(name).toLowerCase()];
       if (!card) return `<li><span class="q">${qty}</span> ${esc(name)}</li>`;
 
@@ -498,7 +481,7 @@ h3 { font-size:9.5pt; margin:0 0 3pt; text-transform:uppercase; letter-spacing:.
 
 function buildHtml(
   data: PdfData,
-  deckMd: string,
+  list: DeckList,
   img: Record<string, string>,
   meta: Record<string, any>,
   symbols: Record<string, string>,
@@ -577,7 +560,7 @@ function buildHtml(
 <h1>${esc(data.title)}</h1>
 ${data.subtitle ? `<div class="sub">${esc(data.subtitle)}</div>` : ""}
 ${statChips ? `<div class="stats">${statChips}</div>` : ""}
-<section class="sec"><div class="cols">${renderDecklist(deckMd, meta, symbols, identity)}</div></section>
+<section class="sec"><div class="cols">${renderDecklist(list, meta, symbols, identity)}</div></section>
 
 ${
   swaps.length || sideboard.length
@@ -598,22 +581,19 @@ ${appendix.map((a) => `<section class="sec brk"><div class="md-body">${a.html}</
 
 const slug = process.argv[2];
 if (!slug) {
-  console.error("usage: bun run deck:pdf <deck-slug>\n   e.g. bun run deck:pdf edgar-markov");
+  console.error("usage: bun run deck:pdf <deck-slug> [list-id]\n   e.g. bun run deck:pdf edgar-markov");
   process.exit(1);
 }
 
 const deckDir = join(REPO_ROOT, "decks", slug);
-const deckPath = join(deckDir, "DECK.md");
 const dataPath = join(deckDir, "pdf.json");
-for (const [label, path] of [["DECK.md", deckPath], ["pdf.json", dataPath]] as const) {
-  if (!existsSync(path)) {
-    console.error(`missing ${label}: ${path}`);
-    if (label === "pdf.json") console.error(`see decks/README.md for the pdf.json shape.`);
-    process.exit(1);
-  }
+if (!existsSync(dataPath)) {
+  console.error(`missing pdf.json: ${dataPath}\nsee decks/README.md for the pdf.json shape.`);
+  process.exit(1);
 }
 
-const deckMd = await Bun.file(deckPath).text();
+const deck = await readDeck(slug);
+const { list } = pickList(deck, process.argv[3]);
 const data: PdfData = await Bun.file(dataPath).json();
 
 const cardRefs: CardRef[] = [
@@ -623,14 +603,8 @@ const cardRefs: CardRef[] = [
 ];
 const images = await loadImages(cardRefs);
 
-const deckNames = deckMd
-  .split("\n")
-  .map((l) => {
-    const m = l.trim().match(CARD_LINE);
-    return m ? cleanCardName(m[2]) : "";
-  })
-  .filter(Boolean);
-const meta = await loadDeckMeta(slug, deckNames);
+const deckNames = listNames(list);
+const meta = await loadDeckMeta(deckNames);
 const symbols = await loadSymbols();
 
 /** Union of every card's colour identity — used to trim what lands are shown as producing. */
@@ -646,7 +620,7 @@ for (const rel of data.appendix ?? []) {
   appendix.push({ title: rel, html: renderMarkdown(await Bun.file(path).text(), symbols) });
 }
 
-const html = buildHtml(data, deckMd, images, meta, symbols, identity, appendix);
+const html = buildHtml(data, list, images, meta, symbols, identity, appendix);
 const htmlPath = join(deckDir, `.${slug}-reference.html`);
 await Bun.write(htmlPath, html);
 

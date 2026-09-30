@@ -1,0 +1,178 @@
+# Candidates NOT in the user's pool — found via EDHREC page + Scryfall sweeps, 2026-08-23.
+# Fetched into cards.txt for verification; evaluated in research/decisions.md.
+1 Torbran, Thane of Red Fell
+1 Heartless Hidetsugu
+1 Orcish Bowmasters
+1 Demonic Tutor
+1 Vampiric Tutor
+1 Wheel of Fortune
+1 Wheel of Misfortune
+1 Magus of the Wheel
+1 Reforge the Soul
+1 Burning Inquiry
+1 Molten Psyche
+1 Bloodsoaked Insight
+1 Teferi's Puzzle Box
+1 Mana Flare
+1 Wild Evocation
+1 Humble Defector
+1 Akroan Horse
+1 Court of Ambition
+1 Prisoner's Dilemma
+1 Khârn the Betrayer
+1 Coveted Jewel
+1 Anvil of Bogardan
+1 Curse of Opulence
+1 Share the Spoils
+1 Captive Audience
+1 Mindcrank
+1 Pain Distributor
+1 Rakdos, Lord of Riots
+1 Star Athlete
+1 Florian, Voldaren Scion
+1 Withering Torment
+1 Suspended Sentence
+1 Tibalt's Trickery
+1 Malakir Rebirth
+1 Fell the Profane
+1 Black Market Connections
+1 Spiked Corridor
+1 The Rollercrusher Ride
+1 Eidolon of the Great Revel
+1 Pyrostatic Pillar
+1 Dragonlord Kolaghan
+1 Erebos, God of the Dead
+1 Balor
+1 Chains of Mephistopheles
+1 Black Vise
+1 Iron Maiden
+1 Ebony Owl Netsuke
+1 Viseling
+1 Wheel of Torture
+1 Sire of Insanity
+1 Fatal Lore
+1 Curse of Obsession
+1 Possibility Storm
+1 Gonti, Night Minister
+1 Scab-Clan Berserker
+1 Mindsparker
+1 Price of Glory
+1 Burning Earth
+1 Acidic Soil
+1 Tempt with Vengeance
+1 Risky Move
+1 Life of the Party
+1 Rankle and Torbran
+1 Capital Punishment
+1 Obosh, the Preypiercer
+1 Ayara, First of Locthwain
+1 Kokusho, the Evening Star
+1 Monument to Endurance
+1 Hidetsugu's Second Rite
+1 Zurzoth, Chaos Rider
+1 Jinxed Idol
+1 Harmless Offering
+1 Fraying Omnipotence
+1 Ob Nixilis, the Adversary
+1 Angrath's Marauders
+1 Fear of Burning Alive
+1 Persistent Constrictor
+1 Unstoppable Slasher
+1 Screaming Nemesis
+1 Massacre Girl
+1 Xantcha, Sleeper Agent
+1 Shadow of Mortality
+1 Guff Rewrites History
+1 Transforming Flourish
+1 Mutinous Massacre
+1 Creative Technique
+1 Decorum Dissertation
+1 Mob Verdict
+1 Scheming Symmetry
+1 Allure of the Unknown
+1 Light Up the Stage
+1 Mana Geyser
+1 Boltwave
+1 Cursed Mirror
+1 Séance Board
+1 Victory Chimes
+1 Gilded Lotus
+1 Thran Dynamo
+1 Commander's Sphere
+1 Wishclaw Talisman
+1 Hithlain Rope
+1 Dark Fortress
+1 Daredevil, Fearless Fighter
+1 Bastion of Remembrance
+1 The One Ring
+1 Bolas's Citadel
+1 Ancient Tomb
+1 Sol Ring
+1 Arcane Signet
+1 Talisman of Indulgence
+1 Rakdos Signet
+1 Fellwar Stone
+1 Mind Stone
+1 Thought Vessel
+1 Command Tower
+1 Dragonskull Summit
+1 Smoldering Marsh
+1 Tainted Peak
+1 Sulfurous Springs
+1 Graven Cairns
+1 Foreboding Ruins
+1 Blood Crypt
+1 Shadowblood Ridge
+1 Exotic Orchard
+1 Luxury Suite
+1 Blazemire Verge
+1 Temple of Malice
+1 Haunted Ridge
+1 Blackcleave Cliffs
+1 Bloodstained Mire
+1 Canyon Slough
+1 Badlands
+1 Mount Doom
+1 Reliquary Tower
+1 Maze of Ith
+1 Command Beacon
+1 Castle Locthwain
+1 Takenuma, Abandoned Mire
+1 Rogue's Passage
+1 Shivan Gorge
+1 Temple of the False God
+1 Cabal Coffers
+1 Kolaghan's Command
+1 Toralf, God of Fury
+1 Hellkite Tyrant
+1 Vexing Bauble
+1 Darksteel Plate
+1 Hammer of Nazahn
+1 Tibalt, Rakish Instigator
+1 Furnace of Rath
+1 Sunbird's Invocation
+1 Ruination Rioter
+1 Goblin Game
+1 Hive Mind
+1 Knowledge Pool
+1 Nath's Buffoon
+1 Avarice Totem
+1 Wedding Ring
+1 Howling Golem
+1 Otherworld Atlas
+1 Horn of Greed
+1 Winter Sky
+1 Master of the Feast
+1 Dire Undercurrents
+1 Forced Fruition
+1 Cruelclaw's Heist
+1 Coiling Rebirth
+1 Nocturnal Hunger
+1 Consumed by Greed
+1 Sazacap's Brew
+1 Valley Rally
+1 Blooming Blast
+1 Wildfire Howl
+1 Starforged Sword
+1 Gate to the Afterlife
+1 Blasphemous Act

@@ -1,0 +1,25 @@
+{
+  "title": "Upgrade Test - Chatterfang",
+  "subtitle": "All 13 recommended swaps applied - playtest fork of decks/chatterfang",
+  "stats": [
+    [
+      "Nonland",
+      "64"
+    ],
+    [
+      "Avg MV",
+      "3.00"
+    ],
+    [
+      "Outlets",
+      "6"
+    ],
+    [
+      "Drainers",
+      "10"
+    ]
+  ],
+  "appendix": [
+    "research/gameplan.md"
+  ]
+}

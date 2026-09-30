@@ -24,3 +24,9 @@ bun.lockb
 # Raw deck-editor exports dropped at the repo root while researching. The ones worth keeping
 # get cleaned up into decks/<slug>/samples/ — see decks/README.md.
 /moxfield-*.json
+
+# Generated proposal-artifact payload. The hand-written half lives in
+# decks/<slug>/research/proposal.json and IS tracked; everything under artifact/ except the page
+# itself is rebuilt by `bun run deck:proposal <slug>` (see deck-brain §3.1).
+decks/*/artifact/img/
+decks/*/artifact/proposal.json
