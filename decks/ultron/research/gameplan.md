@@ -78,7 +78,8 @@ Under Krang every artifact creature has haste, so the token rocks tap immediatel
    Ultron token, every Spawn, every myriad copy, every Myr. Echoes doubles it. Twenty triggers
    over a game is normal.
 5. **Walking Ballista** — under Forsaken Monument every tap for {C} makes an extra {C}; Tron plus
-   three doubled rocks is X=10 easily, and it is a colourless spell for Sanctum of Ugin.
+   three doubled rocks is X=10 easily, and it is a colourless spell for Sanctum of Ugin. Under
+   Omnath, Locus of the Void the mana banked on earlier turns adds to X as well.
 6. **Portal to Phyrexia** — original plus token: six sacrifices on entry, then two reanimations
    every upkeep from any graveyard.
 7. **Platinum Angel** — not a kill, a lock: copy her, then Forge or Krang for indestructible and
@@ -87,9 +88,9 @@ Under Krang every artifact creature has haste, so the token rocks tap immediatel
 
 ## Removal that only hurts them
 
-All Is Dust, Ugin's −3 and Ugin Eye of the Storms' exile-on-cast read *colour*; Null Elemental
-Blast reads *multicolour*, so a mono-coloured commander is immune to it. Nothing in this deck has a
-colour. Ugin, Eye of the Storms is the strongest card in the list
+All Is Dust, Ugin's −3 and Ugin Eye of the Storms' exile-on-cast read *colour*. Nothing in this
+deck has a colour, Omnath included. (Null Elemental Blast is on the sideboard since 2026-09-30; it
+reads *multicolour*, so a mono-coloured commander is immune to it.) Ugin, Eye of the Storms is the strongest card in the list
 once it lands — every colourless spell (almost every spell) exiles a coloured permanent.
 
 ## Sequencing traps
@@ -98,7 +99,7 @@ once it lands — every colourless spell (almost every spell) exiles a coloured 
   the {2} a turn ahead.
 - **Sanctum of Ugin** triggers on *casting* a colourless spell with MV 7+ — Krang, Portal,
   Blightsteel, Forge, Leveler, Battlesphere, Platinum Angel, Squadron, All Is Dust, Ugin EotS,
-  Ten Rings, and Ballista or Hangarback at X of 4 or more. Hold it until the cast, then sac for Blightsteel or Krang.
+  Ten Rings, Omnath, and Ballista or Hangarback at X of 4 or more. Hold it until the cast, then sac for Blightsteel, Krang or Omnath.
 - **Kuldotha Forgemaster** puts the card onto the battlefield — that is an artifact *entering*
   (Ultron triggers) but not a *cast* (Sanctum, Echoes' copy and Liberator's counter don't).
 - **Marvin** has every activated ability of your other creatures — and every Ultron token of a
@@ -131,8 +132,26 @@ once it lands — every colourless spell (almost every spell) exiles a coloured 
 - **Duplicant** exiles a nontoken creature on entry; the token Duplicant does it again.
 - **Legend rule** on token copies of Krang, Karn, The One Ring, Squadron is not legendary. Mirror
   Box off → choose one; it doesn't have to be the card.
-- **Mishra's Workshop** mana only casts artifact spells — not Echoes, All Is Dust, the Ugins or
-  the instants. Tap it first for artifacts and keep Wastes for {C} pips.
+- **Mishra's Workshop** mana only casts artifact spells — not Echoes, All Is Dust, the Ugins,
+  Omnath or the instants. Tap it first for artifacts and keep Wastes for {C} pips.
+- **Omnath, Locus of the Void** keeps your unspent mana across steps and turns. When the pool
+  would empty, the mana becomes colourless instead and stays (CR 500.5, 614.5; ledger cost-014).
+  - Under Unwinding Clock, tap every rock on every opponent's turn and keep the mana for your own
+    turn. Sol Ring, Thran Dynamo and Gilded Lotus alone bank 24 across three opponent turns, or 33
+    with Forsaken Monument.
+  - Banked mana keeps its restriction (ledger cost-023). Workshop mana still casts only artifact
+    spells and can't pay Ultron's {2}. Karn's upkeep mana now carries over every turn, but still
+    can't cast a nonartifact spell. Spend restricted mana first.
+  - Landfall adds {C}{C}, or {C}{C}{C}{C} under Echoes. When Ultron copies Darksteel Citadel,
+    Treasure Vault or Power Depot, the token is a land: resolve landfall first and pay the {2}
+    with it. Solemn's basic and Vesuva also trigger it.
+  - It's not an artifact: Ultron can't copy it, and Workshop, Karn and Mightstone mana can't cast
+    it. Jhoira's Familiar (−1) and Ugin, the Ineffable (−2) do reduce it, and Gateway or Amulet
+    put it in for {4}. Echoes' cast copy dies to the legend rule unless Mirror Box is out, and
+    two Omnaths double landfall again. Hall of Echoes can become a second one for a turn.
+  - If it's removed, the bank stays until the end of that step (ledger cost-010). Spend it in
+    response on Walking Ballista's {4} counters or Kozilek's Command.
+  - Announce your pool every time you pass priority (CR 106.4b).
 
 ## Mulligan guide
 

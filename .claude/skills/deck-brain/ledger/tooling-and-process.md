@@ -347,3 +347,47 @@ of turn. Draw a card."*) has the same text as Warlord's Fury, cut from vision-sc
 decisions and sideboard records, then re-derive from the recorded grounds (§1.1b).
 **See also:** tool-007
 **Source:** vision-scarlet-witch (2026-09-28), FRA review.
+
+### Never pipe `bun run lookup` through `head` — the entry you need sits below the fold {#tool-018}
+
+**Kind:** correction · **Recorded:** 2026-09-29
+**Cards:** Mirkwood Bats; Nadier's Nightblade; Second Harvest; Chatterfang, Squirrel General
+**Claim:** Truncating a ledger lookup defeats the lookup. `lookup` prints entries whole and in file
+order, not in relevance order, so the entry that answers the question is as likely to be last as
+first.
+**Evidence:** 2026-09-29 (upgrade-test): I needed to know whether Mirkwood Bats triggers once per
+token or once per event when a replacement chain creates forty tokens at one instant. I ran
+`bun run lookup "Mirkwood Bats"`, which reported **11 entries**, piped it through `head -50`, read
+the four it showed, found nothing, and dispatched `mtg-rules-expert`. The answer was already in
+repl-011, which states it in the entry's own Evidence line: *"CR 603.2c — one event with multiple
+occurrences triggers once per occurrence (Bats says 'a token', not 'one or more')"*, with the worked
+`2N+2` Bats-trigger maths beside it. The subagent's answer matched the recorded one and cost a round
+trip. The whole point of deck-brain §1.1 is that lookup comes first; running it and then hiding most
+of its output is the same failure as not running it.
+**Changes:** Read a lookup's full output. When it is genuinely long, narrow it with a more specific
+query or `grep -n "^### "` for the titles and then read the matching entries, and never cap it with
+`head`. Check the entry count the tool reports against how many entries you actually read before
+concluding the ledger has nothing. Dispatch `mtg-rules-expert` only after that count matches.
+**See also:** tool-015, eval-006
+**Source:** upgrade-test (2026-09-29) — dispatched a rules subagent for a ruling repl-011 already
+held.
+
+### Grep the deck's own records for a card before nominating it as a cut {#tool-019}
+
+**Kind:** correction · **Recorded:** 2026-09-29
+**Cards:** Cultivate; Concordant Crossroads; Craterhoof Behemoth
+**Claim:** A deck's research files record which cards the pilot protected and which lines of play
+depend on which cards. Nominating a cut without reading them repeats settled arguments and hides
+costs.
+**Evidence:** Two misses in one upgrade-test pass (2026-09-29). (1) I nominated Cultivate although
+`chatterfang/research/proposal.json` lists it under CLOSE CUTS with the grounds the pilot gave, and
+the pilot declined it a second time. (2) I agreed to the pilot's suggested cut of Concordant
+Crossroads and named one lost combo, but not that `upgrade-test/research/gameplan.md` §7 relies on it:
+Craterhoof Behemoth grants trample, not haste, so without Crossroads the tokens made that turn can't
+attack. I found it only while updating the gameplan after the swap was applied.
+**Changes:** Before naming a cut, run `grep -rn "<card>" decks/<slug>/research/` and read every hit,
+including the proposal's CLOSE CUTS paragraph and the gameplan. A protected card needs new evidence,
+stated as such. Any line of play that depends on the card is a cost to name in the proposal, before
+the pilot decides.
+**See also:** eval-011, tool-018
+**Source:** upgrade-test (2026-09-29), wave 10.

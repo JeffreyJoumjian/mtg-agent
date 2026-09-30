@@ -94,7 +94,6 @@
             { "name": "Eldrazi Confluence", "qty": 1 },
             { "name": "Kozilek's Command", "qty": 1 },
             { "name": "Meteor Golem", "qty": 1 },
-            { "name": "Null Elemental Blast", "qty": 1 },
             { "name": "Ugin, Eye of the Storms", "qty": 1 },
             { "name": "Ugin, the Ineffable", "qty": 1 }
           ]
@@ -128,6 +127,7 @@
             { "name": "Liberator, Urza's Battlethopter", "qty": 1 },
             { "name": "Marvin, Murderous Mimic", "qty": 1 },
             { "name": "Mystic Forge", "qty": 1 },
+            { "name": "Omnath, Locus of the Void", "qty": 1 },
             { "name": "Steel Overseer", "qty": 1 },
             { "name": "Ultron, Machine Overlord", "qty": 1 },
             { "name": "Unwinding Clock", "qty": 1 }
@@ -209,6 +209,7 @@
     "Myr Battlesphere": { "status": "PROXY" },
     "Mystic Forge": { "status": "PROXY" },
     "Null Elemental Blast": { "status": "PROXY" },
+    "Omnath, Locus of the Void": { "printing": {"set":"frc","collectorNumber":"88"} },
     "Palladium Myr": { "status": "PROXY" },
     "Panharmonicon": { "status": "PROXY" },
     "Platinum Angel": { "status": "PROXY" },

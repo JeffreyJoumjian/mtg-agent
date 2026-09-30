@@ -274,3 +274,100 @@ Given that, forcing a second or third add meant breaking a card that works. **On
 size of this wave.** The held candidates are recorded at the top of the proposal artifact in priority
 order — Enduring Vitality first — and will be revisited when play frees a slot, which is exactly how
 Chitterspitter's came open (pilot reported never having cast it once).
+
+## 2026-09-29 — Wave 10: burst seeds, Warren Soultrader, Azusa
+
+**Applied.** 100/100, no legality or identity flags, Game Changers 1 (Gaea's Cradle). avg MV
+2.84 → 2.97, **MV≤2 27 → 24, MV≤3 49 → 48**. Token Engines 11 → 15, Ramp & Mana 16 → 13, Card Draw
+7 → 6, Sacrifice Outlets 5 → 5. The proposal page's projection (the parent plus every applied wave)
+lands on the same 100 cards at 2.97, so the page and this list agree.
+
+| Out | In | Section |
+|---|---|---|
+| Nature's Lore | Chatterstorm | Token Engines |
+| Arcane Signet | Verdant Command | Token Engines |
+| Carrion Feeder | Esika's Chariot | Token Engines |
+| Village Rites | Deep Forest Hermit | Token Engines |
+| Concordant Crossroads | Warren Soultrader | Sacrifice Outlets |
+| Oracle of Mul Daya | Azusa, Lost but Seeking | Ramp & Mana |
+
+**The play report that drove it.** Over many games the fork could not win before turn 8 to 10. The
+pilot asked for more burst token creation and drain, and fewer landfall and land-fetch pieces.
+
+**The measurement.** The curve was not the cause: 27 cards at MV 2 or less and 49 at MV 3 or less is
+a fast curve. Classifying the 13 token cards plus the commander by whether they *start* a token event
+or *react* to one gave **ten multipliers or splitters against six seeds**, and every seed except one
+made exactly one token per turn. Avenger of Zendikar (MV 7) was the only card that made several
+tokens in one turn from nothing. Three of the fork's own earlier cuts (Deep Forest Hermit, Verdant
+Command, Nested Shambler) were seeds, which is why the fork got slower than the parent.
+
+**Why the adds are seeds and not drain.** Seven per-death drains plus three converters already put a
+single token death near 19 life across the table. Per-token triggers were confirmed this session
+(ledger repl-011, CR 603.2c): Mirkwood Bats fires once per token created, so token count is the clock.
+
+**Chatterstorm over Spore Swarm, measured.** On Chatterfang + Peregrin Took + Tippy-Toe + Academy
+Manufactor, three storm copies (three separate events) make 42 tokens; Spore Swarm's one event of
+three makes 18. Peregrin and Tippy-Toe add a fixed Food per event, so granularity multiplies them
+(ledger repl-013). Official Academy Manufactor ruling: it scales with the count.
+
+**The pilot's calls, and the grounds recorded for each:**
+
+- **Kept Cultivate** (second time it was declined; it was already on the close-cuts list, and I
+  re-nominated it anyway): *"a nice two land burst when you're struggling for lands."*
+- **Kept Dryad of the Ilysian Grove.**
+- **Kept Avenger of Zendikar:** *"it's expensive sure but it can pump out 16+ tokens easily."*
+- **Cut Oracle of Mul Daya** because its revealed top card *"is putting a target on my back"*, and
+  asked for another extra-land card in its place.
+- **Cut Concordant Crossroads** for a sacrifice outlet that makes any-colour mana, and asked for more
+  cards shaped like Pitiless Plunderer. Warren Soultrader answers both.
+- **Chose Azusa over Druid Class** (my recommendation, which also turns each land into a lifegain
+  event for the three converters).
+- **Chose option 2 (Azusa in, Carrion Feeder out)** over my recommendation (no Azusa, Feeder kept).
+
+**Azusa, measured against it before the pilot chose it.** Extra land drops only fire with a spare
+land in hand. With 36 lands in 99, on the play and every normal drop made, that's 27% on turn 4, 16%
+on turn 5 and 9% on turn 6; a second spare is 10%, 5% and 2%. A 40,000-game simulation (36 lands
+including 2 fetchlands, Cultivate and Sakura-Tribe Elder) gave **3.7 landfall triggers over turns 3
+to 8 with Dryad alone and 3.7 with Dryad + Azusa**, and 5.3 against 5.4 with one extra card drawn a
+turn. Extra drops mostly move a land you'd have played next turn onto this turn. Oracle supplied the
+lands from the top; Azusa and Dryad don't. The same simulation gives **Dryad's own drop about zero**
+as well, so she is earning her slot on fixing and the 2/4 body. Icetill Explorer, which replays
+lands from the graveyard, was the only option that moved the count (+0.5 to +0.8). Verdict on Azusa
+after play.
+
+**Carrion Feeder, measured.** I first nominated it on the grounds that Chatterfang is an outlet from
+the command zone. That was overstated: his outlet costs {B} and only eats Squirrels. Counting Ashnod's
+Altar, Woe Strider, Yawgmoth, Warren Soultrader, Phyrexian Tower and High Market, the chance of having
+seen a free outlet by turn 4 is 54% with Feeder and 48% without. The pilot chose option 2 knowing that.
+
+**Costs named before applying:**
+
+- **Chatterfang + Warren Soultrader is a declared two-card chosen-N loop.** Sacrifice a Squirrel and
+  pay 1 life, get a Treasure and a Squirrel back. Mirkwood Bats fires three times per loop. Any
+  life-gaining death payoff makes it free. It can assemble on turn 4.
+- **Concordant Crossroads out** removes the Unbeatable Squirrel Girl + Cryptolith Rite + Crossroads
+  infinite the deck reviewer counted.
+- **Concordant Crossroads out also means tokens made on the Craterhoof turn can't attack.** They still
+  count toward X. I missed this when proposing the cut and found it while updating the gameplan.
+- The external analyzer will probably read the heavier curve as slower.
+
+**Rejected, with grounds:** Druid Class (above); Exploration (an extra drop and nothing else);
+Case of the Locked Hothouse (Oracle's full text without the reveal, but MV 4 and nothing extra before
+seven lands); Icetill Explorer (the best of the land cards, still under one extra trigger a game);
+Phyrexian Altar (held: Soultrader took the slot and also makes a token per sacrifice); Spore Swarm (one
+event, 18 tokens against Chatterstorm's 42). Pitiless-shaped near misses: Scavenger's Talent and
+Kingpin, Wilson Fisk (once per turn), Golgari Germination and Blight Mound (nontoken deaths only),
+Revel in Riches, Kamber and Moonstone Eulogist (opponents' creatures only), Crowded Crypt (a slow
+one-shot), Ruthless Knave (mana-negative), Experimental Confectioner (a second Camellia; same loop
+with Ninja Pizza and Peregrin Took). Kept after consideration as cuts: Sakura-Tribe Elder (a land
+source and a free death; cutting it was part of the fork's first slowdown, ledger build-042), Vito
+(weakest converter, but the pilot asked for more drain), Bilbo (the new seeds feed him: 18 → 30 on
+the six-card board).
+
+**Held for the next slot, in order:** Squirrel Nest, Enduring Vitality, Marauding Blight-Priest,
+Tend the Pests, Phyrexian Altar, Essence Warden, Enduring Tenacity, Saproling Migration (the pilot
+likes it but finds it expensive).
+
+**`research/gameplan.md` refreshed** in the same pass. It still described cards cut in waves 4 to 9
+(Orcrist, Ancient Greenwarden, Awaken the Woods, Mycoloth, Chitterspitter, Viscera Seer, Champion of
+Lambholt) and said Vito was the only converter. Added §8d for the Soultrader loop.

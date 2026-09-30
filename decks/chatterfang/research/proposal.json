@@ -3,8 +3,8 @@
   "subtitle": "Every recommendation, its grounds, and what happened when the whole package was actually built",
   "listId": "main",
   "diagnosis": [
-    "**HELD ADDS — the short list, in priority order.** Researched, costed and wanted; waiting only on a slot. **1. Enduring Vitality** {1}{G}{G} — Cryptolith Rite's exact granted ability on a 3/3 vigilance body that returns from the graveyard as an enchantment when it dies as a creature; also a second route to the Concordant Crossroads + Unbeatable Squirrel Girl line, which currently needs Cryptolith Rite specifically. **2. Marauding Blight-Priest** {2}{B} — converter #4, *each* opponent loses 1, the same shape as Starscape Cleric; my wave-2 grounds for cutting it (*\"a strictly worse Vito\"* and *\"three converters is more than the lifegain sources support\"*) are both void — it is not a worse Vito on a many-small-events profile, and the fuel count is now 15. **3. Essence Warden** {G} — MV 1, and *no* \"you control\" clause, so opponents' creatures entering also feed the converters. **4. Enduring Tenacity** {2}{B}{B} — the only converter that survives a board wipe and keeps working; single-target, so it overlaps Vito. **5. Bogwater Lumaret** {B}{G} and **Greenhouse Propagator** {2}{G} — both superseded: fuel is not the constraint, and Essence Warden is the cheaper version of the same line.",
-    "**CLOSE CUTS — seven cards the pilot protected, and why the grounds held.** Recorded so none of these gets re-nominated without new evidence. **Ninja Pizza** — it converts Foods that would otherwise sit *idle* into mana, so my \"it competes with Camellia's forage and Bilbo's split\" objection only bites on Foods actually being foraged. **Cultivate** — it is **two** landfall triggers (one land to the battlefield, one to hand for a later drop), not the \"zero synergy\" card I called it. **Elvish Mystic** — turn-one acceleration, which the pilot has asked for repeatedly. **Craterhoof Behemoth** — the last combat kill route now that Orcrist has gone; a curve number is not worth retiring an axis. **Second Harvest** — the only doubling effect that works *after* the board exists, and it is an instant. **Bitterblossom** — the earliest recurring engine, an enchantment so wipes miss it, and two tokens plus two Mirkwood Bats triggers a turn with Chatterfang. **Bloodletter of Aclazotz** — counter bait *and* surprise lethal, two functions no per-card rate analysis sees; and its condition is met constantly by 15 fuel sources, so \"conditional\" was never a real cut reason.",
+    "**HELD ADDS: the short list, in priority order** (re-ranked 2026-09-29 on the seed count). Researched, costed and wanted; waiting only on a slot. **1. Squirrel Nest** {1}{G}{G}: an Aura on a land that makes a Squirrel every turn for no mana. It is the repeatable seed this deck is shortest on. **2. Enduring Vitality** {1}{G}{G}: Cryptolith Rite's granted ability on a 3/3 vigilance body that returns as an enchantment the first time it dies. Its second argument, a route to the Concordant Crossroads + Unbeatable Squirrel Girl loop, left with wave 10. **3. Marauding Blight-Priest** {2}{B}: converter #4, *each* opponent loses 1, the same shape as Starscape Cleric. **4. Tend the Pests** {B}{G}: an instant-speed sacrifice for X Pests that each gain 1 life when they die, so it answers removal on a big creature. **5. Phyrexian Altar** {3}: the any-colour outlet the pilot asked for, held because Warren Soultrader took that slot. **6. Essence Warden** {G}: no *you control* clause, so opponents' creatures feed the converters too. **7. Enduring Tenacity** {2}{B}{B}: the converter that survives a wipe; single-target. **8. Saproling Migration** {1}{G}: the pilot likes it but finds the kicked cost high. **9. Bogwater Lumaret and Greenhouse Propagator**: superseded, fuel is not the constraint.",
+    "**CLOSE CUTS: nine cards the pilot protected, and why the grounds held.** Recorded so none of these gets re-nominated without new evidence. (Cultivate was re-nominated on 2026-09-29 in spite of this list, and the pilot declined it a second time.) **Ninja Pizza**: it converts Foods that would otherwise sit *idle* into mana, so the \"competes with Camellia's forage and Bilbo's split\" objection only bites on Foods actually being foraged. **Cultivate**: **two** landfall triggers (one land to the battlefield, one to hand), and in the pilot's words *\"a nice two land burst when you're struggling for lands.\"* **Elvish Mystic**: turn-one acceleration. **Craterhoof Behemoth**: the last combat kill route. **Second Harvest**: the only doubling effect that works *after* the board exists, at instant speed. **Bitterblossom**: the earliest recurring engine, and an enchantment so wipes miss it. **Bloodletter of Aclazotz**: counter bait *and* surprise lethal, and its condition is met constantly. **Dryad of the Ilysian Grove** (kept 2026-09-29): note that the landfall simulation below gives its extra drop almost no added triggers now that Oracle of Mul Daya is gone, so it earns the slot on fixing (every land taps for any colour) and the 2/4 body. **Avenger of Zendikar** (kept 2026-09-29): *\"it's expensive sure but it can pump out 16+ tokens easily.\"*",
     "The number that kills in this list is **tokens created in one turn**, not tokens standing on board. With Mirkwood Bats, Prosperous Innkeeper and one lifegain converter out, every single token that *enters* is worth 4 damage to every opponent - Bats triggers once per token, not once per batch (CR 603.2c).",
     "That means Avenger of Zendikar on 8 lands is already 16 tokens entering and 64 damage to each opponent, with no sacrifice loop at all. The deck isn't getting there because it is short on mana, short on single-event token bursts, and short on ways to convert a wide board into a win that don't route through the combo.",
     "A per-upkeep drip can never trigger Mirkwood Bats more than twice a turn. That is why the 1-token-per-turn cards feel like nothing, and it is the axis this package was built on: fewer sources that make one token, more sources that make many at once, plus real converters.",
@@ -466,6 +466,90 @@
           "cost": "A 2/1 that **can't block**, so it adds nothing defensively. Offspring costs an extra {2}{B} on top. **Viscera Seer out:** the one genuinely surplus card — Woe Strider strictly dominates it (free sacrifice, scry 1, *and* a Goat, *and* escape recursion), and five free outlets remain plus Chatterfang, three lands and three spells when one in play is enough. Sacrifice Outlets 6 → 5."
         }
       ]
+    },
+    {
+      "label": "Wave 10: seeds, not multipliers",
+      "status": "applied",
+      "note": "Applied to upgrade-test 2026-09-29, after the pilot reported the fork can't win before turn 8 to 10 across many games. **Measured cause:** ten multipliers or splitters against six seeds, and every seed except one made exactly one token per turn. Avenger of Zendikar (MV 7) was the only card that made several tokens in one turn from nothing. The curve was never the problem (27 cards at MV 2 or less before this wave). Measured after: avg MV 2.84 → 2.97, **MV≤2 27 → 24, MV≤3 49 → 48**. Token Engines 11 → 15, Ramp & Mana 16 → 13, Card Draw 7 → 6. The curve got heavier on paper, so the external analyzer will likely read it as slower. The cards leaving at MV 1 made no tokens and no mana; the 4 and 5 drops arriving make four and eight bodies.",
+      "swaps": [
+        {
+          "in": "Chatterstorm",
+          "out": "Nature's Lore",
+          "section": "Token Engines",
+          "verdict": "pending",
+          "axis": "tokens per mana, counted in events",
+          "grounds": "Each storm copy is a **separate creation event**, so Peregrin Took and Tippy-Toe add their fixed Food to every copy (CR 614.5). On Chatterfang + Peregrin Took + Tippy-Toe + Academy Manufactor, three copies make **42 tokens** against Spore Swarm's **18** for the same three Squirrels, at half the mana. With only the commander out it's still 4 tokens for 2 mana.",
+          "interactions": [
+            "Chatterfang, Squirrel General, Peregrin Took, Tippy-Toe, Terrific Partner, Academy Manufactor: the whole chain re-applies to every copy",
+            "Mirkwood Bats: one trigger per token created (CR 603.2c)"
+          ],
+          "cost": "Only one copy unless you cast spells before it that turn. **Nature's Lore out:** the pilot named \"extra land fetching\" as the category to cut and kept Cultivate, which gets two lands to Lore's one."
+        },
+        {
+          "in": "Verdant Command",
+          "out": "Arcane Signet",
+          "section": "Token Engines",
+          "verdict": "pending",
+          "axis": "tokens per mana, at instant speed",
+          "grounds": "Two Squirrels at instant speed, four through the commander. Modal, so it's never dead: the 3-life mode is a lifegain event for Dina, Starscape Cleric and Vito, and the exile mode is graveyard hate. In 40% of Chatterfang decks on EDHREC; this fork had cut it.",
+          "interactions": [
+            "Dina, Soul Steeper, Starscape Cleric, Vito, Thorn of the Dusk Rose: the 3-life mode drains"
+          ],
+          "cost": "The Squirrels enter tapped. **Arcane Signet out:** the only ramp card with no body, no token and no landfall. Bodies are mana here through Gaea's Cradle, Circle of Dreams Druid and Three Tree City."
+        },
+        {
+          "in": "Esika's Chariot",
+          "out": "Carrion Feeder",
+          "section": "Token Engines",
+          "verdict": "pending",
+          "axis": "a repeatable seed that creature removal misses",
+          "grounds": "Two 2/2 Cats on arrival, four through the commander, then a token copy of any token you control every time it attacks. It's a Vehicle, so creature wipes and edicts miss it between turns.",
+          "interactions": [
+            "Chatterfang, Squirrel General: the attack copy is a token creation, so it gets a Squirrel too",
+            "Academy Manufactor: copying a Treasure, Food or Clue becomes one of each"
+          ],
+          "cost": "Crew 4 taps bodies that could have been sacrificed or tapped for mana. **Carrion Feeder out** is the pilot's option 2. I recommended keeping it: free-outlet access by turn 4 is 54% with it and 48% without (counting Ashnod's Altar, Woe Strider, Yawgmoth, Warren Soultrader, Phyrexian Tower and High Market), and Chatterfang's own outlet costs {B} and only eats Squirrels."
+        },
+        {
+          "in": "Deep Forest Hermit",
+          "out": "Village Rites",
+          "section": "Token Engines",
+          "verdict": "pending",
+          "axis": "tokens in one event",
+          "grounds": "Four Squirrels in one event, eight through the commander. Squirrels get +1/+1 while it's out, which is the combat route. Vanishing 3 sacrifices it for a free death trigger. In 64% of Chatterfang decks on EDHREC at +0.57 synergy, the highest-synergy card the deck wasn't running; this fork had cut it.",
+          "interactions": [
+            "Valley Rotcaller: counts every Squirrel",
+            "Camellia, the Seedmiser: menace for the whole Squirrel team"
+          ],
+          "cost": "Five mana. The anthem stops Skullclamp killing Squirrels while it's out. **Village Rites out:** Deadly Dispute does the same job for one more mana and also makes a Treasure, which is a full token event here."
+        },
+        {
+          "in": "Warren Soultrader",
+          "out": "Concordant Crossroads",
+          "section": "Sacrifice Outlets",
+          "verdict": "pending",
+          "axis": "both pilot asks in one card: any-colour mana from a sacrifice, and a token per death",
+          "grounds": "*\"Pay 1 life, Sacrifice another creature: Create a Treasure token.\"* A free outlet for any colour of mana, and every sacrifice is a token event: the commander adds a Squirrel, Peregrin Took and Tippy-Toe add Foods, Academy Manufactor splits them. Golgari has no other card shaped like Pitiless Plunderer that counts token deaths without a once-per-turn cap.",
+          "interactions": [
+            "Chatterfang, Squirrel General: **declared two-card chosen-N loop.** Sacrifice a Squirrel and pay 1 life, get a Treasure and a Squirrel back. Mirkwood Bats: 3 triggers per loop. Any payoff that gains life on a death makes it free. Can assemble on turn 4.",
+            "Pitiless Plunderer: a second Treasure per sacrifice"
+          ],
+          "cost": "A creature, so it dies to wipes, and each activation costs 1 life. **Concordant Crossroads out:** the pilot's suggestion. It hasted every opponent's creatures too. It also takes out the Unbeatable Squirrel Girl + Cryptolith Rite + Crossroads infinite the deck reviewer counted."
+        },
+        {
+          "in": "Azusa, Lost but Seeking",
+          "out": "Oracle of Mul Daya",
+          "section": "Ramp & Mana",
+          "verdict": "pending",
+          "axis": "the pilot's call: keep an extra-land card once Oracle goes",
+          "grounds": "Pilot: Oracle's revealed top card *\"is putting a target on my back.\"* Azusa gives two extra land drops at MV 3, one less than Oracle.",
+          "interactions": [
+            "Dryad of the Ilysian Grove: three extra drops with both out",
+            "Cultivate: the land it puts in hand is a spare land to use a drop on"
+          ],
+          "cost": "**Measured against it before the pilot chose it.** A 40,000-game simulation (36 lands including 2 fetchlands, Cultivate and Sakura-Tribe Elder, on the play) gave **3.7 landfall triggers over turns 3 to 8 with Dryad alone, and 3.7 with Dryad + Azusa** (5.3 vs 5.4 with one extra card drawn per turn). Extra drops only fire with a spare land in hand, which happens 27% of the time on turn 4 and 16% on turn 5. Oracle supplied those lands from the top; Azusa doesn't. Verdict after play."
+        }
+      ]
     }
   ],
   "passed": [
@@ -548,6 +632,46 @@
     {
       "name": "The Mycotyrant",
       "why": "Raised by the pilot 2026-09-28 after it appeared in none of my research — a real gap, not a rejection: it IS returned by the plain sweep `id<=bg type:creature cmc<=3 o:\"create\" o:\"creature token\"`, and I had built the search space out of the pasted pool plus Chatterfang's EDHREC page, where it appears zero times. Evaluated now and it is a clean pass, on the mechanic. Its end-step trigger makes X tokens where X = times you DESCENDED, and CR 700.11 counts \"permanent CARDS put into your graveyard\" — CR 111.6 and 108.2b say a token is not a card, and the Lost Caverns of Ixalan release notes reject the 111.7 graveyard-trip argument by name. So sacrificing Squirrels, Foods, Treasures and Clues descends ZERO times. It is an anti-synergy: the more the engine is tuned to eat tokens, the less it descends. Measured in this list, X = 0–2 on a typical turn — no repeatable self-mill at all, just Takenuma's one-shot channel, Barren Moor cycling and six self-sacrificing lands. Feeding outlets real creature cards instead would descend, but those 52 cards are the engine, not fodder. Second clause is dead too: P/T counts Fungi and/or Saprolings, and with Tendershoot Dryad cut in wave 4 this deck has zero of both, so it is a 3-mana 1/1 trample. Salt 0.27. NOT a knock on the card — it is commander rank #271 in 9,284 decks and its most-played card is Mirkwood Bats at 64%, which is this deck's best payoff. It is a self-mill commander, and mill is the only cheap repeatable way to put CARDS in your own graveyard. Filed as a possible fourth deck, not a Chatterfang piece."
+    },
+    {
+      "name": "Druid Class",
+      "why": "Recommended for Oracle's slot and passed by the pilot for Azusa. Level 1 makes every land a separate 1-life gain for Dina, Starscape Cleric and Vito, which turns landfall into drain; the extra land drop needs level 2, 5 mana in total."
+    },
+    {
+      "name": "Exploration",
+      "why": "Oracle's extra-land line for {G} and nothing else. The simulation gives an extra drop almost no added landfall triggers without a card that supplies lands."
+    },
+    {
+      "name": "Case of the Locked Hothouse",
+      "why": "The closest match to Oracle's whole text without the reveal: once you have seven lands you look at the top privately and play lands, creatures and enchantments from it. MV 4 and does nothing extra before seven lands."
+    },
+    {
+      "name": "Icetill Explorer",
+      "why": "The one extra-land card that supplies lands: it replays used fetchlands and milled lands from the graveyard. Simulated at +0.5 to +0.8 landfall triggers over turns 3 to 8, against Azusa's +0.0 to +0.1. Still under one extra trigger a game."
+    },
+    {
+      "name": "Spore Swarm",
+      "why": "Three Saprolings at instant speed, but in one event: 18 tokens on the full chain against Chatterstorm's 42 for the same three Squirrels, at twice the mana."
+    },
+    {
+      "name": "Scavenger's Talent",
+      "why": "Pitiless Plunderer's shape, but it triggers only once each turn."
+    },
+    {
+      "name": "Kingpin, Wilson Fisk",
+      "why": "Two Treasures per sacrifice, but only once each turn."
+    },
+    {
+      "name": "Golgari Germination",
+      "why": "A Saproling per death, but only nontoken creatures, and nearly every death in this deck is a token."
+    },
+    {
+      "name": "Crowded Crypt",
+      "why": "Counts every death including tokens, then {4}{B}{B} and a sacrifice for that many 2/2 Zombies that can't block. A slow one-shot."
+    },
+    {
+      "name": "Experimental Confectioner",
+      "why": "A Rat per Food sacrificed, so not a death trigger. It's a second Camellia: with Ninja Pizza and Peregrin Took it forms the same chosen-N loop the reviewer already found."
     }
   ],
   "compareTo": {

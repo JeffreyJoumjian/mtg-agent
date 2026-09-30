@@ -328,6 +328,8 @@
   var DRAIN = [
     { id: "plunderer", name: "Pitiless Plunderer", img: "img/pitiless-plunderer.jpg", kind: "token",
       rule: "death → Treasure", what: "a Treasure per creature death — the repeater" },
+    { id: "soultrader", name: "Warren Soultrader", img: "img/warren-soultrader.jpg", kind: "token",
+      rule: "sac → Treasure", what: "a Treasure per creature you sacrifice to it, for 1 life each" },
     { id: "bats", name: "Mirkwood Bats", img: "img/mirkwood-bats.jpg", kind: "token",
       rule: "create or sac", what: "every token created, and every token sacrificed",
       each: function (c) { return c.created + c.sacC + c.sacA; } },
@@ -369,6 +371,10 @@
 
   var PRESETS = [
     { label: "Pitiless Plunderer", n: 1, t: "treasure" },
+    { label: "Warren Soultrader", n: 1, t: "treasure" },
+    { label: "Chatterstorm, per copy", n: 1, t: "squirrel" },
+    { label: "Verdant Command", n: 2, t: "squirrel" },
+    { label: "Esika's Chariot", n: 2, t: "other" },
     { label: "Tireless Provisioner", n: 1, t: "treasure" },
     { label: "Tireless Tracker", n: 1, t: "clue" },
     { label: "Camellia forage", n: 1, t: "food" },
@@ -611,6 +617,7 @@
       if (e || o) { eachSum += e; oneSum += o; rows.push({ d: d, each: e, one: o }); }
       else if (ev) { rows.push({ d: d, each: 0, one: 0, note: ev + " lifegain event" + (ev === 1 ? "" : "s") + ", +" + (ev * (d.per || 1)) + " life" }); }
       else if (d.id === "plunderer") { rows.push({ d: d, each: 0, one: 0, note: "makes the Treasures that start each new event" }); }
+      else if (d.id === "soultrader") { rows.push({ d: d, each: 0, one: 0, note: "each creature you sacrifice to it costs 1 life and makes a Treasure that starts a new event" }); }
     });
 
     var convRows = [];

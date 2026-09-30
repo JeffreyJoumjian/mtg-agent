@@ -46,7 +46,7 @@
 1 Mycosynth Golem (5DN) 137
 1 Myr Battlesphere (2XM) 276
 1 Mystic Forge (40K) 246
-1 Null Elemental Blast (MH3) 12
+1 Omnath, Locus of the Void (FRC) 88
 1 Palladium Myr (M21) 234
 1 Panharmonicon (SLD) 605
 1 Planar Nexus

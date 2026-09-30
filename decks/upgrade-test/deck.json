@@ -50,18 +50,15 @@
         {
           "name": "Ramp & Mana",
           "cards": [
-            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Azusa, Lost but Seeking", "qty": 1 },
             { "name": "Circle of Dreams Druid", "qty": 1 },
-            { "name": "Concordant Crossroads", "qty": 1 },
             { "name": "Cryptolith Rite", "qty": 1 },
             { "name": "Cultivate", "qty": 1 },
             { "name": "Dryad of the Ilysian Grove", "qty": 1 },
             { "name": "Elvish Mystic", "qty": 1 },
             { "name": "Gardenize", "qty": 1 },
             { "name": "Llanowar Elves", "qty": 1 },
-            { "name": "Nature's Lore", "qty": 1 },
             { "name": "Ninja Pizza", "qty": 1 },
-            { "name": "Oracle of Mul Daya", "qty": 1 },
             { "name": "Pitiless Plunderer", "qty": 1 },
             { "name": "Sakura-Tribe Elder", "qty": 1 },
             { "name": "Sol Ring", "qty": 1 },
@@ -76,8 +73,7 @@
             { "name": "Moldervine Reclamation", "qty": 1 },
             { "name": "Skullclamp", "qty": 1 },
             { "name": "Sylvan Library", "qty": 1 },
-            { "name": "Tireless Tracker", "qty": 1 },
-            { "name": "Village Rites", "qty": 1 }
+            { "name": "Tireless Tracker", "qty": 1 }
           ]
         },
         {
@@ -105,12 +101,16 @@
             { "name": "Bilbo, Fellow Conspirator", "qty": 1 },
             { "name": "Bitterblossom", "qty": 1 },
             { "name": "Camellia, the Seedmiser", "qty": 1 },
+            { "name": "Chatterstorm", "qty": 1 },
+            { "name": "Deep Forest Hermit", "qty": 1 },
+            { "name": "Esika's Chariot", "qty": 1 },
             { "name": "Hazel of the Rootbloom", "qty": 1 },
             { "name": "Peregrin Took", "qty": 1 },
             { "name": "Scute Swarm", "qty": 1 },
             { "name": "Second Harvest", "qty": 1 },
             { "name": "The Unbeatable Squirrel Girl", "qty": 1 },
-            { "name": "Tippy-Toe, Terrific Partner", "qty": 1 }
+            { "name": "Tippy-Toe, Terrific Partner", "qty": 1 },
+            { "name": "Verdant Command", "qty": 1 }
           ]
         },
         {
@@ -124,8 +124,8 @@
           "name": "Sacrifice Outlets",
           "cards": [
             { "name": "Ashnod's Altar", "qty": 1 },
-            { "name": "Carrion Feeder", "qty": 1 },
             { "name": "Ravenous Squirrel", "qty": 1 },
+            { "name": "Warren Soultrader", "qty": 1 },
             { "name": "Woe Strider", "qty": 1 },
             { "name": "Yawgmoth, Thran Physician", "qty": 1 }
           ]

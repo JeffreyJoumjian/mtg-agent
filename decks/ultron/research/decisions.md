@@ -466,3 +466,62 @@ often because we'd rather spend the mana elsewhere and develop the board and pay
 trigger."* **Not changed:** Scavenger Grounds (graveyard hate; pod-dependent, pilot's call) and Power
 Depot (enters tapped but counts as an artifact; first cut if tapped lands become a problem).
 Validated: legal, on-identity, 100 cards. PDF regenerated.
+
+---
+
+## 2026-09-30 — Omnath, Locus of the Void in, Null Elemental Blast out (pilot's call, trial)
+
+Snapshot: `versions/2026-09-30-1156-main-omnath-locus-of-the-void-in-null-elemental-blast-out-trial.json`.
+The pilot asked for Omnath and chose the cut: *"we can try cutting null elemental blast and i'll see
+if the deck struggles without it."*
+
+**Omnath, Locus of the Void** `{7}` Legendary Creature — Elemental 6/6, colourless (FRC, pinned to
+the extended-art FRC 88). *"Omnath gets +1/+1 for each unspent mana you have. If you would lose
+unspent mana, that mana becomes colorless instead. Landfall — Whenever a land you control enters,
+add {C}{C}."*
+
+**The 2026-09-28 near-miss, re-derived** (`fra-set-review-2026-09-28.md`):
+- *"Not an artifact: no Ultron copy, no Workshop mana, no artifact reducers."* Still holds for Ultron,
+  Workshop, Karn and Mightstone mana, and Foundry Inspector. The review left out that Jhoira's Familiar
+  (historic, −1) and Ugin, the Ineffable (colourless, −2) do reduce it. Real cost: 7 hard, 4 to 6 with
+  reducers, or {4} at instant speed through Thran Temporal Gateway or Quicksilver Amulet.
+- *"The recorded constraint is mana sinks, not mana."* No longer holds. Omnath makes little mana
+  itself; it keeps the surplus the deck already makes and carries it to the sinks it already runs
+  (Walking Ballista, Hangarback Walker, Kozilek's Command, Hall of Echoes, Mind's Eye, Ultron's {2}).
+  That's ledger eval-025: check for a banking clause before calling surplus mana wasted.
+
+**Grounds for** (rules verified by mtg-rules-expert; ledger cost-010, cost-014, cost-023):
+- Mana persists across steps and turns (CR 500.5, 614.5; Kruphix ruling 2014-04-26, same wording).
+- Unwinding Clock: rocks tapped on each opponent's turn bank for your own turn. Sol Ring, Thran Dynamo
+  and Gilded Lotus alone bank 24 per cycle, 33 with Forsaken Monument. Bounded: one untap per opponent
+  untap step (CR 502.3), so no loop.
+- Karn, Legacy Reforged's upkeep mana carries over instead of emptying at cleanup (CR 514.2).
+- Landfall {C}{C}, doubled by Echoes of Eternity (CR 603.2d). Ultron's token copy of Darksteel
+  Citadel, Treasure Vault or Power Depot is a land entering, so landfall pays the {2} back.
+- Colourless: All Is Dust and both Ugins skip it. Casting it triggers Sanctum of Ugin, and Sanctum
+  can fetch it.
+
+**Grounds against, named:** not an artifact (the same off-type grounds that cut Karn, Scion of Urza
+on 2026-09-10); banked Workshop mana stays artifact-spells-only (CR 106.6), so it can't pay Ultron's
+{2}; Echoes' cast copy dies to the legend rule without Mirror Box; removal empties the bank at the end
+of that step, so hold an instant-speed sink; the pool has to be announced on every priority pass
+(CR 106.4b).
+
+**Null Elemental Blast out** (pilot's pick from the ranked table). Grounds: *"Counter target
+multicolored spell / Destroy target multicolored permanent"*, so a mono-coloured commander is immune;
+Workshop can't pay for it; top of the 2026-09-10, 09-16 and 09-28 cut tables. Cost: interaction 9 → 8
+and the only 1-mana answer. Rest of the table: Quicksilver Amulet (next; Gateway covers every
+artifact creature and Omnath, and Glaring Fleshraker is its only exclusive target), Palladium Myr,
+Hedron Archive and Solemn Simulacrum (each gets better under Omnath), Liberator and Duplicant (not
+considered: declined twice, and kept last on purpose).
+
+**Curve:** avg MV 4.55 → 4.64; MV ≤ 2 12 → 11; MV ≤ 3 23 → 22; MV 7+ 14 → 15.
+
+Roles: Removal & Interaction 9 → 8, Payoffs & Engines 10 → 11. Sideboard: Null Elemental Blast added,
+displaces Omnath (the trial reversal); Karn, the Great Creator re-pointed from Null Elemental Blast to
+Quicksilver Amulet (pilot's pick). Gameplan: Omnath bullet under Sequencing traps; the Sanctum,
+Workshop, Walking Ballista and removal notes updated. EDHREC has no data until FRC releases on
+2026-10-02.
+
+**Validated:** 100/100, 92/92 found, no legality or identity flags, 3/3 Game Changers.
+`MOXFIELD.txt` regenerated with the FRC 88 pin.

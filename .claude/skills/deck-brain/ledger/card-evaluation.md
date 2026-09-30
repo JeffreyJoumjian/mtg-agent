@@ -699,3 +699,44 @@ Search every topic at once with `bun run lookup "<card | rule number | term>"`.
 **Changes:** In any deck with landfall payoffs, count land-fetch spells as landfall enablers and grade them by **how many lands reach the battlefield**, not by mana efficiency. A two-land fetch that splits battlefield/hand is worth more than a one-land fetch of the same cost. "No synergy" is a claim about a card's text that must be checked against the text.
 **See also:** eval-016
 **Source:** upgrade-test (2026-09-28) — pilot rescued Cultivate from my cut list.
+
+### An extra land drop adds landfall triggers only when something supplies the lands {#eval-058}
+
+**Kind:** pattern · **Recorded:** 2026-09-29
+**Cards:** Azusa, Lost but Seeking; Dryad of the Ilysian Grove; Oracle of Mul Daya; Icetill Explorer; Exploration; Case of the Locked Hothouse; Druid Class; Cultivate; Sakura-Tribe Elder; Tireless Provisioner; Scute Swarm; Tireless Tracker
+**Claim:** A card that only permits more land drops (Exploration, Azusa, Dryad of the Ilysian Grove)
+adds almost no landfall triggers in a 36-land deck, because you run out of lands in hand long before
+you run out of drops. It mostly moves a land you would have played next turn onto this turn. The
+cards that add triggers are the ones that supply lands: fetch spells, fetchlands, and extra-drop
+cards that also play lands from somewhere other than the hand (Oracle of Mul Daya from the top,
+Icetill Explorer from the graveyard).
+**Evidence:** upgrade-test (2026-09-29). Hypergeometric, 36 lands in 99, on the play, every normal
+drop made: the chance of holding a spare land after the normal drop is 27% on turn 4, 16% on turn 5,
+9% on turn 6; a second spare is 10%, 5%, 2%. A resolved Cultivate raises the first to 53%, 36%, 23%.
+A 40,000-game simulation (36 lands including 2 fetchlands, Cultivate and Sakura-Tribe Elder) counted
+landfall triggers over turns 3 to 8: no extra-drop card 3.7, Dryad 3.7, Dryad + Azusa 3.7. With one
+extra card drawn a turn: Dryad 5.3, Dryad + Azusa 5.4. Icetill Explorer, which replays fetchlands and
+milled lands from the graveyard, was the only card that moved it: +0.5 to +0.8. The model is loose on
+mana, but the conclusion rests on lands drawn, which it counts exactly.
+**Changes:** Grade an extra-land-drop card by its land supply, not its drop count. Two drop-granters
+in one list is a blank alongside the first (SKILL §2.5), because X is lands in hand. Pair a granter
+with a land source (Cultivate puts one in hand) or pick one that brings its own lands. A landfall
+payoff does not need a granter to earn its slot: each fires about 4 to 5 times over turns 3 to 8 off
+normal drops, fetchlands and fetch spells. This answers Ghave's open question about a second
+extra-land card (Icetill Explorer or Dryad): Icetill, if either.
+**See also:** eval-057, eval-002
+**Source:** upgrade-test (2026-09-29). The pilot chose Azusa anyway over this measurement; verdict
+pending play.
+
+### The pilot counts public information as a cost: a revealed top card draws attacks {#eval-059}
+
+**Kind:** pattern · **Recorded:** 2026-09-29
+**Cards:** Oracle of Mul Daya; Case of the Locked Hothouse
+**Claim:** A card that plays with your library's top card revealed (or reveals your hand) tells the
+table what you are about to do, and this pilot treats that as a real cost in multiplayer.
+**Evidence:** The pilot cut Oracle of Mul Daya from upgrade-test on exactly that ground: *"playing
+with the top revealed is putting a target on my back."* Case of the Locked Hothouse does the same job
+once solved with a private look (*"You may look at the top card of your library any time"*).
+**Changes:** When proposing a card that reveals the top of the library or the hand, name the reveal as
+a cost in the grounds, and offer a private-look alternative where one exists.
+**Source:** upgrade-test (2026-09-29).

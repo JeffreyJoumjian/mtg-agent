@@ -37,6 +37,11 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
   deciding swap by swap (*"i don't have time to decide"*). Tuned in waves since. It isn't curated.
 - After play, promote the waves that earned it into `decks/chatterfang` with `deck:edit`, mark
   them `applied` in `chatterfang/research/proposal.json`, and drop the rest.
+- Declared chosen-N loops beyond chatterfang's: Chatterfang + Warren Soultrader (wave 10, live from
+  turn 4). Wave 10 removed Concordant Crossroads, and with it the Unbeatable Squirrel Girl + Cryptolith
+  Rite + Crossroads loop; tokens made on a Craterhoof turn can no longer attack.
+- Azusa, Lost but Seeking went in over a simulation that gave extra land drops about zero added
+  landfall triggers (wave 10). Ask how she played before the next wave.
 
 ### ghave (WBG)
 
@@ -114,6 +119,8 @@ and flag it before adding:
 
 - Artifact and copy deck, explicitly **not voltron** (*"purely an artifact and copying deck"*).
 - Basalt Monolith is out on purpose: it's infinite with Forsaken Monument.
+- Trial since 2026-09-30: Omnath, Locus of the Void in, Null Elemental Blast out. The pilot will
+  judge whether the deck struggles without NEB; the sideboard row swaps it back for Omnath.
 
 ## vision-scarlet-witch: The Vision and Scarlet Witch (mono-red)
 

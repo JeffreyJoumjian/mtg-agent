@@ -1,14 +1,12 @@
 # Upgrade Test (Chatterfang) — Pilot's Gameplan
 
-> Playtest fork of `decks/chatterfang` taken **2026-09-25** with all 13 recommended swaps applied at
-> once. Parent list untouched. Proposal page: https://claude.ai/artifact/Qgp3cNcdmKWoE8fPZMxvQB
+> Playtest fork of `decks/chatterfang`, taken **2026-09-25** and tuned in waves since. Parent list
+> untouched. Every wave, with its grounds, is in `research/decisions.md` and on the proposal page:
+> https://claude.ai/artifact/Qgp3cNcdmKWoE8fPZMxvQB
 >
-> **In:** Craterhoof Behemoth, Concordant Crossroads, Ancient Greenwarden, Mycoloth, Circle of
-> Dreams Druid, Orcrist Goblin-cleaver, Bilbo Fellow Conspirator, Ninja Pizza, Cauldron of Essence,
-> Blasphemous Edict, Yawgmoth Thran Physician, Champion of Lambholt, Awaken the Woods.
-> **Out:** From Beyond, Tendershoot Dryad, Bitterblossom, Marauding Blight-Priest, Blade of the
-> Bloodchief, Verdant Command, Nested Shambler, Idol of Oblivion, Dina Soul Steeper, Toxic Deluge,
-> Sakura-Tribe Elder, Abrupt Decay, Cultivate.
+> **Updated 2026-09-29 for wave 10.** In: Chatterstorm, Verdant Command, Esika's Chariot, Deep Forest
+> Hermit, Warren Soultrader, Azusa, Lost but Seeking. Out: Nature's Lore, Arcane Signet, Carrion
+> Feeder, Village Rites, Concordant Crossroads, Oracle of Mul Daya.
 
 ## 0. The one-paragraph version
 
@@ -17,20 +15,21 @@ Rite and Gaea's Cradle turn that board into mana, and the sacrifice outlets turn
 Drain is the primary plan — but **attacking is close to free here, so treat a wide board as a real
 second route.** A token that gets blocked and trades fires every death trigger you own (Blood
 Artist, Zulaport, Bastion, Cauldron of Essence, Mirkwood Bats, Nadier's Nightblade, Marionette
-Apprentice), and the life each one gains feeds Vito. **Either way you are draining.** What this fork
-adds is a way to *end* it: Craterhoof, Orcrist and Blasphemous Edict each convert a wide board into
-a win without touching the combo.
+Apprentice), and the life each one gains feeds Dina, Starscape Cleric and Vito. **Either way you are
+draining.** Craterhoof, Blasphemous Edict and Gruesome Fate each turn a wide board into a win without
+touching the combo. Wave 10 added the thing the deck was short of: cards that make **several tokens
+in one turn from nothing** (Chatterstorm, Verdant Command, Esika's Chariot, Deep Forest Hermit).
 
 ## 1. The curve you actually have
 
 | | MV≤1 | MV2 | MV3 | MV4 | MV5 | MV6+ | avg |
 |---|---|---|---|---|---|---|---|
-| Nonland (64) | 8 | 16 | 22 | 10 | 5 | 3 | **3.00** |
+| Nonland (64) | 5 | 19 | 24 | 10 | 4 | 2 | **2.97** |
 
-**This is a heavier deck than the parent** (2.73 → 3.00) — that is the deliberate trade, cheap drip
-engines for bigger single-turn payoffs. It is why Awaken the Woods, Ancient Greenwarden, Circle of
-Dreams Druid and Ninja Pizza all came in on the same pass. **If the deck feels clunky, the mana came
-down too slowly, not the payoffs too late** — that's the thing to watch and report back.
+Heavier than the parent (2.73). Wave 10 made it heavier on paper (2.84 → 2.97, MV ≤ 2 27 → 24), but
+the cards that left at MV 1 made no tokens and no mana, and the ones that arrived make four to eight
+bodies each. **The thing to watch and report back is the turn you win on**, which was 8 to 10 before
+this wave.
 
 ## 2. The three numbers to track
 
@@ -38,44 +37,47 @@ down too slowly, not the payoffs too late** — that's the thing to watch and re
    created** (CR 603.2c), Prosperous Innkeeper gains 1 per creature entering, and Vito converts each
    of those gains. Sixteen tokens entering at once is sixteen separate Bats triggers.
 2. **Tokens on board** — everything else scales off it: Gaea's Cradle, Three Tree City, Circle of
-   Dreams Druid, Gruesome Fate, Valley Rotcaller, Orcrist, Craterhoof, Blasphemous Edict.
+   Dreams Druid, Gruesome Fate, Valley Rotcaller, Craterhoof, Blasphemous Edict.
 3. **Is Bloodletter out, and is it your turn?** If yes, every number above doubles.
 
-> **Note the change from the parent list:** Dina and Blight-Priest are gone, so **Vito is your only
-> lifegain converter**. Life-gain *events* still matter, but only through one card now.
+> **Three lifegain converters:** Dina and Starscape Cleric (1 to *each* opponent per gain) and Vito
+> (that much to one opponent). Every 1-life gain is a separate event for each of them, so many small
+> gains beat one big one.
 
 ## 3. Opening
 
-**T1–T2:** Llanowar Elves (turn-2 Chatterfang), Viscera Seer, Carrion Feeder, Ravenous Squirrel,
-Arcane Signet, Skullclamp, Concordant Crossroads.
+**T1–T2:** Llanowar Elves or Elvish Mystic (turn-2 Chatterfang), Sol Ring, Ravenous Squirrel,
+Bitterblossom, Skullclamp, Sakura-Tribe Elder, Cryptolith Rite. Hold **Chatterstorm** and **Verdant
+Command** for after Chatterfang lands: each Squirrel they make brings a second one.
 
 **T3 — the fork:**
 - No board → **Chatterfang**. He is the engine; everything after him is worth double.
 - Board already → **Cryptolith Rite** (every token taps for mana) or **Parallel Lives**.
-- Lands in hand → **Ancient Greenwarden** line: hold for the turn you can chain land drops.
+- Spare lands in hand → **Azusa** or **Dryad**, with a landfall payoff already out.
 
 **T4–T6:** deploy a drain payoff under an existing board, not the other way around. A Blood Artist
 with nothing to sacrifice is a 0/1. **Yawgmoth is the exception** — he converts spare bodies into
 cards the moment he lands, so he is never a dead draw.
 
 **Mulligans.** Keep 3 lands with both colours and a 1–2 drop. Ship hands with no token source before
-turn 3. At avg MV 3.00 this list wants the third land more than the parent did.
+turn 3. At avg MV 2.97 this list wants the third land more than the parent did.
 
 ## 4. The sacrifice decision tree
 
 **Sacrifice when:** you have a free outlet and *any* drain payoff; in response to targeted removal;
 in response to a wrath (Plumb the Forbidden converts the board into a fistful of cards).
 
-**Do NOT sacrifice when:** no payoff is on the battlefield; or **Vito or Prosperous Innkeeper would
-die in the same event** — "whenever you gain life" has no look-back and they must be alive as each
-gain happens. Blood Artist, Zulaport, Bastion and Cauldron of Essence are fine dying in the same
+**Do NOT sacrifice when:** no payoff is on the battlefield; or **Vito, Dina, Starscape Cleric or
+Prosperous Innkeeper would die in the same event**. "Whenever you gain life" and "whenever a creature
+enters" have no look-back, so they must be alive as each gain happens. Blood Artist, Zulaport, Bastion and Cauldron of Essence are fine dying in the same
 wipe, because dies-triggers look back in time (CR 603.10a).
 
 ## 5. The engine to look for
 
 **Free outlet + Blood Artist + Zulaport + Bastion + Cauldron of Essence.** Each token sacrificed is
 1 to *each* opponent four times over, plus Mirkwood Bats for a fifth, plus Marionette Apprentice for
-a sixth if it's out. The four life-gains then fire Vito for 4 at one opponent.
+a sixth if it's out. The four life gains then fire Dina and Starscape Cleric for 4 to each opponent
+and Vito for 4 at one, if they're out.
 
 > **Roughly 6 to the whole table per 1/1**, doubled by Bloodletter. Cauldron of Essence is on an
 > **artifact**, so unlike the rest it survives Blasphemous Edict and every creature wipe.
@@ -84,22 +86,25 @@ a sixth if it's out. The four life-gains then fire Vito for 4 at one opponent.
 counter *and draw a card*. It is a free outlet, a draw engine and removal in one, bounded only by
 your life total. With Skullclamp out, a −1/−1 counter kills the clamped 1/1 and draws two more.
 
+**Warren Soultrader is a Pitiless Plunderer you trigger yourself.** Pay 1 life, sacrifice another
+creature, create a Treasure. That Treasure is a token event, so the whole §5c chain runs on every
+sacrifice: a Squirrel from Chatterfang, a Food each from Peregrin and Tippy-Toe, and Manufactor's
+split. It is also the deck's any-colour outlet. See §8d for the loop.
+
 ## 5b. Landfall — every land is a token and a Squirrel
 
 Chatterfang adds a Squirrel to every token, and four cards make a token per land: Tireless
 Provisioner (Food or Treasure), Tireless Tracker (a Clue), Scute Swarm (a copy of itself at six
 lands), Avenger of Zendikar (a Plant per land on arrival, then a counter per land after).
-**Oracle of Mul Daya** gives a second land drop and lets you play lands off the top.
-**Verdant Catacombs** and **Misty Rainforest** are two landfall triggers each.
+**Verdant Catacombs** and **Misty Rainforest** are two landfall triggers each; crack them on your
+own turn with payoffs out. **Cultivate** is two (one now, one on a later drop) and **Sakura-Tribe
+Elder** is one plus a free death.
 
-**Ancient Greenwarden doubles all of it** — and because "triggers an additional time" makes two
-*separately resolving* triggers (CR 603.2d), each is its own creation event, so **Chatterfang
-applies to both** (CR 614.5). One land drop with Scute Swarm + Greenwarden is 4 bodies and 4
-Mirkwood Bats triggers, not 2 and 2. It also lets you replay lands from the graveyard.
-
-**Awaken the Woods** is the payoff for all of it: X Forest Dryad *land creature* tokens is X tokens
-for Chatterfang to double **and** X landfall triggers, doubled again by Greenwarden, and the lands
-stay.
+**Dryad of the Ilysian Grove** (one extra drop) and **Azusa** (two) only matter when you hold a spare
+land after your normal drop, which is about 27% of turn 4s and 16% of turn 5s. **Cultivate is what
+puts that spare land in your hand**, so the best landfall turn is Cultivate, then Dryad or Azusa,
+then two land drops with Provisioner and Scute Swarm out. Every trigger is its own token event, so
+each one runs the whole §5c chain.
 
 ## 5c. The ordering law — memorise this one
 
@@ -108,8 +113,8 @@ When several replacement effects want the same token-creation event, **you choos
 
 > **Peregrin Took → Tippy-Toe → Bilbo → Academy Manufactor → Chatterfang LAST**
 
-Fixed adders, then splitters, then the multiplier. Getting Chatterfang first on a 15-Treasure Orcrist
-hit costs you **30 tokens**.
+Fixed adders, then splitters, then the multiplier. Getting Chatterfang first on a 15-Treasure event
+costs you **30 tokens**.
 
 **Peregrin Took and Tippy-Toe are not Food-adders** — both read *"if one or more **tokens** would be
 created, those tokens plus an additional Food token are created instead."* They fire on **every**
@@ -132,15 +137,16 @@ which is nearly always true here because Peregrin and Tippy-Toe are feeding it F
 
 ## 6. Sequencing within your turn
 
-1. **Upkeep** — Mycoloth, Chitterspitter. With Oracle of Mul Daya out, check the top of your library
-   before you draw.
-2. **Main 1 — Bloodletter FIRST if you have it.** Then landfall payoffs, **then** your land drop(s),
-   then the other token makers, then the payoff.
-3. **Tap for value before you sacrifice** — Gaea's Cradle, Three Tree City and Circle of Dreams
+1. **Upkeep:** Bitterblossom makes a Faerie; Deep Forest Hermit loses a time counter.
+2. **Start of main 1:** Gardenize adds its mana and Black Market Connections asks for its choices.
+3. **Main 1: Bloodletter FIRST if you have it.** Then landfall payoffs, **then** your land drop(s),
+   then the other token makers, then the payoff. **Chatterstorm goes last among your spells**: every
+   spell cast before it is another copy, and every copy is a separate token event.
+4. **Tap for value before you sacrifice** — Gaea's Cradle, Three Tree City and Circle of Dreams
    Druid all read the board, and a sacrificed Squirrel is one less mana. Cryptolith Rite means a
    token can tap for mana *and then* be sacrificed.
-4. **Sacrifice in the second main**, once the board is as wide as it will get.
-5. **Ninja Pizza** makes a free Food at the beginning of your second main — that is a full token
+5. **Sacrifice in the second main**, once the board is as wide as it will get.
+6. **Ninja Pizza** makes a free Food at the beginning of your second main — that is a full token
    event, so it runs the whole §5c cascade.
 
 ## 7. The kill — four routes, none of them the combo
@@ -151,19 +157,17 @@ choose your own thirteen; opponents lose their boards; you bank **thirteen** dea
 look back in time. Keep Chatterfang out of your thirteen so the board rebuilds.
 
 **Craterhoof Behemoth.** X is the *number* of creatures and includes Craterhoof itself, determined
-once on resolution. ⚠️ **It grants trample, NOT haste** — tokens you made this turn get +X/+X and
-still cannot attack. You need **Concordant Crossroads** for the alpha strike to include them.
-Deploy every token *before* letting the trigger resolve; creatures made afterwards get nothing.
+once on resolution. ⚠️ **It grants trample, NOT haste.** Craterhoof has haste itself, but tokens you
+made this turn get +X/+X and still cannot attack, and Concordant Crossroads left in wave 10. They do
+count toward X. **Build the board the turn before, then cast Craterhoof.** Deploy every token
+*before* letting the trigger resolve; creatures made afterwards get nothing.
 
-**Orcrist, Goblin-cleaver on Chatterfang.** He has **forestwalk**, so against any green deck he is
-unblockable. Choose Squirrel: a Treasure for each one, tripled by Academy Manufactor, then
-Chatterfang last. Fifteen Squirrels is ~90 tokens and ~90 Mirkwood Bats triggers.
+**Valley Rotcaller.** When it attacks, each opponent loses X, where X is your other Squirrels, Bats,
+Lizards and Rats. Every Chatterfang Squirrel counts, and so do Mirkwood Bats and Starscape Cleric.
+X is locked on resolution (see §9).
 
 **Gruesome Fate** with 20 creatures is 20 to each opponent, 40 with Bloodletter. **Cast it before
 you sacrifice** — it counts creatures you control.
-
-**Champion of Lambholt** is the enabler for the two combat routes: after one Avenger of Zendikar it
-is a 17/17 and nothing on the table can block you.
 
 ## 8. The finish — the combos are still here
 
@@ -220,21 +224,39 @@ Mana from **Circle of Dreams Druid** (one tap = one mana per creature), **Crypto
 tokens only), **Gaea's Cradle**, **Three Tree City** naming Squirrel, and **Hazel of the Rootbloom**,
 whose ability taps tokens *as a cost* and so ignores summoning sickness.
 
-Then convert with Craterhoof, Orcrist, Gruesome Fate, or the Altar. **Second Harvest** doubles the
-board before any of it.
+Then convert with Craterhoof, Gruesome Fate, Blasphemous Edict, or the Altar. **Second Harvest**
+doubles the board before any of it.
+
+### 8d. The Soultrader loop: Chatterfang + Warren Soultrader (live from turn 4)
+
+With **Chatterfang + Warren Soultrader** out and one Squirrel:
+
+1. Pay 1 life and sacrifice the Squirrel to Soultrader.
+2. Soultrader makes a **Treasure**, and Chatterfang adds a **Squirrel** to that event.
+3. Repeat with the new Squirrel as many times as you choose.
+
+> **Per iteration: one death, +1 Treasure, board size unchanged, 1 life paid.** Mirkwood Bats fires
+> three times (two tokens created, one sacrificed). Any payoff that gains life on a death (Zulaport,
+> Bastion, Cauldron of Essence, Blood Artist, Nadier's Nightblade) pays the life back, which makes it
+> free. With Pitiless Plunderer also out, each death is a second Treasure.
+
+- Unlike 8a it costs no `{B}` and needs no target. It does need **another** creature, so Soultrader
+  can't sacrifice itself.
+- ⚠️ Assembles on **turn 4**, the same as 8a. Tell the table it's in the deck.
 
 ## 9. Mistakes to avoid
 
 1. **Sacrificing with no payoff out.** The most common way to lose this deck.
 2. **Applying Chatterfang before the adders.** See §5c — it is the single most expensive misplay
    here, and it is easy to get backwards.
-3. **Expecting Craterhoof to grant haste.** It grants trample. Without Concordant Crossroads, this
-   turn's tokens sit at home.
+3. **Expecting Craterhoof to grant haste.** It grants trample. Concordant Crossroads is out of the
+   deck, so this turn's tokens always sit at home.
 4. **Sacrificing in response to Valley Rotcaller's attack trigger.** X is locked on *resolution*, not
    on declare-attackers — let the trigger resolve first or X shrinks.
 5. **Forgetting Chatterfang applies to non-creature tokens.** Treasures, Foods, Clues, Servos — every
    one brings a Squirrel. Deadly Dispute makes two bodies, not zero.
-6. **Wiping while Vito or Innkeeper are on board** — they die and give you nothing.
+6. **Wiping while Vito, Dina, Starscape Cleric or Innkeeper are on board.** They die and give you
+   nothing.
 7. **Casting Gruesome Fate after the board is gone.**
 8. **Tapping Gaea's Cradle or Circle of Dreams Druid after you sacrifice.** Tap first.
 9. **Forgetting Mirkwood Bats triggers twice per token** — once on create, once on sacrifice — and
@@ -242,6 +264,10 @@ board before any of it.
 10. **Including Chatterfang in your own thirteen for Blasphemous Edict.** You choose; don't pick him.
 11. **Counting on Circle of Dreams Druid or Ninja Pizza's Foods the turn they land.** Circle is
     summoning sick without haste; a real Food token is a noncreature artifact and is *not*.
+12. **Casting Chatterstorm first.** It copies once for each spell cast *before* it this turn.
+13. **Attacking with Esika's Chariot the turn it lands.** A Vehicle that came under your control this
+    turn can't attack, and Crossroads no longer gives it haste. It makes its two Cats on arrival
+    either way.
 
 ## 5d. The Pitiless Plunderer loop — the actual kill, and its two traps
 
@@ -291,4 +317,5 @@ event). And 75 Foods means 25 activations of Peregrin Took's "Sacrifice three Fo
 **do not reflexively cash them**, CR 104.3c kills you for drawing from an empty library.
 
 **Interactive version:** https://claude.ai/artifact/Gti7ru3nZXYFh59YJXCmyD — toggle which pieces are
-actually on board and it solves the ordering and the loop for you.
+actually on board and it solves the ordering for one event, then adds up what sacrificing it deals.
+It does not run the repeat; multiply by the number of deaths yourself, as in the table above.

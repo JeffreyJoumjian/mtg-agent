@@ -278,6 +278,10 @@ planeswalker an opponent controls. Its owner shuffles it into their library."*
   - **Why not:** it's off-type twice (not an artifact: no Ultron copy, no Workshop mana, no artifact
     reducers), the same grounds that cut Karn, Scion of Urza on 2026-09-10. And the deck's recorded
     constraint is sinks for surplus mana, not more mana.
+  - **Re-derived 2026-09-30 and added on trial** (for Null Elemental Blast). Jhoira's Familiar and
+    Ugin, the Ineffable do reduce it, and banking the surplus answers the sink constraint rather
+    than adding to it. See `decisions.md` 2026-09-30. Living Library's bench row below still names
+    Null Elemental Blast; re-point it if Living Library is ever promoted to the sideboard.
 - **Emrakul, the Exigent Doom** (reprint):
   - **The line:** *"When you cast this spell, untap all lands you control"* refunds Tron. The hand
     mode (`{3}`, exile it: a land gains `{T}: Add {C}{C}`) is Sol-Ring-on-a-land ramp. Sanctum and

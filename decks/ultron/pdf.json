@@ -14,12 +14,13 @@
     { "name": "Eldritch Immunity", "cost": "{C}", "when": "Coloured sweepers or coloured blockers. Displaces Kozilek's Command." },
     { "name": "Spine of Ish Sah", "cost": "{7}", "when": "Enchantment / planeswalker pods. Displaces Duplicant." },
     { "name": "Tezzeret, Cruel Captain", "cost": "{3}", "when": "Slow pods without fliers. Displaces Solemn Simulacrum." },
-    { "name": "Karn, the Great Creator", "cost": "{4}", "when": "Artifact- or Treasure-heavy pod. Displaces Null Elemental Blast." },
+    { "name": "Karn, the Great Creator", "cost": "{4}", "when": "Artifact- or Treasure-heavy pod. Displaces Quicksilver Amulet." },
     { "name": "Metalwork Colossus", "cost": "{11}", "when": "Want a free 10/10 in the top end. Displaces Duplicant." },
     { "name": "Coveted Jewel", "cost": "{6}", "when": "Pods that don't attack. Displaces Iron Spider, Stark Upgrade." },
     { "name": "Myr Retriever", "cost": "{2}", "when": "Recursion over a lord. Displaces Palladium Myr." },
     { "name": "Scrap Trawler", "cost": "{3}", "when": "Hangarback Walker underperforms — recursion over a mana sink. Displaces Hangarback Walker." },
-    { "name": "Blast Zone", "cost": "land", "when": "Token decks (X=0 clears every token). Displaces one Wastes." }
+    { "name": "Blast Zone", "cost": "land", "when": "Token decks (X=0 clears every token). Displaces one Wastes." },
+    { "name": "Null Elemental Blast", "cost": "{C}", "when": "The deck misses a cheap answer, or multicoloured commanders. Displaces Omnath, Locus of the Void." }
   ],
   "appendix": ["research/gameplan.md"]
 }

@@ -278,9 +278,9 @@ in the pile.
 
 ### Banked "doesn't-empty" mana survives its source dying — long enough to pay the LTB trigger {#cost-010}
 
-**Kind:** ruling · **Verified:** 2026-08-20 against CR 2026-08-07
-**Cards:** Electro, Assaulting Battery; Omnath, Locus of Mana
-**Rules:** 106.4b, 500.2, 500.5, 604.2, 611.3b, 703.4q
+**Kind:** ruling · **Verified:** 2026-09-30 against CR 2026-08-07
+**Cards:** Electro, Assaulting Battery; Omnath, Locus of Mana; Omnath, Locus of the Void; Kruphix, God of Horizons
+**Rules:** 106.4b, 500.2, 500.5, 604.2, 611.3b, 703.4q, 704.5g
 **Claim:** When a permanent with an Omnath-style effect ("you don't lose unspent red mana as steps
 and phases end" — Electro, Assaulting Battery) leaves the battlefield, the banked mana is NOT lost
 immediately: pools empty only as a step or phase ends, so the mana stays available for the rest of
@@ -290,12 +290,20 @@ whole bank can be spent on his {X} damage trigger.
 ends); CR 604.2 / 611.3b (the static effect stops the moment the permanent leaves); CR 500.2 (a
 step/phase in which players receive priority can't end while the stack is nonempty). Rider:
 CR 106.4b — a player retaining mana must announce their pool contents whenever they pass priority.
+The Kruphix wording (*"If you would lose unspent mana, that mana becomes colorless instead"*, also on
+Omnath, Locus of the Void) works the same way. The bank stays until the current step or phase ends,
+so the controller can spend it in response to the removal spell (Kruphix and Omnath, Locus of Mana
+rulings). Lethal damage gives no chance to respond before the creature dies (CR 704.5g), but the
+mana still stays in the pool for the rest of that step.
 **Changes:** Removal in response doesn't strand the battery — evaluate Electro-style cards knowing
 the stored mana converts into the leave-trigger X even when he's killed. Pilot note: announce the
-pool when passing priority.
-**See also:** cost-002
+pool when passing priority. Under Omnath, Locus of the Void, which has no leave trigger, keep an
+instant-speed sink ready (Walking Ballista's {4} counter ability, Kozilek's Command) so removal
+turns the bank into damage instead of losing it.
+**See also:** cost-002, cost-014, cost-023
 **Source:** iron-man (2026-08-20) — user rules question on Electro, Assaulting Battery (spm / iron-man
-context); verified by mtg-rules-expert against rules version 2026-08-07.
+context); verified by mtg-rules-expert against rules version 2026-08-07. Extended with the Kruphix
+wording for ultron (2026-09-30, Omnath, Locus of the Void proposal), verified by mtg-rules-expert.
 
 ### Master Transmuter self-blink: cost is paid at activation, so the same card can come back {#cost-011}
 
@@ -379,21 +387,27 @@ user pushback.
 
 ### Horizon Stone turns banked coloured mana colourless; Leyline Tyrant keeps red red {#cost-014}
 
-**Kind:** ruling · **Verified:** 2026-09-03 against CR 2026-08-07
-**Cards:** Horizon Stone; Leyline Tyrant; Electro, Assaulting Battery; Ashling, Flame Dancer
-**Rules:** 106.4, 107.4a, 107.4b, 107.4c, 614.1a
+**Kind:** ruling · **Verified:** 2026-09-30 against CR 2026-08-07
+**Cards:** Horizon Stone; Leyline Tyrant; Electro, Assaulting Battery; Ashling, Flame Dancer; Omnath, Locus of the Void; Kruphix, God of Horizons
+**Rules:** 106.4, 107.4a, 107.4b, 107.4c, 500.5, 614.1a, 614.5
 **Claim:** Horizon Stone (*"If you would lose unspent mana, that mana becomes colorless instead"*)
 banks mana but strips its colour at each step/phase end, so the bank can pay generic and `{C}` only —
 never a `{R}` pip. Leyline Tyrant / Electro / Ashling (*"you don't lose unspent red mana"*) keep
 the colour. With both out, red stays red (nothing is "lost", so the Stone has no event to replace).
 **Evidence:** CR 107.4a (coloured costs can be paid only with mana of that colour); CR 107.4b–c;
 CR 614.1a (the Stone is a replacement on the "lose" event); CR 106.4.
+The same wording on Kruphix, God of Horizons and Omnath, Locus of the Void banks already-colourless
+mana indefinitely. Every step or phase end (CR 500.5) is a new "lose" event, and CR 614.5 limits a
+replacement to one application per event, so it applies again at each one (Kruphix ruling
+2014-04-26).
 **Changes:** In a mono-colour deck with coloured pips on its payoffs, Horizon Stone is a strict
 downgrade on a colour-keyed banker; take it only in a colourless or generic-heavy shell. Also
 sharpens the 2026-08-04 entry (cost-002): "colourless empties normally" is true, and under Horizon
-Stone "coloured becomes colourless" is the equivalent loss.
-**See also:** cost-002, cost-007
-**Source:** vision-scarlet-witch (2026-09-03) — founding build; verified by mtg-rules-expert.
+Stone "coloured becomes colourless" is the equivalent loss. In a colourless deck the colour loss
+costs nothing, so the Kruphix wording is a full bank.
+**See also:** cost-002, cost-007, cost-023
+**Source:** vision-scarlet-witch (2026-09-03) — founding build; verified by mtg-rules-expert. Omnath,
+Locus of the Void added for ultron (2026-09-30), verified by mtg-rules-expert.
 
 ### A spell cast during an ability's resolution ignores card-type timing; "without paying its mana cost" is the only cost that permission allows {#cost-015}
 
@@ -599,3 +613,25 @@ produces no mana instead."* CR 105.4 (colourless is not a colour); CR 903.4. (90
 by `mtg-rules-expert` 2026-09-28.
 **Changes:** Strike these from Ultron's and any colourless deck's pool before counting mana sources.
 **Source:** ultron (2026-09-28), FRA review.
+
+### Banked mana keeps its spending restriction {#cost-023}
+
+**Kind:** ruling · **Verified:** 2026-09-30 against CR 2026-08-07
+**Cards:** Omnath, Locus of the Void; Kruphix, God of Horizons; Mishra's Workshop; The Mightstone and Weakstone; Karn, Legacy Reforged
+**Rules:** 106.6, 500.5, 514.2, 614.7, 616.1
+**Claim:** Mana that a banker keeps across steps and turns (Omnath, Locus of the Void, Kruphix, Horizon
+Stone) keeps the spending restriction it was made with, so a banked Mishra's Workshop {C}{C}{C} still
+casts only artifact spells on a later turn.
+**Evidence:** CR 106.6 says a restriction "doesn't affect the mana's type", so making the mana
+colourless leaves the restriction on. The Kruphix ruling (2014-04-26) says restrictions and riders
+stay with the mana, and the Omnath, Locus of Mana ruling (2010-03-01) says they apply "no matter when
+you spend it". Karn, Legacy Reforged's upkeep mana (*"can't be spent to cast nonartifact spells. Until
+end of turn, you don't lose this mana"*) hands over to the banker at cleanup. CR 514.2 ends Karn's
+clause first, then CR 500.5 empties the pool, and only the banker's replacement is left to apply
+(CR 614.7, 616.1), so Karn's mana banks with its restriction.
+**Changes:** Count a bank by what it can pay, not by its size. Banked Workshop mana can't pay
+Ultron's {2}, an ability cost or a nonartifact spell. Banked Karn and Mightstone mana pays anything
+except a nonartifact spell (Kozilek's Command, Omnath itself). Spend restricted mana on artifact
+spells first and keep unrestricted mana for triggers and abilities.
+**See also:** cost-010, cost-014
+**Source:** ultron (2026-09-30), Omnath, Locus of the Void proposal; verified by mtg-rules-expert.
