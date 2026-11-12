@@ -12,11 +12,14 @@ Search every topic at once with `bun run lookup "<card | rule number | term>"`.
 **Claim:** Forsaken Monument (*"Whenever you tap a permanent for {C}, add an additional {C}"*) plus
 Basalt Monolith (*"{T}: Add {C}{C}{C}. {3}: Untap"*) is infinite colourless mana: tap for four, untap
 for three, net one per loop. Any X-outlet (Walking Ballista) is a table kill. This is a two-card
-infinite and disqualifies the pair at Bracket 3.
+infinite. Official Bracket 3 text rules out early two-card combos, but every activation here is
+chosen, so under the pilot's loop policy (root `CLAUDE.md`) flag it, say what each iteration does and
+let them decide.
 **Evidence:** Oracle text of both; arithmetic.
 **Changes:** When a colourless deck seats a `{C}` doubler, grep the list for every "untap this"
 rock (Basalt Monolith, Grim Monolith with Power Artifact, Mana Vault + untappers) before calling it
 combo-free. The Monolith was 43% of the Ultron field and would have been auto-included.
+**History:** Until 2026-11-12 the Claim ended "disqualifies the pair at Bracket 3". It now defers to the pilot's loop policy in root `CLAUDE.md`, which opts in to chosen-N loops.
 **See also:** loop-008
 **Source:** ultron (2026-09-03) — founding build, Bracket 3 compliance pass.
 
@@ -38,9 +41,9 @@ usable without the stack (CR 605.1a, 605.3b); only an empty stack is needed betw
 infinite drain; with Grave Pact / Dictate of Erebos it is every opponent's board.
 **Changes:** For any recursion loop in a deck whose commander or engine triggers **on cast**, add the
 trigger's output as a body / mana / card to the per-iteration ledger before declaring it
-mana-negative. Ashnod's Altar does **not** close this one (colourless can't pay the {B} floor —
-CR 601.2f, reducers eat generic only), which is why the live `DECK.md` and COMBAT are safe and
-SACRIFICE (Phyrexian Altar) is not at Bracket 3.
+mana-negative. Ashnod's Altar does **not** close this one (colourless can't pay the {B} floor, CR 601.2f, and
+reducers eat generic only), so a list holding Phyrexian Altar or Warren Soultrader has the loop as soon
+as Oathsworn Vampire joins it. Flag it before adding either half.
 **Added 2026-11-03 (edgar-markov `b4`, mtg-rules-expert):** Warren Soultrader (*"Pay 1 life, Sacrifice
 another creature: Create a Treasure token"*) closes the same loop. Per iteration: cast Oathsworn from
 the graveyard for {1}{B} (eminence token), pay 1 life and sacrifice Oathsworn (Treasure), pay 1 life and
@@ -58,7 +61,7 @@ Phyrexian Altar returns one mana per sacrifice … No loop."* It counted **one**
 iteration; corrected on 2026-09-06 because of the eminence token. Root cause: costed the loop from the
 card in hand, not from what the commander adds to every cast. Eminence is an ability word (CR 207.2c)
 with no keyword entry, so it doesn't show up when you grep the loop's cards — it has to be remembered
-as a property of *every* Vampire cast.
+as a property of *every* Vampire cast. Until 2026-11-12 the Changes line called the SACRIFICE list unsafe at Bracket 3. It now defers to the pilot's loop policy in root `CLAUDE.md`.
 **Source:** edgar-markov (2026-09-06) — the pilot asked whether Oathsworn Vampire was in the Edgar
 lists.
 
@@ -157,8 +160,10 @@ Paradise (+2 colorless per round); Navigator + Ioreth of the Healing House + Eli
 Architect + Elixir + a blue mana creature. All are optional activations (chosen-N under 104.4b /
 732.2a), but self-funding. End-step blinkers, Mistmeadow Witch (activations in the end step return a
 turn later, 513.2), Restoration Angel and Brago are safe.
-**Changes:** Never add Deadeye Navigator to a Captain America, Living Legend list. Re-run a loop audit
+**Changes:** Flag Deadeye Navigator as a loop before proposing it for a Captain America, Living Legend
+list, and name the package it loops with. Re-run a loop audit
 before adding any other repeatable instant-speed blink.
+**History:** Until 2026-11-12 the Changes line said "Never add Deadeye Navigator". The loops are chosen-N, so it now defers to the pilot's loop policy in root `CLAUDE.md`.
 **See also:** tap-022, loop-005
 **Source:** cap-living-legend (2026-09-15).
 
@@ -204,12 +209,14 @@ Psychosis Crawler, a kill) turns the harmless loop into a win.
   this creature becomes tapped, draw a card, then discard a card" and Ioreth is blue → unbounded
   looting; with Psychosis Crawler ("Whenever you draw a card, each opponent loses 1 life") that is
   unbounded drain.
-**Changes:** Run **at most one** of that cluster. Before adding any repeatable free untapper, check the
+**Changes:** Two of that cluster in one list is an unbounded loop, so flag it before adding the second.
+Before adding any repeatable free untapper, check the
 deck for an "on untap" or "on becomes tapped" payoff — the payoff is what converts a harmless loop into
-a win. `DECK.md` holds Marvin + Unctus + Halo Fountain — never add Ioreth to that list; the existing
-"Marvin excluded from DECK-ENGINE" note now has a second, stronger reason. Also keep **Basalt
+a win. In `deck.json`, the `main` list holds Marvin, Unctus and Halo Fountain, and the `engine` list
+holds Ioreth, Unctus and Halo Fountain. Also keep **Basalt
 Monolith** out of any Mesmeric Orb deck: it untaps itself for {3} while tapping for {C}{C}{C}, which is
 net-zero mana and therefore infinite self-mill on its own.
+**History:** Until 2026-11-12 the Changes line said to run at most one of the cluster and never to add Ioreth to the list in `DECK.md`. The loop is chosen-N, so it now defers to the pilot's loop policy in root `CLAUDE.md`, and it names the `deck.json` lists that replaced `DECK.md` and `DECK-ENGINE`.
 **See also:** loop-001, loop-005, loop-009, tap-024
 **Source:** cap-living-legend (2026-09-16) — Petitioners mill audit (mtg-rules-expert, CR 2026-08-07);
 cap-living-legend (2026-09-16), merged from "Marvin + Ioreth is unbounded 'becomes tapped' events —
@@ -241,8 +248,8 @@ library before a mass tap pass, and prefer token makers whose tokens are off-col
 **Claim:** Each of the high-power aristocrats commanders has a short list of 99-card pairings that
 loop: cut the pairing, keep the commander. Label each loop by whether it needs a decision per
 iteration, not by how many cards it takes — "two-card" and "automatic" are separate axes, the pilot's
-loop policy bans only unstoppable loops (see the 2026-09-06 loop-policy memory), and since 2026-09-24
-the pilot opts in to combos.
+loop policy bans only unstoppable loops, and the pilot opts in to combos (root `CLAUDE.md`, Pilot
+preferences, Loops).
 **Evidence:** From oracle text, all verified with `bun run card` on 2026-09-22:
 - **Chatterfang** (*"If one or more tokens would be created under your control, those tokens plus
   that many 1/1 Squirrels are created instead. {B}, Sacrifice X Squirrels: …"*) + **Pitiless
@@ -288,7 +295,7 @@ outlets as "altars" in loop math: compute each outlet's return per iteration. "T
 many cards it takes. On 2026-09-24 the pilot overrode the drain-family brief ("maybe not two card
 infinite"): *"i want to start trying to play with combos a little bit and if people complain too
 often then i'll consider taking them out."* The drain-family decks now run their combos openly, and
-the pod's reaction is the test (see memory drain-token-decks).
+the pod's reaction is the test (root `CLAUDE.md`, Pilot preferences, Loops).
 **History:** On 2026-09-22 this ledger said these pairings "form an automatic (no-choice) infinite",
 and that for Chatterfang "Plunderer is the one hard exclusion". Corrected on 2026-09-24: the
 Chatterfang + Pitiless Plunderer loop is two cards but not automatic — every iteration needs a
@@ -368,11 +375,10 @@ Any counters-matter token list with Rosie must check its "whenever counters are 
 **Evidence:** Rosie: *"Whenever you create a token, put a +1/+1 counter on target creature you control
 other than Rosie Cotton."* Broodscale: *"Whenever one or more +1/+1 counters are put on this creature,
 you may create a 0/1 colorless Eldrazi Spawn…"* Each Spawn triggers Rosie, which targets Broodscale,
-which makes a Spawn. It is chosen-N (Broodscale's "may"), but it is two 99-card pieces, which the
-drain-family brief rules out ("maybe not two card infinite").
+which makes a Spawn. It is chosen-N (Broodscale's "may") and needs no commander.
 **Changes:** Before adding Rosie, grep the list for creatures that make a token when a counter
-lands on them (Basking Broodscale and similar). Exclude one half, or declare it if the brief allows
-two-card loops.
+lands on them (Basking Broodscale and similar), and flag the loop before adding the second half.
+**History:** Until 2026-11-12 this entry said the drain-family brief rules the pair out. The pilot opted in to chosen-N loops (loop-010), so it now defers to the loop policy in root `CLAUDE.md`.
 **See also:** loop-010
 **Source:** ghave founding build (2026-09-24) — Broodscale excluded.
 
@@ -657,8 +663,9 @@ opponent who can't lose (Platinum Angel) keeps the loop mandatory and endless, a
 forced to break it (CR 732.5). Gatherer rulings on Vito (2020-06-23), Enduring Tenacity
 (2024-09-20) and Sanguine Bond (2021-03-19) say the same. Declare the shortcut with explicit counts
 per opponent (CR 732.2a).
-**Changes:** File these pairs as "automatic" when checking a list against the pilot's loop policy;
-they are the class that policy excluded until the 2026-11-03 Edgar `b4` brief allowed everything.
+**Changes:** File these pairs as "automatic" when checking a list against the pilot's loop policy.
+The policy keeps them out of every list whose brief doesn't allow automatic infinites, and Edgar `b4` is
+the one list that does.
 At the table, check for an opponent who can't lose before starting, because that board is the one
 where the loop draws instead of winning.
 **Source:** edgar-markov `b4` founding (2026-11-03); mtg-rules-expert.

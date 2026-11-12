@@ -81,10 +81,10 @@ same floor; pin and floor are bumped together. `mise install` fetches the pinned
 whatever else is on `PATH` (`~/.bun/bin/bun`, Homebrew, an old version manager). When it matters, run
 `mise exec -- bun ...`, and use `mise which bun` to see which binary you actually got.
 
-Running below the pin has broken two different things already: `bun test ./test` throws
-`ModuleNotFound` on Bun 1.1.x **while printing "0 pass, 0 fail"**, which reads like a clean run; and
-`bun run deck:pdf` fails its temp-file cleanup there because `Bun.file().delete` does not exist before
-1.3. The `test` script is now `bun test test/`, which works on every version.
+Below the pin, `bun test ./test` on Bun 1.1.x throws `ModuleNotFound` **while printing "0 pass,
+0 fail"**, which reads like a clean run, and `bun run deck:pdf` can't clean up its temp files because
+`Bun.file().delete` arrived in 1.3. The `test` script runs `bun test test/`, which works on every
+version.
 
 The *global* config (the user's `~/.claude` instructions, rules, agents, and enabled plugins) lives in
 a separate private repo, [`claude-config`](https://github.com/JeffreyJoumjian/claude-config), whose

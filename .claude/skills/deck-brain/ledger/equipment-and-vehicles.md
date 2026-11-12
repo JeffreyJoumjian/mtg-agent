@@ -705,12 +705,13 @@ Angels) and Honored Dreyleader each blank it. Same family as the 2026-08-25 Welc
 (*a payoff gated on power/toughness reads the creature as modified*), now pointed the other way: there
 the anthem switched off a trigger, here it switches off a **cost**.
 **Changes:** In any token deck running Skullclamp — one of the strongest draw engines in the
-archetype, and four cards per body under Teysa Karlov — count the anthems before adding one. Reject
-Cathars' Crusade, Intangible Virtue, Divine Visitation and token-lords on that ground and say so,
-because they otherwise look like auto-includes in a go-wide list. If an anthem is wanted anyway,
+archetype, and four cards per body under Teysa Karlov — count the anthems before adding one. When
+Cathars' Crusade, Intangible Virtue, Divine Visitation or a token-lord is proposed, name the Skullclamp
+cost, because they otherwise look like auto-includes in a go-wide list. It's a cost to weigh against the
+combat route, not a veto (eval-044). If an anthem is wanted anyway,
 Skullclamp still works on the turn it is equipped to a freshly-made token *before* the anthem lands,
 but treat that as a corner case, not a plan.
-**History:** On 2026-09-23 eval-044 changed how this weighs in practice, not the rule: "turns off Skullclamp" is a cost to weigh against the combat route, not a veto. Only a pure anthem with no other text (Sylvan Anthem, Squirrel Sovereign) loses on this ground alone; name the tension and let the pilot choose.
+**History:** On 2026-09-23 eval-044 changed how this weighs in practice, not the rule: "turns off Skullclamp" is a cost to weigh against the combat route, not a veto. Only a pure anthem with no other text (Sylvan Anthem, Squirrel Sovereign) loses on this ground alone; name the tension and let the pilot choose. Until 2026-11-12 the Changes line still said to reject these cards on this ground; it now matches eval-044.
 **See also:** repl-005, eval-044
 **Source:** chatterfang / teysa-karlov founding build (2026-09-22) — Cathars' Crusade is a pilot
 favourite and was cut on this ground.

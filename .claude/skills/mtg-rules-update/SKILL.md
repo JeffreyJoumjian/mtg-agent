@@ -54,7 +54,7 @@ all derived files (`rules/sections`, `rules/glossary`, `rules/INDEX.md`, `manife
 
 ## Notes
 
-- The build is a **clean rebuild** — chunking is deterministic, so re-running on the same
+- The build is a **clean rebuild**. Chunking is deterministic, so re-running on the same
   input always yields identical files. The only stateful part is the diff, which compares
   the new `rules.json` against the previous one; a rebuild of the same source keeps the
   existing `CHANGELOG.md`.

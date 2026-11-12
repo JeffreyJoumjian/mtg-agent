@@ -25,9 +25,8 @@ in that deck's `research/decisions.md`.
 2. **Dispatch the `mtg-rules-expert` subagent** for a new interaction, a ruling lookup flags with ⚠
    (older rules version, changed rules), or a recorded answer the pilot disputes. It loads only the
    relevant rule chunks in its own context and returns a cited answer.
-3. **Call it with no `model` parameter** so its own setting (Sonnet) applies; this overrides the
-   global "Opus for verification" rule for this one agent. Pass `model: "opus"` when the pilot
-   disputes its answer or it comes back unsure.
+3. **Call it with no `model` parameter** so its own setting (Sonnet) applies. Pass
+   `model: "opus"` when the pilot disputes its answer or it comes back unsure.
 
 Rules text lives in `rules/sections/` (one file per section; `rules/INDEX.md` maps them).
 
@@ -115,8 +114,8 @@ When the pilot bans another card, add it here.
   every wave, because Chatterfang's slid from 8 to 5 over three waves without anyone noticing.
 - **Loops:** only automatic or unstoppable infinites are out. A loop where the pilot chooses how
   many times to iterate (every step optional, opponents can respond, CR 732.2b) is not an "infinite
-  combo" to them, and buyback (Reiterate) is fine at their Bracket 3 tables. Since 2026-09-24 they
-  opt in to combos, two-card chosen-N loops included, and will pull any the pod complains about. Flag
+  combo" to them, and buyback (Reiterate) is fine at their Bracket 3 tables. They opt in to
+  combos, two-card chosen-N loops included, and will pull any the pod complains about. Flag
   the loop, say what each iteration does, and let them decide; mention it once when a combo
   assembles by turn 4–5, since official Bracket 3 text rules out early two-card combos.
 - **Their pods remove stax on sight** (Silent Arbiter dies fast). Use that when rating hate and

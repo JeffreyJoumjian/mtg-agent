@@ -9,10 +9,9 @@ paths:
 
 The pilot runs `bun run dev` in `apps/collection-visualizer` (http://localhost:3200) and owns its
 lifecycle: assume it's up, and if a task needs it and you're not sure, ask them to start it. Builds,
-typechecks and `bun test` are fine. Several servers were once left running across sessions on ports
-3001–3003, quietly burning CPU, because Vite silently walked to the next free port. (`strictPort` in
-`apps/collection-visualizer/vite.config.ts` now makes a second start fail instead of hiding a
-duplicate.) Any other background process you start is yours to stop.
+typechecks and `bun test` are fine. `strictPort` in `apps/collection-visualizer/vite.config.ts`
+makes a second `bun run dev` fail instead of quietly taking the next free port, so a failed start
+means the pilot's server is already up. Any other background process you start is yours to stop.
 
 A `SessionEnd` hook in `.claude/settings.json` kills this repo's Vite servers as a backstop. It only
 fires when the session actually ends, so stop what you start. The hook exits early when
