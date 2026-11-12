@@ -9,6 +9,7 @@
  *    bun run card --deck chatterfang           # price a deck's main list (batched, one call)
  *    bun run card --deck chatterfang --list b4 # another list of the same deck
  *    bun run card --deck chatterfang --id ur   # override the identity check (default: the commanders')
+ *    bun run card --deck iron-man --list v3 --oracle  # every card's cost, type and oracle text instead of prices
  *    bun run card --deck some/list.txt         # a pasted `1x Card` list still works
  *    bun run search "t:witch id<=ur"           # raw Scryfall search syntax -> list
  *    bun run cards:refresh                      # re-pull every cached card (prices + oracle)
@@ -100,6 +101,9 @@ async function runDeck(arg: string): Promise<void> {
   let priced = 0;
   const offColor: string[] = [];
   const illegal: string[] = [];
+  // --oracle prints a readable dump of the whole list, which set-review reviewers read instead of
+  // running `bun run card` per card (parallel runs can tear data/card-cache.json).
+  const withOracle = hasFlag("--oracle");
 
   for (const name of names) {
     const c = found[name];
@@ -108,9 +112,16 @@ async function runDeck(arg: string): Promise<void> {
     if (c.commanderLegal !== "legal") illegal.push(`${c.name} (${c.commanderLegal})`);
     if (wantIdentity && !c.colorIdentity.every((x) => wantIdentity.includes(x)))
       offColor.push(`${c.name} (CI:${identity(c)})`);
-    console.log(
-      `${money(c.usd)}  ${c.name.padEnd(34)}  ${(c.manaCost || "—").padEnd(14)}  ${c.typeLine}`,
-    );
+
+    if (withOracle) {
+      // The cache keeps only the front face's P/T, so say so on a double-faced card.
+      const stats = pt(c) ? `  ·  ${c.faces.length > 1 ? "front " : ""}${pt(c)}` : "";
+      console.log(`${c.name}  ${c.manaCost || "—"}  ·  ${c.typeLine}${stats}`);
+      if (c.oracleText) console.log(c.oracleText);
+      console.log("");
+    } else {
+      console.log(`${money(c.usd)}  ${c.name.padEnd(34)}  ${(c.manaCost || "—").padEnd(14)}  ${c.typeLine}`);
+    }
   }
 
   console.log(`\nTOTAL: $${total.toFixed(2)}   (priced ${priced}/${names.length})`);

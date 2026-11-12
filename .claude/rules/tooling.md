@@ -55,8 +55,12 @@ paths:
 - `bun run deck:proposal <slug>`: build the data bundle behind a deck's **upgrade-proposal artifact**.
   It reads the hand-written grounds in `decks/<slug>/research/proposal.json`, then derives card text,
   salt, Game Changer status, card art and the current/approved/projected deck stats from `deck.json`
-  and the caches into `decks/<slug>/artifact/`. One artifact per deck, republished in place; see
-  `deck-brain` §3.1 for the workflow.
+  and the caches into `decks/<slug>/artifact/`. One artifact per proposed list, republished in place; see
+  `deck-brain` §3.1 for the workflow. `--proposal <file>` (relative to the deck folder) with its own
+  `--out <dir>` gives a second list its own proposal and page; vision-scarlet-witch uses it for its
+  B3 token list.
+- `bun run card-viz <spec.json> [--out <dir>]`: card-image pages of swaps, bench pairs and verdict
+  tiles for T3 Code's `html_render`. The `card-visualizer` skill holds the spec format.
 - `bun test`: the suite under `test/`. Scoped there on purpose: `apps/collection-visualizer` has its
   own deps and its own `bun test`, and an unscoped run fails on a fresh clone before that app is
   installed.

@@ -44,6 +44,8 @@ summaries (they're unreliable for new sets):
   when the query holds `<` or `>`).
 - `bun run edhrec commander|card "<name>"` or `bun run edhrec --deck <slug>`: crowd data. An extra
   lens, never the source of truth (deck-brain §2.2).
+- `bun run set-scan <set-code>`: fetches a whole set and writes each deck's colour-legal pool to
+  `data/<code>-candidates-<slug>.json`, the input to the `set-review` skill.
 
 ### Link every card name to Scryfall
 

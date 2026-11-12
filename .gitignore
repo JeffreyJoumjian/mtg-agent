@@ -28,5 +28,5 @@ bun.lockb
 # Generated proposal-artifact payload. The hand-written half lives in
 # decks/<slug>/research/proposal.json and IS tracked; everything under artifact/ except the page
 # itself is rebuilt by `bun run deck:proposal <slug>` (see deck-brain §3.1).
-decks/*/artifact/img/
-decks/*/artifact/proposal.json
+decks/*/artifact*/img/
+decks/*/artifact*/proposal.json

@@ -13,6 +13,7 @@
     "search": "bun run scripts/card.ts search",
     "cards:refresh": "bun run scripts/card.ts refresh",
     "set-scan": "bun run scripts/set-scan.ts",
+    "card-viz": "bun run scripts/card-viz.ts",
     "carddata": "bun run scripts/carddata.ts",
     "deckcheck": "bun run scripts/deckcheck.ts",
     "test": "bun test test/",

@@ -6,9 +6,13 @@
  * Game Changer status, images, and the before/after deck stats — is computed here, so the page can
  * never drift from `deck.json` (deck-brain §1.4).
  *
- *   bun run deck:proposal <slug> [--out <dir>] [--no-images]
+ *   bun run deck:proposal <slug> [--proposal <file>] [--out <dir>] [--no-images]
  *
  * Writes `<out>/proposal.json` and `<out>/img/<card-slug>.jpg`.
+ *
+ * `--proposal` names a second proposal file, relative to the deck folder, for a deck that proposes
+ * more than one list (vision-scarlet-witch has one for `b4` and one for its Bracket 3 token list).
+ * Give each its own `--out`, so each list gets its own page.
  */
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -176,7 +180,7 @@ async function main() {
   const args = process.argv.slice(2);
   const slug = args.find((a) => !a.startsWith("--"));
   if (!slug) {
-    console.error("usage: bun run deck:proposal <slug> [--out <dir>] [--no-images]");
+    console.error("usage: bun run deck:proposal <slug> [--proposal <file>] [--out <dir>] [--no-images]");
     process.exit(1);
   }
 
@@ -184,7 +188,10 @@ async function main() {
   const outDir = outFlag >= 0 ? args[outFlag + 1] : join(deckDir(slug), "artifact");
   const withImages = !args.includes("--no-images");
 
-  const proposalPath = join(deckDir(slug), "research", "proposal.json");
+  const proposalFlag = args.indexOf("--proposal");
+  const proposalPath = proposalFlag >= 0
+    ? join(deckDir(slug), args[proposalFlag + 1])
+    : join(deckDir(slug), "research", "proposal.json");
   const proposalFile = Bun.file(proposalPath);
   if (!(await proposalFile.exists())) {
     console.error(`no proposal at ${proposalPath}`);
@@ -200,8 +207,10 @@ async function main() {
     process.exit(1);
   }
 
-  const liveWaves = proposal.waves.filter((w) => w.status === "approved" || w.status === "applied");
-  const openWaves = proposal.waves.filter((w) => w.status !== "declined");
+  // An "applied" wave is already in deck.json, so folding it in again would count every card it
+  // added twice (a founding wave of 96 additions projected a 196-card list on 2026-11-03).
+  const liveWaves = proposal.waves.filter((w) => w.status === "approved");
+  const openWaves = proposal.waves.filter((w) => w.status === "proposed" || w.status === "approved");
 
   const approvedList = applyWaves(list, liveWaves);
   const projectedList = applyWaves(list, openWaves);

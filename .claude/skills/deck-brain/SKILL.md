@@ -293,7 +293,7 @@ non-obvious parts:
 ### 3.1 Every upgrade pass gets a proposal artifact — and it is updated, never re-created
 
 The pilot reads proposals on a published page, not in chat scrollback (*"i'm afraid to use the chat
-there and lose history"*). **One artifact per deck, updated in place for the life of that deck.**
+there and lose history"*). **One artifact per proposed list, updated in place for the life of that list.**
 
 The split is the §1.4 rule again: the **grounds** are hand-written, **everything else is generated.**
 
@@ -308,7 +308,7 @@ The loop for any swap conversation:
 1. Edit `research/proposal.json` — add a wave, or move a wave's `status`.
 2. `bun run deck:proposal <slug>` — regenerates data and pulls any new card art.
 3. Republish the artifact **to the same URL** (`url` from a different conversation; the same
-   `file_path` within the one that created it). Never publish a second artifact for the same deck.
+   `file_path` within the one that created it). Never publish a second artifact for the same list.
 4. Only after the pilot approves, run `bun run deck:edit` and set that wave to `"applied"`.
 
 `status` per wave drives the page and the maths: `proposed` (on the table), `approved` (pilot said
