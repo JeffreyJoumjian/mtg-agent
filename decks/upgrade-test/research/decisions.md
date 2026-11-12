@@ -371,3 +371,230 @@ likes it but finds it expensive).
 **`research/gameplan.md` refreshed** in the same pass. It still described cards cut in waves 4 to 9
 (Orcrist, Ancient Greenwarden, Awaken the Woods, Mycoloth, Chitterspitter, Viscera Seer, Champion of
 Lambholt) and said Vito was the only converter. Added §8d for the Soultrader loop.
+
+## 2026-10-15 — Confirmed as the live Chatterfang list
+
+The pilot thought they had been playing this fork all along and asked to make it the default
+Chatterfang list. The export they pasted matches `main` here card for card (100 of 100, zero
+differences). It differs from `decks/chatterfang` main by 15 cards in each direction. From now on
+this deck is the target for Chatterfang work, and `decks/chatterfang` stays untouched as the
+pre-fork record (`decks/_notes.md` updated to say so).
+
+**Queue.** The pilot wants to start with two adds, Priest of Forgotten Gods and Pest Infestation,
+and said to make no cuts yet. Nothing in `deck.json` has changed. Cuts get proposed only when the
+pilot asks, with the affected role ranked first.
+
+## 2026-10-15 (later) — Wave 11: Pest Infestation and Priest of Forgotten Gods (a trial)
+
+**Applied as a trial.** 100/100, no legality or identity flags, Game Changers 1 (Gaea's Cradle). avg MV
+2.97 → 2.92 by the tools, about 2.99 with Pest Infestation costed at 5 instead of 1. **MV≤2 24 → 26,
+MV≤3 48 → 48.** Token Engines 15 → 16, Card Draw 6 → 5, Sacrifice Outlets 5 → 5.
+
+| Out | In | Section |
+|---|---|---|
+| Black Market Connections | Pest Infestation | Token Engines |
+| Woe Strider | Priest of Forgotten Gods | Sacrifice Outlets |
+
+**Grounds for Pest Infestation.** Wave 10 found ten multipliers against six seeds, and every seed except
+one made a single token per turn. Pest Infestation is a seed you size: X=2 is 5 mana for 4 Pests plus 4
+Squirrels, X=3 is 7 mana for 6 plus 6. It is one creation event, so Mirkwood Bats and Prosperous
+Innkeeper each fire per body. Each Pest that dies gains 1 life, a separate event for Dina, Starscape
+Cleric and Vito (ledger dmg-028). The destroy half is "up to X", so zero targets is legal and none of
+the list's own artifacts or enchantments is at risk.
+
+**Grounds for Priest of Forgotten Gods.** A 2 MV outlet at instant speed. Tap and sacrifice two other
+creatures: each target opponent loses 2 and sacrifices a creature of their choice, and you add {B}{B}
+and draw a card. Two sacrifices are two deaths, so every per-death payoff fires twice. It is an edict
+and not a wipe. A scan of all 100 oracle texts found no untap effect (only Hazel of the Rootbloom says
+"untapped", as a cost), so it activates once per turn and creates no new loop.
+
+**What the pilot weighed against my advice.** I nominated Azusa (for Pest Infestation) and Dryad of the
+Ilysian Grove (for Priest) first, because ledger eval-058's simulation found 3.7 landfall triggers over
+turns 3 to 8 with no extra-drop card, with Dryad alone and with Dryad plus Azusa. The pilot kept both:
+*"azusa really helps with mana ramp"*. That is the play verdict wave 10 asked for, so the Azusa swap is
+marked kept. I argued once that Black Market Connections is one of two permanents here that draw with
+an empty board (the other is Sylvan Library), survives a creature wipe, makes up to four tokens a turn
+for Mirkwood Bats with Chatterfang, and is one of the 12 artifact-token sources behind Marionette
+Apprentice. The pilot chose the trial anyway, and it is their call.
+
+**Costs named before applying:**
+
+- **Outlet access.** Priest needs two other creatures and a turn to lose summoning sickness, where Woe
+  Strider worked the turn it landed. The chance of having seen a no-mana outlet by turn 4 stays at 48.1%
+  (6 of them in 99 cards, 10 seen), but the usable number is lower. Woe Strider and Ashnod's Altar were
+  the only unlimited outlets with no mana or life cost, so that slot is now Altar alone.
+- **Empty-board draw.** Card Draw drops to 5 slots. The count of cards that draw at all stays at 15
+  because Priest draws a card per activation, but only once a turn and only with two spare creatures.
+- **Pest Infestation reads as MV 1** in every stats tool, so the analyzer will flatter the curve.
+- **Not re-measured:** the wave 10 figure of about 19 life per token death, and the 40,000-game
+  simulation, which was taken from ledger eval-058 and not re-run.
+
+**Undo rows (the pilot's rule: if the sacrifice outlets struggle, say so).**
+
+- Woe Strider back **for Priest of Forgotten Gods**, or for Pest Infestation if the pilot would rather keep Priest.
+- Black Market Connections back **for Pest Infestation**, or Azusa out for it instead (my first
+  nomination, now declined).
+
+Every `deck:edit` snapshots the replaced list to `versions/`, so an undo is one command.
+
+## 2026-11-10 — Wave 12: Crossroads, Springleaf Parade, Twitching Doll, Black Market Connections (pilot's calls)
+
+**Applied, four swaps, each its own `deck:edit`.** 100/100, legal and on-identity, Game Changers 1
+(Gaea's Cradle). avg MV 2.92 → 2.88, MV 2 20 → 21, MV 5 4 → 3. Ramp & Mana 13 → 15, Token Engines
+16 → 14, Card Draw 5 → 5.
+
+| Out | In | Section |
+|---|---|---|
+| Verdant Command | Concordant Crossroads | Ramp & Mana |
+| Deep Forest Hermit | Springleaf Parade | Token Engines |
+| Tireless Tracker | Twitching Doll | Ramp & Mana |
+| Pest Infestation | Black Market Connections | Card Draw |
+
+**Concordant Crossroads, re-added.** Cut in wave 10 for Warren Soultrader (which stays). Haste lets
+fresh tokens use Cryptolith Rite's and Springleaf Parade's `{T}` mana the turn they arrive (CR 302.6,
+702.10c), lets Priest of Forgotten Gods, Circle of Dreams Druid, both elves and Twitching Doll tap the
+turn they land, and lets Craterhoof-turn tokens attack, the cost wave 10 recorded. **Loop back:** The
+Unbeatable Squirrel Girl + Cryptolith Rite (or Springleaf Parade) + Crossroads is unbounded Squirrels
+and mana, chosen-N, assemblable on turn 4 or 5. **Cost:** every creature has haste, opponents' too.
+
+**Springleaf Parade.** At X=3, 5 mana for three Shapeshifters plus three Chatterfang Squirrels.
+Changelings count as Squirrels for Chatterfang, Camellia and Hazel, and as Squirrels and Bats for
+Valley Rotcaller. Its static is a second Cryptolith Rite for tokens. The 2026-09-25 pass rested only
+on summoning sickness, which Crossroads removes. Deep Forest Hermit held the same 5-mana seed slot,
+leaves after three turns, and its anthem blanks Skullclamp on Squirrels. The pilot named the cost: one
+fewer sacrificeable body. Tools count Parade at MV 2; its real cost at X=3 is 5.
+
+**Twitching Doll, for Tireless Tracker (the pilot's choice between Tracker and a 1-mana dork).** The
+pilot rarely cracks Clues, so Tracker was a landfall token maker, a job Tireless Provisioner already
+does with tokens the pilot uses. Keeping both 1-mana dorks keeps the turn-2 Chatterfang: with two in
+99 cards, one is in the opening seven 13.7% of the time, against 7.1% with one. **Cost:** Tracker's
+Clue plus Squirrel per land fed Mirkwood Bats, Nadier's Nightblade and Academy Manufactor.
+
+**Black Market Connections, back for Pest Infestation.** This ends the wave 11 trial with the undo it
+recorded: *"If the draw dries up, Black Market Connections returns for Pest Infestation."* The pilot
+set the draw target this session: **8 to 10 draw sources, and Clue makers never count** (*"i rarely
+sacrifice clues for card draw unless i have a lot of mana"*).
+
+### Correction: the Card Draw role drifted from 8 to 5 without anyone re-counting it
+
+The parent list held 8 in Card Draw. Idol of Oblivion left in wave 2, Village Rites in wave 10 and
+Black Market Connections in wave 11. Each wave named its own minus one, and none re-counted the role
+against a target. Counted the pilot's way after this wave (no Clue makers): Sylvan Library,
+Skullclamp, Moldervine Reclamation, Deadly Dispute and Black Market Connections draw directly, and
+Yawgmoth and Tippy-Toe draw every turn as a side job. That's 7. Bloodline Recollector (agreed, cut
+still open) makes 8. Not counted: Priest of Forgotten Gods and Peregrin Took (conditional), Plumb the
+Forbidden (one-shot), the three draw lands, Ravenous Squirrel ({1}{B}{G} per card), Academy
+Manufactor's Clues.
+
+### Still open after this wave
+
+- **Bloodline Recollector:** agreed as an add, but the pilot now keeps Deadly Dispute, so it needs a
+  different cut.
+- **Witch's Oven for Ravenous Squirrel** (agreed as a trial in round 2): held while the draw plan
+  settled, because Ravenous is a conditional draw outlet.
+- **Idol of Oblivion for Gruesome Fate:** proposed, no answer yet.
+- **On hold (pilot):** Exploration for Dryad of the Ilysian Grove, Yahenni, Undying Partisan for
+  Gardenize, Super Shredder.
+- **Priest of Forgotten Gods trial:** verdict still open.
+
+### Reviewed this session and passed, with grounds
+
+- **Ygra, Eater of All:** "Other creatures" includes opponents' creatures, so every opponent gets
+  *"{2}, {T}, Sacrifice this permanent: You gain 3 life"* as an instant-speed answer to a lethal
+  drain. The ledger eval-046 grounds also still hold, and the list already has three loop families.
+- **Krark-Clan Ironworks:** without Ygra it eats only artifacts, so no creature-death drains fire.
+  Its loop (Camellia + Tippy-Toe or Peregrin + KCI) duplicates the Ashnod's Altar loop.
+- **Feign Death:** not repeatable. The returned creature is a new object (CR 400.7).
+- **Cauldron Familiar:** held. Good with this many Foods, but a Squirrel dying fires the same death
+  triggers.
+- **Exploration** (simulated, 120,000 games): with it in the opening hand, 3 lands on turn 2 in 51%
+  of games, against 0% for Dryad or Azusa. Level by turn 4 (3.30, 3.28, 3.31). On hold.
+
+## 2026-11-10 (later) — Trial: Bloodline Recollector in, Deadly Dispute out (pilot's call)
+
+Snapshot: `versions/2026-11-10-0204-main-trial-bloodline-recollector-in-deadly-dispute-out.json`.
+The pilot first said to keep Deadly Dispute, then chose the original swap as a trial: *"let me try
+bloodline recollector in and deadly dispute out for a bit and see what happens."* 100/100, legal,
+Game Changers 1, avg MV unchanged at 2.88 (both MV 2).
+
+**Grounds.** Recollector becomes prepared at every end step where three or more creatures died,
+opponents' turns included, and its copy of Ancestral Craving draws three for {B} and 3 life. Deadly
+Dispute draws two once.
+
+**Cost named before applying.** Draw by the pilot's rule (no Clue makers) stays at 7: Sylvan
+Library, Skullclamp, Moldervine Reclamation, Black Market Connections, Bloodline Recollector, plus
+Yawgmoth and Tippy-Toe. That's one short of the 8-to-10 target. Recollector is a 2/2 that dies
+before its copy is cast if a wipe hits first, and each copy costs 3 life.
+
+**Undo rows.** Deadly Dispute back for Recollector if the trial disappoints, or Dispute back for
+Gruesome Fate to reach 8 while keeping Recollector (my recommended cut for that slot; Esika's Chariot
+and Zulaport Cutthroat were the alternatives).
+
+**Still open:** Witch's Oven for Ravenous Squirrel (trial agreed in round 2, held), Idol of Oblivion
+for 9, Exploration, Yahenni and Super Shredder on hold, the Priest of Forgotten Gods trial verdict.
+
+## 2026-11-10 (later still) — Trial: Witch's Oven in, Ravenous Squirrel out (pilot's call)
+
+Snapshot: `versions/2026-11-10-0207-main-trial-witch-s-oven-in-ravenous-squirrel-out.json`. The pilot
+agreed to this trial in round 2 of the review (*"maybe i'm willing to try this swap and i'll let you
+know how it goes"*). I held it during the draw review because Ravenous Squirrel draws for {1}{B}{G},
+then the pilot pointed out it had already been decided. Ravenous never counted toward the draw target
+(it's conditional), so the hold wasn't needed. Logged as my miss.
+
+**Grounds.** *"{T}, Sacrifice a creature: Create a Food token. If the sacrificed creature's toughness
+was 4 or greater, create two Food tokens instead."* A free outlet once a turn, live the turn it lands
+(an artifact). With Tippy-Toe or Peregrin Took each use makes two Foods, and Chatterfang adds two
+Squirrels. Its Foods feed Camellia, Ninja Pizza and Cauldron Familiar (held). Ravenous Squirrel's
+outlet costs {1}{B}{G} per sacrifice.
+
+**Costs.** Once per turn (no untapper in the list). Loses a 1-drop Squirrel and a conditional draw
+outlet. Draw by the pilot's rule stays at 7. **Undo:** Ravenous Squirrel back for Oven.
+
+## 2026-11-10 (closing) — Idol of Oblivion declined; the draw number is an aim
+
+- **Idol of Oblivion for Esika's Chariot: declined** by the pilot (*"nope"*). It was offered as the
+  eighth draw source. Draw stays at 7 by the pilot's rule.
+- **8 to 10 is an aim, not a hard floor** (pilot: *"it's not a hard floor but an aim, 8-10"*). The
+  entries above that call 7 "one short of the target" should be read that way. The rule now sits in
+  the root `CLAUDE.md` under Pilot preferences, for every deck.
+
+## 2026-11-10 (after the wave) — CommanderBracket 6.1 → 7.3 is the site switching estimators
+
+The pilot saw the speed rating go from 6.1 to 7.3 after pasting this session's list. Reproduced on
+commanderbracket.app (pre-session list 6.1, current list 7.3), then read the API response the page
+uses (`POST https://mtg-assistant.up.railway.app/decks/analyze-complete`) for both lists.
+
+| | Pre-session | Current |
+|---|---|---|
+| Shown on the page | 6.1 (ML model) | 7.3 (rule heuristic) |
+| ML estimate | 6.11 | 6.13 |
+| ML uncertainty (sigma) | 0.926 | 1.011 |
+| Rule heuristic | 7.2 | 7.3 |
+| Interaction count | 9 | 7 |
+| Deck health (mana / interaction / engine) | 66 (87 / 62 / 44) | 66 (84 / 67 / 44) |
+| Ramp by turn 3 / two ramp by turn 3 | 73% / 34% | 76% / 37% |
+| Combos in deck | 6 | 7 |
+
+**What happened.** The page shows the ML model's turn while its sigma is under 1.0 and the rule
+heuristic otherwise (0.999 still showed the ML number, 1.011 showed the heuristic). Neither estimate
+moved more than 0.1 turns. The heuristic's +0.1 is lost cheap interaction: Pest Infestation (read as
+removal) and Verdant Command (read as a counterspell) took the interaction count from 9 to 7 and
+removed a −0.1 cheap-interaction bonus. The seventh combo is The Unbeatable Squirrel Girl + Cryptolith
+Rite + Concordant Crossroads, already flagged in wave 12.
+
+**Each swap scored alone** (ML sigma, then the number shown):
+
+| Swap | Applied alone to the pre-session list | Undone alone on the current list |
+|---|---|---|
+| Concordant Crossroads for Verdant Command | 0.946, 6.1 | 1.034, 7.3 |
+| Springleaf Parade for Deep Forest Hermit | 0.950, 6.1 | 0.996, 6.1 |
+| Twitching Doll for Tireless Tracker | 0.949, 6.1 | 0.983, 6.1 |
+| Black Market Connections for Pest Infestation | 0.999, 6.1 | 0.917, 6.1 |
+| Bloodline Recollector for Deadly Dispute | 0.915, 6.2 | 1.042, 7.3 |
+| Witch's Oven for Ravenous Squirrel | 0.926, 6.1 | 1.023, 7.3 |
+
+**No list change.** Undoing a swap to bring the display back to 6.1 would move the model's uncertainty,
+not the deck's speed. **A cost wave 12 didn't name:** Verdant Command's graveyard exile and loyalty
+counter and Pest Infestation's artifact and enchantment removal both left the list. The remaining
+flexible answers are Assassin's Trophy, Beast Within and Tear Asunder, and graveyard hate is down to
+Bojuka Bog. Ledger: tool-023.

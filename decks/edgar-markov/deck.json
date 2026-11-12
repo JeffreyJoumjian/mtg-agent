@@ -489,6 +489,209 @@
           ]
         }
       ]
+    },
+    "b4": {
+      "label": "Bracket 4",
+      "kind": "deck",
+      "bracket": 4,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Edgar Markov", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Ancient Tomb", "qty": 1 },
+            { "name": "Arid Mesa", "qty": 1 },
+            { "name": "Badlands", "qty": 1 },
+            { "name": "Bleachbone Verge", "qty": 1 },
+            { "name": "Blood Crypt", "qty": 1 },
+            { "name": "Bloodstained Mire", "qty": 1 },
+            { "name": "Cavern of Souls", "qty": 1 },
+            { "name": "City of Brass", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Exotic Orchard", "qty": 1 },
+            { "name": "Godless Shrine", "qty": 1 },
+            { "name": "Luxury Suite", "qty": 1 },
+            { "name": "Mana Confluence", "qty": 1 },
+            { "name": "Marsh Flats", "qty": 1 },
+            { "name": "Phyrexian Tower", "qty": 1 },
+            { "name": "Plains", "qty": 2 },
+            { "name": "Plateau", "qty": 1 },
+            { "name": "Polluted Delta", "qty": 1 },
+            { "name": "Sacred Foundry", "qty": 1 },
+            { "name": "Savai Triome", "qty": 1 },
+            { "name": "Scrubland", "qty": 1 },
+            { "name": "Swamp", "qty": 3 },
+            { "name": "Three Tree City", "qty": 1 },
+            { "name": "Urborg, Tomb of Yawgmoth", "qty": 1 },
+            { "name": "Vault of Champions", "qty": 1 },
+            { "name": "Verdant Catacombs", "qty": 1 },
+            { "name": "Voldaren Estate", "qty": 1 },
+            { "name": "Windswept Heath", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Fast Mana & Ramp",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Cabal Ritual", "qty": 1 },
+            { "name": "Chrome Mox", "qty": 1 },
+            { "name": "Culling the Weak", "qty": 1 },
+            { "name": "Dark Ritual", "qty": 1 },
+            { "name": "Grim Monolith", "qty": 1 },
+            { "name": "Lotus Petal", "qty": 1 },
+            { "name": "Mana Vault", "qty": 1 },
+            { "name": "Master of Dark Rites", "qty": 1 },
+            { "name": "Mox Diamond", "qty": 1 },
+            { "name": "Smothering Tithe", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tutors",
+          "cards": [
+            { "name": "Beseech the Mirror", "qty": 1 },
+            { "name": "Demonic Tutor", "qty": 1 },
+            { "name": "Diabolic Intent", "qty": 1 },
+            { "name": "Enlightened Tutor", "qty": 1 },
+            { "name": "Forerunner of the Legion", "qty": 1 },
+            { "name": "Grim Tutor", "qty": 1 },
+            { "name": "Imperial Seal", "qty": 1 },
+            { "name": "Vampiric Tutor", "qty": 1 },
+            { "name": "Wishclaw Talisman", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Advantage",
+          "cards": [
+            { "name": "Black Market Connections", "qty": 1 },
+            { "name": "Bolas's Citadel", "qty": 1 },
+            { "name": "Emeritus of Woe", "qty": 1 },
+            { "name": "Esper Sentinel", "qty": 1 },
+            { "name": "Necropotence", "qty": 1 },
+            { "name": "Skullclamp", "qty": 1 },
+            { "name": "The One Ring", "qty": 1 },
+            { "name": "Twilight Prophet", "qty": 1 },
+            { "name": "Welcoming Vampire", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Loop Halves & Drain",
+          "cards": [
+            { "name": "Blood Artist", "qty": 1 },
+            { "name": "Bloodletter of Aclazotz", "qty": 1 },
+            { "name": "Bloodthirsty Conqueror", "qty": 1 },
+            { "name": "Cliffhaven Vampire", "qty": 1 },
+            { "name": "Cruel Celebrant", "qty": 1 },
+            { "name": "Enduring Tenacity", "qty": 1 },
+            { "name": "Exquisite Blood", "qty": 1 },
+            { "name": "Impact Tremors", "qty": 1 },
+            { "name": "Marauding Blight-Priest", "qty": 1 },
+            { "name": "Oathsworn Vampire", "qty": 1 },
+            { "name": "Sanguine Bond", "qty": 1 },
+            { "name": "Vengeful Bloodwitch", "qty": 1 },
+            { "name": "Vito, Thorn of the Dusk Rose", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Sacrifice Outlets",
+          "cards": [
+            { "name": "Ashnod's Altar", "qty": 1 },
+            { "name": "Indulgent Aristocrat", "qty": 1 },
+            { "name": "Phyrexian Altar", "qty": 1 },
+            { "name": "Viscera Seer", "qty": 1 },
+            { "name": "Warren Soultrader", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Combat Package",
+          "cards": [
+            { "name": "Bloodline Keeper", "qty": 1 },
+            { "name": "Captivating Vampire", "qty": 1 },
+            { "name": "Charismatic Conqueror", "qty": 1 },
+            { "name": "Cordial Vampire", "qty": 1 },
+            { "name": "Edgar, Charmed Groom", "qty": 1 },
+            { "name": "Elenda, the Dusk Rose", "qty": 1 },
+            { "name": "Legion Lieutenant", "qty": 1 },
+            { "name": "Sanctum Seeker", "qty": 1 },
+            { "name": "Shared Animosity", "qty": 1 },
+            { "name": "Sorin, Imperious Bloodlord", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Interaction & Protection",
+          "cards": [
+            { "name": "Anguished Unmaking", "qty": 1 },
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Olivia's Wrath", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Silence", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 },
+            { "name": "Teferi's Protection", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Recursion & Doubling",
+          "cards": [
+            { "name": "Animate Dead", "qty": 1 },
+            { "name": "Anointed Procession", "qty": 1 },
+            { "name": "Reanimate", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "b4-pool": {
+      "label": "Bracket 4 pool",
+      "kind": "pool",
+      "sections": [
+        {
+          "name": "Stax & Hate (held)",
+          "cards": [
+            { "name": "Deadly Rollick", "qty": 1 },
+            { "name": "Deflecting Swat", "qty": 1 },
+            { "name": "Drana and Linvala", "qty": 1 },
+            { "name": "Drannith Magistrate", "qty": 1 },
+            { "name": "Opposition Agent", "qty": 1 },
+            { "name": "Orcish Bowmasters", "qty": 1 },
+            { "name": "Pyroblast", "qty": 1 },
+            { "name": "Red Elemental Blast", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Alternates",
+          "cards": [
+            { "name": "Ad Nauseam", "qty": 1 },
+            { "name": "Aetherflux Reservoir", "qty": 1 },
+            { "name": "Akroma's Will", "qty": 1 },
+            { "name": "Bartolomé del Presidio", "qty": 1 },
+            { "name": "Blood Tribute", "qty": 1 },
+            { "name": "Cabal Coffers", "qty": 1 },
+            { "name": "Defiant Bloodlord", "qty": 1 },
+            { "name": "Dusk Legion Zealot", "qty": 1 },
+            { "name": "Falkenrath Pit Fighter", "qty": 1 },
+            { "name": "Gamble", "qty": 1 },
+            { "name": "Generous Gift", "qty": 1 },
+            { "name": "Kalastria Highborn", "qty": 1 },
+            { "name": "Malakir Bloodwitch", "qty": 1 },
+            { "name": "Markov Baron", "qty": 1 },
+            { "name": "Phyrexian Arena", "qty": 1 },
+            { "name": "Phyrexian Reclamation", "qty": 1 },
+            { "name": "Purphoros, God of the Forge", "qty": 1 },
+            { "name": "Spectator Seating", "qty": 1 },
+            { "name": "Stromkirk Captain", "qty": 1 },
+            { "name": "Talisman of Hierarchy", "qty": 1 },
+            { "name": "Talisman of Indulgence", "qty": 1 },
+            { "name": "Vampire of the Dire Moon", "qty": 1 },
+            { "name": "Vein Ripper", "qty": 1 },
+            { "name": "Yahenni, Undying Partisan", "qty": 1 },
+            { "name": "Zulaport Cutthroat", "qty": 1 }
+          ]
+        }
+      ]
     }
   },
   "cards": {
@@ -498,6 +701,7 @@
     "Arcane Signet": { "status": "OWNED", "printing": {"set":"eld","collectorNumber":"331"} },
     "Ashnod's Altar": { "status": "OWNED", "printing": {"set":"cmm","collectorNumber":"368"} },
     "Bartolomé del Presidio": { "printing": {"set":"lci","collectorNumber":"224"} },
+    "Beseech the Mirror": { "tags": ["tutor"] },
     "Black Market Connections": { "status": "OWNED", "printing": {"set":"clb","collectorNumber":"669"} },
     "Blade of the Bloodchief": { "status": "BUY", "printing": {"set":"lcc","collectorNumber":"300"} },
     "Blazemire Verge": { "status": "OWNED", "printing": {"set":"dsk","collectorNumber":"256"} },
@@ -506,6 +710,7 @@
     "Blood Seeker": { "printing": {"set":"dsc","collectorNumber":"77"} },
     "Bloodletter of Aclazotz": { "status": "OWNED", "printing": {"set":"lci","collectorNumber":"92"} },
     "Bloodline Keeper": { "status": "OWNED", "printing": {"set":"inr","collectorNumber":"98"} },
+    "Bloodthirsty Conqueror": { "tags": ["combo"] },
     "Bojuka Bog": { "status": "OWNED", "printing": {"set":"plst","collectorNumber":"C18-238"} },
     "Brightclimb Pathway": { "printing": {"set":"znr","collectorNumber":"259"} },
     "Cabal Coffers": { "status": "PROXY", "note": "— engine with Urborg", "printing": {"set":"mh2","collectorNumber":"301"} },
@@ -516,12 +721,15 @@
     "Chaos Warp": { "status": "OWNED", "printing": {"set":"fic","collectorNumber":"291"} },
     "Charismatic Conqueror": { "status": "BUY", "printing": {"set":"lcc","collectorNumber":"70"} },
     "Clavileño, First of the Blessed": { "status": "OWNED", "printing": {"set":"lcc","collectorNumber":"2"} },
+    "Cliffhaven Vampire": { "tags": ["combo"] },
     "Command Tower": { "status": "OWNED", "printing": {"set":"eld","collectorNumber":"333"} },
     "Cordial Vampire": { "status": "OWNED", "printing": {"set":"lcc","collectorNumber":"189"} },
     "Creeping Bloodsucker": { "printing": {"set":"j25","collectorNumber":"415"} },
     "Crossway Troublemakers": { "printing": {"set":"fdn","collectorNumber":"518"} },
     "Cruel Celebrant": { "status": "OWNED", "printing": {"set":"war","collectorNumber":"188"} },
     "Deadly Dispute": { "status": "BUY", "printing": {"set":"afr","collectorNumber":"94"} },
+    "Demonic Tutor": { "tags": ["tutor"] },
+    "Diabolic Intent": { "tags": ["tutor"] },
     "Dictate of Erebos": { "status": "OWNED", "printing": {"set":"sld","collectorNumber":"2204"} },
     "Dragonskull Summit": { "status": "OWNED", "printing": {"set":"xln","collectorNumber":"252"} },
     "Drana, Liberator of Malakir": { "printing": {"set":"bfz","collectorNumber":"109"} },
@@ -533,11 +741,17 @@
     "Elenda, the Dusk Rose": { "status": "OWNED", "printing": {"set":"rix","collectorNumber":"157"} },
     "Elspeth, Storm Slayer": { "status": "OWNED", "printing": {"set":"tdm","collectorNumber":"11"} },
     "Emeritus of Woe": { "status": "BUY", "note": "— replaces Demonic Tutor, frees a GC slot", "printing": {"set":"sos","collectorNumber":"80"} },
+    "Enduring Tenacity": { "tags": ["combo"] },
+    "Enlightened Tutor": { "tags": ["tutor"] },
+    "Exquisite Blood": { "tags": ["combo"] },
     "Florian, Voldaren Scion": { "status": "BUY", "printing": {"set":"mid","collectorNumber":"223"} },
+    "Forerunner of the Legion": { "tags": ["tutor"] },
     "Generous Gift": { "status": "OWNED", "printing": {"set":"cmm","collectorNumber":"26"} },
     "Godless Shrine": { "status": "OWNED", "printing": {"set":"trk","collectorNumber":"285"} },
     "Grave Pact": { "printing": {"set":"cmm","collectorNumber":"165"} },
+    "Grim Tutor": { "tags": ["tutor"] },
     "Herald's Horn": { "status": "BUY", "printing": {"set":"cmm","collectorNumber":"953"} },
+    "Imperial Seal": { "tags": ["tutor"] },
     "Indulgent Aristocrat": { "status": "OWNED", "printing": {"set":"soi","collectorNumber":"118"} },
     "Indulging Patrician": { "printing": {"set":"m21","collectorNumber":"219"} },
     "Infantry Shield": { "printing": {"set":"tdc","collectorNumber":"35"} },
@@ -547,7 +761,7 @@
     "Legion Lieutenant": { "status": "OWNED", "printing": {"set":"rix","collectorNumber":"163"} },
     "Luxury Suite": { "status": "BUY", "printing": {"set":"msc","collectorNumber":"252"} },
     "Malakir Bloodwitch": { "status": "OWNED", "printing": {"set":"voc","collectorNumber":"131"} },
-    "Marauding Blight-Priest": { "status": "BUY", "printing": {"set":"znr","collectorNumber":"112"} },
+    "Marauding Blight-Priest": { "status": "BUY", "tags": ["combo"], "printing": {"set":"znr","collectorNumber":"112"} },
     "Master of Dark Rites": { "status": "BUY" },
     "Mavren Fein, Dusk Apostle": { "printing": {"set":"xln","collectorNumber":"24"} },
     "Minas Tirith": { "status": "OWNED", "printing": {"set":"ltr","collectorNumber":"256"} },
@@ -556,11 +770,12 @@
     "Nighthawk Scavenger": { "printing": {"set":"znr","collectorNumber":"115"} },
     "Nomad Outpost": { "status": "OWNED" },
     "Nullpriest of Oblivion": { "status": "OWNED", "printing": {"set":"znr","collectorNumber":"118"} },
+    "Oathsworn Vampire": { "tags": ["combo"] },
     "Olivia's Wrath": { "status": "OWNED", "printing": {"set":"lcc","collectorNumber":"205"} },
     "Patchwork Banner": { "status": "BUY", "printing": {"set":"msc","collectorNumber":"207"} },
     "Path of Ancestry": { "status": "OWNED", "printing": {"set":"plst","collectorNumber":"M3C-363"} },
     "Path to Exile": { "status": "OWNED", "printing": {"set":"cmm","collectorNumber":"49"} },
-    "Phyrexian Altar": { "printing": {"set":"plst","collectorNumber":"UMA-232"} },
+    "Phyrexian Altar": { "tags": ["combo"], "printing": {"set":"plst","collectorNumber":"UMA-232"} },
     "Phyrexian Arena": { "printing": {"set":"one","collectorNumber":"104"} },
     "Phyrexian Reclamation": { "status": "BUY", "printing": {"set":"tdc","collectorNumber":"194"} },
     "Phyrexian Tower": { "status": "PROXY", "printing": {"set":"uma","collectorNumber":"248"} },
@@ -573,7 +788,7 @@
     "Sacred Foundry": { "status": "OWNED", "printing": {"set":"trk","collectorNumber":"295"} },
     "Sanctum Seeker": { "status": "OWNED", "printing": {"set":"xln","collectorNumber":"120"} },
     "Sangromancer": { "status": "BUY", "note": "— life floor; gain 3 per opponent creature death", "printing": {"set":"scd","collectorNumber":"103"} },
-    "Sanguine Bond": { "status": "OWNED" },
+    "Sanguine Bond": { "status": "OWNED", "tags": ["combo"] },
     "Savai Triome": { "status": "PROXY", "printing": {"set":"iko","collectorNumber":"253"} },
     "Scheming Silvertongue": { "status": "BUY", "printing": {"set":"sos","collectorNumber":"99"} },
     "Shadow Alley Denizen": { "printing": {"set":"rvr","collectorNumber":"92"} },
@@ -603,6 +818,7 @@
     "Vampire Nocturnus": { "printing": {"set":"m13","collectorNumber":"113"} },
     "Vampire of the Dire Moon": { "printing": {"set":"m20","collectorNumber":"120"} },
     "Vampire Socialite": { "status": "OWNED", "printing": {"set":"mid","collectorNumber":"249"} },
+    "Vampiric Tutor": { "tags": ["tutor"] },
     "Vanquisher's Banner": { "printing": {"set":"xln","collectorNumber":"251"} },
     "Vault of Champions": { "status": "PROXY", "printing": {"set":"cmm","collectorNumber":"436"} },
     "Vault of the Archangel": { "status": "BUY", "printing": {"set":"tdc","collectorNumber":"410"} },
@@ -611,9 +827,11 @@
     "Vicious Conquistador": { "printing": {"set":"xln","collectorNumber":"128"} },
     "Village Rites": { "printing": {"set":"inr","collectorNumber":"137"} },
     "Viscera Seer": { "status": "OWNED", "printing": {"set":"soc","collectorNumber":"229"} },
-    "Vito, Thorn of the Dusk Rose": { "status": "OWNED", "printing": {"set":"m21","collectorNumber":"127"} },
+    "Vito, Thorn of the Dusk Rose": { "status": "OWNED", "tags": ["combo"], "printing": {"set":"m21","collectorNumber":"127"} },
     "Warleader's Call": { "status": "BUY", "printing": {"set":"mkm","collectorNumber":"242"} },
+    "Warren Soultrader": { "tags": ["combo"] },
     "Welcoming Vampire": { "printing": {"set":"tdc","collectorNumber":"140"} },
+    "Wishclaw Talisman": { "tags": ["tutor"] },
     "Yahenni, Undying Partisan": { "status": "OWNED", "printing": {"set":"aer","collectorNumber":"74"} }
   }
 }

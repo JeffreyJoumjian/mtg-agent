@@ -928,3 +928,195 @@ Vampire are kept.
 
 Curve unchanged (MV 2 for MV 2). Snapshot:
 `versions/2026-09-28-1715-sacrifice-fra-edgar-ancient-bloodlord-in-morlun-out.json`.
+
+---
+
+## 2026-11-03 — Founded `b4`: the no-holds-barred Bracket 4 build
+
+### The brief
+
+Pilot: *"what if we just fully give in and make the best edgar deck possible including infinite
+combos and everything. like the best packapunched version of the deck and let's just make it
+bracket 4. no holds barred, no worry about card costs (i proxy anyway)."* They asked whether to lean
+drain or aggro. Answers given before the build:
+
+- **Lean:** *"i've always enjoyed playing edgar more as drain anyway. so yeah let's go with what the
+  best bracket 4/cedh decks are doing"*.
+- **Automatic infinites:** *"yes of course. this deck is no holds barred best of the best deck"*.
+  This overrides, for this list only, the older rule that automatic or unstoppable loops are out.
+- **Stax:** *"i dont' want things like opposition agent tbh. i want to play my own deck not other
+  peoples decks. Also i dont' really want to play fully hate pieces that dont' benefit me, like
+  esper benefits me but drannith doesn't ... keep a section for these in case i would like to lean
+  towards more staxy later."* Rule for this list: a hate piece must also do something for us.
+- **Where:** a `b4` list in this folder. *"so i guess the deck leans more very high bracket 4
+  instead of pure cedh metagame"*.
+
+`combat` and `sacrifice` are untouched and stay Bracket 3. `main` stays abandoned.
+
+### The measurement that settled drain versus aggro
+
+EDHREC serves cEDH average decks per theme. Pulled `average-decks/edgar-markov/cedh/combo`
+(44 decks) and `cedh/aggro` (33 decks) and diffed them by script:
+
+| | combo average | aggro average |
+|---|---|---|
+| nonland cards | 68 | 66 |
+| shared | 54 | 54 |
+| two-card lifegain loops | 4 pairs (Exquisite Blood, Bloodthirsty Conqueror × Vito, Sanguine Bond) | 6 pairs (+ Marauding Blight-Priest) |
+| Oathsworn Vampire + Phyrexian Altar | yes | yes |
+| Necropotence, Bolas's Citadel, Dark Ritual, six or more tutors | yes | yes |
+
+Aggro-only (12): Boros Charm, Clavileño, Edgar Ancient Bloodlord, Forerunner of the Legion,
+Herald's Horn, Malakir Bloodwitch, Marauding Blight-Priest, New Blood, Shared Animosity, Stensian
+Sanguinist, Talisman of Indulgence, Urza's Incubator. Combo-only (14): Animate Dead, Beseech the
+Mirror, Cabal Ritual, Chrome Mox, Esper Sentinel, Falkenrath Pit Fighter, Gamble, Lotus Petal, Mana
+Vault, Mox Diamond, Orcish Bowmasters, Red Elemental Blast, Warren Soultrader, Wishclaw Talisman.
+
+Reading: at this power level there is no lean. Both averages win by draining and both carry the
+loops; "aggro" spends its last dozen slots on lords instead of moxen. The two Bracket 3 lists share
+only 25 (`combat`) and 26 (`sacrifice`) of the combo average's 68 nonlands, so `b4` is a rebuild,
+not a tune. Commander Spellbook on the Bracket 3 lists: `combat` 0 loops and 44 one card away,
+`sacrifice` 0 loops and 90 one card away.
+
+Hand-only simulation (ignoring mana, Necropotence and draw), 2 loss-to-gain halves and 5
+gain-to-loss halves, on the play: a complete pair in hand by turn 4 is 47% with 9 tutors, 39% with
+the 7 unconditional ones, 8% with none.
+
+### Role skeleton (deck-brain §2.1), targets set before any card was picked
+
+| Role | Target | Built |
+|---|---|---|
+| Commander | 1 | 1 |
+| Lands | 31 | 31 |
+| Fast Mana & Ramp | 13 | 13 |
+| Tutors | 9 | 9 |
+| Card Advantage | 9 | 9 |
+| Loop Halves & Drain | 13 | 13 |
+| Sacrifice Outlets | 4 | 4 |
+| Combat Package | 10 | 10 |
+| Interaction & Protection | 7 | 7 |
+| Recursion & Doubling | 3 | 3 |
+
+Lands follow the cEDH average (31 with six fetches and three original duals) with two swaps:
+Bleachbone Verge for Caves of Koilos (untapped, no damage) and Windswept Heath as a sixth fetch.
+The per-card grounds for all 100 live in `research/proposal-b4.json` and on the published page
+(URL in `decks/_notes.md`), not here, so there is one copy to maintain.
+
+### Loops in the list (14 found by Commander Spellbook, rulings from `mtg-rules-expert` against CR 2026-08-07)
+
+- **Ten lifegain pairs.** Exquisite Blood or Bloodthirsty Conqueror with Vito, Sanguine Bond,
+  Marauding Blight-Priest, Enduring Tenacity or Cliffhaven Vampire. Mandatory (no "may", CR 603.5),
+  and they end with every opponent dead rather than a draw, because each cycle lowers a finite life
+  total and state-based actions remove the player (CR 704.5a, 104.2a, 104.4b, 732.4). You may pick
+  a different target for every Bond or Vito trigger (CR 115.1d, 603.3d). Declare the shortcut with
+  explicit counts per opponent (CR 732.2a). The one draw: an opponent who can't lose the game
+  (Platinum Angel) keeps the loop mandatory and endless. A "can't gain life" effect merely ends it
+  (CR 119.7). With Blight-Priest or Cliffhaven, Exquisite Blood triggers once per opponent who lost
+  life (CR 603.2c), so the chain grows threefold per cycle. Ledger loop-023.
+- **Oathsworn Vampire + Phyrexian Altar** under eminence: ledger loop-002, unchanged (net 0 mana,
+  +2 life per iteration with Blood Artist). Chosen-N.
+- **Oathsworn Vampire + Warren Soultrader** under eminence: a second outlet for the same loop. Per
+  iteration: cast from the graveyard for {1}{B} (eminence token), pay 1 life and sacrifice
+  Oathsworn (Treasure), pay 1 life and sacrifice the token (Treasure), two Treasures pay the next
+  cast. Blood Artist fires twice: net 0 mana, net 0 life, opponents lose 2. Needs {1}{B} and 2 life
+  to start, and a life gain that turn (Blood Artist's first trigger supplies it from then on).
+  Chosen-N. Ledger loop-002, extended.
+- **Ashnod's Altar** can't close the Oathsworn loop (colourless can't pay the {B}), which is why it
+  sits in the pool and not the 100.
+
+### Clauses checked (deck-brain §1.3)
+
+- **Olivia's Wrath** kills our own Esper Sentinel and Warren Soultrader. Enduring Tenacity dies and
+  returns as an enchantment, which keeps its trigger (CR 205.1a, 113.6) and still loops.
+- **"If you control a commander"** (Deflecting Swat, Deadly Rollick, Flawless Maneuver, Akroma's
+  Will, Jeska's Will): Edgar in the command zone is not controlled by anyone (CR 903.3d, 109.4), so
+  none of these is free or double-moded while he sits there. All five are out of the 100; Swat and
+  Rollick wait in the pool's stax section, Akroma's Will in the alternates. Ledger zone-029.
+- **Sorin's −3** puts a Vampire onto the battlefield without casting it, so no eminence token
+  (CR 601.2, 112.1). Oathsworn cast from the graveyard does trigger eminence.
+- **Banned, verified with `bun run card`:** Mana Crypt, Jeweled Lotus, Dockside Extortionist.
+  Everything else in the fast-mana suite is legal.
+
+### Measured after the build
+
+`bun run deck:show edgar-markov --list b4`: 100 cards, 31 lands, avg MV 2.57, pips W18 B61 R4,
+sources W24 B32 R20. MV ≤ 2: 35 nonland cards (3 at MV 0). MV ≤ 3: 50. `deckcheck`: 14 Game
+Changers, Bracket 4+ (Ancient Tomb, Chrome Mox, Grim Monolith, Mana Vault, Mox Diamond, Smothering
+Tithe, Demonic Tutor, Enlightened Tutor, Imperial Seal, Vampiric Tutor, Bolas's Citadel,
+Necropotence, The One Ring, Teferi's Protection). `bun run card --deck edgar-markov --list b4`:
+97/97 found, all legal, no identity flags. EDHREC coverage 75/94 non-basics on the Edgar page; the
+19 absent are the cEDH staples (fetches, moxen, Imperial Seal, Beseech, Wishclaw, Esper Sentinel,
+Cliffhaven, Tenacity, Soultrader, Silence, Animate Dead). The other three lists still total 100.
+
+### Where the Bracket 3 lists' protected cards went
+
+- **Malakir Bloodwitch** (*"she is a finisher"*, 2026-09-28): alternates. A one-shot drain at five
+  mana in a list that wins by loops; first combat-package swap if the pilot wants her back.
+- **Generous Gift** (*"we can't get rid of permanent destruction"*): Anguished Unmaking and Chaos
+  Warp carry the any-permanent role at instant speed, so the rule holds without Gift.
+- **Cordial Vampire** (*"really strong"*): in.
+- **Clavileño**: passed, needs attacks. **Blood Seeker**: passed, Bracket 3 pod tech.
+- **Dark Ritual** (rejected June 2026 as a one-shot in a midrange deck): in. The grounds named the
+  deck that wants it, and this is that deck.
+
+### The pool (`b4-pool`)
+
+- **Stax & Hate (held):** Opposition Agent and Drannith Magistrate (declined by the pilot), Orcish
+  Bowmasters and Drana and Linvala (both benefit us, held as the first picks if the list leans
+  staxier), Red Elemental Blast and Pyroblast (blue pods), Deflecting Swat and Deadly Rollick (not
+  free, see above).
+- **Alternates:** Ad Nauseam (first card in if the list ever goes turbo; with Teferi's Protection
+  it is unbounded draw), Gamble, Stromkirk Captain (ranked last of the eleven combat candidates:
+  fifth lord, needs red, first strike does nothing for drain), Markov Baron, Malakir Bloodwitch,
+  Dusk Legion Zealot and Falkenrath Pit Fighter (cut for Black Market Connections as the ninth draw
+  card), Phyrexian Arena, Yahenni, Bartolomé, Kalastria Highborn, Vein Ripper, Purphoros, Zulaport
+  Cutthroat, Akroma's Will, Generous Gift, Aetherflux Reservoir (loops with either loss-to-gain
+  half at 50 life), Blood Tribute (kicked with Vito out kills one opponent), Phyrexian Reclamation,
+  Ashnod's Altar, Vampire of the Dire Moon, Defiant Bloodlord, Talisman of Indulgence, Cabal
+  Coffers, Spectator Seating.
+
+### Lines to know
+
+- Turn 1 Dark Ritual into Sorin; turn 2 Sorin −3 puts Bloodthirsty Conqueror onto the
+  battlefield; turn 3 Vito or Blight-Priest and the table is dead.
+- Vampiric Tutor or Imperial Seal with Necropotence out: the card is in hand at end step for one
+  life. With Bolas's Citadel it is cast from the top. With Twilight Prophet it is drawn on upkeep
+  and drains its mana value.
+- Diabolic Intent and Culling the Weak are paid with an eminence token, which is also a death
+  trigger.
+- Bolas's Citadel's sacrifice-ten with Exquisite Blood and any gain-to-loss half out starts the
+  loop by itself.
+- Beseech the Mirror bargained on a token casts Vito, Blight-Priest, Tenacity, Cliffhaven,
+  Oathsworn, Phyrexian Altar, Warren Soultrader or Necropotence for free; the MV 5 halves
+  (Exquisite Blood, Conqueror, Sanguine Bond) go to hand.
+
+### Files
+
+- List: `deck.json` list `b4`; Moxfield export `MOXFIELD-B4.txt`; snapshot
+  `versions/2026-11-03-2008-b4-founded-bracket-4-drain-combo-build.json`.
+- Pool: list `b4-pool`.
+- Grounds and page: `research/proposal-b4.json`, rendered by `bun run deck:proposal edgar-markov
+  --proposal research/proposal-b4.json --out decks/edgar-markov/artifact-b4`.
+- Tool fix made this session: `scripts/deck-proposal.ts` no longer folds "applied" waves into the
+  stats rail a second time (ledger tool-021). The WandaVision pages, whose waves are all applied,
+  should be regenerated to correct their rails.
+
+### Applied 2026-11-03 (pilot's call): Ashnod's Altar in `b4`, Talisman of Hierarchy out
+
+The pilot asked why Ashnod's Altar was out. Re-derived against the list (deck-brain §1.1b):
+
+- **Grounds for leaving it out:** it closes no loop on its own, because {C}{C} can't pay Oathsworn
+  Vampire's {B} (ledger loop-002); Commander Spellbook finds 14 loops with or without it; the Edgar
+  combo theme runs it in 15% of lists against Phyrexian Altar 41%, Viscera Seer 59% and Indulgent
+  Aristocrat 73%, and neither cEDH average runs it; 61 of 83 pips are black.
+- **What it adds:** a fifth free outlet that pays {C}{C} per eminence token (Skullclamp: two cards
+  and a net mana per token), a mana-positive Oathsworn loop alongside either coloured outlet, and
+  free instant-speed steal-then-sacrifice with Captivating Vampire.
+- **Cuts considered:** Indulgent Aristocrat (my nomination: the close call in the outlet role) and
+  Talisman of Hierarchy. The pilot chose Talisman: *"let's put out talisman and put ashnod's back
+  in."* Arcane Signet stays as the coloured two-mana rock.
+
+Measured after the edit: avg MV 2.57 → 2.58, W sources 24 → 23, B sources 32 → 31, 14 Game
+Changers unchanged, 100 cards. The pool mirrors it (Talisman into Alternates, Ashnod's out).
+Snapshot: `versions/2026-11-03-2052-b4-ashnod-s-altar-in-talisman-of-hierarchy-out.json`. Wave 1
+on the page, verdict pending after play.

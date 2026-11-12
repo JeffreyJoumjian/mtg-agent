@@ -1,0 +1,451 @@
+{
+  "takenAt": "2026-11-03T20:52:06.082Z",
+  "listId": "b4",
+  "label": "Ashnod's Altar in, Talisman of Hierarchy out",
+  "reason": "before Ashnod's Altar in, Talisman of Hierarchy out",
+  "list": {
+    "label": "Bracket 4",
+    "kind": "deck",
+    "bracket": 4,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Edgar Markov",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Ancient Tomb",
+            "qty": 1
+          },
+          {
+            "name": "Arid Mesa",
+            "qty": 1
+          },
+          {
+            "name": "Badlands",
+            "qty": 1
+          },
+          {
+            "name": "Bleachbone Verge",
+            "qty": 1
+          },
+          {
+            "name": "Blood Crypt",
+            "qty": 1
+          },
+          {
+            "name": "Bloodstained Mire",
+            "qty": 1
+          },
+          {
+            "name": "Cavern of Souls",
+            "qty": 1
+          },
+          {
+            "name": "City of Brass",
+            "qty": 1
+          },
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Exotic Orchard",
+            "qty": 1
+          },
+          {
+            "name": "Godless Shrine",
+            "qty": 1
+          },
+          {
+            "name": "Luxury Suite",
+            "qty": 1
+          },
+          {
+            "name": "Mana Confluence",
+            "qty": 1
+          },
+          {
+            "name": "Marsh Flats",
+            "qty": 1
+          },
+          {
+            "name": "Phyrexian Tower",
+            "qty": 1
+          },
+          {
+            "name": "Plains",
+            "qty": 2
+          },
+          {
+            "name": "Plateau",
+            "qty": 1
+          },
+          {
+            "name": "Polluted Delta",
+            "qty": 1
+          },
+          {
+            "name": "Sacred Foundry",
+            "qty": 1
+          },
+          {
+            "name": "Savai Triome",
+            "qty": 1
+          },
+          {
+            "name": "Scrubland",
+            "qty": 1
+          },
+          {
+            "name": "Swamp",
+            "qty": 3
+          },
+          {
+            "name": "Three Tree City",
+            "qty": 1
+          },
+          {
+            "name": "Urborg, Tomb of Yawgmoth",
+            "qty": 1
+          },
+          {
+            "name": "Vault of Champions",
+            "qty": 1
+          },
+          {
+            "name": "Verdant Catacombs",
+            "qty": 1
+          },
+          {
+            "name": "Voldaren Estate",
+            "qty": 1
+          },
+          {
+            "name": "Windswept Heath",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Fast Mana & Ramp",
+        "cards": [
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Cabal Ritual",
+            "qty": 1
+          },
+          {
+            "name": "Chrome Mox",
+            "qty": 1
+          },
+          {
+            "name": "Culling the Weak",
+            "qty": 1
+          },
+          {
+            "name": "Dark Ritual",
+            "qty": 1
+          },
+          {
+            "name": "Grim Monolith",
+            "qty": 1
+          },
+          {
+            "name": "Lotus Petal",
+            "qty": 1
+          },
+          {
+            "name": "Mana Vault",
+            "qty": 1
+          },
+          {
+            "name": "Master of Dark Rites",
+            "qty": 1
+          },
+          {
+            "name": "Mox Diamond",
+            "qty": 1
+          },
+          {
+            "name": "Smothering Tithe",
+            "qty": 1
+          },
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Hierarchy",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Tutors",
+        "cards": [
+          {
+            "name": "Beseech the Mirror",
+            "qty": 1
+          },
+          {
+            "name": "Demonic Tutor",
+            "qty": 1
+          },
+          {
+            "name": "Diabolic Intent",
+            "qty": 1
+          },
+          {
+            "name": "Enlightened Tutor",
+            "qty": 1
+          },
+          {
+            "name": "Forerunner of the Legion",
+            "qty": 1
+          },
+          {
+            "name": "Grim Tutor",
+            "qty": 1
+          },
+          {
+            "name": "Imperial Seal",
+            "qty": 1
+          },
+          {
+            "name": "Vampiric Tutor",
+            "qty": 1
+          },
+          {
+            "name": "Wishclaw Talisman",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Advantage",
+        "cards": [
+          {
+            "name": "Black Market Connections",
+            "qty": 1
+          },
+          {
+            "name": "Bolas's Citadel",
+            "qty": 1
+          },
+          {
+            "name": "Emeritus of Woe",
+            "qty": 1
+          },
+          {
+            "name": "Esper Sentinel",
+            "qty": 1
+          },
+          {
+            "name": "Necropotence",
+            "qty": 1
+          },
+          {
+            "name": "Skullclamp",
+            "qty": 1
+          },
+          {
+            "name": "The One Ring",
+            "qty": 1
+          },
+          {
+            "name": "Twilight Prophet",
+            "qty": 1
+          },
+          {
+            "name": "Welcoming Vampire",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Loop Halves & Drain",
+        "cards": [
+          {
+            "name": "Blood Artist",
+            "qty": 1
+          },
+          {
+            "name": "Bloodletter of Aclazotz",
+            "qty": 1
+          },
+          {
+            "name": "Bloodthirsty Conqueror",
+            "qty": 1
+          },
+          {
+            "name": "Cliffhaven Vampire",
+            "qty": 1
+          },
+          {
+            "name": "Cruel Celebrant",
+            "qty": 1
+          },
+          {
+            "name": "Enduring Tenacity",
+            "qty": 1
+          },
+          {
+            "name": "Exquisite Blood",
+            "qty": 1
+          },
+          {
+            "name": "Impact Tremors",
+            "qty": 1
+          },
+          {
+            "name": "Marauding Blight-Priest",
+            "qty": 1
+          },
+          {
+            "name": "Oathsworn Vampire",
+            "qty": 1
+          },
+          {
+            "name": "Sanguine Bond",
+            "qty": 1
+          },
+          {
+            "name": "Vengeful Bloodwitch",
+            "qty": 1
+          },
+          {
+            "name": "Vito, Thorn of the Dusk Rose",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Sacrifice Outlets",
+        "cards": [
+          {
+            "name": "Indulgent Aristocrat",
+            "qty": 1
+          },
+          {
+            "name": "Phyrexian Altar",
+            "qty": 1
+          },
+          {
+            "name": "Viscera Seer",
+            "qty": 1
+          },
+          {
+            "name": "Warren Soultrader",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Combat Package",
+        "cards": [
+          {
+            "name": "Bloodline Keeper",
+            "qty": 1
+          },
+          {
+            "name": "Captivating Vampire",
+            "qty": 1
+          },
+          {
+            "name": "Charismatic Conqueror",
+            "qty": 1
+          },
+          {
+            "name": "Cordial Vampire",
+            "qty": 1
+          },
+          {
+            "name": "Edgar, Charmed Groom",
+            "qty": 1
+          },
+          {
+            "name": "Elenda, the Dusk Rose",
+            "qty": 1
+          },
+          {
+            "name": "Legion Lieutenant",
+            "qty": 1
+          },
+          {
+            "name": "Sanctum Seeker",
+            "qty": 1
+          },
+          {
+            "name": "Shared Animosity",
+            "qty": 1
+          },
+          {
+            "name": "Sorin, Imperious Bloodlord",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Interaction & Protection",
+        "cards": [
+          {
+            "name": "Anguished Unmaking",
+            "qty": 1
+          },
+          {
+            "name": "Chaos Warp",
+            "qty": 1
+          },
+          {
+            "name": "Olivia's Wrath",
+            "qty": 1
+          },
+          {
+            "name": "Path to Exile",
+            "qty": 1
+          },
+          {
+            "name": "Silence",
+            "qty": 1
+          },
+          {
+            "name": "Swords to Plowshares",
+            "qty": 1
+          },
+          {
+            "name": "Teferi's Protection",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Recursion & Doubling",
+        "cards": [
+          {
+            "name": "Animate Dead",
+            "qty": 1
+          },
+          {
+            "name": "Anointed Procession",
+            "qty": 1
+          },
+          {
+            "name": "Reanimate",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

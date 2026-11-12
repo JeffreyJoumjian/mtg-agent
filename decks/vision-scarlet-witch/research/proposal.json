@@ -1,0 +1,430 @@
+{
+  "title": "WandaVision Bracket 4",
+  "subtitle": "The turn 3 to 4 combo build, saved as the b4 list on 2026-10-14. main is unchanged.",
+  "listId": "main",
+  "diagnosis": [
+    "**The brief (2026-10-13).** Build a Bracket 4 version that kills on turn 3 or 4 with combos. Start from main plus the spellslinger list's draw cards. Judge every protection piece on its own merits instead of keeping it by rule. If the turbo plan doesn't work in play, the voltron pieces come back.",
+    "**What Bracket 4 changes for this commander.** Her trigger refunds {R} on every cast, so colourless fast mana is worth more here than in The Scarlet Witch's b4, where red pips capped the chain (ledger build-024). Here the colourless mana pays the generic part of a cost and her refund pays the pip. Three cheap cards also turn her trigger into a loop: Grinning Ignus, Reiterate with Seething Song, and Underworld Breach with Lion's Eye Diamond and Wheel of Fortune. Each line was checked against the Comprehensive Rules on 2026-10-13. Each is chosen-N, because every iteration is an optional cast or activation (CR 732.2a), and the pilot opted into loops like these on 2026-09-24.",
+    "**The kill lines, cheapest first.** 1. Her, Grinning Ignus and 3 mana give unbounded casts and counters. Grapeshot, Chandra's Ignition, Soul's Fire or Aetherflux Reservoir then ends it. With Ruby Medallion, Birgi or Runaway Steam-Kin out, the loop also makes unbounded mana, so Crackle with Power works. 2. Her, Reiterate, Seething Song and 8 mana (6 under Ruby Medallion) give unbounded instant casts, and every converter fires on each one. 3. Her, Underworld Breach, Lion's Eye Diamond and Wheel of Fortune net {R}{R} per loop until the smallest library runs out. 4. Her, Storm-Kiln Artist and Haze of Rage make mana from the fourth spell of the turn onward. 5. Dualcaster Mage and Molten Duplication make unbounded hasty tokens, and this is the one line that doesn't need her.",
+    "**What carried over from Scarlet Witch, and what didn't.** Carried over: a five-mana creature is a setback on the kill turn (Thor for Soul's Fire, 2026-10-13), so Neheb, Iron Man and Twinflame Tyrant go. Arcane Bombardment was judged too slow for B4 (2026-10-13), and it costs the same six mana here. Treasonous Ogre and Runaway Steam-Kin earned their b4 slots there by doing the job they do here. Powerbalance was declined for a turn-3 plan (2026-10-10), and those grounds hold. Not carried over: Gamble left Scarlet Witch's b4 because it discards the card it found when your hand is empty. This list casts it on turns 1 to 3 with a full hand to find the one missing combo piece, so it's proposed again with that cost named. Bonus Round stays out, because copies aren't cast and her trigger never sees them (founding entry, 2026-09-03).",
+    "**Curve and speed.** Average mana value drops from 2.79 to 2.30. Cards at mana value 2 or less go from 34 to 44, and at 3 or less from 49 to 60. Only Mana Geyser and Chandra's Ignition still cost 5. Crackle with Power counts as 2 but costs {X}{X}{X}{R}{R}, so it's a finisher for unbounded mana only. Simian Spirit Guide counts as a 3, though it's never cast. The Ignus kill needs 4 mana on turn 2 for her and 3 on turn 3 for Ignus and Grapeshot, because the last Ignus activation hands back the mana the loop started with.",
+    "**Bracket, in two parts (ledger build-025).** Hard criteria: 10 Game Changers (Ancient Tomb, Jeska's Will and The One Ring already, plus Mana Vault, Grim Monolith, Chrome Mox, Mox Diamond, Lion's Eye Diamond, Underworld Breach and Gamble), and two-card loops that can assemble by turn 3. Either one puts the list at Bracket 4. Power read: a turn-3 kill is realistic whenever she resolves on turn 2, and the table can still stop it by removing her or countering Ignus or Seething Song. That's why Hexing Squelcher, Conqueror's Flail and Swiftfoot Boots stay.",
+    "**How often a named combo comes together (simulated, 50,000 hands).** Counting cards seen only, on the play, with every cantrip and draw spell drawing its cards and Gamble or Imperial Recruiter standing in for one missing piece, a complete kit is in hand by turn 3 in 29% of games, by turn 4 in 33% and by turn 5 in 38%. Grinning Ignus is about half of that. Mana and her surviving aren't modelled, so these are ceilings. The limit is mono-red's tutor pool (ledger build-014): two-card combos in a 99-card singleton deck with two tutors don't meet in most games. In the other two games in three this list plays as a faster main, with her out on turn 2 and the storm turn a turn or two earlier. Scarlet Witch's b4 is more consistent because its kill uses interchangeable parts (ten doublers, eight seeds) instead of named pairs. The lever here is more finishers for the Ignus loop: Kediss back for Wiccan measured +2 points by turn 4.",
+    "**Protection, judged card by card.** Kept without a swap: Hexing Squelcher (your spells can't be countered), Conqueror's Flail (opponents can't cast spells during your turn, the best protection a combo turn can have), Swiftfoot Boots (hexproof for three mana all in), Deflecting Swat (free with her out), Cavern of Souls and Command Beacon. Proposed cuts: Champion's Helm, Commander's Plate, Mithril Coat, Tyrite Sanctum, The Ozolith and Shadowspear. That removes her access to indestructible, lifelink and protection from colours. In this list a wrath costs her recast and little else, because any loop rebuilds her counters in one turn.",
+    "**Fallback.** If the turbo plan stalls, the voltron package (Embercleave, Blackblade Reforged, Bulk Up, Kediss, Shadowspear, Champion's Helm) comes back first, as the pilot asked. Every swap below names the card it displaces, so any one of them can be undone alone."
+  ],
+  "waves": [
+    {
+      "id": "wave-1",
+      "label": "Wave 1 · Fast mana and a 28-land base",
+      "status": "applied",
+      "note": "The turbo plan needs her on the battlefield on turn 2. Sol Ring, Mana Vault, Grim Monolith, Ancient Tomb or City of Traitors pay her {2}, and two red sources pay the {R}{R}. Every zero-cost artifact cast after she lands is a free spell: it gives {R}, a counter and a storm count, and the noncreature pingers fire. Lands drop from 32 to 28 (24 red, 4 colourless), the same count Scarlet Witch's b4 runs, because ten fast-mana pieces and six rituals now share the job. Applied to the b4 list on 2026-10-14. main is unchanged.",
+      "swaps": [
+        {
+          "in": "Mana Vault",
+          "out": "Arcane Signet",
+          "section": "Rocks & Cost Reduction",
+          "axis": "Speed: a turn-2 commander",
+          "grounds": "Mana Vault costs {1} and taps for {C}{C}{C}. Cast it on turn 1, leave it untapped, and on turn 2 two Mountains plus Vault cast her with mana to spare. Arcane Signet is a two-mana rock that makes one, which is the slowest mana piece in main.",
+          "interactions": [
+            "Grinning Ignus — Vault pays the {2} of Ignus's first cast",
+            "Reiterate — colourless pays the {3} buyback"
+          ],
+          "cost": "It doesn't untap unless you pay {4} in your upkeep, and it deals 1 damage to you each draw step while tapped."
+        },
+        {
+          "in": "Grim Monolith",
+          "out": "The Fire Crystal",
+          "section": "Rocks & Cost Reduction",
+          "axis": "Speed: mana now instead of a discount later",
+          "grounds": "Grim Monolith costs {2} and taps for {C}{C}{C}, so it nets one mana the turn it lands and three on the turn you use it. The Fire Crystal is four mana for a one-mana discount on red spells and haste, which is a turn-3 play that doesn't advance a turn-3 kill. Ruby Medallion stays as the two-mana reducer.",
+          "interactions": [
+            "Molten Duplication — copy an untapped Monolith for another {C}{C}{C}"
+          ],
+          "cost": "Monolith only untaps for {4}. Losing The Fire Crystal costs the second discount on Reiterate (+1 mana per Reiterate loop) and haste for Thermo-Alchemist."
+        },
+        {
+          "in": "Chrome Mox",
+          "out": "Lindblum, Industrial Regency",
+          "section": "Rocks & Cost Reduction",
+          "axis": "A land slot becomes a zero-mana red source",
+          "grounds": "Lindblum always enters tapped, and its Mage Siege half is a three-mana 0/1 pinger. Chrome Mox costs {0}: imprint a red card and it taps for {R} from turn 1. With her out, casting it is also +{R} and a counter.",
+          "interactions": [
+            "The Vision and Scarlet Witch — a {0} cast is a free {R} and a counter"
+          ],
+          "cost": "The imprinted card is gone, so Chrome Mox costs a card."
+        },
+        {
+          "in": "Mox Diamond",
+          "out": "Tyrite Sanctum",
+          "section": "Rocks & Cost Reduction",
+          "axis": "A spare land becomes any colour at zero mana",
+          "grounds": "Tyrite Sanctum's indestructible counter costs {2} and then {4} across two turns, from a colourless land in a deck that needs {R}{R} on turn 2. Mox Diamond discards a spare land to enter and taps for any colour, and with 28 lands most opening hands hold one to spare.",
+          "cost": "This removes the deck's only permanent indestructible route (the constraint the pilot asked to judge card by card). Mox Diamond also costs a card, the land."
+        },
+        {
+          "in": "Lion's Eye Diamond",
+          "out": "Forge of Heroes",
+          "section": "Rocks & Cost Reduction",
+          "axis": "A combo piece that is also turn-1 mana",
+          "grounds": "Forge of Heroes gives one counter the turn she lands, and the loops make unbounded counters. Lion's Eye Diamond costs {0} and makes three mana of one colour at instant speed by discarding your hand. Escaped off Underworld Breach (mana cost {0} plus three exiled cards) it is a cast, so her trigger fires, and the Breach, Lion's Eye Diamond and Wheel of Fortune loop nets +{R}{R} per iteration (verified 2026-10-13).",
+          "interactions": [
+            "Underworld Breach, Wheel of Fortune — the loop, bounded by the smallest library (ledger loop-019)"
+          ],
+          "cost": "It discards your hand. Use it with an empty hand, after Wheel of Fortune, or inside the Breach loop."
+        },
+        {
+          "in": "Lotus Petal",
+          "out": "Rogue's Passage",
+          "section": "Rocks & Cost Reduction",
+          "axis": "A land slot becomes a free spell",
+          "grounds": "Rogue's Passage makes a creature unblockable for {4}, and she already flies. Lotus Petal is turn-1 acceleration, and with her out it's +2 for a card: her refund on the cast, then one mana of any colour. The pilot cut Petal from main on 2026-09-04 because cards in hand were the constraint. On a turn-3 plan speed outranks the card, which is the trade Scarlet Witch's b4 made for Simian Spirit Guide.",
+          "cost": "It doesn't replace itself."
+        },
+        {
+          "in": "City of Traitors",
+          "out": "Arena of Glory",
+          "section": "Lands",
+          "axis": "Two untapped mana from one land",
+          "grounds": "Arena of Glory's haste only matters to a combat plan. City of Traitors taps for {C}{C} and is sacrificed when you play another land. That second colourless mana is a turn early for Sol Ring, Grim Monolith or her {2}.",
+          "cost": "It's lost on your next land drop, and it makes no red, so her {R}{R} still has to come from red sources."
+        },
+        {
+          "in": "Simian Spirit Guide",
+          "out": "Leyline Tyrant",
+          "section": "Rocks & Cost Reduction",
+          "axis": "One more way to cast her on turn 2",
+          "grounds": "Leyline Tyrant banks red across turns, and Electro and Ashling still do that. The turbo plan spends everything in one turn. Simian Spirit Guide is exiled from hand for {R} at any time, for zero mana.",
+          "cost": "Exiling it isn't casting a spell, so her trigger, storm and the pingers ignore it (the 2026-09-08 Scarlet Witch grounds). Its only job is speed."
+        },
+        {
+          "in": "Desperate Ritual",
+          "out": "Urabrask",
+          "section": "Rituals",
+          "axis": "A two-mana ritual over a four-mana engine",
+          "grounds": "Urabrask is a third 'add {R} per instant or sorcery' engine behind Birgi and Electro, at four mana. Scarlet Witch's b4 kept Birgi over Urabrask on deployment speed (2026-09-16), and the same holds here. Desperate Ritual is {1}{R} for {R}{R}{R} at instant speed, plus her {R}. It is Arcane, so it splices onto Hex Magic for another {R}{R}{R}, and it's cheap fuel for an Underworld Breach escape.",
+          "interactions": [
+            "Hex Magic — splice onto Arcane {1}{R} for {R}{R}{R} more",
+            "Underworld Breach — escapes for {1}{R} and three cards, nets {R}{R} with her out"
+          ],
+          "cost": "Urabrask's ping to one opponent per instant or sorcery, and its saga side, go with it."
+        }
+      ]
+    },
+    {
+      "id": "wave-2",
+      "label": "Wave 2 · The combo package",
+      "status": "applied",
+      "note": "Each loop here was checked by the rules agent on 2026-10-13, and each is chosen-N: you can stop after any iteration (CR 732.2a). Grinning Ignus is the cheapest kill in the deck, because it needs only her, Ignus and 3 mana. Reiterate and Underworld Breach are the second and third lines. Dualcaster Mage with Molten Duplication is insurance for when she's been removed. Applied to the b4 list on 2026-10-14. main is unchanged.",
+      "swaps": [
+        {
+          "in": "Grinning Ignus",
+          "out": "Powerbalance",
+          "section": "Mana Engines",
+          "axis": "A loop with her that costs 3 mana on turn 3",
+          "grounds": "Cast Ignus for {2}{R} and her trigger gives back {R}. Activate Ignus ({R}, return it to hand) for {C}{C}{R}, recast it, and her {R} pays the next activation. Each iteration nets 0 mana and gives one cast, one counter and one storm count. The ability has no {T}, so summoning sickness doesn't stop it (CR 302.6). It is a mana ability, so it can't be responded to (CR 605.1a), but it's sorcery-speed: main phase, empty stack. Start with 3 mana including {R}, and the last activation leaves you with that 3. Powerbalance goes on the Scarlet Witch b4 grounds (2026-10-10): a turn-3 plan gives it two opponent turns.",
+          "interactions": [
+            "Grapeshot — cast it after the loop with any storm count you like",
+            "Chandra's Ignition, Soul's Fire — her power is now whatever you chose",
+            "Aetherflux Reservoir — every Ignus cast gains life, then 50 damage per 50 life",
+            "Ruby Medallion, Birgi, God of Storytelling, Runaway Steam-Kin — each makes the loop produce mana, so Crackle with Power becomes a kill"
+          ],
+          "cost": "Ignus is a creature spell, so Guttersnipe and the noncreature pingers don't fire. You need a finisher. A counter on Ignus ends the loop."
+        },
+        {
+          "in": "Reiterate",
+          "out": "Loki Laufeyson",
+          "section": "Copy & Recursion",
+          "axis": "Reiterate plus Seething Song is a loop with her out",
+          "grounds": "Reiterate with buyback costs {4}{R}{R}. Copying Seething Song gives {R}{R}{R}{R}{R}, and her trigger on the Reiterate cast gives {R}, so it nets 0 and every iteration is an instant cast. Guttersnipe, Kessig Flamebreather, Firebrand Archer, Coruscation Mage, Longshot, Thermo-Alchemist, Electro and Birgi all fire on each one. It nets +1 under Ruby Medallion, and +2 Treasures per iteration with Storm-Kiln Artist. Start with 8 mana with her out: let Seething Song's trigger resolve before you cast Reiterate (6 under Ruby). It also copies Jeska's Will and Mana Geyser (ledger loop-018) and starts the Increasing Vengeance loop with Storm-Kiln (loop-017). Loki needs a tap and haste, copies only spells up to his power, and his copies aren't cast.",
+          "interactions": [
+            "Seething Song — the ritual the loop copies",
+            "Guttersnipe, Longshot, Rebel Bowman — damage on every Reiterate cast",
+            "Storm-Kiln Artist — two Treasures per iteration"
+          ],
+          "cost": "If Seething Song is countered, Reiterate has no target and buyback is lost (CR 608.2b). With Ashling out, her forced loot draws 2 per iteration, so stop before your library runs out."
+        },
+        {
+          "in": "Underworld Breach",
+          "out": "Arcane Bombardment",
+          "section": "Copy & Recursion",
+          "axis": "Graveyard recursion for 2 mana instead of 6",
+          "grounds": "Arcane Bombardment is {4}{R}{R}, and the pilot judged it too slow for Scarlet Witch's b4 (2026-10-13). Underworld Breach costs {1}{R}. With her out, every escape is a cast that gives {R}, so Rite of Flame escapes for {R} and makes {R}{R}{R}, and Seething Song nets +3. Breach, Lion's Eye Diamond and Wheel of Fortune nets +{R}{R} per loop. An escaped Grapeshot copies the whole storm count again.",
+          "interactions": [
+            "Lion's Eye Diamond, Wheel of Fortune — the loop",
+            "Rite of Flame, Pyretic Ritual, Seething Song — rituals escape for profit with her out",
+            "Grapeshot — escape it more than once"
+          ],
+          "cost": "It's sacrificed at the end step, so finish in the main phase. Each Wheel refills opponents' hands, and the pilot's library is usually the first to run out (ledger loop-019)."
+        },
+        {
+          "in": "Haze of Rage",
+          "out": "Embercleave",
+          "section": "Copy & Recursion",
+          "axis": "A storm card that is a loop with Storm-Kiln Artist",
+          "grounds": "Embercleave is the combat kill, and it's the first voltron card back if turbo stalls. Haze of Rage costs {1}{R} with buyback {2}. With Storm-Kiln Artist and her out, each cast nets n minus 3 mana, where n is Haze's position among the spells cast this turn. That's break-even as the third spell, +1 as the fourth, and climbing after that (rules agent correction, 2026-10-13). Each copy gives creatures +1/+0, so her power climbs with the storm count.",
+          "interactions": [
+            "Storm-Kiln Artist — a Treasure for the cast and for each storm copy",
+            "Soul's Fire, Chandra's Ignition — her power after a few Hazes"
+          ],
+          "cost": "The loop needs Storm-Kiln Artist, which is a single copy. Imperial Recruiter or Gamble finds it."
+        },
+        {
+          "in": "Runaway Steam-Kin",
+          "out": "Neheb, the Eternal",
+          "section": "Mana Engines",
+          "axis": "A one-mana engine over a five-mana one",
+          "grounds": "Neheb costs five and pays out postcombat, which is the 'five mana on the kill turn' problem Scarlet Witch's b4 fixed by cutting Thor. Runaway Steam-Kin is {1}{R} ({R} under Ruby). It gets a counter per red spell up to three, and removing three gives {R}{R}{R}. In the Ignus loop that's {R}{R}{R} every third cast, so the loop makes unbounded red. Scarlet Witch's b4 took it back on 2026-10-13.",
+          "interactions": [
+            "Grinning Ignus — every third Ignus cast pays {R}{R}{R}",
+            "Reiterate — every third Reiterate pays {R}{R}{R}"
+          ],
+          "cost": "A 1/1. Fiery Confluence's creature mode kills it, so pick the other modes while it's out."
+        },
+        {
+          "in": "Treasonous Ogre",
+          "out": "Blackblade Reforged",
+          "section": "Mana Engines",
+          "axis": "Life becomes the mana that starts a loop",
+          "grounds": "Blackblade Reforged is a voltron piece. Treasonous Ogre's 'Pay 3 life: Add {R}' doesn't tap, so it works the turn Ogre lands, at instant speed, and costs {2}{R} under Ruby. It pays the 8 mana that starts Reiterate with Seething Song, or the 5 for Chandra's Ignition after an Ignus loop. Its power is 2, so Imperial Recruiter can find it. Scarlet Witch's b4 took it on 2026-10-13.",
+          "interactions": [
+            "Reiterate, Seething Song — life pays the start",
+            "Chandra's Ignition — life pays the finisher after Ignus"
+          ],
+          "cost": "Life. Six red costs 18 of your 40, which is fine on turn 3 and risky against an aggressive table."
+        },
+        {
+          "in": "Aetherflux Reservoir",
+          "out": "Fiery Emancipation",
+          "section": "Win Conditions",
+          "axis": "A finisher that turns creature casts into damage",
+          "grounds": "Fiery Emancipation is a six-mana tripler for a long game. Aetherflux Reservoir gains life on every spell cast, creature spells included, and pays 50 life for 50 damage. It's the one finisher the Ignus loop can use without any card in hand: loop until you have 150 life to spend, then pay 50 once per opponent. It's also in the spellslinger list.",
+          "interactions": [
+            "Grinning Ignus — every iteration gains more life than the last"
+          ],
+          "cost": "Four colourless mana that no reducer touches."
+        },
+        {
+          "in": "Dualcaster Mage",
+          "out": "Kediss, Emberclaw Familiar",
+          "section": "Copy & Recursion",
+          "axis": "A kill that doesn't need her",
+          "grounds": "Kediss copies her combat damage to the table, which is a voltron line. Dualcaster Mage has flash and copies an instant or sorcery when it enters. Flash it in over Molten Duplication and retarget the copy at Dualcaster: each hasty token copy copies the original again, so you get as many hasty 2/2s as you choose (verified 2026-10-13). Without the combo it copies Seething Song for five red.",
+          "interactions": [
+            "Molten Duplication — the loop; win in combat with the tokens",
+            "Seething Song, Jeska's Will — a ritual copy at instant speed",
+            "Imperial Recruiter — finds it (power 2)"
+          ],
+          "cost": "Removing the newest Dualcaster, or countering the original sorcery, stops the loop. The tokens made so far stay."
+        },
+        {
+          "in": "Molten Duplication",
+          "out": "Iron Man, Tony Stark",
+          "section": "Copy & Recursion",
+          "axis": "The second half of the Dualcaster loop, useful alone",
+          "grounds": "Iron Man is a five-drop. Molten Duplication is {1}{R}: a hasty token copy of an artifact or creature you control, which is an artifact too. Aim the original at Grim Monolith or Mana Vault, so the final token taps for {C}{C}{C}. Alone, it copies a rock or Storm-Kiln Artist for the turn.",
+          "interactions": [
+            "Dualcaster Mage — the loop",
+            "Grim Monolith, Mana Vault — copy an untapped rock for three mana"
+          ],
+          "cost": "Never aim it at her. A token copy of a legendary creature hits the legend rule (CR 704.5j)."
+        }
+      ]
+    },
+    {
+      "id": "wave-3",
+      "label": "Wave 3 · Tutors and card flow",
+      "status": "applied",
+      "note": "The play report said the deck struggles with draw, and a turbo list has to find two or three specific cards by turn 3. This wave adds the spellslinger list's draw cards (Vision of Love, Thrill of Possibility and Wiccan, with War Room passed over below), two tutors, and Unexpected Windfall, Wrenn's Resolve, Expedite and Chromatic Star. Every one-mana spell is free with her out, so each one is also a counter, an {R} and a storm count. Applied to the b4 list on 2026-10-14. main is unchanged.",
+      "swaps": [
+        {
+          "in": "Gamble",
+          "out": "Wanda's Vision",
+          "section": "Card Draw",
+          "axis": "Find the missing combo piece on turns 1 to 3",
+          "grounds": "Wanda's Vision is a five-mana engine for a long game. Gamble is {R}: search for any card, then discard one at random. On turns 1 to 3 your hand holds about five cards, so the card you found is the one discarded about one time in six, and Underworld Breach can escape it if it is. It left Scarlet Witch's b4 because drawn late into an empty hand it discards exactly what it found (ledger eval-024). Cast it early or hold it for a hand with cards in it.",
+          "interactions": [
+            "Grinning Ignus, Reiterate, Underworld Breach — the pieces it finds",
+            "Underworld Breach — escapes a discarded piece"
+          ],
+          "cost": "A random discard, and one Game Changer."
+        },
+        {
+          "in": "Imperial Recruiter",
+          "out": "Twinflame Tyrant",
+          "section": "Card Draw",
+          "axis": "A second tutor that finds four combo creatures",
+          "grounds": "Twinflame Tyrant is a five-mana damage doubler. Imperial Recruiter costs {2}{R} ({1}{R} under Ruby) and finds a creature with power 2 or less: Grinning Ignus, Dualcaster Mage, Storm-Kiln Artist, Runaway Steam-Kin, Treasonous Ogre, Hexing Squelcher or Guttersnipe. It isn't a Game Changer.",
+          "interactions": [
+            "Grinning Ignus, Dualcaster Mage, Storm-Kiln Artist — the combo creatures it can find"
+          ],
+          "cost": "A 1/1 body."
+        },
+        {
+          "in": "Wiccan, Young Avenger",
+          "out": "Origin of Thor",
+          "section": "Card Draw",
+          "axis": "A card per noncreature spell, from the spellslinger list",
+          "grounds": "Origin of Thor is a saga that pays off two turns after you cast it. Wiccan exiles your top card on every noncreature spell, and you can play it until your next end step. With her out every free cantrip becomes card-positive. He's a Hero, so Cavern of Souls makes him uncounterable.",
+          "cost": "Four mana ({2}{R} under Ruby). The pilot called Wiccan too slow for Scarlet Witch's b4 (2026-09-16). It's here because the spellslinger draw cards were the agreed base. If the curve feels heavy, he's the first card of this wave to cut."
+        },
+        {
+          "in": "Vision of Love",
+          "out": "Bulk Up",
+          "section": "Card Draw",
+          "axis": "Draw two for one net mana, from the spellslinger list",
+          "grounds": "Bulk Up is a voltron card. Vision of Love is a {1}{R} instant: sacrifice an artifact or discard a card to draw two. Sacrifice a Treasure, a Mox Amber with no legend out, or Chromatic Star, which draws a card of its own on the way to the graveyard.",
+          "interactions": [
+            "Chromatic Star — sacrificed to Vision of Love it draws too, so three cards"
+          ],
+          "cost": "It needs an artifact or a card to give up."
+        },
+        {
+          "in": "Unexpected Windfall",
+          "out": "Roaming Throne",
+          "section": "Card Draw",
+          "axis": "Cards and mana at instant speed",
+          "grounds": "Roaming Throne naming Hero doubles her trigger, which is strong, but it's a four-mana colourless creature that no reducer touches. Unexpected Windfall is a {2}{R}{R} instant ({1}{R}{R} under Ruby): discard a card, draw two, make two Treasures. After her refund and the two Treasures it costs one mana, or none under Ruby, and it trades a spare card for two new ones. The pilot kept it in Scarlet Witch's b4 as a recursion target.",
+          "cost": "It needs another card in hand. Roaming Throne leaves too, and it was the deck's way to get {R}{R} per spell."
+        },
+        {
+          "in": "Thrill of Possibility",
+          "out": "Fiery Inscription",
+          "section": "Card Draw",
+          "axis": "Draw over an eighth converter, from the spellslinger list",
+          "grounds": "Fiery Inscription is the eighth converter. A Reiterate loop needs only one converter on the battlefield, and seven remain. Thrill of Possibility is a {1}{R} instant: discard a card, draw two.",
+          "cost": "Inscription was the converter that survives creature wipes. All seven left are creatures except Grapeshot."
+        },
+        {
+          "in": "Expedite",
+          "out": "Shadowspear",
+          "section": "Cantrips",
+          "axis": "A free cantrip over lifelink",
+          "grounds": "Shadowspear's lifelink matters in long games, and turbo games end on turns 3 and 4. Expedite is {R}, free with her out: draw a card, and give a creature haste, so Thermo-Alchemist pings the turn it lands.",
+          "cost": "Lifelink is gone from the list, along with Shadowspear's 'opponents lose hexproof and indestructible' ability."
+        },
+        {
+          "in": "Chromatic Star",
+          "out": "The Ozolith",
+          "section": "Cantrips",
+          "axis": "A cantrip artifact over counter insurance",
+          "grounds": "The Ozolith keeps her counters when she dies, but the loops make unbounded counters, so those counters aren't what this list protects. Chromatic Star costs {1}, free with her out. {1} and sacrifice it for one mana of any colour, and you draw a card when it hits the graveyard. Each one is a storm count, a counter and a noncreature pinger trigger.",
+          "interactions": [
+            "Vision of Love — sacrifice it as the cost and draw an extra card"
+          ],
+          "cost": "Her counters are lost if she dies."
+        },
+        {
+          "in": "Wrenn's Resolve",
+          "out": "Commander's Plate",
+          "section": "Card Draw",
+          "axis": "Two cards over a four-mana protection piece",
+          "grounds": "Commander's Plate costs {1} plus {3} to equip her. Wrenn's Resolve is {1}{R}: exile your top two cards and play them until the end of your next turn.",
+          "cost": "Protection from white, blue, black and green leaves the list."
+        }
+      ]
+    },
+    {
+      "id": "wave-4",
+      "label": "Wave 4 · Protection and interaction",
+      "status": "applied",
+      "note": "Kept with no swap: Hexing Squelcher, Conqueror's Flail, Deflecting Swat and Swiftfoot Boots. Squelcher stops counterspells on every combo piece. Flail stops opponents casting anything on your turn, Teferi's Protection included. Swat is free with her out, and Boots is the cheaper of the two hexproof Equipment. The two cuts below trade slow insurance for cheap answers that also work on the combo turn. Applied to the b4 list on 2026-10-14. main is unchanged.",
+      "swaps": [
+        {
+          "in": "Untimely Malfunction",
+          "out": "Champion's Helm",
+          "section": "Protection",
+          "axis": "One hexproof source is enough when the other answer is an instant",
+          "grounds": "Champion's Helm and Swiftfoot Boots both give her hexproof, and Boots costs three all in against Helm's four. Untimely Malfunction is a {1}{R} instant: redirect a single-target spell or ability aimed at her, destroy an artifact, or stop two creatures blocking.",
+          "cost": "Helm's +2/+2 and its always-on hexproof go with it."
+        },
+        {
+          "in": "Pyroblast",
+          "out": "Mithril Coat",
+          "section": "Protection",
+          "axis": "Answer the blue player instead of insuring against a wrath",
+          "grounds": "Mithril Coat gives flash indestructible, which matters in a long game. In this list a wrath costs her recast, which Command Beacon makes tax-free, and the loops rebuild her counters in one turn. Pyroblast is {R}, free with her out: counter a blue spell or destroy a blue permanent, which covers counterspells and blue stax in Bracket 4 pods.",
+          "cost": "Indestructible leaves the list. Pyroblast does nothing against a table with no blue."
+        }
+      ]
+    },
+    {
+      "id": "wave-5",
+      "label": "Wave 5 · After the save",
+      "status": "applied",
+      "note": "Two swaps the pilot made on 2026-10-14 after b4 was saved.",
+      "swaps": [
+        {
+          "in": "Impact Tremors",
+          "out": "Wiccan, Young Avenger",
+          "section": "Win Conditions",
+          "axis": "A finisher for both loops at two mana",
+          "grounds": "A recast Grinning Ignus is a new object entering (CR 400.7, 603.6a), so Impact Tremors deals 1 to each opponent every iteration and the Ignus loop kills on its own. It also makes the Dualcaster Mage tokens a kill without combat. Simulated: a complete combo by turn 4 goes from 33% to 35%.",
+          "interactions": [
+            "Grinning Ignus — each recast pings every opponent",
+            "Dualcaster Mage, Molten Duplication — each token pings every opponent"
+          ],
+          "cost": "Wiccan's card per noncreature spell leaves, and with it the last of spellslinger's draw creatures."
+        },
+        {
+          "in": "Infantry Shield",
+          "out": "Treasonous Ogre",
+          "section": "Win Conditions",
+          "axis": "Turns her power into attacking tokens",
+          "grounds": "Pilot: life is harder to spare at Bracket 4 tables. Infantry Shield gives her menace and mobilize X equal to her power: whenever she attacks, X 1/1 Warriors enter tapped and attacking, and you choose which opponent each attacks (CR 702.181a, 508.4). After an Ignus loop that's as many attackers as you chose, and Impact Tremors pings for each one. Simulated: 34.8% to 36.5% by turn 4.",
+          "interactions": [
+            "Grinning Ignus — set her power, then attack",
+            "Impact Tremors — 1 to each opponent per Warrior"
+          ],
+          "cost": "Treasonous Ogre's life-to-mana that started a Reiterate loop is gone. Shield costs {2}{R} plus equip {2} and only works when she attacks."
+        }
+      ]
+    }
+  ],
+  "passed": [
+    {
+      "name": "War Room",
+      "why": "The fourth spellslinger draw card. It's a colourless land, and this list already has four (Ancient Tomb, City of Traitors, Cavern of Souls, Command Beacon) while needing {R}{R} on turn 2. Each card costs {3} and a life. Swap it for a Mountain if you want it anyway."
+    },
+    {
+      "name": "Twinning Staff",
+      "why": "Adds a copy to every copy: Reiterate with Seething Song nets +5 a loop and Reiterate with Pyretic Ritual turns positive. It's three colourless mana for a card that doesn't kill on its own, and Ruby Medallion already makes the Seething Song loop positive. First in if Reiterate turns are coming up short."
+    },
+    {
+      "name": "Mishra's Bauble",
+      "why": "A {0} artifact: with her out it's +{R}, a counter and a storm count, and the card arrives next upkeep. Passed for Chromatic Star, which draws on the same turn."
+    },
+    {
+      "name": "Mox Opal",
+      "why": "Needs three artifacts before it taps, which turn 1 rarely has. Mox Amber's legendary-creature condition is met by her and five other creatures in the list."
+    },
+    {
+      "name": "Flare of Duplication",
+      "why": "Free if you sacrifice a nontoken red creature, and copies an instant or sorcery. It's in two of the three combo decks on her EDHREC page. Passed because it costs a creature, and Reiterate and Dualcaster Mage already copy rituals."
+    },
+    {
+      "name": "Tibalt's Trickery",
+      "why": "Red's only hard counter, for {1}{R}. Its cost is a random free spell for the opponent. Hexing Squelcher and Conqueror's Flail protect your own combo, so this would only stop theirs."
+    },
+    {
+      "name": "Red Elemental Blast",
+      "why": "A second blue answer behind Pyroblast. Worth bringing in for a pod with two blue decks."
+    },
+    {
+      "name": "Fervent Mastery",
+      "why": "Finds three cards and discards three at random. With a full hand the discards often hit what it found, and it costs five ({3}{R}{R}), or four with the opponent-rummage clause."
+    },
+    {
+      "name": "Bonus Round",
+      "why": "Copies every instant and sorcery after it this turn, but copies aren't cast, so her trigger, Guttersnipe and the pingers never see them (founding grounds, 2026-09-03). It earned a slot in Scarlet Witch's b4, where the chain runs on copies."
+    },
+    {
+      "name": "Wishclaw Talisman",
+      "why": "Its cost is {1}{B}, so it's black and not legal in this deck."
+    },
+    {
+      "name": "Mishra's Workshop",
+      "why": "The pilot withdrew it from every b4 deck on 2026-10-10."
+    }
+  ]
+}

@@ -509,3 +509,234 @@ card for card, verified against
 `versions/2026-09-28-1602-main-fra-command-the-stage-in-braid-of-fire-out.json`. Revert snapshot:
 `versions/2026-09-28-1840-main-revert-braid-of-fire-back-in-command-the-stage-out.json`. No reason
 given; Command the Stage stays out of both Wanda decks. Net FRA result for WandaVision: no changes.
+
+---
+
+## 2026-10-10 — Rite of Flame and Powerbalance into `main` (pilot's calls); Braid of Fire and Cosmic Cube out
+
+Prompted by the pilot asking which red decks want Powerbalance. The cross-deck measurement is
+deck-brain ledger eval-060.
+
+| List | Out | In | Grounds |
+|---|---|---|---|
+| `main` | Braid of Fire | Rite of Flame | Pilot: *"it's pay 1 get 2 guaranteed every time almost."* With her out it nets two red (you pay {R}, it adds {R}{R}, her trigger adds {R}), a counter and every pinger, and Arcane Bombardment, Past in Flames and Increasing Vengeance cast or copy it again. Braid was 5th of 5 in Mana Banking on 2026-09-28: its mana arrives in the upkeep and is lost unless Leyline Tyrant, Electro or Ashling is out. |
+| `main` | Cosmic Cube | Powerbalance | Same Free-Cast Engines job for 2 mana instead of 5, with no attack needed. |
+
+**Rite of Flame, the case against it, recorded.** The founding build passed on it as a fifth ritual
+because "the deck's mana comes from the refund and the bank." It also spends a card in a deck whose
+reported gap is draw. The pilot took it anyway, as they protected Seething Song on 2026-09-04.
+
+**Powerbalance.** Oracle: *"Whenever an opponent casts a spell, you may reveal the top card of your
+library. If you do, you may cast that card without paying its mana cost if the two spells have the
+same mana value."* Simulated at about 0.63 free spells per opponent turn cycle for this list (6
+opponent spells a cycle, opponent mana values taken from the 24 lists in this repo), so about 3
+over five cycles. Each hit is a counter, an {R} that lasts the step (CR 106.4) or banks, every
+pinger, and with an instant in hand a Wanda's Vision trigger. Only Crackle with Power and
+Shatterskull Smashing are X-spell blanks (a free cast locks X at 0). Costs: every trigger reveals
+your next draw (ledger eval-059), and it adds one red pip over Cube.
+
+**Cut ranking for Powerbalance, scored against `main` after Rite of Flame:**
+
+| Candidate | Grounds |
+|---|---|
+| **Cosmic Cube** (cut, pilot's pick) | Same job, 5 mana and needs an attack. What is lost: it picks the best of six cards and can cast Chandra's Ignition free. |
+| Blackblade Reforged (my pick, not taken) | Growth & Voltron is at 5 against a target of 4, and it costs 2 plus 3 to equip at sorcery speed for power the counters already supply. Against: about +6 power for Soul's Fire, Origin of Thor and Ignition. |
+| Loki Laufeyson | Copy & Recursion is at 4 against 2, its copies aren't cast, and it only copies spells up to its power. The pilot picked it on 2026-09-04. |
+| Increasing Vengeance | Same over-target role, but its copies of Ignition and Soul's Fire are finisher damage, the other reported gap. |
+| Kediss, Emberclaw Familiar | Works only when the commander connects in combat, but it is one of six finishers. |
+| Swiftfoot Boots | Second hexproof source after Champion's Helm, but Protection is under target (8 against 9). |
+
+**Also decided:** `spellslinger` is unchanged, because the pilot hasn't played it yet. Powerbalance
+for Thrill of Possibility there is on hold.
+
+Roles: Rituals 4 → 5, Mana Banking 5 → 4, Free-Cast Engines stays at 2. Curve: average MV
+2.84 → 2.79, MV 1 11 → 12, MV 5 7 → 6, red pips 75 → 77. Snapshots:
+`versions/2026-10-10-0802-main-rite-of-flame-in-braid-of-fire-out.json` and
+`versions/2026-10-10-0802-main-powerbalance-in-cosmic-cube-out.json`. `gameplan.md` updated (the
+Braid line now covers Rite, and the Cube script is now a Powerbalance script). Validated: 100
+cards, 81/81 found, legal, mono-red, 3/3 Game Changers. PDF regenerated. Rite of Flame and
+Powerbalance have no printing pinned, so `MOXFIELD.txt` exports them as bare names.
+
+---
+
+## 2026-10-13 — Bracket 4 proposal (turn 3 to 4 combo); nothing applied
+
+Pilot: *"see if we can elevate it to a bracket 4 deck"*, using what Scarlet Witch's B3 and B4 lists
+taught, without assuming a card that failed there fails here. Answers to the scoping questions: a turn
+3 to 4 combo build (*"if it's not working we bring the voltron pieces back"*), built from `main` plus
+the spellslinger list's draw cards, every protection piece judged card by card, reviewed on a proposal
+page in waves before any list is created.
+
+**Proposal page:** https://claude.ai/artifact/UjPtcJfpuZkukvzBpy5QBf. Grounds per swap are in
+`research/proposal.json`; the page data is generated into `artifact/` by
+`bun run deck:proposal vision-scarlet-witch`. All four waves are `proposed`. No `b4` list exists in
+`deck.json` yet. Once the pilot approves waves, copy `main` into a new `b4` list and apply each
+approved wave with `deck:edit --list b4`.
+
+### The four waves (29 out, 29 in, measured against `main` with a dry run)
+
+| Wave | Out | In |
+|---|---|---|
+| 1. Fast mana, 28 lands | Arcane Signet, The Fire Crystal, Lindblum, Tyrite Sanctum, Forge of Heroes, Rogue's Passage, Arena of Glory, Leyline Tyrant, Urabrask | Mana Vault, Grim Monolith, Chrome Mox, Mox Diamond, Lion's Eye Diamond, Lotus Petal, City of Traitors, Simian Spirit Guide, Desperate Ritual |
+| 2. Combo package | Powerbalance, Loki Laufeyson, Arcane Bombardment, Embercleave, Neheb, Blackblade Reforged, Fiery Emancipation, Kediss, Iron Man | Grinning Ignus, Reiterate, Underworld Breach, Haze of Rage, Runaway Steam-Kin, Treasonous Ogre, Aetherflux Reservoir, Dualcaster Mage, Molten Duplication |
+| 3. Tutors and card flow | Wanda's Vision, Twinflame Tyrant, Origin of Thor, Bulk Up, Roaming Throne, Fiery Inscription, Shadowspear, The Ozolith, Commander's Plate | Gamble, Imperial Recruiter, Wiccan, Vision of Love, Unexpected Windfall, Thrill of Possibility, Expedite, Chromatic Star, Wrenn's Resolve |
+| 4. Protection | Champion's Helm, Mithril Coat | Untimely Malfunction, Pyroblast |
+
+Projected: 100 cards, 28 lands, average MV 2.79 → 2.30, MV ≤ 2 from 34 to 44, MV ≤ 3 from 49 to 60,
+Game Changers 3 → 10, creatures 20 → 19.
+
+### Grounds that came out of this pass
+
+- **Loops verified by `mtg-rules-expert` (all chosen-N, CR 732.2a):** the commander with Grinning Ignus
+  (ledger loop-020), with Reiterate and Seething Song (loop-018, extended), with Underworld Breach, Lion's
+  Eye Diamond and Wheel of Fortune (loop-019, extended), with Storm-Kiln Artist and Haze of Rage
+  (loop-022), and Dualcaster Mage with Molten Duplication, which doesn't need her (loop-021).
+- **Kept from Scarlet Witch's lessons:** five-drops are a setback on the kill turn (Thor, 2026-10-13),
+  Arcane Bombardment is too slow for B4 (2026-10-13), Powerbalance doesn't suit a turn-3 plan
+  (2026-10-10), and Treasonous Ogre and Runaway Steam-Kin did the same job there.
+- **Not carried over:** Gamble returns, cast early with a full hand, because this list needs one
+  specific piece; Bonus Round stays out because copies aren't cast (founding entry). Colourless fast
+  mana counts for more here than in Scarlet Witch's b4, because her refund turns any cast into {R}.
+- **Hex Magic stays.** I first nominated it as a cut, then re-read the oracle: it exiles your hand,
+  draws that many, and lets you play the exiled cards until the end of your next turn, so a hand of
+  four gives access to eight on turns 1 to 3. It is also Arcane, so Desperate Ritual splices onto it.
+- **Wiccan and War Room** were both in the agreed spellslinger draw set. Wiccan is proposed with its
+  cost named (four mana; the pilot called it too slow for Scarlet Witch's b4). War Room is passed:
+  this list already has four colourless lands and needs {R}{R} on turn 2.
+- **How often a combo comes together (simulated, 50,000 hands, cards seen only):** 29% by turn 3,
+  33% by turn 4, 38% by turn 5, about half of it Grinning Ignus. The rest of the time the list plays
+  as a faster `main`. Ledger build-045.
+
+### Correction recorded
+
+Ledger loop-018 said Mana Geyser is weak on your own turn because opponents' lands are untapped. A
+player untaps only in their own untap step (CR 502.3), so lands opponents tapped on their turns are
+still tapped on yours. Corrected in place with a History line. The pilot's 2026-09-04 read (*"~10 mana
+at the beginning of your phase"*) was right.
+
+---
+
+## 2026-10-14 — `b4` saved from the Bracket 4 proposal (pilot's call); token package discussed
+
+Pilot: *"alright save this list"*. All four proposal waves applied to a new `b4` list (label "Bracket 4
+turbo", bracket 4), one `deck:edit` per wave so each can be undone alone. `main` and `spellslinger` are
+unchanged (checked against a copy of `deck.json` taken before the edit). `b4` was seeded as a copy of
+`main` with "Rocks & Cost Reduction" renamed Fast Mana and the two mana-creature sections merged into
+Mana Engines; the three sections the waves emptied were removed afterwards.
+
+Snapshots: `versions/2026-10-14-0907-b4-b4-wave-1-fast-mana-and-a-28-land-base.json`,
+`...-wave-2-the-combo-package.json`, `...-wave-3-tutors-and-card-flow.json`,
+`...-wave-4-protection-and-interaction.json`. Validated: 100 cards, 81 of 81 names found, legal, mono-red,
+10 Game Changers, average MV 2.30. `MOXFIELD-B4.txt` generated. The proposal page's waves are now
+`applied`. The new cards have no printing pinned, so they export as bare names.
+
+### Token package raised by the pilot (not applied)
+
+Impact Tremors, Purphoros, God of the Forge, Infantry Shield and Iron Man, Tony Stark, plus token
+makers that fire on instants and sorceries. Rules checked from the CR: a recast Grinning Ignus is a new
+object entering (CR 400.7, 603.6a), so each loop iteration triggers Impact Tremors and Purphoros, and
+the Dualcaster Mage tokens do too; mobilize tokens enter tapped and attacking, so they trigger both
+(CR 702.181a). Measured on `b4` (same kit simulation as build-045): Impact Tremors for Wiccan moves a
+complete combo by turn 4 from 33% to 35%; adding Purphoros as well (for Simian Spirit Guide) reaches
+36%. Iron Man (five mana) and Infantry Shield (three plus equip two, and it needs an attack) are the
+slow half. Waiting on the pilot: whether Impact Tremors goes into `b4`, and whether to build a
+separate Bracket 3 token list for the pods that object to strong Bracket 3 decks.
+
+---
+
+## 2026-10-14 (part 2) — `b4`: Impact Tremors and Infantry Shield in (pilot's calls); B3 token list proposed
+
+### Applied to `b4`
+
+| Out | In | Grounds |
+|---|---|---|
+| Wiccan, Young Avenger | Impact Tremors | A recast Grinning Ignus is a new object entering (CR 400.7, 603.6a), so Tremors makes the Ignus loop a kill by itself, and the Dualcaster Mage tokens a kill without combat. Simulated complete combo by turn 4: 33% to 35%. |
+| Treasonous Ogre | Infantry Shield | Pilot: *"life might be more difficult to come by in b4."* My recommended cut was Aetherflux Reservoir (same finisher job). Shield gives her mobilize X equal to her power, so after an Ignus loop she attacks with as many Warriors as you chose (ledger equip-029). Simulated: 34.8% to 36.5%. |
+
+Snapshots: `versions/2026-10-14-0917-b4-impact-tremors-in-wiccan-out.json`,
+`versions/2026-10-14-0934-b4-infantry-shield-in-treasonous-ogre-out.json`. Both are recorded on the
+`b4` proposal page as wave 5. Average MV 2.30 → 2.26, 10 Game Changers.
+
+### Proposed: a Bracket 3 token list built from `main`
+
+Page: https://claude.ai/artifact/2wcbwDiAkYKwyDTMMBVdJF, grounds in `research/proposal-b3-tokens.json`,
+data from `bun run deck:proposal vision-scarlet-witch --proposal research/proposal-b3-tokens.json --out
+decks/vision-scarlet-witch/artifact-b3-tokens` (the `--proposal` option was added to the script for this,
+so one deck can propose more than one list). Nothing applied; no `b3-tokens` list exists yet.
+
+Pilot's scope: cut the slow engines but keep Neheb, Origin of Thor, Loki and Powerbalance; judge every
+card on merit, because late-game combos are allowed at Bracket 3. Also the pilot's point, recorded:
+she grows herself and makes mana, so the only Equipment worth paying for is her protection and cards
+like Infantry Shield.
+
+| Wave | Out | In |
+|---|---|---|
+| 1. Token engine | Wanda's Vision, Arcane Bombardment, Thermo-Alchemist, Urabrask | Impact Tremors, Purphoros, Young Pyromancer, Stormsplitter |
+| 2. Voltron that makes tokens | Blackblade Reforged, Leyline Tyrant | Infantry Shield, Empty the Warrens |
+| 3. Extras, one call each | Firebrand Archer, Forge of Heroes | Goblin Bombardment, Hordeling Outburst |
+
+Projected across all three waves: average MV 2.79 → 2.73, MV ≤ 3 from 49 to 51, 3 Game Changers.
+
+### Found while checking the B3 list
+
+- **`main` already holds a three-card loop.** Loki Laufeyson's delayed copy starts the Increasing
+  Vengeance loop, and Storm-Kiln Artist makes a Treasure per copy, so it is unbounded mana (verified
+  2026-10-14, ledger loop-017). It has been in `main` since 2026-09-04. The pilot allows late-game
+  combos at Bracket 3, so it stays.
+- **Stormsplitter doubles itself** on every instant or sorcery cast (ledger zone-028), so five spells
+  with Impact Tremors and Purphoros out deal 93 to each opponent. It is bounded by spells cast.
+- **Roaming Throne naming Hero makes Infantry Shield's mobilize trigger twice**, and also doubles her
+  cast trigger (ledger equip-029, loop-020).
+
+---
+
+## 2026-10-14 (part 3) — `b3-tokens` built from the B3 token proposal (pilot's call)
+
+Pilot approved all three waves (*"yupp go for it"*). New list `b3-tokens` (label "Bracket 3 tokens",
+bracket 3), seeded as a copy of `main` through the deck store, then one `deck:edit` per wave and one
+per wave 3 swap, so each can be undone alone. `main`, `spellslinger` and `b4` are unchanged (checked
+against a copy of `deck.json` taken before the edit).
+
+Snapshots: `versions/2026-10-14-1010-b3-tokens-b3-tokens-wave-1-the-token-engine.json`,
+`...-b3-tokens-wave-2-voltron-that-makes-tokens.json`,
+`...-goblin-bombardment-in-firebrand-archer-out.json`, `...-hordeling-outburst-in-forge-of-heroes-out.json`.
+Validated: 100 cards, 81 of 81 names found, legal, mono-red, 3 Game Changers, 31 lands, average MV
+2.73. `MOXFIELD-B3-TOKENS.txt` generated. The proposal page's waves are now `applied`. The new cards
+have no printing pinned.
+
+**Pilot asked whether Roaming Throne really doubles Infantry Shield's mobilize.** Re-derived from the
+text: Infantry Shield says the equipped creature *"has"* mobilize, and an ability granted by an effect
+is that object's own ability (CR 113.1a, 113.10, layer 6 in 613.1f). She is a Hero, so Roaming Throne
+naming Hero makes it trigger an additional time (CR 603.2d), and Throne's ruling says each instance
+makes its own choices. Two sets of X Warriors, and Impact Tremors triggers for each Warrior. Ledger
+equip-029.
+
+## 2026-11-10 — `main`: Laughing Mad in, Crash Through out (pilot's call)
+
+Snapshot: `versions/2026-11-10-0207-main-laughing-mad-in-crash-through-out.json`. Part of a
+multi-deck card review. The pilot listed Laughing Mad *"for flashback"*, and plays `main` most of the
+four lists (*"probably main"*).
+
+**Grounds.** Flashback makes it two casts from one card: two Vision triggers ({R} and a +1/+1
+counter each) and two triggers on every converter, for one net card across the two casts. The
+gameplan names cards in hand as the deck's binding constraint, and the first play report said it
+*"struggles with draw sometimes."*
+
+**The first proposal was draw-for-draw** (Thrill of Possibility, in `spellslinger`), which the pilot
+read as cutting draw. Crash Through is the better cut: a cantrip whose rider (team trample) does least
+for a flying commander. Card Draw 6 → 7, Cantrips 6 → 5. avg MV 2.79 → 2.81.
+
+**Cost.** {2}{R}, then {3}{R} on flashback, against Crash Through's {R}. Vision refunds {R} per cast,
+so the two casts cost 5 net.
+
+**Also reviewed for this deck this session, not taken:**
+- Kediss, Emberclaw Familiar went to Iron Man; it stays in `main` and `b3-tokens` here.
+- Giggling Skitterspike, a recorded cute line: every targeted cantrip (Crimson Wisps, Fists of Flame,
+  Might of the Meek, Ancestral Anger, Impolite Entrance, Bulk Up, Soul's Fire) makes it deal its
+  power to each opponent. It needs 9 mana to set up and pulls those cantrips off the commander.
+- Waltz of Rage, a recorded cute line for `b3-tokens`: every Goblin token its damage kills is an
+  impulse-drawn card, because its delayed trigger exists before state-based actions (CR 603.7a,
+  704.3).
+
+Validated: `main` 100/100, legal and mono-red, Game Changers 3/3 unchanged. Moxfield files
+regenerated; only `MOXFIELD.txt` changed. PDF regenerated.

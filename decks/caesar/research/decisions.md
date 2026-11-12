@@ -212,3 +212,32 @@ neither slot came from drain.
 Now: 34 lands, avg MV 2.71, MV ≤ 2 and MV ≤ 3 unchanged, 13 drain payoffs. Validated clean. PDF
 regenerated. Note: `pdf.json`'s hand-written stats line (Avg MV 2.74, 17 token makers) predates
 today's changes.
+
+## 2026-11-10 — Chainsaw in, Talisman of Conviction out (pilot's call)
+
+Snapshot: `versions/2026-11-10-0147-main-chainsaw-in-talisman-of-conviction-out.json`. Part of a
+multi-deck card review; the pilot's note paired Chainsaw with Infantry Shield (*"use these together
+in a deck, maybe Caesar"*).
+
+**Grounds.** Chainsaw's *"Whenever one or more creatures die, put a rev counter"* triggers once per
+death event (ledger trig-021). Mobilize sacrifices its Warriors together at end step, which is one
+event. Caesar runs four free outlets (Viscera Seer, Ashnod's Altar, Phyrexian Altar, Goblin
+Bombardment), so sacrificing the Warriors one at a time before the end step makes each one its own
+event and its own counter. Worn with Infantry Shield, more power means more Warriors (mobilize X is
+the creature's power) and more Warriors means more counters, so the pair grows every attack.
+Caesar's own attack sacrifice and Grave Pact deaths add counters too. The ETB (3 damage to up to one
+creature) makes it a sixth removal piece. Iron Man passed on Chainsaw on 2026-09-03 because that
+deck makes almost no death events; Caesar is the opposite case.
+
+**Costs named.** Equip {3} on top of the Shield's {2}. Ramp 7 → 6. R sources 21 → 20, W 25 → 24.
+
+**Cuts considered.** Legion Warboss and Loyal Apprentice were kept because each supplies the body
+Caesar sacrifices on every attack. Talisman of Conviction is the rock for the lightest colour.
+
+**Also reviewed for Caesar this pass, not taken:** Priest of Forgotten Gods (Caesar's four outlets
+are already free and unlimited), Super Shredder (a better fit for the token decks that spend Foods
+and Treasures too), Rain of Gore (it turns Blood Artist's and Cruel Celebrant's "you gain 1 life"
+into your own life loss).
+
+Validated: 100/100, legal and on-identity, Game Changers 3/3 unchanged. `MOXFIELD.txt` and
+`caesar-reference.pdf` regenerated.

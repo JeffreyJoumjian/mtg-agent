@@ -525,3 +525,51 @@ Workshop, Walking Ballista and removal notes updated. EDHREC has no data until F
 
 **Validated:** 100/100, 92/92 found, no legality or identity flags, 3/3 Game Changers.
 `MOXFIELD.txt` regenerated with the FRC 88 pin.
+
+## 2026-11-10 — Ugin, the Spirit Dragon and Tezzeret, Cruel Captain in; Quicksilver Amulet and Thought Vessel out (pilot's calls)
+
+Snapshots: `versions/2026-11-10-0147-main-ugin-the-spirit-dragon-in-quicksilver-amulet-out.json`
+and `versions/2026-11-10-0147-main-tezzeret-cruel-captain-in-thought-vessel-out.json`.
+
+### IN — Ugin, the Spirit Dragon `{8}`, for Quicksilver Amulet
+
+*"−X: Exile each permanent with mana value X or less that's one or more colors."* Every card in this
+list is colourless, so it is a one-sided wipe, and *"+2: Ugin deals 3 damage to any target"* is
+repeatable removal. **The 2026-09-03 pass is re-derived and withdrawn:** it called Ugin *"a fourth
+coloured-permanent wipe behind All Is Dust and both Ugins"*, but the two Ugins already in are spot
+removal, so All Is Dust was the only wipe. MV 8 fires Sanctum of Ugin, fits under Ugin's Labyrinth,
+and costs 6 with Ugin, the Ineffable out.
+
+**Cut:** Quicksilver Amulet, next on the 2026-09-30 cut table. Thran Temporal Gateway already deploys
+every artifact creature and Omnath, so Glaring Fleshraker was Amulet's only exclusive target. The
+pilot: *"I'll see if I'm struggling to cast bigger creatures but it's usually not the case."*
+Offered and not taken: Cityscape Leveler (same MV, so curve-neutral) and Omnath (on trial).
+
+**Costs:** Ugin isn't an artifact, so no Ultron copy. Avg MV 4.64 → 4.71, MV 7+ 15 → 16, Deployers
+2 → 1.
+
+### IN — Tezzeret, Cruel Captain `{3}`, for Thought Vessel
+
+**The 2026-09-03 pass is re-derived and withdrawn.** It reasoned that a planeswalker *"rarely
+reaches −7"*; the card's value is elsewhere. *"0: Untap target artifact or creature"* untaps Gilded
+Lotus or Thran Dynamo for 3 mana a turn. *"−3: Search your library for an artifact card with mana
+value 1 or less"* finds Sol Ring, Mox Opal, Commander's Plate, Walking Ballista or Hangarback Walker
+(both MV 0 in the library). *"Whenever an artifact you control enters, put a loyalty counter"*
+counts Ultron's token copies, so it climbs while the deck develops.
+
+**Cut:** Thought Vessel, the pilot's pick. I had recommended Palladium Myr (a rock that dies to
+wipes, on the 2026-09-30 table) and named Thought Vessel as not recommended. **Costs named:** one
+fewer 2-mana rock (MV 2 cards 6 → 5), and the no-maximum-hand-size clause leaves (The Ten Rings
+still sets it to ten).
+
+**Also reviewed for Ultron this pass, not taken:** Alhammarret's Archive (does nothing alone at 5,
+and it's legendary, so an Ultron copy dies to the legend rule), Giggling Skitterspike (copies are 1/1
+until a {5} monstrosity each, and Cybermen Squadron's myriad copies enter attacking so they never
+trigger it, CR 508.4), Krark-Clan Ironworks (the loop family excluded at founding, unchanged).
+
+**Sideboard:** Tezzeret's row removed. New rows: Quicksilver Amulet (displaces Ugin) and Thought
+Vessel (displaces Tezzeret). Karn, the Great Creator re-pointed from Quicksilver Amulet to Palladium
+Myr. Both `research/sideboard.md` and `pdf.json` updated.
+
+Validated: 100/100, legal and on-identity, Game Changers 3/3 unchanged. `MOXFIELD.txt` and
+`ultron-reference.pdf` regenerated.

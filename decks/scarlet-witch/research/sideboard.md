@@ -148,8 +148,9 @@ Banefire at X≥5):
 ## Verification
 
 ```bash
-bun run card --deck decks/scarlet-witch/DECK.md --id r      # the promoted list
-bun run card --deck decks/scarlet-witch/DECK-V3.md --id r   # the chain build
+bun run card --deck scarlet-witch --list main   # the promoted list
+bun run card --deck scarlet-witch --list v3     # the chain build
+bun run card --deck scarlet-witch --list b4     # the chain build at Bracket 4
 ```
 
 ---
@@ -165,6 +166,41 @@ loop whose iteration count the pilot chooses, which by their own line (2026-09-0
 
 None of its distinctive cards are on a buy list any more. If you ever want the fast-mana shell
 back, the file is in `versions/`; nothing in the current deck depends on it.
+
+That retirement covers the *old* Bracket 4 list only. `b4` was rebuilt the same day as the chain
+deck at Bracket 4, and it is live (`decks/_notes.md`).
+
+## `b4` sideboard
+
+Every row names the date the card left and the card that replaced it. To undo a cut, swap the card
+back in for the one in the last column. The snapshot in `versions/` with that date holds the list
+from just before the change.
+
+| Card | Why it's out | Displaces if you want it back |
+|---|---|---|
+| **Pyromancer's Goggles** | Five colourless mana in a turn-3 deck, for one {R} and one copy per turn cycle. Left `b4` on 2026-10-10 for Inner Fire, which turns a full hand into red pips. Still in `v3`. | Treasonous Ogre (Inner Fire, its old pointer, left `b4` on 2026-10-13) |
+| **Bionic Blow** | The weakest of the pumps on red pips: {X}{R}{R} at sorcery speed for the same +X that Lunar Frenzy and Frantic Confrontation give for one pip at instant speed. Left `b4` on 2026-10-10 for Simian Spirit Guide. Still in `v3`. | Simian Spirit Guide |
+| **Valakut, the Molten Pinnacle** | Enters tapped, and its trigger needs five other Mountains, which a turn-3 deck never has. Left `b4` on 2026-10-10 for a 19th Mountain. Still in `v3`. | one Mountain |
+| **Arcane Bombardment** | A {4}{R}{R} enchantment, so Wanda never discounts it, and the pilot judged it too slow for a turn-3 list. Left `b4` on 2026-10-13 for Inspired Tinkering. Once it's out, one instant or sorcery a turn (opponents' turns included) re-casts the whole exiled pile, so it was the list's strongest engine for an empty hand. Its free casts force X = 0. Still in `v3`. | Inspired Tinkering |
+| **Inner Fire** | Adds {R} per card in your own hand, so it is weakest when the deck has emptied its hand and is topdecking. Left `b4` on 2026-10-13 for Treasonous Ogre, which makes up to 9 red at 30 life without needing a hand. Not in any other list, so its printing can't be pinned: bring it back as (SOK) 105. | Treasonous Ogre |
+| **Thor, God of Thunder** | Five mana of setup on the kill turn ({2}{R}{R} under Ruby), no Livaan trigger, and copies don't trigger him. Left `b4` on 2026-10-13 for Soul's Fire. Lost with him: a 5/5 flier and his replay of an instant, sorcery or Equipment from the graveyard. Still in `v3`. | Soul's Fire |
+| **Vandalblast** | Never cast in the pilot's games. Left `b4` on 2026-10-13 for Fiery Confluence, which keeps the artifact removal (up to three targets) and is a finisher otherwise. Vandalblast's overload is the only answer to a wide artifact board. Still in `v3`. | Fiery Confluence |
+| **Gamble** | The only tutor, but drawn late with nothing else in hand it discards the card it found. Left `b4` on 2026-10-13 for Bonus Round. Lost with it: a sure way to find Livaan or a finisher on turns 1–2, and one Game Changer (10 → 9). Still in `v3`. | Bonus Round |
+| **Runechanter's Pike** | Four mana ({2} plus equip {2}) for about +2 to +4 on a turn-3 plan. Left `b4` on 2026-10-13 for Runaway Steam-Kin. Seeds drop to 8 counting Forge of Heroes, Tyrite Sanctum and Blazing Crescendo, the bottom of the 8–10 target. Still in `v3`. | Runaway Steam-Kin |
+
+**Waiting on play (pilot, 2026-10-13):** these two go in only if the five swaps above play well.
+
+| Card | Why it's waiting | Would displace |
+|---|---|---|
+| **Hexing Squelcher** | {R} under Ruby. Your spells can't be countered on any turn, and it carries Conqueror's Flail with ward of its own. It doesn't stop instant-speed removal or opponents' instants copied by Bonus Round; only the Flail does. Same pairing as the 2026-08-19 record. | Champion's Helm |
+| **Twinning Staff** | {3} colourless, no red pips. Every copy effect makes one more, so with Bonus Round every spell resolves three times. | Unleash Fury (re-pointed 2026-11-10 from Hex Magic, which the pilot keeps: it lets you play the exiled hand until the end of your next turn, so a full hand doubles) |
+
+**Held for later (pilot, 2026-11-10):** reviewed and kept out of the 100 for now.
+
+| Card | When to bring it in | Would displace |
+|---|---|---|
+| **Mizzix's Mastery** | When the chain keeps stalling with a graveyard full of spent rituals. Overload is an alternative cost, so Wanda and the reducers cut it to {R}{R}{R} mid-chain, and it recasts every instant and sorcery in the graveyard for free. 31 of the list's 39 instants and sorceries have no X, so the "free casts force X = 0" ground from 2026-09-08 covers only about a fifth of them. Run Past in Flames and Underworld Breach first, because Mastery exiles what it copies. It was in `main` until the pilot deleted that list on 2026-11-10, so no list runs it now. | Unleash Fury (the 2026-09-16 cleanest cut; Bulk Up does the same doubling and has flashback) |
+| **Dominion Infiltration** | When opponents run creatures worth copying for a turn. It makes hasty changeling token copies of X opposing creatures until end of turn, so it copies rather than steals, and the copies' enter abilities work for you. {R}{R}{R} plus X minus Wanda's power. Legal from 2026-11-13 (Star Trek). | the weakest seed or pump at the time |
 
 ## The chain build (`DECK-V3.md`, 2026-09-08)
 

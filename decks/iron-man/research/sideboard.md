@@ -16,12 +16,12 @@ fourth and takes the deck to bracket 4.
 | **Cyclonic Rift** ($41) | Strix Serenade | Clear the way and swing. | ★GC — **4 of 3** |
 | **Urza, Lord High Artificer** ($16) | Mind Stone | Construct token, artifacts tap for `{U}`, `{5}` impulse sink. Taps artifacts for mana, so it partly replaces a rock. Not a Game Changer. | stays 3 |
 
-**Already at 3.5:** the maindeck keeps **Aggravated Assault**, which goes infinite with *two*
-Equipment the commander attaches for free — The Reaver Cleaver (damage → Treasures → pay
-`{3}{R}{R}`) and Sword of Feast and Famine (damage → untap all lands → pay again). WotC permits
-bracket 3 decks where *"the long game could end with one being deployed"*, and with 7 extra-combat
-effects the card is core to the design — but it's redundantly assembled. **Cut Aggravated Assault
-for Master Transmuter** if a pod wants a strict bracket 3.
+**Already at 3.5:** `v3` runs **Aggravated Assault** again (trial since 2026-11-10). It goes infinite with
+*two* Equipment the commander attaches for free: The Reaver Cleaver (damage → Treasures → pay
+`{3}{R}{R}`) and Sword of Feast and Famine (damage → untap all lands → pay again). With Brotherhood
+Regalia making Iron Man unblockable, every hit connects, so in practice it wins once assembled. WotC
+permits bracket 3 decks where *"the long game could end with one being deployed"*. **Swap Memnarch,
+the Warden back in for Aggravated Assault** if a pod wants a strict bracket 3.
 
 ---
 
@@ -42,6 +42,11 @@ for Master Transmuter** if a pod wants a strict bracket 3.
 | **Big Score** ($0.38) | Conqueror's Flail | Pods with little instant-speed interaction, where the lockout has nothing to lock out and you'd rather have the two cards and two Treasures. This is the straight reversal of the 2026-08-19 swap. |
 | **Disrupt Decorum** ($4.75) | Overpowering Attack | Creature-heavy / go-wide pods. Goad everything: until your next turn their creatures must attack — **each other**, never you — so their boards arrive at your turn tapped and chewed up. Note goad does **not** forbid blocking; the value is tapped/dead blockers plus deflected aggro. 0/5 field — merit call. |
 | **Soul's Fire** ($0.28) | Seize the Day | Pillow-fort / attack-tax pods (Ghostly Prison, Propaganda, no-attack locks). Instant: the commander deals his power to **any target** with no combat — and Mjölnir doubles it. Dead without a big board; bring in only when combat is being taxed. 0/5 field — merit call. |
+| **Propaganda** | Cosmic Cube (v3) | Cut 2026-10-10 for a Cube trial. Silent Arbiter left `v3` on 2026-11-10, so this is now the main defence against a wide board. Bring it back if a wide board keeps swinging at you, or if Cube whiffs because Iron Man isn't attacking. |
+| **Thopter Spy Network** | Kediss, Emberclaw Familiar (v3) | Cut 2026-11-10 for Kediss (pilot's pick). Bring it back if Kediss keeps dying before Iron Man connects, or if the draw dries up: a flying Thopter every upkeep and a card whenever artifact creatures connect. |
+| **Into the Flood Maw** | Infantry Shield (v3) | Cut 2026-11-10 for Infantry Shield (pilot's pick). Bring it back if you need a 1-mana instant answer more than the menace and the Warriors. Silent Arbiter left `v3` on 2026-11-10, so menace no longer makes Iron Man unblockable, and Brotherhood Regalia does that job now. |
+| **Silent Arbiter** | Brotherhood Regalia (v3) | Cut 2026-11-10 for Regalia (pilot's pick). Bring it back if wide boards keep swinging at you and Propaganda isn't enough. With Infantry Shield's menace it makes Iron Man unblockable again, so Regalia is the natural slot. Cost: it stops every second attacker, so Aggravated Assault's untap only ever sends Iron Man. |
+| **Memnarch, the Warden** | Aggravated Assault (v3) | Cut 2026-11-10 for Assault (pilot's pick over Surestrike Trident). Bring it back for a strict bracket 3 (it removes the Assault loop), or if the extra combats aren't paying off. 8/9 indestructible, two Myr, and a card per artifact when it attacks. |
 | **Blackblade Reforged** ($2.60) | Conqueror's Flail | Held 2026-09-03, pilot's call. A fourth one-card route to double-strike lethal: *"+1/+1 for each land you control"* — about 12/12 on 7 lands, colourless (no CR 702.16d conflict), deploys free off the combat trigger, and re-suits for equip-legendary `{3}` against Argentum Armor's `{6}` and Aettir's `{5}`. Bring in when kills keep missing 11 power after Mjölnir is answered, or when re-suit cost is what loses games. Flail is the narrowest insurance piece — its lock only covers your own turn, where Plate, Helm, Coat and Nazahn cover every turn. MV 2, so no Synthesizer trigger. |
 
 ---
@@ -136,7 +141,7 @@ payoffs (9 since One with the Machine left).
   per **event** (CR 603.2c), and this deck makes almost no death events of its own (Ignition,
   Mjölnir's ETB, its own ETB — one each). Expect +2 to +4 by the time it matters. The ETB 3 damage
   is the real content and Mjölnir already does 4. Equip `{3}`.
-- **Infantry Shield** (`{2}{R}`, 2026-09-02, re-checked 2026-09-03 as a Chainsaw "combo") — the
+- **Infantry Shield**. **Now maindecked in v3 (2026-11-10).** Menace plus Silent Arbiter made Iron Man unblockable until Arbiter left `v3` later the same day (Brotherhood Regalia does that now), the Warriors still enter attacking under Arbiter (CR 508.4c), and Wizard's Staff doubles mobilize. The original grounds follow (`{2}{R}`, 2026-09-02, re-checked 2026-09-03 as a Chainsaw "combo") — the
   mobilize tokens are red Warriors, not artifacts, never block (sacrificed at your end step,
   CR 702.181a), and die as **one** event, so the combo is one Chainsaw counter per attack, not X.
   Their damage is life-total damage split across opponents (CR 508.4), not commander damage. It

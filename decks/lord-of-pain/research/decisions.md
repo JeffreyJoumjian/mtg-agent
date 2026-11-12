@@ -524,3 +524,52 @@ Full review: `research/fra-set-review-2026-09-28.md` (129-card pool).
   review file's follow-up section.
 
 Validation: both lists clean, legal and on-identity, 100 cards each. PDF regenerated from `main`.
+
+---
+
+## 2026-10-10 — Powerbalance in, Fellwar Stone out (`main` and `b3`, pilot's call)
+
+Prompted by the pilot asking which red decks want Powerbalance; after the analysis: *"powerbalance is
+insane in lord."* The cross-deck measurement is deck-brain ledger eval-060.
+
+| List | Out | In | Grounds |
+|---|---|---|---|
+| `main`, `b3` | Fellwar Stone | Powerbalance | See below. Neither card is a Game Changer, so the B4 → B3 derivation is unchanged. |
+
+**Powerbalance, re-derived.** The 2026-08-23 build cut it as "Random/narrow" without weighing the
+commander. Oracle: *"Whenever an opponent casts a spell, you may reveal the top card of your library.
+If you do, you may cast that card without paying its mana cost if the two spells have the same mana
+value."* A hit on an opponent's turn is your first spell that turn (ledger trig-016), so it fires The
+Lord of Pain (its mana value in damage to an opponent you choose) and Vial Smasher the Fierce, both
+red sources that Torbran, Solphim, Torture Pit and Twinflame boost, and you get the card. Simulated
+at about 0.57 to 0.60 free spells per opponent turn cycle at 6 opponent spells a cycle (about 0.78 at
+9), and Howling Mine, Font of Mythos, Seizan and Spiteful Visions push opponents toward the higher
+number. With both creatures out, five cycles is roughly 16 damage before amplifiers plus about three
+free cards. Costs: every trigger reveals your next draw (ledger eval-059), and Exsanguinate and
+Torment of Hailfire are blank reveals (a free cast locks X at 0).
+
+**Cut ranking, scored against `main`:**
+
+| Candidate | Grounds |
+|---|---|
+| Painful Quandary (my pick, not taken) | Same trigger. Under the gifts opponents mostly take the discard, its life loss isn't amplified, and its 2026-08-23 reason ("discards feed Bloodchief Ascension") lapsed when Bloodchief was cut that day (ledger eval-061). Against: two black pips for Gray Merchant, and an opponent with an empty hand can't discard (CR 118.3, 118.12a). |
+| **Fellwar Stone** (cut, pilot's pick) | Ramp was at 12 against a target of 8, and it is the weakest of the four 2-mana rocks: Arcane Signet and Talisman of Indulgence always make B or R, and Rakdos Signet makes both. The 2026-08-23 "two outs, colourless floor" note kept it without ranking it. Against: rocks dodge Manabarbs, and the 2026-09-22 pass asked for more fast mana. |
+| Grim Monolith | Nets one colourless once, because untapping costs {4} for {C}{C}{C}. Against: it is the burst toward a turn-3 commander, and `b3` runs Basalt Monolith in its place. |
+| A Mountain (34 → 33 lands) | Rocks beat lands here under Manabarbs, and the gifts find land drops. Against: a 5-mana commander and average MV 3.26. |
+| Rakdos, Lord of Riots | A {B}{B}{R}{R} 4-drop that only discounts creature spells. Against: Kaervek for {B}{R}, and its recorded cute lines. |
+| Basilisk Collar | Lifeline is at 5 against 3, and Whip and Witch's Clinic also give lifelink. Against: deathtouch on a 5/5 menace keeps attackers off. |
+
+Roles: Ramp & cost reduction 12 → 11, Cast / upkeep / mana punishers 5 → 6. `main`: average MV 3.26
+(unchanged), red pips 33 → 35, mana sources 42 → 41 (34 lands + 7 rocks, `deckcheck`). `b3`: average
+MV 3.28, red pips 33 → 35. Snapshots: `versions/2026-10-10-0823-main-powerbalance-in-fellwar-stone-out.json`
+and `versions/2026-10-10-0823-b3-powerbalance-in-fellwar-stone-out.json`. Validated: both lists 100
+cards, all found, legal, in B/R identity; `main` 9 Game Changers, `b3` 3/3. Powerbalance has no
+printing pinned, so both Moxfield files export it as a bare name.
+
+## 2026-11-10 — Rain of Gore reviewed, not taken
+
+*"If a spell or ability would cause its controller to gain life, that player loses that much life
+instead."* It applies to you too. With Exquisite Blood out, every opponent life loss would become
+your own life loss, which ends this deck's lifeline (Exquisite Blood, Sanguine Bond, Whip of Erebos,
+Bloodthirsty Conqueror). The commander already says *"Your opponents can't gain life"*, and the
+standing rule for this list is no extra lifegain hate. Lifelink is exempt (official ruling).

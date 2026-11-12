@@ -1,0 +1,988 @@
+{
+  "title": "Edgar Bracket 4",
+  "subtitle": "No holds barred: the drain/combo core the strongest Edgar lists share, every infinite allowed, combat kept as a ten-slot second route.",
+  "listId": "b4",
+  "diagnosis": [
+    "Brief (2026-11-03): the pilot wants the strongest Edgar possible for Bracket 4 pods, infinite combos included, no card-price limit, and asked whether to lean drain or aggro. Measured answer: at the top of the field there is no lean. EDHREC's cEDH combo average (44 decks) and cEDH aggro average (33 decks) share 54 of about 67 nonland cards, and both carry the same loop suite (Exquisite Blood and Bloodthirsty Conqueror with Vito and Sanguine Bond, plus Oathsworn Vampire with Phyrexian Altar), Necropotence, Bolas's Citadel, Dark Ritual and six or more tutors. The aggro version only spends its last dozen slots on lords and Shared Animosity instead of moxen. The pilot chose the drain/combo core, allowed automatic infinites, declined stax that only stifles opponents (Opposition Agent, Drannith Magistrate), kept Esper Sentinel because it draws us cards, and asked for a held hate section in the pool.",
+    "The loop suite is two 'opponent loses, you gain' halves (Exquisite Blood, Bloodthirsty Conqueror) times five 'you gain, opponent loses' halves (Vito, Sanguine Bond, Marauding Blight-Priest, Enduring Tenacity, Cliffhaven Vampire): ten two-card infinites, each half a fair drain card alone. The third engine is Oathsworn Vampire with Phyrexian Altar or Warren Soultrader under eminence: every recast makes a token, two sacrifices pay the next recast, and Blood Artist, Cruel Celebrant, Vengeful Bloodwitch and Impact Tremors each turn the unbounded deaths and casts into a kill. Commander Spellbook confirms 14 loops in the list. Nine tutors find any half; a hand-only simulation (ignoring mana, Necropotence and draw) puts a complete pair in hand 47% of the time by turn 4 and 58% by turn 6, against 8% and 10% with no tutors.",
+    "Skeleton: 31 lands, 13 fast mana and ramp, 9 tutors, 9 card advantage, 13 loop halves and drain, 4 outlets, 10 combat, 7 interaction and protection, 3 recursion and doubling. Measured after the build: avg MV 2.57, 35 nonland cards at MV 2 or less and 50 at MV 3 or less, 14 Game Changers (no cap at Bracket 4), 61 of 83 pips black. Mana Crypt, Jeweled Lotus and Dockside Extortionist are banned, verified.",
+    "Self-hits named (deck-brain 1.3): Olivia's Wrath kills Esper Sentinel and Warren Soultrader (Enduring Tenacity dies and returns as an enchantment, which is fine). Deflecting Swat, Deadly Rollick, Flawless Maneuver, Akroma's Will and Jeska's Will all read 'if you control a commander': Edgar in the command zone is not controlled, so none of them is free or double-moded while he sits there; they are in the pool, not the 100. The lifegain loops are mandatory triggers with no 'may', which is exactly the automatic class the pilot's older loop rule excluded and this brief allows.",
+    "Lines worth knowing: turn-1 Dark Ritual into Sorin, turn-2 Sorin -3 puts Bloodthirsty Conqueror onto the battlefield, turn-3 Vito or Blight-Priest and the table is dead. Vampiric Tutor or Imperial Seal with Necropotence out is a one-mana tutor to hand at end step; with Bolas's Citadel it is cast from the top; with Twilight Prophet it is drawn on upkeep and drains its mana value. Diabolic Intent and Culling the Weak are paid with an eminence token. Citadel's sacrifice-ten with Exquisite Blood and any gain-to-loss half out starts the loop by itself."
+  ],
+  "waves": [
+    {
+      "id": "founding",
+      "label": "Founding build (applied 2026-11-03)",
+      "status": "applied",
+      "note": "The whole 100, filed by role with the grounds for each card. There was no prior Bracket 4 list, so every row is an addition.",
+      "swaps": [
+        {
+          "in": "Ancient Tomb",
+          "section": "Lands",
+          "grounds": "Two colourless on turn 1 is a turn-1 Talisman or Signet and a turn-2 four-drop; the damage is refunded by any drain. Game Changer, no cap at Bracket 4.",
+          "axis": "speed"
+        },
+        {
+          "in": "Arid Mesa",
+          "section": "Lands",
+          "grounds": "Fetches a Mountain or Plains card: every dual, shock and the Triome here carries those types. Six fetches also fill the graveyard for Cabal Ritual's threshold and shuffle after a Vampiric Tutor or Imperial Seal you no longer want on top.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Bloodstained Mire",
+          "section": "Lands",
+          "grounds": "Fetches a Swamp or Mountain card: every dual, shock and the Triome here carries those types. Six fetches also fill the graveyard for Cabal Ritual's threshold and shuffle after a Vampiric Tutor or Imperial Seal you no longer want on top.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Marsh Flats",
+          "section": "Lands",
+          "grounds": "Fetches a Plains or Swamp card: every dual, shock and the Triome here carries those types. Six fetches also fill the graveyard for Cabal Ritual's threshold and shuffle after a Vampiric Tutor or Imperial Seal you no longer want on top.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Polluted Delta",
+          "section": "Lands",
+          "grounds": "Fetches a Island or Swamp card: every dual, shock and the Triome here carries those types. Six fetches also fill the graveyard for Cabal Ritual's threshold and shuffle after a Vampiric Tutor or Imperial Seal you no longer want on top.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Verdant Catacombs",
+          "section": "Lands",
+          "grounds": "Fetches a Swamp or Forest card: every dual, shock and the Triome here carries those types. Six fetches also fill the graveyard for Cabal Ritual's threshold and shuffle after a Vampiric Tutor or Imperial Seal you no longer want on top.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Windswept Heath",
+          "section": "Lands",
+          "grounds": "Fetches a Forest or Plains card: every dual, shock and the Triome here carries those types. Six fetches also fill the graveyard for Cabal Ritual's threshold and shuffle after a Vampiric Tutor or Imperial Seal you no longer want on top.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Badlands",
+          "section": "Lands",
+          "grounds": "Untapped dual with basic land types, so every fetch finds it.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Scrubland",
+          "section": "Lands",
+          "grounds": "Untapped dual with basic land types, so every fetch finds it.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Plateau",
+          "section": "Lands",
+          "grounds": "Untapped dual with basic land types, so every fetch finds it.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Blood Crypt",
+          "section": "Lands",
+          "grounds": "Untapped dual with basic land types, so every fetch finds it.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Godless Shrine",
+          "section": "Lands",
+          "grounds": "Untapped dual with basic land types, so every fetch finds it.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Sacred Foundry",
+          "section": "Lands",
+          "grounds": "Untapped dual with basic land types, so every fetch finds it.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Savai Triome",
+          "section": "Lands",
+          "grounds": "The one land that enters tapped: all three colours, fetchable, cycles away in the late game.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Command Tower",
+          "section": "Lands",
+          "grounds": "Untapped, any of our colours, no cost.",
+          "axis": "colour"
+        },
+        {
+          "in": "City of Brass",
+          "section": "Lands",
+          "grounds": "Untapped rainbow; the damage is refunded by the first drain trigger.",
+          "axis": "colour"
+        },
+        {
+          "in": "Mana Confluence",
+          "section": "Lands",
+          "grounds": "Untapped rainbow; same accounting as City of Brass.",
+          "axis": "colour"
+        },
+        {
+          "in": "Exotic Orchard",
+          "section": "Lands",
+          "grounds": "Reads opponents' lands; at a three-colour table it is a rainbow land almost every game, and the cEDH averages run it.",
+          "axis": "colour"
+        },
+        {
+          "in": "Cavern of Souls",
+          "section": "Lands",
+          "grounds": "Naming Vampire makes Vito, Bloodthirsty Conqueror, Marauding Blight-Priest, Cliffhaven Vampire and Oathsworn Vampire uncounterable, which are the halves most likely to meet a counterspell at Bracket 4.",
+          "axis": "protection",
+          "interactions": [
+            "Vito, Thorn of the Dusk Rose",
+            "Bloodthirsty Conqueror",
+            "Oathsworn Vampire"
+          ]
+        },
+        {
+          "in": "Phyrexian Tower",
+          "section": "Lands",
+          "grounds": "A land that is also a free sacrifice outlet and a ritual: sacrifice an eminence token for {B}{B}.",
+          "axis": "outlet",
+          "interactions": [
+            "Culling the Weak",
+            "Blood Artist"
+          ]
+        },
+        {
+          "in": "Three Tree City",
+          "section": "Lands",
+          "grounds": "With four or five Vampires out it is a ritual every turn that casts the whole hand.",
+          "axis": "speed"
+        },
+        {
+          "in": "Urborg, Tomb of Yawgmoth",
+          "section": "Lands",
+          "grounds": "Every land taps for black, so Ancient Tomb, the Verge and the fetches all pay the {B}{B}{B} of Necropotence and Bolas's Citadel.",
+          "axis": "colour",
+          "interactions": [
+            "Necropotence",
+            "Bolas's Citadel"
+          ]
+        },
+        {
+          "in": "Voldaren Estate",
+          "section": "Lands",
+          "grounds": "Any colour for a Vampire spell, and a Blood token late when the hand is empty.",
+          "axis": "colour"
+        },
+        {
+          "in": "Vault of Champions",
+          "section": "Lands",
+          "grounds": "Untapped W/B with two or more opponents.",
+          "axis": "colour"
+        },
+        {
+          "in": "Luxury Suite",
+          "section": "Lands",
+          "grounds": "Untapped B/R with two or more opponents; red is the lightest colour, so the red land is paired with black.",
+          "axis": "colour"
+        },
+        {
+          "in": "Bleachbone Verge",
+          "section": "Lands",
+          "grounds": "Black untapped on its own, white with any Plains or Swamp in play.",
+          "axis": "colour"
+        },
+        {
+          "in": "Swamp",
+          "section": "Lands",
+          "grounds": "Three Swamps: fetch targets, Urborg-free black, and the only lands that dodge nonbasic hate. Black is 61 of the deck's 83 pips.",
+          "axis": "colour"
+        },
+        {
+          "in": "Plains",
+          "section": "Lands",
+          "grounds": "Two Plains: fetch targets for the white side (Silence, Swords, Teferi's Protection, Enlightened Tutor).",
+          "axis": "colour"
+        },
+        {
+          "in": "Sol Ring",
+          "section": "Fast Mana & Ramp",
+          "grounds": "Two mana on turn 1.",
+          "axis": "speed"
+        },
+        {
+          "in": "Mana Vault",
+          "section": "Fast Mana & Ramp",
+          "grounds": "Three mana on turn 1 for one: a turn-1 Sorin or a turn-2 Bloodthirsty Conqueror off a land. Game Changer.",
+          "axis": "speed"
+        },
+        {
+          "in": "Grim Monolith",
+          "section": "Fast Mana & Ramp",
+          "grounds": "Three for two; untaps for four on the loop turn. Game Changer.",
+          "axis": "speed"
+        },
+        {
+          "in": "Chrome Mox",
+          "section": "Fast Mana & Ramp",
+          "grounds": "Zero-mana rock; exile a spare lord or drain card. Game Changer.",
+          "axis": "speed"
+        },
+        {
+          "in": "Mox Diamond",
+          "section": "Fast Mana & Ramp",
+          "grounds": "Zero-mana rock off a 31-land deck with six fetches; the discarded land is a fine price for a turn-1 Vito. Game Changer.",
+          "axis": "speed"
+        },
+        {
+          "in": "Lotus Petal",
+          "section": "Fast Mana & Ramp",
+          "grounds": "One mana of any colour on the combo turn, and a token-free artifact for Beseech the Mirror's bargain.",
+          "axis": "speed"
+        },
+        {
+          "in": "Dark Ritual",
+          "section": "Fast Mana & Ramp",
+          "grounds": "Turn-1 Necropotence or Sorin, turn-2 Bloodthirsty Conqueror. Rejected for Edgar in June 2026 because that list was midrange; this list is the explosive-turn deck the rejection named.",
+          "axis": "speed",
+          "interactions": [
+            "Necropotence",
+            "Sorin, Imperious Bloodlord"
+          ]
+        },
+        {
+          "in": "Cabal Ritual",
+          "section": "Fast Mana & Ramp",
+          "grounds": "Three black for two, five with seven cards in the graveyard, which six fetches and the tutors reach by the mid game.",
+          "axis": "speed"
+        },
+        {
+          "in": "Culling the Weak",
+          "section": "Fast Mana & Ramp",
+          "grounds": "Sacrifice an eminence token for {B}{B}{B}{B} at instant speed, and the sacrifice is a death trigger for Blood Artist, Cruel Celebrant and Vengeful Bloodwitch.",
+          "axis": "speed",
+          "interactions": [
+            "Blood Artist",
+            "Cruel Celebrant"
+          ]
+        },
+        {
+          "in": "Arcane Signet",
+          "section": "Fast Mana & Ramp",
+          "grounds": "Two-mana rock that fixes all three colours.",
+          "axis": "colour"
+        },
+        {
+          "in": "Talisman of Hierarchy",
+          "section": "Fast Mana & Ramp",
+          "grounds": "Two-mana rock for the two heavy colours; the damage is refunded by the drain.",
+          "axis": "colour"
+        },
+        {
+          "in": "Master of Dark Rites",
+          "section": "Fast Mana & Ramp",
+          "grounds": "A one-drop Vampire (token on cast) that turns that token into {B}{B}{B} for a Vampire spell: turn-2 Bloodthirsty Conqueror, or Vito plus Blight-Priest in one turn.",
+          "axis": "speed",
+          "interactions": [
+            "Bloodthirsty Conqueror",
+            "Vito, Thorn of the Dusk Rose"
+          ]
+        },
+        {
+          "in": "Smothering Tithe",
+          "section": "Fast Mana & Ramp",
+          "grounds": "Bracket 4 opponents cast a rock or cantrip every turn; the Treasures fund Citadel and Necropotence and pay Wishclaw and Skullclamp. Game Changer.",
+          "axis": "speed",
+          "interactions": [
+            "Bolas's Citadel",
+            "Wishclaw Talisman"
+          ]
+        },
+        {
+          "in": "Vampiric Tutor",
+          "section": "Tutors",
+          "grounds": "One mana, instant, to the top. With Necropotence out the card is in hand at end step for one life; with Bolas's Citadel it is cast from the top; with Twilight Prophet it is drawn on upkeep and drains its mana value. Game Changer.",
+          "axis": "consistency",
+          "interactions": [
+            "Necropotence",
+            "Bolas's Citadel",
+            "Twilight Prophet"
+          ]
+        },
+        {
+          "in": "Imperial Seal",
+          "section": "Tutors",
+          "grounds": "The sorcery copy of Vampiric Tutor, same three partners. Game Changer.",
+          "axis": "consistency",
+          "interactions": [
+            "Necropotence",
+            "Bolas's Citadel",
+            "Twilight Prophet"
+          ]
+        },
+        {
+          "in": "Demonic Tutor",
+          "section": "Tutors",
+          "grounds": "Two mana to hand. Game Changer.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Grim Tutor",
+          "section": "Tutors",
+          "grounds": "Three mana to hand; the 3 life is repaid by the first drain.",
+          "axis": "consistency"
+        },
+        {
+          "in": "Diabolic Intent",
+          "section": "Tutors",
+          "grounds": "Two mana to hand; the sacrifice is an eminence token and a death trigger.",
+          "axis": "consistency",
+          "interactions": [
+            "Blood Artist",
+            "Cruel Celebrant"
+          ]
+        },
+        {
+          "in": "Beseech the Mirror",
+          "section": "Tutors",
+          "grounds": "Bargain by sacrificing a token or Treasure: the tutored card is cast free if its mana value is 4 or less, which covers Vito, Marauding Blight-Priest, Enduring Tenacity, Cliffhaven Vampire, Oathsworn Vampire, Phyrexian Altar, Warren Soultrader and Necropotence. Exquisite Blood, Bloodthirsty Conqueror and Sanguine Bond (MV 5) go to hand instead.",
+          "axis": "speed",
+          "interactions": [
+            "Vito, Thorn of the Dusk Rose",
+            "Phyrexian Altar",
+            "Necropotence"
+          ]
+        },
+        {
+          "in": "Enlightened Tutor",
+          "section": "Tutors",
+          "grounds": "One mana at instant speed for Exquisite Blood, Sanguine Bond, Enduring Tenacity, Phyrexian Altar, Necropotence, Bolas's Citadel, Skullclamp, The One Ring, Anointed Procession or Smothering Tithe, onto the top where Necropotence, Citadel or Twilight Prophet pick it up. Game Changer.",
+          "axis": "consistency",
+          "interactions": [
+            "Exquisite Blood",
+            "Sanguine Bond",
+            "Phyrexian Altar"
+          ]
+        },
+        {
+          "in": "Wishclaw Talisman",
+          "section": "Tutors",
+          "grounds": "Two mana plus one to tutor to hand; hand it over on the turn you win, or when Smothering Tithe Treasures make the activation free.",
+          "axis": "consistency",
+          "cost": "The opponent who receives it gets one tutor; activate it only when the tutored card wins or when an opponent's tutor cannot matter."
+        },
+        {
+          "in": "Forerunner of the Legion",
+          "section": "Tutors",
+          "grounds": "Tutors a Vampire to the top (Vito, Bloodthirsty Conqueror, Blight-Priest, Cliffhaven, Oathsworn) on a Vampire body that made a token on the way in; later every Vampire entering pumps a creature.",
+          "axis": "consistency",
+          "interactions": [
+            "Necropotence",
+            "Bolas's Citadel"
+          ]
+        },
+        {
+          "in": "Necropotence",
+          "section": "Card Advantage",
+          "grounds": "The best draw engine in the colours: pay life for cards, and the deck gains that life back in every loop and drain. Skipping the draw step costs nothing with nine tutors that put cards on top. Game Changer.",
+          "axis": "card flow",
+          "interactions": [
+            "Vampiric Tutor",
+            "Imperial Seal",
+            "Exquisite Blood"
+          ]
+        },
+        {
+          "in": "Bolas's Citadel",
+          "section": "Card Advantage",
+          "grounds": "Play from the top paying life, which the drain refunds. The sacrifice-ten mode with eminence tokens is 10 to each opponent, 30 life back under Exquisite Blood, and the start of any loop. Game Changer.",
+          "axis": "card flow",
+          "interactions": [
+            "Exquisite Blood",
+            "Vito, Thorn of the Dusk Rose",
+            "Vampiric Tutor"
+          ]
+        },
+        {
+          "in": "The One Ring",
+          "section": "Card Advantage",
+          "grounds": "Protection from everything for a turn cycle when cast, which is the combo-turn insurance, then a card per burden counter. Game Changer.",
+          "axis": "protection"
+        },
+        {
+          "in": "Skullclamp",
+          "section": "Card Advantage",
+          "grounds": "Equip a token for one, sacrifice it to any outlet: two cards per token.",
+          "axis": "card flow",
+          "interactions": [
+            "Viscera Seer",
+            "Phyrexian Altar",
+            "Warren Soultrader"
+          ]
+        },
+        {
+          "in": "Esper Sentinel",
+          "section": "Card Advantage",
+          "grounds": "A one-drop that draws a card whenever an opponent's first noncreature spell each turn isn't taxed; the pilot kept it because it benefits us, unlike pure stax.",
+          "axis": "card flow",
+          "cost": "Non-Vampire: no eminence token, and Olivia's Wrath kills it."
+        },
+        {
+          "in": "Welcoming Vampire",
+          "section": "Card Advantage",
+          "grounds": "A card per turn from the eminence token entering.",
+          "axis": "card flow"
+        },
+        {
+          "in": "Twilight Prophet",
+          "section": "Card Advantage",
+          "grounds": "Upkeep draw plus a drain for the revealed card's mana value once ten permanents are out; a tutor to the top sets the number.",
+          "axis": "card flow",
+          "interactions": [
+            "Vampiric Tutor",
+            "Imperial Seal",
+            "Enlightened Tutor"
+          ]
+        },
+        {
+          "in": "Emeritus of Woe",
+          "section": "Card Advantage",
+          "grounds": "A Vampire body that enters prepared with a Demonic Tutor copy castable for {1}{B}, and re-prepares at any end step where two or more creatures died, which an outlet arranges.",
+          "axis": "card flow",
+          "interactions": [
+            "Viscera Seer",
+            "Blood Artist"
+          ]
+        },
+        {
+          "in": "Black Market Connections",
+          "section": "Card Advantage",
+          "grounds": "Treasure, a card or a changeling body (a Vampire for every lord and count) each turn; the pilot's standing rule for Edgar is as much repeatable draw as possible.",
+          "axis": "card flow"
+        },
+        {
+          "in": "Exquisite Blood",
+          "section": "Loop Halves & Drain",
+          "grounds": "The loss-to-gain half of five two-card infinites (Vito, Sanguine Bond, Marauding Blight-Priest, Enduring Tenacity, Cliffhaven Vampire). Alone, every drain refunds the life paid to Necropotence, Citadel, the tutors and the lands.",
+          "axis": "combo density",
+          "interactions": [
+            "Vito, Thorn of the Dusk Rose",
+            "Sanguine Bond",
+            "Marauding Blight-Priest",
+            "Enduring Tenacity",
+            "Cliffhaven Vampire"
+          ]
+        },
+        {
+          "in": "Bloodthirsty Conqueror",
+          "section": "Loop Halves & Drain",
+          "grounds": "The same half on a 5/5 flying deathtouch Vampire; Sorin's -3 puts it onto the battlefield on turn 2, Reanimate and Animate Dead bring it back.",
+          "axis": "combo density",
+          "interactions": [
+            "Sorin, Imperious Bloodlord",
+            "Reanimate",
+            "Vito, Thorn of the Dusk Rose"
+          ]
+        },
+        {
+          "in": "Vito, Thorn of the Dusk Rose",
+          "section": "Loop Halves & Drain",
+          "grounds": "Three-mana gain-to-loss half; the {3}{B}{B} team-lifelink activation turns an attack with N Vampires into N separate drains.",
+          "axis": "combo density",
+          "interactions": [
+            "Exquisite Blood",
+            "Bloodthirsty Conqueror",
+            "Sanctum Seeker"
+          ]
+        },
+        {
+          "in": "Sanguine Bond",
+          "section": "Loop Halves & Drain",
+          "grounds": "Vito's trigger as an enchantment: survives creature wipes and is an Enlightened Tutor target.",
+          "axis": "resilience",
+          "interactions": [
+            "Exquisite Blood",
+            "Bloodthirsty Conqueror",
+            "Enlightened Tutor"
+          ]
+        },
+        {
+          "in": "Marauding Blight-Priest",
+          "section": "Loop Halves & Drain",
+          "grounds": "The each-opponent version: with Exquisite Blood every opponent's loss is a separate gain and every gain hits all three, so the table dies at once.",
+          "axis": "combo density",
+          "interactions": [
+            "Exquisite Blood",
+            "Bloodthirsty Conqueror"
+          ]
+        },
+        {
+          "in": "Enduring Tenacity",
+          "section": "Loop Halves & Drain",
+          "grounds": "Vito's trigger on a 4/3 that returns as an enchantment when it dies: the half that creature removal cannot keep off the table.",
+          "axis": "resilience",
+          "interactions": [
+            "Exquisite Blood",
+            "Bloodthirsty Conqueror"
+          ],
+          "cost": "Non-Vampire while a creature; no eminence token."
+        },
+        {
+          "in": "Cliffhaven Vampire",
+          "section": "Loop Halves & Drain",
+          "grounds": "Each-opponent half on a Vampire flier (token on cast).",
+          "axis": "combo density",
+          "interactions": [
+            "Exquisite Blood",
+            "Bloodthirsty Conqueror"
+          ]
+        },
+        {
+          "in": "Oathsworn Vampire",
+          "section": "Loop Halves & Drain",
+          "grounds": "With Phyrexian Altar or Warren Soultrader and any life gained this turn: recast from the graveyard, eminence makes a token, two sacrifices pay the next recast. Unbounded casts, tokens and deaths for Blood Artist, Cruel Celebrant, Vengeful Bloodwitch and Impact Tremors.",
+          "axis": "combo density",
+          "interactions": [
+            "Phyrexian Altar",
+            "Warren Soultrader",
+            "Blood Artist",
+            "Impact Tremors"
+          ]
+        },
+        {
+          "in": "Blood Artist",
+          "section": "Loop Halves & Drain",
+          "grounds": "Death drain that also supplies the life gain Oathsworn needs; in the Oathsworn loop it is the kill.",
+          "axis": "combo density",
+          "interactions": [
+            "Oathsworn Vampire",
+            "Phyrexian Altar"
+          ]
+        },
+        {
+          "in": "Cruel Celebrant",
+          "section": "Loop Halves & Drain",
+          "grounds": "Each-opponent death drain on a Vampire; a second kill for the Oathsworn loop.",
+          "axis": "combo density",
+          "interactions": [
+            "Oathsworn Vampire"
+          ]
+        },
+        {
+          "in": "Vengeful Bloodwitch",
+          "section": "Loop Halves & Drain",
+          "grounds": "Third death drain on a two-mana Vampire.",
+          "axis": "combo density",
+          "interactions": [
+            "Oathsworn Vampire"
+          ]
+        },
+        {
+          "in": "Bloodletter of Aclazotz",
+          "section": "Loop Halves & Drain",
+          "grounds": "Doubles every life loss on our turn: Citadel's ten, Blight-Priest's pings, Sanctum Seeker's attack drain, and a Vito hit.",
+          "axis": "reach",
+          "interactions": [
+            "Bolas's Citadel",
+            "Sanctum Seeker",
+            "Vito, Thorn of the Dusk Rose"
+          ]
+        },
+        {
+          "in": "Impact Tremors",
+          "section": "Loop Halves & Drain",
+          "grounds": "Two mana: a point to each opponent per creature entering, which is every Vampire cast (the token) plus the Vampire itself, and an unbounded kill in the Oathsworn loop.",
+          "axis": "combo density",
+          "interactions": [
+            "Oathsworn Vampire",
+            "Anointed Procession"
+          ]
+        },
+        {
+          "in": "Phyrexian Altar",
+          "section": "Sacrifice Outlets",
+          "grounds": "The Oathsworn loop's mana and a coloured ritual off tokens.",
+          "axis": "combo density",
+          "interactions": [
+            "Oathsworn Vampire"
+          ]
+        },
+        {
+          "in": "Viscera Seer",
+          "section": "Sacrifice Outlets",
+          "grounds": "Free outlet on a one-drop Vampire; the scry stacks the top for Necropotence and Citadel.",
+          "axis": "outlet",
+          "interactions": [
+            "Skullclamp",
+            "Emeritus of Woe"
+          ]
+        },
+        {
+          "in": "Warren Soultrader",
+          "section": "Sacrifice Outlets",
+          "grounds": "A second Phyrexian Altar for the Oathsworn loop: a Treasure per sacrifice, and Treasures also pay Wishclaw, Skullclamp and Beseech's bargain.",
+          "axis": "combo density",
+          "interactions": [
+            "Oathsworn Vampire",
+            "Blood Artist"
+          ],
+          "cost": "Non-Vampire; dies to Olivia's Wrath."
+        },
+        {
+          "in": "Indulgent Aristocrat",
+          "section": "Sacrifice Outlets",
+          "grounds": "One-drop Vampire outlet; {2} and a token puts a counter on every Vampire, which turns the eminence board into a clock.",
+          "axis": "outlet",
+          "interactions": [
+            "Shared Animosity"
+          ]
+        },
+        {
+          "in": "Sorin, Imperious Bloodlord",
+          "section": "Combat Package",
+          "grounds": "-3 puts Bloodthirsty Conqueror, Vito or any Vampire from hand onto the battlefield (turn-2 Conqueror off Dark Ritual); +1 sacrificing a Vampire is 3 damage and 3 life, the gain that unlocks Oathsworn and fires Vito every turn.",
+          "axis": "speed",
+          "interactions": [
+            "Bloodthirsty Conqueror",
+            "Oathsworn Vampire",
+            "Vito, Thorn of the Dusk Rose"
+          ]
+        },
+        {
+          "in": "Captivating Vampire",
+          "section": "Combat Package",
+          "grounds": "Lord, and with the outlets a removal spell: steal the creature, sacrifice it.",
+          "axis": "second route",
+          "interactions": [
+            "Viscera Seer",
+            "Phyrexian Altar"
+          ]
+        },
+        {
+          "in": "Cordial Vampire",
+          "section": "Combat Package",
+          "grounds": "A counter on every Vampire for every death; the pilot called it really strong and the field runs it in 82% of lists.",
+          "axis": "second route"
+        },
+        {
+          "in": "Legion Lieutenant",
+          "section": "Combat Package",
+          "grounds": "Two-mana lord.",
+          "axis": "second route"
+        },
+        {
+          "in": "Sanctum Seeker",
+          "section": "Combat Package",
+          "grounds": "A drain and a gain per attacking Vampire; with Vito out each gain is a second hit.",
+          "axis": "second route",
+          "interactions": [
+            "Vito, Thorn of the Dusk Rose",
+            "Bloodletter of Aclazotz"
+          ]
+        },
+        {
+          "in": "Shared Animosity",
+          "section": "Combat Package",
+          "grounds": "The one-swing kill with the eminence board; the one aggro-average card kept because the pilot wants combat as a live second route.",
+          "axis": "second route",
+          "interactions": [
+            "Indulgent Aristocrat",
+            "Cordial Vampire"
+          ]
+        },
+        {
+          "in": "Edgar, Charmed Groom",
+          "section": "Combat Package",
+          "grounds": "A lord that comes back as a token-a-turn engine when it dies.",
+          "axis": "second route"
+        },
+        {
+          "in": "Elenda, the Dusk Rose",
+          "section": "Combat Package",
+          "grounds": "Grows on every death, lifelink (a gain event for Vito on every hit) and leaves a board of tokens when answered.",
+          "axis": "second route",
+          "interactions": [
+            "Vito, Thorn of the Dusk Rose"
+          ]
+        },
+        {
+          "in": "Bloodline Keeper",
+          "section": "Combat Package",
+          "grounds": "A 2/2 flier every turn, and a +2/+2 lord once five Vampires are out.",
+          "axis": "second route"
+        },
+        {
+          "in": "Charismatic Conqueror",
+          "section": "Combat Package",
+          "grounds": "Taxes every untapped rock and creature an opponent plays at Bracket 4, or gives us a lifelink token.",
+          "axis": "second route"
+        },
+        {
+          "in": "Swords to Plowshares",
+          "section": "Interaction & Protection",
+          "grounds": "One-mana exile at instant speed.",
+          "axis": "interaction"
+        },
+        {
+          "in": "Path to Exile",
+          "section": "Interaction & Protection",
+          "grounds": "One-mana exile at instant speed.",
+          "axis": "interaction"
+        },
+        {
+          "in": "Anguished Unmaking",
+          "section": "Interaction & Protection",
+          "grounds": "Instant exile of any nonland permanent; the pilot's rule that an any-permanent answer is never replaced by a creature-only one.",
+          "axis": "interaction"
+        },
+        {
+          "in": "Chaos Warp",
+          "section": "Interaction & Protection",
+          "grounds": "The second any-permanent answer at instant speed, the one that also hits lands and indestructible permanents.",
+          "axis": "interaction"
+        },
+        {
+          "in": "Olivia's Wrath",
+          "section": "Interaction & Protection",
+          "grounds": "A one-sided wipe in a deck that is almost all Vampires.",
+          "axis": "interaction",
+          "cost": "Kills Esper Sentinel and Warren Soultrader; Enduring Tenacity dies and returns as an enchantment."
+        },
+        {
+          "in": "Silence",
+          "section": "Interaction & Protection",
+          "grounds": "One mana: opponents cast nothing this turn, which is the whole combo-turn protection against instant-speed answers.",
+          "axis": "protection"
+        },
+        {
+          "in": "Teferi's Protection",
+          "section": "Interaction & Protection",
+          "grounds": "Survives any wipe or kill turn, and with Ad Nauseam from the pool it is unbounded draw. Game Changer.",
+          "axis": "protection"
+        },
+        {
+          "in": "Reanimate",
+          "section": "Recursion & Doubling",
+          "grounds": "One mana for Bloodthirsty Conqueror, Vito or Bloodletter from any graveyard; the life is refunded by the first drain.",
+          "axis": "speed",
+          "interactions": [
+            "Bloodthirsty Conqueror"
+          ]
+        },
+        {
+          "in": "Animate Dead",
+          "section": "Recursion & Doubling",
+          "grounds": "Second reanimation, and it takes opponents' creatures too.",
+          "axis": "speed",
+          "interactions": [
+            "Bloodthirsty Conqueror"
+          ]
+        },
+        {
+          "in": "Anointed Procession",
+          "section": "Recursion & Doubling",
+          "grounds": "Doubles eminence tokens, Coffin tokens, Bloodline Keeper's, Elenda's, Black Market Connections' and every Treasure from Smothering Tithe and Warren Soultrader.",
+          "axis": "reach",
+          "interactions": [
+            "Smothering Tithe",
+            "Warren Soultrader",
+            "Impact Tremors"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wave-1",
+      "label": "Wave 1 — Ashnod's Altar for Talisman of Hierarchy (pilot's call, applied 2026-11-03)",
+      "status": "applied",
+      "note": "The pilot asked why Ashnod's Altar was out. Re-derived against the list: it closes no loop on its own (colourless can't pay Oathsworn's {B}; Spellbook 14 loops before and after) and the combo theme runs it in 15% of lists, but it is a fifth free outlet that pays {C}{C} per eminence token. The pilot took it over the second coloured rock.",
+      "swaps": [
+        {
+          "in": "Ashnod's Altar",
+          "out": "Talisman of Hierarchy",
+          "section": "Sacrifice Outlets",
+          "axis": "free outlet that pays, over a rock that fixes",
+          "grounds": "Every eminence token is {C}{C} from turn 2: with Skullclamp each token is two cards and a net mana after the re-equip; with Phyrexian Altar or Warren Soultrader out, one body to the coloured outlet and the other to Ashnod's makes the Oathsworn loop mana-positive, which pays Grim Monolith untaps, Wishclaw and The One Ring mid-loop; with Captivating Vampire it is free instant-speed steal-then-sacrifice removal. Talisman of Hierarchy was the second two-mana coloured rock; Arcane Signet stays as the first.",
+          "interactions": [
+            "Skullclamp",
+            "Oathsworn Vampire",
+            "Phyrexian Altar",
+            "Warren Soultrader",
+            "Captivating Vampire",
+            "Grim Monolith"
+          ],
+          "cost": "Colourless only in a list with 61 of 83 pips black (Necropotence, Bolas's Citadel and Beseech the Mirror all want {B}{B}{B}), three mana up front, and dead until a body is on the table. W sources 24 to 23, B sources 32 to 31, avg MV 2.57 to 2.58.",
+          "verdict": "pending",
+          "verdictWhy": "Judge after play whether the colourless burst gets used or the slot wanted a coloured rock."
+        }
+      ]
+    }
+  ],
+  "passed": [
+    {
+      "name": "Opposition Agent",
+      "why": "Declined by the pilot: it plays other people's decks. Held in the pool's stax section."
+    },
+    {
+      "name": "Drannith Magistrate",
+      "why": "Declined by the pilot: pure hate with no benefit to us. Held in the pool's stax section."
+    },
+    {
+      "name": "Orcish Bowmasters",
+      "why": "Held: it pings and grows an Orc Army, so it does benefit us, but it is still a hate piece first. Pool, first pick if the list leans staxier."
+    },
+    {
+      "name": "Drana and Linvala",
+      "why": "Held: shuts off opposing activated abilities and gives them to us; a Vampire. Pool, hate section."
+    },
+    {
+      "name": "Red Elemental Blast",
+      "why": "Pool: only worth a slot if the pods are blue-heavy."
+    },
+    {
+      "name": "Pyroblast",
+      "why": "Pool, same as Red Elemental Blast."
+    },
+    {
+      "name": "Deflecting Swat",
+      "why": "Not free with Edgar in the command zone ('if you control a commander'); three mana for a redirect is a pool card."
+    },
+    {
+      "name": "Deadly Rollick",
+      "why": "Same clause as Deflecting Swat: four mana to exile a creature is not worth a slot."
+    },
+    {
+      "name": "Ad Nauseam",
+      "why": "The pilot chose the creature-based cEDH average over pure turbo; Ad Nauseam with 30 creatures and an avg MV of 2.57 still draws about 15 cards, and with Teferi's Protection it is unbounded. First alternate if the list ever goes turbo."
+    },
+    {
+      "name": "Gamble",
+      "why": "Random discard in a deck with two reanimation spells is not a tax, but nine tutors is already the field's count. Alternate."
+    },
+    {
+      "name": "Stromkirk Captain",
+      "why": "Fifth lord, needs red, first strike does nothing for a drain deck. Ranked last of the eleven combat cards; the field runs it in 74%."
+    },
+    {
+      "name": "Markov Baron",
+      "why": "Fourth lord; convoke only with untapped creatures that were not attacking. Alternate."
+    },
+    {
+      "name": "Malakir Bloodwitch",
+      "why": "The pilot's finisher in the combat list, but a one-shot drain at five mana in a list that wins by loops. Alternate, first combat-package swap if the pilot wants her."
+    },
+    {
+      "name": "Dusk Legion Zealot",
+      "why": "A two-mana Vampire cantrip; cut for Black Market Connections (repeatable) as the ninth draw card."
+    },
+    {
+      "name": "Falkenrath Pit Fighter",
+      "why": "One-drop Vampire with repeatable draw-two; cut for Black Market Connections on the pilot's repeatable-draw rule."
+    },
+    {
+      "name": "Phyrexian Arena",
+      "why": "Necropotence and Citadel outdraw it; alternate."
+    },
+    {
+      "name": "Yahenni, Undying Partisan",
+      "why": "Fifth outlet; the four in plus Master of Dark Rites, Phyrexian Tower, Culling the Weak and Diabolic Intent cover the job."
+    },
+    {
+      "name": "Bartolomé del Presidio",
+      "why": "Same role as Yahenni."
+    },
+    {
+      "name": "Kalastria Highborn",
+      "why": "A paid death drain; the three free ones are in."
+    },
+    {
+      "name": "Vein Ripper",
+      "why": "Six mana; the loops do not need a fourth death drain."
+    },
+    {
+      "name": "Purphoros, God of the Forge",
+      "why": "Impact Tremors at two mana does the Oathsworn-loop job; Purphoros is the four-mana indestructible copy. Alternate."
+    },
+    {
+      "name": "Zulaport Cutthroat",
+      "why": "Cruel Celebrant on a non-Vampire; alternate."
+    },
+    {
+      "name": "Akroma's Will",
+      "why": "Both modes only with Edgar on the battlefield; the deck does not depend on a wide board surviving. Alternate."
+    },
+    {
+      "name": "Generous Gift",
+      "why": "Anguished Unmaking and Chaos Warp carry the any-permanent role at instant speed."
+    },
+    {
+      "name": "Aetherflux Reservoir",
+      "why": "Loops with Exquisite Blood or Bloodthirsty Conqueror once you have 50 life, but does nothing before that. Alternate."
+    },
+    {
+      "name": "Blood Tribute",
+      "why": "Kicked with Vito out it kills one opponent for six mana at sorcery speed. Alternate."
+    },
+    {
+      "name": "Phyrexian Reclamation",
+      "why": "Reanimate and Animate Dead cover recursion for a combo deck."
+    },
+    {
+      "name": "Vampire of the Dire Moon",
+      "why": "A one-drop body; every one-drop slot went to a card with an engine text."
+    },
+    {
+      "name": "Defiant Bloodlord",
+      "why": "Seven mana for the sixth gain-to-loss half."
+    },
+    {
+      "name": "Talisman of Indulgence",
+      "why": "Fourteenth mana rock; red is the lightest colour."
+    },
+    {
+      "name": "Cabal Coffers",
+      "why": "Big mana for a deck that wins on two cards; Urborg stays for fixing."
+    },
+    {
+      "name": "Spectator Seating",
+      "why": "Red/white bond land; red is 4 pips."
+    },
+    {
+      "name": "Jeska's Will",
+      "why": "Both modes need Edgar on the battlefield; one mode in a black deck is weak."
+    },
+    {
+      "name": "Toxic Deluge",
+      "why": "Kills our own board; Olivia's Wrath is one-sided."
+    },
+    {
+      "name": "Clavileño, First of the Blessed",
+      "why": "Needs attacks in a deck that wins without them."
+    },
+    {
+      "name": "Coat of Arms",
+      "why": "Symmetric and a win-more card for the combat route."
+    },
+    {
+      "name": "Cathars' Crusade",
+      "why": "The counter loops (Crusade with Animation Module or Nim Deathmantle and an altar) need three cards where the lifegain loops need two; alternate."
+    },
+    {
+      "name": "Animation Module",
+      "why": "Three-card counter loop piece; the two-card lifegain loops outrank it."
+    },
+    {
+      "name": "Nim Deathmantle",
+      "why": "Three-card loop piece with Elenda and an altar; outranked by the two-card loops."
+    },
+    {
+      "name": "Roaming Throne",
+      "why": "Doubles triggers at four mana; the loops are already unbounded."
+    },
+    {
+      "name": "Herald's Horn",
+      "why": "Tribal cost reducer from the Bracket 3 lists; the fast mana here is faster and colourless rocks fund non-Vampire spells too."
+    },
+    {
+      "name": "Urza's Incubator",
+      "why": "Same as Herald's Horn."
+    },
+    {
+      "name": "Talisman of Hierarchy",
+      "why": "Cut for Ashnod's Altar in wave 1 (pilot's call); Arcane Signet stays as the two-mana coloured rock. First alternate if the list wants more coloured mana."
+    }
+  ]
+}

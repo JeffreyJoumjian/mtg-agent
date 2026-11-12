@@ -1,0 +1,22 @@
+{
+  "takenAt": "2026-11-03T20:08:27.235Z",
+  "listId": "b4",
+  "label": "Founded: Bracket 4 drain/combo build",
+  "reason": "before Founded: Bracket 4 drain/combo build",
+  "list": {
+    "label": "Bracket 4",
+    "kind": "deck",
+    "bracket": 4,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Edgar Markov",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

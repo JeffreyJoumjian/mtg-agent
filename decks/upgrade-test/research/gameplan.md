@@ -4,6 +4,9 @@
 > untouched. Every wave, with its grounds, is in `research/decisions.md` and on the proposal page:
 > https://claude.ai/artifact/Qgp3cNcdmKWoE8fPZMxvQB
 >
+> **Updated 2026-10-15 for wave 11 (a trial).** In: Pest Infestation, Priest of Forgotten Gods. Out:
+> Black Market Connections, Woe Strider. Undo rows are in `research/decisions.md`.
+>
 > **Updated 2026-09-29 for wave 10.** In: Chatterstorm, Verdant Command, Esika's Chariot, Deep Forest
 > Hermit, Warren Soultrader, Azusa, Lost but Seeking. Out: Nature's Lore, Arcane Signet, Carrion
 > Feeder, Village Rites, Concordant Crossroads, Oracle of Mul Daya.
@@ -19,12 +22,15 @@ Apprentice), and the life each one gains feeds Dina, Starscape Cleric and Vito. 
 draining.** Craterhoof, Blasphemous Edict and Gruesome Fate each turn a wide board into a win without
 touching the combo. Wave 10 added the thing the deck was short of: cards that make **several tokens
 in one turn from nothing** (Chatterstorm, Verdant Command, Esika's Chariot, Deep Forest Hermit).
+Wave 11 added Pest Infestation to that group.
 
 ## 1. The curve you actually have
 
 | | MV≤1 | MV2 | MV3 | MV4 | MV5 | MV6+ | avg |
 |---|---|---|---|---|---|---|---|
-| Nonland (64) | 5 | 19 | 24 | 10 | 4 | 2 | **2.97** |
+| Nonland (64) | 6 | 20 | 22 | 10 | 4 | 2 | **2.92** |
+
+The tools count Pest Infestation at MV 1. At X=2 it costs 5, which puts the real average near 2.99.
 
 Heavier than the parent (2.73). Wave 10 made it heavier on paper (2.84 → 2.97, MV ≤ 2 27 → 24), but
 the cards that left at MV 1 made no tokens and no mana, and the ones that arrived make four to eight
@@ -60,7 +66,7 @@ with nothing to sacrifice is a 0/1. **Yawgmoth is the exception** — he convert
 cards the moment he lands, so he is never a dead draw.
 
 **Mulligans.** Keep 3 lands with both colours and a 1–2 drop. Ship hands with no token source before
-turn 3. At avg MV 2.97 this list wants the third land more than the parent did.
+turn 3. At avg MV 2.92 this list wants the third land more than the parent did.
 
 ## 4. The sacrifice decision tree
 
@@ -90,6 +96,21 @@ your life total. With Skullclamp out, a −1/−1 counter kills the clamped 1/1 
 creature, create a Treasure. That Treasure is a token event, so the whole §5c chain runs on every
 sacrifice: a Squirrel from Chatterfang, a Food each from Peregrin and Tippy-Toe, and Manufactor's
 split. It is also the deck's any-colour outlet. See §8d for the loop.
+
+**Priest of Forgotten Gods is an outlet that pays you back, once a turn.** Tap it and sacrifice two
+other creatures. Each opponent you target loses 2 life and sacrifices a creature of their choice, and
+you add {B}{B} and draw a card. It works at instant speed, so use it in response to removal or a
+wrath, but it needs a turn to lose summoning sickness. It is an edict, not a wipe, because each
+opponent gives up their worst creature. Two sacrifices are two deaths, so every payoff above fires
+twice per activation. It taps, and the list has no untap effect (checked 2026-10-15), so it can't
+repeat in a turn and is not the outlet for the loops.
+
+**Pest Infestation is a seed you can size.** {X}{X}{G}: X=2 costs 5 and makes 4 Pests plus 4
+Squirrels from Chatterfang. That is one creation event, so without doublers Mirkwood Bats fires 8
+times and Prosperous Innkeeper gains 8. Each Pest that dies gains 1 life, which is its own event for
+Dina, Starscape Cleric and Vito. The destroy half is "up to X", so choose no targets to leave your
+own Altar, Doubling Season and Cryptolith Rite alone, or aim it at an opponent's artifacts and
+enchantments. It is a sorcery.
 
 ## 5b. Landfall — every land is a token and a Squirrel
 
@@ -138,7 +159,7 @@ which is nearly always true here because Peregrin and Tippy-Toe are feeding it F
 ## 6. Sequencing within your turn
 
 1. **Upkeep:** Bitterblossom makes a Faerie; Deep Forest Hermit loses a time counter.
-2. **Start of main 1:** Gardenize adds its mana and Black Market Connections asks for its choices.
+2. **Start of main 1:** Gardenize adds its mana.
 3. **Main 1: Bloodletter FIRST if you have it.** Then landfall payoffs, **then** your land drop(s),
    then the other token makers, then the payoff. **Chatterstorm goes last among your spells**: every
    spell cast before it is another copy, and every copy is a separate token event.

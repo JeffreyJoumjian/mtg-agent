@@ -26,7 +26,6 @@
 1 Fate Unraveler (DSC) 141
 1 Feed the Swarm (DSC) 78
 1 Fell the Profane (MH3) 244
-1 Fellwar Stone (SLD) 1040
 1 Font of Mythos (PLST) CON-136
 1 Foreboding Ruins (DSC) 277
 1 Fraying Omnipotence (M19) 97
@@ -58,6 +57,7 @@
 1 Orcish Bowmasters (LTR) 103
 1 Painful Quandary (FDN) 179
 1 Polluted Delta
+1 Powerbalance
 1 Rakdos Charm (C17) 190
 1 Rakdos Signet (AFC) 214
 1 Rakdos, Lord of Riots (DSC) 230

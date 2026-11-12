@@ -1086,3 +1086,298 @@ Full review: `research/fra-set-review-2026-09-28.md`.
 - **Open (pilot's question):** should Braid of Fire, just cut from WandaVision, go into `v3` and
   `b4`? Evaluated in the review file's follow-up section. Pyre Rhymer // Molten Tide is the parent
   review's competing SIDE pick for `v3`.
+
+---
+
+## 2026-10-10 — `b4`: Inner Fire in, Pyromancer's Goggles out (pilot's call); Powerbalance and Mishra's Workshop declined
+
+Prompted by the pilot: *"we have a lot of fast mana but not red which is our critical piece."* That
+matches the 2026-09-08 finding that the Bracket 4 pool is mostly colourless. Five colourless pieces
+make 2 or 3 mana each (Sol Ring, Mana Vault, Grim Monolith, Ancient Tomb, City of Traitors), and the
+red-capable fast pieces make 1 each except Lion's Eye Diamond.
+
+### Applied
+
+| List | Out | In | Grounds |
+|---|---|---|---|
+| `b4` | Pyromancer's Goggles | Inner Fire | Inner Fire is mana value 4, so Wanda discounts it to {1}{R} at power 2 and {R} at power 3. It adds {R} per card in hand, and Livaan gives +4. Goggles is 5 colourless in a turn-3 deck and gives one {R} and one copy per turn cycle. Pilot: *"move pyro to the sideboard and put in inner fire for it."* |
+
+The 2026-08 upgrade-candidates note skipped Inner Fire as *"dead when your hand is empty, which is
+exactly the kill turn."* That was written for the grind list. `b4` casts it at the start of a chain,
+when the hand is full, and after Wheel of Fortune it is about six red.
+
+**Cuts considered for Inner Fire's slot:** Hex Magic (my first pick: mana value 3, so never
+discounted, and it swaps the hand rather than adding cards), Grim Monolith (nets one colourless once,
+since it doesn't untap without {4}), Faithless Looting and Monstrous Rage. The pilot chose Goggles,
+which had been raised and kept on 2026-09-16.
+
+Snapshot: `versions/2026-10-10-0802-b4-inner-fire-in-pyromancer-s-goggles-out-to-sideboard.json`.
+Fast mana 16 → 17, Copy and recur 9 → 8, average MV 2.68 → 2.66. Validated: 100 cards, all found,
+legal, mono-red, 10 Game Changers. Goggles stays in `main` and `v3`. Inner Fire exports as a bare
+name until a printing is pinned.
+
+### Proposed, waiting on the pilot
+
+- **Simian Spirit Guide in, Bionic Blow out.** Pilot OK'd adding the Guide. Bionic Blow is the
+  weakest of the five pumps on red pips: {X}{R}{R} at sorcery speed for the same +X that Lunar
+  Frenzy and Frantic Confrontation give for one pip at instant speed. The Guide's 2026-09-08 cut
+  (least needed turn-1 accelerant, triggers nothing) is answered by the new ground: it is the only
+  card that adds a red pip for zero mana, at any time.
+- **Valakut, the Molten Pinnacle → Mountain** was raised as a question. In `b4` Valakut enters
+  tapped, and its trigger needs five other Mountains, which a turn-3 deck never has.
+
+### Declined, with grounds
+
+- **Powerbalance** (pilot: *"i can see if it's not that useful"*). The line the pilot described
+  works: the free spell goes on the stack above the opponent's (CR 608.2g), and a ritual's mana lasts
+  the step (CR 106.4), so an instant finisher in hand can use it straight away. Simulated, a turn-1
+  Powerbalance sees a free spell before your turn 3 in 65% of games, a noncreature one in 59% and a
+  mana card in about 22%. It was declined on the slot, not the line: two opponent turns before a
+  turn-3 kill, and {R}{R} on turn 1 or 2. `v3`'s turn-5 clock would give it three cycles if the
+  pilot wants the line there.
+- **Mishra's Workshop** for Valakut. The pilot's case was that it pays for the artifacts so the
+  red lands pay pips. They withdrew it: *"i misjudged workshop i don't want it anymore in any of the
+  b4 decks."*
+
+### Applied later the same day (pilot's calls)
+
+| List | Out | In | Grounds |
+|---|---|---|---|
+| `b4` | Bionic Blow | Simian Spirit Guide | As proposed above: the only card that adds a red pip for zero mana, at instant speed, against the weakest pump on pips. |
+| `b4` | Valakut, the Molten Pinnacle | Mountain | Valakut enters tapped, and its trigger needs five other Mountains, which a turn-3 deck never has. A basic Mountain is the same red source, untapped. |
+
+Snapshots: `versions/2026-10-10-0823-b4-simian-spirit-guide-in-bionic-blow-out.json` and
+`versions/2026-10-10-0823-b4-mountain-in-valakut-out.json`. Fast mana 17 → 18, Doublers 11 → 10,
+Mountains 18 → 19 (26 lands unchanged), average MV 2.66 → 2.68 (Simian Spirit Guide counts as a
+3-drop though it is never cast). Validated: 100 cards, all found, legal, mono-red, 10 Game Changers.
+Simian Spirit Guide exports as a bare name until a printing is pinned.
+
+---
+
+## 2026-10-13 — `b4`: Inspired Tinkering in, Arcane Bombardment out (pilot's call)
+
+Prompted by the pilot: several games in a row ended in dead draws, and they asked whether `b4` had
+lost draw or exile cards.
+
+### What the list history showed
+
+- **The nine-card draw section hasn't changed since the 2026-09-08 rebuild.** This was computed by
+  diffing every `b4` snapshot in `versions/` against `deck.json`. The one card that digs and left
+  since then is Wiccan, Young Avenger (2026-09-16, for Apex of Power).
+- **The bigger drop came with the rebuild itself.** The retired B4 had a 13-card draw section.
+  Inspired Tinkering, Hit the Mother Lode, Wiccan and Cait Sith left, and only Blazing Crescendo came
+  in. Commune with Lava and Will of the Jeskai stayed, under other headings.
+- **Half the refuel role needs another card in hand.** Drawn into an empty hand, Big Score and
+  Unexpected Windfall can't be cast (the discard is an additional cost), Faithless Looting draws two
+  and discards both, Gamble discards the card it found, and Hex Magic exiles and draws nothing. That
+  is five of the ten refuel cards. Ledger `build-032` and `eval-024` already state the pattern.
+- **One repeatable draw engine.** The One Ring is the only one, about 11% to be among the first 11
+  cards without Gamble. Wiccan was the second.
+
+### Applied
+
+| List | Out | In | Grounds |
+|---|---|---|---|
+| `b4` | Arcane Bombardment | Inspired Tinkering | Pilot: *"I love arcane but it's too slow for bracket 4."* Bombardment is a {4}{R}{R} enchantment, so Wanda never discounts it. Inspired Tinkering is mana value 5, so it costs {2}{R} at her power 2 and {R} at power 4. It gives three cards to play through next turn and three Treasures whether or not the hand is empty, and Livaan gives +5. |
+
+Tinkering was left out of the chain build on 2026-09-08 for being *"big mana, and the constraint is
+pips"*. That is the error the 2026-09-16 entry corrected for Brass's Bounty: Treasures make any
+colour, so they are red pips.
+
+**The cut I recommended was Hex Magic, and the pilot chose Bombardment.** Hex Magic costs the same
+{2}{R} at Wanda's base power, is never discounted (mana value 3) and does nothing off an empty hand.
+Its one edge is a hand of four or more cards. Bombardment's case, for the record: once it's on the
+battlefield, one instant or sorcery a turn (opponents' turns included) re-casts the whole exiled
+pile, which made it the list's strongest engine for an empty hand. Against that, it is six real
+mana on a turn-3 plan, and its free casts force X = 0. This reverses the 2026-09-08 addition to
+`DECK-B4.md`, which was also the pilot's call.
+
+Snapshot: `versions/2026-10-13-1217-b4-inspired-tinkering-in-arcane-bombardment-out.json`. Copy and
+recur 8 → 7, Card draw & selection 9 → 10, average MV 2.68 → 2.66, red pips 81 → 80. Validated: 100
+cards, all 82 names found, legal, mono-red, 10 Game Changers. Inspired Tinkering exports as (CLB)
+183. Bombardment stays in `main` and `v3` and moves to the `b4` sideboard.
+
+### Open, waiting on play
+
+- **Pirate's Pillage.** The pilot will decide after playing Tinkering. For it: it costs {1}{R} at
+  Wanda's power 2 and {R} at power 3, makes two Treasures, gets +4 from Livaan, and its discard
+  feeds Underworld Breach and Past in Flames. Its 2026-08-04 cut ground ("identical to Big Score")
+  is a redundancy ground, which deck-brain §2.5 no longer accepts. Against it: like Big Score it is
+  card-neutral and needs another card in hand, so it fixes a hand of cards you can't use, not an
+  empty one. If it goes in, the nominated cut is Neheb, because the engines role holds 5 cards
+  against the skeleton's 3–4 (`turn-5-chain-2026-09-08.md` §7). Neheb costs the most and his mana
+  needs cards to spend. Grim Monolith (colourless, in the 18-card fast mana role) and Solphim were
+  considered.
+- **Hex Magic** is still the refuel card that does least off an empty hand.
+
+---
+
+## 2026-10-13 (part 2) — Combo inventory for `b4`; nothing applied
+
+Prompted by the pilot: *"since this is a bracket 4 deck after all, no holds barred. are there any
+infinite combos that this deck could run?"* Found with Commander Spellbook's find-my-combos (ledger
+`tool-020`), then each loop checked against the oracle text and the CR by `mtg-rules-expert`. Every
+loop below is chosen-N: each iteration is an optional cast or activation (CR 732.2a, 732.4).
+
+### Already in the list
+
+| Loop | Each iteration | Condition |
+|---|---|---|
+| Reiterate + Seething Song + Ruby Medallion | Neutral mana, one cast | +1 {R} per loop with The Fire Crystal too (ledger `loop-018`) |
+| Reiterate + Seething Song + Storm-Kiln Artist | +1 mana, two Treasures | none |
+| Reiterate + Explosive Welcome + three reducers | Neutral mana, 8 damage | Ruby Medallion, The Fire Crystal and Longshot or Artist's Talent level 2. Not in Commander Spellbook. |
+| Increasing Vengeance + any copier + Storm-Kiln Artist | One copy, one Treasure | Reiterate, Return the Favor, Storm King's Thunder or Repeated Reverberation starts it. Not in Commander Spellbook (ledger `loop-017`). |
+| Reiterate + Mana Geyser | Mana per tapped opponent land | Six or more tapped opponent lands, which is rare on your own turn |
+| Reiterate + Jeska's Will | Mana per card in an opponent's hand, three more cards | Six or more cards in an opponent's hand |
+| Underworld Breach + Lion's Eye Diamond + Wheel of Fortune | Neutral mana, everyone draws seven | Bounded by the library, and the pilot usually decks first (ledger `loop-019`) |
+| Underworld Breach + Wheel of Fortune + Jeska's Will | +1 mana (+4 with Lion's Eye Diamond) | Bounded by the library |
+
+Wanda never discounts Reiterate (mana value 3). Reiterate casts trigger Longshot, Livaan, Birgi and
+Electro. Increasing Vengeance copies trigger none of them, so that loop needs an X-spell to finish.
+
+### One card away, ranked for this list (proposed, not applied)
+
+1. **Twinning Staff** ({3}): every copy event makes one more. Reiterate + Seething Song nets +4 with
+   no reducers, Pyretic Ritual, Desperate Ritual and Explosive Welcome break even, and the Increasing
+   Vengeance loop makes red mana without Storm-Kiln Artist. It also adds a copy to every chain
+   copier. Not symmetric.
+2. **Aggravated Assault** ({2}{R}) with Neheb, the Eternal: once opponents have lost 5 life this
+   turn, each extra postcombat main phase pays for the next activation (CR 505.1a). This would make
+   Neheb a combo piece, which counts against the earlier suggestion to cut him for Pirate's Pillage.
+3. **Haze of Rage** ({1}{R}, buyback) with Storm-Kiln Artist: net positive from storm count 3, or 2
+   under Ruby Medallion. Each copy gives +1/+0, so Wanda's power and discount climb without limit.
+4. **Grinding Station** ({2}) with Underworld Breach and Mox Amber: self-fuelling, +{R} per loop,
+   bounded by the library.
+5. **Bonus Round**: symmetric. Conqueror's Flail covers the pilot's turn. Not needed once Twinning
+   Staff is in.
+
+Also returned and passed over: Solphim + Heartless Hidetsugu (kills even life totals only),
+Pyromancer's Goggles (the list already starts the Increasing Vengeance loop four ways), Blightsteel
+Colossus + Chandra's Ignition (twelve mana), Mycosynth Lattice + Vandalblast (mass land denial, not
+a loop) and The One Ring locks.
+
+---
+
+## 2026-10-13 (part 3) — `b4`: five swaps on trial (pilot's call)
+
+The pilot picked these from the combo and one-card-add discussion (part 2), judged as cards rather
+than combo pieces, by what each does on the kill turn. Each swap was applied as its own
+`deck:edit`, so each has its own snapshot and can be undone alone (the `b4` sideboard in
+`research/sideboard.md` names the card each cut would displace).
+
+### Applied
+
+| Out | In | Grounds |
+|---|---|---|
+| Inner Fire | Treasonous Ogre | Inner Fire adds {R} per card in your own hand, so it is weakest when you are topdecking. Pilot: *"stuff like jeska's will always pays off cause we're emptying our hand during our turn while most opponents have cards in their hand."* Ogre's "Pay 3 life: Add {R}" doesn't tap, so it works the turn it enters, at instant speed: up to 9 red at 30 life. {2}{R} under Ruby. The 2026-09-08 pass on it leaned on price. |
+| Thor, God of Thunder | Soul's Fire | Pilot: *"spending 5 mana on him is a big set back on a huge turn."* Thor triggers nothing from Livaan and isn't triggered by copies. Soul's Fire is a {1}{R} instant under Ruby: Wanda deals her power to any target, Livaan's +3 resolving first, and each copy picks a new target. |
+| Vandalblast | Fiery Confluence | Pilot: never cast it. Confluence is MV 4, so {R}{R} at Wanda's power 2. It keeps artifact removal (up to three) and is 6 to each opponent otherwise, 12 with a Bonus Round copy. Interaction stays at 3. |
+| Gamble | Bonus Round | Pilot: *"i'd rather draw/exile into a jeska's will and be able to play it."* Gamble drawn into an empty hand discards the card it found (ledger `eval-024`). Bonus Round copies every instant and sorcery after it that turn. |
+| Runechanter's Pike | Runaway Steam-Kin | Pilot: *"4 mana to do anything."* Pike is about +2 to +4 on a turn-3 plan. Steam-Kin is {R} under Ruby and makes one red per red spell, and its counters carry over between turns. |
+
+**Grounds re-derived, not reused (deck-brain §1.1b):** Steam-Kin's 2026-08-07 sideboard ground was
+"a 1/1 that dies to our own Fiery Confluence". Both are now in `b4`, so the self-hit is real again,
+but only when Confluence's creature mode is chosen. Pick the opponent and artifact modes while
+Steam-Kin or Livaan is out. Fiery Confluence left at the 2026-09-08 rebuild with no recorded
+grounds.
+
+**Costs named before applying:** Gamble was the only tutor, so finding Livaan on turns 1–2 now
+rests on the draw cards. Seeds drop to 8, the bottom of the 8–10 target. Bonus Round is symmetric,
+so equip Conqueror's Flail before casting it.
+
+Snapshots: `versions/2026-10-13-1434-b4-treasonous-ogre-in-inner-fire-out.json`,
+`...-soul-s-fire-in-thor-out.json`, `...-fiery-confluence-in-vandalblast-out.json`,
+`...-bonus-round-in-gamble-out.json`, `...-runaway-steam-kin-in-runechanter-s-pike-out.json`.
+Average MV 2.66 → 2.70 (Confluence counts as 4, though it costs {R}{R} with Wanda out); MV ≤ 2
+38 → 36, MV ≤ 3 54 → 54; creatures 11 → 12; red pips 80 → 82; Game Changers 10 → 9. Validated: 100
+cards, all 82 names found, legal, mono-red. `main` and `v3` unchanged. Treasonous Ogre, Soul's
+Fire, Bonus Round and Runaway Steam-Kin export as bare names until a printing is pinned.
+
+### Waiting on play
+
+- **Hexing Squelcher for Champion's Helm** and **Twinning Staff for Hex Magic**: the pilot will
+  decide after playing the five above.
+
+### Declined, with grounds
+
+- **Aggravated Assault**: pilot, *"it's useless if I don't draw Neheb."* Without Neheb it is five
+  mana for one extra combat.
+- **Mana Flare**: about one red per land on the kill turn, and three opponents get the same for
+  every turn it is out before then. Treasonous Ogre and Steam-Kin give more red and help nobody else.
+- **The Vision and Scarlet Witch**: the same {R} per spell as Birgi for {1}{R}{R} under Ruby, and its
+  mana empties between steps. Steam-Kin does the job for {R}.
+
+---
+
+## 2026-10-13 (part 4) — Correction to part 2's Mana Geyser line
+
+Part 2's combo table says Reiterate + Mana Geyser needs *"six or more tapped opponent lands, which is
+rare on your own turn"*. The second half is wrong. A player untaps only in their own untap step (CR
+502.3), so every land an opponent tapped during their own turn is still tapped during yours, and
+Geyser counts all of them. Only lands held up for instant-speed answers stay untapped. Found while
+building the WandaVision Bracket 4 proposal; ledger loop-018 now carries the corrected text and a
+History line.
+
+## 2026-11-10 — `b4` review of 13 candidates; nothing applied; correction on Hex Magic
+
+The pilot asked for a review of Spiteful Repossession, Decaying Time Loop, Raphael's Technique,
+Reforge the Soul, Reality Scramble, Improvisation Capstone, Call Forth the Tempest, Hit the Mother
+Lode, Isengard Unleashed, Prisoner's Dilemma, Volcanic Vision and Mizzix's Mastery for `b4`, with the
+old verdicts re-derived. Pilot's call: *"for now I would say no change. Keep Mizzix in sideboard."*
+
+### Correction: Hex Magic was described wrong
+
+The 2026-10-10 entry said Hex Magic *"swaps the hand rather than adding cards"*. Its text is *"Exile
+all the cards from your hand, then draw that many cards. Until the end of your next turn, you may play
+cards exiled this way."* With a full hand it doubles the cards you can play until the end of your
+next turn. What stays true: from an empty hand it does nothing. The pilot: *"hex magic is sometimes
+one of our better draw/renew hand spells."* Twinning Staff's waiting row is re-pointed to Unleash
+Fury.
+
+### Re-derived verdicts (grounds, not verdicts)
+
+- **Mizzix's Mastery, held in the sideboard.** The 2026-09-08 ground (*"every free-cast forces X =
+  0"*) is true but covers 8 of `b4`'s 39 instants and sorceries; the other 31 have no X. Overload is
+  an alternative cost, so Wanda and the reducers cut it (official ruling), about {R}{R}{R} mid-chain.
+  Displaces Unleash Fury if it comes in.
+- **Raphael's Technique:** not a better Wheel of Fortune (two red pips against one, and each player
+  may decline). As a second wheel it works from an empty hand at instant speed. Not taken.
+- **Reforge the Soul:** mana value 5, so {R}{R} at Wanda's power 3 against Wheel's one pip, and as a
+  sorcery its pips come out of the kill turn. Stays in `main` and `v3`.
+- **Hit the Mother Lode:** the 2026-09-08 grouping with free-cast X = 0 cards was wrong (discover can
+  put the card into your hand). Its Treasures enter tapped, so about 7 red pips arrive next turn.
+  Held.
+- **Isengard Unleashed:** a ×3 multiplier at {R}{R}{R} under Wanda, ×9 with a Bonus Round copy
+  (official ruling). It stops damage prevention but not Teferi's Protection, whose "life total can't
+  change" still blocks the loss (official ruling). Conqueror's Flail is the answer to Teferi's
+  Protection on your turn. Not taken.
+- **Dominion Infiltration** (from the earlier list): copies, doesn't steal; held in the sideboard for
+  pods with creatures worth copying.
+- **Passed:** Spiteful Repossession (counts only opponents with more lands; about 0 to 3 here),
+  Decaying Time Loop (nothing from an empty hand), Reality Scramble (random and lateral), Improvisation
+  Capstone (its Paradigm copies arrive on later turns, the reason Arcane Bombardment left on
+  2026-10-13), Call Forth the Tempest (three red pips, creature-only damage), Prisoner's Dilemma
+  (snitch is each opponent's best choice, so a fixed 8 each), Volcanic Vision (Past in Flames covers
+  the rebuy; cute line: it is the only card that gets Apex of Power's ten mana twice).
+- **Earlier list, all lists:** Waltz of Rage passed (kills the engine creatures; its own kills do
+  trigger the impulse draw, CR 603.7a and 704.3), Laughing Mad passed for this deck (mana value 3, no
+  discount).
+
+`research/sideboard.md`: a "Held for later" table added under the `b4` waiting rows (Mizzix's Mastery,
+Dominion Infiltration), and a stray duplicate table header removed.
+
+## 2026-11-10 (later) — `main` deleted (pilot's call)
+
+While picking lists for the Star Trek set review, the pilot deleted `main`, the promoted V2
+damage-conversion build at Bracket 3: *"i don't really play the other version of scarlet witch
+anymore cause she can be too strong in bracket 3, so you can keep v3 but delete main"*. `v3` and
+`b4` remain, and `b4` is still the live list. `MOXFIELD.txt` is gone.
+
+- The list was saved first, in the `deck:edit` snapshot format:
+  `versions/2026-11-10-0435-main-deleted-pilot-s-call.json`.
+- The `cards` metadata of the 14 cards that were only in `main` (Mizzix's Mastery, Fiery
+  Emancipation, Kazuul, Tyrant of the Cliffs and others) stays in `deck.json` with their printing
+  pins, in case one comes back.
+- `research/sideboard.md`: the seven `b4` rows that said "Still in `main` and `v3`" now say `v3`,
+  which still runs all seven. Mizzix's Mastery's row now says no list runs it.
+- `scarlet-witch-reference.pdf` and `pdf.json` still describe the deleted `main`.

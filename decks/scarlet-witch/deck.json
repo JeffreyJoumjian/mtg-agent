@@ -4,147 +4,6 @@
   "format": "commander",
   "description": "**Authoritative current list.** Promoted from `DECK-V2.md` on 2026-09-08 after the damage pass\nproved out; the previous V1 list is retired to `versions/2026-09-08-v1-retired.md` and the\nSideboard: `SIDEBOARD.md`.\n\n**The chain build (`DECK-V3.md`) sits beside this file**, built 2026-09-08 after an opponent\nended a game on turn 5 with the same commander. Both are Bracket 3 at 3/3 Game Changers; this\none grinds damage across turns 4–7, that one aims for one doubling turn. Test both — the\nmechanism is in `research/turn-5-chain-2026-09-08.md`.\n\n**What this list is:** three slots sit in *spell → damage conversion* (Guttersnipe, Fated\nFirepower, Nico Minoru), one one-shot mana slot is burn (Boltwave), the tenth win condition is\na tutor (Gamble), and Ancient Tomb is a Mountain to keep Game Changers at 3/3. Converters\n5 → 8: a converter in the first 12 cards goes from ~48% to ~66% of games.\n\n**Gameplan:** turns 3–5 put a *converter* down before a mana engine; turns 4–7 cast your spells\n(each one now deals 4–12 to each opponent) and bank the rituals under Electro / Ashling; the\nX-spell is the closer, not the plan. Blackblade on Wanda by turn 5 when drawn. With creature\npingers out, take Fiery Confluence's \"2 to each opponent\" mode three times — the creature mode\nis the one that kills your own board.\n\n**Sequencing note:** on a Neheb turn, burn in your *precombat* main, then collect {R} per point\nof life your opponents lost at the start of your *postcombat* main and cast the X-spell there.\nThe postcombat main phase happens whether or not you attack (rule 500.1).",
   "lists": {
-    "main": {
-      "label": "Main",
-      "kind": "deck",
-      "bracket": 3,
-      "sections": [
-        {
-          "name": "Commander",
-          "cards": [
-            { "name": "The Scarlet Witch", "qty": 1 }
-          ]
-        },
-        {
-          "name": "Lands",
-          "cards": [
-            { "name": "Arena of Glory", "qty": 1 },
-            { "name": "Castle Embereth", "qty": 1 },
-            { "name": "Forge of Heroes", "qty": 1 },
-            { "name": "Mines of Moria", "qty": 1 },
-            { "name": "Mountain", "qty": 22 },
-            { "name": "Nykthos, Shrine to Nyx", "qty": 1 },
-            { "name": "Rogue's Passage", "qty": 1 },
-            { "name": "Shatterskull Smashing", "qty": 1 },
-            { "name": "Tyrite Sanctum", "qty": 1 },
-            { "name": "Valakut Awakening", "qty": 1 },
-            { "name": "Valakut, the Molten Pinnacle", "qty": 1 },
-            { "name": "War Room", "qty": 1 }
-          ]
-        },
-        {
-          "name": "Ramp — rocks, rituals and cost reduction",
-          "cards": [
-            { "name": "Arcane Signet", "qty": 1 },
-            { "name": "Artist's Talent", "qty": 1 },
-            { "name": "Brass's Bounty", "qty": 1 },
-            { "name": "Desperate Ritual", "qty": 1 },
-            { "name": "Gauntlet of Power", "qty": 1 },
-            { "name": "Jeska's Will", "qty": 1 },
-            { "name": "Mana Geyser", "qty": 1 },
-            { "name": "Pyretic Ritual", "qty": 1 },
-            { "name": "Pyromancer's Goggles", "qty": 1 },
-            { "name": "Ruby Medallion", "qty": 1 },
-            { "name": "Seething Song", "qty": 1 },
-            { "name": "Sol Ring", "qty": 1 },
-            { "name": "The Fire Crystal", "qty": 1 }
-          ]
-        },
-        {
-          "name": "Ramp — per-spell mana engines",
-          "cards": [
-            { "name": "Ashling, Flame Dancer", "qty": 1 },
-            { "name": "Electro, Assaulting Battery", "qty": 1 },
-            { "name": "Neheb, the Eternal", "qty": 1 },
-            { "name": "Storm-Kiln Artist", "qty": 1 },
-            { "name": "The Vision and Scarlet Witch", "qty": 1 },
-            { "name": "Urabrask", "qty": 1 }
-          ]
-        },
-        {
-          "name": "Card Draw & selection",
-          "cards": [
-            { "name": "Big Score", "qty": 1 },
-            { "name": "Commune with Lava", "qty": 1 },
-            { "name": "Gamble", "qty": 1 },
-            { "name": "Hex Magic", "qty": 1 },
-            { "name": "Hit the Mother Lode", "qty": 1 },
-            { "name": "Ignite the Future", "qty": 1 },
-            { "name": "Inspired Tinkering", "qty": 1 },
-            { "name": "Reforge the Soul", "qty": 1 },
-            { "name": "The One Ring", "qty": 1 },
-            { "name": "Unexpected Windfall", "qty": 1 },
-            { "name": "Wheel of Fortune", "qty": 1 },
-            { "name": "Wiccan, Young Avenger", "qty": 1 },
-            { "name": "Will of the Jeskai", "qty": 1 }
-          ]
-        },
-        {
-          "name": "Theme / Synergy — pump her power to grow the discount",
-          "cards": [
-            { "name": "Blackblade Reforged", "qty": 1 },
-            { "name": "Livaan, Cultist of Tiamat", "qty": 1 },
-            { "name": "Runechanter's Pike", "qty": 1 }
-          ]
-        },
-        {
-          "name": "Theme / Synergy — copy and recur",
-          "cards": [
-            { "name": "Arcane Bombardment", "qty": 1 },
-            { "name": "Mizzix's Mastery", "qty": 1 },
-            { "name": "Past in Flames", "qty": 1 },
-            { "name": "Repeated Reverberation", "qty": 1 }
-          ]
-        },
-        {
-          "name": "Damage conversion — pingers, boosters and burn",
-          "cards": [
-            { "name": "Boltwave", "qty": 1 },
-            { "name": "Fated Firepower", "qty": 1 },
-            { "name": "Guttersnipe", "qty": 1 },
-            { "name": "Nico Minoru, Runaway", "qty": 1 }
-          ]
-        },
-        {
-          "name": "Protection",
-          "cards": [
-            { "name": "Champion's Helm", "qty": 1 },
-            { "name": "Commander's Plate", "qty": 1 },
-            { "name": "Conqueror's Flail", "qty": 1 },
-            { "name": "Deflecting Swat", "qty": 1 },
-            { "name": "Mithril Coat", "qty": 1 },
-            { "name": "Return the Favor", "qty": 1 }
-          ]
-        },
-        {
-          "name": "Removal & Defence",
-          "cards": [
-            { "name": "Chaos Warp", "qty": 1 },
-            { "name": "Disrupt Decorum", "qty": 1 },
-            { "name": "Fiery Confluence", "qty": 1 },
-            { "name": "Kazuul, Tyrant of the Cliffs", "qty": 1 },
-            { "name": "Untimely Malfunction", "qty": 1 },
-            { "name": "Vandalblast", "qty": 1 },
-            { "name": "Volcanic Vision", "qty": 1 },
-            { "name": "Zuko's Exile", "qty": 1 }
-          ]
-        },
-        {
-          "name": "Win Conditions",
-          "cards": [
-            { "name": "Chandra's Ignition", "qty": 1 },
-            { "name": "Crackle with Power", "qty": 1 },
-            { "name": "Electrodominance", "qty": 1 },
-            { "name": "Fiery Emancipation", "qty": 1 },
-            { "name": "Fiery Inscription", "qty": 1 },
-            { "name": "Jaya's Immolating Inferno", "qty": 1 },
-            { "name": "Longshot, Rebel Bowman", "qty": 1 },
-            { "name": "Storm King's Thunder", "qty": 1 },
-            { "name": "Thor, God of Thunder", "qty": 1 }
-          ]
-        }
-      ]
-    },
     "b4": {
       "label": "B4",
       "kind": "deck",
@@ -165,11 +24,10 @@
             { "name": "City of Traitors", "qty": 1 },
             { "name": "Forge of Heroes", "qty": 1 },
             { "name": "Mines of Moria", "qty": 1 },
-            { "name": "Mountain", "qty": 18 },
+            { "name": "Mountain", "qty": 19 },
             { "name": "Shatterskull Smashing", "qty": 1 },
             { "name": "Tyrite Sanctum", "qty": 1 },
-            { "name": "Valakut Awakening", "qty": 1 },
-            { "name": "Valakut, the Molten Pinnacle", "qty": 1 }
+            { "name": "Valakut Awakening", "qty": 1 }
           ]
         },
         {
@@ -189,8 +47,10 @@
             { "name": "Pyretic Ritual", "qty": 1 },
             { "name": "Ruby Medallion", "qty": 1 },
             { "name": "Seething Song", "qty": 1 },
+            { "name": "Simian Spirit Guide", "qty": 1 },
             { "name": "Sol Ring", "qty": 1 },
-            { "name": "The Fire Crystal", "qty": 1 }
+            { "name": "The Fire Crystal", "qty": 1 },
+            { "name": "Treasonous Ogre", "qty": 1 }
           ]
         },
         {
@@ -200,6 +60,7 @@
             { "name": "Birgi, God of Storytelling", "qty": 1 },
             { "name": "Electro, Assaulting Battery", "qty": 1 },
             { "name": "Neheb, the Eternal", "qty": 1 },
+            { "name": "Runaway Steam-Kin", "qty": 1 },
             { "name": "Storm-Kiln Artist", "qty": 1 }
           ]
         },
@@ -210,8 +71,7 @@
             { "name": "Coral Sword", "qty": 1 },
             { "name": "Hero's Blade", "qty": 1 },
             { "name": "Inventor's Axe", "qty": 1 },
-            { "name": "Monstrous Rage", "qty": 1 },
-            { "name": "Runechanter's Pike", "qty": 1 }
+            { "name": "Monstrous Rage", "qty": 1 }
           ]
         },
         {
@@ -223,7 +83,6 @@
         {
           "name": "Doublers — X-spells and power doublers",
           "cards": [
-            { "name": "Bionic Blow", "qty": 1 },
             { "name": "Bulk Up", "qty": 1 },
             { "name": "Comet Storm", "qty": 1 },
             { "name": "Commune with Lava", "qty": 1 },
@@ -239,10 +98,9 @@
         {
           "name": "Copy and recur",
           "cards": [
-            { "name": "Arcane Bombardment", "qty": 1 },
+            { "name": "Bonus Round", "qty": 1 },
             { "name": "Increasing Vengeance", "qty": 1 },
             { "name": "Past in Flames", "qty": 1 },
-            { "name": "Pyromancer's Goggles", "qty": 1 },
             { "name": "Reiterate", "qty": 1 },
             { "name": "Repeated Reverberation", "qty": 1 },
             { "name": "Return the Favor", "qty": 1 },
@@ -255,9 +113,9 @@
           "cards": [
             { "name": "Big Score", "qty": 1 },
             { "name": "Faithless Looting", "qty": 1 },
-            { "name": "Gamble", "qty": 1 },
             { "name": "Hex Magic", "qty": 1 },
             { "name": "Ignite the Future", "qty": 1 },
+            { "name": "Inspired Tinkering", "qty": 1 },
             { "name": "Jeska's Will", "qty": 1 },
             { "name": "The One Ring", "qty": 1 },
             { "name": "Unexpected Windfall", "qty": 1 },
@@ -270,7 +128,7 @@
             { "name": "Chandra's Ignition", "qty": 1 },
             { "name": "Longshot, Rebel Bowman", "qty": 1 },
             { "name": "Solphim, Mayhem Dominus", "qty": 1 },
-            { "name": "Thor, God of Thunder", "qty": 1 }
+            { "name": "Soul's Fire", "qty": 1 }
           ]
         },
         {
@@ -287,8 +145,8 @@
           "name": "Removal & interaction",
           "cards": [
             { "name": "Chaos Warp", "qty": 1 },
-            { "name": "Untimely Malfunction", "qty": 1 },
-            { "name": "Vandalblast", "qty": 1 }
+            { "name": "Fiery Confluence", "qty": 1 },
+            { "name": "Untimely Malfunction", "qty": 1 }
           ]
         },
         {
@@ -454,52 +312,73 @@
     }
   },
   "cards": {
+    "Apex of Power": { "printing": {"set":"m19","collectorNumber":"129"} },
     "Arcane Bombardment": { "status": "BUY", "printing": {"set":"snc","collectorNumber":"101"} },
     "Arcane Signet": { "status": "BUY", "printing": {"set":"fic","collectorNumber":"332"} },
     "Arena of Glory": { "status": "PROXY", "printing": {"set":"mh3","collectorNumber":"215"} },
     "Artist's Talent": { "status": "BUY", "note": "3rd cost reducer", "printing": {"set":"blb","collectorNumber":"124"} },
     "Ashling, Flame Dancer": { "status": "BUY", "printing": {"set":"mh3","collectorNumber":"115"} },
     "Big Score": { "status": "BUY", "printing": {"set":"snc","collectorNumber":"102"} },
-    "Birgi, God of Storytelling": { "note": "~$33" },
+    "Birgi, God of Storytelling": { "note": "~$33", "printing": {"set":"khm","collectorNumber":"123"} },
     "Blackblade Reforged": { "status": "BUY", "printing": {"set":"cmr","collectorNumber":"457"} },
+    "Blazing Crescendo": { "printing": {"set":"msh","collectorNumber":"340"} },
     "Boltwave": { "status": "BUY", "printing": {"set":"fdn","collectorNumber":"79"} },
+    "Bonesplitter": { "printing": {"set":"cmr","collectorNumber":"458"} },
     "Brass's Bounty": { "status": "BUY", "printing": {"set":"rix","collectorNumber":"94"} },
     "Bulk Up": { "printing": {"set":"fdn","collectorNumber":"80"} },
     "Castle Embereth": { "status": "PROXY", "printing": {"set":"tdc","collectorNumber":"347"} },
     "Champion's Helm": { "status": "BUY", "printing": {"set":"fic","collectorNumber":"337"} },
     "Chandra's Ignition": { "status": "PROXY", "printing": {"set":"lcc","collectorNumber":"220"} },
     "Chaos Warp": { "status": "OWNED", "note": "no Scryfall price; `mar #69` is the House of M art", "printing": {"set":"mar","collectorNumber":"69"} },
+    "Chrome Mox": { "printing": {"set":"2xm","collectorNumber":"240"} },
+    "City of Traitors": { "printing": {"set":"olgc","collectorNumber":"2019NA"} },
+    "Comet Storm": { "printing": {"set":"mm2","collectorNumber":"111"} },
     "Commander's Plate": { "status": "PROXY", "printing": {"set":"cmr","collectorNumber":"305"} },
     "Commune with Lava": { "status": "BUY", "printing": {"set":"c20","collectorNumber":"149"} },
     "Conqueror's Flail": { "status": "BUY", "note": "lockout: opponents can't cast spells during your turn", "printing": {"set":"fic","collectorNumber":"340"} },
+    "Coral Sword": { "printing": {"set":"fin","collectorNumber":"134"} },
     "Crackle with Power": { "status": "PROXY", "printing": {"set":"stx","collectorNumber":"95"} },
     "Deflecting Swat": { "status": "PROXY", "printing": {"set":"cmm","collectorNumber":"214"} },
     "Desperate Ritual": { "status": "BUY", "printing": {"set":"uma","collectorNumber":"127"} },
     "Disrupt Decorum": { "status": "BUY", "printing": {"set":"clb","collectorNumber":"789"} },
     "Electro, Assaulting Battery": { "status": "BUY", "printing": {"set":"spm","collectorNumber":"76"} },
     "Electrodominance": { "status": "BUY", "printing": {"set":"rna","collectorNumber":"99"} },
+    "Explosive Welcome": { "printing": {"set":"stx","collectorNumber":"100"} },
+    "Faithless Looting": { "printing": {"set":"plst","collectorNumber":"OTC-165"} },
     "Fated Firepower": { "status": "BUY", "printing": {"set":"tla","collectorNumber":"132"} },
     "Fiery Confluence": { "status": "BUY", "printing": {"set":"tle","collectorNumber":"165"} },
     "Fiery Emancipation": { "status": "PROXY", "note": "— *tripler; {1}{R}{R}{R} with Ruby + Longshot*", "printing": {"set":"m21","collectorNumber":"366"} },
     "Fiery Inscription": { "status": "BUY", "printing": {"set":"ltr","collectorNumber":"126"} },
     "Forge of Heroes": { "status": "PROXY", "printing": {"set":"fic","collectorNumber":"395"} },
+    "Frantic Confrontation": { "printing": {"set":"tle","collectorNumber":"117"} },
     "Gamble": { "status": "PROXY", "note": "🔶GC", "printing": {"set":"dmr","collectorNumber":"121"} },
     "Gauntlet of Power": { "status": "BUY", "note": "every Mountain taps for {R}{R}", "printing": {"set":"dmr","collectorNumber":"223"} },
+    "Grim Monolith": { "printing": {"set":"ulg","collectorNumber":"126"} },
     "Guttersnipe": { "status": "BUY", "printing": {"set":"tdc","collectorNumber":"217"} },
+    "Hero's Blade": { "printing": {"set":"frf","collectorNumber":"160"} },
     "Hex Magic": { "status": "BUY", "printing": {"set":"msh","collectorNumber":"133"} },
     "Hit the Mother Lode": { "status": "BUY", "printing": {"set":"lci","collectorNumber":"153"} },
     "Ignite the Future": { "status": "BUY", "printing": {"set":"afc","collectorNumber":"129"} },
-    "Inspired Tinkering": { "status": "BUY", "printing": {"set":"clb","collectorNumber":"183"} },
+    "Increasing Vengeance": { "printing": {"set":"c19","collectorNumber":"147"} },
+    "Inspired Tinkering": { "status": "BUY", "printing": {"set":"plst","collectorNumber":"CLB-183"} },
+    "Inventor's Axe": { "printing": {"set":"mh3","collectorNumber":"126"} },
     "Jaya's Immolating Inferno": { "status": "BUY", "note": "— *second table-killer; needs a legendary, which Wanda always is*", "printing": {"set":"dom","collectorNumber":"133"} },
     "Jeska's Will": { "status": "PROXY", "note": "🔶GC", "printing": {"set":"clb","collectorNumber":"799"} },
     "Kazuul, Tyrant of the Cliffs": { "status": "BUY", "note": "the deck's only permanent defence", "printing": {"set":"scd","collectorNumber":"148"} },
+    "Lion's Eye Diamond": { "printing": {"set":"mir","collectorNumber":"307"} },
     "Livaan, Cultist of Tiamat": { "status": "BUY", "note": "*the key engine card, 23 cents*", "printing": {"set":"clb","collectorNumber":"188"} },
     "Longshot, Rebel Bowman": { "status": "BUY", "printing": {"set":"tle","collectorNumber":"120"} },
+    "Lotus Petal": { "printing": {"set":"v09","collectorNumber":"7"} },
+    "Lunar Frenzy": { "printing": {"set":"mid","collectorNumber":"147"} },
     "Mana Geyser": { "status": "BUY", "printing": {"set":"cns","collectorNumber":"147"} },
+    "Mana Vault": { "printing": {"set":"2x2","collectorNumber":"308"} },
     "Mines of Moria": { "status": "PROXY", "printing": {"set":"ltr","collectorNumber":"257"} },
     "Mithril Coat": { "status": "PROXY", "note": "no Scryfall price; typically single digits", "printing": {"set":"ltr","collectorNumber":"245"} },
     "Mizzix's Mastery": { "status": "BUY", "printing": {"set":"rvr","collectorNumber":"118"} },
+    "Monstrous Rage": { "printing": {"set":"woe","collectorNumber":"142"} },
     "Mountain": { "status": "PROXY", "printing": {"set":"thb","collectorNumber":"253"} },
+    "Mox Amber": { "printing": {"set":"dom","collectorNumber":"224"} },
+    "Mox Diamond": { "printing": {"set":"v10","collectorNumber":"10"} },
     "Neheb, the Eternal": { "status": "PROXY", "printing": {"set":"cmm","collectorNumber":"244"} },
     "Nico Minoru, Runaway": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"700"} },
     "Nykthos, Shrine to Nyx": { "status": "PROXY", "printing": {"set":"ppro","collectorNumber":"2022-3"} },
@@ -507,6 +386,7 @@
     "Pyretic Ritual": { "status": "BUY", "printing": {"set":"sld","collectorNumber":"1064"} },
     "Pyromancer's Goggles": { "status": "BUY", "printing": {"set":"fdn","collectorNumber":"677"} },
     "Reforge the Soul": { "status": "BUY", "note": "— *kept as hand denial, the pilot's call 2026-08-21*", "printing": {"set":"inr","collectorNumber":"167"} },
+    "Reiterate": { "printing": {"set":"tsr","collectorNumber":"182"} },
     "Repeated Reverberation": { "status": "BUY", "printing": {"set":"m20","collectorNumber":"156"} },
     "Return the Favor": { "status": "BUY", "printing": {"set":"otj","collectorNumber":"142"} },
     "Rogue's Passage": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"C17-272"} },
@@ -514,7 +394,9 @@
     "Runechanter's Pike": { "status": "BUY", "printing": {"set":"isd","collectorNumber":"231"} },
     "Seething Song": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"C21-179"} },
     "Shatterskull Smashing": { "status": "PROXY", "printing": {"set":"znr","collectorNumber":"161"} },
+    "Simian Spirit Guide": { "printing": {"set":"tsr","collectorNumber":"190"} },
     "Sol Ring": { "status": "BUY", "printing": {"set":"sld","collectorNumber":"2683"} },
+    "Solphim, Mayhem Dominus": { "printing": {"set":"one","collectorNumber":"150"} },
     "Storm King's Thunder": { "status": "BUY", "printing": {"set":"clb","collectorNumber":"196"} },
     "Storm-Kiln Artist": { "status": "BUY", "printing": {"set":"cmm","collectorNumber":"644"} },
     "The Fire Crystal": { "status": "BUY", "note": "second Ruby Medallion; {R}{R} floor, so 3 mana in practice", "printing": {"set":"fin","collectorNumber":"135"} },
@@ -523,7 +405,9 @@
     "The Vision and Scarlet Witch": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"707"} },
     "Thor, God of Thunder": { "status": "PROXY", "printing": {"set":"msh","collectorNumber":"156"} },
     "Tyrite Sanctum": { "status": "PROXY", "printing": {"set":"dmc","collectorNumber":"240"} },
+    "Underworld Breach": { "printing": {"set":"thb","collectorNumber":"161"} },
     "Unexpected Windfall": { "status": "BUY", "printing": {"set":"afr","collectorNumber":"164"} },
+    "Unleash Fury": { "printing": {"set":"m21","collectorNumber":"170"} },
     "Untimely Malfunction": { "status": "PROXY", "printing": {"set":"dsk","collectorNumber":"161"} },
     "Urabrask": { "status": "PROXY", "note": "~$17", "printing": {"set":"mom","collectorNumber":"169"} },
     "Valakut Awakening": { "status": "PROXY", "printing": {"set":"znr","collectorNumber":"174"} },

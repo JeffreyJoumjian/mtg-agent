@@ -55,7 +55,6 @@
           "cards": [
             { "name": "Arcane Signet", "qty": 1 },
             { "name": "Dark Ritual", "qty": 1 },
-            { "name": "Fellwar Stone", "qty": 1 },
             { "name": "Grim Monolith", "qty": 1 },
             { "name": "Jet Medallion", "qty": 1 },
             { "name": "Mana Vault", "qty": 1 },
@@ -141,6 +140,7 @@
             { "name": "Manabarbs", "qty": 1 },
             { "name": "Mogis, God of Slaughter", "qty": 1 },
             { "name": "Painful Quandary", "qty": 1 },
+            { "name": "Powerbalance", "qty": 1 },
             { "name": "Vial Smasher the Fierce", "qty": 1 }
           ]
         },
@@ -228,7 +228,6 @@
             { "name": "Arcane Signet", "qty": 1 },
             { "name": "Basalt Monolith", "qty": 1 },
             { "name": "Dark Ritual", "qty": 1 },
-            { "name": "Fellwar Stone", "qty": 1 },
             { "name": "Jet Medallion", "qty": 1 },
             { "name": "Mind Stone", "qty": 1 },
             { "name": "Rakdos Signet", "qty": 1 },
@@ -313,6 +312,7 @@
             { "name": "Manabarbs", "qty": 1 },
             { "name": "Mogis, God of Slaughter", "qty": 1 },
             { "name": "Painful Quandary", "qty": 1 },
+            { "name": "Powerbalance", "qty": 1 },
             { "name": "Vial Smasher the Fierce", "qty": 1 }
           ]
         },

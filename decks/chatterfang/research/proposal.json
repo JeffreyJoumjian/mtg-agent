@@ -540,14 +540,51 @@
           "in": "Azusa, Lost but Seeking",
           "out": "Oracle of Mul Daya",
           "section": "Ramp & Mana",
-          "verdict": "pending",
+          "verdict": "kept",
           "axis": "the pilot's call: keep an extra-land card once Oracle goes",
           "grounds": "Pilot: Oracle's revealed top card *\"is putting a target on my back.\"* Azusa gives two extra land drops at MV 3, one less than Oracle.",
           "interactions": [
             "Dryad of the Ilysian Grove: three extra drops with both out",
             "Cultivate: the land it puts in hand is a spare land to use a drop on"
           ],
-          "cost": "**Measured against it before the pilot chose it.** A 40,000-game simulation (36 lands including 2 fetchlands, Cultivate and Sakura-Tribe Elder, on the play) gave **3.7 landfall triggers over turns 3 to 8 with Dryad alone, and 3.7 with Dryad + Azusa** (5.3 vs 5.4 with one extra card drawn per turn). Extra drops only fire with a spare land in hand, which happens 27% of the time on turn 4 and 16% on turn 5. Oracle supplied those lands from the top; Azusa doesn't. Verdict after play."
+          "cost": "**Measured against it before the pilot chose it.** A 40,000-game simulation (36 lands including 2 fetchlands, Cultivate and Sakura-Tribe Elder, on the play) gave **3.7 landfall triggers over turns 3 to 8 with Dryad alone, and 3.7 with Dryad + Azusa** (5.3 vs 5.4 with one extra card drawn per turn). Extra drops only fire with a spare land in hand, which happens 27% of the time on turn 4 and 16% on turn 5. Oracle supplied those lands from the top; Azusa doesn't. Verdict after play.",
+          "verdictWhy": "Pilot after play, 2026-10-15: she really helps with mana ramp. The wave 10 simulation found about zero added landfall triggers, but the play report outweighs it for now."
+        }
+      ]
+    },
+    {
+      "label": "Wave 11: a trial of Pest Infestation and Priest of Forgotten Gods",
+      "status": "applied",
+      "note": "Applied to upgrade-test 2026-10-15 as a trial. The pilot picked both swaps and kept Azusa and Dryad of the Ilysian Grove over my first nominations. Measured after: avg MV 2.97 → 2.92 by the tools (about 2.99 with Pest Infestation costed at 5), **MV≤2 24 → 26, MV≤3 48 → 48**. Token Engines 15 → 16, Card Draw 6 → 5, Sacrifice Outlets 5 → 5. **Undo:** Woe Strider back for Priest of Forgotten Gods (or for Pest Infestation), and Black Market Connections back for Pest Infestation.",
+      "swaps": [
+        {
+          "in": "Pest Infestation",
+          "out": "Black Market Connections",
+          "section": "Token Engines",
+          "verdict": "pending",
+          "axis": "a burst seed against a fixed one-token-a-turn seed",
+          "grounds": "Wave 10 found ten multipliers against six seeds, and every seed except one made a single token per turn. Pest Infestation is a seed you size: **X=2 is 5 mana for 4 Pests plus 4 Squirrels**, X=3 is 7 mana for 6 plus 6. It is one creation event, so Mirkwood Bats and Prosperous Innkeeper each fire per body. Each Pest that dies gains 1 life, a separate event for Dina, Starscape Cleric and Vito. The destroy half is \"up to X\", so zero targets is legal and the list's own artifacts and enchantments are safe.",
+          "interactions": [
+            "Chatterfang, Squirrel General: one Squirrel per Pest",
+            "Doubling Season and Parallel Lives: double the Pests",
+            "Dina, Starscape Cleric, Vito: a lifegain event per Pest death",
+            "Priest of Forgotten Gods: sacrificing two Pests is two deaths and two life gains"
+          ],
+          "cost": "**Black Market Connections is one of two permanents here that draw with an empty board** (the other is Sylvan Library), survives a creature wipe, makes up to four tokens a turn with Chatterfang, and is one of the 12 artifact-token sources behind Marionette Apprentice. Card Draw drops to 5 slots. Pest Infestation is a sorcery that every stats tool counts at MV 1 while it costs 5 to 7. The pilot made this call knowing both."
+        },
+        {
+          "in": "Priest of Forgotten Gods",
+          "out": "Woe Strider",
+          "section": "Sacrifice Outlets",
+          "verdict": "pending",
+          "axis": "what each activation is worth against how soon it works",
+          "grounds": "A 2 MV outlet at instant speed. Tap and sacrifice two other creatures: each target opponent loses 2 and sacrifices a creature of their choice, and you add {B}{B} and draw a card. Two sacrifices are two deaths, so every per-death payoff fires twice. It is an edict and not a wipe. No card in the list untaps it, so it activates once per turn and makes no new loop.",
+          "interactions": [
+            "Blood Artist, Zulaport Cutthroat, Bastion of Remembrance, Cauldron of Essence, Mirkwood Bats, Nadier's Nightblade, Marionette Apprentice: each fires per sacrificed token",
+            "Dina, Starscape Cleric, Vito: the life each payoff gains",
+            "Gardenize: a charge counter per death"
+          ],
+          "cost": "Priest needs two other creatures and a turn to lose summoning sickness, where Woe Strider worked the turn it landed. The chance of having seen a no-mana outlet by turn 4 stays at 48.1%, but the usable number is lower. Woe Strider and Ashnod's Altar were the only unlimited outlets with no mana or life cost. The pilot's rule: if the sacrifice outlets struggle, Woe Strider comes back."
         }
       ]
     }

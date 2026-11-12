@@ -1,0 +1,407 @@
+{
+  "takenAt": "2026-10-14T09:34:41.878Z",
+  "listId": "b4",
+  "label": "Infantry Shield in, Treasonous Ogre out",
+  "reason": "before Infantry Shield in, Treasonous Ogre out",
+  "list": {
+    "label": "Bracket 4 turbo",
+    "kind": "deck",
+    "bracket": 4,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "The Vision and Scarlet Witch",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Ancient Tomb",
+            "qty": 1
+          },
+          {
+            "name": "Cavern of Souls",
+            "qty": 1
+          },
+          {
+            "name": "City of Traitors",
+            "qty": 1
+          },
+          {
+            "name": "Command Beacon",
+            "qty": 1
+          },
+          {
+            "name": "Fire Nation Palace",
+            "qty": 1
+          },
+          {
+            "name": "Mountain",
+            "qty": 20
+          },
+          {
+            "name": "Shatterskull Smashing",
+            "qty": 1
+          },
+          {
+            "name": "Sokenzan, Crucible of Defiance",
+            "qty": 1
+          },
+          {
+            "name": "Valakut Awakening",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Fast Mana",
+        "cards": [
+          {
+            "name": "Chrome Mox",
+            "qty": 1
+          },
+          {
+            "name": "Grim Monolith",
+            "qty": 1
+          },
+          {
+            "name": "Lion's Eye Diamond",
+            "qty": 1
+          },
+          {
+            "name": "Lotus Petal",
+            "qty": 1
+          },
+          {
+            "name": "Mana Vault",
+            "qty": 1
+          },
+          {
+            "name": "Mox Amber",
+            "qty": 1
+          },
+          {
+            "name": "Mox Diamond",
+            "qty": 1
+          },
+          {
+            "name": "Ruby Medallion",
+            "qty": 1
+          },
+          {
+            "name": "Simian Spirit Guide",
+            "qty": 1
+          },
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Rituals",
+        "cards": [
+          {
+            "name": "Desperate Ritual",
+            "qty": 1
+          },
+          {
+            "name": "Jeska's Will",
+            "qty": 1
+          },
+          {
+            "name": "Mana Geyser",
+            "qty": 1
+          },
+          {
+            "name": "Pyretic Ritual",
+            "qty": 1
+          },
+          {
+            "name": "Rite of Flame",
+            "qty": 1
+          },
+          {
+            "name": "Seething Song",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Mana Engines",
+        "cards": [
+          {
+            "name": "Ashling, Flame Dancer",
+            "qty": 1
+          },
+          {
+            "name": "Birgi, God of Storytelling",
+            "qty": 1
+          },
+          {
+            "name": "Electro, Assaulting Battery",
+            "qty": 1
+          },
+          {
+            "name": "Runaway Steam-Kin",
+            "qty": 1
+          },
+          {
+            "name": "Storm-Kiln Artist",
+            "qty": 1
+          },
+          {
+            "name": "Treasonous Ogre",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Copy & Recursion",
+        "cards": [
+          {
+            "name": "Increasing Vengeance",
+            "qty": 1
+          },
+          {
+            "name": "Past in Flames",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Cantrips",
+        "cards": [
+          {
+            "name": "Ancestral Anger",
+            "qty": 1
+          },
+          {
+            "name": "Chromatic Star",
+            "qty": 1
+          },
+          {
+            "name": "Crash Through",
+            "qty": 1
+          },
+          {
+            "name": "Crimson Wisps",
+            "qty": 1
+          },
+          {
+            "name": "Expedite",
+            "qty": 1
+          },
+          {
+            "name": "Fists of Flame",
+            "qty": 1
+          },
+          {
+            "name": "Impolite Entrance",
+            "qty": 1
+          },
+          {
+            "name": "Might of the Meek",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw",
+        "cards": [
+          {
+            "name": "Artist's Talent",
+            "qty": 1
+          },
+          {
+            "name": "Big Score",
+            "qty": 1
+          },
+          {
+            "name": "Faithless Looting",
+            "qty": 1
+          },
+          {
+            "name": "Hex Magic",
+            "qty": 1
+          },
+          {
+            "name": "The One Ring",
+            "qty": 1
+          },
+          {
+            "name": "Thrill of Possibility",
+            "qty": 1
+          },
+          {
+            "name": "Unexpected Windfall",
+            "qty": 1
+          },
+          {
+            "name": "Vision of Love",
+            "qty": 1
+          },
+          {
+            "name": "Wheel of Fortune",
+            "qty": 1
+          },
+          {
+            "name": "Wrenn's Resolve",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Converters — spells into damage",
+        "cards": [
+          {
+            "name": "Coruscation Mage",
+            "qty": 1
+          },
+          {
+            "name": "Firebrand Archer",
+            "qty": 1
+          },
+          {
+            "name": "Grapeshot",
+            "qty": 1
+          },
+          {
+            "name": "Guttersnipe",
+            "qty": 1
+          },
+          {
+            "name": "Kessig Flamebreather",
+            "qty": 1
+          },
+          {
+            "name": "Longshot, Rebel Bowman",
+            "qty": 1
+          },
+          {
+            "name": "Thermo-Alchemist",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Win Conditions",
+        "cards": [
+          {
+            "name": "Aetherflux Reservoir",
+            "qty": 1
+          },
+          {
+            "name": "Chandra's Ignition",
+            "qty": 1
+          },
+          {
+            "name": "Crackle with Power",
+            "qty": 1
+          },
+          {
+            "name": "Impact Tremors",
+            "qty": 1
+          },
+          {
+            "name": "Soul's Fire",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Protection",
+        "cards": [
+          {
+            "name": "Conqueror's Flail",
+            "qty": 1
+          },
+          {
+            "name": "Deflecting Swat",
+            "qty": 1
+          },
+          {
+            "name": "Hexing Squelcher",
+            "qty": 1
+          },
+          {
+            "name": "Pyroblast",
+            "qty": 1
+          },
+          {
+            "name": "Swiftfoot Boots",
+            "qty": 1
+          },
+          {
+            "name": "Untimely Malfunction",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Removal",
+        "cards": [
+          {
+            "name": "Chaos Warp",
+            "qty": 1
+          },
+          {
+            "name": "Fiery Confluence",
+            "qty": 1
+          },
+          {
+            "name": "Lightning Bolt",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Combo Pieces",
+        "cards": [
+          {
+            "name": "Dualcaster Mage",
+            "qty": 1
+          },
+          {
+            "name": "Grinning Ignus",
+            "qty": 1
+          },
+          {
+            "name": "Haze of Rage",
+            "qty": 1
+          },
+          {
+            "name": "Molten Duplication",
+            "qty": 1
+          },
+          {
+            "name": "Reiterate",
+            "qty": 1
+          },
+          {
+            "name": "Underworld Breach",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Tutors",
+        "cards": [
+          {
+            "name": "Gamble",
+            "qty": 1
+          },
+          {
+            "name": "Imperial Recruiter",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

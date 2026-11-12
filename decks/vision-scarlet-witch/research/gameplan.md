@@ -20,11 +20,11 @@ is +8/+8 at the end of it. Nobody needed to attack.
 ## The three numbers you track
 
 1. **Cards in hand.** The cantrips are card-neutral; the draw spells (Looting, Big Score, Hex
-   Magic, Wheel, Vision, Cube) are what keep the chain going. Cast Hex Magic with cards in hand — it
+   Magic, Wheel, Vision, Powerbalance) are what keep the chain going. Cast Hex Magic with cards in hand — it
    exiles the hand and redraws that many; at zero cards it does nothing.
 2. **Red in the pool.** Under a bank it never empties (CR 106.4). Announce it every time you pass
-   priority (CR 106.4b). Braid of Fire pays one more {R} into the bank every upkeep. Under Emancipation, Ancient Tomb deals 6 — stop tapping it — with no bank
-   out its mana vanishes unless you cast an instant in your upkeep.
+   priority (CR 106.4b). Rite of Flame nets two red with her out: you pay {R}, it adds {R}{R}
+   and her trigger adds {R}. Under Emancipation, Ancient Tomb deals 6, so stop tapping it.
 3. **Her power.** Base 3. One counter from every spell (two under Roaming Throne), Forge of Heroes the turn she lands, Tyrite
    Sanctum each turn, Blackblade +1 per land, Champion's Helm +2, Plate +3, Embercleave +1.
 
@@ -88,8 +88,13 @@ Precombat, in this order:
 **Wanda's Vision:** your **second** spell each turn casts a random nonland card free — on opponents'
    turns too (two instants). A Crackle hit is X = 0; a card you decline stays exiled.
 
-**Cosmic Cube:** every attack, look at six and cast one with mana value up to her power, free — any
-   card type, mid-combat (CR 608.2g). Cast Ignition or a multiplier off it before blockers.
+**Powerbalance:** whenever an opponent casts a spell, you may reveal your top card and cast it free
+   if its mana value matches theirs. The free spell goes on the stack above theirs (CR 608.2g) and
+   counts as your cast, so she gets her counter and {R} and every pinger fires. Its mana lasts the
+   whole step (CR 106.4), so an instant in hand can spend it right away. Decline Crackle, because a
+   free cast locks X at 0; it stays on top and you draw it. A card that doesn't match also stays on
+   top, and every reveal shows the table your next draw. The free spell plus one instant from your
+   hand makes two spells that turn, which also triggers Wanda's Vision.
 
 **Origin of Thor script:** cast it the turn *before* the storm turn. Chapter II fires on the storm
    turn (a counter per spell, on top of her own), chapter III the turn after: her power to each

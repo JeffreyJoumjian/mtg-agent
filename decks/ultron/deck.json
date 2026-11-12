@@ -58,8 +58,8 @@
             { "name": "Mox Opal", "qty": 1 },
             { "name": "Palladium Myr", "qty": 1 },
             { "name": "Sol Ring", "qty": 1 },
+            { "name": "Tezzeret, Cruel Captain", "qty": 1 },
             { "name": "The Mightstone and Weakstone", "qty": 1 },
-            { "name": "Thought Vessel", "qty": 1 },
             { "name": "Thran Dynamo", "qty": 1 },
             { "name": "Worn Powerstone", "qty": 1 }
           ]
@@ -95,7 +95,8 @@
             { "name": "Kozilek's Command", "qty": 1 },
             { "name": "Meteor Golem", "qty": 1 },
             { "name": "Ugin, Eye of the Storms", "qty": 1 },
-            { "name": "Ugin, the Ineffable", "qty": 1 }
+            { "name": "Ugin, the Ineffable", "qty": 1 },
+            { "name": "Ugin, the Spirit Dragon", "qty": 1 }
           ]
         },
         {
@@ -113,7 +114,6 @@
         {
           "name": "Deployers",
           "cards": [
-            { "name": "Quicksilver Amulet", "qty": 1 },
             { "name": "Thran Temporal Gateway", "qty": 1 }
           ]
         },
@@ -179,13 +179,14 @@
     "Duplicant": { "status": "PROXY" },
     "Echoes of Eternity": { "status": "PROXY" },
     "Eldrazi Confluence": { "status": "PROXY" },
-    "Extraplanar Lens": { "status": "PROXY" },
+    "Extraplanar Lens": { "status": "PROXY", "printing": {"set":"cmm","collectorNumber":"381"} },
     "Fomori Vault": { "status": "PROXY" },
     "Forsaken Monument": { "status": "PROXY" },
     "Foundry Inspector": { "status": "PROXY" },
     "Gilded Lotus": { "status": "PROXY" },
     "Glaring Fleshraker": { "status": "PROXY" },
-    "Hangarback Walker": { "status": "PROXY" },
+    "Hall of Echoes": { "printing": {"set":"fra","collectorNumber":"179"} },
+    "Hangarback Walker": { "status": "PROXY", "printing": {"set":"ori","collectorNumber":"229"} },
     "Hedron Archive": { "status": "PROXY" },
     "Idol of Oblivion": { "status": "PROXY" },
     "Inventors' Fair": { "status": "PROXY" },
@@ -196,10 +197,11 @@
     "Krang, Utrom Warlord": { "status": "PROXY", "note": "💰" },
     "Kuldotha Forgemaster": { "status": "PROXY" },
     "Liberator, Urza's Battlethopter": { "status": "PROXY" },
-    "Marvin, Murderous Mimic": { "status": "PROXY" },
+    "Marvin, Murderous Mimic": { "status": "PROXY", "printing": {"set":"dsk","collectorNumber":"253"} },
+    "Memnarch, the Warden": { "printing": {"set":"frc","collectorNumber":"15"} },
     "Meteor Golem": { "status": "PROXY" },
     "Mind Stone": { "status": "PROXY" },
-    "Mind's Eye": { "status": "PROXY" },
+    "Mind's Eye": { "status": "PROXY", "printing": {"set":"fdc","collectorNumber":"272"} },
     "Mirror Box": { "status": "PROXY" },
     "Mirrorpool": { "status": "PROXY" },
     "Mirrorworks": { "status": "PROXY" },
@@ -209,14 +211,15 @@
     "Myr Battlesphere": { "status": "PROXY" },
     "Mystic Forge": { "status": "PROXY" },
     "Null Elemental Blast": { "status": "PROXY" },
-    "Omnath, Locus of the Void": { "printing": {"set":"frc","collectorNumber":"88"} },
+    "Omnath, Locus of the Void": { "printing": {"set":"frc","collectorNumber":"3"} },
     "Palladium Myr": { "status": "PROXY" },
     "Panharmonicon": { "status": "PROXY" },
-    "Platinum Angel": { "status": "PROXY" },
+    "Planar Nexus": { "printing": {"set":"m3c","collectorNumber":"132"} },
+    "Platinum Angel": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"CN2-214"} },
     "Portal to Phyrexia": { "status": "PROXY", "note": "💰" },
     "Power Depot": { "status": "PROXY" },
     "Prototype Portal": { "status": "PROXY" },
-    "Quicksilver Amulet": { "status": "PROXY" },
+    "Quicksilver Amulet": { "status": "PROXY", "printing": {"set":"e02","collectorNumber":"44"} },
     "Roaming Throne": { "status": "PROXY", "note": "💰" },
     "Rogue's Passage": { "status": "PROXY" },
     "Sanctum of Ugin": { "status": "PROXY" },
@@ -234,7 +237,7 @@
     "Thespian's Stage": { "status": "PROXY" },
     "Thought Vessel": { "status": "PROXY" },
     "Thran Dynamo": { "status": "PROXY" },
-    "Thran Temporal Gateway": { "status": "PROXY" },
+    "Thran Temporal Gateway": { "status": "PROXY", "printing": {"set":"dom","collectorNumber":"233"} },
     "Treasure Vault": { "status": "PROXY" },
     "Ugin, Eye of the Storms": { "status": "PROXY", "note": "💰" },
     "Ugin, the Ineffable": { "status": "PROXY" },
@@ -252,7 +255,7 @@
     "Walking Ballista": { "status": "PROXY" },
     "War Room": { "status": "PROXY" },
     "Wastes": { "status": "PROXY" },
-    "Worn Powerstone": { "status": "PROXY" },
+    "Worn Powerstone": { "status": "PROXY", "printing": {"set":"cmm","collectorNumber":"984"} },
     "Wurmcoil Engine": { "status": "PROXY" }
   }
 }

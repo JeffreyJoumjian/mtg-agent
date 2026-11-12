@@ -1,0 +1,20 @@
+{
+  "takenAt": "2026-11-03T20:08:27.447Z",
+  "listId": "b4-pool",
+  "label": "Founded: Bracket 4 pool (held hate pieces and alternates)",
+  "reason": "before Founded: Bracket 4 pool (held hate pieces and alternates)",
+  "list": {
+    "label": "Bracket 4 pool",
+    "kind": "pool",
+    "sections": [
+      {
+        "name": "Stax & Hate (held)",
+        "cards": []
+      },
+      {
+        "name": "Alternates",
+        "cards": []
+      }
+    ]
+  }
+}

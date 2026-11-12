@@ -49,6 +49,7 @@
             { "name": "Jeska's Will", "qty": 1 },
             { "name": "Mana Geyser", "qty": 1 },
             { "name": "Pyretic Ritual", "qty": 1 },
+            { "name": "Rite of Flame", "qty": 1 },
             { "name": "Seething Song", "qty": 1 }
           ]
         },
@@ -57,7 +58,6 @@
           "cards": [
             { "name": "Ashling, Flame Dancer", "qty": 1 },
             { "name": "Birgi, God of Storytelling", "qty": 1 },
-            { "name": "Braid of Fire", "qty": 1 },
             { "name": "Electro, Assaulting Battery", "qty": 1 },
             { "name": "Leyline Tyrant", "qty": 1 }
           ]
@@ -74,7 +74,6 @@
           "name": "Cantrips",
           "cards": [
             { "name": "Ancestral Anger", "qty": 1 },
-            { "name": "Crash Through", "qty": 1 },
             { "name": "Crimson Wisps", "qty": 1 },
             { "name": "Fists of Flame", "qty": 1 },
             { "name": "Impolite Entrance", "qty": 1 },
@@ -88,6 +87,7 @@
             { "name": "Big Score", "qty": 1 },
             { "name": "Faithless Looting", "qty": 1 },
             { "name": "Hex Magic", "qty": 1 },
+            { "name": "Laughing Mad", "qty": 1 },
             { "name": "The One Ring", "qty": 1 },
             { "name": "Wheel of Fortune", "qty": 1 }
           ]
@@ -147,7 +147,7 @@
         {
           "name": "Free-Cast Engines",
           "cards": [
-            { "name": "Cosmic Cube", "qty": 1 },
+            { "name": "Powerbalance", "qty": 1 },
             { "name": "Wanda's Vision", "qty": 1 }
           ]
         },
@@ -338,89 +338,422 @@
           ]
         }
       ]
+    },
+    "b4": {
+      "label": "Bracket 4 turbo",
+      "kind": "deck",
+      "bracket": 4,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "The Vision and Scarlet Witch", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Ancient Tomb", "qty": 1 },
+            { "name": "Cavern of Souls", "qty": 1 },
+            { "name": "City of Traitors", "qty": 1 },
+            { "name": "Command Beacon", "qty": 1 },
+            { "name": "Fire Nation Palace", "qty": 1 },
+            { "name": "Mountain", "qty": 20 },
+            { "name": "Shatterskull Smashing", "qty": 1 },
+            { "name": "Sokenzan, Crucible of Defiance", "qty": 1 },
+            { "name": "Valakut Awakening", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Fast Mana",
+          "cards": [
+            { "name": "Chrome Mox", "qty": 1 },
+            { "name": "Grim Monolith", "qty": 1 },
+            { "name": "Lion's Eye Diamond", "qty": 1 },
+            { "name": "Lotus Petal", "qty": 1 },
+            { "name": "Mana Vault", "qty": 1 },
+            { "name": "Mox Amber", "qty": 1 },
+            { "name": "Mox Diamond", "qty": 1 },
+            { "name": "Ruby Medallion", "qty": 1 },
+            { "name": "Simian Spirit Guide", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Rituals",
+          "cards": [
+            { "name": "Desperate Ritual", "qty": 1 },
+            { "name": "Jeska's Will", "qty": 1 },
+            { "name": "Mana Geyser", "qty": 1 },
+            { "name": "Pyretic Ritual", "qty": 1 },
+            { "name": "Rite of Flame", "qty": 1 },
+            { "name": "Seething Song", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Mana Engines",
+          "cards": [
+            { "name": "Ashling, Flame Dancer", "qty": 1 },
+            { "name": "Birgi, God of Storytelling", "qty": 1 },
+            { "name": "Electro, Assaulting Battery", "qty": 1 },
+            { "name": "Runaway Steam-Kin", "qty": 1 },
+            { "name": "Storm-Kiln Artist", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Copy & Recursion",
+          "cards": [
+            { "name": "Increasing Vengeance", "qty": 1 },
+            { "name": "Past in Flames", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Cantrips",
+          "cards": [
+            { "name": "Ancestral Anger", "qty": 1 },
+            { "name": "Chromatic Star", "qty": 1 },
+            { "name": "Crash Through", "qty": 1 },
+            { "name": "Crimson Wisps", "qty": 1 },
+            { "name": "Expedite", "qty": 1 },
+            { "name": "Fists of Flame", "qty": 1 },
+            { "name": "Impolite Entrance", "qty": 1 },
+            { "name": "Might of the Meek", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Artist's Talent", "qty": 1 },
+            { "name": "Big Score", "qty": 1 },
+            { "name": "Faithless Looting", "qty": 1 },
+            { "name": "Hex Magic", "qty": 1 },
+            { "name": "The One Ring", "qty": 1 },
+            { "name": "Thrill of Possibility", "qty": 1 },
+            { "name": "Unexpected Windfall", "qty": 1 },
+            { "name": "Vision of Love", "qty": 1 },
+            { "name": "Wheel of Fortune", "qty": 1 },
+            { "name": "Wrenn's Resolve", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Converters — spells into damage",
+          "cards": [
+            { "name": "Coruscation Mage", "qty": 1 },
+            { "name": "Firebrand Archer", "qty": 1 },
+            { "name": "Grapeshot", "qty": 1 },
+            { "name": "Guttersnipe", "qty": 1 },
+            { "name": "Kessig Flamebreather", "qty": 1 },
+            { "name": "Longshot, Rebel Bowman", "qty": 1 },
+            { "name": "Thermo-Alchemist", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Win Conditions",
+          "cards": [
+            { "name": "Aetherflux Reservoir", "qty": 1 },
+            { "name": "Chandra's Ignition", "qty": 1 },
+            { "name": "Crackle with Power", "qty": 1 },
+            { "name": "Impact Tremors", "qty": 1 },
+            { "name": "Infantry Shield", "qty": 1 },
+            { "name": "Soul's Fire", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection",
+          "cards": [
+            { "name": "Conqueror's Flail", "qty": 1 },
+            { "name": "Deflecting Swat", "qty": 1 },
+            { "name": "Hexing Squelcher", "qty": 1 },
+            { "name": "Pyroblast", "qty": 1 },
+            { "name": "Swiftfoot Boots", "qty": 1 },
+            { "name": "Untimely Malfunction", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal",
+          "cards": [
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Fiery Confluence", "qty": 1 },
+            { "name": "Lightning Bolt", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Combo Pieces",
+          "cards": [
+            { "name": "Dualcaster Mage", "qty": 1 },
+            { "name": "Grinning Ignus", "qty": 1 },
+            { "name": "Haze of Rage", "qty": 1 },
+            { "name": "Molten Duplication", "qty": 1 },
+            { "name": "Reiterate", "qty": 1 },
+            { "name": "Underworld Breach", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Tutors",
+          "cards": [
+            { "name": "Gamble", "qty": 1 },
+            { "name": "Imperial Recruiter", "qty": 1 }
+          ]
+        }
+      ]
+    },
+    "b3-tokens": {
+      "label": "Bracket 3 tokens",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "The Vision and Scarlet Witch", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Ancient Tomb", "qty": 1 },
+            { "name": "Arena of Glory", "qty": 1 },
+            { "name": "Cavern of Souls", "qty": 1 },
+            { "name": "Command Beacon", "qty": 1 },
+            { "name": "Fire Nation Palace", "qty": 1 },
+            { "name": "Lindblum, Industrial Regency", "qty": 1 },
+            { "name": "Mountain", "qty": 20 },
+            { "name": "Rogue's Passage", "qty": 1 },
+            { "name": "Shatterskull Smashing", "qty": 1 },
+            { "name": "Sokenzan, Crucible of Defiance", "qty": 1 },
+            { "name": "Tyrite Sanctum", "qty": 1 },
+            { "name": "Valakut Awakening", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Rocks & Cost Reduction",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Mox Amber", "qty": 1 },
+            { "name": "Ruby Medallion", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "The Fire Crystal", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Rituals",
+          "cards": [
+            { "name": "Jeska's Will", "qty": 1 },
+            { "name": "Mana Geyser", "qty": 1 },
+            { "name": "Pyretic Ritual", "qty": 1 },
+            { "name": "Rite of Flame", "qty": 1 },
+            { "name": "Seething Song", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Mana Banking",
+          "cards": [
+            { "name": "Ashling, Flame Dancer", "qty": 1 },
+            { "name": "Birgi, God of Storytelling", "qty": 1 },
+            { "name": "Electro, Assaulting Battery", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Mana Engines",
+          "cards": [
+            { "name": "Neheb, the Eternal", "qty": 1 },
+            { "name": "Storm-Kiln Artist", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Cantrips",
+          "cards": [
+            { "name": "Ancestral Anger", "qty": 1 },
+            { "name": "Crash Through", "qty": 1 },
+            { "name": "Crimson Wisps", "qty": 1 },
+            { "name": "Fists of Flame", "qty": 1 },
+            { "name": "Impolite Entrance", "qty": 1 },
+            { "name": "Might of the Meek", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Artist's Talent", "qty": 1 },
+            { "name": "Big Score", "qty": 1 },
+            { "name": "Faithless Looting", "qty": 1 },
+            { "name": "Hex Magic", "qty": 1 },
+            { "name": "The One Ring", "qty": 1 },
+            { "name": "Wheel of Fortune", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Converters — spells into damage",
+          "cards": [
+            { "name": "Coruscation Mage", "qty": 1 },
+            { "name": "Fiery Inscription", "qty": 1 },
+            { "name": "Grapeshot", "qty": 1 },
+            { "name": "Guttersnipe", "qty": 1 },
+            { "name": "Kessig Flamebreather", "qty": 1 },
+            { "name": "Longshot, Rebel Bowman", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection",
+          "cards": [
+            { "name": "Champion's Helm", "qty": 1 },
+            { "name": "Commander's Plate", "qty": 1 },
+            { "name": "Conqueror's Flail", "qty": 1 },
+            { "name": "Deflecting Swat", "qty": 1 },
+            { "name": "Hexing Squelcher", "qty": 1 },
+            { "name": "Mithril Coat", "qty": 1 },
+            { "name": "Swiftfoot Boots", "qty": 1 },
+            { "name": "The Ozolith", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Growth & Voltron",
+          "cards": [
+            { "name": "Bulk Up", "qty": 1 },
+            { "name": "Embercleave", "qty": 1 },
+            { "name": "Infantry Shield", "qty": 1 },
+            { "name": "Roaming Throne", "qty": 1 },
+            { "name": "Shadowspear", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Copy & Recursion",
+          "cards": [
+            { "name": "Increasing Vengeance", "qty": 1 },
+            { "name": "Loki Laufeyson", "qty": 1 },
+            { "name": "Past in Flames", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Damage Multipliers",
+          "cards": [
+            { "name": "Fiery Emancipation", "qty": 1 },
+            { "name": "Twinflame Tyrant", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Free-Cast Engines",
+          "cards": [
+            { "name": "Powerbalance", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal",
+          "cards": [
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Fiery Confluence", "qty": 1 },
+            { "name": "Lightning Bolt", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Win Conditions",
+          "cards": [
+            { "name": "Chandra's Ignition", "qty": 1 },
+            { "name": "Crackle with Power", "qty": 1 },
+            { "name": "Empty the Warrens", "qty": 1 },
+            { "name": "Iron Man, Tony Stark", "qty": 1 },
+            { "name": "Kediss, Emberclaw Familiar", "qty": 1 },
+            { "name": "Origin of Thor", "qty": 1 },
+            { "name": "Soul's Fire", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Engine",
+          "cards": [
+            { "name": "Goblin Bombardment", "qty": 1 },
+            { "name": "Hordeling Outburst", "qty": 1 },
+            { "name": "Impact Tremors", "qty": 1 },
+            { "name": "Purphoros, God of the Forge", "qty": 1 },
+            { "name": "Stormsplitter", "qty": 1 },
+            { "name": "Young Pyromancer", "qty": 1 }
+          ]
+        }
+      ]
     }
   },
   "cards": {
-    "Ancestral Anger": { "status": "PROXY" },
+    "Ancestral Anger": { "status": "PROXY", "printing": {"set":"sos","collectorNumber":"106"} },
     "Ancient Tomb": { "status": "PROXY", "note": "💰 ★GAME CHANGER" },
-    "Arcane Bombardment": { "status": "PROXY" },
-    "Arcane Signet": { "status": "PROXY" },
+    "Arcane Bombardment": { "status": "PROXY", "printing": {"set":"snc","collectorNumber":"101"} },
+    "Arcane Signet": { "status": "PROXY", "printing": {"set":"eld","collectorNumber":"331"} },
     "Arena of Glory": { "status": "PROXY" },
-    "Artist's Talent": { "status": "PROXY" },
-    "Ashling, Flame Dancer": { "status": "PROXY" },
-    "Big Score": { "status": "PROXY" },
-    "Birgi, God of Storytelling": { "status": "PROXY" },
-    "Blackblade Reforged": { "status": "PROXY" },
+    "Artist's Talent": { "status": "PROXY", "printing": {"set":"blb","collectorNumber":"124"} },
+    "Ashling, Flame Dancer": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"MH3-115"} },
+    "Big Score": { "status": "PROXY", "printing": {"set":"snc","collectorNumber":"102"} },
+    "Birgi, God of Storytelling": { "status": "PROXY", "printing": {"set":"khm","collectorNumber":"123"} },
+    "Blackblade Reforged": { "status": "PROXY", "printing": {"set":"dom","collectorNumber":"211"} },
     "Braid of Fire": { "status": "PROXY", "note": "💰" },
-    "Bulk Up": { "status": "PROXY" },
-    "Cavern of Souls": { "status": "PROXY", "note": "💰" },
-    "Champion's Helm": { "status": "PROXY" },
-    "Chandra's Ignition": { "status": "PROXY" },
-    "Chaos Warp": { "status": "PROXY" },
+    "Bulk Up": { "status": "PROXY", "printing": {"set":"fdn","collectorNumber":"80"} },
+    "Cavern of Souls": { "status": "PROXY", "note": "💰", "printing": {"set":"lci","collectorNumber":"269"} },
+    "Champion's Helm": { "status": "PROXY", "printing": {"set":"cmm","collectorNumber":"375"} },
+    "Chandra's Ignition": { "status": "PROXY", "printing": {"set":"ori","collectorNumber":"137"} },
+    "Chaos Warp": { "status": "PROXY", "printing": {"set":"mar","collectorNumber":"69"} },
     "Command Beacon": { "status": "PROXY" },
     "Commander's Plate": { "status": "PROXY", "note": "💰" },
-    "Conqueror's Flail": { "status": "PROXY" },
-    "Coruscation Mage": { "status": "PROXY" },
+    "Conqueror's Flail": { "status": "PROXY", "printing": {"set":"2x2","collectorNumber":"302"} },
+    "Coruscation Mage": { "status": "PROXY", "printing": {"set":"blb","collectorNumber":"131"} },
     "Cosmic Cube": { "status": "PROXY" },
-    "Crackle with Power": { "status": "PROXY" },
-    "Crash Through": { "status": "PROXY" },
-    "Crimson Wisps": { "status": "PROXY" },
+    "Crackle with Power": { "status": "PROXY", "printing": {"set":"stx","collectorNumber":"95"} },
+    "Crash Through": { "status": "PROXY", "printing": {"set":"hou","collectorNumber":"88"} },
+    "Crimson Wisps": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"J25-533"} },
     "Deflecting Swat": { "status": "PROXY", "note": "💰" },
-    "Electro, Assaulting Battery": { "status": "PROXY" },
-    "Embercleave": { "status": "PROXY" },
-    "Faithless Looting": { "status": "PROXY" },
-    "Fiery Confluence": { "status": "PROXY" },
-    "Fiery Emancipation": { "status": "PROXY" },
-    "Fiery Inscription": { "status": "PROXY" },
-    "Fire Nation Palace": { "status": "PROXY" },
-    "Firebrand Archer": { "status": "PROXY" },
-    "Fists of Flame": { "status": "PROXY" },
-    "Forge of Heroes": { "status": "PROXY" },
-    "Grapeshot": { "status": "PROXY" },
-    "Guttersnipe": { "status": "PROXY" },
-    "Hex Magic": { "status": "PROXY" },
-    "Hexing Squelcher": { "status": "PROXY", "note": "💰" },
-    "Impolite Entrance": { "status": "PROXY" },
-    "Increasing Vengeance": { "status": "PROXY" },
-    "Iron Man, Tony Stark": { "status": "PROXY" },
-    "Jeska's Will": { "status": "PROXY", "note": "💰 ★GAME CHANGER" },
-    "Kediss, Emberclaw Familiar": { "status": "PROXY" },
-    "Kessig Flamebreather": { "status": "PROXY" },
-    "Leyline Tyrant": { "status": "PROXY" },
-    "Lightning Bolt": { "status": "PROXY" },
-    "Lindblum, Industrial Regency": { "status": "PROXY" },
-    "Loki Laufeyson": { "status": "PROXY" },
-    "Longshot, Rebel Bowman": { "status": "PROXY" },
-    "Mana Geyser": { "status": "PROXY" },
-    "Might of the Meek": { "status": "PROXY" },
+    "Electro, Assaulting Battery": { "status": "PROXY", "printing": {"set":"spm","collectorNumber":"76"} },
+    "Embercleave": { "status": "PROXY", "printing": {"set":"eld","collectorNumber":"120"} },
+    "Faithless Looting": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"OTC-165"} },
+    "Fiery Confluence": { "status": "PROXY", "printing": {"set":"tle","collectorNumber":"165"} },
+    "Fiery Emancipation": { "status": "PROXY", "printing": {"set":"m21","collectorNumber":"143"} },
+    "Fiery Inscription": { "status": "PROXY", "printing": {"set":"ltr","collectorNumber":"126"} },
+    "Fire Nation Palace": { "status": "PROXY", "printing": {"set":"tla","collectorNumber":"268"} },
+    "Firebrand Archer": { "status": "PROXY", "printing": {"set":"hou","collectorNumber":"92"} },
+    "Fists of Flame": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"MH1-123"} },
+    "Forge of Heroes": { "status": "PROXY", "printing": {"set":"cmm","collectorNumber":"995"} },
+    "Grapeshot": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"803"} },
+    "Guttersnipe": { "status": "PROXY", "printing": {"set":"m19","collectorNumber":"145"} },
+    "Hex Magic": { "status": "PROXY", "printing": {"set":"msh","collectorNumber":"133"} },
+    "Hexing Squelcher": { "status": "PROXY", "note": "💰", "printing": {"set":"ecl","collectorNumber":"145"} },
+    "Impolite Entrance": { "status": "PROXY", "printing": {"set":"ecl","collectorNumber":"146"} },
+    "Increasing Vengeance": { "status": "PROXY", "printing": {"set":"c19","collectorNumber":"147"} },
+    "Iron Man, Tony Stark": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"851"} },
+    "Jeska's Will": { "status": "PROXY", "note": "💰 ★GAME CHANGER", "printing": {"set":"mkc","collectorNumber":"156"} },
+    "Kediss, Emberclaw Familiar": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"CMR-188"} },
+    "Kessig Flamebreather": { "status": "PROXY", "printing": {"set":"vow","collectorNumber":"164"} },
+    "Leyline Tyrant": { "status": "PROXY", "printing": {"set":"znr","collectorNumber":"147"} },
+    "Lightning Bolt": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"CLB-187"} },
+    "Lindblum, Industrial Regency": { "status": "PROXY", "printing": {"set":"fin","collectorNumber":"285"} },
+    "Loki Laufeyson": { "status": "PROXY", "printing": {"set":"msh","collectorNumber":"143"} },
+    "Longshot, Rebel Bowman": { "status": "PROXY", "printing": {"set":"tle","collectorNumber":"120"} },
+    "Mana Geyser": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"C21-176"} },
+    "Might of the Meek": { "status": "PROXY", "printing": {"set":"blb","collectorNumber":"144"} },
     "Mithril Coat": { "status": "PROXY", "note": "💰" },
     "Mountain": { "status": "OWNED" },
-    "Mox Amber": { "status": "PROXY", "note": "💰" },
-    "Neheb, the Eternal": { "status": "PROXY" },
-    "Origin of Thor": { "status": "PROXY" },
-    "Past in Flames": { "status": "PROXY" },
-    "Pyretic Ritual": { "status": "PROXY" },
+    "Mox Amber": { "status": "PROXY", "note": "💰", "printing": {"set":"dom","collectorNumber":"224"} },
+    "Neheb, the Eternal": { "status": "PROXY", "printing": {"set":"hou","collectorNumber":"104"} },
+    "Origin of Thor": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"701"} },
+    "Past in Flames": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"MM3-105"} },
+    "Powerbalance": { "printing": {"set":"mh3","collectorNumber":"335"} },
+    "Pyretic Ritual": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"1064"} },
+    "Rite of Flame": { "printing": {"set":"plst","collectorNumber":"SS3-7"} },
     "Roaming Throne": { "status": "PROXY", "note": "💰" },
     "Rogue's Passage": { "status": "PROXY" },
-    "Ruby Medallion": { "status": "PROXY" },
-    "Seething Song": { "status": "PROXY" },
+    "Ruby Medallion": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"MH3-295"} },
+    "Seething Song": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"C21-179"} },
     "Shadowspear": { "status": "PROXY", "note": "💰" },
-    "Shatterskull Smashing": { "status": "PROXY" },
-    "Sokenzan, Crucible of Defiance": { "status": "PROXY" },
+    "Shatterskull Smashing": { "status": "PROXY", "printing": {"set":"znr","collectorNumber":"161"} },
+    "Sokenzan, Crucible of Defiance": { "status": "PROXY", "printing": {"set":"neo","collectorNumber":"276"} },
     "Sol Ring": { "status": "PROXY" },
-    "Soul's Fire": { "status": "PROXY" },
-    "Storm-Kiln Artist": { "status": "PROXY" },
-    "Swiftfoot Boots": { "status": "PROXY" },
-    "The Fire Crystal": { "status": "PROXY" },
+    "Soul's Fire": { "status": "PROXY", "printing": {"set":"uma","collectorNumber":"148"} },
+    "Storm-Kiln Artist": { "status": "PROXY", "printing": {"set":"stx","collectorNumber":"115"} },
+    "Swiftfoot Boots": { "status": "PROXY", "printing": {"set":"fdn","collectorNumber":"258"} },
+    "The Fire Crystal": { "status": "PROXY", "printing": {"set":"fin","collectorNumber":"135"} },
     "The One Ring": { "status": "PROXY", "note": "💰 ★GAME CHANGER" },
-    "The Ozolith": { "status": "PROXY", "note": "💰" },
-    "The Vision and Scarlet Witch": { "status": "PROXY", "note": "💰" },
-    "Thermo-Alchemist": { "status": "PROXY" },
-    "Twinflame Tyrant": { "status": "PROXY", "note": "💰" },
-    "Tyrite Sanctum": { "status": "PROXY" },
-    "Urabrask": { "status": "PROXY" },
-    "Valakut Awakening": { "status": "PROXY" },
-    "Wanda's Vision": { "status": "PROXY" },
-    "Wheel of Fortune": { "status": "PROXY" }
+    "The Ozolith": { "status": "PROXY", "note": "💰", "printing": {"set":"iko","collectorNumber":"237"} },
+    "The Vision and Scarlet Witch": { "status": "PROXY", "note": "💰", "printing": {"set":"msc","collectorNumber":"707"} },
+    "Thermo-Alchemist": { "status": "PROXY", "printing": {"set":"mid","collectorNumber":"164"} },
+    "Twinflame Tyrant": { "status": "PROXY", "note": "💰", "printing": {"set":"fdn","collectorNumber":"97"} },
+    "Tyrite Sanctum": { "status": "PROXY", "printing": {"set":"khm","collectorNumber":"272"} },
+    "Urabrask": { "status": "PROXY", "printing": {"set":"mom","collectorNumber":"169"} },
+    "Valakut Awakening": { "status": "PROXY", "printing": {"set":"znr","collectorNumber":"174"} },
+    "Wanda's Vision": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"708"} },
+    "Wheel of Fortune": { "status": "PROXY", "printing": {"set":"30a","collectorNumber":"179"} }
   }
 }

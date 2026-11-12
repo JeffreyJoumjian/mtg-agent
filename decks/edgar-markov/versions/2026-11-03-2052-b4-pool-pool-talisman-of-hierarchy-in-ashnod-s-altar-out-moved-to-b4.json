@@ -1,0 +1,154 @@
+{
+  "takenAt": "2026-11-03T20:52:06.291Z",
+  "listId": "b4-pool",
+  "label": "Pool: Talisman of Hierarchy in, Ashnod's Altar out (moved to b4)",
+  "reason": "before Pool: Talisman of Hierarchy in, Ashnod's Altar out (moved to b4)",
+  "list": {
+    "label": "Bracket 4 pool",
+    "kind": "pool",
+    "sections": [
+      {
+        "name": "Stax & Hate (held)",
+        "cards": [
+          {
+            "name": "Deadly Rollick",
+            "qty": 1
+          },
+          {
+            "name": "Deflecting Swat",
+            "qty": 1
+          },
+          {
+            "name": "Drana and Linvala",
+            "qty": 1
+          },
+          {
+            "name": "Drannith Magistrate",
+            "qty": 1
+          },
+          {
+            "name": "Opposition Agent",
+            "qty": 1
+          },
+          {
+            "name": "Orcish Bowmasters",
+            "qty": 1
+          },
+          {
+            "name": "Pyroblast",
+            "qty": 1
+          },
+          {
+            "name": "Red Elemental Blast",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Alternates",
+        "cards": [
+          {
+            "name": "Ad Nauseam",
+            "qty": 1
+          },
+          {
+            "name": "Aetherflux Reservoir",
+            "qty": 1
+          },
+          {
+            "name": "Akroma's Will",
+            "qty": 1
+          },
+          {
+            "name": "Ashnod's Altar",
+            "qty": 1
+          },
+          {
+            "name": "Bartolomé del Presidio",
+            "qty": 1
+          },
+          {
+            "name": "Blood Tribute",
+            "qty": 1
+          },
+          {
+            "name": "Cabal Coffers",
+            "qty": 1
+          },
+          {
+            "name": "Defiant Bloodlord",
+            "qty": 1
+          },
+          {
+            "name": "Dusk Legion Zealot",
+            "qty": 1
+          },
+          {
+            "name": "Falkenrath Pit Fighter",
+            "qty": 1
+          },
+          {
+            "name": "Gamble",
+            "qty": 1
+          },
+          {
+            "name": "Generous Gift",
+            "qty": 1
+          },
+          {
+            "name": "Kalastria Highborn",
+            "qty": 1
+          },
+          {
+            "name": "Malakir Bloodwitch",
+            "qty": 1
+          },
+          {
+            "name": "Markov Baron",
+            "qty": 1
+          },
+          {
+            "name": "Phyrexian Arena",
+            "qty": 1
+          },
+          {
+            "name": "Phyrexian Reclamation",
+            "qty": 1
+          },
+          {
+            "name": "Purphoros, God of the Forge",
+            "qty": 1
+          },
+          {
+            "name": "Spectator Seating",
+            "qty": 1
+          },
+          {
+            "name": "Stromkirk Captain",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Indulgence",
+            "qty": 1
+          },
+          {
+            "name": "Vampire of the Dire Moon",
+            "qty": 1
+          },
+          {
+            "name": "Vein Ripper",
+            "qty": 1
+          },
+          {
+            "name": "Yahenni, Undying Partisan",
+            "qty": 1
+          },
+          {
+            "name": "Zulaport Cutthroat",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

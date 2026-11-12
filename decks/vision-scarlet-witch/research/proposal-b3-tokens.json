@@ -1,0 +1,168 @@
+{
+  "title": "WandaVision B3 Tokens",
+  "subtitle": "The Bracket 3 token build, saved as the b3-tokens list on 2026-10-14. main is unchanged.",
+  "listId": "main",
+  "diagnosis": [
+    "**The brief (2026-10-14).** A Bracket 3 list that floods the board with tokens off the same spells that fire the pingers, and keeps main's game: storm one or two players out, then finish the last with a voltron swing. The pilot's calls: cut the slow engines but keep Neheb, Origin of Thor, Loki and Powerbalance, and judge every card on merit, because late-game combos are fine at Bracket 3.",
+    "**What main already is.** main is the semi-voltron build from the founding brief: Embercleave, Kediss, Bulk Up, Shadowspear, Champion's Helm, Swiftfoot Boots, Commander's Plate, Mithril Coat and Conqueror's Flail around a commander that grows herself. Only 3 of the 331 decks on her EDHREC page are tagged voltron. The pilot's point holds: she grows and makes mana on her own, so the Equipment worth paying for is her protection and cards like Infantry Shield that turn her power into more value. Blackblade Reforged, the one pure growth Equipment, is the voltron card this proposal cuts.",
+    "**How the package works.** Impact Tremors and Purphoros turn every creature entering into damage to each opponent (1 and 2). The token makers are Young Pyromancer (a 1/1 per instant or sorcery), Stormsplitter (copies itself on every instant or sorcery, so it doubles each spell), Iron Man (a flying Robot per red spell, already in main), Infantry Shield (as many Warriors as her power each attack), Empty the Warrens and Hordeling Outburst, plus Sokenzan and Lindblum from main. Fiery Emancipation triples every ping and Twinflame Tyrant doubles it, so the two multipliers main already runs get better here.",
+    "**One turn, worked.** With her, Impact Tremors, Young Pyromancer and Guttersnipe out, each instant or sorcery deals 2 (Guttersnipe) plus 1 (the Pyromancer token entering) to each opponent, and Purphoros adds 2 more. Stormsplitter with both enchantments out: five instants or sorceries make 1 + 2 + 4 + 8 + 16 = 31 tokens, which is 93 damage to each opponent before anyone attacks (verified 2026-10-14). Nothing in this list is a two-card infinite.",
+    "**Bracket.** Game Changers stay at 3 (Ancient Tomb, Jeska's Will, The One Ring). The one loop in the list is Loki with Increasing Vengeance and Storm-Kiln Artist, which main already holds: three cards, unbounded Treasures (verified 2026-10-14, ledger loop-017). The pilot allows it as a late-game combo. Stormsplitter grows fast, but it stops when you run out of spells.",
+    "**Costs to know.** Chandra's Ignition hits each other creature, so it kills your own tokens, Young Pyromancer and the pingers: cast it last. Fiery Confluence's 1-damage mode does the same, so pick its other modes. Under Fiery Emancipation, Ancient Tomb deals 6 to you.",
+    "**Curve.** Across all three waves, average mana value goes from 2.79 to 2.73, cards at 2 or less stay at 34, and cards at 3 or less go from 49 to 51. Lands drop from 32 to 31 only if the Hordeling Outburst swap in wave 3 is taken."
+  ],
+  "waves": [
+    {
+      "id": "wave-1",
+      "label": "Wave 1 · The token engine",
+      "status": "applied",
+      "note": "Two enchantments that turn creatures entering into damage, and two creatures that make a token on every instant or sorcery. Each swap replaces a slow engine or the weakest converter. Applied to the b3-tokens list on 2026-10-14. main is unchanged.",
+      "swaps": [
+        {
+          "in": "Impact Tremors",
+          "out": "Wanda's Vision",
+          "section": "Converters — spells into damage",
+          "axis": "A two-mana converter for every creature entering",
+          "grounds": "Impact Tremors deals 1 to each opponent whenever a creature you control enters: every Young Pyromancer token, Stormsplitter copy, Iron Man Robot, Infantry Shield Warrior, Sokenzan Spirit and Lindblum Wizard. Under Fiery Emancipation each ping is 3. Wanda's Vision costs five mana for one random free spell a turn, and it was on the pilot's list of slow engines.",
+          "interactions": [
+            "Young Pyromancer, Stormsplitter — tokens on every instant or sorcery",
+            "Iron Man, Tony Stark — a Robot, so a ping, on every red spell",
+            "Fiery Emancipation, Twinflame Tyrant — each ping tripled or doubled"
+          ],
+          "cost": "Wanda's Vision was the on-theme card, and its free spells also fired her trigger."
+        },
+        {
+          "in": "Purphoros, God of the Forge",
+          "out": "Arcane Bombardment",
+          "section": "Converters — spells into damage",
+          "axis": "A second, indestructible copy of the same effect at 2 damage",
+          "grounds": "Purphoros deals 2 to each opponent whenever another creature you control enters, and it's an indestructible enchantment, so wraths don't remove it. With five red pips among your permanents it is also a 6/5 creature. Arcane Bombardment is six mana, on the pilot's slow-engine list. Two copies of the effect means the engine shows up in more games (deck-brain §2.5), and together they make each token 3 damage.",
+          "interactions": [
+            "Impact Tremors — 3 damage per token with both out",
+            "Stormsplitter — every copy pings for 2"
+          ],
+          "cost": "Bombardment's recast-the-graveyard engine leaves, which was the list's best answer to an empty hand."
+        },
+        {
+          "in": "Young Pyromancer",
+          "out": "Thermo-Alchemist",
+          "section": "Converters — spells into damage",
+          "axis": "The same two-mana slot, now with a body per spell",
+          "grounds": "Thermo-Alchemist deals 1 per instant or sorcery by untapping and tapping again. Young Pyromancer makes a 1/1 per instant or sorcery instead. With Impact Tremors that's the same 1 damage, 3 with Purphoros too, and the tokens stay as blockers and attackers, which answers the pilot's 2026-09-04 worry about surviving attacks. Thermo-Alchemist ranks last of main's eight converters: instant and sorcery only, a 0/3 defender, and it needs to tap.",
+          "interactions": [
+            "Impact Tremors, Purphoros, God of the Forge — each token is damage",
+            "Infantry Shield, Embercleave — more attackers on the voltron turn"
+          ],
+          "cost": "Alone, without Tremors or Purphoros out, it deals no damage at all."
+        },
+        {
+          "in": "Stormsplitter",
+          "out": "Urabrask",
+          "section": "Converters — spells into damage",
+          "axis": "Four mana that doubles itself on every spell",
+          "grounds": "Both are four-mana creatures that trigger on instants and sorceries. Urabrask adds {R} and pings one opponent for 1. Stormsplitter makes a hasty token copy of itself, and each copy has the same trigger, so k spells make 2 to the k minus 1 tokens (verified 2026-10-14). With Tremors and Purphoros out that's 3 damage per token to each opponent. Birgi and Electro still refund {R} per spell, so Urabrask's mana isn't missed.",
+          "interactions": [
+            "Impact Tremors, Purphoros, God of the Forge — five spells, 31 tokens, 93 to each opponent",
+            "Past in Flames — every flashback is a cast, so it doubles them again"
+          ],
+          "cost": "Cast the next spell only after the new copies exist, or it doesn't double. The copies are exiled at the next end step. Urabrask's saga side goes too."
+        }
+      ]
+    },
+    {
+      "id": "wave-2",
+      "label": "Wave 2 · Voltron that makes tokens",
+      "status": "applied",
+      "note": "The finish the pilot enjoys most is a big swing at the last player. These two make that swing, and the storm turn before it, put tokens on the battlefield. Applied to the b3-tokens list on 2026-10-14. main is unchanged.",
+      "swaps": [
+        {
+          "in": "Infantry Shield",
+          "out": "Blackblade Reforged",
+          "section": "Growth & Voltron",
+          "axis": "Equipment that turns her power into attackers, over Equipment that only adds power",
+          "grounds": "Blackblade Reforged adds +1/+1 per land, which she doesn't need, because every spell already grows her. Infantry Shield gives her menace and mobilize X equal to her power: whenever she attacks, X 1/1 Warriors enter tapped and attacking a player you choose for each (CR 702.181a, 508.4). At 12 power that's 12 attackers, 12 damage to each opponent from Impact Tremors and 24 more from Purphoros. It costs {2}{R}, which Ruby Medallion, Artist's Talent and Longshot reduce, plus equip {2}. Splitting the Warriors between opponents needs the table to play with attacking multiple players, which most Commander pods do (CR 806.2b).",
+          "interactions": [
+            "Bulk Up — X is read as the mobilize trigger resolves, so Bulk Up with the trigger on the stack doubles it",
+            "Embercleave — costs {1} less per attacking creature; cast it once the Warriors exist and it's {R}{R}",
+            "Roaming Throne — naming Hero, mobilize triggers twice, so two sets of X Warriors (verified 2026-10-14)",
+            "Impact Tremors, Purphoros, God of the Forge — damage per Warrior"
+          ],
+          "cost": "The Warriors are sacrificed at the end step, and it only works when she attacks."
+        },
+        {
+          "in": "Empty the Warrens",
+          "out": "Leyline Tyrant",
+          "section": "Win Conditions",
+          "axis": "A storm finisher that leaves an army",
+          "grounds": "Empty the Warrens makes two Goblins, copied once per spell cast before it this turn. As the eighth spell it makes 16 Goblins, which is 16 to each opponent with Tremors, 48 with Purphoros as well, and 16 attackers for the voltron turn. Leyline Tyrant was the fourth red-banking card, and Electro and Ashling still bank.",
+          "interactions": [
+            "Impact Tremors, Purphoros, God of the Forge — damage per Goblin",
+            "The Fire Crystal — gives the Goblins haste"
+          ],
+          "cost": "It's weak early in a turn. Cast it late in the storm."
+        }
+      ]
+    },
+    {
+      "id": "wave-3",
+      "label": "Wave 3 · Extras, one call each",
+      "status": "applied",
+      "note": "Two more pieces with harder cuts. Each can be taken or declined on its own. Applied to the b3-tokens list on 2026-10-14. main is unchanged.",
+      "swaps": [
+        {
+          "in": "Goblin Bombardment",
+          "out": "Firebrand Archer",
+          "section": "Converters — spells into damage",
+          "axis": "Turn tokens that are leaving anyway into damage",
+          "grounds": "Goblin Bombardment: sacrifice a creature to deal 1 damage to any target. Infantry Shield's Warriors are sacrificed at the end step and Stormsplitter's copies are exiled then, so sacrifice them to Bombardment after combat damage first. Every point is tripled under Fiery Emancipation. Firebrand Archer is the most fragile of the remaining pingers (a 2/1 for 1 damage per noncreature spell), and Kessig Flamebreather does the same job as a 1/3.",
+          "interactions": [
+            "Infantry Shield, Stormsplitter — tokens that leave at end step anyway",
+            "Fiery Emancipation — 3 damage per sacrifice"
+          ],
+          "cost": "One fewer per-spell pinger."
+        },
+        {
+          "in": "Hordeling Outburst",
+          "out": "Forge of Heroes",
+          "section": "Win Conditions",
+          "axis": "A sorcery that is three tokens, over a land that gives one counter once",
+          "grounds": "Hordeling Outburst makes three Goblins for {1}{R}{R}. As a sorcery it also fires Guttersnipe, and Young Pyromancer and Stormsplitter add a token each if they're out, so it's three to five creatures entering. Forge of Heroes gives one +1/+1 counter the turn she lands, and main runs 32 lands.",
+          "interactions": [
+            "Impact Tremors, Purphoros, God of the Forge — a ping per creature entering"
+          ],
+          "cost": "Lands go from 32 to 31, and she loses one counter the turn she lands."
+        }
+      ]
+    }
+  ],
+  "passed": [
+    {
+      "name": "Vivi's Persistence",
+      "why": "A {1}{R} instant that makes a 0/1 Wizard pinging each opponent per noncreature spell, and it returns to hand when she enters or attacks if you pay {2}. Strong, and the first alternate if the converter count drops. Passed because wave 1 already brings the converter role to 11."
+    },
+    {
+      "name": "Krenko's Command",
+      "why": "Two Goblins for two. Hordeling Outburst makes three for three and was given the one slot."
+    },
+    {
+      "name": "Prismari Pianist",
+      "why": "Young Pyromancer's job for three mana, with three tokens on spells of mana value 5 or more, which main has few of."
+    },
+    {
+      "name": "Kuldotha Rebirth",
+      "why": "Three Goblins for {R}, but it needs an artifact to sacrifice. main's spare artifacts are Storm-Kiln Treasures, so it would often sit in hand."
+    },
+    {
+      "name": "Song of Totentanz",
+      "why": "X Rats that can't block, and haste for everything. A fine use of banked mana, and the alternate to Empty the Warrens."
+    },
+    {
+      "name": "Tempt with Vengeance",
+      "why": "Each opponent may take the same X hasty tokens, which hands the table attackers."
+    },
+    {
+      "name": "Siege-Gang Commander",
+      "why": "Five mana, and a creature spell, so none of the instant-or-sorcery triggers fire."
+    }
+  ]
+}

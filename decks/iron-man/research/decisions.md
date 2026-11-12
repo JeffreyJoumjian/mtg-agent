@@ -1838,3 +1838,207 @@ Snapshot: `versions/2026-09-28-1715-v3-fra-memnarch-the-warden-in-wurmcoil-engin
 > **Re-add trigger:** if Arbiter is ever cut (with Regalia unparked for evasion), Memnarch draws 8–12
 > on every combat alongside the commander. Master of Machines and Titan of Innovation come back under
 > the same trigger.
+
+---
+
+## 2026-10-10 — Cosmic Cube in, Propaganda out (pilot's call, trial)
+
+Snapshot: `versions/2026-10-10-0832-v3-cosmic-cube-in-propaganda-out-trial.json`. The pilot asked
+whether Ultron or Iron Man should run Cosmic Cube after it left vision-scarlet-witch that morning,
+then picked the cut: *"let's try replacing propaganda for a bit."*
+
+### IN — Cosmic Cube `{5}` Artifact
+
+*"Ward {2}. Whenever you attack, look at the top six cards of your library. You may cast a spell
+from among them with mana value less than or equal to the greatest power among attacking creatures
+you control without paying its mana cost."*
+
+- **The cap fits this commander.** The Invincible Iron Man is a 5/5 flier with haste that attacks
+  every turn. At power 5, 54 of v3's 63 nonland cards are castable, so 99% of looks find one, with
+  3.3 choices on average. Memnarch (MV 10) is the only card it can never reach. Ultron's 2/2 Robot
+  tokens find one in 41% of looks, which is why Ultron passed (ledger eval-062).
+- **It is usually free and pays off the same turn.** The commander's beginning-of-combat deploy puts
+  it in from hand, and "whenever you attack" fires in the declare attackers step that follows
+  (CR 506.1). A hard cast is 5, minus Cloud Key, Etherium Sculptor and Enthusiastic Mechanaut.
+- **It answers the logged draw complaint.** The combat deploy spends cards from hand, while Cube adds
+  a card from the library on every attack.
+- **Synergies in v3:** Genji Glove's extra combat triggers it twice. A free artifact draws off
+  Fateful Discovery and, at MV 3+, makes a Simulacrum Synthesizer Construct. Silent Arbiter's
+  one-attacker cap doesn't matter.
+- **Cute line:** Cube can cast Chandra's Ignition mid-combat (a cast during resolution ignores
+  sorcery timing, ledger cost-015), so Iron Man deals his power to every other creature and each
+  opponent before blockers. Until now Vedalken Orrery was the only off-tempo Ignition route.
+- **Old pass reason, re-derived:** the 2026-08-20 recomposition passed on Cube because *"Buster
+  Sword already covers cast-on-connect."* Buster Sword left in v3, so that no longer holds.
+- EDHREC (lens only): 41% of Tony Stark decks, synergy +0.38.
+
+### OUT — Propaganda
+
+Kept on 2026-09-10 as the enchantment spare key to Silent Arbiter: Arbiter dies to artifact and
+creature removal, Propaganda does not. **Cost named:** interaction 8 → 7, and the attack-tax defence
+now rests on Arbiter alone.
+
+**Cuts offered and not taken** (re-checked against today's oracles): Cloud Key (the standing next
+cut, declined 2026-09-10), Iron Lad, Sword of Feast and Famine (its pro-black/green is inside
+Commander's Plate's white/black/green, and The Reaver Cleaver already makes mana on connect),
+Counterspell (the only counter that is neither free nor refunding) and Gilded Lotus (the only
+curve-neutral swap, but ramp 6 → 5 and Clock's refresh 10 → 7).
+
+**Curve:** avg MV 3.51 → 3.54; MV 3 17 → 16; MV ≤ 2 unchanged at 15. Sections: Card Draw / Engines
+7 → 8, Interaction & Defense 8 → 7.
+
+> **Re-add trigger:** Propaganda returns for Cube if games are lost to a wide board swinging at the
+> pilot after Arbiter has been removed, or if Cube whiffs because Iron Man isn't attacking.
+
+**Validated:** v3 100/100, every card found, no legality or colour-identity flags, 3/3 Game Changers
+unchanged. MOXFIELD-V3.txt regenerated. `iron-man-reference.pdf` still renders `main` (last built
+2026-08-20) and was left alone.
+
+## 2026-11-10 — Kediss and Infantry Shield in; Thopter Spy Network and Into the Flood Maw out (pilot's calls)
+
+Snapshots: `versions/2026-11-10-0147-v3-kediss-in-thopter-spy-network-out.json` and
+`versions/2026-11-10-0147-v3-infantry-shield-in-into-the-flood-maw-out.json`. From the pilot's note:
+*"card/voltron commander that deals combat damage to each other player. WandaVision or Scarlet Witch
+has a card like that that maybe we should run in Iron Man."* That card is Kediss, from
+vision-scarlet-witch `main` and `b3-tokens`.
+
+### IN — Kediss, Emberclaw Familiar `{1}{R}`, for Thopter Spy Network
+
+*"Whenever a commander you control deals combat damage to an opponent, it deals that much damage to
+each other opponent."* Official ruling: that damage isn't combat damage, so it doesn't count toward
+21 and doesn't retrigger Kediss. It turns one-player commander damage into life-total damage on the
+other two players, and double strike and Genji Glove's extra combat each trigger it again.
+
+**Mjölnir doubles it too** (mtg-rules-expert, medium-high confidence, no official ruling on the
+pair): Iron Man is the source of Kediss's damage (CR 120.2b, 120.7), and *"Double all damage
+equipped creature would deal"* isn't limited to combat. A 5-power hit is 10 to the defending player
+and 20 to each other opponent (CR 614.5 doesn't stop it, because it is a separate damage event).
+
+**Cut:** the pilot kept Captain America's Shield and picked Thopter Spy Network from the offered
+list. Thopter Spy Network was an enchantment draw engine the combat deploy can't put in. Card Draw /
+Engines 8 → 7. **Costs:** Kediss is a non-artifact 1/1, so Tony's dig can't find it and the combat
+deploy can't put it in.
+
+### IN — Infantry Shield `{2}{R}`, for Into the Flood Maw
+
+**The 2026-09-02 and 09-03 passes are re-derived and withdrawn.** They judged the Shield against the
+commander-damage plan (*"Warriors not artifacts, never block, die as one event, life-total damage
+not commander damage"*). With Kediss in, life-total damage on the other players is the plan. Checked
+by mtg-rules-expert:
+
+- Menace plus Silent Arbiter makes Iron Man unblockable: menace needs two blockers (CR 702.111b) and
+  Arbiter allows one per combat (CR 509.1b).
+- The Warriors still enter attacking under Arbiter: *"A creature that's put onto the battlefield
+  attacking ... isn't affected by requirements or restrictions that apply to the declaration of
+  attackers"* (CR 508.4c). In Commander each one can attack any opponent (CR 903.2, and the Shield's
+  2025-04-04 ruling).
+- Wizard's Staff makes mobilize trigger twice, since mobilize is the equipped creature's own granted
+  ability (CR 113.1a, 603.2d; ledger equip-018, equip-029). Genji Glove's extra combat triggers it
+  again.
+
+**Cut:** Into the Flood Maw, the pilot's pick (I had nominated Champion's Helm, whose hexproof
+overlaps Padeem's). Interaction & Defense 7 → 6.
+
+### Answered this pass
+
+- **Brotherhood Regalia** stays parked. Silent Arbiter covered most of its job on 2026-09-08, and
+  menace plus Arbiter now makes Iron Man unblockable without it. Manifold Key's {3}, {T} mode is the
+  unblockable source in v3. Regalia's named cut if it comes in is still Basilisk Collar.
+- **Rituals:** no. A ritual is one card for one fast turn, isn't an artifact (Tony's dig can't find
+  it) and adds nothing to the artifact payoffs. If the flip ({4}{U}{R}) feels slow, Training Grounds
+  is the recorded fix (2026-08-20): the flip becomes {2}{U}{R}. Mana Vault and Grim Monolith are each a
+  Game Changer and would make the list Bracket 4.
+- **Also reviewed, not taken:** Scroll Rack (selection, not draw: zero net cards), The Aetherspark
+  (better home in Captain America; the 2026-08-20 "slow loyalty" ground was wrong, since it banks the
+  same combat's damage, but this list's draw role was 8 deep), Alhammarret's Archive (a multiplier
+  that does nothing alone), Tezzeret, Cruel Captain (held; it went to Ultron).
+
+**Sideboard:** rows added for Thopter Spy Network (displaces Kediss) and Into the Flood Maw
+(displaces Infantry Shield); the Infantry Shield "passed" bullet now says it is maindecked.
+
+Validated: v3 100/100, legal and on-identity, Game Changers 3/3 unchanged. `MOXFIELD-V3.txt`
+regenerated (`main` and `v2` rewritten with no change). `iron-man-reference.pdf` renders `main`, so
+it was left alone.
+
+## 2026-11-10 (later) — Trial: Brotherhood Regalia and Aggravated Assault in; Silent Arbiter and Memnarch out (pilot's calls)
+
+Snapshots: `versions/2026-11-10-0330-v3-trial-brotherhood-regalia-in-silent-arbiter-out.json` and
+`versions/2026-11-10-0330-v3-trial-aggravated-assault-in-memnarch-out.json`. The pilot's brief:
+*"he sometimes really struggles without any multi combat tricks"*, plus the standing question of
+whether `v3` had a hard unblockable card. It didn't: Manifold Key's `{3}, {T}` mode costs 3 every turn,
+and Infantry Shield's menace made Iron Man unblockable only while Silent Arbiter lived.
+
+### IN — Brotherhood Regalia `{2}`, for Silent Arbiter
+
+*"Equipped creature has ward {2}, is an Assassin in addition to its other types, and can't be
+blocked. Equip legendary creature {1}."* Iron Man's combat deploy attaches it for free. It does
+Arbiter's offensive job (one blocker per combat) without needing Arbiter alive, and the pilot's pods
+kill Arbiter on sight. Parked since 2026-09-08; its recorded cut was Basilisk Collar, which the pilot
+kept.
+
+### IN — Aggravated Assault `{2}{R}`, for Memnarch, the Warden
+
+*"{3}{R}{R}: Untap all creatures you control. After this main phase, there is an additional combat
+phase followed by an additional main phase. Activate only as a sorcery."* Every extra combat is
+another beginning-of-combat free deploy. **The 2026-08-25 cut is re-derived and withdrawn:** it rested
+on Mjölnir plus Embercleave killing in one hit, which the pilot's games contradict.
+
+**Loop (flagged to the pilot, chosen-N, inside their loop policy):** with Regalia making Iron Man
+unblockable, The Reaver Cleaver (*"create that many Treasure tokens"*) or Sword of Feast and Famine
+(*"you untap all lands you control"*) pays for the next combat on every hit. In practice it's a win
+once Iron Man is flipped with Regalia, one of those two, Assault and 5 mana. The pod should be told.
+The sideboard's strict-Bracket-3 row is Memnarch back for Assault.
+
+### How the cuts were chosen
+
+The pilot rejected my cuts (Champion's Helm, then Basilisk Collar and Surestrike Trident) and offered
+Surestrike Trident, Memnarch or Silent Arbiter. Arbiter was the clear one once Regalia is in. Between
+the other two I argued for cutting Trident and keeping Memnarch, because Memnarch draws a card per artifact on
+every Assault combat once Arbiter is gone (the 2026-09-28 re-add trigger).
+
+**Correction: I undersold Surestrike Trident twice.** I rated it on first strike ("covered by double
+strike") and called its instant-speed shot a small gap, without reading the 2026-09-02 entry that added
+it (for Ultron, Artificial Malevolence). Its job is a loop: Unwinding Clock untaps Iron Man and Brass
+Squire on each opponent's untap step, the Trident fires for his power (doubled by Mjölnir), and Squire
+or Marvin re-attaches it, three shots per turn cycle. Every piece is still in `v3`. When the pilot asked
+why it had come in, the loop surfaced and they kept it: *"that's such a good combo piece."* Ledger:
+tool-019.
+
+### Costs named
+
+- **Defence.** Only one creature could attack the pilot each combat while Arbiter lived, and Propaganda
+  is out for the Cosmic Cube trial. If wide boards start hitting the pilot, Propaganda back for Cube is
+  the recorded fix.
+- **Memnarch.** An 8/9 indestructible body, two Myr blockers, its attack draw, and Padeem's most reliable
+  highest-MV artifact (Krang, Portal to Phyrexia and Darksteel Forge at 9 remain).
+- **Draw role.** Unchanged at 7 in Card Draw / Engines. Memnarch only drew when it attacked instead of
+  Iron Man, so it never counted. Still one under the pilot's 8-to-10 aim.
+- **Re-add triggers that now apply** (2026-09-08 and 2026-09-28): Iron Man, Master of Machines and Iron
+  Man, Titan of Innovation were to return if Arbiter left. Not proposed; each would need a cut.
+
+**Curve:** avg MV 3.54 → 3.40 (no zeros 3.54 → 3.40). MV 2 16 → 17, MV 3 17 → 18, MV 4 10 → 9, MV 7+
+6 → 5. Sections: Equipment 20 → 21, Board Wipes & Finishers 3 → 4, Artifact Payoffs / Creatures 11 → 9.
+
+**Correction to this session's earlier figure:** I quoted 15 cards at MV ≤ 2 for `v3`. Counted from
+the card data it was 22 (seven at MV 1, fifteen at MV 2, commander and lands excluded).
+
+**Validated:** v3 100/100, every card found, no legality or colour-identity flags, Game Changers 3/3
+unchanged. `MOXFIELD-V3.txt` regenerated. Regalia uses the global printing (ACR) 71; Aggravated Assault
+has no pinned printing yet. `iron-man-reference.pdf` renders `main` and was left alone.
+
+**Undo rows:** Silent Arbiter back for Regalia; Memnarch back for Aggravated Assault (sideboard).
+
+## 2026-11-10 (later still) — `main` and `v2` deleted (pilot's call)
+
+While picking lists for the Star Trek set review, the pilot kept `v3` and deleted the other two:
+*"v3 (target) and delete the other 2"*. `v3` is now the deck's only list, so every tool that
+defaults to `main` falls back to it. `MOXFIELD.txt` and `MOXFIELD-V2.txt` are gone.
+
+- Both lists were saved first, in the `deck:edit` snapshot format:
+  `versions/2026-11-10-0435-main-deleted-pilot-s-call.json` and
+  `versions/2026-11-10-0435-v2-deleted-pilot-s-call.json`.
+- The `cards` metadata of the 32 cards that were only in those lists stays in `deck.json`. It holds
+  the printing pins of the sideboard's swap-back cards (Silent Arbiter, Memnarch, Propaganda,
+  Thopter Spy Network), which a swap back would want.
+- `iron-man-reference.pdf` and `pdf.json` still describe the deleted `main`. Older entries and
+  research files that name `main` or `v2` describe those lists as they were.
