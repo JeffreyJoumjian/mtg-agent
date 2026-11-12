@@ -23,8 +23,8 @@ combo-free. The Monolith was 43% of the Ultron field and would have been auto-in
 ### Count the commander's cast trigger in a recursion loop — Oathsworn Vampire + Phyrexian Altar IS infinite under Edgar {#loop-002}
 
 **Kind:** ruling · **Verified:** 2026-09-06 against CR 2026-08-07
-**Cards:** Oathsworn Vampire; Phyrexian Altar; Edgar Markov; Blood Artist; Zulaport Cutthroat; Cruel Celebrant; Vengeful Bloodwitch; Grave Pact; Dictate of Erebos; Ashnod's Altar
-**Rules:** 112.1, 113.6f, 117.1a, 119.9, 207.2c, 505.6a, 601.2a, 601.2f, 601.2i, 605.1a, 605.3b, 608.2i
+**Cards:** Oathsworn Vampire; Phyrexian Altar; Edgar Markov; Blood Artist; Zulaport Cutthroat; Cruel Celebrant; Vengeful Bloodwitch; Grave Pact; Dictate of Erebos; Ashnod's Altar; Warren Soultrader
+**Rules:** 106.4, 112.1, 113.6f, 117.1a, 119.3, 119.4, 119.9, 207.2c, 505.6a, 601.2a, 601.2f, 601.2i, 601.3, 603.4, 605.1a, 605.3b, 608.2i, 700.4
 **Claim:** Each recast of Oathsworn Vampire is a Vampire spell, so Edgar's eminence makes a 1/1 token —
 a **second** body per iteration. Sac Oathsworn (+{B}), sac the token (+{B}), recast for {1}{B}, new
 token: net 0 mana, two deaths and one token per iteration, repeatable any number of times in one main
@@ -41,7 +41,18 @@ trigger's output as a body / mana / card to the per-iteration ledger before decl
 mana-negative. Ashnod's Altar does **not** close this one (colourless can't pay the {B} floor —
 CR 601.2f, reducers eat generic only), which is why the live `DECK.md` and COMBAT are safe and
 SACRIFICE (Phyrexian Altar) is not at Bracket 3.
-**History:** On 2026-08-25 the combo check (`decks/edgar-markov/research/versions-comparison-2026-08-25.md`
+**Added 2026-11-03 (edgar-markov `b4`, mtg-rules-expert):** Warren Soultrader (*"Pay 1 life, Sacrifice
+another creature: Create a Treasure token"*) closes the same loop. Per iteration: cast Oathsworn from
+the graveyard for {1}{B} (eminence token), pay 1 life and sacrifice Oathsworn (Treasure), pay 1 life and
+sacrifice the token (Treasure), two Treasures pay the next cast (CR 605.1a). Blood Artist fires twice
+(CR 700.4): net 0 mana, net 0 life, opponents lose 2. Start-up is {1}{B} plus 2 life (CR 119.4) and
+one life gain that turn. Soultrader's ability uses the stack, so each cast waits for the Treasures and
+triggers to resolve (CR 117.1a); the Altar version keeps its mana in the pool through the triggers
+(CR 106.4) and nets +2 life instead. Re-checked against CR 2026-08-07 on 2026-11-03: nothing changed.
+**History:** On 2026-11-03 the rules agent noted that the "gained life this turn" evidence cited
+608.2i and 119.9, which cover look-back effects during resolution and "whenever you gain life"
+triggers; the permission is a cast permission that functions from the graveyard (CR 601.3) and any
+gain this turn satisfies it (CR 119.3, Gatherer 2018-01-19). Conclusion unchanged. On 2026-08-25 the combo check (`decks/edgar-markov/research/versions-comparison-2026-08-25.md`
 §5) cleared Oathsworn Vampire for the SACRIFICE build: *"Oathsworn costs {1}{B} to recast and
 Phyrexian Altar returns one mana per sacrifice … No loop."* It counted **one** sacrifice per
 iteration; corrected on 2026-09-06 because of the eminence token. Root cause: costed the loop from the
@@ -447,3 +458,207 @@ without the -X hitting anything you kept. The *better* line in a death-trigger d
 spare token you are **not** sacrificing: it dies to CR 704.5f and that is one more death trigger.
 **See also:** loop-010
 **Source:** upgrade-test (2026-09-28) — verifying the Pitiless Plunderer / Chatterfang loop.
+
+### Any spell copier starts the Increasing Vengeance loop, not only Goggles or Dual Strike {#loop-017}
+
+**Kind:** ruling · **Verified:** 2026-10-13 against CR 2026-08-07
+**Cards:** Increasing Vengeance; Reiterate; Return the Favor; Storm King's Thunder; Repeated Reverberation; Pyromancer's Goggles; Dual Strike; Storm-Kiln Artist; Ashling, Flame Dancer; Twinning Staff; Seething Song; Loki Laufeyson
+**Rules:** 115.5, 115.7d, 117.1b, 603.7, 603.7a, 704.5b, 707.10, 707.10c, 732.2a, 732.4
+**Claim:** Once any copy of Increasing Vengeance exists, it can be retargeted at the original
+Increasing Vengeance, and then every copy makes another. So any card that can copy Increasing
+Vengeance (Reiterate, Return the Favor, Storm King's Thunder, Repeated Reverberation) starts the
+unbounded loop that Commander Spellbook lists only for Pyromancer's Goggles and Dual Strike.
+**Evidence:** Increasing Vengeance reads *"Copy target instant or sorcery spell you control. ... You
+may choose new targets for the copies."* CR 115.5 only stops a spell targeting itself, and a copy is
+a different object (CR 707.10), so a copy may target the original. Each copy copies its target, the
+original, and the new copy may be retargeted at the original again (CR 707.10c, 115.7d). The original
+stays on the stack the whole time. Copies are never cast, so the flashback "copy that spell twice"
+clause never applies to them. Storm-Kiln Artist's magecraft (*"cast or copy"*) makes one Treasure per
+copy, so the loop becomes unbounded mana of any colour. Twinning Staff makes two copies per step: one
+keeps the loop going and the other can copy a ritual instead. Ashling, Flame Dancer only pays out on
+the second and third resolution each turn.
+**Changes:** In any deck with Increasing Vengeance, a second copier and a magecraft payoff, list this
+loop as present, because Commander Spellbook's find-my-combos does not report it. Each copy's default target
+is the first spell, so the pilot must retarget at every step and ends the loop by not retargeting.
+With Storm King's Thunder or Repeated Reverberation (delayed triggers, CR 603.7), cast the first spell,
+then the copier, let it resolve, and only then cast Increasing Vengeance at the first spell. Ashling's
+forced loot draws a card per copy, so keep N below the library size (CR 704.5b). A counter on the
+original ends the loop. Every step is optional, so it is a chosen-N loop (CR 732.2a, 732.4).
+**Loki Laufeyson is another delayed-trigger copier** (verified 2026-10-14): at power 2 his "{1},{T}: When
+you next cast an instant or sorcery spell with mana value less than or equal to Loki's power this
+turn, copy that spell" matches Increasing Vengeance (mana value 2). Cast a cheap instant first, activate
+Loki with it on the stack and let the ability resolve (CR 117.1b), then cast Increasing Vengeance at the
+instant. The delayed trigger didn't exist when the instant was cast, so it fires on Increasing Vengeance
+(CR 603.7a). So vision-scarlet-witch `main` has held a three-card loop (Loki, Increasing Vengeance,
+Storm-Kiln Artist) since 2026-09-04 without anyone listing it. Unsettled: whether the trigger still
+fires if Loki leaves before Increasing Vengeance is cast (no published Loki rulings).
+**See also:** loop-018, zone-019
+**Source:** scarlet-witch (2026-10-13), the pilot's "are there any infinite combos this deck could
+run?"; mtg-rules-expert. Loki added from vision-scarlet-witch (2026-10-14), B3 token proposal.
+
+### Reiterate with buyback loops on a ritual once one copy pays for the reduced Reiterate {#loop-018}
+
+**Kind:** ruling · **Verified:** 2026-10-13 against CR 2026-08-07
+**Cards:** Reiterate; Seething Song; Explosive Welcome; Mana Geyser; Jeska's Will; Ruby Medallion; The Fire Crystal; Longshot, Rebel Bowman; Artist's Talent; Storm-Kiln Artist; Birgi, God of Storytelling; Electro, Assaulting Battery; The Scarlet Witch; The Vision and Scarlet Witch; Ashling, Flame Dancer
+**Rules:** 117.1a, 117.3b, 118.8d, 502.3, 601.2f, 603.3, 608.2b, 608.2h, 700.2g, 702.27a, 704.5b, 707.10, 732.2a
+**Claim:** Reiterate with buyback can copy the same ritual on the stack again and again, so the loop
+is unbounded as soon as one copy's mana covers Reiterate's reduced total (six with no reducers). Each
+Reiterate is a cast, so Longshot, Livaan, Birgi and Electro trigger every iteration.
+**Evidence:** Reiterate targets the ritual spell, which stays on the stack. Buyback returns Reiterate
+to hand as it resolves (CR 702.27a), and the copy resolves first (CR 707.10). Net mana per iteration
+with Seething Song: −1 with no reducers, 0 under Ruby Medallion, +1 under Ruby Medallion and The Fire
+Crystal, +3 under four reducers, and +1 with Storm-Kiln Artist and no reducers, because magecraft
+fires on the cast and on the copy. Explosive Welcome gives {R}{R}{R} and 8 damage per copy, so it is
+neutral under three reducers. Birgi and Electro add {R} per Reiterate cast but not per copy, and that
+mana arrives after the cast is paid. The Scarlet Witch never discounts Reiterate, because it stays
+mana value 3 with buyback paid (CR 118.8d, cost-005). Mana Geyser counts opponents' tapped lands as
+each copy resolves (CR 608.2h). Copies of Jeska's Will keep both modes (CR 700.2g, 707.10). **A commander that adds {R} per cast
+makes the Seething Song loop neutral with no reducers:** The Vision and Scarlet Witch's trigger on each
+Reiterate gives {R}, so 6 paid, 1 + 5 back (verified 2026-10-13 for vision-scarlet-witch). Starting it
+takes 8 mana with her out, but only if Seething Song's own trigger resolves before Reiterate is cast
+(CR 603.3, 117.3b); casting Reiterate over the trigger takes 9. Ashling's forced loot fires on the cast
+and the copy, so it draws 2 per iteration and the loop must stop before the library empties (CR 704.5b).
+Mana Geyser on your own turn counts every land an opponent tapped during their own last turn, because
+a player untaps only in their own untap step (CR 502.3). Only lands they held up stay untapped.
+**Changes:** In a deck with Reiterate, cost every ritual and Treasure maker against Reiterate's
+reduced buyback total before calling the list combo-free. Commander Spellbook reports the Seething
+Song, Storm-Kiln Artist, Mana Geyser and Jeska's Will versions but not Explosive Welcome under
+reducers. If the original leaves the stack, Reiterate fizzles and buyback doesn't return it (CR
+608.2b, zone-019). Mana Geyser is a real Reiterate partner on your own turn whenever opponents tapped
+out on theirs. Add the commander's own per-cast mana to the sum before calling a loop negative.
+**History:** Until 2026-10-13 (same day, vision-scarlet-witch pass) this entry said Mana Geyser is weak on
+your own turn because opponents' lands are untapped. That is wrong: opponents untap only in their own
+untap step (CR 502.3), so lands they tapped on their turns are still tapped on yours. The pilot's
+report of about ten mana from Geyser (2026-09-04) was the correct read.
+**See also:** cost-005, zone-019, build-025, loop-017, loop-020
+**Source:** scarlet-witch (2026-10-13), `b4` combo question; mtg-rules-expert. Extended from
+vision-scarlet-witch (2026-10-13), Bracket 4 proposal; mtg-rules-expert.
+
+### Underworld Breach loops are bounded by your library, and the pilot usually decks first {#loop-019}
+
+**Kind:** ruling · **Verified:** 2026-10-13 against CR 2026-08-07
+**Cards:** Underworld Breach; Lion's Eye Diamond; Wheel of Fortune; Jeska's Will; Grinding Station; Mox Amber; Lotus Petal; Chrome Mox; Birgi, God of Storytelling; Longshot, Rebel Bowman; The Vision and Scarlet Witch
+**Rules:** 104.3c, 104.4a, 118.5, 118.6, 605.1a, 608.2n, 702.138a, 704.5b, 732.4
+**Claim:** Breach + Lion's Eye Diamond + Wheel of Fortune is mana-neutral and makes every player
+draw seven per loop, so it ends when a library runs out, and the pilot's library is usually the
+smallest. It wins through the casts, not by decking.
+**Evidence:** Escape on a {0} card costs only the three exiled cards (CR 118.5, 702.138a). Only a card
+with no mana cost can't be escaped (CR 118.6). An escaped instant or sorcery returns to the graveyard
+(CR 608.2n), so Wheel escapes again. Lion's Eye Diamond's ability is a mana ability (CR 605.1a). Per
+loop it adds {R}{R}{R} and Wheel costs {2}{R}, so the net is 0. Birgi adds 2 and Longshot deals 4 to
+each opponent. The Vision and Scarlet Witch also adds 2, because escaping Lion's Eye Diamond and Wheel
+are both casts (verified 2026-10-13). The graveyard grows by about one card a loop, so it never runs dry. A player who must draw from an empty library loses at the next state-based check (CR
+104.3c, 704.5b), and if every player loses on the same Wheel the game is a draw (CR 104.4a).
+Breach + Wheel + Jeska's Will nets +1 per loop (+4 with Lion's Eye Diamond), since an opponent holds
+seven cards after each Wheel, but Jeska's exile mode takes three more cards a loop. Breach + Grinding
+Station + Mox Amber fuels itself (mill three, exile three) and nets {R} per loop.
+**Changes:** Count libraries before starting a Wheel loop and stop before your own runs out. Choose
+only Jeska's Will's mana mode inside the loop. Finish every Breach loop in the main phase: escape
+keeps the card's normal timing and Breach is sacrificed at the end step. A loop with any optional
+action is never a forced draw (CR 732.4).
+**See also:** build-025
+**Source:** scarlet-witch (2026-10-13), `b4` combo question; mtg-rules-expert.
+
+### The Vision and Scarlet Witch + Grinning Ignus is a mana-neutral loop that costs 3 mana to start {#loop-020}
+
+**Kind:** ruling · **Verified:** 2026-10-13 against CR 2026-08-07
+**Cards:** The Vision and Scarlet Witch; Grinning Ignus; Ruby Medallion; Birgi, God of Storytelling; Runaway Steam-Kin; Aetherflux Reservoir; Grapeshot; Chandra's Ignition; Crackle with Power; Guttersnipe; Firebrand Archer; Kessig Flamebreather; Impact Tremors; Purphoros, God of the Forge; Infantry Shield; Roaming Throne
+**Rules:** 117.1a, 117.3b, 302.6, 400.7, 500.5, 601.2a, 602.5a, 602.5d, 603.2d, 603.6a, 605.1a, 605.5a, 732.2a, 732.4
+**Claim:** With a commander that adds {R} on every spell cast, Grinning Ignus recast and re-bounced
+gives unbounded casts, counters and storm at zero net mana, and any extra per-cast mana makes it
+unbounded mana.
+**Evidence:** Ignus costs {2}{R}. The commander's trigger is not a mana ability and resolves first,
+giving {R} (CR 605.5a). Ignus's "{R}, Return this creature to its owner's hand: Add {C}{C}{R}" has no
+{T}, so summoning sickness doesn't apply (CR 302.6, 602.5a), and it is a mana ability despite its
+sorcery restriction (CR 605.1a), so it can't be responded to. "Activate only as a sorcery" needs your
+main phase and an empty stack (CR 602.5d, 117.1a), so it can't be activated mid-cast (CR 601.2a). After
+Ignus resolves you get priority (CR 117.3b). Per iteration: −{R} +{C}{C}{R} −{2}{R} +{R} = 0. Start
+with 3 mana including {R}, and the last activation hands that mana back. Ruby Medallion makes it +{C} per
+iteration, Birgi +{R}, Runaway Steam-Kin {R}{R}{R} every third cast. Floating {C} empties at the end of
+the phase (CR 500.5). Ignus is a creature spell, so Guttersnipe ("instant or sorcery") and Firebrand
+Archer or Kessig Flamebreather ("noncreature") never fire, but Aetherflux Reservoir ("a spell") does.
+**Changes:** Treat it as a two-card combo with the commander and pair it with a finisher that reads
+storm, power or life: Grapeshot, Chandra's Ignition, Aetherflux Reservoir, or Crackle with Power once a
+mana engine makes the loop positive. Count converters as no help here. A counter on Ignus ends it, and
+fizzling the commander's trigger leaves the next activation unpaid. Every step is optional, so it's a
+chosen-N loop (CR 732.2a, 732.4). Commander Spellbook lists the pair.
+**Extended 2026-10-14:** a recast Ignus is a new object entering (CR 400.7, 603.6a), so Impact Tremors
+(1 to each opponent) and Purphoros (2) trigger every iteration and the loop kills on its own. Infantry
+Shield is a combat finisher: she attacks at the power you chose and mobilize makes that many Warriors
+(equip-029). Roaming Throne naming Hero makes her cast trigger fire twice (CR 603.2d), so the loop nets
++{R} per iteration with no other help (rules agent's arithmetic from the rule, not an official ruling).
+**See also:** loop-018, loop-022, equip-029
+**Source:** vision-scarlet-witch (2026-10-13), Bracket 4 proposal; Commander Spellbook find-my-combos,
+then mtg-rules-expert.
+
+### Dualcaster Mage + Molten Duplication or Twinflame makes unbounded hasty tokens; never aim the sorcery at a legend {#loop-021}
+
+**Kind:** ruling · **Verified:** 2026-10-13 against CR 2026-08-07
+**Cards:** Dualcaster Mage; Molten Duplication; Twinflame; Imperial Recruiter; Storm-Kiln Artist; Ashling, Flame Dancer; Grim Monolith; Mana Vault
+**Rules:** 113.7a, 115.6, 115.7d, 601.2c, 608.2b, 704.5b, 704.5j, 707.10, 707.10c, 732.2a, 732.4
+**Claim:** Flash Dualcaster Mage over Molten Duplication (or a one-target Twinflame), retarget each copy
+at the newest Dualcaster, and every hasty token copies the original again, so the number of attackers
+is the pilot's choice; the loop needs the original sorcery to stay on the stack.
+**Evidence:** Dualcaster's ETB copies the spell and the copy may take new targets (CR 707.10c, 115.7d).
+Copies aren't cast (CR 707.10), so cast triggers fire only on the original sorcery and on Dualcaster.
+The ETB is mandatory whenever a legal spell target exists; the loop ends by aiming the last copy away
+from Dualcaster (CR 732.2a, 732.4). A copy of a strive spell keeps the original's number of targets and
+pays no strive cost (CR 601.2c, 707.10). Killing Dualcaster after its ETB triggers doesn't stop the copy
+(CR 113.7a), but killing the newest Dualcaster after its copy exists makes that copy's target illegal
+(CR 608.2b), and a counter on the original stops the chain. When the original finally resolves for its
+first target, a legendary target gives a token that dies to the legend rule (CR 704.5j). Storm-Kiln
+Artist makes a Treasure per copy, and Ashling loots per copy (CR 704.5b).
+**Changes:** In mono-red this is the cheapest commander-independent two-card infinite (five mana). Cast
+the sorcery precombat and aim it first at a non-legendary rock such as Grim Monolith or Mana Vault, so
+the last token taps for three. Imperial Recruiter finds Dualcaster Mage (power 2).
+**See also:** loop-017, zone-019
+**Source:** vision-scarlet-witch (2026-10-13), Bracket 4 proposal; EDHREC combo theme view, then
+mtg-rules-expert.
+
+### Haze of Rage with Storm-Kiln Artist nets n − 3 mana as the nth spell of the turn {#loop-022}
+
+**Kind:** ruling · **Verified:** 2026-10-13 against CR 2026-08-07
+**Cards:** Haze of Rage; Storm-Kiln Artist; The Vision and Scarlet Witch; Birgi, God of Storytelling; Ruby Medallion
+**Rules:** 611.2c, 702.27a, 702.40a, 707.10
+**Claim:** With Storm-Kiln Artist and a commander that adds {R} per cast, Haze of Rage with buyback is
+break-even as the third spell of the turn and positive from the fourth, rising by one each cast.
+**Evidence:** Buyback total {3}{R} (CR 702.27a). Storm copies it once per earlier spell this turn (CR
+702.40a), Storm-Kiln makes a Treasure for the cast and each copy (magecraft, "cast or copy"; CR
+707.10), and the commander gives {R} for the cast only. With n − 1 copies the net is (n − 1) + 1 + 1 −
+4 = n − 3, and under Ruby Medallion it is n − 2. Each resolution gives creatures on the battlefield +1/+0
+(CR 611.2c), so the commander's power climbs with the storm count.
+**Changes:** Count it as a three-card loop (commander, Storm-Kiln Artist, Haze of Rage) and sequence two
+cheap spells before the first Haze. Commander Spellbook lists it as positive from storm count 3, which
+is one spell too early without a reducer.
+**See also:** loop-018, loop-020
+**Source:** vision-scarlet-witch (2026-10-13), Bracket 4 proposal; mtg-rules-expert corrected my "third
+spell" estimate.
+
+### Exquisite Blood lifegain loops are mandatory and end the game, not draw it {#loop-023}
+
+**Kind:** ruling · **Verified:** 2026-11-03 against CR 2026-08-07
+**Cards:** Exquisite Blood; Bloodthirsty Conqueror; Sanguine Bond; Vito, Thorn of the Dusk Rose; Enduring Tenacity; Marauding Blight-Priest; Cliffhaven Vampire; Platinum Angel
+**Rules:** 101.2, 104.2a, 104.4b, 115.1d, 119.7, 119.8, 119.9, 603.2c, 603.3b, 603.3d, 603.5, 608.2b, 704.5a, 732.2a, 732.4, 732.5
+**Claim:** A "whenever an opponent loses life, you gain that much" half (Exquisite Blood, Bloodthirsty
+Conqueror) with any "whenever you gain life, an opponent loses" half (Sanguine Bond, Vito, Enduring
+Tenacity, Marauding Blight-Priest, Cliffhaven Vampire) is a mandatory loop with no choice per
+iteration, and it ends with every opponent dead rather than in a draw; the only draw is an opponent
+who can't lose the game, and a "can't gain life" effect merely stops it.
+**Evidence:** Neither trigger has a "may" (CR 603.5), so the pilot's only choices are targets and
+trigger order. Each cycle lowers a finite life total by a constant, state-based actions remove the
+player (CR 704.5a) and the last opponent leaving wins the game (CR 104.2a), so the draw rule for an
+endless mandatory loop (CR 104.4b, 732.4) does not apply. Targets are chosen per trigger as it goes
+on the stack (CR 115.1d, 603.3d), so a different opponent can be named each time; a trigger whose
+only target has left the game is removed on resolution (CR 608.2b), which stops that chain without
+a draw. With an each-opponent half, Exquisite Blood triggers once per opponent who lost life
+(CR 603.2c), three separate gains. A "can't gain life" effect wins over the gain (CR 101.2, 119.7)
+and Sanguine Bond needs a gain event (CR 119.9), so the loop ends and the game goes on. Only an
+opponent who can't lose (Platinum Angel) keeps the loop mandatory and endless, and nobody can be
+forced to break it (CR 732.5). Gatherer rulings on Vito (2020-06-23), Enduring Tenacity
+(2024-09-20) and Sanguine Bond (2021-03-19) say the same. Declare the shortcut with explicit counts
+per opponent (CR 732.2a).
+**Changes:** File these pairs as "automatic" when checking a list against the pilot's loop policy;
+they are the class that policy excluded until the 2026-11-03 Edgar `b4` brief allowed everything.
+At the table, check for an opponent who can't lose before starting, because that board is the one
+where the loop draws instead of winning.
+**Source:** edgar-markov `b4` founding (2026-11-03); mtg-rules-expert.

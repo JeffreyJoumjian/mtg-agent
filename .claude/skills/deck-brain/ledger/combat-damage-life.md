@@ -295,7 +295,7 @@ The Torbran case (2026-09-08) is the mirror case of the combat-only rule, not a 
 ### "Damage can't be prevented" beats ONE of four defence families — sort the opponent's card before hoping {#dmg-027}
 
 **Kind:** ruling · **Verified:** 2026-09-16 against CR 2026-08-07
-**Cards:** Teferi's Protection; The One Ring; Skullcrack; Worship; Angel's Grace; Phyrexian Unlife; Leyline of Sanctity; Witchbane Orb; Shalai, Voice of Plenty; Chandra's Ignition; Everlasting Torment
+**Cards:** Teferi's Protection; The One Ring; Skullcrack; Worship; Angel's Grace; Phyrexian Unlife; Leyline of Sanctity; Witchbane Orb; Shalai, Voice of Plenty; Chandra's Ignition; Everlasting Torment; Isengard Unleashed; Conqueror's Flail
 **Rules:** 101.2, 115.10a, 119.8, 120.7, 608.2b, 613.11, 614.1a, 615.1a, 615.12, 702.16b, 702.16e, 702.16j, 702.26b, 903.4
 **Claim:** A burn deck loses to four structurally different things, and unpreventable-damage effects answer only the first. Sort any defensive card into the right family before assuming Skullcrack covers it.
 
@@ -310,7 +310,8 @@ The Torbran case (2026-09-08) is the mirror case of the combat-only rule, not a 
 **The three that decide real games:** (1) **Teferi's Protection** also reads *"your life total can't change"* — that, not the protection, is what makes it unanswerable by damage; the damage is dealt and the life-loss result is simply impossible (101.2, 119.8). (2) **The One Ring is only protection from everything, no life lock** — so a *non-targeting* damage source plus an unpreventable-damage effect kills through it, and its protection arrives on a *triggered* ability, leaving a priority window to burn them in response. (3) **Player hexproof** (Leyline of Sanctity, Witchbane Orb, Shalai) blanks every targeted burn spell and is beaten outright by non-targeted damage (115.10a), with no prevention effect needed.
 **Changes:** In any damage deck, the maximum-coverage kill is **non-targeted damage + a source whose colour dodges protection + an unpreventable-damage effect**. For Chandra's Ignition the *source is the creature, not the spell* (CR 120.7), so a **colourless** creature ignores protection from red entirely. Also check colour identity before reaching for the obvious enabler: Everlasting Torment is {2}{B/R}, identity {B,R}, and is **illegal in mono-red** (CR 903.4).
 **See also:** dmg-021, build-013
-**Source:** scarlet-witch (2026-09-16) — the pilot's "if an opponent casts Teferi's or a damage-can't-be-dealt card we're kinda cooked"; mtg-rules-expert
+**Changes (added 2026-11-10):** A "triple damage, can't be prevented" card such as Isengard Unleashed is a multiplier first and an answer second. It beats protection's damage clause, but against Teferi's Protection the only answer is to stop the cast, for example Conqueror's Flail (*"your opponents can't cast spells during your turn"*) equipped before the kill turn. Teferi's Protection's official ruling confirms the life lock: unpreventable damage is dealt, but *"your life total also can't change."*
+**Source:** scarlet-witch (2026-09-16) — the pilot's "if an opponent casts Teferi's or a damage-can't-be-dealt card we're kinda cooked"; mtg-rules-expert; scarlet-witch (2026-11-10), Isengard Unleashed reviewed for `b4` on the pilot's "a lot of protection plays in bracket 4".
 
 ### A lifegain CONVERTER multiplies every life-gaining drainer; it is not another drainer {#dmg-028}
 
@@ -333,3 +334,26 @@ The Torbran case (2026-09-08) is the mirror case of the combat-only rule, not a 
 **Changes:** Score additives by (instances per cycle × addend). State the multiplied and unmultiplied break-evens before proposing one.
 **See also:** dmg-004, repl-001
 **Source:** lord-of-pain / vision-scarlet-witch (2026-09-28), FRA review
+
+### Kediss's spread damage comes from the commander, so the commander's damage doubler doubles it again {#dmg-030}
+
+**Kind:** ruling · **Verified:** 2026-11-10 against CR 2026-08-07
+**Cards:** Kediss, Emberclaw Familiar; Mjölnir, Hammer of Thor; Tony Stark
+**Rules:** 120.2b, 120.4b, 120.7, 603.2g, 614.1, 614.5, 903.10a
+**Claim:** Kediss, Emberclaw Familiar (*"Whenever a commander you control deals combat damage to an
+opponent, it deals that much damage to each other opponent"*) makes the commander the source of the
+spread damage, so a doubler on the commander such as Mjölnir, Hammer of Thor (*"Double all damage
+equipped creature would deal"*) applies to the combat hit and again to each spread instance.
+**Evidence:** The ability names the commander as the object dealing the damage (CR 120.2b), and the
+source of damage is the object that dealt it (CR 120.7). Mjölnir's replacement isn't limited to
+combat damage and modifies each damage event as it is dealt (CR 120.4b, 614.1). The spread damage is a
+new event, not a second application to the first one, so CR 614.5 doesn't block it. Kediss triggers
+on the doubled amount actually dealt (CR 603.2g). Worked case: a 5-power commander with Mjölnir deals
+10 to the defending player, and each other opponent takes 20. Kediss's official ruling says the spread
+damage isn't combat damage, so it doesn't count toward commander damage (CR 903.10a). Confidence is
+medium-high: no official ruling covers this pair, and the one inferred link is that "it" is the
+commander as source.
+**Changes:** When a damage multiplier sits on the commander, count Kediss-style spread damage as
+multiplied too. In a voltron deck that turns one connected hit into table-wide lethal faster than
+commander damage.
+**Source:** iron-man (2026-11-10), Kediss added to v3; mtg-rules-expert.

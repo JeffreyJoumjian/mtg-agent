@@ -41,7 +41,7 @@ commander: pick it by YOUR colours, and it strips your own Auras" (which extende
 ### Living weapon and For Mirrodin! move the Equipment onto their own token — a triggered attacher ordered last takes it back, and global clauses work from anywhere {#equip-002}
 
 **Kind:** ruling · **Verified:** 2026-09-18 against CR 2026-08-07
-**Cards:** Tony Stark; Kaldra Compleat; Nettlecyst; Hexplate Wallbreaker; Sigarda's Aid; Hammer of Nazahn; Stonehewer Giant; Captain America, First Avenger
+**Cards:** Tony Stark; Kaldra Compleat; Nettlecyst; Hexplate Wallbreaker; Sigarda's Aid; Hammer of Nazahn; Stonehewer Giant; Captain America, First Avenger; Silent Arbiter; Brass Squire
 **Rules:** 301.5d, 601.2c, 603.3, 603.3b, 603.3d, 701.3a, 702.92a, 702.163a, 704.5d, 704.5f
 **Claim:** A Living weapon / For Mirrodin! Equipment's own ETB trigger creates a token and attaches the
 Equipment to it, so an attach performed inside another ability's resolution always loses the
@@ -78,6 +78,12 @@ first, and Living weapon is guaranteed to steal it afterwards.
   Wallbreaker is not — its payoff is *"untap **each attacking creature**. After this phase, **there is
   an additional combat phase**"*, both **global**, so the commander gets the extra combat no matter
   who holds the sword. The whole cycle remains fine as standalone bodies.
+- Exception to "no matter who holds the sword": Hexplate Wallbreaker's trigger is *"Whenever equipped
+  creature attacks"*, so the holder has to attack. Under an attack cap (Silent Arbiter: *"No more than one
+  creature can attack each combat"*) the Rebel and the commander can't both attack, so the Equipment has to
+  reach the commander: a triggered attacher ordered to resolve last (Hammer of Nazahn), a free re-attacher
+  (Brass Squire's {T}), or its own equip ({3}{R}). Check for an attack cap before counting a For Mirrodin!
+  extra combat as free. Source: iron-man (2026-11-10), extra-combat review.
 **History:** On 2026-08-07 this ledger claimed "Any Equipment with Living weapon or For Mirrodin!
 cannot be used to suit up a specific creature via an 'attach it to X' effect — the ETB trigger
 creates a token and moves the Equipment to it afterwards", that "the attach-on-ETB effect resolves
@@ -724,3 +730,45 @@ on resolution, both inside combat 1), CR 500.8 (multiple extra phases after the 
 For *attack* triggers (Argentum Armor), count only the combats the creature can actually attack in.
 **See also:** dmg-018, trig-034, eval-055
 **Source:** captain-america (2026-09-28), FRA review.
+
+### Infantry Shield's mobilize reads power on resolution, doubles under Roaming Throne, and discounts Embercleave {#equip-029}
+
+**Kind:** ruling · **Verified:** 2026-10-14 against CR 2026-08-07
+**Cards:** Infantry Shield; Roaming Throne; Bulk Up; Embercleave; Impact Tremors; The Vision and Scarlet Witch; Silent Arbiter; Wizard's Staff; Genji Glove
+**Rules:** 107.3c, 107.3j, 113.1a, 118.7a, 508.4, 508.4c, 509.1b, 603.2d, 603.6a, 608.2h, 702.111b, 702.181a, 806.2b, 903.2
+**Claim:** Mobilize granted by Infantry Shield is the equipped creature's own triggered ability, its X is
+the creature's power as the trigger resolves, and the Warriors count as attacking creatures for cost
+reductions, so Bulk Up, Roaming Throne and Embercleave all scale with it.
+**Evidence:** A granted ability belongs to the creature (CR 113.1a), so Roaming Throne naming the
+creature's type makes mobilize trigger an additional time (CR 603.2d). X is read on resolution (CR
+107.3c, 107.3j, 608.2h), so Bulk Up cast with the trigger on the stack doubles it. Mobilize tokens enter
+tapped and attacking a player their controller chooses for each (CR 702.181a, 508.4), and each one
+entering triggers Impact Tremors (CR 603.6a). They are attacking creatures, so Embercleave cast after
+they exist costs {1} less per Warrior, down to {R}{R} (CR 118.7a). Splitting Warriors between opponents
+needs the attack-multiple-players option, which Free-for-All requires a table to pick (CR 806.2b).
+**Changes:** Equip precombat (sorcery speed), pump her before the mobilize trigger resolves, and cast
+Embercleave only once the Warriors exist. Count Infantry Shield as a finisher for any line that sets her
+power to an arbitrary number (loop-020).
+**See also:** equip-012, loop-020
+**Added 2026-11-10 (iron-man, mtg-rules-expert):** (1) Silent Arbiter doesn't stop the Warriors: *"A creature that's put onto the battlefield attacking ... isn't affected by requirements or restrictions that apply to the declaration of attackers"* (CR 508.4c). (2) Menace from the Shield plus Silent Arbiter's *"No more than one creature can block each combat"* makes the equipped creature unblockable, because menace needs two blockers (CR 702.111b, 509.1b). (3) Wizard's Staff on the same creature makes mobilize trigger twice, since the granted ability is the creature's own (CR 113.1a, 603.2d), and Genji Glove's extra combat triggers it again. (4) Commander's default multiplayer setup already includes the attack-multiple-players option (CR 903.2), so each Warrior can attack a different opponent without a table vote; that supersedes the 806.2b caveat above for Commander.
+**Source:** vision-scarlet-witch (2026-10-14), b4 swap and B3 token proposal; mtg-rules-expert.
+; iron-man (2026-11-10), Infantry Shield moved into v3 beside Kediss and Silent Arbiter.
+### A beginning-of-combat "put an artifact from hand onto the battlefield and attach it" trigger has one response window before it and one after, and none inside {#equip-030}
+
+**Kind:** ruling · **Verified:** 2026-11-10 against CR 2026-08-07
+**Cards:** Tony Stark
+**Rules:** 112.1, 113.7a, 113.9, 115.1, 117.2a, 117.2e, 117.3a, 117.3b, 117.4, 117.5, 201.5, 301.5b, 301.5c, 400.2, 400.7, 507.1, 507.2, 508.1, 603.2b, 603.3, 603.5, 603.6a, 608.2c, 608.2d, 701.3a, 701.3b, 701.5a, 701.6a, 702.16a, 702.16d, 702.16k, 702.21a, 704.4, 704.5n, 712.16, 712.18
+**Claim:** Opponents can respond to The Invincible Iron Man's deploy trigger while it's on the stack and again after it resolves, but they can't see which artifact is coming, can't counter it with a spell counter, can't act between the artifact entering and the attach, and can't stop the attach with hexproof or ward.
+**Evidence:**
+- Oracle (back face): *"At the beginning of combat on your turn, you may put an artifact card from your hand onto the battlefield. If it's an Equipment, attach it to The Invincible Iron Man."* No official rulings are published.
+- The last chance to act before the trigger exists is the empty-stack pass that ends the precombat main phase (CR 117.4). If the source is gone or front face up when beginning of combat starts, nothing triggers (CR 603.2b). The 507.1 defending-player choice isn't a priority window.
+- The trigger goes on the stack before anyone gets priority in the step (CR 507.2, 117.3a, 117.5, 603.3), so nobody can remove the commander in between. Everyone can respond to the trigger itself.
+- The "may" and the choice of card happen on resolution (CR 603.5, 608.2d), and the card comes from a hidden zone (CR 400.2). Opponents can only change the options, for example with forced discard in response.
+- Putting a card onto the battlefield isn't casting it (CR 112.1, 701.5a), so a spell counter has nothing to hit. Only an effect that counters abilities stops it (CR 113.9, 701.6a).
+- No player gets priority during resolution (CR 117.2e), and state-based actions ignore mid-resolution states (CR 704.4). The instructions run in order (CR 608.2c), and Equipment doesn't enter attached (CR 301.5b). The artifact's own enters triggers wait until after resolution (CR 603.6a, 117.2a), so the Equipment is already attached when they go on the stack. That ordering is also why For Mirrodin! can take the Equipment away (equip-002).
+- After resolution the active player gets priority (CR 117.3b), and the enters triggers go on the stack first (CR 117.5). Attackers are declared with no priority (CR 508.1), so the empty-stack pass in beginning of combat is the last window.
+- If the commander left in response, the trigger still resolves (CR 113.7a). The artifact enters, and the Equipment stays on the battlefield unattached (CR 701.3a, 701.3b). A flickered commander is a new object (CR 400.7, 201.5), so the result is the same. A double-faced permanent can't be turned face down (CR 712.16). If an outside effect transforms it back to Tony Stark, it's the same object (CR 712.18), the name still refers to it (CR 201.5), and the Equipment attaches to Tony, who is a creature.
+- Attaching doesn't target (CR 115.1), so hexproof, shroud and ward (CR 702.21a) don't matter. Protection does: a permanent with protection can't be equipped by Equipment with the stated quality (CR 702.16d), so the attempt does nothing (CR 701.3b). If it ends up attached anyway, it falls off as a state-based action (CR 704.5n). Protection from artifacts covers every Equipment (CR 702.16a), and protection from a player only covers Equipment that player controls (CR 702.16k). An Equipment that's also a creature without reconfigure can't attach at all (CR 301.5c).
+**Changes:** When rating a "put onto the battlefield" deploy engine, treat it as safe from spell counters and hand-reveal-free, and price only ability counters (Stifle effects), removal on the trigger and forced discard as answers. Against a removal-heavy pod, the pilot should expect the response while the trigger is on the stack, before choosing the artifact, and pick the card on resolution with that in mind.
+**See also:** equip-002, equip-012
+**Source:** iron-man (2026-11-10), the pilot asked at what point opponents can respond to Iron Man's trigger; mtg-rules-expert.

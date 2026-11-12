@@ -99,14 +99,20 @@ When the pilot bans another card, add it here.
 - **Work on the newest list.** Check which lists a deck's `deck.json` has and the dates in
   `research/decisions.md`, target the newest, and ask when it's unclear. If the newest isn't `main`,
   say so and offer to promote it.
-- **End every list edit, even a single swap, with the full absolute path to each changed list's
-  Moxfield file** (`main` → `MOXFIELD.txt`, `b4` → `MOXFIELD-B4.txt`), e.g.
-  `/Users/skylerdj/Desktop/mtg-agent/decks/chatterfang/MOXFIELD.txt`. Pasting it into Moxfield is
-  always their next step.
+- **End every list edit, even a single swap, with a clickable link to each changed list's Moxfield
+  file** (`main` → `MOXFIELD.txt`, `b4` → `MOXFIELD-B4.txt`): one bullet per list, a markdown link
+  whose text is the deck and list and whose target is the absolute path, e.g.
+  `- [Chatterfang upgrade-test](/Users/skylerdj/Desktop/mtg-agent/decks/upgrade-test/MOXFIELD.txt)`.
+  A bare path in prose or after a bold label isn't clickable in T3 Code. Pasting the list into
+  Moxfield is always their next step.
 
 ### Pilot preferences
 
 - **Everything is proxied**: price is never an argument (deck-brain §0.1).
+- **Card draw: aim for 8 to 10 sources per deck.** It's an aim, not a hard floor. Clue makers
+  (Tireless Tracker, Academy Manufactor's Clues) never count: the pilot rarely cracks Clues (*"it's
+  like a nice to have but not the reason I'm playing those cards"*). Re-count the draw role after
+  every wave, because Chatterfang's slid from 8 to 5 over three waves without anyone noticing.
 - **Loops:** only automatic or unstoppable infinites are out. A loop where the pilot chooses how
   many times to iterate (every step optional, opponents can respond, CR 732.2b) is not an "infinite
   combo" to them, and buyback (Reiterate) is fine at their Bracket 3 tables. Since 2026-09-24 they

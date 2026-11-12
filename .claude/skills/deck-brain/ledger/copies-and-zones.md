@@ -695,3 +695,41 @@ exception is for effects written *for* Commander.
 the parent corrected that file.
 **See also:** zone-013
 **Source:** lord-of-pain (right) vs chatterfang (misread) (2026-09-28), FRA review.
+
+### Stormsplitter's copies keep its trigger, so it doubles on every cast instant or sorcery {#zone-028}
+
+**Kind:** ruling · **Verified:** 2026-10-14 against CR 2026-08-07
+**Cards:** Stormsplitter; Impact Tremors; Purphoros, God of the Forge; Reiterate; Increasing Vengeance; Past in Flames
+**Rules:** 603.2c, 603.6a, 603.7, 707.2, 707.10
+**Claim:** Each token copy of Stormsplitter has the same "whenever you cast an instant or sorcery spell,
+create a token that's a copy of this creature" trigger, so with one Stormsplitter out, k instants or
+sorceries make 2^k − 1 tokens that turn.
+**Evidence:** A token copy copies the creature's abilities (CR 707.2, plus Stormsplitter's own ruling).
+Each copy entering is its own event for Impact Tremors and Purphoros (CR 603.6a, 603.2c), so with both
+out each token deals 3 to each opponent: five spells make 31 tokens and 93 damage to each opponent.
+Spell copies aren't cast (CR 707.10), so Increasing Vengeance copies add nothing, while each Reiterate
+or Past in Flames flashback cast doubles again. Every token is exiled at the next end step (CR 603.7).
+**Changes:** Score Stormsplitter as exponential in spells cast, and only with an enters payoff out.
+Cast the next spell after the new copies exist: casting in response to your own triggers doesn't double.
+It ends when the spells do, so it is not an infinite for bracket purposes.
+**See also:** zone-008, loop-017
+**Source:** vision-scarlet-witch (2026-10-14), B3 token proposal; mtg-rules-expert.
+
+### A commander in the command zone is not "a commander you control" {#zone-029}
+
+**Kind:** ruling · **Verified:** 2026-11-03 against CR 2026-08-07
+**Cards:** Edgar Markov; Deflecting Swat; Deadly Rollick; Flawless Maneuver; Akroma's Will; Jeska's Will; Captivating Vampire
+**Rules:** 109.4, 113.6b, 903.3, 903.3d
+**Claim:** "If you control a commander" is only true for a commander on the battlefield, so under an
+eminence commander that is never cast, the free-spell cycle (Deflecting Swat, Deadly Rollick,
+Flawless Maneuver) costs full price and the both-modes clause of Akroma's Will and Jeska's Will is
+off.
+**Evidence:** CR 903.3d: *"If an effect refers to controlling a commander, it refers to a permanent
+on the battlefield that is a commander."* CR 109.4: only objects on the stack or battlefield have a
+controller. Eminence functioning from the command zone is the ability naming its zone (CR 113.6b)
+and does not make the card controlled. A stolen commander counts (any commander you control), a
+token copy does not (CR 903.3 example).
+**Changes:** In an eminence deck (Edgar Markov, Oloro, Arahbo, Inalla, Kess), price the free-spell
+cycle at its printed cost and score Akroma's Will on one mode, unless the plan includes casting the
+commander. Captivating Vampire stealing an opponent's commander turns the cycle on.
+**Source:** edgar-markov `b4` founding (2026-11-03); mtg-rules-expert.

@@ -216,7 +216,7 @@ as a single number.
 ### Mono-red's to-hand tutor pool is two cards, and one is a Game Changer {#build-014}
 
 **Kind:** pattern · **Recorded:** 2026-08-20
-**Cards:** Ring of Three Wishes; Planar Portal; Gamble; Fervent Mastery; Inventors' Fair; Imperial Recruiter; Firemind's Foresight
+**Cards:** Ring of Three Wishes; Planar Portal; Gamble; Fervent Mastery; Inventors' Fair; Imperial Recruiter; Firemind's Foresight; Wishclaw Talisman; Grinning Ignus; Dualcaster Mage
 **Claim:** A mono-red Commander deck has exactly two unconditional "search for a card, put it in
 your hand" effects, and adding the better one is a Game Changer budget question before it is a
 slot question.
@@ -232,7 +232,8 @@ list at 3/3 must drop a GC to seat Gamble), then cost Fervent Mastery under the 
 reducers — it is the one tutor those reducers touch. Rank the random-discard tax against the
 deck's own recursion before calling it a downside.
 **History:** The same pass (2026-08-20, eval-024) corrected this entry's last line for hand-dumping decks: state the deck's typical hand size when the tutor would be cast. In a deck that empties its hand, Fervent Mastery's random-discard tax is the wrong shape however good the recursion is.
-**See also:** build-011, build-025, eval-024
+**Added 2026-10-13 (vision-scarlet-witch):** Wishclaw Talisman is often remembered as a colourless tutor. Its cost is {1}{B}, so it isn't legal in mono-red. Imperial Recruiter finds Grinning Ignus and Dualcaster Mage (both power 2), so in a combo list it is a real second tutor.
+**See also:** build-011, build-025, eval-024, build-045
 **Source:** scarlet-witch (2026-08-20) — the "should we add tutors" pass.
 
 ### Count the conversion layer before the mana layer in a spellslinger deck {#build-015}
@@ -892,3 +893,45 @@ the cut. The chatterfang review took From Beyond; the ghave review kept it as fi
 than cut Cultivate.
 **See also:** build-042, tool-016
 **Source:** chatterfang / ghave (2026-09-28), FRA review.
+
+### Named two-card combos meet in about a third of mono-red games by turn 4; interchangeable parts are the floor {#build-045}
+
+**Kind:** pattern · **Recorded:** 2026-10-13
+**Cards:** Grinning Ignus; Reiterate; Seething Song; Underworld Breach; Lion's Eye Diamond; Wheel of Fortune; Dualcaster Mage; Molten Duplication; Haze of Rage; Storm-Kiln Artist; Gamble; Imperial Recruiter; The Vision and Scarlet Witch
+**Claim:** In a mono-red singleton deck with two tutors, five separate combo kits are complete in hand
+by turn 3 in about 29% of games and by turn 4 in about 33%, so a "turn 3 to 4 combo" plan needs a
+consistent fallback built from interchangeable cards.
+**Evidence:** Simulated 50,000 hands of the proposed vision-scarlet-witch Bracket 4 list, on the play,
+counting cards seen with every cantrip and draw spell drawing its cards, and Gamble or Imperial
+Recruiter standing in for one missing piece. Kits: Ignus plus a finisher (16% by turn 3), Reiterate
+plus Seething Song, Mana Geyser or Jeska's Will (10%), Dualcaster plus Molten Duplication (8%), Haze of
+Rage plus Storm-Kiln Artist (8%), and Breach plus Lion's Eye Diamond plus Wheel of Fortune (2%). Any kit:
+29% by turn 3, 33% by turn 4, 38% by turn 5. Mana and the commander surviving weren't modelled, so these are
+ceilings. Adding one more Ignus finisher (Kediss for Wiccan) moved turn 4 from 33% to 35%.
+Scarlet Witch's b4 kills with interchangeable doublers and seeds and does not depend on named pairs.
+**Changes:** Before promising a kill turn for a combo build, simulate kit access instead of counting
+combos. Raise the rate by adding partners to the cheapest kit (more finishers for one engine) rather
+than more distinct combos, and keep the interchangeable storm or chain turn strong as the floor. The
+tutor pool caps it (build-014).
+**See also:** build-014, build-025, loop-020
+**Source:** vision-scarlet-witch (2026-10-13), Bracket 4 proposal.
+
+### Before choosing a lean for a high-power build, diff the field's per-theme averages at that power level {#build-046}
+
+**Kind:** pattern · **Recorded:** 2026-11-03
+**Cards:** Edgar Markov; Exquisite Blood; Bloodthirsty Conqueror; Vito, Thorn of the Dusk Rose; Sanguine Bond; Oathsworn Vampire; Phyrexian Altar; Shared Animosity; Necropotence; Bolas's Citadel
+**Claim:** When a pilot asks which archetype to lean a Bracket 4 or cEDH build toward, diff the
+field's per-theme average decks at that power level before arguing cards; if they share most of
+their nonlands, the "lean" is a package of the remaining slots, not a build.
+**Evidence:** Asked drain versus aggro for a no-holds-barred Edgar, I pulled EDHREC's
+`average-decks/edgar-markov/cedh/combo` (44 decks) and `cedh/aggro` (33 decks) and diffed them by
+script: 54 of about 67 nonlands shared, both carrying the same lifegain loops, Oathsworn + Phyrexian
+Altar, Necropotence, Bolas's Citadel, Dark Ritual and six or more tutors. The aggro-only cards were
+12 lords and attack payoffs; the combo-only cards were 14 moxen, rituals and hate pieces. Neither was
+an attack deck. The pilot's Bracket 3 lists shared only 25 and 26 of the combo average's 68.
+**Changes:** For a high-power rebuild, measure three things first: the per-theme cEDH averages and
+their overlap, Commander Spellbook's find-my-combos on each existing list (loops held and one card
+away), and a hand-only simulation of how often the win pieces meet given the tutor count. The
+archetype question usually dissolves into "which ten slots", and the measurements name them.
+**See also:** build-025, tool-020
+**Source:** edgar-markov `b4` founding (2026-11-03), the pilot's "drain or aggro" question.

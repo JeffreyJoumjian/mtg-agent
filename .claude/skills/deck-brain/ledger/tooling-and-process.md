@@ -135,11 +135,18 @@ card was read, the same gap as the "oracle-text sweep missed a card" correction.
   (pool with NEW/REPRINT flags, the deck's oracle dump, `deck:show` snapshots) plus a read-only
   lookup helper, then checking each review file's table against the pool's name list by script:
   100% on all 11.
-**Changes:** `bun run set-scan <code>` is the tool (scripts/set-scan.ts — update its DECKS map when
-a deck is added); review files follow decks/<slug>/research/<code>-set-review-<date>.md.
+**Changes:** Run a set review with the `set-review` skill (.claude/skills/set-review/), which holds
+the steps. Since 2026-11-10 the tooling covers what the FRA sweep built by hand: `bun run set-scan
+<code>` flags each pool card's `reprint` and `inLists`, `bun run set-scan <codes> --check <file>`
+proves every pool card has a verdict row, and `bun run card --deck <slug> --list <id> --oracle`
+writes the deck's oracle dump. The scan reads every deck's colour identity from the commanders of
+its main list, so a new deck needs no script change.
 - **Before fanning out (2026-09-28):** warm the caches, ban `bun run card/edhrec/deck:*` inside the
   agents, and plan the coverage check up front. Also flag reprints: FRC was 69 of 87 reprints, and
   three decks got a MAIN from a reprint they had never evaluated (Windcrag Siege twice, Kher Keep).
+**History:** Until 2026-11-10 this entry said to update a hard-coded DECKS map in scripts/set-scan.ts
+when a deck is added. The script had no such map by then, because it builds the deck list from
+`listDeckSlugs()` (checked 2026-11-10).
 **See also:** tool-006, tool-017
 **Source:** all three decks (2026-08-09), HOB set review; all decks (2026-09-28, merged from
 "REFINEMENT: a parallel set sweep needs a pre-warmed cache, read-only lookups and a coverage
@@ -273,7 +280,7 @@ the package's entire thesis, and the finding worth acting on.
 **Changes:** When a tool disagrees with a build, reproduce the reading on both lists and compare the
 components before either defending the build or reverting it. Report the sub-scores to the pilot;
 the headline is the least informative number on the page.
-**See also:** tool-014, build-042
+**See also:** tool-014, tool-023, build-042
 **Source:** chatterfang / upgrade-test (2026-09-25) — pilot pushed back twice with the same tool.
 
 ### Deck checkers count dead tutors and auto-detected combos — audit both before trusting a comparison {#tool-014}
@@ -324,16 +331,26 @@ your research".
 ### Pre-release Scryfall legality is "not_legal" — never file a pass on it {#tool-016}
 
 **Kind:** pattern · **Recorded:** 2026-09-28
-**Cards:** Gardenize
+**Cards:** Gardenize; Gul Dukat, Colonial Prefect
 **Claim:** Scryfall reports unreleased cards as not commander-legal, so a "not legal" rejection filed
 before release is a data-timing artefact, not an evaluation.
 **Evidence:** Gardenize (FRA, releases 2026-10-02) was passed in chatterfang's proposal.json and
 upgrade-test/decisions.md on 2026-09-25 as *"not commander-legal — the tool reports not_legal"*. On
 2026-09-28 the set index reports it legal, and it came back as a MAIN for chatterfang on its merits.
+On 2026-11-10, three days before Star Trek's release, `bun run card` reported six TRK cards as
+not_legal from the 24-hour card cache (Vengeance Mission, Gul Dukat, Deep Space 9, Seven of Nine,
+Tal Shiar Analyst, Academy Instructor), while `bun run set-scan` listed all six as legal. A fresh
+`/cards/named` call still returned not_legal for Gul Dukat, while `/cards/search` returned legal for
+both of its printings. Scryfall's legality reaches the search endpoint first, and the by-name
+endpoint and our cache catch up later.
 **Changes:** When a card fails on legality, check its set's release date. If it is unreleased,
-record it as "unreleased, re-check on <date>", never as a pass.
+record it as "unreleased, re-check on <date>", never as a pass. Before release, judge a new card's
+legality from the `set-scan` index or a `bun run scripts/card.ts search` query, which read the search
+endpoint. A not_legal from `bun run card` on a card the index lists as legal is the cache or the
+by-name endpoint lagging.
 **See also:** tool-010, build-044
-**Source:** chatterfang (2026-09-28), FRA review. Both records corrected 2026-09-28.
+**Source:** chatterfang (2026-09-28), FRA review. Both records corrected 2026-09-28. Star Trek review
+(2026-11-10).
 
 ### Check new-set cards against the decision log by oracle text, not by name {#tool-017}
 
@@ -375,7 +392,7 @@ held.
 ### Grep the deck's own records for a card before nominating it as a cut {#tool-019}
 
 **Kind:** correction · **Recorded:** 2026-09-29
-**Cards:** Cultivate; Concordant Crossroads; Craterhoof Behemoth
+**Cards:** Cultivate; Concordant Crossroads; Craterhoof Behemoth; Surestrike Trident; Unwinding Clock; Brass Squire
 **Claim:** A deck's research files record which cards the pilot protected and which lines of play
 depend on which cards. Nominating a cut without reading them repeats settled arguments and hides
 costs.
@@ -385,9 +402,78 @@ the pilot declined it a second time. (2) I agreed to the pilot's suggested cut o
 Crossroads and named one lost combo, but not that `upgrade-test/research/gameplan.md` §7 relies on it:
 Craterhoof Behemoth grants trample, not haste, so without Crossroads the tokens made that turn can't
 attack. I found it only while updating the gameplan after the swap was applied.
+Third miss, iron-man (2026-11-10): I offered Surestrike Trident as a cut twice, rating it on its first
+strike ("covered by double strike") and calling its instant-speed shot "a small gap". The 2026-09-02
+entry that added it says its job is a loop: Unwinding Clock untaps the artifact commander on each
+opponent's untap step, the Trident fires for his power (doubled by Mjölnir), and Brass Squire re-attaches
+it, three shots per turn cycle. Every piece was still in the list. The pilot asked why it had come in,
+which surfaced it before the swap was applied.
 **Changes:** Before naming a cut, run `grep -rn "<card>" decks/<slug>/research/` and read every hit,
 including the proposal's CLOSE CUTS paragraph and the gameplan. A protected card needs new evidence,
 stated as such. Any line of play that depends on the card is a cost to name in the proposal, before
 the pilot decides.
 **See also:** eval-011, tool-018
-**Source:** upgrade-test (2026-09-29), wave 10.
+**Source:** upgrade-test (2026-09-29), wave 10. iron-man (2026-11-10), extra-combat review.
+
+### Commander Spellbook's find-my-combos takes a deck as JSON and lists combos one card away {#tool-020}
+
+**Kind:** pattern · **Recorded:** 2026-10-13
+**Cards:** Increasing Vengeance; Reiterate; Explosive Welcome
+**Claim:** For "what combos could this deck run?", send the list to Commander Spellbook's
+find-my-combos endpoint first, then verify every hit and look for the variants it misses.
+**Evidence:** `curl -X POST https://backend.commanderspellbook.com/find-my-combos -H 'Content-Type:
+application/json' -d '{"commanders":[{"card":"<name>"}],"main":[{"card":"<name>","quantity":1}]}'`
+returned `results.included` (6 for scarlet-witch `b4`) and `results.almostIncluded` (36), each with
+`uses`, `produces`, `notablePrerequisites` and step text in `description`. It missed two loops the
+list already held: Increasing Vengeance started by Reiterate, Return the Favor, Storm King's Thunder
+or Repeated Reverberation (loop-017), and Reiterate + Explosive Welcome under three reducers
+(loop-018).
+**Changes:** Treat the result as an idea list, like EDHREC. Verify each loop's text and rules
+(deck-brain §1.1), then generalise each pairing to the deck's other cards with the same role. For a
+founding build, send the whole candidate pool first (116 cards for Edgar `b4` returned 29 loops), so
+the skeleton is picked from what the pool can do rather than from memory. Send
+only card names.
+**See also:** loop-017, loop-018
+**Source:** scarlet-witch (2026-10-13).
+
+### deck:proposal folded "applied" waves into the stats rail a second time {#tool-021}
+
+**Kind:** correction · **Recorded:** 2026-11-03
+**Claim:** Until 2026-11-03 `scripts/deck-proposal.ts` applied every wave whose status was `approved`
+or `applied` on top of the current list, so an applied wave's `in` cards were counted twice and its
+`out` cards were filtered from a list that no longer held them.
+**Evidence:** The Edgar `b4` founding wave (96 additions, status `applied`) projected a 196-card
+list. The WandaVision pages (`decks/vision-scarlet-witch/artifact*`), whose waves are all `applied`,
+carried the same error in their "approved" and "projected" columns.
+**Changes:** Fixed: only `approved` waves feed the approved column and only `proposed` plus
+`approved` waves feed the projected column. Regenerate any page whose waves have been applied since
+it was last published. When a tool computes "before and after", test it with a wave that is already
+in the source of truth.
+**See also:** tool-020
+**Source:** edgar-markov `b4` founding (2026-11-03).
+
+### Per-wave role deltas hid a three-wave slide; re-count every role against its target after each wave {#tool-022}
+
+**Kind:** correction · **Recorded:** 2026-11-10
+**Cards:** Idol of Oblivion; Village Rites; Black Market Connections; Tireless Tracker
+**Claim:** Each upgrade wave reported its own role change ("Card Draw 7 → 6"), and none compared the
+running total with a target, so upgrade-test's Card Draw slid from the parent's 8 to 5 without anyone
+noticing until the pilot asked why.
+**Evidence:** upgrade-test history: Idol of Oblivion left in wave 2 (2026-09-25), Village Rites in
+wave 10 (2026-09-29) and Black Market Connections in the wave 11 trial (2026-10-15). Each entry named
+its own minus one. The pilot then set the aim (8 to 10 draw sources, Clue makers never counting, now
+in the root `CLAUDE.md`), and by that rule the list stood at 6.
+**Changes:** After every wave, list each role's count against its target (draw against 8 to 10) in
+the decision-log entry, not just the delta. Count draw the pilot's way: no Clue makers, and no
+conditional draw unless it fires every turn.
+**Source:** upgrade-test (2026-11-10), wave 12.
+
+### CommanderBracket shows one of two win-turn estimates, and a jump can be the switch between them {#tool-023}
+
+**Kind:** pattern · **Recorded:** 2026-11-10
+**Cards:** Black Market Connections; Pest Infestation; Springleaf Parade; Deep Forest Hermit; Twitching Doll; Tireless Tracker
+**Claim:** CommanderBracket's predicted win turn is an ML model's estimate while that model's uncertainty (sigma) is under 1.0 and a rule heuristic above it, so a swap that nudges sigma across 1.0 moves the headline by a turn or more while neither estimate changes.
+**Evidence:** upgrade-test after six swaps on 2026-11-10. The headline went 6.1 to 7.3. The page's own API call (`POST https://mtg-assistant.up.railway.app/decks/analyze-complete` with body `{"decklist", "commander"}`) returns `bracket_analysis.determination.signals`: `ml_estimate` 6.11 to 6.13, `ml_sigma` 0.926 to 1.011, `turn_estimate_basis` ml to heuristic. `bracket_analysis.turn_breakdown.heuristic_estimate` went 7.2 to 7.3. Scoring each swap alone: Black Market Connections for Pest Infestation moved sigma from 0.926 to 0.999 by itself, and undoing that swap, Springleaf Parade for Deep Forest Hermit, or Twitching Doll for Tireless Tracker brought sigma under 1.0 and the headline back to 6.1. Sigma 0.999 showed the ML number and 1.011 showed the heuristic. Unverified: the 2026-09-25 split of 6.6 (parent) against 7.5 (fork) in tool-013 may have been the same switch. The tool has changed since, so it can't be re-checked.
+**Changes:** When the headline moves, read `turn_estimate_basis`, `ml_estimate`, `ml_sigma` and `heuristic_estimate` for both lists before blaming the deck, and compare ML to ML and heuristic to heuristic. Never revert a card to pull the headline back across a basis switch. To attribute a real change, score each swap alone against the API, one call per variant. The heuristic's `turn_breakdown` names its modifiers (engine base, combos, fast mana, doublers and payoffs, interaction count, a cheap-interaction bonus), so a heuristic move traces to a line item.
+**See also:** tool-013, tool-014
+**Source:** upgrade-test (2026-11-10). The pilot asked why the speed rating went from 6.1 to 7.3.

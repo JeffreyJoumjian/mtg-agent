@@ -100,18 +100,20 @@ Search every topic at once with `bun run lookup "<card | rule number | term>"`.
 ### File a card by what it does in this deck, including its alternate cost and the pilot's win conditions {#eval-007}
 
 **Kind:** correction · **Recorded:** 2026-08-04
-**Cards:** Jaya's Immolating Inferno; Crackle with Power; Storm King's Thunder; Electrodominance; Blustersquall; Hylda of the Icy Crown; Verity Circle; Elenda, the Dusk Rose; Malakir Bloodwitch; Bloodline Recollector
+**Cards:** Jaya's Immolating Inferno; Crackle with Power; Storm King's Thunder; Electrodominance; Blustersquall; Hylda of the Icy Crown; Verity Circle; Elenda, the Dusk Rose; Malakir Bloodwitch; Bloodline Recollector; Brass's Bounty; Inspired Tinkering; Neheb, the Eternal
 **Claim:** A card's role is what it does in this deck, not its type line, cost template or headline mode; an overload line or the pilot's view of it as a finisher can put it in a different role entirely, and a card cut from the wrong role is cut on false grounds.
 **Evidence:**
 - 2026-08-04 — Filed a card in the wrong role and cut it on that basis: Jaya's Immolating Inferno was sidelined as "a fourth X-spell behind Crackle, Storm King's Thunder and Electrodominance." But Storm King's Thunder is a *copier* and Electrodominance hits **one** target. Jaya's is the deck's **second table-killer**. *Root cause:* grouped by card template ("X-spell") rather than by function.
 - 2026-09-02 (inquisitor-greyfax): Cut Blustersquall from an Esper tap deck as "one-shot tempo in a deck that wins by grinding." Its overload is `{3}{U}`: **tap every creature you don't control.** In a deck whose kill is "tap the blockers and swing", that is the alpha-strike button — and with Hylda of the Icy Crown out it is also a dozen 4/4 tokens, and with Verity Circle a dozen cards. The user caught it. This is the **third instance** of the same failure in this repo — Jaya's Immolating Inferno ("a fourth X-spell", actually the second table-killer) and the Elenda cut both went the same way.
 - 2026-09-28 (edgar-markov, FRA review): Malakir Bloodwitch (*"each opponent loses life equal to the number of Vampires you control"*) was nominated as the cut for a draw engine as "one-shot reach" (the Bloodline Recollector proposal). The pilot rejected it: *"she is a finisher."* In a tribal drain deck, the card that converts board width into a table-wide drain is a win condition, not filler. §2.4's "a card filed in the wrong role", once more.
+- 2026-09-08 → 2026-10-13 (scarlet-witch): the chain build, whose limit is red pips, left out Brass's Bounty and Inspired Tinkering as *"big mana, and the constraint is pips"*, and Neheb, the Eternal as mana that *"arrives postcombat"*. Treasures say *"Add one mana of any color"*, so both spells are red-pip cards, and Neheb's input is the chain's own damage. Neheb and Bounty were re-filed on 2026-09-16. Tinkering stayed out until the pilot reported dead draws, and then it was the one card that fixed both the pips and the draw: three cards and three Treasures for {R} at Wanda's power 4.
 **Changes:**
 - Classify by what a card *does in this deck*, not by its type line or cost template.
 - Read the *overload / kicker / escalate* line before assigning a card its role. The alternate cost is often a different card in a different role. Before cutting any card, write down the role you are cutting it *from* and check that role against the card's **full** text including alternate costs. If a card has an overload, kicker or entwine line, evaluate the expensive mode as its real mode.
 - Before nominating a cut from a different role, check whether the pilot counts it as a win condition.
+- In a deck limited by one colour's pips, file every Treasure maker and any-colour source by the pips it makes, never as generic "big mana".
 **See also:** eval-005, eval-016, eval-036
-**Source:** deck not recorded (2026-08-04, "Filed a card in the wrong role and cut it on that basis"); inquisitor-greyfax (2026-09-02, closer pass — "we can't rely on 1 big creature.", merged from "Filed an overload spell as \"tempo\" and nearly cut the deck's alpha-strike button"); edgar-markov (2026-09-28, FRA review, pilot override, merged from "CORRECTION: a drain-on-ETB \"reach\" creature is a finisher to the pilot, not a cut candidate for draw")
+**Source:** deck not recorded (2026-08-04, "Filed a card in the wrong role and cut it on that basis"); inquisitor-greyfax (2026-09-02, closer pass — "we can't rely on 1 big creature.", merged from "Filed an overload spell as \"tempo\" and nearly cut the deck's alpha-strike button"); edgar-markov (2026-09-28, FRA review, pilot override, merged from "CORRECTION: a drain-on-ETB \"reach\" creature is a finisher to the pilot, not a cut candidate for draw"); scarlet-witch (2026-10-13, `b4` dead-draw pass, Inspired Tinkering in)
 
 ### A lord keyed to COLOUR, not tribe, can wipe your own tokens {#eval-008}
 
@@ -574,7 +576,8 @@ Search every topic at once with `bun run lookup "<card | rule number | term>"`.
 **Evidence:** CR 613.1d (layer 4, type-changing) resolves before CR 613.1f (layer 6, ability-adding), so Ninja Pizza's grant to "Foods you control" does reach the creatures. But: (1) mass artifact removal — Vandalblast, Bane of Progress, By Force — becomes a one-sided wipe of a board that would otherwise be immune; (2) Null Rod / Collector Ouphe / Stony Silence / Karn stop *activated abilities of artifacts*, which now includes Chatterfang's own `{B}, Sacrifice X Squirrels` (CR 101.2 — "can't" wins); (3) single-target artifact removal becomes creature removal; (4) Ygra's own **Ward—Sacrifice a Food** is payable by any opponent sacrificing any creature they control, so the ward is nearly blank in a creature pod. The granted ability also contains `{T}`, so CR 302.6 blocks tokens made this turn — it is next-turn mana.
 **Changes:** For any "your creatures are also \<artifact/other type\>" card, list the hate cards that newly hit you and check whether the grant's cost contains `{T}` before counting it as this-turn mana. Same audit as §1.3, applied to type-changing rather than to symmetric damage.
 **See also:** eval-051
-**Source:** chatterfang (2026-09-25) — Ygra evaluated, then passed over on these grounds.
+**Added 2026-11-10 (upgrade-test re-review):** (5) *"Other creatures"* includes opponents' creatures, so every opponent gains *"{2}, {T}, Sacrifice this permanent: You gain 3 life"* on each of their creatures. In a drain deck that is an instant-speed lifegain answer to every lethal drain, which is the deciding cost on its own. **Changes:** for any "other creatures have X" grant, check whether opponents' creatures get X too before scoring it.
+**Source:** chatterfang (2026-09-25) — Ygra evaluated, then passed over on these grounds; upgrade-test (2026-11-10), Ygra re-derived with KCI, Cauldron Familiar and Witch's Oven around it, and passed again.
 
 ### Sort an upgrade into engine and converter — cheap converters, board-to-mana included, are cut last {#eval-047}
 
@@ -724,9 +727,17 @@ with a land source (Cultivate puts one in hand) or pick one that brings its own 
 payoff does not need a granter to earn its slot: each fires about 4 to 5 times over turns 3 to 8 off
 normal drops, fetchlands and fetch spells. This answers Ghave's open question about a second
 extra-land card (Icetill Explorer or Dryad): Icetill, if either.
+**History:** On 2026-09-29 this entry graded extra-drop cards only on landfall triggers over turns 3
+to 8. The pilot's play verdict on 2026-10-15 was that Azusa *"really helps with mana ramp"*, and I had
+nominated her as a cut twice on this measurement. A window total cannot show a land arriving a turn
+earlier, and an earlier land is more mana on turns 4 to 6. The trigger count was the wrong axis for a
+ramp card.
+**Changes (added 2026-10-15):** Also grade an extra-drop card on lands on the battlefield by turns 4
+and 5, and ask for a play report before nominating one as a cut.
 **See also:** eval-057, eval-002
-**Source:** upgrade-test (2026-09-29). The pilot chose Azusa anyway over this measurement; verdict
-pending play.
+**Measured (added 2026-11-10):** 120,000 simulated games, 36 lands in 99, on the play, no other ramp. With Exploration in the opening hand, 3 lands are on the battlefield on turn 2 in 51% of games (a turn-2 three-drop); Dryad and Azusa never manage it, because they cost 3. By turn 4 the three are level (3.30, 3.28 and 3.31 lands). Across all games the turn-2 line comes up about 4% of the time. **Changes:** grade a 1-mana drop-granter on the turn-2 three-drop line, and a 3-mana one on what it does besides the drop (Dryad's fixing and body, Azusa's second drop).
+**Source:** upgrade-test (2026-09-29, 2026-10-15). The pilot chose Azusa over this measurement, kept
+her through the wave 11 trial after play, and said she helps with mana ramp; upgrade-test (2026-11-10), the pilot asked whether Exploration beats the 3-mana granters at 1 mana.
 
 ### The pilot counts public information as a cost: a revealed top card draws attacks {#eval-059}
 
@@ -740,3 +751,113 @@ once solved with a private look (*"You may look at the top card of your library 
 **Changes:** When proposing a card that reveals the top of the library or the hand, name the reveal as
 a cost in the grounds, and offer a private-look alternative where one exists.
 **Source:** upgrade-test (2026-09-29).
+
+### A reveal-and-match free-cast engine is worth its hit rate times the deck's cast triggers {#eval-060}
+
+**Kind:** pattern · **Recorded:** 2026-10-10
+**Cards:** Powerbalance; The Lord of Pain; Vial Smasher the Fierce; Arcane Bombardment; The Vision and Scarlet Witch; Electro, Assaulting Battery; Ashling, Flame Dancer
+**Rules:** 106.4, 608.2g
+**Claim:** Powerbalance gives about the same number of free spells in every deck here (0.5 to 0.7 per
+turn cycle), so the deck's payoff per hit decides it, and lands and X-spells are blanks that stall it.
+**Evidence:** Oracle: *"Whenever an opponent casts a spell, you may reveal the top card of your
+library. If you do, you may cast that card without paying its mana cost if the two spells have the
+same mana value."* Nothing moves a missed card, so a land or an X-spell on top blocks every trigger
+until your next draw, and a free X-spell has X = 0 (cost-001; Gatherer 2024-06-07). Simulation
+(2026-10-10, 20,000 runs per list): opponent spell MVs drawn from the nonland cards of the 24 deck
+lists in this repo (MV 1: 15%, 2: 27%, 3: 26%, 4: 17%, 5: 8%, 6+: 6%), 6 opponent spells per turn
+cycle, X-spells declined. Free casts per cycle ranged from 0.51 (scarlet-witch main, 7 X-spells)
+to 0.68 (caesar, average MV 2.69), and about 2.6 to 3.4 casts worth 7 to 9 total MV over five
+cycles. The payoff per hit differs far more: a hit on an opponent's turn is your first spell that
+turn (trig-016), so it fires The Lord of Pain and Vial Smasher the Fierce, and an instant or sorcery
+hit fires Arcane Bombardment again. The free spell goes on the stack above the opponent's spell
+(CR 608.2g), and a ritual's mana stays in your pool until that step ends (CR 106.4), so it pays for
+instants from hand straight away. Electro or Ashling (cost-002) only matter for carrying it into
+your own turn.
+**Changes:** Rank a deck for this kind of card by what one free cast triggers there, not by the
+curve match. Count lands plus X-spells as blank reveals, never point it at an X-spell finisher, and
+name the revealed top card as a cost (eval-059).
+**See also:** cost-001, cost-002, trig-016, eval-059
+**Source:** cross-deck question (2026-10-10), Powerbalance in every red list.
+**History:** Recorded 2026-10-10 saying a ritual hit is wasted unless Electro or Ashling banks it.
+Corrected the same day when the pilot described going off on an opponent's turn with the finisher
+already in hand: the mana lasts the whole step, so the instants in hand can spend it.
+
+### An opponent's-choice punisher is cheap to dodge when your own gifts fill their hands {#eval-061}
+
+**Kind:** pattern · **Recorded:** 2026-10-10
+**Cards:** Painful Quandary; Torment of Hailfire; Howling Mine; Font of Mythos; Seizan, Perverter of Truth; Bloodchief Ascension
+**Rules:** 118.3, 118.12a
+**Claim:** A punisher that lets the opponent discard instead of losing life gets weaker in a deck
+whose own symmetric draw overflows the opponents' hands, because the card they discard is often one
+they would have lost at cleanup anyway.
+**Evidence:** Painful Quandary: *"Whenever an opponent casts a spell, that player loses 5 life unless
+they discard a card."* Torment of Hailfire offers the same out on every repetition (*"unless that
+player sacrifices a nonland permanent of their choice or discards a card"*). In lord-of-pain,
+Howling Mine, Font of Mythos and Seizan make the table overflow its hand and discard at cleanup
+(fra-set-review-2026-09-28). Quandary's recorded reason for its slot (2026-08-23: *"Discards feed
+Bloodchief Ascension"*) lapsed when Bloodchief Ascension was cut later that day. The escape needs a
+card: "unless" makes the discard an optional cost (CR 118.12a), and a player can't pay a cost they
+lack the resources for (CR 118.3), so an opponent with an empty hand loses the 5. Under the gifts
+that is rare.
+**Changes:** Score an opponent's-choice punisher by the option the opponent will actually take in
+this deck. With draw gifts out, that is mostly the discard, so count Quandary as a discard engine
+unless a discard payoff (Tinybones, Pocket Nuisance) is in the list. For Torment of Hailfire, X has
+to exceed each opponent's hand plus nonland permanents before the life loss starts.
+**See also:** eval-004, eval-030
+**Source:** lord-of-pain (2026-10-10), finding a slot for Powerbalance.
+
+### A power-capped free-cast engine is scored by the deck's usual attacker, not its biggest {#eval-062}
+
+**Kind:** pattern · **Recorded:** 2026-10-10
+**Cards:** Cosmic Cube; Tony Stark; Ultron, Artificial Malevolence; Ultron, Machine Overlord; Buster Sword
+**Claim:** Cosmic Cube can only cast a card whose mana value is at most the greatest power among
+your attackers, so it is strong under a voltron commander that attacks at 5+ power every turn and
+weak in a deck whose usual attackers are 2/2 tokens.
+**Evidence:** Oracle: *"Whenever you attack, look at the top six cards of your library. You may cast
+a spell from among them with mana value less than or equal to the greatest power among attacking
+creatures you control without paying its mana cost."* Hypergeometric count over each list's 99,
+with lands and X-spells as misses (2026-10-10). ultron main finds at least one castable card in 41%
+of looks at power 2, and those hits average 0.5 per look and are all MV 2 or less (Sol Ring, Mind
+Stone, Mox Opal and the like). It rises to 92% at power 4 and 97% at power 5. iron-man v3 finds one
+in 99% of looks at power 5, the base power of The Invincible Iron Man, with 3.3 hits per look.
+**Changes:** Before rating Cosmic Cube, name the power of the creature that attacks on most turns
+and count the library's castable cards at that power. Buster Sword has the same shape, capped by
+the damage dealt. In ultron, Cube pays off only once Ultron, Machine Overlord (Robot tokens become
+4/4) or a bomb body is attacking.
+**See also:** cost-015, eval-060
+**Source:** ultron / iron-man (2026-10-10). The pilot asked whether either deck should run Cosmic
+Cube after it left vision-scarlet-witch that morning.
+
+### Weigh the "free casts force X = 0" objection by the share of X-spells it would actually hit {#eval-063}
+
+**Kind:** pattern · **Recorded:** 2026-11-10
+**Cards:** Mizzix's Mastery; Hit the Mother Lode; Improvisation Capstone; Arcane Bombardment
+**Rules:** 107.3b
+**Claim:** A card that casts spells without paying their mana cost forces X = 0 (CR 107.3b), but that
+only costs you the X-spells among the cards it would cast. Count that share in the current list before
+rejecting the card, and check whether it offers a put-into-hand option that sidesteps the rule.
+**Evidence:** scarlet-witch `b4` (2026-11-10): Mizzix's Mastery was rejected on 2026-09-08 because
+*"every free-cast forces X = 0"*, but only 8 of the list's 39 instants and sorceries have {X}. By mid
+chain its graveyard is mostly rituals, draw and pumps, and overload (an alternative cost, so Wanda and
+the reducers cut it to about {R}{R}{R}) recasts all of them, each one a real cast for Livaan and the
+per-spell engines (CR 707.12). Hit the Mother Lode was grouped with the same objection, yet discover
+says *"cast it without paying its mana cost or put it into your hand"*, so it never forces X = 0.
+**Changes:** Before using the X = 0 ground, write the count ("N of M instants and sorceries have X")
+and read the free-cast clause for an "or put it into your hand" exit.
+**Source:** scarlet-witch (2026-11-10), `b4` review of 13 candidates; Mizzix's Mastery moved to the
+sideboard.
+
+### An exile-and-draw that lets you play the exiled cards adds cards; it isn't a hand swap {#eval-064}
+
+**Kind:** correction · **Recorded:** 2026-11-10
+**Cards:** Hex Magic
+**Claim:** Hex Magic (*"Exile all the cards from your hand, then draw that many cards. Until the end
+of your next turn, you may play cards exiled this way"*) doubles the cards you can play with a full
+hand. I filed it as a hand swap and nominated it as a cut three times on that reading.
+**Evidence:** The 2026-10-10 scarlet-witch entry said it *"swaps the hand rather than adding cards"*.
+The duration clause keeps the exiled hand playable, so N cards in hand become 2N playable cards until
+the end of the next turn. What stays true is that it does nothing from an empty hand. The pilot
+corrected it: *"hex magic is sometimes one of our better draw/renew hand spells."*
+**Changes:** When scoring any "exile your hand, draw that many" card, read the last sentence: if the
+exiled cards stay playable, count it as card advantage scaled by hand size.
+**Source:** scarlet-witch (2026-11-10), pilot pushback while choosing a cut for Mizzix's Mastery.
