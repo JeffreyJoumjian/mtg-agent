@@ -14,7 +14,8 @@ import type {
 
 const CHAPTER = /^([1-9])\.\s+(.+)$/;
 const SECTION = /^(\d{3})\.\s+(.+)$/;
-const RULE = /^(\d{3}\.\d+)\.\s+(.+)$/;
+// The period after the number is optional because the published CR prints 606.5 without one.
+const RULE = /^(\d{3}\.\d+)\.?\s+(.+)$/;
 const SUBRULE = /^(\d{3}\.\d+[a-z]+)\s+(.+)$/;
 const EXAMPLE = /^Example:\s+(.+)$/;
 

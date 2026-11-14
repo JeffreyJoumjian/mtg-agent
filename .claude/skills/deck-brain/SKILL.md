@@ -385,4 +385,8 @@ Rules for the ledger:
   hunch, and hunches are what the ledger exists to replace.
 - **A ruling names the rules version it was checked against.** After a rules update,
   `bun run lookup` marks each older ruling ✓ (none of its cited rules changed) or ⚠ (re-check them).
-  Re-verify a ⚠ entry before relying on it, then update its Verified line.
+  Cite rule numbers as they are in that version and leave them alone after an update. `lookup`
+  matches each cited rule to the current text by wording, so a rule that only moved to a new number
+  stays ✓ and the note says where it is now ("732.2a is now 733.2a").
+  Re-verify a ⚠ entry before relying on it, then update its Verified line and renumber its
+  citations to the new version.

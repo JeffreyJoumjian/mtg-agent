@@ -248,12 +248,15 @@ const OLD_LINE_REF = /^LEDGER(?:\.md)?:(\d+)$/i;
 
 /** Search the ledger and the decision logs. Every term must match (case- and accent-insensitive).
  *  A rule number also matches the rules under it (`603.2` finds `603.2d`); an entry id matches that
- *  entry; `LEDGER.md:<line>` resolves an old line reference through the archive's id map. Pure. */
+ *  entry; `LEDGER.md:<line>` resolves an old line reference through the archive's id map.
+ *  `currentRuleNumbers` gives an entry's cited rules numbered as in the current rules, so a rule number
+ *  also finds the entries that cited it under its old number. Pure. */
 export function lookup(
   query: string,
   topics: LedgerTopic[],
   decisions: DecisionSection[],
   idMap: OldEntryRef[] = [],
+  currentRuleNumbers: (e: LedgerEntry) => string[] = (e) => e.rules,
 ): LookupResult {
   const all = topics.flatMap((t) => t.entries);
   const trimmed = query.trim();
@@ -274,7 +277,7 @@ export function lookup(
     RULE_REF.test(term)
       ? new RegExp(`(?<![\\d.])${term.replace(".", "\\.")}(?!\\d)`).test(hay)
       : matchKey(hay).includes(matchKey(term));
-  const ruleHit = (e: LedgerEntry, term: string) => RULE_REF.test(term) && e.rules.some((r) => coversRule(term, r));
+  const ruleHit = (e: LedgerEntry, term: string) => RULE_REF.test(term) && currentRuleNumbers(e).some((r) => coversRule(term, r));
 
   // Entries that name more of the queried cards on their Cards line, or cite the queried rule, come
   // first; then a title match; then file order.
@@ -295,17 +298,102 @@ export function lookup(
   return { entries, decisions: ranked };
 }
 
-/** Cited rules whose text differs between two rules maps (or that one of them lacks). A cited
- *  section-level number (`603.2`) covers its lettered subrules. Pure. */
-export function changedRules(cited: string[], before: Record<string, string>, after: Record<string, string>): string[] {
-  const ids = Object.keys({ ...before, ...after });
-  const out: string[] = [];
-  for (const rule of cited) {
-    const covered = ids.filter((id) => coversRule(rule, id));
+/** What `compareCitedRules` found for one entry's cited rules. */
+export interface CitedRuleCheck {
+  /** Cited rules whose text changed, or that don't exist in the older rules. */
+  changed: string[];
+  /** Cited rules whose text is unchanged but that sit under a different number in the newer rules. */
+  moved: { from: string; to: string }[];
+}
 
-    if (covered.length === 0 || covered.some((id) => before[id] !== after[id])) out.push(rule);
+/** Rule text with its rule-number references blanked out, so renumbering doesn't read as an edit. */
+const blankRuleNumbers = (text: string) =>
+  text.replace(/\s+/g, " ").trim().replace(/\b\d{3}(?:\.\d+[a-z]*)?(?:[–-][a-z0-9]+)?/g, "#");
+
+/** `603.2d` splits into `["603", ".2", "d"]`. */
+const ruleParts = (id: string) => {
+  const m = id.match(/^(\d{3})(?:\.(\d+)([a-z]*))?$/);
+
+  return m ? [m[1], m[2] && `.${m[2]}`, m[3]].filter(Boolean) : [id];
+};
+
+/** Two versions of the rules, indexed for `compareCitedRules`. Indexing is the costly part, so build one
+ *  per pair of versions and reuse it for every entry. */
+export interface RuleIndex {
+  before: Record<string, string>;
+  beforeIds: string[];
+  afterIds: string[];
+  /** Ids in `after` by their text with rule numbers blanked out. */
+  afterIdsByText: Record<string, string[]>;
+  /** For each section of `before`, the section of `after` that most of its rules landed in. */
+  homeSection: Record<string, string>;
+}
+
+/** Index `before` (the rules an entry was verified against) and `after` (the current rules). Pure. */
+export function indexRules(before: Record<string, string>, after: Record<string, string>): RuleIndex {
+  const afterIdsByText: Record<string, string[]> = {};
+  for (const [id, text] of Object.entries(after)) {
+    (afterIdsByText[blankRuleNumbers(text)] ??= []).push(id);
   }
-  return out;
+
+  // Boilerplate recurs across sections (the same sentence ends Adventurer, Prototype, Omen and Preparation), so
+  // a rule whose text appears at several numbers goes to the one in the section most of its old section moved to.
+  const votes: Record<string, Record<string, number>> = {};
+  for (const [id, text] of Object.entries(before)) {
+    const candidates = afterIdsByText[blankRuleNumbers(text)] ?? [];
+    const landed = candidates.includes(id) ? id : candidates.length === 1 ? candidates[0] : "";
+    if (landed) {
+      const tally = (votes[id.slice(0, 3)] ??= {});
+      tally[landed.slice(0, 3)] = (tally[landed.slice(0, 3)] ?? 0) + 1;
+    }
+  }
+  const homeSection: Record<string, string> = {};
+  for (const [section, tally] of Object.entries(votes)) {
+    homeSection[section] = Object.entries(tally).sort((a, b) => b[1] - a[1])[0][0];
+  }
+
+  return { before, beforeIds: Object.keys(before), afterIds: Object.keys(after), afterIdsByText, homeSection };
+}
+
+/** Compare the rules an entry cites (numbered as in `index.before`, the rules it was verified against)
+ *  with `index.after`. A rule counts as unchanged when its text matches once rule-number references are
+ *  blanked out, at the same number or at exactly one other number, so a section renumbering (Meld Cards
+ *  taking 713 in CR 2026-11-06 shifted every later section up by one) doesn't read as an edit. A cited
+ *  section-level number (`603.2`) covers its lettered subrules and also counts as changed when a rule
+ *  was added under it. Pure. */
+export function compareCitedRules(cited: string[], index: RuleIndex): CitedRuleCheck {
+  const { before, beforeIds, afterIds, afterIdsByText, homeSection } = index;
+  const result: CitedRuleCheck = { changed: [], moved: [] };
+  for (const rule of cited) {
+    const covered = beforeIds.filter((id) => coversRule(rule, id));
+
+    // Where each covered rule is in `after`: its own number if the text still matches there, else the one other rule with the same text.
+    const target: Record<string, string> = {};
+    for (const id of covered) {
+      const candidates = afterIdsByText[blankRuleNumbers(before[id])] ?? [];
+      const inHomeSection = candidates.filter((c) => c.slice(0, 3) === homeSection[id.slice(0, 3)]);
+      if (candidates.includes(id)) target[id] = id;
+      else if (candidates.length === 1) target[id] = candidates[0];
+      else if (inHomeSection.length === 1) target[id] = inHomeSection[0];
+    }
+    if (covered.length === 0 || covered.some((id) => !(id in target))) {
+      result.changed.push(rule);
+      continue;
+    }
+
+    const newIds = covered.map((id) => target[id]);
+    const images = newIds.map((id) => ruleParts(id).slice(0, ruleParts(rule).length).join(""));
+    const distinct = images.filter((image, i) => images.indexOf(image) === i);
+    if (distinct.length > 1) {
+      // The covered rules went to different places, so report each one that moved and skip the added-rule check.
+      for (const id of covered.filter((c) => target[c] !== c)) result.moved.push({ from: id, to: target[id] });
+      continue;
+    }
+
+    if (afterIds.some((id) => coversRule(distinct[0], id) && !newIds.includes(id))) result.changed.push(rule);
+    else if (distinct[0] !== rule) result.moved.push({ from: rule, to: distinct[0] });
+  }
+  return result;
 }
 
 /** Read every topic file in the ledger folder, in name order. */

@@ -17,7 +17,8 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import {
-  changedRules,
+  compareCitedRules,
+  indexRules,
   lookup,
   readDecisionLogs,
   readIdMap,
@@ -26,6 +27,7 @@ import {
   renderIndex,
   validateLedger,
   type LedgerEntry,
+  type RuleIndex,
 } from "./lib/ledger.ts";
 import { parseRules } from "./lib/parser.ts";
 import { LEDGER_DIR, META_PATH, RAW_DIR, RULES_JSON_PATH } from "./lib/paths.ts";
@@ -53,19 +55,42 @@ function rulesFor(version: string, current: string): Record<string, string> | nu
   return rulesByVersion[version];
 }
 
+/** An older version's rules indexed against the current ones, built once and shared by every entry verified against it. */
+const indexByVersion: Record<string, RuleIndex | null> = {};
+function indexFor(version: string, current: string): RuleIndex | null {
+  if (version in indexByVersion) return indexByVersion[version];
+
+  const before = rulesFor(version, current);
+  const after = rulesFor(current, current);
+  indexByVersion[version] = before && after ? indexRules(before, after) : null;
+  return indexByVersion[version];
+}
+
 /** One line saying whether a ruling still stands on the current rules text. */
 function freshness(e: LedgerEntry, current: string): string | null {
   if (e.kind !== "ruling" || !e.verified || e.verified.cr === current) return null;
 
-  const before = rulesFor(e.verified.cr, current);
-  const after = rulesFor(current, current);
-  if (!before || !after) return `⚠ Verified against CR ${e.verified.cr}, whose text isn't in rules/raw/. Re-check the cited rules.`;
+  const index = indexFor(e.verified.cr, current);
+  if (!index) return `⚠ Verified against CR ${e.verified.cr}, whose text isn't in rules/raw/. Re-check the cited rules.`;
   if (e.rules.length === 0) return `⚠ Verified against CR ${e.verified.cr} and cites no rule numbers. Re-check it against CR ${current}.`;
 
-  const changed = changedRules(e.rules, before, after);
+  // Citations stay in the numbering of the CR the entry was verified against, so say where moved rules are now.
+  const { changed, moved } = compareCitedRules(e.rules, index);
+  const renumbered = moved.length ? ` Renumbered since: ${moved.map((m) => `${m.from} is now ${m.to}`).join(", ")}.` : "";
   return changed.length
-    ? `⚠ Verified against CR ${e.verified.cr}; since then these cited rules changed: ${changed.join(", ")}. Re-check them.`
-    : `✓ Verified against CR ${e.verified.cr}; none of its cited rules changed in CR ${current}.`;
+    ? `⚠ Verified against CR ${e.verified.cr}; since then these cited rules changed: ${changed.join(", ")}. Re-check them.${renumbered}`
+    : `✓ Verified against CR ${e.verified.cr}; none of its cited rules changed in CR ${current}.${renumbered}`;
+}
+
+/** An entry's cited rules numbered as in the current rules: a rule that only moved is listed at its new number. */
+const currentNumbersById: Record<string, string[]> = {};
+function currentRuleNumbers(e: LedgerEntry, current: string): string[] {
+  if (e.id in currentNumbersById) return currentNumbersById[e.id];
+
+  const index = e.verified && e.verified.cr !== current ? indexFor(e.verified.cr, current) : null;
+  const moved = index ? compareCitedRules(e.rules, index).moved : [];
+  currentNumbersById[e.id] = [...e.rules.filter((r) => !moved.some((m) => m.from === r)), ...moved.map((m) => m.to)];
+  return currentNumbersById[e.id];
 }
 
 function runLookup(): void {
@@ -83,7 +108,13 @@ function runLookup(): void {
   const deck = flagValue("--deck");
   const limit = Number(flagValue("--limit") ?? 0);
   const current = (JSON.parse(readFileSync(META_PATH, "utf8")) as { version: string }).version;
-  const result = lookup(query, hasFlag("--decisions") ? [] : readLedger(), hasFlag("--ledger") ? [] : readDecisionLogs(deck), readIdMap());
+  const result = lookup(
+    query,
+    hasFlag("--decisions") ? [] : readLedger(),
+    hasFlag("--ledger") ? [] : readDecisionLogs(deck),
+    readIdMap(),
+    (e) => currentRuleNumbers(e, current),
+  );
 
   if (result.resolvedFrom) {
     const r = result.resolvedFrom;

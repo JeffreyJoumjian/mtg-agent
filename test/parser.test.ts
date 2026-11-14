@@ -92,6 +92,18 @@ test("parses rules and subrules including non-sequential letters", () => {
   expect(ids).toEqual(["100.1", "100.1a", "100.1m", "100.2"]);
 });
 
+test("parses a rule printed without a period after its number instead of folding it into the rule before", () => {
+  // The published CR writes 606.5 as "606.5 If the total cost…", with no period after the number.
+  const parsed = parseRules(
+    FIXTURE.replace(
+      "101.1. Whenever a card contradicts these rules, the card wins.",
+      "101.1. Whenever a card contradicts these rules, the card wins.\n\n101.2 A rule printed without its trailing period.",
+    ),
+  );
+  expect(parsed.rules["101.1"]).toEqual("Whenever a card contradicts these rules, the card wins.");
+  expect(parsed.rules["101.2"]).toEqual("A rule printed without its trailing period.");
+});
+
 test("attaches examples to the correct rule", () => {
   const parsed = parseRules(FIXTURE);
   const rule = parsed.sections[0].rules.find((r) => r.id === "100.2");

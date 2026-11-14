@@ -2,7 +2,8 @@ import { test, expect } from "bun:test";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import {
-  changedRules,
+  compareCitedRules,
+  indexRules,
   lookup,
   parseDecisionLog,
   parseTopic,
@@ -12,6 +13,9 @@ import {
   validateLedger,
 } from "../scripts/lib/ledger.ts";
 import { LEDGER_DIR } from "../scripts/lib/paths.ts";
+
+const compare = (cited: string[], before: Record<string, string>, after: Record<string, string>) =>
+  compareCitedRules(cited, indexRules(before, after));
 
 const TOPIC = `# Ledger: Triggers, the stack and targeting
 
@@ -93,6 +97,14 @@ test("lookup matches a rule number and the rules under it, but not a longer numb
   expect(lookup("trig-002", topics, []).entries.map((e) => e.id)).toEqual(["trig-002"]);
 });
 
+test("lookup finds an entry by the current number of a rule it cited under an older number", () => {
+  const topics = [parseTopic(TOPIC, FILE)];
+  // trig-001 cites 603.1 and 603.2d. Say 603.2d has since moved to 604.9d.
+  const current = (e: { rules: string[] }) => e.rules.map((r) => (r === "603.2d" ? "604.9d" : r));
+  expect(lookup("604.9d", topics, [], [], current).entries.map((e) => e.id)).toEqual(["trig-001"]);
+  expect(lookup("604.9d", topics, []).entries.map((e) => e.id)).toEqual([]);
+});
+
 test("lookup resolves an old LEDGER.md line reference to the entry that absorbed it", () => {
   const topics = [parseTopic(TOPIC, FILE)];
   const idMap = [
@@ -113,11 +125,52 @@ test("lookup returns whole decision-log sections, heading matches first", () => 
   expect(res.decisions[0].text).toEqual("## 2026-09-22 — Roaming Throne re-derived\n\nDeclined by the pilot.");
 });
 
-test("changedRules flags a cited rule whose text, or a subrule's text, changed between versions", () => {
+test("compareCitedRules flags a cited rule whose text, or a subrule's text, changed between versions", () => {
   const before = { "603.2": "a", "603.2d": "old", "702.19": "t" };
   const after = { "603.2": "a", "603.2d": "new", "702.19": "t" };
-  expect(changedRules(["603.2", "702.19", "999.1"], before, after)).toEqual(["603.2", "999.1"]);
-  expect(changedRules(["702.19"], before, after)).toEqual([]);
+  expect(compare(["603.2", "702.19", "999.1"], before, after)).toEqual({ changed: ["603.2", "999.1"], moved: [] });
+  expect(compare(["702.19"], before, after)).toEqual({ changed: [], moved: [] });
+  expect(compare(["603.2"], { "603.2": "a" }, { "603.2": "a", "603.2a": "added later" })).toEqual({ changed: ["603.2"], moved: [] });
+});
+
+test("compareCitedRules follows a rule whose text moved to another number, and ignores edits to rule-number references", () => {
+  // CR 2026-11-06 put Meld Cards at 713, so Taking Shortcuts went from 732 to 733 and Day and Night took 732.
+  const before = {
+    "732.2a": "A player may suggest a shortcut (see rule 732.5).",
+    "732.5": "Loops end when a player stops.",
+    "603.3a": "Controlled by the player who controlled its source (see rules 603.7d–f).",
+  };
+  const after = {
+    "732.2a": "If it's day and nobody cast a spell, it becomes night.",
+    "733.2a": "A player may suggest a shortcut (see rule 733.5).",
+    "733.5": "Loops end when a player stops.",
+    "603.3a": "Controlled by the player who controlled its source (see rules 603.7d–g).",
+  };
+  expect(compare(["732.2a", "732.5", "603.3a"], before, after)).toEqual({
+    changed: [],
+    moved: [
+      { from: "732.2a", to: "733.2a" },
+      { from: "732.5", to: "733.5" },
+    ],
+  });
+});
+
+test("compareCitedRules follows a cited section as a whole, and flags edits, additions and ambiguous matches", () => {
+  const before = { "722.1": "Prep one.", "722.2": "Prep two.", "603.1": "Same words.", "603.2": "Same words." };
+  const moved = { "723.1": "Prep one.", "723.2": "Prep two.", "722.1": "Station one.", "603.1": "Same words.", "603.2": "Same words." };
+  expect(compare(["722"], before, moved)).toEqual({ changed: [], moved: [{ from: "722", to: "723" }] });
+  expect(compare(["722"], before, { ...moved, "723.3": "A new prep rule." })).toEqual({ changed: ["722"], moved: [] });
+  expect(compare(["722.2"], before, { ...moved, "723.2": "Prep two, reworded." })).toEqual({ changed: ["722.2"], moved: [] });
+
+  // A rule whose text now appears at two other numbers can't be tied to one, so it's flagged for a re-check.
+  expect(compare(["722.1"], before, { "723.1": "Prep one.", "724.1": "Prep one." })).toEqual({ changed: ["722.1"], moved: [] });
+});
+
+test("compareCitedRules settles boilerplate that recurs across sections by where the rest of its section went", () => {
+  const before = { "722.1": "Prep one.", "722.2": "Prep two.", "722.3": "Shared closing sentence." };
+  const after = { "723.1": "Prep one.", "723.2": "Prep two.", "723.3": "Shared closing sentence.", "716.3": "Shared closing sentence." };
+  expect(compare(["722"], before, after)).toEqual({ changed: [], moved: [{ from: "722", to: "723" }] });
+  expect(compare(["722.3"], before, after)).toEqual({ changed: [], moved: [{ from: "722.3", to: "723.3" }] });
 });
 
 test("the repo's ledger is well-formed and its INDEX.md and CARDS.md are fresh", () => {
