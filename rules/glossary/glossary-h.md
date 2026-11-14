@@ -2,7 +2,9 @@
 
 ## Hand
 
-1. A zone. A player’s hand is where that player holds cards they have drawn but not played yet. 2. All the cards in a player’s hand. See rule 402, “Hand.”
+1. A zone. A player’s hand is where that player holds cards they have drawn but not played yet.
+2. All the cards in a player’s hand.
+See rule 402, “Hand.”
 
 ## Hand Modifier
 
@@ -31,6 +33,10 @@ A keyword ability that exiles cards. A card exiled this way “haunts” a creat
 ## Heal
 
 To remove damage marked on a permanent. See rule 701.69, “Heal.”
+
+## Heartwood Token
+
+A Heartwood token is a red and green artifact token with “{T}: Add {R} or {G}.” For more information about predefined tokens, see rule 111.10.
 
 ## Hexproof
 

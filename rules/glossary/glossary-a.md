@@ -6,7 +6,9 @@ To turn a face-up ongoing scheme card face down and put it on the bottom of its 
 
 ## Ability
 
-1. Text on an object that explains what that object does or can do. 2. An activated or triggered ability on the stack. This kind of ability is an object. See rule 113, “Abilities,” and section 6, “Spells, Abilities, and Effects.”
+1. Text on an object that explains what that object does or can do.
+2. An activated or triggered ability on the stack. This kind of ability is an object.
+See rule 113, “Abilities,” and section 6, “Spells, Abilities, and Effects.”
 
 ## Ability Word
 
@@ -50,7 +52,7 @@ A cost a spell may have that its controller may pay (or, in some cases, must pay
 
 ## Adventurer Card
 
-Cards with a two-part card frame (one part of which is inset on the left) on a single card where the alternative characteristics include the Adventure spell type. See rule 715, “Adventurer Cards.”
+Cards with a two-part card frame (one part of which is inset on the left) on a single card where the alternative characteristics include the Adventure spell type. See rule 716, “Adventurer Cards.”
 
 ## Affinity
 
@@ -102,7 +104,9 @@ A keyword ability that can make a creature particularly brutal when it attacks. 
 
 ## Ante
 
-1. A zone used only when playing “for keeps.” 2. To put a card into the ante zone. See rule 407, “Ante.”
+1. A zone used only when playing “for keeps.”
+2. To put a card into the ante zone.
+See rule 407, “Ante.”
 
 ## Any Target
 
@@ -114,7 +118,8 @@ See Active Player, Nonactive Player Order.
 
 ## Archenemy
 
-1. A casual variant in which a team of players faces off against a single opponent strengthened with powerful scheme cards. See rule 904, “Archenemy.” 2. A player in an Archenemy game who is playing with a scheme deck.
+1. A casual variant in which a team of players faces off against a single opponent strengthened with powerful scheme cards. See rule 904, “Archenemy.”
+2. A player in an Archenemy game who is playing with a scheme deck.
 
 ## Archenemy Commander
 
@@ -151,6 +156,10 @@ Assemble is a keyword action in the Unstable set that puts Contraptions onto the
 ## Assign Combat Damage
 
 To determine how an attacking or blocking creature will deal its combat damage. See rule 510, “Combat Damage Step.”
+
+## Assimilate
+
+A keyword action that lets a player gain control of a creature and put a +1/+1 counter on it or put a creature card onto the battlefield under their control with a +1/+1 counter on it. In either case, it’s a Borg artifact creature with no other creature types. See rule 701.72, “Assimilate.”
 
 ## Assist
 
@@ -198,11 +207,11 @@ An ability that triggers when a creature “attacks and isn’t blocked” trigg
 
 ## Attraction
 
-An artifact type seen only on nontraditional Magic cards in the Unfinity expansion. See rule 717, “Attraction Cards,” rule 701.51, “Open an Attraction,” and rule 701.52, “Roll to Visit Your Attractions.”
+An artifact type seen only on nontraditional Magic cards in the Unfinity expansion. See rule 718, “Attraction Cards,” rule 701.51, “Open an Attraction,” and rule 701.52, “Roll to Visit Your Attractions.”
 
 ## Attraction Deck
 
-An optional deck of at least three (in limited play) or ten (in constructed play) Attraction cards that can be used to support play with some cards from the Unfinity expansion. See rule 717.2.
+An optional deck of at least three (in limited play) or ten (in constructed play) Attraction cards that can be used to support play with some cards from the Unfinity expansion. See rule 718.2.
 
 ## Aura
 

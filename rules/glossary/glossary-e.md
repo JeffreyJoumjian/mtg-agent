@@ -36,6 +36,10 @@ The middle player on each team in an Emperor game. See rule 809, “Emperor Vari
 
 A multiplayer variant played among three-player teams. See rule 809, “Emperor Variant.”
 
+## Empower Jace
+
+A keyword action that gives you a Jace planeswalker token and/or puts loyalty counters on a Jace token you already have. See rule 701.71, “Empower Jace.”
+
 ## Enchant
 
 A keyword ability that defines what an Aura spell can target and what an Aura permanent can be attached to. See rule 303, “Enchantments,” and rule 702.5, “Enchant.”
@@ -70,11 +74,11 @@ Part of the turn. This step is the first step of the ending phase. See rule 513,
 
 ## End the Combat Phase
 
-To “end the combat phase” as the result of an effect is to perform an expedited process that skips everything else that would happen that phase. See rule 724, “Ending Turns and Phases.”
+To “end the combat phase” as the result of an effect is to perform an expedited process that skips everything else that would happen that phase. See rule 725, “Ending Turns and Phases.”
 
 ## End the Turn
 
-To “end the turn” as the result of an effect is to perform an expedited process that skips nearly everything else that would happen that turn. See rule 724, “Ending Turns and Phases.”
+To “end the turn” as the result of an effect is to perform an expedited process that skips nearly everything else that would happen that turn. See rule 725, “Ending Turns and Phases.”
 
 ## Ending Phase
 
@@ -82,7 +86,7 @@ Part of the turn. This phase is the fifth and final phase of the turn. See rule 
 
 ## Endure
 
-A keyword ability that lets you choose put +1/+1 counters on a creature or create a Spirit creature token. See rule 702.62, “Endure.”
+A keyword ability that lets you choose put +1/+1 counters on a creature or create a Spirit creature token. See rule 701.63, “Endure.”
 
 ## Enduring Story
 
@@ -170,7 +174,9 @@ An activated ability that may be activated only once. See rule 702.177, “Exhau
 
 ## Exile
 
-1. A zone. Exile is essentially a holding area for cards. It used to be known as the “removed-from-the-game” zone. 2. To put an object into the exile zone from whatever zone it’s currently in. An “exiled” card is one that’s been put into the exile zone. See rule 406, “Exile.”
+1. A zone. Exile is essentially a holding area for cards. It used to be known as the “removed-from-the-game” zone.
+2. To put an object into the exile zone from whatever zone it’s currently in. An “exiled” card is one that’s been put into the exile zone.
+See rule 406, “Exile.”
 
 ## Expansion Symbol
 

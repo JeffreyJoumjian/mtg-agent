@@ -54,7 +54,7 @@ An amount of damage greater than or equal to a creature’s toughness. See rules
 
 ## Level
 
-A numerical designation a permanent may have. A Class enchantment’s level determines what other abilities it has. See rule 716, “Class Cards.”
+A numerical designation a permanent may have. A Class enchantment’s level determines what other abilities it has. See rule 717, “Class Cards.”
 
 ## Level Symbol
 
@@ -62,7 +62,7 @@ A symbol that represents a keyword ability indicating abilities, power, and toug
 
 ## Level Up
 
-A keyword ability that can put level counters on a creature. See rule 702.87, “Level Up.” For class level abilities of Class cards, see rule 716, “Class Cards.”
+A keyword ability that can put level counters on a creature. See rule 702.87, “Level Up.” For class level abilities of Class cards, see rule 717, “Class Cards.”
 
 ## Leveler Cards
 
@@ -70,7 +70,9 @@ Cards with striated text boxes and three power/toughness boxes. See rule 711, �
 
 ## Library
 
-1. A zone. A player’s library is where that player draws cards from. 2. All the cards in a player’s library. See rule 401, “Library.”
+1. A zone. A player’s library is where that player draws cards from.
+2. All the cards in a player’s library.
+See rule 401, “Library.”
 
 ## Life, Life Total
 
@@ -122,7 +124,7 @@ Informal term for the current system of mulligan rules. See rule 103.5.
 
 ## Loop
 
-A set of actions that could be repeated indefinitely. See rule 732, “Taking Shortcuts.”
+A set of actions that could be repeated indefinitely. See rule 733, “Taking Shortcuts.”
 
 ## Lose the Game
 
@@ -130,7 +132,8 @@ There are several ways to lose the game. See rule 104, “Ending the Game,” ru
 
 ## Loyalty
 
-1. Part of a card that only planeswalker cards have. A planeswalker card’s loyalty is printed in its lower right corner. See rule 209, “Loyalty.” 2. A characteristic that only planeswalkers have. See rule 306.5.
+1. Part of a card that only planeswalker cards have. A planeswalker card’s loyalty is printed in its lower right corner. See rule 209, “Loyalty.”
+2. A characteristic that only planeswalkers have. See rule 306.5.
 
 ## Loyalty Ability
 

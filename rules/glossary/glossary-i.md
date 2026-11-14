@@ -6,7 +6,7 @@ See Intervening “If” Clause.
 
 ## Illegal Action
 
-An action that violates the rules of the game and/or requirements or restrictions created by effects. See rule 733, “Handling Illegal Actions.”
+An action that violates the rules of the game and/or requirements or restrictions created by effects. See rule 734, “Handling Illegal Actions.”
 
 ## Illegal Target
 
@@ -66,7 +66,8 @@ A keyword ability that affects how an object deals damage to creatures and playe
 
 ## Infinity
 
-1. An artifact subtype. 2. ∞ is a keyword found on Infinity cards that grants an ability as long as that permanent is harnessed. See rule 702.186, “∞ (Infinity),” and rule 701.64, “Harness.”
+1. An artifact subtype.
+2. ∞ is a keyword found on Infinity cards that grants an ability as long as that permanent is harnessed. See rule 702.186, “∞ (Infinity),” and rule 701.64, “Harness.”
 
 ## Ingest
 
@@ -74,7 +75,7 @@ A keyword ability that can exile the top card of a player’s library. See rule 
 
 ## Initiative
 
-A designation a player can have. Some effects instruct a player to take the initiative. The player with the initiative ventures into Undercity whenever they take the initiative and at the beginning of their upkeep. See rule 726, “The Initiative.”
+A designation a player can have. Some effects instruct a player to take the initiative. The player with the initiative ventures into Undercity whenever they take the initiative and at the beginning of their upkeep. See rule 727, “The Initiative.”
 
 ## Instant
 

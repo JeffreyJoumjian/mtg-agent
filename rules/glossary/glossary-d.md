@@ -14,11 +14,11 @@ A keyword ability found on creature cards that allows them to be cast for an alt
 
 ## Day
 
-Along with night, a designation the game can have. See rule 731, “Day and Night,” and rule 702.145, “Daybound and Nightbound.”
+Along with night, a designation the game can have. See rule 732, “Day and Night,” and rule 702.145, “Daybound and Nightbound.”
 
 ## Daybound
 
-An ability found on the front faces of some double-faced cards. Cards with daybound and nightbound are face up when it’s day and face down when it’s night. See rule 702.145, “Daybound and Nightbound,” and rule 731, “Day and Night.”
+An ability found on the front faces of some double-faced cards. Cards with daybound and nightbound are face up when it’s day and face down when it’s night. See rule 702.145, “Daybound and Nightbound,” and rule 732, “Day and Night.”
 
 ## Deal
 
@@ -168,7 +168,8 @@ Part of a draft in which each player opens an unopened booster pack and the card
 
 ## Draw
 
-1. To put the top card of a player’s library into their hand as a turn-based action or as the result of an effect that uses the word “draw.” See rule 121, “Drawing a Card.” 2. The result of a game in which neither player wins or loses. See rule 104.4.
+1. To put the top card of a player’s library into their hand as a turn-based action or as the result of an effect that uses the word “draw.” See rule 121, “Drawing a Card.”
+2. The result of a game in which neither player wins or loses. See rule 104.4.
 
 ## Draw Step
 

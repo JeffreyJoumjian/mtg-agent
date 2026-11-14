@@ -54,7 +54,8 @@ A keyword ability that can return a creature from the graveyard to the battlefie
 
 ## Phase
 
-1. A subsection of a turn. See section 5, “Turn Structure.” 2. A permanent “phases in” when its status changes from phased out to phased in. A permanent “phases out” when its status changes from phased in to phased out. See rule 702.26, “Phasing.”
+1. A subsection of a turn. See section 5, “Turn Structure.”
+2. A permanent “phases in” when its status changes from phased out to phased in. A permanent “phases out” when its status changes from phased in to phased out. See rule 702.26, “Phasing.”
 
 ## Phased In, Phased Out
 
@@ -134,7 +135,11 @@ Older versions of the rules stated that a player who controlled two or more plan
 
 ## Play
 
-1. To play a land is to put a land onto the battlefield as a special action. See rule 116, “Special Actions,” and rule 305, “Lands.” 2. To play a card is to play that card as a land or cast that card as a spell, whichever is appropriate. See rule 601, “Casting Spells.” 3. (Obsolete) Casting a spell used to be known as playing a spell. Cards with that text have received errata in the Oracle card reference. See Cast. 4. (Obsolete) Activating an activated ability used to be known as playing an activated ability. Cards with that text have received errata in the Oracle card reference. See Activate. 5. (Obsolete) The battlefield used to be known as the in-play zone. Cards that were printed with text that contains the phrases “in play,” “from play,” “into play,” or the like are referring to the battlefield and have received errata in the Oracle card reference. See Battlefield.
+1. To play a land is to put a land onto the battlefield as a special action. See rule 116, “Special Actions,” and rule 305, “Lands.”
+2. To play a card is to play that card as a land or cast that card as a spell, whichever is appropriate. See rule 601, “Casting Spells.”
+3. (Obsolete) Casting a spell used to be known as playing a spell. Cards with that text have received errata in the Oracle card reference. See Cast.
+4. (Obsolete) Activating an activated ability used to be known as playing an activated ability. Cards with that text have received errata in the Oracle card reference. See Activate.
+5. (Obsolete) The battlefield used to be known as the in-play zone. Cards that were printed with text that contains the phrases “in play,” “from play,” “into play,” or the like are referring to the battlefield and have received errata in the Oracle card reference. See Battlefield.
 
 ## Player
 
@@ -174,7 +179,8 @@ A main phase that occurs after a combat phase. See Main Phase.
 
 ## Power
 
-1. Part of a card that only creature cards have. A creature card’s power is printed before the slash in its lower right corner. See rule 208, “Power/Toughness.” 2. A characteristic that only creatures have. See rule 302.4.
+1. Part of a card that only creature cards have. A creature card’s power is printed before the slash in its lower right corner. See rule 208, “Power/Toughness.”
+2. A characteristic that only creatures have. See rule 302.4.
 
 ## Powerstone Token
 
@@ -190,15 +196,15 @@ The first main phase of a turn. See Main Phase.
 
 ## Preparation Card
 
-Cards with a two-part card frame (one part of which is inset on the right) on a single card. See rule 722, “Preparation Cards.”
+Cards with a two-part card frame (one part of which is inset on the right) on a single card. See rule 723, “Preparation Cards.”
 
 ## Prepare Spell
 
-The inset frame of a preparation card that includes its alternative characteristics. See rule 722, “Preparation Cards.”
+The inset frame of a preparation card that includes its alternative characteristics. See rule 723, “Preparation Cards.”
 
 ## Prepared
 
-A designation a permanent may have that allows you to cast a copy of that card with its alternative characteristics. See rule 722, “Preparation Cards.”
+A designation a permanent may have that allows you to cast a copy of that card with its alternative characteristics. See rule 723, “Preparation Cards.”
 
 ## Prevent
 
@@ -230,11 +236,11 @@ A keyword ability that provides a range of benefits against objects with a speci
 
 ## Prototype
 
-An ability which allows a prototype card to be cast with a secondary set of characteristics. See rule 718, “Prototype Cards,” and rule 702.160, “Prototype.”
+An ability which allows a prototype card to be cast with a secondary set of characteristics. See rule 719, “Prototype Cards,” and rule 702.160, “Prototype.”
 
 ## Prototype Card
 
-Cards with a two-part card frame (one part of which is inset under the type line) on a single card. See rule 718, “Prototype Cards.”
+Cards with a two-part card frame (one part of which is inset under the type line) on a single card. See rule 719, “Prototype Cards.”
 
 ## Provoke
 

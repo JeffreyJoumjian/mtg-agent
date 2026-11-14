@@ -14,7 +14,7 @@ A designation given to a creature whose saddle ability has resolved. See rule 70
 
 ## Saga
 
-An enchantment subtype. Sagas have a number of chapter abilities that take effect over a number of turns to tell a story. See rule 714, “Saga Cards.”
+An enchantment subtype. Sagas have a number of chapter abilities that take effect over a number of turns to tell a story. See rule 715, “Saga Cards.”
 
 ## Scavenge
 
@@ -70,7 +70,7 @@ A counter that protects a permanent from being damaged or destroyed. See rule 12
 
 ## Shortcut
 
-A mutually understood way for the game to advance forward a number of game choices (either taking an action or passing priority) without players needing to explicitly identify each such choice. See rule 732, “Taking Shortcuts.”
+A mutually understood way for the game to advance forward a number of game choices (either taking an action or passing priority) without players needing to explicitly identify each such choice. See rule 733, “Taking Shortcuts.”
 
 ## Shroud
 
@@ -122,7 +122,8 @@ Some older cards were printed with the term “snow-covered” in their rules te
 
 ## Solved
 
-1. A designation a Case may have, allowing its last ability to affect the game. See rule 719, “Case Cards.” 2. A keyword ability of Case cards that affects the game only if the Case has the solved designation. See rule 702.169, “Solved.”
+1. A designation a Case may have, allowing its last ability to affect the game. See rule 720, “Case Cards.”
+2. A keyword ability of Case cards that affects the game only if the Case has the solved designation. See rule 702.169, “Solved.”
 
 ## Sorcery
 
@@ -238,11 +239,11 @@ A kind of ability. Static abilities do something all the time rather than being 
 
 ## Station
 
-A keyword ability that lets you tap creatures to add charge counters to station cards. See rule 702.184, “Station,” and rule 721, “Station Cards.”
+A keyword ability that lets you tap creatures to add charge counters to station cards. See rule 702.184, “Station,” and rule 722, “Station Cards.”
 
 ## Station Cards
 
-Cards with striated text boxes, one or more station symbols, and the station ability. See rule 721, “Station Cards.”
+Cards with striated text boxes, one or more station symbols, and the station ability. See rule 722, “Station Cards.”
 
 ## Status
 
@@ -278,11 +279,11 @@ A counter that stops a permanent from untapping. See rule 122.1d.
 
 ## Subgame
 
-A completely separate Magic game created by an effect. See rule 729, “Subgames.”
+A completely separate Magic game created by an effect. See rule 730, “Subgames.”
 
 ## Substitute Card
 
-A game supplement with a Magic card back that can be used to represent a double-faced card or meld card. See rule 713, “Substitute Cards.”
+A game supplement with a Magic card back that can be used to represent a double-faced card or meld card. See rule 714, “Substitute Cards.”
 
 ## Subtype
 

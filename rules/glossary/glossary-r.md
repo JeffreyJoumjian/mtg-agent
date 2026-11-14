@@ -2,7 +2,7 @@
 
 ## Rad Counter
 
-A type of counter a player can have that causes that player to mill cards at the beginning of their precombat main phase, then lose 1 life and remove one rad counter for each nonland card milled this way. See rule 122, “Counters,” and rule 728, “Rad Counters.”
+A type of counter a player can have that causes that player to mill cards at the beginning of their precombat main phase, then lose 1 life and remove one rad counter for each nonland card milled this way. See rule 122, “Counters,” and rule 729, “Rad Counters.”
 
 ## Rampage
 
@@ -102,7 +102,7 @@ To cast an instant spell or activate an ability while another spell or ability i
 
 ## Restart the Game
 
-To immediately end the current game and restart it. See rule 727, “Restarting the Game.”
+To immediately end the current game and restart it. See rule 728, “Restarting the Game.”
 
 ## Restriction
 

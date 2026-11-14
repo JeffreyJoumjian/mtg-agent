@@ -2,7 +2,8 @@
 
 ## Vanguard
 
-1. A casual variant in which each player plays the role of a famous character. See rule 902, “Vanguard.” 2. A card type seen only on nontraditional Magic cards in the Vanguard casual variant. A vanguard card is not a permanent. See rule 313, “Vanguards.”
+1. A casual variant in which each player plays the role of a famous character. See rule 902, “Vanguard.”
+2. A card type seen only on nontraditional Magic cards in the Vanguard casual variant. A vanguard card is not a permanent. See rule 313, “Vanguards.”
 
 ## Vanishing
 

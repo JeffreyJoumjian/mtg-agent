@@ -1,194 +1,918 @@
 # Changelog
 
-## 2026-08-07 (effective August 7, 2026)
+## 2026-11-06 (effective November 6, 2026)
 
-**35 added · 13 removed · 44 changed**
+**147 added · 124 removed · 211 changed**
 
 ### Added
 
-- `111.10w`
-- `122.1j`
-- `310.9a`
-- `310.9b`
-- `310.9c`
-- `310.9d`
-- `310.9e`
-- `310.9f`
-- `310.9g`
-- `310.12`
-- `310.12a`
-- `310.12b`
-- `601.7a`
-- `601.7b`
-- `601.8`
-- `700.16`
-- `701.50f`
-- `701.69`
-- `701.69a`
-- `701.70`
-- `701.70a`
-- `702.122e`
-- `702.193`
-- `702.193a`
-- `702.193b`
-- `702.194`
-- `702.194a`
-- `702.194b`
-- `702.194c`
-- `702.195`
-- `702.195a`
-- `702.195b`
-- `702.195c`
-- `704.5aa`
-- `707.12a`
+- `111.10x`
+- `205.4c`
+- `506.8`
+- `506.8a`
+- `506.8b`
+- `506.8c`
+- `506.8d`
+- `506.8e`
+- `506.8f`
+- `506.8g`
+- `508.4e`
+- `509.1b`
+- `700.17`
+- `701.27h`
+- `701.27i`
+- `701.27j`
+- `701.28g`
+- `701.28h`
+- `701.71`
+- `701.71a`
+- `701.72`
+- `701.72a`
+- `701.72b`
+- `701.72c`
+- `702.196`
+- `702.196a`
+- `702.196b`
+- `712.6a`
+- `712.6b`
+- `712.6c`
+- `712.6d`
+- `712.6e`
+- `712.12a`
+- `713.1a`
+- `713.1b`
+- `713.1c`
+- `713.2d`
+- `713.2e`
+- `713.2f`
+- `713.2g`
+- `713.5a`
+- `713.5b`
+- `713.5c`
+- `713.6`
+- `713.7`
+- `713.8`
+- `713.8a`
+- `713.8b`
+- `713.8c`
+- `713.8d`
+- `713.8e`
+- `713.9`
+- `714.5`
+- `715.1a`
+- `715.2d`
+- `715.2e`
+- `716.3a`
+- `716.3b`
+- `716.3c`
+- `716.3d`
+- `716.5`
+- `717.2c`
+- `717.2d`
+- `718.2b`
+- `718.6`
+- `718.6a`
+- `719.2a`
+- `719.3d`
+- `719.4`
+- `719.5`
+- `721.3a`
+- `721.3b`
+- `721.3c`
+- `721.3d`
+- `721.5`
+- `723.2a`
+- `723.2b`
+- `723.2c`
+- `723.3a`
+- `723.3b`
+- `723.3c`
+- `723.3d`
+- `724.3`
+- `724.4`
+- `724.5`
+- `724.5a`
+- `724.5b`
+- `724.6`
+- `724.7`
+- `724.8`
+- `724.9`
+- `725.1a`
+- `725.1b`
+- `725.1c`
+- `725.1d`
+- `725.1e`
+- `725.1f`
+- `725.2a`
+- `725.2b`
+- `725.2c`
+- `725.2d`
+- `725.2e`
+- `725.2f`
+- `725.2g`
+- `728.2`
+- `728.3`
+- `728.4`
+- `728.5`
+- `728.5a`
+- `728.6`
+- `728.7`
+- `730.1a`
+- `730.1b`
+- `730.4`
+- `730.4a`
+- `730.4b`
+- `730.5`
+- `730.5a`
+- `730.5b`
+- `730.5c`
+- `730.6`
+- `731.2d`
+- `731.2e`
+- `731.2f`
+- `731.2g`
+- `731.2h`
+- `731.2i`
+- `731.2j`
+- `731.3`
+- `731.3a`
+- `731.3b`
+- `731.3c`
+- `731.3d`
+- `731.3e`
+- `733.1a`
+- `733.1b`
+- `733.1c`
+- `733.2a`
+- `733.2b`
+- `733.2c`
+- `733.3`
+- `733.4`
+- `733.5`
+- `733.6`
+- `734.1`
+- `734.2`
+- `903.5f`
 
 ### Removed
 
-- `205.4c`
-- `310.8a`
-- `310.8b`
-- `310.8c`
-- `310.8d`
-- `310.8e`
-- `310.8f`
-- `310.8g`
-- `310.11a`
-- `310.11b`
-- `509.1b`
-- `601.5a`
-- `601.6b`
+- `506.7a`
+- `506.7b`
+- `506.7c`
+- `506.7d`
+- `506.7e`
+- `506.7f`
+- `506.7g`
+- `614.13c`
+- `712.4a`
+- `712.4b`
+- `712.4c`
+- `712.5a`
+- `712.5b`
+- `712.5c`
+- `712.5d`
+- `712.5e`
+- `712.5f`
+- `712.5g`
+- `712.8e`
+- `712.8f`
+- `712.8g`
+- `712.11c`
+- `712.11d`
+- `712.13a`
+- `712.14a`
+- `712.14b`
+- `712.14c`
+- `712.15a`
+- `712.17`
+- `712.18`
+- `712.19`
+- `712.20`
+- `712.21`
+- `712.21a`
+- `712.21b`
+- `712.21c`
+- `712.21d`
+- `712.21e`
+- `714.1a`
+- `714.2d`
+- `714.2e`
+- `714.3a`
+- `714.3b`
+- `714.3c`
+- `715.3d`
+- `715.5`
+- `716.2d`
+- `717.5`
+- `717.6`
+- `717.6a`
+- `718.3a`
+- `718.3b`
+- `718.3c`
+- `718.3d`
+- `720.2a`
+- `720.2b`
+- `720.2c`
+- `720.3d`
+- `720.4`
+- `720.5`
+- `722.3a`
+- `722.3b`
+- `722.3c`
+- `722.3d`
+- `722.5`
+- `723.1a`
+- `723.1b`
+- `723.5a`
+- `723.5b`
+- `723.6`
+- `723.7`
+- `723.8`
+- `723.9`
+- `724.1c`
+- `724.1d`
+- `724.1e`
+- `724.1f`
+- `724.2a`
+- `724.2b`
+- `724.2c`
+- `724.2d`
+- `724.2e`
+- `724.2f`
+- `724.2g`
+- `725.3`
+- `725.4`
+- `725.5`
+- `727.1a`
+- `727.5a`
+- `727.6`
+- `727.7`
+- `729.1b`
+- `729.2`
+- `729.2a`
+- `729.2b`
+- `729.2c`
+- `729.3`
+- `729.4`
+- `729.4a`
+- `729.4b`
+- `729.5`
+- `729.5a`
+- `729.5b`
+- `729.5c`
+- `729.6`
+- `730.2d`
+- `730.2e`
+- `730.2f`
+- `730.2g`
+- `730.2h`
+- `730.2i`
+- `730.2j`
+- `730.3a`
+- `730.3b`
+- `730.3c`
+- `730.3d`
+- `730.3e`
+- `731.1a`
+- `732.1b`
+- `732.1c`
+- `732.3`
+- `732.4`
+- `732.5`
+- `732.6`
 
 ### Changed
 
+- `100.2d`
+  - before: Some formats and casual play variants allow players to use a supplementary deck of nontraditional Magic cards (see rule 108.2a). These supplementary decks have their own deck construction rules. See …
+  - after: Some formats and casual play variants allow players to use a supplementary deck of nontraditional Magic cards (see rule 108.2a). These supplementary decks have their own deck construction rules. See …
+- `103.2a`
+  - before: If any players are using sideboards (see rule 100.4) or cards being represented by substitute cards (see rule 713), those cards are set aside. After this happens, each player’s deck is considered the…
+  - after: If any players are using sideboards (see rule 100.4) or cards being represented by substitute cards (see rule 714), those cards are set aside. After this happens, each player’s deck is considered the…
+- `104.6`
+  - before: One card (Karn Liberated) restarts the game. All players still in the game when it restarts then immediately begin a new game. See rule 727, “Restarting the Game.”
+  - after: One card (Karn Liberated) restarts the game. All players still in the game when it restarts then immediately begin a new game. See rule 728, “Restarting the Game.”
+- `107.15`
+  - before: The text box of a Saga card contains chapter symbols, each of which is a keyword ability that represents a triggered ability. A chapter symbol includes a Roman numeral, indicated here as “rN”. The te…
+  - after: The text box of a Saga card contains chapter symbols, each of which is a keyword ability that represents a triggered ability. A chapter symbol includes a Roman numeral, indicated here as “rN”. The te…
+- `107.16`
+  - before: The text box of a Class card contains class level bars, each of which is a keyword ability that represents both an activated ability and a static ability. A class level bar includes the activation co…
+  - after: The text box of a Class card contains class level bars, each of which is a keyword ability that represents both an activated ability and a static ability. A class level bar includes the activation co…
+- `109.4b`
+  - before: A triggered ability that has triggered but is waiting to be placed on the stack is controlled by the player who controlled its source at the time it triggered, unless it’s a delayed triggered ability…
+  - after: A triggered ability that has triggered but is waiting to be placed on the stack is controlled by the player who controlled its source at the time it triggered, unless it’s a delayed triggered ability…
+- `109.5`
+  - before: The words “you” and “your” on an object refer to the object’s controller, its would-be controller (if a player is attempting to play, cast, or activate it), or its owner (if it has no controller). Fo…
+  - after: The words “you” and “your” on an object refer to the object’s controller, its would-be controller (if a player is attempting to play, cast, or activate it), or its owner (if it has no controller). Fo…
+- `113.7`
+  - before: The source of an ability is the object that generated it. The source of an activated ability on the stack is the object whose ability was activated. The source of a triggered ability (other than a de…
+  - after: The source of an ability is the object that generated it. The source of an activated ability on the stack is the object whose ability was activated. The source of a triggered ability (other than a de…
+- `113.8`
+  - before: The controller of an activated ability on the stack is the player who activated it. The controller of a triggered ability on the stack (other than a delayed triggered ability) is the player who contr…
+  - after: The controller of an activated ability on the stack is the player who activated it. The controller of a triggered ability on the stack (other than a delayed triggered ability) is the player who contr…
+- `121.8`
+  - before: If a spell or ability causes a card to be drawn while another spell is being cast, the drawn card is kept face down until that spell becomes cast (see rule 601.2i) or until the casting process is rev…
+  - after: If a spell or ability causes a card to be drawn while another spell is being cast, the drawn card is kept face down until that spell becomes cast (see rule 601.2i) or until the casting process is rev…
+- `122.1g`
+  - before: The number of defense counters on a battle on the battlefield indicates how much defense it has. A battle with 0 defense is put into its owner’s graveyard if it isn’t the source of an ability that ha…
+  - after: The number of defense counters on a battle on the battlefield indicates how much defense it has. A Siege battle with 0 defense is put into its owner’s graveyard if it isn’t the source of an ability t…
+- `122.1i`
+  - before: One or more rad counters on a player cause a triggered ability to trigger at the beginning of that player’s precombat main phase. See rule 728, “Rad Counters.”
+  - after: One or more rad counters on a player cause a triggered ability to trigger at the beginning of that player’s precombat main phase. See rule 729, “Rad Counters.”
+- `201.4f`
+  - before: If a player wants to choose an adventurer card’s alternative name, the player may do so. (See rule 715.) If a player is instructed to choose a card name with certain characteristics, use the card’s c…
+  - after: If a player wants to choose the alternative name of an adventurer card, omen card, or preparation card, the player may do so. (See rules 716, 721, and 723.) If a player is instructed to choose a card…
+- `202.3b`
+  - before: The mana value of the back face of a nonmodal double-faced permanent or spell’s back face is calculated as though it had the mana cost of its front face. If a permanent or spell is a copy of the back…
+  - after: The mana value of the back face of a nonmodal double-faced permanent or spell’s back face is calculated as though it had the mana cost of its front face. If a permanent or spell is a copy of the back…
+- `202.3c`
+  - before: The mana value of a melded permanent is calculated as though it had the combined mana cost of the front faces of each card that represents it. If a permanent is a copy of a melded permanent (even if …
+  - after: The mana value of a melded permanent is calculated as though it had the combined mana cost of the front faces of each card that represents it. If a permanent is a copy of a melded permanent (even if …
 - `205.3g`
   - before: Artifacts have their own unique set of subtypes; these subtypes are called artifact types. The artifact types are Attraction (see rule 717), Blood, Bobblehead, Book, Clue, Contraption, Equipment (see…
-  - after: Artifacts have their own unique set of subtypes; these subtypes are called artifact types. The artifact types are Attraction (see rule 717), Blood, Bobblehead, Book, Clue, Contraption, Equipment (see…
+  - after: Artifacts have their own unique set of subtypes; these subtypes are called artifact types. The artifact types are Attraction (see rule 718), Blood, Bobblehead, Book, Clue, Communicator, Contraption, …
 - `205.3h`
   - before: Enchantments have their own unique set of subtypes; these subtypes are called enchantment types. The enchantment types are Aura (see rule 303.4), Background, Cartouche, Case (see rule 719), Class (se…
-  - after: Enchantments have their own unique set of subtypes; these subtypes are called enchantment types. The enchantment types are Aura (see rule 303.4), Background, Cartouche, Case (see rule 719), Class (se…
+  - after: Enchantments have their own unique set of subtypes; these subtypes are called enchantment types. The enchantment types are Aura (see rule 303.4), Background, Cartouche, Case (see rule 720), Class (se…
+- `205.3j`
+  - before: Planeswalkers have their own unique set of subtypes; these subtypes are called planeswalker types. The planeswalker types are Ajani, Aminatou, Angrath, Arlinn, Ashiok, Bahamut, Basri, Bolas, Calix, C…
+  - after: Planeswalkers have their own unique set of subtypes; these subtypes are called planeswalker types. The planeswalker types are Ajani, Aminatou, Angrath, Arlinn, Arzakon, Ashiok, Bahamut, Basri, Bolas,…
 - `205.3m`
   - before: Creatures and kindreds share their lists of subtypes; these subtypes are called creature types. One creature type is two words long: Time Lord. All other creature types are one word long: Advisor, Ae…
   - after: Creatures and kindreds share their lists of subtypes; these subtypes are called creature types. One creature type is two words long: Time Lord. All other creature types are one word long: Advisor, Ae…
 - `205.4b`
   - before: An object’s supertype is independent of its card type and subtype, even though some supertypes are closely identified with specific card types. Changing an object’s card types or subtypes won’t chang…
   - after: An object’s supertype is independent of its card type and subtype, even though some supertypes are closely identified with specific card types. Changing an object’s card types or subtypes won’t chang…
-- `310.7`
-  - before: If a battle’s defense is 0 and it isn’t the source of an ability which has triggered but not yet left the stack, it’s put into its owner’s graveyard. (This is a state-based action. See rule 704.)
-  - after: If a Siege battle’s defense is 0 and it isn’t the source of an ability which has triggered but not yet left the stack, it’s put into its owner’s graveyard. (This is a state-based action. See rule 704…
-- `310.8`
-  - before: Each battle has a player designated as its protector.
-  - after: If a non-Siege battle’s defense is 0, it’s put into its owner’s graveyard. (This is a state-based action. See rule 704.)
-- `310.9`
-  - before: A battle can’t be attached to players or permanents, even if it is also an Aura, Equipment, or Fortification. If a battle is somehow attached to a permanent, it becomes unattached. This is a state-ba…
-  - after: Each battle has a player designated as its protector.
-- `310.10`
-  - before: If a battle that isn’t being attacked has no player designated as its protector, or its protector is a player who can’t be its protector based on its battle type, its controller chooses an appropriat…
-  - after: A battle can’t be attached to players or permanents, even if it is also an Aura, Equipment, or Fortification. If a battle is somehow attached to a permanent, it becomes unattached. This is a state-ba…
-- `310.11`
-  - before: All currently existing battles have the subtype Siege. Sieges are subject to special rules.
-  - after: If a battle that isn’t being attacked has no player designated as its protector, or its protector is a player who can’t be its protector, its controller chooses an appropriate player to be its protec…
-- `505.1b`
-  - before: In card text, phrases such as “first main phase,” “second main phase,” and so on count the number of main phases that have occurred only in the current turn unless that text specifies otherwise.
-  - after: Phrases such as “first main phase,” “second main phase,” and so on count the number of main phases that have occurred only in the current turn unless that text specifies otherwise.
-- `506.4`
-  - before: A permanent is removed from combat if it leaves the battlefield, if its controller changes, if it phases out, if an effect specifically removes it from combat, if it’s a planeswalker that’s being att…
-  - after: A permanent is removed from combat if it leaves the battlefield, if its controller or protector changes, if it phases out, if an effect specifically removes it from combat, if it’s a planeswalker tha…
+- `207.2c`
+  - before: An ability word appears in italics at the beginning of some abilities. Ability words are similar to keywords in that they tie together cards that have similar functionality, but they have no special …
+  - after: An ability word appears in italics at the beginning of some abilities. Ability words are similar to keywords in that they tie together cards that have similar functionality, but they have no special …
+- `208.3`
+  - before: A noncreature permanent has no power or toughness, even if it’s a card with a power and toughness printed on it (such as a Vehicle). A noncreature object not on the battlefield has power or toughness…
+  - after: A noncreature permanent has no power or toughness, even if it’s a card with a power and toughness printed on it (such as a Vehicle). A noncreature object not on the battlefield has power or toughness…
+- `303.5`
+  - before: Some enchantments have the subtype “Saga.” See rule 714 for more information about Saga cards.
+  - after: Some enchantments have the subtype “Saga.” See rule 715 for more information about Saga cards.
+- `303.6`
+  - before: Some enchantments have the subtype “Class.” See rule 716 for more information about Class cards.
+  - after: Some enchantments have the subtype “Class.” See rule 717 for more information about Class cards.
+- `405.4`
+  - before: Each spell has all the characteristics of the card associated with it. Each activated or triggered ability that’s on the stack has the text of the ability that created it and no other characteristics…
+  - after: Each spell has all the characteristics of the card associated with it. Each activated or triggered ability that’s on the stack has the text of the ability that created it and no other characteristics…
+- `502.2`
+  - before: Second, if it’s day and the previous turn’s active player didn’t cast any spells during that turn, it becomes night. If it’s night and the previous turn’s active player cast two or more spells during…
+  - after: Second, if it’s day and the previous turn’s active player didn’t cast any spells during that turn, it becomes night. If it’s night and the previous turn’s active player cast two or more spells during…
+- `505.4`
+  - before: Second, if the active player controls one or more Saga enchantments and it’s the active player’s precombat main phase, the active player puts a lore counter on each Saga they control with one or more…
+  - after: Second, if the active player controls one or more Saga enchantments and it’s the active player’s precombat main phase, the active player puts a lore counter on each Saga they control with one or more…
+- `506.6`
+  - before: Some abilities check to see whether or not a creature “had to attack” during a particular combat phase. A creature had to attack if one or more effects were requiring that creature to attack at the t…
+  - after: A creature attacks a player alone if it’s declared as an attacker attacking a player during the declare attackers step and no other creature is declared as an attacker attacking that player. A creatu…
+- `506.7`
+  - before: Some spells state that they may be cast “only [before/after] [a particular point in the combat phase],” in which that point may be “attackers are declared,” “blockers are declared,” “the combat damag…
+  - after: Some abilities check to see whether or not a creature “had to attack” during a particular combat phase. A creature had to attack if one or more effects were requiring that creature to attack at the t…
+- `508.1`
+  - before: First, the active player declares attackers. This turn-based action doesn’t use the stack. To declare attackers, the active player follows the steps below, in order. If at any point during the declar…
+  - after: First, the active player declares attackers. This turn-based action doesn’t use the stack. To declare attackers, the active player follows the steps below, in order. If at any point during the declar…
+- `509.1`
+  - before: First, the defending player declares blockers. This turn-based action doesn’t use the stack. To declare blockers, the defending player follows the steps below, in order. If at any point during the de…
+  - after: First, the defending player declares blockers. This turn-based action doesn’t use the stack. To declare blockers, the defending player follows the steps below, in order. If at any point during the de…
 - `509.1a`
   - before: The defending player chooses which creatures they control, if any, will block. The chosen creatures must be untapped and they can’t also be battles. For each of the chosen creatures, the defending pl…
   - after: The defending player chooses which creatures they control, if any, will block. The chosen creatures must be untapped and they can’t also be battles. For each of the chosen creatures, the defending pl…
-- `601.5`
-  - before: If a player is no longer allowed to cast a spell after completing its proposal (see rules 601.2a–d), the casting of the spell is illegal and the game returns to the moment before the casting of that …
-  - after: While announcing the choices of any targets and/or the division or distribution of any effects as described in rules 601.2c–d, some options may be available to a player only if other choices are made…
+- `510.1e`
+  - before: Once a player has assigned combat damage from each attacking or blocking creature they control, the total damage assignment (not solely the damage assignment of any individual attacking or blocking c…
+  - after: Once a player has assigned combat damage from each attacking or blocking creature they control, the total damage assignment (not solely the damage assignment of any individual attacking or blocking c…
+- `601.2`
+  - before: To cast a spell is to take it from where it is (usually the hand), put it on the stack, and pay its costs, so that it will eventually resolve and have its effect. Casting a spell includes proposal of…
+  - after: To cast a spell is to take it from where it is (usually the hand), put it on the stack, and pay its costs, so that it will eventually resolve and have its effect. Casting a spell includes proposal of…
+- `601.2e`
+  - before: The game checks to see if the proposed spell can legally be cast. If the proposed spell is illegal, the game returns to the moment before the casting of that spell was proposed (see rule 733, “Handli…
+  - after: The game checks to see if the proposed spell can legally be cast. If the proposed spell is illegal, the game returns to the moment before the casting of that spell was proposed (see rule 734, “Handli…
 - `601.6`
-  - before: Some spells specify that one of their controller’s opponents does something the controller would normally do while it’s being cast, such as choose a mode or choose targets. In these cases, the oppone…
+  - before: If a player is no longer allowed to cast a spell after completing its proposal (see rules 601.2a–d), the casting of the spell is illegal and the game returns to the moment before the casting of that …
   - after: If a player is no longer allowed to cast a spell after completing its proposal (see rules 601.2a–d), the casting of the spell is illegal and the game returns to the moment before the casting of that …
-- `601.6a`
-  - before: If there is more than one opponent who could make such a choice, the spell’s controller decides which of those opponents will make the choice.
-  - after: Once a player has begun casting a spell that had flash because certain conditions were met or that could be cast as though it had flash because certain conditions were met (see 601.3d), they may cont…
-- `601.7`
-  - before: Casting a spell that alters costs won’t affect spells and abilities that are already on the stack.
-  - after: Some spells specify that one of their controller’s opponents does something the controller would normally do while it’s being cast, such as choose a mode or choose targets. In these cases, the oppone…
-- `603.12a`
-  - before: Normally, if the trigger event or events occur multiple times during the resolution of the spell or ability that created it, the reflexive triggered ability will trigger once for each of those times.…
-  - after: Normally, if the trigger event or events occur multiple times during the resolution of the spell or ability that created it, the reflexive triggered ability will trigger once for each of those times.…
-- `605.1a`
-  - before: An activated ability is a mana ability if it meets all of the following criteria: it doesn’t require a target (see rule 115.6), it could add mana to a player’s mana pool when it resolves, and it’s no…
-  - after: An activated ability is a mana ability if it meets all of the following criteria: it doesn’t require a target (see rule 115.6), it could add mana to a player’s mana pool when it resolves, it’s not a …
-- `701.44c`
-  - before: If a permanent changes zones before an effect causes it to explore, its last known information is used to determine which object explored and who controlled it.
-  - after: If a permanent is no longer on the battlefield as an effect instructs it to explore, its last known information is used to determine which object explored and who controlled it.
-- `701.50b`
-  - before: A permanent “connives” after the process described in rule 701.50a is complete, even if some or all of those actions were impossible.
-  - after: If a permanent is no longer on the battlefield as an effect instructs it to connive, its last known information is used to determine which object connived and who controlled it.
-- `701.50c`
-  - before: If a permanent changes zones before an effect causes it to connive, its last known information is used to determine which object connived and who controlled it.
-  - after: If multiple permanents are instructed to connive at the same time, the first player in APNAP order who controls (or, in the case of a permanent no longer on the battlefield, last controlled; see rule…
-- `701.50d`
-  - before: If multiple permanents are instructed to connive at the same time, the first player in APNAP order who controls (or, in the case of a permanent no longer on the battlefield, last controlled; see rule…
-  - after: Connive N is a variant of connive. To have a permanent connive N, the permanent’s controller draws N cards, discards N cards, then puts a number of +1/+1 counters on the permanent equal to the number…
-- `701.50e`
-  - before: Connive N is a variant of connive. The permanent’s controller draws N cards, discards N cards, then puts a number of +1/+1 counters on the permanent equal to the number of nonland cards discarded thi…
-  - after: If a permanent would connive 0, no connive event occurs. Abilities that trigger whenever a permanent connives won’t trigger.
-- `702.2e`
-  - before: If an object changes zones before an effect causes it to deal damage, its last known information is used to determine whether it had deathtouch.
-  - after: If an object is no longer in the zone it’s expected to be in as an effect causes it to deal damage, its last known information is used to determine whether it had deathtouch.
-- `702.15c`
-  - before: If an object changes zones before an effect causes it to deal damage, its last known information is used to determine whether it had lifelink.
-  - after: If an object is no longer in the zone it’s expected to be in as an effect causes it to deal damage, its last known information is used to determine whether it had lifelink.
-- `702.54b`
-  - before: “Bloodthirst X” is a special form of bloodthirst. “Bloodthirst X” means “This permanent enters with X +1/+1 counters on it, where X is the total damage your opponents have been dealt this turn.”
-  - after: “Bloodthirst X” is a variant of the bloodthirst ability. “Bloodthirst X” means “This permanent enters with X +1/+1 counters on it, where X is the total damage your opponents have been dealt this turn…
-- `702.57a`
-  - before: A forecast ability is a special kind of activated ability that can be activated only from a player’s hand. It’s written “Forecast — [Activated ability].”
-  - after: A forecast ability is an activated ability that can be activated only from a player’s hand. It’s written “Forecast — [Activated ability].”
-- `702.80b`
-  - before: If an object changes zones before an effect causes it to deal damage, its last known information is used to determine whether it had wither.
-  - after: If an object is no longer in the zone it’s expected to be in as an effect causes it to deal damage, its last known information is used to determine whether it had wither.
-- `702.90d`
-  - before: If an object changes zones before an effect causes it to deal damage, its last known information is used to determine whether it had infect.
-  - after: If an object is no longer in the zone it’s expected to be in as an effect causes it to deal damage, its last known information is used to determine whether it had infect.
-- `702.122c`
-  - before: If an effect states that a creature “can’t crew Vehicles,” that creature can’t be tapped to pay the crew cost of a Vehicle.
-  - after: A Vehicle is “crewed by” a creature if that creature was tapped to pay the cost to activate that Vehicle’s crew ability.
-- `702.122d`
-  - before: Some Vehicles have abilities that trigger when they become crewed. “Whenever [this Vehicle] becomes crewed” means “Whenever a crew ability of [this Vehicle] resolves.” If that ability has an interven…
-  - after: If an effect states that a creature “can’t crew Vehicles,” that creature can’t be tapped to pay the crew cost of a Vehicle.
-- `702.142a`
-  - before: A boast ability is a special kind of activated ability. “Boast — [Cost]: [Effect]” means “[Cost]: [Effect]. Activate only if this creature attacked this turn and only once each turn.”
-  - after: Boast is a keyword that adds additional rules to the activated ability that follows it. “Boast — [Cost]: [Effect]” means “[Cost]: [Effect]. Activate only if this creature attacked this turn and only …
-- `702.177a`
-  - before: An exhaust ability is a special kind of activated ability. “Exhaust — [Cost]: [Effect]” means “[Cost]: [Effect]. Activate only once.”
-  - after: Exhaust is a keyword that adds additional rules to the activated ability that follows it. “Exhaust — [Cost]: [Effect]” means “[Cost]: [Effect]. Activate only once.”
-- `702.178a`
-  - before: A max speed ability is a special kind of static ability. “Max speed — [Ability]” means “As long as your speed is 4, this object has ‘[Ability].’” See rule 702.179, “Start Your Engines!”
-  - after: A max speed ability is a static ability. “Max speed — [Ability]” means “As long as your speed is 4, this object has ‘[Ability].’” See rule 702.179, “Start Your Engines!”
-- `704.5v`
-  - before: If a battle has defense 0 and it isn’t the source of an ability that has triggered but not yet left the stack, it’s put into its owner’s graveyard.
-  - after: If a Siege battle has defense 0 and it isn’t the source of an ability that has triggered but not yet left the stack, it’s put into its owner’s graveyard.
-- `704.5w`
-  - before: If a battle has no player in the game designated as its protector and no attacking creatures are currently attacking that battle, that battle’s controller chooses an appropriate player to be its prot…
-  - after: If a non-Siege battle has defense 0, it’s put into its owner’s graveyard.
-- `704.5x`
-  - before: If a Siege’s controller is also its designated protector, that player chooses an opponent to become its protector. If no player can be chosen this way, the battle is put into its owner’s graveyard. S…
-  - after: If a battle has no player in the game designated as its protector and no attacking creatures are currently attacking that battle, that battle’s controller chooses an appropriate player to be its prot…
-- `704.5y`
-  - before: If a permanent has more than one Role controlled by the same player attached to it, each of those Roles except the one with the most recent timestamp is put into its owner’s graveyard.
-  - after: If a battle’s protector is a player who can’t be its protector, that battle’s controller chooses an appropriate player to become its protector. If no player can be chosen this way, the battle is put …
-- `704.5z`
-  - before: If a player controls a permanent with start your engines! and that player has no speed, that player’s speed becomes 1. See rule 702.179, “Start Your Engines!”
-  - after: If a permanent has more than one Role controlled by the same player attached to it, each of those Roles except the one with the most recent timestamp is put into its owner’s graveyard.
-- `708.2b`
-  - before: A face-down permanent can’t be turned face-down. If a spell or ability attempts to turn a face-down permanent face down, nothing happens and that effect doesn’t change any of its characteristics or t…
-  - after: A face-down permanent can’t be turned face down. If a spell or ability attempts to turn a face-down permanent face down, nothing happens and that effect doesn’t change any of its characteristics or t…
+- `602.2`
+  - before: To activate an ability is to put it onto the stack and pay its costs, so that it will eventually resolve and have its effect. Only an object’s controller (or its owner, if it doesn’t have a controlle…
+  - after: To activate an ability is to put it onto the stack and pay its costs, so that it will eventually resolve and have its effect. Only an object’s controller (or its owner, if it doesn’t have a controlle…
+- `603.3a`
+  - before: A triggered ability is controlled by the player who controlled its source at the time it triggered, unless it’s a delayed triggered ability. To determine the controller of a delayed triggered ability…
+  - after: A triggered ability is controlled by the player who controlled its source at the time it triggered, unless it’s a delayed triggered ability. To determine the controller of a delayed triggered ability…
+- `608.2g`
+  - before: If an effect gives a player the option to pay mana, they may activate mana abilities before taking that action. If an effect specifically instructs or allows a player to cast a spell during resolutio…
+  - after: If an effect gives a player the option to pay mana, they may activate mana abilities before taking that action. If an effect specifically instructs or allows a player to cast a spell during resolutio…
+- `608.3d`
+  - before: If the object that’s resolving is a mutating creature spell, the object representing that spell merges with the permanent it is targeting (see rule 730, “Merging with Permanents”).
+  - after: If the object that’s resolving is a mutating creature spell, the object representing that spell merges with the permanent it is targeting (see rule 731, “Merging with Permanents”).
+- `613.2a`
+  - before: Layer 1a: Copiable effects are applied. This includes copy effects (see rule 707, “Copying Objects”) and changes to an object’s characteristics determined by merging an object with a permanent (see r…
+  - after: Layer 1a: Copiable effects are applied. This includes copy effects (see rule 707, “Copying Objects”) and changes to an object’s characteristics determined by merging an object with a permanent (see r…
+- `614.13a`
+  - before: While applying an effect that modifies how a permanent enters the battlefield, you may have to choose a number of objects that will also change zones. You can’t choose the object that will become tha…
+  - after: While applying an effect that modifies how a permanent enters the battlefield, you may have to choose a number of objects that will also change zones. You can’t choose the object that will become tha…
+- `614.13b`
+  - before: The same object can’t be chosen to change zones more than once when applying replacement effects that modify how one or more permanents enter the battlefield. Example: Jund (a plane card) says, “When…
+  - after: While applying a replacement effect that modifies how a permanent enters the battlefield, another replacement effect may cause a player to mill cards or exile cards from the top of a library. In that…
+- `701.9c`
+  - before: If a card is discarded, but an effect causes it to be put into a hidden zone instead of into its owner’s graveyard without being revealed, all values of that card’s characteristics are considered to …
+  - after: If a card is discarded, but an effect causes it to be put into a hidden zone instead of into its owner’s graveyard without being revealed, all values of that card’s characteristics are considered to …
+- `701.27c`
+  - before: If a spell or ability instructs a player to transform a permanent that isn’t represented by a double-faced token or a double-faced card, nothing happens.
+  - after: A permanent that transforms doesn’t become a new object. Any effects that applied to that permanent will continue to apply to it. Example: An effect gives Village Ironsmith (the front face of a doubl…
+- `701.27d`
+  - before: If a spell or ability instructs a player to transform a permanent, and the face that permanent would transform into is an instant or sorcery face nothing happens.
+  - after: If a spell or ability instructs a player to transform a permanent that isn’t represented by a double-faced token or a double-faced card, nothing happens. Example: A Clone enters the battlefield as a …
+- `701.27e`
+  - before: Some triggered abilities trigger when an object “transforms into” an object with a specified characteristic. Such an ability triggers if the object either transforms or converts (see rule 701.28) and…
+  - after: If a spell or ability instructs a player to transform a permanent, and the face that permanent would transform into is an instant or sorcery face, nothing happens.
+- `701.27f`
+  - before: If an activated or triggered ability of a permanent that isn’t a delayed triggered ability of that permanent tries to transform it, the permanent does so only if it hasn’t transformed or converted si…
+  - after: Some triggered abilities trigger when an object “transforms into” an object with a specified characteristic. Such an ability triggers if the object either transforms or converts (see rule 701.28) and…
+- `701.27g`
+  - before: Some spells and abilities refer to a “transformed permanent.” This phrase refers to a double-faced permanent on the battlefield with its back face up. A permanent with its front face up is never cons…
+  - after: If an activated or triggered ability of a permanent that isn’t a delayed triggered ability of that permanent tries to transform it, the permanent does so only if it hasn’t transformed or converted si…
+- `701.28a`
+  - before: To convert a permanent, turn it so that its other face is up. This follows rules 701.27a–f, 712.9–10, and 712.18. Those rules apply to converting a permanent just as they apply to transforming a perm…
+  - after: To convert a permanent, turn it so that its other face is up. This follows rules 701.27a–g, 712.7, and 712.15. Those rules apply to converting a permanent just as they apply to transforming a permane…
+- `701.28c`
+  - before: If a spell or ability instructs a player to convert a permanent that isn’t represented by a double-faced token or a double-faced card, nothing happens.
+  - after: A permanent that converts doesn’t become a new object. Any effects that applied to that permanent will continue to apply to it.
+- `701.28d`
+  - before: If a spell or ability instructs a player to convert a permanent, and the face that permanent would convert into is an instant or sorcery face, nothing happens.
+  - after: If a spell or ability instructs a player to convert a permanent that isn’t represented by a double-faced token or a double-faced card, nothing happens.
+- `701.28e`
+  - before: If an activated or triggered ability of a permanent that isn’t a delayed triggered ability of that permanent tries to convert it, the permanent does so only if it hasn’t converted or transformed sinc…
+  - after: If a spell or ability instructs a player to convert a permanent, and the face that permanent would convert into is an instant or sorcery face, nothing happens.
+- `701.28f`
+  - before: If a spell or ability states that a permanent can’t transform, that permanent also can’t convert.
+  - after: If an activated or triggered ability of a permanent that isn’t a delayed triggered ability of that permanent tries to convert it, the permanent does so only if it hasn’t converted or transformed sinc…
+- `701.42a`
+  - before: Meld is a keyword action that appears in an ability on one card in a meld pair. To meld the two cards in a meld pair, put them onto the battlefield with their back faces up and combined. The resultin…
+  - after: Meld is a keyword action that appears in an ability on one card in a meld pair. To meld the two cards in a meld pair, put them onto the battlefield with their back faces up and combined. The resultin…
+- `701.51a`
+  - before: A player may open an Attraction only during a game in which that player is playing with an Attraction deck (see rule 717, “Attraction Cards”).
+  - after: A player may open an Attraction only during a game in which that player is playing with an Attraction deck (see rule 718, “Attraction Cards”).
+- `701.52a`
+  - before: To roll to visit your Attractions, roll a six-sided die. Then if you control one or more Attractions with a number lit up that is equal to that result, each of those Attractions has been “visited” an…
+  - after: To roll to visit your Attractions, roll a six-sided die. Then if you control one or more Attractions with a number lit up that is equal to that result, each of those Attractions has been “visited” an…
+- `702.87c`
+  - before: Some enchantments have the subtype Class and associated abilities that give them a class level. These are not the same as level up abilities and class levels do not interact with level counters. See …
+  - after: Some enchantments have the subtype Class and associated abilities that give them a class level. These are not the same as level up abilities and class levels do not interact with level counters. See …
+- `702.140c`
+  - before: As a mutating creature spell resolves, if its target is legal, it doesn’t enter the battlefield. Rather, it merges with the target creature and becomes one object represented by more than one card or…
+  - after: As a mutating creature spell resolves, if its target is legal, it doesn’t enter the battlefield. Rather, it merges with the target creature and becomes one object represented by more than one card or…
+- `702.145b`
+  - before: Daybound is found on the front faces of some double-faced cards and represents three static abilities. “Daybound” means “If it is night and this permanent is represented by a double-faced card, it en…
+  - after: Daybound is found on the front faces of some double-faced cards and represents three static abilities. “Daybound” means “If it is night and this permanent is represented by a double-faced card, it en…
+- `702.155a`
+  - before: Read ahead is a keyword found on some Saga cards. “Read ahead” means “Chapter abilities of this Saga can’t trigger the turn it entered the battlefield unless it has exactly the number of lore counter…
+  - after: Read ahead is a keyword found on some Saga cards. “Read ahead” means “Chapter abilities of this Saga can’t trigger the turn it entered the battlefield unless it has exactly the number of lore counter…
+- `702.155b`
+  - before: Each Saga with read ahead has the intrinsic abilities “As this Saga enters, choose a number between one and this Saga’s final chapter number” and “This Saga enters with the chosen number of lore coun…
+  - after: Each Saga with read ahead has the intrinsic abilities “As this Saga enters, choose a number between one and this Saga’s final chapter number” and “This Saga enters with the chosen number of lore coun…
+- `702.159a`
+  - before: Visit is a keyword ability found on Attraction cards (see rule 717). “Visit — [Effect]” means “Whenever you roll to visit your Attractions, if the result is equal to a number that is lit up on this A…
+  - after: Visit is a keyword ability found on Attraction cards (see rule 718). “Visit — [Effect]” means “Whenever you roll to visit your Attractions, if the result is equal to a number that is lit up on this A…
+- `702.160a`
+  - before: Prototype is a static ability that appears on prototype cards that have a secondary set of power, toughness, and mana cost characteristics. A player who casts a spell with prototype can choose to cas…
+  - after: Prototype is a static ability that appears on prototype cards that have a secondary set of power, toughness, and mana cost characteristics. A player who casts a spell with prototype can choose to cas…
+- `702.169a`
+  - before: Solved is a keyword ability found on Case cards. See rule 719, “Case Cards.” “Solved” is followed by ability text. Together, they represent a static ability, a triggered ability, or an activated abil…
+  - after: Solved is a keyword ability found on Case cards. See rule 720, “Case Cards.” “Solved” is followed by ability text. Together, they represent a static ability, a triggered ability, or an activated abil…
+- `702.184b`
+  - before: Each card printed with a station ability is known as a station card. It has a nonstandard layout and includes station symbols that are themselves keyword abilities. See rule 721, “Station Cards.”
+  - after: Each card printed with a station ability is known as a station card. It has a nonstandard layout and includes station symbols that are themselves keyword abilities. See rule 722, “Station Cards.”
+- `703.4f`
+  - before: Immediately after a player’s precombat main phase begins, that player puts a lore counter on each Saga enchantment they control with one or more chapter abilities. In an Archenemy game, this happens …
+  - after: Immediately after a player’s precombat main phase begins, that player puts a lore counter on each Saga enchantment they control with one or more chapter abilities. In an Archenemy game, this happens …
+- `704.5s`
+  - before: If the number of lore counters on a Saga permanent with one or more chapter abilities is greater than or equal to its final chapter number and it isn’t the source of a chapter ability that has trigge…
+  - after: If the number of lore counters on a Saga permanent with one or more chapter abilities is greater than or equal to its final chapter number and it isn’t the source of a chapter ability that has trigge…
+- `707.2`
+  - before: When copying an object, the copy acquires the copiable values of the original object’s characteristics and, for an object on the stack, choices made when casting or activating it (mode, targets, the …
+  - after: When copying an object, the copy acquires the copiable values of the original object’s characteristics and, when copying a spell, choices made when casting or activating it (modes, targets, the value…
+- `707.8`
+  - before: When copying a melded permanent or other double-faced permanent, use the copiable values of the face that’s currently up to determine the characteristics of the copy. See rule 712, “Double-Faced Card…
+  - after: When copying a double-faced permanent or a melded permanent, use the copiable values of the face that’s currently up to determine the characteristics of the copy. See rule 712, “Double-Faced Cards” a…
+- `711.7`
+  - before: Some enchantments have the subtype Class and associated abilities that give them a class level. These are not level up abilities and class levels do not interact with level counters. See rule 716, “C…
+  - after: Some enchantments have the subtype Class and associated abilities that give them a class level. These are not level up abilities and class levels do not interact with level counters. See rule 717, “C…
+- `712.1`
+  - before: A double-faced card has a Magic card face on one side and either a Magic card face or half of an oversized card face on the other. (It does not have a Magic card back.) There are three kinds of doubl…
+  - after: A double-faced card has a Magic card face on one side and a full Magic card face on the other. It does not have a Magic card back. There are two kinds of double-faced cards: nonmodal double-faced car…
+- `712.2`
+  - before: Nonmodal double-faced cards have a Magic card face on each side and include abilities on one or both of their faces that allow the card to either “transform” or “convert” (turn over to its other face…
+  - after: Nonmodal double-faced cards have a Magic card face on each side and include abilities on one or both of their faces that allow the card to either “transform” or “convert” (turn over to its other face…
+- `712.2b`
+  - before: A nonmodal double-faced card’s back face is marked by a back-face symbol in its upper left or upper right corner. On cards printed starting with The Brothers’ War release, that symbol is a single whi…
+  - after: A nonmodal double-faced card’s back face is marked by a back-face symbol in its upper left or upper right corner. On cards printed starting with The Brothers’ War release, that symbol is a single whi…
+- `712.4`
+  - before: Meld cards have a Magic card face on one side and half of an oversized card face on the other.
+  - after: Players who are allowed to look at a double-faced card may look at both sides of that card.
+- `712.5`
+  - before: There are seven specific meld pairs.
+  - after: Players must ensure that double-faced cards in hidden zones are indistinguishable from other cards in the same zone. To do this, the owner of a double-faced card may use completely opaque card sleeve…
+- `712.6`
+  - before: Players who are allowed to look at a double-faced card may look at both sides of that card.
+  - after: Each face of a double-faced card has its own set of characteristics.
+- `712.7`
+  - before: Players must ensure that double-faced cards in hidden zones are indistinguishable from other cards in the same zone. To do this, the owner of a double-faced card may use completely opaque card sleeve…
+  - after: Only permanents represented by double-faced tokens and double-faced cards can transform or convert. (See rules 701.27d and 701.28d.)
+- `712.8`
+  - before: Each face of a double-faced card that isn’t a meld card has its own set of characteristics. The front face of each meld card and the combined face formed by a meld pair each has its own set of charac…
+  - after: A double-faced spell is cast with its front face up by default. See rule 601, “Casting Spells.”
+- `712.8a`
+  - before: While a double-faced card is outside the game or in a zone other than the battlefield or stack, it has only the characteristics of its front face.
+  - after: If a double-faced card or a copy of a double-faced card is cast as a spell “transformed” or “converted,” it’s put on the stack with its back face up.
+- `712.8b`
+  - before: A meld card on the stack has only the characteristics of its front face.
+  - after: A player casting a modal double-faced card or a copy of a modal double-faced card as a spell chooses which face they are casting before putting it onto the stack.
+- `712.8c`
+  - before: Normally, a nonmodal double-faced spell has its front face up while on the stack and has only the characteristics of its front face. However, if an effect allows a player to cast a nonmodal double-fa…
+  - after: Only the face that will be face up on the stack is evaluated to determine if it can be cast. Only that face is considered to be put onto the stack.
+- `712.8d`
+  - before: While a double-faced permanent has its front face up, it has only the characteristics of its front face.
+  - after: If an ability of a double-faced card’s front face allows it to be cast “transformed” or “converted,” that ability is also considered when evaluating that spell to determine if it can be cast. This is…
+- `712.9`
+  - before: Only permanents represented by double-faced tokens and double-faced cards that are not meld cards can transform or convert. (See rule 701.27, “Transform,” and rule 701.28, “Convert.”) If a spell or a…
+  - after: A player playing a modal double-faced card or a copy of a modal double-faced card as a land chooses one of its faces that’s a land before putting it onto the battlefield. It enters the battlefield wi…
+- `712.10`
+  - before: If a spell or ability instructs a player to transform or convert a permanent, and the face that permanent would transform or convert into is an instant or sorcery card face, or is a double-faced toke…
+  - after: By default, a resolving double-faced spell that becomes a permanent is put onto the battlefield with the same face up that was face up on the stack. (See rule 701.27j.)
+- `712.11`
+  - before: A double-faced spell is cast with its front face up by default. See rule 601, “Casting Spells.”
+  - after: A double-faced card put onto the battlefield from a zone other than the stack enters the battlefield with its front face up by default.
+- `712.11a`
+  - before: If a double-faced card or a copy of a double-faced card is cast as a spell “transformed” or “converted,” it’s put on the stack with its back face up.
+  - after: If a spell or ability puts a double-faced card onto the battlefield “transformed” or “converted,” it enters the battlefield with its back face up. If a player is instructed to put a card that isn’t a…
+- `712.11b`
+  - before: A player casting a modal double-faced card or a copy of a modal double-faced card as a spell chooses which face they are casting before putting it onto the stack.
+  - after: If a player is instructed to put a double-faced card onto the battlefield with an instant or sorcery face up, that card stays in its current zone. If that zone is the stack, that card is put into its…
+- `712.12`
+  - before: A player playing a modal double-faced card or a copy of a modal double-faced card as a land chooses one of its faces that’s a land before putting it onto the battlefield. It enters the battlefield wi…
+  - after: If an effect allows a player to cast a double-faced card as a face-down creature spell, or if a double-faced card enters the battlefield face down, it will have the characteristics given to it by the…
+- `712.13`
+  - before: By default, a resolving double-faced spell that becomes a permanent is put onto the battlefield with the same face up that was face up on the stack.
+  - after: Double-faced permanents can’t be turned face down. If a spell or ability tries to turn a double-faced permanent face down, nothing happens and the resulting effect doesn’t change any of its character…
+- `712.14`
+  - before: A double-faced card put onto the battlefield from a zone other than the stack enters the battlefield with its front face up by default.
+  - after: A double-faced card that is exiled face down remains hidden, using a face-down substitute card and/or opaque sleeves. See rule 714, “Substitute Cards.”
+- `712.15`
+  - before: If an effect allows a player to cast a double-faced card as a face-down creature spell, or if a double-faced card enters the battlefield face down, it will have the characteristics given to it by the…
+  - after: When a double-faced permanent transforms or converts, it doesn’t become a new object. Any effects that applied to that permanent will continue to apply to it. See rules 701.27c and 701.28c.
 - `712.16`
-  - before: Melded permanents and other double-faced permanents can’t be turned face down. If a spell or ability tries to turn a double-faced permanent face down, nothing happens.
-  - after: Melded permanents and other double-faced permanents can’t be turned face down. If a spell or ability tries to turn a double-faced permanent face down, nothing happens and that effect doesn’t change a…
-- `722.3a`
-  - before: Some spells and abilities cause a permanent with a prepare spell to become prepared or state that a permanent enters prepared. If that permanent has the alternative characteristics of a prepare spell…
-  - after: Some spells and abilities cause a permanent with a prepare spell to become prepared or state that a permanent enters prepared. If that permanent has the alternative characteristics of a prepare spell…
-- `730.2j`
-  - before: A face-up merged permanent that contains a double-faced component can’t be turned face down.
-  - after: A face-up merged permanent that contains a double-faced component can’t be turned face down. If a spell or ability tries to turn a face-up merged permanent that contains a double-faced component face…
-- `800.4i`
-  - before: If an effect requires information about a specific player, the effect uses the current information about that player if they are still in the game; otherwise, the effect uses the last known informati…
-  - after: If an effect requires information about a specific player, the effect uses the current information about that player if they are still in the game; otherwise, the effect uses the last known informati…
+  - before: Melded permanents and other double-faced permanents can’t be turned face down. If a spell or ability tries to turn a double-faced permanent face down, nothing happens and that effect doesn’t change a…
+  - after: If an effect instructs a player to choose a card name, the player may choose the name of either face of a double-faced card but not both.
+- `713.1`
+  - before: A substitute card is a game supplement that can be used to represent a double-faced card or meld card. A substitute card has a normal Magic card back.
+  - after: Meld cards each have a Magic card face on one side and half of an oversized card face on the other. They are not considered double-faced cards (although they were under previous rules).
+- `713.2`
+  - before: Each substitute card must clearly indicate the name of at least the front face of the card that it represents. Other information from the printed card (e.g. card type, mana cost, and power and toughn…
+  - after: There are seven specific meld pairs.
+- `713.2a`
+  - before: Some substitute cards list the names and mana costs of the cards they can represent. Exactly one of the fill-in circles must be marked to denote which card the substitute card represents. This style …
+  - after: Midnight Scavengers and Graf Rats meld to form Chittering Host.
+- `713.2b`
+  - before: Some substitute cards represent one specific listed card. This style of substitute card was found in the Core Set 2019 release, and it represents the card Nicol Bolas, the Ravager.
+  - after: Hanweir Garrison and Hanweir Battlements meld to form Hanweir, the Writhing Township.
+- `713.2c`
+  - before: Some substitute cards can represent any modal double-faced card. These substitute cards include the front-face and back-face symbols on the front face of the card. To use one of them, write in the na…
+  - after: Bruna, the Fading Light and Gisela, the Broken Blade meld to form Brisela, Voice of Nightmares.
+- `713.3`
+  - before: If a substitute card is used in a deck, the card it represents is set aside prior to the beginning of the game (see rule 103.2a) and must remain available throughout the game. A substitute card can’t…
+  - after: Players who are allowed to look at a meld card may look at both sides of that card.
+- `713.4`
+  - before: For all game purposes, the substitute card is considered to be the card it’s representing.
+  - after: Players must ensure that meld cards in hidden zones are indistinguishable from other cards in the same zone. To do this, the owner of a meld card may use completely opaque card sleeves and/or a subst…
+- `713.5`
+  - before: If the substitute card is face up in a public zone, it should be set aside and the double-faced card or meld card that it represents should be used instead.
+  - after: The front face of each meld card and the combined face formed by the back faces of a meld pair each has its own set of characteristics.
+- `714.1`
+  - before: Each Saga card has a striated text box containing a number of chapter symbols. Its illustration is vertically oriented on the right side of the card, and its type line is along the bottom of the card.
+  - after: A substitute card is a game supplement that can be used to represent a double-faced card or meld card. A substitute card has a normal Magic card back.
+- `714.2`
+  - before: A chapter symbol is a keyword ability that represents a triggered ability referred to as a chapter ability.
+  - after: Each substitute card must clearly indicate the name of at least the front face of the card that it represents. Other information from the printed card (e.g. card type, mana cost, and power and toughn…
+- `714.2a`
+  - before: A chapter symbol includes a Roman numeral, indicated here as “{rN}.” The numeral I represents 1, II represents 2, III represents 3, and so on.
+  - after: Some substitute cards list the names and mana costs of the cards they can represent. Exactly one of the fill-in circles must be marked to denote which card the substitute card represents. This style …
+- `714.2b`
+  - before: “{rN}—[Effect]” means “When one or more lore counters are put onto this Saga, if the number of lore counters on it was less than N and became at least N, [effect].”
+  - after: Some substitute cards represent one specific listed card. This style of substitute card was found in the Core Set 2019 release, and it represents the card Nicol Bolas, the Ravager.
+- `714.2c`
+  - before: “{rN1}, {rN2}—[Effect]” means the same as “{rN1}—[Effect]” and “{rN2}—[Effect].”
+  - after: Some substitute cards can represent any double-faced card or meld card. These substitute cards include two name lines intended to indicate the names of the front and back faces of the card it represe…
+- `714.3`
+  - before: Sagas use lore counters to track their progress.
+  - after: If a substitute card is used in a deck, the card it represents is set aside prior to the beginning of the game (see rule 103.2a) and must remain available throughout the game. A substitute card can’t…
+- `714.4`
+  - before: If the number of lore counters on a Saga permanent with one or more chapter abilities is greater than or equal to its final chapter number, and it isn’t the source of a chapter ability that has trigg…
+  - after: For all game purposes, the substitute card is considered to be the card it represents.
+- `715.1`
+  - before: Adventurer cards have a two-part card frame, with a smaller frame inset within their text box.
+  - after: Each Saga card has a striated text box containing a number of chapter symbols. Its illustration is vertically oriented on the right side of the card, and its type line is along the bottom of the card.
+- `715.2`
+  - before: The text that appears in the inset frame on the left defines alternative characteristics that the object may have while it’s a spell. The card’s normal characteristics appear as usual, although with …
+  - after: A chapter symbol is a keyword ability that represents a triggered ability referred to as a chapter ability.
+- `715.2a`
+  - before: If an effect refers to a card, spell, or permanent that “has an Adventure,” it refers to an object that has the alternative characteristics of an Adventure spell, even if the object currently doesn’t…
+  - after: A chapter symbol includes a Roman numeral, indicated here as “{rN}.” The numeral I represents 1, II represents 2, III represents 3, and so on.
+- `715.2b`
+  - before: The existence and values of these alternative characteristics are part of the object’s copiable values.
+  - after: “{rN}—[Effect]” means “When one or more lore counters are put onto this Saga, if the number of lore counters on it was less than N and became at least N, [effect].”
+- `715.2c`
+  - before: Although adventurer cards are printed with multiple sets of characteristics, each adventurer card is only one card. For example, a player who has drawn or discarded an adventurer card has drawn or di…
+  - after: “{rN1}, {rN2}—[Effect]” means the same as “{rN1}—[Effect]” and “{rN2}—[Effect].”
+- `715.3`
+  - before: As a player plays an adventurer card, the player chooses whether they play the card normally or as an Adventure.
+  - after: Sagas use lore counters to track their progress.
+- `715.3a`
+  - before: When casting an adventurer card as an Adventure, only the alternative characteristics are evaluated to see if it can be cast.
+  - after: Each Saga without read ahead has the intrinsic ability “This Saga enters with a lore counter on it.” This ability creates a replacement effect (see rule 614.1c).
+- `715.3b`
+  - before: While on the stack as an Adventure, the spell has only its alternative characteristics.
+  - after: Each Saga with read ahead has the intrinsic abilities “As this Saga enters, choose a number between one and this Saga’s final chapter number” and “This Saga enters with the chosen number of lore coun…
+- `715.3c`
+  - before: If an Adventure spell is copied, the copy is also an Adventure. It has the alternative characteristics of the spell and not the normal characteristics of the card that represents the Adventure spell.…
+  - after: As a player’s precombat main phase begins, that player puts a lore counter on each Saga they control with one or more chapter abilities. This turn-based action doesn’t use the stack.
+- `715.4`
+  - before: In every zone except the stack, and while on the stack not as an Adventure, an adventurer card has only its normal characteristics.
+  - after: If the number of lore counters on a Saga permanent with one or more chapter abilities is greater than or equal to its final chapter number, and it isn’t the source of a chapter ability that has trigg…
+- `716.1`
+  - before: Each Class card has a striated text box containing two class level bars. Its illustration is vertically oriented on the left side of the card, and its type line is along the bottom of the card.
+  - after: Adventurer cards have a two-part card frame, with a smaller frame inset within their text box.
+- `716.2`
+  - before: A class level bar is a keyword ability that represents both an activated ability and a static ability. A class level bar includes the activation cost of its activated ability and a level number. Any …
+  - after: The text that appears in the inset frame on the left defines alternative characteristics that the object may have while it’s a spell. The card’s normal characteristics appear as usual, although with …
+- `716.2a`
+  - before: “[Cost]: Level N — [Abilities]” means “[Cost]: This Class’s level becomes N. Activate only if this Class is level N-1 and only as a sorcery” and “As long as this Class is level N or greater, it has […
+  - after: If an effect refers to a card, spell, or permanent that “has an Adventure,” it refers to an object that has the alternative characteristics of an Adventure spell, even if the object currently doesn’t…
+- `716.2b`
+  - before: A level is a designation that any permanent can have. A Class retains its level even if it stops being a Class. Levels are not a copiable characteristic.
+  - after: The existence and values of these alternative characteristics are part of the object’s copiable values.
+- `716.2c`
+  - before: The phrase “to gain a Class level” means “to activate an ability indicated by a class level bar”
+  - after: Although adventurer cards are printed with multiple sets of characteristics, each adventurer card is only one card. For example, a player who has drawn or discarded an adventurer card has drawn or di…
+- `716.3`
+  - before: Any ability printed on a Class card that isn’t preceded by a class level bar is treated normally. In particular, the Class has the ability printed in its top text box section at all times. That abili…
+  - after: As a player plays an adventurer card, the player chooses whether they play the card normally or as an Adventure.
+- `716.4`
+  - before: Some older creature cards, called leveler cards, have level up abilities that add level counters to them. These are not the same as class level abilities. Level counters do not interact with Class ca…
+  - after: In every zone except the stack, and while on the stack not as an Adventure, an adventurer card has only its normal characteristics.
+- `717.1`
+  - before: Attraction is an artifact subtype seen only on nontraditional Magic cards. Each Attraction has an “Astrotorium” card back rather than a traditional Magic card back and has a column of circled numbers…
+  - after: Each Class card has a striated text box containing two class level bars. Its illustration is vertically oriented on the left side of the card, and its type line is along the bottom of the card.
+- `717.2`
+  - before: Attraction cards do not begin the game in a player’s deck and do not count toward maximum or minimum deck sizes. Rather, a player who chooses to play with Attraction cards begins the game with a supp…
+  - after: A class level bar is a keyword ability that represents both an activated ability and a static ability. A class level bar includes the activation cost of its activated ability and a level number. Any …
+- `717.2a`
+  - before: In constructed play, an Attraction deck must contain at least ten Attraction cards and each card in an Attraction deck must have a different English name.
+  - after: “[Cost]: Level N — [Abilities]” means “[Cost]: This Class’s level becomes N. Activate only if this Class is level N-1 and only as a sorcery” and “As long as this Class is level N or greater, it has […
+- `717.2b`
+  - before: In limited play, an Attraction deck must contain at least three Attraction cards from that player’s card pool, and may contain multiple Attractions cards with the same English name.
+  - after: A level is a designation that any permanent can have. A Class retains its level even if it stops being a Class. Levels are not a copiable characteristic.
+- `717.3`
+  - before: Effects can cause an Attraction card to enter the battlefield from the command zone. See rule 701.51, “Open an Attraction.”
+  - after: Any ability printed on a Class card that isn’t preceded by a class level bar is treated normally. In particular, the Class has the ability printed in its top text box section at all times. That abili…
+- `717.4`
+  - before: As a player’s precombat main phase begins, a player who controls one or more Attractions rolls to visit their Attractions. See rules 703.4g and 701.52, “Roll to Visit Your Attractions.” This turn-bas…
+  - after: Some older creature cards, called leveler cards, have level up abilities that add level counters to them. These are not the same as class level abilities. Level counters do not interact with Class ca…
+- `718.1`
+  - before: Prototype cards have a two-part frame, with a smaller frame inset below the type line of the card. The inset frame contains the prototype keyword ability as well as a second set of power, toughness, …
+  - after: Attraction is an artifact subtype seen only on nontraditional Magic cards. Each Attraction has an “Astrotorium” card back rather than a traditional Magic card back and has a column of circled numbers…
+- `718.2`
+  - before: The mana cost, power, and toughness in the inset frame represent alternative characteristics that the object may have while it is a spell or while it is a permanent on the battlefield. The card’s nor…
+  - after: Attraction cards do not begin the game in a player’s deck and do not count toward maximum or minimum deck sizes. Rather, a player who chooses to play with Attraction cards begins the game with a supp…
+- `718.2a`
+  - before: The existence and values of these alternative characteristics are part of the object’s copiable values.
+  - after: In constructed play, an Attraction deck must contain at least ten Attraction cards and each card in an Attraction deck must have a different English name.
+- `718.3`
+  - before: As a player casts a prototype card, the player chooses whether they cast the card normally or cast it as a prototyped spell using the prototype keyword ability (see rule 702.160, “Prototype”).
+  - after: Effects can cause an Attraction card to enter the battlefield from the command zone. See rule 701.51, “Open an Attraction.”
+- `718.4`
+  - before: In every zone except the stack or the battlefield, and while on the stack or the battlefield when not cast as a prototyped spell, a prototype card has only its normal characteristics.
+  - after: As a player’s precombat main phase begins, a player who controls one or more Attractions rolls to visit their Attractions. See rules 703.4g and 701.52, “Roll to Visit Your Attractions.” This turn-bas…
+- `718.5`
+  - before: A prototype card’s characteristics other than its power, toughness, and mana cost (and other than color) remain the same whether it was cast as a prototyped spell or cast normally.
+  - after: Each Attraction card has an ability that begins with the word “Visit” followed by a long dash in its rules text. This is a visit ability. A visit ability triggers whenever you roll to visit your Attr…
+- `719.1`
+  - before: Each Case card’s illustration is vertically oriented on the left side of the card, and its type line is along the bottom of the card.
+  - after: Prototype cards have a two-part frame, with a smaller frame inset below the type line of the card. The inset frame contains the prototype keyword ability as well as a second set of power, toughness, …
+- `719.2`
+  - before: The Case frame has no additional rules meaning.
+  - after: The mana cost, power, and toughness in the inset frame represent alternative characteristics that the object may have while it is a spell or while it is a permanent on the battlefield. The card’s nor…
+- `719.3`
+  - before: Case cards have two special keyword abilities that appear before a long dash and represent a triggered ability and an ability that may be static, triggered, or activated. 
+  - after: As a player casts a prototype card, the player chooses whether they cast the card normally or cast it as a prototyped spell using the prototype keyword ability (see rule 702.160, “Prototype”).
+- `719.3a`
+  - before: “To solve — [Condition]” means “At the beginning of your end step, if [condition] and this Case is not solved, this Case becomes solved.” 
+  - after: While casting a prototyped spell, use only its alternative power, toughness, and mana cost when evaluating those characteristics to see if it can be cast.
+- `719.3b`
+  - before: Solved is a designation a permanent can have. It has no rules meaning other than to act as a marker that spells and abilities can identify. Once a permanent becomes solved, it stays solved until it l…
+  - after: Both a prototyped spell and the permanent it becomes have only its alternative set of power, toughness, and mana cost characteristics. If that mana cost includes one or more colored mana symbols, the…
+- `719.3c`
+  - before: If a Case has the solved designation, “Solved — [Ability text]” is an ability that may affect the game if it’s a static ability, it may trigger if it’s a triggered ability, and it can be activated if…
+  - after: If a prototyped spell is copied, the copy is also a prototyped spell. It has the alternative power, toughness, and mana cost characteristics of the spell and not the normal power, toughness, and mana…
+- `720.1`
+  - before: Omen cards have a two-part card frame, with a smaller frame inset within their text box.
+  - after: Each Case card’s illustration is vertically oriented on the left side of the card, and its type line is along the bottom of the card.
+- `720.2`
+  - before: The text that appears in the inset frame on the left defines alternative characteristics that the object may have while it’s a spell. The card’s normal characteristics appear as usual, although with …
+  - after: The Case frame has no additional rules meaning.
+- `720.3`
+  - before: As a player casts an omen card, the player chooses whether they cast the card normally or as an Omen.
+  - after: Case cards have two special keyword abilities that appear before a long dash and represent a triggered ability and an ability that may be static, triggered, or activated. 
+- `720.3a`
+  - before: When casting an omen card as an Omen, only the alternative characteristics are evaluated to see if it can be cast.
+  - after: “To solve — [Condition]” means “At the beginning of your end step, if [condition] and this Case is not solved, this Case becomes solved.” 
+- `720.3b`
+  - before: While on the stack as an Omen, the spell has only its alternative characteristics.
+  - after: Solved is a designation a permanent can have. It has no rules meaning other than to act as a marker that spells and abilities can identify. Once a permanent becomes solved, it stays solved until it l…
+- `720.3c`
+  - before: If an Omen spell is copied, the copy is also an Omen. It has the alternative characteristics of the spell and not the normal characteristics of the card that represents the Omen spell. Any rule or ef…
+  - after: If a Case has the solved designation, “Solved — [Ability text]” is an ability that may affect the game if it’s a static ability, it may trigger if it’s a triggered ability, and it can be activated if…
+- `721.1`
+  - before: Each station card has a striated text box and may have one or more power/toughness boxes. The text box of a station card contains one or two station symbols. Station cards also usually have the stati…
+  - after: Omen cards have a two-part card frame, with a smaller frame inset within their text box.
+- `721.2`
+  - before: A station symbol represents a static ability. The station symbol includes a single number followed by a plus sign, indicated here as “{N+}.” Any abilities printed within the same text box striation a…
+  - after: The text that appears in the inset frame on the left defines alternative characteristics that the object may have while it’s a spell. The card’s normal characteristics appear as usual, although with …
+- `721.2a`
+  - before: “{N+}[abilities]” means “As long as this permanent has N or more charge counters on it, it has [abilities].”
+  - after: If an effect refers to a card, spell, or permanent that “has an Omen,” it refers to an object that has the alternative characteristics of an Omen spell, even if the object currently doesn’t use them.
+- `721.2b`
+  - before: “{N+}[abilities][P/T]” means “As long as this permanent has N or more charge counters on it, it has [abilities] and is a creature with base power and toughness [P/T] in addition to its other types.”
+  - after: The existence and values of these alternative characteristics are part of the object’s copiable values.
+- `721.2c`
+  - before: While in any zone other than the battlefield, station cards do not have power or toughness.
+  - after: Although omen cards are printed with multiple sets of characteristics, each omen card is only one card. For example, a player who has drawn or discarded an omen card has drawn or discarded one card, …
+- `721.3`
+  - before: The text box striations have no game significance other than clearly demarcating which abilities and which power/toughness box are associated with which station symbol. Station cards each contain onl…
+  - after: As a player casts an omen card, the player chooses whether they cast the card normally or as an Omen.
+- `721.4`
+  - before: Any ability a station card has that isn’t preceded by a station symbol is treated normally. In particular, each station card has its station ability (see rule 702.184) at all times. That ability may …
+  - after: In every zone except the stack, and while on the stack not as an Omen, an omen card has only its normal characteristics.
+- `722.1`
+  - before: Preparation cards have a two-part card frame, with a smaller frame inset within their text box.
+  - after: Each station card has a striated text box and may have one or more power/toughness boxes. The text box of a station card contains one or two station symbols. Station cards also usually have the stati…
+- `722.2`
+  - before: The text that appears in the inset frame on the right defines alternative characteristics that the object may have while it’s a spell. The card’s normal characteristics appear as usual, although with…
+  - after: A station symbol represents a static ability. The station symbol includes a single number followed by a plus sign, indicated here as “{N+}.” Any abilities printed within the same text box striation a…
+- `722.2a`
+  - before: The inset frame of a preparation card is called a “prepare spell.” If a rule or effect refers to a card, spell, or permanent that has a prepare spell, it refers to an object for which these alternati…
+  - after: “{N+}[abilities]” means “As long as this permanent has N or more charge counters on it, it has [abilities].”
+- `722.2b`
+  - before: The existence and values of these alternative characteristics are part of the object’s copiable values.
+  - after: “{N+}[abilities][P/T]” means “As long as this permanent has N or more charge counters on it, it has [abilities] and is a creature with base power and toughness [P/T] in addition to its other types.”
+- `722.2c`
+  - before: Although preparation cards are printed with multiple sets of characteristics, each preparation card is only one card. For example, a player who has drawn or discarded a preparation card has drawn or …
+  - after: While in any zone other than the battlefield, station cards do not have power or toughness.
+- `722.3`
+  - before: Preparation cards can’t be cast using the alternative characteristics found within their inset frames. Rather, these characteristics are used to define characteristics of copies which may be cast.
+  - after: The text box striations have no game significance other than clearly demarcating which abilities and which power/toughness box are associated with which station symbol. Station cards each contain onl…
+- `722.4`
+  - before: In every zone, a preparation card has only its normal characteristics.
+  - after: Any ability a station card has that isn’t preceded by a station symbol is treated normally. In particular, each station card has its station ability (see rule 702.184) at all times. That ability may …
+- `723.1`
+  - before: Some cards allow a player to control another player during that player’s next turn. This effect applies to the next turn that the affected player actually takes. The affected player is controlled dur…
+  - after: Preparation cards have a two-part card frame, with a smaller frame inset within their text box.
+- `723.2`
+  - before: Two cards (Word of Command and Opposition Agent) allow a player to control another player for a limited duration.
+  - after: The text that appears in the inset frame on the right defines alternative characteristics that the object may have while it’s a spell. The card’s normal characteristics appear as usual, although with…
+- `723.3`
+  - before: Only control of the player changes. All objects are controlled by their normal controllers. A player who’s being controlled during their turn is still the active player.
+  - after: Preparation cards can’t be cast using the alternative characteristics found within their inset frames. Rather, these characteristics are used to define characteristics of copies which may be cast.
+- `723.4`
+  - before: If information about an object in the game would be visible to the player being controlled, it’s visible to both that player and the controller of the player. If information about cards outside the g…
+  - after: In every zone, a preparation card has only its normal characteristics.
+- `723.5`
+  - before: While controlling another player, a player makes all choices and decisions the controlled player is allowed to make or is told to make by the rules or by any objects. This includes choices and decisi…
+  - after: If an effect instructs a player to choose a card name and the player wants to choose a preparation card’s alternative name, the player may do so.
+- `724.1`
+  - before: Some cards end the turn. When an effect ends the turn, follow these steps in order, as they differ from the normal process for resolving spells and abilities (see rule 608, “Resolving Spells and Abil…
+  - after: Some cards allow a player to control another player during that player’s next turn. This effect applies to the next turn that the affected player actually takes. The affected player is controlled dur…
+- `724.1a`
+  - before: If there are any triggered abilities that triggered before this process began but haven’t been put onto the stack yet, those abilities cease to exist. They won’t be put onto the stack. This rule does…
+  - after: Multiple player-controlling effects that affect the same player overwrite each other. The last one to be created is the one that works.
+- `724.1b`
+  - before: Exile every object on the stack, including the object that’s resolving. All objects not on the battlefield or in the command zone that aren’t represented by cards will cease to exist the next time st…
+  - after: If a turn is skipped, any pending player-controlling effects wait until the player who would be affected actually takes a turn.
+- `724.2`
+  - before: One card (Mandate of Peace) ends the combat phase. When an effect ends the combat phase, follow these steps in order, as they differ from the normal process for resolving spells and abilities (see ru…
+  - after: Two cards (Word of Command and Opposition Agent) allow a player to control another player for a limited duration.
+- `725.1`
+  - before: The monarch is a designation a player can have. There is no monarch in a game until an effect instructs a player to become the monarch.
+  - after: Some cards end the turn. When an effect ends the turn, follow these steps in order, as they differ from the normal process for resolving spells and abilities (see rule 608, “Resolving Spells and Abil…
+- `725.2`
+  - before: There are two inherent triggered abilities associated with being the monarch. These triggered abilities have no source and are controlled by the player who was the monarch at the time the abilities t…
+  - after: One card (Mandate of Peace) ends the combat phase. When an effect ends the combat phase, follow these steps in order, as they differ from the normal process for resolving spells and abilities (see ru…
+- `726.1`
+  - before: The initiative is a designation a player can have. There is no initiative in a game until an effect instructs a player to take the initiative. A player who currently has the initiative designation is…
+  - after: The monarch is a designation a player can have. There is no monarch in a game until an effect instructs a player to become the monarch.
+- `726.2`
+  - before: There are three inherent triggered abilities associated with having the initiative. These triggered abilities have no source and are controlled by the player who had the initiative at the time the ab…
+  - after: There are two inherent triggered abilities associated with being the monarch. These triggered abilities have no source and are controlled by the player who was the monarch at the time the abilities t…
+- `726.3`
+  - before: Only one player can have the initiative at a time. As a player takes the initiative, the player who currently has the initiative ceases to have it.
+  - after: Only one player can be the monarch at a time. As a player becomes the monarch, the current monarch ceases to be the monarch.
+- `726.4`
+  - before: If the player who has the initiative leaves the game, the active player takes the initiative at the same time that player leaves the game. If the active player is leaving the game or if there is no a…
+  - after: If the monarch leaves the game, the active player becomes the monarch at the same time as that player leaves the game. If the active player is leaving the game or if there is no active player, the ne…
+- `726.5`
+  - before: If the player who currently has the initiative is instructed to take the initiative, this causes the last triggered ability in 726.2 to trigger but does not create a second initiative designation.
+  - after: If the result of a continuous effect generated by a static ability is determined based on who is currently the monarch, but there is no monarch in the game as that effect begins to apply, that effect…
+- `727.1`
+  - before: One card (Karn Liberated) restarts the game. A game that is restarted immediately ends. No players in that game win, lose, or draw that game. All players in that game when it ended then start a new g…
+  - after: The initiative is a designation a player can have. There is no initiative in a game until an effect instructs a player to take the initiative. A player who currently has the initiative designation is…
+- `727.2`
+  - before: All Magic cards involved in the game that was restarted when it ended, including phased-out permanents and nontraditional Magic cards, are involved in the new game, even if those cards were not origi…
+  - after: There are three inherent triggered abilities associated with having the initiative. These triggered abilities have no source and are controlled by the player who had the initiative at the time the ab…
+- `727.3`
+  - before: Because each player draws seven cards when the new game begins, any player with fewer than seven cards in their library will lose the game when state-based actions are checked during the upkeep step …
+  - after: Only one player can have the initiative at a time. As a player takes the initiative, the player who currently has the initiative ceases to have it.
+- `727.4`
+  - before: The effect that restarts the game finishes resolving just before the first turn’s untap step. If the spell or ability that generated that effect has additional instructions, those instructions are fo…
+  - after: If the player who has the initiative leaves the game, the active player takes the initiative at the same time that player leaves the game. If the active player is leaving the game or if there is no a…
+- `727.5`
+  - before: Effects may exempt certain cards from the procedure that restarts the game. These cards are not in their owner’s deck as the new game begins.
+  - after: If the player who currently has the initiative is instructed to take the initiative, this causes the last triggered ability in 727.2 to trigger but does not create a second initiative designation.
+- `728.1`
+  - before: Rad counters are a kind of counter a player can have (see rule 122, “Counters”). There is an inherent triggered ability associated with rad counters. This ability has no source and is controlled by t…
+  - after: One card (Karn Liberated) restarts the game. A game that is restarted immediately ends. No players in that game win, lose, or draw that game. All players in that game when it ended then start a new g…
+- `728.1a`
+  - before: A card that refers to life loss “from radiation” refers to life lost as a result of the triggered ability associated with rad counters.
+  - after: The starting player in the new game is the player who controlled the spell or ability that restarted the game.
+- `729.1`
+  - before: One card (Shahrazad) allows players to play a Magic subgame.
+  - after: Rad counters are a kind of counter a player can have (see rule 122, “Counters”). There is an inherent triggered ability associated with rad counters. This ability has no source and is controlled by t…
+- `729.1a`
+  - before: A “subgame” is a completely separate Magic game created by an effect. Essentially, it’s a game within a game. The “main game” is the game in which the spell or ability that created the subgame was ca…
+  - after: A card that refers to life loss “from radiation” refers to life lost as a result of the triggered ability associated with rad counters.
+- `730.1`
+  - before: One keyword causes an object to merge with a permanent. See rule 702.140, “Mutate.”
+  - after: One card (Shahrazad) allows players to play a Magic subgame.
+- `730.2`
+  - before: To merge an object with a permanent, place that object on top of or under that permanent. That permanent becomes a merged permanent represented by the card or copy that represented that object in add…
+  - after: As the subgame starts, an entirely new set of game zones is created. Each player takes all the cards in their main-game library, moves them to their subgame library, and shuffles them. No other cards…
+- `730.2a`
+  - before: A merged permanent has only the characteristics of its topmost component, unless otherwise specified by the effect that caused them to merge. This is a copiable effect whose timestamp is the time the…
+  - after: As a subgame begins, if one or more supplementary decks of nontraditional cards are being used, each player moves each of their supplementary decks from the main-game command zone to the subgame comm…
+- `730.2b`
+  - before: As an object merges with a permanent, that object leaves its previous zone and becomes part of an object on the battlefield, but the resulting permanent isn’t considered to have just entered the batt…
+  - after: As a subgame of a Vanguard game starts, each player moves their vanguard card from the main-game command zone to the subgame command zone.
+- `730.2c`
+  - before: Because a merged permanent is the same object that it was before, it hasn’t just come under a player’s control, any continuous effects that affected it continue to do so, and so on.
+  - after: As a subgame of a Commander game starts, each player moves their commander from the main-game command zone (if it’s there) to the subgame command zone.
+- `730.3`
+  - before: If a merged permanent leaves the battlefield, one permanent leaves the battlefield and each of the individual components are put into the appropriate zone.
+  - after: Because each player draws seven cards when a game begins, any player with fewer than seven cards in their deck will lose the subgame when state-based actions are checked during the upkeep step of the…
+- `731.1`
+  - before: Day and night are designations that the game itself can have. The game starts with neither designation. “It becomes day” and “it becomes night” refer to the game gaining the day or night designation.…
+  - after: One keyword causes an object to merge with a permanent. See rule 702.140, “Mutate.”
+- `731.2`
+  - before: As the second part of the untap step, the game checks the previous turn to see if the game’s day/night designation should change. See rule 502, “Untap Step.”
+  - after: To merge an object with a permanent, place that object on top of or under that permanent. That permanent becomes a merged permanent represented by the card or copy that represented that object in add…
+- `731.2a`
+  - before: If it’s day and the previous turn’s active player didn’t cast any spells during that turn, it becomes night. Multiplayer games using the shared team turns option (see rule 805) use a modified rule: i…
+  - after: A merged permanent has only the characteristics of its topmost component, unless otherwise specified by the effect that caused them to merge. This is a copiable effect whose timestamp is the time the…
+- `731.2b`
+  - before: If it’s night, and previous turn’s active player cast two or more spells during the previous turn, it becomes day. Multiplayer games using the shared team turns option (see rule 805) use a modified r…
+  - after: As an object merges with a permanent, that object leaves its previous zone and becomes part of an object on the battlefield, but the resulting permanent isn’t considered to have just entered the batt…
+- `731.2c`
+  - before: If it’s neither day nor night, this check doesn’t happen and it remains neither.
+  - after: Because a merged permanent is the same object that it was before, it hasn’t just come under a player’s control, any continuous effects that affected it continue to do so, and so on.
+- `732.1`
+  - before: When playing a game, players typically make use of mutually understood shortcuts rather than explicitly identifying each game choice (either taking an action or passing priority) a player makes.
+  - after: Day and night are designations that the game itself can have. The game starts with neither designation. “It becomes day” and “it becomes night” refer to the game gaining the day or night designation.…
+- `732.1a`
+  - before: The rules for taking shortcuts are largely informal. As long as each player in the game understands the intent of each other player, any shortcut system they use is acceptable.
+  - after: The phrases “day becomes night” and “night becomes day” refer to the game losing the first designation and gaining the second one.
+- `732.2`
+  - before: Taking a shortcut follows the following procedure.
+  - after: As the second part of the untap step, the game checks the previous turn to see if the game’s day/night designation should change. See rule 502, “Untap Step.”
+- `732.2a`
+  - before: At any point in the game, the player with priority may suggest a shortcut by describing a sequence of game choices, for all players, that may be legally taken based on the current game state and the …
+  - after: If it’s day and the previous turn’s active player didn’t cast any spells during that turn, it becomes night. Multiplayer games using the shared team turns option (see rule 805) use a modified rule: i…
+- `732.2b`
+  - before: Each other player, in turn order starting after the player who suggested the shortcut, may either accept the proposed sequence, or shorten it by naming a place where they will make a game choice that…
+  - after: If it’s night, and previous turn’s active player cast two or more spells during the previous turn, it becomes day. Multiplayer games using the shared team turns option (see rule 805) use a modified r…
+- `732.2c`
+  - before: Once the last player has either accepted or shortened the shortcut proposal, the shortcut is taken. The game advances to the last proposed ending point, with all game choices contained in the shortcu…
+  - after: If it’s neither day nor night, this check doesn’t happen and it remains neither.
+- `733.1`
+  - before: If a player takes an illegal action or starts to take an action but can’t legally complete it, the entire action is reversed and any payments already made are canceled. No abilities trigger and no ef…
+  - after: When playing a game, players typically make use of mutually understood shortcuts rather than explicitly identifying each game choice (either taking an action or passing priority) a player makes.
+- `733.2`
+  - before: When reversing illegal spells and abilities, the player who had priority retains it and may take another action or pass. The player may redo the reversed action in a legal way or take any other actio…
+  - after: Taking a shortcut follows the following procedure.
+- `801.17`
+  - before: Effects that restart the game (see rule 727) are exempt from the limited range of influence option. All players in the game will be involved in the new game.
+  - after: Effects that restart the game (see rule 728) are exempt from the limited range of influence option. All players in the game will be involved in the new game.
+- `903.4d`
+  - before: The back face of a double-faced card (see rule 712) is included when determining a card’s color identity. This is an exception to rule 712.8a. Example: Civilized Scholar is the front face of a double…
+  - after: The back face of a double-faced card (see rule 712) is included when determining a card’s color identity. This is an exception to rule 712.6a. Example: Civilized Scholar is the front face of a double…
+- `903.4e`
+  - before: If a card has any alternative characteristics, such as those of adventurer cards (see rule 715, “Adventurer Cards”), those characteristics are included when determining the card’s color identity.
+  - after: If a card has any alternative characteristics, such as those of adventurer cards (see rule 716, “Adventurer Cards”), those characteristics are included when determining the card’s color identity.
+- `903.5e`
+  - before: Commander games do not use sideboards.
+  - after: Some cards have abilities that modify the rules for deck construction and apply only if that card is designated as a deck’s commander. These abilities function before the game begins. See rule 113.6n…

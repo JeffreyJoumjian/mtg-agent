@@ -6,7 +6,7 @@ A keyword ability that lets a player cast a card they discard. See rule 702.35, 
 
 ## Main Game
 
-The game in which a spell (or ability) that created a subgame was cast (or activated). See rule 729, “Subgames.”
+The game in which a spell (or ability) that created a subgame was cast (or activated). See rule 730, “Subgames.”
 
 ## Main Phase
 
@@ -62,7 +62,8 @@ A multiplayer game or a two-player series of games (usually best-two-of-three) p
 
 ## Max Speed
 
-1. A player has max speed if their speed is 4. See rule 702.179, “Start Your Engines!” 2. A keyword ability that grants an ability to the permanent or card it’s on only if that permanent’s controller (or that card’s owner, if it isn’t on the battlefield) has a speed of 4. See rule 702.178, “Max Speed.”
+1. A player has max speed if their speed is 4. See rule 702.179, “Start Your Engines!”
+2. A keyword ability that grants an ability to the permanent or card it’s on only if that permanent’s controller (or that card’s owner, if it isn’t on the battlefield) has a speed of 4. See rule 702.178, “Max Speed.”
 
 ## Maximum Hand Size
 
@@ -82,7 +83,7 @@ To turn two members of a meld pair so their back faces are up and combined into 
 
 ## Meld Cards
 
-Cards with a Magic card face on one side and half of an oversized Magic card face on the other. See rule 712, “Double-Faced Cards.”
+Cards with a Magic card face on one side and half of an oversized Magic card face on the other. See rule 713, “Meld Cards.”
 
 ## Melee
 
@@ -98,7 +99,7 @@ A keyword ability that lets your bigger creatures power up your smaller creature
 
 ## Merged Permanent
 
-A card or token may merge with a permanent to form a merged permanent. This merged permanent is represented by more than one card and/or token. See rule 730, “Merging with Permanents.”
+A card or token may merge with a permanent to form a merged permanent. This merged permanent is represented by more than one card and/or token. See rule 731, “Merging with Permanents.”
 
 ## Mill
 
@@ -134,7 +135,7 @@ A keyword ability that has a permanent enter the battlefield with +1/+1 counters
 
 ## Monarch
 
-A designation a player can have. Some effects instruct a player to become the monarch. The monarch draws a card at the beginning of their end step. Dealing combat damage to the monarch steals the title from that player. See rule 725, “The Monarch.”
+A designation a player can have. Some effects instruct a player to become the monarch. The monarch draws a card at the beginning of their end step. Dealing combat damage to the monarch steals the title from that player. See rule 726, “The Monarch.”
 
 ## Mono Artifact (Obsolete)
 
@@ -203,7 +204,7 @@ A keyword that lets a creature card be cast as a mutating creature spell. See ru
 
 ## Mutating Creature Spell
 
-A creature spell cast using the mutate keyword ability. As it resolves, if its target creature is legal, it merges with the target creature. The resulting creature has all characteristics of the topmost component and has the abilities of each component. See rule 702.140, “Mutate,” and rule 730, “Merging with Permanents.”
+A creature spell cast using the mutate keyword ability. As it resolves, if its target creature is legal, it merges with the target creature. The resulting creature has all characteristics of the topmost component and has the abilities of each component. See rule 702.140, “Mutate,” and rule 731, “Merging with Permanents.”
 
 ## Myriad
 

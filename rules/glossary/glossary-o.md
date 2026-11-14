@@ -14,7 +14,7 @@ A keyword ability that allows you to pay an additional cost as you cast a creatu
 
 ## Omen Card
 
-Cards with a two-part card frame (one part of which is inset on the left) on a single card where the alternative characteristics include the Omen spell type. See rule 720, “Omen Cards.”
+Cards with a two-part card frame (one part of which is inset on the left) on a single card where the alternative characteristics include the Omen spell type. See rule 721, “Omen Cards.”
 
 ## One-Shot Effect
 

@@ -44,6 +44,10 @@ A keyword ability that makes other attacking creatures better in combat. See rul
 
 A zone. The battlefield is the zone in which permanents exist. It used to be known as the “in-play” zone. See rule 403, “Battlefield.”
 
+## Beam me up
+
+A keyword ability that lets a player cast an instant or sorcery spell from their graveyard by paying a specific cost and returning a creature they control to its owner’s hand. See rule 702.196, “Beam me up.”
+
 ## Becomes
 
 A word used in some trigger events to indicate a change in status or characteristics. See rule 603.2e.

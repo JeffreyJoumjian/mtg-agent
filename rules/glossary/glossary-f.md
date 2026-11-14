@@ -4,17 +4,24 @@
 
 A keyword ability that lets you choose whether to create Servo tokens or put +1/+1 counters on a creature. See rule 702.123, “Fabricate.”
 
+## Face a Dilemma
+
+To “face a dilemma” is to choose one or more modes for a modal spell or ability. See rule 700.17.
+
 ## Face a Villainous Choice
 
 A keyword action that causes a player to choose one of two listed choices. See rule 701.55, “Face a Villainous Choice.”
 
 ## Face Down
 
-1. A card is “face down” if it’s physically positioned so the card back is showing. Cards in some zones are normally kept face down. See section 4, “Zones.” 2. A status a permanent may have. See rule 110.5 and rule 702.37, “Morph.” 3. Face-down spells have additional rules. See rule 708, “Face-Down Spells and Permanents,” and rule 702.37, “Morph.”
+1. A card is “face down” if it’s physically positioned so the card back is showing. Cards in some zones are normally kept face down. See section 4, “Zones.”
+2. A status a permanent may have. See rule 110.5 and rule 702.37, “Morph.”
+3. Face-down spells have additional rules. See rule 708, “Face-Down Spells and Permanents,” and rule 702.37, “Morph.”
 
 ## Face Up
 
-1. A card is “face up” if it’s physically positioned so the card front is showing. Cards in some zones are normally kept face up. See section 4, “Zones.” 2. A default status a permanent may have. See rule 110.5 and rule 702.37, “Morph.”
+1. A card is “face up” if it’s physically positioned so the card front is showing. Cards in some zones are normally kept face up. See section 4, “Zones.”
+2. A default status a permanent may have. See rule 110.5 and rule 702.37, “Morph.”
 
 ## Fading
 

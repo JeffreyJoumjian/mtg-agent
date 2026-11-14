@@ -1,8 +1,8 @@
 {
-  "version": "2026-08-07",
-  "effectiveDate": "August 7, 2026",
+  "version": "2026-11-06",
+  "effectiveDate": "November 6, 2026",
   "source": "https://magic.wizards.com/en/rules",
-  "sha256": "2ed5f1bbb4f8771c84a6f2944a218428c6c5ccba21110a5d101b9a51a4c062b3",
+  "sha256": "eabcc73a695b6a453aa4b3cde409108e4c68483afc3b65e8c836aa3906159231",
   "chapters": [
     {
       "num": 1,
@@ -172,7 +172,8 @@
         "730",
         "731",
         "732",
-        "733"
+        "733",
+        "734"
       ]
     },
     {
@@ -243,7 +244,7 @@
       "crossRefs": [
         "108",
         "201",
-        "717",
+        "718",
         "901",
         "903",
         "904"
@@ -338,7 +339,7 @@
         "123",
         "504",
         "702",
-        "713",
+        "714",
         "901",
         "903",
         "905"
@@ -382,7 +383,7 @@
       "crossRefs": [
         "100",
         "704",
-        "727",
+        "728",
         "800",
         "801",
         "809",
@@ -502,8 +503,8 @@
         "601",
         "700",
         "711",
-        "714",
-        "716",
+        "715",
+        "717",
         "901"
       ]
     },
@@ -651,6 +652,7 @@
         "Powerstone Token",
         "Characteristics",
         "Copiable Values",
+        "Heartwood Token",
         "Incubator Token",
         "Permanent Spell",
         "Vibranium Token",
@@ -665,8 +667,7 @@
         "Enchantment",
         "Shard Token",
         "Clue Token",
-        "Food Token",
-        "Gold Token"
+        "Food Token"
       ],
       "crossRefs": [
         "701",
@@ -1097,7 +1098,7 @@
         "601",
         "616",
         "704",
-        "733"
+        "734"
       ]
     },
     {
@@ -1111,6 +1112,7 @@
         "Enters the Battlefield",
         "Precombat Main Phase",
         "Source of an Ability",
+        "State-Based Actions",
         "Replacement Effect",
         "Activated Ability",
         "Prevention Effect",
@@ -1131,8 +1133,7 @@
         "Equipment",
         "Graveyard",
         "Permanent",
-        "Toughness",
-        "Vigilance"
+        "Toughness"
       ],
       "crossRefs": [
         "400",
@@ -1140,7 +1141,7 @@
         "614",
         "615",
         "704",
-        "728",
+        "729",
         "810"
       ]
     },
@@ -1236,6 +1237,7 @@
         "name",
         "Secondary Title Bar",
         "Collector Number",
+        "Preparation Card",
         "Adventurer Card",
         "Characteristics",
         "Alternate Name",
@@ -1247,6 +1249,7 @@
         "Regenerate",
         "Rules Text",
         "As Though",
+        "Omen Card",
         "Sacrifice",
         "Toughness",
         "Artifact",
@@ -1256,9 +1259,7 @@
         "Becomes",
         "Counter",
         "Instant",
-        "Trigger",
-        "Blight",
-        "Create"
+        "Trigger"
       ],
       "crossRefs": [
         "108",
@@ -1267,7 +1268,7 @@
         "710",
         "712",
         "713",
-        "715"
+        "716"
       ]
     },
     {
@@ -1284,6 +1285,7 @@
         "Enters the Battlefield",
         "Phyrexian Mana Symbol",
         "Hybrid Mana Symbols",
+        "Double-Faced Cards",
         "Fused Split Spell",
         "Additional Cost",
         "Color Indicator",
@@ -1303,8 +1305,7 @@
         "Mana Pool",
         "Permanent",
         "Type Line",
-        "Becomes",
-        "Double"
+        "Becomes"
       ],
       "crossRefs": [
         "105",
@@ -1313,7 +1314,9 @@
         "204",
         "305",
         "601",
-        "709"
+        "709",
+        "712",
+        "713"
       ]
     },
     {
@@ -1398,10 +1401,10 @@
         "303",
         "305",
         "704",
-        "714",
-        "716",
+        "715",
         "717",
-        "719"
+        "718",
+        "720"
       ]
     },
     {
@@ -1801,8 +1804,8 @@
         "601",
         "702",
         "704",
-        "714",
-        "716"
+        "715",
+        "717"
       ]
     },
     {
@@ -2603,7 +2606,7 @@
       "crossRefs": [
         "503",
         "702",
-        "731"
+        "732"
       ]
     },
     {
@@ -2695,7 +2698,7 @@
         "500",
         "506",
         "701",
-        "714",
+        "715",
         "904"
       ]
     },
@@ -2813,7 +2816,7 @@
         "603",
         "605",
         "702",
-        "733",
+        "734",
         "801",
         "802"
       ]
@@ -2859,7 +2862,7 @@
         "506",
         "603",
         "605",
-        "733"
+        "734"
       ]
     },
     {
@@ -2902,7 +2905,7 @@
         "117",
         "603",
         "702",
-        "733"
+        "734"
       ]
     },
     {
@@ -3062,7 +3065,7 @@
         "611",
         "700",
         "702",
-        "733"
+        "734"
       ]
     },
     {
@@ -3106,7 +3109,7 @@
         "601",
         "701",
         "702",
-        "733"
+        "734"
       ]
     },
     {
@@ -3354,7 +3357,7 @@
         "609",
         "613",
         "702",
-        "730"
+        "731"
       ]
     },
     {
@@ -3564,7 +3567,7 @@
         "612",
         "707",
         "708",
-        "730"
+        "731"
       ]
     },
     {
@@ -3793,8 +3796,9 @@
         "704",
         "708",
         "712",
-        "717",
-        "733",
+        "713",
+        "718",
+        "734",
         "810",
         "901",
         "904"
@@ -3841,8 +3845,7 @@
         "Bolster",
         "Manifest",
         "Support",
-        "Meld",
-        "Exert"
+        "Meld"
       ]
     },
     {
@@ -3902,13 +3905,15 @@
         "704",
         "708",
         "712",
-        "717",
-        "733",
+        "713",
+        "718",
+        "734",
         "810",
         "901",
         "904"
       ],
       "labels": [
+        "Exert",
         "Explore",
         "Assemble",
         "Adapt",
@@ -3935,7 +3940,9 @@
         "Waterbend",
         "Blight",
         "Heal",
-        "Recruit"
+        "Recruit",
+        "Empower Jace",
+        "Assimilate"
       ]
     },
     {
@@ -4008,13 +4015,13 @@
         "709",
         "711",
         "712",
-        "714",
-        "716",
+        "715",
         "717",
-        "719",
-        "721",
-        "730",
+        "718",
+        "720",
+        "722",
         "731",
+        "732",
         "800",
         "903"
       ],
@@ -4125,13 +4132,13 @@
         "709",
         "711",
         "712",
-        "714",
-        "716",
+        "715",
         "717",
-        "719",
-        "721",
-        "730",
+        "718",
+        "720",
+        "722",
         "731",
+        "732",
         "800",
         "903"
       ],
@@ -4264,13 +4271,13 @@
         "709",
         "711",
         "712",
-        "714",
-        "716",
+        "715",
         "717",
-        "719",
-        "721",
-        "730",
+        "718",
+        "720",
+        "722",
         "731",
+        "732",
         "800",
         "903"
       ],
@@ -4401,13 +4408,13 @@
         "709",
         "711",
         "712",
-        "714",
-        "716",
+        "715",
         "717",
-        "719",
-        "721",
-        "730",
+        "718",
+        "720",
+        "722",
         "731",
+        "732",
         "800",
         "903"
       ],
@@ -4462,7 +4469,8 @@
         "Paradigm",
         "Power-up",
         "Teamwork",
-        "Storied"
+        "Storied",
+        "Beam me up"
       ]
     },
     {
@@ -4512,7 +4520,7 @@
         "514",
         "603",
         "701",
-        "714",
+        "715",
         "904"
       ]
     },
@@ -4559,7 +4567,7 @@
         "514",
         "603",
         "702",
-        "714",
+        "715",
         "810",
         "901",
         "903",
@@ -4645,9 +4653,9 @@
         "Enchantment",
         "Any Target",
         "Changeling",
+        "Meld Cards",
         "Rules Text",
-        "Card Type",
-        "Colorless"
+        "Card Type"
       ],
       "crossRefs": [
         "110",
@@ -4658,7 +4666,8 @@
         "607",
         "608",
         "704",
-        "712"
+        "712",
+        "713"
       ]
     },
     {
@@ -4812,7 +4821,7 @@
       ],
       "crossRefs": [
         "702",
-        "716"
+        "717"
       ]
     },
     {
@@ -4828,47 +4837,90 @@
         "Nonmodal Double-Faced Card",
         "Modal Double-Faced Cards",
         "Enters the Battlefield",
+        "Double-Faced Cards",
+        "Outside the Game",
+        "Characteristics",
+        "Copiable Values",
+        "Substitute Card",
+        "Reminder Text",
+        "Planeswalker",
+        "Battlefield",
+        "Independent",
+        "Mana Value",
+        "Meld Cards",
+        "Face Down",
+        "Graveyard",
+        "Mana Cost",
+        "Permanent",
+        "Toughness",
+        "Transform",
+        "Creature",
+        "Modified",
+        "Ability",
+        "Becomes",
+        "Convert"
+      ],
+      "crossRefs": [
+        "100",
+        "202",
+        "305",
+        "601",
+        "701",
+        "708",
+        "713",
+        "714"
+      ]
+    },
+    {
+      "num": "713",
+      "title": "Meld Cards",
+      "chapter": 7,
+      "file": "rules/sections/713-meld-cards.md",
+      "summary": "Meld Cards",
+      "keywords": [
+        "meld",
+        "cards",
+        "Enters the Battlefield",
         "Leaves the Battlefield",
         "Double-Faced Cards",
-        "Replacement Effect",
         "Triggered Ability",
         "Outside the Game",
         "Characteristics",
         "Copiable Values",
         "Substitute Card",
         "Timestamp Order",
-        "Permanent Card",
-        "Reminder Text",
         "Planeswalker",
         "Battlefield",
         "Enchantment",
-        "Independent",
         "Mana Value",
         "Meld Cards",
         "Commander",
         "Face Down",
         "Graveyard",
-        "Mana Cost",
-        "Permanent"
+        "Permanent",
+        "Toughness",
+        "Artifact",
+        "Creature",
+        "End Step",
+        "Opponent",
+        "Ability",
+        "Becomes"
       ],
       "crossRefs": [
         "100",
         "202",
-        "305",
         "400",
-        "601",
         "613",
         "701",
-        "708",
-        "713",
+        "714",
         "903"
       ]
     },
     {
-      "num": "713",
+      "num": "714",
       "title": "Substitute Cards",
       "chapter": 7,
-      "file": "rules/sections/713-substitute-cards.md",
+      "file": "rules/sections/714-substitute-cards.md",
       "summary": "Substitute Cards",
       "keywords": [
         "substitute",
@@ -4897,10 +4949,10 @@
       ]
     },
     {
-      "num": "714",
+      "num": "715",
       "title": "Saga Cards",
       "chapter": 7,
-      "file": "rules/sections/714-saga-cards.md",
+      "file": "rules/sections/715-saga-cards.md",
       "summary": "Saga Cards",
       "keywords": [
         "saga",
@@ -4936,10 +4988,10 @@
       ]
     },
     {
-      "num": "715",
+      "num": "716",
       "title": "Adventurer Cards",
       "chapter": 7,
-      "file": "rules/sections/715-adventurer-cards.md",
+      "file": "rules/sections/716-adventurer-cards.md",
       "summary": "Adventurer Cards",
       "keywords": [
         "adventurer",
@@ -4967,10 +5019,10 @@
       "crossRefs": []
     },
     {
-      "num": "716",
+      "num": "717",
       "title": "Class Cards",
       "chapter": 7,
-      "file": "rules/sections/716-class-cards.md",
+      "file": "rules/sections/717-class-cards.md",
       "summary": "Class Cards",
       "keywords": [
         "class",
@@ -5006,10 +5058,10 @@
       ]
     },
     {
-      "num": "717",
+      "num": "718",
       "title": "Attraction Cards",
       "chapter": 7,
-      "file": "rules/sections/717-attraction-cards.md",
+      "file": "rules/sections/718-attraction-cards.md",
       "summary": "Attraction Cards",
       "keywords": [
         "attraction",
@@ -5049,10 +5101,10 @@
       ]
     },
     {
-      "num": "718",
+      "num": "719",
       "title": "Prototype Cards",
       "chapter": 7,
-      "file": "rules/sections/718-prototype-cards.md",
+      "file": "rules/sections/719-prototype-cards.md",
       "summary": "Prototype Cards",
       "keywords": [
         "prototype",
@@ -5089,10 +5141,10 @@
       ]
     },
     {
-      "num": "719",
+      "num": "720",
       "title": "Case Cards",
       "chapter": 7,
-      "file": "rules/sections/719-case-cards.md",
+      "file": "rules/sections/720-case-cards.md",
       "summary": "Case Cards",
       "keywords": [
         "case",
@@ -5122,10 +5174,10 @@
       ]
     },
     {
-      "num": "720",
+      "num": "721",
       "title": "Omen Cards",
       "chapter": 7,
-      "file": "rules/sections/720-omen-cards.md",
+      "file": "rules/sections/721-omen-cards.md",
       "summary": "Omen Cards",
       "keywords": [
         "omen",
@@ -5153,10 +5205,10 @@
       "crossRefs": []
     },
     {
-      "num": "721",
+      "num": "722",
       "title": "Station Cards",
       "chapter": 7,
-      "file": "rules/sections/721-station-cards.md",
+      "file": "rules/sections/722-station-cards.md",
       "summary": "Station Cards",
       "keywords": [
         "station",
@@ -5180,10 +5232,10 @@
       ]
     },
     {
-      "num": "722",
+      "num": "723",
       "title": "Preparation Cards",
       "chapter": 7,
-      "file": "rules/sections/722-preparation-cards.md",
+      "file": "rules/sections/723-preparation-cards.md",
       "summary": "Preparation Cards",
       "keywords": [
         "preparation",
@@ -5220,10 +5272,10 @@
       ]
     },
     {
-      "num": "723",
+      "num": "724",
       "title": "Controlling Another Player",
       "chapter": 7,
-      "file": "rules/sections/723-controlling-another-player.md",
+      "file": "rules/sections/724-controlling-another-player.md",
       "summary": "Controlling Another Player",
       "keywords": [
         "controlling",
@@ -5260,10 +5312,10 @@
       ]
     },
     {
-      "num": "724",
+      "num": "725",
       "title": "Ending Turns and Phases",
       "chapter": 7,
-      "file": "rules/sections/724-ending-turns-and-phases.md",
+      "file": "rules/sections/725-ending-turns-and-phases.md",
       "summary": "Ending Turns and Phases",
       "keywords": [
         "ending",
@@ -5302,10 +5354,10 @@
       ]
     },
     {
-      "num": "725",
+      "num": "726",
       "title": "The Monarch",
       "chapter": 7,
-      "file": "rules/sections/725-the-monarch.md",
+      "file": "rules/sections/726-the-monarch.md",
       "summary": "The Monarch",
       "keywords": [
         "monarch",
@@ -5330,10 +5382,10 @@
       ]
     },
     {
-      "num": "726",
+      "num": "727",
       "title": "The Initiative",
       "chapter": 7,
-      "file": "rules/sections/726-the-initiative.md",
+      "file": "rules/sections/727-the-initiative.md",
       "summary": "The Initiative",
       "keywords": [
         "initiative",
@@ -5357,10 +5409,10 @@
       ]
     },
     {
-      "num": "727",
+      "num": "728",
       "title": "Restarting the Game",
       "chapter": 7,
-      "file": "rules/sections/727-restarting-the-game.md",
+      "file": "rules/sections/728-restarting-the-game.md",
       "summary": "Restarting the Game",
       "keywords": [
         "restarting",
@@ -5394,16 +5446,16 @@
       "crossRefs": [
         "103",
         "704",
-        "729",
+        "730",
         "801",
         "903"
       ]
     },
     {
-      "num": "728",
+      "num": "729",
       "title": "Rad Counters",
       "chapter": 7,
-      "file": "rules/sections/728-rad-counters.md",
+      "file": "rules/sections/729-rad-counters.md",
       "summary": "Rad Counters",
       "keywords": [
         "rad",
@@ -5425,10 +5477,10 @@
       ]
     },
     {
-      "num": "729",
+      "num": "730",
       "title": "Subgames",
       "chapter": 7,
-      "file": "rules/sections/729-subgames.md",
+      "file": "rules/sections/730-subgames.md",
       "summary": "Subgames",
       "keywords": [
         "subgames",
@@ -5464,10 +5516,10 @@
       ]
     },
     {
-      "num": "730",
+      "num": "731",
       "title": "Merging with Permanents",
       "chapter": 7,
-      "file": "rules/sections/730-merging-with-permanents.md",
+      "file": "rules/sections/731-merging-with-permanents.md",
       "summary": "Merging with Permanents",
       "keywords": [
         "merging",
@@ -5508,10 +5560,10 @@
       ]
     },
     {
-      "num": "731",
+      "num": "732",
       "title": "Day and Night",
       "chapter": 7,
-      "file": "rules/sections/731-day-and-night.md",
+      "file": "rules/sections/732-day-and-night.md",
       "summary": "Day and Night",
       "keywords": [
         "day",
@@ -5540,10 +5592,10 @@
       ]
     },
     {
-      "num": "732",
+      "num": "733",
       "title": "Taking Shortcuts",
       "chapter": 7,
-      "file": "rules/sections/732-taking-shortcuts.md",
+      "file": "rules/sections/733-taking-shortcuts.md",
       "summary": "Taking Shortcuts",
       "keywords": [
         "taking",
@@ -5579,10 +5631,10 @@
       ]
     },
     {
-      "num": "733",
+      "num": "734",
       "title": "Handling Illegal Actions",
       "chapter": 7,
-      "file": "rules/sections/733-handling-illegal-actions.md",
+      "file": "rules/sections/734-handling-illegal-actions.md",
       "summary": "Handling Illegal Actions",
       "keywords": [
         "handling",
@@ -5687,7 +5739,7 @@
         "614",
         "615",
         "704",
-        "727",
+        "728",
         "809",
         "901"
       ]
@@ -6162,10 +6214,10 @@
         "Static Ability",
         "Combat Damage",
         "Commander Tax",
+        "Creature Type",
         "Lose the Game",
-        "Reminder Text",
-        "Starting Deck",
-        "Booster Pack"
+        "Nonbasic Land",
+        "Reminder Text"
       ],
       "crossRefs": [
         "103",
@@ -6179,7 +6231,7 @@
         "702",
         "704",
         "712",
-        "715",
+        "716",
         "806"
       ]
     },
@@ -6337,6 +6389,7 @@
       "Ascend",
       "Assemble",
       "Assign Combat Damage",
+      "Assimilate",
       "Assist",
       "At End of Turn (Obsolete)",
       "Attach",
@@ -6364,6 +6417,7 @@
       "Battle",
       "Battle Cry",
       "Battlefield",
+      "Beam me up",
       "Becomes",
       "Beginning of Combat Step",
       "Beginning Phase",
@@ -6507,6 +6561,7 @@
       "Emerge",
       "Emperor",
       "Emperor Variant",
+      "Empower Jace",
       "Enchant",
       "Enchantment",
       "Enchantment Type",
@@ -6548,6 +6603,7 @@
       "Extort",
       "Extra Turn",
       "Fabricate",
+      "Face a Dilemma",
       "Face a Villainous Choice",
       "Face Down",
       "Face Up",
@@ -6603,6 +6659,7 @@
       "Haste",
       "Haunt",
       "Heal",
+      "Heartwood Token",
       "Hexproof",
       "Hidden Agenda",
       "Hidden Zone",

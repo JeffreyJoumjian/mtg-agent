@@ -50,7 +50,7 @@ One half of a split permanent is “unlocked” if it has the appropriate unlock
 
 ## Unprepared
 
-A permanent that becomes unprepared loses the prepared designation. See rule 722, “Preparation Cards.” See also Prepared.
+A permanent that becomes unprepared loses the prepared designation. See rule 723, “Preparation Cards.” See also Prepared.
 
 ## Untap
 

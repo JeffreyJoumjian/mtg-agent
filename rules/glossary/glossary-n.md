@@ -6,11 +6,11 @@ A characteristic, and part of a card. A card’s name is printed in its upper le
 
 ## Night
 
-Along with day, a designation the game can have. See rule 731, “Day and Night,” and rule 702.145, “Daybound and Nightbound.”
+Along with day, a designation the game can have. See rule 732, “Day and Night,” and rule 702.145, “Daybound and Nightbound.”
 
 ## Nightbound
 
-An ability found on the back faces of some double-faced cards. Cards with daybound and nightbound are face up when it’s day and face down when it’s night. See rule 702.145, “Daybound and Nightbound,” and rule 731, “Day and Night.”
+An ability found on the back faces of some double-faced cards. Cards with daybound and nightbound are face up when it’s day and face down when it’s night. See rule 702.145, “Daybound and Nightbound,” and rule 732, “Day and Night.”
 
 ## Ninjutsu
 

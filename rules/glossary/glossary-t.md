@@ -90,7 +90,8 @@ An obsolete keyword ability that has been renamed. See rule 702.89, “Umbra Arm
 
 ## Toughness
 
-1. Part of a card that only creature cards have. A creature card’s toughness is printed after the slash in its lower right corner. See rule 208, “Power/Toughness.” 2. A characteristic that only creatures have. See rule 302.4.
+1. Part of a card that only creature cards have. A creature card’s toughness is printed after the slash in its lower right corner. See rule 208, “Power/Toughness.”
+2. A characteristic that only creatures have. See rule 302.4.
 
 ## Tournament
 
@@ -182,7 +183,8 @@ A multiplayer variant played among two-player teams that each have a shared life
 
 ## Type
 
-1. An object’s card type or, more broadly, its card type, subtype, and/or supertype. See rule 205, “Type Line,” and section 3, “Card Types.” 2. An attribute mana has. See rule 106, “Mana.”
+1. An object’s card type or, more broadly, its card type, subtype, and/or supertype. See rule 205, “Type Line,” and section 3, “Card Types.”
+2. An attribute mana has. See rule 106, “Mana.”
 
 ## Type Icon
 
