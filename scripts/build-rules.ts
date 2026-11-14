@@ -66,7 +66,9 @@ async function main() {
   const rawPath = await resolveRawFile(process.argv[2]);
   console.log(`Building from ${repoRelative(rawPath)}`);
 
-  const text = await readFile(rawPath, "utf8");
+  // Hash the LF form. .gitattributes stores raw files with LF, so a CRLF download and a fresh checkout must
+  // give the same sha256, or a rebuild on another machine would overwrite CHANGELOG.md with an empty diff.
+  const text = (await readFile(rawPath, "utf8")).replace(/\r\n/g, "\n");
   const sha256 = createHash("sha256").update(text).digest("hex");
 
   const previousRules = await loadPreviousRules();

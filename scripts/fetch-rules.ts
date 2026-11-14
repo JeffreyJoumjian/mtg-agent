@@ -70,7 +70,8 @@ async function main() {
     headers: { "user-agent": "Mozilla/5.0 (mtg-agent rules fetcher)" },
   });
   if (!res.ok) throw new Error(`Failed to download rules file: HTTP ${res.status}`);
-  const content = await res.text();
+  // Save LF line endings, as .gitattributes stores them, so the file on disk matches what a fresh clone gets.
+  const content = (await res.text()).replace(/\r\n/g, "\n");
 
   if (!/Comprehensive Rules/i.test(content)) {
     throw new Error("Downloaded file does not look like the Comprehensive Rules. Aborting.");
