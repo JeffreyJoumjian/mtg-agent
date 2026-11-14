@@ -300,15 +300,15 @@ use it after attacking.
 
 ### An "enter as a copy" Equipment copying a LEGENDARY target dies to the legend rule on arrival {#equip-009}
 
-**Kind:** ruling · **Verified:** 2026-09-08 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Masterwork of Ingenuity; Excalibur, Sword of Eden; Meteor Sword; Argentum Armor; Captain America, First Avenger
 **Rules:** 202.3, 205.4d, 704.3, 704.5j, 707.2
 **Claim:** A copy effect copies name and supertypes, so copying a legendary permanent you already
 control produces two legendary permanents with the same name and one is put into the graveyard
 immediately as a state-based action. You cannot use the doomed copy first — the SBA happens before
 any player gets priority.
-**Evidence:** CR 707.2 — copiable values are *"name, mana cost, colour indicator, card type, subtype,
-**supertype**, rules text, power, toughness and/or loyalty."* CR 205.4d + CR 704.5j — *"If two or more
+**Evidence:** CR 707.2 — copiable values are *"name, mana cost, color indicator, card type, subtype,
+**supertype**, rules text, power, toughness, loyalty, and/or defense"*. CR 205.4d + CR 704.5j — *"If two or more
 legendary permanents with the same name are controlled by the same player, that player chooses one of
 them, and the rest are put into their owners' graveyards."* CR 704.3 — SBAs are checked before any
 player receives priority. Note it is **put into the graveyard, not sacrificed** (no sacrifice
@@ -593,7 +593,7 @@ for {1}{W}) still ends on a Germ, not on the commander.
 
 ### Crew is INSTANT speed and Station is sorcery speed — but crewing after blockers are declared does nothing {#equip-023}
 
-**Kind:** ruling · **Verified:** 2026-09-13 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Rules:** 117.1b, 506.4b, 509.1, 509.1a, 509.1g, 702.122a, 702.184a
 **Claim:** Crew has no timing restriction and can be activated any time you hold priority, including
 on an opponent's turn and after blockers are declared; Station cannot — it is sorcery-timed. But
@@ -626,7 +626,7 @@ UNCREWED".
 
 ### Over-crewing adds ZERO power, but a second crew activation re-triggers "becomes crewed" {#equip-024}
 
-**Kind:** ruling · **Verified:** 2026-09-13 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Veteran Motorist
 **Rules:** 117.2a, 208.3, 208.3a, 301.7a, 301.7b, 601.2i, 702.122a, 702.122b, 702.122c, 702.122e
 **Claim:** Tapping more power than a Vehicle's crew number gives it no extra stats — but activating
@@ -734,7 +734,7 @@ For *attack* triggers (Argentum Armor), count only the combats the creature can 
 
 ### Infantry Shield's mobilize reads power on resolution, doubles under Roaming Throne, and discounts Embercleave {#equip-029}
 
-**Kind:** ruling · **Verified:** 2026-10-14 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Infantry Shield; Roaming Throne; Bulk Up; Embercleave; Impact Tremors; The Vision and Scarlet Witch; Silent Arbiter; Wizard's Staff; Genji Glove
 **Rules:** 107.3c, 107.3j, 113.1a, 118.7a, 508.4, 508.4c, 509.1b, 603.2d, 603.6a, 608.2h, 702.111b, 702.181a, 806.2b, 903.2
 **Claim:** Mobilize granted by Infantry Shield is the equipped creature's own triggered ability, its X is
@@ -756,9 +756,9 @@ power to an arbitrary number (loop-020).
 ; iron-man (2026-11-10), Infantry Shield moved into v3 beside Kediss and Silent Arbiter.
 ### A beginning-of-combat "put an artifact from hand onto the battlefield and attach it" trigger has one response window before it and one after, and none inside {#equip-030}
 
-**Kind:** ruling · **Verified:** 2026-11-10 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Tony Stark
-**Rules:** 112.1, 113.7a, 113.9, 115.1, 117.2a, 117.2e, 117.3a, 117.3b, 117.4, 117.5, 201.5, 301.5b, 301.5c, 400.2, 400.7, 507.1, 507.2, 508.1, 603.2b, 603.3, 603.5, 603.6a, 608.2c, 608.2d, 701.3a, 701.3b, 701.5a, 701.6a, 702.16a, 702.16d, 702.16k, 702.21a, 704.4, 704.5n, 712.16, 712.18
+**Rules:** 112.1, 113.7a, 113.9, 115.1, 117.2a, 117.2e, 117.3a, 117.3b, 117.4, 117.5, 201.5, 301.5b, 301.5c, 400.2, 400.7, 507.1, 507.2, 508.1, 603.2b, 603.3, 603.5, 603.6a, 608.2c, 608.2d, 701.3a, 701.3b, 701.5a, 701.6a, 701.27c, 702.16a, 702.16d, 702.16k, 702.21a, 704.4, 704.5n, 712.13
 **Claim:** Opponents can respond to The Invincible Iron Man's deploy trigger while it's on the stack and again after it resolves, but they can't see which artifact is coming, can't counter it with a spell counter, can't act between the artifact entering and the attach, and can't stop the attach with hexproof or ward.
 **Evidence:**
 - Oracle (back face): *"At the beginning of combat on your turn, you may put an artifact card from your hand onto the battlefield. If it's an Equipment, attach it to The Invincible Iron Man."* No official rulings are published.
@@ -768,7 +768,7 @@ power to an arbitrary number (loop-020).
 - Putting a card onto the battlefield isn't casting it (CR 112.1, 701.5a), so a spell counter has nothing to hit. Only an effect that counters abilities stops it (CR 113.9, 701.6a).
 - No player gets priority during resolution (CR 117.2e), and state-based actions ignore mid-resolution states (CR 704.4). The instructions run in order (CR 608.2c), and Equipment doesn't enter attached (CR 301.5b). The artifact's own enters triggers wait until after resolution (CR 603.6a, 117.2a), so the Equipment is already attached when they go on the stack. That ordering is also why For Mirrodin! can take the Equipment away (equip-002).
 - After resolution the active player gets priority (CR 117.3b), and the enters triggers go on the stack first (CR 117.5). Attackers are declared with no priority (CR 508.1), so the empty-stack pass in beginning of combat is the last window.
-- If the commander left in response, the trigger still resolves (CR 113.7a). The artifact enters, and the Equipment stays on the battlefield unattached (CR 701.3a, 701.3b). A flickered commander is a new object (CR 400.7, 201.5), so the result is the same. A double-faced permanent can't be turned face down (CR 712.16). If an outside effect transforms it back to Tony Stark, it's the same object (CR 712.18), the name still refers to it (CR 201.5), and the Equipment attaches to Tony, who is a creature.
+- If the commander left in response, the trigger still resolves (CR 113.7a). The artifact enters, and the Equipment stays on the battlefield unattached (CR 701.3a, 701.3b). A flickered commander is a new object (CR 400.7, 201.5), so the result is the same. A double-faced permanent can't be turned face down (CR 712.13). If an outside effect transforms it back to Tony Stark, it's the same object (CR 701.27c), the name still refers to it (CR 201.5), and the Equipment attaches to Tony, who is a creature.
 - Attaching doesn't target (CR 115.1), so hexproof, shroud and ward (CR 702.21a) don't matter. Protection does: a permanent with protection can't be equipped by Equipment with the stated quality (CR 702.16d), so the attempt does nothing (CR 701.3b). If it ends up attached anyway, it falls off as a state-based action (CR 704.5n). Protection from artifacts covers every Equipment (CR 702.16a), and protection from a player only covers Equipment that player controls (CR 702.16k). An Equipment that's also a creature without reconfigure can't attach at all (CR 301.5c).
 **Changes:** When rating a "put onto the battlefield" deploy engine, treat it as safe from spell counters and hand-reveal-free, and price only ability counters (Stifle effects), removal on the trigger and forced discard as answers. Against a removal-heavy pod, the pilot should expect the response while the trigger is on the stack, before choosing the artifact, and pick the card on resolution with that in mind.
 **See also:** equip-002, equip-012

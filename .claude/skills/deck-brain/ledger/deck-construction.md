@@ -861,17 +861,21 @@ sure this deck is better?" It was not.
 
 ### An {X} spell is counted at its printed mana value and silently understates the curve {#build-043}
 
-**Kind:** ruling · **Verified:** 2026-09-25 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Awaken the Woods
-**Rules:** 202.3b
+**Rules:** 107.3g, 202.3e
 **Claim:** Awaken the Woods (`{X}{G}{G}`) reports **mana value 2** in Scryfall data, in
 `bun run deck:show`, in the proposal artifact and in every third-party deck reviewer — but costs 5
 for X=3. A list with X spells is more expensive than every automated curve reading says.
-**Evidence:** CR 202.3b — X is 0 while the card is not on the stack, so cmc = 2. Verified against
+**Evidence:** CR 202.3e — *"X is treated as 0 while the object is not on the stack"*, and CR 107.3g
+says the same for the {X} in a card's mana cost, so cmc = 2. Verified against
 `data/card-cache.json` (`cmc: 2`) and against `deck:show`'s avg-MV calculation.
 **Changes:** When an {X} card is added or evaluated, state its **realistic cast cost** next to its
 mana value, and discount any avg-MV or win-turn figure for a deck carrying several. This cuts both
 ways: a win-turn estimate that already looks bad for an X-heavy deck is optimistic, not harsh.
+**History:** Until 2026-11-14 this entry cited CR 202.3b for X being 0 off the stack. 202.3b is the
+mana value of a double-faced card's back face, and the X rule is 202.3e (with 107.3g). The claim was
+right and the number was wrong. Found while re-verifying after CR 2026-11-06.
 **See also:** build-042, cost-003
 **Source:** chatterfang / upgrade-test (2026-09-25).
 

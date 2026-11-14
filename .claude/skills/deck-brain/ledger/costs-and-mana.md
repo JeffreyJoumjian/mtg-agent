@@ -45,7 +45,7 @@ was right.
 
 ### Mana value is not what you paid — reductions, alternative costs and free casts leave the printed value {#cost-003}
 
-**Kind:** ruling · **Verified:** 2026-09-08 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Prismari Pianist; Manaform Hellkite; Fierce Guardianship; Deadly Rollick; The Lord of Pain; Kaervek the Merciless; The Frightful Four; Helm of Awakening; Excalibur, Sword of Eden
 **Rules:** 107.3b, 118.7, 118.8d, 118.9c, 120.8, 202.3, 202.3e, 601.2f
 **Claim:** Cost reduction never changes a spell's mana value, and neither does an alternative cost
@@ -54,10 +54,11 @@ mana value is derived from its printed mana cost, unaffected by anything you pai
 X must be 0 under a free cast, and an `{X}` in a mana cost counts as **0** while the object isn't on
 the stack.
 **Evidence:** CR 202.3 — *"The mana value of an object is a number equal to the total amount of mana
-in its mana cost."* CR 118.7 — *"Paying a cost changed or reduced by an effect counts as paying the
+in its mana cost, regardless of color."* CR 118.7 — *"Paying a cost changed or reduced by an effect counts as paying the
 original cost."* CR 601.2f applies reductions only while determining a spell's total cost. CR 118.9c
 ("an alternative cost… doesn't change a spell's mana cost"), 118.8d (additional costs likewise),
-202.3e (X as chosen on the stack; off the stack *"an {X} in a mana cost is treated as 0"*), 107.3b
+202.3e (X as chosen on the stack; off the stack *"X is treated as 0 while the object is not on the
+stack"*), 107.3b
 (X = 0 when free-cast). CR 120.8 — a source dealing 0 damage deals no damage at all, so no damage
 triggers fire either. The first version of this entry (2026-08-06) rested on "Oracle behaviour; MV is
 a characteristic, reductions modify the cost paid" without a CR citation — cite CR 202.3 / 118.7 from
@@ -411,7 +412,7 @@ Locus of the Void added for ultron (2026-09-30), verified by mtg-rules-expert.
 
 ### A spell cast during an ability's resolution ignores card-type timing; "without paying its mana cost" is the only cost that permission allows {#cost-015}
 
-**Kind:** ruling · **Verified:** 2026-09-04 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Cosmic Cube; Wanda's Vision; Arcane Bombardment; Possibility Storm; Crackle with Power
 **Rules:** 107.3b, 118.9, 118.9b, 118.9d, 307.1, 601.2a, 601.2i, 601.3, 608.2g, 701.57a
 **Claim:** When an effect lets you cast a spell *during its own resolution* (Cosmic Cube's attack
@@ -424,7 +425,9 @@ you cannot elect to pay full price through it. Discover is the one template that
 **Evidence:** CR 608.2g — *"If an effect specifically instructs or allows a player to cast a spell
 during resolution, they do so by following the steps in rules 601.2a–i, except no player receives
 priority after it's cast. That spell becomes the topmost object on the stack, and the currently
-resolving spell or ability continues to resolve."* CR 601.3 (a spell may be cast only if a rule or
+resolving spell or ability continues to resolve, which may include casting other spells this way."*
+Since CR 2026-11-06 it also says that a player allowed to cast more than one spell during resolution
+*"may cast those spells in the order of their choice."* CR 601.3 (a spell may be cast only if a rule or
 effect allows it). CR 118.9 (the wording is an alternative cost) and 118.9b — *"An effect that
 allows you to cast a spell may require a certain alternative cost to be paid."* CR 701.57a (discover:
 *"If you don't cast it, put that card into your hand"*). Riders already ledgered: 118.9d (additional

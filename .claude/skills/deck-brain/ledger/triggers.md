@@ -98,11 +98,11 @@ Search every topic at once with `bun run lookup "<card | rule number | term>"`.
 
 ### Transforming is NOT "a creature enters" — but entering transformed is {#trig-009}
 
-**Kind:** ruling · **Verified:** 2026-08-19 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Impact Tremors; Tony Stark
-**Rules:** 603.6, 603.6a, 603.6d, 613.7g, 614.12, 701.27a, 701.28a, 712.14a, 712.18
+**Rules:** 603.6, 603.6a, 603.6d, 613.7g, 614.12, 701.27a, 701.27c, 701.28a, 701.28c, 712.11a
 **Claim:** A permanent that transforms (or converts) into its creature face does not trigger any "enters the battlefield" ability — not other permanents' *"whenever a creature enters"* triggers, not the back face's own *"when this creature enters"* ETB, and not "as this enters"/enters-with-counters replacements. The one exception is entering the battlefield *already* transformed, which is a real enters event that ETB triggers see as the creature face.
-**Evidence:** CR 701.27a — transform = "turn it over so that its other face is up," no zone change; CR 712.18 — it "doesn't become a new object" and effects continue to apply (auras, equipment, counters all stay). ETB triggers are zone-change triggers firing only when an event "puts one or more permanents onto the battlefield" (CR 603.6, 603.6a), and enters-replacements apply only "as part of the event that puts the permanent onto the battlefield" (CR 603.6d, 614.12). Contrast CR 712.14a: put onto the battlefield "transformed" → it *enters* back-face-up, so ETB triggers fire seeing the creature. Convert is the same mechanic (CR 701.28a). Two footnotes: transforming DOES grant a new timestamp (CR 613.7g — layers only), and no single CR line says "neither enters nor leaves" — the conclusion is derived, so cite the chain, not a phantom subrule.
+**Evidence:** CR 701.27a — transform = "turn it over so that its other face is up," no zone change; CR 701.27c (701.28c for convert) — it "doesn't become a new object" and effects continue to apply (auras, equipment, counters all stay). ETB triggers are zone-change triggers firing only when an event "puts one or more permanents onto the battlefield" (CR 603.6, 603.6a), and enters-replacements apply only "as part of the event that puts the permanent onto the battlefield" (CR 603.6d, 614.12). Contrast CR 712.11a: put onto the battlefield "transformed" → it *enters* back-face-up, so ETB triggers fire seeing the creature. Convert is the same mechanic (CR 701.28a). Two footnotes: transforming DOES grant a new timestamp (CR 613.7g — layers only), and no single CR line says "neither enters nor leaves" — the conclusion is derived, so cite the chain, not a phantom subrule.
 **Changes:** Never count ETB payoffs (Impact Tremors-style, "when this enters" value) as working with a transform — flipping Tony Stark into The Invincible Iron Man feeds none of them. Conversely blink/reanimate effects that return a DFC "transformed" DO pay ETB value. Also: a flip does not reset auras/counters, so buffs survive the transform.
 **Source:** iron-man/scarlet-witch (2026-08-19), user asked if transforming into a creature counts as "creature enters."
 
@@ -119,7 +119,7 @@ Search every topic at once with `bun run lookup "<card | rule number | term>"`.
 
 ### "Exiled with" collections are cumulative — every trigger recopies the WHOLE pile, once each {#trig-011}
 
-**Kind:** ruling · **Verified:** 2026-08-19 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Arcane Bombardment; Chaos Warp
 **Rules:** 601.2a, 601.2h, 607.2a, 608.2c, 608.2g, 704.5e, 707.10a, 707.12
 **Claim:** Arcane Bombardment's trigger copies every card it has ever exiled, exactly once per card per trigger — the originals never leave exile, so the pile only grows, and a card exiled turns ago (Chaos Warp) yields one fresh cast on every subsequent trigger. The just-exiled card is included in the SAME trigger's batch ("exile... **Then** copy each card").
@@ -232,7 +232,7 @@ Search every topic at once with `bun run lookup "<card | rule number | term>"`.
 
 ### "One or more" triggers fire once per EVENT — a mass sacrifice is one counter, one mill is one Horror, a wheel is one per discarding player {#trig-021}
 
-**Kind:** ruling · **Verified:** 2026-09-28 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Infantry Shield; Chainsaw; Blade of the Bloodchief; Shared Animosity; Purphoros, God of the Forge; Warleader's Call; Mirkwood Bats; Zellix, Sanity Flayer; Traumatize; Bruvac the Grandiloquent; Persistent Petitioners; Tinybones, Pocket Nuisance
 **Rules:** 508.4, 603.2c, 608.2f, 702.181a
 **Claim:** An ability worded *"whenever one or more creatures die"* triggers **once** when any number of creatures die simultaneously, while *"whenever a creature dies"* triggers once **per creature**; the same shape applies to every "one or more" trigger — Zellix, Sanity Flayer makes one Horror per mill *instruction*, so ten small mills beat one Traumatize. "Whenever a player discards one or more cards" batches each player's cards, not the players, so a wheel that makes four players discard triggers it four times.
@@ -299,18 +299,22 @@ Search every topic at once with `bun run lookup "<card | rule number | term>"`.
 
 ### "Attacks and isn't blocked" is the ONE attack-shaped trigger that fires for a token put onto the battlefield attacking {#trig-027}
 
-**Kind:** ruling · **Verified:** 2026-09-13 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Shredder, Shadow Master; Shared Animosity
 **Rules:** 508.3a, 508.3b, 508.3c, 508.3d, 508.3e, 508.4, 508.6, 509.3c, 509.3d, 509.3g
 **Claim:** Refines the 2026-08-25 CR 508.4 finding (tokens that enter attacking *"never 'attacked'"*, so no "whenever a creature attacks" triggers): *"Whenever [a creature] attacks and isn't blocked"* is exactly one carve-out in the rules that still fires for a token put onto the battlefield attacking, and it is worth building around.
-**Evidence:** CR 509.3g — *"Whenever [a creature] attacks and isn't blocked, . . ."* → *"**It will trigger even if the creature was never declared as an attacker** (for example, if it entered the battlefield attacking)."* Contrast the four rules that explicitly exclude entered-attacking creatures: 508.3a (creature attacks / attacks a player), 508.3b (a player **is attacked**), 508.3c/d/e (a player attacks). The tokens also still fire 509.3c/d ("becomes blocked") and every combat-damage trigger, which are not attack triggers at all. CR 508.6 — you *are* "attacking" those players (static checks see it) but you never *attacked* them.
+**Evidence:** CR 509.3g — *"Whenever [a creature] attacks and isn't blocked, . . ."* → *"**It will trigger even if the creature was never declared as an attacker** (for example, if it entered the battlefield attacking)."* Contrast the attack triggers tied to a creature being declared as an attacker. 508.3a (creature attacks / attacks a player), 508.3b (a player **is attacked**) and 508.3e (a player attacks another player) say in words that they won't trigger for a creature put onto the battlefield attacking. 508.3c and 508.3d (a player attacks) say they trigger only if a creature is declared as an attacker, which gives the same result. The tokens also still fire 509.3c/d ("becomes blocked") and every combat-damage trigger, which are not attack triggers at all. CR 508.6 — you *are* "attacking" those players (static checks see it) but you never *attacked* them.
 **Changes:** In a myriad / enters-attacking deck, payoffs worded "attacks and isn't blocked" (and combat-damage payoffs) scale with the token count; payoffs worded "whenever a creature you control attacks" (Shared Animosity, raid, attack-count triggers) see only the declared attackers. Defensively, the good news is the tokens do not wake opponents' "whenever you're attacked" triggers (508.3b).
+**History:** Until 2026-11-14 this entry said four rules explicitly exclude entered-attacking
+creatures and listed five (508.3a to 508.3e). Only 508.3a, 508.3b and 508.3e say in words that they
+won't trigger for such a creature. 508.3c and 508.3d only say the ability triggers if a creature is
+declared as an attacker. The conclusion is unchanged. Found while re-verifying after CR 2026-11-06.
 **See also:** trig-021, trig-026
 **Source:** rules question from the pilot (2026-09-13) — Shredder, Shadow Master.
 
 ### A modal spell's modes resolve in PRINTED order, and a mid-resolution graveyard counts {#trig-028}
 
-**Kind:** ruling · **Verified:** 2026-09-16 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Will of the Jeskai; Past in Flames
 **Rules:** 601.2b, 608.2c, 608.2g, 611.2c, 613.1f, 700.2a, 700.2d
 **Claim:** Chosen modes are carried out top-to-bottom as printed, never in the order chosen and never reorderable. And a continuous effect from a resolving spell fixes its set of objects **when that effect begins**, not when the spell starts resolving — so cards put into the graveyard by an *earlier mode of the same spell* are inside the set.
@@ -377,7 +381,7 @@ Search every topic at once with `bun run lookup "<card | rule number | term>"`.
 
 ### Attack-trigger doublers (Isshin, Windcrag Siege) double "whenever you attack" commander triggers {#trig-034}
 
-**Kind:** ruling · **Verified:** 2026-09-24 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Isshin, Two Heavens as One; Windcrag Siege; Caesar, Legion's Emperor
 **Rules:** 508.4, 603.2d
 **Claim:** Isshin, Two Heavens as One and Windcrag Siege (Mardu mode) make Caesar, Legion's Emperor's "Whenever you attack" trigger twice, and each instance gets its own optional sacrifice and its own two modes.

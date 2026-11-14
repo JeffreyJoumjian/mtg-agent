@@ -345,7 +345,7 @@ Protection against a second response should come from a different card.
 
 ### A card that GRANTS a {T} ability to a colour turns the whole creature base into tap engines {#tap-016}
 
-**Kind:** ruling · **Verified:** 2026-09-10 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Resplendent Mentor; Heliod, Sun-Crowned; Archangel of Thune; Light of Promise
 **Rules:** 113.10, 119.9, 302.6, 509.1a, 603.2c, 603.2e, 702.10c
 **Claim:** Resplendent Mentor ("White creatures you control have '{T}: You gain 1 life.'") under a

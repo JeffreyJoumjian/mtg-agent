@@ -139,7 +139,7 @@ The Torbran case (2026-09-08) is the mirror case of the combat-only rule, not a 
 
 ### "Target creature you control deals damage equal to its power" deals NOTHING if that creature is removed in response — no last-known-information fallback {#dmg-013}
 
-**Kind:** ruling · **Verified:** 2026-09-04 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Soul's Fire; Chandra's Ignition; Origin of Thor; Swiftfoot Boots; Champion's Helm; Deflecting Swat; Bolt Bend; Twinferno
 **Rules:** 113.7a, 601.2c, 603.3, 608.1, 608.2, 608.2b, 608.2h, 707.10, 707.10c, 903.9a
 **Claim:** Soul's Fire, Chandra's Ignition, Origin of Thor chapter III and every other "target creature you control deals damage equal to its power to …" effect deal zero damage if the creature is exiled, bounced or killed in response. The spell still resolves (the other target is legal) but the damage clause needs information about an illegal target and fails outright. LKI does not save it.

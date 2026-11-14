@@ -25,7 +25,7 @@ combo-free. The Monolith was 43% of the Ultron field and would have been auto-in
 
 ### Count the commander's cast trigger in a recursion loop — Oathsworn Vampire + Phyrexian Altar IS infinite under Edgar {#loop-002}
 
-**Kind:** ruling · **Verified:** 2026-09-06 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Oathsworn Vampire; Phyrexian Altar; Edgar Markov; Blood Artist; Zulaport Cutthroat; Cruel Celebrant; Vengeful Bloodwitch; Grave Pact; Dictate of Erebos; Ashnod's Altar; Warren Soultrader
 **Rules:** 106.4, 112.1, 113.6f, 117.1a, 119.3, 119.4, 119.9, 207.2c, 505.6a, 601.2a, 601.2f, 601.2i, 601.3, 603.4, 605.1a, 605.3b, 608.2i, 700.4
 **Claim:** Each recast of Oathsworn Vampire is a Vampire spell, so Edgar's eminence makes a 1/1 token —

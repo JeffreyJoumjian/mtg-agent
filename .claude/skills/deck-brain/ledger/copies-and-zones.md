@@ -53,19 +53,19 @@ Pickings).
 
 ### A modal DFC is cast as either face from any zone, but off the battlefield and stack it has only its front face {#zone-003}
 
-**Kind:** ruling · **Verified:** 2026-08-24 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Tony Stark; Master Transmuter
-**Rules:** 712.8a, 712.8e, 712.11, 712.11b, 712.14
+**Rules:** 712.6a, 712.6e, 712.8, 712.8b, 712.11
 **Claim:** A **modal** DFC may be cast as either face, from the command zone or from hand (CR
-712.11b), while a transforming DFC is cast front face up; Tony Stark // The Invincible Iron Man is
+712.8b), while a transforming DFC is cast front face up; Tony Stark // The Invincible Iron Man is
 layout `modal_dfc` (a Marvel-set hybrid that is modal AND has a transform ability). In any zone other
 than the battlefield or stack a double-faced card still has only its front face's characteristics
-(CR 712.8a), so a DFC with an artifact back face is NOT an artifact card in hand.
-**Evidence:** CR 712.11b — *"A player casting a modal double-faced card... chooses which face they
-are casting before putting it onto the stack."* Contrast CR 712.11 — a **nonmodal** double-faced
+(CR 712.6a), so a DFC with an artifact back face is NOT an artifact card in hand.
+**Evidence:** CR 712.8b — *"A player casting a modal double-faced card... chooses which face they
+are casting before putting it onto the stack."* Contrast CR 712.8 — a **nonmodal** double-faced
 spell "is cast with its front face up by default", so a transforming commander must be recast as
-its small front face and re-flipped. CR 712.8a — 712.11b is a casting permission, not a
-characteristics change. CR 712.8e — on the battlefield, back face up = artifact. CR 712.14 — a DFC
+its small front face and re-flipped. CR 712.6a — 712.8b is a casting permission, not a
+characteristics change. CR 712.6e — on the battlefield, back face up = artifact. CR 712.11 — a DFC
 put onto the battlefield from a non-stack zone enters front face up anyway. Scryfall layout field
 `modal_dfc` + keywords [Flying, Transform, Haste], verified 2026-08-24 via
 `bun run card "Tony Stark" --json`; oracle verified 2026-08-24 — front face "Legendary Creature —
@@ -75,7 +75,7 @@ counting a DFC as a hit for any type-worded effect.
 - **Recasting a commander (2026-08-07).** For Tony Stark // The Invincible Iron Man this is the
   difference between 8 mana (recast the 5/5 directly, {4}{U}{R} + tax) and 10 mana across two turns
   (recast the 1/3 for {1}{U} + tax, then pay {4}{U}{R} at sorcery speed). Scryfall's `layout` field
-  settles it — `modal_dfc` vs `transform`. Note CR 712.8a still applies: in the command zone the card
+  settles it — `modal_dfc` vs `transform`. Note CR 712.6a still applies: in the command zone the card
   shows only its **front** face's characteristics, which is what determines colour identity
   questions, not what you may cast.
 - **Recasting from hand (2026-08-24).** The recast path after a bounce is {4}{U}{R} for The
@@ -96,7 +96,10 @@ counting a DFC as a hit for any type-worded effect.
 be recast for {1}{U} (+ tax if commander) and re-transformed"; corrected the same day because
 commander tax applies only to command-zone casts (no tax from hand, cost-012) and Tony Stark is a
 modal DFC whose {4}{U}{R} face is directly castable. I had pattern-matched "has a Transform ability"
-to "transforming DFC, front-face casts only" and the user corrected me.
+to "transforming DFC, front-face casts only" and the user corrected me. On 2026-11-14 the battlefield
+citation changed from 712.8e (now 712.6d, which covers only nonmodal permanents) to 712.6e, the modal
+rule (then 712.8f), because Tony Stark is a modal DFC. The claim was right. Found while re-verifying
+after CR 2026-11-06.
 **See also:** zone-004, zone-005, zone-006, cost-006, cost-012
 **Source:** iron-man (2026-08-07); iron-man (2026-08-24, merged from "A DFC with an artifact back face
 is NOT an artifact card in hand"), Master Transmuter vs Tony Stark rules question; iron-man
@@ -125,28 +128,34 @@ a nonmodal DFC commander would count 2.
 
 ### The current CR lets a modal DFC transform — the 2021 MDFC rulings boilerplate is stale {#zone-005}
 
-**Kind:** ruling · **Verified:** 2026-08-18 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Tony Stark
-**Rules:** 712.9
+**Rules:** 712.7, 713.1, 713.1c
 **Claim:** A modal double-faced card *can* transform under the current rules. Do not trust the
 cached Scryfall ruling text *"A modal double-faced card can't be transformed"* that is stamped on
 every 2020-2021 MDFC.
-**Evidence:** CR 712.9 (rules of 2026-08-07) — *"Only permanents represented by double-faced tokens
-and double-faced cards that are **not meld cards** can transform or convert."* Modal DFCs are not
-excluded. Nothing in CR 712 restricts transforming to nonmodal cards. Tony Stark is
+**Evidence:** CR 712.7 (rules of 2026-11-06) — *"Only permanents represented by double-faced tokens
+and double-faced cards can transform or convert."* Modal DFCs are not excluded. Meld cards are the
+only cards left out. CR 713.1 says they *"are not considered double-faced cards"* and CR 713.1c says
+*"Meld cards cannot be transformed or converted."* Nothing in CR 712 restricts transforming to
+nonmodal cards. Tony Stark is
 `layout: modal_dfc` and prints *"{4}{U}{R}: Transform Tony Stark"* — a hybrid design the 2021
 boilerplate predates.
 **Changes:** When a Scryfall ruling and the local `rules/sections/` disagree, the local CR wins —
 rulings are frozen at print date and are not re-issued when the rules change. Grep the CR before
 quoting a ruling older than the card in front of you.
+**History:** Until 2026-11-14 this entry quoted the rule as it read on 2026-08-07, as CR 712.9: only
+double-faced cards "that are not meld cards" can transform or convert. CR 2026-11-06 moved meld cards
+out of the double-faced rules, so the rule is now 712.7 and the meld exclusion is in 713.1 and 713.1c.
+The claim is unchanged.
 **See also:** zone-003, zone-006
 **Source:** iron-man (2026-08-18), checking whether Tony Stark can be cast as its back face.
 
 ### Read the PRINTED CARD to tell a modal DFC from a transforming one {#zone-006}
 
-**Kind:** ruling · **Verified:** 2026-08-18 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Tony Stark; Bruce Banner; Jennifer Walters; King T'Challa; Monica Rambeau
-**Rules:** 712.2b, 712.2c, 712.3b, 712.3c, 712.11b, 903.8
+**Rules:** 712.2b, 712.2c, 712.3b, 712.3c, 712.8b, 903.8
 **Claim:** When a card's layout is contested, the card image settles it faster and more reliably
 than any database field or ruling. Three independent tells, all visible on the scan.
 **Evidence:** (1) **A mana cost printed in the back face's top-right corner** — modal only; a
@@ -162,7 +171,7 @@ Tony Stark) whose transform cost equals the back face's mana cost in every case.
 when a layout claim is load-bearing. Also: a card can be modal *and* transform, so "it has a
 Transform ability" is **not** evidence that the back face is uncastable — check for a printed
 back-face mana cost instead. Note the limit of this test: it settles *which layout the card is*, not
-*which zones you may cast it from*; the command-zone half still rests on CR 712.11b + 903.8, and
+*which zones you may cast it from*; the command-zone half still rests on CR 712.8b + 903.8, and
 this cycle has **zero** Scryfall rulings to lean on.
 **See also:** zone-003, zone-005
 **Source:** iron-man (2026-08-18) — the user challenged "are you 1000% sure" on the 6-vs-8 mana
@@ -191,7 +200,7 @@ alone.
 
 ### Token copies of ETB artifacts keep the ETB; spell-copy and myriad tokens never trigger "nontoken" {#zone-008}
 
-**Kind:** ruling · **Verified:** 2026-09-03 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Portal to Phyrexia; Echoes of Eternity; Chrome Dome; Glaring Fleshraker; Sculpting Steel; Kuldotha Forgemaster; Prototype Portal; Panharmonicon
 **Rules:** 603.2d, 603.6a, 608.3f, 702.116a, 707.2, 707.3, 707.5, 707.10f
 **Claim:** A token created as a copy of a permanent enters with that permanent's triggered abilities
@@ -214,9 +223,9 @@ trigger. Panharmonicon + Echoes of Eternity on such a trigger is three instances
 
 ### Copying a permanent copies no counters, status or casting choices — Chalice copies tap for nothing, Ballista copies die, Stations are bare shells {#zone-009}
 
-**Kind:** ruling · **Verified:** 2026-09-16 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Everflowing Chalice; Walking Ballista; Hangarback Walker; Ultron, Artificial Malevolence; Mirrorworks; Prototype Portal; Helm of the Host; Chrome Dome; Sculpting Steel; Echoes of Eternity; Lithoform Engine; Threefold Thunderhulk; Big Mother Mouser; Sol Ring; Thran Dynamo; Gilded Lotus; Arc Reactor; The Mightstone and Weakstone; Shuri, Wakandan Inventor; Extinguisher Battleship; Ultron, Machine Overlord; Forsaken Monument; Scrap Trawler
-**Rules:** 107.3g, 508.1a, 611.3a, 614.1c, 614.12, 702.33e, 704.5f, 707.2, 721.2b
+**Rules:** 107.3g, 508.1a, 611.3a, 614.1c, 614.12, 702.33e, 704.5f, 707.2, 722.2b
 **Claim:** When an effect copies a *permanent* (Ultron, Mirrorworks, Prototype Portal, Helm of the
 Host, Chrome Dome, Sculpting Steel, Shuri), the copy gets none of the original's counters, status or
 casting choices: a copied Everflowing Chalice enters with zero charge counters and taps for nothing,
@@ -225,16 +234,18 @@ whose abilities and creature-ness sit behind a counter threshold (Station `{N+}`
 Class levels) is a bare shell with none of it. Copying a *spell* (Echoes of Eternity, Lithoform
 Engine's third mode) is the opposite: the copy keeps X and kicked status.
 **Evidence:** CR 707.2 — copiable values are derived from printed text: "name, mana cost, color
-indicator, card type, subtype, supertype, rules text, power, toughness, and/or loyalty… Other effects
-(including type-changing and text-changing effects), **status, counters**, and stickers are not
-copied"; choices made when casting (*"the value of X, whether it was kicked"*) are copied only *"for
-an object on the stack"*. CR 107.3g — *"If a card in any zone other than the stack has an {X} in its
-mana cost, the value of {X} is treated as 0."* Everflowing Chalice's counters come from a
+indicator, card type, subtype, supertype, rules text, power, toughness, loyalty, and/or defense… Other
+effects (including type-changing and text-changing effects), **status, counters**, and stickers are
+not copied"; choices made when casting (*"the value of X, whether it was kicked"*) are copied only
+*"when copying a spell"*. CR 107.3g — *"If a card in any zone other than the stack has an {X} in its
+mana cost, the value of {X} is treated as 0, even if the value of X is defined somewhere within its
+text."* Everflowing Chalice's counters come from a
 kicker-linked "enters with" replacement (702.33e, 614.1c) that reads how many times *it* was kicked —
 the token never was. Printed "enters with N counters" replacements DO apply to the copy (614.12 reads
 the copy's own text): a token Threefold Thunderhulk gets its three, a token Big Mother Mouser its two.
-CR 721.2b defines a Station `{5+}` line as "**As long as this permanent has 5 or more charge counters
-on it**, it has [abilities] and is a creature."
+CR 722.2b defines a Station `{N+}` line as "**As long as this permanent has N or more charge counters
+on it**, it has [abilities] and is a creature with base power and toughness [P/T] in addition to its
+other types."
 **Changes:** In a "copy on enter" deck, sort the rocks into fixed-output (Sol Ring, Dynamo, Lotus,
 Arc Reactor, Mightstone — copy them) and cast-choice-output (Chalice, Ballista, Hangarback, any
 X-cost artifact — never pay to copy the permanent). If an X-cost artifact is wanted as a copy target,
@@ -255,7 +266,11 @@ the engine must copy the *spell* (Echoes), not the permanent.
 
 **History:** Before 2026-09-04 the ultron deck's own gameplan said "Chalice copies enter with the
 same counters" — a claim written from recall, the exact §1.1 failure; corrected on 2026-09-04 when
-the pilot asked whether a Chalice copy keeps its counters and CR 707.2 said no.
+the pilot asked whether a Chalice copy keeps its counters and CR 707.2 said no. On 2026-11-14 the
+Station citation moved from 721.2b to 722.2b, because Meld Cards took section 713 and shifted every
+later section up by one. The 707.2 quotes now use the CR 2026-11-06 wording (defense joins the
+copiable values, and casting choices are copied "when copying a spell" instead of "for an object on
+the stack"), and the Station quote is now the rule's own {N+} wording. The ruling is unchanged.
 **See also:** zone-001, zone-008, zone-015, cost-019
 **Source:** ultron (2026-09-04), the pilot asked whether a Chalice copy keeps its counters;
 cap-living-legend (2026-09-09, merged from "Copy effects don't copy counters or status, so
@@ -609,9 +624,9 @@ protection spell might be needed, rather than leaning on the devotion buffer.
 
 ### No effect makes permanents instants/sorceries, and one would blank them {#zone-025}
 
-**Kind:** ruling · **Verified:** 2026-09-28 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Flow State; Amethyst Dragon // Explosive Crystal; Smaug, the Great Calamity // Spew Flame; Song-Mad Treachery; Strife Scholar // Awaken the Ages; Stormshriek Feral // Flush Out; Omniclown Colossus // Pie-roclasm
-**Rules:** 110.4, 202.3e, 304.4, 307.4, 308.1, 608.3e, 712.8f, 712.13a, 715.3b, 720.3b, 722.3c
+**Rules:** 110.4, 202.3e, 304.4, 307.4, 308.1, 608.3e, 701.27j, 712.6e, 716.3b, 721.3b, 723.3c
 **Claim:** No paper card adds the instant or sorcery type to permanent cards or spells, and if one
 did, the creature would get an instant/sorcery discount and then go to the graveyard instead of
 entering. An instant/sorcery-gated reducer reaches a permanent only through a separately cast
@@ -622,9 +637,9 @@ unrelated), `"are instants"`, `"is a sorcery"`, `"are sorceries"`, `"instant in 
 `"count as" instant`, `"treated as" instant`, `"spells you cast are"`: 0 hits. CR 110.4 —
 *"Instant and sorcery cards can't enter the battlefield and thus can't be permanents"*; 304.4 /
 307.4; 608.3e — a permanent spell that can't be put onto the battlefield goes to the graveyard
-(712.13a is the printed analogue for an instant/sorcery back face). Kindred (308.1) is the only
+(701.27j is the printed analogue for an instant/sorcery back face). Kindred (308.1) is the only
 card type designed to share a type line with instant/sorcery, and it adds no permanent type. The
-halves: 715.3b (Adventure), 720.3b (Omen), 712.8f (MDFC, face that's up), 722.3c (Prepare copy).
+halves: 716.3b (Adventure), 721.3b (Omen), 712.6e (MDFC, face that's up), 723.3c (Prepare copy).
 **Changes:** When a pilot asks to widen an instant/sorcery-only reducer to permanents, answer with
 the split-card routes, and gate them on the *spell half's* mana value, not the card's. Mono-red,
 MV ≥ 4 halves as of this date: Amethyst Dragon (Explosive Crystal {4}{R}), Smaug (Spew Flame
@@ -698,7 +713,7 @@ the parent corrected that file.
 
 ### Stormsplitter's copies keep its trigger, so it doubles on every cast instant or sorcery {#zone-028}
 
-**Kind:** ruling · **Verified:** 2026-10-14 against CR 2026-08-07
+**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
 **Cards:** Stormsplitter; Impact Tremors; Purphoros, God of the Forge; Reiterate; Increasing Vengeance; Past in Flames
 **Rules:** 603.2c, 603.6a, 603.7, 707.2, 707.10
 **Claim:** Each token copy of Stormsplitter has the same "whenever you cast an instant or sorcery spell,
