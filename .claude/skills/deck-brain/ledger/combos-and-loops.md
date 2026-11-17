@@ -496,7 +496,8 @@ turn, copy that spell" matches Increasing Vengeance (mana value 2). Cast a cheap
 Loki with it on the stack and let the ability resolve (CR 117.1b), then cast Increasing Vengeance at the
 instant. The delayed trigger didn't exist when the instant was cast, so it fires on Increasing Vengeance
 (CR 603.7a). So vision-scarlet-witch `main` has held a three-card loop (Loki, Increasing Vengeance,
-Storm-Kiln Artist) since 2026-09-04 without anyone listing it. Unsettled: whether the trigger still
+Storm-Kiln Artist) since 2026-09-04 without anyone listing it. Loki left every vision-scarlet-witch
+list on 2026-11-14 for Lwaxana Troi, and none of them runs another copier, so the loop is gone there. Unsettled: whether the trigger still
 fires if Loki leaves before Increasing Vengeance is cast (no published Loki rulings).
 **See also:** loop-018, zone-019
 **Source:** scarlet-witch (2026-10-13), the pilot's "are there any infinite combos this deck could

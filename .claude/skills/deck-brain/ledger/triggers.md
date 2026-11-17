@@ -381,12 +381,12 @@ declared as an attacker. The conclusion is unchanged. Found while re-verifying a
 
 ### Attack-trigger doublers (Isshin, Windcrag Siege) double "whenever you attack" commander triggers {#trig-034}
 
-**Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
-**Cards:** Isshin, Two Heavens as One; Windcrag Siege; Caesar, Legion's Emperor
-**Rules:** 508.4, 603.2d
-**Claim:** Isshin, Two Heavens as One and Windcrag Siege (Mardu mode) make Caesar, Legion's Emperor's "Whenever you attack" trigger twice, and each instance gets its own optional sacrifice and its own two modes.
-**Evidence:** Isshin oracle: *"If a creature attacking causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time."* Windcrag Siege Mardu mode reads the same. Isshin ruling 2022-02-18: it affects abilities *"directly related to attacking, such as 'whenever [this creature] attacks' or 'whenever you attack with one or more creatures.'"* Two such effects give 3 instances, not 4 (CR 603.2d). Tokens that enter tapped and attacking never "attacked" (CR 508.4), so they don't add triggers.
-**Changes:** For any "whenever you attack" commander, count Isshin-style effects as doublers of the commander itself.
+**Kind:** ruling · **Verified:** 2026-11-15 against CR 2026-11-06
+**Cards:** Isshin, Two Heavens as One; Windcrag Siege; Caesar, Legion's Emperor; Lwaxana Troi, Charming Guest; Roaming Throne
+**Rules:** 508.4, 603.2d, 603.12
+**Claim:** Isshin, Two Heavens as One and Windcrag Siege (Mardu mode) make Caesar, Legion's Emperor's "Whenever you attack" trigger twice, and each instance gets its own optional sacrifice and its own two modes. No "triggers an additional time" effect doubles Caesar's "When you do, choose two": it's a reflexive trigger, so one sacrifice always gives exactly one "choose two".
+**Evidence:** Isshin oracle: *"If a creature attacking causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time."* Windcrag Siege Mardu mode reads the same. Isshin ruling 2022-02-18: it affects abilities *"directly related to attacking, such as 'whenever [this creature] attacks' or 'whenever you attack with one or more creatures.'"* Two such effects give 3 instances, not 4 (CR 603.2d). Tokens that enter tapped and attacking never "attacked" (CR 508.4), so they don't add triggers. CR 603.2d, last sentence: such an effect *"refers only to triggered abilities that object has, not to any delayed or reflexive triggered abilities (see rule 603.7 and rule 603.12) that may be created by abilities the object has."* So Lwaxana Troi aimed at Caesar adds one "Whenever you attack" instance (four with Isshin and Windcrag Siege), and each instance still makes one reflexive trigger (mtg-rules-expert, 2026-11-14).
+**Changes:** For any "whenever you attack" commander, count Isshin-style effects as doublers of the commander itself. Count extra instances of the trigger, never extra reflexive or delayed triggers it creates.
 **See also:** trig-006, trig-007, dmg-018, equip-028
 **Source:** caesar (2026-09-24), founding build (verified by hand 2026-09-24).
 

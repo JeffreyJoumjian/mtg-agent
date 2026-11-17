@@ -11,6 +11,11 @@ card-viz` builds the pages from a JSON spec, and T3 Code's `html_render` shows t
 stay plain images so T3 Code can open and zoom them on click, and the link icon beside each card
 name opens its Scryfall page.
 
+Use pages for every answer that puts cards in front of the pilot, follow-up cut options and role
+rankings included. A text table of cards isn't a substitute: the pilot asked for one to be redone
+as pages (2026-11-15). Rank a role with `tiles`, using the verdict for keep or cut and the label for
+the rank.
+
 The pages argue for changes and make none. Every swap on them stays the pilot's decision, taken one
 at a time (CLAUDE.md, "Deck changes").
 
@@ -76,10 +81,12 @@ Done when every page printed, nothing came back `NOT FOUND`, and every outgoing 
 The two tools are deferred T3 Code tools. Load them with ToolSearch
 `select:mcp__t3-code__html_preview,mcp__t3-code__html_render`.
 
-1. Preview the first swaps page with `html_preview`. Check that the images load and that its
-   `contentHeight` is close to the printed estimate.
-2. Render this round's pages in order with `html_render`, passing the file's whole HTML, the page
-   title as `title` and the printed height as `height`.
+1. Preview the first swaps page with `html_preview`, passing the page file as `path`. Check that
+   the images load and that its `contentHeight` is close to the printed estimate.
+2. Render this round's pages in order with `html_render`, passing the page file as `path`, the page
+   title as `title`, and the previewed `contentHeight` (or the printed height for pages you didn't
+   preview) as `height`. Passing the path sends the file exactly as built; retyping its HTML once
+   pointed a card's link at the wrong card.
 
 The pages sit above the final reply. Keep the reply to what the pages can't hold: this deck's open
 decisions, its review file as an absolute-path link, each card name linked to Scryfall (CLAUDE.md),

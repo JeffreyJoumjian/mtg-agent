@@ -79,9 +79,6 @@ Dispatch one `Agent` per deck in a single message, with `model: "opus"` and
 - the banned cards from CLAUDE.md, pasted in full
 - the instruction "Read `.claude/skills/set-review/reviewer.md` and follow it."
 
-A forked deck that shares its parent's colours and plan (upgrade-test and chatterfang) can share
-one reviewer and one file, with a verdict column per deck.
-
 Done when every reviewer has returned.
 
 ## 5. Verify

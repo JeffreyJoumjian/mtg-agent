@@ -357,3 +357,27 @@ commander as source.
 multiplied too. In a voltron deck that turns one connected hit into table-wide lethal faster than
 commander damage.
 **Source:** iron-man (2026-11-10), Kediss added to v3; mtg-rules-expert.
+
+### A resolved "creatures you control gain lifelink" misses tokens that enter attacking; a static grant covers them {#dmg-031}
+
+**Kind:** ruling · **Verified:** 2026-11-15 against CR 2026-11-06
+**Cards:** Sorin, Solemn Visitor; Sorin, Vengeful Bloodlord; Vito, Thorn of the Dusk Rose; Caesar, Legion's Emperor; South Wind Avatar
+**Rules:** 109.3, 611.2a, 611.2c, 611.3a, 611.3c, 702.15b, 702.15e, 119.9
+**Claim:** An effect from a resolved spell or ability that gives your creatures an ability or a P/T
+bonus "until" some time (Sorin, Solemn Visitor's +1, Vito's {3}{B}{B}) only covers the creatures you
+control when it resolves. Tokens created later in the turn, such as Caesar's Soldiers entering tapped
+and attacking, don't get it. A static grant (Sorin, Vengeful Bloodlord's "During your turn, creatures
+... you control have lifelink") covers them from the moment they enter.
+**Evidence:** Abilities and power are characteristics (CR 109.3), and a resolved effect that modifies
+characteristics fixes its set of objects when it begins (CR 611.2c). A static ability's effect isn't
+locked in (CR 611.3a) and applies to a permanent as it enters (CR 611.3c). Each lifelink source
+dealing damage at the same time is its own life-gain event (CR 702.15e, 119.9), so South Wind Avatar
+triggers once per lifelinked attacker. Gatherer rulings for Sorin, Solemn Visitor (2014-09-20) and
+South Wind Avatar (2026-01-27) agree. Checked by mtg-rules-expert, confidence very high.
+**Changes:** In a deck whose attackers are mostly tokens made during combat, rate a sorcery-speed
+team grant (a planeswalker +1, a precombat pump) as covering only the board you had before attacks,
+and prefer static grants. An instant-speed grant such as Vito's activation works if it resolves after
+the attack triggers have made the tokens (later in the declare attackers step, or in declare
+blockers), so never activate it in response to those triggers.
+**See also:** dmg-001, dmg-025, trig-022
+**Source:** caesar (2026-11-15), the pilot asked why Sorin, Vengeful Bloodlord over Sorin, Solemn Visitor.

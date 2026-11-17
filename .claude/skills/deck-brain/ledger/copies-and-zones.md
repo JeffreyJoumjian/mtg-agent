@@ -224,8 +224,8 @@ trigger. Panharmonicon + Echoes of Eternity on such a trigger is three instances
 ### Copying a permanent copies no counters, status or casting choices — Chalice copies tap for nothing, Ballista copies die, Stations are bare shells {#zone-009}
 
 **Kind:** ruling · **Verified:** 2026-11-14 against CR 2026-11-06
-**Cards:** Everflowing Chalice; Walking Ballista; Hangarback Walker; Ultron, Artificial Malevolence; Mirrorworks; Prototype Portal; Helm of the Host; Chrome Dome; Sculpting Steel; Echoes of Eternity; Lithoform Engine; Threefold Thunderhulk; Big Mother Mouser; Sol Ring; Thran Dynamo; Gilded Lotus; Arc Reactor; The Mightstone and Weakstone; Shuri, Wakandan Inventor; Extinguisher Battleship; Ultron, Machine Overlord; Forsaken Monument; Scrap Trawler
-**Rules:** 107.3g, 508.1a, 611.3a, 614.1c, 614.12, 702.33e, 704.5f, 707.2, 722.2b
+**Cards:** Everflowing Chalice; Walking Ballista; Hangarback Walker; Ultron, Artificial Malevolence; Mirrorworks; Prototype Portal; Helm of the Host; Chrome Dome; Sculpting Steel; Echoes of Eternity; Lithoform Engine; Threefold Thunderhulk; Big Mother Mouser; Sol Ring; Thran Dynamo; Gilded Lotus; Arc Reactor; The Mightstone and Weakstone; Shuri, Wakandan Inventor; Extinguisher Battleship; Ultron, Machine Overlord; Forsaken Monument; Scrap Trawler; Replicator
+**Rules:** 107.3g, 302.6, 508.1a, 611.2a, 611.3a, 613.1d, 614.1c, 614.12, 702.33e, 704.5f, 707.2, 707.9b, 722.2b
 **Claim:** When an effect copies a *permanent* (Ultron, Mirrorworks, Prototype Portal, Helm of the
 Host, Chrome Dome, Sculpting Steel, Shuri), the copy gets none of the original's counters, status or
 casting choices: a copied Everflowing Chalice enters with zero charge counters and taps for nothing,
@@ -263,6 +263,15 @@ the engine must copy the *spell* (Echoes), not the permanent.
   has its {4} counter ability; Hangarback Walker's token has {1},{T}. When an X-cost artifact is
   proposed for a copy-on-enter deck, check the deck's anthems before writing "never pay for the copy"
   — the honest line is "never, unless [anthem] is out."
+- **A copy of a copy drops the creator's "becomes" clause (2026-11-15).** Ultron's *"If the token
+  isn't a creature, it becomes a 2/2 Robot Villain creature"* is a separate type-changing effect
+  (613.1d, lasting the game per 611.2a), not an "except" clause written into the copy (707.9b). So a
+  token copy *of that token* (Replicator's `{2},{T}`) is a plain copy of the original card: a
+  Replicator copy of Ultron's 2/2 Sol Ring is a noncreature Sol Ring. It isn't summoning-sick (302.6),
+  so it taps as soon as Unwinding Clock untaps it, but it isn't a Robot for Roaming Throne or Machine
+  Overlord, and creature wipes miss it. Verified by mtg-rules-expert against CR 2026-11-06; Ultron has
+  no published rulings. Check the creator's wording before rating any copy-of-a-token engine: an
+  "except it's a creature" token passes its creature-ness on, a "becomes a creature" token doesn't.
 
 **History:** Before 2026-09-04 the ultron deck's own gameplan said "Chalice copies enter with the
 same counters" — a claim written from recall, the exact §1.1 failure; corrected on 2026-09-04 when

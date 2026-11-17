@@ -101,7 +101,7 @@ When the pilot bans another card, add it here.
 - **End every list edit, even a single swap, with a clickable link to each changed list's Moxfield
   file** (`main` → `MOXFIELD.txt`, `b4` → `MOXFIELD-B4.txt`): one bullet per list, a markdown link
   whose text is the deck and list and whose target is the absolute path, e.g.
-  `- [Chatterfang upgrade-test](/Users/skylerdj/Desktop/mtg-agent/decks/upgrade-test/MOXFIELD.txt)`.
+  `- [Chatterfang main](/Users/skylerdj/Desktop/mtg-agent/decks/chatterfang/MOXFIELD.txt)`.
   A bare path in prose or after a bold label isn't clickable in T3 Code. Pasting the list into
   Moxfield is always their next step.
 

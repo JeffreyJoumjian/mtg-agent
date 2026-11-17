@@ -856,3 +856,24 @@ corrected it: *"hex magic is sometimes one of our better draw/renew hand spells.
 **Changes:** When scoring any "exile your hand, draw that many" card, read the last sentence: if the
 exiled cards stay playable, count it as card advantage scaled by hand size.
 **Source:** scarlet-witch (2026-11-10), pilot pushback while choosing a cut for Mizzix's Mastery.
+
+### In a deck that gains life in 1s, a converter that drains each opponent beats one that drains "that much" {#eval-065}
+
+**Kind:** pattern · **Recorded:** 2026-11-15
+**Cards:** South Wind Avatar; Marauding Blight-Priest; Starscape Cleric; Cliffhaven Vampire; Vito, Thorn of the Dusk Rose; Sanguine Bond; Enduring Tenacity; Soul Warden; Blood Artist; Zulaport Cutthroat; Alhammarret's Archive
+**Claim:** Lifegain converters come in two kinds. "Whenever you gain life, each opponent loses 1"
+pays per gain event across the table. "Target opponent loses that much" pays the amount, to one
+player. A drain deck whose gains are many 1-life triggers (Blood Artist, Zulaport, Cruel Celebrant,
+Bastion, Soul Warden, Elas il-Kor) gets three times as much from the first kind in a four-player pod.
+Effects that only grow the amount (Cleric Class, The Wind Crystal, Alhammarret's Archive's lifegain
+half) help only the second kind.
+**Evidence:** CR 119.9 and ledger dmg-001: "whenever you gain life" triggers count events, and each
+gainer's trigger is its own event. Vito's ruling: each lifelink attacker is a separate event. Neither
+kind loops unless the deck also gains life when an opponent loses it (Exquisite Blood makes Vito or
+Sanguine Bond an automatic infinite).
+**Changes:** Before adding a converter, count the deck's gain events per death and per creature
+entering, and rank each-opponent converters first. Value South Wind Avatar above Blight-Priest in a
+death deck, because it gains on every death itself. Read Alhammarret's Archive's draw half separately
+from its lifegain half.
+**Source:** caesar (2026-11-15), the pilot's lifegain audit. The pilot took South Wind Avatar, Vito,
+Soul Warden and Mirkwood Bats.
