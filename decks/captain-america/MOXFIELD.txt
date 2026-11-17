@@ -1,7 +1,7 @@
 1 Captain America, First Avenger (SLD) 1726
 1 Academy Ruins (PLST) 2XM-309
 1 Adarkar Wastes (DMU) 243
-1 Akiri, Fearless Voyager (ZNR) 220
+1 Anthropological Mission
 1 Arcane Signet (MSC) 191
 1 Ardenn, Intrepid Archaeologist (PLST) CMR-10
 1 Arena of Glory (PLST) MH3-215
@@ -26,7 +26,6 @@
 1 Commander's Plate (SLD) 1733
 1 Dalakos, Crafter of Wonders (THB) 212
 1 Deflecting Swat (CMM) 214
-1 Dispatch (MSC) 130
 1 Eiganjo, Seat of the Empire (NEO) 268
 1 Enlightened Tutor (DMR) 6
 1 Esper Sentinel (PLST) MH2-12
@@ -44,15 +43,15 @@
 1 Illusionist's Bracers (RVR) 260
 1 Inventors' Fair (SLD) 1735
 2 Island (THB) 251
+1 Jean-Luc Picard, Luminary
 1 Kaldra Compleat (CMM) 958
 1 Master Transmuter
 1 Meteor Sword (TLA) 258
 1 Mithril Coat (LTR) 245
 1 Mjölnir, Hammer of Thor (MSH) 146
-2 Mountain (THB) 253
+1 Mountain (THB) 253
 1 Mox Opal (2XM) 275
 1 Otawara, Soaring City (NEO) 271
-1 Path to Exile (MAR) 47
 3 Plains (THB) 250
 1 Plateau (OLGC) 2018A
 1 Prismatic Vista (MH1) 244
@@ -62,12 +61,14 @@
 1 Sacred Foundry (EOE) 256
 1 Scalding Tarn (MM3) 244
 1 Sea of Clouds (PLST) BBD-84
+1 Seven of Nine, Unassimilated
 1 Shadowspear (THB) 236
 1 Shivan Reef
 1 Sigarda's Aid (SLD) 1727
 1 Single Combat (WAR) 30
 1 Sol Ring (SLD) 1734
 1 Spectator Seating (MSC) 268
+1 Spire of Industry
 1 Sram, Senior Edificer (SLD) 461
 1 Steam Vents (TRK) 298
 1 Steelshaper's Gift (MAR) 50

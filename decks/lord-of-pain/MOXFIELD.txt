@@ -45,12 +45,12 @@
 1 Kederekt Parasite (PLST) CON-48
 1 Lich's Relic
 1 Luxury Suite (MSC) 252
+1 Lwaxana Troi, Charming Guest
 1 Malakir Rebirth (ZNR) 111
 1 Mana Vault
 1 Manabarbs (M10) 149
 1 Marsh Flats
 1 Mithril Coat (LTR) 245
-1 Mogis, God of Slaughter (DSC) 89
 1 Mount Doom (HOC) 50
 4 Mountain (THB) 253
 1 Mox Diamond

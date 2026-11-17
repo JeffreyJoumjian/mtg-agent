@@ -241,3 +241,211 @@ into your own life loss).
 
 Validated: 100/100, legal and on-identity, Game Changers 3/3 unchanged. `MOXFIELD.txt` and
 `caesar-reference.pdf` regenerated.
+
+## 2026-11-14 — Star Trek (TRK/TRC) review: pilot's calls, nine swaps applied
+
+Review: `research/trk-set-review-2026-11-10.md`, then a follow-up round on the pilot's questions.
+Each swap was its own decision and has its own `deck:edit` snapshot.
+
+**Applied**
+- Troubling Tribbles in, Assemble the Legion out. Agreed only together with anthems, so the 0/1,
+  can't-block Tribbles can attack. Tribbles copies itself every upkeep (15 tokens after four
+  upkeeps for 3 mana, against Assemble's 10 for 5). It's mandatory growth, and with Ocelot Pride's
+  city's blessing it triples, so declare it at the table.
+- Caretaker's Talent in, Tocasia's Welcome out. The same {2}{W} once-a-turn draw, off any token
+  (Treasures too). Level 3 gives creature tokens +2/+2, but it also stops Skullclamp killing them.
+- Heraldic Banner in, Lich's Relic out. Named white, +1/+0 to the Tribbles and white tokens without
+  stopping Skullclamp, plus {W}. Ramp 6 to 7, removal 6 to its target of 5.
+- Worf, Still Not Merry in, Hero of Bladehold out. The pilot kept Secure the Wastes as the
+  instant-speed token maker and read Worf as a 5-mana finisher. Worf makes a flying Faerie per
+  attacking non-Faerie creature on each attack. No haste.
+- Landbase pass: Vault of Champions in for a Plains (the pilot: *"can't believe we didn't have vault
+  of champions to begin with"*), Luxury Suite for Blackcleave Cliffs, Spectator Seating for
+  Inspiring Vantage, Polluted Delta for Concealed Courtyard, Castle Embereth for the last Mountain.
+
+**Declined or held, with the pilot's grounds**
+- Vengeance Mission: the pilot wouldn't cut Blood Artist for it and then held it rather than cut
+  Cruel Celebrant. It's in `research/sideboard.md`, displacing Cruel Celebrant.
+- Rite of Oblivion for Vanishing Verse: declined. Verse stays.
+- Kor, Cause of Vengeance: declined, because the deck doesn't run enough Warriors for its pump.
+  Kurn, Son of Mogh (the review's swap for Idol of Oblivion) wasn't taken either, and Idol stays.
+- L'Rell, Fierce Visionary: declined, because Legion Warboss's mentor is more useful here.
+- Flooded Strand for Nomad Outpost: declined. The pilot kept Nomad Outpost.
+- The Needs of the Many: it's a mass-protection spell like Teferi's Protection, not a Mithril Coat
+  replacement, and `main` already runs Teferi's Protection. It's a sideboard row for pods that need
+  a second save.
+- Alhammarret's Archive and Soul Warden-type cards: not recommended. Elas il-Kor is already the
+  deck's Soul Warden effect, and nothing here turns lifegain into damage. A converter round
+  (Marauding Blight-Priest, Vito) was offered. Vito with Exquisite Blood would be an automatic
+  infinite, and neither is in the list.
+- The rest of the bench (Combat Celebrant, Grand Crescendo, Elim Garak, Eject the Warp Core, The
+  Wrath of Khan): not worth adding.
+
+**Validated:** 100/100, legal and on-identity, Game Changers 3/3. Average MV 2.73 by `deck:show`.
+`MOXFIELD.txt` regenerated. `caesar-reference.pdf` was not regenerated. Undo rows for all four
+nonland swaps are in `research/sideboard.md`.
+
+## 2026-11-15 — Lwaxana Troi in for Ingris; lifegain package in: Mirkwood Bats, South Wind Avatar, Soul Warden, Vito (pilot's calls)
+
+Snapshot: `versions/2026-11-15-0911-main-lwaxana-troi-in-ingris-stingerquill-out.json`. The Star
+Trek review had passed on Lwaxana (*"repeats what Isshin and Windcrag Siege already give"*). That was
+too quick: Isshin and Windcrag Siege double only attack-caused triggers, and Lwaxana can also double a
+drainer's death trigger. The pilot: *"yes let's try to fit her in"*, then *"yes let's cut ingris for
+lwaxana"*.
+
+**Grounds.** Aimed at Caesar she adds one "Whenever you attack" instance, so four with Isshin and
+Windcrag Siege out. Each instance is its own optional sacrifice and two modes. She doesn't add a
+second reflexive "choose two" per sacrifice, because CR 603.2d excludes reflexive triggers (ledger
+trig-034, checked by mtg-rules-expert). Aimed at Zulaport Cutthroat, Blood Artist or Cruel Celebrant,
+every death drains 2. Drain & Death Payoffs was 13 against a target of 11. Ingris fired only on
+declared attackers, never on Caesar's tapped-and-attacking tokens (CR 508.4).
+
+**Costs.** Ingris's {4} Cadet-and-haste ability and a 1/4 flying blocker. Lwaxana is a 2/2 that The
+Meathook Massacre at X = 2 kills. Doublers go 5 → 6.
+
+**Curve:** average MV 2.73 → 2.71, MV ≤ 2 29 → 30, MV ≤ 3 53 → 53. Validated 100/100, legal and
+on-identity, Game Changers 3/3. `MOXFIELD.txt` regenerated. Undo row in `research/sideboard.md`.
+
+**Correction to the 2026-11-14 entry.** It said Alhammarret's Archive wasn't recommended because
+nothing turns lifegain into damage. That ignored its draw half: it doubles every draw outside the
+draw step, so Skullclamp draws four, and Caesar's draw mode, Morbid Opportunist, Caretaker's Talent
+and Idol of Oblivion double too. It's held, not passed.
+
+**Lifegain audit, applied (pilot's calls).** The pilot asked to fit South Wind Avatar, Vito, Soul
+Warden and Mirkwood Bats, then picked the cuts from the offered options:
+
+| Out | In | Grounds |
+|---|---|---|
+| Zurgo Stormrender | Mirkwood Bats | Whenever you create or sacrifice a token, each opponent loses 1, once per token, Treasures and doubler extras included (CR 603.2c, ledger). Zurgo drained only on tokens leaving while not attacking. Cost: Zurgo's draw on attacking tokens and its mobilize Warrior. |
+| Swords to Plowshares | South Wind Avatar | The pilot's pick over Mayhem Devil and Path to Exile. Each life gain makes each opponent lose 1, per event (CR 119.9, ledger dmg-001), and it gains on every death itself. Swords gave the opponent life, which undoes drain. Cost: Removal & Interaction 5 → 4. |
+| General's Enforcer | Soul Warden | The pilot's pick. Every creature that enters gains 1 for the converters, and Ocelot Pride keeps making Cats. Enforcer ranked last in Protection, since Mithril Coat, Flawless Maneuver and Teferi's Protection still answer destroy effects. Cost: Protection 7 → 6, and Adeline, Anim Pakal, Myrel and Commissar Raine lose indestructible. |
+| Talisman of Indulgence | Vito, Thorn of the Dusk Rose | A second converter: target opponent loses as much as you gained. Its lifelink activation makes each connecting attacker a separate gain. Cost: Ramp 7 → 6, red sources 21 → 20. Vito drains one opponent, so it's the weakest of the four. Never add Exquisite Blood, which is an automatic infinite with Vito. |
+
+Snapshots: `versions/2026-11-15-1028-main-*.json`, one per swap. Undo rows are in
+`research/sideboard.md`. Mayhem Devil and Viscera Seer stay. No loop was added, because no card in the
+list gains life when an opponent loses it. Ledger eval-065 records the converter lesson.
+
+**Roles after the audit:** Ramp 6, Removal & Interaction 4, Protection 6, Doublers 6, Drain & Death
+Payoffs 15, against targets of 7, 5, 7, 5 and 11. Drain is the deck's engine now, which the pilot chose.
+
+**Curve:** average MV 2.71 → 2.77, MV ≤ 2 30 → 28, MV ≤ 3 53 → 51. Validated 100/100, every name
+found, legal and on-identity, Game Changers 3/3. `MOXFIELD.txt` regenerated. `research/gameplan.md`
+updated (opening, protection table, turn order, the kill), including lines left stale by earlier
+swaps (Lingering Souls, Assemble the Legion, Hero of Bladehold). `caesar-reference.pdf` wasn't
+regenerated.
+
+## 2026-11-15 — Pilot's card notes round: Super Shredder in, Bitterbloom Bearer out (pilot's call)
+
+Snapshot: `versions/2026-11-15-1412-main-super-shredder-in-bitterbloom-bearer-out.json`. The pilot's
+notes asked for Own the Day and Super Shredder here, and whether the Yahenni, Undying Partisan +
+Infantry Shield + Blade of the Bloodchief combo belongs in Caesar or Edgar.
+
+**Grounds.** Super Shredder gets a +1/+1 counter whenever another permanent leaves the battlefield:
+every token sacrificed, Treasures, fetch lands, and every creature Grave Pact or Dictate takes from an
+opponent. The trigger is per permanent, so the mobilize Warriors dying together at end step add one
+counter each (CR 603.2c, ledger trig-021). Wearing Infantry Shield, its power becomes that many
+Warriors (mobilize X reads power on resolution, ledger equip-029), and sacrificing them to Viscera
+Seer, Ashnod's Altar, Phyrexian Altar or Goblin Bombardment before damage roughly doubles it before
+it connects. Isshin and Windcrag Siege trigger mobilize twice, and the token doublers double the
+Warriors (ledger repl-012). That is the Yahenni combo in one card. Yahenni grows only when an
+opponent's creature dies, so here it needs Blade to use the deck's own tokens, and its outlet would
+be the fifth free one. Edgar's `combat` and `sacrifice` lists already run Yahenni and Blade, so the
+combo goes to Edgar's round as Infantry Shield alone.
+
+**Correction to the 2026-11-10 entry.** It passed Super Shredder here as a better fit for decks that
+also spend Foods and Treasures. That missed Infantry Shield, which turns its power into Warriors that
+grow it again.
+
+**Cuts offered and not taken.** Impact Tremors (weakest of the three enter pingers), Soul Warden,
+Warleader's Call, Vito, a Swamp and Talisman of Hierarchy. The pilot turned down the first three
+outright and kept Vito for its lifelink (*"if we have things to give our creatures lifelink"*).
+Bitterbloom Bearer was the pilot's own pick: Bitterblossom still makes the same upkeep Faerie.
+
+**Costs.** Token Engines 13 → 12 against a target of 14. Super Shredder is a 1/1 until it grows, and
+the deck's own The Meathook Massacre kills it at X = 1.
+
+**Curve:** average MV 2.77 → 2.77, MV ≤ 2 28 → 28, MV ≤ 3 51 → 51. Validated 100/100, legal and
+on-identity, Game Changers 3/3. `MOXFIELD.txt` regenerated. Undo row in `research/sideboard.md`.
+
+**Still open in this round:** Own the Day (the pilot wants it, not for a Swamp) and Sorin, Vengeful
+Bloodlord as a free team-lifelink source for South Wind Avatar and Vito to convert.
+
+## 2026-11-15 — Pilot's call: keep `main` as the drain build and found a `combat` list
+
+The pilot invited a rethink (*"i'm fully okay to rething the deck that way and we go all in on
+combat"*). My read, given before any build: Caesar triggers only on attacks, his tokens enter
+attacking, and his damage mode counts living tokens, so the commander rewards keeping tokens alive.
+Isshin, Windcrag Siege, Lwaxana, Adeline, Anim Pakal, Myrel, Worf, Infantry Shield, Super Shredder and
+the proposed Own the Day are all attack cards, while Drain & Death Payoffs sat at 16 against a target
+of 11. EDHREC (23,357 decks) tags Tokens 2,862, Aristocrats 1,164 and Aggro 788. Costs named: no play
+report on Caesar exists yet; combat is more exposed to blockers, fogs and wipes; static anthems stop
+Skullclamp killing 1/1 tokens; "whenever a creature attacks" payoffs such as Fervent Charge (43% of
+Caesar decks) never fire for tokens that enter attacking (CR 508.4).
+
+**Pilot's calls.**
+- `main` stays as it is. A new `combat` list gets built without being limited to `main`'s cards.
+  Cards from `main` that don't make it are then offered back one at a time with pros and cons, like
+  the swap rounds.
+- Grave Pact and Dictate of Erebos stay in the combat list (founding asks, and Caesar sacrifices on
+  every attack).
+- Own the Day, Sorin, Vengeful Bloodlord and Krenko, Tin Street Kingpin move into the combat build
+  instead of being decided against `main`.
+
+**Open:** all-in combat, or combat with a lifelink layer (Sorin plus each-opponent converters).
+
+## 2026-11-15 — `combat` founded: go-wide combat with a lifelink layer (first draft)
+
+Snapshot: `versions/2026-11-15-1532-combat-founded-combat-with-lifelink.json`. Import list:
+`MOXFIELD-COMBAT.txt`. The pilot chose combat with lifelink over all-in combat (*"lifelink is an
+integral part of any combat based deck. you'll never win if you can't get life back"*), Bracket 3,
+and the same Game Changers except Demonic Tutor.
+
+**How it wins.** Neyali, Suns' Vanguard gives attacking tokens double strike, and Caesar's tokens
+enter attacking, so they have it at once (static, CR 611.3a). Iroas prevents all damage to attacking
+creatures, so they survive blocks, and All-Out Assault's deathtouch kills the blockers. Sorin,
+Vengeful Bloodlord gives everything lifelink during your turn, including tokens made in combat
+(ledger dmg-031). Each token's damage in each damage step is its own gain (CR 702.15e, ledger
+dmg-001), and South Wind Avatar and Marauding Blight-Priest each make every opponent lose 1 per
+gain. Damage dealt to a blocker still gains life (CR 702.15b). Throne of the God-Pharaoh drains each
+opponent per tapped creature at your end step: order it before the mobilize sacrifice so the
+Warriors still count (CR 603.3b).
+
+**Role skeleton (targets set before picking).**
+
+| Role | Target | Built |
+|---|---|---|
+| Lands | 34 | 34 (main's, minus Kher Keep and Phyrexian Tower, plus Vault of the Archangel and Minas Tirith; Plains 2 → 3, Swamp 2 → 1) |
+| Ramp & Mana | 7 | 6 |
+| Card Draw | 8–10 | 7 + Court of Grace (monarch) + Minas Tirith = 9 |
+| Removal & Interaction | 5 | 5 |
+| Board Wipes | 1 | 1 (Ruinous Ultimatum, one-sided) |
+| Protection | 7 | 7 |
+| Token Engines | 14 | 14 |
+| Token & Trigger Doublers | 5 | 6 |
+| Anthems & Combat | 6 | 6 |
+| Lifelink & Converters | 5 | 5 + Vault of the Archangel |
+| Death & Drain Payoffs | 5 | 5 (Grave Pact and Dictate at the pilot's request) |
+| Sacrifice Outlets | 3 | 3 (two make mana, Goblin Bombardment makes damage) |
+
+**New to Caesar (19):** Talisman of Conviction, Swords to Plowshares (both back), Welcoming Vampire,
+The One Ring (Game Changer in Demonic Tutor's slot), Akroma's Will, Hero of Bladehold (back), Ainok
+Strike Leader, Voice of Victory, Krenko, Tin Street Kingpin, Exalted Sunborn, Intangible Virtue,
+Neyali, Iroas, All-Out Assault, Own the Day, Sorin, Vengeful Bloodlord, Marauding Blight-Priest,
+Kambal, Throne of the God-Pharaoh. Lands: Vault of the Archangel, Minas Tirith.
+
+**Left out from main (to be offered back one at a time):** Blood Artist, Cruel Celebrant, Zulaport
+Cutthroat, Bastion of Remembrance, Mirkwood Bats, Impact Tremors, Soul Warden, Vito, Mayhem Devil,
+The Meathook Massacre, Lwaxana, Worf, Bitterblossom, Morbid Opportunist, Skullclamp, Viscera Seer,
+Pitiless Plunderer, Reassembling Skeleton, Demonic Tutor, Kher Keep, Phyrexian Tower.
+
+**Self-hits checked (SKILL §1.3).** Static +1/+1 anthems stop Skullclamp killing 1/1 tokens, so
+Skullclamp is out. The Meathook Massacre's −X/−X kills the deck's own tokens. Intangible Virtue's
+vigilance means declared token attackers stay untapped, which Throne doesn't count (Caesar's own
+tokens enter tapped either way). Voice of Victory and Myrel stop opponents casting spells on your
+turn, which pods that remove stax on sight may target. No infinite found: no card gains life when an
+opponent loses it, and Pitiless Plunderer and Reassembling Skeleton (the declared loop in `main`) are
+both out. Troubling Tribbles' upkeep copies are still mandatory.
+
+**Curve:** average MV 3.03, MV ≤ 2 22, MV ≤ 3 45 (main: 2.77, 28, 51). Own the Day usually costs 3,
+and Exalted Sunborn can warp in for {1}{W}. Validated 100/100, legal and on-identity, Game Changers
+3/3 (Smothering Tithe, Teferi's Protection, The One Ring). Pips W46 B21 R20, sources W26 B20 R20.

@@ -1,0 +1,95 @@
+{
+  "pages": [
+    {
+      "title": "Tony Stark (Iron Man v3)",
+      "sections": [
+        {
+          "heading": "Swaps for v3",
+          "note": "Both swaps together take the draw count from 7 to 9. With both, average MV goes 3.40 → 3.43, MV ≤ 2 stays at 24 and MV ≤ 3 goes 42 → 41.",
+          "swaps": [
+            {
+              "in": "Co-Option Adjutant",
+              "out": "Manifold Key",
+              "decks": ["iron-man v3"],
+              "curve": "3.40 → 3.45 · ≤2 24 → 23 · ≤3 42 → 41",
+              "axis": "cards per turn",
+              "why": [
+                "It gives Iron Man, an artifact creature, \"draw a card\" whenever he deals combat damage to a player, and Brotherhood Regalia makes him unblockable.",
+                "The draw is his own ability, so Wizard's Staff and Roaming Throne each add one more (ledger equip-018). Double strike and extra combats multiply it again.",
+                "Manifold Key's unblockable mode was v3's evasion until Brotherhood Regalia took that job on 2026-11-10."
+              ],
+              "flags": [
+                "You lose Key's {1} untap, and the backup evasion if Regalia is answered.",
+                "During the Aggravated Assault loop the draws aren't optional, so watch your library."
+              ]
+            },
+            {
+              "in": "Seven of Nine, Unassimilated",
+              "out": "Cloud Key",
+              "decks": ["iron-man v3"],
+              "curve": "3.40 → 3.38 · ≤2 24 → 25 · ≤3 42 → 42",
+              "axis": "cards before Tony flips",
+              "why": [
+                "It's a {1}{U} 0/4 artifact creature that draws every turn. v3's 36 land slots hold 30 different names, so it stops discarding at five lands about 83% of the time.",
+                "It doesn't need Iron Man flipped or attacking, it deploys for free, and it blocks."
+              ],
+              "flags": [
+                "You've kept Cloud Key four times without giving a reason. If the reason is surviving creature wipes, this swap leaves every cost reducer a creature."
+              ],
+              "options": [
+                { "card": "Manifold Key", "note": "The cleaner curve swap if you turn down Adjutant." },
+                { "card": "Champion's Helm", "note": "You declined it as a cut twice on 2026-11-10." }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Lwaxana round",
+          "swaps": [
+            {
+              "in": "Lwaxana Troi, Charming Guest",
+              "verdict": "consider",
+              "decks": ["iron-man v3"],
+              "axis": "a third trigger doubler",
+              "why": [
+                "Tap her for {2} aimed at Iron Man and leave her tapped, and each of his triggers fires again: the combat deploy, The Reaver Cleaver's Treasures, Infantry Shield's mobilize, and Adjutant's draw if you take it.",
+                "She stacks with Wizard's Staff and Roaming Throne, because each adds one more trigger (CR 603.2d). She passes the MV 2 rule.",
+                "Your ground on Scarlet Witch was that she needs a creature with a trigger already on the board. Here that's the commander, as on Lord of Pain and Vision."
+              ],
+              "flags": [
+                "The review passed on her. A second deploy needs a second artifact in hand, and cards in hand are what this deck runs short of.",
+                "She isn't an artifact, so the reducers don't discount her and the combat deploy can't put her in.",
+                "She has no cut named yet. Say if you want her, and I'll rank one."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Bench",
+          "pairs": [
+            { "in": "Deep Space 9", "out": "Darksteel Forge" },
+            { "in": "The Immortal Sun", "out": "Cloud Key", "note": "Its planeswalker lock hits every player." },
+            { "in": "U.S.S. Defiant, Mirror Migrant", "out": "Champion's Helm", "note": "It phases Iron Man out with his Equipment, and he comes back flipped. You turned it down for Vision on 2026-11-14." },
+            { "in": "Darksteel Plate", "out": "Champion's Helm", "note": "The existing sideboard row." }
+          ]
+        },
+        {
+          "heading": "Traps",
+          "note": "Each of these reads like an upgrade and isn't. The reasons are in the reply below.",
+          "tiles": [
+            { "card": "Quark, Humble Proprietor", "verdict": "trap" },
+            { "card": "Kobayashi Maru Scenario", "verdict": "trap" },
+            { "card": "Test of Priorities", "verdict": "trap" },
+            { "card": "Temporal Tribulation", "verdict": "trap" },
+            { "card": "The Guardian of Forever", "verdict": "trap" },
+            { "card": "Gray and Adira, Forever Joined", "verdict": "trap" },
+            { "card": "Howling Mine", "verdict": "trap" },
+            { "card": "Romulan Bird-of-Prey", "verdict": "trap" },
+            { "card": "Engineered Explosives", "verdict": "trap" },
+            { "card": "Command Chair", "verdict": "trap" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "pages": [
+    {
+      "title": "Ultron, Artificial Malevolence",
+      "sections": [
+        {
+          "heading": "Swaps for main",
+          "note": "All four together: average MV 4.71 → 4.76, MV ≤ 2 10 → 10, MV ≤ 3 23 → 23. Card Draw stays at 7, because Enterprise-D adds one and The Ten Rings leaves.",
+          "swaps": [
+            {
+              "in": "Replicator",
+              "out": "Sculpting Steel",
+              "decks": [
+                "ultron main"
+              ],
+              "curve": "4.71 → 4.70 · ≤2 10 → 11 · ≤3 23 → 23",
+              "axis": "repeatability",
+              "why": [
+                "For {2} and a tap it makes a tapped token copy of any token you control, and Ultron turns every artifact you cast into a token worth copying.",
+                "Unwinding Clock untaps it on each opponent's untap step, so it copies four times a turn cycle. Sculpting Steel copies once, and it's the only one-shot card in the copy role.",
+                "The price stays {2} whatever the token costs. Prototype Portal pays {9} to copy Portal to Phyrexia, where Replicator pays {2}."
+              ],
+              "flags": [
+                "Steel works with no token on the board, triggers Ultron and Mirrorworks itself, and can copy an opponent's artifact. Replicator needs Ultron to have made a token first.",
+                "Replicator's copies are tokens, so they never trigger Ultron or Mirrorworks."
+              ],
+              "options": [
+                {
+                  "card": "Prototype Portal",
+                  "note": "Kept, because it repeats and works without Ultron."
+                }
+              ],
+              "optionsLabel": "Other cut considered"
+            },
+            {
+              "in": "The Guardian of Forever",
+              "out": "Palladium Myr",
+              "decks": [
+                "ultron main"
+              ],
+              "curve": "unchanged, a 3 for a 3 · ≤2 10 · ≤3 23",
+              "axis": "keeping Ultron alive",
+              "why": [
+                "For {4}, in response to any removal, you sacrifice Ultron and leave him in the graveyard. He comes back at the next end step, and his tax doesn't go up because he isn't cast.",
+                "That answers exile, bounce, −X/−X and theft, which Darksteel Forge, Cryptothrall and Commander's Plate each leave open.",
+                "The same {4} re-buys Meteor Golem, Myr Battlesphere, Duplicant or Solemn Simulacrum, and every return is a fresh Ultron trigger.",
+                "Protection & Recursion is at 3 against a target of 4, and Ramp is at 13 against 12."
+              ],
+              "flags": [
+                "Palladium Myr can't tap the turn it lands and dies to every creature wipe. Mana sources go from 47 to 46.",
+                "Ultron's token copies can't be sacrificed to it, because it asks for a nontoken creature.",
+                "The Karn, the Great Creator and Myr Retriever bench rows both displace Palladium Myr, so they'd need a new card to displace."
+              ],
+              "options": [
+                {
+                  "card": "Solemn Simulacrum",
+                  "note": "Not offered, because the Guardian feeds both of its triggers."
+                },
+                {
+                  "card": "Hedron Archive",
+                  "note": "Not offered, because you turned it down as a cut on 2026-09-09 and 2026-09-10."
+                }
+              ],
+              "optionsLabel": "Other cuts considered"
+            },
+            {
+              "in": "U.S.S. Enterprise-D, Galaxy-Class",
+              "out": "Hangarback Walker",
+              "decks": [
+                "ultron main"
+              ],
+              "curve": "4.71 → 4.76 · ≤2 10 → 9 · ≤3 23 → 23",
+              "axis": "card flow",
+              "why": [
+                "Tap Ultron to station it, and it exiles your top card for you to play that turn. After the {3}, each card costs no mana.",
+                "Ultron's new token rocks can't tap for mana the turn they arrive, but they can station, so they're free fuel.",
+                "Echoes of Eternity doubles the trigger, which makes it two cards a turn. At 7 counters it's a 4/5 flier with vigilance.",
+                "Card Draw goes from 7 to 8, the bottom of your aim."
+              ],
+              "flags": [
+                "Hangarback is your \"see if I regret it\" trial from 2026-09-16, and it has no verdict yet, so this one is your call.",
+                "Station is sorcery speed, so it's about one card a turn, on your turn. Station before your land drop so a land hit is playable.",
+                "MV ≤ 2 drops only because the tools count Hangarback at its printed 0. Its real cast is {2} to {6}."
+              ],
+              "options": [
+                {
+                  "card": "Skullclamp",
+                  "note": "The other pick for this slot. It draws two whenever a Spawn or Scion dies, but it's often dead without Glaring Fleshraker out."
+                }
+              ],
+              "optionsLabel": "Competes with"
+            },
+            {
+              "in": "Deep Space 9",
+              "out": "The Ten Rings",
+              "decks": [
+                "ultron main"
+              ],
+              "curve": "4.71 → 4.73 · ≤2 10 → 10 · ≤3 23 → 23",
+              "axis": "card flow per mana",
+              "why": [
+                "When it enters and every upkeep, it exiles your top four cards and puts every permanent among them onto the battlefield. 96 of your 99 cards are permanents.",
+                "Each artifact it puts out is an Ultron trigger. Echoes makes it eight cards a turn, and Ultron's copy fires the entry trigger once more before the legend rule removes it.",
+                "It never becomes a creature, so creature wipes miss it. Thran Temporal Gateway puts it in for {4}, and the reducers take it as low as {2}.",
+                "The Ten Rings' cards land in hand and still cost mana in a list whose average MV is 4.7. Deep Space 9's cards cost nothing."
+              ],
+              "flags": [
+                "Card Draw drops from 7 to 6, because its exile isn't a draw. That's how we counted it in Iron Man, and Enterprise-D brings the count back to 7.",
+                "Your hand size drops to seven. Thought Vessel left on 2026-11-10 and The Ten Rings was the other hand-size card, so the Thought Vessel bench row is the fix if it bites.",
+                "The trigger is mandatory, so it takes four cards a turn off your library, eight under Echoes. All Is Dust, Eldrazi Confluence and Kozilek's Command are gone if it exiles them."
+              ],
+              "options": [
+                {
+                  "card": "Cybermen Squadron",
+                  "note": "The cut that keeps Card Draw at 7, and 8 with Enterprise-D. It's your only myriad finisher, and Deep Space 9's +3/+3 at 9 station isn't evasion."
+                }
+              ],
+              "optionsLabel": "Other cut considered"
+            }
+          ]
+        },
+        {
+          "heading": "Bench",
+          "pairs": [
+            {
+              "in": "Skullclamp",
+              "out": "Hangarback Walker",
+              "note": "The alternative to Enterprise-D for Hangarback's slot."
+            },
+            {
+              "in": "Thought Vessel",
+              "out": "Tezzeret, Cruel Captain",
+              "note": "Already on the bench. If The Ten Rings leaves, it's the deck's only hand-size fix."
+            }
+          ]
+        },
+        {
+          "heading": "Near-misses",
+          "note": "Each has a real line here, and each lost to a card already in the list or proposed above.",
+          "tiles": [
+            {
+              "card": "U.S.S. Defiant, Mirror Migrant",
+              "verdict": "pass",
+              "label": "Guardian saves Ultron every turn"
+            },
+            {
+              "card": "Jefferies Tube",
+              "verdict": "pass",
+              "label": "{4} a card"
+            },
+            {
+              "card": "Class-4 Tactical Cube",
+              "verdict": "pass",
+              "label": "Bombs is over target"
+            },
+            {
+              "card": "Crystalline Entity",
+              "verdict": "pass",
+              "label": "kills Omnath and Fleshraker"
+            },
+            {
+              "card": "Howling Mine",
+              "verdict": "pass",
+              "label": "feeds the table"
+            }
+          ]
+        },
+        {
+          "heading": "Traps",
+          "note": "Each of these reads like an upgrade and isn't. The reasons are in the reply below.",
+          "tiles": [
+            {
+              "card": "The Immortal Sun",
+              "verdict": "trap",
+              "label": "turns off the Ugins"
+            },
+            {
+              "card": "Isolinear Processor",
+              "verdict": "trap",
+              "label": "can't pay Ultron's {2}"
+            },
+            {
+              "card": "Engineered Explosives",
+              "verdict": "trap",
+              "label": "wipes our tokens"
+            },
+            {
+              "card": "Starfleet Communicator",
+              "verdict": "trap",
+              "label": "draws only for attackers"
+            },
+            {
+              "card": "U.S.S. Cerritos, Following Up",
+              "verdict": "trap",
+              "label": "our wipes kill its tokens"
+            },
+            {
+              "card": "Arcane Signet",
+              "verdict": "trap",
+              "label": "taps for nothing"
+            },
+            {
+              "card": "Command Tower",
+              "verdict": "trap",
+              "label": "taps for nothing"
+            },
+            {
+              "card": "Astral Cornucopia",
+              "verdict": "trap",
+              "label": "Ultron's copy has no counters"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

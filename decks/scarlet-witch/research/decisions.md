@@ -1381,3 +1381,28 @@ anymore cause she can be too strong in bracket 3, so you can keep v3 but delete 
 - `research/sideboard.md`: the seven `b4` rows that said "Still in `main` and `v3`" now say `v3`,
   which still runs all seven. Mizzix's Mastery's row now says no list runs it.
 - `scarlet-witch-reference.pdf` and `pdf.json` still describe the deleted `main`.
+
+## 2026-11-14 — Star Trek (TRK/TRC) review: Infinite Diversity on trial in `b4` (pilot's calls)
+
+Review: `research/trk-set-review-2026-11-10.md`, then one follow-up round on the cut.
+
+**Applied**
+- `b4`, as a trial the pilot will report on: Infinite Diversity in, Coral Sword out. Mid-chain,
+  Wanda's discount brings it to {R}{R} once her power plus the reducers reach 7, and Wanda and Livaan
+  count 5 creature types, so it casts five free copies of one graveyard instant or sorcery. Five
+  Seething Songs make 25 red, and five Bulk Ups double Wanda five times. It's dead before the chain
+  starts. Coral Sword was the smallest seed (+1), and seeds drop from 8 to 7. Undo row in
+  `research/sideboard.md`.
+
+**Declined or kept, with the pilot's grounds**
+- Solphim, Mayhem Dominus stays: *"we don't usually need him as a closer but some people play
+  lifegain and he's our only damage doubler"*. The review had proposed cutting it in both lists.
+- Neheb, the Eternal stays (the pilot asked for it on 2026-09-16). Champion's Helm was offered as the
+  cut and not taken; Hexing Squelcher is still queued for the Helm's slot.
+- Lwaxana Troi, Charming Guest: declined for `v3` and as a `b4` bench card: *"not worth adding just
+  for some creatures that might not even be on the board"*.
+- `v3` took no swaps. Infinite Diversity, Dominion Infiltration and Disrupt Decorum are bench rows in
+  `research/sideboard.md`.
+
+**Validated:** `b4` 100/100, legal and on-identity, Game Changers 9. Average MV 2.81 by `deck:show`.
+`MOXFIELD-B4.txt` regenerated.

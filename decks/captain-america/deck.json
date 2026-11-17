@@ -31,7 +31,7 @@
             { "name": "Hallowed Fountain", "qty": 1 },
             { "name": "Inventors' Fair", "qty": 1 },
             { "name": "Island", "qty": 2 },
-            { "name": "Mountain", "qty": 2 },
+            { "name": "Mountain", "qty": 1 },
             { "name": "Otawara, Soaring City", "qty": 1 },
             { "name": "Plains", "qty": 3 },
             { "name": "Plateau", "qty": 1 },
@@ -43,6 +43,7 @@
             { "name": "Sea of Clouds", "qty": 1 },
             { "name": "Shivan Reef", "qty": 1 },
             { "name": "Spectator Seating", "qty": 1 },
+            { "name": "Spire of Industry", "qty": 1 },
             { "name": "Steam Vents", "qty": 1 },
             { "name": "The Lonely Mountain", "qty": 1 },
             { "name": "Training Center", "qty": 1 },
@@ -83,9 +84,11 @@
         {
           "name": "Card Draw / Engines",
           "cards": [
-            { "name": "Akiri, Fearless Voyager", "qty": 1 },
+            { "name": "Anthropological Mission", "qty": 1 },
             { "name": "Buster Sword", "qty": 1 },
             { "name": "Esper Sentinel", "qty": 1 },
+            { "name": "Jean-Luc Picard, Luminary", "qty": 1 },
+            { "name": "Seven of Nine, Unassimilated", "qty": 1 },
             { "name": "Sram, Senior Edificer", "qty": 1 },
             { "name": "The Mighty Thor, Jane Foster", "qty": 1 }
           ]
@@ -114,12 +117,10 @@
             { "name": "Captain America, Super-Soldier", "qty": 1 },
             { "name": "Chaos Warp", "qty": 1 },
             { "name": "Deflecting Swat", "qty": 1 },
-            { "name": "Dispatch", "qty": 1 },
             { "name": "Fierce Guardianship", "qty": 1 },
             { "name": "Flawless Maneuver", "qty": 1 },
             { "name": "Generous Gift", "qty": 1 },
             { "name": "Grand Abolisher", "qty": 1 },
-            { "name": "Path to Exile", "qty": 1 },
             { "name": "Swords to Plowshares", "qty": 1 },
             { "name": "Teferi's Protection", "qty": 1 }
           ]

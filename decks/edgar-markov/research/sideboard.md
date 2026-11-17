@@ -131,6 +131,10 @@ still feed it, but it is meaningfully worse now and is the leading next cut.
 | **The Lord of Pain** | — | — | Chaos night | ❓ |
 | **Preacher of the Schism** | `{2}{B}` | Deathtouch. On attack, if defender has more life, draw + create a 1/1 Vampire | Both triggers are life-total-conditional (2/6 field) | ❓ |
 | **High-Society Hunter** | — | — | Was the original no-combo sub; superseded by Cathars' Crusade | ❓ |
+| **Rite of Ascension** | `{2}{R}{W}` | An enchantment. Whenever you attack, it makes a tapped and attacking 2/1 haste Warrior for each opponent you attacked, three a turn and six under Windcrag Siege. | In `combat`, in place of Mavren Fein, Dusk Apostle, when the pod's removal keeps killing Mavren or the list needs more attackers per swing. Held out because it's an enchantment whose Warriors aren't Vampires, so they miss eminence, the lords, Shared Animosity and Sanctum Seeker, and Olivia's Wrath kills them (pilot, 2026-11-14). | 💰 |
+| **Vampire Nocturnus** | `{1}{B}{B}{B}` | Plays with the top card revealed; while it's black, Vampires get +2/+1 and flying. | In `combat`, in place of Concerted Effort, if the fliers that switch Concerted Effort on keep dying. Cut 2026-11-14. | 💰 |
+| **Infantry Shield** | `{2}{R}` | Equipment: menace and mobilize X, where X is the equipped creature's power. | In `sacrifice`, in place of Troubling Tribbles, if the list starts attacking more or the Tribbles' growth draws too much hate. Cut 2026-11-14. | 💰 |
+| **Emeritus of Woe** | `{3}{B}` | A 5/4 Vampire whose prepared Demonic Tutor costs {1}{B} once two creatures have died. | In `sacrifice`, in place of Alhammarret's Archive, if the Archive is too slow or you miss the repeatable tutor. Cut 2026-11-14. | 💰 |
 
 ---
 

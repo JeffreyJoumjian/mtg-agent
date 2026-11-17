@@ -23,7 +23,6 @@
             { "name": "Cavern of Souls", "qty": 1 },
             { "name": "Command Beacon", "qty": 1 },
             { "name": "Fire Nation Palace", "qty": 1 },
-            { "name": "Forge of Heroes", "qty": 1 },
             { "name": "Lindblum, Industrial Regency", "qty": 1 },
             { "name": "Mountain", "qty": 20 },
             { "name": "Rogue's Passage", "qty": 1 },
@@ -65,6 +64,7 @@
         {
           "name": "Mana Engines",
           "cards": [
+            { "name": "Lwaxana Troi, Charming Guest", "qty": 1 },
             { "name": "Neheb, the Eternal", "qty": 1 },
             { "name": "Storm-Kiln Artist", "qty": 1 },
             { "name": "Urabrask", "qty": 1 }
@@ -88,6 +88,7 @@
             { "name": "Faithless Looting", "qty": 1 },
             { "name": "Hex Magic", "qty": 1 },
             { "name": "Laughing Mad", "qty": 1 },
+            { "name": "Reckless Impulse", "qty": 1 },
             { "name": "The One Ring", "qty": 1 },
             { "name": "Wheel of Fortune", "qty": 1 }
           ]
@@ -102,7 +103,7 @@
             { "name": "Guttersnipe", "qty": 1 },
             { "name": "Kessig Flamebreather", "qty": 1 },
             { "name": "Longshot, Rebel Bowman", "qty": 1 },
-            { "name": "Thermo-Alchemist", "qty": 1 }
+            { "name": "Tal Shiar Analyst", "qty": 1 }
           ]
         },
         {
@@ -133,7 +134,6 @@
           "cards": [
             { "name": "Arcane Bombardment", "qty": 1 },
             { "name": "Increasing Vengeance", "qty": 1 },
-            { "name": "Loki Laufeyson", "qty": 1 },
             { "name": "Past in Flames", "qty": 1 }
           ]
         },
@@ -239,6 +239,7 @@
         {
           "name": "Trigger Doubler",
           "cards": [
+            { "name": "Lwaxana Troi, Charming Guest", "qty": 1 },
             { "name": "Roaming Throne", "qty": 1 }
           ]
         },
@@ -285,7 +286,6 @@
           "cards": [
             { "name": "Arcane Bombardment", "qty": 1 },
             { "name": "Increasing Vengeance", "qty": 1 },
-            { "name": "Loki Laufeyson", "qty": 1 },
             { "name": "Past in Flames", "qty": 1 }
           ]
         },
@@ -556,6 +556,7 @@
         {
           "name": "Mana Engines",
           "cards": [
+            { "name": "Lwaxana Troi, Charming Guest", "qty": 1 },
             { "name": "Neheb, the Eternal", "qty": 1 },
             { "name": "Storm-Kiln Artist", "qty": 1 }
           ]
@@ -589,7 +590,6 @@
             { "name": "Fiery Inscription", "qty": 1 },
             { "name": "Grapeshot", "qty": 1 },
             { "name": "Guttersnipe", "qty": 1 },
-            { "name": "Kessig Flamebreather", "qty": 1 },
             { "name": "Longshot, Rebel Bowman", "qty": 1 }
           ]
         },
@@ -620,7 +620,6 @@
           "name": "Copy & Recursion",
           "cards": [
             { "name": "Increasing Vengeance", "qty": 1 },
-            { "name": "Loki Laufeyson", "qty": 1 },
             { "name": "Past in Flames", "qty": 1 }
           ]
         },
@@ -660,6 +659,7 @@
         {
           "name": "Token Engine",
           "cards": [
+            { "name": "Academy Instructor", "qty": 1 },
             { "name": "Goblin Bombardment", "qty": 1 },
             { "name": "Hordeling Outburst", "qty": 1 },
             { "name": "Impact Tremors", "qty": 1 },

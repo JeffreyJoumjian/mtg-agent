@@ -20,6 +20,7 @@
 1 Charismatic Conqueror (LCC) 70
 1 Clavileño, First of the Blessed (LCC) 2
 1 Command Tower (ELD) 333
+1 Concerted Effort
 1 Cordial Vampire (LCC) 189
 1 Crossway Troublemakers (FDN) 518
 1 Cruel Celebrant (WAR) 188
@@ -82,7 +83,6 @@
 1 Urborg, Tomb of Yawgmoth (M15) 248
 1 Urza's Incubator (PMH3) 297p
 1 Vampire Cutthroat (EMN) 110
-1 Vampire Nocturnus (M13) 113
 1 Vampire of the Dire Moon (M20) 120
 1 Vampire Socialite (MID) 249
 1 Vanquisher's Banner (XLN) 251

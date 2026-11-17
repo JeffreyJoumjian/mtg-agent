@@ -230,9 +230,9 @@
         {
           "name": "Evasion",
           "cards": [
+            { "name": "Concerted Effort", "qty": 1 },
             { "name": "Malakir Bloodwitch", "qty": 1 },
-            { "name": "Shadow Alley Denizen", "qty": 1 },
-            { "name": "Vampire Nocturnus", "qty": 1 }
+            { "name": "Shadow Alley Denizen", "qty": 1 }
           ]
         },
         {
@@ -464,6 +464,7 @@
         {
           "name": "Engine Bodies & Multipliers",
           "cards": [
+            { "name": "Alhammarret's Archive", "qty": 1 },
             { "name": "Anointed Procession", "qty": 1 },
             { "name": "Blade of the Bloodchief", "qty": 1 },
             { "name": "Blood Seeker", "qty": 1 },
@@ -477,14 +478,13 @@
             { "name": "Edgar, Ancient Bloodlord", "qty": 1 },
             { "name": "Elenda, the Dusk Rose", "qty": 1 },
             { "name": "Elspeth, Storm Slayer", "qty": 1 },
-            { "name": "Emeritus of Woe", "qty": 1 },
-            { "name": "Infantry Shield", "qty": 1 },
             { "name": "Malakir Bloodwitch", "qty": 1 },
             { "name": "Marauding Blight-Priest", "qty": 1 },
             { "name": "Mirkwood Bats", "qty": 1 },
             { "name": "Purphoros, God of the Forge", "qty": 1 },
             { "name": "Roaming Throne", "qty": 1 },
             { "name": "Sangromancer", "qty": 1 },
+            { "name": "Troubling Tribbles", "qty": 1 },
             { "name": "Vito, Thorn of the Dusk Rose", "qty": 1 }
           ]
         }

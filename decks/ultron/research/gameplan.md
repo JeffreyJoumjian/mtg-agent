@@ -28,7 +28,8 @@ Under Krang every artifact creature has haste, so the token rocks tap immediatel
 | Hangarback Walker | **Never**, unless Machine Overlord or Forsaken Monument is out | Same X = 0 rule: the token is a 0/0 and dies. Under Overlord (+2/+2 to Constructs) or Monument (+2/+2 to colourless creatures) it lives as a 2/2 that grows itself for {1}. |
 | Cost reducer (Inspector, Familiar, Cloud Key, Anvil) | **Always** | Cloud Key's token re-chooses the type — name creature for the fatties. Anvil's token re-imprints. |
 | ETB artifact (Battlesphere, Meteor Golem, Portal, Solemn, Mightstone, Duplicant) | **Always** | The token keeps the ETB (CR 707.5). Token Portal = three more sacrifices. |
-| Bomb body (Wurmcoil, Blightsteel, Krang, Leveler) | Yes | Legendary ones (Krang) hit the legend rule unless Mirror Box is out — keep either, they're identical. |
+| Bomb body (Blightsteel, Krang, Leveler) | Yes | Legendary ones (Krang) hit the legend rule unless Mirror Box is out — keep either, they're identical. |
+| Deep Space 9 | Yes | The token's entry trigger exiles four more cards and puts the permanents in before the legend rule removes one of the two (CR 603.6a, 704.5j). Keep the card, which has the upkeep trigger like the token. |
 | The One Ring | Yes | Keep the **token** (0 burden counters) and bin the card. No protection trigger — the token wasn't cast. |
 | Equipment (Commander's Plate) | Rarely | The token is a 2/2 that can't equip anything (CR 301.5c). Only if you want the body. |
 | Engine pieces (Roaming Throne, Panharmonicon, Echoes, Unwinding Clock, Mystic Forge) | Yes if mana is spare | A second Clock does nothing; a second Throne or Panharmonicon adds a trigger (they add, they don't compound). |
@@ -49,15 +50,20 @@ Under Krang every artifact creature has haste, so the token rocks tap immediatel
 - **Extraplanar Lens**: imprint a Wastes on turn 3 or Urza's Tower once Tron is up — Stage and
   Vesuva copies of Tower share its name and trigger it too. Opponents' same-named lands also
   benefit; almost nobody else runs Wastes or Tower.
-- **Prototype Portal**: imprint Myr Battlesphere ({7}: 4/7 + four Myr each turn), Wurmcoil ({6}),
-  or Meteor Golem ({7}: destroy a permanent every turn). With Unwinding Clock, once per untap
+- **Prototype Portal**: imprint Myr Battlesphere ({7}: 4/7 + four Myr each turn) or
+  Meteor Golem ({7}: destroy a permanent every turn). With Unwinding Clock, once per untap
   step — four a turn cycle.
 - **Roaming Throne** naming Robot also doubles every token copy of a noncreature artifact (they
   are Robot Villains): a token Portal to Phyrexia edicts six and reanimates twice each upkeep.
   Ultron copies the Throne itself for {2} — the token names Robot too and adds a fifth trigger,
   and Machine Overlord makes both of them 6/6 with ward 2.
-- **Sculpting Steel** entering as a copy of X *is* a nontoken artifact entering — Ultron copies it
-  too (three X for {5} total).
+- **Replicator** (`{2}, {T}`) makes a tapped copy of any token you control. Aim it at Ultron's best
+  token: Myr Battlesphere, Meteor Golem, Portal to Phyrexia, Gilded Lotus or Thran Dynamo. Unwinding
+  Clock untaps it on each opponent's untap step, so that's four copies a turn cycle, and Tezzeret's 0
+  untaps it for a second copy on your turn. Its copy of an Ultron token is a plain copy of the
+  original card (ledger zone-009): a copied Sol Ring isn't a 2/2 Robot, so it taps for mana as soon
+  as Clock untaps it, but Roaming Throne and Machine Overlord don't count it. Ultron's own copy of
+  Replicator is a creature, so it can't tap until your next turn. Its tokens never trigger Ultron.
 - **The Mycosynth Gardens** ({X},{T}: becomes a copy of an artifact with MV X) is a land — it does
   **not** enter, so no Ultron trigger, but it is a repeatable fifth copy of Forsaken Monument or
   Cloud Key.
@@ -99,7 +105,17 @@ once it lands — every colourless spell (almost every spell) exiles a coloured 
   the {2} a turn ahead.
 - **Sanctum of Ugin** triggers on *casting* a colourless spell with MV 7+ — Krang, Portal,
   Blightsteel, Forge, Leveler, Battlesphere, Platinum Angel, Squadron, All Is Dust, Ugin EotS,
-  Ten Rings, Omnath, and Ballista or Hangarback at X of 4 or more. Hold it until the cast, then sac for Blightsteel, Krang or Omnath.
+  Ten Rings, Deep Space 9, Omnath, and Ballista or Hangarback at X of 4 or more. Hold it until the cast, then sac for Blightsteel, Krang or Omnath.
+- **Deep Space 9**'s trigger is mandatory. On entry and every upkeep it exiles your top four cards
+  (eight under Echoes) and puts every permanent among them onto the battlefield, so count your
+  library: The One Ring, Mind's Eye and Memnarch draw on top of it. All Is Dust, Eldrazi Confluence
+  and Kozilek's Command are lost if it exiles them. Walking Ballista and Hangarback Walker enter as
+  0/0 and die unless Machine Overlord or Forsaken Monument is out. The cards it puts in aren't cast,
+  so Cityscape Leveler's and Ugin, Eye of the Storms' cast triggers don't fire. Each land is an
+  Omnath landfall, and each artifact is an Ultron trigger. Thran Temporal Gateway puts it in for {4}
+  at instant speed, Kuldotha Forgemaster fetches it by sacrificing three Ultron tokens, and Ultron's
+  copy for {2} fires the entry trigger once more. One tap from Krang or Blightsteel stations it to
+  9, which gives your creatures +3/+3. It never becomes a creature, so creature wipes miss it.
 - **Kuldotha Forgemaster** puts the card onto the battlefield — that is an artifact *entering*
   (Ultron triggers) but not a *cast* (Sanctum, Echoes' copy and Liberator's counter don't).
 - **Marvin** has every activated ability of your other creatures — and every Ultron token of a

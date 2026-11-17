@@ -281,3 +281,34 @@ All of them need a specific card out and attacking. Explained to the pilot; the 
 **Resolved 2026-09-28: dropped.** After the explanation above, the pilot passed: *"nah drop it"*.
 Esper Sentinel stays. Grounds on file: Windcrag Siege is only a payoff doubler here. It needs Genji
 Glove, Argentum Armor, Ultima Weapon, Akiri or Thor on the battlefield and attacking.
+
+## 2026-11-14 — Star Trek (TRK/TRC) review: four swaps applied (pilot's calls)
+
+Review: `research/trk-set-review-2026-11-10.md`, then two follow-up rounds on cuts. The pilot's rule
+for cuts: a voltron deck can't give up protection pieces, so the first cuts offered (Commander's
+Plate, Esper Sentinel, Single Combat, Swiftfoot Boots) were all refused. Each swap has its own
+`deck:edit` snapshot.
+
+**Applied**
+- Anthropological Mission in, Akiri, Fearless Voyager out. Mission loots on the first two noncreature
+  spells and then draws on every one, and 43 cards in the 99 qualify. It's an enchantment, so it
+  survives creature removal.
+- Jean-Luc Picard, Luminary in, Path to Exile out. Throw kills creatures for {1} every turn, and Path
+  ramps an opponent. Jean-Luc draws whenever another historic permanent with MV 3 or more enters.
+- Seven of Nine, Unassimilated in, Dispatch out. It's the same trade as Jean-Luc for Path, after the
+  pilot refused a tutor as the cut. Seven draws every turn and stops discarding at five differently
+  named lands.
+- Spire of Industry in, one Mountain out. It taps for any colour while you control an artifact.
+
+**Declined, with the pilot's grounds**
+- Lwaxana Troi, Charming Guest: her {2} activation competes with casting Equipment.
+- Transwarp Hub: the pilot wanted no land cut, and then chose not to add it at all.
+- Mr. Spock, Science Officer: the only cut left was Talisman of Conviction, and the deck needs its
+  mana for Throw ({3} plus an unattach) and equips. Draw sits at 9 without him. He's a sideboard row
+  in `research/sideboard.md`, displacing Talisman of Conviction.
+- Federation Resupply: its beam me up cost is too high.
+- Spire of Industry for Iron Man: not recommended. It adds one blue source, costs life per coloured
+  tap, and Aettir and Priwen's power is your life total.
+
+**Validated:** 100/100, legal and on-identity, Game Changers 3/3. Average MV 2.94 by `deck:show`.
+`MOXFIELD.txt` regenerated.

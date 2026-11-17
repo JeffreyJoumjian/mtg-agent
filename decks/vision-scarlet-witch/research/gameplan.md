@@ -11,7 +11,7 @@ board. Bank the surplus red under Leyline Tyrant, Electro or Ashling, then spend
 ```
 cast {R} cantrip  →  trigger: +{R}, +1/+1 on her  →  cantrip resolves: draw  →  repeat
                     ↳ Guttersnipe 2 · Archer 1 · Flamebreather 1 · Coruscation 1 · Inscription 2
-                      · Longshot 2 · Thermo (untap → tap) 1   — to EACH opponent, per spell
+                      · Longshot 2 · Tal Shiar (untap → tap) 1   — to EACH opponent, per spell
 ```
 
 With four converters out, eight cantrips in a turn is **8 × 6 = 48 to each opponent**. The commander
@@ -20,12 +20,13 @@ is +8/+8 at the end of it. Nobody needed to attack.
 ## The three numbers you track
 
 1. **Cards in hand.** The cantrips are card-neutral; the draw spells (Looting, Big Score, Hex
-   Magic, Wheel, Vision, Powerbalance) are what keep the chain going. Cast Hex Magic with cards in hand — it
-   exiles the hand and redraws that many; at zero cards it does nothing.
+   Magic, Laughing Mad, Reckless Impulse, Wheel, Vision, Powerbalance) are what keep the chain going. Cast Hex Magic with cards in hand — it
+   exiles the hand and redraws that many; at zero cards it does nothing. Reckless Impulse's two cards stay playable only until the end of your
+   next turn, so cast it when you can use both.
 2. **Red in the pool.** Under a bank it never empties (CR 106.4). Announce it every time you pass
    priority (CR 106.4b). Rite of Flame nets two red with her out: you pay {R}, it adds {R}{R}
    and her trigger adds {R}. Under Emancipation, Ancient Tomb deals 6, so stop tapping it.
-3. **Her power.** Base 3. One counter from every spell (two under Roaming Throne), Forge of Heroes the turn she lands, Tyrite
+3. **Her power.** Base 3. One counter from every spell (two under Roaming Throne), Tyrite
    Sanctum each turn, Blackblade +1 per land, Champion's Helm +2, Plate +3, Embercleave +1.
 
 ## Protection sequencing
@@ -59,8 +60,7 @@ Precombat, in this order:
    damage to a face. Two players in two turns.
 6. Or **Crackle with Power** with the bank: X=4 is 20 to each of four targets for {12}{R}{R}; X=5
    is 25 to each of five.
-7. Or **Soul's Fire** after Bulk Up, with **Loki** tapped first ({1}: copies the next instant or sorcery with mana value up to his
-   power): her power twice, to one face or two (the copy may keep the same target, and it resolves
+7. Or **Soul's Fire** after Bulk Up, copied by **Increasing Vengeance** ({R}{R}): her power twice, to one face or two (the copy may keep the same target, and it resolves
    first). Under Emancipation each hit is tripled and Shadowspear gains all of it back.
 
 **Every power-to-face spell targets her — Soul's Fire, Chandra's Ignition, Origin of Thor III.** If
@@ -114,26 +114,28 @@ other opponent.
 | + Kediss | any | same damage to each other opponent (life loss, not commander damage) |
 | Chandra's Ignition at power 15 | — | 15 to each opponent **and** each other creature — kills your own pingers, so it is the last spell of the game |
 | Origin of Thor chapter III at power 15 | — | 15 to each opponent, no sweep — cast the Saga two turns before, storm on the chapter II turn |
-| Soul's Fire at power 15 | — | 15 to one face; Loki or Increasing Vengeance copies it (the copy may keep the same target); Past in Flames recasts it |
+| Soul's Fire at power 15 | — | 15 to one face; Increasing Vengeance copies it (the copy may keep the same target); Past in Flames recasts it |
 | **Fiery Emancipation** out | ×3 | she is lethal at **7 power** in one hit; Ignition at 7 = 21 to each opponent; every Guttersnipe trigger = 6 |
 | **Twinflame Tyrant** out | ×2 | opponents only, combat included; with Emancipation ×6 |
 
 ## Sequencing traps
 
 - **Reducers don't touch the cantrips.** Ruby Medallion and The Fire Crystal reduce generic only;
-  a {R} spell is already at its floor. They pay for Big Score, Hex Magic, Bulk Up, Loki's power-up and
-  the Equipment.
+  a {R} spell is already at its floor. They pay for Big Score, Hex Magic, Bulk Up and the Equipment.
+  They don't touch Lwaxana's {2} activation, because it's an ability, not a spell.
 - **"Noncreature spell" and "instant or sorcery" are different sets.** Archer, Flamebreather,
-  Coruscation Mage and Longshot fire on Equipment and artifacts; Guttersnipe, Thermo,
+  Coruscation Mage, Longshot and Tal Shiar Analyst's untap fire on Equipment and artifacts; Guttersnipe,
   Inscription, Electro, Ashling, Storm-Kiln and Urabrask only on instants and sorceries.
   Iron Man's tokens come only from **red** spells — colourless Equipment and rocks make none.
 - **Fiery Confluence's "1 damage to each creature" mode kills Archer, Coruscation Mage and
   Kediss.** Take the 2-to-each-opponent and destroy-artifact modes unless the board is empty.
 - **Ashling** discards *then* draws on every instant/sorcery; the third trigger in a turn adds
   {R}{R}{R}{R}. Sequence cheap spells so the third one lands when you need the burst.
-- **Loki** copies only spells with mana value up to his power — power him up the turn he lands
-  ({4}{R} less his own cost is {3}), and Tyrite Sanctum can grow him further. His tap needs haste
-  (Fire Crystal, Boots) or a turn.
+- **Lwaxana Troi** points at the commander: {2} and tap her, then choose not to untap her in your
+  untap step. While she stays tapped, every spell gives {R}{R} and two counters, three of each with
+  Roaming Throne. Her tap needs haste (Fire Crystal, Boots) or a turn. If the commander leaves and
+  comes back, it's a new object (CR 400.7), so untap Lwaxana and activate her again. She's a 2/2, so
+  two of Fiery Confluence's creature modes or Chandra's Ignition kill her.
 - **Iron Man, Tony Stark** makes a 2/1 flying artifact token per **red** spell (colourless Equipment
   doesn't count), doubled by Throne — he is a Hero. Each token pumps Storm-Kiln Artist.
 - **Wheel of Fortune / Reforge** after you've emptied your hand — and note what it strips from

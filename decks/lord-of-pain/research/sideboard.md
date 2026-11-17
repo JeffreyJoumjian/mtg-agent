@@ -5,6 +5,9 @@ names the card it **displaces** so a swap is never ambiguous.
 
 ## Bracket 4 → Bracket 3 (derived — `DECK-B3.md`)
 
+The pilot deleted the `b3` list on 2026-11-14 because they don't play this deck at Bracket 3, so
+this section is a record of the old swap set, not a live list.
+
 Re-derive with: `diff <(grep -E '^[0-9]+x ' DECK.md | sort) <(grep -E '^[0-9]+x ' DECK-B3.md | sort)`
 — it must show exactly these seven swaps and nothing else.
 
@@ -32,6 +35,7 @@ It still contains two non-infinite two-card kills — [Bloodletter of Aclazotz](
 | [Leechridden Swamp](https://scryfall.com/search?q=%21%22Leechridden+Swamp%22) | B3 tables (Glacial Chasm is a Game Changer) or when you want the 35th land to tap for mana. | [Glacial Chasm](https://scryfall.com/search?q=%21%22Glacial+Chasm%22) |
 | [Lightning Greaves](https://scryfall.com/search?q=%21%22Lightning+Greaves%22) | You need haste + shroud more than you need to target your own commander (Coat's attach, Collar equip, Witch's Clinic all target). | [Swiftfoot Boots](https://scryfall.com/search?q=%21%22Swiftfoot+Boots%22) |
 | [Imp's Mischief](https://scryfall.com/search?q=%21%22Imp%27s+Mischief%22) | Combo/counter-heavy pod — second redirect (spells only, costs life = MV; already the B3 Vampiric swap). | [Vial Smasher the Fierce](https://scryfall.com/search?q=%21%22Vial+Smasher+the+Fierce%22) |
+| [Mogis, God of Slaughter](https://scryfall.com/search?q=%21%22Mogis%2C+God+of+Slaughter%22) | Cut 2026-11-14 for Lwaxana. Bring it back if Lwaxana keeps dying to your own Blasphemous Act or Toxic Deluge, because Mogis is indestructible and charges 2 a turn per opponent. | [Lwaxana Troi, Charming Guest](https://scryfall.com/search?q=%21%22Lwaxana+Troi%2C+Charming+Guest%22) |
 | [Brash Taunter](https://scryfall.com/search?q=%21%22Brash+Taunter%22) | Creature-heavy pod — Taunter + [Blasphemous Act](https://scryfall.com/search?q=%21%22Blasphemous+Act%22) is 13 (×2 Solphim, +2 Torbran) to one player. | [Fraying Omnipotence](https://scryfall.com/search?q=%21%22Fraying+Omnipotence%22) |
 | [Kardur, Doomscourge](https://scryfall.com/search?q=%21%22Kardur%2C+Doomscourge%22) | Pod full of go-wide attackers; goad + drain. | [No Mercy](https://scryfall.com/search?q=%21%22No+Mercy%22) |
 | [Mindcrank](https://scryfall.com/search?q=%21%22Mindcrank%22) | B4 only — two-card infinite with [Bloodchief Ascension](https://scryfall.com/search?q=%21%22Bloodchief+Ascension%22) (bring both in) once it has 3 counters. | [Fraying Omnipotence](https://scryfall.com/search?q=%21%22Fraying+Omnipotence%22) + Seizan |

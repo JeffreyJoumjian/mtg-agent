@@ -107,8 +107,8 @@
             { "name": "Mirrorworks", "qty": 1 },
             { "name": "Panharmonicon", "qty": 1 },
             { "name": "Prototype Portal", "qty": 1 },
-            { "name": "Roaming Throne", "qty": 1 },
-            { "name": "Sculpting Steel", "qty": 1 }
+            { "name": "Replicator", "qty": 1 },
+            { "name": "Roaming Throne", "qty": 1 }
           ]
         },
         {
@@ -121,6 +121,7 @@
           "name": "Payoffs & Engines",
           "cards": [
             { "name": "Cybermen Squadron", "qty": 1 },
+            { "name": "Deep Space 9", "qty": 1 },
             { "name": "Forsaken Monument", "qty": 1 },
             { "name": "Glaring Fleshraker", "qty": 1 },
             { "name": "Krang, Utrom Warlord", "qty": 1 },
@@ -144,8 +145,7 @@
             { "name": "Platinum Angel", "qty": 1 },
             { "name": "Portal to Phyrexia", "qty": 1 },
             { "name": "Solemn Simulacrum", "qty": 1 },
-            { "name": "Walking Ballista", "qty": 1 },
-            { "name": "Wurmcoil Engine", "qty": 1 }
+            { "name": "Walking Ballista", "qty": 1 }
           ]
         },
         {

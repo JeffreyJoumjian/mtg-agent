@@ -20,7 +20,6 @@
 1 Commander's Plate (CMR) 305
 1 Commune with Lava (C20) 149
 1 Conqueror's Flail (FIC) 340
-1 Coral Sword (FIN) 134
 1 Crackle with Power (STX) 95
 1 Deflecting Swat (CMM) 214
 1 Desperate Ritual (UMA) 127
@@ -36,6 +35,7 @@
 1 Hex Magic (MSH) 133
 1 Ignite the Future (AFC) 129
 1 Increasing Vengeance (C19) 147
+1 Infinite Diversity
 1 Inspired Tinkering (PLST) CLB-183
 1 Inventor's Axe (MH3) 126
 1 Jaya's Immolating Inferno (DOM) 133

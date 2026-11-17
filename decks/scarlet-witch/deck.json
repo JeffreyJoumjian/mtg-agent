@@ -68,8 +68,8 @@
           "name": "Seed — power on Wanda before the first X-spell",
           "cards": [
             { "name": "Bonesplitter", "qty": 1 },
-            { "name": "Coral Sword", "qty": 1 },
             { "name": "Hero's Blade", "qty": 1 },
+            { "name": "Infinite Diversity", "qty": 1 },
             { "name": "Inventor's Axe", "qty": 1 },
             { "name": "Monstrous Rage", "qty": 1 }
           ]

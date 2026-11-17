@@ -1,0 +1,98 @@
+1 Caesar, Legion's Emperor (PIP) 1
+1 Adeline, Resplendent Cathar (MID) 1
+1 Ainok Strike Leader
+1 Akroma's Will
+1 All-Out Assault
+1 Anguished Unmaking (SOI) 242
+1 Anim Pakal, Thousandth Moon (LCI) 223
+1 Anointed Procession (AKH) 2
+1 Arcane Signet (ELD) 331
+1 Arid Mesa (MM3) 229
+1 Ashnod's Altar (CMM) 368
+1 Badlands (30A) 273
+1 Battlefield Forge (BRO) 257
+1 Black Market Connections (MSC) 155
+1 Blightstep Pathway (KHM) 252
+1 Blood Crypt (TRK) 278
+1 Bloodline Recollector (FRA) 49
+1 Bloodstained Mire (KTK) 230
+1 Brightclimb Pathway (ZNR) 259
+1 Caretaker's Talent
+1 Castle Ardenvale (ELD) 238
+1 Castle Embereth
+1 Caves of Koilos (DMU) 244
+1 Chainsaw (DSK) 128
+1 Clifftop Retreat (DOM) 239
+1 Command Tower (ELD) 333
+1 Commissar Severina Raine (40K) 112
+1 Court of Grace (PLST) ONC-62
+1 Deflecting Swat (CMM) 214
+1 Diamond City (PIP) 147
+1 Dictate of Erebos (SLD) 2204
+1 Dragonskull Summit (XLN) 252
+1 Elas il-Kor, Sadistic Pilgrim (DMU) 198
+1 Elspeth, Storm Slayer (TDM) 11
+1 Exalted Sunborn
+1 Flawless Maneuver (CMM) 24
+1 Goblin Bombardment (SLD) 825
+1 Godless Shrine (TRK) 285
+1 Grave Pact (CMM) 639
+1 Heraldic Banner
+1 Hero of Bladehold (TDC) 119
+1 Idol of Oblivion (PLST) M3C-297
+1 Infantry Shield (TDC) 35
+1 Intangible Virtue
+1 Iroas, God of Victory
+1 Isolated Chapel (DOM) 241
+1 Isshin, Two Heavens as One (NEO) 224
+1 Kambal, Profiteering Mayor
+1 Krenko, Tin Street Kingpin
+1 Legion Warboss (GRN) 109
+1 Loyal Apprentice (PLST) TDC-222
+1 Luxury Suite
+1 Marauding Blight-Priest
+1 Marsh Flats (MM3) 239
+1 Minas Tirith
+1 Mithril Coat (LTR) 245
+1 Mondrak, Glory Dominus (ONE) 23
+1 Mother of Runes (PLST) DDO-20
+1 Myrel, Shield of Argive (BRO) 18
+1 Needleverge Pathway (ZNR) 263
+1 Neyali, Suns' Vanguard
+1 Nomad Outpost (TDM) 263
+1 Ocelot Pride (MH3) 38
+1 Own the Day
+1 Path to Exile (PLST) BLC-147
+1 Phyrexian Altar (PLST) UMA-232
+3 Plains (THB) 250
+1 Plateau (30A) 275
+1 Polluted Delta
+1 Purphoros, God of the Forge (CMM) 246
+1 Ruinous Ultimatum (IKO) 204
+1 Sacred Foundry (EOE) 256
+1 Scrubland (30A) 277
+1 Secure the Wastes (PIP) 457
+1 Smothering Tithe (RNA) 22
+1 Sol Ring (SLD) 1734
+1 Sorin, Vengeful Bloodlord
+1 South Wind Avatar
+1 Spectator Seating
+1 Sulfurous Springs (DMU) 256
+1 Super Shredder
+1 Swamp (TRK) 321
+1 Swiftfoot Boots (FDN) 258
+1 Swords to Plowshares (PMEI) 2026-4
+1 Talisman of Conviction
+1 Talisman of Hierarchy (SOC) 358
+1 Teferi's Protection (2X2) 32
+1 The One Ring (LTR) 246
+1 Throne of the God-Pharaoh
+1 Troubling Tribbles
+1 Vanishing Verse (STX) 244
+1 Vault of Champions
+1 Vault of the Archangel
+1 Voice of Victory
+1 Warleader's Call (MKM) 242
+1 Welcoming Vampire
+1 Windbrisk Heights (TDC) 411
+1 Windcrag Siege (TDM) 235

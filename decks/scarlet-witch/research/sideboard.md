@@ -180,6 +180,7 @@ from just before the change.
 |---|---|---|
 | **Pyromancer's Goggles** | Five colourless mana in a turn-3 deck, for one {R} and one copy per turn cycle. Left `b4` on 2026-10-10 for Inner Fire, which turns a full hand into red pips. Still in `v3`. | Treasonous Ogre (Inner Fire, its old pointer, left `b4` on 2026-10-13) |
 | **Bionic Blow** | The weakest of the pumps on red pips: {X}{R}{R} at sorcery speed for the same +X that Lunar Frenzy and Frantic Confrontation give for one pip at instant speed. Left `b4` on 2026-10-10 for Simian Spirit Guide. Still in `v3`. | Simian Spirit Guide |
+| **Coral Sword** | The smallest seed (+1 to Wanda). Left `b4` on 2026-11-14 for Infinite Diversity, as a trial the pilot will report on. Seeds dropped from 8 to 7, below the 8 to 10 target. | Infinite Diversity |
 | **Valakut, the Molten Pinnacle** | Enters tapped, and its trigger needs five other Mountains, which a turn-3 deck never has. Left `b4` on 2026-10-10 for a 19th Mountain. Still in `v3`. | one Mountain |
 | **Arcane Bombardment** | A {4}{R}{R} enchantment, so Wanda never discounts it, and the pilot judged it too slow for a turn-3 list. Left `b4` on 2026-10-13 for Inspired Tinkering. Once it's out, one instant or sorcery a turn (opponents' turns included) re-casts the whole exiled pile, so it was the list's strongest engine for an empty hand. Its free casts force X = 0. Still in `v3`. | Inspired Tinkering |
 | **Inner Fire** | Adds {R} per card in your own hand, so it is weakest when the deck has emptied its hand and is topdecking. Left `b4` on 2026-10-13 for Treasonous Ogre, which makes up to 9 red at 30 life without needing a hand. Not in any other list, so its printing can't be pinned: bring it back as (SOK) 105. | Treasonous Ogre |
@@ -209,3 +210,15 @@ Bracket 3 and the same 3/3 Game Changers. It carries its own cut list in
 `research/turn-5-chain-2026-09-08.md`; this sideboard covers `DECK.md`. Cards that are maindeck in
 V3 and absent here — the cheap Equipment seeds and the `{X}{R}` pump instants — are listed there,
 not duplicated into these tables (deck-brain §1.4: one source of truth).
+
+## `v3` bench from the Star Trek review (2026-11-14)
+
+`v3` took no swaps in this review. Lwaxana Troi, Charming Guest was declined for every list (*"not
+worth adding just for some creatures that might not even be on the board"*), and Solphim stays. These
+cards wait on the bench.
+
+| Card | When to bring it in | Would displace |
+|---|---|---|
+| **Infinite Diversity** | If it proves itself in `b4`'s trial. Mid-chain it costs {R}{R} and casts five free copies of one graveyard instant or sorcery. | Pyromancer's Goggles |
+| **Dominion Infiltration** | When opponents run creatures worth copying for a turn. Its X can't exceed the number of creatures opponents control (CR 601.2c). | Bionic Blow |
+| **Disrupt Decorum** | When the pod keeps attacking you. It costs {R}{R} with Wanda out, so the old "too slow for a turn-5 plan" ground no longer holds. | Vandalblast |

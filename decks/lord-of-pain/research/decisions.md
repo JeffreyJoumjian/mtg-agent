@@ -573,3 +573,29 @@ instead."* It applies to you too. With Exquisite Blood out, every opponent life 
 your own life loss, which ends this deck's lifeline (Exquisite Blood, Sanguine Bond, Whip of Erebos,
 Bloodthirsty Conqueror). The commander already says *"Your opponents can't gain life"*, and the
 standing rule for this list is no extra lifegain hate. Lifelink is exempt (official ruling).
+
+## 2026-11-14 — Star Trek (TRK/TRC) review: Lwaxana in, Mogis out; `b3` deleted (pilot's calls)
+
+Review: `research/trk-set-review-2026-11-10.md`, then a follow-up round on the pilot's questions.
+
+**Applied**
+- Lwaxana Troi, Charming Guest in, Mogis, God of Slaughter out. For {R} under Ruby Medallion and
+  then {2}, every trigger of The Lord of Pain happens twice while she stays tapped. Mogis was the
+  only card in the cast/upkeep/mana punisher role (6 against a target of 5) that wasn't its top card
+  or a pilot keep, and opponents can sacrifice their worst creature instead of taking its 2. Costs:
+  Mogis survived our own Blasphemous Act and Toxic Deluge and she doesn't, her {T} ability waits a
+  turn without haste, and Gray Merchant loses 1 devotion. Mogis is a pocket row in
+  `research/sideboard.md`.
+- `b3` deleted. The pilot doesn't play this deck at Bracket 3 because its salt is too high. Its last
+  state is in `versions/2026-11-14-1214-b3-deleted-pilot-s-call.json`, and `MOXFIELD-B3.txt` is
+  gone. The sideboard's B4 → B3 section is now a record of the old swap set.
+
+**Declined, with the pilot's grounds**
+- Painful Quandary stays. The pilot wanted Lwaxana in without cutting it.
+- Gul Dukat, Colonial Prefect: declined, because 7 mana is too much in a deck without much mana
+  generation, despite its lifegain.
+- Lightning Greaves alongside Swiftfoot Boots: declined after the cut options (Basilisk Collar, the
+  pilot's own request on 2026-08-23) were shown. The Greaves pocket row for Boots stays.
+
+**Validated:** 100/100, legal and on-identity, Game Changers 9. Average MV 3.23 by `deck:show`.
+`MOXFIELD.txt` regenerated. The reference PDF was not regenerated.

@@ -8,7 +8,6 @@
 1 Archway of Innovation (MH3) 214
 1 Argentum Armor (PLST) AFC-198
 1 Basilisk Collar (PIP) 225
-1 Blacksmith's Talent (BLB) 125
 1 Brass Squire (CMR) 460
 1 Brotherhood Regalia (ACR) 71
 1 Bulk Up (FDN) 80
@@ -26,6 +25,7 @@
 1 Counterspell (MAR) 52
 1 Darksteel Citadel (C18) 241
 1 Darksteel Forge (2XM) 248
+1 Deep Space 9
 1 Deflecting Swat (CMM) 214
 1 Embercleave (ELD) 120
 1 Enthusiastic Mechanaut (EOC) 114
@@ -35,7 +35,6 @@
 1 Fierce Guardianship (CMM) 94
 1 Genji Glove (FIN) 258
 1 Gilded Lotus (MSC) 199
-1 Goblin Welder (CM2) 101
 1 Great Furnace (PLST) C18-250
 1 Hammer of Nazahn (MSC) 427
 1 Infantry Shield (TDC) 35
@@ -46,6 +45,7 @@
 4 Island (THB) 251
 1 Kediss, Emberclaw Familiar (PLST) CMR-188
 1 Krang, Utrom Warlord (TMT) 175
+1 Lwaxana Troi, Charming Guest
 1 Mana Drain (2X2) 57
 1 Manifold Key (M20) 230
 1 Marvin, Murderous Mimic (DSK) 253

@@ -740,3 +740,47 @@ so the two casts cost 5 net.
 
 Validated: `main` 100/100, legal and mono-red, Game Changers 3/3 unchanged. Moxfield files
 regenerated; only `MOXFIELD.txt` changed. PDF regenerated.
+
+## 2026-11-14 — Star Trek (TRK/TRC) review: six swaps across three lists (pilot's calls)
+
+Review: `research/trk-set-review-2026-11-10.md`. The pilot took each swap as its own decision.
+
+**Applied**
+
+| List | Out | In | Grounds |
+|---|---|---|---|
+| `main` | Forge of Heroes | Reckless Impulse | Two cards for {1}{R}, free under any one reducer plus her refund. Card Draw goes 7 to 8, into the 8 to 10 aim from the first play report. Forge gave one counter the turn she landed, and every other list had already cut it. Lands go 32 to 31, the count `b3-tokens` runs, and red sources stay at 26. |
+| `main` | Thermo-Alchemist | Tal Shiar Analyst | The same tap-and-untap pinger, but any noncreature spell untaps it (50 of the list's nonland cards against 28 instants and sorceries), and it's a 3/2 instead of a 0/3 defender. Cost: one more mana, and two of Fiery Confluence's creature modes kill it where the 0/3 needed three. Converters stay at 8. |
+| `b3-tokens` | Kessig Flamebreather | Academy Instructor | Both trigger on noncreature spells. Kessig deals 1 to each opponent, while Instructor makes a 1/1 Officer that Impact Tremors, Purphoros and Goblin Bombardment turn into more than 1 damage, and it stays as a blocker. The pilot noted that Iron Man, Tony Stark already makes 2/1 Robots on red spells (they called it "the war machine"). Converters 6 to 5, Token Engine 6 to 7. |
+| `main`, `b3-tokens`, `spellslinger` | Loki Laufeyson | Lwaxana Troi, Charming Guest | The pilot: *"let's replace loki in all version"* (`b4` has no Loki). Pointed at the commander, her cast trigger fires twice, so every spell gives {R}{R} and two counters, three of each with Roaming Throne. Loki copied one instant or sorcery a turn, and the copy isn't cast, so it fired neither her trigger nor the pingers. Cost: the Loki, Increasing Vengeance and Storm-Kiln Artist loop (ledger loop-017) leaves all three lists, because none runs another spell copier. Increasing Vengeance stays as a copier for Soul's Fire and Ignition. She's a 2/2 whose {2} activation nothing reduces. Same mana value, so the curves don't move. |
+
+Snapshots: `versions/2026-11-14-1347-main-reckless-impulse-in-forge-of-heroes-out.json`,
+`versions/2026-11-14-1347-main-tal-shiar-analyst-in-thermo-alchemist-out.json`,
+`versions/2026-11-14-1347-b3-tokens-academy-instructor-in-kessig-flamebreather-out.json`, and
+`versions/2026-11-14-1400-{main,b3-tokens,spellslinger}-lwaxana-troi-in-loki-laufeyson-out.json`. Undo rows
+are in `research/sideboard.md`.
+
+**Declined or kept, with the pilot's words**
+- U.S.S. Defiant, Mirror Migrant for Blackblade Reforged in `main`: *"i don't want uss defiant
+  migrant"*. The proposal's grounds were a {2} flash phase-out that answers edicts, exile wraths and
+  bounce, the one row of the protection matrix nothing covers. The `b3-tokens` bench row for it
+  (over Champion's Helm) is dropped too, since the pilot doesn't want the card.
+- Kediss, Emberclaw Familiar stays in `b3-tokens`: *"i dont' want to take out kediss"*. Skullclamp
+  is still open, and the other cuts offered were Crash Through, Champion's Helm, Embercleave and
+  Rogue's Passage (dry-run figures in the 2026-11-14 chat).
+
+**Not taken:** Skullclamp in `b3-tokens`. No cut was agreed, and the pilot moved on (*"i want to move on
+from the vision questions"*). Crash Through was the last proposed cut.
+
+**Docs fixed for these swaps:** `research/gameplan.md` (the converter line, the draw list, her
+power sources and the trigger-type trap now name Tal Shiar Analyst, Reckless Impulse and Laughing
+Mad, and the Loki lines now cover Lwaxana or Increasing Vengeance), `research/sideboard.md` (Thor now displaces Tal Shiar Analyst, and the Reiterate and Underworld
+Breach rows follow the loop policy instead of saying "Bracket 4 only"), and `pdf.json` (Lands 31,
+Cantrips 5, and the same three rows).
+
+**Curve.** `main`: average MV 2.81 to 2.82, MV ≤ 2 stays at 33, MV ≤ 3 goes 49 to 50.
+`b3-tokens`: average MV 2.73 to 2.75, MV ≤ 2 goes 34 to 33, MV ≤ 3 stays at 51.
+
+**Validated:** `main`, `b3-tokens` and `spellslinger` 100/100, every name found, legal and mono-red,
+Game Changers 3 in each. `MOXFIELD.txt`, `MOXFIELD-B3-TOKENS.txt` and `MOXFIELD-SPELLSLINGER.txt`
+regenerated.

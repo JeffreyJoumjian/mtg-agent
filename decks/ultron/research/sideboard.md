@@ -18,3 +18,5 @@ displaces. Grounds for each are in `research/decisions.md` (2026-09-03).
 | [Null Elemental Blast](https://scryfall.com/search?q=%21%22Null+Elemental+Blast%22) | The deck struggles without a cheap answer, or the pod runs multicoloured commanders (swapped out on trial 2026-09-30) | Omnath, Locus of the Void |
 | [Quicksilver Amulet](https://scryfall.com/search?q=%21%22Quicksilver+Amulet%22) | Big creatures get stuck in hand (cut 2026-11-10 on trial; Thran Temporal Gateway covers every artifact creature) | Ugin, the Spirit Dragon |
 | [Thought Vessel](https://scryfall.com/search?q=%21%22Thought+Vessel%22) | The deck misses its turn-2 rock or overflows hand size (cut 2026-11-10) | Tezzeret, Cruel Captain |
+| [Sculpting Steel](https://scryfall.com/search?q=%21%22Sculpting+Steel%22) | You want a copy that works with no token on the board, or one that copies an opponent's artifact (cut 2026-11-15) | Replicator |
+| [Wurmcoil Engine](https://scryfall.com/search?q=%21%22Wurmcoil+Engine%22) | The deck struggles against creature boards and needs a resilient body (cut 2026-11-15 on trial) | Deep Space 9 |

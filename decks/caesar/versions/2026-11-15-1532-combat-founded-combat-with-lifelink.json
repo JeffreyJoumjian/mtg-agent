@@ -1,0 +1,65 @@
+{
+  "takenAt": "2026-11-15T15:32:58.605Z",
+  "listId": "combat",
+  "label": "Founded: combat with lifelink",
+  "reason": "before Founded: combat with lifelink",
+  "list": {
+    "label": "Combat",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": []
+      },
+      {
+        "name": "Lands",
+        "cards": []
+      },
+      {
+        "name": "Ramp & Mana",
+        "cards": []
+      },
+      {
+        "name": "Card Draw",
+        "cards": []
+      },
+      {
+        "name": "Removal & Interaction",
+        "cards": []
+      },
+      {
+        "name": "Board Wipes",
+        "cards": []
+      },
+      {
+        "name": "Protection",
+        "cards": []
+      },
+      {
+        "name": "Token Engines",
+        "cards": []
+      },
+      {
+        "name": "Token & Trigger Doublers",
+        "cards": []
+      },
+      {
+        "name": "Anthems & Combat",
+        "cards": []
+      },
+      {
+        "name": "Lifelink & Converters",
+        "cards": []
+      },
+      {
+        "name": "Death & Drain Payoffs",
+        "cards": []
+      },
+      {
+        "name": "Sacrifice Outlets",
+        "cards": []
+      }
+    ]
+  }
+}

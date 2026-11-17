@@ -2042,3 +2042,61 @@ defaults to `main` falls back to it. `MOXFIELD.txt` and `MOXFIELD-V2.txt` are go
   Thopter Spy Network), which a swap back would want.
 - `iron-man-reference.pdf` and `pdf.json` still describe the deleted `main`. Older entries and
   research files that name `main` or `v2` describe those lists as they were.
+
+## 2026-11-14 — Star Trek (TRK/TRC) review: Lwaxana and Deep Space 9 in (pilot's calls)
+
+Review: `research/trk-set-review-2026-11-10.md`, then three follow-up rounds on the cuts.
+
+### Applied
+
+| Out | In | Grounds |
+|---|---|---|
+| Blacksmith's Talent | Lwaxana Troi, Charming Guest | The pilot's pick from the offered cuts. Aimed at Iron Man and left tapped, she makes each of his triggers fire again, on top of Wizard's Staff and Roaming Throne (CR 603.2d): the combat deploy, The Reaver Cleaver's Treasures and Infantry Shield's mobilize. Talent's level 2 attach repeated the combat deploy and Brass Squire, and its level 3 double strike repeated Embercleave and Genji Glove, for 8 mana across its levels. Costs: she's a non-artifact 2/2, so no reducer or deploy helps her and Chandra's Ignition kills her, and a doubled deploy needs a second artifact in hand. |
+| Goblin Welder | Deep Space 9 | The pilot's pick (*"i understand that goblin welder is useful"*). An MV 9 artifact the combat deploy puts in for free. Each upkeep it exiles the top four cards and puts every permanent among them onto the battlefield: 90 of the 99 are permanents, about 3.6 a turn. It keeps an MV 9 artifact out for Padeem's draw, and Hammer of Nazahn attaches the Equipment it hits. Costs: Welder's swaps leave (Tutors / Recursion 2 to 1, Academy Ruins remains), the nine instants and sorceries it exiles are gone for good, and it takes four cards off the library every upkeep. |
+
+Snapshots: `versions/2026-11-14-1609-v3-lwaxana-troi-in-blacksmith-s-talent-out.json` and
+`versions/2026-11-14-1609-v3-deep-space-9-in-goblin-welder-out.json`. Undo rows are in
+`research/sideboard.md`.
+
+### Declined, with the pilot's words
+
+- Co-Option Adjutant for Manifold Key: *"i wouldn't take out manifold key for it ... for 4 mana it's
+  not tooo worth it currently"*. It goes to the bench once the open cuts settle.
+- Seven of Nine for Cloud Key, Manifold Key or Champion's Helm: *"i don't like the current ones as cut
+  options"*. Steel Overseer, Hammer of Nazahn, Conqueror's Flail, Etherium Sculptor, Counterspell and
+  Iron Lad were offered after that, and none was taken yet.
+- Deep Space 9 for Darksteel Forge (the review's bench row), then Krang, Gilded Lotus, Aettir and
+  Priwen, Simulacrum Synthesizer, Shadowspear and Thran Dynamo, before the pilot picked Goblin Welder.
+- Lwaxana for Hammer of Nazahn, Conqueror's Flail, Steel Overseer, Goblin Welder or Counterspell,
+  before the pilot picked Blacksmith's Talent.
+
+**Re-scored by Deep Space 9 (record for later cuts):** Hammer of Nazahn now attaches every Equipment it
+puts in, Simulacrum Synthesizer makes a Construct for every MV 3+ artifact it puts in, and Fateful
+Discovery draws for each artifact. Those three gained value, so they're weaker cut candidates than they
+were before 2026-11-14.
+
+### Settled at the end of the round
+
+- **Seven of Nine is benched, displacing Iron Lad.** No cut the pilot accepted was left, so the last
+  question was whether Seven beats one of the draw cards. It beats Iron Lad on volume: a card every turn
+  with no tap, against about half a card a turn (Iron Lad draws only when the top card is an artifact,
+  49 of 99, and a non-artifact on top blocks every tap until it moves). The pilot: *"let me keep iron lad
+  for a bit and run a few games and we'll see if he gets blocked often and seven of nine is worth
+  brining in then."*
+- **Co-Option Adjutant is benched, displacing Steel Overseer.** With Lwaxana in, Iron Man has three
+  trigger doublers, so the draw Adjutant grants him fires up to four times per hit.
+- **No Spock** (*"so no spock"*). Spock, Voice of Reason had been proposed for Shadowspear. Mr. Spock,
+  Science Officer was held because it doubles mostly mandatory draws and is a double-pip MV 4
+  non-artifact. Deep Space 9's exile isn't a draw (CR 121.1), so Mr. Spock wouldn't double it.
+- **Counterspell stays:** *"counterspells are kinda important for this deck"*.
+- **Bench rows filed:** Seven of Nine, Co-Option Adjutant and The Immortal Sun (over Cloud Key). The
+  review's Deep Space 9 row is moot now that it's in. U.S.S. Defiant, Mirror Migrant isn't filed,
+  because the pilot turned it down for Vision the same day. Darksteel Plate over Champion's Helm was
+  already a row.
+- **Draw count:** Card Draw / Engines is 7, with Cosmic Cube still on trial. Padeem and Iron Spider
+  draw too, conditionally.
+
+**Curve:** average MV 3.40 to 3.54, MV ≤ 2 24 to 23, MV ≤ 3 42 to 41. Card Draw / Engines stays at 7.
+
+**Validated:** v3 100/100, every name found, legal and on-identity, Game Changers 3/3 unchanged.
+`MOXFIELD-V3.txt` regenerated.

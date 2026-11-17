@@ -83,14 +83,12 @@
         {
           "name": "Tutors / Recursion",
           "cards": [
-            { "name": "Fabricate", "qty": 1 },
-            { "name": "Goblin Welder", "qty": 1 }
+            { "name": "Fabricate", "qty": 1 }
           ]
         },
         {
           "name": "Cheat, Attach & Untap",
           "cards": [
-            { "name": "Blacksmith's Talent", "qty": 1 },
             { "name": "Manifold Key", "qty": 1 },
             { "name": "Master Transmuter", "qty": 1 },
             { "name": "Thousand-Year Elixir", "qty": 1 },
@@ -148,8 +146,10 @@
           "cards": [
             { "name": "Brass Squire", "qty": 1 },
             { "name": "Darksteel Forge", "qty": 1 },
+            { "name": "Deep Space 9", "qty": 1 },
             { "name": "Iron Spider, Stark Upgrade", "qty": 1 },
             { "name": "Krang, Utrom Warlord", "qty": 1 },
+            { "name": "Lwaxana Troi, Charming Guest", "qty": 1 },
             { "name": "Marvin, Murderous Mimic", "qty": 1 },
             { "name": "Portal to Phyrexia", "qty": 1 },
             { "name": "Roaming Throne", "qty": 1 },

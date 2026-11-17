@@ -6,7 +6,16 @@ each deck's `research/decisions.md`**; this file is the short version. When the 
 `deck.json` and the decision log win and this file gets fixed. Cross-deck pilot rules (banned cards,
 loop policy, pods) are in the root `CLAUDE.md`.
 
-## Drain-token family: chatterfang, upgrade-test, caesar
+## Star Trek (TRK + TRC) set review: complete (2026-11-15)
+
+Taken one deck per round on 2026-11-14 and 2026-11-15. Each deck's section below and its
+`research/decisions.md` hold what it took. Lwaxana Troi, Charming Guest went into lord-of-pain,
+vision-scarlet-witch (`main`, `spellslinger`, `b3-tokens`), iron-man (`v3`) and caesar.
+captain-america and scarlet-witch passed, and the pilot dropped the edgar-markov round (*"no need for
+lwaxana"*, 2026-11-15). The ground for any later red deck: she needs a creature with a trigger
+already on the board, which a commander with the trigger meets.
+
+## Drain-token family: chatterfang, caesar
 
 Brief (2026-09-22, replacing Edgar Markov): *"create as many tokens, sac em and drain"*, any
 colours, any tribe. Ranked on power, with salt **reported, not minimised**.
@@ -20,31 +29,28 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
 - `decks/ghave` was deleted on 2026-11-10 at the pilot's request (*"I don't really play ghave"*).
   It's recoverable from git history; ledger entries that cite it as a source still stand.
 
-### chatterfang (BG), the pre-fork list
+### chatterfang (BG)
 
-- Since 2026-10-15 the pilot's live list is `upgrade-test`, the default target for all Chatterfang
-  work (their export matched its `main` card for card). Leave this list unedited unless asked.
+- The pilot's only Chatterfang deck. It was the `upgrade-test` fork, made 2026-09-25 with the whole
+  proposal package applied (*"i don't have time to decide"*) and tuned in waves since. On
+  2026-11-14 the pilot had the original pre-fork list deleted and the fork renamed `chatterfang`
+  (*"upgrade test is now main and the only deck we play"*). The pre-fork decision log sits at the top
+  of `research/decisions.md`, and older ledger and log entries call this deck `upgrade-test`.
 - Declared chosen-N loops: Camellia, the Seedmiser + Tippy-Toe or Peregrin Took + Ashnod's Altar
-  (Food loop); Chatterfang + Pitiless Plunderer (two cards, live from turn 4).
+  (Food loop); Chatterfang + Pitiless Plunderer (two cards, live from turn 4); Chatterfang + Warren
+  Soultrader (live from turn 4); The Unbeatable Squirrel Girl + Cryptolith Rite or Springleaf
+  Parade + Concordant Crossroads (live from turn 4 or 5).
 - Its one Game Changer is Gaea's Cradle. Unanswered since 2026-09-23: the pilot mentioned a green
   Game Changer "that lets you put many lands on the board". Ask which card; don't guess.
-- Upgrade proposal page (deck-brain §3.1, one page republished in place):
-  https://claude.ai/artifact/Qgp3cNcdmKWoE8fPZMxvQB ("Acorn Economy Upgrade"). Held adds and
-  close-cut shortlists sit at the top.
-- Token-math solver, a separate tool page rather than the proposal record:
+- Protected since 2026-11-14: Gruesome Fate (*"one of our best finishers"*) and Gardenize. Combat is
+  the secondary finisher here, so attack-based draw like Kurn doesn't fit.
+- The old proposal page (deck-brain §3.1), built from the pre-fork list:
+  https://claude.ai/artifact/Qgp3cNcdmKWoE8fPZMxvQB ("Acorn Economy Upgrade"). Its source is
+  `research/pre-fork-proposal.json` and `artifact/`. Its `compareTo` names `upgrade-test`, so fix
+  that before regenerating it.
+- Token-math solver, a separate tool page:
   https://claude.ai/artifact/Gti7ru3nZXYFh59YJXCmyD ("Acorn Cascade"). Source in
   `decks/chatterfang/calculator/`.
-
-### upgrade-test, the live Chatterfang list (default target since 2026-10-15)
-
-- Forked 2026-09-25 with the whole proposal package applied, so the pilot could play it instead of
-  deciding swap by swap (*"i don't have time to decide"*). Tuned in waves since. It isn't curated.
-- Confirmed 2026-10-15: this is the list the pilot plays. Edit it for every Chatterfang request,
-  and don't promote its waves into `decks/chatterfang`. That deck stays as the record of the
-  pre-fork list, not edited and not deleted.
-- Declared chosen-N loops beyond chatterfang's: Chatterfang + Warren Soultrader (wave 10, live from
-  turn 4), and since wave 12 (2026-11-10) The Unbeatable Squirrel Girl + Cryptolith Rite or Springleaf
-  Parade + Concordant Crossroads (live from turn 4 or 5).
 - **Card draw aim (pilot, 2026-11-10): 8 to 10 sources, an aim rather than a floor, and Clue makers never count.** The pilot
   rarely cracks Clues. The count is 7 (Sylvan Library, Skullclamp, Moldervine, Black Market
   Connections, Bloodline Recollector, plus Yawgmoth and Tippy-Toe). Re-count it after every wave.
@@ -57,12 +63,32 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
 - Trial since 2026-10-15 (wave 11): Priest of Forgotten Gods in for Woe Strider. If the sacrifice
   outlets struggle, Woe Strider returns for Priest. The other half of that trial ended in wave 12:
   Black Market Connections came back for Pest Infestation. Grounds and costs are in
-  `upgrade-test/research/decisions.md`.
+  `chatterfang/research/decisions.md`.
+- Since 2026-11-14: Alhammarret's Archive doubles every draw after the first in the draw step, and
+  Moldervine's and Skullclamp's draws are mandatory, so count the library before running a chosen-N
+  loop. Elvish Mystic is the one 1-mana dork left (Llanowar Elves went for the Archive).
 
 ### caesar (RWB)
 
 - Pilot's asks: Infantry Shield, token doublers, and a small hexproof/indestructible protection
   package so Caesar survives to keep making tokens.
+- Since 2026-11-14: Troubling Tribbles copies itself every upkeep, and with Ocelot Pride's city's
+  blessing every new Tribble is copied again, so they triple. Both are mandatory, so declare the
+  engine at the table. Caretaker's Talent, Heraldic Banner (named white) and Castle Embereth are the
+  anthems that let the 0/1 Tribbles attack. Caretaker's level 3 stops Skullclamp killing tokens.
+- Since 2026-11-15: Lwaxana Troi in for Ingris, and a lifegain package: Mirkwood Bats (for Zurgo),
+  South Wind Avatar (for Swords to Plowshares), Soul Warden (for General's Enforcer), Vito (for Talisman
+  of Indulgence). South Wind Avatar and Vito turn every life gain into drain. Never add Exquisite Blood
+  (automatic infinite with Vito).
+- Since 2026-11-15 (pilot's card notes round): Super Shredder in for Bitterbloom Bearer. It grows
+  whenever another permanent leaves, and wearing Infantry Shield its power becomes Warriors that grow
+  it again.
+- **`combat` (founded 2026-11-15, first draft):** go-wide combat with a lifelink layer, Bracket 3, Game
+  Changers Smothering Tithe, Teferi's Protection and The One Ring. `main` stays as the drain build. Core:
+  Neyali (attacking tokens double strike), Iroas, Sorin, Vengeful Bloodlord, South Wind Avatar and
+  Marauding Blight-Priest. Grave Pact and Dictate stay at the pilot's request. Next step: offer `main`'s
+  21 left-out cards back one at a time with pros and cons (list in `research/decisions.md`). Never add
+  Exquisite Blood or Bloodthirsty Conqueror (automatic infinite with the converters).
 
 ## cap-living-legend: Captain America, Living Legend (UW)
 
@@ -94,6 +120,8 @@ and flag it before adding:
 ## edgar-markov
 
 - `main` is abandoned. `combat` and `sacrifice` are the Bracket 3 lists (pilot, 2026-09-28).
+- Since 2026-11-14 `sacrifice` runs Troubling Tribbles, whose upkeep doubling is mandatory, so declare
+  it at the table. `combat` runs Concerted Effort in place of Vampire Nocturnus.
 - **`b4` is the no-holds-barred Bracket 4 list (founded 2026-11-03)**, built on the drain/combo core
   that EDHREC's cEDH combo and aggro averages share. Every infinite is allowed in it, including the
   automatic lifegain loops (Exquisite Blood or Bloodthirsty Conqueror with Vito, Sanguine Bond,
@@ -124,6 +152,10 @@ and flag it before adding:
   Memnarch. Regalia is now the unblockable source. **Loop:** Assault plus The Reaver Cleaver or Sword of
   Feast and Famine, with Iron Man unblockable, is unbounded combats (chosen-N). Tell the pod. Without
   Arbiter, Propaganda (out for the Cube trial) is the fix if wide boards hit the pilot.
+- Since 2026-11-14 in `v3` (Star Trek review): Lwaxana Troi in for Blacksmith's Talent, Deep Space 9 in for
+  Goblin Welder. Deep Space 9's upkeep exile is mandatory and loses instants and sorceries for good.
+- Watch since 2026-11-14 in `v3`: the pilot is testing whether Iron Lad's draw keeps stalling on a
+  non-artifact top card. If it does, Seven of Nine, Unassimilated (benched) comes in for it.
 - Surestrike Trident is a loop piece the pilot protects (Unwinding Clock + Brass Squire, three shots
   per turn cycle). Don't nominate it on first strike alone.
 
@@ -131,8 +163,11 @@ and flag it before adding:
 
 - Brief: *"the most toxic commander deck imaginable"*. Every opponent action bleeds them, and the
   gifts (extra cards, extra mana) are really a drain.
-- `main` is Bracket 4 (Exquisite Blood + Sanguine Bond, plus its Game Changers). `b3` is `main`
-  minus a documented swap set, so apply every other change to both lists.
+- `main` is Bracket 4 (Exquisite Blood + Sanguine Bond, plus its Game Changers) and the only list.
+  The pilot deleted `b3` on 2026-11-14 because they don't play the deck at Bracket 3 (its salt is
+  too high); its last state is in `versions/2026-11-14-1214-b3-deleted-pilot-s-call.json`.
+- Since 2026-11-14 Lwaxana Troi, Charming Guest doubles the commander's triggers while she stays
+  tapped. Her {T} ability waits a turn unless she has haste.
 - Amplifiers must be opponent-restricted (Solphim, Torbran, Torture Pit, Twinflame, Bloodletter,
   Wound Reflection). A symmetric one like Fiery Emancipation triples the deck's own symmetric gift
   engines against the pilot.
@@ -159,6 +194,9 @@ and flag it before adding:
   Steam-Kin in for Inner Fire, Thor, Vandalblast, Gamble and Runechanter's Pike. After play, the
   pilot decides on Hexing Squelcher (for Champion's Helm) and Twinning Staff (for Hex Magic). Every
   cut has a dated row in the `b4` sideboard for undoing it.
+- Trial since 2026-11-14 in `b4`: Infinite Diversity in, Coral Sword out. The pilot will report how it
+  plays; the sideboard row swaps Coral Sword back. Solphim stays as the only damage doubler, for pods
+  where opponents gain life.
 - The chain's kill-turn constraint is **red pips, not mana**. With Livaan out, an X-spell costs only
   its coloured pips, and X counts toward mana value on the stack (CR 202.3e). See
   `research/turn-5-chain-2026-09-08.md`.
@@ -172,6 +210,13 @@ and flag it before adding:
 - Trial since 2026-11-10: Ugin, the Spirit Dragon in for Quicksilver Amulet (the pilot will watch
   for big creatures stuck in hand), and Tezzeret, Cruel Captain in for Thought Vessel. Sideboard rows
   swap each back.
+- Since 2026-11-15 (Star Trek round): Replicator in for Sculpting Steel. Its copy of an
+  Ultron token is a plain copy of the original card, so a copied Sol Ring isn't a Robot creature.
+- Trial since 2026-11-15: Deep Space 9 in, Wurmcoil Engine out. The pilot will say if the deck
+  struggles against creatures; the sideboard row swaps Wurmcoil back.
+- The pilot says this deck never has spare mana (*"i'm always casting something"*, 2026-11-15). That
+  passed The Guardian of Forever, whose {4} has to be held up. Weigh hold-up costs, mana sinks and
+  Omnath's banking against it.
 
 ## vision-scarlet-witch: The Vision and Scarlet Witch (mono-red)
 
@@ -185,8 +230,12 @@ and flag it before adding:
   Minoru, because the deck makes few exile casts.
 - First play report: *"struggles with draw sometimes and/or having enough finishers to get through
   without commander damage."*
-- `research/sideboard.md` still holds Reiterate and Underworld Breach as "Bracket 4 only". That
-  predates the loop policy, so reword it the next time the file is touched.
+- Star Trek review (2026-11-14): `main` took Reckless Impulse and Tal Shiar Analyst, and `b3-tokens`
+  took Academy Instructor (Skullclamp not taken). Lwaxana Troi replaced Loki in `main`, `spellslinger` and `b3-tokens`. The
+  pilot doesn't want U.S.S. Defiant, Mirror Migrant and keeps Kediss in
+  `b3-tokens`.
+- `research/sideboard.md`: Vandalblast (displaces Crash Through) and Defense Grid (displaces Expedite)
+  name cards no longer in `main`. Repoint them the next time the file is touched.
 - **`b4` (Bracket 4 turbo, saved 2026-10-14):** the turn 3 to 4 combo build. Its proposal page is
   https://claude.ai/artifact/UjPtcJfpuZkukvzBpy5QBf (republish to that URL; grounds in
   `research/proposal.json`, data from `bun run deck:proposal vision-scarlet-witch`). Loops it holds:
@@ -197,5 +246,6 @@ and flag it before adding:
   Grounds in `research/proposal-b3-tokens.json`. Regenerate with `bun run deck:proposal
   vision-scarlet-witch --proposal research/proposal-b3-tokens.json --out
   decks/vision-scarlet-witch/artifact-b3-tokens` and republish that page's `index.html`.
-- `main` holds a three-card loop: Loki, Increasing Vengeance and Storm-Kiln Artist (ledger loop-017).
+- The Loki, Increasing Vengeance and Storm-Kiln Artist loop (ledger loop-017) left every list with
+  Loki on 2026-11-14. No list holds a second spell copier now.
   The pilot allows late-game combos at Bracket 3.

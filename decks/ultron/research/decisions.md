@@ -573,3 +573,85 @@ Myr. Both `research/sideboard.md` and `pdf.json` updated.
 
 Validated: 100/100, legal and on-identity, Game Changers 3/3 unchanged. `MOXFIELD.txt` and
 `ultron-reference.pdf` regenerated.
+
+## 2026-11-15 — Star Trek (TRK/TRC) review: Replicator and Deep Space 9 in; Sculpting Steel and Wurmcoil Engine out (pilot's calls)
+
+Snapshot: `versions/2026-11-15-1154-main-replicator-in-sculpting-steel-out.json`. Review:
+`research/trk-set-review-2026-11-10.md`, swap 1. The list hadn't changed since the review, and dry
+runs matched its curve figures.
+
+**Replicator** `{2}` Artifact (TRK). *"When this artifact enters, create a Food token. {2}, {T}:
+Create a tapped token that's a copy of target token you control."* The pilot: *"agreed for
+replicator IN, sculpting steel OUT"*.
+
+- **Grounds:** Ultron turns every nontoken artifact into a token, so Replicator always has the best
+  artifact on the board to copy, at a flat {2} whatever its mana value. Unwinding Clock untaps it on
+  each opponent's untap step (four copies a turn cycle), and Tezzeret's 0 untaps it once more on your
+  turn. Sculpting Steel was the only one-shot card in the copy role.
+- **Cost named:** Steel worked with no token on the board, triggered Ultron and Mirrorworks itself,
+  and could copy an opponent's artifact.
+- **Rules (mtg-rules-expert, CR 2026-11-06):** Ultron's *"it becomes a 2/2 Robot Villain creature"*
+  is a separate type-changing effect, not a copiable value (707.2, 707.9b, 613.1d). So Replicator's
+  copy of a token Sol Ring is a noncreature Sol Ring: not summoning-sick, not a Robot, missed by
+  creature wipes. Ultron's token copy of Replicator is a creature and can't activate until your next
+  turn (302.6). None of Replicator's tokens trigger Ultron. Filed in ledger zone-009.
+
+**Curve:** average MV 4.71 → 4.70, MV ≤ 2 10 → 11, MV ≤ 3 23 → 23. Copy Engines stays at 7.
+
+**Sideboard:** new row, Sculpting Steel displaces Replicator.
+
+Validated: 100/100, every name found, legal and on-identity, Game Changers 3/3 unchanged.
+`MOXFIELD.txt` regenerated.
+
+### Deep Space 9 in, Wurmcoil Engine out (pilot's call, trial)
+
+Snapshot: `versions/2026-11-15-1255-main-deep-space-9-in-wurmcoil-engine-out-trial.json`. The pilot:
+*"let's try cutting wurmcoil engine and putting in deep space 9. but keep it in mind if i say that
+i'm struggling with creatures"*.
+
+- **Grounds:** on entry and every upkeep it exiles the top four cards and puts every permanent among
+  them onto the battlefield (96 of the 99 are permanents). Each artifact is an Ultron trigger, each
+  land an Omnath landfall. Echoes doubles both triggers, Ultron's copy fires the entry trigger before
+  the legend rule (CR 603.6a, 704.5j), and it never becomes a creature, because its station line has
+  no P/T box (CR 722.2a). Creature removal and creature wipes miss it.
+- **Why Wurmcoil:** Bombs & ETB was 10 against its target of 9, and Wurmcoil ranked ninth of ten
+  there, as the most replaceable body (Blightsteel, Battlesphere, Portal, Mycosynth, Platinum Angel,
+  Forgemaster, Ballista and Solemn each do a job nothing else does). Hangarback Walker ranked tenth.
+- **Cuts offered and not taken:**
+  - The Ten Rings (my first pick): the pilot asked for other options. Keeping it holds Card Draw at
+    7 and the maximum hand size at ten.
+  - Ugin, the Spirit Dragon, offered with Crystalline Entity as the replacement wipe. The pilot
+    kept Ugin: *"his exile ability is pretty nice and is better than 'destroy'"*.
+  - Omnath (my second pick, on the grounds that it isn't an artifact and the pilot said *"i don't
+    think i've ever had excess mana in this deck"*, which idles its banking). Cost named: Deep Space
+    9's lands are Omnath landfalls, about 3 mana each upkeep.
+  - Cybermen Squadron, Memnarch (the only cut that lowered the curve, but Card Draw would drop to 6)
+    and Cityscape Leveler (turned down as a cut on 2026-11-10).
+  - Left off the list: Tezzeret and the ramp (the pilot's mana report), Walking Ballista (a kill
+    line), Kuldotha Forgemaster (it fetches Deep Space 9), Liberator (turned down twice), Darksteel
+    Forge (Protection is under target).
+- **Draw count:** its exile isn't a draw (CR 121.1, the Iron Man reading), so Card Draw stays at 7.
+- **Costs named:** the trigger is mandatory, four cards a turn off the library and eight under
+  Echoes. All Is Dust, Eldrazi Confluence and Kozilek's Command are lost if it exiles them. Walking
+  Ballista and Hangarback Walker enter as 0/0 without an anthem. Cards it puts in aren't cast.
+
+**Curve:** average MV 4.70 → 4.74, MV ≤ 2 11 → 11, MV ≤ 3 23 → 23, MV 7+ 16 → 17. Bombs & ETB
+10 → 9, Payoffs & Engines 11 → 12 (Deep Space 9 sits there as an engine).
+
+**Sideboard:** new row, Wurmcoil Engine displaces Deep Space 9 (bring it back if the deck struggles
+against creatures).
+
+### Passed this round
+
+- **U.S.S. Enterprise-D, Galaxy-Class** (for Hangarback Walker): *"it's not even 'without paying their
+  mana costs' and we could lose the exiled card if it's too expensive"*. Hangarback stays.
+- **Crystalline Entity** (as a wipe): passed once Ugin, the Spirit Dragon stayed. Grounds: Ugin's
+  exile beats destroy, and Entity misses artifact creatures and kills Omnath and Fleshraker.
+- **The Guardian of Forever** (for Palladium Myr): the pilot doubts they'd ever hold {4}: *"i'm always
+  casting something"*. Counter given once: Unwinding Clock untaps the rocks on opponents' turns,
+  and a save costs less than a recast. The pilot passed it, so no bench row.
+- **Skullclamp** (the review's bench row, displacing Hangarback Walker): not filed, the pilot's call
+  (*"no need for skullclamp"*).
+
+Validated after both applies: 100/100, every name found, legal and on-identity, Game Changers 3/3
+unchanged. `MOXFIELD.txt` regenerated. The round is closed.

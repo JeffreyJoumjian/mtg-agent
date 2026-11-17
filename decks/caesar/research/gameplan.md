@@ -12,9 +12,9 @@ also leaves a pile of free deaths for Blood Artist, Zulaport and Grave Pact.
 
 | | MV1 | MV2 | MV3 | MV4 | MV5 | MV7 | avg |
 |---|---|---|---|---|---|---|---|
-| Nonland in the 99 (64) | 8 | 21 | 22 | 9 | 3 | 1 | **2.74** |
+| Nonland, Caesar included (66) | 8 | 20 | 23 | 11 | 3 | 1 | **2.77** |
 
-**Nothing between 5 and 7**, and 51 of 64 nonland cards cost 3 or less. The one 7 is Ruinous
+**Nothing between 5 and 7**, and 51 of 66 nonland cards cost 3 or less. The one 7 is Ruinous
 Ultimatum, the one-sided wipe.
 
 ## 2. How Caesar works — the three rules that matter
@@ -25,7 +25,7 @@ Ultimatum, the one-sided wipe.
    creature. Always have one spare body before combat.
 3. **His Soldiers enter attacking but never "attacked."** They don't trigger Caesar again, or
    Adeline, Anim Pakal, Myrel or mobilize. They **do** trigger Impact Tremors, Warleader's Call,
-   Elas and Tocasia's Welcome as they enter.
+   Elas and Caretaker's Talent (once a turn) as they enter.
 
 ### Which two modes
 
@@ -42,18 +42,17 @@ Reassembling Skeleton (it comes back) → anything else. **Never a drainer.**
 
 ## 3. Opening
 
-**T1–T2:** Ocelot Pride, Mother of Runes, Viscera Seer, Bitterblossom, Bitterbloom Bearer, Loyal
-Apprentice, General's Enforcer, a Talisman, Skullclamp.
+**T1–T2:** Ocelot Pride, Soul Warden, Mother of Runes, Viscera Seer, Bitterblossom, Super Shredder,
+Loyal Apprentice, Talisman of Hierarchy, Skullclamp.
 
-**T3:** Adeline, Anim Pakal, Lingering Souls, Legion Warboss, Isshin, Infantry Shield, Swiftfoot
+**T3:** Adeline, Anim Pakal, Troubling Tribbles, Vito, Legion Warboss, Isshin, Infantry Shield, Swiftfoot
 Boots, Windcrag Siege (choose **Mardu**).
 
-**T4: Caesar**, ideally with Boots, Mithril Coat, General's Enforcer or Mother of Runes ready. Attack
+**T4: Caesar**, ideally with Boots, Mithril Coat or Mother of Runes ready. Attack
 the same turn with anything that isn't summoning sick. He doesn't need haste, because the trigger
 is "whenever you attack."
 
-**T5–T6:** a token doubler (Anointed Procession, Mondrak, Elspeth), Grave Pact / Dictate, Assemble
-the Legion, Court of Grace.
+**T5–T6:** a token doubler (Anointed Procession, Mondrak, Elspeth), Grave Pact / Dictate, Court of Grace.
 
 **Mulligans.** Keep 3 lands with 2 colours and one cheap creature, because Caesar needs one other
 body. You don't need a token maker in the opener: Caesar is always in the command zone.
@@ -62,9 +61,9 @@ body. You don't need a token maker in the opener: Caesar is always in the comman
 
 | Threat | Answer |
 |---|---|
-| Targeted destroy/damage | Swiftfoot Boots (hexproof), Mother of Runes, Mithril Coat, General's Enforcer, Deflecting Swat |
+| Targeted destroy/damage | Swiftfoot Boots (hexproof), Mother of Runes, Mithril Coat, Deflecting Swat |
 | **Targeted exile (Swords, Path, Chaos Warp)** | Indestructible doesn't help. Use **Swiftfoot Boots, Mother of Runes or Deflecting Swat** |
-| Destroy wipe | Mithril Coat, General's Enforcer, **Flawless Maneuver (free with Caesar out)** |
+| Destroy wipe | Mithril Coat, **Flawless Maneuver (free with Caesar out)** |
 | Anything / everything | Teferi's Protection |
 | Instant-speed removal on your turn | Myrel: opponents can't cast spells during your turn |
 
@@ -80,29 +79,40 @@ entered. With this deck that's nearly every turn.
 - **Infantry Shield on Caesar = mobilize 4.** Four Warriors attack, then all four die at your end
   step. That's four deaths for every drainer and four sacrifices per opponent under Grave Pact.
   With a doubler it's eight.
+- **Infantry Shield on Super Shredder grows it every attack.** It makes Warriors equal to its
+  power, and each Warrior you sacrifice before damage gives it a +1/+1 counter, so a 4-power
+  Shredder swings as an 8/8 with menace. The Warriors left at end step add one counter each when
+  they die. Isshin or Windcrag Siege trigger mobilize twice, and a token doubler doubles the Warriors.
 - **Skullclamp on any 1/1 = draw two** when it dies. Warleader's Call makes your tokens 2/2, and a
   clamped 2/2 doesn't die. That's a real cost, not a reason to skip the anthem.
 
 ## 6. Sequencing within your turn
 
-1. **Upkeep:** Bitterblossom, Bitterbloom Bearer, Assemble the Legion, Court of Grace.
+1. **Upkeep:** Bitterblossom, Troubling Tribbles (mandatory copies), Court of Grace.
 2. **Main 1:** equip Infantry Shield and Boots, cast doublers and Isshin **before** combat.
 3. **Beginning of combat:** Loyal Apprentice's Thopter and Legion Warboss's Goblin arrive.
-4. **Declare attackers.** Caesar, Adeline, Anim Pakal, Myrel, Hero of Bladehold and mobilize all
+4. **Declare attackers.** Caesar, Adeline, Anim Pakal, Myrel, Worf and mobilize all
    trigger. **Put Myrel's trigger on the stack first, so it resolves last.** Caesar's Soldiers then
    exist before Myrel counts your Soldiers.
+   **Vito's lifelink:** activate {3}{B}{B} only after the attack triggers have resolved and the
+   tokens exist (or in declare blockers). Tokens made after it resolves don't get lifelink (ledger dmg-031).
 5. **Main 2:** sacrifice surplus Warriors to Ashnod's Altar for mana, or Skullclamp one. They die at
    end step anyway.
-6. **End step:** mobilize Warriors are sacrificed. That's a death each, Zurgo drains 1 per Warrior,
+6. **End step:** mobilize Warriors are sacrificed. That's a death each, Mirkwood Bats drains 1 per Warrior,
    and Grave Pact / Dictate make each opponent sacrifice per death.
 
 ## 7. The kill
 
-- **Drain:** every death pays Blood Artist, Zulaport, Cruel Celebrant, Bastion, Elas, Meathook and
-  Zurgo (Zurgo only for tokens). Every creature entering pays Impact Tremors and Warleader's Call.
+- **Drain:** every death pays Blood Artist, Zulaport, Cruel Celebrant, Bastion, Elas and Meathook, and
+  every token created or sacrificed pays Mirkwood Bats. Every creature entering pays Impact Tremors,
+  Warleader's Call and Purphoros, and gains 1 from Soul Warden and Elas.
+- **Converters:** with South Wind Avatar out, every life gain makes each opponent lose 1 more, and Vito
+  makes one opponent lose that much. Each gainer's trigger is its own gain (ledger dmg-001), and the
+  Avatar gains on every death itself.
   A doubled Caesar attack with Warleader's Call out is 4 Soldiers entering, so 4 to each opponent,
   before anything dies.
-- **Combat:** tokens arrive already attacking, with Hero's battle cry and Warleader's +1/+1. You
+- **Combat:** tokens arrive already attacking, with Warleader's +1/+1 and Heraldic Banner's +1/+0. Vito's
+  {3}{B}{B} gives the team lifelink, and each attacker that connects is a separate gain for the converters. You
   can also finish with Caesar's damage mode: damage equal to your token count at one opponent.
 - **Grave Pact / Dictate lock:** every end-step Warrior sacrifice clears one creature from each
   opponent. They run out of blockers quickly.

@@ -1120,3 +1120,33 @@ Measured after the edit: avg MV 2.57 → 2.58, W sources 24 → 23, B sources 32
 Changers unchanged, 100 cards. The pool mirrors it (Talisman into Alternates, Ashnod's out).
 Snapshot: `versions/2026-11-03-2052-b4-ashnod-s-altar-in-talisman-of-hierarchy-out.json`. Wave 1
 on the page, verdict pending after play.
+
+## 2026-11-14 — Star Trek (TRK/TRC) review: three swaps applied (pilot's calls)
+
+Review: `research/trk-set-review-2026-11-10.md`, then two follow-up rounds on cuts. Each swap has
+its own `deck:edit` snapshot.
+
+**Applied**
+- `combat`: Concerted Effort in, Vampire Nocturnus out. The pilot called it an easy yes. Nocturnus flies the Vampires only while the top card is black (39 of 99 cards). Concerted
+  Effort needs one of combat's seven fliers at upkeep, and it also spreads Edgar's first strike,
+  Charismatic Conqueror's vigilance and Malakir Bloodwitch's protection from white.
+- `sacrifice`: Troubling Tribbles in, Infantry Shield out. Tribbles double every upkeep with no attack
+  and no mana, which meets the three reasons the Shield came in on 2026-09-03 (Skullclamp draws, Grave
+  Pact edicts, Elspeth doubling). The growth is mandatory, so declare it at the table.
+- `sacrifice`: Alhammarret's Archive in, Emeritus of Woe out. This was the pilot's pick over Dictate of
+  Erebos and Anointed Procession. The Archive doubles 10 of the 11 draw sources and every life gain, so
+  Vito drains double. Costs: creature cards 38 to 37, the list's only repeatable tutor, and a 5/4
+  eminence Vampire.
+
+**Declined, with the pilot's grounds**
+- Concerted Effort in `sacrifice`: left out. With Patchwork Banner, Anointed Procession and Akroma's
+  Will off the table, no cut was worth it, because the list spreads little beyond flying.
+- Rite of Ascension: the better card, but it's an enchantment with no Vampire synergy, so it's a
+  `combat` sideboard row in place of Mavren Fein for now.
+- Rite of Oblivion for Akroma's Will: declined. The pilot hasn't struggled with removal, and Akroma's
+  Will stays.
+- Vengeance Mission: not needed. Dictate of Erebos stays.
+
+**Validated:** both lists 100/100, legal and on-identity, Game Changers 3 each. Average MV: `combat`
+2.95, `sacrifice` 2.97 by `deck:show`. `MOXFIELD-COMBAT.txt` and `MOXFIELD-SACRIFICE.txt` regenerated.
+Sideboard section B has the Rite of Ascension row and undo rows for all three swaps.

@@ -1,0 +1,119 @@
+{
+  "pages": [
+    {
+      "title": "The Vision and Scarlet Witch",
+      "sections": [
+        {
+          "heading": "Swaps for main and b3-tokens",
+          "note": "main with all three: average MV 2.81 → 2.82, MV ≤ 2 33 → 33, MV ≤ 3 49 → 50. b3-tokens with both: 2.73 → 2.73, 34 → 33, 51 → 51. b4 gets no swap.",
+          "swaps": [
+            {
+              "in": "U.S.S. Defiant, Mirror Migrant",
+              "out": "Blackblade Reforged",
+              "decks": [
+                "vision main"
+              ],
+              "axis": "protection",
+              "why": [
+                "It's a {2} flash artifact that phases her out with her Equipment and counters, which covers edicts, exile wraths and bounce.",
+                "Growth and voltron go from 5 to 4 and protection from 8 to 9, both onto target. main is the last list still running Blackblade."
+              ],
+              "flags": [
+                "Cast it on opponents' turns. On your own turn she'd be gone for the rest of the turn."
+              ]
+            },
+            {
+              "in": "Reckless Impulse",
+              "out": "Forge of Heroes",
+              "decks": [
+                "vision main"
+              ],
+              "axis": "card draw",
+              "why": [
+                "It draws two, and any reducer plus her refund makes it free. Draw goes from 7 to 8.",
+                "Forge gives one counter the turn she lands, and every other list has cut it already."
+              ],
+              "flags": [
+                "Lands go from 32 to 31, which is what b3-tokens runs. Red sources stay at 26."
+              ]
+            },
+            {
+              "in": "Tal Shiar Analyst",
+              "out": "Thermo-Alchemist",
+              "decks": [
+                "vision main"
+              ],
+              "axis": "untap triggers",
+              "why": [
+                "It's Thermo-Alchemist's ping, but any noncreature spell untaps it: 50 of the list's nonland cards instead of 28."
+              ],
+              "flags": [
+                "It costs one more mana and swaps a 0/3 defender for a 3/2."
+              ]
+            },
+            {
+              "in": "Skullclamp",
+              "out": "Kediss, Emberclaw Familiar",
+              "decks": [
+                "vision b3-tokens"
+              ],
+              "axis": "card draw",
+              "why": [
+                "Each 1/1 token becomes two cards for {1}, and draw goes from 6 to 7. Nothing in the list pumps toughness, so nothing switches it off.",
+                "Kediss only works in combat while two or more opponents are alive, and this list's plan ends with a swing at the last opponent."
+              ]
+            },
+            {
+              "in": "Academy Instructor",
+              "out": "Kessig Flamebreather",
+              "decks": [
+                "vision b3-tokens"
+              ],
+              "axis": "token payoff",
+              "why": [
+                "Both trigger on noncreature spells. Kessig deals 1 to each opponent, while Instructor makes a 1/1 Officer.",
+                "Impact Tremors, Purphoros, Goblin Bombardment and Skullclamp each turn that Officer into more than 1 damage, and alone it's still a blocker."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Bench",
+          "pairs": [
+            {
+              "in": "Lwaxana Troi, Charming Guest",
+              "out": "Loki Laufeyson",
+              "deck": "main"
+            },
+            {
+              "in": "Alhammarret's Archive",
+              "out": "Wanda's Vision",
+              "deck": "main"
+            },
+            {
+              "in": "Tal Shiar Analyst",
+              "out": "Thermo-Alchemist",
+              "deck": "b4"
+            },
+            {
+              "in": "Reckless Impulse",
+              "out": "Crash Through",
+              "deck": "b3-tokens",
+              "note": "Bench, not swap, because cantrips are protected."
+            },
+            {
+              "in": "U.S.S. Defiant, Mirror Migrant",
+              "out": "Champion's Helm",
+              "deck": "b3-tokens"
+            },
+            {
+              "in": "Lwaxana Troi, Charming Guest",
+              "out": "Loki Laufeyson",
+              "deck": "b3-tokens"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

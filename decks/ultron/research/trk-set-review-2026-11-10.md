@@ -106,7 +106,7 @@ Walker (lines 28, 102, 108, 118 to 124, 126).
   threshold isn't a creature, Ultron's clause makes the token a 2/2 Robot Villain. Most Spacecraft
   here are legendary, so the copy also meets the legend rule. Deep Space 9 is the one exception
   worth paying for, because its entry trigger fires before the legend rule applies.
-- **A Spacecraft with no power/toughness box never becomes a creature** (CR 721.2a). That's Deep
+- **A Spacecraft with no power/toughness box never becomes a creature** (CR 722.2a). That's Deep
   Space 9, so creature wipes and creature removal can't touch it.
 - **Communicators copy themselves on cast.** The card is nontoken, so it triggers Ultron. The copy is
   a token, so it doesn't (ledger zone-008). Ultron's copy of any Equipment is a creature, and an
@@ -522,7 +522,7 @@ The Ten Rings' cards arrive in hand, and each still costs mana in a list whose a
   [Sanctum of Ugin](https://scryfall.com/search?q=%21%22Sanctum+of+Ugin%22), and it's an
   [Ugin's Labyrinth](https://scryfall.com/search?q=%21%22Ugin%27s+Labyrinth%22) imprint. Workshop and
   Karn mana pay for it.
-- It never becomes a creature (CR 721.2a), so creature wipes and creature removal miss it. Nine
+- It never becomes a creature (CR 722.2a), so creature wipes and creature removal miss it. Nine
   station (one tap from Krang) gives the team +3/+3.
 
 **Self-hits (§1.3):**

@@ -13,6 +13,7 @@
 1 Cybermen Squadron (WHO) 176
 1 Darksteel Citadel (C18) 241
 1 Darksteel Forge (2XM) 248
+1 Deep Space 9
 1 Deserted Temple (MH3) 301
 1 Duplicant (DRC) 54
 1 Echoes of Eternity (MH3) 4
@@ -54,10 +55,10 @@
 1 Portal to Phyrexia (BRO) 240
 1 Power Depot (MH2) 251
 1 Prototype Portal (C18) 216
+1 Replicator
 1 Roaming Throne (MAR) 99
 1 Sanctum of Ugin (BFZ) 242
 1 Scavenger Grounds (MSC) 263
-1 Sculpting Steel (2XM) 286
 1 Semblance Anvil (SOM) 201
 1 Shrine of the Forsaken Gods (M3C) 376
 1 Sol Ring (SLD) 1734
@@ -89,4 +90,3 @@
 1 War Room (PLST) MKC-310
 9 Wastes (OGW) 183
 1 Worn Powerstone (CMM) 984
-1 Wurmcoil Engine (2XM) 308

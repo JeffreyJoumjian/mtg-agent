@@ -1,0 +1,98 @@
+{
+  "pages": [
+    {
+      "title": "The Scarlet Witch",
+      "sections": [
+        {
+          "heading": "Swaps for b4 and v3",
+          "swaps": [
+            {
+              "in": "Infinite Diversity",
+              "out": "Solphim, Mayhem Dominus",
+              "decks": [
+                "scarlet-witch b4"
+              ],
+              "curve": "2.70 \u2192 2.77 \u00b7 \u22642 36 \u2192 36 \u00b7 \u22643 54 \u2192 54",
+              "axis": "chain output",
+              "why": [
+                "Wanda's discount brings it to {R}{R} once her power plus the reducers reach 7, and Livaan gives +9 when it's cast.",
+                "Wanda and Livaan count 5 creature types, so it casts five free copies of one graveyard spell. Five Seething Songs make 25 red, and five Fiery Confluences deal 30 to each opponent.",
+                "The closers role has 4 cards against 2 to 3, and Solphim ranks last in it (ledger dmg-019)."
+              ],
+              "flags": [
+                "Solphim adds two creature types (Phyrexian Horror), so cutting it means 5 copies instead of 7 on turns Solphim would be out.",
+                "Before the chain starts it's a dead {5}{R}{R} card."
+              ],
+              "options": [
+                {
+                  "card": "Neheb, the Eternal",
+                  "note": "Runner-up cut. The engines role is over target too, but you asked for Neheb on 2026-09-16."
+                }
+              ]
+            },
+            {
+              "in": "Lwaxana Troi, Charming Guest",
+              "out": "Solphim, Mayhem Dominus",
+              "decks": [
+                "scarlet-witch v3"
+              ],
+              "curve": "2.77 \u2192 2.74 \u00b7 \u22642 35 \u2192 36 \u00b7 \u22643 48 \u2192 49",
+              "axis": "what limits the chain",
+              "why": [
+                "Tapped on Livaan, each chain link roughly triples Wanda instead of doubling her. On Wiccan she gives two cards per noncreature spell.",
+                "Solphim doubles damage that's usually lethal already. Lwaxana raises the chain's real limits, Wanda's power and red pips."
+              ],
+              "flags": [
+                "You brought Solphim into this list on 2026-09-08.",
+                "Her ability needs {T}, so she can't use it the turn she comes down.",
+                "In the barest modelled case Solphim kills (42 to each opponent) and Lwaxana doesn't (36)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Bench",
+          "pairs": [
+            {
+              "in": "Lwaxana Troi, Charming Guest",
+              "out": "Runaway Steam-Kin",
+              "deck": "b4",
+              "note": "If its trial ends."
+            },
+            {
+              "in": "Dominion Infiltration",
+              "out": "Unleash Fury",
+              "deck": "b4"
+            },
+            {
+              "in": "Infinite Diversity",
+              "out": "Pyromancer's Goggles",
+              "deck": "v3"
+            },
+            {
+              "in": "Dominion Infiltration",
+              "out": "Bionic Blow",
+              "deck": "v3"
+            },
+            {
+              "in": "Disrupt Decorum",
+              "out": "Vandalblast",
+              "deck": "v3"
+            }
+          ]
+        },
+        {
+          "heading": "Trap",
+          "note": "It reads like an upgrade and isn't: it says \"You can't sacrifice Treasure tokens\", which switches off every Treasure both lists make.",
+          "tiles": [
+            {
+              "card": "Quark, Humble Proprietor",
+              "verdict": "trap",
+              "label": "b4 and v3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
