@@ -21,17 +21,17 @@
 1 Command Tower (ELD) 333
 1 Commander's Plate (SLD) 1733
 1 Conqueror's Flail (2X2) 302
-1 Cosmic Cube (MSH) 245
 1 Counterspell (MAR) 52
 1 Darksteel Citadel (C18) 241
 1 Darksteel Forge (2XM) 248
-1 Deep Space 9
+1 Deep Space 9 (TRK) 263
 1 Deflecting Swat (CMM) 214
 1 Embercleave (ELD) 120
 1 Enthusiastic Mechanaut (EOC) 114
 1 Etherium Sculptor (FDC) 62
 1 Fabricate (SLD) 7124
 1 Fateful Discovery (HOB) 40
+1 Fellwar Stone (CMM) 382
 1 Fierce Guardianship (CMM) 94
 1 Genji Glove (FIN) 258
 1 Gilded Lotus (MSC) 199
@@ -40,17 +40,17 @@
 1 Infantry Shield (TDC) 35
 1 Insight Engine (EOC) 6
 1 Inventors' Fair (SLD) 1735
-1 Iron Lad, Diverging Destiny (MSH) 59
 1 Iron Spider, Stark Upgrade (SPM) 166
 4 Island (THB) 251
+1 Izzet Signet (RVR) 261
 1 Kediss, Emberclaw Familiar (PLST) CMR-188
 1 Krang, Utrom Warlord (TMT) 175
-1 Lwaxana Troi, Charming Guest
+1 Lieutenant Commander Data (TRK) 69
+1 Lwaxana Troi, Charming Guest (TRK) 157
 1 Mana Drain (2X2) 57
 1 Manifold Key (M20) 230
 1 Marvin, Murderous Mimic (DSK) 253
 1 Master Transmuter (2XM) 58
-1 Mind's Eye (FDC) 272
 1 Mithril Coat (LTR) 245
 1 Mjölnir, Hammer of Thor (MSH) 146
 4 Mountain (THB) 253

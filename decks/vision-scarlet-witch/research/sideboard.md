@@ -6,7 +6,7 @@ displaces. Grounds for each are in `research/decisions.md` (2026-09-03).
 | Card | Bring in when | Displaces |
 |---|---|---|
 | [Blasphemous Act](https://scryfall.com/search?q=%21%22Blasphemous+Act%22) | Ramp tables with 10/10s; cast it the turn **before** she comes down (it kills the converters too) | Fiery Confluence |
-| [Vandalblast](https://scryfall.com/search?q=%21%22Vandalblast%22) | Artifact pods — the overload is one-sided | Crash Through |
+| [Vandalblast](https://scryfall.com/search?q=%21%22Vandalblast%22) | Artifact pods — the overload is one-sided | Ancestral Anger |
 | [Pyroblast](https://scryfall.com/search?q=%21%22Pyroblast%22) / [Red Elemental Blast](https://scryfall.com/search?q=%21%22Red+Elemental+Blast%22) | Two or more blue decks at the table | Might of the Meek |
 | [Underworld Breach](https://scryfall.com/search?q=%21%22Underworld+Breach%22) | A loop you choose to run: Breach with Grapeshot and a ritual. The pilot allows chosen loops at Bracket 3, so tell the pod first. | Past in Flames |
 | [Reiterate](https://scryfall.com/search?q=%21%22Reiterate%22) | A loop you choose to run: buyback on Mana Geyser makes as much red as you want. Buyback is fine at the pilot's Bracket 3 tables, so tell the pod first. | Increasing Vengeance |
@@ -15,7 +15,7 @@ displaces. Grounds for each are in `research/decisions.md` (2026-09-03).
 | [Silver Shroud Costume](https://scryfall.com/search?q=%21%22Silver+Shroud+Costume%22) | Boards of fliers and reach — unblockable, and a flash shroud in response to removal | Impolite Entrance |
 | [Desperate Ritual](https://scryfall.com/search?q=%21%22Desperate+Ritual%22) | The pilot wants a fifth ritual for the bank | Crimson Wisps |
 | [Silent Arbiter](https://scryfall.com/search?q=%21%22Silent+Arbiter%22) | Pods that leave stax pieces alone — one attacker per combat at the table, one blocker against her (the pilot's pods kill it on sight) | Iron Man, Tony Stark |
-| [Defense Grid](https://scryfall.com/search?q=%21%22Defense+Grid%22) | Counterspell-heavy pod, and you accept the tax on your own Swat and Coat on their turns | Expedite |
+| [Defense Grid](https://scryfall.com/search?q=%21%22Defense+Grid%22) | Counterspell-heavy pod, and you accept the tax on your own Swat and Coat on their turns | Fists of Flame |
 
 ## From the Star Trek review (2026-11-14)
 

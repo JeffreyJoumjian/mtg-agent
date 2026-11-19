@@ -43,7 +43,7 @@
 1 Lightning Bolt (PLST) CLB-187
 1 Lindblum, Industrial Regency (FIN) 285
 1 Longshot, Rebel Bowman (TLE) 120
-1 Lwaxana Troi, Charming Guest
+1 Lwaxana Troi, Charming Guest (TRK) 157
 1 Mana Geyser (PLST) C21-176
 1 Might of the Meek (BLB) 144
 1 Mithril Coat (LTR) 245

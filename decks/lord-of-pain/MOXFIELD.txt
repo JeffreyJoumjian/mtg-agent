@@ -15,7 +15,7 @@
 1 Cabal Coffers (MH2) 301
 1 Chaos Warp (MAR) 69
 1 Command Tower (C21) 284
-1 Dark Ritual
+1 Dark Ritual (PLST) A25-82
 1 Deadly Rollick (CMM) 695
 1 Deflecting Swat (CMM) 698
 1 Demonic Tutor (J20) 4
@@ -32,7 +32,7 @@
 1 Glacial Chasm (V12) 7
 1 Graven Cairns (FIC) 401
 1 Gray Merchant of Asphodel (PLST) C14-146
-1 Grim Monolith
+1 Grim Monolith (ULG) 126
 1 Haunted Ridge (WHO) 286
 1 Heartless Hidetsugu (CNS) 144
 1 Hexing Squelcher (ECL) 145
@@ -43,22 +43,22 @@
 1 Kaervek the Merciless (2X2) 236
 1 Kaya's Ghostform (WAR) 94
 1 Kederekt Parasite (PLST) CON-48
-1 Lich's Relic
+1 Lich's Relic (FRA) 57
 1 Luxury Suite (MSC) 252
-1 Lwaxana Troi, Charming Guest
+1 Lwaxana Troi, Charming Guest (TRK) 157
 1 Malakir Rebirth (ZNR) 111
-1 Mana Vault
+1 Mana Vault (2X2) 308
 1 Manabarbs (M10) 149
-1 Marsh Flats
+1 Marsh Flats (MM3) 239
 1 Mithril Coat (LTR) 245
 1 Mount Doom (HOC) 50
 4 Mountain (THB) 253
-1 Mox Diamond
+1 Mox Diamond (V10) 10
 1 No Mercy (P22) 9
 1 Orcish Bowmasters (LTR) 103
 1 Painful Quandary (FDN) 179
-1 Polluted Delta
-1 Powerbalance
+1 Polluted Delta (KTK) 239
+1 Powerbalance (MH3) 131
 1 Rakdos Charm (C17) 190
 1 Rakdos Signet (AFC) 214
 1 Rakdos, Lord of Riots (DSC) 230
@@ -87,10 +87,10 @@
 1 Urborg, Tomb of Yawgmoth (UMA) 254
 1 Valgavoth, Harrower of Souls (DSC) 6
 1 Vampiric Tutor (SOA) 35
-1 Verdant Catacombs
+1 Verdant Catacombs (MM3) 249
 1 Vial Smasher the Fierce (DSC) 239
 1 Wheel of Fortune (30A) 476
 1 Whip of Erebos (DSC) 159
 1 Witch's Clinic (C21) 81
-1 Wooded Foothills
+1 Wooded Foothills (KTK) 249
 1 Wound Reflection (2XM) 113

@@ -693,11 +693,13 @@ target), but **protection does** (702.16c puts it in the graveyard as an SBA).
 
 **Kind:** ruling · **Verified:** 2026-09-22 against CR 2026-08-07
 **Cards:** Skullclamp; Cathars' Crusade; Intangible Virtue; Divine Visitation; Honored Dreyleader; Welcoming Vampire; Teysa Karlov
-**Rules:** 704.5f
+**Rules:** 700.4, 701.21a, 702.181a, 704.5f
 **Claim:** Skullclamp (*"Equipped creature gets +1/−1. Whenever equipped creature dies, draw two
-cards."*) only draws because a 1/1 becomes a 1/0 and dies to the toughness-0 state-based action. Any
-static anthem or "enters with a +1/+1 counter" effect raises toughness to 2, the creature survives,
-and Skullclamp becomes a bad Equipment that shrinks your team.
+cards."*) gets a free kill on a 1/1, which becomes a 1/0 and dies to the toughness-0 state-based action.
+Any static anthem or "enters with a +1/+1 counter" effect raises toughness to 2, so the creature
+survives and that free kill is gone. Sacrifice is still a death (CR 700.4, 701.21a), so in a deck with a
+free outlet, a sacrifice-as-cost commander such as Caesar, or mobilize Warriors that are sacrificed at
+end step (CR 702.181a), Skullclamp keeps drawing two for {1} plus the sacrifice.
 **Evidence:** CR 704.5f (toughness 0 or less → graveyard as an SBA). Cathars' Crusade
 (*"Whenever a creature you control enters, put a +1/+1 counter on each creature you control"*),
 Intangible Virtue (*"Creature tokens you control get +1/+1"*), Divine Visitation (tokens become 4/4
@@ -711,6 +713,10 @@ cost, because they otherwise look like auto-includes in a go-wide list. It's a c
 combat route, not a veto (eval-044). If an anthem is wanted anyway,
 Skullclamp still works on the turn it is equipped to a freshly-made token *before* the anthem lands,
 but treat that as a corner case, not a plan.
+**Correction (2026-11-18, caesar `combat`):** I left Skullclamp out of an anthem-heavy combat list on
+this entry's old wording, which said Skullclamp *only* draws through the toughness kill. The pilot put it
+back. The list has three free outlets (four with Phyrexian Tower), Caesar's attack sacrifice and two mobilize cards, so the clamp
+still draws two per equip. Before calling Skullclamp blanked, count the deck's sacrifice routes.
 **History:** On 2026-09-23 eval-044 changed how this weighs in practice, not the rule: "turns off Skullclamp" is a cost to weigh against the combat route, not a veto. Only a pure anthem with no other text (Sylvan Anthem, Squirrel Sovereign) loses on this ground alone; name the tension and let the pilot choose. Until 2026-11-12 the Changes line still said to reject these cards on this ground; it now matches eval-044.
 **See also:** repl-005, eval-044
 **Source:** chatterfang / teysa-karlov founding build (2026-09-22) — Cathars' Crusade is a pilot

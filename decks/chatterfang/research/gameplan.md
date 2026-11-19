@@ -28,9 +28,10 @@ Wave 11 added Pest Infestation to that group.
 
 | | MV≤1 | MV2 | MV3 | MV4 | MV5 | MV6+ | avg |
 |---|---|---|---|---|---|---|---|
-| Nonland (64) | 6 | 20 | 22 | 10 | 4 | 2 | **2.92** |
+| Nonland (66) | 5 | 22 | 23 | 10 | 4 | 2 | **2.92** |
 
-The tools count Pest Infestation at MV 1. At X=2 it costs 5, which puts the real average near 2.99.
+Since 2026-11-18 the deck runs 34 lands (two Swamps went for Replicator and Support Mission, on trial).
+Springleaf Parade counts at MV 2 and really costs 5 at X = 3.
 
 Heavier than the parent (2.73). Wave 10 made it heavier on paper (2.84 → 2.97, MV ≤ 2 27 → 24), but
 the cards that left at MV 1 made no tokens and no mana, and the ones that arrived make four to eight
@@ -153,6 +154,11 @@ those two replace only Clue/Food/Treasure tokens and cannot see Squirrels. "Chat
 still the right thing to remember at the table — it always reaches the maximum — just don't reason
 that a doubler placed after him is wasted. It isn't.
 
+**Replicator follows the same law.** Its copy of a Clue, Food or Treasure is that kind of token, so
+Manufactor replaces it with one of each, untapped (ledger repl-015). With Doubling Season out, one
+activation on a Treasure is 12 tokens if Chatterfang goes last. Each activation is its own event, so
+Peregrin and Tippy-Toe add their Food to it, and it works at instant speed.
+
 Bilbo before Manufactor is correct whenever `3 × Foods > total Clue/Food/Treasure` in the event,
 which is nearly always true here because Peregrin and Tippy-Toe are feeding it Foods.
 
@@ -266,6 +272,10 @@ With **Chatterfang + Warren Soultrader** out and one Squirrel:
 - ⚠️ Assembles on **turn 4**, the same as 8a. Tell the table it's in the deck.
 
 ## 9. Mistakes to avoid
+
+- **Support Mission puts a +1/+1 counter on every creature that enters,** so Skullclamp no longer kills a
+  Squirrel by itself. Equip it and sacrifice the Squirrel instead (ledger equip-027). Your own Meathook
+  Massacre at X = 1 now spares your countered tokens.
 
 1. **Sacrificing with no payoff out.** The most common way to lose this deck.
 2. **Applying Chatterfang before the adders.** See §5c — it is the single most expensive misplay

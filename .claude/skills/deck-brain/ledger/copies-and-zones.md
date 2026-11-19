@@ -99,7 +99,12 @@ modal DFC whose {4}{U}{R} face is directly castable. I had pattern-matched "has 
 to "transforming DFC, front-face casts only" and the user corrected me. On 2026-11-14 the battlefield
 citation changed from 712.8e (now 712.6d, which covers only nonmodal permanents) to 712.6e, the modal
 rule (then 712.8f), because Tony Stark is a modal DFC. The claim was right. Found while re-verifying
-after CR 2026-11-06.
+after CR 2026-11-06. **On 2026-11-19 I made the same mistake again:** I told the pilot that cost reducers can't
+bring Iron Man out sooner because "the transform is an activated ability", without running `bun run lookup` on the
+commander first. The pilot corrected it (*"if i cast iron man instead of tony stark ... don't ever make this mistake
+again"*). The Invincible Iron Man is an artifact creature spell when cast, so Etherium Sculptor, Enthusiastic Mechanaut
+and Cloud Key (naming artifact or creature) all reduce it. Rule: before any claim about how a commander is cast or what
+reduces it, run `bun run lookup "<commander>"` and check `layout`.
 **See also:** zone-004, zone-005, zone-006, cost-006, cost-012
 **Source:** iron-man (2026-08-07); iron-man (2026-08-24, merged from "A DFC with an artifact back face
 is NOT an artifact card in hand"), Master Transmuter vs Tony Stark rules question; iron-man
@@ -757,3 +762,28 @@ token copy does not (CR 903.3 example).
 cycle at its printed cost and score Akroma's Will on one mode, unless the plan includes casting the
 commander. Captivating Vampire stealing an opponent's commander turns the cycle on.
 **Source:** edgar-markov `b4` founding (2026-11-03); mtg-rules-expert.
+
+### A flicker mode chosen several times on the same target flickers it once {#zone-030}
+
+**Kind:** ruling · **Verified:** 2026-11-19 against CR 2026-11-06
+**Cards:** Eldrazi Confluence; Myr Battlesphere; Portal to Phyrexia; Meteor Golem; Ultron, Artificial Malevolence
+**Rules:** 302.6, 400.7, 603.3, 603.6a, 608.2b, 608.2c, 700.2d, 903.9a
+**Claim:** When a "choose the same mode more than once" spell aims its exile-and-return mode at one
+permanent several times, the first instance flickers it and the later instances do nothing, because
+the permanent that comes back is a new object the later instances never targeted.
+**Evidence:** CR 700.2d treats a mode chosen several times as that mode appearing that many times in
+sequence, and the Gatherer ruling lets each instance pick the same target. Targets are checked once,
+as the spell starts to resolve (608.2b), and the instructions then run in order (608.2c). The first
+instance returns *"a new object with no memory of, or relation to, its previous existence"* (400.7),
+so the object the second and third instances targeted is no longer on the battlefield. Aimed at three
+*different* permanents, each returns as a new object and enters (603.6a), and every enter trigger
+waits until the spell has finished resolving (603.3). The same mode saves a permanent from targeted
+removal: aimed at your own commander in response, it comes back as a new object and the removal's
+target is gone. The commander option for exile (903.9a) is a state-based action, so it never gets a
+window mid-resolution, and the commander returns tapped and summoning-sick (302.6).
+**Changes:** Count a multi-mode flicker as one enter per *different* target. "Three ETBs off one
+Battlesphere" is wrong; three ETBs needs three permanents worth flickering on the board. Score the
+spell's protection use (an instant-speed save for the commander) beside its value use.
+**Source:** ultron (2026-11-19). The gameplan had claimed three ETBs and three Ultron triggers from
+one Battlesphere or Portal; the pilot ranked Eldrazi Confluence as a cut and the claim was
+re-checked by mtg-rules-expert.

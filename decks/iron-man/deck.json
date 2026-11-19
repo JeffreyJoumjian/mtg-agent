@@ -7,6 +7,7 @@
       "label": "V3",
       "kind": "deck",
       "bracket": 3,
+      "edhplay": "0290f98b-de86-4fb0-a3d4-615fc78c5413",
       "sections": [
         {
           "name": "Commander",
@@ -53,7 +54,9 @@
           "name": "Ramp / Mana Rocks",
           "cards": [
             { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Fellwar Stone", "qty": 1 },
             { "name": "Gilded Lotus", "qty": 1 },
+            { "name": "Izzet Signet", "qty": 1 },
             { "name": "Sol Ring", "qty": 1 },
             { "name": "Talisman of Creativity", "qty": 1 },
             { "name": "Thran Dynamo", "qty": 1 },
@@ -71,11 +74,9 @@
         {
           "name": "Card Draw / Engines",
           "cards": [
-            { "name": "Cosmic Cube", "qty": 1 },
             { "name": "Fateful Discovery", "qty": 1 },
             { "name": "Insight Engine", "qty": 1 },
-            { "name": "Iron Lad, Diverging Destiny", "qty": 1 },
-            { "name": "Mind's Eye", "qty": 1 },
+            { "name": "Lieutenant Commander Data", "qty": 1 },
             { "name": "The One Ring", "qty": 1 },
             { "name": "The Ten Rings", "qty": 1 }
           ]
@@ -188,6 +189,7 @@
     "Counterspell": { "status": "PROXY", "printing": {"set":"mar","collectorNumber":"52"} },
     "Darksteel Citadel": { "status": "PROXY" },
     "Darksteel Forge": { "status": "PROXY", "note": "💰" },
+    "Deep Space 9": { "printing": {"set":"trk","collectorNumber":"263"} },
     "Deflecting Swat": { "status": "PROXY", "note": "💰" },
     "Embercleave": { "status": "PROXY", "printing": {"set":"eld","collectorNumber":"120"} },
     "Enthusiastic Mechanaut": { "printing": {"set":"eoc","collectorNumber":"114"} },
@@ -196,6 +198,7 @@
     "Extinguisher Battleship": { "status": "PROXY" },
     "Fabricate": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"7124"} },
     "Fateful Discovery": { "status": "PROXY", "printing": {"set":"hob","collectorNumber":"40"} },
+    "Fellwar Stone": { "printing": {"set":"cmm","collectorNumber":"382"} },
     "Fierce Guardianship": { "status": "PROXY", "note": "💰 ★GAME CHANGER" },
     "Fomori Vault": { "status": "PROXY" },
     "Galvanic Blast": { "status": "PROXY" },
@@ -215,9 +218,12 @@
     "Iron Man, Titan of Innovation": { "status": "PROXY" },
     "Iron Man, Tony Stark": { "status": "PROXY" },
     "Island": { "status": "OWNED" },
+    "Izzet Signet": { "printing": {"set":"rvr","collectorNumber":"261"} },
     "Kediss, Emberclaw Familiar": { "printing": {"set":"plst","collectorNumber":"CMR-188"} },
     "Knuckles the Echidna": { "status": "PROXY" },
     "Krang, Utrom Warlord": { "status": "PROXY", "note": "💰" },
+    "Lieutenant Commander Data": { "printing": {"set":"trk","collectorNumber":"69"} },
+    "Lwaxana Troi, Charming Guest": { "printing": {"set":"trk","collectorNumber":"157"} },
     "Mana Drain": { "printing": {"set":"2x2","collectorNumber":"57"} },
     "Manifold Key": { "printing": {"set":"m20","collectorNumber":"230"} },
     "Marvin, Murderous Mimic": { "printing": {"set":"dsk","collectorNumber":"253"} },

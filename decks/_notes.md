@@ -40,8 +40,8 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
   (Food loop); Chatterfang + Pitiless Plunderer (two cards, live from turn 4); Chatterfang + Warren
   Soultrader (live from turn 4); The Unbeatable Squirrel Girl + Cryptolith Rite or Springleaf
   Parade + Concordant Crossroads (live from turn 4 or 5).
-- Its one Game Changer is Gaea's Cradle. Unanswered since 2026-09-23: the pilot mentioned a green
-  Game Changer "that lets you put many lands on the board". Ask which card; don't guess.
+- Its one Game Changer is Gaea's Cradle. The 2026-09-23 question about a second green Game Changer
+  ("that lets you put many lands on the board") was closed by the pilot on 2026-11-18. Don't raise it again.
 - Protected since 2026-11-14: Gruesome Fate (*"one of our best finishers"*) and Gardenize. Combat is
   the secondary finisher here, so attack-based draw like Kurn doesn't fit.
 - The old proposal page (deck-brain §3.1), built from the pre-fork list:
@@ -64,6 +64,9 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
   outlets struggle, Woe Strider returns for Priest. The other half of that trial ended in wave 12:
   Black Market Connections came back for Pest Infestation. Grounds and costs are in
   `chatterfang/research/decisions.md`.
+- **Trial since 2026-11-18: 34 lands.** Replicator and Support Mission came in for two Swamps (Swamps 5 → 3). The
+  pilot will say if the deck starts missing land drops; the undo is a Swamp back for either card.
+  Vengeance Mission was passed.
 - Since 2026-11-14: Alhammarret's Archive doubles every draw after the first in the draw step, and
   Moldervine's and Skullclamp's draws are mandatory, so count the library before running a chosen-N
   loop. Elvish Mystic is the one 1-mana dork left (Llanowar Elves went for the Archive).
@@ -80,14 +83,18 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
   South Wind Avatar (for Swords to Plowshares), Soul Warden (for General's Enforcer), Vito (for Talisman
   of Indulgence). South Wind Avatar and Vito turn every life gain into drain. Never add Exquisite Blood
   (automatic infinite with Vito).
+- Since 2026-11-18: Alhammarret's Archive in for Talisman of Hierarchy in both `main` and `combat` (every
+  off-turn draw doubles, and so does Vito's drain in `main`). Ramp is 5 in both now.
 - Since 2026-11-15 (pilot's card notes round): Super Shredder in for Bitterbloom Bearer. It grows
   whenever another permanent leaves, and wearing Infantry Shield its power becomes Warriors that grow
   it again.
 - **`combat` (founded 2026-11-15, first draft):** go-wide combat with a lifelink layer, Bracket 3, Game
   Changers Smothering Tithe, Teferi's Protection and The One Ring. `main` stays as the drain build. Core:
   Neyali (attacking tokens double strike), Iroas, Sorin, Vengeful Bloodlord, South Wind Avatar and
-  Marauding Blight-Priest. Grave Pact and Dictate stay at the pilot's request. Next step: offer `main`'s
-  21 left-out cards back one at a time with pros and cons (list in `research/decisions.md`). Never add
+  Marauding Blight-Priest. Grave Pact and Dictate stay at the pilot's request. The pilot kept the draft as
+  is on 2026-11-18. Haste, token-entry payoffs and the pilot's picks (Pitiless Plunderer, Skullclamp,
+  Phyrexian Tower) are parked as bench rows in `research/sideboard.md` with their paired cuts. Its own
+  gameplan is `research/gameplan-combat.md` (2026-11-18). Never add
   Exquisite Blood or Bloodthirsty Conqueror (automatic infinite with the converters).
 
 ## cap-living-legend: Captain America, Living Legend (UW)
@@ -120,6 +127,12 @@ and flag it before adding:
 ## edgar-markov
 
 - `main` is abandoned. `combat` and `sacrifice` are the Bracket 3 lists (pilot, 2026-09-28).
+- Since 2026-11-18: both B3 lists run Infantry Shield (`combat` for Mavren Fein, `sacrifice` for Phyrexian
+  Reclamation), completing the Yahenni + Blade combo, and `sacrifice` runs Door of Destinies (for Crossway
+  Troublemakers, the pilot's pick). `sacrifice` has no recursion now.
+- Manabase pass 2026-11-19 on both B3 lists: red-heavy lands out for black (Swamp, Scrubland, Marsh Flats; plus
+  Silent Clearing in `sacrifice`). Spectator Seating stays because it enters untapped in Commander. Pilot rules for `sacrifice`
+  (2026-09-28): no card-draw cuts; Malakir Bloodwitch, Clavileño and Cordial Vampire are protected.
 - Since 2026-11-14 `sacrifice` runs Troubling Tribbles, whose upkeep doubling is mandatory, so declare
   it at the table. `combat` runs Concerted Effort in place of Vampire Nocturnus.
 - **`b4` is the no-holds-barred Bracket 4 list (founded 2026-11-03)**, built on the drain/combo core
@@ -144,8 +157,9 @@ and flag it before adding:
 - `v3` is the only list. The pilot deleted `main` and `v2` on 2026-11-10, and their last state is in
   `versions/2026-11-10-0435-main-deleted-pilot-s-call.json` and `...-v2-deleted-pilot-s-call.json`.
   `iron-man-reference.pdf` and `pdf.json` still describe the deleted `main`.
-- Trial since 2026-10-10: Cosmic Cube in, Propaganda out in `v3`. The pilot will judge it in play;
-  the sideboard row swaps Propaganda back.
+- Cosmic Cube's trial ended 2026-11-19: Izzet Signet took its slot.
+- Trial since 2026-11-19: Fellwar Stone in, Mind's Eye out. Firm draw is 5 now (7 with Padeem and Iron Spider). If the
+  pilot runs out of cards, Mind's Eye comes back, or Genji Glove goes instead (my pick). Propaganda's sideboard row now displaces Signet.
 - Since 2026-11-10 in `v3`: Kediss in (for Thopter Spy Network) and Infantry Shield in (for Into the
   Flood Maw).
 - Trial since 2026-11-10 in `v3`: Brotherhood Regalia in for Silent Arbiter, Aggravated Assault in for
@@ -154,8 +168,15 @@ and flag it before adding:
   Arbiter, Propaganda (out for the Cube trial) is the fix if wide boards hit the pilot.
 - Since 2026-11-14 in `v3` (Star Trek review): Lwaxana Troi in for Blacksmith's Talent, Deep Space 9 in for
   Goblin Welder. Deep Space 9's upkeep exile is mandatory and loses instants and sorceries for good.
-- Watch since 2026-11-14 in `v3`: the pilot is testing whether Iron Lad's draw keeps stalling on a
-  non-artifact top card. If it does, Seven of Nine, Unassimilated (benched) comes in for it.
+- **Tony Stark is a modal DFC (ledger zone-003).** The pilot usually casts The Invincible Iron Man directly for
+  {4}{U}{R} (+ tax): it's an artifact creature spell, so Etherium Sculptor, Enthusiastic Mechanaut and Cloud Key all
+  reduce it. Never describe Iron Man as "transform only".
+- **Pilot rule (2026-11-19): no more cost-reducer cuts** (*"our commander is very difficult to cast"*). Without a
+  reducer out, Iron Man lands on turn 5 or 6.
+- 2026-11-19 notes round: Lieutenant Commander Data in for Iron Lad (the Iron Lad watch from 2026-11-14 is over;
+  Seven of Nine's bench row now displaces Data). Chimil passed (the pilot didn't want Ultima Weapon cut),
+  Anthropological Mission passed, Rhystic Study not taken (a fourth Game Changer), artifact-entry pingers passed
+  (*"the damage ones are so little"*).
 - Surestrike Trident is a loop piece the pilot protects (Unwinding Clock + Brass Squire, three shots
   per turn cycle). Don't nominate it on first strike alone.
 
@@ -194,6 +215,8 @@ and flag it before adding:
   Steam-Kin in for Inner Fire, Thor, Vandalblast, Gamble and Runechanter's Pike. After play, the
   pilot decides on Hexing Squelcher (for Champion's Helm) and Twinning Staff (for Hex Magic). Every
   cut has a dated row in the `b4` sideboard for undoing it.
+- Since 2026-11-19 in `v3`: Swiftfoot Boots in, Coral Sword out (a second hexproof source beside Champion's Helm).
+  Lightning Greaves is passed in both Wanda decks: its shroud blocks the pumps and equips that target her.
 - Trial since 2026-11-14 in `b4`: Infinite Diversity in, Coral Sword out. The pilot will report how it
   plays; the sideboard row swaps Coral Sword back. Solphim stays as the only damage doubler, for pods
   where opponents gain life.
@@ -217,6 +240,14 @@ and flag it before adding:
 - The pilot says this deck never has spare mana (*"i'm always casting something"*, 2026-11-15). That
   passed The Guardian of Forever, whose {4} has to be held up. Weigh hold-up costs, mana sinks and
   Omnath's banking against it.
+- Trial since 2026-11-19: Stridehangar Automaton in, Hangarback Walker out. The pilot will watch
+  for games where they put out a lot of +1/+1 counters; the sideboard row swaps Hangarback back.
+  Stridehangar had been cut once before, on 2026-09-09, as the smallest payoff in its role.
+- Since 2026-11-19: Cyberman Patrol in for Marvin. Afflict 3 on every artifact creature, 6 with
+  Patrol's copy.
+- Trial since 2026-11-19: Big Mother Mouser in, Eldrazi Confluence out (the pilot's own top cut).
+  The pilot will see how it goes; the sideboard row swaps Confluence back if Ultron keeps dying to
+  targeted removal. Confluence's flicker hits each target once (ledger zone-030).
 
 ## vision-scarlet-witch: The Vision and Scarlet Witch (mono-red)
 
@@ -234,8 +265,8 @@ and flag it before adding:
   took Academy Instructor (Skullclamp not taken). Lwaxana Troi replaced Loki in `main`, `spellslinger` and `b3-tokens`. The
   pilot doesn't want U.S.S. Defiant, Mirror Migrant and keeps Kediss in
   `b3-tokens`.
-- `research/sideboard.md`: Vandalblast (displaces Crash Through) and Defense Grid (displaces Expedite)
-  name cards no longer in `main`. Repoint them the next time the file is touched.
+- `research/sideboard.md` rows were repointed on 2026-11-18: Vandalblast now displaces Ancestral Anger and
+  Defense Grid displaces Fists of Flame (the cantrips closest to Crash Through and Expedite).
 - **`b4` (Bracket 4 turbo, saved 2026-10-14):** the turn 3 to 4 combo build. Its proposal page is
   https://claude.ai/artifact/UjPtcJfpuZkukvzBpy5QBf (republish to that URL; grounds in
   `research/proposal.json`, data from `bun run deck:proposal vision-scarlet-witch`). Loops it holds:

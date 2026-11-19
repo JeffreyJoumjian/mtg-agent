@@ -43,7 +43,7 @@
 1 Luxury Suite (MSC) 252
 1 Malakir Bloodwitch (VOC) 131
 1 Marauding Blight-Priest (ZNR) 112
-1 Master of Dark Rites
+1 Master of Dark Rites (LCC) 83
 1 Minas Tirith (LTR) 256
 1 Mirkwood Bats (LTR) 95
 1 Mountain (SLD) 362
@@ -63,7 +63,7 @@
 1 Sacred Foundry (TRK) 295
 1 Sanctum Seeker (XLN) 120
 1 Sangromancer (SCD) 103
-1 Sanguine Bond
+1 Sanguine Bond (IMA) 107
 1 Savai Triome (IKO) 253
 1 Scheming Silvertongue (SOS) 99
 1 Shared Animosity (LTC) 226

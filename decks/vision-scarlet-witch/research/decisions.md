@@ -784,3 +784,17 @@ Cantrips 5, and the same three rows).
 **Validated:** `main`, `b3-tokens` and `spellslinger` 100/100, every name found, legal and mono-red,
 Game Changers 3 in each. `MOXFIELD.txt`, `MOXFIELD-B3-TOKENS.txt` and `MOXFIELD-SPELLSLINGER.txt`
 regenerated.
+
+## 2026-11-18 — Housekeeping: two sideboard rows repointed (pilot's OK)
+
+Vandalblast displaced Crash Through and Defense Grid displaced Expedite, and neither is in `main`. They
+now name the closest `main` cantrips: Vandalblast → Ancestral Anger (trample and a card, like Crash
+Through), Defense Grid → Fists of Flame. No list changed.
+
+## 2026-11-19 — Pilot's card notes round: Greaves and Boots checked; no change
+
+The pilot's notes asked about Lightning Greaves and Swiftfoot Boots for decks that need the commander
+alive. Greaves stays out of every list on the founding grounds (shroud blanks Bulk Up, Twinferno, Might
+of the Meek, Ancestral Anger, Fists of Flame and every equip on her; ledger equip-004), and the pilot
+agreed. Boots is already in `main`, `b4` and `b3-tokens`; `spellslinger` runs nine protection pieces
+without it, so nothing was proposed there.

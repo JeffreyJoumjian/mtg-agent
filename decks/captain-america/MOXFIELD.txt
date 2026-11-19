@@ -1,7 +1,7 @@
 1 Captain America, First Avenger (SLD) 1726
 1 Academy Ruins (PLST) 2XM-309
 1 Adarkar Wastes (DMU) 243
-1 Anthropological Mission
+1 Anthropological Mission (TRK) 46
 1 Arcane Signet (MSC) 191
 1 Ardenn, Intrepid Archaeologist (PLST) CMR-10
 1 Arena of Glory (PLST) MH3-215
@@ -10,7 +10,7 @@
 1 Avengers Tower (MSH) 260
 1 Axgard Armory (KHM) 250
 1 Basilisk Collar (PIP) 225
-1 Battlefield Forge
+1 Battlefield Forge (BRO) 257
 1 Boros Charm (FDN) 721
 1 Brass Squire (CMR) 460
 1 Brotherhood Regalia (ACR) 71
@@ -43,9 +43,9 @@
 1 Illusionist's Bracers (RVR) 260
 1 Inventors' Fair (SLD) 1735
 2 Island (THB) 251
-1 Jean-Luc Picard, Luminary
+1 Jean-Luc Picard, Luminary (PSPL) 14
 1 Kaldra Compleat (CMM) 958
-1 Master Transmuter
+1 Master Transmuter (2XM) 58
 1 Meteor Sword (TLA) 258
 1 Mithril Coat (LTR) 245
 1 Mjölnir, Hammer of Thor (MSH) 146
@@ -61,14 +61,14 @@
 1 Sacred Foundry (EOE) 256
 1 Scalding Tarn (MM3) 244
 1 Sea of Clouds (PLST) BBD-84
-1 Seven of Nine, Unassimilated
+1 Seven of Nine, Unassimilated (TRK) 80
 1 Shadowspear (THB) 236
-1 Shivan Reef
+1 Shivan Reef (DMU) 255
 1 Sigarda's Aid (SLD) 1727
 1 Single Combat (WAR) 30
 1 Sol Ring (SLD) 1734
 1 Spectator Seating (MSC) 268
-1 Spire of Industry
+1 Spire of Industry (AER) 184
 1 Sram, Senior Edificer (SLD) 461
 1 Steam Vents (TRK) 298
 1 Steelshaper's Gift (MAR) 50

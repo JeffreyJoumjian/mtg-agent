@@ -449,3 +449,58 @@ both out. Troubling Tribbles' upkeep copies are still mandatory.
 **Curve:** average MV 3.03, MV ≤ 2 22, MV ≤ 3 45 (main: 2.77, 28, 51). Own the Day usually costs 3,
 and Exalted Sunborn can warp in for {1}{W}. Validated 100/100, legal and on-identity, Game Changers
 3/3 (Smothering Tithe, Teferi's Protection, The One Ring). Pips W46 B21 R20, sources W26 B20 R20.
+
+## 2026-11-18 — `combat` kept as drafted; nine proposals parked (pilot's call)
+
+The pilot asked for haste enablers (*"BADLY"*), cards that punish opponents when tokens enter, and
+cards that benefit when tokens enter, then named Pitiless Plunderer, Skullclamp and Phyrexian Tower as
+must-haves. Nine swaps were proposed, each paired with one of the draft's softest cards (Exalted
+Sunborn, Chainsaw, The One Ring, Anointed Procession, Intangible Virtue, Mithril Coat, Talisman of
+Conviction, Secure the Wastes, Castle Ardenvale). The pilot kept the list as drafted (*"i'm okay with
+this for now, don't cut any of the soft cuts"*). All nine are bench rows in `research/sideboard.md`
+under the `combat` heading, with their paired cuts.
+
+**Haste odds, for the next time this comes up.** Swiftfoot Boots is the list's only haste source:
+about 10% to have it by turn 4 on the play. Four sources make it 35%, five make it 42%. Most of
+Caesar's tokens enter attacking, so haste mainly matters for creatures cast that turn and for tokens
+made outside an attack.
+
+**Correction to the 2026-11-15 founding entry.** It left Skullclamp out because static anthems stop it
+killing 1/1 tokens. That ground was incomplete: a sacrificed creature still dies, and this list has
+Caesar's attack sacrifice, two altars, Goblin Bombardment and two mobilize cards, so Skullclamp still
+draws two per equip. The project's own rule already says an anthem is a cost to Skullclamp, not a
+veto. Ledger equip-027 is corrected.
+
+## 2026-11-18 — `main`: Alhammarret's Archive in, Talisman of Hierarchy out (pilot's call)
+
+Snapshot: `versions/2026-11-18-1142-main-alhammarret-s-archive-in-talisman-of-hierarchy-out.json`. The
+Archive was held on 2026-11-15. The pilot asked for it in both Caesar lists and picked Talisman of
+Hierarchy over Worf (my pick), Viscera Seer and the other options.
+
+**Grounds.** It doubles every draw outside the draw step: Skullclamp draws four; Caesar's draw mode,
+Morbid Opportunist, Caretaker's Talent, Idol of Oblivion, Commissar Raine and Black Market Connections
+draw two; Bloodline Recollector's copy draws six. It doubles every life gain, and Vito makes an
+opponent lose as much as you gained, so Vito's drain doubles. South Wind Avatar counts gains, not
+life, so it doesn't change (ledger eval-065). Draws are mandatory, so count the library before a long
+Skullclamp chain.
+
+**Costs.** Ramp 6 → 5 against a target of 7. White and black sources 24/23 → 23/22. Card Draw 8 → 9.
+
+**Curve:** average MV 2.77 → 2.82, MV ≤ 2 28 → 27, MV ≤ 3 51 → 50. Validated 100/100, legal and
+on-identity, Game Changers 3/3. `MOXFIELD.txt` regenerated. Undo row in `research/sideboard.md`.
+`combat`'s Archive slot is still open.
+
+## 2026-11-18 — `combat`: Alhammarret's Archive in, Talisman of Hierarchy out (pilot's call)
+
+Snapshot: `versions/2026-11-18-1146-combat-alhammarret-s-archive-in-talisman-of-hierarchy-out.json`. The
+same trade as in `main`. Krenko (my first pick) and the soft cuts were turned down. Here the Archive
+is a draw doubler: The One Ring, Caretaker's Talent, Welcoming Vampire, Idol of Oblivion, Black Market
+Connections, Commissar Raine, Minas Tirith, the monarch draw and Bloodline Recollector all draw twice.
+Its life half doesn't change South Wind Avatar or Marauding Blight-Priest, which count gains.
+
+**Costs.** Ramp 6 → 5 against a target of 7. White and black sources 26/20 → 25/19. Card Draw 7 → 8
+(10 counting Court of Grace and Minas Tirith).
+
+**Curve:** average MV 3.03 → 3.08, MV ≤ 2 22 → 21, MV ≤ 3 45 → 44. Validated 100/100, legal and
+on-identity, Game Changers 3/3. `MOXFIELD-COMBAT.txt` regenerated. Undo row under the `combat`
+heading in `research/sideboard.md`.

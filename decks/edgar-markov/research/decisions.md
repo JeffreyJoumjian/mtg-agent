@@ -1150,3 +1150,63 @@ its own `deck:edit` snapshot.
 **Validated:** both lists 100/100, legal and on-identity, Game Changers 3 each. Average MV: `combat`
 2.95, `sacrifice` 2.97 by `deck:show`. `MOXFIELD-COMBAT.txt` and `MOXFIELD-SACRIFICE.txt` regenerated.
 Sideboard section B has the Rite of Ascension row and undo rows for all three swaps.
+
+## 2026-11-18 — Pilot's card notes round, part 1: Infantry Shield into `combat`, Door of Destinies into `sacrifice`
+
+Snapshots: `versions/2026-11-18-1249-combat-infantry-shield-in-mavren-fein-out.json` and
+`versions/2026-11-18-1249-sacrifice-door-of-destinies-in-crossway-troublemakers-out.json`. The pilot's
+notes paired Yahenni + Infantry Shield + Blade of the Bloodchief as a combo for Caesar or Edgar; Caesar
+got Super Shredder instead, and both Edgar lists already run Yahenni and Blade.
+
+**`combat`: Infantry Shield in, Mavren Fein out.** The combo: Shield and Blade on Yahenni, Edgar's attack
+trigger resolves before mobilize (mobilize reads power on resolution, ledger equip-029), each Warrior is
+sacrificed to Yahenni for free (trig-013), and Blade adds two counters per death. On Edgar it's mobilize
+4+ pumped by six anthems; each Warrior is Purphoros 2 and Warleader's Call 1 to each opponent on entry,
+and Mirkwood Bats on entry and exit. Mavren made one 1/1 per attack, and Rite of Ascension's sideboard row
+already named its slot (repointed to Infantry Shield). Token Makers 4 → 3. Curve unchanged (2.95).
+
+**`sacrifice`: Door of Destinies in, Crossway Troublemakers out**, the pilot's call over my pass. Door
+grows only on Vampire spells cast, its pump matters when attacking, and it stops Skullclamp's free kill on
+1/1 tokens (Skullclamp still draws on sacrifice, ledger equip-027). Card Draw 9 → 8. Average MV 2.97 → 2.94.
+
+**Correction.** I offered Crossway Troublemakers as Door's cut, and Malakir Bloodwitch and Clavileño as
+cuts for Infantry Shield in `sacrifice`, without checking this log: on 2026-09-28 the pilot ruled out
+card-draw cuts in `sacrifice` and protected Bloodwitch (*"she is a finisher"*), Clavileño and Cordial
+Vampire. The pilot chose Crossway anyway; the undo row is in `research/sideboard.md`.
+
+**`sacrifice`: Infantry Shield in, Phyrexian Reclamation out** (pilot's call, from the second set of cuts:
+Vengeful Bloodwitch, Anowon, Urza's Incubator, Kalastria Highborn, Reclamation). Snapshot:
+`versions/2026-11-18-1307-sacrifice-infantry-shield-in-phyrexian-reclamation-out.json`. Reclamation was the
+list's only recursion. Average MV 2.94 → 2.97. The 2026-11-14 Infantry Shield sideboard row is replaced by a
+Reclamation undo row.
+
+**Still open:** the manabase pass on both lists.
+
+Validated: both lists 100/100, legal and on-identity, Game Changers 3 each. `MOXFIELD-COMBAT.txt` and
+`MOXFIELD-SACRIFICE.txt` regenerated.
+
+## 2026-11-19 — Pilot's card notes round, part 2: manabase pass on `combat` and `sacrifice` (pilot's call)
+
+Snapshots: `versions/2026-11-19-1027-combat-manabase-pass-swamp-scrubland-marsh-flats-in.json` and
+`versions/2026-11-19-1027-sacrifice-manabase-pass-swamp-scrubland-marsh-flats-silent-clearing-in.json`.
+
+**Grounds.** Both lists made far more red than they spend and too little black: `combat` had 18 red
+sources for 10 red pips and 30 black for 49; `sacrifice` had 17 red for 4 red pips (Edgar, Chaos Warp,
+Purphoros, Infantry Shield) and 31 black for 57. More Swamps also help Cabal Coffers, Castle Locthwain
+and Tainted Field, and Scrubland is a Swamp for Coffers without Urborg.
+
+**Applied.** Both lists: Swamp for Mountain, Scrubland for Path of Ancestry, Marsh Flats for Sundown Pass.
+`sacrifice` also: Silent Clearing for Sacred Foundry (it sacrifices for a card late, which fits the
+pilot's draw rule for that list). `combat` keeps Sacred Foundry because it has the most red spells.
+
+**Revised during the round.** My first version cut Spectator Seating for Scrubland. The pilot pointed out
+that a land with no downside shouldn't go (Seating enters untapped with two or more opponents). Path of
+Ancestry always enters tapped, so it took Scrubland's swap instead, at the cost of one black source
+against my first version.
+
+**Result (tool count).** `combat`: red 18 → 15, black 30 → 31, white 22 → 21. `sacrifice`: red 17 → 13,
+black 31 → 33, white 22 → 21. The tool counts Marsh Flats as colourless; in play it fetches Scrubland,
+Godless Shrine or Blood Crypt (and Savai Triome or Sacred Foundry in `combat`), so it's a source of all
+three colours. Validated: both lists 100/100, legal and on-identity, Game Changers 3 each.
+
+**Undo:** the old land for its replacement in each list, if a colour runs short.

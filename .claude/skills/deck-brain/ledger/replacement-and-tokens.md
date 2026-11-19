@@ -192,8 +192,13 @@ CR 2026-11-06.
 **Claim:** An effect creating N Clue/Food/Treasure tokens at once becomes N Clues + N Foods + N Treasures, not "N−1 plus one of each."
 **Evidence:** Official Gatherer ruling 6/18/2021 — *"If you control one Academy Manufactor and would create some number of Clue, Food, or Treasure tokens, you will instead create that many Clue tokens, that many Food tokens, and that many Treasure tokens."* CR 700.1 (one event), CR 614.5 — the one-opportunity limit stops Manufactor re-applying to its **own output**; it does not limit the application to a single token.
 **Changes:** Price batch-token cards (Orcrist, Goblin-cleaver: "create a Treasure for each creature you control of that type") as `batch x 3` with Manufactor out, then apply the token-adder last. This is the general shape for every "instead create one of each" replacement.
+- (2026-11-18) A token *copy* of a Clue, Food or Treasure counts too. Replicator's copy of a Treasure has the
+  Treasure subtype (CR 707.2, 111.10a), so Manufactor replaces it with a fresh Clue, Food and Treasure, which
+  enter untapped because the replaced event's "tapped" doesn't carry over (CR 614.6, medium-high: no
+  ruling covers it). With Doubling Season and Chatterfang, one activation is 12 tokens if Chatterfang goes
+  last. Checked by mtg-rules-expert.
 **See also:** repl-010, repl-013
-**Source:** chatterfang (2026-09-25)
+**Source:** chatterfang (2026-09-25); chatterfang (2026-11-18), Replicator
 
 ### Empower Jace: one token, one activation a turn, and a doubler kills the spare {#repl-016}
 

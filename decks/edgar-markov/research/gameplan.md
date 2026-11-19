@@ -219,6 +219,11 @@ Ripper + Mirkwood Bats + Blight-Priest — that's ~11 life off the table for a 1
   the battlefield when the life gain happens
 
 ### The engine to look for
+**`combat` and `sacrifice`: the Yahenni combo (since 2026-11-18 in both).** Infantry Shield and Blade of the
+Bloodchief on Yahenni. Let Edgar's attack trigger resolve before mobilize, so the counter is counted. Sacrifice
+each Warrior to Yahenni for free; Blade puts two counters on him per death. A 4-power Yahenni swings as a 12/12
+with menace, and every Warrior death fires the drainers. In `sacrifice`, each Warrior is also a Grave Pact or Dictate edict.
+
 **Free outlet + Blood Artist + Cruel Celebrant + Blight-Priest.** Each sacrificed token is 1 focused,
 1 to each, and 2 more to each from Blight-Priest (two life-gain events). Roughly **13 across the
 table per token**, doubled on your turn by Bloodletter.

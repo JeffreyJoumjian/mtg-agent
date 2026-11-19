@@ -25,10 +25,11 @@ copy and the two drifted apart; that copy is now just a pointer here.
 |---|---|---|
 | **Rousing Refrain** | Full-grip tables: control, counterspell decks, Rhystic Study / Mystic Remora pods. Three opponents holding four cards is 12 red mana. Dead against aggro. | Mana Geyser |
 | **Insurrection** | Creature-heavy boards you want to steal and swing with. **Not a defensive card** — it's a sorcery, so it can't answer an attack. | Chandra's Ignition |
-| **Swiftfoot Boots** | Artifact-removal-heavy pods, or if you want haste for the Blackblade commander-damage line. Hexproof doesn't stack with Champion's Helm. | Champion's Helm |
+| **Swiftfoot Boots** | In `v3` and `b4` since 2026-11-19 (for Coral Sword in `v3`, for Infinite Diversity in `b4`). Hexproof doesn't stack with Champion's Helm; it's the spare key when Helm isn't drawn or is destroyed. | Infinite Diversity (`b4`), Coral Sword (`v3`) |
+| **Coral Sword** | Cut from `v3` 2026-11-19 for Swiftfoot Boots. Bring it back if Wanda's first X-spell keeps coming up one short and removal isn't the problem. | Swiftfoot Boots (`v3`) |
 | **Darksteel Plate** | If you want a *second* indestructible source. Five mana all-in and no flash, so it's strictly worse than Mithril Coat. | Return the Favor |
-| **Nova Flame** | Creature decks. Permanent +1/+1 counters on Wanda plus a sweep — but no damage to players, so it can't close a game. | Volcanic Vision |
-| **Blasphemous Act** | Tables with **large** creatures, where Chandra's Ignition at 2 power and Fiery Confluence at 3 don't get there. Costs {1} less per creature on the battlefield, so it's often {R}. Remember it kills Wanda too. | Volcanic Vision |
+| **Nova Flame** | Creature decks. Permanent +1/+1 counters on Wanda plus a sweep — but no damage to players, so it can't close a game. | Vandalblast (v3) |
+| **Blasphemous Act** | Tables with **large** creatures, where Chandra's Ignition at 2 power and Fiery Confluence at 3 don't get there. Costs {1} less per creature on the battlefield, so it's often {R}. Remember it kills Wanda too. | Untimely Malfunction (v3) |
 | **Prisoner's Dilemma** | Pods that enjoy the politics. 4/8/12 to each opponent, but *they* choose. | Fiery Confluence |
 | **Pinnacle Monk // Mystic Peak** | If you keep flooding or getting land-screwed. Land when you need land. | a Mountain |
 | **Hexing Squelcher** | Counterspell-heavy pods, where you want uncounterable on **all** turns (a flashed Mithril Coat or Deflecting Swat can be countered; Conqueror's Flail only locks *your* turn). Left the 100 on 2026-08-19: a 2/2 your own Fiery Confluence and Chandra's Ignition kill on the crucial turn, and its on-turn coverage is what Flail now does more broadly. | Champion's Helm |
@@ -180,7 +181,7 @@ from just before the change.
 |---|---|---|
 | **Pyromancer's Goggles** | Five colourless mana in a turn-3 deck, for one {R} and one copy per turn cycle. Left `b4` on 2026-10-10 for Inner Fire, which turns a full hand into red pips. Still in `v3`. | Treasonous Ogre (Inner Fire, its old pointer, left `b4` on 2026-10-13) |
 | **Bionic Blow** | The weakest of the pumps on red pips: {X}{R}{R} at sorcery speed for the same +X that Lunar Frenzy and Frantic Confrontation give for one pip at instant speed. Left `b4` on 2026-10-10 for Simian Spirit Guide. Still in `v3`. | Simian Spirit Guide |
-| **Coral Sword** | The smallest seed (+1 to Wanda). Left `b4` on 2026-11-14 for Infinite Diversity, as a trial the pilot will report on. Seeds dropped from 8 to 7, below the 8 to 10 target. | Infinite Diversity |
+| **Coral Sword** | The smallest seed (+1 to Wanda). Left `b4` on 2026-11-14 for Infinite Diversity; the pilot's EDHPlay list had Swiftfoot Boots in the slot instead, and since 2026-11-19 `b4` matches that. | Swiftfoot Boots |
 | **Valakut, the Molten Pinnacle** | Enters tapped, and its trigger needs five other Mountains, which a turn-3 deck never has. Left `b4` on 2026-10-10 for a 19th Mountain. Still in `v3`. | one Mountain |
 | **Arcane Bombardment** | A {4}{R}{R} enchantment, so Wanda never discounts it, and the pilot judged it too slow for a turn-3 list. Left `b4` on 2026-10-13 for Inspired Tinkering. Once it's out, one instant or sorcery a turn (opponents' turns included) re-casts the whole exiled pile, so it was the list's strongest engine for an empty hand. Its free casts force X = 0. Still in `v3`. | Inspired Tinkering |
 | **Inner Fire** | Adds {R} per card in your own hand, so it is weakest when the deck has emptied its hand and is topdecking. Left `b4` on 2026-10-13 for Treasonous Ogre, which makes up to 9 red at 30 life without needing a hand. Not in any other list, so its printing can't be pinned: bring it back as (SOK) 105. | Treasonous Ogre |
@@ -219,6 +220,6 @@ cards wait on the bench.
 
 | Card | When to bring it in | Would displace |
 |---|---|---|
-| **Infinite Diversity** | If it proves itself in `b4`'s trial. Mid-chain it costs {R}{R} and casts five free copies of one graveyard instant or sorcery. | Pyromancer's Goggles |
+| **Infinite Diversity** | Its `b4` trial (2026-11-14) never reached the table: the pilot's EDHPlay list kept Swiftfoot Boots, and `b4` took Boots back on 2026-11-19. Mid-chain it costs {R}{R} and casts five free copies of one graveyard instant or sorcery. | Swiftfoot Boots (`b4`) |
 | **Dominion Infiltration** | When opponents run creatures worth copying for a turn. Its X can't exceed the number of creatures opponents control (CR 601.2c). | Bionic Blow |
 | **Disrupt Decorum** | When the pod keeps attacking you. It costs {R}{R} with Wanda out, so the old "too slow for a turn-5 plan" ground no longer holds. | Vandalblast |

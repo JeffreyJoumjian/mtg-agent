@@ -655,3 +655,119 @@ against creatures).
 
 Validated after both applies: 100/100, every name found, legal and on-identity, Game Changers 3/3
 unchanged. `MOXFIELD.txt` regenerated. The round is closed.
+
+## 2026-11-19 — Card-notes round: Stridehangar Automaton and Cyberman Patrol in; Hangarback Walker and Marvin out (pilot's calls)
+
+The pilot's card notes for this deck: Big Mother Mouser, Stridehangar Automaton, Cyberman Patrol and
+Forsaken Monument (already in), plus three questions (how the deck wins, artifact aristocrats, token
+doublers). Answers given: it wins wide through Krang, Cybermen Squadron, a copied Blightsteel,
+Glaring Fleshraker, Walking Ballista under Forsaken Monument, Portal to Phyrexia, or a Platinum Angel
+lock. No aristocrat package, because most Ultron copies are rocks and value artifacts worth keeping
+and colourless death payoffs are thin (Kuldotha Forgemaster and Portal already cash in spare Robots).
+No colourless card doubles tokens outright. Panharmonicon, Roaming Throne naming Robot and Echoes of
+Eternity each make Ultron trigger again, and Stridehangar adds a Thopter per batch.
+
+### Stridehangar Automaton in, Hangarback Walker out (pilot's call, trial)
+
+Snapshot: `versions/2026-11-19-1917-main-stridehangar-automaton-in-hangarback-walker-out-trial.json`.
+The pilot: *"hangarback might be too expensive or like you it's value comes in its dying meanwhile
+stridehanger can immediately start giving value, while walker needs the +1/+1 putters on the board
+as well. i wioud do this swap and keep track if i notice i'm putting a lot of +1/+1s and it's worth
+playing it"*.
+
+- **Grounds:** *"Thopters you control get +1/+1. If one or more artifact tokens would be created under
+  your control, those tokens plus an additional 1/1 colorless Thopter artifact creature token with
+  flying are created instead."* Every artifact token batch (each Ultron copy, Battlesphere's Myr,
+  Prototype Portal, Replicator, Urza's Saga, Treasure Vault) brings a 2/2 flier, with no mana once it
+  has landed. Ultron's copy is a second replacement effect, and each applies once to the event
+  (CR 614.5, 616.1f), so a batch brings two Thopters, both 3/3. Each Thopter is a colourless
+  creature entering, so Glaring Fleshraker pings each opponent.
+- **Why Hangarback:** its token copy is a 0/0 unless Machine Overlord or Forsaken Monument is out
+  (ledger zone-009), Deep Space 9 and every deployer put it in at X = 0, and its growth costs {1} a
+  counter in a deck that never has spare mana.
+- **History I missed when proposing.** Stridehangar was in this list until 2026-09-09, when the
+  pilot picked it from a ranked table as the cut for Mind's Eye, on the grounds *"one extra Thopter
+  per token batch on a 1/4, the smallest payoff in the role"*. The proposal didn't say so. Since
+  then Cyberman Patrol has come in (each Thopter gets afflict 3), and the pilot's 2026-11-15 mana
+  report makes Hangarback's {1} per counter cost more. The one-Thopter-per-batch rate is the same.
+  Flagged to the pilot on 2026-11-19.
+- **Also corrected:** the proposal page said Bombs & ETB was one over its target. It was 9 against
+  a target of 9, because Wurmcoil's cut on 2026-11-15 had already brought it down from 10.
+  Stridehangar takes Hangarback's place in Bombs & ETB, so the count stays at 9.
+- **Trial:** the pilot will watch for games where they put out a lot of +1/+1 counters (Steel
+  Overseer, Iron Spider). The sideboard row swaps Hangarback back.
+
+**Curve:** average MV 4.74 → 4.79, MV ≤ 2 11 → 10, MV ≤ 3 23 → 23. The tools count Hangarback at
+MV 0, but its real cast was X = 2 or more, so the real curve barely moves.
+
+### Cyberman Patrol in, Marvin out (pilot's call)
+
+Snapshot: `versions/2026-11-19-1917-main-cyberman-patrol-in-marvin-out.json`. The pilot: *"heck yeah
+let's put cyberman over marvin"*.
+
+- **Grounds:** *"Artifact creatures you control have afflict 3."* Ultron's token copies of rocks are
+  artifact creatures, so they have it too. Patrol's own Ultron copy grants a second instance, and
+  each triggers separately (CR 702.130b), so a block costs the defending player 6.
+- **Cost named:** Marvin's copied activated abilities are gone (a token Thran Dynamo tapping for
+  three, a third deployer, a second Kuldotha tutor, Iron Spider's counters). Afflict does nothing
+  until you attack.
+
+**Curve:** unchanged, both cost 2. Payoffs & Engines stays at 12.
+
+**Sideboard:** Hangarback Walker displaces Stridehangar Automaton, Marvin displaces Cyberman Patrol,
+and Scrap Trawler moved from Hangarback to Stridehangar.
+
+### Big Mother Mouser: my pass grounds were wrong
+
+I passed it on the grounds that it only grows by attacking and that Ultron can't copy its death
+tokens. Re-read against the list, that undersold it:
+
+- *"This creature enters with two +1/+1 counters on it. Whenever this creature attacks, double the
+  number of +1/+1 counters on it. When this creature dies, create a number of 1/1 colorless Robot
+  artifact creature tokens equal to the number of +1/+1 counters on this creature."*
+- Ultron's token copy gets its own two counters, because the printed "enters with" replacement reads
+  the copy's text (ledger zone-009, CR 614.12). So the {2} buys a second full Mouser.
+- Steel Overseer and Iron Spider add counters before the attack, and the attack trigger doubles
+  them, so it doesn't only grow by attacking.
+- It's a Robot. Machine Overlord gives it and its Robot tokens +2/+2, and Roaming Throne naming Robot
+  makes the attack trigger double twice (×4) and the death trigger make tokens twice. Both death
+  triggers count the counters it had as it died (CR 608.2h).
+- Its death tokens are an artifact token batch, so Stridehangar adds a Thopter, and each Robot is a
+  Fleshraker ping. Iron Spider can draw by removing its counters. Cyberman Patrol gives it afflict 3.
+
+The pilot wants it in and asked for a cut. Proposed on 2026-11-19 and still open: Mystic Forge
+(curve unchanged), with Platinum Angel and Omnath as the other cuts.
+
+### Big Mother Mouser cuts, second and third pass
+
+The pilot asked for more cuts after Mystic Forge, Platinum Angel and Omnath. Second pass, from Ramp
+(13 against a target of 12): Palladium Myr, then Solemn Simulacrum, Hedron Archive, Memnarch, a
+Wastes, Jhoira's Familiar and Duplicant. The pilot then ranked their own cuts: Eldrazi Confluence,
+Walking Ballista, Platinum Angel, Myr Battlesphere, Prototype Portal.
+
+**Correction, Eldrazi Confluence.** The gameplan said mode 2 three times on Battlesphere or Portal
+gives three ETBs and three Ultron triggers. It doesn't: the first instance returns a new object
+(CR 400.7), so the other two instances find nothing (ledger zone-030, verified by mtg-rules-expert).
+Three ETBs need three different permanents. The 2026-09-04 borrow named three different targets
+(Battlesphere, Portal, Meteor Golem), which works, but the gameplan line had collapsed it to one.
+Not noted before: aimed at Ultron in response to targeted removal, it saves Ultron, which returns
+tapped as a new object. Gameplan corrected.
+
+### Big Mother Mouser in, Eldrazi Confluence out (pilot's call, trial)
+
+Snapshot: `versions/2026-11-19-2121-main-big-mother-mouser-in-eldrazi-confluence-out-trial.json`.
+The pilot: *"let's try cutting eldrazi confluence and see how it goes"*. This settles the open Mouser
+slot above. The cut was the pilot's own first pick, and I agreed after the zone-030 correction.
+
+- **Grounds:** Mouser as re-read above. Confluence's value line needs several flicker targets out,
+  Deep Space 9 exiles it, and the curve is unchanged (4.79, MV ≤ 2 10, MV ≤ 3 23).
+- **Costs named:** the only instant-speed save for Ultron against targeted removal (Cryptothrall's
+  hexproof and Commander's Plate remain), Kozilek's Command is now the only instant, and Removal &
+  Interaction drops to 8 against a target of 9. Bombs & ETB goes to 10 against 9.
+- **Rest of the pilot's ranking, for the record:** Walking Ballista (paper curve 4.85, real cast 4+),
+  Platinum Angel (curve 4.74), Myr Battlesphere (I'd keep: best copy target, Prototype Portal's best
+  imprint) and Prototype Portal (I'd keep: copy engines are 7 against 8).
+- **Trial:** the sideboard row swaps Confluence back if Ultron keeps dying to targeted removal.
+
+EDHPlay: pushed to "Ultron", valid, bracket 3, verified. Big Mother Mouser pinned to (TMC) 37.
+Validated: 100/100, every name found, legal and colourless, Game Changers 3/3.

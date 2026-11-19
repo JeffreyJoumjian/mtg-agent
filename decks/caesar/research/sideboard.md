@@ -17,3 +17,24 @@ list; this file is prose about it.
 | [General's Enforcer](https://scryfall.com/search?q=%21%22General's+Enforcer%22) | Cut 2026-11-15 for Soul Warden (the pilot's pick). Bring it back if destroy wipes keep killing Adeline, Anim Pakal, Myrel or Commissar Raine. | [Soul Warden](https://scryfall.com/search?q=%21%22Soul+Warden%22) |
 | [Talisman of Indulgence](https://scryfall.com/search?q=%21%22Talisman+of+Indulgence%22) | Cut 2026-11-15 for Vito. Bring it back if red runs short or the deck stalls on mana. | [Vito, Thorn of the Dusk Rose](https://scryfall.com/search?q=%21%22Vito%2C+Thorn+of+the+Dusk+Rose%22) |
 | [Bitterbloom Bearer](https://scryfall.com/search?q=%21%22Bitterbloom+Bearer%22) | Cut 2026-11-15 for Super Shredder (the pilot's pick). Bring it back if the deck runs short of bodies for Caesar's attack sacrifice, or Shredder keeps dying before it grows. | [Super Shredder](https://scryfall.com/search?q=%21%22Super+Shredder%22) |
+| [Talisman of Hierarchy](https://scryfall.com/search?q=%21%22Talisman+of+Hierarchy%22) | Cut 2026-11-18 for Alhammarret's Archive (the pilot's pick). Bring it back if the deck stalls on mana or white and black run short. | [Alhammarret's Archive](https://scryfall.com/search?q=%21%22Alhammarret's+Archive%22) |
+
+## `combat` bench (parked 2026-11-18)
+
+The pilot kept `combat` as drafted for now (*"i'm okay with this for now, don't cut any of the soft
+cuts"*). These were proposed that round, each with the cut it was paired with in `combat`. The first
+three answer the pilot's asks for haste, and Plunderer, Skullclamp and Phyrexian Tower were the pilot's
+own picks.
+
+| Card | Bring it in when | Displaces in `combat` |
+|---|---|---|
+| [Rising of the Day](https://scryfall.com/search?q=%21%22Rising+of+the+Day%22) | Creatures cast this turn, or tokens made outside an attack, keep sitting out. Haste for everything, and +1/+0 to legendary creatures. | [Exalted Sunborn](https://scryfall.com/search?q=%21%22Exalted+Sunborn%22) |
+| [Samut, Hazoret's Champion](https://scryfall.com/search?q=%21%22Samut%2C+Hazoret's+Champion%22) | The same haste on a 2-drop body. | [Chainsaw](https://scryfall.com/search?q=%21%22Chainsaw%22) |
+| [Enduring Courage](https://scryfall.com/search?q=%21%22Enduring+Courage%22) | You want each entering creature to get +2/+0 and haste. It comes back as an enchantment when it dies. | [The One Ring](https://scryfall.com/search?q=%21%22The+One+Ring%22) |
+| [Impact Tremors](https://scryfall.com/search?q=%21%22Impact+Tremors%22) | You want more damage per token entering. Survives wipes. | [Anointed Procession](https://scryfall.com/search?q=%21%22Anointed+Procession%22) |
+| [Agate Instigator](https://scryfall.com/search?q=%21%22Agate+Instigator%22) | The same, twice with offspring, and lifelinked on your turn under Sorin. | [Intangible Virtue](https://scryfall.com/search?q=%21%22Intangible+Virtue%22) |
+| [Soul Warden](https://scryfall.com/search?q=%21%22Soul+Warden%22) | You want a gain per creature entering, which the two converters turn into 2 per opponent. | [Mithril Coat](https://scryfall.com/search?q=%21%22Mithril+Coat%22) |
+| [Pitiless Plunderer](https://scryfall.com/search?q=%21%22Pitiless+Plunderer%22) | The pilot's pick. A Treasure per creature death. | [Talisman of Conviction](https://scryfall.com/search?q=%21%22Talisman+of+Conviction%22) |
+| [Skullclamp](https://scryfall.com/search?q=%21%22Skullclamp%22) | The pilot's pick. Draws two per sacrificed creature even with anthems out (ledger equip-027). | [Secure the Wastes](https://scryfall.com/search?q=%21%22Secure+the+Wastes%22) |
+| [Phyrexian Tower](https://scryfall.com/search?q=%21%22Phyrexian+Tower%22) | The pilot's pick. A free outlet in a land slot. | [Castle Ardenvale](https://scryfall.com/search?q=%21%22Castle+Ardenvale%22) |
+| [Talisman of Hierarchy](https://scryfall.com/search?q=%21%22Talisman+of+Hierarchy%22) | Cut 2026-11-18 for Alhammarret's Archive (the pilot's pick). Bring it back if `combat` stalls on mana. | [Alhammarret's Archive](https://scryfall.com/search?q=%21%22Alhammarret's+Archive%22) |

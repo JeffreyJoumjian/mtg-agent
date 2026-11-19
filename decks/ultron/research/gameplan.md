@@ -25,7 +25,9 @@ Under Krang every artifact creature has haste, so the token rocks tap immediatel
 |---|---|---|
 | Any mana rock (Dynamo, Lotus, Arc Reactor, Powerstone, Mightstone) | **Always** | Permanent mana plus a body. (An Everflowing Chalice-style rock would copy with zero counters — CR 707.2 — which is why the deck runs Powerstone instead.) |
 | Walking Ballista | **Never** | X is 0 for anything not on the stack (CR 107.3g): the token is a 0/0 and dies at once. Echoes of Eternity's *spell* copy does keep X. |
-| Hangarback Walker | **Never**, unless Machine Overlord or Forsaken Monument is out | Same X = 0 rule: the token is a 0/0 and dies. Under Overlord (+2/+2 to Constructs) or Monument (+2/+2 to colourless creatures) it lives as a 2/2 that grows itself for {1}. |
+| Big Mother Mouser | **Always** | The token enters with its own two +1/+1 counters, because the printed "enters with" replacement reads the copy's text (ledger zone-009). It's a second full Mouser. |
+| Stridehangar Automaton | **Always** | The copy is a second replacement effect, and each one applies once to the event (CR 614.5, 616.1f), so every artifact token batch brings two Thopters, both 3/3. |
+| Cyberman Patrol | Yes | The copy gives every artifact creature a second afflict 3. Each instance triggers separately (CR 702.130b), so a block costs 6. |
 | Cost reducer (Inspector, Familiar, Cloud Key, Anvil) | **Always** | Cloud Key's token re-chooses the type — name creature for the fatties. Anvil's token re-imprints. |
 | ETB artifact (Battlesphere, Meteor Golem, Portal, Solemn, Mightstone, Duplicant) | **Always** | The token keeps the ETB (CR 707.5). Token Portal = three more sacrifices. |
 | Bomb body (Blightsteel, Krang, Leveler) | Yes | Legendary ones (Krang) hit the legend rule unless Mirror Box is out — keep either, they're identical. |
@@ -105,12 +107,12 @@ once it lands — every colourless spell (almost every spell) exiles a coloured 
   the {2} a turn ahead.
 - **Sanctum of Ugin** triggers on *casting* a colourless spell with MV 7+ — Krang, Portal,
   Blightsteel, Forge, Leveler, Battlesphere, Platinum Angel, Squadron, All Is Dust, Ugin EotS,
-  Ten Rings, Deep Space 9, Omnath, and Ballista or Hangarback at X of 4 or more. Hold it until the cast, then sac for Blightsteel, Krang or Omnath.
+  Ten Rings, Deep Space 9, Omnath, and Ballista at X of 4 or more. Hold it until the cast, then sac for Blightsteel, Krang or Omnath.
 - **Deep Space 9**'s trigger is mandatory. On entry and every upkeep it exiles your top four cards
   (eight under Echoes) and puts every permanent among them onto the battlefield, so count your
-  library: The One Ring, Mind's Eye and Memnarch draw on top of it. All Is Dust, Eldrazi Confluence
-  and Kozilek's Command are lost if it exiles them. Walking Ballista and Hangarback Walker enter as
-  0/0 and die unless Machine Overlord or Forsaken Monument is out. The cards it puts in aren't cast,
+  library: The One Ring, Mind's Eye and Memnarch draw on top of it. All Is Dust and Kozilek's
+  Command are lost if it exiles them. Walking Ballista enters as a 0/0 and dies unless
+  Machine Overlord or Forsaken Monument is out. The cards it puts in aren't cast,
   so Cityscape Leveler's and Ugin, Eye of the Storms' cast triggers don't fire. Each land is an
   Omnath landfall, and each artifact is an Ultron trigger. Thran Temporal Gateway puts it in for {4}
   at instant speed, Kuldotha Forgemaster fetches it by sacrificing three Ultron tokens, and Ultron's
@@ -118,29 +120,37 @@ once it lands — every colourless spell (almost every spell) exiles a coloured 
   9, which gives your creatures +3/+3. It never becomes a creature, so creature wipes miss it.
 - **Kuldotha Forgemaster** puts the card onto the battlefield — that is an artifact *entering*
   (Ultron triggers) but not a *cast* (Sanctum, Echoes' copy and Liberator's counter don't).
-- **Marvin** has every activated ability of your other creatures — and every Ultron token of a
-  noncreature artifact is a creature. Token Dynamo: Marvin taps for three. Token Gateway: a third
-  deployer. Kuldotha: a second tutor. Steel Overseer's counters land on Marvin (he is an artifact
-  creature) and Walking Ballista's "remove a counter: 1 damage" lets him shoot them; Hangarback's {1},{T} grows him. One tap per
-  untap, four per cycle under Clock. Legendary — his copy needs Mirror Box.
+- **Cyberman Patrol** gives every artifact creature afflict 3, so each one that becomes blocked
+  makes the defending player lose 3, or 6 once Ultron has copied Patrol (CR 702.130b). Ultron's
+  token copies of rocks are artifact creatures, so they have it too. Swing wide under Krang or
+  Cybermen Squadron: the table either takes the damage or pays 3 to 6 life per block. It does
+  nothing until you attack.
 - **Mind's Eye**: pay {1} per opponent draw — Unwinding Clock means the rocks are untapped on their
   turns, so the mana is free. Ultron's token copy is a Robot: Throne doubles it, Echoes doubles
   both. Five triggers on one draw step is normal late.
 - **Idol of Oblivion** draws only on a turn you created a token — any Ultron copy, Spawn, Myr,
   Thopter or Treasure Vault activation counts. Hold {2} for a copy before you tap it.
-- **Eldrazi Confluence** mode 2, three times, on Battlesphere or Portal at instant speed: three
-  fresh ETBs and three Ultron triggers. It also flickers an opponent's token out of existence.
+- **Big Mother Mouser** enters with two +1/+1 counters and doubles them each time it attacks. Put
+  Steel Overseer's, Iron Spider's and Tezzeret's counters on it before combat so the doubling starts
+  higher. Roaming Throne naming Robot makes the attack trigger double twice (×4) and the death
+  trigger make Robots twice, and both death triggers count the counters it had as it died (CR
+  608.2h). It's a Robot, so Machine Overlord makes it and its Robot tokens +2/+2. The death Robots
+  are an artifact token batch, so Stridehangar adds a Thopter, and each Robot is a Fleshraker ping.
+  Iron Spider can draw off its counters. An exile wipe leaves no Robots.
 - **Chimil** discovers at your end step: take the free cast (Ultron copies it) unless it is
-  Walking Ballista, Hangarback Walker or a card you would rather hold. It also makes every spell uncounterable.
-- **Hangarback Walker** is the mana sink: {1},{T} for a counter, four times a cycle under Unwinding
-  Clock, and Overseer and Iron Spider stack more. It dies into a Thopter per counter — each one a
-  Fleshraker ping and an Idol turn-on. Never pay Ultron's {2} for it unless Machine Overlord or
-  Forsaken Monument is out; Gateway, Amulet, Forgemaster, Prototype Portal and a Chimil discover
-  all make it a 0/0. Under Krang it is indestructible, so a wipe leaves no Thopters — feed it to
-  Kuldotha instead.
+  Walking Ballista or a card you would rather hold. It also makes every spell uncounterable.
+- **Stridehangar Automaton** adds a 1/1 flying Thopter to every batch of artifact tokens you create:
+  each Ultron copy, Battlesphere's Myr, a Prototype Portal copy, a Replicator copy, Urza's Saga's
+  Constructs and Treasure Vault's Treasures. Thopters get +1/+1, so each is a 2/2 flier. Get it out
+  before the batch, because it's a replacement effect. Ultron's copy of it adds a second Thopter
+  per batch, and both are 3/3. Each Thopter is a colourless creature entering, so Glaring
+  Fleshraker pings each opponent, and it's a token for Idol of Oblivion. Liberator is a Thopter, so
+  it gets +1/+1 too. Stridehangar is a Construct, so Machine Overlord makes it a 3/6. Its Thopters
+  are tokens, so Ultron doesn't copy them, and Fleshraker's Eldrazi Spawn aren't artifacts, so
+  they bring no Thopter.
 - **Mycosynth Golem** gives artifact creature spells affinity, and X is chosen before the reduction
-  is applied (CR 601.2b, 601.2f, 702.41a): with ten artifacts, Walking Ballista or Hangarback
-  Walker at X = 5 costs nothing.
+  is applied (CR 601.2b, 601.2f, 702.41a): with ten artifacts, Walking Ballista at X = 5 costs
+  nothing.
 - **Ugin's Labyrinth**: exile Krang, Blightsteel or Portal on entry for {C}{C} a turn, and tap it
   to take the card back the turn you can cast it. **Urza's Workshop** taps for one per Urza's
   land — Mine, Power Plant, Tower, Cave, Saga, itself — once you control three artifacts.

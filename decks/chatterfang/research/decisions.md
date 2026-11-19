@@ -1183,3 +1183,42 @@ own `deck:edit` snapshot.
 
 **Validated:** 100/100, legal and on-identity, Game Changers 1 (Gaea's Cradle). Average MV 2.94 by
 `deck:show`. `MOXFIELD.txt` regenerated. The reference PDF wasn't regenerated, only renamed.
+
+## 2026-11-18 — Pilot's card notes round: Replicator and Support Mission in, two Swamps out (trial)
+
+Snapshots: `versions/2026-11-18-1238-main-replicator-in-swamp-out-trial.json` and
+`versions/2026-11-18-1238-main-support-mission-in-swamp-out-trial.json`. The pilot's notes named Support
+Mission and Vengeance Mission for Chatterfang, and the Replicator question from the Star Trek round was
+folded in.
+
+**Passed: Vengeance Mission.** It drains one opponent for 1 per death (2 from its seventh counter) and
+gains nothing. Zulaport, Bastion and Cauldron each drain the whole table and gain 1 per death, and each
+gain fires Dina, Starscape Cleric and Vito. The 2026-11-10 review's grounds still hold. The pilot agreed.
+
+**Replicator in (re-derived from the 2026-11-10 NO).** For {2} at instant speed it copies a token, and
+Chatterfang adds a Squirrel. A copy of a Clue, Food or Treasure is that kind of token, so Academy
+Manufactor replaces it with one of each, untapped; with Doubling Season it's 12 tokens per activation
+if Chatterfang applies last (mtg-rules-expert; ledger repl-015 updated). Each activation is its own
+event for Peregrin Took and Tippy-Toe. The review's grounds (Hazel and Ninja Pizza already give free
+events) were a redundancy argument, which SKILL §2.5 doesn't accept.
+
+**Support Mission in, on the pilot's ask.** A +1/+1 counter on each creature you control that enters,
+two from its fifth counter. I argued once that it only helps combat, the backup plan, and costs
+Skullclamp its free kill on Squirrels (it still draws on sacrifice, ledger equip-027). Upside: the
+deck's own Meathook Massacre at X = 1 spares countered tokens.
+
+**Cuts.** Two basic Swamps, on trial (*"i'm willing to try less lands and see how it goes"*). The deck
+ran 36 lands and 14 ramp pieces at an average MV of 2.94. Four lands by turn 4 on the play goes from
+52.7% to 47.0%, the same as Caesar `main` at 34 lands with 5 ramp pieces. Swamps were the cut because
+black is better supplied (33 sources for 32 pips) than green (31 for 47). Turned down or kept:
+Chatterstorm (measured 42 tokens in wave 10), Twitching Doll (refused 2026-11-14), Valley Rotcaller
+(drains each opponent for the Squirrel count on every attack, doubled by Bloodletter).
+
+**Correction during the round.** I twice described Zulaport Cutthroat as gaining no life and proposed
+it as Replicator's cut. Its text reads *"each opponent loses 1 life and you gain 1 life"*. The pilot
+caught it. The cause was writing card text from memory instead of running `bun run card` (SKILL §1.1).
+
+**Undo:** a Swamp back for Support Mission or Replicator if the deck misses land drops.
+
+**Curve:** average MV 2.94 → 2.92, MV ≤ 2 26 → 27, MV ≤ 3 48 → 50. Lands 36 → 34, black sources 33 → 31.
+Validated 100/100, legal and on-identity, Game Changers 1. `MOXFIELD.txt` regenerated.

@@ -43,7 +43,7 @@ Reassembling Skeleton (it comes back) → anything else. **Never a drainer.**
 ## 3. Opening
 
 **T1–T2:** Ocelot Pride, Soul Warden, Mother of Runes, Viscera Seer, Bitterblossom, Super Shredder,
-Loyal Apprentice, Talisman of Hierarchy, Skullclamp.
+Loyal Apprentice, Skullclamp.
 
 **T3:** Adeline, Anim Pakal, Troubling Tribbles, Vito, Legion Warboss, Isshin, Infantry Shield, Swiftfoot
 Boots, Windcrag Siege (choose **Mardu**).
@@ -52,7 +52,8 @@ Boots, Windcrag Siege (choose **Mardu**).
 the same turn with anything that isn't summoning sick. He doesn't need haste, because the trigger
 is "whenever you attack."
 
-**T5–T6:** a token doubler (Anointed Procession, Mondrak, Elspeth), Grave Pact / Dictate, Court of Grace.
+**T5–T6:** a token doubler (Anointed Procession, Mondrak, Elspeth), Grave Pact / Dictate, Court of Grace,
+Alhammarret's Archive.
 
 **Mulligans.** Keep 3 lands with 2 colours and one cheap creature, because Caesar needs one other
 body. You don't need a token maker in the opener: Caesar is always in the command zone.
@@ -83,6 +84,8 @@ entered. With this deck that's nearly every turn.
   power, and each Warrior you sacrifice before damage gives it a +1/+1 counter, so a 4-power
   Shredder swings as an 8/8 with menace. The Warriors left at end step add one counter each when
   they die. Isshin or Windcrag Siege trigger mobilize twice, and a token doubler doubles the Warriors.
+- **Alhammarret's Archive doubles every draw outside your draw step and every life gain.** Skullclamp draws
+  four, Caesar's draw mode two, and Vito drains twice as much. Draws are mandatory, so watch your library.
 - **Skullclamp on any 1/1 = draw two** when it dies. Warleader's Call makes your tokens 2/2, and a
   clamped 2/2 doesn't die. That's a real cost, not a reason to skip the anthem.
 

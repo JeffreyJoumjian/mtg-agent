@@ -2100,3 +2100,69 @@ were before 2026-11-14.
 
 **Validated:** v3 100/100, every name found, legal and on-identity, Game Changers 3/3 unchanged.
 `MOXFIELD-V3.txt` regenerated.
+
+## 2026-11-18 — Housekeeping: sideboard rows repointed to `v3` (pilot's OK)
+
+Twelve rows in `research/sideboard.md` named a displaced card that only existed in the deleted `main`
+or `v2`. Each now names the `v3` card in the same job: Grim Monolith → Talisman of Creativity, Mana
+Vault → Arcane Signet, Cyclonic Rift → Counterspell, Vandalblast → Chaos Warp, Rogue's Passage →
+Treasure Vault, Trophy Mage → Fabricate, Disrupt Decorum and Soul's Fire → Bulk Up, and the four rows
+that competed for Phyrexian Metamorph's flex creature slot (Thorin, Shimmer Myr, Ultron, Cyberdrive
+Awakener) → Marvin, Murderous Mimic. The Urza and Padeem rows were removed, because both cards are in
+`v3`. No list changed.
+
+## 2026-11-19 — Pilot's card notes round: Lieutenant Commander Data in, Iron Lad out (pilot's call)
+
+Snapshot: `versions/2026-11-19-1119-v3-lieutenant-commander-data-in-iron-lad-out.json`. The pilot's notes
+named Lieutenant Commander Data, Anthropological Mission and Chimil, the Inner Sun for Iron Man.
+
+**Applied: Data for Iron Lad**, the pilot's own pairing after I proposed Enthusiastic Mechanaut. Same cost
+and type (legendary artifact creature, MV 3), so curve and the combat deploy are unchanged. Iron Lad drew
+only on an artifact top card (about half the time) and stalled on a non-artifact top. Data gets a counter
+whenever any player casts a noncreature spell, and {1} plus three counters from among your creatures draws
+a card, with no tap; Iron Spider and Steel Overseer add counters and Marvin copies the ability. This ends
+the 2026-11-14 Iron Lad watch. Seven of Nine's bench row now displaces Data. Undo row for Iron Lad in
+`research/sideboard.md`.
+
+**Pilot rule: no more cost-reducer cuts** (*"our commander is very difficult to cast. if we have no cost
+reducers on board he's coming in turn 5-6"*).
+
+**Correction (repeat of a recorded mistake).** I told the pilot the reducers can't speed up Iron Man because
+the transform is an activated ability. Tony Stark is a modal DFC (ledger zone-003, recorded 2026-08-24 from
+the same correction): The Invincible Iron Man is cast directly for {4}{U}{R}, an artifact creature spell, so
+Etherium Sculptor, Enthusiastic Mechanaut and Cloud Key all reduce it. I hadn't run `bun run lookup` on the
+commander before the claim. Ledger zone-003 and `decks/_notes.md` now say so plainly. The same wrong finding sits in the
+2026-09-09 entry (*"none of the three reducers reduce the commander"*, under "Cut candidates offered and NOT
+taken"); it's superseded, and so is its "Cloud Key is the standing next cut" line.
+
+**Passed:** Chimil (the pilot didn't want Ultima Weapon as the cut), Anthropological Mission (it triggers only
+on cast spells, and it's an enchantment Tony can't dig for), Rhystic Study for Mind's Eye (a fourth Game
+Changer), and artifact-entry damage cards such as Ingenious Artillerist (*"the damage ones are so little and
+not worth it if not running a package"*).
+
+Validated 100/100, legal and on-identity, Game Changers 3/3. `MOXFIELD-V3.txt` regenerated.
+
+## 2026-11-19 (later) — Izzet Signet in, Cosmic Cube out (pilot's call); Fellwar Stone's cut still open
+
+Snapshot: `versions/2026-11-19-1807-v3-izzet-signet-in-cosmic-cube-out.json`. Ends the Cosmic Cube trial from
+2026-10-10. The pilot asked whether the Cube really helps; counted against `v3`, its attack trigger found a card
+that helped the same combat on about 58% of attacks (52% under 9 power, 87% with Brass Squire or Hammer of
+Nazahn out), because equip is sorcery speed and only Embercleave, Mithril Coat and Hammer of Nazahn attach
+themselves (CR 608.2g lets the spell be cast mid-combat). Chandra's Ignition is the one hit that hurts (it kills
+the pilot's other creatures too). Izzet Signet makes {U}{R} from turn 3, so Iron Man cast directly lands sooner;
+with Fellwar Stone, turn-2 accelerants would go from 5 to 7 (35% → 46% by turn 2 on the play).
+
+**Withdrawn:** Bulk Up as a cut. It came in on 2026-09-02 as the 2-mana one-hit kill with Mjölnir (24 combat
+damage with one more Equipment), and Kediss since 2026-11-10 spreads that hit to each other opponent, doubled
+again by Mjölnir (ledger dmg-030), so it's now a table kill. Thousand-Year Elixir stays at the pilot's call (haste
+for Iron Spider, Brass Squire and Master Transmuter's save).
+
+**Costs.** Card Draw / Engines 7 → 6 (the Cube sat in that section, though it casts rather than draws). Average MV
+3.54 → 3.49, MV ≤ 2 23 → 24, MV ≤ 3 41 → 42. Validated 100/100, legal and on-identity, Game Changers 3/3.
+`MOXFIELD-V3.txt` regenerated. Undo rows in `research/sideboard.md`.
+
+**Then: Fellwar Stone in, Mind's Eye out, on trial** (pilot's call, over my pick of Genji Glove). Snapshot:
+`versions/2026-11-19-1810-v3-fellwar-stone-in-mind-s-eye-out-trial.json`. Turn-2 accelerants 6 → 7. Card Draw /
+Engines 6 → 5; firm draw sources are Fateful Discovery, Insight Engine, Lieutenant Commander Data, The One Ring and
+The Ten Rings, plus Padeem and Iron Spider conditionally. The pilot will report if draw dries up; the undo is Mind's
+Eye back, or Genji Glove out instead.

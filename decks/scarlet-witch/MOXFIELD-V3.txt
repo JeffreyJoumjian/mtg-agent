@@ -6,7 +6,7 @@
 1 Artist's Talent (BLB) 124
 1 Ashling, Flame Dancer (MH3) 115
 1 Big Score (SNC) 102
-1 Bionic Blow
+1 Bionic Blow (MSC) 680
 1 Blackblade Reforged (CMR) 457
 1 Blazing Crescendo (MSH) 340
 1 Bonesplitter (CMR) 458
@@ -19,14 +19,13 @@
 1 Commander's Plate (CMR) 305
 1 Commune with Lava (C20) 149
 1 Conqueror's Flail (FIC) 340
-1 Coral Sword (FIN) 134
 1 Crackle with Power (STX) 95
 1 Deflecting Swat (CMM) 214
 1 Desperate Ritual (UMA) 127
 1 Electro, Assaulting Battery (SPM) 76
 1 Electrodominance (RNA) 99
 1 Fiery Confluence (TLE) 165
-1 Fists of Flame
+1 Fists of Flame (PLST) MH1-123
 1 Forge of Heroes (FIC) 395
 1 Frantic Confrontation (TLE) 117
 1 Gamble (DMR) 121
@@ -62,11 +61,12 @@
 1 Solphim, Mayhem Dominus (ONE) 150
 1 Storm King's Thunder (CLB) 196
 1 Storm-Kiln Artist (CMM) 644
+1 Swiftfoot Boots (FDN) 258
 1 The Fire Crystal (FIN) 135
 1 The Vision and Scarlet Witch (MSC) 707
 1 Thor, God of Thunder (MSH) 156
-1 Titan's Strength
-1 Twinferno
+1 Titan's Strength (ORI) 166
+1 Twinferno (DMU) 149
 1 Tyrite Sanctum (DMC) 240
 1 Unexpected Windfall (AFR) 164
 1 Unleash Fury (M21) 170

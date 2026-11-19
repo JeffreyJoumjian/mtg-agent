@@ -8,7 +8,7 @@
 1 Birgi, God of Storytelling (KHM) 123
 1 Blazing Crescendo (MSH) 340
 1 Bonesplitter (CMR) 458
-1 Bonus Round
+1 Bonus Round (PLST) BBD-56
 1 Bulk Up (FDN) 80
 1 Castle Embereth (TDC) 347
 1 Champion's Helm (FIC) 337
@@ -35,7 +35,6 @@
 1 Hex Magic (MSH) 133
 1 Ignite the Future (AFC) 129
 1 Increasing Vengeance (C19) 147
-1 Infinite Diversity
 1 Inspired Tinkering (PLST) CLB-183
 1 Inventor's Axe (MH3) 126
 1 Jaya's Immolating Inferno (DOM) 133
@@ -60,18 +59,19 @@
 1 Repeated Reverberation (M20) 156
 1 Return the Favor (OTJ) 142
 1 Ruby Medallion (CMM) 405
-1 Runaway Steam-Kin
+1 Runaway Steam-Kin (GRN) 115
 1 Seething Song (PLST) C21-179
 1 Shatterskull Smashing (ZNR) 161
 1 Simian Spirit Guide (TSR) 190
 1 Sol Ring (SLD) 2683
 1 Solphim, Mayhem Dominus (ONE) 150
-1 Soul's Fire
+1 Soul's Fire (UMA) 148
 1 Storm King's Thunder (CLB) 196
 1 Storm-Kiln Artist (CMM) 644
+1 Swiftfoot Boots (FDN) 258
 1 The Fire Crystal (FIN) 135
 1 The One Ring (LTR) 246
-1 Treasonous Ogre
+1 Treasonous Ogre (SLD) 2007
 1 Tyrite Sanctum (DMC) 240
 1 Underworld Breach (THB) 161
 1 Unexpected Windfall (AFR) 164

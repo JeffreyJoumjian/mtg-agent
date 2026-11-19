@@ -8,6 +8,7 @@
       "label": "B4",
       "kind": "deck",
       "bracket": 4,
+      "edhplay": "b0f67cb0-8812-481d-beac-c7c504b6606d",
       "sections": [
         {
           "name": "Commander",
@@ -69,7 +70,6 @@
           "cards": [
             { "name": "Bonesplitter", "qty": 1 },
             { "name": "Hero's Blade", "qty": 1 },
-            { "name": "Infinite Diversity", "qty": 1 },
             { "name": "Inventor's Axe", "qty": 1 },
             { "name": "Monstrous Rage", "qty": 1 }
           ]
@@ -138,7 +138,8 @@
             { "name": "Commander's Plate", "qty": 1 },
             { "name": "Conqueror's Flail", "qty": 1 },
             { "name": "Deflecting Swat", "qty": 1 },
-            { "name": "Mithril Coat", "qty": 1 }
+            { "name": "Mithril Coat", "qty": 1 },
+            { "name": "Swiftfoot Boots", "qty": 1 }
           ]
         },
         {
@@ -162,6 +163,7 @@
       "label": "V3",
       "kind": "deck",
       "bracket": 3,
+      "edhplay": "278a50d5-8a55-438d-9de3-790f00a8b1f6",
       "sections": [
         {
           "name": "Commander",
@@ -215,7 +217,6 @@
           "cards": [
             { "name": "Blackblade Reforged", "qty": 1 },
             { "name": "Bonesplitter", "qty": 1 },
-            { "name": "Coral Sword", "qty": 1 },
             { "name": "Gauntlet of Power", "qty": 1 },
             { "name": "Hero's Blade", "qty": 1 },
             { "name": "Inventor's Axe", "qty": 1 },
@@ -286,7 +287,8 @@
             { "name": "Commander's Plate", "qty": 1 },
             { "name": "Conqueror's Flail", "qty": 1 },
             { "name": "Deflecting Swat", "qty": 1 },
-            { "name": "Mithril Coat", "qty": 1 }
+            { "name": "Mithril Coat", "qty": 1 },
+            { "name": "Swiftfoot Boots", "qty": 1 }
           ]
         },
         {
@@ -319,11 +321,13 @@
     "Artist's Talent": { "status": "BUY", "note": "3rd cost reducer", "printing": {"set":"blb","collectorNumber":"124"} },
     "Ashling, Flame Dancer": { "status": "BUY", "printing": {"set":"mh3","collectorNumber":"115"} },
     "Big Score": { "status": "BUY", "printing": {"set":"snc","collectorNumber":"102"} },
+    "Bionic Blow": { "printing": {"set":"msc","collectorNumber":"680"} },
     "Birgi, God of Storytelling": { "note": "~$33", "printing": {"set":"khm","collectorNumber":"123"} },
     "Blackblade Reforged": { "status": "BUY", "printing": {"set":"cmr","collectorNumber":"457"} },
     "Blazing Crescendo": { "printing": {"set":"msh","collectorNumber":"340"} },
     "Boltwave": { "status": "BUY", "printing": {"set":"fdn","collectorNumber":"79"} },
     "Bonesplitter": { "printing": {"set":"cmr","collectorNumber":"458"} },
+    "Bonus Round": { "printing": {"set":"plst","collectorNumber":"BBD-56"} },
     "Brass's Bounty": { "status": "BUY", "printing": {"set":"rix","collectorNumber":"94"} },
     "Bulk Up": { "printing": {"set":"fdn","collectorNumber":"80"} },
     "Castle Embereth": { "status": "PROXY", "printing": {"set":"tdc","collectorNumber":"347"} },
@@ -349,6 +353,7 @@
     "Fiery Confluence": { "status": "BUY", "printing": {"set":"tle","collectorNumber":"165"} },
     "Fiery Emancipation": { "status": "PROXY", "note": "— *tripler; {1}{R}{R}{R} with Ruby + Longshot*", "printing": {"set":"m21","collectorNumber":"366"} },
     "Fiery Inscription": { "status": "BUY", "printing": {"set":"ltr","collectorNumber":"126"} },
+    "Fists of Flame": { "printing": {"set":"plst","collectorNumber":"MH1-123"} },
     "Forge of Heroes": { "status": "PROXY", "printing": {"set":"fic","collectorNumber":"395"} },
     "Frantic Confrontation": { "printing": {"set":"tle","collectorNumber":"117"} },
     "Gamble": { "status": "PROXY", "note": "🔶GC", "printing": {"set":"dmr","collectorNumber":"121"} },
@@ -360,6 +365,7 @@
     "Hit the Mother Lode": { "status": "BUY", "printing": {"set":"lci","collectorNumber":"153"} },
     "Ignite the Future": { "status": "BUY", "printing": {"set":"afc","collectorNumber":"129"} },
     "Increasing Vengeance": { "printing": {"set":"c19","collectorNumber":"147"} },
+    "Infinite Diversity": { "printing": {"set":"trk","collectorNumber":"153"} },
     "Inspired Tinkering": { "status": "BUY", "printing": {"set":"plst","collectorNumber":"CLB-183"} },
     "Inventor's Axe": { "printing": {"set":"mh3","collectorNumber":"126"} },
     "Jaya's Immolating Inferno": { "status": "BUY", "note": "— *second table-killer; needs a legendary, which Wanda always is*", "printing": {"set":"dom","collectorNumber":"133"} },
@@ -391,19 +397,25 @@
     "Return the Favor": { "status": "BUY", "printing": {"set":"otj","collectorNumber":"142"} },
     "Rogue's Passage": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"C17-272"} },
     "Ruby Medallion": { "status": "PROXY", "printing": {"set":"cmm","collectorNumber":"405"} },
+    "Runaway Steam-Kin": { "printing": {"set":"grn","collectorNumber":"115"} },
     "Runechanter's Pike": { "status": "BUY", "printing": {"set":"isd","collectorNumber":"231"} },
     "Seething Song": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"C21-179"} },
     "Shatterskull Smashing": { "status": "PROXY", "printing": {"set":"znr","collectorNumber":"161"} },
     "Simian Spirit Guide": { "printing": {"set":"tsr","collectorNumber":"190"} },
     "Sol Ring": { "status": "BUY", "printing": {"set":"sld","collectorNumber":"2683"} },
     "Solphim, Mayhem Dominus": { "printing": {"set":"one","collectorNumber":"150"} },
+    "Soul's Fire": { "printing": {"set":"uma","collectorNumber":"148"} },
     "Storm King's Thunder": { "status": "BUY", "printing": {"set":"clb","collectorNumber":"196"} },
     "Storm-Kiln Artist": { "status": "BUY", "printing": {"set":"cmm","collectorNumber":"644"} },
+    "Swiftfoot Boots": { "printing": {"set":"fdn","collectorNumber":"258"} },
     "The Fire Crystal": { "status": "BUY", "note": "second Ruby Medallion; {R}{R} floor, so 3 mana in practice", "printing": {"set":"fin","collectorNumber":"135"} },
     "The One Ring": { "status": "PROXY", "note": "🔶GC", "printing": {"set":"ltr","collectorNumber":"246"} },
     "The Scarlet Witch": { "status": "OWNED", "printing": {"set":"msh","collectorNumber":"368"} },
     "The Vision and Scarlet Witch": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"707"} },
     "Thor, God of Thunder": { "status": "PROXY", "printing": {"set":"msh","collectorNumber":"156"} },
+    "Titan's Strength": { "printing": {"set":"ori","collectorNumber":"166"} },
+    "Treasonous Ogre": { "printing": {"set":"sld","collectorNumber":"2007"} },
+    "Twinferno": { "printing": {"set":"dmu","collectorNumber":"149"} },
     "Tyrite Sanctum": { "status": "PROXY", "printing": {"set":"dmc","collectorNumber":"240"} },
     "Underworld Breach": { "printing": {"set":"thb","collectorNumber":"161"} },
     "Unexpected Windfall": { "status": "BUY", "printing": {"set":"afr","collectorNumber":"164"} },

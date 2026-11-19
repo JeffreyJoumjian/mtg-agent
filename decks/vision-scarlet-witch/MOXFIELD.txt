@@ -40,12 +40,12 @@
 1 Jeska's Will (MKC) 156
 1 Kediss, Emberclaw Familiar (PLST) CMR-188
 1 Kessig Flamebreather (VOW) 164
-1 Laughing Mad
+1 Laughing Mad (FIN) 143
 1 Leyline Tyrant (ZNR) 147
 1 Lightning Bolt (PLST) CLB-187
 1 Lindblum, Industrial Regency (FIN) 285
 1 Longshot, Rebel Bowman (TLE) 120
-1 Lwaxana Troi, Charming Guest
+1 Lwaxana Troi, Charming Guest (TRK) 157
 1 Mana Geyser (PLST) C21-176
 1 Might of the Meek (BLB) 144
 1 Mithril Coat (LTR) 245
@@ -56,7 +56,7 @@
 1 Past in Flames (PLST) MM3-105
 1 Powerbalance (MH3) 335
 1 Pyretic Ritual (SLD) 1064
-1 Reckless Impulse
+1 Reckless Impulse (TRK) 168
 1 Rite of Flame (PLST) SS3-7
 1 Roaming Throne (MAR) 99
 1 Rogue's Passage (WHO) 299
@@ -69,7 +69,7 @@
 1 Soul's Fire (UMA) 148
 1 Storm-Kiln Artist (STX) 115
 1 Swiftfoot Boots (FDN) 258
-1 Tal Shiar Analyst
+1 Tal Shiar Analyst (TRK) 174
 1 The Fire Crystal (FIN) 135
 1 The One Ring (LTR) 246
 1 The Ozolith (IKO) 237

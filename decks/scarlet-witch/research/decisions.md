@@ -1406,3 +1406,38 @@ Review: `research/trk-set-review-2026-11-10.md`, then one follow-up round on the
 
 **Validated:** `b4` 100/100, legal and on-identity, Game Changers 9. Average MV 2.81 by `deck:show`.
 `MOXFIELD-B4.txt` regenerated.
+
+## 2026-11-18 — Housekeeping: two sideboard rows repointed (pilot's OK)
+
+Nova Flame and Blasphemous Act displaced Volcanic Vision, which is in neither live list. Both now name
+a `v3` artifact answer, the softest slot in a creature-heavy pod: Nova Flame → Vandalblast, Blasphemous
+Act → Untimely Malfunction. No list changed.
+
+## 2026-11-19 — Pilot's card notes round: Swiftfoot Boots into `v3`; Lightning Greaves passed
+
+Snapshot: `versions/2026-11-19-1033-v3-swiftfoot-boots-in-coral-sword-out.json`. The pilot's notes named
+Lightning Greaves and Swiftfoot Boots for decks that need the commander alive.
+
+**Lightning Greaves: passed in both Wanda decks** (the pilot agreed). Shroud stops the pilot targeting her
+too (ledger equip-004), and this list wins by targeting her: Bulk Up, Monstrous Rage, Titan's Strength,
+Fists of Flame and every equip ability.
+
+**`v3`: Swiftfoot Boots in, Coral Sword out.** Her power is the discount, so the chain stops when she
+dies. On 2026-08-02 Champion's Helm took the slot over Boots (its +2/+2 is +2 discount, and haste doesn't
+help a static ability). That was a choice between the two; as a second hexproof source Boots is a spare
+key for when Helm isn't drawn or is destroyed (SKILL §2.5), and haste enables the Blackblade line. Coral
+Sword was the smallest seed (+1), the same cut `b4` made on 2026-11-14. Seeds 8 → 7, Protection 5 → 6.
+Average MV 2.77 → 2.79. `b4` was left alone (speed first). Validated 100/100, legal and on-identity.
+`MOXFIELD-V3.txt` regenerated. Undo row in `research/sideboard.md`.
+
+## 2026-11-19 — `b4` matches EDHPlay: Swiftfoot Boots in, Infinite Diversity out (pilot's call)
+
+Snapshot: `versions/2026-11-19-2004-b4-swiftfoot-boots-in-infinite-diversity-out-match-edhplay.json`.
+The first EDHPlay sync (edhplay-sync skill) pushed local `b4` over the pilot's EDHPlay deck "[B4] The
+Scarlet Witch", which had Swiftfoot Boots and had never taken the 2026-11-14 Infinite Diversity trial.
+That removed Boots and added Infinite Diversity on EDHPlay. The pilot chose the EDHPlay version
+(*"i don't remember putting in infinite diversity"*), so `b4` now runs Boots in Protection, beside
+Champion's Helm and Mithril Coat. Hexproof doesn't stack with Helm; Boots is the spare key when Helm
+isn't drawn or is destroyed, and haste enables the Blackblade line. Seeds 5 → 4, Protection 5 → 6,
+average MV 2.81 → 2.72. Pushed to EDHPlay. The sync now stops and shows the diff when EDHPlay holds a
+change the local list doesn't explain.
