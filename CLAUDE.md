@@ -104,6 +104,8 @@ When the pilot bans another card, add it here.
   `- [Chatterfang main](/Users/skylerdj/Desktop/mtg-agent/decks/chatterfang/MOXFIELD.txt)`.
   A bare path in prose or after a bold label isn't clickable in T3 Code. Pasting the list into
   Moxfield is always their next step.
+- **Push every applied edit to EDHPlay** with the `edhplay-sync` skill when the list has an
+  `edhplay` id (`deck:edit` prints an `edhplay:` line). A list without one isn't played on EDHPlay.
 
 ### Pilot preferences
 

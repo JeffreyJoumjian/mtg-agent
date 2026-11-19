@@ -57,6 +57,17 @@ test("formatDeck emits a fixed top-level key order and omits empty optionals", (
   expect(text).not.toContain('"bracket"');
 });
 
+test("a list's edhplay deck id survives formatDeck and parseDeck, and a malformed one is rejected", () => {
+  const deck = sample();
+  deck.lists[MAIN_LIST].edhplay = "60e58260-cf82-430f-a81c-8ce20355edd2";
+
+  const parsed = parseDeck(formatDeck(deck));
+  expect(parsed.lists[MAIN_LIST].edhplay).toEqual("60e58260-cf82-430f-a81c-8ce20355edd2");
+
+  const bad = validateDeck({ ...deck, lists: { main: { ...deck.lists[MAIN_LIST], edhplay: "chatterfang" } } });
+  expect(bad.ok ? [] : bad.errors).toEqual(["lists.main.edhplay must be an EDHPlay deck id (a UUID)"]);
+});
+
 test("validateDeck reports every problem instead of the first", () => {
   const res = validateDeck({
     schema: 2,

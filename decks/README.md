@@ -53,6 +53,7 @@ supporting prose (`research/`).
       "label": "Main",
       "kind": "deck",                // "deck" targets 100 cards; "pool" has no size target
       "bracket": 3,                  // optional, 1–5
+      "edhplay": "60e58260-…",       // optional: the EDHPlay deck this list is pushed to (edhplay-sync skill)
       "sections": [
         { "name": "Commander", "cards": [ { "name": "Chatterfang, Squirrel General", "qty": 1 } ] },
         { "name": "Lands",     "cards": [ { "name": "Forest", "qty": 7 } ] },

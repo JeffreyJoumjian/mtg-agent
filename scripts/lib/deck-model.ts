@@ -33,6 +33,9 @@ export interface DeckList {
   kind: "deck" | "pool";
   /** Commander bracket this list is built for (1–5). Per list because variants differ. */
   bracket?: number;
+  /** The EDHPlay deck id (a UUID from edhplay.com/decks/<id>) this list is pushed to. Absent when
+   *  the list isn't on EDHPlay, which means the pilot doesn't play it. See the `edhplay-sync` skill. */
+  edhplay?: string;
   sections: ListSection[];
 }
 
@@ -165,12 +168,18 @@ export function validateDeck(raw: unknown): { ok: true; deck: Deck } | { ok: fal
   };
 }
 
+/** An EDHPlay deck id, as it appears in edhplay.com/decks/<id>. */
+export const EDHPLAY_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+
 function validateList(id: string, list: any, errors: string[]): void {
   if (!/^[a-z0-9-]+$/.test(id)) errors.push(`list id "${id}" must be kebab-case`);
   if (typeof list?.label !== "string" || !list.label) errors.push(`lists.${id}.label must be a non-empty string`);
   if (list?.kind !== "deck" && list?.kind !== "pool") errors.push(`lists.${id}.kind must be "deck" or "pool"`);
   if (list?.bracket !== undefined && !(Number.isInteger(list.bracket) && list.bracket >= 1 && list.bracket <= 5)) {
     errors.push(`lists.${id}.bracket must be an integer from 1 to 5`);
+  }
+  if (list?.edhplay !== undefined && !(typeof list.edhplay === "string" && EDHPLAY_ID.test(list.edhplay))) {
+    errors.push(`lists.${id}.edhplay must be an EDHPlay deck id (a UUID)`);
   }
   if (!Array.isArray(list?.sections)) {
     errors.push(`lists.${id}.sections must be an array`);
@@ -257,6 +266,7 @@ export function formatDeck(deck: Deck): string {
     const list = normalizeList(deck.lists[id]);
     out.push(`    ${j(id)}: {`, `      "label": ${j(list.label)},`, `      "kind": ${j(list.kind)},`);
     if (list.bracket !== undefined) out.push(`      "bracket": ${list.bracket},`);
+    if (list.edhplay !== undefined) out.push(`      "edhplay": ${j(list.edhplay)},`);
     out.push(`      "sections": [`);
 
     list.sections.forEach((s, si) => {

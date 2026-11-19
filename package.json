@@ -25,6 +25,7 @@
     "deck:show": "bun run scripts/deck.ts show",
     "deck:edit": "bun run scripts/deck.ts edit",
     "deck:meta": "bun run scripts/deck.ts meta",
+    "edhplay": "bun run scripts/edhplay.ts",
     "lookup": "bun run scripts/ledger.ts lookup",
     "ledger:index": "bun run scripts/ledger.ts index"
   },

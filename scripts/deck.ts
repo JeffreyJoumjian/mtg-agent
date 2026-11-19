@@ -327,6 +327,11 @@ async function runEdit(argv: string[]): Promise<void> {
   printChanges(outcome.entry.changes);
   console.log(`  snapshot: ${outcome.entry.snapshot}`);
   for (const p of outcome.moxfield) console.log(`  moxfield: ${p}`);
+
+  const edhplayId = outcome.deck.lists[args.listId].edhplay;
+  if (edhplayId) {
+    console.log(`  edhplay: push it now (edhplay-sync skill): bun run edhplay push ${args.slug} --list ${args.listId}`);
+  }
 }
 
 async function runMeta(argv: string[]): Promise<void> {
