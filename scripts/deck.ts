@@ -330,7 +330,7 @@ async function runEdit(argv: string[]): Promise<void> {
 
   const edhplayId = outcome.deck.lists[args.listId].edhplay;
   if (edhplayId) {
-    console.log(`  edhplay: push it now (edhplay-sync skill): bun run edhplay push ${args.slug} --list ${args.listId}`);
+    console.log(`  edhplay: compare it with EDHPlay now (edhplay-sync skill): bun run edhplay push ${args.slug} --list ${args.listId}`);
   }
 }
 

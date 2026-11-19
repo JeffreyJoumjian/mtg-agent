@@ -1,6 +1,6 @@
 ---
 name: edhplay-sync
-description: EDHPlay sync. Push a deck list from deck.json to the pilot's EDHPlay deck (edhplay.com/decks) after every applied list edit, link, create or delete an EDHPlay deck, or export one with printings. Use after any `deck:edit` apply on a list with an `edhplay` id, or when the pilot mentions EDHPlay.
+description: EDHPlay sync. Compare a deck list in deck.json with the pilot's EDHPlay deck (edhplay.com/decks) and settle every difference with them before pushing, after every applied list edit; also link, create, delete or export an EDHPlay deck. Use after any `deck:edit` apply on a list with an `edhplay` id, or when the pilot mentions EDHPlay.
 ---
 
 # EDHPlay sync
@@ -16,38 +16,54 @@ site and API do, verified 2026-11-19.
 
 ## Policy (pilot, 2026-11-19)
 
-- **Push after every applied edit.** Once the pilot OKs a change and `deck:edit` applies it (its
-  output ends with an `edhplay:` line), push that list in the same turn. If the Chrome extension
-  isn't connected, end the turn naming the EDHPlay decks that are now behind.
-- **Printings:** a pin in `deck.json` or `decks/_printings.txt` wins. A card with no pin keeps the
-  printing it has on EDHPlay, and the push hands back `B|…` lines that you back-fill as pins, so
-  the exports stay complete.
-- **Archive folder decks sync like the rest.** Folders, deck names and tokens on EDHPlay stay as
-  the pilot set them.
-- Creating or deleting an EDHPlay deck happens only when the pilot asks for it.
+- **EDHPlay is usually the truth.** It's the list the pilot plays, and they edit it there too. The
+  local list is ahead of it only for edits made here that haven't been pushed yet.
+- **Any difference stops the push.** `push` only compares and writes nothing unless you pass
+  `--confirm`. The one difference that goes through without a question is the edit the pilot just
+  approved in this conversation: when every `DIFFERENT` line is exactly that edit, confirm it. Any
+  other line, an `art` line included, goes to the pilot with context, and you settle it together.
+- **Compare after every applied edit.** `deck:edit` ends with an `edhplay:` line for a linked list;
+  run the comparison in the same turn. If the Chrome extension isn't connected, end the turn naming
+  the EDHPlay decks that are now behind.
+- **Printings:** a card with no pin keeps the printing it has on EDHPlay, and its printing comes
+  back as `B|…` lines that you back-fill as pins, so the exports stay complete.
+- **Archive folder decks sync like the rest.** Folders, deck names and tokens on EDHPlay stay as the
+  pilot set them. Creating or deleting an EDHPlay deck happens only when the pilot asks.
 
-## Push a list
+## Compare and push a list
 
 1. **Tab.** Load the Chrome tools, call `tabs_context_mcp`, open a new tab on
    https://edhplay.com/decks and check it shows "My decks", which means the pilot is signed in.
 2. **Install** once per tab, and again after any navigation: run the output of
    `bun run edhplay install` with `javascript_tool`. It answers `INSTALLED …`.
-3. **Push:** run the output of `bun run edhplay push <slug> --list <id>`. Run pushes one at a time,
-   because they share the paging buffer. The first line of the answer is one of:
-   - `UNCHANGED …`: EDHPlay already matches.
-   - `PUSHED …: N change(s), valid, bracket B, verify ok`, followed by the changes (`+`, `-`,
-     `qty`, `art`, `commander:`).
-   - `NOT FOUND`, `INVALID`, `verify FAILED`, `STILL DIFFERENT`: stop and report it to the pilot
-     with the lines that follow. A not-found name usually means the local spelling or a set code
-     EDHPlay doesn't know.
+3. **Compare:** run the output of `bun run edhplay push <slug> --list <id>`, one list at a time,
+   because the answers share the paging buffer. The first line is one of:
+   - `UNCHANGED …`: EDHPlay matches. Go to step 6.
+   - `DIFFERENT …: N difference(s), nothing written`, then one line per difference:
+     `local only|…`, `EDHPlay only|…`, `count|card|local N|EDHPlay N`, `art|card|local …|EDHPlay …`,
+     `commander|local …|EDHPlay …`. Go to step 4.
    - `AUTH`: reload the tab, install again, rerun. `NOT INSTALLED`: step 2.
    - `[more: bun run edhplay page N]`: run that command's output for the next page.
-4. **Back-fill** every `B|Name|SET|123` line: `bun run edhplay backfill <slug>` with the lines on
+4. **Settle the differences.** Unless every line is the edit the pilot just approved, stop and show
+   them all. Pipe the lines into `bun run edhplay explain <slug> --list <id>`: for each card it
+   prints the local lists that hold it and every logged change that touched it. A card this list
+   never logged usually means the pilot changed it on EDHPlay. Give the pilot each line with that
+   context and wait for their call, card by card:
+   - **EDHPlay wins:** change the local list with `deck:edit` (`--why` saying it matches EDHPlay),
+     or for an `art` line `deck:meta --card "…" --printing "(SET) 123"`, and log it in the deck's
+     `research/decisions.md`.
+   - **Local wins:** that line is pushed in step 5.
+   Repeat step 3 until every remaining line is one the pilot chose to push, or it says `UNCHANGED`.
+5. **Push:** run the output of `bun run edhplay push <slug> --list <id> --confirm`. It must answer
+   `PUSHED …: N change(s), valid, bracket B, verify ok`. Report `NOT FOUND`, `INVALID`,
+   `verify FAILED` or `STILL DIFFERENT` to the pilot with the lines that follow. A not-found name
+   usually means a local spelling or set code EDHPlay doesn't know.
+6. **Back-fill** every `B|Name|SET|123` line: `bun run edhplay backfill <slug>` with the lines on
    stdin. It pins them in `deck.json` and regenerates the MOXFIELD files. When the same deck has
-   another linked list, push that one after the back-fill, so it picks up the new pins.
-5. **Done** when every pushed list answered `UNCHANGED` or `PUSHED … verify ok` and every `B|` line
-   is back-filled. Close the tab you opened. Report one line per list: the EDHPlay deck name and
-   link, and the changes, calling out every `art` line, since that changed a printing on EDHPlay.
+   another linked list, compare that one after the back-fill, so it picks up the new pins.
+7. **Done** when every list answered `UNCHANGED` or `PUSHED … verify ok` and every `B|` line is
+   back-filled. Close the tab you opened. Report one line per list: the EDHPlay deck name and link,
+   and what changed on each side.
 
 ## Other jobs
 

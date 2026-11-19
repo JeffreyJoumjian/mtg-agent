@@ -6,7 +6,8 @@
  *   bun run edhplay install                                 # print the helpers to run once per tab
  *   bun run edhplay link <slug> --list <id> --deck <uuid>   # record which EDHPlay deck a list is
  *   bun run edhplay link <slug> --list <id> --unlink
- *   bun run edhplay push <slug> [--list <id>] [--dry-run]   # print the push script for the browser
+ *   bun run edhplay push <slug> [--list <id>] [--confirm]   # compare with EDHPlay; --confirm writes
+ *   bun run edhplay explain <slug> [--list <id>] < lines    # local history behind each differing card
  *   bun run edhplay create <slug> --list <id> --name "<EDHPlay deck name>" [--folder <uuid>]
  *   bun run edhplay export <uuid>                           # print a script that exports a deck with printings
  *   bun run edhplay page <n>                                # print the script that reads page n of the last result
@@ -19,15 +20,17 @@
  * recalculates the bracket and re-reads the deck to verify it. The `edhplay-sync` skill holds the
  * whole procedure and what the API does.
  *
- * Printing policy (pilot, 2026-11-19): a printing pinned in `deck.json` or `decks/_printings.txt`
- * wins. A card with no pin keeps the printing it already has on EDHPlay (Import & Replace would
- * otherwise reset it to EDHPlay's default), and whatever printing it ends up with comes back as
- * `B|…` lines for `backfill`, which pins it in `deck.json` so the next export is complete.
+ * Policy (pilot, 2026-11-19): EDHPlay is what the pilot plays, so it is usually the truth. Any
+ * difference between it and the local list stops the push: `push` only reports the differences
+ * unless `--confirm` is passed, and the agent decides each one with the pilot first. A card with no
+ * printing pin keeps the printing it has on EDHPlay (Import & Replace would otherwise reset it to
+ * EDHPlay's default), and its printing comes back as `B|…` lines for `backfill`, which pins it in
+ * `deck.json` so the exports stay complete.
  */
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { EDHPLAY_ID, isCommanderSection, listEntries, pickList, type Deck } from "./lib/deck-model.ts";
-import { listDeckSlugs, readDeck, regenerateMoxfield, setCardMeta, writeDeck } from "./lib/deck-store.ts";
+import { EDHPLAY_ID, isCommanderSection, listEntries, listNames, pickList, type Deck } from "./lib/deck-model.ts";
+import { listDeckSlugs, readDeck, readHistory, regenerateMoxfield, setCardMeta, writeDeck } from "./lib/deck-store.ts";
 import { GLOBAL_PRINTINGS_PATH, mergePrintings, parsePrintingRef, parsePrintings, printingsFromMeta } from "./lib/moxfield.ts";
 import { REPO_ROOT } from "./lib/paths.ts";
 
@@ -36,7 +39,8 @@ const USAGE = [
   "  bun run edhplay status",
   "  bun run edhplay install",
   "  bun run edhplay link <slug> --list <id> (--deck <uuid> | --unlink)",
-  "  bun run edhplay push <slug> [--list <id>] [--dry-run]",
+  "  bun run edhplay push <slug> [--list <id>] [--confirm]",
+  "  bun run edhplay explain <slug> [--list <id>] < lines",
   '  bun run edhplay create <slug> --list <id> --name "<EDHPlay deck name>" [--folder <uuid>]',
   "  bun run edhplay export <uuid>",
   "  bun run edhplay page <n>",
@@ -59,7 +63,7 @@ function positionals(argv: string[]): string[] {
   const out: string[] = [];
   for (let i = 0; i < argv.length; i++) {
     if (argv[i].startsWith("--")) {
-      if (!["--dry-run", "--unlink"].includes(argv[i])) i++;
+      if (!["--confirm", "--unlink"].includes(argv[i])) i++;
       continue;
     }
     out.push(argv[i]);
@@ -109,7 +113,7 @@ const out = (text) => { window.__edhOut = text; return text.length > ${PAGE} ? t
 `;
 
 /** The push body: diff the wanted list against the EDHPlay deck, import with replace, validate,
- *  recalculate the bracket, re-read and verify. Expects DECK, LABEL, DRY, CMD and WANT in scope. */
+ *  recalculate the bracket, re-read and verify. Expects DECK, LABEL, CONFIRM, CMD and WANT in scope. */
 const PUSH_BODY = `
 const r0 = await api('/decks/' + DECK);
 if (r0.status === 401) return 'AUTH: the EDHPlay token expired. Reload the tab and run the snippet again.';
@@ -138,14 +142,14 @@ const diff = (deck) => {
   for (const c of [...cmd, ...cards]) { const k = face(c.name); want[k] = want[k] || { name: c.name, qty: 0, set: c.set_code, num: c.collector_number }; want[k].qty += c.quantity; }
   const lines = [];
   const wantCmd = cmd.map((c) => face(c.name)).sort().join(' + ');
-  if (wantCmd !== haveCmd) lines.push('commander: ' + (haveCmd || 'none') + ' -> ' + wantCmd);
+  if (wantCmd !== haveCmd) lines.push('commander|local ' + wantCmd + '|EDHPlay ' + (haveCmd || 'none'));
   for (const [k, w] of Object.entries(want)) {
     const h = have[k];
-    if (!h) lines.push('+' + w.qty + ' ' + w.name);
-    else if (h.qty !== w.qty) lines.push('qty ' + w.name + ' ' + h.qty + ' -> ' + w.qty);
-    else if (w.set && (h.set.toLowerCase() !== w.set.toLowerCase() || h.num.toLowerCase() !== String(w.num).toLowerCase())) lines.push('art ' + w.name + ' (' + h.set + ') ' + h.num + ' -> (' + w.set + ') ' + w.num);
+    if (!h) lines.push('local only|' + w.qty + ' ' + w.name);
+    else if (h.qty !== w.qty) lines.push('count|' + w.name + '|local ' + w.qty + '|EDHPlay ' + h.qty);
+    else if (w.set && (h.set.toLowerCase() !== w.set.toLowerCase() || h.num.toLowerCase() !== String(w.num).toLowerCase())) lines.push('art|' + w.name + '|local (' + w.set + ') ' + w.num + '|EDHPlay (' + h.set + ') ' + h.num);
   }
-  for (const [k, h] of Object.entries(have)) if (!want[k]) lines.push('-' + h.qty + ' ' + h.name);
+  for (const [k, h] of Object.entries(have)) if (!want[k]) lines.push('EDHPlay only|' + h.qty + ' ' + h.name);
   return lines;
 };
 const backfillFrom = (deck) => {
@@ -155,8 +159,8 @@ const backfillFrom = (deck) => {
 };
 const pending = diff(before);
 const head = LABEL + ' -> ' + before.name;
-if (pending.length === 0 && before.is_valid && !before.needs_validation) return out(['UNCHANGED ' + head + ' (valid)', ...(DRY ? [] : backfillFrom(before))].join('\\n'));
-if (DRY) return out('DRY RUN ' + head + ': ' + pending.length + ' change(s)\\n' + pending.join('\\n'));
+if (pending.length === 0 && before.is_valid && !before.needs_validation) return out(['UNCHANGED ' + head + ' (valid)', ...backfillFrom(before)].join('\\n'));
+if (pending.length > 0 && !CONFIRM) return out('DIFFERENT ' + head + ': ' + pending.length + ' difference(s), nothing written\\n' + pending.join('\\n'));
 let note = '';
 if (pending.length > 0) {
   const sideboard = before.cards.filter((c) => c.zone === 'sideboard').map((c) => ({ name: c.name, quantity: c.quantity, set_code: c.set_code.toUpperCase(), collector_number: c.collector_number }));
@@ -181,11 +185,11 @@ return out([
 ].join('\\n'));
 `;
 
-/** Installs `window.__edh` in the tab: the helpers plus `push(DECK, LABEL, DRY, CMD, WANT)`. It
+/** Installs `window.__edh` in the tab: the helpers plus `push(DECK, LABEL, CONFIRM, CMD, WANT)`. It
  *  lasts until the tab navigates, so the per-deck snippets stay small. */
 function installSnippet(): string {
   return `(() => {${PRELUDE}
-window.__edh = { api, face, out, push: async (DECK, LABEL, DRY, CMD, WANT) => {${PUSH_BODY}} };
+window.__edh = { api, face, out, push: async (DECK, LABEL, CONFIRM, CMD, WANT) => {${PUSH_BODY}} };
 return 'INSTALLED edhplay helpers in ' + location.host;
 })()`;
 }
@@ -200,10 +204,10 @@ ${body}
 })()`;
 }
 
-function pushSnippet(deck: Deck, slug: string, listId: string, deckId: string, dry: boolean): string {
+function pushSnippet(deck: Deck, slug: string, listId: string, deckId: string, confirm: boolean): string {
   const { commanders, cards } = wantedRows(deck, listId);
   return viaInstalled(
-    `return window.__edh.push(${JSON.stringify(deckId)}, ${JSON.stringify(`${slug}/${listId}`)}, ${dry}, ${JSON.stringify(commanders)}, ${JSON.stringify(cards)});`,
+    `return window.__edh.push(${JSON.stringify(deckId)}, ${JSON.stringify(`${slug}/${listId}`)}, ${confirm}, ${JSON.stringify(commanders)}, ${JSON.stringify(cards)});`,
   );
 }
 
@@ -244,7 +248,7 @@ async function runPush(argv: string[]): Promise<void> {
   if (!list.edhplay) {
     throw new Error(`${slug}/${id} isn't linked to an EDHPlay deck. Link it with "bun run edhplay link", or it isn't played.`);
   }
-  console.log(pushSnippet(deck, slug, id, list.edhplay, argv.includes("--dry-run")));
+  console.log(pushSnippet(deck, slug, id, list.edhplay, argv.includes("--confirm")));
 }
 
 async function runCreate(argv: string[]): Promise<void> {
@@ -265,7 +269,7 @@ const created = await api('/decks', { method: 'POST', body: JSON.stringify({ nam
 if (created.status === 401) return 'AUTH: the EDHPlay token expired. Reload the tab and run the snippet again.';
 if (created.status !== 200 && created.status !== 201) return 'ERROR: create returned ' + created.status + ' ' + JSON.stringify(created.body).slice(0, 300);
 window.__edhOut = '';
-const pushed = await window.__edh.push(created.body.id, ${JSON.stringify(`${slug}/${listId}`)}, false, ${JSON.stringify(commanders)}, ${JSON.stringify(cards)});
+const pushed = await window.__edh.push(created.body.id, ${JSON.stringify(`${slug}/${listId}`)}, true, ${JSON.stringify(commanders)}, ${JSON.stringify(cards)});
 return out('CREATED ' + created.body.id + '\\n' + (window.__edhOut || pushed));
 `;
   console.log(viaInstalled(body));
@@ -297,6 +301,41 @@ function runPage(argv: string[]): void {
   console.log(
     `(() => { const t = window.__edhOut || 'NO RESULT: run the push or export snippet first, in this tab.'; const s = t.slice(${n * PAGE}, ${(n + 1) * PAGE}); return s + (t.length > ${(n + 1) * PAGE} ? '\\n[more: bun run edhplay page ${n + 1}]' : '\\n[end]'); })()`,
   );
+}
+
+/**
+ * The context the pilot needs to settle each difference a push reported: for every card named in
+ * the `DIFFERENT` lines (stdin), which local lists hold it now and every logged change that touched
+ * it in this deck, oldest first. A card the list never logged is usually an edit made on EDHPlay.
+ */
+async function runExplain(argv: string[]): Promise<void> {
+  const [slug] = positionals(argv);
+  if (!slug) throw new Error(USAGE);
+
+  const deck = await readDeck(slug);
+  const { id } = pickList(deck, flag(argv, "--list"));
+  const history = await readHistory(slug);
+  const text = await Bun.stdin.text();
+
+  const names: string[] = [];
+  for (const raw of text.split("\n")) {
+    const parts = raw.trim().split("|");
+    if (parts[0] === "local only" || parts[0] === "EDHPlay only") names.push(parts[1].replace(/^\d+\s+/, ""));
+    else if (parts[0] === "count" || parts[0] === "art") names.push(parts[1]);
+  }
+
+  for (const name of [...new Set(names)]) {
+    const face = name.split(" // ")[0].trim().toLowerCase();
+    const matches = (n: string) => n.split(" // ")[0].trim().toLowerCase() === face;
+    const lists = Object.entries(deck.lists).filter(([, l]) => listNames(l).some(matches)).map(([lid]) => lid);
+    const logged = history
+      .filter((h) => h.entries.some((e) => matches(e.name) || ("replaces" in e && e.replaces ? matches(e.replaces) : false)))
+      .map((h) => `    ${h.at.slice(0, 10)} ${h.listId}: ${h.label}`);
+
+    console.log(`${name}`);
+    console.log(`  in local lists: ${lists.length ? lists.join(", ") : "none"}${lists.includes(id) ? "" : `  (not in ${id})`}`);
+    console.log(logged.length ? `  logged changes:\n${logged.join("\n")}` : `  logged changes: none in ${slug}, so ${id} never changed it locally`);
+  }
 }
 
 async function runBackfill(argv: string[]): Promise<void> {
@@ -331,6 +370,7 @@ async function main(): Promise<void> {
   if (command === "install") return void console.log(installSnippet());
   if (command === "link") return runLink(rest);
   if (command === "push") return runPush(rest);
+  if (command === "explain") return runExplain(rest);
   if (command === "create") return runCreate(rest);
   if (command === "export") return runExport(rest);
   if (command === "page") return runPage(rest);
