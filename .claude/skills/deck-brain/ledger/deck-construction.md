@@ -939,3 +939,22 @@ away), and a hand-only simulation of how often the win pieces meet given the tut
 archetype question usually dissolves into "which ten slots", and the measurements name them.
 **See also:** build-025, tool-020
 **Source:** edgar-markov `b4` founding (2026-11-03), the pilot's "drain or aggro" question.
+
+### A founding draft built from the commander's EDHREC page misses the newest sets — search by mechanic too {#build-047}
+
+**Kind:** correction · **Recorded:** 2026-11-20
+**Cards:** Arabella, Abandoned Doll; Worf, Still Not Merry; Endless Foot Assault; Raph & Leo, Sibling Rivals; Rite of Ascension; General Kreat, the Boltbringer; Hanweir Garrison
+**Claim:** A first draft assembled from the commander's EDHREC page plus recall leaves out strong
+cards from recent sets, because EDHREC inclusion lags new releases and recall stops at the training
+data. Run Scryfall searches on the commander's own mechanics before calling a draft objective.
+**Evidence:** The Arabella founding draft (2026-11-20) left out Worf, Still Not Merry (TRC, red-white:
+a tapped and attacking Faerie for each attacking non-Faerie creature), which the pilot already runs
+in Caesar and asked about. Searches on `id<=rw` for `"tapped and attacking"`, `"additional combat
+phase"` and `"whenever you attack"` then surfaced Endless Foot Assault, Raph & Leo, Rite of Ascension,
+General Kreat and Hanweir Garrison, none of which the draft had weighed.
+**Changes:** For every new deck, after the EDHREC pass, run `bun run scripts/card.ts search` with the
+commander's colour identity and each key phrase of its plan (its trigger words, "tapped and
+attacking", "additional combat", "twice that many", the payoff's gate such as "power 2 or less"),
+newest sets first, and check the pilot's other decks for cards in the same colours.
+**See also:** build-046, tool-007
+**Source:** arabella founding (2026-11-20), the pilot's "what happened to worf" question.

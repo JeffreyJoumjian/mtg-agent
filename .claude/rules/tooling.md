@@ -50,8 +50,10 @@ paths:
   copy-pasteable Moxfield/Archidekt import lists **derived** from `deck.json`. Every `deck:edit` apply
   already does this; run it by hand only after hand-editing `deck.json`. The output is generated, so
   change `deck.json` instead of editing it.
-- `bun run deck:pdf <slug> [list-id]`: the printable reference, from `deck.json` + `pdf.json`. The one
-  command with an external dependency: it needs Chrome, Chromium, or (on Windows) Edge.
+- `bun run deck:pdf <slug> [list-id]` (or `--all`): one printable reference PDF per list (`main` plus
+  every list on EDHPlay), derived from `deck.json`, `history.jsonl` and `research/sideboard.md`, with an
+  optional `pdf.json` footer and appendix. The one command with an external dependency: it needs
+  Chrome, Chromium, or (on Windows) Edge.
 - `bun run deck:proposal <slug>`: build the data bundle behind a deck's **upgrade-proposal artifact**.
   It reads the hand-written grounds in `decks/<slug>/research/proposal.json`, then derives card text,
   salt, Game Changer status, card art and the current/approved/projected deck stats from `deck.json`

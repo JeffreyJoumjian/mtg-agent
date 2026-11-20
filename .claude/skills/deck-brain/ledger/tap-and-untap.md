@@ -602,3 +602,22 @@ Bodies added *while the trigger is on the stack* both raise X and join the set (
 **Changes:** Price a mass-pump finisher in a token deck as a **two-card** plan (pump + haste), and
 sequence every token-maker before letting the pump trigger resolve.
 **Source:** chatterfang (2026-09-25) — Craterhoof Behemoth evaluation.
+
+### Reconnaissance at end of combat untaps every attacker after damage — free team vigilance {#tap-027}
+
+**Kind:** ruling · **Verified:** 2026-11-20 against CR 2026-11-06
+**Cards:** Reconnaissance; Arabella, Abandoned Doll; Raph & Leo, Sibling Rivals; Aurelia, the Warleader
+**Rules:** 506.4, 506.4b, 511.3
+**Claim:** Reconnaissance's {0} can be activated once per attacking creature during the end of combat
+step, after combat damage, so every attacker untaps for free: the team keeps its damage, can block on
+the other players' turns, and can attack again in an additional combat.
+**Evidence:** Oracle: *"{0}: Remove target attacking creature you control from combat and untap it.
+(If you activate during end of combat, the creature will untap after it deals combat damage.)"*
+Creatures stay attacking until the end of combat step ends (CR 511.3), so they are legal targets
+then. Tapping or untapping an attacker doesn't remove it from combat (506.4b); Reconnaissance removes
+it by its own words (506.4), which no longer matters once damage is dealt.
+**Changes:** In a go-wide attack deck, score Reconnaissance as vigilance for the whole board, not as
+one creature's escape. It answers the "attacked creatures can't block" cost, and with an extra-combat
+card that untaps only some attackers (Raph & Leo untaps two), it readies the rest for the next combat.
+**See also:** tap-010
+**Source:** arabella (2026-11-20), weighing Reconnaissance as a cut for the equipment package.

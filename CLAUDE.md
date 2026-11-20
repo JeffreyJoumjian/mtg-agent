@@ -127,6 +127,9 @@ When the pilot bans another card, add it here.
   time, i'm okay to put both myrel and opposition in"*).
 - **Fast mana and cantrip fuel are protected** in spellslinger builds (Seething Song and Mana Geyser
   were both refused as cuts). Nominate cuts elsewhere first.
+- **Trials come up only when they ask.** Keep the list of trials waiting on a play report out of
+  replies and status summaries, and give it when the pilot asks about trials (*"could you stop
+  mentioning trials in every message"*). Record each trial in the deck's notes and decision log as usual.
 - **They watch the curve and an external analyzer's "estimated win turn".** Say what a heavier card
   does to the curve up front.
 - **They like cute lines**: record them even when the card is cut.

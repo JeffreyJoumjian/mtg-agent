@@ -56,6 +56,11 @@ one source of truth, generate every other copy, and diff by script.
   claiming 20, 20 and 24 while actually holding 22, 26 and 24. The `DECK.md` copy still listed Fiery
   Emancipation and Hit the Mother Lode as sideboard cards two days after both were moved into the
   100. Root cause: duplication with no generation step.
+- **Deck PDFs (2026-11-20):** every `pdf.json` hand-carried its header stats, sideboard and swap
+  history, so the printed references fell behind after each round (Ultron's still said Scrap Trawler
+  displaces Hangarback Walker after Hangarback had left). `deck-pdf.ts` now derives all three per list
+  from `deck.json`, `research/sideboard.md` and `history.jsonl`; `pdf.json` keeps only the footer and
+  the appendix docs.
 - **STATUS.md (2026-09-22):** `DECK.md` and `STATUS.md` must hold the same 100 card names;
   decks/README.md requires them to agree card-for-card, and SKILL §1.4 records three separate drifts
   (bracket swap list ×3, sideboard across three files). On the 2026-09-22 founding of

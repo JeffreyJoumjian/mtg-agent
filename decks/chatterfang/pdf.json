@@ -1,24 +1,4 @@
 {
-  "title": "Upgrade Test - Chatterfang",
-  "subtitle": "Live Chatterfang list since 2026-10-15 · Bracket 3 · 1/3 Game Changers · wave 11 trial · 100 cards",
-  "stats": [
-    [
-      "Nonland",
-      "64"
-    ],
-    [
-      "Avg MV",
-      "2.92 (Pest Infestation counted at 1)"
-    ],
-    [
-      "Sacrifice outlets",
-      "5"
-    ],
-    [
-      "Drain payoffs",
-      "12"
-    ]
-  ],
   "appendix": [
     "research/gameplan.md"
   ]

@@ -1,0 +1,88 @@
+1 Arabella, Abandoned Doll (DSK) 208
+1 Adeline, Resplendent Cathar (MID) 1
+1 Agate Instigator (PLST) BLC-21
+1 Ainok Strike Leader (TDC) 11
+1 Anim Pakal, Thousandth Moon (LCI) 223
+1 Anointed Procession (AKH) 2
+1 Arcane Signet (ELD) 331
+1 Arid Mesa (MM3) 229
+1 Aurelia, the Warleader (FDN) 651
+1 Battlefield Forge (BRO) 257
+1 Boros Signet (RVR) 251
+1 Castle Ardenvale (ELD) 238
+1 Chaos Warp (PLST) DRC-48
+1 City on Fire (MOM) 135
+1 Clifftop Retreat (DOM) 239
+1 Combat Celebrant (AKH) 125
+1 Command Tower (ELD) 333
+1 Dalkovan Encampment (TDM) 253
+1 Dawn of Hope (GRN) 8
+1 Deflecting Swat (CMM) 214
+1 Delney, Streetwise Lookout (MKM) 12
+1 Dolmen Gate (LRW) 256
+1 Dusk // Dawn (AKH) 210
+1 Elspeth, Storm Slayer (TDM) 11
+1 Endless Foot Assault (TMC) 8
+1 Enduring Innocence (DSK) 6
+1 Flawless Maneuver (CMM) 24
+1 Furycalm Snarl (STX) 266
+1 General Kreat, the Boltbringer (PLST) J25-48
+1 Get Lost (LCI) 14
+1 Gold Myr (NEC) 153
+1 Idol of Oblivion (PLST) M3C-297
+1 Impact Tremors (DTK) 140
+1 Inspiring Vantage (OTJ) 269
+1 Iroas, God of Victory (PLST) C16-205
+1 Iron Myr (SOM) 168
+1 Kher Keep (PLST) MKC-270
+1 Kirol, Attentive First-Year (ECL) 231
+1 Krenko, Mob Boss (FDN) 204
+1 Krenko, Tin Street Kingpin (WAR) 137
+1 Legion Warboss (GRN) 109
+1 Mentor of the Meek (FDN) 578
+1 Minas Tirith (LTR) 256
+1 Mithril Coat (LTR) 245
+1 Mondrak, Glory Dominus (ONE) 23
+1 Moogles' Valor (FIN) 27
+1 Mother of Runes (PLST) DDO-20
+7 Mountain (THB) 253
+1 Myrel, Shield of Argive (BRO) 18
+1 Needleverge Pathway (ZNR) 263
+1 Ocelot Pride (MH3) 38
+1 Ojer Taq, Deepest Foundation (LCI) 26
+1 Ornithopter of Paradise (PLST) MH2-232
+1 Path to Exile (PLST) BLC-147
+7 Plains (THB) 250
+1 Plateau (OLGC) 2018A
+1 Purphoros, God of the Forge (CMM) 246
+1 Raid Bombardment (UMA) 142
+1 Raph & Leo, Sibling Rivals (TMT) 166
+1 Reconnaissance (ACR) 82
+1 Rogue's Passage (WHO) 299
+1 Rugged Prairie (CMM) 1022
+1 Rumor Gatherer (SNC) 29
+1 Sacred Foundry (EOE) 256
+1 Secure the Wastes (DTK) 36
+1 Skullclamp (MSC) 210
+1 Smothering Tithe (RNA) 22
+1 Sol Ring (SLD) 1734
+1 Soul Warden (PLST) MM3-24
+1 Spectator Seating (CMM) 427
+1 Stroke of Midnight (WOE) 33
+1 Sunbillow Verge (DFT) 264
+1 Sundown Pass (SOS) 264
+1 Swiftfoot Boots (FDN) 258
+1 Swords to Plowshares (PMEI) 2026-4
+1 Talisman of Conviction (CMM) 978
+1 Teferi's Protection (2X2) 32
+1 Tempt with Vengeance (CMM) 263
+1 The One Ring (LTR) 246
+1 Tocasia's Welcome (BRO) 30
+1 Torbran, Thane of Red Fell (ELD) 147
+1 Voice of Victory (TDM) 33
+1 Welcoming Vampire (VOW) 46
+1 Windbrisk Heights (TDC) 411
+1 Windcrag Siege (TDM) 235
+1 Winds of Abandon (PLST) MH1-37
+1 Witty Roastmaster (SNC) 131
+1 Worf, Still Not Merry (TRC) 186

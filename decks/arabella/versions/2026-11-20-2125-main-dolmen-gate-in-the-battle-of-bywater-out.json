@@ -1,0 +1,430 @@
+{
+  "takenAt": "2026-11-20T21:25:29.744Z",
+  "listId": "main",
+  "label": "Dolmen Gate in, The Battle of Bywater out",
+  "reason": "before Dolmen Gate in, The Battle of Bywater out",
+  "list": {
+    "label": "Main",
+    "kind": "deck",
+    "bracket": 3,
+    "sections": [
+      {
+        "name": "Commander",
+        "cards": [
+          {
+            "name": "Arabella, Abandoned Doll",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lands",
+        "cards": [
+          {
+            "name": "Arid Mesa",
+            "qty": 1
+          },
+          {
+            "name": "Battlefield Forge",
+            "qty": 1
+          },
+          {
+            "name": "Castle Ardenvale",
+            "qty": 1
+          },
+          {
+            "name": "Clifftop Retreat",
+            "qty": 1
+          },
+          {
+            "name": "Command Tower",
+            "qty": 1
+          },
+          {
+            "name": "Dalkovan Encampment",
+            "qty": 1
+          },
+          {
+            "name": "Furycalm Snarl",
+            "qty": 1
+          },
+          {
+            "name": "Inspiring Vantage",
+            "qty": 1
+          },
+          {
+            "name": "Kher Keep",
+            "qty": 1
+          },
+          {
+            "name": "Minas Tirith",
+            "qty": 1
+          },
+          {
+            "name": "Mountain",
+            "qty": 7
+          },
+          {
+            "name": "Needleverge Pathway",
+            "qty": 1
+          },
+          {
+            "name": "Plains",
+            "qty": 7
+          },
+          {
+            "name": "Plateau",
+            "qty": 1
+          },
+          {
+            "name": "Rogue's Passage",
+            "qty": 1
+          },
+          {
+            "name": "Rugged Prairie",
+            "qty": 1
+          },
+          {
+            "name": "Sacred Foundry",
+            "qty": 1
+          },
+          {
+            "name": "Spectator Seating",
+            "qty": 1
+          },
+          {
+            "name": "Sunbillow Verge",
+            "qty": 1
+          },
+          {
+            "name": "Sundown Pass",
+            "qty": 1
+          },
+          {
+            "name": "Windbrisk Heights",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Ramp",
+        "cards": [
+          {
+            "name": "Arcane Signet",
+            "qty": 1
+          },
+          {
+            "name": "Boros Signet",
+            "qty": 1
+          },
+          {
+            "name": "Gold Myr",
+            "qty": 1
+          },
+          {
+            "name": "Iron Myr",
+            "qty": 1
+          },
+          {
+            "name": "Ornithopter of Paradise",
+            "qty": 1
+          },
+          {
+            "name": "Smothering Tithe",
+            "qty": 1
+          },
+          {
+            "name": "Sol Ring",
+            "qty": 1
+          },
+          {
+            "name": "Talisman of Conviction",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Card Draw",
+        "cards": [
+          {
+            "name": "Enduring Innocence",
+            "qty": 1
+          },
+          {
+            "name": "Idol of Oblivion",
+            "qty": 1
+          },
+          {
+            "name": "Mentor of the Meek",
+            "qty": 1
+          },
+          {
+            "name": "Rumor Gatherer",
+            "qty": 1
+          },
+          {
+            "name": "Skullclamp",
+            "qty": 1
+          },
+          {
+            "name": "The One Ring",
+            "qty": 1
+          },
+          {
+            "name": "Tocasia's Welcome",
+            "qty": 1
+          },
+          {
+            "name": "Welcoming Vampire",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Removal & Interaction",
+        "cards": [
+          {
+            "name": "Chaos Warp",
+            "qty": 1
+          },
+          {
+            "name": "Get Lost",
+            "qty": 1
+          },
+          {
+            "name": "Path to Exile",
+            "qty": 1
+          },
+          {
+            "name": "Stroke of Midnight",
+            "qty": 1
+          },
+          {
+            "name": "Swords to Plowshares",
+            "qty": 1
+          },
+          {
+            "name": "Winds of Abandon",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Board Wipes",
+        "cards": [
+          {
+            "name": "Dusk // Dawn",
+            "qty": 1
+          },
+          {
+            "name": "The Battle of Bywater",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Protection",
+        "cards": [
+          {
+            "name": "Deflecting Swat",
+            "qty": 1
+          },
+          {
+            "name": "Flawless Maneuver",
+            "qty": 1
+          },
+          {
+            "name": "Grand Abolisher",
+            "qty": 1
+          },
+          {
+            "name": "Mother of Runes",
+            "qty": 1
+          },
+          {
+            "name": "Reconnaissance",
+            "qty": 1
+          },
+          {
+            "name": "Teferi's Protection",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Token Makers",
+        "cards": [
+          {
+            "name": "Adeline, Resplendent Cathar",
+            "qty": 1
+          },
+          {
+            "name": "Ainok Strike Leader",
+            "qty": 1
+          },
+          {
+            "name": "Anim Pakal, Thousandth Moon",
+            "qty": 1
+          },
+          {
+            "name": "Endless Foot Assault",
+            "qty": 1
+          },
+          {
+            "name": "Krenko, Mob Boss",
+            "qty": 1
+          },
+          {
+            "name": "Krenko, Tin Street Kingpin",
+            "qty": 1
+          },
+          {
+            "name": "Legion Warboss",
+            "qty": 1
+          },
+          {
+            "name": "Moogles' Valor",
+            "qty": 1
+          },
+          {
+            "name": "Myrel, Shield of Argive",
+            "qty": 1
+          },
+          {
+            "name": "Secure the Wastes",
+            "qty": 1
+          },
+          {
+            "name": "Tempt with Vengeance",
+            "qty": 1
+          },
+          {
+            "name": "Voice of Victory",
+            "qty": 1
+          },
+          {
+            "name": "Worf, Still Not Merry",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Token Doublers",
+        "cards": [
+          {
+            "name": "Anointed Procession",
+            "qty": 1
+          },
+          {
+            "name": "Elspeth, Storm Slayer",
+            "qty": 1
+          },
+          {
+            "name": "Mondrak, Glory Dominus",
+            "qty": 1
+          },
+          {
+            "name": "Ojer Taq, Deepest Foundation",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Payoffs & Trigger Doublers",
+        "cards": [
+          {
+            "name": "City on Fire",
+            "qty": 1
+          },
+          {
+            "name": "Delney, Streetwise Lookout",
+            "qty": 1
+          },
+          {
+            "name": "Kirol, Attentive First-Year",
+            "qty": 1
+          },
+          {
+            "name": "Raid Bombardment",
+            "qty": 1
+          },
+          {
+            "name": "Windcrag Siege",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Extra Combats & Evasion",
+        "cards": [
+          {
+            "name": "Aurelia, the Warleader",
+            "qty": 1
+          },
+          {
+            "name": "Combat Celebrant",
+            "qty": 1
+          },
+          {
+            "name": "Iroas, God of Victory",
+            "qty": 1
+          },
+          {
+            "name": "Raph & Leo, Sibling Rivals",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Entry Pings & Amplifiers",
+        "cards": [
+          {
+            "name": "Agate Instigator",
+            "qty": 1
+          },
+          {
+            "name": "General Kreat, the Boltbringer",
+            "qty": 1
+          },
+          {
+            "name": "Impact Tremors",
+            "qty": 1
+          },
+          {
+            "name": "Molten Gatekeeper",
+            "qty": 1
+          },
+          {
+            "name": "Purphoros, God of the Forge",
+            "qty": 1
+          },
+          {
+            "name": "Torbran, Thane of Red Fell",
+            "qty": 1
+          },
+          {
+            "name": "Witty Roastmaster",
+            "qty": 1
+          }
+        ]
+      },
+      {
+        "name": "Lifegain Payoffs",
+        "cards": [
+          {
+            "name": "Dawn of Hope",
+            "qty": 1
+          },
+          {
+            "name": "Ocelot Pride",
+            "qty": 1
+          },
+          {
+            "name": "Soul Warden",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

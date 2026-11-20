@@ -434,3 +434,14 @@ declared as an attacker. The conclusion is unchanged. Found while re-verifying a
 
 **See also:** trig-012
 **Source:** upgrade-test (2026-09-28), pilot asked whether to swap Enduring Vitality for Cryptolith Rite.
+
+### "Attack with this creature and/or your commander" triggers once per declaration, not once per attacker {#trig-039}
+
+**Kind:** ruling · **Verified:** 2026-11-20 against CR 2026-11-06
+**Cards:** Ainok Strike Leader; Caesar, Legion's Emperor; Arabella, Abandoned Doll
+**Rules:** 508.1m, 508.3c, 508.3d, 508.4, 603.2c, 603.2d
+**Claim:** Ainok Strike Leader ("Whenever you attack with this creature and/or your commander, for each opponent, create a 1/1 red Goblin creature token that's tapped and attacking that player") triggers once when both it and the commander attack, and once when only one of them attacks. It makes one Goblin per opponent each time, whichever player each attacker is aimed at. This is an inference from the wording, not a published ruling (Scryfall has none for it).
+**Evidence:** All attackers are declared together in one turn-based action, and the abilities that trigger on it trigger together (CR 508.1m). CR 508.3d: "'Whenever [a player] attacks, . . .' triggers if one or more creatures that player controls are declared as attackers", so one declaration gives one trigger however many creatures attack. CR 603.2c lets an ability trigger repeatedly only "if one event contains multiple occurrences", and Ainok's "and/or" names one combined condition that either creature or both can meet, so there is nothing to repeat per creature. The "and/or" would do nothing if each creature triggered separately, because the card could have said "whenever this creature or your commander attacks". Only an effect that says "triggers an additional time" adds instances (CR 603.2d, ledger trig-034). The tokens enter attacking and never "attacked" (CR 508.4), so they add no triggers.
+**Changes:** Count Ainok as one batch of Goblins per combat, not two. In a 3-opponent pod that is 3 tokens per combat. An Isshin-style doubler adds a second instance (trig-034), which I haven't checked against this card. When Arabella also attacks, Ainok's trigger has to resolve before hers, so the 1/1 Goblins are on the battlefield when her X is counted.
+**See also:** trig-021, trig-034
+**Source:** rules question from the pilot (2026-11-20), checked by mtg-rules-expert and the quoted rules re-read in rules/sections/.

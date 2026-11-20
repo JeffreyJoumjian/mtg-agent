@@ -1,19 +1,18 @@
 #!/usr/bin/env bun
 /**
- * Generate a printable deck + swap-log + sideboard PDF for any deck in `decks/`.
+ * Generate a printable reference PDF (decklist, recent swaps, sideboard, appendix) per deck list.
  *
- *   bun run deck:pdf <deck-slug> [list-id]
- *   bun run deck:pdf edgar-markov
+ *   bun run deck:pdf <deck-slug> [list-id]   one list, or `main` plus every list on EDHPlay
+ *   bun run deck:pdf --all                    the same for every deck
  *
- * Reads:
- *   decks/<slug>/deck.json        the list (main unless a list id is given), grouped by section
- *   decks/<slug>/pdf.json         title / stats / swaps / sideboard / upgrades  (see PdfData)
+ * Reads, per list:
+ *   decks/<slug>/deck.json              the list, its header stats and curve
+ *   decks/<slug>/history.jsonl          the recent swaps made to that list
+ *   decks/<slug>/research/sideboard.md  the sideboard rows whose displaced card is in that list
+ *   decks/<slug>/pdf.json               optional: footer and appendix docs (see PdfData)
  *
- * `swaps` is the build's decision history — what came in, what went out, why.
- * `upgrades` holds further swap blocks (e.g. a bracket-4 path), each on its own page.
- *
- * Writes:
- *   decks/<slug>/<slug>-reference.pdf
+ * Writes `decks/<slug>/<slug>-reference.pdf` for `main` and `<slug>-<list-id>-reference.pdf` for
+ * every other list, so each played list has its own current reference.
  *
  * Card images are fetched from Scryfall once and cached in the git-ignored
  * `data/card-images/`, so re-runs are offline and instant.
@@ -24,8 +23,18 @@
 import { existsSync, mkdirSync, readdirSync } from "node:fs";
 import { REPO_ROOT } from "./lib/paths.ts";
 import { resolveNames } from "./lib/card-cache.ts";
-import { listNames, pickList, type DeckList } from "./lib/deck-model.ts";
-import { readDeck } from "./lib/deck-store.ts";
+import {
+  commandersOf,
+  isCommanderSection,
+  listNames,
+  MAIN_LIST,
+  pickList,
+  type Deck,
+  type DeckList,
+} from "./lib/deck-model.ts";
+import { listDeckSlugs, readDeck, readHistory, type HistoryEntry } from "./lib/deck-store.ts";
+import { computeStats } from "./lib/deck-stats.ts";
+import type { CardSummary } from "./lib/scryfall.ts";
 import { join } from "node:path";
 
 // ---------------------------------------------------------------- types
@@ -43,53 +52,164 @@ type Swap = {
   in: CardRef & { text: string };
   /** Card going out. */
   out: CardRef & { text: string };
-  /** Why the swap was made. */
+  /** Why the swap was made, dated. */
   why: string;
-  /** Condition under which the OUT card returns. */
-  back: string;
+  /** When the OUT card comes back, from its sideboard row. Absent when no row names it. */
+  back?: string;
 };
 
 /** A card held in the sideboard with its bring-in trigger. */
 type SideboardCard = CardRef & { when: string };
 
-/**
- * A named block of substitutions, rendered like `swaps` but under its own heading on a new
- * page — e.g. a bracket-4 upgrade path, which is a different thing from the build's history.
- */
-type SwapSection = {
+/** Everything the reference shows besides the decklist and the appendix. */
+type Reference = {
   title: string;
-  /** Optional paragraph under the heading. */
-  intro?: string;
-  /** Column labels for the two sides. Defaults to IN / OUT. */
-  labels?: [string, string];
-  /** Label for the `back` note. Defaults to "Bring back". */
-  backLabel?: string;
+  subtitle: string;
+  /** Stat chips across the header, e.g. `[["Lands", "34"], ...]`. */
+  stats: [string, string][];
+  /** The list's most recent swaps, newest first. */
   swaps: Swap[];
+  sideboard: SideboardCard[];
+  footer?: string;
 };
 
 /** Basics default to a plain black-bordered printing unless `set` says otherwise. */
 const DEFAULT_BASIC_SET = "m21";
 const BASICS = ["Plains", "Island", "Swamp", "Mountain", "Forest"];
 
-/** Contents of `decks/<slug>/pdf.json`. */
+/** How many of a list's swaps the reference shows. */
+const SWAP_LIMIT = 12;
+
+/**
+ * Contents of the optional `decks/<slug>/pdf.json`: the hand-written parts of the reference. The
+ * header, the swaps and the sideboard are derived from the deck's own files, so they can't drift.
+ */
 type PdfData = {
-  title: string;
-  subtitle?: string;
-  /** Stat chips across the header, e.g. `[["Creatures", "36"], ...]`. */
-  stats?: [string, string][];
-  /** The build's decision history — what came in, what went out, and why. */
-  swaps?: Swap[];
-  sideboard?: SideboardCard[];
-  /** Further swap blocks after the sideboard, each on its own page. */
-  upgrades?: SwapSection[];
-  /** Footer note. Defaults to a pointer at the deck's research files. */
+  /** Footer note under the sideboard. */
   footer?: string;
   /**
-   * Extra markdown documents appended after the sideboard, each starting a new page.
-   * Paths are relative to the deck folder, e.g. `["research/gameplan.md"]`.
+   * Markdown documents appended after the sideboard, each starting a new page, relative to the
+   * deck folder. Defaults to `research/gameplan.md` when it exists.
    */
   appendix?: string[];
+  /** Per-list overrides keyed by list id, for a variant with its own gameplan or footer. */
+  lists?: Record<string, { footer?: string; appendix?: string[] }>;
 };
+
+/** One row of a `research/sideboard.md` table, as written there. */
+export type SideboardRow = { card: string; when: string; displaces: string };
+
+/** One swap read from `history.jsonl`. */
+export type HistorySwap = { at: string; in: string; out: string; why: string };
+
+/** A table cell with link, bold and code marks stripped: `[Sol Ring](…)` → `Sol Ring`. */
+const plainCell = (cell: string) =>
+  cell.replace(/\[([^\]]+)\]\([^)]*\)/g, "$1").replace(/\*\*|`/g, "").trim();
+
+/** The card a sideboard row brings in: its link text, else its bold text, else the text before ` (`. */
+function rowCard(cell: string): string {
+  const link = cell.match(/\[([^\]]+)\]\(/);
+  if (link) return link[1].trim();
+
+  const bold = cell.match(/\*\*([^*]+)\*\*/);
+  if (bold) return bold[1].trim();
+
+  return plainCell(cell).split(" (")[0].trim();
+}
+
+/**
+ * Every row of every table in a sideboard doc that names a card and the card it displaces.
+ * Decks word their columns differently (`Displaces`, `Displaces in \`combat\``, `Replaced by`,
+ * `IN | OUT`), so columns are found by header, and a table without both is skipped. The "when"
+ * text prefers a bring-in column, then "What it does", then a "Why" column.
+ */
+export function parseSideboard(md: string): SideboardRow[] {
+  const cells = (line: string) => line.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+  const isRow = (line: string | undefined) => (line ?? "").trim().startsWith("|");
+  const isSeparator = (line: string | undefined) => /^\|[\s:|-]+\|\s*$/.test((line ?? "").trim());
+  const lines = md.split("\n");
+  const rows: SideboardRow[] = [];
+
+  let i = 0;
+  while (i < lines.length) {
+    if (!isRow(lines[i]) || !isSeparator(lines[i + 1])) {
+      i++;
+      continue;
+    }
+
+    const header = cells(lines[i]).map(plainCell);
+    const cardCol = header.findIndex((h) => /^(card|in)$/i.test(h));
+    const displacesCol = header.findIndex((h) => /displac|replaced by|^out$/i.test(h));
+    const whenCol =
+      [/bring|when|against/i, /what it does/i, /why/i]
+        .map((re) => header.findIndex((h, col) => col !== cardCol && col !== displacesCol && re.test(h)))
+        .find((col) => col >= 0) ?? -1;
+
+    i += 2;
+    while (isRow(lines[i])) {
+      const row = cells(lines[i]);
+      const card = cardCol >= 0 ? rowCard(row[cardCol] ?? "") : "";
+
+      if (card && displacesCol >= 0) {
+        rows.push({
+          card,
+          when: whenCol >= 0 ? plainCell(row[whenCol] ?? "") : "",
+          displaces: plainCell(row[displacesCol] ?? ""),
+        });
+      }
+      i++;
+    }
+  }
+  return rows;
+}
+
+/**
+ * The sideboard rows that apply to one list: the card isn't already in it, and its displaces cell
+ * names a card that is. A card listed in two tables keeps its first row.
+ */
+export function sideboardForList(
+  rows: SideboardRow[],
+  listCards: string[],
+): (SideboardRow & { displaced: string[] })[] {
+  const inList = listCards.map((name) => frontFace(name).toLowerCase());
+  const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const kept: Record<string, true> = {};
+  const out: (SideboardRow & { displaced: string[] })[] = [];
+
+  for (const row of rows) {
+    const key = frontFace(row.card).toLowerCase();
+    if (inList.includes(key) || kept[key]) continue;
+
+    const cell = row.displaces.toLowerCase();
+    const displaced = listCards.filter((name) =>
+      new RegExp(`(^|[^a-z])${escapeRe(frontFace(name).toLowerCase())}($|[^a-z])`).test(cell),
+    );
+    if (!displaced.length) continue;
+
+    kept[key] = true;
+    out.push({ ...row, displaced });
+  }
+  return out;
+}
+
+/** A list's swaps from `history.jsonl`, newest first: every add that names the card it replaces. */
+export function historySwaps(
+  history: Pick<HistoryEntry, "at" | "listId" | "label" | "rationale" | "entries">[],
+  listId: string,
+  limit: number,
+): HistorySwap[] {
+  return history
+    .filter((h) => h.listId === listId)
+    .sort((a, b) => b.at.localeCompare(a.at))
+    .flatMap((h) =>
+      h.entries.flatMap((e) =>
+        e.op === "add" && e.replaces
+          ? [{ at: h.at.slice(0, 10), in: e.name, out: e.replaces, why: e.why ?? h.rationale ?? h.label }]
+          : [],
+      ),
+    )
+    .slice(0, limit);
+}
 
 // ---------------------------------------------------------------- helpers
 
@@ -360,16 +480,19 @@ function renderMarkdown(md: string, symbols: Record<string, string>): string {
 // ---------------------------------------------------------------- card metadata
 
 /**
- * Mana cost / MV / type / produced-mana for every card in the list, from the shared card cache
- * (`data/card-cache.json`), keyed by lower-cased front face.
+ * Mana cost / MV / type / produced-mana for every named card, from the shared card cache
+ * (`data/card-cache.json`). `meta` is keyed by lower-cased front face for the renderer, `found`
+ * by the requested name for `computeStats`.
  */
-async function loadDeckMeta(names: string[]): Promise<Record<string, any>> {
+async function loadDeckMeta(
+  names: string[],
+): Promise<{ meta: Record<string, CardSummary>; found: Record<string, CardSummary> }> {
   const { found, unresolved } = await resolveNames(names);
   for (const nf of unresolved) console.warn(`  ! no card data for "${nf}"`);
 
-  const meta: Record<string, any> = {};
+  const meta: Record<string, CardSummary> = {};
   for (const [name, card] of Object.entries(found)) meta[frontFace(name).toLowerCase()] = card;
-  return meta;
+  return { meta, found };
 }
 
 // ---------------------------------------------------------------- html
@@ -480,10 +603,10 @@ h3 { font-size:9.5pt; margin:0 0 3pt; text-transform:uppercase; letter-spacing:.
 `;
 
 function buildHtml(
-  data: PdfData,
+  ref: Reference,
   list: DeckList,
   img: Record<string, string>,
-  meta: Record<string, any>,
+  meta: Record<string, CardSummary>,
   symbols: Record<string, string>,
   identity: Set<string>,
   appendix: { title: string; html: string }[],
@@ -491,55 +614,32 @@ function buildHtml(
   const src = (name: string) => img[frontFace(name)] ?? "";
   const costTag = (c?: string) => (c ? ` <span class="cost">${esc(c)}</span>` : "");
 
-  const swaps = [...(data.swaps ?? [])].sort((a, b) =>
-    a.in.name.toLowerCase().localeCompare(b.in.name.toLowerCase()),
-  );
-  const sideboard = [...(data.sideboard ?? [])].sort((a, b) =>
+  const swaps = ref.swaps;
+  const sideboard = [...ref.sideboard].sort((a, b) =>
     a.name.toLowerCase().localeCompare(b.name.toLowerCase()),
   );
 
-  const renderSwapRows = (
-    rows: Swap[],
-    [inLabel, outLabel]: [string, string] = ["IN", "OUT"],
-    backLabel = "Bring back",
-  ) =>
-    rows
-      .map(
-        (s) => `
+  const swapRows = swaps
+    .map(
+      (s) => `
 <div class="swap">
   <div class="pair">
     <div class="side inn">
-      <div class="tag">${esc(inLabel)}</div><img src="${src(s.in.name)}" alt="">
+      <div class="tag">IN</div><img src="${src(s.in.name)}" alt="">
       <div class="sd"><div class="nm">${esc(s.in.name)}${costTag(s.in.cost)}</div><div class="blurb">${esc(s.in.text)}</div></div>
     </div>
     <div class="arrow">&#8596;</div>
     <div class="side out">
       <div class="sd right"><div class="nm">${esc(s.out.name)}${costTag(s.out.cost)}</div><div class="blurb">${esc(s.out.text)}</div></div>
-      <img src="${src(s.out.name)}" alt=""><div class="tag">${esc(outLabel)}</div>
+      <img src="${src(s.out.name)}" alt=""><div class="tag">OUT</div>
     </div>
   </div>
   <div class="notes">
     <div class="why"><b>Why:</b> ${esc(s.why)}</div>
-    <div class="back"><b>${esc(backLabel)}:</b> ${esc(s.back)}</div>
+    ${s.back ? `<div class="back"><b>Bring back:</b> ${esc(s.back)}</div>` : ""}
   </div>
 </div>`,
-      )
-      .join("");
-
-  const swapRows = renderSwapRows(swaps);
-
-  const upgradeBlocks = (data.upgrades ?? [])
-    .map((u) => {
-      const sorted = [...u.swaps].sort((a, b) =>
-        a.in.name.toLowerCase().localeCompare(b.in.name.toLowerCase()),
-      );
-      return (
-        `<section class="sec brk"><h2>${esc(u.title)}</h2>` +
-        (u.intro ? `<div class="sub">${esc(u.intro)}</div>` : "") +
-        renderSwapRows(sorted, u.labels, u.backLabel) +
-        `</section>`
-      );
-    })
+    )
     .join("");
 
   const sbCells = sideboard
@@ -550,28 +650,27 @@ function buildHtml(
     )
     .join("");
 
-  const statChips = (data.stats ?? [])
+  const statChips = ref.stats
     .map(([k, v]) => `<span><b>${esc(k)}</b> ${esc(v)}</span>`)
     .join("");
 
-  return `<!doctype html><html><head><meta charset="utf-8"><title>${esc(data.title)}</title>
+  return `<!doctype html><html><head><meta charset="utf-8"><title>${esc(ref.title)}</title>
 <style>${CSS}</style></head><body>
 
-<h1>${esc(data.title)}</h1>
-${data.subtitle ? `<div class="sub">${esc(data.subtitle)}</div>` : ""}
+<h1>${esc(ref.title)}</h1>
+<div class="sub">${esc(ref.subtitle)}</div>
 ${statChips ? `<div class="stats">${statChips}</div>` : ""}
 <section class="sec"><div class="cols">${renderDecklist(list, meta, symbols, identity)}</div></section>
 
 ${
   swaps.length || sideboard.length
     ? `<section class="sec brk">
-${swaps.length ? `<h2>Build history &mdash; ${swaps.length} substitutions made to finalize this list</h2>${swapRows}` : ""}
+${swaps.length ? `<h2>Recent swaps &mdash; the last ${swaps.length} changes to this list, newest first</h2>${swapRows}` : ""}
 ${sideboard.length ? `<h2 class="sb">Sideboard &mdash; what to bring in, and when</h2><div class="grid">${sbCells}</div>` : ""}
 </section>`
     : ""
 }
-${upgradeBlocks}
-${data.footer ? `<div class="foot">${esc(data.footer)}</div>` : ""}
+${ref.footer ? `<div class="foot">${esc(ref.footer)}</div>` : ""}
 ${appendix.map((a) => `<section class="sec brk"><div class="md-body">${a.html}</div></section>`).join("")}
 
 </body></html>`;
@@ -579,78 +678,185 @@ ${appendix.map((a) => `<section class="sec brk"><div class="md-body">${a.html}</
 
 // ---------------------------------------------------------------- main
 
-const slug = process.argv[2];
-if (!slug) {
-  console.error("usage: bun run deck:pdf <deck-slug> [list-id]\n   e.g. bun run deck:pdf edgar-markov");
-  process.exit(1);
+/** The lists a deck gets a reference for: `main` plus every list on EDHPlay, else its first list. */
+function listsToRender(deck: Deck): string[] {
+  const ids = Object.keys(deck.lists).filter(
+    (id) => deck.lists[id].kind === "deck" && (id === MAIN_LIST || deck.lists[id].edhplay),
+  );
+  return ids.length ? ids : [pickList(deck).id];
 }
 
-const deckDir = join(REPO_ROOT, "decks", slug);
-const dataPath = join(deckDir, "pdf.json");
-if (!existsSync(dataPath)) {
-  console.error(`missing pdf.json: ${dataPath}\nsee decks/README.md for the pdf.json shape.`);
-  process.exit(1);
+/** Build one list's reference PDF from the deck's own files and print where it went. */
+async function renderList(slug: string, deck: Deck, listId: string, symbols: Record<string, string>): Promise<void> {
+  const deckDir = join(REPO_ROOT, "decks", slug);
+  const list = deck.lists[listId];
+
+  let data: PdfData = {};
+  const dataPath = join(deckDir, "pdf.json");
+  if (existsSync(dataPath)) {
+    data = await Bun.file(dataPath).json();
+  }
+  const override = data.lists?.[listId] ?? {};
+
+  let sideboardRows: SideboardRow[] = [];
+  const sideboardPath = join(deckDir, "research", "sideboard.md");
+  if (existsSync(sideboardPath)) {
+    const md = await Bun.file(sideboardPath).text();
+    sideboardRows = parseSideboard(md);
+  }
+
+  const deckNames = listNames(list);
+  const rows = sideboardForList(sideboardRows, deckNames);
+  const fullHistory = await readHistory(slug);
+  const history = historySwaps(fullHistory, listId, SWAP_LIMIT);
+
+  const { meta, found } = await loadDeckMeta([
+    ...deckNames,
+    ...rows.map((r) => r.card),
+    ...history.flatMap((h) => [h.in, h.out]),
+  ]);
+  const card = (name: string): CardSummary | undefined => meta[frontFace(name).toLowerCase()];
+  const costOf = (name: string) => {
+    const c = card(name);
+    return c && /\bLand\b/.test(c.typeLine) ? "land" : c?.manaCost;
+  };
+
+  const swaps: Swap[] = history.map((h) => {
+    // The OUT card's own sideboard row, when one says how it comes back for the IN card.
+    const back = sideboardRows.find(
+      (r) =>
+        frontFace(r.card).toLowerCase() === frontFace(h.out).toLowerCase() &&
+        r.displaces.toLowerCase().includes(frontFace(h.in).toLowerCase()),
+    );
+    return {
+      in: { name: h.in, cost: costOf(h.in), text: card(h.in)?.typeLine ?? "" },
+      out: { name: h.out, cost: costOf(h.out), text: card(h.out)?.typeLine ?? "" },
+      why: `${h.at}: ${h.why}`,
+      back: back?.when || undefined,
+    };
+  });
+
+  const sideboard: SideboardCard[] = rows
+    .filter((r) => card(r.card))
+    .map((r) => ({
+      name: r.card,
+      cost: costOf(r.card),
+      when: `${r.when}${!r.when || /[.!?)]$/.test(r.when) ? "" : "."} Displaces ${r.displaced.join(", ")}.`.trim(),
+    }));
+
+  const stats = computeStats(list, found, deck.cards);
+  const upTo = (mv: number) =>
+    stats.curve.histogram.slice(0, mv + 1).reduce((n, b) => n + b.creature + b.noncreature, 0);
+  const gameChangers = stats.flags.gameChangers.length;
+
+  const ref: Reference = {
+    title: `${deck.name} — ${list.label}`,
+    subtitle: [
+      commandersOf(list).join(" + "),
+      list.bracket ? `Bracket ${list.bracket}` : "",
+      `${gameChangers} Game Changer${gameChangers === 1 ? "" : "s"}`,
+      `${stats.size.total} cards`,
+    ]
+      .filter(Boolean)
+      .join(" · "),
+    stats: [
+      ...list.sections
+        .filter((s) => s.cards.length && !isCommanderSection(s.name))
+        .map((s): [string, string] => [s.name, String(s.cards.reduce((n, c) => n + c.qty, 0))]),
+      ["Avg MV", stats.curve.avgMv.toFixed(2)],
+      ["MV ≤ 2", String(upTo(2))],
+      ["MV ≤ 3", String(upTo(3))],
+    ],
+    swaps,
+    sideboard,
+    footer: override.footer ?? data.footer,
+  };
+
+  const images = await loadImages([...swaps.flatMap((s) => [s.in, s.out]), ...sideboard]);
+
+  /** Union of every card's colour identity — used to trim what lands are shown as producing. */
+  const identity = new Set<string>();
+  for (const name of deckNames) {
+    for (const c of card(name)?.colorIdentity ?? []) identity.add(c);
+  }
+
+  const appendixPaths =
+    override.appendix ?? data.appendix ?? (existsSync(join(deckDir, "research", "gameplan.md")) ? ["research/gameplan.md"] : []);
+  const appendix: { title: string; html: string }[] = [];
+  for (const rel of appendixPaths) {
+    const path = join(deckDir, rel);
+    if (!existsSync(path)) {
+      console.warn(`  ! appendix not found: ${rel}`);
+      continue;
+    }
+
+    const md = await Bun.file(path).text();
+    appendix.push({ title: rel, html: renderMarkdown(md, symbols) });
+  }
+
+  const base = listId === MAIN_LIST ? `${slug}-reference` : `${slug}-${listId}-reference`;
+  const htmlPath = join(deckDir, `.${base}.html`);
+  const pdfPath = join(deckDir, `${base}.pdf`);
+  await Bun.write(htmlPath, buildHtml(ref, list, images, meta, symbols, identity, appendix));
+
+  // Remove the old PDF first, so a Chrome failure can't leave a stale file looking like success.
+  if (existsSync(pdfPath)) {
+    await Bun.file(pdfPath).delete();
+  }
+
+  const proc = Bun.spawn(
+    [
+      findChrome(),
+      "--headless",
+      "--disable-gpu",
+      "--no-sandbox",
+      "--no-pdf-header-footer",
+      "--virtual-time-budget=30000",
+      `--print-to-pdf=${pdfPath}`,
+      `file://${htmlPath}`,
+    ],
+    { stdout: "pipe", stderr: "pipe" },
+  );
+  await proc.exited;
+  await Bun.file(htmlPath).delete();
+
+  if (!existsSync(pdfPath)) {
+    const stderr = await new Response(proc.stderr).text();
+    throw new Error(`Chrome did not produce ${pdfPath}. stderr:\n${stderr}`);
+  }
+
+  const bytes = Buffer.from(await Bun.file(pdfPath).arrayBuffer());
+  const pages = (bytes.toString("latin1").match(/\/Type\s*\/Page[^s]/g) ?? []).length;
+  console.log(
+    `${pdfPath}\n  ${pages} pages · ${(bytes.length / 1024 / 1024).toFixed(1)} MB · ` +
+      `${swaps.length} swaps · ${sideboard.length} sideboard`,
+  );
 }
 
-const deck = await readDeck(slug);
-const { list } = pickList(deck, process.argv[3]);
-const data: PdfData = await Bun.file(dataPath).json();
+async function main(): Promise<void> {
+  const [target, listArg] = process.argv.slice(2);
+  if (!target) {
+    console.error("usage: bun run deck:pdf <deck-slug> [list-id]\n       bun run deck:pdf --all");
+    process.exit(1);
+  }
 
-const cardRefs: CardRef[] = [
-  ...(data.swaps ?? []).flatMap((s) => [s.in, s.out]),
-  ...(data.upgrades ?? []).flatMap((u) => u.swaps.flatMap((s) => [s.in, s.out])),
-  ...(data.sideboard ?? []),
-];
-const images = await loadImages(cardRefs);
+  const symbols = await loadSymbols();
+  const slugs = target === "--all" ? await listDeckSlugs() : [target];
 
-const deckNames = listNames(list);
-const meta = await loadDeckMeta(deckNames);
-const symbols = await loadSymbols();
+  for (const slug of slugs) {
+    const deck = await readDeck(slug);
+    const played = Object.values(deck.lists).some((l) => l.edhplay);
+    if (target === "--all" && !played && !existsSync(join(REPO_ROOT, "decks", slug, "pdf.json"))) {
+      continue;
+    }
 
-/** Union of every card's colour identity — used to trim what lands are shown as producing. */
-const identity = new Set<string>();
-for (const name of deckNames) {
-  for (const c of meta[frontFace(name).toLowerCase()]?.colorIdentity ?? []) identity.add(c);
+    const ids = listArg ? [pickList(deck, listArg).id] : listsToRender(deck);
+    for (const id of ids) {
+      await renderList(slug, deck, id, symbols);
+    }
+  }
 }
 
-const appendix: { title: string; html: string }[] = [];
-for (const rel of data.appendix ?? []) {
-  const path = join(deckDir, rel);
-  if (!existsSync(path)) { console.warn(`  ! appendix not found: ${rel}`); continue; }
-  appendix.push({ title: rel, html: renderMarkdown(await Bun.file(path).text(), symbols) });
+if (import.meta.main) {
+  await main();
 }
-
-const html = buildHtml(data, list, images, meta, symbols, identity, appendix);
-const htmlPath = join(deckDir, `.${slug}-reference.html`);
-await Bun.write(htmlPath, html);
-
-const pdfPath = join(deckDir, `${slug}-reference.pdf`);
-const proc = Bun.spawn(
-  [
-    findChrome(),
-    "--headless",
-    "--disable-gpu",
-    "--no-sandbox",
-    "--no-pdf-header-footer",
-    "--virtual-time-budget=30000",
-    `--print-to-pdf=${pdfPath}`,
-    `file://${htmlPath}`,
-  ],
-  { stdout: "pipe", stderr: "pipe" },
-);
-await proc.exited;
-await Bun.file(htmlPath).delete();
-
-if (!existsSync(pdfPath)) {
-  console.error("Chrome did not produce a PDF. stderr:\n" + (await new Response(proc.stderr).text()));
-  process.exit(1);
-}
-const bytes = Buffer.from(await Bun.file(pdfPath).arrayBuffer());
-const pages = (bytes.toString("latin1").match(/\/Type\s*\/Page[^s]/g) ?? []).length;
-console.log(
-  `${pdfPath}\n  ${pages} pages · ${(bytes.length / 1024 / 1024).toFixed(1)} MB · ` +
-    `${(data.swaps ?? []).length} swaps · ${(data.sideboard ?? []).length} sideboard` +
-      (data.upgrades ?? [])
-        .map((u) => ` · ${u.swaps.length} ${u.title.toLowerCase()}`)
-        .join(""),
-);

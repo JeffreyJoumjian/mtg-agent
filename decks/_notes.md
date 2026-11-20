@@ -13,11 +13,16 @@ New decks the pilot has asked for, parked until they pick one to build. Ask befo
 - From the 2026-11-15 card notes: Zndrsplt + Okaun (partners), a Galea voltron deck, and Bruce Banner
   (maybe Bracket 4).
 - From the 2026-11-20 card notes:
-  - Arabella, Abandoned Doll (RW): a new deck at Bracket 3 or 4.
+  - Arabella, Abandoned Doll (RW): **founded 2026-11-20 as `decks/arabella`, Bracket 3.** Build it
+    objectively from the commander and the field first, then do a second pass for pieces from the
+    existing decks. Keep the token-maxxing ideas below out of it unless the build gets there on its own.
   - Tifa Lockhart (G): maybe a new voltron deck.
   - A new landfall deck (no commander named).
   - A new token-maxxing deck: as many tokens as possible, as much damage or drain and life gain as
     possible when they enter, as much drain as possible, and a commander costing 4 to 5 or less.
+    Explore commanders first, separately from Arabella. The pilot counts Chatterfang as one
+    token-maxxing deck already; this one is the "nasty" kind where token types don't matter (or every
+    token counts as every type), with pings on every entry and death and combat buffs.
   - A voltron deck whose whole plan is to tutor for Infantry Shield and Chainsaw, pump the commander
     and swing, ideally pumping it many times with Equipment or instants and sorceries (both cards are
     red, so the commander needs red).
@@ -116,6 +121,21 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
   Phyrexian Tower) are parked as bench rows in `research/sideboard.md` with their paired cuts. Its own
   gameplan is `research/gameplan-combat.md` (2026-11-18). Never add
   Exquisite Blood or Bloodthirsty Conqueror (automatic infinite with the converters).
+
+## arabella: Arabella, Abandoned Doll (RW)
+
+- Founded 2026-11-20 as an objective first draft, Bracket 3, Game Changers Smothering Tithe,
+  Teferi's Protection and The One Ring. Next step: a second pass for pieces from the existing
+  decks. Keep the separate token-maxxing exploration out of it unless the build gets there.
+- No permanent power anthems: her X counts creatures with power 2 or less as the trigger resolves.
+  Pumps until end of turn are fine after her triggers resolve.
+- Delney and Windcrag Siege (Mardu) each add an Arabella trigger (CR 603.2d). Order her triggers
+  under the attack-time token makers so their tokens count.
+- Grand Abolisher is in at the pilot's ask (not a Game Changer). Lightning Greaves is passed:
+  shroud stops Reconnaissance targeting her.
+- On EDHPlay since 2026-11-21: "Arabella", https://edhplay.com/decks/ee20952b-41b1-44cf-b27b-87a6e18f81ef
+  (created at the pilot's ask; printings back-filled from EDHPlay).
+- Protection is 8 against a target of 5 after the equipment swaps; it's the deck's main surplus.
 
 ## cap-living-legend: Captain America, Living Legend (UW)
 
@@ -237,9 +257,9 @@ and flag it before adding:
   cut has a dated row in the `b4` sideboard for undoing it.
 - Since 2026-11-19 in `v3`: Swiftfoot Boots in, Coral Sword out (a second hexproof source beside Champion's Helm).
   Lightning Greaves is passed in both Wanda decks: its shroud blocks the pumps and equips that target her.
-- Trial since 2026-11-14 in `b4`: Infinite Diversity in, Coral Sword out. The pilot will report how it
-  plays; the sideboard row swaps Coral Sword back. Solphim stays as the only damage doubler, for pods
-  where opponents gain life.
+- Since 2026-11-19 in `b4`: Swiftfoot Boots in, Infinite Diversity out, to match the pilot's EDHPlay
+  deck. That ended the 2026-11-14 Infinite Diversity trial (Coral Sword was its cut). Solphim stays as
+  the only damage doubler, for pods where opponents gain life.
 - The chain's kill-turn constraint is **red pips, not mana**. With Livaan out, an X-spell costs only
   its coloured pips, and X counts toward mana value on the stack (CR 202.3e). See
   `research/turn-5-chain-2026-09-08.md`.

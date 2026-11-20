@@ -26,7 +26,7 @@ decks/<deck-slug>/
 │                   Immutable once written. Older Markdown snapshots stay and remain readable.
 ├── MOXFIELD.txt    DERIVED import list — regenerated from deck.json, never edited by hand
 │                   (plus MOXFIELD-<ID>.txt for every other 100-card list).
-├── pdf.json        Layout for the printable reference (swaps, sideboard, appendix) — see below.
+├── pdf.json        Optional footer and appendix for the printable references — see below.
 ├── research/       Everything that informs the deck: card pool, strategy, decisions, sideboard prose.
 ├── samples/        Sample hands, goldfish lines, and example decklists worth learning from.
 └── images/         Card/art images, only if actually needed.
@@ -221,59 +221,57 @@ list (default 25), and `--json` gives raw output everywhere.
 
 ## Printable deck reference (PDF)
 
-`bun run deck:pdf <slug> [list-id]` builds a print-ready PDF at
-`decks/<slug>/<slug>-reference.pdf` from `deck.json` (the `main` list unless you name another):
+```bash
+bun run deck:pdf <slug>             # main plus every list on EDHPlay
+bun run deck:pdf <slug> <list-id>   # one list
+bun run deck:pdf --all              # every deck that has a pdf.json or a list on EDHPlay
+```
 
-1. **Page 1** — the decklist, three columns, grouped by the list's sections, with a stat bar across
-   the top. Fits on one page, so it doubles as a build checklist.
-2. **Swap pages** — one bordered row per substitution: `IN` card image and text on the left,
-   `↔`, `OUT` on the right, then **Why** and **Bring back** side by side underneath.
-3. **Sideboard** — each held card with its bring-in trigger. Flows on from the swaps rather than
-   starting a fresh page.
-4. **Appendix** — any markdown docs you list (gameplan, formulas, …), each starting a new page.
+Each list gets its own PDF: `decks/<slug>/<slug>-reference.pdf` for `main`, and
+`decks/<slug>/<slug>-<list-id>-reference.pdf` for every other list (`caesar-combat-reference.pdf`,
+`iron-man-v3-reference.pdf`). Every part except the footer and the appendix is derived from the
+deck's own files, so a regenerated PDF always matches the list:
+
+1. **Page 1**: the decklist from `deck.json`, three columns grouped by the list's sections, under a
+   header built from the list (commander, bracket, Game Changer count, card count) and a stat bar
+   with every section's count, the average MV, and the MV ≤ 2 and MV ≤ 3 counts.
+2. **Recent swaps**: the list's last 12 swaps from `history.jsonl`, newest first. Each is a bordered
+   row with the `IN` card on the left and the `OUT` card on the right, then the dated **Why** from
+   the history line and, when the OUT card has a sideboard row that displaces the IN card, its
+   **Bring back** text.
+3. **Sideboard**: every row of `research/sideboard.md` whose displaced card is in this list and
+   whose own card isn't. Tables are read by their headers, so `Card | Bring in when | Displaces`,
+   `IN | OUT | Why` and `Card | … | Replaced by` all work. A table without a displaced-card column
+   (a "considered and rejected" table) is skipped.
+4. **Appendix**: markdown docs, each starting a new page.
 
 Everything is black-on-white with no background fills, so it prints without eating ink. Card images
 are pulled from Scryfall once and cached in the git-ignored `data/card-images/`, so re-runs are
-offline and instant. Rendering shells out to headless Chrome — no npm dependencies.
+offline and instant. Rendering shells out to headless Chrome, with no npm dependencies.
 
-The decklist comes straight from `deck.json`; everything else lives in **`decks/<slug>/pdf.json`**:
+**`decks/<slug>/pdf.json`** is optional and holds only the hand-written parts:
 
 ```jsonc
 {
-  "title": "Edgar Markov — Vampire Aristocrats",
-  "subtitle": "Bracket 3 · 3/3 Game Changers · no infinite combos · 100 cards",
-  "stats": [["Creatures", "36"], ["Lifelink", "11"], ["Sources", "W21 / B28 / R16"]],
-  "swaps": [
-    {
-      "in":  { "name": "Sundown Pass",     "cost": "land", "text": "R/W. Untapped from land drop 3." },
-      "out": { "name": "Clifftop Retreat", "cost": "land", "text": "R/W. Needs a Mountain or Plains." },
-      "why":  "Only 7 enablers — untapped just 50% of the time on your 4th land.",
-      "back": "Never."
-    }
-  ],
-  "sideboard": [
-    { "name": "Fracture", "cost": "{W}{B}", "when": "Blood Moon or Back to Basics in the pod." }
-  ],
-  "appendix": ["research/gameplan.md", "research/formulas.md"]
+  "footer": "One paragraph under the sideboard.",
+  "appendix": ["research/gameplan.md", "research/formulas.md"],
+  "lists": { "combat": { "appendix": ["research/gameplan-combat.md"] } }
 }
 ```
 
 Notes:
+- `appendix` defaults to `research/gameplan.md` when that file exists. `lists.<id>` overrides the
+  footer or the appendix for one list, for a variant with its own gameplan.
 - The decklist shows **mana cost + MV** for spells and **produced mana** for lands, using Scryfall's
   official symbol SVGs (cached in `data/card-symbols/`). Land output is trimmed to the deck's own
   colour identity, so Command Tower reads `WBR` rather than `WUBRG`.
-- `appendix` renders markdown docs into the PDF — headings, tables, fenced code, blockquotes and
-  lists are supported, and `{B}`-style tokens in prose become real mana symbols (inside fenced code
-  they stay as text so formula alignment survives).
-- `swaps` and `sideboard` are **sorted alphabetically at render time** — keep them in whatever order
-  is convenient to edit.
-- Add `"set": "m21"` to any card ref to pin which printing's art is used. Basic lands default to a
-  plain black-bordered printing already, because Scryfall's default basic is often a full-art or
-  borderless treatment that reads badly in print.
-- `stats`, `swaps`, `sideboard` and `footer` are all optional — a `pdf.json` with just a `title`
-  produces a clean one-page decklist.
+- `appendix` renders headings, tables, fenced code, blockquotes and lists, and `{B}`-style tokens in
+  prose become real mana symbols (inside fenced code they stay as text so formula alignment
+  survives).
+- Basic lands use a plain black-bordered printing, because Scryfall's default basic is often a
+  full-art or borderless treatment that reads badly in print.
 
-Regenerate the PDF whenever the list changes, or it will silently show the old list.
+Regenerate the PDFs whenever a list changes, or they will silently show the old list.
 
 ## In the app
 

@@ -1,0 +1,242 @@
+{
+  "schema": 1,
+  "name": "Arabella — Small Army",
+  "format": "commander",
+  "description": "Arabella, Abandoned Doll (RW), Bracket 3. Go wide with power-2-or-less creatures and tokens; every Arabella attack drains each opponent for the count. Token doublers, entry pings, attack-trigger doublers and a light lifegain layer. Founded 2026-11-20 as an objective first draft.",
+  "lists": {
+    "main": {
+      "label": "Main",
+      "kind": "deck",
+      "bracket": 3,
+      "edhplay": "ee20952b-41b1-44cf-b27b-87a6e18f81ef",
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            { "name": "Arabella, Abandoned Doll", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            { "name": "Arid Mesa", "qty": 1 },
+            { "name": "Battlefield Forge", "qty": 1 },
+            { "name": "Castle Ardenvale", "qty": 1 },
+            { "name": "Clifftop Retreat", "qty": 1 },
+            { "name": "Command Tower", "qty": 1 },
+            { "name": "Dalkovan Encampment", "qty": 1 },
+            { "name": "Furycalm Snarl", "qty": 1 },
+            { "name": "Inspiring Vantage", "qty": 1 },
+            { "name": "Kher Keep", "qty": 1 },
+            { "name": "Minas Tirith", "qty": 1 },
+            { "name": "Mountain", "qty": 7 },
+            { "name": "Needleverge Pathway", "qty": 1 },
+            { "name": "Plains", "qty": 7 },
+            { "name": "Plateau", "qty": 1 },
+            { "name": "Rogue's Passage", "qty": 1 },
+            { "name": "Rugged Prairie", "qty": 1 },
+            { "name": "Sacred Foundry", "qty": 1 },
+            { "name": "Spectator Seating", "qty": 1 },
+            { "name": "Sunbillow Verge", "qty": 1 },
+            { "name": "Sundown Pass", "qty": 1 },
+            { "name": "Windbrisk Heights", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Ramp",
+          "cards": [
+            { "name": "Arcane Signet", "qty": 1 },
+            { "name": "Boros Signet", "qty": 1 },
+            { "name": "Gold Myr", "qty": 1 },
+            { "name": "Iron Myr", "qty": 1 },
+            { "name": "Ornithopter of Paradise", "qty": 1 },
+            { "name": "Smothering Tithe", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Talisman of Conviction", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            { "name": "Enduring Innocence", "qty": 1 },
+            { "name": "Idol of Oblivion", "qty": 1 },
+            { "name": "Mentor of the Meek", "qty": 1 },
+            { "name": "Rumor Gatherer", "qty": 1 },
+            { "name": "Skullclamp", "qty": 1 },
+            { "name": "The One Ring", "qty": 1 },
+            { "name": "Tocasia's Welcome", "qty": 1 },
+            { "name": "Welcoming Vampire", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Removal & Interaction",
+          "cards": [
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Get Lost", "qty": 1 },
+            { "name": "Path to Exile", "qty": 1 },
+            { "name": "Stroke of Midnight", "qty": 1 },
+            { "name": "Swords to Plowshares", "qty": 1 },
+            { "name": "Winds of Abandon", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            { "name": "Dusk // Dawn", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Protection",
+          "cards": [
+            { "name": "Deflecting Swat", "qty": 1 },
+            { "name": "Dolmen Gate", "qty": 1 },
+            { "name": "Flawless Maneuver", "qty": 1 },
+            { "name": "Mithril Coat", "qty": 1 },
+            { "name": "Mother of Runes", "qty": 1 },
+            { "name": "Reconnaissance", "qty": 1 },
+            { "name": "Swiftfoot Boots", "qty": 1 },
+            { "name": "Teferi's Protection", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Makers",
+          "cards": [
+            { "name": "Adeline, Resplendent Cathar", "qty": 1 },
+            { "name": "Ainok Strike Leader", "qty": 1 },
+            { "name": "Anim Pakal, Thousandth Moon", "qty": 1 },
+            { "name": "Endless Foot Assault", "qty": 1 },
+            { "name": "Krenko, Mob Boss", "qty": 1 },
+            { "name": "Krenko, Tin Street Kingpin", "qty": 1 },
+            { "name": "Legion Warboss", "qty": 1 },
+            { "name": "Moogles' Valor", "qty": 1 },
+            { "name": "Myrel, Shield of Argive", "qty": 1 },
+            { "name": "Secure the Wastes", "qty": 1 },
+            { "name": "Tempt with Vengeance", "qty": 1 },
+            { "name": "Voice of Victory", "qty": 1 },
+            { "name": "Worf, Still Not Merry", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Token Doublers",
+          "cards": [
+            { "name": "Anointed Procession", "qty": 1 },
+            { "name": "Elspeth, Storm Slayer", "qty": 1 },
+            { "name": "Mondrak, Glory Dominus", "qty": 1 },
+            { "name": "Ojer Taq, Deepest Foundation", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Payoffs & Trigger Doublers",
+          "cards": [
+            { "name": "City on Fire", "qty": 1 },
+            { "name": "Delney, Streetwise Lookout", "qty": 1 },
+            { "name": "Kirol, Attentive First-Year", "qty": 1 },
+            { "name": "Raid Bombardment", "qty": 1 },
+            { "name": "Windcrag Siege", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Extra Combats & Evasion",
+          "cards": [
+            { "name": "Aurelia, the Warleader", "qty": 1 },
+            { "name": "Combat Celebrant", "qty": 1 },
+            { "name": "Iroas, God of Victory", "qty": 1 },
+            { "name": "Raph & Leo, Sibling Rivals", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Entry Pings & Amplifiers",
+          "cards": [
+            { "name": "Agate Instigator", "qty": 1 },
+            { "name": "General Kreat, the Boltbringer", "qty": 1 },
+            { "name": "Impact Tremors", "qty": 1 },
+            { "name": "Purphoros, God of the Forge", "qty": 1 },
+            { "name": "Torbran, Thane of Red Fell", "qty": 1 },
+            { "name": "Witty Roastmaster", "qty": 1 }
+          ]
+        },
+        {
+          "name": "Lifegain Payoffs",
+          "cards": [
+            { "name": "Dawn of Hope", "qty": 1 },
+            { "name": "Ocelot Pride", "qty": 1 },
+            { "name": "Soul Warden", "qty": 1 }
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {
+    "Adeline, Resplendent Cathar": { "printing": {"set":"mid","collectorNumber":"1"} },
+    "Agate Instigator": { "printing": {"set":"plst","collectorNumber":"BLC-21"} },
+    "Ainok Strike Leader": { "printing": {"set":"tdc","collectorNumber":"11"} },
+    "Anim Pakal, Thousandth Moon": { "printing": {"set":"lci","collectorNumber":"223"} },
+    "Anointed Procession": { "printing": {"set":"akh","collectorNumber":"2"} },
+    "Arabella, Abandoned Doll": { "printing": {"set":"dsk","collectorNumber":"208"} },
+    "Arcane Signet": { "printing": {"set":"eld","collectorNumber":"331"} },
+    "Aurelia, the Warleader": { "printing": {"set":"fdn","collectorNumber":"651"} },
+    "Battlefield Forge": { "printing": {"set":"bro","collectorNumber":"257"} },
+    "Boros Signet": { "printing": {"set":"rvr","collectorNumber":"251"} },
+    "Castle Ardenvale": { "printing": {"set":"eld","collectorNumber":"238"} },
+    "Chaos Warp": { "printing": {"set":"plst","collectorNumber":"DRC-48"} },
+    "City on Fire": { "printing": {"set":"mom","collectorNumber":"135"} },
+    "Clifftop Retreat": { "printing": {"set":"dom","collectorNumber":"239"} },
+    "Combat Celebrant": { "printing": {"set":"akh","collectorNumber":"125"} },
+    "Dalkovan Encampment": { "printing": {"set":"tdm","collectorNumber":"253"} },
+    "Dawn of Hope": { "printing": {"set":"grn","collectorNumber":"8"} },
+    "Delney, Streetwise Lookout": { "printing": {"set":"mkm","collectorNumber":"12"} },
+    "Dolmen Gate": { "printing": {"set":"lrw","collectorNumber":"256"} },
+    "Dusk // Dawn": { "printing": {"set":"akh","collectorNumber":"210"} },
+    "Elspeth, Storm Slayer": { "printing": {"set":"tdm","collectorNumber":"11"} },
+    "Endless Foot Assault": { "printing": {"set":"tmc","collectorNumber":"8"} },
+    "Enduring Innocence": { "printing": {"set":"dsk","collectorNumber":"6"} },
+    "Flawless Maneuver": { "printing": {"set":"cmm","collectorNumber":"24"} },
+    "Furycalm Snarl": { "printing": {"set":"stx","collectorNumber":"266"} },
+    "General Kreat, the Boltbringer": { "printing": {"set":"plst","collectorNumber":"J25-48"} },
+    "Get Lost": { "printing": {"set":"lci","collectorNumber":"14"} },
+    "Gold Myr": { "printing": {"set":"nec","collectorNumber":"153"} },
+    "Impact Tremors": { "printing": {"set":"dtk","collectorNumber":"140"} },
+    "Inspiring Vantage": { "printing": {"set":"otj","collectorNumber":"269"} },
+    "Iroas, God of Victory": { "printing": {"set":"plst","collectorNumber":"C16-205"} },
+    "Iron Myr": { "printing": {"set":"som","collectorNumber":"168"} },
+    "Kher Keep": { "printing": {"set":"plst","collectorNumber":"MKC-270"} },
+    "Kirol, Attentive First-Year": { "printing": {"set":"ecl","collectorNumber":"231"} },
+    "Krenko, Mob Boss": { "printing": {"set":"fdn","collectorNumber":"204"} },
+    "Krenko, Tin Street Kingpin": { "printing": {"set":"war","collectorNumber":"137"} },
+    "Legion Warboss": { "printing": {"set":"grn","collectorNumber":"109"} },
+    "Mentor of the Meek": { "printing": {"set":"fdn","collectorNumber":"578"} },
+    "Minas Tirith": { "printing": {"set":"ltr","collectorNumber":"256"} },
+    "Mondrak, Glory Dominus": { "printing": {"set":"one","collectorNumber":"23"} },
+    "Moogles' Valor": { "printing": {"set":"fin","collectorNumber":"27"} },
+    "Mother of Runes": { "printing": {"set":"plst","collectorNumber":"DDO-20"} },
+    "Myrel, Shield of Argive": { "printing": {"set":"bro","collectorNumber":"18"} },
+    "Needleverge Pathway": { "printing": {"set":"znr","collectorNumber":"263"} },
+    "Ocelot Pride": { "printing": {"set":"mh3","collectorNumber":"38"} },
+    "Ojer Taq, Deepest Foundation": { "printing": {"set":"lci","collectorNumber":"26"} },
+    "Path to Exile": { "printing": {"set":"plst","collectorNumber":"BLC-147"} },
+    "Purphoros, God of the Forge": { "printing": {"set":"cmm","collectorNumber":"246"} },
+    "Raid Bombardment": { "printing": {"set":"uma","collectorNumber":"142"} },
+    "Raph & Leo, Sibling Rivals": { "printing": {"set":"tmt","collectorNumber":"166"} },
+    "Reconnaissance": { "printing": {"set":"acr","collectorNumber":"82"} },
+    "Rugged Prairie": { "printing": {"set":"cmm","collectorNumber":"1022"} },
+    "Rumor Gatherer": { "printing": {"set":"snc","collectorNumber":"29"} },
+    "Secure the Wastes": { "printing": {"set":"dtk","collectorNumber":"36"} },
+    "Smothering Tithe": { "printing": {"set":"rna","collectorNumber":"22"} },
+    "Soul Warden": { "printing": {"set":"plst","collectorNumber":"MM3-24"} },
+    "Spectator Seating": { "printing": {"set":"cmm","collectorNumber":"427"} },
+    "Sunbillow Verge": { "printing": {"set":"dft","collectorNumber":"264"} },
+    "Sundown Pass": { "printing": {"set":"sos","collectorNumber":"264"} },
+    "Swiftfoot Boots": { "printing": {"set":"fdn","collectorNumber":"258"} },
+    "Talisman of Conviction": { "printing": {"set":"cmm","collectorNumber":"978"} },
+    "Teferi's Protection": { "printing": {"set":"2x2","collectorNumber":"32"} },
+    "Tempt with Vengeance": { "printing": {"set":"cmm","collectorNumber":"263"} },
+    "Tocasia's Welcome": { "printing": {"set":"bro","collectorNumber":"30"} },
+    "Torbran, Thane of Red Fell": { "printing": {"set":"eld","collectorNumber":"147"} },
+    "Voice of Victory": { "printing": {"set":"tdm","collectorNumber":"33"} },
+    "Welcoming Vampire": { "printing": {"set":"vow","collectorNumber":"46"} },
+    "Windbrisk Heights": { "printing": {"set":"tdc","collectorNumber":"411"} },
+    "Windcrag Siege": { "printing": {"set":"tdm","collectorNumber":"235"} },
+    "Witty Roastmaster": { "printing": {"set":"snc","collectorNumber":"131"} },
+    "Worf, Still Not Merry": { "printing": {"set":"trc","collectorNumber":"186"} }
+  }
+}
