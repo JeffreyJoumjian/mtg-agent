@@ -6,6 +6,22 @@ each deck's `research/decisions.md`**; this file is the short version. When the 
 `deck.json` and the decision log win and this file gets fixed. Cross-deck pilot rules (banned cards,
 loop policy, pods) are in the root `CLAUDE.md`.
 
+## Deck requests (parked)
+
+New decks the pilot has asked for, parked until they pick one to build. Ask before starting any.
+
+- From the 2026-11-15 card notes: Zndrsplt + Okaun (partners), a Galea voltron deck, and Bruce Banner
+  (maybe Bracket 4).
+- From the 2026-11-20 card notes:
+  - Arabella, Abandoned Doll (RW): a new deck at Bracket 3 or 4.
+  - Tifa Lockhart (G): maybe a new voltron deck.
+  - A new landfall deck (no commander named).
+  - A new token-maxxing deck: as many tokens as possible, as much damage or drain and life gain as
+    possible when they enter, as much drain as possible, and a commander costing 4 to 5 or less.
+  - A voltron deck whose whole plan is to tutor for Infantry Shield and Chainsaw, pump the commander
+    and swing, ideally pumping it many times with Equipment or instants and sorceries (both cards are
+    red, so the commander needs red).
+
 ## Star Trek (TRK + TRC) set review: complete (2026-11-15)
 
 Taken one deck per round on 2026-11-14 and 2026-11-15. Each deck's section below and its
@@ -65,8 +81,12 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
   Black Market Connections came back for Pest Infestation. Grounds and costs are in
   `chatterfang/research/decisions.md`.
 - **Trial since 2026-11-18: 34 lands.** Replicator and Support Mission came in for two Swamps (Swamps 5 → 3). The
-  pilot will say if the deck starts missing land drops; the undo is a Swamp back for either card.
-  Vengeance Mission was passed.
+  pilot will say if the deck starts missing land drops; the undo is a Swamp back for Support Mission
+  or for Throne of the God-Pharaoh, which took Replicator's slot. Vengeance Mission was passed.
+- Since 2026-11-20: Throne of the God-Pharaoh in, Replicator out (the pilot's call: Replicator's
+  {2},{T} every turn competed for mana). Throne drains each opponent per tapped creature at your end
+  step, so tap the board in response with Cryptolith Rite, Springleaf Parade, Hazel or Esika's
+  Chariot's crew. Creatures tapped that way can't block until your next untap.
 - Since 2026-11-14: Alhammarret's Archive doubles every draw after the first in the draw step, and
   Moldervine's and Skullclamp's draws are mandatory, so count the library before running a chosen-N
   loop. Elvish Mystic is the one 1-mana dork left (Llanowar Elves went for the Archive).

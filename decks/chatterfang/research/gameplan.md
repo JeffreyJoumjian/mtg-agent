@@ -31,6 +31,7 @@ Wave 11 added Pest Infestation to that group.
 | Nonland (66) | 5 | 22 | 23 | 10 | 4 | 2 | **2.92** |
 
 Since 2026-11-18 the deck runs 34 lands (two Swamps went for Replicator and Support Mission, on trial).
+Throne of the God-Pharaoh took Replicator's slot on 2026-11-20.
 Springleaf Parade counts at MV 2 and really costs 5 at X = 3.
 
 Heavier than the parent (2.73). Wave 10 made it heavier on paper (2.84 → 2.97, MV ≤ 2 27 → 24), but
@@ -154,11 +155,6 @@ those two replace only Clue/Food/Treasure tokens and cannot see Squirrels. "Chat
 still the right thing to remember at the table — it always reaches the maximum — just don't reason
 that a doubler placed after him is wasted. It isn't.
 
-**Replicator follows the same law.** Its copy of a Clue, Food or Treasure is that kind of token, so
-Manufactor replaces it with one of each, untapped (ledger repl-015). With Doubling Season out, one
-activation on a Treasure is 12 tokens if Chatterfang goes last. Each activation is its own event, so
-Peregrin and Tippy-Toe add their Food to it, and it works at instant speed.
-
 Bilbo before Manufactor is correct whenever `3 × Foods > total Clue/Food/Treasure` in the event,
 which is nearly always true here because Peregrin and Tippy-Toe are feeding it Foods.
 
@@ -195,6 +191,23 @@ X is locked on resolution (see §9).
 
 **Gruesome Fate** with 20 creatures is 20 to each opponent, 40 with Bloodletter. **Cast it before
 you sacrifice** — it counts creatures you control.
+
+**Throne of the God-Pharaoh** (since 2026-11-20). At your end step, each opponent loses 1 for every
+tapped creature you control, counted as the trigger resolves, so tap the board **in response**:
+
+- Cryptolith Rite and Springleaf Parade let creatures tap for mana. Creatures made this turn can't
+  use that `{T}` unless Concordant Crossroads gives them haste (CR 302.6).
+- Hazel's `{T}, Pay 2 life, Tap X untapped tokens` and Esika's Chariot's crew 4 tap other creatures as
+  a cost, so summoning sickness doesn't stop them. Crew can be paid again and again.
+- Creatures that attacked and survived, and anything you tapped for mana earlier in the turn, already
+  count.
+- **The cost:** whatever you tap stays tapped through the other players' turns, so it can't block.
+  Keep enough blockers untapped.
+- Bloodletter of Aclazotz doubles it. Its doubling works during your turn, and your end step is
+  still your turn, so with Bloodletter out it's 2 per tapped creature.
+- **Cute line:** at your end step, put Throne's trigger on the stack under Hazel's. Hazel copies a
+  token first. Then, with Throne still waiting, tap everything for mana and spend it on Second
+  Harvest. With Crossroads out the new copies can tap too, and Throne counts them all.
 
 ## 8. The finish — the combos are still here
 

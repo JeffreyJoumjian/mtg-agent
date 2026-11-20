@@ -1222,3 +1222,35 @@ caught it. The cause was writing card text from memory instead of running `bun r
 
 **Curve:** average MV 2.94 → 2.92, MV ≤ 2 26 → 27, MV ≤ 3 48 → 50. Lands 36 → 34, black sources 33 → 31.
 Validated 100/100, legal and on-identity, Game Changers 1. `MOXFIELD.txt` regenerated.
+
+## 2026-11-20 — Throne of the God-Pharaoh in, Replicator out (pilot's call)
+
+Snapshot: `versions/2026-11-20-1636-main-throne-of-the-god-pharaoh-in-replicator-out.json`. The
+pilot's card notes named Throne of the God-Pharaoh for this deck. I proposed it for Blood Artist (the
+weakest drain payoff by rate, one opponent per death), with Priest of Forgotten Gods and Circle of
+Dreams Druid as the other cuts. The pilot chose Replicator instead: *"how often does replicator make
+sense cause remember it's also {2}{T} ... we are building the deck a bit more towards swinging and
+tapping for mana so both of those engines could fuel pharaoh and the table"*.
+
+- **Grounds:** *"At the beginning of your end step, each opponent loses life equal to the number of
+  tapped creatures you control."* It counts as the trigger resolves (Gatherer ruling), so the board is
+  tapped in response. Cryptolith Rite and Springleaf Parade tap creatures for mana, Concordant
+  Crossroads lets new tokens use that `{T}`, and Hazel's and Esika's Chariot's tap costs ignore
+  summoning sickness (CR 302.6). Creatures tapped for mana earlier in the turn and surviving attackers
+  already count, and Bloodletter doubles it because the end step is your turn.
+- **Why Replicator, and I agree.** Replicator costs `{2},{T}` every turn for one tapped copy and a
+  Squirrel at its base, in a deck that always has somewhere to spend its mana (ledger eval-009, now
+  with this case). Throne costs nothing after it lands and pays off what the deck already does.
+  Replicator came in on 2026-11-18 as a re-derivation of the 2026-11-10 NO, so it had two days.
+- **Costs named:** Token Engines drops from 15 to 14. Creatures tapped for Throne can't block until
+  your next untap. Blood Artist stays.
+- **Cute line kept for the record:** Replicator copying a Treasure with Academy Manufactor and
+  Doubling Season out made 12 tokens per activation at instant speed if Chatterfang applied last
+  (ledger repl-015).
+- **Land trial:** the undo for the 34-land trial is now a Swamp back for Support Mission or for
+  Throne.
+
+**Curve:** unchanged (2.92, MV ≤ 2 27, MV ≤ 3 50). Drain Payoffs 12 → 13.
+
+EDHPlay: pushed to "[NEW] CHATTERFANG DEEZ NUTS", valid, bracket 3, verified. Throne pinned to (AKH)
+237. Validated: 100/100, every name found, legal and on-identity, Game Changers 1.

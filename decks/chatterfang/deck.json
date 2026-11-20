@@ -108,7 +108,6 @@
             { "name": "Esika's Chariot", "qty": 1 },
             { "name": "Hazel of the Rootbloom", "qty": 1 },
             { "name": "Peregrin Took", "qty": 1 },
-            { "name": "Replicator", "qty": 1 },
             { "name": "Scute Swarm", "qty": 1 },
             { "name": "Second Harvest", "qty": 1 },
             { "name": "Springleaf Parade", "qty": 1 },
@@ -145,6 +144,7 @@
             { "name": "Nadier's Nightblade", "qty": 1 },
             { "name": "Prosperous Innkeeper", "qty": 1 },
             { "name": "Starscape Cleric", "qty": 1 },
+            { "name": "Throne of the God-Pharaoh", "qty": 1 },
             { "name": "Valley Rotcaller", "qty": 1 },
             { "name": "Vito, Thorn of the Dusk Rose", "qty": 1 },
             { "name": "Zulaport Cutthroat", "qty": 1 }
@@ -262,6 +262,7 @@
     "The Meathook Massacre": { "status": "PROXY", "printing": {"set":"inr","collectorNumber":"387"} },
     "The Unbeatable Squirrel Girl": { "status": "PROXY", "printing": {"set":"msh","collectorNumber":"371"} },
     "Three Tree City": { "status": "PROXY", "printing": {"set":"blb","collectorNumber":"260"} },
+    "Throne of the God-Pharaoh": { "printing": {"set":"akh","collectorNumber":"237"} },
     "Tippy-Toe, Terrific Partner": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"734"} },
     "Tireless Provisioner": { "status": "PROXY", "printing": {"set":"sld","collectorNumber":"2057"} },
     "Toxic Deluge": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"161"} },

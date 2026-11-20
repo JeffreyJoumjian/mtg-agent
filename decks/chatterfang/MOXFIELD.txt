@@ -61,7 +61,6 @@
 1 Plumb the Forbidden (STX) 81
 1 Priest of Forgotten Gods (RNA) 83
 1 Prosperous Innkeeper (AFR) 200
-1 Replicator (TRK) 267
 1 Sakura-Tribe Elder (PL25) 4
 1 Scute Swarm (ZNR) 203
 1 Second Harvest (BLC) 123
@@ -78,6 +77,7 @@
 1 The Meathook Massacre (INR) 387
 1 The Unbeatable Squirrel Girl (MSH) 371
 1 Three Tree City (BLB) 260
+1 Throne of the God-Pharaoh (AKH) 237
 1 Tippy-Toe, Terrific Partner (MSC) 734
 1 Tireless Provisioner (SLD) 2057
 1 Twilight Mire (2XM) 328
