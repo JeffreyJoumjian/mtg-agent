@@ -13,6 +13,7 @@
  * Moxfield export regenerated. Nothing here runs git.
  */
 import { readFile } from "node:fs/promises";
+import { basename } from "node:path";
 import { deckName, resolveNames } from "./lib/card-cache.ts";
 import { applyChangeSet, type ChangeEntry } from "./lib/change-set.ts";
 import {
@@ -29,7 +30,7 @@ import {
 } from "./lib/deck-model.ts";
 import { applyToDeck, readDeck, setCardMeta } from "./lib/deck-store.ts";
 import { computeStats, deckIdentity, diffStats, type CardInfo, type DeckStats, type StatChange } from "./lib/deck-stats.ts";
-import { parsePrintingRef } from "./lib/moxfield.ts";
+import { moxfieldFileFor, parsePrintingRef } from "./lib/moxfield.ts";
 import type { CardSummary } from "./lib/scryfall.ts";
 
 export interface EditArgs {
@@ -331,6 +332,16 @@ async function runEdit(argv: string[]): Promise<void> {
   const edhplayId = outcome.deck.lists[args.listId].edhplay;
   if (edhplayId) {
     console.log(`  edhplay: compare it with EDHPlay now (edhplay-sync skill): bun run edhplay push ${args.slug} --list ${args.listId}`);
+  }
+
+  // The pilot ends every list edit with this bullet (CLAUDE.md, "Deck changes"): the list's Moxfield
+  // file, plus its EDHPlay deck when the list is played there. Printing it here keeps the link from
+  // being skipped and the EDHPlay URL from going stale.
+  const moxfieldPath = outcome.moxfield.find((p) => basename(p) === moxfieldFileFor(args.listId));
+  if (moxfieldPath) {
+    const deckLabel = outcome.deck.name.split(" — ")[0].split(",")[0].trim();
+    const edhplayLink = edhplayId ? ` · [EDHPlay](https://edhplay.com/decks/${edhplayId})` : "";
+    console.log(`  link: - [${deckLabel} ${args.listId}](${moxfieldPath})${edhplayLink}`);
   }
 }
 

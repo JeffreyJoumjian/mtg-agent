@@ -98,12 +98,14 @@ When the pilot bans another card, add it here.
 - **Work on the newest list.** Check which lists a deck's `deck.json` has and the dates in
   `research/decisions.md`, target the newest, and ask when it's unclear. If the newest isn't `main`,
   say so and offer to promote it.
-- **End every list edit, even a single swap, with a clickable link to each changed list's Moxfield
-  file** (`main` → `MOXFIELD.txt`, `b4` → `MOXFIELD-B4.txt`): one bullet per list, a markdown link
-  whose text is the deck and list and whose target is the absolute path, e.g.
-  `- [Chatterfang main](/Users/skylerdj/Desktop/mtg-agent/decks/chatterfang/MOXFIELD.txt)`.
-  A bare path in prose or after a bold label isn't clickable in T3 Code. Pasting the list into
-  Moxfield is always their next step.
+- **End every list edit, even a single swap, with clickable links to each changed list's Moxfield
+  file and its EDHPlay deck, together on one bullet per list.** The Moxfield link's text is the deck
+  and list and its target is the absolute path (`main` → `MOXFIELD.txt`, `b4` → `MOXFIELD-B4.txt`).
+  The EDHPlay link goes to the list's deck, and `bun run edhplay status` prints the map, e.g.
+  `- [Chatterfang main](/Users/skylerdj/Desktop/mtg-agent/decks/chatterfang/MOXFIELD.txt) · [EDHPlay](https://edhplay.com/decks/60e58260-cf82-430f-a81c-8ce20355edd2)`.
+  `deck:edit` prints this bullet as its `link:` line after every apply, so copy it from there. A list
+  that isn't on EDHPlay gets the Moxfield link alone. A bare path in prose or after a bold
+  label isn't clickable in T3 Code. Pasting the list into Moxfield is always their next step.
 - **Compare every applied edit with EDHPlay** using the `edhplay-sync` skill when the list has an
   `edhplay` id (`deck:edit` prints an `edhplay:` line). EDHPlay is what the pilot plays, so any
   difference beyond the edit they just approved stops the push until you settle it with them. A
