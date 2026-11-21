@@ -28,6 +28,8 @@ function post(msg: PageMessage): void {
 interface Capture {
   meta: CaptureMeta;
   frames: (RawFrame & { i: number })[];
+  /** Kept with the frames so a restarted service worker can be refilled from the page. */
+  log: LogLine[];
   nextFrame: number;
   nextLog: number;
   open: boolean;
@@ -58,6 +60,35 @@ function parseJson(data: unknown): unknown {
 
 function typeOf(data: unknown): string {
   return typeof data === "object" && data !== null && "type" in data && typeof data.type === "string" ? data.type : "";
+}
+
+/** A closed capture's frames stay for two minutes, long enough for a restarted service worker to
+ *  ask for them, then go, so a long session doesn't keep every game in EDHPlay's memory. */
+function release(capture: Capture): void {
+  setTimeout(() => {
+    if (!capture.open) delete captures[capture.meta.captureId];
+  }, 120_000);
+}
+
+/** Tells other EDHPlay tabs a room is open, so none of them fetches decklists meanwhile. */
+const ROOM_OPEN_KEY = "edhplay-lens:room-open-at";
+
+function markRoomOpen(): void {
+  try {
+    localStorage.setItem(ROOM_OPEN_KEY, String(Date.now()));
+  } catch {
+    // Storage blocked: this tab still checks its own socket.
+  }
+}
+
+function roomOpenAnywhere(): boolean {
+  if (activeWs?.open) return true;
+  try {
+    const at = Number(localStorage.getItem(ROOM_OPEN_KEY) ?? 0);
+    return Date.now() - at < 30_000;
+  } catch {
+    return false;
+  }
 }
 
 function record(capture: Capture, dir: "in" | "out", data: unknown): void {
@@ -96,11 +127,12 @@ function tap(ws: WebSocket, rawUrl: string): void {
     me,
     extensionVersion: VERSION,
   };
-  const capture: Capture = { meta, frames: [], nextFrame: 0, nextLog: 0, open: true, seatIds: [], seatNames: {}, playedBySeat: {} };
+  const capture: Capture = { meta, frames: [], log: [], nextFrame: 0, nextLog: 0, open: true, seatIds: [], seatNames: {}, playedBySeat: {} };
   captures[meta.captureId] = capture;
   activeWs = capture;
   closeSolo();
   post({ kind: "capture_start", meta });
+  markRoomOpen();
 
   ws.addEventListener("message", (e: MessageEvent) => record(capture, "in", parseJson(e.data)));
   const send = ws.send.bind(ws);
@@ -110,6 +142,12 @@ function tap(ws: WebSocket, rawUrl: string): void {
   };
   ws.addEventListener("close", () => {
     capture.open = false;
+    release(capture);
+    try {
+      localStorage.removeItem(ROOM_OPEN_KEY);
+    } catch {
+      // Nothing to clear.
+    }
     capture.meta.endedAt = Date.now();
     post({ kind: "capture_end", captureId: meta.captureId, endedAt: capture.meta.endedAt });
     if (activeWs === capture) {
@@ -194,6 +232,7 @@ function onMessages(state: unknown): void {
     if (!capture) continue;
     const line = toLogLine(m, capture.nextLog++);
     if (!line) continue;
+    capture.log.push(line);
     post({ kind: "log", captureId: capture.meta.captureId, line });
     if (capture.meta.source === "solo") {
       noteSoloSeat(capture, line);
@@ -201,12 +240,25 @@ function onMessages(state: unknown): void {
   }
 }
 
+// The browser keeps 250 resource entries by default; card images fill that before the game
+// bundle loads, and the store hook below finds the bundle by its entry.
+try {
+  performance.setResourceTimingBufferSize(5000);
+} catch {
+  // Older engines: the script and modulepreload scan below still finds it.
+}
+
+function gameBundleUrls(): string[] {
+  const fromTiming = performance.getEntriesByType("resource").map((e) => e.name);
+  const fromTags = [...document.querySelectorAll<HTMLScriptElement | HTMLLinkElement>("script[src], link[rel=modulepreload]")].map((el) =>
+    el instanceof HTMLScriptElement ? el.src : el.href,
+  );
+  return [...new Set([...fromTiming, ...fromTags])].filter((n) => /\/assets\/GameLayout-[^/]+\.js$/.test(n));
+}
+
 async function hookMessageStore(): Promise<void> {
   if (storeHooked) return;
-  const urls = performance
-    .getEntriesByType("resource")
-    .map((e) => e.name)
-    .filter((n) => /\/assets\/GameLayout-[^/]+\.js$/.test(n));
+  const urls = gameBundleUrls();
 
   for (const url of urls) {
     try {
@@ -227,8 +279,15 @@ async function hookMessageStore(): Promise<void> {
   }
 }
 
+let lastPath = location.pathname;
 setInterval(() => {
   void hookMessageStore();
+  if (activeWs?.open) markRoomOpen();
+  // Entering a playtest starts a fresh deck list, so seats can't match a deck from an earlier one.
+  if (location.pathname.startsWith("/playtest") && !lastPath.startsWith("/playtest")) {
+    loadedDecks.length = 0;
+  }
+  lastPath = location.pathname;
   // EDHPlay is a single-page app: leaving a playtest is a route change, not a page unload.
   if (activeSolo && !location.pathname.startsWith("/playtest")) {
     closeSolo();
@@ -249,7 +308,7 @@ function startSolo(): void {
     extensionVersion: VERSION,
     players: [],
   };
-  const capture: Capture = { meta, frames: [], nextFrame: 0, nextLog: 0, open: true, seatIds: [], seatNames: {}, playedBySeat: {} };
+  const capture: Capture = { meta, frames: [], log: [], nextFrame: 0, nextLog: 0, open: true, seatIds: [], seatNames: {}, playedBySeat: {} };
   captures[meta.captureId] = capture;
   activeSolo = capture;
   post({ kind: "capture_start", meta });
@@ -260,6 +319,7 @@ function closeSolo(): void {
   const capture = activeSolo;
   activeSolo = null;
   capture.open = false;
+  release(capture);
   capture.meta.endedAt = Date.now();
   post({ kind: "capture_end", captureId: capture.meta.captureId, endedAt: capture.meta.endedAt });
 }
@@ -371,7 +431,7 @@ let lastHistorySync = 0;
 /** Match history plus every deck in it. Skipped while a room is open, so no opponent's list is
  *  ever fetched during a game. */
 async function syncHistory(force = false): Promise<void> {
-  if (activeWs?.open) return;
+  if (roomOpenAnywhere()) return;
   if (!force && Date.now() - lastHistorySync < 120_000) return;
   lastHistorySync = Date.now();
 
@@ -383,7 +443,7 @@ async function syncHistory(force = false): Promise<void> {
   for (const match of matches) {
     const players = typeof match === "object" && match !== null && "players" in match && Array.isArray(match.players) ? match.players : [];
     for (const p of players) {
-      if (activeWs?.open) return;
+      if (roomOpenAnywhere()) return;
       if (typeof p !== "object" || p === null) continue;
       const deckId = "deck_id" in p && typeof p.deck_id === "string" ? p.deck_id : null;
       if (!deckId || fetchedDecks[deckId]) continue;
@@ -410,8 +470,9 @@ async function snapshotRooms(): Promise<void> {
 window.addEventListener("message", (e: MessageEvent) => {
   if (e.source !== window || !isBackgroundEnvelope(e.data)) return;
   if (e.data.msg.kind === "request_replay") {
-    const capture = activeWs ?? activeSolo;
-    if (capture) post({ kind: "replay", meta: capture.meta, frames: capture.frames });
+    for (const capture of Object.values(captures)) {
+      post({ kind: "replay", meta: capture.meta, frames: capture.frames, log: capture.log, open: capture.open });
+    }
   }
 });
 

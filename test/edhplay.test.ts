@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { GameTracker, parseCapture, soloLogToFrames, type CaptureMeta, type RawFrame } from "../scripts/lib/edhplay-parse.ts";
 import { buildRecords, deckPerformance, fillTypeLines, matchups, meta, overview, playerSummaries, dossierFor, type LocalListRef } from "../scripts/lib/edhplay-games.ts";
-import { ingest, listCaptures, loadParsedGames, readFrames, listDeckSnapshots } from "../scripts/lib/edhplay-store.ts";
+import { groupSessions, ingest, listCaptures, loadParsedGames, readFrames, listDeckSnapshots } from "../scripts/lib/edhplay-store.ts";
 
 // Player ids and shapes follow real EDHPlay frames (2026-11-21); names are made up.
 const ME = "11111111-1111-1111-1111-111111111111";
@@ -334,4 +334,52 @@ test("playtests are stored apart from real games and never reach real-game stats
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
+});
+
+test("a reconnect mid-game is one game, not two, and an open capture counts as in progress", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "edhplay-"));
+  try {
+    const all = frames();
+    // The socket drops after the first turn pass and a new one opens 30 seconds later, starting
+    // with a fresh game_state for the same game (round 1, pilot at 38 life).
+    const first = all.slice(0, 7).map((f, i) => ({ ...f, i }));
+    const resync = {
+      type: "game_state",
+      game_started: true,
+      round_count: 1,
+      turn_seq: 2,
+      current_turn_player_id: OPP,
+      players: [
+        { player_id: ME, username: "pilot", life: 38 },
+        { player_id: OPP, username: "rival", life: 40 },
+      ],
+    };
+    const t0 = all[6].t + 30_000;
+    const second = [{ t: t0, dir: "in" as const, data: resync }, ...all.slice(7).map((f) => ({ ...f, t: f.t + 31_000 }))].map((f, i) => ({ ...f, i }));
+
+    await ingest({ kind: "capture", meta: META, frames: first }, dir);
+    await ingest({ kind: "capture_end", captureId: "cap1", endedAt: all[6].t }, dir);
+    await ingest({ kind: "capture", meta: { ...META, captureId: "cap2", startedAt: t0 }, frames: second }, dir);
+
+    const sessions = await loadParsedGames("games", dir);
+    expect(sessions.map((s) => [s.captureIds, s.inProgress, s.games.length])).toEqual([[["cap1", "cap2"], true, 1]]);
+
+    const { records } = buildRecords({ captures: sessions, matches: [], me: "pilot", lists: [LIST] });
+    expect(records.map((r) => [r.result, r.inProgress, r.captureIds])).toEqual([["win", undefined, ["cap1", "cap2"]]]);
+    expect(records[0].players.find((p) => p.username === "pilot")?.finalLife).toEqual(38);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
+test("captures in the same room more than 15 minutes apart are separate sittings", () => {
+  const meta = (captureId: string, startedAt: number, endedAt: number) => ({ ...META, captureId, startedAt, endedAt, lastIndex: 0, lastLogIndex: -1, frameCount: 1, updatedAt: endedAt });
+  const groups = groupSessions([meta("a", 0, 60_000), meta("b", 120_000, 200_000), meta("c", 200_000 + 16 * 60_000, 2_000_000)]);
+  expect(groups.map((g) => g.map((m) => m.captureId))).toEqual([["a", "b"], ["c"]]);
+});
+
+test("a game with a winner but no seat for the pilot is unknown, not a loss", () => {
+  const stranger: CaptureMeta = { ...META, me: { id: "someone-else", username: "nobody" } };
+  const { records } = buildRecords({ captures: [{ games: parseCapture(stranger, frames()) }], matches: [], lists: [] });
+  expect(records.map((r) => [r.result, r.winner])).toEqual([["unknown", "pilot"]]);
 });

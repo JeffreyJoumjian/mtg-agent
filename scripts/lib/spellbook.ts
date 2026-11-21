@@ -94,13 +94,23 @@ interface CacheEntry {
   result: ComboResult;
 }
 
+function isCacheEntry(v: unknown): v is CacheEntry {
+  return isObj(v) && typeof v.fetchedAt === "number" && isObj(v.result) && Array.isArray(v.result.included) && Array.isArray(v.result.almostIncluded);
+}
+
 async function loadCache(): Promise<Record<string, CacheEntry>> {
+  let raw: unknown = null;
   try {
     const text = await readFile(CACHE_PATH, "utf8");
-    return JSON.parse(text) as Record<string, CacheEntry>;
+    raw = JSON.parse(text);
   } catch {
     return {};
   }
+  const out: Record<string, CacheEntry> = {};
+  for (const [k, v] of Object.entries(isObj(raw) ? raw : {})) {
+    if (isCacheEntry(v)) out[k] = v;
+  }
+  return out;
 }
 
 async function saveCache(cache: Record<string, CacheEntry>): Promise<void> {

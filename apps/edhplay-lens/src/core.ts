@@ -17,7 +17,8 @@ export function matchSeatsToDecks(playedBySeat: Record<string, string[]>, decks:
   const out: Record<string, LoadedDeck> = {};
   for (const [seat, played] of Object.entries(playedBySeat)) {
     let best: { deck: LoadedDeck; hits: number } | undefined;
-    for (const deck of decks) {
+    // Newest first, so a tie on shared staples goes to the deck loaded most recently.
+    for (const deck of [...decks].reverse()) {
       const hits = played.filter((name) => deck.cards.some((c) => c === name || c.split(" // ")[0] === name)).length;
       if (hits > 0 && (!best || hits > best.hits)) {
         best = { deck, hits };

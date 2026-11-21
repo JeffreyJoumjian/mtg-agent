@@ -79,7 +79,10 @@ export const Route = createFileRoute("/api/edhplay/ingest")({
           const result = await ingest(data);
           return json(result);
         } catch (err) {
-          return json({ ok: false, error: err instanceof Error ? err.message : String(err) }, 400);
+          // Only an unsafe id is the payload's fault (400, the extension drops it). Anything else is
+          // the disk or the server (500, the extension keeps the record and retries).
+          const message = err instanceof Error ? err.message : String(err);
+          return json({ ok: false, error: message }, message.includes("isn't a safe file name") ? 400 : 500);
         }
       },
     },

@@ -155,7 +155,11 @@ export interface GameRecord {
   durationSec: number;
   rounds: number;
   joinedMidGame: boolean;
+  /** The game's capture is still open: it's being played right now. */
+  inProgress?: boolean;
   captureId?: string;
+  /** Every capture the game spans (a reconnect mid-game opens a second one). */
+  captureIds?: string[];
   gameId?: string;
   matchId?: string;
   roomId?: string | null;
@@ -169,7 +173,7 @@ export interface GameRecord {
 }
 
 export interface RecordInputs {
-  captures: { games: ParsedGame[] }[];
+  captures: { games: ParsedGame[]; captureIds?: string[]; inProgress?: boolean }[];
   matches: unknown[];
   /** The pilot's EDHPlay username, so match-only games know which seat is theirs. */
   me?: string;
@@ -208,10 +212,13 @@ export function linkGame(game: ParsedGame, matches: MatchView[], used: string[])
   return best?.match;
 }
 
-function resultFor(mode: GameMode, me: string | undefined, winner: string | undefined, meEliminated: boolean): GameResult {
+/** The pilot's result. When their seat can't be found (no profile yet, or a spectate URL without
+ *  the spectator flag) the answer is "unknown", never a loss by default. */
+function resultFor(mode: GameMode, mySeat: string | undefined, winner: string | undefined, meEliminated: boolean): GameResult {
   if (mode === "spectator") return "spectated";
   if (mode === "solo") return "solo";
-  if (winner && sameName(winner, me)) return "win";
+  if (!mySeat) return "unknown";
+  if (winner && sameName(winner, mySeat)) return "win";
   if (winner || meEliminated) return "loss";
   return "unknown";
 }
@@ -236,8 +243,12 @@ export function buildRecords(inputs: RecordInputs): { records: GameRecord[]; par
 
   const listFor = (deckId: string | undefined): LocalListRef | undefined => (deckId ? inputs.lists.find((l) => l.edhplayId === deckId) : undefined);
 
-  const allGames = inputs.captures.flatMap((c) => c.games).filter((g) => g.players.length > 0);
-  for (const game of allGames) {
+  const allGames = inputs.captures.flatMap((c) =>
+    c.games
+      .filter((g) => g.players.length > 0)
+      .map((g) => ({ game: g, captureIds: c.captureIds, inProgress: c.inProgress === true && g.endReason === "capture_end" })),
+  );
+  for (const { game, captureIds, inProgress } of allGames) {
     parsed[game.gameId] = game;
     const match = game.mode === "player" ? linkGame(game, matches, used) : undefined;
     if (match) {
@@ -255,7 +266,7 @@ export function buildRecords(inputs: RecordInputs): { records: GameRecord[]; par
         username: p.username,
         playerId: p.playerId,
         seat: mp?.seat ?? p.lobbySeat,
-        isMe: p.isMe || sameName(p.username, me) && game.mode === "player",
+        isMe: p.isMe || (sameName(p.username, me) && game.mode === "player"),
         isWinner: sameName(p.username, winner),
         commanders: mp?.commanders.length ? mp.commanders : p.commanders.map((c) => ({ name: c.name, imageUri: c.imageUri })),
         deckId: mp?.deckId ?? p.deckId,
@@ -289,8 +300,10 @@ export function buildRecords(inputs: RecordInputs): { records: GameRecord[]; par
       matchId: match?.id,
       roomId: game.roomId,
       winner,
-      result: resultFor(game.mode, me, winner, mine?.eliminatedRound !== undefined),
+      result: inProgress && game.mode === "player" ? "unknown" : resultFor(game.mode, mine?.username, winner, mine?.eliminatedRound !== undefined),
       me: game.mode === "player" ? mine?.username ?? me : undefined,
+      inProgress: inProgress || undefined,
+      captureIds,
       startingPlayer: starting,
       myDeck: mine ? { deckId: mine.deckId ?? game.myDeckId, deckName: mine.deckName ?? list?.deckName, slug: list?.slug, listId: list?.listId, listLabel: list?.label } : undefined,
       players,
@@ -334,7 +347,7 @@ export function buildRecords(inputs: RecordInputs): { records: GameRecord[]; par
       joinedMidGame: false,
       matchId: match.id,
       winner,
-      result: resultFor("player", mine?.username ?? me, winner, mine?.eliminatedRound !== undefined),
+      result: resultFor("player", mine?.username, winner, mine?.eliminatedRound !== undefined),
       me: mine?.username ?? me,
       startingPlayer: match.players.find((p) => p.seat === match.startingSeat)?.username,
       myDeck: mine ? { deckId: mine.deckId, deckName: mine.deckName, slug: list?.slug, listId: list?.listId, listLabel: list?.label } : undefined,

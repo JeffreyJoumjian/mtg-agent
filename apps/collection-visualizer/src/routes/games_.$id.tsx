@@ -93,6 +93,11 @@ function GameReport(props: { data: GameData }) {
 
   return (
     <>
+      {record.inProgress && (
+        <EmptyState>
+          This game is still being played. The report fills in as it goes, and decklists appear once it ends.
+        </EmptyState>
+      )}
       {record.joinedMidGame && (
         <EmptyState>
           Lens started recording in round {game?.firstRoundSeen}, so earlier turns are missing from this game.

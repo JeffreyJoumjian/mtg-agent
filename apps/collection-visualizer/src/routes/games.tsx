@@ -226,7 +226,13 @@ function GameTable(props: { records: GameRecord[]; kind: Kind }) {
               <td className="py-1.5 text-right tabular-nums">{r.rounds || "–"}</td>
               <td className="py-1.5 text-right tabular-nums">{formatDuration(r.durationSec)}</td>
               <td className="py-1.5 text-right text-[12px] text-muted-foreground">
-                {r.source === "match" ? "History only" : r.joinedMidGame ? "Joined late" : "Recorded"}
+                {r.inProgress
+                  ? "In progress"
+                  : r.source === "match"
+                    ? "History only"
+                    : r.joinedMidGame
+                      ? "Joined late"
+                      : "Recorded"}
               </td>
             </tr>
           ))}

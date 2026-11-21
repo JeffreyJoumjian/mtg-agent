@@ -44,12 +44,26 @@ function safeId(id: string, what: string): string {
   return id;
 }
 
-async function readJson<T>(path: string, fallback: T): Promise<T> {
+type Guard<T> = (v: unknown) => v is T;
+
+const isObj = (v: unknown): v is Record<string, unknown> => typeof v === "object" && v !== null && !Array.isArray(v);
+const isStr = (v: unknown): v is string => typeof v === "string";
+const isNum = (v: unknown): v is number => typeof v === "number" && Number.isFinite(v);
+
+/** Parse a JSON file and keep it only when `guard` accepts it; a missing, torn or foreign file
+ *  reads as null. Files here are written by this module, so a guard failure means corruption. */
+async function readJson<T>(path: string, guard: Guard<T>): Promise<T | null> {
+  let text = "";
   try {
-    const text = await readFile(path, "utf8");
-    return JSON.parse(text) as T;
+    text = await readFile(path, "utf8");
   } catch {
-    return fallback;
+    return null;
+  }
+  try {
+    const value: unknown = JSON.parse(text);
+    return guard(value) ? value : null;
+  } catch {
+    return null;
   }
 }
 
@@ -61,7 +75,7 @@ async function writeJson(path: string, value: unknown): Promise<void> {
   await rename(tmp, path);
 }
 
-async function readJsonl<T>(path: string): Promise<T[]> {
+async function readJsonl<T>(path: string, guard: Guard<T>): Promise<T[]> {
   let text = "";
   try {
     text = await readFile(path, "utf8");
@@ -75,12 +89,22 @@ async function readJsonl<T>(path: string): Promise<T[]> {
       continue;
     }
     try {
-      out.push(JSON.parse(line) as T);
+      const value: unknown = JSON.parse(line);
+      if (guard(value)) out.push(value);
     } catch {
       // A torn last line from a crash mid-append. Skipping it loses one frame, not the capture.
     }
   }
   return out;
+}
+
+async function listFiles(path: string, ext: string): Promise<string[]> {
+  try {
+    const names = await readdir(path);
+    return names.filter((f) => f.endsWith(ext)).sort();
+  } catch {
+    return [];
+  }
 }
 
 async function listDirs(path: string): Promise<string[]> {
@@ -129,6 +153,10 @@ export interface StoredCaptureMeta extends CaptureMeta {
   updatedAt: number;
 }
 
+const isStoredMeta: Guard<StoredCaptureMeta> = (v): v is StoredCaptureMeta => isObj(v) && isStr(v.captureId) && isNum(v.startedAt) && isNum(v.lastIndex);
+const isIndexedFrame: Guard<IndexedFrame> = (v): v is IndexedFrame => isObj(v) && isNum(v.i) && isNum(v.t) && (v.dir === "in" || v.dir === "out");
+const isLogLine: Guard<LogLine> = (v): v is LogLine => isObj(v) && isNum(v.i) && isStr(v.id) && isStr(v.message) && isStr(v.playerId);
+
 export interface IngestResult {
   ok: true;
   stored: number;
@@ -142,9 +170,10 @@ export async function ingest(payload: IngestPayload, dir = EDHPLAY_DIR): Promise
       const id = safeId(payload.captureId, "capture id");
       const inGames = join(kindDir(dir, "games"), id, "meta.json");
       const inPlaytests = join(kindDir(dir, "playtests"), id, "meta.json");
-      const gamesMeta = await readJson<StoredCaptureMeta | null>(inGames, null);
+      const gamesMeta = await readJson(inGames, isStoredMeta);
+      const playtestMeta = gamesMeta ? null : await readJson(inPlaytests, isStoredMeta);
       const path = gamesMeta ? inGames : inPlaytests;
-      const meta = gamesMeta ?? (await readJson<StoredCaptureMeta | null>(inPlaytests, null));
+      const meta = gamesMeta ?? playtestMeta;
       if (meta) {
         await writeJson(path, { ...meta, endedAt: payload.endedAt, updatedAt: Date.now() });
       }
@@ -196,7 +225,7 @@ async function ingestCapture(meta: CaptureMeta, frames: IndexedFrame[], log: Log
   await mkdir(capDir, { recursive: true });
 
   const metaPath = join(capDir, "meta.json");
-  const stored = await readJson<StoredCaptureMeta | null>(metaPath, null);
+  const stored = await readJson(metaPath, isStoredMeta);
   const lastIndex = stored?.lastIndex ?? -1;
   const lastLogIndex = stored?.lastLogIndex ?? -1;
 
@@ -230,16 +259,16 @@ async function ingestCapture(meta: CaptureMeta, frames: IndexedFrame[], log: Log
 export async function listCaptures(kind: CaptureKind = "games", dir = EDHPLAY_DIR): Promise<StoredCaptureMeta[]> {
   const base = kindDir(dir, kind);
   const ids = await listDirs(base);
-  const metas = await Promise.all(ids.map((id) => readJson<StoredCaptureMeta | null>(join(base, id, "meta.json"), null)));
+  const metas = await Promise.all(ids.map((id) => readJson(join(base, id, "meta.json"), isStoredMeta)));
   return metas.filter((m): m is StoredCaptureMeta => m !== null).sort((a, b) => a.startedAt - b.startedAt);
 }
 
 export async function readFrames(captureId: string, kind: CaptureKind = "games", dir = EDHPLAY_DIR): Promise<IndexedFrame[]> {
-  return readJsonl<IndexedFrame>(join(kindDir(dir, kind), safeId(captureId, "capture id"), "frames.jsonl"));
+  return readJsonl(join(kindDir(dir, kind), safeId(captureId, "capture id"), "frames.jsonl"), isIndexedFrame);
 }
 
 export async function readLog(captureId: string, kind: CaptureKind = "games", dir = EDHPLAY_DIR): Promise<LogLine[]> {
-  return readJsonl<LogLine>(join(kindDir(dir, kind), safeId(captureId, "capture id"), "log.jsonl"));
+  return readJsonl(join(kindDir(dir, kind), safeId(captureId, "capture id"), "log.jsonl"), isLogLine);
 }
 
 export interface StoredMatch {
@@ -247,15 +276,11 @@ export interface StoredMatch {
   match: unknown;
 }
 
-export async function listMatches(dir = EDHPLAY_DIR): Promise<StoredMatch[]> {
-  let files: string[] = [];
-  try {
-    files = (await readdir(join(dir, "matches"))).filter((f) => f.endsWith(".json"));
-  } catch {
-    return [];
-  }
+const isStoredMatch: Guard<StoredMatch> = (v): v is StoredMatch => isObj(v) && isNum(v.fetchedAt) && "match" in v;
 
-  const out = await Promise.all(files.map((f) => readJson<StoredMatch | null>(join(dir, "matches", f), null)));
+export async function listMatches(dir = EDHPLAY_DIR): Promise<StoredMatch[]> {
+  const files = await listFiles(join(dir, "matches"), ".json");
+  const out = await Promise.all(files.map((f) => readJson(join(dir, "matches", f), isStoredMatch)));
   return out.filter((m): m is StoredMatch => m !== null);
 }
 
@@ -266,16 +291,12 @@ export interface DeckSnapshot {
   deck: unknown;
 }
 
+const isDeckSnapshot: Guard<DeckSnapshot> = (v): v is DeckSnapshot => isObj(v) && isNum(v.fetchedAt) && isStr(v.hash) && (v.reason === "own" || v.reason === "opponent");
+
 export async function listDeckSnapshots(deckId: string, dir = EDHPLAY_DIR): Promise<DeckSnapshot[]> {
   const deckDir = join(dir, "decks", safeId(deckId, "deck id"));
-  let files: string[] = [];
-  try {
-    files = (await readdir(deckDir)).filter((f) => f.endsWith(".json")).sort();
-  } catch {
-    return [];
-  }
-
-  const out = await Promise.all(files.map((f) => readJson<DeckSnapshot | null>(join(deckDir, f), null)));
+  const files = await listFiles(deckDir, ".json");
+  const out = await Promise.all(files.map((f) => readJson(join(deckDir, f), isDeckSnapshot)));
   return out.filter((s): s is DeckSnapshot => s !== null).sort((a, b) => a.fetchedAt - b.fetchedAt);
 }
 
@@ -289,17 +310,14 @@ export interface RoomSnapshot {
   rooms: unknown[];
 }
 
-export async function listRoomSnapshots(dir = EDHPLAY_DIR): Promise<RoomSnapshot[]> {
-  let files: string[] = [];
-  try {
-    files = (await readdir(join(dir, "rooms"))).filter((f) => f.endsWith(".jsonl")).sort();
-  } catch {
-    return [];
-  }
+const isRoomSnapshot: Guard<RoomSnapshot> = (v): v is RoomSnapshot => isObj(v) && isNum(v.t) && Array.isArray(v.rooms);
 
+export async function listRoomSnapshots(dir = EDHPLAY_DIR): Promise<RoomSnapshot[]> {
+  const files = await listFiles(join(dir, "rooms"), ".jsonl");
   const all: RoomSnapshot[] = [];
   for (const f of files) {
-    all.push(...(await readJsonl<RoomSnapshot>(join(dir, "rooms", f))));
+    const snaps = await readJsonl(join(dir, "rooms", f), isRoomSnapshot);
+    all.push(...snaps);
   }
   return all;
 }
@@ -310,8 +328,10 @@ export interface Profile {
   username: string;
 }
 
+const isProfile: Guard<Profile> = (v): v is Profile => isObj(v) && isStr(v.id) && isStr(v.username) && isNum(v.fetchedAt);
+
 export async function readProfile(dir = EDHPLAY_DIR): Promise<Profile | null> {
-  return readJson<Profile | null>(join(dir, "profile.json"), null);
+  return readJson(join(dir, "profile.json"), isProfile);
 }
 
 export interface PlayerNote {
@@ -320,8 +340,15 @@ export interface PlayerNote {
   updatedAt: number;
 }
 
+const isPlayerNote = (v: unknown): v is PlayerNote => isObj(v) && isStr(v.note) && Array.isArray(v.tags) && v.tags.every(isStr) && isNum(v.updatedAt);
+
 export async function readPlayerNotes(dir = EDHPLAY_DIR): Promise<Record<string, PlayerNote>> {
-  return readJson<Record<string, PlayerNote>>(join(dir, "players.json"), {});
+  const raw = await readJson(join(dir, "players.json"), isObj);
+  const out: Record<string, PlayerNote> = {};
+  for (const [k, v] of Object.entries(raw ?? {})) {
+    if (isPlayerNote(v)) out[k] = v;
+  }
+  return out;
 }
 
 export async function setPlayerNote(username: string, note: string, tags: string[], dir = EDHPLAY_DIR): Promise<void> {
@@ -334,52 +361,104 @@ export async function setPlayerNote(username: string, note: string, tags: string
 // Parsed games, cached per capture so a page load doesn't re-parse every frame of every game.
 
 interface ParseCacheEntry {
-  size: number;
-  mtimeMs: number;
-  metaUpdatedAt: number;
+  /** Size, mtime and meta update time of every capture in the session, joined. */
+  key: string;
   games: ParsedGame[];
 }
 
 /** Bumped whenever `edhplay-parse.ts` changes what it produces, so stale cached parses rebuild. */
-export const PARSER_VERSION = 3;
+export const PARSER_VERSION = 4;
 
-export async function loadParsedGames(kind: CaptureKind = "games", dir = EDHPLAY_DIR): Promise<{ meta: StoredCaptureMeta; games: ParsedGame[] }[]> {
+/** How long a room can go quiet and still be the same sitting: a reconnect or a page reload opens a
+ *  new socket, and so a new capture, in the middle of a game. */
+const SAME_SITTING_MS = 15 * 60_000;
+
+/** A capture counts as still being played when it hasn't ended and was written in the last
+ *  10 minutes. A capture that never got its end marker (a crash) stops counting after that. */
+const LIVE_MS = 10 * 60_000;
+
+export interface ParsedSession {
+  /** The first capture's meta, with the pilot filled in from any capture of the session. */
+  meta: StoredCaptureMeta;
+  /** Every capture of the sitting, in order. One unless the socket reconnected. */
+  captureIds: string[];
+  /** The last capture hasn't ended yet. */
+  inProgress: boolean;
+  games: ParsedGame[];
+}
+
+/** Captures of the same room that follow each other within `SAME_SITTING_MS` form one session and
+ *  are parsed as one stream, so a reconnect mid-game stays one game (the parser treats the new
+ *  socket's `game_state` as a resync). Playtests have no room and are never joined. */
+export function groupSessions(captures: StoredCaptureMeta[]): StoredCaptureMeta[][] {
+  const groups: StoredCaptureMeta[][] = [];
+  for (const meta of captures) {
+    const previous = meta.roomId ? groups.filter((g) => g[0].roomId === meta.roomId).pop() : undefined;
+    const last = previous?.[previous.length - 1];
+    const lastEnd = last ? (last.endedAt ?? last.updatedAt) : 0;
+    if (previous && last && meta.source === last.source && meta.spectator === last.spectator && meta.startedAt - lastEnd < SAME_SITTING_MS) {
+      previous.push(meta);
+    } else {
+      groups.push([meta]);
+    }
+  }
+  return groups;
+}
+
+export async function loadParsedGames(kind: CaptureKind = "games", dir = EDHPLAY_DIR, now = Date.now()): Promise<ParsedSession[]> {
   const cachePath = join(dir, "cache", `parsed-${kind}-v${PARSER_VERSION}.json`);
-  const cache = await readJson<Record<string, ParseCacheEntry>>(cachePath, {});
+  const cacheRaw = await readJson(cachePath, isObj);
+  const cache: Record<string, ParseCacheEntry> = {};
+  for (const [k, v] of Object.entries(cacheRaw ?? {})) {
+    if (isObj(v) && isStr(v.key) && Array.isArray(v.games)) cache[k] = { key: v.key, games: v.games };
+  }
+
   const captures = await listCaptures(kind, dir);
   let dirty = false;
+  const out: ParsedSession[] = [];
 
-  const out: { meta: StoredCaptureMeta; games: ParsedGame[] }[] = [];
-  for (const meta of captures) {
+  for (const group of groupSessions(captures)) {
+    const first = group[0];
+    const last = group[group.length - 1];
+    const meta: StoredCaptureMeta = { ...first, me: group.find((m) => m.me)?.me ?? first.me, endedAt: last.endedAt };
+    const inProgress = last.endedAt === undefined && now - last.updatedAt < LIVE_MS;
+
     // A solo playtest has no socket, so its Event Log lines are the source.
-    const framesPath = join(kindDir(dir, kind), meta.captureId, meta.source === "solo" ? "log.jsonl" : "frames.jsonl");
-    let size = 0;
-    let mtimeMs = 0;
-    try {
-      const s = await stat(framesPath);
-      size = s.size;
-      mtimeMs = s.mtimeMs;
-    } catch {
-      // A capture with a meta file but no frames yet (a solo game with only log lines).
+    const keyParts: string[] = [];
+    for (const m of group) {
+      const file = join(kindDir(dir, kind), m.captureId, m.source === "solo" ? "log.jsonl" : "frames.jsonl");
+      try {
+        const st = await stat(file);
+        keyParts.push(`${m.captureId}:${st.size}:${st.mtimeMs}:${m.updatedAt}`);
+      } catch {
+        keyParts.push(`${m.captureId}:0:0:${m.updatedAt}`);
+      }
     }
+    const key = keyParts.join("|");
+    const captureIds = group.map((m) => m.captureId);
 
-    const hit = cache[meta.captureId];
-    if (hit && hit.size === size && hit.mtimeMs === mtimeMs && hit.metaUpdatedAt === meta.updatedAt) {
-      out.push({ meta, games: hit.games });
+    const hit = cache[first.captureId];
+    if (hit && hit.key === key) {
+      out.push({ meta, captureIds, inProgress, games: hit.games });
       continue;
     }
 
     let frames: RawFrame[] = [];
-    if (meta.source === "solo") {
-      const log = await readLog(meta.captureId, kind, dir);
-      frames = soloLogToFrames(log, meta.players ?? []);
+    if (first.source === "solo") {
+      const log = await readLog(first.captureId, kind, dir);
+      frames = soloLogToFrames(log, first.players ?? []);
     } else {
-      frames = await readFrames(meta.captureId, kind, dir);
+      for (const m of group) {
+        const fs = await readFrames(m.captureId, kind, dir);
+        frames.push(...fs);
+      }
+      // Captures of one sitting don't overlap in time; sorting keeps them in play order either way.
+      frames.sort((a, b) => a.t - b.t);
     }
     const games = parseCapture(meta, frames);
-    cache[meta.captureId] = { size, mtimeMs, metaUpdatedAt: meta.updatedAt, games };
+    cache[first.captureId] = { key, games };
     dirty = true;
-    out.push({ meta, games });
+    out.push({ meta, captureIds, inProgress, games });
   }
 
   if (dirty) {

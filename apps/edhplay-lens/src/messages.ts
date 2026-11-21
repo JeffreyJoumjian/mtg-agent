@@ -16,7 +16,7 @@ export type PageMessage =
   | { kind: "deck"; deckId: string; fetchedAt: number; deck: unknown; reason: "own" | "opponent" }
   | { kind: "rooms"; fetchedAt: number; rooms: unknown[] }
   | { kind: "profile"; fetchedAt: number; id: string; username: string }
-  | { kind: "replay"; meta: CaptureMeta; frames: (RawFrame & { i: number })[] };
+  | { kind: "replay"; meta: CaptureMeta; frames: (RawFrame & { i: number })[]; log: LogLine[]; open: boolean };
 
 export interface PageEnvelope {
   __lens: "page";

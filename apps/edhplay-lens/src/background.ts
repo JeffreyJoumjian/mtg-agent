@@ -27,7 +27,18 @@ async function workbenchUrl(): Promise<string> {
 // ---------------------------------------------------------------------------------------------
 // The outbox: a tiny IndexedDB queue of ingest payloads, sent in order.
 
+let dbPromise: Promise<IDBDatabase> | null = null;
+
+/** One connection for the worker's lifetime; a failed open is retried on the next call. */
 function openDb(): Promise<IDBDatabase> {
+  dbPromise ??= openDbOnce().catch((err) => {
+    dbPromise = null;
+    throw err;
+  });
+  return dbPromise;
+}
+
+function openDbOnce(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
     const req = indexedDB.open("edhplay-lens", 1);
     req.onupgradeneeded = () => req.result.createObjectStore("outbox", { keyPath: "id", autoIncrement: true });
@@ -116,15 +127,15 @@ async function drain(): Promise<void> {
         void err;
         break;
       }
-      if (res.status >= 500) {
-        status.workbench = "down";
-        status.lastError = `The Workbench answered ${res.status}. Records wait here and retry every 30 seconds.`;
-        break;
-      }
-      if (!res.ok) {
-        // A 4xx means the payload itself is bad; keeping it would block every record behind it.
+      if (res.status === 400 || res.status === 422) {
+        // The payload itself is bad; keeping it would block every record queued behind it.
         const text = await res.text();
         status.lastError = `The Workbench refused a record (${res.status}): ${text.slice(0, 200)}`;
+      } else if (!res.ok) {
+        // A disk error, a wrong address (404) or an older Workbench: keep everything and retry.
+        status.workbench = "down";
+        status.lastError = `The Workbench answered ${res.status}, so records wait here and retry every 30 seconds. Check the address in Settings if this keeps happening.`;
+        break;
       } else {
         status.workbench = "ok";
         status.lastSentAt = Date.now();
@@ -186,10 +197,12 @@ function scheduleFlush(): void {
 
 async function flush(): Promise<void> {
   for (const b of Object.values(buffers)) {
-    if (b.frames.length === 0 && b.log.length === 0 && !b.metaDirty) continue;
-    const payload: IngestPayload = { kind: "capture", meta: b.meta, frames: b.frames.splice(0), log: b.log.splice(0) };
-    b.metaDirty = false;
-    await outboxAdd(payload);
+    // Chunks stay well under the Workbench's 5000-per-payload limit, even after a full replay.
+    while (b.frames.length > 0 || b.log.length > 0 || b.metaDirty) {
+      const payload: IngestPayload = { kind: "capture", meta: b.meta, frames: b.frames.splice(0, 2000), log: b.log.splice(0, 2000) };
+      b.metaDirty = false;
+      await outboxAdd(payload);
+    }
   }
   void drain();
 }
@@ -208,6 +221,8 @@ function bufferFor(meta: CaptureMeta): Buffer {
 interface TabState {
   meta: CaptureMeta;
   tracker: GameTracker;
+  /** The socket frames so far, to rebuild the tracker when the meta learns who the pilot is. */
+  frames: RawFrame[];
   /** Solo playtests are re-parsed from their whole log on each change. */
   soloLog: LogLine[];
   open: boolean;
@@ -221,7 +236,7 @@ const captureTab: Record<string, number> = {};
 const replayRequested: Record<number, true> = {};
 
 function startTab(tabId: number, meta: CaptureMeta): TabState {
-  const state: TabState = { meta, tracker: new GameTracker(meta), soloLog: [], open: true, live: null, liveKey: "", liveTimer: null };
+  const state: TabState = { meta, tracker: new GameTracker(meta), frames: [], soloLog: [], open: true, live: null, liveKey: "", liveTimer: null };
   tabs[tabId] = state;
   captureTab[meta.captureId] = tabId;
   delete replayRequested[tabId];
@@ -298,8 +313,15 @@ function handle(msg: PageMessage, tabId: number | undefined): void {
       if (tabId !== undefined) {
         const state = tabs[tabId];
         if (state && state.meta.captureId === msg.meta.captureId) {
+          const learntMe = !state.meta.me && msg.meta.me;
           state.meta = msg.meta;
-          if (msg.meta.source === "solo") rebuildSolo(state);
+          if (msg.meta.source === "solo") {
+            rebuildSolo(state);
+          } else if (learntMe) {
+            // Seats were parsed before the profile arrived; parse again so the pilot's seat is "you".
+            state.tracker = new GameTracker(msg.meta);
+            for (const f of state.frames) state.tracker.push(f);
+          }
         }
       }
       scheduleFlush();
@@ -311,7 +333,11 @@ function handle(msg: PageMessage, tabId: number | undefined): void {
         b.frames.push(msg.frame);
         scheduleFlush();
       }
-      if (tabId !== undefined) tabFor(tabId, msg.captureId)?.tracker.push(msg.frame);
+      if (tabId !== undefined) {
+        const state = tabFor(tabId, msg.captureId);
+        state?.frames.push(msg.frame);
+        state?.tracker.push(msg.frame);
+      }
       break;
     }
     case "log": {
@@ -337,10 +363,30 @@ function handle(msg: PageMessage, tabId: number | undefined): void {
       break;
     }
     case "replay": {
+      // After a worker restart the page sends everything it still holds. Frames and log lines go
+      // back into the outbox (the Workbench drops the ones it already has) and the live parse is
+      // rebuilt for the capture still open.
+      const b = bufferFor(msg.meta);
+      b.meta = msg.meta;
+      b.metaDirty = true;
+      b.frames.push(...msg.frames);
+      b.log.push(...msg.log);
+      scheduleFlush();
+      if (!msg.open) {
+        const endedAt = msg.meta.endedAt ?? Date.now();
+        void flush().then(() => outboxAdd({ kind: "capture_end", captureId: msg.meta.captureId, endedAt })).then(() => drain());
+        delete buffers[msg.meta.captureId];
+        break;
+      }
       if (tabId === undefined) break;
       const state = startTab(tabId, msg.meta);
-      bufferFor(msg.meta);
-      for (const f of msg.frames) state.tracker.push(f);
+      if (msg.meta.source === "solo") {
+        state.soloLog.push(...msg.log);
+        rebuildSolo(state);
+      } else {
+        state.frames.push(...msg.frames);
+        for (const f of msg.frames) state.tracker.push(f);
+      }
       break;
     }
     case "matches":

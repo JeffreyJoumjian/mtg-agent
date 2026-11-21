@@ -31,6 +31,7 @@ import {
   readPlayerNotes,
   readProfile,
   type CaptureKind,
+  type LogLine,
 } from "@mtg/edhplay-store.ts";
 
 export interface LoadedGames {
@@ -87,7 +88,7 @@ export async function loadGames(kind: CaptureKind = "games"): Promise<LoadedGame
 }
 
 /** Playtests know card names but not types; the card cache fills them so land drops count. */
-async function withTypeLines(captures: { games: ParsedGame[] }[]): Promise<{ games: ParsedGame[] }[]> {
+async function withTypeLines<T extends { games: ParsedGame[] }>(captures: T[]): Promise<T[]> {
   const names = captures.flatMap((c) =>
     c.games.flatMap((g) =>
       g.players.flatMap((p) =>
@@ -102,7 +103,7 @@ async function withTypeLines(captures: { games: ParsedGame[] }[]): Promise<{ gam
   for (const [name, i] of Object.entries(info)) {
     typeLines[name] = i.typeLine;
   }
-  return captures.map((c) => ({ games: c.games.map((g) => fillTypeLines(g, typeLines)) }));
+  return captures.map((c) => ({ ...c, games: c.games.map((g) => fillTypeLines(g, typeLines)) }));
 }
 
 /** Roles, colour identity and Game Changer status for card names, from the shared card cache.
@@ -204,7 +205,11 @@ export async function getGame(id: string, kind: CaptureKind) {
   }
 
   const game = record.gameId ? parsed[record.gameId] : undefined;
-  const rawLog = record.captureId ? await readLog(record.captureId, kind) : [];
+  const rawLog: LogLine[] = [];
+  for (const captureId of record.captureIds ?? (record.captureId ? [record.captureId] : [])) {
+    const lines = await readLog(captureId, kind);
+    rawLog.push(...lines);
+  }
   // The page only needs the text and the zones; metadata is untyped JSON and can't cross the RPC.
   const log = rawLog.map((l) => ({
     id: l.id,
@@ -225,9 +230,10 @@ export async function getGame(id: string, kind: CaptureKind) {
     combos[p.playerId] = await findCombos(r.commanders, r.main);
   }
 
-  // Decklists are fetched by the extension only after the game, never shown during it.
+  // Decklists are shown only after the game: a game still being played gets none, even when an
+  // earlier match already saved a snapshot of an opponent's deck.
   const decks: Record<string, OpponentDeckView | null> = {};
-  for (const p of record.players) {
+  for (const p of record.inProgress ? [] : record.players) {
     if (!p.deckId || decks[p.deckId] !== undefined) {
       continue;
     }
@@ -351,7 +357,10 @@ export interface LiveRequest {
  *  are never part of this answer: the pilot doesn't want them during a game. */
 export async function getLive(req: LiveRequest) {
   const loaded = await loadGames();
-  const records = loaded.records.filter((r) => !req.captureId || r.captureId !== req.captureId);
+  // The game being played (every capture of its sitting) must not count toward its own history.
+  const records = loaded.records.filter(
+    (r) => !req.captureId || !(r.captureIds ?? [r.captureId]).includes(req.captureId),
+  );
   const summaries = playerSummaries(records, loaded.parsed);
   const notes = await readPlayerNotes();
   const dossiers = req.players.map((u) => dossierFor(u, summaries, notes));
