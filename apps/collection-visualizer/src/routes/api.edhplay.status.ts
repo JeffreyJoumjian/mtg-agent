@@ -9,7 +9,7 @@ export const Route = createFileRoute("/api/edhplay/status")({
       GET: async ({ request }) => {
         const refused = refuseUnlessExtension(request);
         if (refused) return refused;
-        const status = await getStatus();
+        const status = await getStatus(new URL(request.url).searchParams.has("summary"));
         return json(status);
       },
     },

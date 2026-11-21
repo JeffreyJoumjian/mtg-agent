@@ -172,6 +172,8 @@ export interface ParsedGame {
 export interface LobbyView {
   roomId: string | null;
   phase: string;
+  /** When this `game_state` arrived, so a lobby after a finished game can be told from the one before it. */
+  updatedAt: number;
   players: { playerId: string; username: string; lobbySeat?: number; isMe: boolean }[];
 }
 
@@ -366,6 +368,7 @@ export class GameTracker {
     this.lobbyView = {
       roomId: this.meta.roomId,
       phase,
+      updatedAt: t,
       players: players.map((p) => {
         const playerId = str(p.player_id) ?? "";
         const username = str(p.username) ?? "";

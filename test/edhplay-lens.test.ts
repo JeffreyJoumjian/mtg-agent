@@ -1,6 +1,7 @@
 import { test, expect } from "bun:test";
 import { GameTracker, type CaptureMeta } from "../scripts/lib/edhplay-parse.ts";
-import { liveKey, liveRequest, matchSeatsToDecks, panelView } from "../apps/edhplay-lens/src/core.ts";
+import { badgeFor, comboAlerts, liveKey, liveRequest, matchSeatsToDecks, panelView, showsFinishedGame } from "../apps/edhplay-lens/src/core.ts";
+import type { Combo } from "../scripts/lib/spellbook.ts";
 
 const ME = "11111111-1111-1111-1111-111111111111";
 const OPP = "22222222-2222-2222-2222-222222222222";
@@ -78,4 +79,102 @@ test("a lobby with no game yet shows the seated players", () => {
     ["rival", false],
   ]);
   expect(liveRequest(t.live(), t.lobby())).toEqual({ players: ["rival"], revealed: [] });
+});
+
+test("life change this round resets when the turn passes back to that seat", () => {
+  const t = liveTracker();
+  const deltas = () => {
+    const view = panelView(t.live(), t.lobby(), null);
+    return view.players.map((p) => [p.username, p.life, p.lifeDelta]);
+  };
+  // Round 1 is rival's turn. The pilot hasn't had a turn, so the change counts from the start.
+  expect(deltas()).toEqual([
+    ["pilot", 35, -5],
+    ["rival", 40, 0],
+  ]);
+
+  // The pilot's turn starts: their counter resets, and rival's keeps running through it.
+  t.push({ t: 5, dir: "in", data: { type: "turn_passed", new_turn_player_id: ME, turn_seq: 2, round_count: 1 } });
+  t.push({ t: 6, dir: "in", data: { type: "set_player_stats", player_id: ME, life: 33 } });
+  t.push({ t: 7, dir: "in", data: { type: "set_player_stats", player_id: OPP, life: 30 } });
+  expect(deltas()).toEqual([
+    ["pilot", 33, -2],
+    ["rival", 30, -10],
+  ]);
+
+  // Back to rival: theirs resets, the pilot's still shows what happened since their own turn began.
+  t.push({ t: 8, dir: "in", data: { type: "turn_passed", new_turn_player_id: OPP, turn_seq: 3, round_count: 2 } });
+  t.push({ t: 9, dir: "in", data: { type: "set_player_stats", player_id: OPP, life: 32 } });
+  expect(deltas()).toEqual([
+    ["pilot", 33, -2],
+    ["rival", 32, 2],
+  ]);
+  expect(panelView(t.live(), t.lobby(), null).activeIsMe).toEqual(false);
+});
+
+const combo = (id: string, cards: string[], popularity: number, missing: string[] = []): Combo => ({
+  id,
+  cards,
+  produces: ["Infinite death triggers"],
+  description: "",
+  manaNeeded: "",
+  bracketTag: "S",
+  popularity,
+  missing,
+});
+
+test("combo watch lists assembled combos first, then one card away, and skips the pilot's own seat in real games", () => {
+  const players = [
+    { username: "pilot", isMe: true, combos: { included: [combo("mine", ["A", "B"], 999)], almostIncluded: [] } },
+    {
+      username: "rival",
+      isMe: false,
+      combos: {
+        included: [combo("full", ["Plunderer", "Altar", "Skullclamp"], 10)],
+        almostIncluded: [
+          combo("near-rare", ["X", "Y", "Z"], 5, ["Z"]),
+          combo("near-popular", ["Plunderer", "Skullclamp", "Altar"], 50, ["Altar"]),
+          combo("two-away", ["P", "Q", "R"], 100, ["Q", "R"]),
+        ],
+      },
+    },
+  ];
+  const { alerts, more } = comboAlerts(players, "player");
+  expect(alerts.map((a) => [a.level, a.username, a.shown, a.missing])).toEqual([
+    ["assembled", "rival", ["Plunderer", "Altar", "Skullclamp"], []],
+    ["one-away", "rival", ["Plunderer", "Skullclamp"], ["Altar"]],
+    ["one-away", "rival", ["X", "Y"], ["Z"]],
+  ]);
+  expect(more).toEqual(0);
+
+  // In a playtest every seat is one of the pilot's decks, so their own seat is watched too.
+  expect(comboAlerts(players, "solo").alerts[0].username).toEqual("pilot");
+
+  // More than four alerts: the rest are counted, not shown.
+  const crowded = [{ username: "rival", isMe: false, combos: { included: ["a", "b", "c", "d", "e", "f"].map((id, i) => combo(id, [id], i)), almostIncluded: [] } }];
+  const capped = comboAlerts(crowded, "player");
+  expect(capped.alerts.map((a) => a.cards[0])).toEqual(["f", "e", "d", "c"]);
+  expect(capped.more).toEqual(2);
+});
+
+test("the toolbar badge shows recording first, then records waiting for the Workbench", () => {
+  expect(badgeFor(null, 0, "ok")).toEqual({ text: "", color: "" });
+  expect(badgeFor("game", 0, "ok")).toEqual({ text: "REC", color: "#2f855a" });
+  expect(badgeFor("playtest", 3, "down")).toEqual({ text: "TEST", color: "#b7791f" });
+  expect(badgeFor(null, 3, "down")).toEqual({ text: "!", color: "#c53030" });
+  // Queued records while the Workbench is up are about to send, so no alarm.
+  expect(badgeFor(null, 3, "ok")).toEqual({ text: "", color: "" });
+  expect(badgeFor(null, 0, "down")).toEqual({ text: "", color: "" });
+});
+
+test("the panel keeps a finished game up until the room closes, a new game starts or a rematch lobby arrives", () => {
+  const finished = { endReason: "eliminations", endedAt: 5000 };
+  const preGameLobby = { phase: "lobby", updatedAt: 1000 };
+  const rematchLobby = { phase: "lobby", updatedAt: 6000 };
+  expect(showsFinishedGame({ live: false, finished, roomOpen: true, lobby: preGameLobby })).toEqual(true);
+  expect(showsFinishedGame({ live: false, finished, roomOpen: true, lobby: rematchLobby })).toEqual(false);
+  expect(showsFinishedGame({ live: true, finished, roomOpen: true, lobby: null })).toEqual(false);
+  expect(showsFinishedGame({ live: false, finished: null, roomOpen: false, lobby: null })).toEqual(false);
+  expect(showsFinishedGame({ live: false, finished: { endReason: "new_game", endedAt: 5000 }, roomOpen: true, lobby: null })).toEqual(false);
+  expect(showsFinishedGame({ live: false, finished: { endReason: "new_game", endedAt: 5000 }, roomOpen: false, lobby: rematchLobby })).toEqual(true);
 });

@@ -16,8 +16,8 @@ After a rebuild, press the reload arrow on the extension's card and reload any o
 
 The Workbench has to be running (`bun run dev` in `apps/collection-visualizer`) for records to be
 stored. When it isn't, the extension keeps everything in its own queue and sends it once the
-Workbench is back. The badge shows `REC` while a game is recorded, `TEST` during a playtest, and
-`!` when records are waiting.
+Workbench is back. The badge shows `REC` while a game or a spectated game is recorded, `TEST`
+during a playtest, and `!` on every tab when records are waiting because the Workbench is down.
 
 ## What it records
 
@@ -45,11 +45,27 @@ reads them separately. A playtest never counts toward a record, a win rate, the 
 
 ## The side panel
 
-- **Lobby:** who's seated, and your history with each of them from past games.
-- **Game:** life with a trend line, commander, commander tax and damage, hand and library counts,
-  permanents, cards played and land drops for every seat, the last 15 plays, and combo watch:
-  Commander Spellbook combos among the cards each player has revealed, plus combos one card away.
-- **After the game:** the final state, and a pointer to the full report in the Workbench.
+It follows the browser's light or dark setting: dark uses the Workbench's Broadcast palette, light
+uses the Workbench's light theme. Barlow Condensed ships inside the extension (`src/fonts/`, SIL
+Open Font License in `OFL.txt`) because extension pages can't load Google Fonts. Commander and card
+art comes from the Workbench's `/api/card-image` route, falling back to Scryfall directly and then
+to a `?` placeholder when the Workbench is offline.
+
+- **No game open:** your last real game (result, commanders, a link to its report), your games,
+  playtests and record, and a button to open the Workbench.
+- **Lobby:** who's seated, and your history with each of them from past games: your record at
+  their table, the commanders they usually play, the cards they show most, and your note and tags.
+- **Game:** for every seat, life with a trend line and the change since that seat's own turn last
+  began, commander, hand, permanents, land drops, commander tax and damage, and one line of history.
+  The last plays sit below. Combo watch is pinned at the top: combos whose every piece a player has
+  shown come first, then combos one card away (your own seat is left out of real games). At most
+  four alerts show; the rest are counted.
+- **Spectating** and **playtest** have their own layouts. A playtest names the deck matched to each
+  seat and shows when its commander came out.
+- **Game over:** the result, final standings, your commander's first cast, cards played and cards
+  left in hand, and a link to the report once the Workbench has stored the game.
+- **Workbench offline:** a pinned banner with the number of records waiting and Retry now, with
+  Settings opened below. Settings is always one click away in the footer.
 
 The panel never shows an opponent's decklist. It only knows what past games and the current table
 have shown.

@@ -390,18 +390,44 @@ export interface Overview {
   firstPlayerWinRate: number | null;
   byDeck: { deckId: string; deckName: string; slug?: string; listId?: string; listLabel?: string; record: WinLoss }[];
   byWeek: { week: string; record: WinLoss }[];
+  /** Average round of the pilot's first commander cast, over captured games that saw one. */
+  avgCommanderRound: number | null;
+  avgMulligans: number | null;
+  /** Distinct opponents across the pilot's games, and how many of them sat down more than once. */
+  playersMet: number;
+  playersMetAgain: number;
 }
 
-/** Monday of the record's week, `YYYY-MM-DD`. */
-function weekOf(t: number): string {
-  const d = new Date(t);
+/** Monday of the record's week in Bucharest time (the pilot's), `YYYY-MM-DD`. A Monday 01:30 game
+ *  is still Sunday in UTC, which would put it in the previous week. */
+export function weekOf(t: number): string {
+  const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Bucharest", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(new Date(t));
+  const part = (type: string): string => parts.find((p) => p.type === type)?.value ?? "";
+  const d = new Date(`${part("year")}-${part("month")}-${part("day")}T00:00:00Z`);
   const day = (d.getUTCDay() + 6) % 7;
   d.setUTCDate(d.getUTCDate() - day);
   return d.toISOString().slice(0, 10);
 }
 
-export function overview(records: GameRecord[]): Overview {
+export function overview(records: GameRecord[], parsed: Record<string, ParsedGame> = {}): Overview {
   const mine = records.filter((r) => r.mode === "player");
+
+  const commanderRounds: number[] = [];
+  for (const r of mine) {
+    // A late join can miss the first cast and see a recast, so those games are left out.
+    const game = r.gameId ? parsed[r.gameId] : undefined;
+    const me = game && !game.joinedMidGame ? game.players.find((p) => p.isMe) : undefined;
+    const firsts = (me?.commanders ?? []).map((c) => me?.cards[c.name]?.playedRounds[0]).filter((n): n is number => n !== undefined);
+    if (firsts.length > 0) commanderRounds.push(Math.min(...firsts));
+  }
+
+  const meetings: Record<string, number> = {};
+  for (const r of mine) {
+    for (const p of r.players) {
+      if (!p.isMe) meetings[p.username.toLowerCase()] = (meetings[p.username.toLowerCase()] ?? 0) + 1;
+    }
+  }
+
   const byDeck: Record<string, GameRecord[]> = {};
   const byWeek: Record<string, GameRecord[]> = {};
   for (const r of mine) {
@@ -433,6 +459,10 @@ export function overview(records: GameRecord[]): Overview {
     byWeek: Object.entries(byWeek)
       .map(([week, rs]) => ({ week, record: tally(rs.map((r) => r.result)) }))
       .sort((a, b) => a.week.localeCompare(b.week)),
+    avgCommanderRound: avg(commanderRounds),
+    avgMulligans: avg(mine.map((r) => r.players.find((p) => p.isMe)?.mulligans).filter((n): n is number => n !== undefined)),
+    playersMet: Object.keys(meetings).length,
+    playersMetAgain: Object.values(meetings).filter((n) => n > 1).length,
   };
 }
 
@@ -670,7 +700,9 @@ export interface MetaCard {
 export interface Meta {
   games: number;
   opponentSeats: number;
-  commanders: { name: string; imageUri?: string; seats: number; wins: number; players: string[]; identity: string }[];
+  /** `myWins`/`myLosses`: the pilot's record in the games they played with this commander at the
+   *  table (spectated games never count). */
+  commanders: { name: string; imageUri?: string; seats: number; wins: number; players: string[]; identity: string; myWins: number; myLosses: number }[];
   identities: { identity: string; seats: number }[];
   colors: { color: string; seats: number }[];
   brackets: { bracket: string; seats: number }[];
@@ -688,13 +720,14 @@ export interface Meta {
 export function meta(records: GameRecord[], parsed: Record<string, ParsedGame>, cardInfo: Record<string, CardInfo>, opts: MetaOptions): Meta {
   const scope = records.filter((r) => r.mode === "player" || (opts.includeSpectated && r.mode === "spectator"));
 
-  const commanders: Record<string, { imageUri?: string; seats: number; wins: number; players: string[]; identity: string }> = {};
+  const commanders: Record<string, { imageUri?: string; seats: number; wins: number; players: string[]; identity: string; myWins: number; myLosses: number }> = {};
   const identities: Record<string, number> = {};
   const colors: Record<string, number> = { W: 0, U: 0, B: 0, R: 0, G: 0, C: 0 };
   const brackets: Record<string, number> = {};
   let precon = 0;
   let deckKnown = 0;
   let seats = 0;
+  const countedGames: Record<string, string[]> = {};
 
   for (const r of scope) {
     for (const p of r.players) {
@@ -703,9 +736,16 @@ export function meta(records: GameRecord[], parsed: Record<string, ParsedGame>, 
       if (p.commanders.length > 0) {
         const key = p.commanders.map((c) => c.name).join(" + ");
         const ident = ["W", "U", "B", "R", "G"].filter((c) => p.commanders.some((cm) => (cardInfo[cm.name]?.colorIdentity ?? []).includes(c))).join("");
-        const row = (commanders[key] ??= { imageUri: p.commanders[0].imageUri, seats: 0, wins: 0, players: [], identity: ident });
+        const row = (commanders[key] ??= { imageUri: p.commanders[0].imageUri, seats: 0, wins: 0, players: [], identity: ident, myWins: 0, myLosses: 0 });
         row.seats += 1;
         if (p.isWinner) row.wins += 1;
+        // Two opponents on the same commander in one game still count that game once.
+        const counted = (countedGames[key] ??= []);
+        if (r.mode === "player" && !counted.includes(r.id)) {
+          counted.push(r.id);
+          if (r.result === "win") row.myWins += 1;
+          if (r.result === "loss") row.myLosses += 1;
+        }
         if (!row.players.includes(p.username)) row.players.push(p.username);
         identities[ident || "C"] = (identities[ident || "C"] ?? 0) + 1;
         for (const c of ident ? ident.split("") : ["C"]) colors[c] += 1;
@@ -845,7 +885,9 @@ export function playerSummaries(records: GameRecord[], parsed: Record<string, Pa
       return {
         username,
         games: played.length,
-        theirWins: rs.filter(({ p }) => p.isWinner).length,
+        // Over the games you played, so it sits next to `games` and the record without spectated
+        // wins inflating it.
+        theirWins: played.filter(({ p }) => p.isWinner).length,
         myWins: played.filter(({ r }) => r.result === "win").length,
         myLosses: played.filter(({ r }) => r.result === "loss").length,
         spectated: rs.length - played.length,

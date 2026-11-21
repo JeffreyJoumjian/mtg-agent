@@ -1,6 +1,6 @@
 /** Query hooks over the EDHPlay server functions. The query cache is the only copy of the data. */
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { getDeckGamesFn, getGameFn, getMetaFn, getOverviewFn, getPlayerFn, getPlayersFn, setPlayerNoteFn } from "./api";
+import { getDeckGamesFn, getGameCardsFn, getGameCombosFn, getGameFn, getMetaFn, getOverviewFn, getPlayerFn, getPlayersFn, setPlayerNoteFn } from "./api";
 import type { Kind } from "./ui";
 
 export const edhplayKeys = {
@@ -25,8 +25,37 @@ export function useOverview(kind: Kind) {
   });
 }
 
+/** A game report's first stage. A game still being played refetches every 20 seconds so the
+ *  report fills in as it goes. */
 export function useGame(id: string, kind: Kind) {
-  return useQuery({ queryKey: edhplayKeys.game(id, kind), queryFn: () => getGameFn({ data: { id, kind } }) });
+  return useQuery({
+    queryKey: edhplayKeys.game(id, kind),
+    queryFn: () => getGameFn({ data: { id, kind } }),
+    refetchInterval: (q) => (q.state.data?.record.inProgress ? LIVE_REFRESH_MS : false),
+  });
+}
+
+/** Card roles for a report. `live` keeps it refreshing while the game is being played. */
+export function useGameCards(id: string, kind: Kind, live: boolean) {
+  return useQuery({
+    // `live` is in the key so the end of the game forces a fresh fetch instead of keeping the last
+    // in-progress answer.
+    queryKey: [...edhplayKeys.game(id, kind), "cards", live],
+    queryFn: () => getGameCardsFn({ data: { id, kind } }),
+    refetchInterval: live ? LIVE_REFRESH_MS : false,
+  });
+}
+
+/** Combos among shown cards, and opponents' decklists once the game is over. The extension saves
+ *  opponents' lists a few seconds after a game ends, so this keeps polling for two minutes after
+ *  `endedAt` to pick them up. */
+export function useGameCombos(id: string, kind: Kind, live: boolean, endedAt: number | undefined) {
+  return useQuery({
+    queryKey: [...edhplayKeys.game(id, kind), "combos", live],
+    queryFn: () => getGameCombosFn({ data: { id, kind } }),
+    refetchInterval: () =>
+      live || (endedAt !== undefined && Date.now() - endedAt < 120_000) ? LIVE_REFRESH_MS : false,
+  });
 }
 
 export function useMeta(includeSpectated: boolean) {

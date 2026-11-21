@@ -5,12 +5,13 @@
  *    seconds, so a game played with the dev server off still lands once it's back.
  *  - It keeps a live parse of each tab's game (the same parser the Workbench uses) and asks the
  *    Workbench for history and combos for the side panel. Never decklists.
- *  - The toolbar badge says REC while a game is being recorded and ! when records are waiting. */
+ *  - The toolbar badge says REC while a game is being recorded, TEST during a playtest and ! when
+ *    records are waiting for the Workbench (`badgeFor`). */
 import { GameTracker, soloLogToFrames, type CaptureMeta, type RawFrame } from "../../../scripts/lib/edhplay-parse.ts";
 import type { IngestPayload, LogLine } from "../../../scripts/lib/edhplay-store.ts";
 import type { Dossier } from "../../../scripts/lib/edhplay-games.ts";
 import { isPageMessage, type PageMessage } from "./messages";
-import { liveKey, liveRequest, panelView, type LiveComboView, type PanelView } from "./core";
+import { badgeFor, liveKey, liveRequest, panelView, showsFinishedGame, type LiveComboView, type PanelView } from "./core";
 
 const DEFAULT_WORKBENCH = "http://localhost:3200";
 const FLUSH_MS = 1500;
@@ -88,6 +89,20 @@ async function outboxDelete(id: number): Promise<void> {
   });
 }
 
+/** The idle panel's summary of what's stored: the pilot's record and their last real game. */
+export interface StoredSummary {
+  record: { games: number; wins: number; losses: number };
+  lastGame: {
+    id: string;
+    captureIds: string[];
+    result: string;
+    startedAt: number;
+    rounds: number;
+    myCommander?: string;
+    opponents: string[];
+  } | null;
+}
+
 interface Status {
   workbench: "ok" | "down" | "unknown";
   queued: number;
@@ -96,6 +111,7 @@ interface Status {
   workbenchUrl: string;
   version: string;
   stored?: { captures: number; playtests: number; matches: number; me: string | null };
+  summary?: StoredSummary;
 }
 
 const status: Status = { workbench: "unknown", queued: 0, workbenchUrl: DEFAULT_WORKBENCH, version: chrome.runtime.getManifest().version };
@@ -155,10 +171,18 @@ async function checkWorkbench(): Promise<void> {
   try {
     const base = await workbenchUrl();
     status.workbenchUrl = base;
-    const res = await fetch(`${base}/api/edhplay/status`, { headers: { "x-edhplay-lens": "1" } });
+    // The summary costs the Workbench a full read of the records, so only an open panel asks.
+    // Only the idle and finished panels show the summary, so a live game doesn't pay for it.
+    const wantSummary = ports.some((p) => {
+      const v = p.tabId === null ? null : viewFor(p.tabId);
+      return !v || v.phase === "idle" || v.ended === true;
+    });
+    const res = await fetch(`${base}/api/edhplay/status${wantSummary ? "?summary=1" : ""}`, { headers: { "x-edhplay-lens": "1" } });
     if (!res.ok) throw new Error(String(res.status));
     const body: unknown = await res.json();
     status.workbench = "ok";
+    // The Workbench answers again, so an "isn't answering" line from an earlier check is stale.
+    if (status.lastError?.includes("isn't answering")) status.lastError = undefined;
     if (typeof body === "object" && body !== null) {
       const n = (k: string): number => {
         const v: unknown = Reflect.get(body, k);
@@ -166,12 +190,24 @@ async function checkWorkbench(): Promise<void> {
       };
       const meV: unknown = Reflect.get(body, "me");
       status.stored = { captures: n("captures"), playtests: n("playtests"), matches: n("matches"), me: typeof meV === "string" ? meV : null };
+      const summary: unknown = Reflect.get(body, "summary");
+      if (isSummary(summary)) status.summary = summary;
     }
   } catch {
     status.workbench = "down";
     status.lastError = `The Workbench at ${status.workbenchUrl} isn't answering. Start it with bun run dev in apps/collection-visualizer, and anything recorded meanwhile waits here until it's back.`;
   }
+  void updateBadges();
   broadcast();
+}
+
+function isSummary(v: unknown): v is StoredSummary {
+  if (typeof v !== "object" || v === null || !("record" in v) || !("lastGame" in v)) return false;
+  const record: unknown = v.record;
+  const last: unknown = v.lastGame;
+  const recordOk = typeof record === "object" && record !== null && "wins" in record && typeof record.wins === "number" && "losses" in record && typeof record.losses === "number" && "games" in record && typeof record.games === "number";
+  const lastOk = last === null || (typeof last === "object" && "id" in last && typeof last.id === "string" && "opponents" in last && Array.isArray(last.opponents) && "captureIds" in last && Array.isArray(last.captureIds));
+  return recordOk && lastOk;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -266,6 +302,8 @@ function scheduleLive(tabId: number): void {
   const req = liveRequest(state.tracker.live(), state.tracker.lobby());
   const key = liveKey(req);
   if (key === state.liveKey || req.players.length + req.revealed.length === 0) return;
+  // The table changed (a rematch, a new seat): the old combo alerts don't apply anymore.
+  if (state.live) state.live = { ...state.live, combos: {} };
   if (state.liveTimer) clearTimeout(state.liveTimer);
   state.liveTimer = setTimeout(async () => {
     state.liveTimer = null;
@@ -289,10 +327,19 @@ function scheduleLive(tabId: number): void {
 function viewFor(tabId: number): PanelView {
   const state = tabs[tabId];
   if (!state) return panelView(null, null, null);
-  // After the room closes the parser has no live game, so show the last one as it ended.
+  // After the room closes, or once every opponent is out while the room stays open, the parser
+  // has no live game, so show the last one as it ended until a new game starts.
   const games = state.tracker.games();
-  const game = state.tracker.live() ?? (state.open ? null : games[games.length - 1] ?? null);
-  return { ...panelView(game, state.tracker.lobby(), state.live), ended: !state.open };
+  const finished = games[games.length - 1] ?? null;
+  const live = state.tracker.live();
+  const showFinished = showsFinishedGame({
+    live: live !== null,
+    finished,
+    roomOpen: state.open,
+    lobby: state.tracker.lobby(),
+  });
+  const game = live ?? (showFinished ? finished : null);
+  return { ...panelView(game, state.tracker.lobby(), state.live, state.meta.players ?? []), ended: !state.open || showFinished };
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -356,10 +403,19 @@ function handle(msg: PageMessage, tabId: number | undefined): void {
       break;
     }
     case "capture_end": {
-      void flush().then(() => outboxAdd({ kind: "capture_end", captureId: msg.captureId, endedAt: msg.endedAt })).then(() => drain());
+      // Once the game is stored, refresh the summary so the finished panel can link its report.
+      void flush()
+        .then(() => outboxAdd({ kind: "capture_end", captureId: msg.captureId, endedAt: msg.endedAt }))
+        .then(() => drain())
+        .then(() => checkWorkbench());
+      // A socket's close event lands after EDHPlay has already opened the next one, so only close
+      // the tab's capture when it's still the one ending.
       const t = captureTab[msg.captureId];
-      if (t !== undefined && tabs[t]) tabs[t].open = false;
+      if (t !== undefined && tabs[t]?.meta.captureId === msg.captureId) tabs[t].open = false;
+      delete captureTab[msg.captureId];
       delete buffers[msg.captureId];
+      // After a worker restart this tab may be unknown here while Chrome still shows its REC badge.
+      if (tabId !== undefined && !tabs[tabId]) void setBadge(badgeFor(null, status.queued, status.workbench), tabId);
       break;
     }
     case "replay": {
@@ -466,16 +522,19 @@ chrome.runtime.onConnect.addListener((port) => {
 // ---------------------------------------------------------------------------------------------
 // Badge, alarms, lifecycle.
 
+async function setBadge(badge: ReturnType<typeof badgeFor>, tabId?: number): Promise<void> {
+  await chrome.action.setBadgeText(tabId === undefined ? { text: badge.text } : { text: badge.text, tabId }).catch(() => undefined);
+  if (badge.color) {
+    await chrome.action.setBadgeBackgroundColor(tabId === undefined ? { color: badge.color } : { color: badge.color, tabId }).catch(() => undefined);
+  }
+}
+
 async function updateBadges(): Promise<void> {
+  // The default badge covers every tab, so waiting records show wherever the pilot is.
+  await setBadge(badgeFor(null, status.queued, status.workbench));
   for (const [id, state] of Object.entries(tabs)) {
-    const tabId = Number(id);
-    if (state.open) {
-      await chrome.action.setBadgeText({ text: state.meta.source === "solo" ? "TEST" : "REC", tabId }).catch(() => undefined);
-      await chrome.action.setBadgeBackgroundColor({ color: state.meta.source === "solo" ? "#b7791f" : "#2f855a", tabId }).catch(() => undefined);
-    } else {
-      await chrome.action.setBadgeText({ text: status.queued > 0 && status.workbench === "down" ? "!" : "", tabId }).catch(() => undefined);
-      await chrome.action.setBadgeBackgroundColor({ color: "#c53030", tabId }).catch(() => undefined);
-    }
+    const recording = state.open ? (state.meta.source === "solo" ? "playtest" : "game") : null;
+    await setBadge(badgeFor(recording, status.queued, status.workbench), Number(id));
   }
 }
 

@@ -3,7 +3,7 @@ import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { GameTracker, parseCapture, soloLogToFrames, type CaptureMeta, type RawFrame } from "../scripts/lib/edhplay-parse.ts";
-import { buildRecords, deckPerformance, fillTypeLines, matchups, meta, overview, playerSummaries, dossierFor, type LocalListRef } from "../scripts/lib/edhplay-games.ts";
+import { buildRecords, deckPerformance, fillTypeLines, matchups, meta, overview, playerSummaries, dossierFor, weekOf, type LocalListRef } from "../scripts/lib/edhplay-games.ts";
 import { groupSessions, ingest, listCaptures, loadParsedGames, readFrames, listDeckSnapshots } from "../scripts/lib/edhplay-store.ts";
 
 // Player ids and shapes follow real EDHPlay frames (2026-11-21); names are made up.
@@ -225,6 +225,11 @@ test("buildRecords links a captured game to its match and keeps unseen matches a
   expect(o.captured).toEqual(1);
   expect(o.matchOnly).toEqual(1);
   expect(o.firstPlayerWinRate).toEqual(0.5);
+  expect(o.avgCommanderRound).toEqual(null);
+  expect(overview(records, parsed).avgCommanderRound).toEqual(2);
+  expect(o.avgMulligans).toEqual(1);
+  expect(o.playersMet).toEqual(1);
+  expect(o.playersMetAgain).toEqual(1);
 
   expect(matchups(records)).toEqual([{ commander: "Kotis, the Fangkeeper", imageUri: "y", record: { games: 2, wins: 1, losses: 1, unknown: 0, winRate: 0.5 } }]);
 });
@@ -256,7 +261,7 @@ test("deckPerformance counts plays, draws and never-played cards per captured ga
 test("meta, player summaries and the live dossier read the opponents' side", () => {
   const { records, parsed } = buildRecords({ captures: [{ games: parseCapture(META, frames()) }], matches: [MATCH], lists: [LIST] });
   const m = meta(records, parsed, { "Sol Ring": { roles: ["ramp"], colorIdentity: [], typeLine: "Artifact", cmc: 1, gameChanger: false }, "Kotis, the Fangkeeper": { roles: [], colorIdentity: ["U", "B", "R"], typeLine: "", cmc: 4, gameChanger: false } }, { includeSpectated: false });
-  expect(m.commanders).toEqual([{ name: "Kotis, the Fangkeeper", imageUri: "y", seats: 1, wins: 0, players: ["rival"], identity: "UBR" }]);
+  expect(m.commanders).toEqual([{ name: "Kotis, the Fangkeeper", imageUri: "y", seats: 1, wins: 0, players: ["rival"], identity: "UBR", myWins: 1, myLosses: 0 }]);
   expect(m.brackets).toEqual([{ bracket: "4", seats: 1 }]);
   expect(m.preconShare).toEqual(1);
   expect(m.cards.map((c) => [c.name, c.games, c.played])).toEqual([["Sol Ring", 1, 1]]);
@@ -382,4 +387,26 @@ test("a game with a winner but no seat for the pilot is unknown, not a loss", ()
   const stranger: CaptureMeta = { ...META, me: { id: "someone-else", username: "nobody" } };
   const { records } = buildRecords({ captures: [{ games: parseCapture(stranger, frames()) }], matches: [], lists: [] });
   expect(records.map((r) => [r.result, r.winner])).toEqual([["unknown", "pilot"]]);
+});
+
+test("a commander faced twice in one game counts that game once, and spectated wins don't count as theirs", () => {
+  const seat = (username: string, isMe: boolean, isWinner: boolean) => ({ username, isMe, isWinner, commanders: [{ name: "Kotis, the Fangkeeper" }] });
+  const base = { source: "match" as const, endedAt: 2, durationSec: 0, rounds: 5, joinedMidGame: false };
+  const records = [
+    { ...base, id: "m:a", mode: "player" as const, startedAt: 2, result: "win" as const, players: [seat("pilot", true, true), seat("rival", false, false), seat("twin", false, false)] },
+    { ...base, id: "m:b", mode: "spectator" as const, startedAt: 1, result: "spectated" as const, players: [seat("rival", false, true), seat("other", false, false)] },
+  ];
+
+  const m = meta(records, {}, {}, { includeSpectated: false });
+  expect(m.commanders.map((c) => [c.name, c.seats, c.myWins, c.myLosses])).toEqual([["Kotis, the Fangkeeper", 2, 1, 0]]);
+
+  const rival = playerSummaries(records, {}).find((s) => s.username === "rival");
+  expect([rival?.games, rival?.theirWins, rival?.spectated]).toEqual([1, 0, 1]);
+});
+
+test("weeks start on Monday in Bucharest time", () => {
+  // Monday 2026-11-16 01:30 in Bucharest is Sunday 23:30 UTC.
+  expect(weekOf(Date.parse("2026-11-15T23:30:00Z"))).toEqual("2026-11-16");
+  expect(weekOf(Date.parse("2026-11-15T21:30:00Z"))).toEqual("2026-11-09");
+  expect(weekOf(Date.parse("2026-11-22T12:00:00Z"))).toEqual("2026-11-16");
 });

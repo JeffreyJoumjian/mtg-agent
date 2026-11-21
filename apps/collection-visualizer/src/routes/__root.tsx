@@ -17,6 +17,15 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "MTG Workbench" },
     ],
+    // Barlow Condensed is the display face of the EDHPlay game pages (big numbers and headings).
+    links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&display=swap",
+      },
+    ],
   }),
   component: RootComponent,
 });

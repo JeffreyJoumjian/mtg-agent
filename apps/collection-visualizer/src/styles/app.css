@@ -79,6 +79,7 @@
 }
 
 @theme inline {
+  --font-display: "Barlow Condensed", ui-sans-serif, system-ui, sans-serif;
   --color-good: var(--good);
   --color-good-foreground: var(--good-foreground);
   --color-bad: var(--bad);

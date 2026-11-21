@@ -25,5 +25,8 @@ if (!result.success) {
 for (const f of ["sidepanel.html", "sidepanel.css"]) {
   await cp(join(here, "src", f), join(out, f));
 }
+// Barlow Condensed (SIL Open Font License, OFL.txt alongside) ships with the extension, because
+// extension pages can't load Google Fonts under the default content security policy.
+await cp(join(here, "src", "fonts"), join(out, "fonts"), { recursive: true });
 await cp(join(here, "manifest.json"), join(out, "manifest.json"));
 console.log(`built ${result.outputs.length} scripts into ${out}`);

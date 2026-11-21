@@ -3,7 +3,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { setPlayerNote } from "@mtg/edhplay-store.ts";
-import { getDeckGames, getGame, getMeta, getOverview, getPlayer, getPlayers } from "./server";
+import { getDeckGames, getGame, getGameCards, getGameCombos, getMeta, getOverview, getPlayer, getPlayers } from "./server";
 
 const kindSchema = z.enum(["games", "playtests"]);
 
@@ -14,6 +14,14 @@ export const getOverviewFn = createServerFn({ method: "GET" })
 export const getGameFn = createServerFn({ method: "GET" })
   .validator((data: unknown) => z.object({ id: z.string().min(1).max(200), kind: kindSchema }).parse(data))
   .handler(async ({ data }) => getGame(data.id, data.kind));
+
+export const getGameCardsFn = createServerFn({ method: "GET" })
+  .validator((data: unknown) => z.object({ id: z.string().min(1).max(200), kind: kindSchema }).parse(data))
+  .handler(async ({ data }) => getGameCards(data.id, data.kind));
+
+export const getGameCombosFn = createServerFn({ method: "GET" })
+  .validator((data: unknown) => z.object({ id: z.string().min(1).max(200), kind: kindSchema }).parse(data))
+  .handler(async ({ data }) => getGameCombos(data.id, data.kind));
 
 export const getMetaFn = createServerFn({ method: "GET" })
   .validator((data: unknown) => z.object({ includeSpectated: z.boolean() }).parse(data))
