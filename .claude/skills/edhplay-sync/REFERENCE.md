@@ -51,3 +51,59 @@ the first single-copy line as the commander unless a line carries `[Commander{to
 rule that skips a `Commander` header line (read from the code, not tested), so leave it out. Export with "Include Printings" on prints the same format:
 commander, a blank line, then the rest. Pasting a MOXFIELD file into "Import & Replace" works as a
 manual fallback, with the default-printing caveat above for unpinned lines.
+
+## Games, match history and the live socket (verified 2026-11-21)
+
+Read from the site's bundles and from real traffic (a spectated 4-player game, a solo playtest and
+the match history). The EDHPlay Lens extension (`apps/edhplay-lens/`) and the parser in
+`scripts/lib/edhplay-parse.ts` are built on these facts.
+
+### More endpoints
+
+| Call | What it gives |
+|---|---|
+| `GET /matches/me` | Finished games: `round_count`, `duration_seconds`, `starting_seat`, `winner_seat` (often null), `viewer_seat`, and per player `username`, `deck_id`, `deck_name`, `deck_is_precon`, `deck_bracket`, `commanders[{name,image_uri}]`, `life`, `poison`, `mulligan_count`, `commander_damage`, `eliminated_at_round`. No room id. `limit` is capped at 50. The free tier answers `visible_limit: 5` and `older_hidden: N`: older matches exist but aren't served. |
+| `GET /matches/me/stats` | `403 PREMIUM_REQUIRED` on the free tier. |
+| `GET /decks/{id}` for another player's deck | Works for public decks (all seven opponents' decks tested were public). Some match players come back with `deck_id: null`. |
+| `GET /decks/{id}/game` | What a playtest seat loads: `{id, name, format, bracket_level, cards[{card_print_id, name, type_line, front_image_uri, mana_cost, zone, quantity}]}`. |
+| `GET /rooms?limit=50` | The public lobby list: name, bracket, player and spectator counts, phase. No player names. |
+| `GET /users/me` | Includes the email address; Lens keeps only `id` and `username`. |
+
+### The game socket
+
+`wss://api.edhplay.com/ws/game?room_id=<room>&token=<jwt>&pv=<protocol version>`, plus
+`&spectator=true` when spectating. JSON text frames. The client sends `ping` and closes the socket
+when the first `game_state`'s `protocol_version` differs from its own, so a protocol bump shows up
+at once.
+
+- `game_state` is the full table: `phase` (`lobby` before the game), `game_started`,
+  `round_count`, `turn_seq`, `current_turn_player_id`, `starting_player_id`, `mulligan_type`, and
+  `players[]` with `player_id`, `username`, `life`, `status`, `lobby_seat`, `mulligan_count`,
+  `hand_count`, `library_count`, `commanders`, and zone arrays (`battlefield`, `commandZone`,
+  `graveyard`, `exile`) of card objects.
+- A card object is `{name, type_line, mana_cost, front_image_uri, card_print_id, id, zone,
+  owner_id, x, y}`. Hidden cards come without a name (`cards_moved` with `cards: []` and a `count`).
+- About 57 incoming event types. The ones the parser reads: `move_card` (`id`, `from_zone`,
+  `zone`, `card`), `cards_moved` (`from_zone`, `to_zone`, `cards[]`, `count`, `drawn`),
+  `turn_passed` (`new_turn_player_id`, `round_count`, `turn_seq`), `set_player_stats` (`life`,
+  `previous_values`, `commander_damage: {attackerId: {commander: n}}`), `card_created` (the card is
+  under `token`, with `is_token: true`), `player_eliminated`, `mulligan`, `keep_hand`,
+  `chat_message_received`, `dice_rolled`, `library_shuffled`, `player_disconnected`. Others
+  (`tap`, `untap_all`, `card_pinged`, `arrows_created`, `attach_card`, `place_on_battlefield`
+  which only repositions, `kick_vote_*`, `reaction_received`, `presence_changed`…) are stored raw
+  and counted.
+- The command zone is `commandZone` in some events and `command` in others.
+- Outgoing actions include `set_lobby_deck {deck_id}`, the only place the socket says which deck
+  the player picked.
+
+### The Event Log store and solo playtests
+
+The game bundle (`/assets/GameLayout-*.js`) exports a zustand store whose state holds
+`eventMessages` and `chatMessages` (capped at the last 500). Entries are `{id, playerId, message,
+timestamp, channel, cardName?, cardId?, metadata: {from_zone, to_zone}}`, with messages like
+`Played {card} from Hand`, `Turn passed to Player 2`, `Updated Set life total to 39 (-1)`,
+`Drew 1 card`. EDHPlay's own lines (`New game started!`, turn passes) have `playerId: "system"`.
+The export name is minified, so Lens finds the store by shape.
+
+Solo playtests have no socket at all: a local engine in the playtest bundle turns actions into the
+same event objects and applies them in the page, so the Event Log store is the only way to see them.

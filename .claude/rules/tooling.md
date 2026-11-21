@@ -33,6 +33,9 @@ paths:
 - `data/`: ephemeral, git-ignored caches (`card-cache.json` is the one card cache, shared by the CLI
   and the app; `rulings-cache.json`; `edhrec-cache.json`).
 - `CHANGELOG.md`: generated on each rules update (a rebuild of the same source keeps it).
+- `apps/edhplay-lens/`: the EDHPlay Lens browser extension. `scripts/lib/edhplay-parse.ts` is its
+  game parser, shared with the Workbench; `scripts/lib/edhplay-store.ts` owns `edhplay-data/`, the
+  git-ignored game records (not a cache, see the extension's README).
 
 ## Commands
 
@@ -63,6 +66,9 @@ paths:
   B3 token list.
 - `bun run card-viz <spec.json> [--out <dir>]`: card-image pages of swaps, bench pairs and verdict
   tiles for T3 Code's `html_render`. The `card-visualizer` skill holds the spec format.
+- `bun run lens:build`: build the extension into `apps/edhplay-lens/dist/` (load it unpacked).
+- `bun run games [list | deck <slug> [--playtests] | player <name> | status]`: the recorded EDHPlay
+  games in the terminal.
 - `bun test`: the suite under `test/`. Scoped there on purpose: `apps/collection-visualizer` has its
   own deps and its own `bun test`, and an unscoped run fails on a fresh clone before that app is
   installed.

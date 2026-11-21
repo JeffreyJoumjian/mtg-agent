@@ -1,4 +1,4 @@
-import { Library, Layers, Moon, Sun, Swords } from "lucide-react";
+import { Dices, Globe, Library, Layers, Moon, Sun, Swords, Users } from "lucide-react";
 import { useAtom } from "jotai";
 import { settingsAtom } from "~/lib/state/store";
 import { Link, useRouterState } from "@tanstack/react-router";
@@ -15,11 +15,15 @@ import {
 } from "~/components/ui/sidebar";
 
 /** Decks are the home route. `Collection` is the owned-card library; `Collections` is deliberately
- *  broader than the sets it lists today — it's where user-made lists will live alongside them. */
+ *  broader than the sets it lists today — it's where user-made lists will live alongside them.
+ *  Games, Meta and Players read what the EDHPlay Lens extension records. */
 const NAV = [
   { to: "/", label: "Decks", icon: Swords },
   { to: "/collection", label: "Collection", icon: Library },
   { to: "/collections", label: "Collections", icon: Layers },
+  { to: "/games", label: "Games", icon: Dices },
+  { to: "/meta", label: "Meta", icon: Globe },
+  { to: "/players", label: "Players", icon: Users },
 ] as const;
 
 export function AppSidebar() {

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EDHPlay Lens</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <header>
+      <strong>EDHPlay Lens</strong>
+      <span id="status" class="status"></span>
+    </header>
+    <main id="main"></main>
+    <footer>
+      <details id="settings">
+        <summary>Settings</summary>
+        <label>Workbench address <input id="workbench" type="url" placeholder="http://localhost:3200" /></label>
+        <div class="row">
+          <button id="save" type="button">Save</button>
+          <button id="retry" type="button">Retry now</button>
+        </div>
+        <p id="error" class="error"></p>
+        <p class="muted">Games are stored by the MTG Workbench in <code>edhplay-data/</code>. Playtests are kept apart from real games.</p>
+      </details>
+    </footer>
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

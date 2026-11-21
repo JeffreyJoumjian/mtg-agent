@@ -27,7 +27,9 @@
     "deck:meta": "bun run scripts/deck.ts meta",
     "edhplay": "bun run scripts/edhplay.ts",
     "lookup": "bun run scripts/ledger.ts lookup",
-    "ledger:index": "bun run scripts/ledger.ts index"
+    "ledger:index": "bun run scripts/ledger.ts index",
+    "lens:build": "bun run apps/edhplay-lens/build.ts",
+    "games": "bun run scripts/games.ts"
   },
   "engines": {
     "bun": ">=1.3.14"

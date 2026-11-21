@@ -56,6 +56,20 @@ For a double-faced card, link the front face only. This is a chat rule: `deck.js
 Scryfall spellings, and prose under `research/` may use links. **Inside the app** (where the
 `mcp__deck-ui__*` tools exist), write `[[Card Name]]` instead; the app renders card chips.
 
+## EDHPlay games
+
+The EDHPlay Lens extension (`apps/edhplay-lens/`, see its README) records every EDHPlay game,
+spectated game and solo playtest into `edhplay-data/` through the Workbench. That folder is
+git-ignored and can't be rebuilt: it holds other players' names and chat, so it is never committed,
+and EDHPlay's free tier only keeps the last 5 matches.
+
+- `bun run games deck <slug>` prints card performance from real games (seen, drawn, played, win
+  rate when played and when not, never played) and matchups. Bring it into cut and swap
+  discussions as evidence, next to deck-brain. `--playtests` reads playtests, which never count as
+  real games.
+- `bun run games player <name>` gives the history with one player; the Workbench's Games, Meta and
+  Players pages hold the rest.
+
 ## Decks
 
 Each deck is one file, `decks/<slug>/deck.json`: every list (`main`, variants, pools) and the

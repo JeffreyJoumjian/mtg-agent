@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { useAtom } from "jotai";
-import { Check, ChevronLeft, Copy, History, MessageSquare, X } from "lucide-react";
+import { Check, ChevronLeft, Copy, Dices, History, MessageSquare, X } from "lucide-react";
 import { Group, Panel, Separator, usePanelRef } from "react-resizable-panels";
 import { MAIN_LIST } from "@mtg/deck-model.ts";
 import type { ChangeEntry, ChangeSet } from "@mtg/change-set.ts";
@@ -227,6 +227,11 @@ function Workbench() {
             <Button variant="outline" size="sm" asChild>
               <Link to="/decks/$slug/history" params={{ slug }}>
                 <History /> History
+              </Link>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/decks/$slug/games" params={{ slug }}>
+                <Dices /> Games
               </Link>
             </Button>
             <Button variant="outline" size="sm" onClick={copyList}>

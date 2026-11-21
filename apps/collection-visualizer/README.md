@@ -46,6 +46,12 @@ collection viewer only.
 | `/decks/<slug>/history` | The version timeline: "as it was", "diff vs current", Restore.       |
 | `/collection`           | The owned-card library (was `/`).                                    |
 | `/collections`          | Unchanged.                                                           |
+| `/games`                | EDHPlay games recorded by the Lens extension; `?kind=playtests` for playtests. |
+| `/games/<id>`           | One game's report: life chart, turns, cards, combos, decklists, logs. |
+| `/meta`                 | What the pods play: commanders, colours, brackets, cards, combos.    |
+| `/players`, `/players/<name>` | Everyone met on EDHPlay, with history and private notes.       |
+| `/decks/<slug>/games`   | Card performance and matchups for a deck's EDHPlay-linked lists.     |
+| `/api/edhplay/*`        | Ingest, live and status endpoints for the extension (see `apps/edhplay-lens/README.md`). |
 
 ## Deck builder
 

@@ -30,3 +30,11 @@ bun.lockb
 # itself is rebuilt by `bun run deck:proposal <slug>` (see deck-brain §3.1).
 decks/*/artifact*/img/
 decks/*/artifact*/proposal.json
+
+# EDHPlay Lens game records (see scripts/lib/edhplay-store.ts). Other players' usernames and chat
+# live here and this repo is public, so it never gets committed. It is NOT a rebuildable cache:
+# EDHPlay's free tier only keeps the last 5 matches. Back it up somewhere private.
+/edhplay-data/
+
+# The EDHPlay Lens extension build output (`bun run lens:build`).
+apps/edhplay-lens/dist/

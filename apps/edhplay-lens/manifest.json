@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "EDHPlay Lens",
+  "version": "0.1.0",
+  "description": "Records your EDHPlay games, spectated games and playtests into the MTG Workbench, with a live side panel for the table.",
+  "minimum_chrome_version": "116",
+  "permissions": ["storage", "sidePanel", "alarms"],
+  "host_permissions": ["https://edhplay.com/*", "http://localhost/*", "http://127.0.0.1/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "action": { "default_title": "EDHPlay Lens" },
+  "content_scripts": [
+    { "matches": ["https://edhplay.com/*"], "js": ["page.js"], "run_at": "document_start", "world": "MAIN" },
+    { "matches": ["https://edhplay.com/*"], "js": ["content.js"], "run_at": "document_start" }
+  ]
+}
