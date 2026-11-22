@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { GameTracker, parseCapture, soloLogToFrames, withoutChat, type CaptureMeta, type RawFrame } from "../scripts/lib/edhplay-parse.ts";
 import { buildRecords, deckPerformance, fillTypeLines, matchups, meta, overview, playerSummaries, dossierFor, weekOf, type LocalListRef } from "../scripts/lib/edhplay-games.ts";
-import { groupSessions, ingest, listCaptures, loadParsedGames, readFrames, readLog, listDeckSnapshots } from "../scripts/lib/edhplay-store.ts";
+import { groupSessions, ingest, listCaptures, loadParsedGames, mergeStoredJson, readFrames, readLog, listDeckSnapshots } from "../scripts/lib/edhplay-store.ts";
 
 // Player ids and shapes follow real EDHPlay frames (2026-11-21); names are made up.
 const ME = "11111111-1111-1111-1111-111111111111";
@@ -440,4 +440,21 @@ test("the store drops chat lines from the Event Log and from an older extension'
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
+});
+
+test("a sync conflict keeps the newer stamped file and merges player notes by username", () => {
+  expect(mergeStoredJson({ fetchedAt: 2, match: { id: "a" } }, { fetchedAt: 3, match: { id: "b" } })).toEqual({ fetchedAt: 3, match: { id: "b" } });
+  expect(mergeStoredJson({ updatedAt: 9, lastIndex: 40 }, { updatedAt: 5, lastIndex: 12 })).toEqual({ updatedAt: 9, lastIndex: 40 });
+  expect(
+    mergeStoredJson(
+      { alice: { note: "plays stax", tags: [], updatedAt: 100 }, carol: { note: "", tags: ["salty"], updatedAt: 10 } },
+      { alice: { note: "old", tags: [], updatedAt: 50 }, bob: { note: "combo", tags: [], updatedAt: 60 } },
+    ),
+  ).toEqual({
+    alice: { note: "plays stax", tags: [], updatedAt: 100 },
+    carol: { note: "", tags: ["salty"], updatedAt: 10 },
+    bob: { note: "combo", tags: [], updatedAt: 60 },
+  });
+  expect(mergeStoredJson({ a: 1 }, { a: 2 })).toEqual(null);
+  expect(mergeStoredJson([1], [2])).toEqual(null);
 });

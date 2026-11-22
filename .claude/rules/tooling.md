@@ -68,7 +68,8 @@ paths:
   tiles for T3 Code's `html_render`. The `card-visualizer` skill holds the spec format.
 - `bun run lens:build`: build the extension into `apps/edhplay-lens/dist/` (load it unpacked).
 - `bun run games [list | deck <slug> [--playtests] | player <name> | status]`: the recorded EDHPlay
-  games in the terminal.
+  games in the terminal. `bun run games sync` commits `edhplay-data/` to its private repo, pulls
+  the other machine's games and pushes (`merge-json` is the git merge driver it sets up).
 - `bun test`: the suite under `test/`. Scoped there on purpose: `apps/collection-visualizer` has its
   own deps and its own `bun test`, and an unscoped run fails on a fresh clone before that app is
   installed.

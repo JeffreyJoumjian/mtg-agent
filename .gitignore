@@ -33,7 +33,8 @@ decks/*/artifact*/proposal.json
 
 # EDHPlay Lens game records (see scripts/lib/edhplay-store.ts). Other players' usernames, decklists
 # and the pilot's notes on them live here, and this repo is public, so it never gets committed. It is NOT a rebuildable cache:
-# EDHPlay's free tier only keeps the last 5 matches. Back it up somewhere private.
+# EDHPlay's free tier only keeps the last 5 matches. It is its own private repo instead
+# (JeffreyJoumjian/mtg-agent-data), synced with `bun run games sync`.
 /edhplay-data/
 
 # The EDHPlay Lens extension build output (`bun run lens:build`).

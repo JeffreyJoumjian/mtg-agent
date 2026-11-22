@@ -5,11 +5,16 @@
  *    bun run games deck <slug> [--playtests]  card performance and matchups per EDHPlay-linked list
  *    bun run games player <username>        history with one player
  *    bun run games status                   what is stored and where
+ *    bun run games sync                     commit edhplay-data/, pull the other machine's games, push
  *
  *  Playtests are never mixed into real games: `deck --playtests` reads only playtests. */
 import { listDeckSlugs, readDeck } from "./lib/deck-store.ts";
 import { buildRecords, deckPerformance, overview, playerSummaries, type GameRecord, type LocalListRef } from "./lib/edhplay-games.ts";
-import { EDHPLAY_DIR, listCaptures, listMatches, loadParsedGames, readProfile, type CaptureKind } from "./lib/edhplay-store.ts";
+import { existsSync } from "node:fs";
+import { readFile, writeFile } from "node:fs/promises";
+import { hostname } from "node:os";
+import { join } from "node:path";
+import { EDHPLAY_DIR, listCaptures, listMatches, loadParsedGames, mergeStoredJson, readProfile, type CaptureKind } from "./lib/edhplay-store.ts";
 
 async function lists(): Promise<LocalListRef[]> {
   const out: LocalListRef[] = [];
@@ -75,6 +80,62 @@ if (!cmd || cmd === "list") {
 } else if (cmd === "status") {
   const [g, t, m] = await Promise.all([listCaptures("games"), listCaptures("playtests"), listMatches()]);
   console.log(`${EDHPLAY_DIR}: ${g.length} game captures, ${t.length} playtests, ${m.length} EDHPlay matches.`);
+} else if (cmd === "sync") {
+  await sync();
+} else if (cmd === "merge-json") {
+  // Git's merge driver for edhplay-data's JSON files (set up by `sync`): %A holds our side and
+  // receives the result, %B is theirs. A non-zero exit leaves the conflict for a manual merge.
+  const [ours, theirs] = process.argv.slice(3);
+  const [ourText, theirText] = await Promise.all([readFile(ours, "utf8"), readFile(theirs, "utf8")]);
+  const merged = mergeStoredJson(JSON.parse(ourText), JSON.parse(theirText));
+  if (merged === null) {
+    process.exit(1);
+  }
+  await writeFile(ours, JSON.stringify(merged, null, 2) + "\n");
 } else {
-  console.log("usage: bun run games [list | deck <slug> [--playtests] | player <username> | status]");
+  console.log("usage: bun run games [list | deck <slug> [--playtests] | player <username> | status | sync]");
+}
+
+/** edhplay-data/ is its own private repo (this one is public). Commits whatever the Workbench
+ *  wrote, merges the other machine's games and pushes. `.jsonl` files merge as a union because
+ *  they're append-only, and JSON files go through `merge-json`, so a sync never stops on a file
+ *  both machines touched unless `mergeStoredJson` can't settle it. */
+async function sync(): Promise<void> {
+  if (!existsSync(join(EDHPLAY_DIR, ".git"))) {
+    console.log(`${EDHPLAY_DIR} isn't a git repo yet. Clone the private data repo into it first:`);
+    console.log("  gh repo clone JeffreyJoumjian/mtg-agent-data edhplay-data");
+    process.exit(1);
+  }
+
+  const git = (...args: string[]) => {
+    const r = Bun.spawnSync(["git", "-C", EDHPLAY_DIR, ...args], { stdout: "pipe", stderr: "pipe" });
+    return { ok: r.exitCode === 0, out: r.stdout.toString().trim() + r.stderr.toString().trim() };
+  };
+  const must = (...args: string[]) => {
+    const r = git(...args);
+    if (!r.ok) {
+      console.log(`git ${args.join(" ")} failed:\n${r.out}`);
+      process.exit(1);
+    }
+    return r.out;
+  };
+
+  // The driver command holds this checkout's absolute path, so each machine sets its own.
+  const script = join(import.meta.dir, "games.ts").replaceAll("\\", "/");
+  must("config", "merge.edhplay-json.name", "edhplay-data JSON merge");
+  must("config", "merge.edhplay-json.driver", `bun "${script}" merge-json %A %B`);
+
+  must("add", "-A");
+  const staged = git("diff", "--cached", "--quiet");
+  if (!staged.ok) {
+    must("commit", "-q", "-m", `Sync from ${hostname()}`);
+  }
+
+  const pulled = git("pull", "--no-rebase", "--no-edit", "-q");
+  if (!pulled.ok) {
+    console.log(`The pull hit a conflict that couldn't be merged automatically. Resolve it in ${EDHPLAY_DIR}, commit, then run this again.\n${pulled.out}`);
+    process.exit(1);
+  }
+  must("push", "-q");
+  console.log(`edhplay-data is in sync (${must("rev-parse", "--short", "HEAD")}).`);
 }

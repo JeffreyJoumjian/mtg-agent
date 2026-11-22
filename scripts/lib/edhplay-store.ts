@@ -1,9 +1,10 @@
 /** EDHPlay game store: everything the browser extension records, on disk under `edhplay-data/`.
  *
- *  This folder is git-ignored on purpose. It holds other players' usernames, decklists and the
- *  pilot's notes on them, and the repo is public, so it must never be committed. It never holds
- *  chat: the extension drops it before sending and `ingestCapture` drops it again. Unlike `data/`, it is NOT a rebuildable cache:
- *  EDHPlay's free tier only shows the last 5 matches, so a game missed here is gone. Back it up.
+ *  It holds other players' usernames, decklists and the pilot's notes on them. This repo is
+ *  public, so the folder is git-ignored here and is its own private git repo instead, synced
+ *  between machines with `bun run games sync`. It never holds chat: the extension drops it before
+ *  sending and `ingestCapture` drops it again. Unlike `data/`, it is NOT a rebuildable cache:
+ *  EDHPlay's free tier only shows the last 5 matches, so a game missed here is gone.
  *
  *  Layout (raw first, so new views can be built later from data already collected):
  *    captures/<captureId>/meta.json     CaptureMeta plus `lastIndex`, the highest frame index stored
@@ -66,6 +67,39 @@ async function readJson<T>(path: string, guard: Guard<T>): Promise<T | null> {
   } catch {
     return null;
   }
+}
+
+/** Settles a `bun run games sync` merge conflict in one of the JSON files, so two machines that
+ *  both recorded can always sync. A file stamped with `updatedAt` or `fetchedAt` (match entries,
+ *  capture meta, deck snapshots, the profile) keeps the newer copy whole. `players.json` merges by
+ *  username, the newer note winning. Anything else returns null, and the sync stops so the
+ *  conflict can be merged manually. The `.jsonl` files never reach here: they merge as a union. */
+export function mergeStoredJson(ours: unknown, theirs: unknown): unknown {
+  if (!isObj(ours) || !isObj(theirs)) {
+    return null;
+  }
+
+  const stamp = (v: Record<string, unknown>) => (isNum(v.updatedAt) ? v.updatedAt : isNum(v.fetchedAt) ? v.fetchedAt : null);
+  const ourStamp = stamp(ours);
+  const theirStamp = stamp(theirs);
+  if (ourStamp !== null && theirStamp !== null) {
+    return theirStamp > ourStamp ? theirs : ours;
+  }
+
+  const notes = [...Object.values(ours), ...Object.values(theirs)];
+  if (notes.some((n) => !isObj(n) || !isNum(n.updatedAt))) {
+    return null;
+  }
+  const merged: Record<string, unknown> = { ...ours };
+  for (const [username, note] of Object.entries(theirs)) {
+    const mine = merged[username];
+    const mineAt = isObj(mine) && isNum(mine.updatedAt) ? mine.updatedAt : -1;
+    const theirAt = isObj(note) && isNum(note.updatedAt) ? note.updatedAt : -1;
+    if (theirAt > mineAt) {
+      merged[username] = note;
+    }
+  }
+  return merged;
 }
 
 /** Write through a temp file and rename, so a crash mid-write never leaves half a JSON file. */

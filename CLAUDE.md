@@ -70,6 +70,11 @@ matches. Chat is never recorded: the extension and the store both drop it (`with
   real games.
 - `bun run games player <name>` gives the history with one player; the Workbench's Games, Meta and
   Players pages hold the rest.
+- `edhplay-data/` is its own private repo,
+  [mtg-agent-data](https://github.com/JeffreyJoumjian/mtg-agent-data), so the pilot's Mac and
+  Windows machines share games. `bun run games sync` commits it, merges the other machine's games
+  and pushes. On a new machine, clone it first: `gh repo clone JeffreyJoumjian/mtg-agent-data
+  edhplay-data` from the repo root.
 
 ## Decks
 

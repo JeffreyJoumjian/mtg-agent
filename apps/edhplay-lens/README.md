@@ -39,8 +39,20 @@ Everything lands in `edhplay-data/` at the repo root (see `scripts/lib/edhplay-s
 folder is git-ignored because it holds other players' usernames, decklists and your notes on them,
 and this repo is public. Chat is never recorded: the extension drops it in the page before anything
 is sent, and the Workbench drops it again when it stores a batch.
-It's also not a cache you can rebuild: EDHPlay's free tier only keeps your last five matches, so
-back the folder up somewhere private.
+It's also not a cache you can rebuild: EDHPlay's free tier only keeps your last five matches.
+
+So the folder is its own private repo,
+[mtg-agent-data](https://github.com/JeffreyJoumjian/mtg-agent-data). Run `bun run games sync` to
+commit what the Workbench wrote, merge the other machine's games and push. On a new machine, clone
+it into place from the repo root first:
+
+```bash
+gh repo clone JeffreyJoumjian/mtg-agent-data edhplay-data
+```
+
+Sync never stops on a file both machines touched: the append-only `.jsonl` files keep both sides'
+lines, and the JSON files go through `bun run games merge-json` (`mergeStoredJson`), which keeps
+the newer copy and merges player notes by username.
 
 Solo playtests are stored in `edhplay-data/playtests/`, apart from real games, and every view
 reads them separately. A playtest never counts toward a record, a win rate, the meta or a player.
