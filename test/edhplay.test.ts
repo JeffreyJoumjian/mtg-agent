@@ -2,9 +2,9 @@ import { test, expect } from "bun:test";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { GameTracker, parseCapture, soloLogToFrames, type CaptureMeta, type RawFrame } from "../scripts/lib/edhplay-parse.ts";
+import { GameTracker, parseCapture, soloLogToFrames, withoutChat, type CaptureMeta, type RawFrame } from "../scripts/lib/edhplay-parse.ts";
 import { buildRecords, deckPerformance, fillTypeLines, matchups, meta, overview, playerSummaries, dossierFor, weekOf, type LocalListRef } from "../scripts/lib/edhplay-games.ts";
-import { groupSessions, ingest, listCaptures, loadParsedGames, readFrames, listDeckSnapshots } from "../scripts/lib/edhplay-store.ts";
+import { groupSessions, ingest, listCaptures, loadParsedGames, readFrames, readLog, listDeckSnapshots } from "../scripts/lib/edhplay-store.ts";
 
 // Player ids and shapes follow real EDHPlay frames (2026-11-21); names are made up.
 const ME = "11111111-1111-1111-1111-111111111111";
@@ -66,7 +66,6 @@ test("the tracker reads a two-player game: plays, draws, life, commander damage,
   expect(g.rounds).toEqual(2);
   expect(g.survivorId).toEqual(ME);
   expect(g.myDeckId).toEqual("deck-mine");
-  expect(g.chat).toEqual([{ t: 10000, playerId: OPP, message: "gl hf" }]);
 
   const me = g.players.find((p) => p.isMe);
   expect(me?.username).toEqual("pilot");
@@ -294,10 +293,11 @@ test("the store appends frames once per index, dedupes deck snapshots and parses
     // A retried batch overlapping the first must not duplicate frames 3 and 4.
     await ingest({ kind: "capture", meta: META, frames: fs.slice(3) }, dir);
     const stored = await readFrames("cap1", "games", dir);
-    expect(stored.map((f) => f.i)).toEqual(fs.map((f) => f.i));
+    // Frame 8 is the opponent's "gl hf" chat line, which never reaches disk.
+    expect(stored.map((f) => f.i)).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14]);
 
     const captures = await listCaptures("games", dir);
-    expect(captures.map((c) => [c.captureId, c.frameCount, c.lastIndex])).toEqual([["cap1", fs.length, fs.length - 1]]);
+    expect(captures.map((c) => [c.captureId, c.frameCount, c.lastIndex])).toEqual([["cap1", 14, 14]]);
 
     await ingest({ kind: "deck", deckId: "deck-opp", fetchedAt: 1, deck: { cards: [] }, reason: "opponent" }, dir);
     await ingest({ kind: "deck", deckId: "deck-opp", fetchedAt: 2, deck: { cards: [] }, reason: "opponent" }, dir);
@@ -409,4 +409,35 @@ test("weeks start on Monday in Bucharest time", () => {
   expect(weekOf(Date.parse("2026-11-15T23:30:00Z"))).toEqual("2026-11-16");
   expect(weekOf(Date.parse("2026-11-15T21:30:00Z"))).toEqual("2026-11-09");
   expect(weekOf(Date.parse("2026-11-22T12:00:00Z"))).toEqual("2026-11-16");
+});
+
+test("chat never survives: chat frames are dropped and chat keys are stripped at any depth", () => {
+  expect(withoutChat({ type: "chat_message_received", player_id: OPP, message: "gl hf" })).toEqual(null);
+  expect(withoutChat({ type: "send_chat", message: "ty" })).toEqual(null);
+  expect(
+    withoutChat({
+      type: "game_state",
+      chat_messages: [{ message: "gl hf" }],
+      room: { communication_preference: "chat_only", chatHistory: ["hi"] },
+      players: [{ username: "rival", life: 40, chatMessages: 3 }],
+    }),
+  ).toEqual({ type: "game_state", room: { communication_preference: "chat_only" }, players: [{ username: "rival", life: 40 }] });
+  expect(withoutChat({ type: "move_card", id: "h1" })).toEqual({ type: "move_card", id: "h1" });
+});
+
+test("the store drops chat lines from the Event Log and from an older extension's frames", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "edhplay-"));
+  try {
+    const log = [
+      { i: 0, id: "e1", playerId: ME, message: "Played {card}", timestamp: "2026-11-21T00:00:01Z", channel: "event", cardName: "Forest" },
+      { i: 1, id: "c1", playerId: OPP, message: "gl hf", timestamp: "2026-11-21T00:00:02Z", channel: "chat" },
+    ];
+    await ingest({ kind: "capture", meta: META, frames: frames().map((f, i) => ({ ...f, i })), log }, dir);
+    const [storedFrames, storedLog] = await Promise.all([readFrames("cap1", "games", dir), readLog("cap1", "games", dir)]);
+    const stored = JSON.stringify([storedFrames, storedLog]);
+    expect(stored.includes("gl hf")).toEqual(false);
+    expect(stored.includes("Played {card}")).toEqual(true);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
 });

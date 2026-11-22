@@ -889,7 +889,7 @@ function DeckRow(props: { player: PlayerRecord; parsed?: ParsedPlayer; deck: Opp
 // Logs
 
 function Logs(props: { game: ParsedGame; log: GameData["log"] }) {
-  const [tab, setTab] = useState<"chat" | "events" | "raw">("chat");
+  const [tab, setTab] = useState<"events" | "raw">("events");
   const nameOf = (id: string) => {
     const p = props.game.players.find((x) => x.playerId === id);
     return p?.isMe ? "you" : (p?.username ?? "");
@@ -897,7 +897,6 @@ function Logs(props: { game: ParsedGame; log: GameData["log"] }) {
   const events = props.log.filter((l) => l.channel === "event");
   const counts = Object.entries(props.game.eventCounts).sort((a, b) => b[1] - a[1]);
   const tabs = [
-    { key: "chat" as const, label: `Chat · ${props.game.chat.length}` },
     { key: "events" as const, label: `Event log · ${events.length}` },
     { key: "raw" as const, label: `Raw events · ${counts.length} types` },
   ];
@@ -922,16 +921,6 @@ function Logs(props: { game: ParsedGame; log: GameData["log"] }) {
         ))}
       </div>
       <div role="tabpanel" className="max-h-[360px] overflow-y-auto text-[13px]">
-        {tab === "chat" && (
-          <div className="flex flex-col gap-1.5">
-            {props.game.chat.length === 0 && <span className="text-muted-foreground">Nobody typed in chat.</span>}
-            {props.game.chat.map((c) => (
-              <span key={`${c.t}-${c.playerId}-${c.message}`}>
-                <b>{nameOf(c.playerId)}</b> {c.message}
-              </span>
-            ))}
-          </div>
-        )}
         {tab === "events" && (
           <div className="flex flex-col gap-0.5 text-[12px]">
             {events.length === 0 && <span className="text-muted-foreground">No Event Log lines were recorded.</span>}

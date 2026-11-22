@@ -23,8 +23,8 @@ during a playtest, and `!` on every tab when records are waiting because the Wor
 
 | Source | What | When |
 |---|---|---|
-| Game socket (`/ws/game`) | Every frame in both directions: the full `game_state`, every move, tap, life change, commander damage, token, chat line, die roll, mulligan, elimination | Online games and spectated games |
-| EDHPlay's Event Log store | The log and chat lines as EDHPlay words them, with card names and zones | Online games, and the only source for solo playtests |
+| Game socket (`/ws/game`) | Every frame in both directions: the full `game_state`, every move, tap, life change, commander damage, token, die roll, mulligan, elimination. Chat frames are dropped | Online games and spectated games |
+| EDHPlay's Event Log store | The Event Log lines as EDHPlay words them, with card names and zones. Chat lines are dropped | Online games, and the only source for solo playtests |
 | `/matches/me` | EDHPlay's own result: winner, seats, decks, brackets, final life, mulligans | On load, then every 2 minutes, and right after a room closes |
 | `/decks/{id}` | The decklist of every deck in those matches, yours and opponents' | After the match is in history; never while a room is open |
 | `/users/me` | Your id and username only (the email is dropped in the page) | On load |
@@ -36,7 +36,9 @@ card's name when the viewer can see it, so Lens knows exactly what you saw and n
 ## Where it goes
 
 Everything lands in `edhplay-data/` at the repo root (see `scripts/lib/edhplay-store.ts`). That
-folder is git-ignored because it holds other players' usernames and chat and this repo is public.
+folder is git-ignored because it holds other players' usernames, decklists and your notes on them,
+and this repo is public. Chat is never recorded: the extension drops it in the page before anything
+is sent, and the Workbench drops it again when it stores a batch.
 It's also not a cache you can rebuild: EDHPlay's free tier only keeps your last five matches, so
 back the folder up somewhere private.
 
@@ -75,7 +77,7 @@ have shown.
 - **Games** (with a Games / Playtests toggle): record, win rate, results by week and by deck, and
   every game. Each game has a report with a life chart, turn-by-turn plays, the cards each player
   showed with roles, combos, the cards you drew and never cast, decklists fetched after the game,
-  chat, the Event Log and raw event counts.
+  the Event Log and raw event counts.
 - **Meta:** commanders you face, colours, brackets, precon share, Game Changers, interaction per
   opponent, the cards you see most (filterable by role), combos assembled, game length and
   elimination rounds.

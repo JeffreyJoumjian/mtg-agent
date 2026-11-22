@@ -104,7 +104,6 @@ export interface ParsedPlayer {
   libraryCount?: number;
   /** Turns this player took, by turn sequence number. */
   turnsTaken: number;
-  chatMessages: number;
   disconnects: number;
 }
 
@@ -131,12 +130,6 @@ export interface TurnRecord {
   played: Record<string, string[]>;
 }
 
-export interface ChatLine {
-  t: number;
-  playerId: string;
-  message: string;
-}
-
 export interface ParsedGame {
   /** `<captureId>:<index>`, stable for a stored capture. */
   gameId: string;
@@ -155,7 +148,6 @@ export interface ParsedGame {
   players: ParsedPlayer[];
   turns: TurnRecord[];
   events: GameEvent[];
-  chat: ChatLine[];
   eventCounts: Record<string, number>;
   /** Why the parser closed this game. */
   endReason: "eliminations" | "new_game" | "capture_end";
@@ -184,6 +176,34 @@ type Json = Record<string, unknown>;
 
 function isObj(v: unknown): v is Json {
   return typeof v === "object" && v !== null && !Array.isArray(v);
+}
+
+/** EDHPlay chat is never recorded: the pilot logs plays and players, not what people type. The
+ *  extension runs this on every socket frame before sending it, and the Workbench store runs it
+ *  again on ingest. A frame whose `type` names chat (`chat_message_received`, and whatever the
+ *  outgoing one is called) becomes null, so callers drop it. Any key naming chat inside another
+ *  frame (a `game_state` may carry the room's chat history) is removed, at any depth. */
+export function withoutChat(data: unknown): unknown {
+  if (isObj(data) && typeof data.type === "string" && /chat/i.test(data.type)) {
+    return null;
+  }
+  return stripChatKeys(data);
+}
+
+function stripChatKeys(v: unknown): unknown {
+  if (Array.isArray(v)) {
+    return v.map(stripChatKeys);
+  }
+  if (!isObj(v)) {
+    return v;
+  }
+  const out: Json = {};
+  for (const [key, value] of Object.entries(v)) {
+    if (!/chat/i.test(key)) {
+      out[key] = stripChatKeys(value);
+    }
+  }
+  return out;
 }
 
 function str(v: unknown): string | undefined {
@@ -425,7 +445,6 @@ export class GameTracker {
       players: [],
       turns: [],
       events: [],
-      chat: [],
       eventCounts: {},
       endReason: "capture_end",
       lobby,
@@ -548,7 +567,6 @@ export class GameTracker {
       tokensCreated: 0,
       maxBattlefield: 0,
       turnsTaken: 0,
-      chatMessages: 0,
       disconnects: 0,
     };
     game.players.push(created);
@@ -814,15 +832,6 @@ export class GameTracker {
         player.eliminatedRound = undefined;
         player.eliminatedSeq = undefined;
         this.event({ t, kind: "revived", playerId });
-        return;
-      }
-      case "chat_message_received": {
-        const message = str(msg.message) ?? "";
-        game.chat.push({ t, playerId, message });
-        const player = game.players.find((p) => p.playerId === playerId);
-        if (player) {
-          player.chatMessages += 1;
-        }
         return;
       }
       case "dice_rolled":

@@ -3,8 +3,11 @@
  *
  *  1. The game websocket. Every frame of every room connection, both directions, read only. The
  *     URL's token is never stored.
- *  2. EDHPlay's own Event Log and chat store, found by shape in the game bundle. Solo playtests
- *     have no socket, so this is their only source; online games keep it as readable text.
+ *  2. EDHPlay's own Event Log, found by shape in the game bundle. Solo playtests have no socket,
+ *     so this is their only source; online games keep it as readable text.
+ *
+ *  Chat is never recorded. Chat frames and chat lines are dropped here, before anything leaves
+ *  the page (`withoutChat`), and the Workbench store drops them again on ingest.
  *  3. The site's API, with the site's own token, after a game: match history, the decks in those
  *     matches, the signed-in profile, and lobby-list snapshots. Never during a game: the pilot
  *     doesn't want opponents' decklists while playing.
@@ -12,7 +15,7 @@
  *  Everything goes to the relay (content.ts) with window.postMessage. Frames and log lines are
  *  numbered here, because this page outlives any restart of the extension's service worker, and
  *  the Workbench uses the numbers to drop resent duplicates. */
-import type { CaptureMeta, RawFrame } from "../../../scripts/lib/edhplay-parse.ts";
+import { withoutChat, type CaptureMeta, type RawFrame } from "../../../scripts/lib/edhplay-parse.ts";
 import type { LogLine } from "../../../scripts/lib/edhplay-store.ts";
 import { isBackgroundEnvelope, type PageEnvelope, type PageMessage } from "./messages";
 import { matchSeatsToDecks, type LoadedDeck } from "./core";
@@ -91,7 +94,8 @@ function roomOpenAnywhere(): boolean {
   }
 }
 
-function record(capture: Capture, dir: "in" | "out", data: unknown): void {
+function record(capture: Capture, dir: "in" | "out", raw: unknown): void {
+  const data = withoutChat(raw);
   const type = typeOf(data);
   if (type === "ping" || type === "pong" || data === null) {
     return;
@@ -171,7 +175,7 @@ class LensWebSocket extends NativeWebSocket {
 window.WebSocket = LensWebSocket;
 
 // ---------------------------------------------------------------------------------------------
-// 2. EDHPlay's Event Log and chat store.
+// 2. EDHPlay's Event Log. The same store holds chat, which is never read.
 
 interface StoreLike {
   getState: () => unknown;
@@ -184,9 +188,7 @@ function isStore(v: unknown): v is StoreLike {
 
 function messagesOf(state: unknown): unknown[] {
   if (typeof state !== "object" || state === null) return [];
-  const events = "eventMessages" in state && Array.isArray(state.eventMessages) ? state.eventMessages : [];
-  const chat = "chatMessages" in state && Array.isArray(state.chatMessages) ? state.chatMessages : [];
-  return [...events, ...chat];
+  return "eventMessages" in state && Array.isArray(state.eventMessages) ? state.eventMessages : [];
 }
 
 function toLogLine(m: unknown, i: number): LogLine | null {
@@ -231,7 +233,7 @@ function onMessages(state: unknown): void {
     const capture = activeWs ?? activeSolo;
     if (!capture) continue;
     const line = toLogLine(m, capture.nextLog++);
-    if (!line) continue;
+    if (!line || /chat/i.test(line.channel)) continue;
     capture.log.push(line);
     post({ kind: "log", captureId: capture.meta.captureId, line });
     if (capture.meta.source === "solo") {

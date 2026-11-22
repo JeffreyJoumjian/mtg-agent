@@ -60,8 +60,9 @@ Scryfall spellings, and prose under `research/` may use links. **Inside the app*
 
 The EDHPlay Lens extension (`apps/edhplay-lens/`, see its README) records every EDHPlay game,
 spectated game and solo playtest into `edhplay-data/` through the Workbench. That folder is
-git-ignored and can't be rebuilt: it holds other players' names and chat, so it is never committed,
-and EDHPlay's free tier only keeps the last 5 matches.
+git-ignored and can't be rebuilt: it holds other players' names, decklists and the pilot's notes on
+them, so it is never committed to this public repo. EDHPlay's free tier only keeps the last 5
+matches. Chat is never recorded: the extension and the store both drop it (`withoutChat`).
 
 - `bun run games deck <slug>` prints card performance from real games (seen, drawn, played, win
   rate when played and when not, never played) and matchups. Bring it into cut and swap

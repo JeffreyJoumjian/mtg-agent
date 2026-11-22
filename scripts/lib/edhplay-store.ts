@@ -1,13 +1,14 @@
 /** EDHPlay game store: everything the browser extension records, on disk under `edhplay-data/`.
  *
- *  This folder is git-ignored on purpose. It holds other players' usernames and chat, and the
- *  repo is public, so it must never be committed. Unlike `data/`, it is NOT a rebuildable cache:
+ *  This folder is git-ignored on purpose. It holds other players' usernames, decklists and the
+ *  pilot's notes on them, and the repo is public, so it must never be committed. It never holds
+ *  chat: the extension drops it before sending and `ingestCapture` drops it again. Unlike `data/`, it is NOT a rebuildable cache:
  *  EDHPlay's free tier only shows the last 5 matches, so a game missed here is gone. Back it up.
  *
  *  Layout (raw first, so new views can be built later from data already collected):
  *    captures/<captureId>/meta.json     CaptureMeta plus `lastIndex`, the highest frame index stored
  *    captures/<captureId>/frames.jsonl  every websocket frame, one JSON object per line
- *    captures/<captureId>/log.jsonl     EDHPlay's own Event Log and chat lines for the capture
+ *    captures/<captureId>/log.jsonl     EDHPlay's own Event Log lines for the capture
  *    playtests/<captureId>/…            solo playtests, same files. Kept apart from captures/ so a
  *                                       playtest can never count toward real results
  *    matches/<matchId>.json             the raw `/matches/me` entry, newest fetch wins
@@ -19,7 +20,7 @@ import { createHash } from "node:crypto";
 import { appendFile, mkdir, readdir, readFile, rename, stat, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { REPO_ROOT } from "./paths.ts";
-import { parseCapture, soloLogToFrames, type CaptureMeta, type ParsedGame, type RawFrame } from "./edhplay-parse.ts";
+import { parseCapture, soloLogToFrames, withoutChat, type CaptureMeta, type ParsedGame, type RawFrame } from "./edhplay-parse.ts";
 
 export const EDHPLAY_DIR = process.env.EDHPLAY_DATA_DIR ? resolve(process.env.EDHPLAY_DATA_DIR) : resolve(REPO_ROOT, "edhplay-data");
 
@@ -125,7 +126,7 @@ export interface IndexedFrame extends RawFrame {
   i: number;
 }
 
-/** One line of EDHPlay's own Event Log or chat, as its message store holds it. */
+/** One line of EDHPlay's own Event Log, as its message store holds it. */
 export interface LogLine {
   i: number;
   id: string;
@@ -232,11 +233,16 @@ async function ingestCapture(meta: CaptureMeta, frames: IndexedFrame[], log: Log
   const fresh = frames.filter((f) => f.i > lastIndex).sort((a, b) => a.i - b.i);
   const freshLog = log.filter((l) => l.i > lastLogIndex).sort((a, b) => a.i - b.i);
 
-  if (fresh.length > 0) {
-    await appendFile(join(capDir, "frames.jsonl"), fresh.map((f) => JSON.stringify(f)).join("\n") + "\n");
+  // Chat never reaches disk, even from an older extension build that still sends it. The indexes
+  // above still advance past a dropped frame, so a resent batch doesn't bring it back.
+  const toWrite = fresh.map((f) => ({ ...f, data: withoutChat(f.data) })).filter((f) => f.data !== null);
+  const logToWrite = freshLog.filter((l) => !/chat/i.test(l.channel));
+
+  if (toWrite.length > 0) {
+    await appendFile(join(capDir, "frames.jsonl"), toWrite.map((f) => JSON.stringify(f)).join("\n") + "\n");
   }
-  if (freshLog.length > 0) {
-    await appendFile(join(capDir, "log.jsonl"), freshLog.map((l) => JSON.stringify(l)).join("\n") + "\n");
+  if (logToWrite.length > 0) {
+    await appendFile(join(capDir, "log.jsonl"), logToWrite.map((l) => JSON.stringify(l)).join("\n") + "\n");
   }
 
   const next: StoredCaptureMeta = {
@@ -246,11 +252,11 @@ async function ingestCapture(meta: CaptureMeta, frames: IndexedFrame[], log: Log
     startedAt: stored?.startedAt ?? meta.startedAt,
     lastIndex: fresh.length > 0 ? fresh[fresh.length - 1].i : lastIndex,
     lastLogIndex: freshLog.length > 0 ? freshLog[freshLog.length - 1].i : lastLogIndex,
-    frameCount: (stored?.frameCount ?? 0) + fresh.length,
+    frameCount: (stored?.frameCount ?? 0) + toWrite.length,
     updatedAt: Date.now(),
   };
   await writeJson(metaPath, next);
-  return { ok: true, stored: fresh.length + freshLog.length };
+  return { ok: true, stored: toWrite.length + logToWrite.length };
 }
 
 // ---------------------------------------------------------------------------------------------
