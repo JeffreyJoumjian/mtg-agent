@@ -62,18 +62,20 @@ repo is public.
    it once per machine:
 
    ```bash
-   git config --global --add safe.directory 'S:/mtg-agent/repo'
+   git config --global --add safe.directory '%(prefix)///SKYNAS/docker/mtg-agent/repo'
    ```
 
-   On the Mac, use the mounted path instead, e.g. `/Volumes/docker/mtg-agent/repo`. Do the same for
-   `repo/edhplay-data`.
+   Git on Windows names a mapped drive by its network path, so `S:/mtg-agent/repo` doesn't match;
+   the error message prints the exact path to use. On the Mac, use the mounted path instead, e.g.
+   `/Volumes/docker/mtg-agent/repo`. Do the same for `repo/edhplay-data`.
 
 ## After changing these files
 
 - `docker-compose.yaml`: copy it into the project folder, then paste it into Docker > Project >
   mtg-agent > Edit, because UGOS keeps its own copy.
 - `Dockerfile` or `run.sh`: restart the project. `pull_policy: build` rebuilds the image.
-- The Workbench's packages: restart `mtg-workbench`, which runs `bun install` on every start.
+- The Workbench's packages: restart `mtg-workbench`, which runs `bun install --no-save` on every
+  start.
 
 ## Notes
 

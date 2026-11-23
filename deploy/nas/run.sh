@@ -17,6 +17,9 @@ mode="${1:-}"
 export HOME=/tmp/home
 mkdir -p "$HOME"
 chown "$PUID:$PGID" "$HOME"
+# The bun image starts in /home/bun/app, which PUID can't read, and git refuses to run from a
+# folder it can't stat ("failed to stat '/home/bun/app': Permission denied").
+cd "$HOME"
 
 as_user() {
   setpriv --reuid="$PUID" --regid="$PGID" --clear-groups "$@"
@@ -26,10 +29,12 @@ case "$mode" in
   workbench)
     cd /repo/apps/collection-visualizer
     chown "$PUID:$PGID" node_modules
-    # --host 0.0.0.0 so Nginx Proxy Manager (and the extension) can reach it from outside the
-    # container. WORKBENCH_ALLOWED_HOSTS and VITE_WORKBENCH_CHAT come from the compose file.
+    # --no-save: the app has no lockfile of its own, and a bun.lock written here would show up as
+    # an untracked file on every machine. --host 0.0.0.0 so Nginx Proxy Manager (and the extension)
+    # can reach it from outside the container. WORKBENCH_ALLOWED_HOSTS and VITE_WORKBENCH_CHAT come
+    # from the compose file.
     exec setpriv --reuid="$PUID" --regid="$PGID" --clear-groups \
-      sh -c 'bun install && exec bun run dev --host 0.0.0.0'
+      sh -c 'bun install --no-save && exec bun run dev --host 0.0.0.0'
     ;;
 
   nightly)
