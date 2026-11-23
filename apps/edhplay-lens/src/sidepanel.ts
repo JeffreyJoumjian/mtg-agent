@@ -62,8 +62,37 @@ async function watchActiveTab(): Promise<void> {
 chrome.tabs.onActivated.addListener(() => void watchActiveTab());
 void watchActiveTab();
 
+/** Why the last Save didn't take, shown until the next Save. Status updates re-render Settings and
+ *  would otherwise wipe it. */
+let saveError = "";
+
+// The manifest only grants localhost. Any other Workbench address (the NAS's) is an optional host
+// permission, so the address never has to be written into this public repo. Brave asks once per
+// address, and permissions.request must run inside the click itself, before any await.
 document.getElementById("save")?.addEventListener("click", () => {
-  if (workbenchInput instanceof HTMLInputElement) port.postMessage({ kind: "set_workbench", url: workbenchInput.value.trim() });
+  if (!(workbenchInput instanceof HTMLInputElement)) return;
+
+  const url = workbenchInput.value.trim();
+  if (!url) {
+    saveError = "";
+    port.postMessage({ kind: "set_workbench", url });
+    return;
+  }
+
+  let origin: string;
+  try {
+    origin = new URL(url).origin;
+  } catch {
+    saveError = "That isn't a full address. It needs to start with http:// or https://, like https://mtg.example.com.";
+    if (errorEl) errorEl.textContent = saveError;
+    return;
+  }
+
+  void chrome.permissions.request({ origins: [`${origin}/*`] }).then((granted) => {
+    saveError = granted ? "" : `Lens can't reach ${origin} without your permission. You can press Save again and choose Allow.`;
+    if (errorEl) errorEl.textContent = saveError;
+    if (granted) port.postMessage({ kind: "set_workbench", url });
+  });
 });
 document.getElementById("retry")?.addEventListener("click", () => port.postMessage({ kind: "retry" }));
 settingsToggle?.addEventListener("click", () => {
@@ -126,7 +155,7 @@ function isView(v: unknown): v is PanelView {
 }
 
 function renderSettings(s: StatusView): void {
-  if (errorEl) errorEl.textContent = s.workbench === "down" ? "" : (s.lastError ?? "");
+  if (errorEl) errorEl.textContent = saveError || (s.workbench === "down" ? "" : (s.lastError ?? ""));
   if (workbenchInput instanceof HTMLInputElement && document.activeElement !== workbenchInput) workbenchInput.value = s.workbenchUrl;
 }
 

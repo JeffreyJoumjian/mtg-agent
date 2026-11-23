@@ -5,13 +5,19 @@ paths:
 
 # MTG Workbench app
 
-## The dev server belongs to the pilot
+## The Workbench runs on the NAS
 
-The pilot runs `bun run dev` in `apps/collection-visualizer` (http://localhost:3200) and owns its
-lifecycle: assume it's up, and if a task needs it and you're not sure, ask them to start it. Builds,
-typechecks and `bun test` are fine. `strictPort` in `apps/collection-visualizer/vite.config.ts`
-makes a second `bun run dev` fail instead of quietly taking the next free port, so a failed start
-means the pilot's server is already up. Any other background process you start is yours to stop.
+The NAS runs the app's dev server all the time (`mtg-workbench` in `deploy/nas/`) over the same
+files you edit, so a saved change shows up there straight away. It runs with
+`VITE_WORKBENCH_CHAT=off`, which hides the deck chat, and `WORKBENCH_ALLOWED_HOSTS`, which lets the
+proxy name through. Restarting it happens in UGOS, so ask the pilot.
+
+A local `bun run dev` in `apps/collection-visualizer` (http://localhost:3200) still works and has
+the chat. The pilot owns that one: if a task needs it and you're not sure it's up, ask them to start
+it. Builds, typechecks and `bun test` are fine. `strictPort` in
+`apps/collection-visualizer/vite.config.ts` makes a second `bun run dev` fail instead of quietly
+taking the next free port, so a failed start means the pilot's server is already up. Any other
+background process you start is yours to stop.
 
 A `SessionEnd` hook in `.claude/settings.json` kills this repo's Vite servers as a backstop. It only
 fires when the session actually ends, so stop what you start. The hook exits early when

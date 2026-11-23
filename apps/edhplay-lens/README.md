@@ -14,8 +14,12 @@ Then in Brave (or Chrome) open `brave://extensions`, turn on **Developer mode**,
 unpacked** and pick `apps/edhplay-lens/dist`. Pin the Lens icon; clicking it opens the side panel.
 After a rebuild, press the reload arrow on the extension's card and reload any open EDHPlay tab.
 
-The Workbench has to be running (`bun run dev` in `apps/collection-visualizer`) for records to be
-stored. When it isn't, the extension keeps everything in its own queue and sends it once the
+The Workbench has to be running for records to be stored. The pilot's NAS runs it all the time
+([`deploy/nas/README.md`](../../deploy/nas/README.md)); a local `bun run dev` in
+`apps/collection-visualizer` works too. Lens sends to `http://localhost:3200` until you enter
+another address in Settings and press Save. Brave then asks once whether Lens may reach that
+address, because the manifest only grants localhost and lists other addresses as optional. When the
+Workbench isn't reachable, the extension keeps everything in its own queue and sends it once the
 Workbench is back. The badge shows `REC` while a game or a spectated game is recorded, `TEST`
 during a playtest, and `!` on every tab when records are waiting because the Workbench is down.
 
@@ -42,9 +46,10 @@ is sent, and the Workbench drops it again when it stores a batch.
 It's also not a cache you can rebuild: EDHPlay's free tier only keeps your last five matches.
 
 So the folder is its own private repo,
-[mtg-agent-data](https://github.com/JeffreyJoumjian/mtg-agent-data). Run `bun run games sync` to
-commit what the Workbench wrote, merge the other machine's games and push. On a new machine, clone
-it into place from the repo root first:
+[mtg-agent-data](https://github.com/JeffreyJoumjian/mtg-agent-data). The NAS pushes it once a night
+(the `mtg-nightly` service in `deploy/nas/`). `bun run games sync` does the same on demand: it
+commits what the Workbench wrote, merges any games pushed from elsewhere and pushes. A checkout
+without the folder gets it with:
 
 ```bash
 gh repo clone JeffreyJoumjian/mtg-agent-data edhplay-data

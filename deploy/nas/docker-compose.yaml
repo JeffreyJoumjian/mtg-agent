@@ -1,0 +1,70 @@
+# mtg-agent on the NAS: the MTG Workbench, always on, and the nightly push of edhplay-data.
+# This is deploy/nas/docker-compose.yaml in the mtg-agent repo. The UGOS project folder holds a
+# copy, and UGOS keeps its own copy of that, so after changing this file paste it into
+# Docker > Project > mtg-agent > Edit. Deploy steps are in README.md next to this file.
+#
+# Layout of the project folder (the storage path picked in UGOS):
+#   docker-compose.yaml   this file
+#   .env                  local values, from .env.example
+#   repo/                 the one working copy of mtg-agent, with edhplay-data/ inside it
+#   logs/                 nightly-sync.log
+services:
+  # The Workbench's dev server, so a file saved over SMB shows up straight away. The deck chat is
+  # off: this container has no Claude login.
+  # Reachable from the home network only. Don't forward this port on the router.
+  workbench:
+    build:
+      context: ./repo/deploy/nas
+    pull_policy: build
+    image: mtg-agent
+    container_name: mtg-workbench
+    restart: unless-stopped
+    command: ["sh", "/repo/deploy/nas/run.sh", "workbench"]
+    ports:
+      - "${WORKBENCH_PORT:-3200}:3200"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "2m"
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - WORKBENCH_ALLOWED_HOSTS=${WORKBENCH_ALLOWED_HOSTS}
+      - VITE_WORKBENCH_CHAT=off
+    volumes:
+      - ./repo:/repo
+      # The packages live in a Docker volume, off the share, and are built for Linux here. The PC's
+      # and the Mac's own node_modules never mix with them.
+      - workbench-modules:/repo/apps/collection-visualizer/node_modules
+
+  # Commits edhplay-data and pushes it to its private GitHub repo once a night (run.sh nightly).
+  # It publishes no port.
+  nightly:
+    build:
+      context: ./repo/deploy/nas
+    pull_policy: build
+    image: mtg-agent
+    container_name: mtg-nightly
+    # Names the commits it makes: "Sync from mtg-nas".
+    hostname: mtg-nas
+    restart: unless-stopped
+    command: ["sh", "/repo/deploy/nas/run.sh", "nightly"]
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "2m"
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - SYNC_HOUR=${SYNC_HOUR:-4}
+    volumes:
+      - ./repo:/repo
+      - ./logs:/logs
+
+volumes:
+  workbench-modules:

@@ -2,6 +2,11 @@
  *  Pure — client-importable. */
 import type { ChangeSet } from "@mtg/change-set.ts";
 
+/** False when the Workbench runs with `VITE_WORKBENCH_CHAT=off`, as the NAS deploy does: it has no
+ *  Claude login, so the deck page hides the chat and the server never starts a session
+ *  (deploy/nas/README.md). Vite exposes `VITE_` variables to the browser and the server alike. */
+export const CHAT_ENABLED = import.meta.env.VITE_WORKBENCH_CHAT !== "off";
+
 /** One of the SDK's built-in AskUserQuestion questions. */
 export interface SdkQuestion {
   question: string;

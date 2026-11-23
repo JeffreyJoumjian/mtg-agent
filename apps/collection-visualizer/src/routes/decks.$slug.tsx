@@ -19,6 +19,7 @@ import { ChatPane } from "~/builder/chat/ChatPane";
 import { DeckCardsProvider } from "~/builder/chat/cards-context";
 import { useDeckChat } from "~/builder/chat/use-deck-chat";
 import type { Effort } from "~/builder/chat/Composer";
+import { CHAT_ENABLED } from "~/builder/chat/events";
 import { ListTabs } from "~/builder/ListTabs";
 import {
   activeListAtom,
@@ -110,7 +111,7 @@ function Workbench() {
   // A brand-new deck opens with the agent's onboarding question.
   const introSent = useRef(false);
   useEffect(() => {
-    if (intro && chat.ready && chat.state.items.length === 0 && !introSent.current) {
+    if (CHAT_ENABLED && intro && chat.ready && chat.state.items.length === 0 && !introSent.current) {
       introSent.current = true;
       void actions.send(
         "This is a brand-new deck. Ask me about the commander and the gameplan, one question at a time, then propose a first skeleton.",
@@ -237,14 +238,16 @@ function Workbench() {
             <Button variant="outline" size="sm" onClick={copyList}>
               {copied ? <Check /> : <Copy />} {copied ? "Copied" : "Copy list"}
             </Button>
-            <Button
-              variant={panes.chat ? "secondary" : "outline"}
-              size="sm"
-              aria-pressed={panes.chat}
-              onClick={toggleChat}
-            >
-              <MessageSquare /> Chat
-            </Button>
+            {CHAT_ENABLED && (
+              <Button
+                variant={panes.chat ? "secondary" : "outline"}
+                size="sm"
+                aria-pressed={panes.chat}
+                onClick={toggleChat}
+              >
+                <MessageSquare /> Chat
+              </Button>
+            )}
           </div>
         </div>
         {cardDataError && (
@@ -256,7 +259,8 @@ function Workbench() {
         <Group
           orientation="horizontal"
           className="min-h-0 flex-1"
-          defaultLayout={layout ?? undefined}
+          // Without the chat panel the saved layout names a panel that isn't there, so the board fills the row.
+          defaultLayout={CHAT_ENABLED ? (layout ?? undefined) : undefined}
           onLayoutChanged={(next) => setLayout(next as Record<string, number>)}
         >
           <Panel id="board" minSize="30%" className="flex h-full min-w-0">
@@ -315,72 +319,76 @@ function Workbench() {
                 ) : null
               }
             />
-            {!panes.chat && <ChatEdgeTab onClick={toggleChat} />}
+            {CHAT_ENABLED && !panes.chat && <ChatEdgeTab onClick={toggleChat} />}
           </Panel>
-          <Separator className="w-1 bg-border/40 transition hover:bg-ring data-[separator=active]:bg-ring" />
-          <Panel
-            id="chat"
-            panelRef={chatRef}
-            collapsible
-            collapsedSize={0}
-            defaultSize="30%"
-            minSize="20%"
-            onResize={(size) => {
-              const open = size.inPixels > 0;
-              if (open !== panes.chat) setChatOpen(open);
-            }}
-            className={`h-full min-w-0 ${panes.chat ? "border-l" : ""}`}
-          >
-            {panes.chat && (
-              <div className="flex h-full min-h-0 flex-col">
-                <div className="flex h-8 shrink-0 items-center gap-2 border-b px-3 text-[12px]">
-                  <span className="font-semibold">Chat</span>
-                  <button
-                    type="button"
-                    aria-label="Hide chat"
-                    onClick={toggleChat}
-                    className="ml-auto rounded-md p-1 text-muted-foreground hover:bg-accent hover:text-foreground"
-                  >
-                    <X className="size-3.5" />
-                  </button>
-                </div>
-                <div className="min-h-0 flex-1">
-                  <ChatPane
-                    state={chat.state}
-                    ready={chat.ready}
-                    reconnecting={chat.reconnecting}
-                    cards={allCards}
-                    model={chatModel.model}
-                    effort={chatModel.effort as Effort | null}
-                    onSend={(text) => void actions.send(text, activeId)}
-                    onResolve={(requestId, outcome) =>
-                      answerAgent(requestId, outcome, "The agent was no longer waiting on that request.")
-                    }
-                    onApprove={(requestId, decision) => void actions.approve(requestId, decision)}
-                    onStop={() => void actions.interrupt()}
-                    onModel={(model, effort) => {
-                      setModelAll((a) => ({ ...a, [slug]: { model, effort } }));
-                      void actions.setModel(model, effort);
-                    }}
-                    onNewConversation={() => {
-                      if (window.confirm("Start a new conversation? The current one is archived, not deleted.")) {
-                        void actions.newConversation();
+          {CHAT_ENABLED && (
+            <Separator className="w-1 bg-border/40 transition hover:bg-ring data-[separator=active]:bg-ring" />
+          )}
+          {CHAT_ENABLED && (
+            <Panel
+              id="chat"
+              panelRef={chatRef}
+              collapsible
+              collapsedSize={0}
+              defaultSize="30%"
+              minSize="20%"
+              onResize={(size) => {
+                const open = size.inPixels > 0;
+                if (open !== panes.chat) setChatOpen(open);
+              }}
+              className={`h-full min-w-0 ${panes.chat ? "border-l" : ""}`}
+            >
+              {panes.chat && (
+                <div className="flex h-full min-h-0 flex-col">
+                  <div className="flex h-8 shrink-0 items-center gap-2 border-b px-3 text-[12px]">
+                    <span className="font-semibold">Chat</span>
+                    <button
+                      type="button"
+                      aria-label="Hide chat"
+                      onClick={toggleChat}
+                      className="ml-auto rounded-md p-1 text-muted-foreground hover:bg-accent hover:text-foreground"
+                    >
+                      <X className="size-3.5" />
+                    </button>
+                  </div>
+                  <div className="min-h-0 flex-1">
+                    <ChatPane
+                      state={chat.state}
+                      ready={chat.ready}
+                      reconnecting={chat.reconnecting}
+                      cards={allCards}
+                      model={chatModel.model}
+                      effort={chatModel.effort as Effort | null}
+                      onSend={(text) => void actions.send(text, activeId)}
+                      onResolve={(requestId, outcome) =>
+                        answerAgent(requestId, outcome, "The agent was no longer waiting on that request.")
                       }
-                    }}
-                    onStageProposal={(requestId, cs) => {
-                      setStaged(mergeAgentProposal(staged, { requestId, changeSet: cs }));
-                      setActiveAll((a) => ({ ...a, [slug]: cs.listId }));
-                      setPreviewMode("after");
-                    }}
-                    onDismissProposal={(requestId, reason) => {
-                      answerAgent(requestId, { status: "dismissed", reason }, "");
-                      if (staged?.origin?.requestId === requestId) finish();
-                    }}
-                  />
+                      onApprove={(requestId, decision) => void actions.approve(requestId, decision)}
+                      onStop={() => void actions.interrupt()}
+                      onModel={(model, effort) => {
+                        setModelAll((a) => ({ ...a, [slug]: { model, effort } }));
+                        void actions.setModel(model, effort);
+                      }}
+                      onNewConversation={() => {
+                        if (window.confirm("Start a new conversation? The current one is archived, not deleted.")) {
+                          void actions.newConversation();
+                        }
+                      }}
+                      onStageProposal={(requestId, cs) => {
+                        setStaged(mergeAgentProposal(staged, { requestId, changeSet: cs }));
+                        setActiveAll((a) => ({ ...a, [slug]: cs.listId }));
+                        setPreviewMode("after");
+                      }}
+                      onDismissProposal={(requestId, reason) => {
+                        answerAgent(requestId, { status: "dismissed", reason }, "");
+                        if (staged?.origin?.requestId === requestId) finish();
+                      }}
+                    />
+                  </div>
                 </div>
-              </div>
-            )}
-          </Panel>
+              )}
+            </Panel>
+          )}
         </Group>
 
         <StatsBar stats={stats} after={after} changes={changes} onDetails={() => setDetailsOpen(true)} />

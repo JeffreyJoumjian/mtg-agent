@@ -45,6 +45,10 @@ declare namespace chrome {
       set(items: Record<string, unknown>): Promise<void>;
     };
   }
+  namespace permissions {
+    /** Must be called from a user gesture (a click handler, before any await). */
+    function request(p: { origins: string[] }): Promise<boolean>;
+  }
   namespace alarms {
     function create(name: string, info: { periodInMinutes: number }): void;
     const onAlarm: { addListener(cb: (alarm: { name: string }) => void): void };

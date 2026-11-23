@@ -19,23 +19,17 @@ bun run format         # Prettier: double quotes, semicolons, 120 cols (.prettie
 bun run format:check   # verify without writing
 ```
 
-## Deploy on a NAS (Docker)
+## Running on the NAS
 
-```bash
-docker compose up -d --build
-# open http://<nas-ip>:8080
-```
+The pilot's NAS runs this app all the time, as the dev server over the one working copy of the
+repo, with the deck chat turned off. The setup is in [`deploy/nas/README.md`](../../deploy/nas/README.md).
 
-`./data` holds `collection.csv` and `prices.json`. Drop in a new CSV there (or use the
-in-app Upload button) — no rebuild required.
+Two environment variables change how the dev server behaves there:
 
-The container's production server is `vite preview` (TanStack Start's build here targets
-Vite/`dist/`, not a standalone Nitro bundle), which serves the built client assets and
-routes everything else to the SSR handler. See `Dockerfile` for details.
-
-The deck builder needs the full repo checkout and a Claude login next to it — the agent's cwd is
-the repo root, where it reads `decks/` and `.claude/`. A Docker/NAS deploy without those gets the
-collection viewer only.
+- `WORKBENCH_ALLOWED_HOSTS`: the proxy names Vite accepts, comma-separated (`vite.config.ts`).
+- `VITE_WORKBENCH_CHAT=off`: hides the chat pane and stops the server from starting deck sessions
+  (`CHAT_ENABLED` in `src/builder/chat/events.ts`). The deck stream still sends `deck-changed`, so
+  the board refreshes when `deck.json` changes on disk.
 
 ## Routes
 

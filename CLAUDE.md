@@ -71,10 +71,9 @@ matches. Chat is never recorded: the extension and the store both drop it (`with
 - `bun run games player <name>` gives the history with one player; the Workbench's Games, Meta and
   Players pages hold the rest.
 - `edhplay-data/` is its own private repo,
-  [mtg-agent-data](https://github.com/JeffreyJoumjian/mtg-agent-data), so the pilot's Mac and
-  Windows machines share games. `bun run games sync` commits it, merges the other machine's games
-  and pushes. On a new machine, clone it first: `gh repo clone JeffreyJoumjian/mtg-agent-data
-  edhplay-data` from the repo root.
+  [mtg-agent-data](https://github.com/JeffreyJoumjian/mtg-agent-data), the off-site copy of the
+  games. The NAS pushes it every night (`deploy/nas/README.md`); `bun run games sync` commits and
+  pushes it on demand.
 
 ## Decks
 
@@ -169,9 +168,11 @@ commands. If a test command reports zero tests, check `bun --version` against `m
 believing it. Notes on layout, the rules pipeline and other machines load with `.claude/rules/tooling.md`
 when you open scripts or tests.
 
-**The pilot owns the app's dev server** (`bun run dev` in `apps/collection-visualizer`,
-http://localhost:3200): assume it's up, and ask them to start it when a task needs it. Stop any other
-background process you start.
+**The Workbench runs on the pilot's NAS all the time**, over the one working copy of this repo that
+Claude Code on the PC and the Mac edits through SMB (`deploy/nas/README.md`). Its address is in the
+NAS project's `.env`, not in this public repo. The deck chat is off there; a local `bun run dev` in
+`apps/collection-visualizer` (http://localhost:3200) still has it, and the pilot starts that one.
+Stop any background process you start.
 
 ## Git
 
