@@ -123,6 +123,48 @@ test("a spectator capture never marks a seat as the pilot's", () => {
   expect(games[0].players.some((p) => p.isMe)).toEqual(false);
 });
 
+test("a game started from the lobby takes its players, commanders and first turn from lobby_game_start", () => {
+  // Real order (2026-11-23): the pilot joins a room whose lobby game_state doesn't name them yet,
+  // a third player arrives with player_joined only, then lobby_game_start lists every seat in full.
+  // No game_state follows, so that frame is the only place the names and commanders appear.
+  const THIRD = "33333333-3333-3333-3333-333333333333";
+  let t = 1000;
+  const f = (data: unknown): RawFrame => ({ t: (t += 1000), dir: "in", data });
+  const seat = (player_id: string, username: string, commander: string, lobby_seat: number) => ({
+    player_id,
+    username,
+    life: 40,
+    status: "active",
+    lobby_seat,
+    mulligan_count: 0,
+    commanders: { commander: { name: commander, card_id: `c-${player_id}` } },
+    commandZone: [card(commander, `c-${player_id}`, player_id, "commandZone", "Legendary Creature")],
+    hand_count: 7,
+    library_count: 92,
+  });
+  const games = parseCapture(META, [
+    f({ type: "game_state", phase: "lobby", players: [{ player_id: OPP, username: "rival", lobby_seat: 0 }, { player_id: ME, username: null, lobby_seat: 1 }] }),
+    f({ type: "player_joined", player_id: THIRD, lobby_seat: 2 }),
+    f({
+      type: "lobby_game_start",
+      starting_player_id: OPP,
+      turn_seq: 1,
+      mulligan_type: "commander",
+      players: [seat(OPP, "rival", "Kotis, the Fangkeeper", 0), seat(ME, "pilot", "Chatterfang, Squirrel General", 1), seat(THIRD, "third", "Lumra, Bellow of the Woods", 2)],
+    }),
+    f({ type: "move_card", player_id: OPP, from_player_id: OPP, id: "o1", zone: "battlefield", from_zone: "hand", card: card("Sol Ring", "o1", OPP, "battlefield", "Artifact") }),
+  ]);
+
+  const g = games[0];
+  expect(g.players.map((p) => [p.username, p.isMe, p.commanders.map((c) => c.name)])).toEqual([
+    ["rival", false, ["Kotis, the Fangkeeper"]],
+    ["pilot", true, ["Chatterfang, Squirrel General"]],
+    ["third", false, ["Lumra, Bellow of the Woods"]],
+  ]);
+  expect(g.startingPlayerId).toEqual(OPP);
+  expect(g.turns.map((turn) => [turn.seq, turn.round, turn.playerId, turn.played])).toEqual([[1, 1, OPP, { [OPP]: ["Sol Ring"] }]]);
+});
+
 test("a game joined mid-way is flagged", () => {
   const games = parseCapture(META, [{ t: 1, dir: "in", data: { type: "game_state", game_started: true, round_count: 4, turn_seq: 13, current_turn_player_id: OPP, players: [{ player_id: OPP, username: "rival", life: 22 }] } }]);
   expect(games[0].joinedMidGame).toEqual(true);
@@ -184,6 +226,33 @@ const OLD_MATCH = {
   winner_seat: 1,
 };
 const LIST: LocalListRef = { slug: "chatterfang", deckName: "Chatterfang", listId: "main", label: "Main", edhplayId: "deck-mine", cards: ["Chatterfang, Squirrel General", "Forest", "Skullclamp", "Lightning Greaves", "Pitiless Plunderer"] };
+
+test("a match spanning a restart links to the game that was played, so its result counts once", () => {
+  // Real case (2026-11-22): EDHPlay kept one match while the table restarted after round 1, so the
+  // capture holds a one-round false start and then the real game inside that match's time span.
+  const seats = [
+    { player_id: ME, username: "pilot", life: 40, status: "active", lobby_seat: 0 },
+    { player_id: OPP, username: "rival", life: 40, status: "active", lobby_seat: 1 },
+  ];
+  const start = (t: number): RawFrame => ({ t, dir: "in", data: { type: "lobby_game_start", starting_player_id: ME, turn_seq: 1, players: seats } });
+  const games = parseCapture(META, [
+    start(2000),
+    start(4000),
+    { t: 8000, dir: "in", data: { type: "turn_passed", new_turn_player_id: OPP, round_count: 1, turn_seq: 2 } },
+    { t: 12_000, dir: "in", data: { type: "turn_passed", new_turn_player_id: ME, round_count: 2, turn_seq: 3 } },
+    { t: 19_000, dir: "in", data: { type: "player_eliminated", player_id: OPP } },
+  ]);
+  expect(games.map((g) => [g.gameId, g.endReason])).toEqual([
+    ["cap1:0", "new_game"],
+    ["cap1:1", "eliminations"],
+  ]);
+
+  const { records } = buildRecords({ captures: [{ games }], matches: [MATCH], lists: [LIST] });
+  expect(records.map((r) => [r.id, r.gameId, r.result])).toEqual([
+    ["g:cap1:0", "cap1:0", "unknown"],
+    ["m:match-1", "cap1:1", "win"],
+  ]);
+});
 
 test("buildRecords links a captured game to its match and keeps unseen matches as match-only records", () => {
   const { records, parsed } = buildRecords({ captures: [{ games: parseCapture(META, frames()) }], matches: [MATCH, OLD_MATCH], lists: [LIST] });

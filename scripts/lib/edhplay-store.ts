@@ -407,7 +407,7 @@ interface ParseCacheEntry {
 }
 
 /** Bumped whenever `edhplay-parse.ts` changes what it produces, so stale cached parses rebuild. */
-export const PARSER_VERSION = 4;
+export const PARSER_VERSION = 5;
 
 /** How long a room can go quiet and still be the same sitting: a reconnect or a page reload opens a
  *  new socket, and so a new capture, in the middle of a game. */

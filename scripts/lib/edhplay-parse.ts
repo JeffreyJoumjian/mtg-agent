@@ -333,6 +333,10 @@ export class GameTracker {
     if (type === "new_game_started" || type === "lobby_game_start") {
       this.closeCurrent("new_game", frame.t);
       this.openGame(frame.t, msg);
+      // lobby_game_start lists every seat in full (username, commanders, commandZone) and no
+      // game_state follows it, so it's the only place a game started from the lobby names its
+      // players. The lobby's game_state can predate a seat or carry a null username.
+      this.seedFromState(msg, frame.t, true);
       return;
     }
 
@@ -424,7 +428,8 @@ export class GameTracker {
     this.instances = {};
     this.seq = num(msg.turn_seq) ?? 0;
     this.round = num(msg.round_count) ?? 1;
-    this.activePlayerId = str(msg.current_turn_player_id) ?? "";
+    // lobby_game_start has no current_turn_player_id: the starting player takes turn 1.
+    this.activePlayerId = str(msg.current_turn_player_id) ?? str(msg.starting_player_id) ?? "";
 
     const lobby: Record<string, string> = {};
     for (const p of this.lobbyView?.players ?? []) {

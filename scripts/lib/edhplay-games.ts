@@ -182,34 +182,44 @@ export interface RecordInputs {
 
 const sameName = (a: string | undefined, b: string | undefined): boolean => !!a && !!b && a.toLowerCase() === b.toLowerCase();
 
-/** Pair a captured game with the match EDHPlay recorded for it: the most players in common, then
- *  the closest start time, within 30 minutes. One match per game. */
-export function linkGame(game: ParsedGame, matches: MatchView[], used: string[]): MatchView | undefined {
-  const names = game.players.map((p) => p.username.toLowerCase()).filter(Boolean);
-  let best: { match: MatchView; common: number; gap: number } | undefined;
+/** Pair captured games with the matches EDHPlay recorded for them: the most players in common,
+ *  then the longest time overlap, then the closest start, within 30 minutes. One match per game and
+ *  one game per match, settled over every pair at once: EDHPlay can keep one match across a table
+ *  restart, and linking in time order would hand the match (and its result) to the one-round false
+ *  start while the real game inside it counted its own result again. */
+export function linkGames(games: ParsedGame[], matches: MatchView[]): Map<string, MatchView> {
+  const pairs: { gameId: string; match: MatchView; common: number; overlap: number; gap: number }[] = [];
+  for (const game of games) {
+    const names = game.players.map((p) => p.username.toLowerCase()).filter(Boolean);
+    for (const match of matches) {
+      const common = match.players.filter((p) => names.includes(p.username.toLowerCase())).length;
+      const needed = Math.min(2, names.length);
+      if (common < needed || common === 0) {
+        continue;
+      }
 
-  for (const match of matches) {
-    if (used.includes(match.id)) {
-      continue;
-    }
+      const overlaps = match.startedAt <= game.endedAt + 60_000 && match.endedAt >= game.startedAt - 60_000;
+      const gap = Math.abs(match.startedAt - game.startedAt);
+      if (!overlaps && gap > 30 * 60_000) {
+        continue;
+      }
 
-    const common = match.players.filter((p) => names.includes(p.username.toLowerCase())).length;
-    const needed = Math.min(2, names.length);
-    if (common < needed || common === 0) {
-      continue;
-    }
-
-    const overlaps = match.startedAt <= game.endedAt + 60_000 && match.endedAt >= game.startedAt - 60_000;
-    const gap = Math.abs(match.startedAt - game.startedAt);
-    if (!overlaps && gap > 30 * 60_000) {
-      continue;
-    }
-
-    if (!best || common > best.common || (common === best.common && gap < best.gap)) {
-      best = { match, common, gap };
+      const overlap = Math.max(0, Math.min(match.endedAt, game.endedAt) - Math.max(match.startedAt, game.startedAt));
+      pairs.push({ gameId: game.gameId, match, common, overlap, gap });
     }
   }
-  return best?.match;
+
+  pairs.sort((a, b) => b.common - a.common || b.overlap - a.overlap || a.gap - b.gap);
+  const links = new Map<string, MatchView>();
+  const used = new Set<string>();
+  for (const pair of pairs) {
+    if (links.has(pair.gameId) || used.has(pair.match.id)) {
+      continue;
+    }
+    links.set(pair.gameId, pair.match);
+    used.add(pair.match.id);
+  }
+  return links;
 }
 
 /** The pilot's result. When their seat can't be found (no profile yet, or a spectate URL without
@@ -248,9 +258,13 @@ export function buildRecords(inputs: RecordInputs): { records: GameRecord[]; par
       .filter((g) => g.players.length > 0)
       .map((g) => ({ game: g, captureIds: c.captureIds, inProgress: c.inProgress === true && g.endReason === "capture_end" })),
   );
+  const links = linkGames(
+    allGames.filter(({ game }) => game.mode === "player").map(({ game }) => game),
+    matches,
+  );
   for (const { game, captureIds, inProgress } of allGames) {
     parsed[game.gameId] = game;
-    const match = game.mode === "player" ? linkGame(game, matches, used) : undefined;
+    const match = links.get(game.gameId);
     if (match) {
       used.push(match.id);
     }
