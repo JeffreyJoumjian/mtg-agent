@@ -1,0 +1,441 @@
+{
+  "schema": 1,
+  "name": "Hearthhull — Landfall & Land Sacrifice",
+  "format": "commander",
+  "description": "Hearthhull, the Worldseed (BRG), Bracket 3. Every land is a payoff twice: landfall when it enters and Hearthhull's drain when it's sacrificed, with land recursion to replay it. Pingers, token makers and land-sacrifice payoffs. Founded 2026-11-22 as an objective first draft.",
+  "lists": {
+    "main": {
+      "label": "Main",
+      "kind": "deck",
+      "bracket": 3,
+      "sections": [
+        {
+          "name": "Commander",
+          "cards": [
+            {
+              "name": "Hearthhull, the Worldseed",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "name": "Lands",
+          "cards": [
+            {
+              "name": "Bloodstained Mire",
+              "qty": 1
+            },
+            {
+              "name": "Wooded Foothills",
+              "qty": 1
+            },
+            {
+              "name": "Verdant Catacombs",
+              "qty": 1
+            },
+            {
+              "name": "Windswept Heath",
+              "qty": 1
+            },
+            {
+              "name": "Misty Rainforest",
+              "qty": 1
+            },
+            {
+              "name": "Marsh Flats",
+              "qty": 1
+            },
+            {
+              "name": "Polluted Delta",
+              "qty": 1
+            },
+            {
+              "name": "Scalding Tarn",
+              "qty": 1
+            },
+            {
+              "name": "Arid Mesa",
+              "qty": 1
+            },
+            {
+              "name": "Prismatic Vista",
+              "qty": 1
+            },
+            {
+              "name": "Fabled Passage",
+              "qty": 1
+            },
+            {
+              "name": "Bayou",
+              "qty": 1
+            },
+            {
+              "name": "Taiga",
+              "qty": 1
+            },
+            {
+              "name": "Badlands",
+              "qty": 1
+            },
+            {
+              "name": "Overgrown Tomb",
+              "qty": 1
+            },
+            {
+              "name": "Stomping Ground",
+              "qty": 1
+            },
+            {
+              "name": "Blood Crypt",
+              "qty": 1
+            },
+            {
+              "name": "Ziatora's Proving Ground",
+              "qty": 1
+            },
+            {
+              "name": "Cinder Glade",
+              "qty": 1
+            },
+            {
+              "name": "Smoldering Marsh",
+              "qty": 1
+            },
+            {
+              "name": "Field of the Dead",
+              "qty": 1
+            },
+            {
+              "name": "Bojuka Bog",
+              "qty": 1
+            },
+            {
+              "name": "Boseiju, Who Endures",
+              "qty": 1
+            },
+            {
+              "name": "Lotus Field",
+              "qty": 1
+            },
+            {
+              "name": "Forest",
+              "qty": 7
+            },
+            {
+              "name": "Swamp",
+              "qty": 3
+            },
+            {
+              "name": "Mountain",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "name": "Ramp",
+          "cards": [
+            {
+              "name": "Sol Ring",
+              "qty": 1
+            },
+            {
+              "name": "Nature's Lore",
+              "qty": 1
+            },
+            {
+              "name": "Three Visits",
+              "qty": 1
+            },
+            {
+              "name": "Farseek",
+              "qty": 1
+            },
+            {
+              "name": "Harrow",
+              "qty": 1
+            },
+            {
+              "name": "Skyshroud Claim",
+              "qty": 1
+            },
+            {
+              "name": "Lotus Cobra",
+              "qty": 1
+            },
+            {
+              "name": "Springbloom Druid",
+              "qty": 1
+            },
+            {
+              "name": "Roiling Regrowth",
+              "qty": 1
+            },
+            {
+              "name": "Tireless Provisioner",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "name": "Extra Land Drops",
+          "cards": [
+            {
+              "name": "Azusa, Lost but Seeking",
+              "qty": 1
+            },
+            {
+              "name": "Exploration",
+              "qty": 1
+            },
+            {
+              "name": "Oracle of Mul Daya",
+              "qty": 1
+            },
+            {
+              "name": "Dryad of the Ilysian Grove",
+              "qty": 1
+            },
+            {
+              "name": "Exploration Broodship",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "name": "Card Draw",
+          "cards": [
+            {
+              "name": "The Gitrog Monster",
+              "qty": 1
+            },
+            {
+              "name": "Korvold, Fae-Cursed King",
+              "qty": 1
+            },
+            {
+              "name": "Braids, Arisen Nightmare",
+              "qty": 1
+            },
+            {
+              "name": "Sylvan Library",
+              "qty": 1
+            },
+            {
+              "name": "Valakut Exploration",
+              "qty": 1
+            },
+            {
+              "name": "Evendo Brushrazer",
+              "qty": 1
+            },
+            {
+              "name": "Nahiri's Lithoforming",
+              "qty": 1
+            },
+            {
+              "name": "Escape to the Wilds",
+              "qty": 1
+            },
+            {
+              "name": "Sprouting Goblin",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "name": "Landfall Payoffs",
+          "cards": [
+            {
+              "name": "Tannuk, Memorial Ensign",
+              "qty": 1
+            },
+            {
+              "name": "Koth, the Geomancer",
+              "qty": 1
+            },
+            {
+              "name": "Sabotender",
+              "qty": 1
+            },
+            {
+              "name": "Captain Michael Burnham",
+              "qty": 1
+            },
+            {
+              "name": "Scute Swarm",
+              "qty": 1
+            },
+            {
+              "name": "Rampaging Baloths",
+              "qty": 1
+            },
+            {
+              "name": "Omnath, Locus of Rage",
+              "qty": 1
+            },
+            {
+              "name": "Ob Nixilis, the Fallen",
+              "qty": 1
+            },
+            {
+              "name": "Tifa Lockhart",
+              "qty": 1
+            },
+            {
+              "name": "Ancient Greenwarden",
+              "qty": 1
+            },
+            {
+              "name": "Retreat to Hagra",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "name": "Land Sacrifice",
+          "cards": [
+            {
+              "name": "Titania, Protector of Argoth",
+              "qty": 1
+            },
+            {
+              "name": "Zuran Orb",
+              "qty": 1
+            },
+            {
+              "name": "Crop Rotation",
+              "qty": 1
+            },
+            {
+              "name": "Sylvan Safekeeper",
+              "qty": 1
+            },
+            {
+              "name": "Mayhem Devil",
+              "qty": 1
+            },
+            {
+              "name": "Baloth Prime",
+              "qty": 1
+            },
+            {
+              "name": "Scapeshift",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "name": "Land Recursion",
+          "cards": [
+            {
+              "name": "Splendid Reclamation",
+              "qty": 1
+            },
+            {
+              "name": "Aftermath Analyst",
+              "qty": 1
+            },
+            {
+              "name": "Szarel, Genesis Shepherd",
+              "qty": 1
+            },
+            {
+              "name": "Ramunap Excavator",
+              "qty": 1
+            },
+            {
+              "name": "Crucible of Worlds",
+              "qty": 1
+            },
+            {
+              "name": "Icetill Explorer",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "name": "Removal",
+          "cards": [
+            {
+              "name": "Assassin's Trophy",
+              "qty": 1
+            },
+            {
+              "name": "Beast Within",
+              "qty": 1
+            },
+            {
+              "name": "Putrefy",
+              "qty": 1
+            },
+            {
+              "name": "Infernal Grasp",
+              "qty": 1
+            },
+            {
+              "name": "Tear Asunder",
+              "qty": 1
+            },
+            {
+              "name": "Chaos Warp",
+              "qty": 1
+            },
+            {
+              "name": "Windgrace's Judgment",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "name": "Board Wipes",
+          "cards": [
+            {
+              "name": "Blasphemous Act",
+              "qty": 1
+            },
+            {
+              "name": "Toxic Deluge",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "name": "Protection",
+          "cards": [
+            {
+              "name": "Heroic Intervention",
+              "qty": 1
+            },
+            {
+              "name": "Deflecting Swat",
+              "qty": 1
+            },
+            {
+              "name": "Tamiyo's Safekeeping",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "name": "Tutors",
+          "cards": [
+            {
+              "name": "Demonic Tutor",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "name": "Win Conditions",
+          "cards": [
+            {
+              "name": "Worldsoul's Rage",
+              "qty": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cards": {}
+}

@@ -17,7 +17,8 @@ New decks the pilot has asked for, parked until they pick one to build. Ask befo
     objectively from the commander and the field first, then do a second pass for pieces from the
     existing decks. Keep the token-maxxing ideas below out of it unless the build gets there on its own.
   - Tifa Lockhart (G): maybe a new voltron deck.
-  - A new landfall deck (no commander named).
+  - A new landfall deck: **founded 2026-11-22 as `decks/hearthhull`** (Hearthhull, the Worldseed, BRG,
+    Bracket 3), with Tifa Lockhart in the 99. Tifa as her own voltron deck stays parked above.
   - A new token-maxxing deck: as many tokens as possible, as much damage or drain and life gain as
     possible when they enter, as much drain as possible, and a commander costing 4 to 5 or less.
     Explore commanders first, separately from Arabella. The pilot counts Chatterfang as one
@@ -121,6 +122,21 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
   Phyrexian Tower) are parked as bench rows in `research/sideboard.md` with their paired cuts. Its own
   gameplan is `research/gameplan-combat.md` (2026-11-18). Never add
   Exquisite Blood or Bloodthirsty Conqueror (automatic infinite with the converters).
+
+## hearthhull: Hearthhull, the Worldseed (BRG)
+
+- Founded 2026-11-22 as an objective first draft, Bracket 3, Game Changers Field of the Dead,
+  Crop Rotation and Demonic Tutor. Every land pays off twice: landfall on entry, and Hearthhull's
+  drain (2 from each opponent at 8+ charge counters) when it's sacrificed, with recursion to replay it.
+- The pilot picked Hearthhull over Tannuk after pushing back on my pass (ledger build-048). Tannuk,
+  Tifa and Radha all fit in its colours.
+- Station: a creature cast this turn can pay it (ledger tap-011). The draw ability works at 2+
+  counters, the drain needs 8. Blasphemous Act kills Hearthhull at 8+.
+- Loop hazards, benched for the pilot's call: Dakmor Salvage with Gitrog and a free discard outlet
+  (infinite), Crucible or Ramunap with Strip Mine or Wasteland (a land-destruction lock), Dark Depths
+  with Thespian's Stage (a 20/20 for 5). The Zuran Orb plus Splendid Reclamation line is in the
+  draft and is capped by the land count.
+- Not on EDHPlay yet.
 
 ## arabella: Arabella, Abandoned Doll (RW)
 

@@ -257,9 +257,9 @@ untapped attacker can still be tapped again for a `{T}` ability that same combat
 
 ### Attacking and summoning sickness key on control of the PERMANENT, not on how long it's been a creature {#tap-011}
 
-**Kind:** ruling · **Verified:** 2026-09-09 against CR 2026-08-07
-**Cards:** Cyberdrive Awakener; Mech Hangar; March of the Machines
-**Rules:** 302.6, 508.1a
+**Kind:** ruling · **Verified:** 2026-11-22 against CR 2026-11-06
+**Cards:** Cyberdrive Awakener; Mech Hangar; March of the Machines; Hearthhull, the Worldseed
+**Rules:** 302.6, 508.1a, 702.184a, 722.2b
 **Claim:** A noncreature permanent you've controlled since your turn began can be animated mid-turn
 and attack immediately.
 **Evidence:** CR 302.6 — "A creature can't attack unless **it has been under its controller's
@@ -270,8 +270,13 @@ freshly-crewed Vehicles.
 Machines) are same-turn threats, not next-turn ones — price them as haste. Corollary already
 verified: crew is unaffected by summoning sickness in **both** directions, because the Vehicle's own
 `{T}` isn't in the cost and the creatures tapped to pay are paying a cost, not activating an ability.
+- **Station works the same way (2026-11-22).** Station is the Spacecraft's own ability, with "tap
+  another untapped creature you control" as its cost (CR 702.184a), so a creature cast this turn can
+  station. Below its creature threshold a Spacecraft isn't a creature (CR 722.2b), so 302.6 doesn't
+  touch its own `{T}` abilities either: Hearthhull, the Worldseed can be cast, stationed to 2 by a
+  fresh 2-power creature, and use its `{1}, {T}`, sacrifice-a-land draw on the same turn.
 **See also:** tap-007
-**Source:** cap-living-legend (2026-09-09).
+**Source:** cap-living-legend (2026-09-09); station case from the landfall commander search (2026-11-22).
 
 ### "Whenever a CREATURE you control becomes tapped" ignores a noncreature artifact tapping {#tap-012}
 

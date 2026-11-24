@@ -958,3 +958,23 @@ attacking", "additional combat", "twice that many", the payoff's gate such as "p
 newest sets first, and check the pilot's other decks for cards in the same colours.
 **See also:** build-046, tool-007
 **Source:** arabella founding (2026-11-20), the pilot's "what happened to worf" question.
+
+### A third colour only adds cards, and a second payoff fired by the same cards compounds {#build-048}
+
+**Kind:** correction · **Recorded:** 2026-11-22
+**Cards:** Hearthhull, the Worldseed; Tannuk, Memorial Ensign; Harrow; Crucible of Worlds
+**Claim:** Comparing commanders for a landfall deck, I passed Hearthhull, the Worldseed because its
+drain keys on sacrificing lands rather than lands entering, and because black has the fewest landfall
+cards. The pilot showed both grounds were wrong: the same cards fire both payoffs, and a three-colour
+identity keeps every card of the two-colour pair inside it.
+**Evidence:** Fetch lands and Harrow sacrifice a land and put one onto the battlefield in one card,
+Hearthhull's own `{1}, {T}`, sacrifice-a-land ability grants an extra land drop, and land recursion
+(Crucible of Worlds) replays the sacrificed land for another landfall trigger and another sacrifice.
+BRG holds 159 landfall cards (Scryfall, commander-legal) against RG's 143 and mono-green's 99, and Tannuk, Memorial Ensign, the
+rival pick, fits in Hearthhull's 99 while Tannuk as commander can't run Hearthhull.
+**Changes:** When a candidate's payoff differs from the theme's, list the cards that fire each one
+before calling them competing. Heavy overlap means the second payoff compounds the first. Price a
+wider colour identity by its mana and curve cost only, never by the size of the added colour's own
+pool, and note which rival commanders would fit in its 99.
+**See also:** build-018
+**Source:** landfall deck commander search (2026-11-22), the pilot's "but what about Hearthhull" pushback.

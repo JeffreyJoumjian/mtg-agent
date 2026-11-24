@@ -779,3 +779,19 @@ power to an arbitrary number (loop-020).
 **Changes:** When rating a "put onto the battlefield" deploy engine, treat it as safe from spell counters and hand-reveal-free, and price only ability counters (Stifle effects), removal on the trigger and forced discard as answers. Against a removal-heavy pod, the pilot should expect the response while the trigger is on the stack, before choosing the artifact, and pick the card on resolution with that in mind.
 **See also:** equip-002, equip-012
 **Source:** iron-man (2026-11-10), the pilot asked at what point opponents can respond to Iron Man's trigger; mtg-rules-expert.
+
+### Song of the Dryads on a creature removes its printed abilities, its power and its creature type, and leaves it legendary {#equip-031}
+
+**Kind:** ruling · **Verified:** 2026-11-23 against CR 2026-11-06
+**Cards:** Song of the Dryads; The Scarlet Witch
+**Rules:** 205.4b, 208.3, 208.3a, 305.7
+**Claim:** A creature enchanted with Song of the Dryads becomes a colorless Forest land with no power or toughness, loses every ability printed on it (so The Scarlet Witch's cost reduction stops), keeps the legendary supertype, and keeps any ability another effect gave it.
+**Evidence:**
+- Oracle: *"Enchanted permanent is a colorless Forest land."* Gatherer ruling 2014-11-07: the permanent loses its card types, subtypes and colors, keeps its supertypes and name, gains "{T}: Add {G}" and loses all other abilities from its rules text, but keeps abilities gained from other effects.
+- CR 305.7: an effect that sets a land's subtype to a basic land type makes the land lose "all abilities generated from its rules text, its old land types, and any copiable effects affecting that land," and it "doesn't remove any abilities that were granted to the land by other effects." The Scarlet Witch's reduction is printed text, so it goes away.
+- CR 208.3: a noncreature permanent has no power or toughness, so once she is a land she has none, and the "X is her power" clause can't matter. CR 208.3a says an effect that sets or modifies a noncreature permanent's power is still created, but does nothing until it becomes a creature again.
+- CR 205.4b: changing card types or subtypes doesn't change supertypes, so she stays legendary and the legend rule still applies to her name.
+- No rule says what X would be for a power an object doesn't have. It is moot here because the ability is gone.
+**Changes:** Treat Song of the Dryads as permanent removal for a static-ability engine as well as for a creature body: the engine's text is gone, not just turned off while it is tapped. The target stays a legendary permanent that taps for {G}, so a second legendary copy still triggers the legend rule. Only an ability granted by a different effect survives.
+**See also:** equip-026
+**Source:** the pilot's rules question (2026-11-23), whether The Scarlet Witch keeps her discount under Song of the Dryads; mtg-rules-expert, 305.7 and 208.3 re-read in rules/sections/.

@@ -787,3 +787,18 @@ spell's protection use (an instant-speed save for the commander) beside its valu
 **Source:** ultron (2026-11-19). The gameplan had claimed three ETBs and three Ultron triggers from
 one Battlesphere or Portal; the pilot ranked Eldrazi Confluence as a cut and the claim was
 re-checked by mtg-rules-expert.
+
+### A commander stays your commander when an effect turns it into a land or any other noncreature {#zone-031}
+
+**Kind:** ruling · **Verified:** 2026-11-23 against CR 2026-11-06
+**Cards:** Song of the Dryads; The Scarlet Witch
+**Rules:** 903.3, 903.3d, 903.3e, 903.4a, 903.8, 903.9a
+**Claim:** Type-changing effects don't touch commander status, so a commander enchanted with Song of the Dryads is still its owner's commander, still counts for "controlling a commander," and keeps its color identity and commander tax.
+**Evidence:**
+- CR 903.3: the commander designation "is not a characteristic of the object represented by the card; rather, it is an attribute of the card itself." The card keeps it even when it changes zones.
+- CR 903.3d: "controlling a commander" means a permanent on the battlefield that is a commander, with no condition on its types. A land commander on the battlefield still satisfies it. A "commander creature" wording doesn't match it while it isn't a creature (equip-031 covers why Song removes the creature type).
+- CR 903.3e: an effect that reads a characteristic of "your commander" sees its current characteristics, so it sees a colorless Forest land. CR 903.4a: color identity is fixed from the card at the start of the game, so mana-fixing that reads color identity still sees red for The Scarlet Witch.
+- CR 903.9a and 903.8: if the land is destroyed, its owner may put it into the command zone as a state-based action, and recasting it from there costs the usual {2} per previous cast.
+**Changes:** When an opponent's Aura or land-type effect turns a commander into a land, it is still your commander for every "if you control a commander" payoff and for the command zone, and it only stops being a creature for combat and commander damage. Don't treat a type change as removing the commander.
+**See also:** equip-031, zone-029
+**Source:** the pilot's follow-up (2026-11-23), whether The Scarlet Witch still counts as their commander under Song of the Dryads.
