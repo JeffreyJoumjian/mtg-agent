@@ -56,6 +56,28 @@ For a double-faced card, link the front face only. This is a chat rule: `deck.js
 Scryfall spellings, and prose under `research/` may use links. **Inside the app** (where the
 `mcp__deck-ui__*` tools exist), write `[[Card Name]]` instead; the app renders card chips.
 
+## Cardmarket (buying singles)
+
+The pilot buys singles on Cardmarket (account `skylerdj`). Want List bulk import is the
+"+ Add Deck List" button on a wants list page.
+
+- **150 wants per list is a hard cap.** Anything past it isn't added (a red "Your Wantslist is
+  full" banner lists what was dropped), so split big buy-lists across several lists.
+- Line format: `[amount] Card Name (V.x) (Expansion Name)`, e.g.
+  `4x High Tide (V.1) (Fallen Empires)`. Amount and version are optional.
+- **Always name the full expansion** in parentheses to force the exact printing; otherwise a
+  cheaper reprint matches. Cardmarket splits a set into base, `<Set>: Extras` (showcase, borderless
+  and alternate arts) and `Commander: <Set>`. Scryfall keeps base + extras under one code (`dsk`)
+  and the Commander product under another (`dsc`).
+- Two identical `Name (Expansion)` lines merge into qty 2 of the **same** art (blue "some details
+  may have been lost" notice). Add `(V.2)` to get the second art.
+- Scryfall's `purchase_uris.cardmarket` is an art-specific product link, and `prices.eur` tracks
+  the Cardmarket trend price. The Scryfall API returns HTTP 400 without a `User-Agent` header.
+- Buy with the Shopping Wizard, one list at a time.
+- Past project (June 2026): a Duskmourn "one of every unique art" buy-list, 421 cards (~€403),
+  imported into want lists Duskmourn 1, 2 and 3 (ids 24467999, 24471207, 24471220). Its CSVs are
+  gone.
+
 ## EDHPlay games
 
 The EDHPlay Lens extension (`apps/edhplay-lens/`, see its README) records every EDHPlay game,
@@ -121,7 +143,7 @@ When the pilot bans another card, add it here.
   file and its EDHPlay deck, together on one bullet per list.** The Moxfield link's text is the deck
   and list and its target is the absolute path (`main` → `MOXFIELD.txt`, `b4` → `MOXFIELD-B4.txt`).
   The EDHPlay link goes to the list's deck, and `bun run edhplay status` prints the map, e.g.
-  `- [Chatterfang main](/Users/skylerdj/Desktop/mtg-agent/decks/chatterfang/MOXFIELD.txt) · [EDHPlay](https://edhplay.com/decks/60e58260-cf82-430f-a81c-8ce20355edd2)`.
+  `- [Chatterfang main](/Volumes/docker/mtg-agent/repo/decks/chatterfang/MOXFIELD.txt) · [EDHPlay](https://edhplay.com/decks/60e58260-cf82-430f-a81c-8ce20355edd2)`.
   `deck:edit` prints this bullet as its `link:` line after every apply, so copy it from there. A list
   that isn't on EDHPlay gets the Moxfield link alone. A bare path in prose or after a bold
   label isn't clickable in T3 Code. Pasting the list into Moxfield is always their next step.
