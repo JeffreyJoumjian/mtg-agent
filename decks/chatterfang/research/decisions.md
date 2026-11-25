@@ -1314,3 +1314,40 @@ stays at 7.
 
 EDHPlay: pushed to "[NEW] CHATTERFANG DEEZ NUTS", 2 changes, valid, bracket 3, verify ok. Mycoloth
 pinned to (PLST) CMA-129, the printing EDHPlay chose. Validated: 100/100, every name found.
+
+## 2026-11-25 (later) — Thornvault Forager, Scurry of Squirrels, Ivy Lane Denizen in (pilot's calls)
+
+The pilot asked about four cards: Scurry of Squirrels, Ivy Lane Denizen, Honored Dreyleader and
+Thornvault Forager (*"we have a lot of foods which we rarely have a way to get rid of"*). Each swap
+has its own `deck:edit` snapshot. Curve: average MV 2.97 → 2.97 (Scurry −0.02, Ivy Lane +0.02),
+MV 3 23 and MV 4 10 as before. Draw stays at 7.
+
+- **Thornvault Forager in, Twitching Doll out.** *"{T}, Forage: Add two mana in any combination of
+  colors"* turns a Food into mana every turn without Ninja Pizza, and the sacrificed Food fires
+  Marionette Apprentice, Nadier's Nightblade, Camellia and Mirkwood Bats. It is a Squirrel (Hazel,
+  Squirrel Girl, Valley Rotcaller, Chatterfang's cost), and *"{3}{G}, {T}: Search your library for a
+  Squirrel card"* finds Squirrel Girl, Camellia, Hazel or Tippy-Toe. The list already had four Food
+  outlets (Ninja Pizza, Camellia's forage, Peregrin Took's draw, the Food's own ability), but only
+  Ninja Pizza made mana. **Cost:** without a Food or three graveyard cards it makes only {G}, where
+  the Doll made any colour. Other cuts considered: Sakura-Tribe Elder, Tireless Provisioner.
+- **Scurry of Squirrels in, Esika's Chariot out.** Myriad twice: four tapped-and-attacking copies
+  per attack in a four-player pod, plus four Chatterfang Squirrels, also tapped and attacking.
+  Everything myriad made is exiled at end of combat, extras included (ledger repl-017), so the play
+  is to sacrifice them after combat damage. **Costs:** myriad shrinks as players die; the Chariot's
+  Cats came without attacking and its crew tapped creatures for Throne. Other cut considered: Avenger
+  of Zendikar.
+- **Ivy Lane Denizen in, Support Mission benched (trial).** Ivy Lane's counter has a target, so it can
+  stack on Mycoloth or an attacker and leave Skullclamp's 1/1 alone; Support Mission countered every
+  entering creature. No loop in this list (no persist or undying creature, no Ghave, no Scurry Oak).
+  **Costs:** a 4-mana 2/3 that dies to wipes, and a target choice per trigger on EDHPlay. **Undo:**
+  Support Mission back for Ivy Lane if wipes keep catching it (`research/sideboard.md`).
+- **Honored Dreyleader: passed for `main`.** It grows one trampler and only feeds the combat route.
+  Its counters go only on itself, which corrected ledger equip-027 (it had listed Dreyleader as
+  blanking Skullclamp). **Cute line kept:** Hazel's end-step copies of it each enter with a counter
+  per Squirrel and Food.
+- **Opened:** the pilot asked whether a combat-focused version (pump, Super Shredder, Dreyleader)
+  belongs in this list or in its own. Answer pending.
+
+EDHPlay: pushed to "[NEW] CHATTERFANG DEEZ NUTS", 6 changes, valid, bracket 3, verify ok. Printings
+back-filled: Thornvault Forager (BLB) 197, Scurry of Squirrels (PLST) BLC-33, Ivy Lane Denizen (PLST)
+DDU-12. Validated 100/100, every name found.

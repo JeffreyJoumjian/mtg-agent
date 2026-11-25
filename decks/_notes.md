@@ -87,12 +87,18 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
   Black Market Connections came back for Pest Infestation. Grounds and costs are in
   `chatterfang/research/decisions.md`.
 - **Trial since 2026-11-18: 34 lands.** Replicator and Support Mission came in for two Swamps (Swamps 5 → 3). The
-  pilot will say if the deck starts missing land drops; the undo is a Swamp back for Support Mission
-  or for Throne of the God-Pharaoh, which took Replicator's slot. Vengeance Mission was passed.
+  pilot will say if the deck starts missing land drops; the undo is a Swamp back for Throne of the
+  God-Pharaoh, which took Replicator's slot, or for Ivy Lane Denizen, which took Support Mission's.
+  Vengeance Mission was passed.
 - Since 2026-11-20: Throne of the God-Pharaoh in, Replicator out (the pilot's call: Replicator's
   {2},{T} every turn competed for mana). Throne drains each opponent per tapped creature at your end
-  step, so tap the board in response with Cryptolith Rite, Springleaf Parade, Hazel or Esika's
-  Chariot's crew. Creatures tapped that way can't block until your next untap.
+  step, so tap the board in response with Cryptolith Rite, Springleaf Parade or Hazel. Creatures
+  tapped that way can't block until your next untap.
+- Since 2026-11-25: Mycoloth in for Chatterstorm, Thornvault Forager in for Twitching Doll, and
+  Scurry of Squirrels in for Esika's Chariot. Myriad's copies, Chatterfang's Squirrels and Peregrin
+  Took's Food from them are all exiled at end of combat (ledger), so sacrifice them first.
+- **Trial since 2026-11-25: Ivy Lane Denizen in, Support Mission benched** (`research/sideboard.md`).
+  If wipes keep catching Ivy Lane, Support Mission comes back for it.
 - Since 2026-11-14: Alhammarret's Archive doubles every draw after the first in the draw step, and
   Moldervine's and Skullclamp's draws are mandatory, so count the library before running a chosen-N
   loop. Elvish Mystic is the one 1-mana dork left (Llanowar Elves went for the Archive).

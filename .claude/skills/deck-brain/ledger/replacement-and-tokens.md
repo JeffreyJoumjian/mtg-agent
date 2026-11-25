@@ -210,3 +210,28 @@ CR 2026-11-06.
 **Changes:** Rate empower engines against one-card-a-turn draw engines, not by loyalty totals. Never count empower toward a Jace *card's* loyalty (Jace, Wielder of Mysteries).
 **See also:** repl-003, repl-006
 **Source:** caesar / ghave / cap-living-legend / edgar-markov (2026-09-28), FRA review
+
+### Tokens a replacement effect adds share the creating effect's riders, so myriad's exile takes them too {#repl-017}
+
+**Kind:** ruling · **Verified:** 2026-11-25 against CR 2026-11-06
+**Cards:** Scurry of Squirrels; Chatterfang, Squirrel General; Peregrin Took; Tippy-Toe, Terrific Partner; Doubling Season; Parallel Lives; Nadier's Nightblade; Mirkwood Bats
+**Rules:** 508.4, 702.116a
+**Claim:** When a token-creation effect carries riders (tapped, attacking, "exile at end of combat"),
+every token a replacement effect adds to that event carries them too, so myriad exiles Chatterfang's
+Squirrels, Peregrin Took's Food and the doublers' extra copies along with the copies themselves.
+**Evidence:** Official Gatherer rulings. Chatterfang: *"Anything else specified in the effect creating
+the token (such as tapped, attacking, 'That token gains haste,' or 'Exile that token at end of
+combat') applies to both the original tokens and the Squirrels."* Peregrin Took: the same sentence
+for its Food. Doubling Season and Parallel Lives: *"Everything that is specified by the effect
+creating the original token or tokens will also be true about the additional token or tokens."*
+CR 702.116a: myriad creates copies *"tapped and attacking that player"* and then *"exile the tokens
+at end of combat."* Tippy-Toe has no ruling; its replacement wording matches Peregrin Took's, so it
+is treated the same by analogy. Which opponent an added Squirrel attacks is not settled by the
+rulings (CR 508.4 lets the controller choose when the effect doesn't specify).
+**Changes:** Treat every token from a temporary effect (myriad, encore, "exile at end of turn") as
+temporary, extras included, and spend it before it leaves: sacrifice it to an outlet after combat
+damage (a death fires every drain payoff and Mirkwood Bats' sacrifice clause, where exile fires only
+leave-the-battlefield payoffs like Nadier's Nightblade) and crack temporary Foods for mana. Don't
+count temporary tokens toward an end-step trigger such as Throne of the God-Pharaoh.
+**Source:** chatterfang (2026-11-25). The pilot asked whether the tokens the replacement effects add
+to Scurry of Squirrels' myriad are exiled too.

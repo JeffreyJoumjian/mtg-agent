@@ -64,8 +64,8 @@
             { "name": "Pitiless Plunderer", "qty": 1 },
             { "name": "Sakura-Tribe Elder", "qty": 1 },
             { "name": "Sol Ring", "qty": 1 },
-            { "name": "Tireless Provisioner", "qty": 1 },
-            { "name": "Twitching Doll", "qty": 1 }
+            { "name": "Thornvault Forager", "qty": 1 },
+            { "name": "Tireless Provisioner", "qty": 1 }
           ]
         },
         {
@@ -104,10 +104,10 @@
             { "name": "Bilbo, Fellow Conspirator", "qty": 1 },
             { "name": "Bitterblossom", "qty": 1 },
             { "name": "Camellia, the Seedmiser", "qty": 1 },
-            { "name": "Esika's Chariot", "qty": 1 },
             { "name": "Hazel of the Rootbloom", "qty": 1 },
             { "name": "Mycoloth", "qty": 1 },
             { "name": "Peregrin Took", "qty": 1 },
+            { "name": "Scurry of Squirrels", "qty": 1 },
             { "name": "Scute Swarm", "qty": 1 },
             { "name": "Second Harvest", "qty": 1 },
             { "name": "Springleaf Parade", "qty": 1 },
@@ -156,7 +156,7 @@
             { "name": "Bloodletter of Aclazotz", "qty": 1 },
             { "name": "Craterhoof Behemoth", "qty": 1 },
             { "name": "Gruesome Fate", "qty": 1 },
-            { "name": "Support Mission", "qty": 1 }
+            { "name": "Ivy Lane Denizen", "qty": 1 }
           ]
         }
       ]
@@ -218,6 +218,7 @@
     "Heroic Intervention": { "status": "PROXY", "printing": {"set":"afc","collectorNumber":"161"} },
     "High Market": { "status": "PROXY", "printing": {"set":"2xm","collectorNumber":"321"} },
     "Idol of Oblivion": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"M3C-297"} },
+    "Ivy Lane Denizen": { "printing": {"set":"plst","collectorNumber":"DDU-12"} },
     "Khalni Garden": { "status": "PROXY", "printing": {"set":"plst","collectorNumber":"DDR-28"} },
     "Llanowar Elves": { "printing": {"set":"dom","collectorNumber":"168"} },
     "Llanowar Wastes": { "status": "PROXY", "printing": {"set":"bro","collectorNumber":"264"} },
@@ -246,6 +247,7 @@
     "Ravenous Squirrel": { "status": "PROXY", "printing": {"set":"blc","collectorNumber":"258"} },
     "Replicator": { "printing": {"set":"trk","collectorNumber":"267"} },
     "Sakura-Tribe Elder": { "status": "PROXY", "printing": {"set":"pl25","collectorNumber":"4"} },
+    "Scurry of Squirrels": { "printing": {"set":"plst","collectorNumber":"BLC-33"} },
     "Scute Swarm": { "status": "PROXY", "printing": {"set":"znr","collectorNumber":"203"} },
     "Second Harvest": { "status": "PROXY", "printing": {"set":"blc","collectorNumber":"123"} },
     "Skullclamp": { "status": "PROXY", "printing": {"set":"tdc","collectorNumber":"103"} },
@@ -262,6 +264,7 @@
     "Tendershoot Dryad": { "status": "PROXY", "printing": {"set":"soc","collectorNumber":"125"} },
     "The Meathook Massacre": { "status": "PROXY", "printing": {"set":"inr","collectorNumber":"387"} },
     "The Unbeatable Squirrel Girl": { "status": "PROXY", "printing": {"set":"msh","collectorNumber":"371"} },
+    "Thornvault Forager": { "printing": {"set":"blb","collectorNumber":"197"} },
     "Three Tree City": { "status": "PROXY", "printing": {"set":"blb","collectorNumber":"260"} },
     "Throne of the God-Pharaoh": { "printing": {"set":"akh","collectorNumber":"237"} },
     "Tippy-Toe, Terrific Partner": { "status": "PROXY", "printing": {"set":"msc","collectorNumber":"734"} },

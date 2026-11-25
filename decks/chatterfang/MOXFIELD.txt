@@ -32,7 +32,6 @@
 1 Doubling Season (FDN) 216
 1 Dryad of the Ilysian Grove (CMM) 891
 1 Elvish Mystic (FDC) 202
-1 Esika's Chariot (KHM) 169
 1 Fabled Passage (BLB) 252
 5 Forest (P23) 10
 1 Gaea's Cradle (OLGC) 2014
@@ -42,6 +41,7 @@
 1 Hazel of the Rootbloom (BLC) 2
 1 Heroic Intervention (AFC) 161
 1 High Market (2XM) 321
+1 Ivy Lane Denizen (PLST) DDU-12
 1 Khalni Garden (PLST) DDR-28
 1 Llanowar Wastes (BRO) 264
 1 Marionette Apprentice (PLST) MH3-100
@@ -62,13 +62,13 @@
 1 Priest of Forgotten Gods (RNA) 83
 1 Prosperous Innkeeper (AFR) 200
 1 Sakura-Tribe Elder (PL25) 4
+1 Scurry of Squirrels (PLST) BLC-33
 1 Scute Swarm (ZNR) 203
 1 Second Harvest (BLC) 123
 1 Skullclamp (TDC) 103
 1 Sol Ring (MSC) 214
 1 Springleaf Parade (ECC) 19
 1 Starscape Cleric (BLB) 116
-1 Support Mission (TRK) 216
 3 Swamp (SOS) 269
 1 Sylvan Library (DMR) 441
 1 Tainted Wood (CMM) 1040
@@ -76,12 +76,12 @@
 1 Tear Asunder (DMU) 183
 1 The Meathook Massacre (INR) 387
 1 The Unbeatable Squirrel Girl (MSH) 371
+1 Thornvault Forager (BLB) 197
 1 Three Tree City (BLB) 260
 1 Throne of the God-Pharaoh (AKH) 237
 1 Tippy-Toe, Terrific Partner (MSC) 734
 1 Tireless Provisioner (SLD) 2057
 1 Twilight Mire (2XM) 328
-1 Twitching Doll (DSK) 201
 1 Urborg, Tomb of Yawgmoth (TSR) 287
 1 Valley Rotcaller (BLB) 119
 1 Verdant Catacombs (SLU) 3

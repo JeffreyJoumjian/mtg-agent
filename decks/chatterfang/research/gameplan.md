@@ -8,6 +8,8 @@
 > Recollector, Witch's Oven, Fabled Passage, Alhammarret's Archive, Support Mission, Throne of the
 > God-Pharaoh and Mycoloth came in. Verdant Command, Deep Forest Hermit, Tireless Tracker, Pest
 > Infestation, Deadly Dispute, Ravenous Squirrel, Llanowar Elves, Chatterstorm and two Swamps went out.
+> Later the same day Thornvault Forager, Scurry of Squirrels and Ivy Lane Denizen came in for Twitching
+> Doll, Esika's Chariot and Support Mission (benched in `research/sideboard.md`).
 
 ## 0. The one-paragraph version
 
@@ -18,9 +20,9 @@ second route.** A token that gets blocked and trades fires every death trigger y
 Artist, Zulaport, Bastion, Cauldron of Essence, Mirkwood Bats, Nadier's Nightblade, Marionette
 Apprentice), and the life each one gains feeds Dina, Starscape Cleric and Vito. **Either way you are
 draining.** Craterhoof, Blasphemous Edict and Gruesome Fate each turn a wide board into a win without
-touching the combo. The cards that make **several tokens in one turn from nothing** are Esika's
-Chariot, Springleaf Parade, Second Harvest and The Unbeatable Squirrel Girl, and Mycoloth turns a
-board into a Saproling stream that grows every upkeep.
+touching the combo. The cards that make **several tokens in one turn from nothing** are Scurry of
+Squirrels (every attack), Springleaf Parade, Second Harvest and The Unbeatable Squirrel Girl, and
+Mycoloth turns a board into a Saproling stream that grows every upkeep.
 
 ## 1. The curve you actually have
 
@@ -50,8 +52,8 @@ Springleaf Parade counts at MV 2 and really costs 5 at X = 3.
 
 ## 3. Opening
 
-**T1–T2:** Elvish Mystic (the only 1-mana dork, so the only turn-2 Chatterfang), Sol Ring, Twitching
-Doll, Bitterblossom, Skullclamp, Sakura-Tribe Elder, Witch's Oven, Cryptolith Rite. Hold **Springleaf
+**T1–T2:** Elvish Mystic (the only 1-mana dork, so the only turn-2 Chatterfang), Sol Ring, Thornvault
+Forager, Bitterblossom, Skullclamp, Sakura-Tribe Elder, Witch's Oven, Cryptolith Rite. Hold **Springleaf
 Parade** and **Second Harvest** for after Chatterfang lands: every token they make brings a Squirrel.
 
 **T3 — the fork:**
@@ -117,11 +119,36 @@ your upkeeps it makes one Saproling per counter, and Chatterfang adds as many Sq
 - **Tap before you cast it.** Gaea's Cradle, Circle of Dreams Druid and Rite-enabled tokens tap for
   mana first. A tapped creature can still be devoured.
 - **It counts counters, not creatures** (Gatherer ruling). Doubling Season doubles the counters it
-  enters with, and Support Mission adds one more.
+  enters with, and Ivy Lane Denizen adds one for every green creature that enters if you aim it at
+  Mycoloth, so each upkeep's Saprolings and Squirrels grow the next upkeep's batch.
 - **It can't devour creatures entering at the same time as it.** Only what's already on the
   battlefield counts.
 - It is a 5-mana creature with a big number on it, so expect removal. The devour drain has already
   happened by then.
+
+**Scurry of Squirrels makes a token burst every attack** (since 2026-11-25). It has myriad twice, so
+attacking one opponent in a four-player pod makes two copies per instance: four copies, tapped and
+attacking the other two players. Chatterfang adds four Squirrels, and those are **tapped and attacking
+too**, because anything the creating effect specifies applies to Chatterfang's Squirrels (Chatterfang
+ruling). Which opponent each Squirrel attacks isn't settled: CR 508.4 lets you choose when the effect
+doesn't name one, but myriad names a player per copy, and EDHPlay will decide it for you either way.
+Peregrin Took and Tippy-Toe each add a Food per instance.
+
+- **Everything myriad made is exiled at end of combat**: the copies, Chatterfang's Squirrels, the
+  extra copies from Doubling Season and Parallel Lives, and Peregrin Took's Food (official rulings on
+  each). Tippy-Toe has no ruling, but its wording is the same as Peregrin Took's, so treat its Food
+  the same way.
+- **So spend them before end of combat.** After combat damage, sacrifice the myriad tokens to an
+  outlet: each one then dies (every drain payoff fires) and Mirkwood Bats pings for the sacrifice,
+  where being exiled fires only Nadier's Nightblade. Crack the Foods for Ninja Pizza mana or
+  Thornvault Forager's forage.
+- Each copy that deals combat damage puts a +1/+1 counter on a creature you choose. Mycoloth is the
+  best target.
+- Myriad makes fewer copies as players die and none against your last opponent.
+
+**Thornvault Forager spends the Foods.** `{T}, Forage` sacrifices a Food for two mana of any colours,
+and that sacrifice fires Marionette Apprentice, Nadier's Nightblade, Camellia and Mirkwood Bats. Late
+in the game `{3}{G}, {T}` finds The Unbeatable Squirrel Girl, Camellia, Hazel or Tippy-Toe.
 
 ## 5b. Landfall — every land is a token and a Squirrel
 
@@ -206,10 +233,10 @@ tapped creature you control, counted as the trigger resolves, so tap the board *
 
 - Cryptolith Rite and Springleaf Parade let creatures tap for mana. Creatures made this turn can't
   use that `{T}` unless Concordant Crossroads gives them haste (CR 302.6).
-- Hazel's `{T}, Pay 2 life, Tap X untapped tokens` and Esika's Chariot's crew 4 tap other creatures as
-  a cost, so summoning sickness doesn't stop them. Crew can be paid again and again.
+- Hazel's `{T}, Pay 2 life, Tap X untapped tokens` taps other creatures as a cost, so summoning
+  sickness doesn't stop it.
 - Creatures that attacked and survived, and anything you tapped for mana earlier in the turn, already
-  count.
+  count. Myriad tokens don't: they're exiled at end of combat, before your end step.
 - **The cost:** whatever you tap stays tapped through the other players' turns, so it can't block.
   Keep enough blockers untapped.
 - Bloodletter of Aclazotz doubles it. Its doubling works during your turn, and your end step is
@@ -295,9 +322,8 @@ With **Chatterfang + Warren Soultrader** out and one Squirrel:
 
 ## 9. Mistakes to avoid
 
-- **Support Mission puts a +1/+1 counter on every creature that enters,** so Skullclamp no longer kills a
-  Squirrel by itself. Equip it and sacrifice the Squirrel instead (ledger equip-027). Your own Meathook
-  Massacre at X = 1 now spares your countered tokens.
+- **Ivy Lane Denizen's counter goes on a target you choose.** Aim it at Mycoloth or an attacker, not at
+  the 1/1 you plan to Skullclamp, so the clamp still kills it for free (ledger equip-027).
 
 1. **Sacrificing with no payoff out.** The most common way to lose this deck.
 2. **Applying Chatterfang before the adders.** See §5c — it is the single most expensive misplay
@@ -319,9 +345,8 @@ With **Chatterfang + Warren Soultrader** out and one Squirrel:
     summoning sick without haste; a real Food token is a noncreature artifact and is *not*.
 12. **Devouring with Mycoloth before you tap, or devouring a converter.** Tap the board for mana
     first, and keep Vito, Dina, Starscape Cleric, Innkeeper and Chatterfang out of the devour.
-13. **Attacking with Esika's Chariot the turn it lands.** A Vehicle that came under your control this
-    turn can't attack unless Concordant Crossroads is out to give it haste. It makes its two Cats on
-    arrival either way.
+13. **Letting myriad tokens be exiled unused.** Sacrifice Scurry of Squirrels' copies and their
+    Squirrels after combat damage, and crack their Foods, before end of combat.
 
 ## 5d. The Pitiless Plunderer loop — the actual kill, and its two traps
 
