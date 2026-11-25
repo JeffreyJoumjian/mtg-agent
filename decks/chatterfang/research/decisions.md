@@ -1254,3 +1254,28 @@ tapping for mana so both of those engines could fuel pharaoh and the table"*.
 
 EDHPlay: pushed to "[NEW] CHATTERFANG DEEZ NUTS", valid, bracket 3, verified. Throne pinned to (AKH)
 237. Validated: 100/100, every name found, legal and on-identity, Game Changers 1.
+
+## 2026-11-25 — Printings pulled from EDHPlay (pilot's changes)
+
+The pilot changed printings on "[NEW] CHATTERFANG DEEZ NUTS" and asked to persist them. The
+comparison showed 14 `art` lines and no card or count differences, so EDHPlay won every line and the
+pins in `deck.json` now match it (MOXFIELD.txt regenerated):
+
+| Card | Was | Now |
+|---|---|---|
+| Command Tower | (FIC) 484 | (PLST) BLC-130 |
+| Overgrown Tomb | (TRK) 289 | (RVR) 283 |
+| Urborg, Tomb of Yawgmoth | (M15) 248 | (TSR) 287 |
+| Verdant Catacombs | (MM3) 249 | (SLU) 3 |
+| Yavimaya, Cradle of Growth | (M3C) 409 | (SLD) 2813 |
+| Circle of Dreams Druid | (AFR) 383 | (PAFR) 176p |
+| Concordant Crossroads | (2X2) 141 | (2X2) 367 |
+| Elvish Mystic | (M15) 173 | (FDC) 202 |
+| Ninja Pizza | (TMC) 32 | (TMC) 93 |
+| Pitiless Plunderer | (RIX) 81 | (LCC) 208 |
+| Black Market Connections | (CLB) 669 | (MSC) 155 |
+| Sylvan Library | (DMR) 179 | (DMR) 441 |
+| Yawgmoth, Thran Physician | (DMR) 110 | (MH1) 116 |
+| Mirkwood Bats | (LTR) 421 | (LTR) 95 |
+
+A second comparison answered `UNCHANGED (valid)`. No list change, so no `history.jsonl` line.

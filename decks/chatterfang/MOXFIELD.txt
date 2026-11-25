@@ -10,7 +10,7 @@
 1 Beast Within (WHO) 819
 1 Bilbo, Fellow Conspirator (HOC) 4
 1 Bitterblossom (SLD) 12
-1 Black Market Connections (CLB) 669
+1 Black Market Connections (MSC) 155
 1 Blasphemous Edict (FDN) 57
 1 Blood Artist (PLST) INR-97
 1 Bloodletter of Aclazotz (LCI) 92
@@ -22,9 +22,9 @@
 1 Castle Locthwain (ELD) 241
 1 Cauldron of Essence (SOS) 179
 1 Chatterstorm (BLC) 210
-1 Circle of Dreams Druid (AFR) 383
-1 Command Tower (FIC) 484
-1 Concordant Crossroads (2X2) 141
+1 Circle of Dreams Druid (PAFR) 176p
+1 Command Tower (PLST) BLC-130
+1 Concordant Crossroads (2X2) 367
 1 Craterhoof Behemoth (SLD) 376
 1 Cryptolith Rite (INR) 316
 1 Cultivate (M21) 177
@@ -32,7 +32,7 @@
 1 Dina, Soul Steeper (STX) 178
 1 Doubling Season (FDN) 216
 1 Dryad of the Ilysian Grove (CMM) 891
-1 Elvish Mystic (M15) 173
+1 Elvish Mystic (FDC) 202
 1 Esika's Chariot (KHM) 169
 1 Fabled Passage (BLB) 252
 5 Forest (P23) 10
@@ -46,18 +46,18 @@
 1 Khalni Garden (PLST) DDR-28
 1 Llanowar Wastes (BRO) 264
 1 Marionette Apprentice (PLST) MH3-100
-1 Mirkwood Bats (LTR) 421
+1 Mirkwood Bats (LTR) 95
 1 Misty Rainforest (MM3) 240
 1 Moldervine Reclamation (M20) 214
 1 Nadier's Nightblade (PLST) BLC-184
 1 Necroblossom Snarl (LTC) 321
-1 Ninja Pizza (TMC) 32
+1 Ninja Pizza (TMC) 93
 1 Nurturing Peatland (MH1) 243
-1 Overgrown Tomb (TRK) 289
+1 Overgrown Tomb (RVR) 283
 1 Parallel Lives (ISD) 199
 1 Peregrin Took (LTR) 181
 1 Phyrexian Tower (UMA) 248
-1 Pitiless Plunderer (RIX) 81
+1 Pitiless Plunderer (LCC) 208
 1 Plumb the Forbidden (STX) 81
 1 Priest of Forgotten Gods (RNA) 83
 1 Prosperous Innkeeper (AFR) 200
@@ -70,7 +70,7 @@
 1 Starscape Cleric (BLB) 116
 1 Support Mission (TRK) 216
 3 Swamp (SOS) 269
-1 Sylvan Library (DMR) 179
+1 Sylvan Library (DMR) 441
 1 Tainted Wood (CMM) 1040
 1 Takenuma, Abandoned Mire (NEO) 278
 1 Tear Asunder (DMU) 183
@@ -82,13 +82,13 @@
 1 Tireless Provisioner (SLD) 2057
 1 Twilight Mire (2XM) 328
 1 Twitching Doll (DSK) 201
-1 Urborg, Tomb of Yawgmoth (M15) 248
+1 Urborg, Tomb of Yawgmoth (TSR) 287
 1 Valley Rotcaller (BLB) 119
-1 Verdant Catacombs (MM3) 249
+1 Verdant Catacombs (SLU) 3
 1 Vito, Thorn of the Dusk Rose (J25) 71
 1 Warren Soultrader (MH3) 414
 1 Witch's Oven (ELD) 237
 1 Woodland Cemetery (DOM) 248
-1 Yavimaya, Cradle of Growth (M3C) 409
-1 Yawgmoth, Thran Physician (DMR) 110
+1 Yavimaya, Cradle of Growth (SLD) 2813
+1 Yawgmoth, Thran Physician (MH1) 116
 1 Zulaport Cutthroat (SLD) 1982
