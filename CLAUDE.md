@@ -56,6 +56,13 @@ For a double-faced card, link the front face only. This is a chat rule: `deck.js
 Scryfall spellings, and prose under `research/` may use links. **Inside the app** (where the
 `mcp__deck-ui__*` tools exist), write `[[Card Name]]` instead; the app renders card chips.
 
+**Show cards as card-image pages, not tables.** Any answer that puts cards in front of the pilot
+(a swap or cut proposal, alternative cuts, a role ranking, a set review, a comparison) goes through
+the `card-visualizer` skill: `bun run card-viz` builds the pages and T3 Code's `html_render` shows
+them. Load the skill before writing that answer. A text table of cards doesn't count, because the
+pilot reads the art, and on 2026-11-25 a Chatterfang cut proposal went out as a table because the
+rule lived only in the skill. The reply under the pages still links every card name.
+
 ## Cardmarket (buying singles)
 
 The pilot buys singles on Cardmarket (account `skylerdj`). Want List bulk import is the
