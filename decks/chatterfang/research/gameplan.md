@@ -1,15 +1,13 @@
-# Upgrade Test (Chatterfang) — Pilot's Gameplan
+# Chatterfang — Pilot's Gameplan
 
-> Playtest fork of `decks/chatterfang`, taken **2026-09-25** and tuned in waves since. Parent list
-> untouched. Every wave, with its grounds, is in `research/decisions.md` and on the proposal page:
-> https://claude.ai/artifact/Qgp3cNcdmKWoE8fPZMxvQB
+> The pilot's only Chatterfang list. It started as the `upgrade-test` fork on **2026-09-25** and
+> became `chatterfang` on 2026-11-14. Every change, with its grounds, is in `research/decisions.md`.
 >
-> **Updated 2026-10-15 for wave 11 (a trial).** In: Pest Infestation, Priest of Forgotten Gods. Out:
-> Black Market Connections, Woe Strider. Undo rows are in `research/decisions.md`.
->
-> **Updated 2026-09-29 for wave 10.** In: Chatterstorm, Verdant Command, Esika's Chariot, Deep Forest
-> Hermit, Warren Soultrader, Azusa, Lost but Seeking. Out: Nature's Lore, Arcane Signet, Carrion
-> Feeder, Village Rites, Concordant Crossroads, Oracle of Mul Daya.
+> **Refreshed 2026-11-25 against the list as it stands.** Changes since the last refresh (wave 11):
+> Concordant Crossroads, Springleaf Parade, Twitching Doll, Black Market Connections, Bloodline
+> Recollector, Witch's Oven, Fabled Passage, Alhammarret's Archive, Support Mission, Throne of the
+> God-Pharaoh and Mycoloth came in. Verdant Command, Deep Forest Hermit, Tireless Tracker, Pest
+> Infestation, Deadly Dispute, Ravenous Squirrel, Llanowar Elves, Chatterstorm and two Swamps went out.
 
 ## 0. The one-paragraph version
 
@@ -20,24 +18,22 @@ second route.** A token that gets blocked and trades fires every death trigger y
 Artist, Zulaport, Bastion, Cauldron of Essence, Mirkwood Bats, Nadier's Nightblade, Marionette
 Apprentice), and the life each one gains feeds Dina, Starscape Cleric and Vito. **Either way you are
 draining.** Craterhoof, Blasphemous Edict and Gruesome Fate each turn a wide board into a win without
-touching the combo. Wave 10 added the thing the deck was short of: cards that make **several tokens
-in one turn from nothing** (Chatterstorm, Verdant Command, Esika's Chariot, Deep Forest Hermit).
-Wave 11 added Pest Infestation to that group.
+touching the combo. The cards that make **several tokens in one turn from nothing** are Esika's
+Chariot, Springleaf Parade, Second Harvest and The Unbeatable Squirrel Girl, and Mycoloth turns a
+board into a Saproling stream that grows every upkeep.
 
 ## 1. The curve you actually have
 
 | | MV≤1 | MV2 | MV3 | MV4 | MV5 | MV6+ | avg |
 |---|---|---|---|---|---|---|---|
-| Nonland (66) | 5 | 22 | 23 | 10 | 4 | 2 | **2.92** |
+| Nonland (66) | 5 | 21 | 23 | 10 | 5 | 2 | **2.97** |
 
 Since 2026-11-18 the deck runs 34 lands (two Swamps went for Replicator and Support Mission, on trial).
-Throne of the God-Pharaoh took Replicator's slot on 2026-11-20.
+Throne of the God-Pharaoh took Replicator's slot on 2026-11-20. Mycoloth took Chatterstorm's on
+2026-11-25, which moved the average from 2.92 to 2.97 and left one fewer 2-drop.
 Springleaf Parade counts at MV 2 and really costs 5 at X = 3.
 
-Heavier than the parent (2.73). Wave 10 made it heavier on paper (2.84 → 2.97, MV ≤ 2 27 → 24), but
-the cards that left at MV 1 made no tokens and no mana, and the ones that arrived make four to eight
-bodies each. **The thing to watch and report back is the turn you win on**, which was 8 to 10 before
-this wave.
+**The thing to watch and report back is the turn you win on**, and whether 34 lands keeps up.
 
 ## 2. The three numbers to track
 
@@ -54,9 +50,9 @@ this wave.
 
 ## 3. Opening
 
-**T1–T2:** Elvish Mystic (turn-2 Chatterfang; Llanowar Elves left 2026-11-14), Sol Ring, Ravenous Squirrel,
-Bitterblossom, Skullclamp, Sakura-Tribe Elder, Cryptolith Rite. Hold **Chatterstorm** and **Verdant
-Command** for after Chatterfang lands: each Squirrel they make brings a second one.
+**T1–T2:** Elvish Mystic (the only 1-mana dork, so the only turn-2 Chatterfang), Sol Ring, Twitching
+Doll, Bitterblossom, Skullclamp, Sakura-Tribe Elder, Witch's Oven, Cryptolith Rite. Hold **Springleaf
+Parade** and **Second Harvest** for after Chatterfang lands: every token they make brings a Squirrel.
 
 **T3 — the fork:**
 - No board → **Chatterfang**. He is the engine; everything after him is worth double.
@@ -68,7 +64,7 @@ with nothing to sacrifice is a 0/1. **Yawgmoth is the exception** — he convert
 cards the moment he lands, so he is never a dead draw.
 
 **Mulligans.** Keep 3 lands with both colours and a 1–2 drop. Ship hands with no token source before
-turn 3. At avg MV 2.92 this list wants the third land more than the parent did.
+turn 3. With 34 lands and an average MV of 2.97, a hand without a third land needs a dork or Sol Ring.
 
 ## 4. The sacrifice decision tree
 
@@ -107,12 +103,25 @@ opponent gives up their worst creature. Two sacrifices are two deaths, so every 
 twice per activation. It taps, and the list has no untap effect (checked 2026-10-15), so it can't
 repeat in a turn and is not the outlet for the loops.
 
-**Pest Infestation is a seed you can size.** {X}{X}{G}: X=2 costs 5 and makes 4 Pests plus 4
-Squirrels from Chatterfang. That is one creation event, so without doublers Mirkwood Bats fires 8
-times and Prosperous Innkeeper gains 8. Each Pest that dies gains 1 life, which is its own event for
-Dina, Starscape Cleric and Vito. The destroy half is "up to X", so choose no targets to leave your
-own Altar, Doubling Season and Cryptolith Rite alone, or aim it at an opponent's artifacts and
-enchantments. It is a sorcery.
+**Witch's Oven is a free outlet once a turn.** Tap it and sacrifice a creature for a Food, or two
+Foods if the creature had toughness 4 or more. The Food is a token event, so Chatterfang adds a
+Squirrel and Peregrin Took and Tippy-Toe each add a Food. It works the turn it lands.
+
+**Mycoloth is a mass sacrifice that pays again every upkeep** (since 2026-11-25). Devour 2 sacrifices
+as many creatures as you like while it enters (CR 702.82a). Each one dies, so every drain payoff
+fires per creature, and Mycoloth gets two +1/+1 counters per creature. At the beginning of each of
+your upkeeps it makes one Saproling per counter, and Chatterfang adds as many Squirrels.
+
+- **Devour tokens, never a converter.** Vito, Dina, Starscape Cleric and Prosperous Innkeeper don't
+  look back, so they give nothing if they die in the devour. Keep Chatterfang out too.
+- **Tap before you cast it.** Gaea's Cradle, Circle of Dreams Druid and Rite-enabled tokens tap for
+  mana first. A tapped creature can still be devoured.
+- **It counts counters, not creatures** (Gatherer ruling). Doubling Season doubles the counters it
+  enters with, and Support Mission adds one more.
+- **It can't devour creatures entering at the same time as it.** Only what's already on the
+  battlefield counts.
+- It is a 5-mana creature with a big number on it, so expect removal. The devour drain has already
+  happened by then.
 
 ## 5b. Landfall — every land is a token and a Squirrel
 
@@ -160,11 +169,11 @@ which is nearly always true here because Peregrin and Tippy-Toe are feeding it F
 
 ## 6. Sequencing within your turn
 
-1. **Upkeep:** Bitterblossom makes a Faerie; Deep Forest Hermit loses a time counter.
+1. **Upkeep:** Bitterblossom makes a Faerie. Mycoloth makes a Saproling per counter, and Chatterfang
+   adds as many Squirrels. Both happen before you draw, so the Saprolings can be sacrificed in main 1.
 2. **Start of main 1:** Gardenize adds its mana.
 3. **Main 1: Bloodletter FIRST if you have it.** Then landfall payoffs, **then** your land drop(s),
-   then the other token makers, then the payoff. **Chatterstorm goes last among your spells**: every
-   spell cast before it is another copy, and every copy is a separate token event.
+   then the other token makers, then the payoff.
 4. **Tap for value before you sacrifice** — Gaea's Cradle, Three Tree City and Circle of Dreams
    Druid all read the board, and a sacrificed Squirrel is one less mana. Cryptolith Rite means a
    token can tap for mana *and then* be sacrificed.
@@ -298,7 +307,7 @@ With **Chatterfang + Warren Soultrader** out and one Squirrel:
 4. **Sacrificing in response to Valley Rotcaller's attack trigger.** X is locked on *resolution*, not
    on declare-attackers — let the trigger resolve first or X shrinks.
 5. **Forgetting Chatterfang applies to non-creature tokens.** Treasures, Foods, Clues, Servos — every
-   one brings a Squirrel. Deadly Dispute makes two bodies, not zero.
+   one brings a Squirrel. Witch's Oven's Food brings one too, so each sacrifice makes two tokens.
 6. **Wiping while Vito, Dina, Starscape Cleric or Innkeeper are on board.** They die and give you
    nothing.
 7. **Casting Gruesome Fate after the board is gone.**
@@ -308,7 +317,8 @@ With **Chatterfang + Warren Soultrader** out and one Squirrel:
 10. **Including Chatterfang in your own thirteen for Blasphemous Edict.** You choose; don't pick him.
 11. **Counting on Circle of Dreams Druid or Ninja Pizza's Foods the turn they land.** Circle is
     summoning sick without haste; a real Food token is a noncreature artifact and is *not*.
-12. **Casting Chatterstorm first.** It copies once for each spell cast *before* it this turn.
+12. **Devouring with Mycoloth before you tap, or devouring a converter.** Tap the board for mana
+    first, and keep Vito, Dina, Starscape Cleric, Innkeeper and Chatterfang out of the devour.
 13. **Attacking with Esika's Chariot the turn it lands.** A Vehicle that came under your control this
     turn can't attack unless Concordant Crossroads is out to give it haste. It makes its two Cats on
     arrival either way.
@@ -345,8 +355,8 @@ when to stop, and you must name a number (CR 732.2a).
 **The two traps, both in your own cost:**
 
 1. **"Sacrifice X Squirrels" does not exclude your own pieces.** Chatterfang (Squirrel Warrior) and
-   Tippy-Toe (Squirrel Hero) are both legal Squirrels — so are Camellia, Ravenous Squirrel and
-   Squirrel Girl. Feed any of them to the cost and the engine stops for every later trigger.
+   Tippy-Toe (Squirrel Hero) are both legal Squirrels, and so are Camellia, Hazel, Valley Rotcaller
+   and Squirrel Girl. Feed any of them to the cost and the engine stops for every later trigger.
    **Sacrifice only the 1/1 tokens.**
 2. **The ability needs a target,** and *"Target creature gets +X/-X"* is unrestricted — with no
    opponent creature you must point it at your own. **Name one of the Squirrels you are about to

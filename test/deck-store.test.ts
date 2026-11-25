@@ -8,7 +8,7 @@ import {
   mkdir,
 } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 import {
   applyToDeck,
   createDeck,
@@ -386,7 +386,7 @@ test("applyToDeck announces every file it is about to write through onBeforeWrit
     cards,
     {
       ...opts,
-      onBeforeWrite: (path) => written.push(path.split("/").pop() ?? path),
+      onBeforeWrite: (path) => written.push(basename(path)),
     },
   );
   expect(outcome.ok).toEqual(true);

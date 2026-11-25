@@ -692,7 +692,7 @@ target), but **protection does** (702.16c puts it in the graveyard as an SBA).
 ### Any anthem or enters-with-counters effect turns OFF Skullclamp — check before adding either {#equip-027}
 
 **Kind:** ruling · **Verified:** 2026-09-22 against CR 2026-08-07
-**Cards:** Skullclamp; Cathars' Crusade; Intangible Virtue; Divine Visitation; Honored Dreyleader; Welcoming Vampire; Teysa Karlov
+**Cards:** Skullclamp; Cathars' Crusade; Intangible Virtue; Divine Visitation; Honored Dreyleader; Ivy Lane Denizen; Support Mission; Welcoming Vampire; Teysa Karlov
 **Rules:** 700.4, 701.21a, 702.181a, 704.5f
 **Claim:** Skullclamp (*"Equipped creature gets +1/−1. Whenever equipped creature dies, draw two
 cards."*) gets a free kill on a 1/1, which becomes a 1/0 and dies to the toughness-0 state-based action.
@@ -702,8 +702,12 @@ free outlet, a sacrifice-as-cost commander such as Caesar, or mobilize Warriors 
 end step (CR 702.181a), Skullclamp keeps drawing two for {1} plus the sacrifice.
 **Evidence:** CR 704.5f (toughness 0 or less → graveyard as an SBA). Cathars' Crusade
 (*"Whenever a creature you control enters, put a +1/+1 counter on each creature you control"*),
-Intangible Virtue (*"Creature tokens you control get +1/+1"*), Divine Visitation (tokens become 4/4
-Angels) and Honored Dreyleader each blank it. Same family as the 2026-08-25 Welcoming Vampire entry
+Intangible Virtue (*"Creature tokens you control get +1/+1"*) and Divine Visitation (tokens become
+4/4 Angels) each blank it. A counter effect only blanks the creatures it reaches: Honored Dreyleader
+(*"put a +1/+1 counter on this creature"*) grows only itself and leaves every token a 1/1, and Ivy
+Lane Denizen (*"put a +1/+1 counter on target creature"*) lets you pick a creature that isn't the
+clamp's target. Support Mission counters every creature that enters, so it does blank the clamp. Same
+family as the 2026-08-25 Welcoming Vampire entry
 (*a payoff gated on power/toughness reads the creature as modified*), now pointed the other way: there
 the anthem switched off a trigger, here it switches off a **cost**.
 **Changes:** In any token deck running Skullclamp — one of the strongest draw engines in the
@@ -717,7 +721,7 @@ but treat that as a corner case, not a plan.
 this entry's old wording, which said Skullclamp *only* draws through the toughness kill. The pilot put it
 back. The list has three free outlets (four with Phyrexian Tower), Caesar's attack sacrifice and two mobilize cards, so the clamp
 still draws two per equip. Before calling Skullclamp blanked, count the deck's sacrifice routes.
-**History:** On 2026-09-23 eval-044 changed how this weighs in practice, not the rule: "turns off Skullclamp" is a cost to weigh against the combat route, not a veto. Only a pure anthem with no other text (Sylvan Anthem, Squirrel Sovereign) loses on this ground alone; name the tension and let the pilot choose. Until 2026-11-12 the Changes line still said to reject these cards on this ground; it now matches eval-044.
+**History:** On 2026-09-23 eval-044 changed how this weighs in practice, not the rule: "turns off Skullclamp" is a cost to weigh against the combat route, not a veto. Only a pure anthem with no other text (Sylvan Anthem, Squirrel Sovereign) loses on this ground alone; name the tension and let the pilot choose. Until 2026-11-12 the Changes line still said to reject these cards on this ground; it now matches eval-044. Until 2026-11-25 the Evidence line listed Honored Dreyleader among the cards that blank Skullclamp; its counters go only on itself, so it never touches a token (chatterfang, re-read while rating it).
 **See also:** repl-005, eval-044
 **Source:** chatterfang / teysa-karlov founding build (2026-09-22) — Cathars' Crusade is a pilot
 favourite and was cut on this ground.
