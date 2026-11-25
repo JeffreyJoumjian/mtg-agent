@@ -12,7 +12,7 @@
 1 Bulk Up (FDN) 80
 1 Castle Embereth (TDC) 347
 1 Champion's Helm (FIC) 337
-1 Chandra's Ignition (LCC) 220
+1 Chandra's Ignition (SLD) 1594
 1 Chaos Warp (MAR) 69
 1 Chrome Mox (2XM) 240
 1 City of Traitors (OLGC) 2019NA
@@ -20,7 +20,7 @@
 1 Commander's Plate (CMR) 305
 1 Commune with Lava (C20) 149
 1 Conqueror's Flail (FIC) 340
-1 Crackle with Power (STX) 95
+1 Crackle with Power (STX) 308
 1 Deflecting Swat (CMM) 214
 1 Desperate Ritual (UMA) 127
 1 Electro, Assaulting Battery (SPM) 76
@@ -28,7 +28,7 @@
 1 Explosive Welcome (STX) 100
 1 Faithless Looting (PLST) OTC-165
 1 Fiery Confluence (TLE) 165
-1 Forge of Heroes (FIC) 395
+1 Forge of Heroes (CMM) 995
 1 Frantic Confrontation (TLE) 117
 1 Grim Monolith (ULG) 126
 1 Hero's Blade (FRF) 160
@@ -38,13 +38,13 @@
 1 Inspired Tinkering (PLST) CLB-183
 1 Inventor's Axe (MH3) 126
 1 Jaya's Immolating Inferno (DOM) 133
-1 Jeska's Will (CLB) 799
+1 Jeska's Will (CMR) 668
 1 Lion's Eye Diamond (MIR) 307
 1 Livaan, Cultist of Tiamat (CLB) 188
 1 Longshot, Rebel Bowman (TLE) 120
-1 Lotus Petal (V09) 7
+1 Lotus Petal (SLD) 7032
 1 Lunar Frenzy (MID) 147
-1 Mana Geyser (CNS) 147
+1 Mana Geyser (PLST) C21-176
 1 Mana Vault (2X2) 308
 1 Mines of Moria (LTR) 257
 1 Mithril Coat (LTR) 245
@@ -53,7 +53,7 @@
 1 Mox Amber (DOM) 224
 1 Mox Diamond (V10) 10
 1 Neheb, the Eternal (CMM) 244
-1 Past in Flames (PLST) MM3-105
+1 Past in Flames (WHO) 565
 1 Pyretic Ritual (SLD) 1064
 1 Reiterate (TSR) 182
 1 Repeated Reverberation (M20) 156
@@ -66,17 +66,17 @@
 1 Sol Ring (SLD) 2683
 1 Solphim, Mayhem Dominus (ONE) 150
 1 Soul's Fire (UMA) 148
-1 Storm King's Thunder (CLB) 196
+1 Storm King's Thunder (CLB) 583
 1 Storm-Kiln Artist (CMM) 644
-1 Swiftfoot Boots (FDN) 258
+1 Swiftfoot Boots (FIC) 361
 1 The Fire Crystal (FIN) 135
 1 The One Ring (LTR) 246
 1 Treasonous Ogre (SLD) 2007
 1 Tyrite Sanctum (DMC) 240
-1 Underworld Breach (THB) 161
+1 Underworld Breach (SLD) 2832
 1 Unexpected Windfall (AFR) 164
 1 Unleash Fury (M21) 170
 1 Untimely Malfunction (DSK) 161
-1 Valakut Awakening (ZNR) 174
+1 Valakut Awakening (ZNR) 355
 1 Wheel of Fortune (30A) 179
 1 Will of the Jeskai (TDC) 40

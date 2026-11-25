@@ -13,20 +13,20 @@
 1 Bulk Up (FDN) 80
 1 Castle Embereth (TDC) 347
 1 Champion's Helm (FIC) 337
-1 Chandra's Ignition (LCC) 220
+1 Chandra's Ignition (SLD) 1594
 1 Chaos Warp (MAR) 69
 1 Comet Storm (MM2) 111
 1 Commander's Plate (CMR) 305
 1 Commune with Lava (C20) 149
 1 Conqueror's Flail (FIC) 340
-1 Crackle with Power (STX) 95
+1 Crackle with Power (STX) 308
 1 Deflecting Swat (CMM) 214
 1 Desperate Ritual (UMA) 127
 1 Electro, Assaulting Battery (SPM) 76
 1 Electrodominance (RNA) 99
 1 Fiery Confluence (TLE) 165
 1 Fists of Flame (PLST) MH1-123
-1 Forge of Heroes (FIC) 395
+1 Forge of Heroes (CMM) 995
 1 Frantic Confrontation (TLE) 117
 1 Gamble (DMR) 121
 1 Gauntlet of Power (DMR) 223
@@ -36,17 +36,17 @@
 1 Increasing Vengeance (C19) 147
 1 Inventor's Axe (MH3) 126
 1 Jaya's Immolating Inferno (DOM) 133
-1 Jeska's Will (CLB) 799
+1 Jeska's Will (CMR) 668
 1 Livaan, Cultist of Tiamat (CLB) 188
 1 Longshot, Rebel Bowman (TLE) 120
 1 Lunar Frenzy (MID) 147
-1 Mana Geyser (CNS) 147
+1 Mana Geyser (PLST) C21-176
 1 Mines of Moria (LTR) 257
 1 Mithril Coat (LTR) 245
 1 Monstrous Rage (WOE) 142
 21 Mountain (THB) 253
 1 Nykthos, Shrine to Nyx (PPRO) 2022-3
-1 Past in Flames (PLST) MM3-105
+1 Past in Flames (WHO) 565
 1 Pyretic Ritual (SLD) 1064
 1 Pyromancer's Goggles (FDN) 677
 1 Reforge the Soul (INR) 167
@@ -59,9 +59,9 @@
 1 Shatterskull Smashing (ZNR) 161
 1 Sol Ring (SLD) 2683
 1 Solphim, Mayhem Dominus (ONE) 150
-1 Storm King's Thunder (CLB) 196
+1 Storm King's Thunder (CLB) 583
 1 Storm-Kiln Artist (CMM) 644
-1 Swiftfoot Boots (FDN) 258
+1 Swiftfoot Boots (FIC) 361
 1 The Fire Crystal (FIN) 135
 1 The Vision and Scarlet Witch (MSC) 707
 1 Thor, God of Thunder (MSH) 156
@@ -72,7 +72,7 @@
 1 Unleash Fury (M21) 170
 1 Untimely Malfunction (DSK) 161
 1 Urabrask (MOM) 169
-1 Valakut Awakening (ZNR) 174
+1 Valakut Awakening (ZNR) 355
 1 Valakut, the Molten Pinnacle (ZNE) 29
 1 Vandalblast (VOC) 152
 1 Wheel of Fortune (30A) 179

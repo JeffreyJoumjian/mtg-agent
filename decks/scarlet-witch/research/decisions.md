@@ -1441,3 +1441,29 @@ Champion's Helm and Mithril Coat. Hexproof doesn't stack with Helm; Boots is the
 isn't drawn or is destroyed, and haste enables the Blackblade line. Seeds 5 → 4, Protection 5 → 6,
 average MV 2.81 → 2.72. Pushed to EDHPlay. The sync now stops and shows the diff when EDHPlay holds a
 change the local list doesn't explain.
+
+## 2026-11-25 — Printings pulled from EDHPlay `b4` (pilot's changes)
+
+The pilot changed 11 printings on the EDHPlay deck "[B4] The Scarlet Witch" and asked to pull them.
+None of the 11 had a local printing change logged, so EDHPlay won on every line. Pins are set with
+`deck:meta --printing`:
+
+| Card | Was | Now |
+|---|---|---|
+| Forge of Heroes | (FIC) 395 | (CMM) 995 |
+| Valakut Awakening | (ZNR) 174 | (ZNR) 355 |
+| Lotus Petal | (V09) 7 | (SLD) 7032 |
+| Crackle with Power | (STX) 95 | (STX) 308 |
+| Storm King's Thunder | (CLB) 196 | (CLB) 583 |
+| Past in Flames | (PLST) MM3-105 | (WHO) 565 |
+| Underworld Breach | (THB) 161 | (SLD) 2832 |
+| Jeska's Will | (CLB) 799 | (CMR) 668 |
+| Chandra's Ignition | (LCC) 220 | (SLD) 1594 |
+| Swiftfoot Boots | (FDN) 258 | (FIC) 361 |
+| Mana Geyser | (CNS) 147 | (PLST) C21-176 |
+
+`b4` compares `UNCHANGED` with EDHPlay afterwards. Pins are deck-wide, so the 9 of these cards that
+`v3` also runs (all but Lotus Petal and Underworld Breach) now export with the new printings in
+`MOXFIELD-V3.txt` too, while the EDHPlay deck "[NEW] The Scarlet Witch" still holds the old ones.
+The pilot chose to push the new printings to `v3` as well, so "[NEW] The Scarlet Witch" took the 9
+art changes (`PUSHED … valid, verify ok`, no card changes). Both EDHPlay decks now match local.
