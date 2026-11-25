@@ -8,434 +8,250 @@
       "label": "Main",
       "kind": "deck",
       "bracket": 3,
+      "edhplay": "ca27d79d-0cbc-402c-82ff-b70c9acd8901",
       "sections": [
         {
           "name": "Commander",
           "cards": [
-            {
-              "name": "Hearthhull, the Worldseed",
-              "qty": 1
-            }
+            { "name": "Hearthhull, the Worldseed", "qty": 1 }
           ]
         },
         {
           "name": "Lands",
           "cards": [
-            {
-              "name": "Bloodstained Mire",
-              "qty": 1
-            },
-            {
-              "name": "Wooded Foothills",
-              "qty": 1
-            },
-            {
-              "name": "Verdant Catacombs",
-              "qty": 1
-            },
-            {
-              "name": "Windswept Heath",
-              "qty": 1
-            },
-            {
-              "name": "Misty Rainforest",
-              "qty": 1
-            },
-            {
-              "name": "Marsh Flats",
-              "qty": 1
-            },
-            {
-              "name": "Polluted Delta",
-              "qty": 1
-            },
-            {
-              "name": "Scalding Tarn",
-              "qty": 1
-            },
-            {
-              "name": "Arid Mesa",
-              "qty": 1
-            },
-            {
-              "name": "Prismatic Vista",
-              "qty": 1
-            },
-            {
-              "name": "Fabled Passage",
-              "qty": 1
-            },
-            {
-              "name": "Bayou",
-              "qty": 1
-            },
-            {
-              "name": "Taiga",
-              "qty": 1
-            },
-            {
-              "name": "Badlands",
-              "qty": 1
-            },
-            {
-              "name": "Overgrown Tomb",
-              "qty": 1
-            },
-            {
-              "name": "Stomping Ground",
-              "qty": 1
-            },
-            {
-              "name": "Blood Crypt",
-              "qty": 1
-            },
-            {
-              "name": "Ziatora's Proving Ground",
-              "qty": 1
-            },
-            {
-              "name": "Cinder Glade",
-              "qty": 1
-            },
-            {
-              "name": "Smoldering Marsh",
-              "qty": 1
-            },
-            {
-              "name": "Field of the Dead",
-              "qty": 1
-            },
-            {
-              "name": "Bojuka Bog",
-              "qty": 1
-            },
-            {
-              "name": "Boseiju, Who Endures",
-              "qty": 1
-            },
-            {
-              "name": "Lotus Field",
-              "qty": 1
-            },
-            {
-              "name": "Forest",
-              "qty": 7
-            },
-            {
-              "name": "Swamp",
-              "qty": 3
-            },
-            {
-              "name": "Mountain",
-              "qty": 3
-            }
+            { "name": "Arid Mesa", "qty": 1 },
+            { "name": "Badlands", "qty": 1 },
+            { "name": "Bayou", "qty": 1 },
+            { "name": "Blood Crypt", "qty": 1 },
+            { "name": "Bloodstained Mire", "qty": 1 },
+            { "name": "Bojuka Bog", "qty": 1 },
+            { "name": "Boseiju, Who Endures", "qty": 1 },
+            { "name": "Cinder Glade", "qty": 1 },
+            { "name": "Fabled Passage", "qty": 1 },
+            { "name": "Field of the Dead", "qty": 1 },
+            { "name": "Forest", "qty": 7 },
+            { "name": "Lotus Field", "qty": 1 },
+            { "name": "Marsh Flats", "qty": 1 },
+            { "name": "Misty Rainforest", "qty": 1 },
+            { "name": "Mountain", "qty": 3 },
+            { "name": "Overgrown Tomb", "qty": 1 },
+            { "name": "Polluted Delta", "qty": 1 },
+            { "name": "Prismatic Vista", "qty": 1 },
+            { "name": "Scalding Tarn", "qty": 1 },
+            { "name": "Smoldering Marsh", "qty": 1 },
+            { "name": "Stomping Ground", "qty": 1 },
+            { "name": "Swamp", "qty": 3 },
+            { "name": "Taiga", "qty": 1 },
+            { "name": "Verdant Catacombs", "qty": 1 },
+            { "name": "Windswept Heath", "qty": 1 },
+            { "name": "Wooded Foothills", "qty": 1 },
+            { "name": "Ziatora's Proving Ground", "qty": 1 }
           ]
         },
         {
           "name": "Ramp",
           "cards": [
-            {
-              "name": "Sol Ring",
-              "qty": 1
-            },
-            {
-              "name": "Nature's Lore",
-              "qty": 1
-            },
-            {
-              "name": "Three Visits",
-              "qty": 1
-            },
-            {
-              "name": "Farseek",
-              "qty": 1
-            },
-            {
-              "name": "Harrow",
-              "qty": 1
-            },
-            {
-              "name": "Skyshroud Claim",
-              "qty": 1
-            },
-            {
-              "name": "Lotus Cobra",
-              "qty": 1
-            },
-            {
-              "name": "Springbloom Druid",
-              "qty": 1
-            },
-            {
-              "name": "Roiling Regrowth",
-              "qty": 1
-            },
-            {
-              "name": "Tireless Provisioner",
-              "qty": 1
-            }
+            { "name": "Farseek", "qty": 1 },
+            { "name": "Harrow", "qty": 1 },
+            { "name": "Lotus Cobra", "qty": 1 },
+            { "name": "Nature's Lore", "qty": 1 },
+            { "name": "Roiling Regrowth", "qty": 1 },
+            { "name": "Skyshroud Claim", "qty": 1 },
+            { "name": "Sol Ring", "qty": 1 },
+            { "name": "Springbloom Druid", "qty": 1 },
+            { "name": "Three Visits", "qty": 1 },
+            { "name": "Tireless Provisioner", "qty": 1 }
           ]
         },
         {
           "name": "Extra Land Drops",
           "cards": [
-            {
-              "name": "Azusa, Lost but Seeking",
-              "qty": 1
-            },
-            {
-              "name": "Exploration",
-              "qty": 1
-            },
-            {
-              "name": "Oracle of Mul Daya",
-              "qty": 1
-            },
-            {
-              "name": "Dryad of the Ilysian Grove",
-              "qty": 1
-            },
-            {
-              "name": "Exploration Broodship",
-              "qty": 1
-            }
+            { "name": "Azusa, Lost but Seeking", "qty": 1 },
+            { "name": "Dryad of the Ilysian Grove", "qty": 1 },
+            { "name": "Exploration", "qty": 1 },
+            { "name": "Exploration Broodship", "qty": 1 },
+            { "name": "Oracle of Mul Daya", "qty": 1 }
           ]
         },
         {
           "name": "Card Draw",
           "cards": [
-            {
-              "name": "The Gitrog Monster",
-              "qty": 1
-            },
-            {
-              "name": "Korvold, Fae-Cursed King",
-              "qty": 1
-            },
-            {
-              "name": "Braids, Arisen Nightmare",
-              "qty": 1
-            },
-            {
-              "name": "Sylvan Library",
-              "qty": 1
-            },
-            {
-              "name": "Valakut Exploration",
-              "qty": 1
-            },
-            {
-              "name": "Evendo Brushrazer",
-              "qty": 1
-            },
-            {
-              "name": "Nahiri's Lithoforming",
-              "qty": 1
-            },
-            {
-              "name": "Escape to the Wilds",
-              "qty": 1
-            },
-            {
-              "name": "Sprouting Goblin",
-              "qty": 1
-            }
+            { "name": "Braids, Arisen Nightmare", "qty": 1 },
+            { "name": "Escape to the Wilds", "qty": 1 },
+            { "name": "Evendo Brushrazer", "qty": 1 },
+            { "name": "Korvold, Fae-Cursed King", "qty": 1 },
+            { "name": "Nahiri's Lithoforming", "qty": 1 },
+            { "name": "Sprouting Goblin", "qty": 1 },
+            { "name": "Sylvan Library", "qty": 1 },
+            { "name": "The Gitrog Monster", "qty": 1 },
+            { "name": "Valakut Exploration", "qty": 1 }
           ]
         },
         {
           "name": "Landfall Payoffs",
           "cards": [
-            {
-              "name": "Tannuk, Memorial Ensign",
-              "qty": 1
-            },
-            {
-              "name": "Koth, the Geomancer",
-              "qty": 1
-            },
-            {
-              "name": "Sabotender",
-              "qty": 1
-            },
-            {
-              "name": "Captain Michael Burnham",
-              "qty": 1
-            },
-            {
-              "name": "Scute Swarm",
-              "qty": 1
-            },
-            {
-              "name": "Rampaging Baloths",
-              "qty": 1
-            },
-            {
-              "name": "Omnath, Locus of Rage",
-              "qty": 1
-            },
-            {
-              "name": "Ob Nixilis, the Fallen",
-              "qty": 1
-            },
-            {
-              "name": "Tifa Lockhart",
-              "qty": 1
-            },
-            {
-              "name": "Ancient Greenwarden",
-              "qty": 1
-            },
-            {
-              "name": "Retreat to Hagra",
-              "qty": 1
-            }
+            { "name": "Ancient Greenwarden", "qty": 1 },
+            { "name": "Captain Michael Burnham", "qty": 1 },
+            { "name": "Koth, the Geomancer", "qty": 1 },
+            { "name": "Ob Nixilis, the Fallen", "qty": 1 },
+            { "name": "Omnath, Locus of Rage", "qty": 1 },
+            { "name": "Rampaging Baloths", "qty": 1 },
+            { "name": "Retreat to Hagra", "qty": 1 },
+            { "name": "Sabotender", "qty": 1 },
+            { "name": "Scute Swarm", "qty": 1 },
+            { "name": "Tannuk, Memorial Ensign", "qty": 1 },
+            { "name": "Tifa Lockhart", "qty": 1 }
           ]
         },
         {
           "name": "Land Sacrifice",
           "cards": [
-            {
-              "name": "Titania, Protector of Argoth",
-              "qty": 1
-            },
-            {
-              "name": "Zuran Orb",
-              "qty": 1
-            },
-            {
-              "name": "Crop Rotation",
-              "qty": 1
-            },
-            {
-              "name": "Sylvan Safekeeper",
-              "qty": 1
-            },
-            {
-              "name": "Mayhem Devil",
-              "qty": 1
-            },
-            {
-              "name": "Baloth Prime",
-              "qty": 1
-            },
-            {
-              "name": "Scapeshift",
-              "qty": 1
-            }
+            { "name": "Baloth Prime", "qty": 1 },
+            { "name": "Crop Rotation", "qty": 1 },
+            { "name": "Mayhem Devil", "qty": 1 },
+            { "name": "Scapeshift", "qty": 1 },
+            { "name": "Sylvan Safekeeper", "qty": 1 },
+            { "name": "Titania, Protector of Argoth", "qty": 1 },
+            { "name": "Zuran Orb", "qty": 1 }
           ]
         },
         {
           "name": "Land Recursion",
           "cards": [
-            {
-              "name": "Splendid Reclamation",
-              "qty": 1
-            },
-            {
-              "name": "Aftermath Analyst",
-              "qty": 1
-            },
-            {
-              "name": "Szarel, Genesis Shepherd",
-              "qty": 1
-            },
-            {
-              "name": "Ramunap Excavator",
-              "qty": 1
-            },
-            {
-              "name": "Crucible of Worlds",
-              "qty": 1
-            },
-            {
-              "name": "Icetill Explorer",
-              "qty": 1
-            }
+            { "name": "Aftermath Analyst", "qty": 1 },
+            { "name": "Crucible of Worlds", "qty": 1 },
+            { "name": "Icetill Explorer", "qty": 1 },
+            { "name": "Ramunap Excavator", "qty": 1 },
+            { "name": "Splendid Reclamation", "qty": 1 },
+            { "name": "Szarel, Genesis Shepherd", "qty": 1 }
           ]
         },
         {
           "name": "Removal",
           "cards": [
-            {
-              "name": "Assassin's Trophy",
-              "qty": 1
-            },
-            {
-              "name": "Beast Within",
-              "qty": 1
-            },
-            {
-              "name": "Putrefy",
-              "qty": 1
-            },
-            {
-              "name": "Infernal Grasp",
-              "qty": 1
-            },
-            {
-              "name": "Tear Asunder",
-              "qty": 1
-            },
-            {
-              "name": "Chaos Warp",
-              "qty": 1
-            },
-            {
-              "name": "Windgrace's Judgment",
-              "qty": 1
-            }
+            { "name": "Assassin's Trophy", "qty": 1 },
+            { "name": "Beast Within", "qty": 1 },
+            { "name": "Chaos Warp", "qty": 1 },
+            { "name": "Infernal Grasp", "qty": 1 },
+            { "name": "Putrefy", "qty": 1 },
+            { "name": "Tear Asunder", "qty": 1 },
+            { "name": "Windgrace's Judgment", "qty": 1 }
           ]
         },
         {
           "name": "Board Wipes",
           "cards": [
-            {
-              "name": "Blasphemous Act",
-              "qty": 1
-            },
-            {
-              "name": "Toxic Deluge",
-              "qty": 1
-            }
+            { "name": "Blasphemous Act", "qty": 1 },
+            { "name": "Toxic Deluge", "qty": 1 }
           ]
         },
         {
           "name": "Protection",
           "cards": [
-            {
-              "name": "Heroic Intervention",
-              "qty": 1
-            },
-            {
-              "name": "Deflecting Swat",
-              "qty": 1
-            },
-            {
-              "name": "Tamiyo's Safekeeping",
-              "qty": 1
-            }
+            { "name": "Deflecting Swat", "qty": 1 },
+            { "name": "Heroic Intervention", "qty": 1 },
+            { "name": "Tamiyo's Safekeeping", "qty": 1 }
           ]
         },
         {
           "name": "Tutors",
           "cards": [
-            {
-              "name": "Demonic Tutor",
-              "qty": 1
-            }
+            { "name": "Demonic Tutor", "qty": 1 }
           ]
         },
         {
           "name": "Win Conditions",
           "cards": [
-            {
-              "name": "Worldsoul's Rage",
-              "qty": 1
-            }
+            { "name": "Worldsoul's Rage", "qty": 1 }
           ]
         }
       ]
     }
   },
-  "cards": {}
+  "cards": {
+    "Aftermath Analyst": { "printing": {"set":"mkm","collectorNumber":"148"} },
+    "Ancient Greenwarden": { "printing": {"set":"znr","collectorNumber":"178"} },
+    "Assassin's Trophy": { "printing": {"set":"mkm","collectorNumber":"187"} },
+    "Azusa, Lost but Seeking": { "printing": {"set":"m21","collectorNumber":"173"} },
+    "Badlands": { "printing": {"set":"fbb","collectorNumber":"282"} },
+    "Baloth Prime": { "printing": {"set":"eoc","collectorNumber":"13"} },
+    "Bayou": { "printing": {"set":"fbb","collectorNumber":"283"} },
+    "Beast Within": { "printing": {"set":"plst","collectorNumber":"LCC-233"} },
+    "Blasphemous Act": { "printing": {"set":"plst","collectorNumber":"DRC-101"} },
+    "Blood Crypt": { "printing": {"set":"trk","collectorNumber":"278"} },
+    "Bloodstained Mire": { "printing": {"set":"ktk","collectorNumber":"230"} },
+    "Bojuka Bog": { "printing": {"set":"plst","collectorNumber":"C18-238"} },
+    "Boseiju, Who Endures": { "printing": {"set":"neo","collectorNumber":"266"} },
+    "Braids, Arisen Nightmare": { "printing": {"set":"dmu","collectorNumber":"84"} },
+    "Captain Michael Burnham": { "printing": {"set":"trk","collectorNumber":"143"} },
+    "Chaos Warp": { "printing": {"set":"plst","collectorNumber":"DRC-48"} },
+    "Cinder Glade": { "printing": {"set":"bfz","collectorNumber":"235"} },
+    "Crop Rotation": { "printing": {"set":"dmr","collectorNumber":"154"} },
+    "Crucible of Worlds": { "printing": {"set":"m19","collectorNumber":"229"} },
+    "Demonic Tutor": { "printing": {"set":"cmm","collectorNumber":"150"} },
+    "Dryad of the Ilysian Grove": { "printing": {"set":"thb","collectorNumber":"169"} },
+    "Escape to the Wilds": { "printing": {"set":"eld","collectorNumber":"189"} },
+    "Evendo Brushrazer": { "printing": {"set":"eoc","collectorNumber":"10"} },
+    "Exploration": { "printing": {"set":"dmr","collectorNumber":"159"} },
+    "Exploration Broodship": { "printing": {"set":"eoc","collectorNumber":"14"} },
+    "Fabled Passage": { "printing": {"set":"blb","collectorNumber":"252"} },
+    "Farseek": { "printing": {"set":"plst","collectorNumber":"LCC-242"} },
+    "Field of the Dead": { "printing": {"set":"m20","collectorNumber":"247"} },
+    "Forest": { "printing": {"set":"mdd","collectorNumber":"301"} },
+    "Harrow": { "printing": {"set":"plst","collectorNumber":"C18-150"} },
+    "Hearthhull, the Worldseed": { "printing": {"set":"eoc","collectorNumber":"1"} },
+    "Heroic Intervention": { "printing": {"set":"aer","collectorNumber":"109"} },
+    "Icetill Explorer": { "printing": {"set":"eoe","collectorNumber":"192"} },
+    "Infernal Grasp": { "printing": {"set":"mid","collectorNumber":"107"} },
+    "Korvold, Fae-Cursed King": { "printing": {"set":"eld","collectorNumber":"329"} },
+    "Koth, the Geomancer": { "printing": {"set":"fra","collectorNumber":"248"} },
+    "Lotus Cobra": { "printing": {"set":"znr","collectorNumber":"193"} },
+    "Lotus Field": { "printing": {"set":"m20","collectorNumber":"249"} },
+    "Marsh Flats": { "printing": {"set":"mm3","collectorNumber":"239"} },
+    "Mayhem Devil": { "printing": {"set":"war","collectorNumber":"204"} },
+    "Misty Rainforest": { "printing": {"set":"mm3","collectorNumber":"240"} },
+    "Nahiri's Lithoforming": { "printing": {"set":"znr","collectorNumber":"151"} },
+    "Nature's Lore": { "printing": {"set":"plst","collectorNumber":"CMM-904"} },
+    "Ob Nixilis, the Fallen": { "printing": {"set":"plst","collectorNumber":"IMA-101"} },
+    "Omnath, Locus of Rage": { "printing": {"set":"bfz","collectorNumber":"217"} },
+    "Oracle of Mul Daya": { "printing": {"set":"2x2","collectorNumber":"154"} },
+    "Overgrown Tomb": { "printing": {"set":"trk","collectorNumber":"289"} },
+    "Polluted Delta": { "printing": {"set":"ktk","collectorNumber":"239"} },
+    "Putrefy": { "printing": {"set":"rvr","collectorNumber":"212"} },
+    "Rampaging Baloths": { "printing": {"set":"fdn","collectorNumber":"645"} },
+    "Ramunap Excavator": { "printing": {"set":"hou","collectorNumber":"129"} },
+    "Retreat to Hagra": { "printing": {"set":"bfz","collectorNumber":"121"} },
+    "Roiling Regrowth": { "printing": {"set":"znr","collectorNumber":"201"} },
+    "Sabotender": { "printing": {"set":"fin","collectorNumber":"153"} },
+    "Scapeshift": { "printing": {"set":"m19","collectorNumber":"201"} },
+    "Scute Swarm": { "printing": {"set":"znr","collectorNumber":"203"} },
+    "Skyshroud Claim": { "printing": {"set":"cmm","collectorNumber":"321"} },
+    "Smoldering Marsh": { "printing": {"set":"bfz","collectorNumber":"247"} },
+    "Splendid Reclamation": { "printing": {"set":"vow","collectorNumber":"221"} },
+    "Springbloom Druid": { "printing": {"set":"fdn","collectorNumber":"767"} },
+    "Sprouting Goblin": { "printing": {"set":"dmu","collectorNumber":"145"} },
+    "Stomping Ground": { "printing": {"set":"trk","collectorNumber":"299"} },
+    "Swamp": { "printing": {"set":"mdd","collectorNumber":"296"} },
+    "Sylvan Library": { "printing": {"set":"dmr","collectorNumber":"179"} },
+    "Sylvan Safekeeper": { "printing": {"set":"cma","collectorNumber":"152"} },
+    "Szarel, Genesis Shepherd": { "printing": {"set":"eoc","collectorNumber":"4"} },
+    "Taiga": { "printing": {"set":"fbb","collectorNumber":"287"} },
+    "Tamiyo's Safekeeping": { "printing": {"set":"neo","collectorNumber":"211"} },
+    "Tannuk, Memorial Ensign": { "printing": {"set":"eoe","collectorNumber":"233"} },
+    "Tear Asunder": { "printing": {"set":"dmu","collectorNumber":"183"} },
+    "The Gitrog Monster": { "printing": {"set":"soi","collectorNumber":"245"} },
+    "Three Visits": { "printing": {"set":"plst","collectorNumber":"CMR-261"} },
+    "Tifa Lockhart": { "printing": {"set":"fin","collectorNumber":"206"} },
+    "Tireless Provisioner": { "printing": {"set":"plst","collectorNumber":"MH2-180"} },
+    "Titania, Protector of Argoth": { "printing": {"set":"plst","collectorNumber":"MH2-287"} },
+    "Toxic Deluge": { "printing": {"set":"cmm","collectorNumber":"191"} },
+    "Valakut Exploration": { "printing": {"set":"znr","collectorNumber":"175"} },
+    "Verdant Catacombs": { "printing": {"set":"mm3","collectorNumber":"249"} },
+    "Windgrace's Judgment": { "printing": {"set":"eoc","collectorNumber":"129"} },
+    "Windswept Heath": { "printing": {"set":"ktk","collectorNumber":"248"} },
+    "Wooded Foothills": { "printing": {"set":"ktk","collectorNumber":"249"} },
+    "Worldsoul's Rage": { "printing": {"set":"mkm","collectorNumber":"244"} },
+    "Ziatora's Proving Ground": { "printing": {"set":"snc","collectorNumber":"261"} },
+    "Zuran Orb": { "printing": {"set":"mh2","collectorNumber":"300"} }
+  }
 }

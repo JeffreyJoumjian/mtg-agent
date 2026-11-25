@@ -1,90 +1,90 @@
-1 Hearthhull, the Worldseed
-1 Aftermath Analyst
-1 Ancient Greenwarden
+1 Hearthhull, the Worldseed (EOC) 1
+1 Aftermath Analyst (MKM) 148
+1 Ancient Greenwarden (ZNR) 178
 1 Arid Mesa (MM3) 229
-1 Assassin's Trophy
-1 Azusa, Lost but Seeking
-1 Badlands
-1 Baloth Prime
-1 Bayou
-1 Beast Within
-1 Blasphemous Act
-1 Blood Crypt
-1 Bloodstained Mire
-1 Bojuka Bog
-1 Boseiju, Who Endures
-1 Braids, Arisen Nightmare
-1 Captain Michael Burnham
-1 Chaos Warp
-1 Cinder Glade
-1 Crop Rotation
-1 Crucible of Worlds
+1 Assassin's Trophy (MKM) 187
+1 Azusa, Lost but Seeking (M21) 173
+1 Badlands (FBB) 282
+1 Baloth Prime (EOC) 13
+1 Bayou (FBB) 283
+1 Beast Within (PLST) LCC-233
+1 Blasphemous Act (PLST) DRC-101
+1 Blood Crypt (TRK) 278
+1 Bloodstained Mire (KTK) 230
+1 Bojuka Bog (PLST) C18-238
+1 Boseiju, Who Endures (NEO) 266
+1 Braids, Arisen Nightmare (DMU) 84
+1 Captain Michael Burnham (TRK) 143
+1 Chaos Warp (PLST) DRC-48
+1 Cinder Glade (BFZ) 235
+1 Crop Rotation (DMR) 154
+1 Crucible of Worlds (M19) 229
 1 Deflecting Swat (CMM) 214
-1 Demonic Tutor
-1 Dryad of the Ilysian Grove
-1 Escape to the Wilds
-1 Evendo Brushrazer
-1 Exploration
-1 Exploration Broodship
-1 Fabled Passage
-1 Farseek
-1 Field of the Dead
-7 Forest
-1 Harrow
-1 Heroic Intervention
-1 Icetill Explorer
-1 Infernal Grasp
-1 Korvold, Fae-Cursed King
-1 Koth, the Geomancer
-1 Lotus Cobra
-1 Lotus Field
-1 Marsh Flats
-1 Mayhem Devil
-1 Misty Rainforest
+1 Demonic Tutor (CMM) 150
+1 Dryad of the Ilysian Grove (THB) 169
+1 Escape to the Wilds (ELD) 189
+1 Evendo Brushrazer (EOC) 10
+1 Exploration (DMR) 159
+1 Exploration Broodship (EOC) 14
+1 Fabled Passage (BLB) 252
+1 Farseek (PLST) LCC-242
+1 Field of the Dead (M20) 247
+7 Forest (MDD) 301
+1 Harrow (PLST) C18-150
+1 Heroic Intervention (AER) 109
+1 Icetill Explorer (EOE) 192
+1 Infernal Grasp (MID) 107
+1 Korvold, Fae-Cursed King (ELD) 329
+1 Koth, the Geomancer (FRA) 248
+1 Lotus Cobra (ZNR) 193
+1 Lotus Field (M20) 249
+1 Marsh Flats (MM3) 239
+1 Mayhem Devil (WAR) 204
+1 Misty Rainforest (MM3) 240
 3 Mountain (THB) 253
-1 Nahiri's Lithoforming
-1 Nature's Lore
-1 Ob Nixilis, the Fallen
-1 Omnath, Locus of Rage
-1 Oracle of Mul Daya
-1 Overgrown Tomb
-1 Polluted Delta
+1 Nahiri's Lithoforming (ZNR) 151
+1 Nature's Lore (PLST) CMM-904
+1 Ob Nixilis, the Fallen (PLST) IMA-101
+1 Omnath, Locus of Rage (BFZ) 217
+1 Oracle of Mul Daya (2X2) 154
+1 Overgrown Tomb (TRK) 289
+1 Polluted Delta (KTK) 239
 1 Prismatic Vista (MH1) 244
-1 Putrefy
-1 Rampaging Baloths
-1 Ramunap Excavator
-1 Retreat to Hagra
-1 Roiling Regrowth
-1 Sabotender
+1 Putrefy (RVR) 212
+1 Rampaging Baloths (FDN) 645
+1 Ramunap Excavator (HOU) 129
+1 Retreat to Hagra (BFZ) 121
+1 Roiling Regrowth (ZNR) 201
+1 Sabotender (FIN) 153
 1 Scalding Tarn (MM3) 244
-1 Scapeshift
-1 Scute Swarm
-1 Skyshroud Claim
-1 Smoldering Marsh
+1 Scapeshift (M19) 201
+1 Scute Swarm (ZNR) 203
+1 Skyshroud Claim (CMM) 321
+1 Smoldering Marsh (BFZ) 247
 1 Sol Ring (SLD) 1734
-1 Splendid Reclamation
-1 Springbloom Druid
-1 Sprouting Goblin
-1 Stomping Ground
-3 Swamp
-1 Sylvan Library
-1 Sylvan Safekeeper
-1 Szarel, Genesis Shepherd
-1 Taiga
-1 Tamiyo's Safekeeping
-1 Tannuk, Memorial Ensign
-1 Tear Asunder
-1 The Gitrog Monster
-1 Three Visits
-1 Tifa Lockhart
-1 Tireless Provisioner
-1 Titania, Protector of Argoth
-1 Toxic Deluge
-1 Valakut Exploration
-1 Verdant Catacombs
-1 Windgrace's Judgment
-1 Windswept Heath
-1 Wooded Foothills
-1 Worldsoul's Rage
-1 Ziatora's Proving Ground
-1 Zuran Orb
+1 Splendid Reclamation (VOW) 221
+1 Springbloom Druid (FDN) 767
+1 Sprouting Goblin (DMU) 145
+1 Stomping Ground (TRK) 299
+3 Swamp (MDD) 296
+1 Sylvan Library (DMR) 179
+1 Sylvan Safekeeper (CMA) 152
+1 Szarel, Genesis Shepherd (EOC) 4
+1 Taiga (FBB) 287
+1 Tamiyo's Safekeeping (NEO) 211
+1 Tannuk, Memorial Ensign (EOE) 233
+1 Tear Asunder (DMU) 183
+1 The Gitrog Monster (SOI) 245
+1 Three Visits (PLST) CMR-261
+1 Tifa Lockhart (FIN) 206
+1 Tireless Provisioner (PLST) MH2-180
+1 Titania, Protector of Argoth (PLST) MH2-287
+1 Toxic Deluge (CMM) 191
+1 Valakut Exploration (ZNR) 175
+1 Verdant Catacombs (MM3) 249
+1 Windgrace's Judgment (EOC) 129
+1 Windswept Heath (KTK) 248
+1 Wooded Foothills (KTK) 249
+1 Worldsoul's Rage (MKM) 244
+1 Ziatora's Proving Ground (SNC) 261
+1 Zuran Orb (MH2) 300

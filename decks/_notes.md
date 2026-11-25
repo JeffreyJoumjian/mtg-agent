@@ -142,7 +142,9 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
   (infinite), Crucible or Ramunap with Strip Mine or Wasteland (a land-destruction lock), Dark Depths
   with Thespian's Stage (a 20/20 for 5). The Zuran Orb plus Splendid Reclamation line is in the
   draft and is capped by the land count.
-- Not on EDHPlay yet.
+- On EDHPlay since 2026-11-25 as "Hearthhull" (top level, Bracket 3, valid):
+  https://edhplay.com/decks/ca27d79d-0cbc-402c-82ff-b70c9acd8901. The list is linked in `deck.json`
+  and all 84 printings EDHPlay picked are pinned.
 
 ## arabella: Arabella, Abandoned Doll (RW)
 
