@@ -37,7 +37,8 @@ function toFinish(raw: string): Finish {
   return v === 'foil' || v === 'etched' ? v : 'normal'
 }
 
-/** Parse a ManaBox CSV export into rows, mapping columns by header name (order-independent). */
+/** Parse a ManaBox CSV export into rows, mapping columns by header name (order-independent).
+ *  Rows from ManaBox lists are left out, because they aren't owned cards. */
 export function parseManaBoxCsv(text: string): CollectionRow[] {
   const lines = text.split(/\r?\n/).filter((l) => l.trim().length > 0)
   if (lines.length < 2) return []
@@ -46,6 +47,7 @@ export function parseManaBoxCsv(text: string): CollectionRow[] {
   const col = (name: string): number => header.indexOf(name)
   const idx = {
     binderName: col('Binder Name'),
+    binderType: col('Binder Type'),
     name: col('Name'),
     setCode: col('Set code'),
     setName: col('Set name'),
@@ -63,6 +65,12 @@ export function parseManaBoxCsv(text: string): CollectionRow[] {
   const rows: CollectionRow[] = []
   for (let i = 1; i < lines.length; i++) {
     const f = splitCsvLine(lines[i])
+
+    // A ManaBox list (Binder Type "list") holds cards that aren't part of the collection, such as a
+    // deck plan or a wish list, so counting it doubled cards that also sit in a binder. Binders,
+    // decks and any other type still count as owned.
+    if ((f[idx.binderType] ?? '').trim().toLowerCase() === 'list') continue
+
     const rawPrice = (f[idx.purchasePrice] ?? '').trim()
     rows.push({
       scryfallId: (f[idx.scryfallId] ?? '').trim(),

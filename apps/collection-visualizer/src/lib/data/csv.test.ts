@@ -34,6 +34,25 @@ test('handles quoted fields containing commas and empty purchase price', () => {
   expect(rows[0].purchasePrice).toEqual(null)
 })
 
+test('skips rows from ManaBox lists, which are not part of the collection, and keeps binders and decks', () => {
+  const csv = [
+    HEADER,
+    'Innistrad: Remastered,binder,The Meathook Massacre,INR,Innistrad Remastered,486,foil,mythic,1,101879,996e6444,28.99,false,false,near_mint,en,USD,2026-06-25T18:48:51.772Z',
+    'Edgar Deck,list,The Meathook Massacre,INR,Innistrad Remastered,486,foil,mythic,1,101879,996e6444,41.25,false,false,near_mint,en,USD,2026-07-14T03:49:58.175Z',
+    'Edgar Deck,List,Cathars\' Crusade,INR,Innistrad Remastered,10,normal,rare,1,1,id-2,1.00,false,false,near_mint,en,USD,2026-07-14T03:49:58.175Z',
+    'Edgar,deck,Sol Ring,CMM,Commander Masters,1,normal,uncommon,1,1,id-3,1.00,false,false,near_mint,en,USD,2026-07-14T03:49:58.175Z',
+  ].join('\n')
+  expect(parseManaBoxCsv(csv).map((r) => `${r.binderName}: ${r.name}`)).toEqual([
+    'Innistrad: Remastered: The Meathook Massacre',
+    'Edgar: Sol Ring',
+  ])
+})
+
+test('keeps every row when the export has no Binder Type column', () => {
+  const csv = 'Binder Name,Name,Set code,Quantity,Scryfall ID\nB,Card X,SET,1,id-1'
+  expect(parseManaBoxCsv(csv).map((r) => r.name)).toEqual(['Card X'])
+})
+
 test('maps unknown finish values to normal and skips blank lines', () => {
   const csv = `${HEADER}\nB,binder,Card X,SET,Set,1,,common,1,1,id-1,0.10,false,false,near_mint,en,USD,2026-01-01T00:00:00.000Z\n`
   const rows = parseManaBoxCsv(csv)
