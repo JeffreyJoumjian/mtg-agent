@@ -379,7 +379,11 @@ async function main(): Promise<void> {
   process.exit(command ? 1 : 0);
 }
 
-main().catch((err) => {
+// Top-level await, not main().catch(): on Bun 1.4.4 a pending Bun.stdin.text() inside an un-awaited
+// main() doesn't keep the process alive, so `backfill` and `explain` exited 0 before reading stdin.
+try {
+  await main();
+} catch (err) {
   console.error(err instanceof Error ? err.message : String(err));
   process.exit(1);
-});
+}

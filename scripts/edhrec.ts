@@ -156,7 +156,10 @@ async function main(): Promise<void> {
   process.exit(1);
 }
 
-if (import.meta.main) {
+// Run main() only when this file is executed directly, because scripts/lib/edhrec-cache.ts
+// imports it. On the NAS share import.meta.main is false: import.meta.path names the file through
+// `skynas` or `S:`, but Bun.main through `SKYNAS`. So fall back to argv[1], compared without case.
+if (import.meta.main || import.meta.path.toLowerCase() === process.argv[1]?.toLowerCase()) {
   main().catch((err) => {
     console.error(err instanceof Error ? err.message : String(err));
     process.exit(1);
