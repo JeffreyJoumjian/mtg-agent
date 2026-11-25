@@ -21,7 +21,6 @@
 1 Camellia, the Seedmiser (BLB) 207
 1 Castle Locthwain (ELD) 241
 1 Cauldron of Essence (SOS) 179
-1 Chatterstorm (BLC) 210
 1 Circle of Dreams Druid (PAFR) 176p
 1 Command Tower (PLST) BLC-130
 1 Concordant Crossroads (2X2) 367
@@ -49,6 +48,7 @@
 1 Mirkwood Bats (LTR) 95
 1 Misty Rainforest (MM3) 240
 1 Moldervine Reclamation (M20) 214
+1 Mycoloth (PLST) CMA-129
 1 Nadier's Nightblade (PLST) BLC-184
 1 Necroblossom Snarl (LTC) 321
 1 Ninja Pizza (TMC) 93

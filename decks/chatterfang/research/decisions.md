@@ -1279,3 +1279,38 @@ pins in `deck.json` now match it (MOXFIELD.txt regenerated):
 | Mirkwood Bats | (LTR) 421 | (LTR) 95 |
 
 A second comparison answered `UNCHANGED (valid)`. No list change, so no `history.jsonl` line.
+
+## 2026-11-25 — Mycoloth in, Chatterstorm out (pilot's call)
+
+Snapshot: `versions/2026-11-25-0141-main-mycoloth-in-chatterstorm-out.json`. The pilot asked to try
+Mycoloth again (*"not for bitterblossom per se but try to put it in and make a cut for it"*). I
+proposed Avenger of Zendikar as the cut, with Esika's Chariot and Bitterblossom as the alternatives.
+The pilot chose Chatterstorm.
+
+- **Grounds:** *"Devour 2 (As this creature enters, you may sacrifice any number of creatures. It
+  enters with twice that many +1/+1 counters on it.)"* and *"At the beginning of your upkeep, create
+  a 1/1 green Saproling creature token for each +1/+1 counter on this creature."* Devour is a
+  sacrifice as it enters (CR 702.82a), so each devoured creature dies (CR 700.4) and fires Blood
+  Artist, Zulaport Cutthroat, Bastion of Remembrance and Cauldron of Essence, and Nadier's Nightblade
+  for a token. Doubling Season doubles the counters it enters with (Gatherer: "Doubling Season affects
+  permanents that enter with counters"), Support Mission adds one, and the Saproling count is read
+  from counters, not from creatures devoured (Gatherer ruling). Chatterfang adds a Squirrel per
+  Saproling, and Mirkwood Bats pings per token.
+- **Re-derived from the wave 4 revert (2026-09-25):** Mycoloth came out then for cost, in a list with
+  only 9 mana sources costing 3 or less. Ramp is 14 cards now, Circle of Dreams Druid is back, and
+  Concordant Crossroads with Springleaf Parade or Cryptolith Rite turns the board into mana. The
+  "too much engine" ground still holds, which is why it took a Token Engines slot.
+- **Costs named:** Chatterstorm was a 2-mana sorcery burst that scaled with the turn's
+  spell count, so MV ≤ 2 drops by one. Mycoloth's upkeep payoff waits a turn cycle and the
+  creature draws removal.
+- **Cute line kept for the record:** Chatterstorm cast last on a Chatterfang + Peregrin Took +
+  Tippy-Toe + Academy Manufactor board made 42 tokens from three storm copies, because each copy is
+  its own creation event (wave 10, ledger repl-013).
+- **Other cuts considered:** Avenger of Zendikar (recommended: the same late burst for 2 more mana,
+  scaling off lands in a 34-land list), Esika's Chariot, Bitterblossom (kept twice before).
+
+**Curve:** average MV 2.92 → 2.97, MV 2 22 → 21, MV 5 4 → 5. Token Engines stays at 14 and draw
+stays at 7.
+
+EDHPlay: pushed to "[NEW] CHATTERFANG DEEZ NUTS", 2 changes, valid, bracket 3, verify ok. Mycoloth
+pinned to (PLST) CMA-129, the printing EDHPlay chose. Validated: 100/100, every name found.
