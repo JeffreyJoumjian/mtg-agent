@@ -94,8 +94,8 @@ colours, any tribe. Ranked on power, with salt **reported, not minimised**.
   {2},{T} every turn competed for mana). Throne drains each opponent per tapped creature at your end
   step, so tap the board in response with Cryptolith Rite, Springleaf Parade or Hazel. Creatures
   tapped that way can't block until your next untap.
-- Since 2026-11-25: Mycoloth in for Chatterstorm, Thornvault Forager in for Twitching Doll, and
-  Scurry of Squirrels in for Esika's Chariot. Myriad's copies, Chatterfang's Squirrels and Peregrin
+- Since 2026-11-25: Mycoloth in for Chatterstorm, Thornvault Forager in for Twitching Doll,
+  Scurry of Squirrels in for Esika's Chariot, and Super Shredder in for Avenger of Zendikar. Myriad's copies, Chatterfang's Squirrels and Peregrin
   Took's Food from them are all exiled at end of combat (ledger), so sacrifice them first.
 - **Trial since 2026-11-25: Ivy Lane Denizen in, Support Mission benched** (`research/sideboard.md`).
   If wipes keep catching Ivy Lane, Support Mission comes back for it.

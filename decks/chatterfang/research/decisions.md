@@ -1351,3 +1351,29 @@ MV 3 23 and MV 4 10 as before. Draw stays at 7.
 EDHPlay: pushed to "[NEW] CHATTERFANG DEEZ NUTS", 6 changes, valid, bracket 3, verify ok. Printings
 back-filled: Thornvault Forager (BLB) 197, Scurry of Squirrels (PLST) BLC-33, Ivy Lane Denizen (PLST)
 DDU-12. Validated 100/100, every name found.
+
+## 2026-11-25 (last) — Super Shredder in, Avenger of Zendikar out (pilot's call)
+
+Snapshot: `versions/2026-11-25-0332-main-super-shredder-in-avenger-of-zendikar-out.json`.
+
+- **Grounds:** *"Whenever another permanent leaves the battlefield, put a +1/+1 counter on Super
+  Shredder."* It triggers per permanent (CR 603.2c), so every sacrificed token, cracked Food, Treasure
+  or Clue, fetch land, forage, exiled myriad token and opposing creature that dies grows it. Menace,
+  Bloodletter doubles its damage on your turn, and Ivy Lane can stack counters on it. Avenger was the
+  most expensive token engine and scaled off lands in a 34-land list; Mycoloth, Scurry of Squirrels
+  and The Unbeatable Squirrel Girl now cover the late burst.
+- **Costs named:** Avenger's Plants arrived at once and counted toward Craterhoof that turn; Super
+  Shredder is one creature that dies to one removal spell. Landfall payoffs drop to Tireless
+  Provisioner and Scute Swarm. Token Engines 14 → 13.
+- **Other cuts considered:** Bitterblossom (the pilot asked what it would cost: the only token engine
+  that works from turn 2 with no condition, a full token event every upkeep, and a free Skullclamp
+  target each turn) and Valley Rotcaller (kept 2026-11-18). This was the third time Avenger was
+  named; the pilot had picked Chatterstorm and Esika's Chariot over it before.
+- **Cute line kept for the record:** Avenger of Zendikar with Ivy Lane Denizen out made one counter
+  per Plant, since Plants are green creatures entering.
+
+**Curve:** average MV 2.97 → 2.89, MV 2 21 → 22, MV 7+ 2 → 1 (Craterhoof Behemoth alone). Draw stays
+at 7.
+
+EDHPlay: pushed to "[NEW] CHATTERFANG DEEZ NUTS", 2 changes, valid, bracket 3, verify ok. Super
+Shredder pinned to (TMT) 83. Validated 100/100, every name found.

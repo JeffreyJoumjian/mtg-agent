@@ -100,7 +100,6 @@
           "name": "Token Engines",
           "cards": [
             { "name": "Academy Manufactor", "qty": 1 },
-            { "name": "Avenger of Zendikar", "qty": 1 },
             { "name": "Bilbo, Fellow Conspirator", "qty": 1 },
             { "name": "Bitterblossom", "qty": 1 },
             { "name": "Camellia, the Seedmiser", "qty": 1 },
@@ -156,7 +155,8 @@
             { "name": "Bloodletter of Aclazotz", "qty": 1 },
             { "name": "Craterhoof Behemoth", "qty": 1 },
             { "name": "Gruesome Fate", "qty": 1 },
-            { "name": "Ivy Lane Denizen", "qty": 1 }
+            { "name": "Ivy Lane Denizen", "qty": 1 },
+            { "name": "Super Shredder", "qty": 1 }
           ]
         }
       ]
@@ -255,6 +255,7 @@
     "Springleaf Parade": { "printing": {"set":"ecc","collectorNumber":"19"} },
     "Squirrel Nest": { "status": "PROXY", "printing": {"set":"dmr","collectorNumber":"177"} },
     "Starscape Cleric": { "printing": {"set":"blb","collectorNumber":"116"} },
+    "Super Shredder": { "printing": {"set":"tmt","collectorNumber":"83"} },
     "Support Mission": { "printing": {"set":"trk","collectorNumber":"216"} },
     "Swamp": { "status": "PROXY", "printing": {"set":"sos","collectorNumber":"269"} },
     "Sylvan Library": { "status": "PROXY", "printing": {"set":"dmr","collectorNumber":"441"} },

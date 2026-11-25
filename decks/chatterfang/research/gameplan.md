@@ -8,8 +8,9 @@
 > Recollector, Witch's Oven, Fabled Passage, Alhammarret's Archive, Support Mission, Throne of the
 > God-Pharaoh and Mycoloth came in. Verdant Command, Deep Forest Hermit, Tireless Tracker, Pest
 > Infestation, Deadly Dispute, Ravenous Squirrel, Llanowar Elves, Chatterstorm and two Swamps went out.
-> Later the same day Thornvault Forager, Scurry of Squirrels and Ivy Lane Denizen came in for Twitching
-> Doll, Esika's Chariot and Support Mission (benched in `research/sideboard.md`).
+> Later the same day Thornvault Forager, Scurry of Squirrels, Ivy Lane Denizen and Super Shredder came
+> in for Twitching Doll, Esika's Chariot, Support Mission (benched in `research/sideboard.md`) and
+> Avenger of Zendikar.
 
 ## 0. The one-paragraph version
 
@@ -28,11 +29,12 @@ Mycoloth turns a board into a Saproling stream that grows every upkeep.
 
 | | MV≤1 | MV2 | MV3 | MV4 | MV5 | MV6+ | avg |
 |---|---|---|---|---|---|---|---|
-| Nonland (66) | 5 | 21 | 23 | 10 | 5 | 2 | **2.97** |
+| Nonland (66) | 5 | 22 | 23 | 10 | 5 | 1 | **2.89** |
 
 Since 2026-11-18 the deck runs 34 lands (two Swamps went for Replicator and Support Mission, on trial).
-Throne of the God-Pharaoh took Replicator's slot on 2026-11-20. Mycoloth took Chatterstorm's on
-2026-11-25, which moved the average from 2.92 to 2.97 and left one fewer 2-drop.
+Throne of the God-Pharaoh took Replicator's slot on 2026-11-20. On 2026-11-25 Mycoloth took
+Chatterstorm's slot (2.92 → 2.97), and Super Shredder took Avenger of Zendikar's (2.97 → 2.89), which
+leaves Craterhoof Behemoth as the only card above 5 mana.
 Springleaf Parade counts at MV 2 and really costs 5 at X = 3.
 
 **The thing to watch and report back is the turn you win on**, and whether 34 lands keeps up.
@@ -152,9 +154,9 @@ in the game `{3}{G}, {T}` finds The Unbeatable Squirrel Girl, Camellia, Hazel or
 
 ## 5b. Landfall — every land is a token and a Squirrel
 
-Chatterfang adds a Squirrel to every token, and three cards make a token per land: Tireless
-Provisioner (Food or Treasure), Scute Swarm (a copy of itself at six lands), Avenger of Zendikar
-(a Plant per land on arrival, then a counter per land after). Tireless Tracker left in wave 12.
+Chatterfang adds a Squirrel to every token, and two cards make a token per land: Tireless
+Provisioner (Food or Treasure) and Scute Swarm (a copy of itself at six lands). Tireless Tracker left
+in wave 12 and Avenger of Zendikar on 2026-11-25.
 **Verdant Catacombs**, **Misty Rainforest** and **Fabled Passage** are two landfall triggers each; crack them on your
 own turn with payoffs out. **Cultivate** is two (one now, one on a later drop) and **Sakura-Tribe
 Elder** is one plus a free death.
@@ -227,6 +229,13 @@ X is locked on resolution (see §9).
 
 **Gruesome Fate** with 20 creatures is 20 to each opponent, 40 with Bloodletter. **Cast it before
 you sacrifice** — it counts creatures you control.
+
+**Super Shredder** (since 2026-11-25). It gets a +1/+1 counter whenever **another permanent** leaves
+the battlefield, one per permanent: every token you sacrifice, every Food, Treasure or Clue you crack,
+every fetch land, every exiled myriad token and every creature an opponent loses. Cast it early, then
+let the engine grow it, and swing with menace. Bloodletter doubles its damage on your turn, and Ivy
+Lane Denizen can put its counters on it too. A Blasphemous Edict is one counter for every creature
+any player sacrifices.
 
 **Throne of the God-Pharaoh** (since 2026-11-20). At your end step, each opponent loses 1 for every
 tapped creature you control, counted as the trigger resolves, so tap the board **in response**:
