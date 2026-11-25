@@ -40,6 +40,12 @@ repo is public.
    `core.autocrlf false` matters because Windows and the Mac share this one checkout: Windows' default
    would rewrite files to CRLF, and the Mac would then see every file as changed.
 
+   Then copy the Workbench's `apps/collection-visualizer/data/` folder over from the old checkout.
+   It's git-ignored, so the clone doesn't have it, and the Collection pages are empty without it:
+   `collection.csv` (the ManaBox export), `price-history.json` and `purchase-overrides.json` can't
+   be rebuilt. `prices.json` and `set-icons.json` refill themselves, and `agent/` holds old chat
+   transcripts.
+
 2. **Fill in `.env`.** Take `TZ`, `PUID` and `PGID` from another project's `.env` on the share, set
    `WORKBENCH_ALLOWED_HOSTS` to the proxy name, and paste the GitHub token: a fine-grained token with
    Contents read and write on mtg-agent-data only.
